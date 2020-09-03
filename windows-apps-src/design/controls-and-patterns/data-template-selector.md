@@ -7,12 +7,12 @@ ms.date: 10/18/2019
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: anawish
-ms.openlocfilehash: d388e1f4b3f1b1be4e265185934a02b6ccd20064
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 382e28b38347a4901e781a12637423260c4bd3e3
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76123852"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160384"
 ---
 # <a name="data-template-selection-styling-items-based-on-their-properties"></a>Datenvorlagenauswahl: Formatieren von Elementen basierend auf ihren Eigenschaften
 
@@ -128,7 +128,7 @@ Nachdem der Code kompiliert wurde, wird jedes Sammlungselement über die übersc
 
 ## <a name="datatemplateselector-performance-considerations"></a>Überlegungen zur Leistung von DataTemplateSelector
 
-Wenn Sie ein ListView- oder GridView-Objekt mit einer großen Datensammlung verwenden, kann die Leistung beim Scrollen und Schwenken ein Problem darstellen. Um die Leistung großer Sammlungen zu gewährleisten, können Sie einige Schritte ausführen, um die Leistung Ihrer Datenvorlagen zu verbessern. Diese werden in [Optimieren der ListView- und GridView-Benutzeroberfläche](/windows/uwp/debug-test-perf/optimize-gridview-and-listview) ausführlich beschrieben.
+Wenn Sie ein ListView- oder GridView-Objekt mit einer großen Datensammlung verwenden, kann die Leistung beim Scrollen und Schwenken ein Problem darstellen. Um die Leistung großer Sammlungen zu gewährleisten, können Sie einige Schritte ausführen, um die Leistung Ihrer Datenvorlagen zu verbessern. Diese werden in [Optimieren der ListView- und GridView-Benutzeroberfläche](../../debug-test-perf/optimize-gridview-and-listview.md) ausführlich beschrieben.
 
 - _Elementreduzierung pro Element_: Begrenzen Sie die Anzahl der Oberflächenelemente in einer Datenvorlage auf ein vernünftiges Minimum.
 - Containerwiederverwendung mit heterogenen Sammlungen

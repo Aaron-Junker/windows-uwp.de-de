@@ -6,26 +6,26 @@ ms.date: 06/05/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a222037600ad90d63421ed2037e6706686688f71
-ms.sourcegitcommit: 9c2b21081158e712a856158d25dce76b3e213a9c
+ms.openlocfilehash: bb97e58e914da1982066d9cf150f5c8b18ef884a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129757"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155444"
 ---
 # <a name="httpclient"></a>HttpClient
 
 **Wichtige APIs**
 
--   [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)
--   [**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http)
--   [**Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage)
+-   [**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient)
+-   [**Windows.Web.Http**](/uwp/api/Windows.Web.Http)
+-   [**Windows.Web.Http.HttpResponseMessage**](/uwp/api/Windows.Web.Http.HttpResponseMessage)
 
-Verwenden Sie [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) und die übrige [**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http)-Namespace-API zum Senden und Empfangen von Informationen über die HTTP-Protokolle 1.1 und 2.0.
+Verwenden Sie [**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) und die übrige [**Windows.Web.Http**](/uwp/api/Windows.Web.Http)-Namespace-API zum Senden und Empfangen von Informationen über die HTTP-Protokolle 1.1 und 2.0.
 
 ## <a name="overview-of-httpclient-and-the-windowswebhttp-namespace"></a>Übersicht über HttpClient und den Windows.Web.Http-Namespace
 
-Die Klassen im [**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http)-Namespace und die zugehörigen [**Windows.Web.Http.Headers**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.Headers)- und [**Windows.Web.Http.Filters**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.Filters)-Namespaces stellen eine Programmierschnittstelle für UWP-Apps bereit, die als HTTP-Client ausgeführt werden, um grundlegende GET-Anforderungen auszuführen oder die weiter unten aufgeführte erweiterte HTTP-Funktionalität zu implementieren.
+Die Klassen im [**Windows.Web.Http**](/uwp/api/Windows.Web.Http)-Namespace und die zugehörigen [**Windows.Web.Http.Headers**](/uwp/api/Windows.Web.Http.Headers)- und [**Windows.Web.Http.Filters**](/uwp/api/Windows.Web.Http.Filters)-Namespaces stellen eine Programmierschnittstelle für UWP-Apps bereit, die als HTTP-Client ausgeführt werden, um grundlegende GET-Anforderungen auszuführen oder die weiter unten aufgeführte erweiterte HTTP-Funktionalität zu implementieren.
 
 -   Methoden für häufige Verben (**DELETE**, **GET**, **PUT** und **POST**). Jede dieser Anforderungen wird als asynchroner Vorgang gesendet.
 
@@ -39,25 +39,25 @@ Die Klassen im [**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows
 
 -   Verfügbarkeit von Statusinformationen zu HTTP-Anforderungen in asynchronen Methoden.
 
-Die [**Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpRequestMessage)-Klasse stellt eine HTTP-Anforderungsnachricht dar, die von [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) gesendet wurde. Die [**Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage)-Klasse stellt eine HTTP-Antwortnachricht dar, die von einer HTTP-Anforderung empfangen wurde. HTTP-Nachrichten werden von IETF in [RFC 2616](https://tools.ietf.org/html/rfc2616) definiert.
+Die [**Windows.Web.Http.HttpRequestMessage**](/uwp/api/Windows.Web.Http.HttpRequestMessage)-Klasse stellt eine HTTP-Anforderungsnachricht dar, die von [**Windows.Web.Http.HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) gesendet wurde. Die [**Windows.Web.Http.HttpResponseMessage**](/uwp/api/Windows.Web.Http.HttpResponseMessage)-Klasse stellt eine HTTP-Antwortnachricht dar, die von einer HTTP-Anforderung empfangen wurde. HTTP-Nachrichten werden von IETF in [RFC 2616](https://tools.ietf.org/html/rfc2616) definiert.
 
-Der [**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http)-Namespace stellt HTTP-Inhalte als HTTP-Entitätskörper und Header dar, darunter auch Cookies. HTTP-Inhalte können einer HTTP-Anforderung oder einer HTTP-Antwort zugeordnet sein. Der **Windows.Web.Http**-Namespace stellt eine Reihe unterschiedlicher Klassen zum Darstellen von HTTP-Inhalten bereit.
+Der [**Windows.Web.Http**](/uwp/api/Windows.Web.Http)-Namespace stellt HTTP-Inhalte als HTTP-Entitätskörper und Header dar, darunter auch Cookies. HTTP-Inhalte können einer HTTP-Anforderung oder einer HTTP-Antwort zugeordnet sein. Der **Windows.Web.Http**-Namespace stellt eine Reihe unterschiedlicher Klassen zum Darstellen von HTTP-Inhalten bereit.
 
--   [**HttpBufferContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpBufferContent). Inhalt als Puffer
--   [**HttpFormUrlEncodedContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpFormUrlEncodedContent). Inhalt als Name und Wert-Tupel, die mit dem MIME-Typ **application/x-www-form-urlencoded** codiert sind
--   [**HttpMultipartContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpMultipartContent). Inhalt in Form des MIME-Typs **multipart/\*** .
--   [**HttpMultipartFormDataContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpMultipartFormDataContent). Inhalt, der als MIME-Typ **multipart/form-data** codiert ist
--   [**HttpStreamContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpStreamContent). Inhalt als Stream (Der interne Typ wird von der HTTP GET-Methode zum Empfangen von Daten und von der HTTP POST-Methode zum Hochladen von Daten verwendet.)
--   [**HttpStringContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpStringContent). Inhalt als Zeichenfolge
--   [**IHttpContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.IHttpContent): Basisschnittstelle für Entwickler zum Erstellen eigener Inhaltsobjekte
+-   [**HttpBufferContent**](/uwp/api/Windows.Web.Http.HttpBufferContent). Inhalt als Puffer
+-   [**HttpFormUrlEncodedContent**](/uwp/api/Windows.Web.Http.HttpFormUrlEncodedContent). Inhalt als Name und Wert-Tupel, die mit dem MIME-Typ **application/x-www-form-urlencoded** codiert sind
+-   [**HttpMultipartContent**](/uwp/api/Windows.Web.Http.HttpMultipartContent). Inhalt in Form des MIME-Typs **multipart/\*** .
+-   [**HttpMultipartFormDataContent**](/uwp/api/Windows.Web.Http.HttpMultipartFormDataContent). Inhalt, der als MIME-Typ **multipart/form-data** codiert ist
+-   [**HttpStreamContent**](/uwp/api/Windows.Web.Http.HttpStreamContent). Inhalt als Stream (Der interne Typ wird von der HTTP GET-Methode zum Empfangen von Daten und von der HTTP POST-Methode zum Hochladen von Daten verwendet.)
+-   [**HttpStringContent**](/uwp/api/Windows.Web.Http.HttpStringContent). Inhalt als Zeichenfolge
+-   [**IHttpContent**](/uwp/api/Windows.Web.Http.IHttpContent): Basisschnittstelle für Entwickler zum Erstellen eigener Inhaltsobjekte
 
-Der Codeausschnitt im Abschnitt „Senden einer einfachen GET-Anforderung über HTTP“ verwendet die [**HttpStringContent**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpStringContent)-Klasse, um die HTTP-Antwort einer HTTP GET-Anforderung als Zeichenfolge darzustellen.
+Der Codeausschnitt im Abschnitt „Senden einer einfachen GET-Anforderung über HTTP“ verwendet die [**HttpStringContent**](/uwp/api/Windows.Web.Http.HttpStringContent)-Klasse, um die HTTP-Antwort einer HTTP GET-Anforderung als Zeichenfolge darzustellen.
 
-Der [**Windows.Web.Http.Headers**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.Headers)-Namespace unterstützt die Erstellung von HTTP-Headern und -Cookies, die dann als Eigenschaften mit [**HttpRequestMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpRequestMessage)- und [**HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage)-Objekten zugeordnet werden.
+Der [**Windows.Web.Http.Headers**](/uwp/api/Windows.Web.Http.Headers)-Namespace unterstützt die Erstellung von HTTP-Headern und -Cookies, die dann als Eigenschaften mit [**HttpRequestMessage**](/uwp/api/Windows.Web.Http.HttpRequestMessage)- und [**HttpResponseMessage**](/uwp/api/Windows.Web.Http.HttpResponseMessage)-Objekten zugeordnet werden.
 
 ## <a name="send-a-simple-get-request-over-http"></a>Senden einer einfachen GET-Anforderung über HTTP
 
-Wie weiter oben in diesem Artikel beschrieben wurde, können UWP-Apps mit dem [**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http)-Namespace GET-Anforderungen senden. Der folgende Codeausschnitt veranschaulicht, wie eine GET-Anforderung mithilfe der [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)-Klasse und der [**Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage)-Klasse an \/„http://www.contoso.com“ gesendet werden kann, um die Antwort der GET-Anforderung zu lesen.
+Wie weiter oben in diesem Artikel beschrieben wurde, können UWP-Apps mit dem [**Windows.Web.Http**](/uwp/api/Windows.Web.Http)-Namespace GET-Anforderungen senden. Der folgende Codeausschnitt veranschaulicht, wie eine GET-Anforderung mithilfe der [**Windows.Web.Http.HttpClient**](/uwp/api/Windows.Web.Http.HttpClient)-Klasse und der [**Windows.Web.Http.HttpResponseMessage**](/uwp/api/Windows.Web.Http.HttpResponseMessage)-Klasse an \/„http://www.contoso.com“ gesendet werden kann, um die Antwort der GET-Anforderung zu lesen.
 
 ```csharp
 //Create an HTTP client object
@@ -158,10 +158,10 @@ int main()
 
 ## <a name="post-binary-data-over-http"></a>Binäre Daten per POST über HTTP
 
-Das folgende [C++/WinRT](/windows/uwp/cpp-and-winrt-apis)-Codebeispiel veranschaulicht die Verwendung von Formulardaten und einer POST-Anforderung, um eine kleine Menge von Binärdaten als Dateiupload an einen Webserver zu senden. Der Code verwendet die [**HttpBufferContent**](/uwp/api/windows.web.http.httpbuffercontent)-Klasse, um die binären Daten darstellen, und die [**HttpMultipartFormDataContent**](/uwp/api/windows.web.http.httpmultipartformdatacontent)-Klasse, um die mehrteiligen Formulardaten darzustellen.
+Das folgende [C++/WinRT](../cpp-and-winrt-apis/index.md)-Codebeispiel veranschaulicht die Verwendung von Formulardaten und einer POST-Anforderung, um eine kleine Menge von Binärdaten als Dateiupload an einen Webserver zu senden. Der Code verwendet die [**HttpBufferContent**](/uwp/api/windows.web.http.httpbuffercontent)-Klasse, um die binären Daten darstellen, und die [**HttpMultipartFormDataContent**](/uwp/api/windows.web.http.httpmultipartformdatacontent)-Klasse, um die mehrteiligen Formulardaten darzustellen.
 
 > [!NOTE]
-> Das Aufrufen von **get** (wie im folgenden Codebeispiel zu sehen) ist für einen UI-Thread nicht geeignet. Die in diesem Fall zu verwendende richtige Methode finden Sie unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+> Das Aufrufen von **get** (wie im folgenden Codebeispiel zu sehen) ist für einen UI-Thread nicht geeignet. Die in diesem Fall zu verwendende richtige Methode finden Sie unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](../cpp-and-winrt-apis/concurrency.md).
 
 ```cppwinrt
 // pch.h
@@ -327,19 +327,18 @@ int main()
 
 ## <a name="exceptions-in-windowswebhttp"></a>Ausnahmen in „Windows.Web.Http“
 
-Eine Ausnahme wird ausgelöst, wenn eine ungültige Zeichenfolge für einen Uniform Resource Identifier (URI) an den Konstruktor für das [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri)-Objekt übergeben wird.
+Eine Ausnahme wird ausgelöst, wenn eine ungültige Zeichenfolge für einen Uniform Resource Identifier (URI) an den Konstruktor für das [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri)-Objekt übergeben wird.
 
-**.NET:**   Der [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri)-Typ wird in C# und VB als [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri) angezeigt.
+**.NET:**   Der [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri)-Typ wird in C# und VB als [**System.Uri**](/dotnet/api/system.uri) angezeigt.
 
-In C# und Visual Basic kann dieser Fehler vermieden werden, indem die [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri)-Klasse in .NET 4.5 und eine der [**System.Uri.TryCreat**](https://docs.microsoft.com/dotnet/api/system.uri.trycreate#overloads)-Methoden zum Testen der von einem Benutzer erhaltenen Zeichenfolge verwendet wird, bevor der URI erstellt wird.
+In C# und Visual Basic kann dieser Fehler vermieden werden, indem die [**System.Uri**](/dotnet/api/system.uri)-Klasse in .NET 4.5 und eine der [**System.Uri.TryCreat**](/dotnet/api/system.uri.trycreate#overloads)-Methoden zum Testen der von einem Benutzer erhaltenen Zeichenfolge verwendet wird, bevor der URI erstellt wird.
 
-In C++ gibt es keine Methode zum Analysieren einer Zeichenfolge für einen URI. Wenn eine App vom Benutzer eine Eingabe für das [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri)-Element erhält, sollte sich der Konstruktor innerhalb eines try/catch-Blocks befinden. Wenn eine Ausnahme ausgelöst wird, kann die App den Benutzer benachrichtigen und einen neuen Hostnamen anfordern.
+In C++ gibt es keine Methode zum Analysieren einer Zeichenfolge für einen URI. Wenn eine App vom Benutzer eine Eingabe für das [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri)-Element erhält, sollte sich der Konstruktor innerhalb eines try/catch-Blocks befinden. Wenn eine Ausnahme ausgelöst wird, kann die App den Benutzer benachrichtigen und einen neuen Hostnamen anfordern.
 
-[  **Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) bietet keine Funktion, die die Behandlung von Ausnahmen erleichtert. Eine App, die [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) und andere Klassen in diesem Namespace verwendet, muss daher den **HRESULT**-Wert verwenden.
+[  **Windows.Web.Http**](/uwp/api/Windows.Web.Http) bietet keine Funktion, die die Behandlung von Ausnahmen erleichtert. Eine App, die [**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) und andere Klassen in diesem Namespace verwendet, muss daher den **HRESULT**-Wert verwenden.
 
-In Apps in C# und VB.NET, die .NET Framework 4.5 verwenden, stellt [System.Exception](https://docs.microsoft.com/dotnet/api/system.exception) einen Fehler während der App-Ausführung dar, wenn eine Ausnahme auftritt. Die [System.Exception.HResult](https://docs.microsoft.com/dotnet/api/system.exception.hresult#System_Exception_HResult)-Eigenschaft gibt den **HRESULT**-Wert zurück, der der jeweiligen Ausnahme zugewiesen ist. Die [System.Exception.Message](https://docs.microsoft.com/dotnet/api/system.exception.message#System_Exception_Message)-Eigenschaft gibt die Meldung zurück, die die Ausnahme beschreibt. Mögliche **HRESULT**-Werte sind in der Headerdatei *Winerror.h* aufgeführt. Eine App kann nach bestimmten **HRESULT**-Werten filtern, um das App-Verhalten je nach Ausnahmeursache zu ändern.
+In Apps in C# und VB.NET, die .NET Framework 4.5 verwenden, stellt [System.Exception](/dotnet/api/system.exception) einen Fehler während der App-Ausführung dar, wenn eine Ausnahme auftritt. Die [System.Exception.HResult](/dotnet/api/system.exception.hresult#System_Exception_HResult)-Eigenschaft gibt den **HRESULT**-Wert zurück, der der jeweiligen Ausnahme zugewiesen ist. Die [System.Exception.Message](/dotnet/api/system.exception.message#System_Exception_Message)-Eigenschaft gibt die Meldung zurück, die die Ausnahme beschreibt. Mögliche **HRESULT**-Werte sind in der Headerdatei *Winerror.h* aufgeführt. Eine App kann nach bestimmten **HRESULT**-Werten filtern, um das App-Verhalten je nach Ausnahmeursache zu ändern.
 
-In Apps mit verwaltetem C++ stellt das [Platform::Exception](https://docs.microsoft.com/cpp/cppcx/platform-exception-class)-Objekt einen Fehler während der App-Ausführung dar, wenn eine Ausnahme auftritt. Die [Platform::Exception::HResult](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#hresult)-Eigenschaft gibt den **HRESULT**-Wert zurück, der der jeweiligen Ausnahme zugewiesen ist. Die [Platform::Exception::Message](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#message)-Eigenschaft gibt die vom System bereitgestellte Zeichenfolge zurück, die dem **HRESULT**-Wert zugeordnet ist. Mögliche **HRESULT**-Werte sind in der Headerdatei *Winerror.h* aufgeführt. Eine App kann nach bestimmten **HRESULT**-Werten filtern, um das App-Verhalten je nach Ausnahmeursache zu ändern.
+In Apps mit verwaltetem C++ stellt das [Platform::Exception](/cpp/cppcx/platform-exception-class)-Objekt einen Fehler während der App-Ausführung dar, wenn eine Ausnahme auftritt. Die [Platform::Exception::HResult](/cpp/cppcx/platform-exception-class#hresult)-Eigenschaft gibt den **HRESULT**-Wert zurück, der der jeweiligen Ausnahme zugewiesen ist. Die [Platform::Exception::Message](/cpp/cppcx/platform-exception-class#message)-Eigenschaft gibt die vom System bereitgestellte Zeichenfolge zurück, die dem **HRESULT**-Wert zugeordnet ist. Mögliche **HRESULT**-Werte sind in der Headerdatei *Winerror.h* aufgeführt. Eine App kann nach bestimmten **HRESULT**-Werten filtern, um das App-Verhalten je nach Ausnahmeursache zu ändern.
 
 Für die meisten Parameterüberprüfungsfehler wird der **HRESULT**-Wert **E\_INVALIDARG** zurückgegeben. Bei manchen unzulässigen Methodenaufrufen wird der **HRESULT**-Wert **E\_ILLEGAL\_METHOD\_CALL** zurückgegeben.
-

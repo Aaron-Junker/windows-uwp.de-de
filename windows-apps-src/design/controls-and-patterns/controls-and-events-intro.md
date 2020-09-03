@@ -11,18 +11,18 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: addb4e7d929fb0222deda63494546d731f01cecd
-ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
+ms.openlocfilehash: ae53810dee72638eb89467098000988c3baaf047
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775794"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160534"
 ---
 # <a name="intro-to-controls-and-patterns"></a>Einführung in Steuerelemente und Muster
 
 In der Windows-App-Entwicklung ist ein *Steuerelement* ein UI-Element, das Inhalte anzeigt oder Interaktionen ermöglicht. Sie erstellen die Benutzeroberfläche für Ihre App mit Steuerelementen wie Schaltflächen, Textfeldern und Kombinationsfeldern, um Daten anzuzeigen und Benutzereingaben zu erhalten.
 
-> **Wichtige APIs:** [Windows.UI.Xaml.Controls-Namespace](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
+> **Wichtige APIs:** [Windows.UI.Xaml.Controls-Namespace](/uwp/api/windows.ui.xaml.controls)
 
 Ein *Muster* ist eine Anleitung zum Ändern eines Steuerelements oder zum Kombinieren verschiedener Steuerelemente, um etwas Neues zu erstellen. Das Muster [master/details](master-details.md) ist z. B. eine Möglichkeit, ein [SplitView](split-view.md)-Steuerelement zur App-Navigation zu verwenden. Ebenso können Sie die Vorlage eines [NavigationView](navigationview.md)-Steuerelements zum Implementieren des Registerkartenmusters anpassen.
 
@@ -169,7 +169,7 @@ Button1().Click({ this, &MainPage::Button1_Click });
 ## <a name="related-topics"></a>Zugehörige Themen
 
 -   [Index der Steuerelemente nach Funktion](controls-by-function.md)
--   [Windows.UI.Xaml.Controls-Namespace](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
+-   [Windows.UI.Xaml.Controls-Namespace](/uwp/api/windows.ui.xaml.controls)
 -   [Layout](../layout/index.md)
 -   [Stil](../style/index.md)
 -   [Nutzbarkeit](../usability/index.md)

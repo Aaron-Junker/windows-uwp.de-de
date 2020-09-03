@@ -12,12 +12,12 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ed1344b5ee49244a6c1afcbb873b54fcc28624f
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6c479a47a53c5f52bab1febf490957355264bfc4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684883"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159875"
 ---
 # <a name="sound"></a>Sound
 
@@ -45,7 +45,7 @@ Es gibt viele Möglichkeiten, Ihre App mit Sound zu verbessern. Sie können Soun
 
 UWP bietet ein einfach zugängliches Soundsystem, bei dem Sie einfach „einen Schalter umlegen“ können und ein beeindruckendes Audioerlebnis für Ihre gesamte App erhalten.
 
-Der [**ElementSoundPlayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.elementsoundplayer) ist ein integriertes Soundsystem innerhalb von XAML, und wenn es aktiviert ist, spielen alle Standardsteuerelemente automatisch Sounds ab.
+Der [**ElementSoundPlayer**](/uwp/api/windows.ui.xaml.elementsoundplayer) ist ein integriertes Soundsystem innerhalb von XAML, und wenn es aktiviert ist, spielen alle Standardsteuerelemente automatisch Sounds ab.
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
@@ -64,12 +64,12 @@ Die **SpatialAudioMode**-Eigenschaft kann folgende Werte annehmen:
 - **Aus**: Räumliches Audio ist immer ausgeschaltet, selbst wenn Sound eingeschaltet ist.
 - **Ein**: Räumliches Audio wird immer wiedergegeben.
 
-Weitere Informationen zu räumlichem Audio und dessen Behandlung durch XAML finden Sie unter [AudioGraph – räumliches Audio](/windows/uwp/audio-video-camera/audio-graphs#spatial-audio).
+Weitere Informationen zu räumlichem Audio und dessen Behandlung durch XAML finden Sie unter [AudioGraph – räumliches Audio](../../audio-video-camera/audio-graphs.md#spatial-audio).
 
 ### <a name="sound-for-tv-and-xbox"></a>Sound für TV und Xbox
 
 Sound ist ein wesentlicher Bestandteil der 10-Fuß-Schnittstelle. Standardmäßig verwendet der **ElementSoundPlayer** den Zustand **Auto**, was bedeutet, dass Sound nur dann wiedergegeben wird, wenn Ihre App auf Xbox ausgeführt wird.
-Weitere Informationen zur Funktionsweise von Sound für TV und Xbox finden Sie im Artikel [Entwerfen für Xbox und Fernsehgeräte](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN).
+Weitere Informationen zur Funktionsweise von Sound für TV und Xbox finden Sie im Artikel [Entwerfen für Xbox und Fernsehgeräte](../devices/designing-for-tv.md).
 
 ## <a name="sound-volume-override"></a>Lautstärkeüberschreibung
 
@@ -173,5 +173,5 @@ Diese Wechselfunktion soll verhindern, dass die Focus-Sounds monoton werden und 
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Entwerfen für Xbox und Fernsehgeräte](/windows/uwp/design/devices/designing-for-tv)
+* [Entwerfen für Xbox und Fernsehgeräte](../devices/designing-for-tv.md)
 * [Dokumentation zur ElementSoundPlayer-Klasse](/uwp/api/windows.ui.xaml.elementsoundplayer)

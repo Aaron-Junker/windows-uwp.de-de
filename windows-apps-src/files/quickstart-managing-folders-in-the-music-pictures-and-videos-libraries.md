@@ -6,12 +6,12 @@ ms.date: 06/18/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c75bd62fb5548cc03247772427fb5aabac4fb5a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: da3e5e74ae1e4e72b47cf80c3a5dfac4d2c6d3ef
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74735075"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156524"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>Dateien und Ordner in den Musik-, Bild- und Videobibliotheken
 
@@ -24,7 +24,7 @@ Eine Bibliothek ist eine virtuelle Sammlung von Ordnern, die standardmäßig ein
 
 -   **Kenntnisse in der asynchronen Programmierung für Apps für die universelle Windows-Plattform (UWP)**
 
-    Informationen zum Schreiben von asynchronen Apps in C# oder Visual Basic finden Sie unter [Aufrufen asynchroner APIs in C# oder Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Informationen zum Schreiben von asynchronen Apps in C++ finden Sie unter [Asynchrone Programmierung in C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
+    Informationen zum Schreiben von asynchronen Apps in C# oder Visual Basic finden Sie unter [Aufrufen asynchroner APIs in C# oder Visual Basic](../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md). Informationen zum Schreiben von asynchronen Apps in C++ finden Sie unter [Asynchrone Programmierung in C++](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md).
 
 -   **Zugriffsberechtigungen für den Speicherort**
 
@@ -39,14 +39,14 @@ Eine Bibliothek ist eine virtuelle Sammlung von Ordnern, die standardmäßig ein
 ## <a name="get-a-reference-to-a-library"></a>Abrufen eines Verweises auf eine Bibliothek
 
 > [!NOTE]
-> Denken Sie daran, die entsprechende Funktion zu deklarieren. Weitere Informationen finden Sie unter [Deklarationen von App-Funktionen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+> Denken Sie daran, die entsprechende Funktion zu deklarieren. Weitere Informationen finden Sie unter [Deklarationen von App-Funktionen](../packaging/app-capability-declarations.md).
  
 
-Rufen Sie die [**StorageLibrary.GetLibraryAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.getlibraryasync)-Methode auf, um einen Verweis auf die Musik-, Bild- oder Videobibliothek des Benutzers zu erhalten. Geben Sie den entsprechenden Wert der [**KnownLibraryId**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownLibraryId)-Enumeration ein.
+Rufen Sie die [**StorageLibrary.GetLibraryAsync**](/uwp/api/windows.storage.storagelibrary.getlibraryasync)-Methode auf, um einen Verweis auf die Musik-, Bild- oder Videobibliothek des Benutzers zu erhalten. Geben Sie den entsprechenden Wert der [**KnownLibraryId**](/uwp/api/Windows.Storage.KnownLibraryId)-Enumeration ein.
 
--   [**KnownLibraryId.Music**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.musiclibrary)
--   [**KnownLibraryId.Pictures**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.pictureslibrary)
--   [**KnownLibraryId.Videos**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.videoslibrary)
+-   [**KnownLibraryId.Music**](/uwp/api/windows.storage.knownfolders.musiclibrary)
+-   [**KnownLibraryId.Pictures**](/uwp/api/windows.storage.knownfolders.pictureslibrary)
+-   [**KnownLibraryId.Videos**](/uwp/api/windows.storage.knownfolders.videoslibrary)
 
 ```cs
 var myPictures = await Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.Storage.KnownLibraryId.Pictures);
@@ -55,7 +55,7 @@ var myPictures = await Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.St
 ## <a name="get-the-list-of-folders-in-a-library"></a>Abrufen der Liste der Ordner in einer Bibliothek
 
 
-Um die Liste der Ordner in einer Bibliothek abzurufen, rufen den Wert der [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders)-Eigenschaft ab.
+Um die Liste der Ordner in einer Bibliothek abzurufen, rufen den Wert der [**StorageLibrary.Folders**](/uwp/api/windows.storage.storagelibrary.folders)-Eigenschaft ab.
 
 ```cs
 using Windows.Foundation.Collections;
@@ -65,7 +65,7 @@ IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myPictures.F
 ## <a name="get-the-folder-in-a-library-where-new-files-are-saved-by-default"></a>Abrufen des Ordners in einer Bibliothek, in den neue Dateien standardmäßig gespeichert werden
 
 
-Um den Ordner in einer Bibliothek abzurufen, in den neue Dateien standardmäßig gespeichert werden, rufen Sie den Wert der [**StorageLibrary.SaveFolder**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.savefolder)-Eigenschaft ab.
+Um den Ordner in einer Bibliothek abzurufen, in den neue Dateien standardmäßig gespeichert werden, rufen Sie den Wert der [**StorageLibrary.SaveFolder**](/uwp/api/windows.storage.storagelibrary.savefolder)-Eigenschaft ab.
 
 ```cs
 Windows.Storage.StorageFolder savePicturesFolder = myPictures.SaveFolder;
@@ -73,7 +73,7 @@ Windows.Storage.StorageFolder savePicturesFolder = myPictures.SaveFolder;
 
 ## <a name="add-an-existing-folder-to-a-library"></a>Hinzufügen eines vorhandenen Ordners zu einer Bibliothek
 
-Um einen Ordner zu einer Bibliothek hinzuzufügen, rufen Sie [**StorageLibrary.RequestAddFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestaddfolderasync) auf. Das Aufrufen dieser Methode führt beispielsweise bei der Bildbibliothek zur Anzeige einer Ordnerauswahl für den Benutzer, die die Schaltfläche zum **Hinzufügen dieses Ordners zu Bildern** umfasst. Wenn der Benutzer einen Ordner auswählt, dann verbleibt er am ursprünglichen Speicherort auf dem Datenträger und wird zu einem Element in der [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders)-Eigenschaft (und in der integrierten Fotos-App). Der Ordner wird aber nicht im Datei-Explorer als untergeordnetes Element des Ordners „Bilder“ angezeigt.
+Um einen Ordner zu einer Bibliothek hinzuzufügen, rufen Sie [**StorageLibrary.RequestAddFolderAsync**](/uwp/api/windows.storage.storagelibrary.requestaddfolderasync) auf. Das Aufrufen dieser Methode führt beispielsweise bei der Bildbibliothek zur Anzeige einer Ordnerauswahl für den Benutzer, die die Schaltfläche zum **Hinzufügen dieses Ordners zu Bildern** umfasst. Wenn der Benutzer einen Ordner auswählt, dann verbleibt er am ursprünglichen Speicherort auf dem Datenträger und wird zu einem Element in der [**StorageLibrary.Folders**](/uwp/api/windows.storage.storagelibrary.folders)-Eigenschaft (und in der integrierten Fotos-App). Der Ordner wird aber nicht im Datei-Explorer als untergeordnetes Element des Ordners „Bilder“ angezeigt.
 
 
 ```cs
@@ -82,11 +82,11 @@ Windows.Storage.StorageFolder newFolder = await myPictures.RequestAddFolderAsync
 
 ## <a name="remove-a-folder-from-a-library"></a>Entfernen eines Ordners aus einer Bibliothek
 
-Rufen Sie zum Entfernen eines Ordners aus einer Bibliothek die [**StorageLibrary.RequestRemoveFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestremovefolderasync)-Methode auf, und geben Sie den zu entfernenden Ordner an. Sie können [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) und ein [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)-Steuerelement (oder ähnliches) verwenden, damit der Benutzer einen zu entfernenden Ordner auswählen kann.
+Rufen Sie zum Entfernen eines Ordners aus einer Bibliothek die [**StorageLibrary.RequestRemoveFolderAsync**](/uwp/api/windows.storage.storagelibrary.requestremovefolderasync)-Methode auf, und geben Sie den zu entfernenden Ordner an. Sie können [**StorageLibrary.Folders**](/uwp/api/windows.storage.storagelibrary.folders) und ein [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView)-Steuerelement (oder ähnliches) verwenden, damit der Benutzer einen zu entfernenden Ordner auswählen kann.
 
-Wenn Sie [**StorageLibrary.RequestRemoveFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestremovefolderasync) aufrufen, wird dem Benutzer ein Bestätigungsdialogfeld angezeigt, das darüber informiert, dass der Ordner nicht länger unter „Bilder“ angezeigt, aber auch nicht gelöscht wird. Dies bedeutet, dass der Ordner am ursprünglichen Speicherort auf dem Datenträger verbleibt, aus der [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders)-Eigenschaft entfernt wird und nicht länger in der integrierten Fotos-App enthalten ist.
+Wenn Sie [**StorageLibrary.RequestRemoveFolderAsync**](/uwp/api/windows.storage.storagelibrary.requestremovefolderasync) aufrufen, wird dem Benutzer ein Bestätigungsdialogfeld angezeigt, das darüber informiert, dass der Ordner nicht länger unter „Bilder“ angezeigt, aber auch nicht gelöscht wird. Dies bedeutet, dass der Ordner am ursprünglichen Speicherort auf dem Datenträger verbleibt, aus der [**StorageLibrary.Folders**](/uwp/api/windows.storage.storagelibrary.folders)-Eigenschaft entfernt wird und nicht länger in der integrierten Fotos-App enthalten ist.
 
-Im folgenden Beispiel wird davon ausgegangen, dass der Benutzer den zu entfernenden Ordner aus einem [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)-Steuerelement namens **lvPictureFolders** ausgewählt hat.
+Im folgenden Beispiel wird davon ausgegangen, dass der Benutzer den zu entfernenden Ordner aus einem [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView)-Steuerelement namens **lvPictureFolders** ausgewählt hat.
 
 
 ```cs
@@ -96,7 +96,7 @@ bool result = await myPictures.RequestRemoveFolderAsync(folder);
 ## <a name="get-notified-of-changes-to-the-list-of-folders-in-a-library"></a>Empfangen von Benachrichtigungen über Änderungen an der Liste der Ordner in einer Bibliothek
 
 
-Um über Änderungen an der Liste der Ordner in einer Bibliothek benachrichtigt zu werden, registrieren Sie einen Handler für das [**StorageLibrary.DefinitionChanged**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.definitionchanged)-Ereignis der Bibliothek.
+Um über Änderungen an der Liste der Ordner in einer Bibliothek benachrichtigt zu werden, registrieren Sie einen Handler für das [**StorageLibrary.DefinitionChanged**](/uwp/api/windows.storage.storagelibrary.definitionchanged)-Ereignis der Bibliothek.
 
 
 ```cs
@@ -158,7 +158,7 @@ private async void getSongs()
 
 Benutzer können angeben, dass Dateien standardmäßig auf der optionalen SD-Karte gespeichert werden sollen. Für Apps kann festgelegt werden, dass Dateien nicht auf der SD-Karte gespeichert werden sollen. Daher können die Medienbibliotheken auf den internen Speicher und die SD-Karte des Geräts aufgeteilt werden.
 
-Sie müssen keinen zusätzlichen Code schreiben, um diese Möglichkeit bereitzustellen. In den Methoden im [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage)-Namespace, mit denen bekannte Ordner abgefragt werden, sind die Abfrageergebnisse beider Speicherorte transparent kombiniert. Sie müssen die **removableStorage**-Funktion in der App-Manifestdatei nicht angeben, um diese kombinierten Ergebnisse zu erhalten.
+Sie müssen keinen zusätzlichen Code schreiben, um diese Möglichkeit bereitzustellen. In den Methoden im [**Windows.Storage**](/uwp/api/Windows.Storage)-Namespace, mit denen bekannte Ordner abgefragt werden, sind die Abfrageergebnisse beider Speicherorte transparent kombiniert. Sie müssen die **removableStorage**-Funktion in der App-Manifestdatei nicht angeben, um diese kombinierten Ergebnisse zu erhalten.
 
 Beachten Sie den Status des Gerätespeichers, der in der folgenden Abbildung dargestellt ist:
 
@@ -175,7 +175,7 @@ Für die Ordner „Eigene Aufnahmen“ und „Gespeicherte Bilder“ werden kein
 
 **Öffnen eines Fotos in der App, mit der es aufgenommen wurde**
 
-Wenn Sie es Benutzern ermöglichen möchten, ein Foto später erneut in der App zu öffnen, mit der es aufgenommen wurde, können Sie die **CreatorAppId** mit den Metadaten des Fotos speichern. Verwenden Sie hierzu ähnlichen Code wie im folgenden Beispiel. In diesem Beispiel ist **testPhoto** eine [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile).
+Wenn Sie es Benutzern ermöglichen möchten, ein Foto später erneut in der App zu öffnen, mit der es aufgenommen wurde, können Sie die **CreatorAppId** mit den Metadaten des Fotos speichern. Verwenden Sie hierzu ähnlichen Code wie im folgenden Beispiel. In diesem Beispiel ist **testPhoto** eine [**StorageFile**](/uwp/api/Windows.Storage.StorageFile).
 
 ```cs
 IDictionary<string, object> propertiesToSave = new Dictionary<string, object>();

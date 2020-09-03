@@ -6,19 +6,19 @@ ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, XAML, benutzerdefiniert, vorlagenbasiert, Steuerelement
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2bd71e5ec78f3e0d1317c4e69ecd234985b2d8ab
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 805e9db834e4428f8db5815b54b8d1d669310611
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492845"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154224"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>Benutzerdefinierte (vorlagenbasierte) XAML-Steuerelemente mit C++/WinRT
 
 > [!IMPORTANT]
-> Wichtige Konzepte und Begriffe im Zusammenhang mit der Nutzung und Erstellung von Laufzeitklassen mit [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) findest du unter [Verwenden von APIs mit C++/WinRT](consume-apis.md) sowie unter [Erstellen von APIs mit C++/WinRT](author-apis.md).
+> Wichtige Konzepte und Begriffe im Zusammenhang mit der Nutzung und Erstellung von Laufzeitklassen mit [C++/WinRT](./intro-to-using-cpp-with-winrt.md) findest du unter [Verwenden von APIs mit C++/WinRT](consume-apis.md) sowie unter [Erstellen von APIs mit C++/WinRT](author-apis.md).
 
-Eines der leistungsstärksten Features der universellen Windows-Plattform (UWP) ist die Flexibilität des Benutzeroberflächenstapels hinsichtlich der Erstellung benutzerdefinierter Steuerelemente auf der Grundlage des XAML-Typs [**Control**](/uwp/api/windows.ui.xaml.controls.control). Das XAML-Benutzeroberflächenframework bietet Features wie [benutzerdefinierte Abhängigkeitseigenschaften](/windows/uwp/xaml-platform/custom-dependency-properties) und [angefügte Eigenschaften](/windows/uwp/xaml-platform/custom-attached-properties) sowie [Steuerelementvorlagen](/windows/uwp/design/controls-and-patterns/control-templates) zur mühelosen Erstellung vielseitiger und anpassbarer Steuerelemente. In diesem Thema werden die Schritte zum Erstellen eines benutzerdefinierten (vorlagenbasierten) Steuerelements mit C++/WinRT beschrieben.
+Eines der leistungsstärksten Features der universellen Windows-Plattform (UWP) ist die Flexibilität des Benutzeroberflächenstapels hinsichtlich der Erstellung benutzerdefinierter Steuerelemente auf der Grundlage des XAML-Typs [**Control**](/uwp/api/windows.ui.xaml.controls.control). Das XAML-Benutzeroberflächenframework bietet Features wie [benutzerdefinierte Abhängigkeitseigenschaften](../xaml-platform/custom-dependency-properties.md) und [angefügte Eigenschaften](../xaml-platform/custom-attached-properties.md) sowie [Steuerelementvorlagen](../design/controls-and-patterns/control-templates.md) zur mühelosen Erstellung vielseitiger und anpassbarer Steuerelemente. In diesem Thema werden die Schritte zum Erstellen eines benutzerdefinierten (vorlagenbasierten) Steuerelements mit C++/WinRT beschrieben.
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>Erstellen einer leeren App (BgLabelControlApp)
 
@@ -46,7 +46,7 @@ namespace BgLabelControlApp
 }
 ```
 
-Das obige Listing veranschaulicht das Muster zum Deklarieren einer Abhängigkeitseigenschaft (Dependency Property, DP). Eine Abhängigkeitseigenschaft besteht aus zwei Teilen: Zuerst wird eine schreibgeschützte statische Eigenschaft vom Typ [**DependencyProperty**](/uwp/api/windows.ui.xaml.dependencyproperty) deklariert. Sie hat den Namen deiner Abhängigkeitseigenschaft plus *Property*. Diese statische Eigenschaft wird in deiner Implementierung verwendet. Danach wird eine Instanzeigenschaft mit Lese-/Schreibzugriff sowie mit dem Typ und dem Namen deiner Abhängigkeitseigenschaft deklariert. Wenn du anstelle einer Abhängigkeitseigenschaft eine *angefügte Eigenschaft* erstellen möchtest, sieh dir die Codebeispiele unter [Benutzerdefinierte angefügte Eigenschaften](/windows/uwp/xaml-platform/custom-attached-properties) an.
+Das obige Listing veranschaulicht das Muster zum Deklarieren einer Abhängigkeitseigenschaft (Dependency Property, DP). Eine Abhängigkeitseigenschaft besteht aus zwei Teilen: Zuerst wird eine schreibgeschützte statische Eigenschaft vom Typ [**DependencyProperty**](/uwp/api/windows.ui.xaml.dependencyproperty) deklariert. Sie hat den Namen deiner Abhängigkeitseigenschaft plus *Property*. Diese statische Eigenschaft wird in deiner Implementierung verwendet. Danach wird eine Instanzeigenschaft mit Lese-/Schreibzugriff sowie mit dem Typ und dem Namen deiner Abhängigkeitseigenschaft deklariert. Wenn du anstelle einer Abhängigkeitseigenschaft eine *angefügte Eigenschaft* erstellen möchtest, sieh dir die Codebeispiele unter [Benutzerdefinierte angefügte Eigenschaften](../xaml-platform/custom-attached-properties.md) an.
 
 > [!NOTE]
 > Wenn du eine Abhängigkeitseigenschaft mit einem Gleitkommatyp erstellen möchtest, lege sie auf `double` (`Double` in [MIDL 3.0](/uwp/midl-3/)) fest. Wenn du eine Abhängigkeitseigenschaft vom Typ `float` (`Single` in MIDL) deklarierst und implementierst und anschließend im XAML-Markup einen Wert für diese Abhängigkeitseigenschaft festlegst, tritt der folgende Fehler auf: *Fehler beim Erstellen von "Windows.Foundation.Single" aus dem Text "<NUMBER>".* .
@@ -217,5 +217,5 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 * [Klasse „UIElement“](/uwp/api/windows.ui.xaml.uielement)
 
 ## <a name="related-topics"></a>Zugehörige Themen
-* [Steuerelementvorlagen](/windows/uwp/design/controls-and-patterns/control-templates)
-* [Benutzerdefinierte Abhängigkeitseigenschaften](/windows/uwp/xaml-platform/custom-dependency-properties)
+* [Steuerelementvorlagen](../design/controls-and-patterns/control-templates.md)
+* [Benutzerdefinierte Abhängigkeitseigenschaften](../xaml-platform/custom-dependency-properties.md)

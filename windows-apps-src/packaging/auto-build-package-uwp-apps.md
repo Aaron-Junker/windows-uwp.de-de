@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 70415c9f3d58625cfdc651ec67c8a9f37c23cffa
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 32054a30e56102b9c0642392d78ac75b78fb99e9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77089496"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158224"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Einrichten automatisierter Builds für UWP-Apps
 
@@ -19,9 +19,9 @@ Du kannst Azure-Pipelines verwenden, um automatisierte Builds für UWP-Projekte 
 
 ## <a name="create-a-new-azure-pipeline"></a>Erstellen einer neuen Azure-Pipeline
 
-Beginne damit, [dich für Azure-Pipelines anzumelden](https://docs.microsoft.com/azure/devops/pipelines/get-started/pipelines-sign-up), falls dies noch nicht geschehen ist.
+Beginne damit, [dich für Azure-Pipelines anzumelden](/azure/devops/pipelines/get-started/pipelines-sign-up), falls dies noch nicht geschehen ist.
 
-Als nächstes erstellst du eine Pipeline, die du zum Erstellen deines Quellcodes verwenden kannst. Ein Tutorial über das Erstellen einer Pipeline zur Erstellung eines GitHub-Repositorys findest du unter [Erstellen einer ersten Pipeline](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml). Azure Pipelines unterstützt die [in diesem Artikel](https://docs.microsoft.com/azure/devops/pipelines/repos) aufgeführten Repositorytypen.
+Als nächstes erstellst du eine Pipeline, die du zum Erstellen deines Quellcodes verwenden kannst. Ein Tutorial über das Erstellen einer Pipeline zur Erstellung eines GitHub-Repositorys findest du unter [Erstellen einer ersten Pipeline](/azure/devops/pipelines/get-started-yaml). Azure Pipelines unterstützt die [in diesem Artikel](/azure/devops/pipelines/repos) aufgeführten Repositorytypen.
 
 ## <a name="set-up-an-automated-build"></a>Einrichten eines automatisierten Builds
 
@@ -66,7 +66,7 @@ Die Standardvorlage versucht, das Paket mit dem Zertifikat zu signieren, das in 
 
 ## <a name="add-your-project-certificate-to-the-secure-files-library"></a>Hinzufügen eines Projektzertifikats zur Bibliothek für sichere Dateien
 
-Du solltest die Übermittlung von Zertifikaten an dein Repository möglichst vermeiden und von Git werden sie standardmäßig ignoriert. Um die sichere Handhabung vertraulicher Dateien wie Zertifikate zu verwalten, unterstützt Azure DevOps das Feature [Sichere Dateien](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops).
+Du solltest die Übermittlung von Zertifikaten an dein Repository möglichst vermeiden und von Git werden sie standardmäßig ignoriert. Um die sichere Handhabung vertraulicher Dateien wie Zertifikate zu verwalten, unterstützt Azure DevOps das Feature [Sichere Dateien](/azure/devops/pipelines/library/secure-files?view=azure-devops).
 
 So lädst du ein Zertifikat für deinen automatisierten Build hoch
 
@@ -80,7 +80,7 @@ So lädst du ein Zertifikat für deinen automatisierten Build hoch
 
     ![Hochladen einer sicheren Datei](images/secure-file2.png)
 
-5. Wenn der private Schlüssel im Zertifikat ein Kennwort aufweist, wird empfohlen, das Kennwort in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) zu speichern und das Kennwort dann mit einer [Variablengruppe](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups) zu verknüpfen. Mithilfe der Variablen kannst du auf das Kennwort von der Pipeline zugreifen. Hierbei ist zu beachten, dass ein Kennwort nur für den privaten Schlüssel unterstützt wird. Die Verwendung einer Zertifikatsdatei, die selbst kennwortgeschützt ist, wird derzeit nicht unterstützt.
+5. Wenn der private Schlüssel im Zertifikat ein Kennwort aufweist, wird empfohlen, das Kennwort in [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) zu speichern und das Kennwort dann mit einer [Variablengruppe](/azure/devops/pipelines/library/variable-groups) zu verknüpfen. Mithilfe der Variablen kannst du auf das Kennwort von der Pipeline zugreifen. Hierbei ist zu beachten, dass ein Kennwort nur für den privaten Schlüssel unterstützt wird. Die Verwendung einer Zertifikatsdatei, die selbst kennwortgeschützt ist, wird derzeit nicht unterstützt.
 
 > [!NOTE]
 > Ab Visual Studio 2019 wird in UWP-Projekten kein temporäres Zertifikat mehr generiert. Verwende zum Erstellen oder Exportieren von Zertifikaten die in [diesem Artikel](/windows/msix/package/create-certificate-package-signing) beschriebenen PowerShell-Cmdlets.
@@ -100,7 +100,7 @@ Mit dieser Aufgabe wird eine im Arbeitsordner enthaltene Projektmappe in Binärd
 | AppxPackageSigningEnabled | wahr | Aktiviert das Signieren von Paketen. |
 | PackageCertificateThumbprint | Zertifikatfingerabdruck | Dieser Wert **muss** mit dem Fingerabdruck im Signaturzertifikat übereinstimmen oder eine leere Zeichenfolge sein. |
 | PackageCertificateKeyFile | Pfad | Der Pfad zu dem zu verwendenden Zertifikat. Dieser wird aus den sicheren Dateimetadaten abgerufen. |
-| PackageCertificatePassword | Kennwort | Das Kennwort für den privaten Schlüssel im Zertifikat. Es wird empfohlen, das Kennwort in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) zu speichern und es mit der [Variablengruppe](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups) zu verknüpfen. Du kannst die Variable an dieses Argument übergeben. |
+| PackageCertificatePassword | Kennwort | Das Kennwort für den privaten Schlüssel im Zertifikat. Es wird empfohlen, das Kennwort in [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) zu speichern und es mit der [Variablengruppe](/azure/devops/pipelines/library/variable-groups) zu verknüpfen. Du kannst die Variable an dieses Argument übergeben. |
 
 ### <a name="configure-the-build"></a>Konfigurieren des Builds
 
@@ -152,7 +152,7 @@ Die mit der `$()`-Syntax definierten Parameter sind Variablen, die in der Buildd
 
 ![Standardvariablen](images/building-screen5.png)
 
-Unter [Vordefinierte Buildvariablen](https://docs.microsoft.com/azure/devops/pipelines/build/variables) sind alle vordefinierten Variablen aufgeführt.
+Unter [Vordefinierte Buildvariablen](/azure/devops/pipelines/build/variables) sind alle vordefinierten Variablen aufgeführt.
 
 ## <a name="configure-the-publish-build-artifacts-task"></a>Konfigurieren des Tasks „Buildartefakte veröffentlichen“
 
@@ -195,7 +195,7 @@ Entferne dann das MSBuild-Argument `AppxBundle` aus dem Buildschritt.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-- [Erstellen einer .NET-App für Windows](https://docs.microsoft.com/vsts/build-release/get-started/dot-net)
+- [Erstellen einer .NET-App für Windows](/vsts/build-release/get-started/dot-net)
 - [Verpacken von UWP-Apps](/windows/msix/package/packaging-uwp-apps)
-- [Querladen von branchenspezifischen Apps in Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
+- [Querladen von branchenspezifischen Apps in Windows 10](/windows/deploy/sideload-apps-in-windows-10)
 - [Erstellen eines Paketsignaturzertifikats](/windows/msix/package/create-certificate-package-signing)

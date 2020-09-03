@@ -5,30 +5,30 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, erstellen, Ereignis
 ms.localizationpriority: medium
-ms.openlocfilehash: 980f39f20de369bce226c4d8c1070bda851480c2
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: f1500ab9999d4689385a9f7edce33253c385c0d0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493655"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154564"
 ---
 # <a name="author-events-in-cwinrt"></a>Erstellen von Ereignissen in C++/WinRT
 
-Dieses Thema baut auf der Windows-Runtime-Komponente sowie der nutzenden Anwendung auf, deren Erstellung im Thema [Windows-Runtime-Komponenten mit C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt) beschrieben wird.
+Dieses Thema baut auf der Windows-Runtime-Komponente sowie der nutzenden Anwendung auf, deren Erstellung im Thema [Windows-Runtime-Komponenten mit C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) beschrieben wird.
 
 Hier finden Sie die neuen Funktionen, die in diesem Thema hinzugefügt wurden.
 - Aktualisierung der Bankkonto-Laufzeitklasse, um ein Ereignis auszulösen, wenn der Saldo des Kontos negativ wird.
 - Aktualisieren der Core-App, die die Bankkonto-Laufzeitklasse nutzt, sodass sie dieses Ereignis verarbeiten kann.
 
 > [!NOTE]
-> Informationen zum Installieren und Verwenden der Visual Studio-Erweiterung (VSIX) [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) und des NuGet-Pakets (die zusammen die Projektvorlage und Buildunterstützung bereitstellen) findest du unter [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) (Visual Studio-Unterstützung für C++/WinRT, XAML, die VSIX-Erweiterung und das NuGet-Paket).
+> Informationen zum Installieren und Verwenden der Visual Studio-Erweiterung (VSIX) [C++/WinRT](./intro-to-using-cpp-with-winrt.md) und des NuGet-Pakets (die zusammen die Projektvorlage und Buildunterstützung bereitstellen) findest du unter [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) (Visual Studio-Unterstützung für C++/WinRT, XAML, die VSIX-Erweiterung und das NuGet-Paket).
 
 > [!IMPORTANT]
 > Wichtige Konzepte und Begriffe im Zusammenhang mit der Nutzung und Erstellung von Laufzeitklassen mit C++/WinRT findest du unter [Verwenden von APIs mit C++/WinRT](consume-apis.md) sowie unter [Erstellen von APIs mit C++/WinRT](author-apis.md).
 
 ## <a name="create-bankaccountwrc-and-bankaccountcoreapp"></a>Erstellen von **BankAccountWRC** und **BankAccountCoreApp**
 
-Wenn Sie die in diesem Thema gezeigten Updates parallel durchführen möchten, damit Sie den Code erstellen und ausführen können, besteht Ihr erster Schritt darin, die exemplarische Vorgehensweise im Thema [Windows-Runtime-Komponenten mit C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt) durchzuführen. Hierdurch erhalten Sie die Windows-Runtime-Komponente **BankAccountWRC-** sowie die Core-App **BankAccountCoreApp-** , die diese nutzt.
+Wenn Sie die in diesem Thema gezeigten Updates parallel durchführen möchten, damit Sie den Code erstellen und ausführen können, besteht Ihr erster Schritt darin, die exemplarische Vorgehensweise im Thema [Windows-Runtime-Komponenten mit C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) durchzuführen. Hierdurch erhalten Sie die Windows-Runtime-Komponente **BankAccountWRC-** sowie die Core-App **BankAccountCoreApp-** , die diese nutzt.
 
 ## <a name="update-bankaccountwrc-to-raise-an-event"></a>Aktualisieren von **BankAccountWRC**, damit sie ein Ereignis auslöst
 
@@ -390,4 +390,4 @@ Diese Richtlinien gelten möglicherweise nicht, wenn du eine interne API entwirf
 * [Erstellen von APIs mit C++/WinRT](author-apis.md)
 * [Verwenden von APIs mit C++/WinRT](consume-apis.md)
 * [Behandeln von Ereignissen mithilfe von Delegaten in C++/WinRT](handle-events.md)
-* [Windows-Runtime-Komponenten mit C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)
+* [Windows-Runtime-Komponenten mit C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)

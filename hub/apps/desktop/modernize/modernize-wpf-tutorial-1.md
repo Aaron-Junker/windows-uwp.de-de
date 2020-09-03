@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 9d08dd0f43f1c505124203028c69326e10eea26c
-ms.sourcegitcommit: 6cdba316bdbd85a2429259ebfb59ff94440e234a
+ms.openlocfilehash: c11f1cab37e79fc320f1fb38f5b909d2cecd1ad4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85882883"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161584"
 ---
 # <a name="part-1-migrate-the-contoso-expenses-app-to-net-core-3"></a>Teil 1: Migrieren der Contoso-Spesen-App zu .NET Core 3
 
@@ -134,7 +134,7 @@ So konfigurieren Sie NuGet-Pakete für das **ContosoExpenses.Data**-Projekt:
     ```
 
     > [!NOTE]
-    > Möglicherweise fällt Ihnen auch auf, dass Sie für dieses .NET Core 3-Projekt dieselben Pakete installieren, wie sie für .NET Framework 4.7.2-Projekte verwendet werden. NuGet-Pakete unterstützen Multi-Targeting. Bibliotheksautoren können verschiedene Versionen einer Bibliothek in das gleiche Paket aufnehmen, die für verschiedene Architekturen und Plattformen kompiliert sind. Diese Pakete unterstützen das gesamte .NET Framework sowie .NET Standard 2.0, das mit .NET Core 3-Projekten kompatibel ist. Weitere Informationen zu den Unterschieden zwischen .NET Framework, .NET Core und .NET Standard finden Sie unter [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard).
+    > Möglicherweise fällt Ihnen auch auf, dass Sie für dieses .NET Core 3-Projekt dieselben Pakete installieren, wie sie für .NET Framework 4.7.2-Projekte verwendet werden. NuGet-Pakete unterstützen Multi-Targeting. Bibliotheksautoren können verschiedene Versionen einer Bibliothek in das gleiche Paket aufnehmen, die für verschiedene Architekturen und Plattformen kompiliert sind. Diese Pakete unterstützen das gesamte .NET Framework sowie .NET Standard 2.0, das mit .NET Core 3-Projekten kompatibel ist. Weitere Informationen zu den Unterschieden zwischen .NET Framework, .NET Core und .NET Standard finden Sie unter [.NET Standard](/dotnet/standard/net-standard).
 
 So konfigurieren Sie NuGet-Pakete für das **ContosoExpenses.Core**-Projekt:
 

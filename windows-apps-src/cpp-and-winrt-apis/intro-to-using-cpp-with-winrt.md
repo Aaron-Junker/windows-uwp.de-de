@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, Einführung
 ms.localizationpriority: medium
-ms.openlocfilehash: 41ded061a1111c55eb2c71b80cba34c0ce0fc50e
-ms.sourcegitcommit: 7c6cc0d972213bb3abab600423c27db50a7c702b
+ms.openlocfilehash: 980194d396bb6fa20b1d11456edee221d224b011
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87477492"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157354"
 ---
 # <a name="introduction-to-cwinrt"></a>Einführung in C++/WinRT
 &nbsp;
@@ -30,7 +30,7 @@ C++/WinRT ist der von Microsoft empfohlene Ersatz für die [C++/CX](/cpp/cppcx/v
 Die Windows-Runtime basiert auf COM-APIs (Component Object Model) und ist für den Zugriff über *Sprachprojektionen* konzipiert. Eine Projektion verbirgt die COM-Details und bietet eine natürlichere Programmiererfahrung für eine bestimmte Sprache.
 
 ### <a name="the-cwinrt-language-projection-in-the-windows-runtime-api-reference-content"></a>Die C++/WinRT-Sprachprojektion in der Windows-Runtime-API-Referenz
-Wenn Sie [Windows-Runtime -APIs](https://docs.microsoft.com/uwp/api/) anzeigen, klicken Sie auf das Kombinationsfeld **Sprache** oben rechts, und wählen Sie **C++/WinRT** aus, um API-Syntaxblöcke so anzuzeigen, wie sie in der C++/WinRT-Sprachprojektion erscheinen.
+Wenn Sie [Windows-Runtime -APIs](/uwp/api/) anzeigen, klicken Sie auf das Kombinationsfeld **Sprache** oben rechts, und wählen Sie **C++/WinRT** aus, um API-Syntaxblöcke so anzuzeigen, wie sie in der C++/WinRT-Sprachprojektion erscheinen.
 
 ## <a name="visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package"></a>Visual Studio-Unterstützung für C++/WinRT, XAML, die VSIX-Erweiterung und das NuGet-Paket
 Für Visual Studio-Unterstützung benötigen Sie Visual Studio 2019 oder Visual Studio 2017 (mindestens Version 15.6; empfohlen wird mindestens 15.7). Installieren Sie im Visual Studio-Installer die Workload **Entwicklung für die universelle Windows-Plattform**. Aktivieren Sie unter **Installationsdetails** > **Entwicklung für die universelle Windows-Plattform** die **Tools für Universelle Windows-Plattform – C++ (v14x)** -Option(en), falls dies noch nicht erfolgt ist. Wählen Sie zudem unter Windows **Einstellungen** > **Update \& Sicherheit** > **Für Entwickler** die Option **Entwicklermodus** anstelle der Option **Apps querladen** aus.
@@ -71,7 +71,7 @@ Hier sind die Visual Studio-Projektvorlagen, die von der VSIX-Erweiterung bereit
 ### <a name="blank-app-cwinrt"></a>Blank App (C++/WinRT)
 Eine Projektvorlage für eine UWP-App (Universelle Windows-Plattform), die über eine XAML-Benutzeroberfläche verfügt.
 
-Visual Studio bietet XAML-Compiler-Unterstützung, um Implementierungs- und Header-Stubs aus der IDL-Datei (`.idl`) (Interface Definition Language) zu generieren, die sich hinter jeder XAML-Markup-Datei befindet. Definieren Sie in einer IDL-Datei alle lokalen Laufzeitklassen, auf die Sie in den XAML-Seiten Ihrer Anwendung verweisen möchten, und erstellen Sie das Projekt einmal, um Implementierungsvorlagen in `Generated Files` und Stubtypdefinitionen in `Generated Files\sources` zu generieren. Verwende dann die Stubtypdefinitionen als Referenz, um dein lokalen Laufzeitklassen zu implementieren. Siehe [Einbeziehen von Laufzeitklassen in Midl-Dateien (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
+Visual Studio bietet XAML-Compiler-Unterstützung, um Implementierungs- und Header-Stubs aus der IDL-Datei (`.idl`) (Interface Definition Language) zu generieren, die sich hinter jeder XAML-Markup-Datei befindet. Definieren Sie in einer IDL-Datei alle lokalen Laufzeitklassen, auf die Sie in den XAML-Seiten Ihrer Anwendung verweisen möchten, und erstellen Sie das Projekt einmal, um Implementierungsvorlagen in `Generated Files` und Stubtypdefinitionen in `Generated Files\sources` zu generieren. Verwende dann die Stubtypdefinitionen als Referenz, um dein lokalen Laufzeitklassen zu implementieren. Siehe [Einbeziehen von Laufzeitklassen in Midl-Dateien (.idl)](./author-apis.md#factoring-runtime-classes-into-midl-files-idl).
 
 Die Unterstützung der XAML-Entwurfsoberfläche in Visual Studio 2019 für C++/WinRT ist nahezu gleichwertig mit C#. In Visual Studio 2019 können Sie mit der Registerkarte **Ereignisse** im Fenster **Eigenschaften** Ereignishandler in einem C++/WinRT-Projekt hinzufügen. Sie können Ihrem Code Ereignishandler auch manuell hinzufügen&mdash;Weitere Informationen hierzu erhalten Sie unter [Behandeln von Ereignissen mithilfe von Delegaten in C++/WinRT](handle-events.md).
 
@@ -91,7 +91,7 @@ Eine Projektvorlage für eine Komponente; typischerweise für die Nutzung in ein
 
 Diese Vorlage veranschaulicht die `midl.exe` > `cppwinrt.exe`-Toolkette, in der Windows-Runtime-Metadaten (`.winmd`) aus IDL generiert werden, und die anschließende Implementierung und Generierung von Header-Stubs aus den Windows-Runtime-Metadaten.
 
-Definieren Sie in einer IDL-Datei die Laufzeitklassen in Ihrer Komponenten, deren Standardschnittstelle und alle anderen Schnittstellen, die sie implementieren. Erstellen Sie das Projekt einmalig, um `module.g.cpp`, `module.h.cpp`, Implementierungsvorlagen in `Generated Files` und Stubtypdefinitionen in `Generated Files\sources` zu generieren. Verwenden Sie dann die Stubtypdefinitionen als Referenz, um die Laufzeitklassen in Ihrer Komponente zu implementieren. Siehe [Einbeziehen von Laufzeitklassen in Midl-Dateien (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
+Definieren Sie in einer IDL-Datei die Laufzeitklassen in Ihrer Komponenten, deren Standardschnittstelle und alle anderen Schnittstellen, die sie implementieren. Erstellen Sie das Projekt einmalig, um `module.g.cpp`, `module.h.cpp`, Implementierungsvorlagen in `Generated Files` und Stubtypdefinitionen in `Generated Files\sources` zu generieren. Verwenden Sie dann die Stubtypdefinitionen als Referenz, um die Laufzeitklassen in Ihrer Komponente zu implementieren. Siehe [Einbeziehen von Laufzeitklassen in Midl-Dateien (.idl)](./author-apis.md#factoring-runtime-classes-into-midl-files-idl).
 
 Packen Sie die erstellte Binärdatei für die Komponente für Windows-Runtime und deren `.winmd` mit der UWP-App, die diese nutzt.
 
@@ -139,7 +139,7 @@ Sie können in Ihrer C++/WinRT-Programmierung Standard-C++-Sprachfunktionen sowi
 > [!WARNING]
 > Es gibt außerdem Typen, die Sie bei genauerer Betrachtung des C++/WinRT-Windows-Namespace-Headers entdecken. Ein Beispiel ist **winrt::param::hstring**, es stehen jedoch auch Beispiele für die Sammlung zur Verfügung. Diese dienen ausschließlich der Optimierung der Bindung von Eingabeparametern, erzielen hohe Leistungsverbesserungen und sorgen dafür, dass die meisten aufrufenden Muster für verwandte C++-Standardtypen und -container „einfach funktionieren“. Diese Typen werden von der Projektion immer nur in Fällen verwendet, in denen sie den größten Wert hinzufügen. Sie sind umfassend optimiert und nicht für die allgemeine Verwendung vorgesehen. Geben Sie nicht der Versuchung nach, sie selbst zu nutzen. Sie sollten auch keine Typen aus dem `winrt::impl`-Namespace verwenden, da es sich dabei um Implementierungstypen handelt, die Änderungen unterliegen. Sie sollten weiterhin Standardtypen oder Typen aus dem [WinRT-Namespace](/uwp/cpp-ref-for-winrt/winrt) verwenden.
 >
-> Siehe auch [Übergabe von Parametern in die ABI-Grenze](/windows/uwp/cpp-and-winrt-apis/pass-parms-to-abi).
+> Siehe auch [Übergabe von Parametern in die ABI-Grenze](./pass-parms-to-abi.md).
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [winrt::hstring-Struktur](/uwp/cpp-ref-for-winrt/hstring)
@@ -151,4 +151,4 @@ Sie können in Ihrer C++/WinRT-Programmierung Standard-C++-Sprachfunktionen sowi
 * [Erste Schritte mit C++/WinRT](get-started.md)
 * [C++-Standarddatentypen und C++/WinRT](std-cpp-data-types.md)
 * [Verarbeitung von Zeichenfolgen in C++/WinRT](strings.md)
-* [Windows-Runtime-APIs](https://docs.microsoft.com/uwp/api/)
+* [Windows-Runtime-APIs](/uwp/api/)

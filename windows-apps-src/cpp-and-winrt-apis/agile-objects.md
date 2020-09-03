@@ -5,16 +5,16 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, agil, objekt, agilität, IAgileObject
 ms.localizationpriority: medium
-ms.openlocfilehash: 82dff619e6fa3934f69b93090bee90de6359ca07
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 71800de1d209a0164ab5a7e90bbc191c0f9bebe9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66360330"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154634"
 ---
 # <a name="agile-objects-in-cwinrt"></a>Agile Objekte in C++/WinRT
 
-In den meisten Fällen kann von jedem Thread aus auf eine Instanz einer Windows-Runtime-Klasse zugegriffen werden (wie es bei den meisten C++-Standardobjekten der Fall ist). Eine solche Windows-Runtime-Klasse ist *agile*. Nur eine kleine Anzahl von Windows-Runtime-Klassen, die mit Windows bereitgestellt werden, sind nicht agil. Wenn Sie sie nutzen, müssen Sie ihr Threadingmodell und ihr Marshallingverhalten berücksichtigen (Marshalling ist die Weitergabe von Daten über eine Apartmentgrenze). Es ist ein guter Standard für jedes Windows-Runtime-Objekt, agil zu sein, sodass Ihre eigenen [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)-Typen standardmäßig agil sind.
+In den meisten Fällen kann von jedem Thread aus auf eine Instanz einer Windows-Runtime-Klasse zugegriffen werden (wie es bei den meisten C++-Standardobjekten der Fall ist). Eine solche Windows-Runtime-Klasse ist *agile*. Nur eine kleine Anzahl von Windows-Runtime-Klassen, die mit Windows bereitgestellt werden, sind nicht agil. Wenn Sie sie nutzen, müssen Sie ihr Threadingmodell und ihr Marshallingverhalten berücksichtigen (Marshalling ist die Weitergabe von Daten über eine Apartmentgrenze). Es ist ein guter Standard für jedes Windows-Runtime-Objekt, agil zu sein, sodass Ihre eigenen [C++/WinRT](./intro-to-using-cpp-with-winrt.md)-Typen standardmäßig agil sind.
 
 Sie können dieses Verhalten jedoch abwählen. Möglicherweise haben Sie einen zwingenden Grund, ein Objekt Ihres Typs zu beschränken (z.B. in einem Singlethread-Apartment). Dies hat typischerweise mit Wiedereinsprungsvoraussetzungen zu tun. Aber auch die UI-APIs (User Interface, Benutzerschnittstelle) bieten zunehmend agile Objekte. Im Allgemeinen ist Agilität die einfachste und leistungsfähigste Option. Auch wenn Sie eine Aktivierungsfactory implementieren, muss diese agil sein (selbst dann, wenn Ihre entsprechende Laufzeitklasse es nicht ist).
 
@@ -37,7 +37,7 @@ struct MyType : winrt::implements<MyType, IStringable>
 };
 ```
 
-Da wir dies nicht explizit ausschließen, ist diese Implementierung agil. Die [**winrt::implementiert**](/uwp/cpp-ref-for-winrt/implements)-Basisstruktur implementiert [**IAgileObject**](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject) und [**IMarshal**](/windows/desktop/api/objidl/nn-objidl-imarshal). Die **IMarshal**-Implementierung verwendet **CoCreateFreeThreadedMarshaler**, um Legacycode zu unterstützen, dem **IAgileObject** nicht bekannt ist.
+Da wir dies nicht explizit ausschließen, ist diese Implementierung agil. Die [**winrt::implementiert**](/uwp/cpp-ref-for-winrt/implements)-Basisstruktur implementiert [**IAgileObject**](/windows/desktop/api/objidl/nn-objidl-iagileobject) und [**IMarshal**](/windows/desktop/api/objidl/nn-objidl-imarshal). Die **IMarshal**-Implementierung verwendet **CoCreateFreeThreadedMarshaler**, um Legacycode zu unterstützen, dem **IAgileObject** nicht bekannt ist.
 
 Dieser Code prüft ein Objekt auf Agilität. Der Aufruf von [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) löst eine Ausnahme aus, wenn `myimpl` nicht agil ist.
 
@@ -115,7 +115,7 @@ Der Aufruf [**agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agile_refget-fu
 
 ## <a name="important-apis"></a>Wichtige APIs
 
-* [IAgileObject-Schnittstelle](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject)
+* [IAgileObject-Schnittstelle](/windows/desktop/api/objidl/nn-objidl-iagileobject)
 * [IMarshal-Schnittstelle](/windows/desktop/api/objidl/nn-objidl-imarshal)
 * [winrt::agile_ref-Strukturvorlage](/uwp/cpp-ref-for-winrt/agile-ref)
 * [winrt::implements-Strukturvorlage](/uwp/cpp-ref-for-winrt/implements)

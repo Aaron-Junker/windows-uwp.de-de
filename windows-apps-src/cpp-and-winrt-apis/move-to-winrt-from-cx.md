@@ -1,45 +1,45 @@
 ---
-description: In diesem Thema werden die technischen Details der Portierung von Quellcode in einem [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)-Projekt zum entsprechenden Äquivalent in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) beschrieben.
+description: In diesem Thema werden die technischen Details der Portierung von Quellcode in einem [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)-Projekt zum entsprechenden Äquivalent in [C++/WinRT](./intro-to-using-cpp-with-winrt.md) beschrieben.
 title: Umstellen von C++/CX auf C++/WinRT
 ms.date: 01/17/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: fd0fb73000472390111632d0800a5ad4653f2258
-ms.sourcegitcommit: a9f44bbb23f0bc3ceade3af7781d012b9d6e5c9a
+ms.openlocfilehash: 94ffa80700cea640d63f63344991144a2ac00ab6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88180805"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157314"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Umstellen von C++/CX auf C++/WinRT
 
-Dies ist das erste Thema in einer Reihe, in der die Portierung des Quellcodes in Ihrem [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)-Projekt in entsprechenden [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)-Code beschrieben wird.
+Dies ist das erste Thema in einer Reihe, in der die Portierung des Quellcodes in Ihrem [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)-Projekt in entsprechenden [C++/WinRT](./intro-to-using-cpp-with-winrt.md)-Code beschrieben wird.
 
 Wenn für den Projekt zudem Typen der [C++-Vorlagenbibliothek für Windows-Runtime (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) verwendet werden, helfen dir die Informationen unter [Wechsel zu C++/WinRT von WRL](move-to-winrt-from-wrl.md) weiter.
 
 ## <a name="strategies-for-porting"></a>Strategien zum Portieren
 
-Sie sollten wissen, dass die Portierung von C++/CX nach C++/WinRT im Allgemeinen unkompliziert ist, mit der einzigen Ausnahme der Portierung von [Parallel Patterns Library (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl)-Aufgaben zu Co-Routinen. Die Modelle unterscheiden sich. Es gibt keine natürliche 1:1-Zuordnung von PPL-Aufgaben zu Co-Routinen, und es gibt keine einfache Methode, den Code, der für alle Fälle funktioniert, automatisch zu portieren. Hilfe zu diesem speziellen Aspekt der Portierung und Ihren Optionen für die Interoperabilität zwischen den beiden Modellen finden Sie unter [Asynchronität und Interoperabilität zwischen C++/WinRT und C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx-async).
+Sie sollten wissen, dass die Portierung von C++/CX nach C++/WinRT im Allgemeinen unkompliziert ist, mit der einzigen Ausnahme der Portierung von [Parallel Patterns Library (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl)-Aufgaben zu Co-Routinen. Die Modelle unterscheiden sich. Es gibt keine natürliche 1:1-Zuordnung von PPL-Aufgaben zu Co-Routinen, und es gibt keine einfache Methode, den Code, der für alle Fälle funktioniert, automatisch zu portieren. Hilfe zu diesem speziellen Aspekt der Portierung und Ihren Optionen für die Interoperabilität zwischen den beiden Modellen finden Sie unter [Asynchronität und Interoperabilität zwischen C++/WinRT und C++/CX](./interop-winrt-cx-async.md).
 
 Entwicklungsteams berichten routinemäßig, dass, sobald sie die Hürde der Portierung ihres asynchronen Codes genommen haben, der Rest der Portierung weitgehend automatisch erfolgt.
 
 ### <a name="porting-in-one-pass"></a>Portieren in einem Durchgang
 
-Wenn Sie Ihr gesamtes Projekt in einem Durchgang portieren können, brauchen Sie nur dieses Thema, um die benötigten Informationen zu erhalten (die nachfolgenden Themen zur *Interoperabilität* sind nicht erforderlich). Wir empfehlen, mit der Erstellung eines neuen Projekts in Visual Studio unter Verwendung einer der C++/WinRT-Projektvorlagen zu beginnen (siehe [Visual Studio-Unterstützung für C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Verschieben Sie dann Ihre Quellcodedateien in das neue Projekt, und portieren Sie dabei den gesamten C++/CX-Quellcode nach C++/WinRT.
+Wenn Sie Ihr gesamtes Projekt in einem Durchgang portieren können, brauchen Sie nur dieses Thema, um die benötigten Informationen zu erhalten (die nachfolgenden Themen zur *Interoperabilität* sind nicht erforderlich). Wir empfehlen, mit der Erstellung eines neuen Projekts in Visual Studio unter Verwendung einer der C++/WinRT-Projektvorlagen zu beginnen (siehe [Visual Studio-Unterstützung für C++/WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Verschieben Sie dann Ihre Quellcodedateien in das neue Projekt, und portieren Sie dabei den gesamten C++/CX-Quellcode nach C++/WinRT.
 
-Wenn Sie die Portierung lieber in Ihrem bestehenden C++/CX-Projekt durchführen möchten, müssen Sie es um C++/WinRT-Unterstützung erweitern. Die Schritte, die Sie dazu ausführen müssen, sind in [Erweitern eines bestehenden C++/CX-Projekts um C++/WinRT-Unterstützung](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx#taking-a-ccx-project-and-adding-cwinrt-support) beschrieben. Wenn Sie mit der Portierung fertig sind, haben Sie aus einem reinen C++/CX-Projekt ein reines C++/WinRT-Projekt gemacht.
+Wenn Sie die Portierung lieber in Ihrem bestehenden C++/CX-Projekt durchführen möchten, müssen Sie es um C++/WinRT-Unterstützung erweitern. Die Schritte, die Sie dazu ausführen müssen, sind in [Erweitern eines bestehenden C++/CX-Projekts um C++/WinRT-Unterstützung](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support) beschrieben. Wenn Sie mit der Portierung fertig sind, haben Sie aus einem reinen C++/CX-Projekt ein reines C++/WinRT-Projekt gemacht.
 
 > [!NOTE]
 > Bei einem Windows-Runtime-Komponentenprojekt ist die Portierung in einem Durchgang Ihre einzige Option. Ein in C++ geschriebenes Windows-Runtime-Komponentenprojekt muss entweder den gesamten C++/CX-Quellcode oder den gesamten C++/WinRT-Quellcode enthalten. Es können in diesem Projekttyp nicht beide Quellcodes parallel vorhanden sein.
 
 ### <a name="porting-a-project-gradually"></a>Schrittweise Portierung eines Projekts
 
-Mit Ausnahme von Windows-Runtime-Komponentenprojekten, wie im vorigen Abschnitt erwähnt, benötigen Sie einen Portierungsprozess, bei dem C++/CX- und C++/WinRT-Code eine Zeit lang nebeneinander im selben Projekt existieren, wenn die Größe oder Komplexität Ihrer Codebasis eine schrittweise Portierung erforderlich macht. Schauen Sie sich zusätzlich zu diesem Thema auch die Themen [Interoperabilität zwischen C++/WinRT und C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx) sowie [Asynchronität und Interoperabilität zwischen C++/WinRT und C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx-async) an. Diese Themen enthalten Informationen und Codebeispiele zur Verdeutlichung der Interoperabilität zwischen den beiden Sprachprojektionen.
+Mit Ausnahme von Windows-Runtime-Komponentenprojekten, wie im vorigen Abschnitt erwähnt, benötigen Sie einen Portierungsprozess, bei dem C++/CX- und C++/WinRT-Code eine Zeit lang nebeneinander im selben Projekt existieren, wenn die Größe oder Komplexität Ihrer Codebasis eine schrittweise Portierung erforderlich macht. Schauen Sie sich zusätzlich zu diesem Thema auch die Themen [Interoperabilität zwischen C++/WinRT und C++/CX](./interop-winrt-cx.md) sowie [Asynchronität und Interoperabilität zwischen C++/WinRT und C++/CX](./interop-winrt-cx-async.md) an. Diese Themen enthalten Informationen und Codebeispiele zur Verdeutlichung der Interoperabilität zwischen den beiden Sprachprojektionen.
 
-Um ein Projekt für einen schrittweisen Portierungsprozess vorzubereiten, besteht eine Möglichkeit darin, C++/WinRT-Unterstützung zu Ihrem C++/CX-Projekt hinzuzufügen. Die Schritte, die Sie dazu ausführen müssen, sind in [Erweitern eines bestehenden C++/CX-Projekts um C++/WinRT-Unterstützung](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx#taking-a-ccx-project-and-adding-cwinrt-support) beschrieben. Von dort aus können Sie dann schrittweise portieren.
+Um ein Projekt für einen schrittweisen Portierungsprozess vorzubereiten, besteht eine Möglichkeit darin, C++/WinRT-Unterstützung zu Ihrem C++/CX-Projekt hinzuzufügen. Die Schritte, die Sie dazu ausführen müssen, sind in [Erweitern eines bestehenden C++/CX-Projekts um C++/WinRT-Unterstützung](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support) beschrieben. Von dort aus können Sie dann schrittweise portieren.
 
-Eine weitere Möglichkeit besteht darin, ein neues Projekt in Visual Studio unter Verwendung einer der C++/WinRT-Projektvorlagen zu erstellen (siehe [Visual Studio-Unterstützung für C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)), und dann C++/CX-Unterstützung zu diesem Projekt hinzuzufügen. Die Schritte, die Sie dazu ausführen müssen, sind in [Erweitern eines bestehenden C++/WinRT-Projekts um C++/CX-Unterstützung](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx#taking-a-cwinrt-project-and-adding-cx-support) beschrieben. Sie können dann damit beginnen, Ihren Quellcode dorthin zu verschieben und dabei *einen Teil* des C++/CX-Quellcodes nach C++/WinRT zu portieren.
+Eine weitere Möglichkeit besteht darin, ein neues Projekt in Visual Studio unter Verwendung einer der C++/WinRT-Projektvorlagen zu erstellen (siehe [Visual Studio-Unterstützung für C++/WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)), und dann C++/CX-Unterstützung zu diesem Projekt hinzuzufügen. Die Schritte, die Sie dazu ausführen müssen, sind in [Erweitern eines bestehenden C++/WinRT-Projekts um C++/CX-Unterstützung](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-cx-support) beschrieben. Sie können dann damit beginnen, Ihren Quellcode dorthin zu verschieben und dabei *einen Teil* des C++/CX-Quellcodes nach C++/WinRT zu portieren.
 
 In jedem Fall ist die Interoperabilität (in beiden Richtungen) zwischen Ihrem C++/WinRT-Code und dem restlichen C++/CX-Code, der noch nicht portiert wurde, gewährleistet.
 
@@ -57,17 +57,17 @@ Alternativ können Sie eine Windows-Runtime-Komponente (WRC) verwenden, um beim 
 
 - Sie könnten ein neues C++/CX WRC-Projekt erstellen, so viel C++/CX-Code wie möglich in dieses Projekt verschieben und dann das XAML-Projekt in C++/WinRT ändern.
 - Oder Sie könnten ein neues C++/WinRT WRC-Projekt erstellen, das XAML-Projekt als C++/CX belassen, mit der Portierung von C++/CX nach C++/WinRT beginnen und den resultierenden Code aus dem XAML-Projekt in das Komponentenprojekt verschieben.
-- Außerdem kannst du auch ein C++/CX-Komponentenprojekt neben einem C++/WinRT-Komponentenprojekt innerhalb derselben Lösung verwenden, auf beide aus deinem Anwendungsprojekt verweisen und nach und nach das Portieren von einem zum anderen durchführen. Unter [Interoperabilität zwischen C++/WinRT und C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx) finden Sie auch weitere Einzelheiten zur Verwendung der beiden Sprachprojektionen im selben Projekt.
+- Außerdem kannst du auch ein C++/CX-Komponentenprojekt neben einem C++/WinRT-Komponentenprojekt innerhalb derselben Lösung verwenden, auf beide aus deinem Anwendungsprojekt verweisen und nach und nach das Portieren von einem zum anderen durchführen. Unter [Interoperabilität zwischen C++/WinRT und C++/CX](./interop-winrt-cx.md) finden Sie auch weitere Einzelheiten zur Verwendung der beiden Sprachprojektionen im selben Projekt.
 
 ## <a name="first-steps-in-porting-a-ccx-project-to-cwinrt"></a>Erste Schritte bei der Portierung eines C++/CX-Projekts zu C++/WinRT
 
 Unabhängig von Ihrer Portierungsstrategie (Portierung in einem Durchgang oder schrittweise Portierung) besteht Ihr erster Schritt darin, Ihr Projekt auf die Portierung vorzubereiten. Hier finden Sie eine Zusammenfassung dessen, was wir in [Strategien für die Portierung](#strategies-for-porting) beschrieben haben, in Bezug auf die Art des Projekts, mit dem Sie beginnen, und dessen Einrichtung.
 
 - **Portieren in einem Durchgang**. Erstellen Sie ein neues Projekt in Visual Studio unter Verwendung einer der C++/WinRT-Projektvorlagen. Verschieben Sie die Dateien aus Ihrem C++/CX-Projekt in dieses neue Projekt, und portieren Sie den C++/CX-Quellcode.
-- **Schrittweise Portierung eines Projekts (kein XAML-Projekt)** . Sie können C++/WinRT-Unterstützung zu Ihrem C++/CX-Projekt hinzufügen (siehe [Erweitern eines bestehenden C++/CX-Projekts um C++/WinRT-Unterstützung](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx#taking-a-ccx-project-and-adding-cwinrt-support)) und schrittweise portieren. Oder Sie können ein neues C++/WinRT-Projekt erstellen und C++/CX-Unterstützung hinzufügen (siehe [Erweitern eines bestehenden C++/WinRT-Projekts um C++/CX-Unterstützung](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx#taking-a-cwinrt-project-and-adding-cx-support)), Dateien in dieses verschieben, und schrittweise portieren.
+- **Schrittweise Portierung eines Projekts (kein XAML-Projekt)** . Sie können C++/WinRT-Unterstützung zu Ihrem C++/CX-Projekt hinzufügen (siehe [Erweitern eines bestehenden C++/CX-Projekts um C++/WinRT-Unterstützung](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support)) und schrittweise portieren. Oder Sie können ein neues C++/WinRT-Projekt erstellen und C++/CX-Unterstützung hinzufügen (siehe [Erweitern eines bestehenden C++/WinRT-Projekts um C++/CX-Unterstützung](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-cx-support)), Dateien in dieses verschieben, und schrittweise portieren.
 - **Schrittweise Portierung eines XAML-Projekts**. Erstellen Sie ein neues C++/WinRT-Projekt, verschieben Sie Dateien und portieren Sie nach und nach. Ihre XAML-Seitentypen müssen zu jedem beliebigen Zeitpunkt *entweder* alle in C++/WinRT *oder* alle in C++/CX vorliegen.
 
-Der Rest dieses Themas gilt unabhängig davon, welche Portierungsstrategie Sie auswählen. Es enthält einen Katalog mit technischen Details, die bei der Portierung von Quellcode von C++/CX nach C++/WinRT wichtig sind. Wenn Sie eine schrittweise Portierung durchführen, sollten Sie auch [Interoperabilität zwischen C++/WinRT und C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx) und [Asynchronität und Interoperabilität zwischen C++/WinRT und C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx-async) lesen.
+Der Rest dieses Themas gilt unabhängig davon, welche Portierungsstrategie Sie auswählen. Es enthält einen Katalog mit technischen Details, die bei der Portierung von Quellcode von C++/CX nach C++/WinRT wichtig sind. Wenn Sie eine schrittweise Portierung durchführen, sollten Sie auch [Interoperabilität zwischen C++/WinRT und C++/CX](./interop-winrt-cx.md) und [Asynchronität und Interoperabilität zwischen C++/WinRT und C++/CX](./interop-winrt-cx-async.md) lesen.
 
 ## <a name="file-naming-conventions"></a>Konventionen für die Dateibenennung
 
@@ -80,9 +80,9 @@ Der Rest dieses Themas gilt unabhängig davon, welche Portierungsstrategie Sie a
 
 Beachte, dass C++/WinRT die Zeichenfolge `.xaml` aus den Dateinamen `*.h` und `*.cpp` entfernt.
 
-C++/WinRT fügt eine zusätzliche Entwicklerdatei hinzu: die **Midl-Datei (.idl)** . C++/CX generiert diese Datei automatisch intern und fügt sie zu jedem öffentlichen und geschützten Member hinzu. In C++/WinRT erstellst du die Datei selbst und fügst sie hinzu. Weitere Informationen, Codebeispiele und eine exemplarische Vorgehensweise zum Schreiben in IDL findest du unter [XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft](/windows/uwp/cpp-and-winrt-apis/binding-property).
+C++/WinRT fügt eine zusätzliche Entwicklerdatei hinzu: die **Midl-Datei (.idl)** . C++/CX generiert diese Datei automatisch intern und fügt sie zu jedem öffentlichen und geschützten Member hinzu. In C++/WinRT erstellst du die Datei selbst und fügst sie hinzu. Weitere Informationen, Codebeispiele und eine exemplarische Vorgehensweise zum Schreiben in IDL findest du unter [XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft](./binding-property.md).
 
-Siehe auch [Einbeziehen von Laufzeitklassen in Midl-Dateien (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
+Siehe auch [Einbeziehen von Laufzeitklassen in Midl-Dateien (.idl)](./author-apis.md#factoring-runtime-classes-into-midl-files-idl).
 
 ### <a name="runtime-classes"></a>Laufzeitklassen
 
@@ -251,7 +251,7 @@ record.UserState(newValue);
 
 ## <a name="creating-an-instance-of-a-class"></a>Erstellen einer Instanz einer Klasse
 
-Hierfür verwendest du ein C++/ CX-Objekt über einen Handle (Hütchenverweis \^). Du erstellst ein neues Objekt über das Schlüsselwort `ref new`, das wiederum [**RoActivateInstance**](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roactivateinstance) aufruft, um eine neue Instanz der Laufzeitklasse zu aktivieren.
+Hierfür verwendest du ein C++/ CX-Objekt über einen Handle (Hütchenverweis \^). Du erstellst ein neues Objekt über das Schlüsselwort `ref new`, das wiederum [**RoActivateInstance**](/windows/desktop/api/roapi/nf-roapi-roactivateinstance) aufruft, um eine neue Instanz der Laufzeitklasse zu aktivieren.
 
 ```cppcx
 using namespace Windows::Storage::Streams;
@@ -350,7 +350,7 @@ Anders gesagt: Der `[]`-Operator erstellt immer einen Eintrag in der Zuordnung. 
 
 ## <a name="converting-from-a-base-runtime-class-to-a-derived-one"></a>Konvertieren von einer Basis-Laufzeitklasse zu einer abgeleiteten Klasse
 
-Üblicherweise wird ein Verweis auf die Basis verwendet, für die bekannt ist, dass auf ein Objekt mit einem abgeleiteten Typ verwiesen wird. In C++/CX verwendest du `dynamic_cast`, um „Verweis auf Basis“ in „Verweis auf abgeleitet“ *umzuwandeln*. `dynamic_cast` ist eigentlich nur ein versteckter Aufruf von [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). Hier ist ein typisches Beispiel angegeben: Du verarbeitest ein Ereignis für eine geänderte Abhängigkeitseigenschaft und möchtest die Umwandlung von **DependencyObject** zurück in den eigentlichen Typ durchführen, der der Besitzer der Abhängigkeitseigenschaft ist.
+Üblicherweise wird ein Verweis auf die Basis verwendet, für die bekannt ist, dass auf ein Objekt mit einem abgeleiteten Typ verwiesen wird. In C++/CX verwendest du `dynamic_cast`, um „Verweis auf Basis“ in „Verweis auf abgeleitet“ *umzuwandeln*. `dynamic_cast` ist eigentlich nur ein versteckter Aufruf von [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)). Hier ist ein typisches Beispiel angegeben: Du verarbeitest ein Ereignis für eine geänderte Abhängigkeitseigenschaft und möchtest die Umwandlung von **DependencyObject** zurück in den eigentlichen Typ durchführen, der der Besitzer der Abhängigkeitseigenschaft ist.
 
 ```cppcx
 void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
@@ -461,7 +461,7 @@ Weitere Informationen und Optionen findest du unter [Einen registrierten Delegat
 
 ## <a name="boxing-and-unboxing"></a>Boxing und Unboxing
 
-C++/CX führt automatisch ein Boxing von Skalaren zu Objekten durch. In C++/WinRT musst du die Funktion [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) explizit aufrufen. In beiden Sprachen musst du ein Unboxing explizit angeben. Siehe [Boxing und Unboxing mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/boxing).
+C++/CX führt automatisch ein Boxing von Skalaren zu Objekten durch. In C++/WinRT musst du die Funktion [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) explizit aufrufen. In beiden Sprachen musst du ein Unboxing explizit angeben. Siehe [Boxing und Unboxing mit C++/WinRT](./boxing.md).
 
 In der unten stehenden Tabelle werden folgende Definitionen verwendet.
 
@@ -518,15 +518,15 @@ Grundlegendes Boxing und Unboxing
 
 Die Parallel Patterns Library (PPL) (beispielsweise [**concurrency::task**](/cpp/parallel/concrt/reference/task-class)) wurde aktualisiert und unterstützt jetzt C++/CX-Handledeklaratorverweise (^).
 
-In C++/WinRT solltest du stattdessen Coroutinen und `co_await` verwenden. Weitere Informationen und Codebeispiele findest du unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+In C++/WinRT solltest du stattdessen Coroutinen und `co_await` verwenden. Weitere Informationen und Codebeispiele findest du unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](./concurrency.md).
 
 ## <a name="consuming-objects-from-xaml-markup"></a>Verwenden von Objekten aus XAML-Markup
 
-In einem C++/CX-Projekt kannst du private Member und benannte Elemente aus XAML-Markup nutzen. In C++/WinRT dagegen müssen alle Entitäten, die über die XAML-[ **{x:Bind}-Markuperweiterung**](/windows/uwp/xaml-platform/x-bind-markup-extension) genutzt werden, in IDL öffentlich verfügbar gemacht werden.
+In einem C++/CX-Projekt kannst du private Member und benannte Elemente aus XAML-Markup nutzen. In C++/WinRT dagegen müssen alle Entitäten, die über die XAML-[ **{x:Bind}-Markuperweiterung**](../xaml-platform/x-bind-markup-extension.md) genutzt werden, in IDL öffentlich verfügbar gemacht werden.
 
 Durch Binden an einen booleschen Typ wird in C++/CX `true` oder `false` angezeigt, in C++/WinRT dagegen **Windows.Foundation.IReference`1\<Boolean\>** .
 
-Weitere Informationen sowie Codebeispiele findest du unter [Verwenden von Objekten aus Markup](/windows/uwp/cpp-and-winrt-apis/binding-property#consuming-objects-from-xaml-markup).
+Weitere Informationen sowie Codebeispiele findest du unter [Verwenden von Objekten aus Markup](./binding-property.md#consuming-objects-from-xaml-markup).
 
 ## <a name="mapping-ccx-platform-types-to-cwinrt-types"></a>Zuordnen von C++/CX-**Platform**-Typen zu C++/WinRT-Typen
 
@@ -561,7 +561,7 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 
 In Fällen, in denen C++/CX die Verwendung eines Arrays erfordert, erlaubt C++/WinRT die Verwendung eines beliebigen zusammenhängenden Containers. Unter [Auswirkungen des Standardkonstruktors auf Sammlungen](#how-the-default-constructor-affects-collections) wird erläutert, warum **std::vector** eine gute Wahl ist.
 
-Wenn du also ein **Platform::Array\^** -Element in C++/CX verwendest, gehören die Verwendung einer Initialisiererliste, eines **std::array**- oder **std::vector**-Elements zu deinen Portierungsoptionen. Weitere Informationen und Codebeispiele findest du unter [Standard-Initialisierungslisten](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists) und [Standard-Arrays und -Vektoren](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors).
+Wenn du also ein **Platform::Array\^** -Element in C++/CX verwendest, gehören die Verwendung einer Initialisiererliste, eines **std::array**- oder **std::vector**-Elements zu deinen Portierungsoptionen. Weitere Informationen und Codebeispiele findest du unter [Standard-Initialisierungslisten](./std-cpp-data-types.md#standard-initializer-lists) und [Standard-Arrays und -Vektoren](./std-cpp-data-types.md#standard-arrays-and-vectors).
 
 ### <a name="port-platformexception-to-winrthresult_error"></a>Portieren von **Platform::Exception\^** zu **winrt::hresult_error**
 
@@ -625,7 +625,7 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 
 **Platform::String\^** ist das Äquivalent zum HSTRING-ABI-Typ der Windows-Runtime. Für C++/WinRT ist die Entsprechung [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring). Bei C++/WinRT kannst du aber Windows-Runtime-APIs mit Wide-String-Typen der C++-Standardbibliothek, z. B. **std::wstring**, bzw. Wide-String-Literale aufrufen. Weitere Informationen und Codebeispiele findest du unter [String-Verarbeitung in C++/WinRT](strings.md).
 
-Mit C++/CX kannst du auf die Eigenschaft [**Platform::String::Data**](https://docs.microsoft.com/cpp/cppcx/platform-string-class?view=vs-2019#data) zugreifen, um die Zeichenfolge als **const wchar_t\*** -Array im C-Stil abzurufen (z. B. zur Übergabe an **std::wcout**).
+Mit C++/CX kannst du auf die Eigenschaft [**Platform::String::Data**](/cpp/cppcx/platform-string-class?view=vs-2019#data) zugreifen, um die Zeichenfolge als **const wchar_t\*** -Array im C-Stil abzurufen (z. B. zur Übergabe an **std::wcout**).
 
 ```cppcx
 auto var{ titleRecord->TitleName->Data() };
@@ -746,12 +746,12 @@ In den unten stehenden Beispielen ist *ws* eine Variable des Typs **std::wstring
 ## <a name="related-topics"></a>Zugehörige Themen
 
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [Erstellen von Ereignissen in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events)
-* [Parallelität und asynchrone Vorgänge mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
-* [Verwenden von APIs mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis)
-* [Behandeln von Ereignissen mithilfe von Delegaten in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/handle-events)
-* [Interoperabilität zwischen C++/WinRT und C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx)
-* [Asynchronität und Interoperabilität zwischen C++/WinRT und C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx-async)
+* [Erstellen von Ereignissen in C++/WinRT](./author-events.md)
+* [Parallelität und asynchrone Vorgänge mit C++/WinRT](./concurrency.md)
+* [Verwenden von APIs mit C++/WinRT](./consume-apis.md)
+* [Behandeln von Ereignissen mithilfe von Delegaten in C++/WinRT](./handle-events.md)
+* [Interoperabilität zwischen C++/WinRT und C++/CX](./interop-winrt-cx.md)
+* [Asynchronität und Interoperabilität zwischen C++/WinRT und C++/CX](./interop-winrt-cx-async.md)
 * [Microsoft Interface Definition Language 3.0 – Referenz](/uwp/midl-3)
-* [Umstellen von WRL auf C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-wrl)
-* [Verarbeitung von Zeichenfolgen in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/strings)
+* [Umstellen von WRL auf C++/WinRT](./move-to-winrt-from-wrl.md)
+* [Verarbeitung von Zeichenfolgen in C++/WinRT](./strings.md)

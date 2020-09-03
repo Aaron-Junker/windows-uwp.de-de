@@ -5,12 +5,12 @@ keywords: Neuigkeiten, Update, Features, Entwicklerleitfäden, Windows 10, Sept
 ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 85e41a26343c9e4c6eb239cbfdd74dc946d5b657
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d15cd0289b3de0c086a3ddc974e1b121447188c5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258805"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155224"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im September 2018
 
@@ -22,9 +22,9 @@ Nach der [Installation der Tools und des SDKs](https://developer.microsoft.com/w
 
 ### <a name="windows-machine-learning"></a>Windows Machine Learning
 
-Die [Windows Machine Learning-Dokumente](https://docs.microsoft.com/windows/ai/) befinden sich jetzt auf einer eigenen Website und wurden für das aktuelle Windows-Insider-SDK aktualisiert. Es sind Desktop- und UWP-Tutorials für C++ und C# verfügbar, um dir das Hinzufügen von WinML zu deiner Anwendung zu erleichtern.
+Die [Windows Machine Learning-Dokumente](/windows/ai/) befinden sich jetzt auf einer eigenen Website und wurden für das aktuelle Windows-Insider-SDK aktualisiert. Es sind Desktop- und UWP-Tutorials für C++ und C# verfügbar, um dir das Hinzufügen von WinML zu deiner Anwendung zu erleichtern.
 
-Die [Referenz zur Windows.AI.MachineLearning-API](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning) wurde für das aktuelle Windows-Insider-SDK aktualisiert.
+Die [Referenz zur Windows.AI.MachineLearning-API](/uwp/api/windows.ai.machinelearning) wurde für das aktuelle Windows-Insider-SDK aktualisiert.
 
 Das [GitHub-Repository „Windows-Machine-Learning“](https://github.com/Microsoft/Windows-Machine-Learning) wurde mit neuen Beispielen aktualisiert, die für das aktuelle SDK geeignet sind.
 
@@ -32,9 +32,9 @@ Das [GitHub-Repository „Windows-Machine-Learning“](https://github.com/Micros
 
 ### <a name="windows-ui-library"></a>Windows-UI-Bibliothek
 
-Die [Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) umfasst eine Reihe von NuGet-Paketen, mit denen Steuerelemente und andere Benutzeroberflächenelemente für UWP-Apps bereitgestellt werden. Diese Pakete sind auch mit früheren Versionen von Windows 10 kompatibel, sodass Ihre App selbst dann funktioniert, wenn die Benutzer nicht mit der neuesten Betriebssystemversion arbeiten.
+Die [Windows-UI-Bibliothek](/uwp/toolkits/winui/) umfasst eine Reihe von NuGet-Paketen, mit denen Steuerelemente und andere Benutzeroberflächenelemente für UWP-Apps bereitgestellt werden. Diese Pakete sind auch mit früheren Versionen von Windows 10 kompatibel, sodass Ihre App selbst dann funktioniert, wenn die Benutzer nicht mit der neuesten Betriebssystemversion arbeiten.
 
-Weitere Informationen zur Windows-UI-Bibliothek findest du in [dieser Liste mit API-Namespaces, die im NuGet-Paket enthalten sind](https://docs.microsoft.com/uwp/api/overview/winui/).
+Weitere Informationen zur Windows-UI-Bibliothek findest du in [dieser Liste mit API-Namespaces, die im NuGet-Paket enthalten sind](/uwp/api/overview/winui/).
 
 ## <a name="developer-guidance"></a>Erläuterungen für Entwickler
 

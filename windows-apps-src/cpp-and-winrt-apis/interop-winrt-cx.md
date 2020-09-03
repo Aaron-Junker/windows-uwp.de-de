@@ -1,20 +1,20 @@
 ---
-description: In diesem Thema werden zwei Hilfsfunktionen für die Konvertierung zwischen [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)- und [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)-Objekten gezeigt.
+description: In diesem Thema werden zwei Hilfsfunktionen für die Konvertierung zwischen [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)- und [C++/WinRT](./intro-to-using-cpp-with-winrt.md)-Objekten gezeigt.
 title: Interoperabilität zwischen C++/WinRT und C++/CX
 ms.date: 10/09/2018
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, Interoperabilität, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: d3fa04f0aabe001dc87ce4292dff7557432583a6
-ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
+ms.openlocfilehash: 8ef3b45222b5e9324dc76d7a81a8d096a569595d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88502285"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157374"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>Interoperabilität zwischen C++/WinRT und C++/CX
 
-Bevor Sie dieses Thema lesen, benötigen Sie die Informationen im Thema [Umstellen von C++/CX auf C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx). In diesem Thema werden zwei Hauptstrategieoptionen für die Portierung Ihres [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)-Projekts nach [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) vorgestellt.
+Bevor Sie dieses Thema lesen, benötigen Sie die Informationen im Thema [Umstellen von C++/CX auf C++/WinRT](./move-to-winrt-from-cx.md). In diesem Thema werden zwei Hauptstrategieoptionen für die Portierung Ihres [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)-Projekts nach [C++/WinRT](./intro-to-using-cpp-with-winrt.md) vorgestellt.
 
 - Portieren des gesamten Projekts in einem Durchgang. Die einfachste Option für ein Projekt, das nicht zu groß ist. Bei einem Windows-Runtime-Komponentenprojekt ist diese Strategie Ihre einzige Option.
 - Schrittweise Portierung des Projekts (Größe oder Komplexität Ihrer Codebasis kann dies erforderlich machen). Diese Strategie erfordert jedoch, dass Sie einem Portierungsprozess folgen, bei dem eine Zeit lang C++/CX- und C++/WinRT-Code nebeneinander im selben Projekt existieren. Für ein XAML-Projekt müssen Ihre XAML-Seitentypen zu jedem beliebigen Zeitpunkt *entweder* alle in C++/WinRT *oder* alle in C++/CX vorliegen.
@@ -23,7 +23,7 @@ Dieses Thema zur Interoperabilität ist relevant für die *zweite* Strategie&mda
 
 Diese Hilfsfunktionen sind sehr nützlich, wenn Sie Ihren Code schrittweise von C++ /CX nach C++/WinRT portieren. Sie könnten sich alternativ einfach dafür entscheiden, sowohl die C++/WinRT- als auch die C++/CX-Sprachprojektionen im selben Projekt zu verwenden, unabhängig davon, ob Sie portieren oder nicht, und diese Hilfsfunktionen für die Interoperabilität zwischen den beiden zu verwenden.
 
-Nachdem Sie dieses Thema gelesen haben, finden Sie im erweiterten Thema [Asynchronität und Interoperabilität zwischen C++/WinRT und C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx-async) Informationen und Codebeispiele, die verdeutlichen, wie PPL-Aufgaben und Co-Routinen parallel im gleichen Projekt unterstützt werden (z. B. das Aufrufen von Co-Routinen aus Aufgabenketten).
+Nachdem Sie dieses Thema gelesen haben, finden Sie im erweiterten Thema [Asynchronität und Interoperabilität zwischen C++/WinRT und C++/CX](./interop-winrt-cx-async.md) Informationen und Codebeispiele, die verdeutlichen, wie PPL-Aufgaben und Co-Routinen parallel im gleichen Projekt unterstützt werden (z. B. das Aufrufen von Co-Routinen aus Aufgabenketten).
 
 ## <a name="the-from_cx-and-to_cx-functions"></a>Funktionen **from_cx** und **from_cx**
 
@@ -80,7 +80,7 @@ Um die beiden Hilfsfunktionen in Ihrem Projekt zu verwenden, führen Sie die fol
 
 ## <a name="taking-a-ccx-project-and-adding-cwinrt-support"></a>Erweitern eines bestehenden C++/CX-Projekts um C++/WinRT-Unterstützung
 
-In diesem Abschnitt wird beschrieben, was zu tun ist, wenn Sie sich entschieden haben, Ihr bestehendes C++/CX-Projekt um C++/WinRT-Unterstützung zu erweitern und die Portierung dort vorzunehmen. Weitere Informationen finden Sie auch unter [Visual Studio-Unterstützung für C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+In diesem Abschnitt wird beschrieben, was zu tun ist, wenn Sie sich entschieden haben, Ihr bestehendes C++/CX-Projekt um C++/WinRT-Unterstützung zu erweitern und die Portierung dort vorzunehmen. Weitere Informationen finden Sie auch unter [Visual Studio-Unterstützung für C++/WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 Um C++/CX und C++/WinRT in einem C++/CX-Projekt zu mischen (einschließlich der Verwendung der Hilfsfunktionen **from_cx** and **to_cx** im Projekt) müssen Sie dem Projekt manuell C++/WinRT-Unterstützung hinzufügen.
 
@@ -143,7 +143,7 @@ In diesem Abschnitt wird beschrieben, was zu tun ist, wenn Sie sich entschieden 
 
 Um C++/WinRT und C++/CX in einem C++/WinRT-Projekt zu mischen (einschließlich der Verwendung der Hilfsfunktionen **from_cx** and **to_cx** im Projekt) müssen Sie dem Projekt manuell C++/CX-Unterstützung hinzufügen.
 
-- Erstellen Sie ein neues C++/WinRT-Projekt in Visual Studio unter Verwendung einer der C++/WinRT-Projektvorlagen (siehe [Visual Studio-Unterstützung für C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)).
+- Erstellen Sie ein neues C++/WinRT-Projekt in Visual Studio unter Verwendung einer der C++/WinRT-Projektvorlagen (siehe [Visual Studio-Unterstützung für C++/WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)).
 - Aktivieren Sie die Projektunterstützung für C++/CX. Lege in den Projekteigenschaften Folgendes fest: **C/C++** \> **Allgemein** \> **Windows-Runtime-Erweiterung verwenden ** \> **Ja (/ZW)**.
 
 ### <a name="an-example-cwinrt-project-showing-the-two-helper-functions-in-use"></a>C++/WinRT-Beispielprojekt zur Veranschaulichung der Verwendung der beiden Hilfsfunktionen
@@ -344,5 +344,5 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="related-topics"></a>Zugehörige Themen
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [Umstellen von C++/CX auf C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx)
-* [Asynchronität und Interoperabilität zwischen C++/WinRT und C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx-async)
+* [Umstellen von C++/CX auf C++/WinRT](./move-to-winrt-from-cx.md)
+* [Asynchronität und Interoperabilität zwischen C++/WinRT und C++/CX](./interop-winrt-cx-async.md)

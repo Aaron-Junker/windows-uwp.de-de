@@ -6,12 +6,12 @@ ms.date: 05/11/2020
 ms.localizationpriority: medium
 ms.author: jken
 author: grantmestrength
-ms.openlocfilehash: 0880d7e7299db2a1a0f7de69400b7bb9c5d0efd9
-ms.sourcegitcommit: 10ec5a20dd1152a1037ebc4fba1a28cc96593586
+ms.openlocfilehash: 22dddfaea4297ef12fe449f08cda7723c2b52642
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83665863"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157634"
 ---
 # <a name="microsoft-build---the-windows-documentation"></a>Microsoft Build: die Windows-Dokumentation
 
@@ -25,36 +25,36 @@ Wir haben Links zu Dokumentation zusammengestellt, die die im Rahmen der [Micros
 
 ## <a name="windows-terminal"></a>Windows-Terminal
 
-* [Installieren und Einrichten von Windows-Terminal](https://docs.microsoft.com/windows/terminal/get-started)
-* [Einrichten benutzerdefinierter Tastenzuordnungen](https://docs.microsoft.com/windows/terminal/customize-settings/key-bindings)
-* [Katalog mit angepassten Terminals](https://docs.microsoft.com/windows/terminal/custom-terminal-gallery/retro-command-prompt)
+* [Installieren und Einrichten von Windows-Terminal](/windows/terminal/get-started)
+* [Einrichten benutzerdefinierter Tastenzuordnungen](/windows/terminal/customize-settings/key-bindings)
+* [Katalog mit angepassten Terminals](/windows/terminal/custom-terminal-gallery/retro-command-prompt)
 
 ## <a name="windows-subsystem-for-linux-wsl"></a>Windows-Subsystem für Linux (WSL)
 
-* [Was ist WSL? (Was ist WSL 2?)](https://docs.microsoft.com/windows/wsl/about)
-* [Installieren von WSL 2](https://docs.microsoft.com/windows/wsl/install-win10)
-* [Vergleich von WSL 2 und WSL 1](https://docs.microsoft.com/windows/wsl/compare-versions)
+* [Was ist WSL? (Was ist WSL 2?)](/windows/wsl/about)
+* [Installieren von WSL 2](/windows/wsl/install-win10)
+* [Vergleich von WSL 2 und WSL 1](/windows/wsl/compare-versions)
 
 ## <a name="windows-package-manager"></a>Windows Paket-Manager
 
-* [Windows Paket-Manager](https://docs.microsoft.com/windows/package-manager) 
-* [Übermitteln von Paketen](https://docs.microsoft.com/windows/package-manager/package)
-* [Verwenden des Tools „winget“](https://docs.microsoft.com/windows/package-manager/winget)
+* [Windows Paket-Manager](../../package-manager/index.md) 
+* [Übermitteln von Paketen](../../package-manager/package/index.md)
+* [Verwenden des Tools „winget“](../../package-manager/winget/index.md)
 
 ## <a name="winui"></a>WinUI
 
-* [Übersicht über WinUI](https://docs.microsoft.com/windows/apps/winui/)
-* [WinUI 3.0 Vorschauversion 1](https://docs.microsoft.com/windows/apps/winui/winui3) 
-* [WinUI 3.0 für Desktop-Apps](https://docs.microsoft.com/windows/apps/winui/winui3/get-started-winui3-for-desktop)
+* [Übersicht über WinUI](../winui/index.md)
+* [WinUI 3.0 Vorschauversion 1](../winui/winui3/index.md) 
+* [WinUI 3.0 für Desktop-Apps](../winui/winui3/get-started-winui3-for-desktop.md)
 
 ## <a name="developing-for-android-on-windows"></a>Entwickeln für Android unter Windows
 
-* [Android-Entwicklung: Übersicht](https://docs.microsoft.com/windows/android/overview)
-* [Erste Schritte](https://docs.microsoft.com/windows/android/native-android)
-* [Testen auf einem Android-Gerät](https://docs.microsoft.com/windows/android/emulator)
+* [Android-Entwicklung: Übersicht](../../android/overview.md)
+* [Erste Schritte](../../android/native-android.md)
+* [Testen auf einem Android-Gerät](../../android/emulator.md)
 
 ## <a name="dual-screen-device-development"></a>Entwicklung für Geräte mit Doppelbildschirm
 
 * [Vorstellung von Surface Duo](https://www.microsoft.com/surface/devices/surface-duo)
-* [Abrufen der Surface Duo-Tools](https://docs.microsoft.com/dual-screen/android/get-duo-sdk?tabs=windows)
-* [Verwenden des Surface Duo-Emulators](https://docs.microsoft.com/dual-screen/android/use-emulator?tabs=java%2Cwindows)
+* [Abrufen der Surface Duo-Tools](/dual-screen/android/get-duo-sdk?tabs=windows)
+* [Verwenden des Surface Duo-Emulators](/dual-screen/android/use-emulator?tabs=java%252cwindows)

@@ -8,18 +8,18 @@ author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 27906d9d389c065ab1fdf7124151cd1915f850eb
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 18b89caa0de947d2b95b46c3deb11378912b6012
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76726013"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161424"
 ---
 # <a name="part-5-package-and-deploy-with-msix"></a>Teil 5: Verpacken und Bereitstellen mit MSIX
 
 Dies ist der letzte Teil eines Tutorials, in dem das Modernisieren der WPF-Beispiel-Desktop-App Contoso Expenses veranschaulicht wird. Eine Übersicht über das Tutorial, die Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-App findest du unter [Tutorial: Modernisieren einer WPF-App](modernize-wpf-tutorial.md). In diesem Artikel wird davon ausgegangen, dass du [Teil 4](modernize-wpf-tutorial-4.md) bereits abgeschlossen hast.
 
-In [Teil 4](modernize-wpf-tutorial-4.md) hast du erfahren, dass einige WinRT-APIs (einschließlich der Benachrichtigungs-API) eine Paketidentität erfordern, bevor sie in einer App verwendet werden können. Du kannst die Paketidentität abrufen, indem du die App Contoso Expenses mit [MSIX](https://docs.microsoft.com/windows/msix) packst. Dies ist das in Windows 10 eingeführte Paketformat zum Packen und Bereitstellen von Windows-Anwendungen. MSIX bietet Entwicklern und IT-Experten Vorteile wie die folgenden:
+In [Teil 4](modernize-wpf-tutorial-4.md) hast du erfahren, dass einige WinRT-APIs (einschließlich der Benachrichtigungs-API) eine Paketidentität erfordern, bevor sie in einer App verwendet werden können. Du kannst die Paketidentität abrufen, indem du die App Contoso Expenses mit [MSIX](/windows/msix) packst. Dies ist das in Windows 10 eingeführte Paketformat zum Packen und Bereitstellen von Windows-Anwendungen. MSIX bietet Entwicklern und IT-Experten Vorteile wie die folgenden:
 
 - Optimierte Nutzung von Netzwerk und Speicherplatz
 - Vollständige Deinstallation dank eines einfachen Containers, in dem die App ausgeführt wird. Auf dem System bleiben keine Registrierungsschlüssel und temporären Dateien zurück.
@@ -44,7 +44,7 @@ Visual Studio 2019 bietet mit dem Paketerstellungsprojekt für Windows-Anwendun
 
 5. Wähle **Windows 10, Version 1903 (10.0; Build 18362)** für **Zielversion** und **Mindestversion** aus, und klicke auf **OK**.
 
-    Das Projekt **ContosoExpenses.Package** wird der Projektmappe **ContosoExpenses** hinzugefügt. Dieses Projekt enthält ein [Paketmanifest](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root), das die Anwendung beschreibt, sowie einige Standardobjekte, die für Elemente wie das Symbol im Menü „Programme“ und die Kachel auf dem Startbildschirm verwendet werden. Anders als bei einem UWP-Projekt enthält das Paketerstellungsprojekt jedoch keinen Code. Der Zweck besteht ausschließlich darin, eine vorhandene Desktop-App zu packen.
+    Das Projekt **ContosoExpenses.Package** wird der Projektmappe **ContosoExpenses** hinzugefügt. Dieses Projekt enthält ein [Paketmanifest](/uwp/schemas/appxpackage/uapmanifestschema/schema-root), das die Anwendung beschreibt, sowie einige Standardobjekte, die für Elemente wie das Symbol im Menü „Programme“ und die Kachel auf dem Startbildschirm verwendet werden. Anders als bei einem UWP-Projekt enthält das Paketerstellungsprojekt jedoch keinen Code. Der Zweck besteht ausschließlich darin, eine vorhandene Desktop-App zu packen.
 
 6. Klicke im Projekt **ContosoExpenses.Package** mit der rechten Maustaste auf den Knoten **Anwendungen**, und wähle **Verweis hinzufügen** aus. Dieser Knoten gibt an, welche Anwendungen aus der Projektmappe in das Paket aufgenommen werden.
 

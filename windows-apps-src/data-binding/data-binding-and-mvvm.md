@@ -6,12 +6,12 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 931f2fcbcdbf58b9dc2ca40403d7466b620a8991
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ad0595fa070a1970e4890ce7e95627c06385ba6a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63798107"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154214"
 ---
 # <a name="data-binding-and-mvvm"></a>Datenbindungen und MVVM
 
@@ -35,7 +35,7 @@ Anders als beim MVVM verwendet eine App mit einer stärker konventionellen „Co
 Bei Verwendung des MVVM-Musters wird eine App in die folgenden Ebenen unterteilt:
 
 * Die **Modell**ebene definiert die Typen, die Ihre Geschäftsdaten darstellen. Dies umfasst alles, was erforderlich ist, um die Kerndomäne der App zu modellieren, und umfasst häufig Kernlogik der App. Diese Ebene ist vollständig unabhängig von den Ansichts- und Ansichtsmodellebenen und befindet sich häufig teilweise in der Cloud. Bei einer vollständig implementierten Modellebene können Sie bei Bedarf mehrere verschiedene Client-Apps erstellen, z. B. UWP- und Web-Apps, die mit denselben zugrunde liegenden Daten funktionieren.
-* Die **Ansichts**ebene definiert die Benutzeroberfläche mithilfe von XAML-Markup. Das Markup enthält Datenbindungsausdrücke (z. B. [x:Bind](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)), die die Verbindung zwischen bestimmten Benutzeroberflächenkomponenten und verschiedenen Ansichtsmodell- und Modellmembern definieren. CodeBehind-Dateien werden manchmal als Teil der Ansichtsebene verwendet, um zusätzlichen Code aufzunehmen, der zum Anpassen oder Manipulieren der Benutzeroberfläche erforderlich ist, oder um Daten aus Ereignishandlerargumenten zu extrahieren, bevor eine Ansichtsmodellmethode aufgerufen wird, die die Arbeit ausführt. 
+* Die **Ansichts**ebene definiert die Benutzeroberfläche mithilfe von XAML-Markup. Das Markup enthält Datenbindungsausdrücke (z. B. [x:Bind](../xaml-platform/x-bind-markup-extension.md)), die die Verbindung zwischen bestimmten Benutzeroberflächenkomponenten und verschiedenen Ansichtsmodell- und Modellmembern definieren. CodeBehind-Dateien werden manchmal als Teil der Ansichtsebene verwendet, um zusätzlichen Code aufzunehmen, der zum Anpassen oder Manipulieren der Benutzeroberfläche erforderlich ist, oder um Daten aus Ereignishandlerargumenten zu extrahieren, bevor eine Ansichtsmodellmethode aufgerufen wird, die die Arbeit ausführt. 
 * Die **Ansichtsmodell**ebene stellt Datenbindungsziele für die Ansicht bereit. In vielen Fällen macht das Ansichtsmodell das Modell direkt verfügbar oder stellt Member bereit, die bestimmte Modellmember umschließen. Das Ansichtsmodell kann auch Member zum Nachverfolgen von Daten definieren, die für die Benutzeroberfläche relevant sind, aber nicht für das Modell, wie z. B. die Anzeigereihenfolge einer Liste von Elementen. Das Ansichtsmodell fungiert außerdem als Ort für die Integration anderer Dienste, z. B. dem Datenbankzugriffscode. Bei einfachen Projekten benötigen Sie möglicherweise keine separate Modellebene, sondern nur ein Ansichtsmodell, das alle benötigten Daten kapselt. 
 
 ## <a name="basic-and-advanced-mvvm"></a>Einfaches und erweitertes MVVM
@@ -44,7 +44,7 @@ Wie bei jedem beliebigen Entwurfsmuster gibt es mehr als eine Möglichkeit zum I
 
 Obwohl anspruchsvolle MVVM-Frameworks sehr nützlich sein können, insbesondere bei Projekten auf Unternehmensebene, gehen in der Regel mit der Übernahme eines bestimmten Musters oder Verfahrens Kosten einher, und die Vorteile sind nicht immer einsichtig, abhängig von der Skalierung und Größe Ihres Projekts. Glücklicherweise können Sie nur die Verfahren übernehmen, die einen deutlichen und konkreten Vorteil bieten, und andere ignorieren, bis Sie sie benötigen. 
 
-Insbesondere können Sie einen großen Vorteil erzielen, indem Sie einfach die gesamte Leistungsfähigkeit der Datenbindung verstehen und anwenden und Ihre App-Logik trennen und in die zuvor beschriebenen Ebenen aufteilen. Dies können Sie erreichen, indem Sie nur die vom Windows SDK bereitgestellten Funktionen, ohne Einbeziehung externere Frameworks, verwenden. Besonders die [Markuperweiterung {x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) vereinfacht die Datenbindung und erhöht deren Leistungsfähigkeit gegenüber früheren XAML-Plattformen, indem viele der früher erforderlichen Codebausteine überflüssig werden.
+Insbesondere können Sie einen großen Vorteil erzielen, indem Sie einfach die gesamte Leistungsfähigkeit der Datenbindung verstehen und anwenden und Ihre App-Logik trennen und in die zuvor beschriebenen Ebenen aufteilen. Dies können Sie erreichen, indem Sie nur die vom Windows SDK bereitgestellten Funktionen, ohne Einbeziehung externere Frameworks, verwenden. Besonders die [Markuperweiterung {x:Bind}](../xaml-platform/x-bind-markup-extension.md) vereinfacht die Datenbindung und erhöht deren Leistungsfähigkeit gegenüber früheren XAML-Plattformen, indem viele der früher erforderlichen Codebausteine überflüssig werden.
 
 Weitere Anleitungen zur Verwendung des einfachen, sofort einsatzbereiten MVVM finden Sie im [Kundenauftragsdatenbank-Beispiel](https://github.com/Microsoft/Windows-appsample-customers-orders-database) auf GitHub. Viele der anderen [UWP-App-Beispiele](https://github.com/Microsoft?q=windows-appsample
 ) verwenden ebenfalls eine einfache MVVM-Architektur, und das [Beispiel für eine App mit Verkehrsinformationen](https://github.com/Microsoft/Windows-appsample-trafficapp) enthält sowohl eine CodeBehind- als auch eine MVVM-Version, zusammen mit Anmerkungen, die die [MVVM-Konvertierung](https://github.com/Microsoft/Windows-appsample-trafficapp/blob/MVVM/MVVM.md) beschreiben. 
@@ -53,11 +53,11 @@ Weitere Anleitungen zur Verwendung des einfachen, sofort einsatzbereiten MVVM fi
 
 ### <a name="topics"></a>Themen
 
-[Datenbindung im Detail](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)  
-[Markuperweiterung {x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)  
+[Datenbindung im Detail](./data-binding-in-depth.md)  
+[Markuperweiterung {x:Bind}](../xaml-platform/x-bind-markup-extension.md)  
 
 ### <a name="samples"></a>Beispiele
 
 [Kundenauftragsdatenbank-Beispiel](https://github.com/Microsoft/Windows-appsample-customers-orders-database)  
 [VanArsdel-Bestandsbeispiel](https://github.com/Microsoft/InventorySample)  
-[Beispiel für eine App mit Verkehrsinformationen](https://github.com/Microsoft/Windows-appsample-trafficapp)  
+[Beispiel für eine App mit Verkehrsinformationen](https://github.com/Microsoft/Windows-appsample-trafficapp)

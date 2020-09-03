@@ -5,19 +5,19 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, Standard, c++, cpp, winrt, projiziert, Projektion, Implementierung, implementieren, Laufzeitklasse, Aktivierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 64f605fc716970d2fd4ca534a0c31fb62baa34d4
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 0b5c515760d0a03e163fa663da1f97a728a6da2c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493665"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154594"
 ---
 # <a name="author-apis-with-cwinrt"></a>Erstellen von APIs mit C++/WinRT
 
-Dieses Thema zeigt, wie [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)-APIs mithilfe der [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements)-Basisstruktur direkt oder indirekt erstellt werden. In diesem Zusammenhang werden die Synonyme *Produzieren* oder *Implementieren* für den Begriff *Erstellen* verwendet. Dieses Thema behandelt die folgenden Szenarien für die Implementierung von APIs für einen C++/WinRT-Typ in dieser Reihenfolge.
+Dieses Thema zeigt, wie [C++/WinRT](./intro-to-using-cpp-with-winrt.md)-APIs mithilfe der [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements)-Basisstruktur direkt oder indirekt erstellt werden. In diesem Zusammenhang werden die Synonyme *Produzieren* oder *Implementieren* für den Begriff *Erstellen* verwendet. Dieses Thema behandelt die folgenden Szenarien für die Implementierung von APIs für einen C++/WinRT-Typ in dieser Reihenfolge.
 
 > [!NOTE]
-> In diesem Thema werden Komponenten für Windows-Runtime erwähnt, jedoch nur im Kontext von C++/WinRT. Informationen zu Komponenten für Windows-Runtime, die alle Sprachen für Windows-Runtime abdecken, finden Sie unter [Komponenten für Windows-Runtime](/windows/uwp/winrt-components/).
+> In diesem Thema werden Komponenten für Windows-Runtime erwähnt, jedoch nur im Kontext von C++/WinRT. Informationen zu Komponenten für Windows-Runtime, die alle Sprachen für Windows-Runtime abdecken, finden Sie unter [Komponenten für Windows-Runtime](../winrt-components/index.md).
 
 - Sie erstellen *keine* Windows-Runtime-Klasse (Runtime-Klasse). Sie möchten lediglich mindestens eine Windows-Runtime-Schnittstelle für den lokalen Gebrauch in Ihrer App implementieren. Die Ableitung erfolgt in diesem Fall direkt von **winrt::implements**, und Sie implementieren Funktionen.
 - Sie *erstellen eine* Laufzeitklasse. Möglicherweise erstellen Sie eine Komponente, die von einer App genutzt werden soll. Oder Sie erstellen einen Typ, der von der XAML-Benutzeroberfläche (UI) genutzt werden soll, und in diesem Fall implementieren und nutzen Sie eine Laufzeitklasse innerhalb derselben Kompilierungseinheit. In diesen Fällen lassen Sie die Tools Klassen generieren, die von **winrt::implements** abgeleitet sind.
@@ -178,7 +178,7 @@ struct MyRuntimeClass_base : implements<D, MyProject::IMyRuntimeClass, I...>
 
 In diesem Szenario steht also wieder die Basisstrukturvorlage [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) im Stamm der Vererbungshierarchie.
 
-Ausführlichere Informationen, Code und eine exemplarische Vorgehensweise für das Erstellen von APIs in einer Windows-Runtime-Komponente finden Sie unter [Windows-Runtime-Komponenten mit C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt) und [Erstellen von Ereignissen in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events).
+Ausführlichere Informationen, Code und eine exemplarische Vorgehensweise für das Erstellen von APIs in einer Windows-Runtime-Komponente finden Sie unter [Windows-Runtime-Komponenten mit C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) und [Erstellen von Ereignissen in C++/WinRT](./author-events.md).
 
 ## <a name="if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui"></a>Wenn Sie eine Laufzeitklasse erstellen, die in Ihrer XAML-Benutzeroberfläche referenziert werden soll, gehen Sie wie folgt vor
 
@@ -239,7 +239,7 @@ Wir haben gesehen, dass der Workflow das Deklarieren der Laufzeitklasse und ihre
 Beispiele:
 
 - Sie können Parametertypen lockern. Wenn z. B. in der IDL die Methode eine **SomeClass** akzeptiert, können Sie diese in der Implementierung in **IInspectable** ändern. Dies ist möglich, da jede **SomeClass** an **IInspectable** weitergeleitet werden kann (der umgekehrte Vorgang ist selbstverständlich nicht möglich).
-- Ein kopierbarer Parameter kann nach Wert statt nach Verweis akzeptiert werden. Sie können z. B. `SomeClass const&` in `SomeClass` ändern. Dies ist erforderlich, wenn Sie das Erfassen eines Verweises in einer Coroutine vermeiden müssen (siehe [Parameterübergabe](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)).
+- Ein kopierbarer Parameter kann nach Wert statt nach Verweis akzeptiert werden. Sie können z. B. `SomeClass const&` in `SomeClass` ändern. Dies ist erforderlich, wenn Sie das Erfassen eines Verweises in einer Coroutine vermeiden müssen (siehe [Parameterübergabe](./concurrency.md#parameter-passing)).
 - Sie können den Rückgabewert lockern. Sie können z. B. **void** in [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget) ändern.
 
 Die beiden letzten sind sehr hilfreich, wenn Sie einen Handler für asynchrone Ereignisse schreiben.
@@ -468,7 +468,7 @@ Bis Sie die oben beschriebene Änderung vornehmen (um den Konstruktorparameter a
 Wie Sie weiter oben in diesem Thema gesehen haben, ist eine C++/WinRT-Laufzeitklasse in Form mehrerer C++Klassen in mehreren Namespaces vorhanden. Deshalb hat der Name **MyRuntimeClass** im **winrt::MyProject**-Namespace eine andere Bedeutung als im **winrt::MyProject::implementation**-Namespace. Achten Sie auf den Namespace im aktuellen Kontext, und verwenden Sie dann Namespacepräfixe, wenn Sie einen Namen aus einem anderen Namespace benötigen. Lassen Sie uns die betreffenden Namespaces genauer betrachten.
 
 - **winrt::MyProject**. Dieser Namespace enthält projizierte Typen. Ein Objekt eines projizierten Typs ist ein Proxy und im Grunde lediglich ein intelligenter Zeiger auf ein Unterstützungsobjekt. Dabei kann das Unterstützungsobjekt in Ihrem Projekt oder in einer anderen Kompilierungseinheit implementiert werden.
-- **winrt::MyProject::implementation**. Dieser Namespace enthält Implementierungstypen. Ein Objekt eines Implementierungstyps ist kein Zeiger, sondern ein Wert – ein vollständiges C++-Stapelobjekt. Erstellen Sie Implementierungstypen nicht direkt. Rufen Sie stattdessen [**winrt::make**](/uwp/cpp-ref-for-winrt/make) auf, und übergeben Sie den Implementierungstyp als Vorlagenparameter. Weiter oben in diesem Thema wurden Beispiele für die Verwendung von **winrt::make** gezeigt, und [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage) enthält ein weiteres Beispiel. Siehe auch [Diagnostizieren direkter Zuordnungen](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc).
+- **winrt::MyProject::implementation**. Dieser Namespace enthält Implementierungstypen. Ein Objekt eines Implementierungstyps ist kein Zeiger, sondern ein Wert – ein vollständiges C++-Stapelobjekt. Erstellen Sie Implementierungstypen nicht direkt. Rufen Sie stattdessen [**winrt::make**](/uwp/cpp-ref-for-winrt/make) auf, und übergeben Sie den Implementierungstyp als Vorlagenparameter. Weiter oben in diesem Thema wurden Beispiele für die Verwendung von **winrt::make** gezeigt, und [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage) enthält ein weiteres Beispiel. Siehe auch [Diagnostizieren direkter Zuordnungen](./diag-direct-alloc.md).
 - **winrt::MyProject::factory_implementation**. Dieser Namespace enthält Factorys. Ein Objekt in diesem Namespace unterstützt [**IActivationFactory**](/windows/win32/api/activation/nn-activation-iactivationfactory).
 
 In dieser Tabelle ist die minimale Namespacequalifikation aufgeführt, die in unterschiedlichen Kontexten verwendet werden muss.
@@ -483,7 +483,7 @@ In dieser Tabelle ist die minimale Namespacequalifikation aufgeführt, die in un
 >
 > Das Problem bei `MyRuntimeClass myRuntimeClass;` in diesem Szenario ist, dass im Stapel ein **winrt::MyProject::implementation::MyRuntimeClass**-Objekt erstellt wird. Dieses Objekt (vom Typ „implementation“) verhält sich in gewisser Hinsicht wie der projizierte Typ – Sie können auf die gleiche Weise Methoden für es aufrufen, und es kann sogar in einen projizierten Typ konvertiert werden. Das Objekt wird jedoch gemäß den C++-Regeln gelöscht, wenn der Bereich verlassen wird. Wenn ein projizierter Typ (ein intelligenter Zeiger) an das Objekt zurückgegeben wurde, verweist dieser Zeiger auf kein Objekt.
 >
-> Dieser Fehler, bei dem es zu Speicherbeschädigung kommt, ist schwierig zu diagnostizieren. Für Debugbuilds hilft eine C++/WinRT-Assertion, den Fehler mithilfe einer Stapelerkennung abzufangen. Da jedoch Coroutinen auf dem Heap zugeordnet werden, können Sie diesen Fehler nicht abfangen, wenn er in einer Coroutine erfolgt. Weitere Informationen finden Sie unter [Diagnostizieren direkter Zuordnungen](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc).
+> Dieser Fehler, bei dem es zu Speicherbeschädigung kommt, ist schwierig zu diagnostizieren. Für Debugbuilds hilft eine C++/WinRT-Assertion, den Fehler mithilfe einer Stapelerkennung abzufangen. Da jedoch Coroutinen auf dem Heap zugeordnet werden, können Sie diesen Fehler nicht abfangen, wenn er in einer Coroutine erfolgt. Weitere Informationen finden Sie unter [Diagnostizieren direkter Zuordnungen](./diag-direct-alloc.md).
 
 ## <a name="using-projected-types-and-implementation-types-with-various-cwinrt-features"></a>Verwenden von projizierten Typen und Implementierungstypen mit verschiedenen C++/ WinRT-Funktionen
 
@@ -699,7 +699,7 @@ Wie Sie sehen können, wird die Factory der Implementierung direkt von der **win
 
 ## <a name="overriding-base-class-virtual-methods"></a>Überschreiben von virtuellen Methoden der Basisklasse
 
-In einer abgeleiteten Klasse können Probleme mit virtuellen Methoden auftreten, wenn sowohl die Basisklasse als auch die abgeleitete Klasse App-definierte Klassen sind, aber die virtuelle Methode in einer über-übergeordneten Windows-Runtime-Klasse definiert ist. In der Praxis geschieht dies beim Ableiten von XAML-Klassen. Im Rest dieses Abschnitts wird das Beispiel aus [Abgeleitete Klassen](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx#derived-classes) fortgesetzt.
+In einer abgeleiteten Klasse können Probleme mit virtuellen Methoden auftreten, wenn sowohl die Basisklasse als auch die abgeleitete Klasse App-definierte Klassen sind, aber die virtuelle Methode in einer über-übergeordneten Windows-Runtime-Klasse definiert ist. In der Praxis geschieht dies beim Ableiten von XAML-Klassen. Im Rest dieses Abschnitts wird das Beispiel aus [Abgeleitete Klassen](./move-to-winrt-from-cx.md#derived-classes) fortgesetzt.
 
 ```cppwinrt
 namespace winrt::MyNamespace::implementation
@@ -751,7 +751,7 @@ Dafür ist erforderlich, dass alle Member der Klassenhierarchie den gleichen Rü
 * [winrt::Windows::Foundation::IUnknown::as-Funktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
 ## <a name="related-topics"></a>Zugehörige Themen
-* [Erstellen von Ereignissen in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events)
-* [Verwenden von APIs mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis)
-* [Windows-Runtime-Komponenten mit C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)
-* [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](/windows/uwp/cpp-and-winrt-apis/binding-property)
+* [Erstellen von Ereignissen in C++/WinRT](./author-events.md)
+* [Verwenden von APIs mit C++/WinRT](./consume-apis.md)
+* [Windows-Runtime-Komponenten mit C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)
+* [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](./binding-property.md)

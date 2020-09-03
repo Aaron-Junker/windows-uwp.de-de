@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 202c1cb16e461d7cfbbe82cea999f1ed17523850
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 45f69c2216cdfd5809a978e9199d05d0d79740ee
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081064"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160424"
 ---
 # <a name="calendar-date-and-time-controls"></a>Kalender-, Datums- und Uhrzeitsteuerelemente
 
@@ -25,7 +25,7 @@ ms.locfileid: "80081064"
 
 Datums- und Uhrzeitsteuerelemente bieten Ihnen standardmäßige lokalisierte Methoden, den Benutzern die Anzeige oder Festlegung von Datums-und Uhrzeitwerten in Ihrer App zu ermöglichen. Dieser Artikel enthält Entwurfsrichtlinien und hilft Ihnen beim Auswählen des richtigen Steuerelements.
 
-> **Wichtige APIs:** [CalendarView-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView), [CalendarDatePicker-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker), [DatePicker-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker), [TimePicker-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TimePicker)
+> **Wichtige APIs:** [CalendarView-Klasse](/uwp/api/Windows.UI.Xaml.Controls.CalendarView), [CalendarDatePicker-Klasse](/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker), [DatePicker-Klasse](/uwp/api/Windows.UI.Xaml.Controls.DatePicker), [TimePicker-Klasse](/uwp/api/Windows.UI.Xaml.Controls.TimePicker)
 
 <table>
 <th align="left">XAML-Steuerelementekatalog<th>
@@ -106,20 +106,20 @@ Informationen und Beispiele zu den einzelnen Datums- und Textsteuerelementen fin
 
 ### <a name="globalization"></a>Globalisierung
 
-Die XAML-Datumssteuerelemente unterstützen jedes der von Windows unterstützten Kalendersysteme. Diese Kalender werden in der [Windows.Globalization.CalendarIdentifiers](https://docs.microsoft.com/uwp/api/Windows.Globalization.CalendarIdentifiers)-Klasse angegeben. Jedes Steuerelement verwendet den richtigen Kalender für die standardmäßige Sprache Ihrer App. Alternativ können Sie die **CalendarIdentifier**-Eigenschaft festlegen, um ein bestimmtes Kalendersystem zu verwenden.
+Die XAML-Datumssteuerelemente unterstützen jedes der von Windows unterstützten Kalendersysteme. Diese Kalender werden in der [Windows.Globalization.CalendarIdentifiers](/uwp/api/Windows.Globalization.CalendarIdentifiers)-Klasse angegeben. Jedes Steuerelement verwendet den richtigen Kalender für die standardmäßige Sprache Ihrer App. Alternativ können Sie die **CalendarIdentifier**-Eigenschaft festlegen, um ein bestimmtes Kalendersystem zu verwenden.
 
-Das Zeitauswahl-Steuerelement unterstützt jedes der Uhrsysteme, die in der [Windows.Globalization.ClockIdentifiers](https://docs.microsoft.com/uwp/api/Windows.Globalization.ClockIdentifiers)-Klasse angegeben sind. Sie können für die [ClockIdentifier](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.clockidentifier)-Eigenschaft festlegen, dass das 12-Stunden- oder 24-Stunden-Uhrzeitformat verwendet werden soll. Die Art der Eigenschaft ist „String“ (Zeichenfolge), Sie müssen jedoch Werte verwenden, die den statischen Zeichenfolgeneigenschaften der ClockIdentifiers-Klasse entsprechen. Diese sind: TwelveHour (Zeichenfolge „12HourClock“) und TwentyFourHour (Zeichenfolge „24HourClock“). Der Standardwert lautet „12HourClock“
+Das Zeitauswahl-Steuerelement unterstützt jedes der Uhrsysteme, die in der [Windows.Globalization.ClockIdentifiers](/uwp/api/Windows.Globalization.ClockIdentifiers)-Klasse angegeben sind. Sie können für die [ClockIdentifier](/uwp/api/windows.ui.xaml.controls.timepicker.clockidentifier)-Eigenschaft festlegen, dass das 12-Stunden- oder 24-Stunden-Uhrzeitformat verwendet werden soll. Die Art der Eigenschaft ist „String“ (Zeichenfolge), Sie müssen jedoch Werte verwenden, die den statischen Zeichenfolgeneigenschaften der ClockIdentifiers-Klasse entsprechen. Diese sind: TwelveHour (Zeichenfolge „12HourClock“) und TwentyFourHour (Zeichenfolge „24HourClock“). Der Standardwert lautet „12HourClock“
 
 ### <a name="datetime-and-calendar-values"></a>Werte für Datum/Uhrzeit und Kalender
 
 Die in den XAML-Datums- und Uhrzeitsteuerelementen verwendeten Datumsobjekte weisen je nach Programmiersprache eine unterschiedliche Darstellung auf.
 
-- C# und Visual Basic verwenden die [System.DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset)-Struktur, die Teil von .NET ist. 
-- C++ / CX verwendet die [Windows::Foundation::DateTime](https://docs.microsoft.com/windows/desktop/api/windows.foundation/ns-windows-foundation-datetime)-Struktur. 
+- C# und Visual Basic verwenden die [System.DateTimeOffset](/dotnet/api/system.datetimeoffset)-Struktur, die Teil von .NET ist. 
+- C++ / CX verwendet die [Windows::Foundation::DateTime](/windows/desktop/api/windows.foundation/ns-windows-foundation-datetime)-Struktur. 
 
-Ein verwandtes Konzept ist die Calendar-Klasse, die beeinflusst, wie die Daten im Kontext interpretiert werden. Alle Windows-Runtime-Apps können die [Windows.Globalization.Calendar](https://docs.microsoft.com/uwp/api/Windows.Globalization.Calendar)-Klasse verwenden. C# und Visual Basic-Apps können auch die [System.Globalization.Calendar](https://docs.microsoft.com/dotnet/api/system.globalization.calendar)-Klasse verwenden. Diese weist eine sehr ähnliche Funktionalität auf. (Windows-Runtime-Apps können die .NET-Basisklasse Calendar verwenden, nicht jedoch die spezifischen Implementierungen wie z. B. GregorianCalendar.)
+Ein verwandtes Konzept ist die Calendar-Klasse, die beeinflusst, wie die Daten im Kontext interpretiert werden. Alle Windows-Runtime-Apps können die [Windows.Globalization.Calendar](/uwp/api/Windows.Globalization.Calendar)-Klasse verwenden. C# und Visual Basic-Apps können auch die [System.Globalization.Calendar](/dotnet/api/system.globalization.calendar)-Klasse verwenden. Diese weist eine sehr ähnliche Funktionalität auf. (Windows-Runtime-Apps können die .NET-Basisklasse Calendar verwenden, nicht jedoch die spezifischen Implementierungen wie z. B. GregorianCalendar.)
 
-.NET unterstützt auch einen Typ mit der Bezeichnung [DateTime](https://docs.microsoft.com/dotnet/api/system.datetime), der implizit in [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset) konvertierbar ist. Somit könnte ein Typ „DateTime“ in .NET-Code verwendet werden, der zum Festlegen von Werten verwendet wird, bei denen es sich eigentlich um DateTimeOffset handelt. Weitere Informationen zum Unterschied zwischen DateTime und DateTimeOffset finden Sie in den Bemerkungen in der [DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset)-Klasse.
+.NET unterstützt auch einen Typ mit der Bezeichnung [DateTime](/dotnet/api/system.datetime), der implizit in [DateTimeOffset](/dotnet/api/system.datetimeoffset) konvertierbar ist. Somit könnte ein Typ „DateTime“ in .NET-Code verwendet werden, der zum Festlegen von Werten verwendet wird, bei denen es sich eigentlich um DateTimeOffset handelt. Weitere Informationen zum Unterschied zwischen DateTime und DateTimeOffset finden Sie in den Bemerkungen in der [DateTimeOffset](/dotnet/api/system.datetimeoffset)-Klasse.
 
 > [!NOTE]
 > Eigenschaften, die Datumsobjekte verwenden, können nicht als XAML-Attributzeichenfolge festgelegt werden, da der Windows-Runtime-XAML-Parser nicht über eine Konvertierungslogik zum Konvertieren von Zeichenfolgen in Datumsangaben als DateTime/DateTimeOffset-Objekte verfügt. In der Regel legen Sie diese Werte im Code fest. Eine andere Möglichkeit besteht darin, ein Datum zu definieren, das als Datenobjekt oder im Datenkontext verfügbar ist, und anschließend die Eigenschaft als XAML-Attribut festzulegen, das auf einen [\{Binding\}-Markuperweiterung](../../xaml-platform/binding-markup-extension.md)-Ausdruck verweist, der auf das Datum als Daten zugreifen kann.
@@ -134,7 +134,7 @@ Ein verwandtes Konzept ist die Calendar-Klasse, die beeinflusst, wie die Daten i
 
 ### <a name="for-developers-xaml"></a>Für Entwickler (XAML)
 
-- [CalendarView-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView)
-- [CalendarDatePicker-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker)
-- [DatePicker-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker)
-- [TimePicker-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TimePicker)
+- [CalendarView-Klasse](/uwp/api/Windows.UI.Xaml.Controls.CalendarView)
+- [CalendarDatePicker-Klasse](/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker)
+- [DatePicker-Klasse](/uwp/api/Windows.UI.Xaml.Controls.DatePicker)
+- [TimePicker-Klasse](/uwp/api/Windows.UI.Xaml.Controls.TimePicker)

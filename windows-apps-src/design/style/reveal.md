@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 26e756b52d4faf18eff2fc684c7db94bca058642
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 24ac07b8caacd4369bcbadf2a4019bbcbde59c6b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971075"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159974"
 ---
 # <a name="reveal-highlight"></a>Reveal Highlight
 
@@ -23,7 +23,7 @@ ms.locfileid: "82971075"
 
 Reveal Highlight ist ein Lichteffekt, der interaktive Elemente wie z.B. Befehlsleisten hervorhebt, wenn der Benutzer den Mauszeiger in deren Nähe bewegt. 
 
-> **Wichtige APIs:** [„RevealBrush“-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [„RevealBackgroundBrush“-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [„RevealBorderBrush“-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [„RevealBrushHelper“-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [„VisualState“-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState)
+> **Wichtige APIs:** [„RevealBrush“-Klasse](/uwp/api/windows.ui.xaml.media.revealbrush), [„RevealBackgroundBrush“-Klasse](/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [„RevealBorderBrush“-Klasse](/uwp/api/windows.ui.xaml.media.revealborderbrush), [„RevealBrushHelper“-Klasse](/uwp/api/windows.ui.xaml.media.revealbrushhelper), [„VisualState“-Klasse](/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>Funktionsweise
 Reveal Highlight hebt interaktive Elemente hervor, indem der Container des Elements hervorgehoben wird, wenn sich der Mauszeiger nähert, wie in der folgenden Abbildung gezeigt wird:
@@ -142,7 +142,7 @@ In den meisten Fällen wird „Reveal” für bestimmte Steuerelemente von uns a
 ### <a name="when-to-add-reveal"></a>Wann sollte „Reveal” hinzugefügt werden
 Sie können „Reveal” Ihren benutzerdefinierten Steuerelementen hinzufügen. Allerdings sollten Sie vorher den Typ des Steuerelements und sein Verhalten festlegen. 
 * Wenn Ihr benutzerdefiniertes Steuerelement ein einzelnes interaktives Element ist und keine ähnlichen Steuerelemente (wie z.B. Menüelemente) auf derselben Oberfläche angezeigt werden, benötigt Ihr benutzerdefiniertes Steuerelement „Reveal“ wahrscheinlich nicht.  
-* Besitzen Sie eine Gruppe von verwandten interaktiven Inhalten oder Elementen, benötigt dieser Bereich Ihrer App wahrscheinlich „Reveal“ – dies wird häufig als [Steuerung](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/collection-commanding) der Oberfläche bezeichnet.
+* Besitzen Sie eine Gruppe von verwandten interaktiven Inhalten oder Elementen, benötigt dieser Bereich Ihrer App wahrscheinlich „Reveal“ – dies wird häufig als [Steuerung](../controls-and-patterns/collection-commanding.md) der Oberfläche bezeichnet.
 
 So sollte beispielsweise eine allein angezeigte Schaltfläche „Reveal“ nicht verwenden, während eine Reihe von Schaltflächen in einer Befehlsleiste es verwenden sollte.
 
@@ -286,9 +286,9 @@ Wenn Sie „Reveal” für ein benutzerdefiniertes Steuerelement oder ein Steuer
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [RevealBrush-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
+- [RevealBrush-Klasse](/uwp/api/windows.ui.xaml.media.revealbrush)
 - [Acrylic](acrylic.md)
-- [Kompositionseffekte](https://docs.microsoft.com/windows/uwp/graphics/composition-effects)
+- [Kompositionseffekte](../../composition/composition-effects.md)
 - [Fluent Design für UWP](/windows/apps/fluent-design-system)
 - [Wissenschaft im System: Fluent Design und Tiefe](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [Wissenschaft im System: Fluent Design und Licht](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

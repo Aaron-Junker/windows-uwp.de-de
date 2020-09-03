@@ -8,18 +8,18 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1930d879177bc9282a3b55d019aa2bef7eb8f120
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: d1ce2e7dc434558ac1efd52f6def99d63b38c57e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730079"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161514"
 ---
 # <a name="features-that-require-package-identity"></a>Features, für die Paketidentität benötigt wird
 
-Wenn du deine Desktopanwendung mit [modernen Windows 10-Oberflächen](index.md) aktualisieren möchtest, sind viele Funktionen nur in Desktop-Apps mit [Paketidentität](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) verfügbar. Es gibt mehrere Möglichkeiten, einer Desktop-App eine Paketidentität zuzuweisen:
+Wenn du deine Desktopanwendung mit [modernen Windows 10-Oberflächen](index.md) aktualisieren möchtest, sind viele Funktionen nur in Desktop-Apps mit [Paketidentität](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) verfügbar. Es gibt mehrere Möglichkeiten, einer Desktop-App eine Paketidentität zuzuweisen:
 
-* Verpacken Sie sie in einem [MSIX-Paket](/windows/msix/desktop/desktop-to-uwp-root). MSIX ist ein modernes App-Paketformat, bei dem eine universelle Verpackungsoberfläche für alle Windows-Apps, WPF, Windows Forms und Win32-Apps bereitgestellt wird. Dadurch erhalten Sie Zugriff auf eine stabile Installations- und Aktualisierungsoberfläche, ein verwaltetes Sicherheitsmodell mit einem flexiblen Funktionssystem, Support für den Microsoft Store, Unternehmensverwaltung und viele benutzerdefinierte Distributionsmodelle. Weitere Informationen finden Sie unter [Verpacken von Desktopanwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) in der MSIX-Dokumentation.
+* Verpacken Sie sie in einem [MSIX-Paket](/windows/msix/desktop/desktop-to-uwp-root). MSIX ist ein modernes App-Paketformat, bei dem eine universelle Verpackungsoberfläche für alle Windows-Apps, WPF, Windows Forms und Win32-Apps bereitgestellt wird. Dadurch erhalten Sie Zugriff auf eine stabile Installations- und Aktualisierungsoberfläche, ein verwaltetes Sicherheitsmodell mit einem flexiblen Funktionssystem, Support für den Microsoft Store, Unternehmensverwaltung und viele benutzerdefinierte Distributionsmodelle. Weitere Informationen finden Sie unter [Verpacken von Desktopanwendungen](/windows/msix/desktop/desktop-to-uwp-root) in der MSIX-Dokumentation.
 * Wenn es nicht möglich ist, MSIX-Pakete zur Bereitstellung Ihrer Desktop-App zu erstellen, können Sie ab Windows 10, Version 2004 Paketidentität bereitstellen, indem Sie ein *platzsparendes MSIX-Paket* erstellen, das nur ein Paketmanifest enthält. Weitere Informationen finden Sie unter [Identitätszuweisen für nicht verpackte Desktop-Apps](grant-identity-to-nonpackaged-apps.md).
 
 Wenn deine Desktop-App eine Paketidentität hat, kannst du die folgenden Features in deiner App verwenden.

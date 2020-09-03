@@ -5,18 +5,18 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Daten, Typen
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cb62f8386798fcb78a11be35ba951616c47039c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d61de7acdfa2fc3b563aa77630a9eb8043bce3d7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68270073"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154334"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>C++-Standarddatentypen und C++/WinRT
 
-Mit [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) kannst du Windows-Runtime-APIs unter Verwendung von C++-Standarddatentypen aufrufen (einschließlich einiger Datentypen der C++-Standardbibliothek). Du kannst Standardzeichenfolgen an APIs übergeben (siehe [Behandeln von Zeichenfolgen in C++/WinRT](strings.md)) sowie Initialisierungslisten und Standardcontainer an APIs übergeben, die eine semantisch äquivalente Sammlung erwarten.
+Mit [C++/WinRT](./intro-to-using-cpp-with-winrt.md) kannst du Windows-Runtime-APIs unter Verwendung von C++-Standarddatentypen aufrufen (einschließlich einiger Datentypen der C++-Standardbibliothek). Du kannst Standardzeichenfolgen an APIs übergeben (siehe [Behandeln von Zeichenfolgen in C++/WinRT](strings.md)) sowie Initialisierungslisten und Standardcontainer an APIs übergeben, die eine semantisch äquivalente Sammlung erwarten.
 
-Siehe auch [Übergabe von Parametern in die ABI-Grenze](/windows/uwp/cpp-and-winrt-apis/pass-parms-to-abi).
+Siehe auch [Übergabe von Parametern in die ABI-Grenze](./pass-parms-to-abi.md).
 
 ## <a name="standard-initializer-lists"></a>Standardinitialisierungslisten
 Eine Initialisierungsliste (**std::initializer_list**) ist ein Konstrukt der C++-Standardbibliothek. Initialisierungslisten können beim Aufrufen bestimmter Windows-Runtime-Konstruktoren und -Methoden verwendet werden – etwa beim Aufrufen von [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes).

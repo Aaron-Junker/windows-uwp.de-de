@@ -4,16 +4,16 @@ description: In diesem Artikel wird beschrieben, wie die XamlUICommand-Klasse un
 ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
-ms.openlocfilehash: 5ab46a479e882b9975f24731dfcbb6e433126f80
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 767172fe3384fc74687b239768b277b6147c0fd4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233768"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160634"
 ---
 # <a name="commanding-in-windows-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Befehle in Windows-Apps, die StandardUICommand, XamlUICommand und ICommand verwenden
 
-In diesem Artikel werden Befehle in Windows-Anwendungen beschrieben. Insbesondere wird erläutert, wie Sie mit der [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)-Klasse und der [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)-Klasse (zusammen mit der ICommand-Schnittstelle) Befehle über verschiedene Steuerelementtypen hinweg freigeben und verwalten, und zwar unabhängig vom verwendeten Geräte- und Eingabetyp.
+In diesem Artikel werden Befehle in Windows-Anwendungen beschrieben. Insbesondere wird erläutert, wie Sie mit der [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand)-Klasse und der [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand)-Klasse (zusammen mit der ICommand-Schnittstelle) Befehle über verschiedene Steuerelementtypen hinweg freigeben und verwalten, und zwar unabhängig vom verwendeten Geräte- und Eingabetyp.
 
 ![Eine Abbildung zur Veranschaulichung einer gängigen Verwendung eines freigegebenen Befehls: mehrere Benutzeroberflächen mit einem Favorit-Befehl](images/commanding/generic-commanding.png)
 
@@ -21,9 +21,9 @@ In diesem Artikel werden Befehle in Windows-Anwendungen beschrieben. Insbesonder
 
 ## <a name="important-apis"></a>Wichtige APIs
 
-- [Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) und [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand)
-- [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)
-- [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)
+- [Windows.UI.Xaml.Input.ICommand](/uwp/api/windows.ui.xaml.input.icommand) und [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand)
+- [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand)
+- [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand)
 
 ## <a name="overview"></a>Übersicht
 
@@ -73,20 +73,20 @@ Es gibt verschiedene Möglichkeiten, Befehle in einer Windows-Anwendung gemeinsa
 
 Um umfassende Benutzererfahrungen für alle Befehlsoberflächen effizient und mit minimaler Codeduplizierung bereitzustellen, empfehlen wir, die in diesem Artikel beschriebenen Befehlsbindungsfunktionen zu verwenden (Informationen zum Verarbeiten von Standardereignissen erhalten Sie in den Artikeln zu den einzelnen Ereignissen).
 
-Um ein Steuerelement an eine gemeinsam genutzte Befehlsressource zu binden, können Sie die ICommand-Schnittstellen selbst implementieren, oder Sie können Ihren Befehl in der [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)-Basisklasse oder anhand eines der Plattformbefehle erstellen, die von der abgeleiteten [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)-Klasse definiert werden.
+Um ein Steuerelement an eine gemeinsam genutzte Befehlsressource zu binden, können Sie die ICommand-Schnittstellen selbst implementieren, oder Sie können Ihren Befehl in der [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand)-Basisklasse oder anhand eines der Plattformbefehle erstellen, die von der abgeleiteten [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand)-Klasse definiert werden.
 
-- Mit der ICommand-Schnittstelle ([Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) oder [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand)) können Sie komplett angepasste, in der gesamten App wiederverwendbare Befehle erstellen.
-- [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) bietet diese Möglichkeit auch, vereinfacht jedoch die Entwicklung, indem eine Reihe von integrierten Befehlseigenschaften wie Befehlsverhalten, Tastenkombinationen (Zugriffstasten und Tastaturkürzel), Symbol, Bezeichnung und Beschreibung verfügbar gemacht werden.
-- Die Vorgehensweise wird durch [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) noch weiter vereinfacht, denn hiermit können Sie aus einer Reihe von standardmäßigen Plattformbefehlen mit vordefinierten Eigenschaften auswählen.
+- Mit der ICommand-Schnittstelle ([Windows.UI.Xaml.Input.ICommand](/uwp/api/windows.ui.xaml.input.icommand) oder [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand)) können Sie komplett angepasste, in der gesamten App wiederverwendbare Befehle erstellen.
+- [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) bietet diese Möglichkeit auch, vereinfacht jedoch die Entwicklung, indem eine Reihe von integrierten Befehlseigenschaften wie Befehlsverhalten, Tastenkombinationen (Zugriffstasten und Tastaturkürzel), Symbol, Bezeichnung und Beschreibung verfügbar gemacht werden.
+- Die Vorgehensweise wird durch [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) noch weiter vereinfacht, denn hiermit können Sie aus einer Reihe von standardmäßigen Plattformbefehlen mit vordefinierten Eigenschaften auswählen.
 
 > [!Important]
-> In UWP-Anwendungen sind Befehle je nach gewählter Sprache Implementierungen der [Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand)-Schnittstelle (C++) oder der [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand)-Schnittstelle (C#).
+> In UWP-Anwendungen sind Befehle je nach gewählter Sprache Implementierungen der [Windows.UI.Xaml.Input.ICommand](/uwp/api/windows.ui.xaml.input.icommand)-Schnittstelle (C++) oder der [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand)-Schnittstelle (C#).
 
 ## <a name="command-experiences-using-the-standarduicommand-class"></a>Befehle, die die StandardUICommand-Klasse verwenden
 
-Abgeleitet von [XamlUiCommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) (abgeleitet von [Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) für C++ bzw. [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand) für C#) macht die [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)-Klasse eine Reihe von standardmäßigen Plattformbefehlen mit vordefinierten Eigenschaften wie Symbol, Tastaturkürzel und Beschreibung verfügbar.
+Abgeleitet von [XamlUiCommand](/uwp/api/windows.ui.xaml.input.xamluicommand) (abgeleitet von [Windows.UI.Xaml.Input.ICommand](/uwp/api/windows.ui.xaml.input.icommand) für C++ bzw. [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) für C#) macht die [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand)-Klasse eine Reihe von standardmäßigen Plattformbefehlen mit vordefinierten Eigenschaften wie Symbol, Tastaturkürzel und Beschreibung verfügbar.
 
-Ein [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) bietet eine schnelle und konsistente Möglichkeit, gängige Befehle wie `Save` oder `Delete` zu definieren. Dafür müssen Sie lediglich die execute-Funktion und die canExecute-Funktion bereitstellen.
+Ein [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) bietet eine schnelle und konsistente Möglichkeit, gängige Befehle wie `Save` oder `Delete` zu definieren. Dafür müssen Sie lediglich die execute-Funktion und die canExecute-Funktion bereitstellen.
 
 ### <a name="example"></a>Beispiel
 
@@ -98,14 +98,14 @@ Ein [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input
 | -------------------- |
 | [Beispiel für UWP-Befehle (StandardUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-standarduicommand.zip) |
 
-In diesem Beispiel wird veranschaulicht, wie eine grundlegende [ListView](listview-and-gridview.md) mit einem Befehl „Element löschen“ erweitert wird, der durch die [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)-Klasse implementiert wird, wobei gleichzeitig die Benutzererfahrung für eine Vielzahl von Eingabetypen mit einer [MenuBar](menus.md), einem [Swipe](swipe.md)-Steuerelement, Hoverschaltflächen und einem [Kontextmenü](menus.md) optimiert wird.
+In diesem Beispiel wird veranschaulicht, wie eine grundlegende [ListView](listview-and-gridview.md) mit einem Befehl „Element löschen“ erweitert wird, der durch die [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand)-Klasse implementiert wird, wobei gleichzeitig die Benutzererfahrung für eine Vielzahl von Eingabetypen mit einer [MenuBar](menus.md), einem [Swipe](swipe.md)-Steuerelement, Hoverschaltflächen und einem [Kontextmenü](menus.md) optimiert wird.
 
 > [!NOTE]
-> Dieses Beispiel erfordert das Nuget-Paket „Microsoft.UI.Xaml.Controls“, das Teil der [Microsoft Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) ist.
+> Dieses Beispiel erfordert das Nuget-Paket „Microsoft.UI.Xaml.Controls“, das Teil der [Microsoft Windows-UI-Bibliothek](/uwp/toolkits/winui/) ist.
 
 **XAML:**
 
-Die Beispiel-UI enthält eine [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) mit fünf Elementen. Der [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) „Löschen“ wird an ein [MenuBarItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.menubaritem), ein [SwipeItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.swipeitem), ein [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) und ein [ContextFlyout-Menü](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) gebunden.
+Die Beispiel-UI enthält eine [ListView](/uwp/api/windows.ui.xaml.controls.listview) mit fünf Elementen. Der [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) „Löschen“ wird an ein [MenuBarItem](/uwp/api/microsoft.ui.xaml.controls.menubaritem), ein [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem), ein [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton) und ein [ContextFlyout-Menü](/uwp/api/windows.ui.xaml.uielement.contextflyout) gebunden.
 
 ``` xaml
 <Page
@@ -241,7 +241,7 @@ public class ListItemData
 }
 ```
 
-2. In der MainPage-Klasse definieren wir eine Sammlung von `ListItemData`-Objekten für die [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) der [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)-[ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate). Anschließend füllen wir sie mit einer anfänglichen Sammlung von fünf Elementen (mit Text und zugeordnetem [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) „Löschen“) auf.
+2. In der MainPage-Klasse definieren wir eine Sammlung von `ListItemData`-Objekten für die [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) der [ListView](/uwp/api/windows.ui.xaml.controls.listview)-[ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate). Anschließend füllen wir sie mit einer anfänglichen Sammlung von fünf Elementen (mit Text und zugeordnetem [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) „Löschen“) auf.
 
 ```csharp
 /// <summary>
@@ -315,7 +315,7 @@ private void DeleteCommand_ExecuteRequested(
 }
 ```
 
-4. Schließlich definieren wir Handler für verschiedene ListView-Ereignisse, einschließlich der Ereignisse [PointerEntered](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered), [PointerExited](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) und [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged). Mit den Ereignishandler für Zeiger wird die Schaltfläche „Löschen“ für jedes Element ein- bzw. ausgeblendet.
+4. Schließlich definieren wir Handler für verschiedene ListView-Ereignisse, einschließlich der Ereignisse [PointerEntered](/uwp/api/windows.ui.xaml.uielement.pointerentered), [PointerExited](/uwp/api/windows.ui.xaml.uielement.pointerexited) und [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged). Mit den Ereignishandler für Zeiger wird die Schaltfläche „Löschen“ für jedes Element ein- bzw. ausgeblendet.
 
 ```csharp
 /// <summary>
@@ -367,9 +367,9 @@ private void ListViewSwipeContainer_PointerExited(
 
 ## <a name="command-experiences-using-the-xamluicommand-class"></a>Befehle, die die XamlUICommand-Klasse verwenden
 
-Wenn Sie einen Befehl erstellen müssen, der nicht von der [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)-Klasse definiert wird oder Sie umfassendere Kontrolle über die Darstellung von Befehlen benötigen, wird die [XamlUiCommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)-Klasse von der [ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand)-Schnittstelle abgeleitet, wodurch diverse UI-Eigenschaften (wie ein Symbol, eine Bezeichnung, eine Beschreibung und Tastenkombinationen), Methoden und Ereignisse hinzugefügt werden, mit denen die UI und das Verhalten eines benutzerdefinierten Befehls schnell definiert werden können.
+Wenn Sie einen Befehl erstellen müssen, der nicht von der [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand)-Klasse definiert wird oder Sie umfassendere Kontrolle über die Darstellung von Befehlen benötigen, wird die [XamlUiCommand](/uwp/api/windows.ui.xaml.input.xamluicommand)-Klasse von der [ICommand](/uwp/api/windows.ui.xaml.input.icommand)-Schnittstelle abgeleitet, wodurch diverse UI-Eigenschaften (wie ein Symbol, eine Bezeichnung, eine Beschreibung und Tastenkombinationen), Methoden und Ereignisse hinzugefügt werden, mit denen die UI und das Verhalten eines benutzerdefinierten Befehls schnell definiert werden können.
 
-Mit [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) können Sie UI über die Steuerelementbindung angeben, z. B. ein Symbol, eine Bezeichnung, eine Beschreibung und Tastenkombinationen (sowohl Zugriffstaste als auch Tastaturkürzel), ohne die einzelnen Eigenschaften festzulegen.
+Mit [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) können Sie UI über die Steuerelementbindung angeben, z. B. ein Symbol, eine Bezeichnung, eine Beschreibung und Tastenkombinationen (sowohl Zugriffstaste als auch Tastaturkürzel), ohne die einzelnen Eigenschaften festzulegen.
 
 ### <a name="example"></a>Beispiel
 
@@ -381,16 +381,16 @@ Mit [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xam
 | -------------------- |
 | [Beispiel für UWP-Befehle (XamlUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-xamluicommand.zip) |
 
-In diesem Beispiel wird ebenfalls die Funktion „Löschen“ aus dem vorherigen [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)-Beispiel verwendet; es wird jedoch veranschaulicht, wie Sie mit der [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)-Klasse einen benutzerdefinierten Befehl zum Löschen mit eigenen Werten für Schriftartensymbol, Bezeichnung, Tastaturkürzel und Beschreibung definieren. Wie im [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)-Beispiel erweitern wir eine grundlegende [ListView](listview-and-gridview.md) mit einem Befehl „Element löschen“, der über die [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)-Klasse implementiert wird, wobei die Benutzererfahrung für eine Reihe von Eingabetypen mit einer [MenuBar](menus.md), einem [Swipe](swipe.md)-Steuerelement, Hoverschaltflächen und einem [Kontextmenü](menus.md) optimiert wird.
+In diesem Beispiel wird ebenfalls die Funktion „Löschen“ aus dem vorherigen [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand)-Beispiel verwendet; es wird jedoch veranschaulicht, wie Sie mit der [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand)-Klasse einen benutzerdefinierten Befehl zum Löschen mit eigenen Werten für Schriftartensymbol, Bezeichnung, Tastaturkürzel und Beschreibung definieren. Wie im [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand)-Beispiel erweitern wir eine grundlegende [ListView](listview-and-gridview.md) mit einem Befehl „Element löschen“, der über die [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand)-Klasse implementiert wird, wobei die Benutzererfahrung für eine Reihe von Eingabetypen mit einer [MenuBar](menus.md), einem [Swipe](swipe.md)-Steuerelement, Hoverschaltflächen und einem [Kontextmenü](menus.md) optimiert wird.
 
 Viele Plattformsteuerelemente verwenden die XamlUICommand-Eigenschaften im Hintergrund, wie auch unser StandardUICommand-Beispiel im vorherigen Abschnitt. 
 
 > [!NOTE]
-> Dieses Beispiel erfordert das Nuget-Paket „Microsoft.UI.Xaml.Controls“, das Teil der [Microsoft Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) ist.
+> Dieses Beispiel erfordert das Nuget-Paket „Microsoft.UI.Xaml.Controls“, das Teil der [Microsoft Windows-UI-Bibliothek](/uwp/toolkits/winui/) ist.
 
 **XAML:**
 
-Die Beispiel-UI enthält eine [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) mit fünf Elementen. Der benutzerdefinierte [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) „Löschen“ wird an ein [MenuBarItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.menubaritem), ein [SwipeItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.swipeitem), einen [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) und ein [ContextFlyout-Menü](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout) gebunden.
+Die Beispiel-UI enthält eine [ListView](/uwp/api/windows.ui.xaml.controls.listview) mit fünf Elementen. Der benutzerdefinierte [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) „Löschen“ wird an ein [MenuBarItem](/uwp/api/microsoft.ui.xaml.controls.menubaritem), ein [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem), einen [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton) und ein [ContextFlyout-Menü](/uwp/api/windows.ui.xaml.uielement.contextflyout) gebunden.
 
 ``` xaml
 <Page
@@ -540,7 +540,7 @@ public class ListItemData
 }
 ```
 
-2. In der MainPage-Klasse definieren wir eine Sammlung von `ListItemData`-Objekten für die [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) der [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)-[ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate). Anschließend füllen wir sie mit einer anfänglichen Sammlung von fünf Elementen auf (mit Text und dem zugehörigen [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)).
+2. In der MainPage-Klasse definieren wir eine Sammlung von `ListItemData`-Objekten für die [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) der [ListView](/uwp/api/windows.ui.xaml.controls.listview)-[ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate). Anschließend füllen wir sie mit einer anfänglichen Sammlung von fünf Elementen auf (mit Text und dem zugehörigen [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand)).
 
 ```csharp
 ObservableCollection<ListItemData> collection = new ObservableCollection<ListItemData>();
@@ -585,7 +585,7 @@ private void DeleteCommand_ExecuteRequested(
 }
 ```
 
-4. Schließlich definieren wir Handler für verschiedene ListView-Ereignisse, einschließlich der Ereignisse [PointerEntered](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered), [PointerExited](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) und [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged). Mit den Ereignishandler für Zeiger wird die Schaltfläche „Löschen“ für jedes Element ein- bzw. ausgeblendet.
+4. Schließlich definieren wir Handler für verschiedene ListView-Ereignisse, einschließlich der Ereignisse [PointerEntered](/uwp/api/windows.ui.xaml.uielement.pointerentered), [PointerExited](/uwp/api/windows.ui.xaml.uielement.pointerexited) und [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged). Mit den Ereignishandler für Zeiger wird die Schaltfläche „Löschen“ für jedes Element ein- bzw. ausgeblendet.
 
 ```csharp
 private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -616,7 +616,7 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
 
 UWP-Standardsteuerelemente (Schaltfläche, Liste, Auswahl, Kalender, Textvorhersage) stellen die Grundlage für viele gängige Befehle dar. Eine komplette Liste der Steuerelementtypen finden Sie unter [Steuerelemente und Muster für Windows-Apps](index.md).
 
-Am einfachsten lässt sich eine strukturierte Befehlserfahrung durch Definieren einer Implementierung der ICommand-Schnittstelle einrichten ([Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) für C++ bzw. [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand) für C#).  Diese ICommand-Instanz kann dann an Steuerelemente (z. B. Schaltflächen) gebunden werden.
+Am einfachsten lässt sich eine strukturierte Befehlserfahrung durch Definieren einer Implementierung der ICommand-Schnittstelle einrichten ([Windows.UI.Xaml.Input.ICommand](/uwp/api/windows.ui.xaml.input.icommand) für C++ bzw. [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) für C#).  Diese ICommand-Instanz kann dann an Steuerelemente (z. B. Schaltflächen) gebunden werden.
 
 > [!NOTE]
 > In einigen Fällen ist es genau so effizient, eine Methode an das Click-Ereignis und eine Eigenschaft an die IsEnabled-Eigenschaft zu binden.
@@ -633,7 +633,7 @@ Am einfachsten lässt sich eine strukturierte Befehlserfahrung durch Definieren 
 
 In diesem einfachen Beispiel wird veranschaulicht, wie ein einzelner Befehl mit einem Klick auf eine Schaltfläche, dem Eingeben eines Tastaturkürzels und durch Drehen des Mausrads aufgerufen werden kann.
 
-Wir verwenden zwei [ListViews](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), von denen eine mit fünf Elementen aufgefüllt und die andere leer ist, sowie zwei Schaltflächen, bei denen mit einer Elemente aus der ListView links in die ListView rechts und mit der anderen Elemente von rechts nach links verschoben werden. Jede Schaltfläche ist an einen entsprechenden Befehl gebunden (ViewModel.MoveRightCommand bzw. ViewModel.MoveLeftCommand), und sie wird entsprechend der Anzahl der Elemente in der zugehörigen ListView automatisch aktiviert und deaktiviert.
+Wir verwenden zwei [ListViews](/uwp/api/windows.ui.xaml.controls.listview), von denen eine mit fünf Elementen aufgefüllt und die andere leer ist, sowie zwei Schaltflächen, bei denen mit einer Elemente aus der ListView links in die ListView rechts und mit der anderen Elemente von rechts nach links verschoben werden. Jede Schaltfläche ist an einen entsprechenden Befehl gebunden (ViewModel.MoveRightCommand bzw. ViewModel.MoveLeftCommand), und sie wird entsprechend der Anzahl der Elemente in der zugehörigen ListView automatisch aktiviert und deaktiviert.
 
 **Im folgenden XAML-Code wird die UI für das Beispiel definiert.**
 
@@ -994,7 +994,7 @@ namespace UICommand1.ViewModel
 
 **Und dies ist schließlich die Implementierung der ICommand-Schnittstelle.**
 
-Hier definieren wir einen Befehl, der die [ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand)-Schnittstelle implementiert und ihre Funktionen einfach an andere Objekte weiterleitet.
+Hier definieren wir einen Befehl, der die [ICommand](/uwp/api/windows.ui.xaml.input.icommand)-Schnittstelle implementiert und ihre Funktionen einfach an andere Objekte weiterleitet.
 
 ```csharp
 using System;
@@ -1097,7 +1097,7 @@ Verfolgen Sie beim Erstellen von Befehlen für Ihre Windows-Apps folgende Ansät
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Ein komplettes Beispiel, das eine Implementierung von [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) und [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) veranschaulicht, finden Sie im Beispiel zum [XAML-Steuerelementekatalog](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics).
+Ein komplettes Beispiel, das eine Implementierung von [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand) und [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand) veranschaulicht, finden Sie im Beispiel zum [XAML-Steuerelementekatalog](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics).
 
 ## <a name="see-also"></a>Siehe auch
 

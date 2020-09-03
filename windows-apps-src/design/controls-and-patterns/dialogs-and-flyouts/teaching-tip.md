@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: 479a289ff15ab6a3db7a51d52f4bf3b075e8a64b
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 31ced6c31b126986171c81e03b68a0a1cccc44f2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968781"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160354"
 ---
 # <a name="teaching-tip"></a>Unterrichtstipp
 
@@ -27,12 +27,12 @@ Ein Unterrichtstipp ist möglicherweise einfach ausblendbar oder erfordert expli
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](../images/winui-logo-64x64.png) | Das Steuerelement **TeachingTip** erfordert die Windows-UI-Bibliothek. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](../images/winui-logo-64x64.png) | Das Steuerelement **TeachingTip** erfordert die Windows-UI-Bibliothek. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
 > **APIs der Bibliothek „Windows UI“** [TeachingTip-Klasse](/uwp/api/microsoft.ui.xaml.controls.teachingtip)
 
 > [!TIP]
-> In diesem Dokument stellt der Alias **muxc** in XAML die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben dem [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)-Element Folgendes hinzugefügt: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> In diesem Dokument stellt der Alias **muxc** in XAML die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben dem [Page](/uwp/api/windows.ui.xaml.controls.page)-Element Folgendes hinzugefügt: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
 >Im CodeBehind stellt ebenfalls der Alias **muxc** in C# die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben am Anfang der Datei die folgende **using**-Anweisung hinzugefügt: `using muxc = Microsoft.UI.Xaml.Controls;`
 
@@ -125,9 +125,9 @@ In diesem Beispiel befindet sich TeachingTip in der Elementstruktur anstatt in R
 
 ### <a name="preferred-placement"></a>Bevorzugte Platzierung
 
-Der Unterrichtstipp repliziert das [FlyoutPlacementMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode)-Platzierungsverhalten des Flyouts mit der Eigenschaft „TeachingTipPlacementMode“. Der Standardmodus für die Platzierung versucht, einen zielgerichteten Unterrichtstipp über dem Ziel zu platzieren, während ein nicht zielgerichteter Unterrichtstipp in der Mitte unter dem XAML-Stamm platziert wird. So wie beim Flyout wird automatisch ein anderer Platzierungsmodus ausgewählt, wenn der bevorzugte Platzierungsmodus nicht genug Platz für die Anzeige des Unterrichtstipps lässt.
+Der Unterrichtstipp repliziert das [FlyoutPlacementMode](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode)-Platzierungsverhalten des Flyouts mit der Eigenschaft „TeachingTipPlacementMode“. Der Standardmodus für die Platzierung versucht, einen zielgerichteten Unterrichtstipp über dem Ziel zu platzieren, während ein nicht zielgerichteter Unterrichtstipp in der Mitte unter dem XAML-Stamm platziert wird. So wie beim Flyout wird automatisch ein anderer Platzierungsmodus ausgewählt, wenn der bevorzugte Platzierungsmodus nicht genug Platz für die Anzeige des Unterrichtstipps lässt.
 
-Weitere Informationen zu Anwendungen, die Gamepadeingaben vorhersagen, findest du unter [Gamepad und Fernbedienung]( https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction). Es wird empfohlen, den Zugriff des Gamepads auf alle Unterrichtstipps mit allen möglichen Konfigurationen der Benutzeroberfläche einer App zu testen.
+Weitere Informationen zu Anwendungen, die Gamepadeingaben vorhersagen, findest du unter [Gamepad und Fernbedienung]( ../../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction). Es wird empfohlen, den Zugriff des Gamepads auf alle Unterrichtstipps mit allen möglichen Konfigurationen der Benutzeroberfläche einer App zu testen.
 
 Ein zielgerichteter Unterrichtstipp, bei dem PreferredPlacement auf „BottomLeft“ festgelegt ist, erscheint mit der Spitze zentriert am unteren Rand des Ziels, und der Text des Unterrichtstipps wird nach links verschoben.
 
@@ -168,7 +168,7 @@ Das folgende Diagramm zeigt das Ergebnis aller 13 PreferredPlacement-Modi, die f
 
 ### <a name="add-a-placement-margin"></a>Hinzufügen eines Platzierungsrands
 
-Mithilfe der PlacementMargin-Eigenschaft kannst du steuern, wie weit ein zielgerichteter Unterrichtstipp vom Ziel entfernt ist und wie weit ein nicht zielgerichteter Unterrichtstipp von den Rändern des XAML-Stamms entfernt ist. PlacementMargin verfügt wie [Margin](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.margin) über vier Werte (left, right, top und bottom), sodass nur die relevanten Werte verwendet werden. PlacementMargin.Left gilt beispielsweise, wenn sich der Tipp links vom Ziel oder am linken Rand des XAML-Stamms befindet.
+Mithilfe der PlacementMargin-Eigenschaft kannst du steuern, wie weit ein zielgerichteter Unterrichtstipp vom Ziel entfernt ist und wie weit ein nicht zielgerichteter Unterrichtstipp von den Rändern des XAML-Stamms entfernt ist. PlacementMargin verfügt wie [Margin](/uwp/api/windows.ui.xaml.frameworkelement.margin) über vier Werte (left, right, top und bottom), sodass nur die relevanten Werte verwendet werden. PlacementMargin.Left gilt beispielsweise, wenn sich der Tipp links vom Ziel oder am linken Rand des XAML-Stamms befindet.
 
 Das folgende Beispiel zeigt einen nicht zielgerichteten Tipp, bei dem die PlacementMargin-Werte „Left“/„Top“/„Right“/„Bottom“ jeweils auf 80 festgelegt sind.
 
@@ -357,7 +357,7 @@ private void OnTipClosing(muxc.TeachingTip sender, muxc.TeachingTipClosingEventA
 * Tipps sind dauerhaft und dürfen keine Informationen oder Optionen enthalten, die für die Nutzung einer Anwendung von entscheidender Bedeutung sind.
 * Versuche, Unterrichtstipps nicht zu häufig anzuzeigen. Unterrichtstipps werden dann am ehesten beachtet, wenn sie während langer Sitzungen oder über mehrere Sitzungen hinweg gestaffelt angezeigt werden.
 * Außerdem sollten sie kompakt und gut verständlich sein. Untersuchungen zeigen, dass Benutzer im Durchschnitt nur drei bis fünf Wörter lesen und zwei bis drei Wörter erfassen, wenn sie entscheiden, ob sie mit einem Tipp interagieren.
-* Der Zugriff auf Gamepads ist bei einem Unterrichtstipp nicht garantiert. Weitere Informationen zu Anwendungen, die Gamepadeingaben vorhersagen, findest du unter [Gamepad und Fernbedienung]( https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction). Es wird empfohlen, den Zugriff des Gamepads auf alle Unterrichtstipps mit allen möglichen Konfigurationen der Benutzeroberfläche einer App zu testen.
+* Der Zugriff auf Gamepads ist bei einem Unterrichtstipp nicht garantiert. Weitere Informationen zu Anwendungen, die Gamepadeingaben vorhersagen, findest du unter [Gamepad und Fernbedienung]( ../../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction). Es wird empfohlen, den Zugriff des Gamepads auf alle Unterrichtstipps mit allen möglichen Konfigurationen der Benutzeroberfläche einer App zu testen.
 * Wenn du einen Unterrichtstipp aktivierst, um den XAML-Stamm zu umgehen, solltest du auch die Eigenschaft „IsLightDismissEnabled“ aktivieren und den PreferredPlacement-Modus recht mittig im XAML-Stamm festlegen.
 
 ## <a name="reconfiguring-an-open-teaching-tip"></a>Neukonfiguration eines geöffneten Unterrichtstipps
@@ -366,4 +366,4 @@ Manche Inhalte und Eigenschaften können neu konfiguriert werden, wenn der Unter
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Dialogfelder und Flyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/index)
+* [Dialogfelder und Flyouts](./index.md)

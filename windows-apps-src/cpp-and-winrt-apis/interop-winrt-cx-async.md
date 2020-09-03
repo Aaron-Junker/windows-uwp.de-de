@@ -1,30 +1,30 @@
 ---
-description: Dies ist ein fortgeschrittenes Thema im Zusammenhang mit der schrittweisen Portierung von [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) nach [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). Es wird gezeigt, wie Aufgaben und Co-Routinen der Parallel Patterns Library (PPL) im selben Projekt nebeneinander existieren können.
+description: Dies ist ein fortgeschrittenes Thema im Zusammenhang mit der schrittweisen Portierung von [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) nach [C++/WinRT](./intro-to-using-cpp-with-winrt.md). Es wird gezeigt, wie Aufgaben und Co-Routinen der Parallel Patterns Library (PPL) im selben Projekt nebeneinander existieren können.
 title: Asynchronität und Interoperabilität zwischen C++/WinRT und C++/CX
 ms.date: 08/06/2020
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, Interoperabilität, C++/CX, PPL, Aufgabe, Coroutine
 ms.localizationpriority: medium
-ms.openlocfilehash: d80fedcadaee96dcd4fae4081dcc117b55a1e498
-ms.sourcegitcommit: 2a90b41e455ba0a2b7aff6f771638fb3a2228db4
+ms.openlocfilehash: 1beff7fe5595a2601d56d65b52ca51eacedee47f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88513427"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157394"
 ---
 # <a name="asynchrony-and-interop-between-cwinrt-and-ccx"></a>Asynchronität und Interoperabilität zwischen C++/WinRT und C++/CX
 
 > [!TIP]
 > Obwohl wir empfehlen, dass Sie dieses Thema von Anfang an lesen, können Sie direkt zu einer Zusammenfassung der Interoperabilitätsmethoden im Abschnitt [Übersicht über das asynchrone Portieren von C++/CX zu C++/WinRT](#overview-of-porting-ccx-async-to-cwinrt) wechseln.
 
-Dies ist ein fortgeschrittenes Thema im Zusammenhang mit der schrittweisen Portierung von [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) von [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx). Dieses Thema fährt dort fort, wo das Thema [Interoperabilität zwischen C++/WinRT und C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx) aufgehört hat.
+Dies ist ein fortgeschrittenes Thema im Zusammenhang mit der schrittweisen Portierung von [C++/WinRT](./intro-to-using-cpp-with-winrt.md) von [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx). Dieses Thema fährt dort fort, wo das Thema [Interoperabilität zwischen C++/WinRT und C++/CX](./interop-winrt-cx.md) aufgehört hat.
 
 Sie benötigen einen Portierungsprozess, bei dem C++/CX- und C++/WinRT-Code eine Zeit lang nebeneinander im selben Projekt existieren, wenn die Größe oder Komplexität Ihrer Codebasis eine schrittweise Portierung erforderlich macht. Wenn Sie über asynchronen Code verfügen, müssen Sie möglicherweise PPL-Aufgabenketten (Parallel Patterns Library) und Coroutinen parallel in Ihrem Projekt haben, während Sie den Quellcode schrittweise portieren. Dieses Thema konzentriert sich auf Methoden für die Interoperabilität zwischen asynchronem C++/CX-Code und asynchronem C++/WinRT-Code. Sie können diese Methoden einzeln oder kombinieren verwenden. Die Techniken ermöglichen es Ihnen, auf dem Weg zur Übertragung Ihres gesamten Projekts graduelle, kontrollierte lokale Änderungen vorzunehmen, ohne dass sich jede Änderung unkontrollierbar wie eine Kaskade durch das Produkt fortsetzt.
 
-Bevor Sie dieses Thema lesen, empfiehlt es sich, [Interoperabilität zwischen C++/WinRT und C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx) zu lesen. In diesem Thema wird gezeigt, wie Sie Ihr Projekt für eine schrittweise Portierung vorbereiten. Es gibt Ihnen ferner eine Einführung in zwei Hilfsfunktionen, die Sie für die Konvertierung eines C++/CX-Objekts in ein C++/WinRT-Objekt (und umgekehrt) verwenden können. Dieses Thema über Asynchronität baut auf diesen Informationen auf und verwendet diese Hilfsfunktionen.
+Bevor Sie dieses Thema lesen, empfiehlt es sich, [Interoperabilität zwischen C++/WinRT und C++/CX](./interop-winrt-cx.md) zu lesen. In diesem Thema wird gezeigt, wie Sie Ihr Projekt für eine schrittweise Portierung vorbereiten. Es gibt Ihnen ferner eine Einführung in zwei Hilfsfunktionen, die Sie für die Konvertierung eines C++/CX-Objekts in ein C++/WinRT-Objekt (und umgekehrt) verwenden können. Dieses Thema über Asynchronität baut auf diesen Informationen auf und verwendet diese Hilfsfunktionen.
 
 > [!NOTE]
-> Für die schrittweise Portierung von C++/CX zu C++/WinRT gelten einige Einschränkungen. Bei einem [Windows-Runtime-Komponentenprojekt](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt) ist eine schrittweise Portierung nicht möglich, und Sie müssen das Projekt in einem Durchgang portieren. Bei einem XAML-Projekt müssen Ihre XAML-Seitentypen zu jedem beliebigen Zeitpunkt *entweder* alle in C++/WinRT *oder* alle in C++/CX vorliegen. Weitere Informationen finden Sie im Thema [Umstellen von C++/CX auf C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx).
+> Für die schrittweise Portierung von C++/CX zu C++/WinRT gelten einige Einschränkungen. Bei einem [Windows-Runtime-Komponentenprojekt](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) ist eine schrittweise Portierung nicht möglich, und Sie müssen das Projekt in einem Durchgang portieren. Bei einem XAML-Projekt müssen Ihre XAML-Seitentypen zu jedem beliebigen Zeitpunkt *entweder* alle in C++/WinRT *oder* alle in C++/CX vorliegen. Weitere Informationen finden Sie im Thema [Umstellen von C++/CX auf C++/WinRT](./move-to-winrt-from-cx.md).
 
 ## <a name="the-reason-an-entire-topic-is-dedicated-to-asynchronous-code-interop"></a>Der Grund, warum ein ganzes Thema der Interoperabilität von asynchronem Code gewidmet ist
 
@@ -83,7 +83,7 @@ Der Rückgabetyp einer C++/WinRT-Coroutine ist entweder ein **winrt::IAsyncXxx**
 
 Wenn eine Methode mindestens eine `co_await`-Anweisung (oder mindestens eine `co_return` oder `co_yield`) enthält, ist die Methode aus diesem Grund eine Coroutine.
 
-Weitere Informationen und Codebeispiele findest du unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+Weitere Informationen und Codebeispiele findest du unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](./concurrency.md).
 
 ## <a name="the-direct3d-game-sample-simple3dgamedx"></a>Das Direct3D-Spielbeispiel (**Simple3DGameDX**)
 
@@ -91,7 +91,7 @@ Dieses Thema enthält mehrere exemplarische Vorgehensweisen zu verschiedenen spe
 
 - Laden Sie die ZIP-Datei unter dem obigen Link herunter, und entpacken Sie sie.
 - Öffnen Sie das C++/CX-Projekt (es befindet sich im Ordner namens `cpp`) in Visual Studio.
-- Anschließend müssen Sie dem Projekt C++/WinRT-Unterstützung hinzufügen. Die Schritte, die Sie dazu ausführen müssen, sind in [Erweitern eines bestehenden C++/CX-Projekts um C++/WinRT-Unterstützung](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx#taking-a-ccx-project-and-adding-cwinrt-support) beschrieben. In diesem Abschnitt ist der Schritt zum Hinzufügen der `interop_helpers.h`-Headerdatei zu Ihrem Projekt besonders wichtig, da wir in diesem Thema von diesen Hilfsfunktionen abhängig sind.
+- Anschließend müssen Sie dem Projekt C++/WinRT-Unterstützung hinzufügen. Die Schritte, die Sie dazu ausführen müssen, sind in [Erweitern eines bestehenden C++/CX-Projekts um C++/WinRT-Unterstützung](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support) beschrieben. In diesem Abschnitt ist der Schritt zum Hinzufügen der `interop_helpers.h`-Headerdatei zu Ihrem Projekt besonders wichtig, da wir in diesem Thema von diesen Hilfsfunktionen abhängig sind.
 - Fügen Sie schließlich `#include <pplawait.h>` zu `pch.h` hinzu. Dadurch erhält Ihre Coroutine Unterstützung für PPL (weitere Informationen zu dieser Unterstützung finden Sie im folgenden Abschnitt).
 
 Erstellen Sie jetzt noch keinen Build, sonst erhalten Sie Fehler, weil **byte** nicht eindeutig ist. So beheben Sie dieses Problem.
@@ -390,7 +390,7 @@ Als wir Änderungen an **GameMain::Update** vorgenommen haben, habe ich eine Bes
 
 Dies gilt für alle Methoden, die wir bisher geändert haben. Ferner gilt es auch für *alle* Coroutinen, nicht nur für Fire-and-Forget-Coroutinen. Durch die Einführung einer `co_await` in eine Methode wird ein *Anhaltepunkt* eingeführt. Und aus diesem Grund müssen wir mit dem *this*-Zeiger vorsichtig sein, den wir natürlich *hinter* dem Anhaltepunkt verwenden werden, und zwar jedes Mal, wenn wir auf einen Klassenmember zugreifen.
 
-Die kurze Version lautet, dass die Lösung [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) aufgerufen wird. Doch eine vollständige Behandlung des Problems und seiner Lösung finden Sie unter [Sicherer Zugriff auf den *this*-Zeiger in einer Klassenmember-Coroutine](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine).
+Die kurze Version lautet, dass die Lösung [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) aufgerufen wird. Doch eine vollständige Behandlung des Problems und seiner Lösung finden Sie unter [Sicherer Zugriff auf den *this*-Zeiger in einer Klassenmember-Coroutine](./weak-references.md#safely-accessing-the-this-pointer-in-a-class-member-coroutine).
 
 Sie können **implements::get_strong** nur in einer Klasse aufrufen, die von [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) abgeleitet ist.
 
@@ -423,7 +423,7 @@ void App::Load(Platform::String^)
 }
 ```
 
-Nachdem nun aber **GameMain** von **winrt::implements** abgeleitet wird, müssen wir es auf andere Weise erstellen. In diesem Fall verwenden wir die Funktionsvorlage [**winrt::make_self**](/uwp/cpp-ref-for-winrt/make-self). Weitere Informationen finden Sie unter [Instanziierung und Rückgabe von Implementierungstypen und Schnittstellen](/windows/uwp/cpp-and-winrt-apis/author-apis#instantiating-and-returning-implementation-types-and-interfaces).
+Nachdem nun aber **GameMain** von **winrt::implements** abgeleitet wird, müssen wir es auf andere Weise erstellen. In diesem Fall verwenden wir die Funktionsvorlage [**winrt::make_self**](/uwp/cpp-ref-for-winrt/make-self). Weitere Informationen finden Sie unter [Instanziierung und Rückgabe von Implementierungstypen und Schnittstellen](./author-apis.md#instantiating-and-returning-implementation-types-and-interfaces).
 
 Ersetzen Sie die betreffende Codezeile hierdurch.
 
@@ -938,8 +938,8 @@ winrt::Windows::Foundation::IAsyncAction BasicLoader::LoadTextureAsync(...)
 
 ## <a name="related-topics"></a>Zugehörige Themen
 
-* [Umstellen von C++/CX auf C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx)
-* [Interoperabilität zwischen C++/WinRT und C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx)
-* [Parallelität und asynchrone Vorgänge mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
-* [Starke und schwache Verweise in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references)
-* [Erstellen von APIs mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [Umstellen von C++/CX auf C++/WinRT](./move-to-winrt-from-cx.md)
+* [Interoperabilität zwischen C++/WinRT und C++/CX](./interop-winrt-cx.md)
+* [Parallelität und asynchrone Vorgänge mit C++/WinRT](./concurrency.md)
+* [Starke und schwache Verweise in C++/WinRT](./weak-references.md)
+* [Erstellen von APIs mit C++/WinRT](./author-apis.md)

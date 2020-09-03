@@ -3,22 +3,22 @@ title: WinUI 2.1 – Anmerkungen zu dieser Version
 description: Versionshinweise zu WinUI 2.1 einschließlich neuer Features und Bugfixe.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: f362c4ae7654d6ef3b888b908c4779fce62af5fe
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 02e870209486a271e0455d61070cf5403333e1df
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493085"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154884"
 ---
 # <a name="windows-ui-library-21"></a>Windows-UI-Bibliothek 2.1
 
 Die neueste offizielle Version der Windows UI-Bibliothek – WinUI 2.1 – wurde am 8. April 2019 veröffentlicht 
 
-Mit WinUI erhältst du viele der aktuellsten Features der Windows UX-Plattform, einschließlich aktueller Fluent-Steuerelemente und Formatvorlagen, die in einer sofort nutzbaren Weise zur Verfügung stehen und mit Windows 10 Anniversary Update (14393) kompatibel sind. Der [XAML-Steuerelementkatalog](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/#xaml-controls-gallery) gibt Beispiele, anhand derer du all die coolen neuen Features erkunden kannst, die der Bibliothek hinzugefügt wurden.
+Mit WinUI erhältst du viele der aktuellsten Features der Windows UX-Plattform, einschließlich aktueller Fluent-Steuerelemente und Formatvorlagen, die in einer sofort nutzbaren Weise zur Verfügung stehen und mit Windows 10 Anniversary Update (14393) kompatibel sind. Der [XAML-Steuerelementkatalog](/windows/uwp/design/controls-and-patterns/#xaml-controls-gallery) gibt Beispiele, anhand derer du all die coolen neuen Features erkunden kannst, die der Bibliothek hinzugefügt wurden.
 
 Das [WinUI 2.1 NuGet-Paket](https://www.nuget.org/packages/Microsoft.UI.Xaml/2.1.190405004) herunterladen
 
-Du kannst dich entscheiden, die WinUI-Pakete in deiner App zu verwenden, und dazu den NuGet-Paket-Manager einsetzen: Weitere Informationen findest du unter [Erste Schritte mit der Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/getting-started).
+Du kannst dich entscheiden, die WinUI-Pakete in deiner App zu verwenden, und dazu den NuGet-Paket-Manager einsetzen: Weitere Informationen findest du unter [Erste Schritte mit der Windows-UI-Bibliothek](/uwp/toolkits/winui/getting-started).
 
 WinUI ist ein Open-Source-Projekt, das auf GitHub gehostet wird. Wir freuen uns über Fehlerberichte, Featureanforderungen und Communitycodebeiträge im [Repository zur Windows-UI-Bibliothek](https://aka.ms/winui).
 
@@ -31,7 +31,7 @@ Im Gegensatz zu ListView stellt ItemsRepeater keine umfassende Benutzeroberfläc
 
 ![Beispiel](../images/ItemsRepeater%20-%20MSN%20News.gif)
 
-[Dokumentation](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/items-repeater)
+[Dokumentation](/windows/uwp/design/controls-and-patterns/items-repeater)
 
 ### <a name="animatedvisualplayer"></a>AnimatedVisualPlayer
 
@@ -39,7 +39,7 @@ Der AnimatedVisualPlayer hostet und steuert die Wiedergabe von animierten visuel
 
 ![Beispiel](../images/AnimatedVisualPlayerUpdated.gif)
 
-[Dokumentation](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie)
+[Dokumentation](/windows/communitytoolkit/animations/lottie)
 
 ### <a name="teachingtip"></a>TeachingTip
 
@@ -47,7 +47,7 @@ TeachingTip bietet ein fesselndes, mit dem Fluent-Design kompatibles Verfahren, 
 
 ![Beispiel](../images/TeachingTipUpdated.gif)
 
-[Dokumentation](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/teaching-tip)
+[Dokumentation](/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/teaching-tip)
 
 ### <a name="radiomenuflyoutitem"></a>RadioMenuFlyoutItem
 
@@ -55,7 +55,7 @@ Bietet die Möglichkeit, Optionen im Format von Optionsfeldern in einer Menülei
 
 ![Beispiel](../images/RadioMenuFlyoutItem1.png)
 
-[Dokumentation](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus#create-a-menu-flyout-or-a-context-menu)
+[Dokumentation](/windows/uwp/design/controls-and-patterns/menus#create-a-menu-flyout-or-a-context-menu)
 
 ### <a name="compactdensity"></a>CompactDensity
 
@@ -63,7 +63,7 @@ Der Kompaktmodus ermöglicht es Entwicklern, komfortable Benutzererfahrungen fü
 
 ![Compact Density-Beispiel](../images/CompactDensityUpdated.png)
 
-[Dokumentation](https://docs.microsoft.com/windows/uwp/design/style/spacing )
+[Dokumentation](/windows/uwp/design/style/spacing)
 
 ### <a name="shadows"></a>Schatten
 
@@ -101,7 +101,7 @@ April 2019
 
 #### <a name="new-feature-not-included-in-earlier-pre-releases"></a>Neues Feature (in früheren Vorabversionen nicht enthalten)
 
-* [CompactDensity](https://docs.microsoft.com/windows/uwp/design/style/spacing): Der Kompaktmodus ermöglicht es Entwicklern, komfortable Benutzererfahrungen für eine beliebige Anzahl von Szenarien zu erstellen. Durch einfaches Hinzufügen eines Ressourcenwörterbuchs zu deiner Anwendung kannst du durchschnittlich ~33 % mehr Benutzeroberfläche unterbringen.
+* [CompactDensity](/windows/uwp/design/style/spacing): Der Kompaktmodus ermöglicht es Entwicklern, komfortable Benutzererfahrungen für eine beliebige Anzahl von Szenarien zu erstellen. Durch einfaches Hinzufügen eines Ressourcenwörterbuchs zu deiner Anwendung kannst du durchschnittlich ~33 % mehr Benutzeroberfläche unterbringen.
 
 * Schatten: Das Erstellen einer visuellen Hierarchie in deiner Benutzeroberfläche macht es einfach, die Benutzeroberfläche zu durchsuchen und transportiert die Information, was wichtig ist und beachtet werden muss. Die Erhöhung der Rechte, das In-den-Vordergrund-Stellen bestimmter Elemente deiner Benutzeroberfläche, wird häufig verwendet, um eine solche Hierarchie in Software zu erreichen. Viele unserer allgemeinen Steuerelemente fügen Hervorhebung standardmäßig mithilfe von Z-Tiefe und Schatten hinzu.  
 
@@ -128,8 +128,8 @@ Februar 2019
 
 Neue experimentelle Features:
 
-* [AnimatedVisualPlayer](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.animatedvisualplayer)  
-  Dieses neue Steuerelement ermöglicht die Wiedergabe komplexer Hochleistungs-Vektoranimationen, einschließlich der [Lottie-](https://github.com/airbnb/lottie)Animationen, die mit [Lottie-Windows](https://docs.microsoft.com/windows/communitytoolkit/animations/lottie) erstellt wurden.
+* [AnimatedVisualPlayer](/uwp/api/microsoft.ui.xaml.controls.animatedvisualplayer)  
+  Dieses neue Steuerelement ermöglicht die Wiedergabe komplexer Hochleistungs-Vektoranimationen, einschließlich der [Lottie-](https://github.com/airbnb/lottie)Animationen, die mit [Lottie-Windows](/windows/communitytoolkit/animations/lottie) erstellt wurden.
 
 ### <a name="microsoftuixaml-21181217001-prerelease"></a>Microsoft.UI.Xaml 2.1.181217001-Vorschauversion
 
@@ -141,8 +141,8 @@ Dezember 2018
 
 Neue experimentelle Features:
 
-* [ItemsRepeater](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
+* [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 
-* [Optionsschaltflächen](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiobuttons)
+* [Optionsschaltflächen](/uwp/api/microsoft.ui.xaml.controls.radiobuttons)
 
-* [RadioMenuFlyoutItem](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem)
+* [RadioMenuFlyoutItem](/uwp/api/microsoft.ui.xaml.controls.radiomenuflyoutitem)

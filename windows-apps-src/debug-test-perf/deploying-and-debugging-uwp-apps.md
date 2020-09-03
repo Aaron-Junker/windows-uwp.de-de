@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: Windows 10, UWP, Debuggen, Testen, Leistung
 ms.localizationpriority: medium
-ms.openlocfilehash: d948af1ce10b3752ba9f20454d8dea72916de692
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0f1ff6a98182f4832a2a1b82bf8ceca4aa176c36
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75683853"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157263"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>Bereitstellen und Debuggen von UWP-Apps
 
@@ -92,13 +92,13 @@ Für die Bereitstellung auf einem Remote-PC, der noch nicht das Creators-Update 
 
 Suchen Sie dazu im Menü **Start** nach **Remotedebugger**, öffnen Sie den Debugger, und erlauben Sie ihm die Konfiguration Ihrer Firewalleinstellungen, wenn Sie dazu aufgefordert werden. Standardmäßig wird der Debugger mit Windows-Authentifizierung gestartet. Somit werden die Benutzeranmeldeinformationen benötigt, falls der angemeldete Benutzer nicht auf beiden PCs identisch ist.
 
-Um die Einstellung in **Keine Authentifizierung** zu ändern, wechsle unter **Remotedebugger** zu **Extras** -&gt; **Optionen**, und lege **Keine Authentifizierung** fest. Nach dem Einrichten des Remotedebuggers müssen Sie zudem sicherstellen, dass das Hostgerät auf [Entwicklermodus](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) gesetzt wurde. Anschließend können Sie die Bereitstellung über Ihren Entwicklungscomputer ausführen.
+Um die Einstellung in **Keine Authentifizierung** zu ändern, wechsle unter **Remotedebugger** zu **Extras** -&gt; **Optionen**, und lege **Keine Authentifizierung** fest. Nach dem Einrichten des Remotedebuggers müssen Sie zudem sicherstellen, dass das Hostgerät auf [Entwicklermodus](../get-started/enable-your-device-for-development.md) gesetzt wurde. Anschließend können Sie die Bereitstellung über Ihren Entwicklungscomputer ausführen.
 
 Weitere Informationen findest du auf der Seite [Download Center](https://visualstudio.microsoft.com/downloads/) in Visual Studio.
 
 ## <a name="passing-command-line-debug-arguments"></a>Übergeben von Debugargumenten in der Befehlszeile
 
-In Visual Studio 2019 kannst du beim Starten des Debuggens von UWP-Anwendungen Debugargumente in der Befehlszeile übergeben. Du kannst auf die Debugargumente für die Befehlszeile mit dem Parameter *Args* in der **OnLaunched**-Methode der [**Application**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application)-Klasse zugreifen. Öffne die Projekteigenschaften, und navigiere zur Registerkarte **Debuggen**, um Debugargumente für die Befehlszeile anzugeben.
+In Visual Studio 2019 kannst du beim Starten des Debuggens von UWP-Anwendungen Debugargumente in der Befehlszeile übergeben. Du kannst auf die Debugargumente für die Befehlszeile mit dem Parameter *Args* in der **OnLaunched**-Methode der [**Application**](/uwp/api/windows.ui.xaml.application)-Klasse zugreifen. Öffne die Projekteigenschaften, und navigiere zur Registerkarte **Debuggen**, um Debugargumente für die Befehlszeile anzugeben.
 
 > [!NOTE]
 > Diese Registerkarte ist in Visual Studio 2017 (Version 15.1) für C#, VB und C++ verfügbar. JavaScript ist in neueren Versionen verfügbar. Debugargumente in der Befehlszeile sind für alle Bereitstellungstypen mit Ausnahme des Simulators verfügbar.
@@ -111,7 +111,7 @@ Für C++- und JS-UWP-Projekte wird das Feld **Befehlszeilenargumente** in den **
 
 ![Befehlszeilenargumente für C++ und JS](images/command-line-arguments-cpp.png)
 
-Nach dem Festlegen der Befehlszeilenargumente kannst du auf den Wert des Arguments in der **OnLaunched**-Methode der App zugreifen. Die *Args* des [**LaunchActivatedEventArgs**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs)-Objekts enthalten die **Arguments**-Eigenschaft, deren Wert auf den Text im Feld **Befehlszeilenargumente** festgelegt ist.
+Nach dem Festlegen der Befehlszeilenargumente kannst du auf den Wert des Arguments in der **OnLaunched**-Methode der App zugreifen. Die *Args* des [**LaunchActivatedEventArgs**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs)-Objekts enthalten die **Arguments**-Eigenschaft, deren Wert auf den Text im Feld **Befehlszeilenargumente** festgelegt ist.
 
 ![Befehlszeilenargumente für C++ und JS](images/command-line-arguments-debugging.png)
 
@@ -189,7 +189,7 @@ Auf dem Remotegerät wird das Layout je nach Gerätefamilie am folgenden Standar
 
 ## <a name="debugging-options"></a>Debugoptionen
 
-Unter Windows 10 kannst du die Startleistung von UWP-Apps verbessern, indem du Apps proaktiv startest und dann mithilfe eines als [Vorabstart](https://docs.microsoft.com/windows/uwp/launch-resume/handle-app-prelaunch) bezeichneten Verfahrens anhältst. Viele Apps sind in diesem Modus sofort funktionsfähig, das Verhalten einiger Apps muss jedoch möglicherweise angepasst werden. Um das Debuggen von Problemen in diesen Codepfaden zu erleichtern, können Sie das Debuggen der App von Visual Studio im Vorabstartmodus starten.
+Unter Windows 10 kannst du die Startleistung von UWP-Apps verbessern, indem du Apps proaktiv startest und dann mithilfe eines als [Vorabstart](../launch-resume/handle-app-prelaunch.md) bezeichneten Verfahrens anhältst. Viele Apps sind in diesem Modus sofort funktionsfähig, das Verhalten einiger Apps muss jedoch möglicherweise angepasst werden. Um das Debuggen von Problemen in diesen Codepfaden zu erleichtern, können Sie das Debuggen der App von Visual Studio im Vorabstartmodus starten.
 
 Das Debuggen wird sowohl von einem Visual Studio-Projekt (**Debuggen** -&gt; **Andere Debugziele** -&gt; **Vorabstart der universellen Windows-App debuggen**) als auch für bereits auf dem Computer installierte Apps (**Debuggen** -&gt; **Andere Debugziele** -&gt; **Installiertes App-Paket debuggen** mit aktiviertem Kontrollkästchen **App mit Vorabstart aktivieren**) unterstützt. Weitere Informationen finden Sie unter [Debuggen des UWP-Vorabstarts](https://blogs.msdn.com/b/visualstudioalm/archive/2015/11/30/debug-uwp-prelaunch-with-vs2015.aspx).
 
@@ -213,7 +213,7 @@ Sie können die folgenden Bereitstellungsoptionen auf der Eigenschaftenseite **D
 
 ## <a name="symbols"></a>Sonderzeichen
 
-Symboldateien enthalten eine Vielzahl von Daten, die sehr hilfreich beim Debuggen von Code sind (z. B. Variablen, Funktionsnamen und Adressen von Einsprungspunkten). Mit diesen Daten können Sie die Ausnahmen und Ausführungsreihenfolge von Aufruflisten besser überblicken. Über den [Microsoft-Symbolserver](https://msdl.microsoft.com/download/symbols) stehen Symbole für die meisten Windows-Varianten zur Verfügung. Für schnellere Offline-Lookups können Sie jedoch auch unter [Herunterladen von Windows-Symbolpaketen](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols) heruntergeladen werden.
+Symboldateien enthalten eine Vielzahl von Daten, die sehr hilfreich beim Debuggen von Code sind (z. B. Variablen, Funktionsnamen und Adressen von Einsprungspunkten). Mit diesen Daten können Sie die Ausnahmen und Ausführungsreihenfolge von Aufruflisten besser überblicken. Über den [Microsoft-Symbolserver](https://msdl.microsoft.com/download/symbols) stehen Symbole für die meisten Windows-Varianten zur Verfügung. Für schnellere Offline-Lookups können Sie jedoch auch unter [Herunterladen von Windows-Symbolpaketen](/windows-hardware/drivers/debugger/debugger-download-symbols) heruntergeladen werden.
 
 Wählen Sie zum Festlegen von Symboloptionen für Visual Studio **Extras > Optionen** aus, und navigieren Sie im Dialogfeld zu **Debuggen > Symbole**.
 
@@ -226,7 +226,7 @@ Legen Sie die **Sympath**-Variable auf dem Speicherort des Symbolpakets fest, um
 .reload
 ```
 
-Mit `‘;’` als Trennzeichen oder dem Befehl `.sympath+` können Sie mehrere Pfade hinzufügen. Mehr zu erweiterten Symbolvorgängen mit WinDbg finden Sie unter [Öffentliche und private Symbole](https://docs.microsoft.com/windows-hardware/drivers/debugger/public-and-private-symbols).
+Mit `‘;’` als Trennzeichen oder dem Befehl `.sympath+` können Sie mehrere Pfade hinzufügen. Mehr zu erweiterten Symbolvorgängen mit WinDbg finden Sie unter [Öffentliche und private Symbole](/windows-hardware/drivers/debugger/public-and-private-symbols).
 
 ## <a name="windbg"></a>WinDbg
 
@@ -246,7 +246,7 @@ Einer der am häufigsten in WinDbg verwendeten Befehle ist `!analyze -v`. Er wir
 - EXCEPTION_RECORD: Adresse, Code und Flags der aktuellen Ausnahme
 - STACK_TEXT: Stapelüberwachung vor der Ausnahme
 
-Eine vollständige Liste aller WinDbg-Befehle finden Sie unter [Debuggerbefehle](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-commands).
+Eine vollständige Liste aller WinDbg-Befehle finden Sie unter [Debuggerbefehle](/windows-hardware/drivers/debugger/debugger-commands).
 
 ## <a name="related-topics"></a>Zugehörige Themen
 

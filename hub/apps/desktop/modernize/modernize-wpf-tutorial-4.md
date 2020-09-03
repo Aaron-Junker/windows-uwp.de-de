@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 8443ac25ba678986046b967a90a8899eaffb76aa
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 30b41cf0d22d8f8c2c4ce7f774eab9d2aa479d78
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67420120"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161464"
 ---
 # <a name="part-4-add-windows-10-user-activities-and-notifications"></a>Teil 4: Hinzufügen von Windows 10-Benutzeraktivitäten und -Benachrichtigungen
 
@@ -33,11 +33,11 @@ Benutzeraktivitäten werden mithilfe von [Microsoft Graph](https://developer.mic
 
 ### <a name="introduction-to-adaptive-cards"></a>Einführung in adaptive Karten
 
-Dieser Abschnitt enthält eine kurze Einführung in [adaptive Karten](https://docs.microsoft.com/adaptive-cards/). Wenn du diese Informationen nicht benötigst, kannst du sie überspringen und direkt zu den Anweisungen zum [Hinzufügen einer adaptiven Karte](#add-an-adaptive-card) wechseln.
+Dieser Abschnitt enthält eine kurze Einführung in [adaptive Karten](/adaptive-cards/). Wenn du diese Informationen nicht benötigst, kannst du sie überspringen und direkt zu den Anweisungen zum [Hinzufügen einer adaptiven Karte](#add-an-adaptive-card) wechseln.
 
 Mit adaptiven Karten können Entwickler Karteninhalte auf einheitliche Weise austauschen. Eine adaptive Karte wird durch eine JSON-Nutzlast beschrieben, die ihren Inhalt definiert, der Text, Bilder, Aktionen und mehr umfassen kann.
 
-Eine adaptive Karte definiert lediglich den Inhalt und nicht die visuelle Darstellung des Inhalts. Die Plattform, auf der die adaptive Karte empfangen wird, kann den Inhalt mit dem am besten geeigneten Layout rendern. Adaptive Karten werden durch [ einen Renderer](https://docs.microsoft.com/adaptive-cards/rendering-cards/getting-started) gestaltet, der in der Lage ist, die JSON-Nutzlast in eine native Benutzeroberfläche zu konvertieren. Die Benutzeroberfläche kann beispielsweise XAML für eine WPF- oder UWP-Anwendung, AXML für eine Android-Anwendung oder HTML für eine Website oder einen Botchat sein.
+Eine adaptive Karte definiert lediglich den Inhalt und nicht die visuelle Darstellung des Inhalts. Die Plattform, auf der die adaptive Karte empfangen wird, kann den Inhalt mit dem am besten geeigneten Layout rendern. Adaptive Karten werden durch [ einen Renderer](/adaptive-cards/rendering-cards/getting-started) gestaltet, der in der Lage ist, die JSON-Nutzlast in eine native Benutzeroberfläche zu konvertieren. Die Benutzeroberfläche kann beispielsweise XAML für eine WPF- oder UWP-Anwendung, AXML für eine Android-Anwendung oder HTML für eine Website oder einen Botchat sein.
 
 Hier ist ein Beispiel der Nutzlast einer einfachen adaptiven Karte.
 
@@ -391,7 +391,7 @@ So fügst du der App eine Benachrichtigung hinzu
     }
     ```
 
-    Popupbenachrichtigungen werden durch eine XML-Nutzlast dargestellt, die Text, Bilder, Aktionen und vieles mehr enthalten kann. [Hier](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema) findest du alle unterstützten Elemente. Dieser Code verwendet ein sehr einfaches Schema mit zwei Textzeilen: Titel und Textkörper. Nachdem der Code die XML-Nutzlast definiert und in ein **XmlDocument**-Objekt geladen hat, umschließt er den XML-Code in einem **ToastNotification**-Objekt und zeigt es mithilfe der **ToastNotificationManager**-Klasse an.
+    Popupbenachrichtigungen werden durch eine XML-Nutzlast dargestellt, die Text, Bilder, Aktionen und vieles mehr enthalten kann. [Hier](/windows/uwp/design/shell/tiles-and-notifications/toast-schema) findest du alle unterstützten Elemente. Dieser Code verwendet ein sehr einfaches Schema mit zwei Textzeilen: Titel und Textkörper. Nachdem der Code die XML-Nutzlast definiert und in ein **XmlDocument**-Objekt geladen hat, umschließt er den XML-Code in einem **ToastNotification**-Objekt und zeigt es mithilfe der **ToastNotificationManager**-Klasse an.
 
 5. Erweitere im Projekt **ContosoExpenses.Core** den Ordner **ViewModels**, und öffne die Datei **AddNewExpenseViewModel.cs**. 
 

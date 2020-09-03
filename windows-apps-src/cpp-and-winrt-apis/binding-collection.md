@@ -5,16 +5,16 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, XAML, Steuerelement, binden, Sammlung
 ms.localizationpriority: medium
-ms.openlocfilehash: 388e8ebb062dbbb33ffb269f2adcced34a7e577c
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: c87fcec62c9177ddfccaa14e97294ebcd78ded5f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493645"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154514"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML-Elementsteuerelemente: Binden an eine C++/WinRT-Sammlung
 
-Eine Sammlung, die effektiv an ein XAML-Elementsteuerelement gebunden werden kann, wird als *Observable*-Sammlung bezeichnet. Dieses Konzept basiert auf dem Softwareentwurfsmuster, das als *Beobachter-Muster* bekannt ist. In diesem Thema erfährst du, wie du beobachtbare Sammlungen in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) implementierst und Steuerelemente für XAML-Elemente an sie bindest (Hintergrundinformationen findest Du unter [Datenbindung](/windows/uwp/data-binding)).
+Eine Sammlung, die effektiv an ein XAML-Elementsteuerelement gebunden werden kann, wird als *Observable*-Sammlung bezeichnet. Dieses Konzept basiert auf dem Softwareentwurfsmuster, das als *Beobachter-Muster* bekannt ist. In diesem Thema erfährst du, wie du beobachtbare Sammlungen in [C++/WinRT](./intro-to-using-cpp-with-winrt.md) implementierst und Steuerelemente für XAML-Elemente an sie bindest (Hintergrundinformationen findest Du unter [Datenbindung](../data-binding/index.md)).
 
 Zur besseren Nachvollziehbarkeit dieses Themas empfiehlt es sich, zuerst das unter [XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft](binding-property.md) beschriebene Projekt zu erstellen. In diesem Thema wird dem Projekt weiterer Code hinzugefügt, und es werden weitere Konzepte erläutert.
 

@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 7393d4d1bae227bf3b586a54fba5d43ca2dcb53e
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 2b946047602013704b27fb5c5565155d38dbb7f8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493405"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154824"
 ---
 # <a name="get-started-with-winui-3-for-desktop-apps"></a>Erste Schritte mit WinUI 3 für Desktop-Apps
 
@@ -45,7 +45,7 @@ Um die in diesem Artikel beschriebenen WinUI 3 für Desktop-Projektvorlagen zu 
 
         ![App-Projekt](images/WinUI-csharp-appproject.png)
 
-    * ***Projektname* (Paket)** : Dies ist ein [Paketerstellungsprojekt für Windows-Anwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net), das so konfiguriert ist, dass es die App in ein [MSIX-Paket](https://docs.microsoft.com/windows/msix/overview) umwandelt. Dies bietet eine moderne Bereitstellungserfahrung, die Möglichkeit zur Integration in Windows 10-Features mittels Paketerweiterungen und vieles mehr. Dieses Projekt enthält das [Paketmanifest](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root) für deine App und ist standardmäßig das Startprojekt in deiner Projektmappe.
+    * ***Projektname* (Paket)** : Dies ist ein [Paketerstellungsprojekt für Windows-Anwendungen](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net), das so konfiguriert ist, dass es die App in ein [MSIX-Paket](/windows/msix/overview) umwandelt. Dies bietet eine moderne Bereitstellungserfahrung, die Möglichkeit zur Integration in Windows 10-Features mittels Paketerweiterungen und vieles mehr. Dieses Projekt enthält das [Paketmanifest](/uwp/schemas/appxpackage/uapmanifestschema/schema-root) für deine App und ist standardmäßig das Startprojekt in deiner Projektmappe.
 
         ![App-Projekt](images/WinUI-csharp-packageproject.png)
 
@@ -77,7 +77,7 @@ Um die in diesem Artikel beschriebenen WinUI 3 für Desktop-Projektvorlagen zu 
 
         ![App-Projekt](images/WinUI-cpp-appproject.png)
 
-    * ***Projektname* (Paket)** : Dies ist ein [Paketerstellungsprojekt für Windows-Anwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net), das so konfiguriert ist, dass es die App in ein [MSIX-Paket](https://docs.microsoft.com/windows/msix/overview) umwandelt. Dies bietet eine moderne Bereitstellungserfahrung, die Möglichkeit zur Integration in Windows 10-Features mittels Paketerweiterungen und vieles mehr. Dieses Projekt enthält das [Paketmanifest](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root) für deine App und ist standardmäßig das Startprojekt in deiner Projektmappe.
+    * ***Projektname* (Paket)** : Dies ist ein [Paketerstellungsprojekt für Windows-Anwendungen](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net), das so konfiguriert ist, dass es die App in ein [MSIX-Paket](/windows/msix/overview) umwandelt. Dies bietet eine moderne Bereitstellungserfahrung, die Möglichkeit zur Integration in Windows 10-Features mittels Paketerweiterungen und vieles mehr. Dieses Projekt enthält das [Paketmanifest](/uwp/schemas/appxpackage/uapmanifestschema/schema-root) für deine App und ist standardmäßig das Startprojekt in deiner Projektmappe.
 
         ![Packen des Projekts](images/WinUI-cpp-packageproject.png)
 

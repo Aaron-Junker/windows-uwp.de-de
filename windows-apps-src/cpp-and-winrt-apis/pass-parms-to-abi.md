@@ -5,16 +5,16 @@ ms.date: 07/10/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, übergeben, Parameter, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 51cde2332d3d9df9d1f488aa7f8246f9e1e2ed36
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: 05a627349ad2c4fda890a4f5280f5d33454ea910
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997977"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154454"
 ---
 # <a name="passing-parameters-into-the-abi-boundary"></a>Übergabe von Parametern in die ABI-Grenze
 
-C++/WinRT vereinfacht mit den Typen im **winrt::param**-Namespace die Übergabe von Parametern in die ABI-Grenze, indem automatische Konvertierungen für gängige Fälle bereitgestellt werden. In [Behandeln von Zeichenfolgen](/windows/uwp/cpp-and-winrt-apis/strings) und [C++-Standarddatentypen und C++/WinRT](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types) finden Sie Codebeispiele und weitere Informationen.
+C++/WinRT vereinfacht mit den Typen im **winrt::param**-Namespace die Übergabe von Parametern in die ABI-Grenze, indem automatische Konvertierungen für gängige Fälle bereitgestellt werden. In [Behandeln von Zeichenfolgen](./strings.md) und [C++-Standarddatentypen und C++/WinRT](./std-cpp-data-types.md) finden Sie Codebeispiele und weitere Informationen.
 
 > [!IMPORTANT]
 > Verwenden Sie nicht selbst die Typen im **winrt::param**-Namespace. Sie dienen der Projektion.

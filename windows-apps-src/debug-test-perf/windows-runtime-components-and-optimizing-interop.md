@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b5fd5061f3b466743cad2e9e412d79caebaf2f0
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 721615ae9acf359bed78cfb3211aaba4c143dfcb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730285"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154114"
 ---
 # <a name="uwp-components-and-optimizing-interop"></a>UWP-Komponenten und Optimieren der Interop
 
@@ -46,7 +46,7 @@ Es sind viele Aufrufe in einem kurzen Zeitraum erforderlich, damit die Auswirkun
 
 ### <a name="consider-using-net-for-uwp-apps"></a>Erwägen der Verwendung von .NET für UWP-Apps
 
-Es gibt bestimmte Fälle, in denen eine Aufgabe mithilfe der UWP oder .NET für UWP-Apps ausgeführt werden kann. Sie sollten .NET-Typen und UWP-Typen nach Möglichkeit nicht mischen. Verwenden Sie die einen oder die anderen Typen. Beispielweise können Sie einen XML-Datenstrom mithilfe des [**Windows.Data.Xml.Dom.XmlDocument**](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlDocument)-Typs (ein UWP-Typ) oder des [**System.Xml.XmlReader**](https://docs.microsoft.com/dotnet/api/system.xml.xmlreader)-Typs (ein .NET-Typ) analysieren. Verwenden Sie die API, die dieselbe Technologie wie der Datenstrom aufweist. Wenn Sie beispielsweise XML aus einem [**MemoryStream**](https://docs.microsoft.com/dotnet/api/system.io.memorystream) lesen, verwenden Sie den **System.Xml.XmlReader**-Typ, da es sich bei beiden Typen um .NET-Typen handelt. Wenn Sie aus einer Datei lesen, verwenden Sie den **Windows.Data.Xml.Dom.XmlDocument**-Typ, da es sich bei den Datei-APIs und **XmlDocument** um UWP-Komponenten handelt.
+Es gibt bestimmte Fälle, in denen eine Aufgabe mithilfe der UWP oder .NET für UWP-Apps ausgeführt werden kann. Sie sollten .NET-Typen und UWP-Typen nach Möglichkeit nicht mischen. Verwenden Sie die einen oder die anderen Typen. Beispielweise können Sie einen XML-Datenstrom mithilfe des [**Windows.Data.Xml.Dom.XmlDocument**](/uwp/api/Windows.Data.Xml.Dom.XmlDocument)-Typs (ein UWP-Typ) oder des [**System.Xml.XmlReader**](/dotnet/api/system.xml.xmlreader)-Typs (ein .NET-Typ) analysieren. Verwenden Sie die API, die dieselbe Technologie wie der Datenstrom aufweist. Wenn Sie beispielsweise XML aus einem [**MemoryStream**](/dotnet/api/system.io.memorystream) lesen, verwenden Sie den **System.Xml.XmlReader**-Typ, da es sich bei beiden Typen um .NET-Typen handelt. Wenn Sie aus einer Datei lesen, verwenden Sie den **Windows.Data.Xml.Dom.XmlDocument**-Typ, da es sich bei den Datei-APIs und **XmlDocument** um UWP-Komponenten handelt.
 
 ### <a name="copy-window-runtime-objects-to-net-types"></a>Kopieren von Windows-Runtime-Objekten in .NET-Typen
 
@@ -80,7 +80,7 @@ Die unter [ **.NET für Windows-Apps**](https://dotnet.microsoft.com/apps/deskto
 
 Sie sollten Ihre App messen und feststellen, ob die Interoperabilität einen großen Teil der Ausführungszeit Ihrer App verschlingt, bevor Sie daran gehen, die Interoperabilitätskosten zu optimieren. Wenn Sie die Leistung Ihrer App mit Visual Studio analysieren, erhalten Sie leicht eine obere Grenze für die Interoperabilitätskosten, indem Sie in der Ansicht **Funktionen** auf die inklusive Zeit achten, die von Methoden verbraucht wird, die die UWP aufrufen.
 
-Wenn Ihre App aufgrund des Interoperabilitätsaufwands langsam ist, können Sie die Leistung der App verbessern, indem Sie die Anzahl von Windows-Runtime-API-Aufrufen in Pfaden mit wichtigem Code reduzieren. Beispielsweise kann eine Spielengine, die unzählige physische Berechnungen durchführt und hierzu ständig Position und Dimensionen von [**UIElements**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) abfragt, sehr viel Zeit sparen, indem die notwendigen Infos aus **UIElements** in lokalen Variablen gespeichert werden. Anschließend werden diese zwischengespeicherte Werte für die Berechnungen verwendet, und das Endergebnis wird nach Abschluss der Berechnungen wieder an **UIElements** zurückgegeben. Ein weiteres Beispiel: Wenn C#- oder Visual Basic-Code sehr häufig auf eine Auflistung zugreift, ist es effizienter, eine Auflistung aus dem [**System.Collections**](https://docs.microsoft.com/dotnet/api/system.collections)-Namespace anstatt aus dem [**Windows.Foundation.Collections**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections)-Namespace zu verwenden. Sie können auch erwägen, Aufrufe von UWP-Komponenten zu kombinieren. Ein Fall, in dem dies möglich ist, ist die Verwendung der [**Windows.Storage.BulkAccess**](https://docs.microsoft.com/uwp/api/Windows.Storage.BulkAccess)-APIs.
+Wenn Ihre App aufgrund des Interoperabilitätsaufwands langsam ist, können Sie die Leistung der App verbessern, indem Sie die Anzahl von Windows-Runtime-API-Aufrufen in Pfaden mit wichtigem Code reduzieren. Beispielsweise kann eine Spielengine, die unzählige physische Berechnungen durchführt und hierzu ständig Position und Dimensionen von [**UIElements**](/uwp/api/Windows.UI.Xaml.UIElement) abfragt, sehr viel Zeit sparen, indem die notwendigen Infos aus **UIElements** in lokalen Variablen gespeichert werden. Anschließend werden diese zwischengespeicherte Werte für die Berechnungen verwendet, und das Endergebnis wird nach Abschluss der Berechnungen wieder an **UIElements** zurückgegeben. Ein weiteres Beispiel: Wenn C#- oder Visual Basic-Code sehr häufig auf eine Auflistung zugreift, ist es effizienter, eine Auflistung aus dem [**System.Collections**](/dotnet/api/system.collections)-Namespace anstatt aus dem [**Windows.Foundation.Collections**](/uwp/api/Windows.Foundation.Collections)-Namespace zu verwenden. Sie können auch erwägen, Aufrufe von UWP-Komponenten zu kombinieren. Ein Fall, in dem dies möglich ist, ist die Verwendung der [**Windows.Storage.BulkAccess**](/uwp/api/Windows.Storage.BulkAccess)-APIs.
 
 ### <a name="building-a-uwp-component"></a>Erstellen einer UWP-Komponente
 
@@ -89,4 +89,3 @@ Wenn Sie eine UWP-Komponente schreiben, die von Apps verwendet werden soll, die 
 Alle Vorschläge für das Erzielen einer guten Leistung in Apps gelten auch für das Erzielen einer guten Leistung in Komponenten. Messen Sie Ihre Komponenten, um festzustellen, welche APIs ein hohes Datenverkehrsmuster aufweisen, und stellen Sie für solche Bereiche APIs bereit, die es Ihren Benutzern ermöglichen, die Arbeit mit wenigen Aufrufen zu erledigen. Es wurden große Anstrengungen unternommen, um die UWP so zu gestalten, dass Apps sie ohne häufige Überschreitung der Interoperabilitätsgrenze verwenden können.
 
  
-

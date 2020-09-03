@@ -3,12 +3,12 @@ title: WinUI 2.3 – Anmerkungen zu dieser Version
 description: Versionshinweise zu WinUI 2.3 einschließlich neuer Features und Bugfixe.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 9540f5314e6df02e95943279647d643bdbbef3c5
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 63091f927f63a708c5a5e4d41e9d81fd9f528cb1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493485"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154784"
 ---
 # <a name="windows-ui-library-23"></a>Windows-UI-Bibliothek 2.3
 
@@ -40,9 +40,9 @@ Zeigt, wie viel Fortschritt bei einer bekannten Menge Arbeit erzielt wurde.
 
 ![Festgelegte Statusanzeige](../images/DeterminateProgressBar.gif)
 
-[Dokumentationslink](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/progress-controls)
+[Dokumentationslink](/windows/uwp/design/controls-and-patterns/progress-controls)
 
-[Beispiellink](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/progress-controls#examples)
+[Beispiellink](/windows/uwp/design/controls-and-patterns/progress-controls#examples)
 
 ### <a name="numberbox"></a>NumberBox
 
@@ -50,7 +50,7 @@ Eine **NumberBox** stellt ein Steuerelement dar, das zum Anzeigen und Bearbeiten
 
 ![NumberBox](../images/NumberBoxGif.gif)
 
-[Dokumentations- und Beispiellink](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/number-box)
+[Dokumentations- und Beispiellink](/windows/uwp/design/controls-and-patterns/number-box)
 
 ### <a name="radiobuttons"></a>RadioButtons
 

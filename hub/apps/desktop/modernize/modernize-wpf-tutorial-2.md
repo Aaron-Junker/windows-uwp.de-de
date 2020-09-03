@@ -8,18 +8,18 @@ author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 6bb90fb9cbe7c9f54f60fd1920f0e73e174a3772
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0b5250f1e01aece4f73d83dc7327f193a58f53cf
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80482584"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161494"
 ---
 # <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>Teil 2: Hinzufügen eines UWP-InkCanvas-Steuerelements mithilfe von XAML Islands
 
 Dies ist der zweite Teil eines Tutorials, in dem das Modernisieren der WPF-Beispiel-Desktop-App Contoso Expenses veranschaulicht wird. Eine Übersicht über das Tutorial, die Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-App findest du unter [Tutorial: Modernisieren einer WPF-App](modernize-wpf-tutorial.md). In diesem Artikel wird davon ausgegangen, dass du [Teil 1](modernize-wpf-tutorial-1.md) bereits abgeschlossen hast.
 
-Im fiktiven Szenario dieses Tutorials möchte das Contoso-Entwicklungsteam der App Contoso Expenses Unterstützung für digitale Signaturen hinzufügen. Das UWP-Steuerelement **InkCanvas** ist eine großartige Option für dieses Szenario, da es Freihandschrift und KI-gestützte Funktionen wie die Fähigkeit zur Erkennung von Text und Formen unterstützt. Dazu verwendest du das mit [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) umschlossene UWP-Steuerelement, das im Windows Community Toolkit verfügbar ist. Dieses Steuerelement umschließt die Schnittstelle und Funktionalität des UWP-Steuerelements **InkCanvas** zur Verwendung in einer WPF-App. Weitere Details zu umschlossenen UWP-Steuerelementen findest du unter [Hosten von UWP-XAML-Steuerelementen in Desktop-Apps (XAML Islands)](xaml-islands.md).
+Im fiktiven Szenario dieses Tutorials möchte das Contoso-Entwicklungsteam der App Contoso Expenses Unterstützung für digitale Signaturen hinzufügen. Das UWP-Steuerelement **InkCanvas** ist eine großartige Option für dieses Szenario, da es Freihandschrift und KI-gestützte Funktionen wie die Fähigkeit zur Erkennung von Text und Formen unterstützt. Dazu verwendest du das mit [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) umschlossene UWP-Steuerelement, das im Windows Community Toolkit verfügbar ist. Dieses Steuerelement umschließt die Schnittstelle und Funktionalität des UWP-Steuerelements **InkCanvas** zur Verwendung in einer WPF-App. Weitere Details zu umschlossenen UWP-Steuerelementen findest du unter [Hosten von UWP-XAML-Steuerelementen in Desktop-Apps (XAML Islands)](xaml-islands.md).
 
 ## <a name="configure-the-project-to-use-xaml-islands"></a>Konfigurieren des Projekts für die Verwendung von XAML Islands
 
@@ -36,7 +36,7 @@ Bevor du der App Contoso Expenses ein **InkCanvas**-Steuerelement hinzufügen ka
 
 3. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **ContosoExpenses.Core**, und wähle **Hinzufügen > Neues Element** aus.
 
-4. Wähle **Anwendungsmanifestdatei** aus. Nenne die Datei **app.manifest**, und klicke auf **Hinzufügen**. Weitere Informationen Anwendungsmanifesten findest du in [diesem Artikel](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests).
+4. Wähle **Anwendungsmanifestdatei** aus. Nenne die Datei **app.manifest**, und klicke auf **Hinzufügen**. Weitere Informationen Anwendungsmanifesten findest du in [diesem Artikel](/windows/desktop/SbsCs/application-manifests).
 
 5. Hebe in der Manifestdatei die Auskommentierung des folgenden `<supportedOS>`-Elements für Windows 10 auf.
 
@@ -80,11 +80,11 @@ Bevor du der App Contoso Expenses ein **InkCanvas**-Steuerelement hinzufügen ka
 
 ## <a name="add-an-inkcanvas-control-to-the-app"></a>Hinzufügen des Steuerelements InkCanvas zur App
 
-Nachdem du dein Projekt zur Verwendung von UWP XAML Islands konfiguriert hast, kannst du jetzt der App das umschlossene UWP-Steuerelemente [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) hinzufügen.
+Nachdem du dein Projekt zur Verwendung von UWP XAML Islands konfiguriert hast, kannst du jetzt der App das umschlossene UWP-Steuerelemente [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) hinzufügen.
 
 1. Erweitere im **Projektmappen-Explorer** den Ordner **Ansichten** des Projekts **ContosoExpenses.Core**, und doppelklicke auf die Datei **ExpenseDetail.xaml**.
 
-2. Füge dem **Window**-Element im oberen Bereich der XAML-Datei das folgende Attribut hinzu. So wird auf den XAML-Namespace für das umschlossene UWP-Steuerelement [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) verwiesen.
+2. Füge dem **Window**-Element im oberen Bereich der XAML-Datei das folgende Attribut hinzu. So wird auf den XAML-Namespace für das umschlossene UWP-Steuerelement [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) verwiesen.
 
     ```xml
     xmlns:toolkit="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls"

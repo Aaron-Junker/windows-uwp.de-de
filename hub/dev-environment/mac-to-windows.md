@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Mac zu Windows, Tastenkombinationszuordnung, Wechsel von UNIX zu Windows, Umstellung von Mac auf Windows, Unterstützung des Wechsels von MacBook zu Surface, Verwendung von Windows für einen Macintosh-Benutzer, Wechsel von Macintosh zu Windows, Unterstützung der Änderung von Entwicklungsumgebungen, Mac OS X zu Windows, Unterstützung des Wechsels von Mac zu PC
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: fa137ab51f0bb53e2907fa319d79ed77eb7ed655
-ms.sourcegitcommit: 1e06168ada5ce6013b1d07c428548f084464a286
+ms.openlocfilehash: 1d94944037caf7cd909ea4799867f83bd4a6f887
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87363709"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157584"
 ---
 # <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>Leitfaden zum Ändern der Entwicklungsumgebung von Mac zu Windows
 
@@ -74,14 +74,14 @@ Windows unterstützt mehrere Befehlszeilenshells und Terminals, die manchmal etw
 
 Windows verfügt über zwei primäre Befehlszeilenshells:
 
-1. **[PowerShell](https://docs.microsoft.com/powershell/scripting/overview?view=powershell-7)** : PowerShell ist ein plattformübergreifendes Framework zur Aufgabenautomatisierung und Konfigurationsverwaltung, das aus einer Befehlszeilenshell und einer Skriptsprache auf .NET-Basis besteht. Mit PowerShell können Administratoren, Entwickler und Power-User Aufgaben zur Verwaltung komplexer Prozesse und verschiedener Aspekte der Umgebung und des Betriebssystems, auf dem dieses ausgeführt wird, schnell steuern und automatisieren. PowerShell ist [ vollständig open-source](https://github.com/powershell/powershell), und weil es plattformübergreifend ist, auch [für Mac und Linux verfügbar](https://docs.microsoft.com/powershell/scripting/install/installing-powershell?view=powershell-7).
+1. **[PowerShell](/powershell/scripting/overview?view=powershell-7)** : PowerShell ist ein plattformübergreifendes Framework zur Aufgabenautomatisierung und Konfigurationsverwaltung, das aus einer Befehlszeilenshell und einer Skriptsprache auf .NET-Basis besteht. Mit PowerShell können Administratoren, Entwickler und Power-User Aufgaben zur Verwaltung komplexer Prozesse und verschiedener Aspekte der Umgebung und des Betriebssystems, auf dem dieses ausgeführt wird, schnell steuern und automatisieren. PowerShell ist [ vollständig open-source](https://github.com/powershell/powershell), und weil es plattformübergreifend ist, auch [für Mac und Linux verfügbar](/powershell/scripting/install/installing-powershell?view=powershell-7).
 
     **Mac-und Linux-BASH-Shell-Benutzer**: PowerShell unterstützt auch viele Befehlsaliase, mit denen Sie bereits vertraut sind. Beispiel:
     - Inhalt des aktuellen Verzeichnisses auflisten mit `ls`
     - Dateien verschieben mit `mv`
     - In ein neues Verzeichnis verschieben mit `cd <path>`
 
-    Einige Befehle und Argumente sind in PowerShell und BASH unterschiedlich. Weitere Informationen erhalten Sie, indem Sie [`get-help`](https://docs.microsoft.com/powershell/scripting/learn/ps101/02-help-system?view=powershell-7) in PowerShell eingeben oder sich die [Kompatibilitätsaliase](https://docs.microsoft.com/powershell/scripting/samples/appendix-1---compatibility-aliases?view=powershell-7) in der Dokumentation ansehen.
+    Einige Befehle und Argumente sind in PowerShell und BASH unterschiedlich. Weitere Informationen erhalten Sie, indem Sie [`get-help`](/powershell/scripting/learn/ps101/02-help-system?view=powershell-7) in PowerShell eingeben oder sich die [Kompatibilitätsaliase](/powershell/scripting/samples/appendix-1---compatibility-aliases?view=powershell-7) in der Dokumentation ansehen.
 
     Um PowerShell als Administrator auszuführen, geben Sie „PowerShell“ im Windows-Startmenü ein und wählen dann „Als Administrator ausführen“ aus.
 
@@ -89,7 +89,7 @@ Windows verfügt über zwei primäre Befehlszeilenshells:
 
 ### <a name="linux-shells"></a>Linux-Shells
 
-Windows-Subsystem für Linux (WSL) kann jetzt installiert werden, um die Ausführung einer Linux-Shell innerhalb von Windows zu unterstützen. Das bedeutet, dass Sie **bash** direkt in Windows integriert ausführen können, ganz gleich, für welche Linux-Verteilung Sie sich entscheiden. Mithilfe von WSL wird eine Umgebung bereitgestellt, die Mac-Benutzern sehr vertraut ist. Beispielsweise werden Dateien in einem aktuellen Verzeichnis mit **ls** aufgelistet, nicht wie in der traditionellen Windows-Befehlsshell mit **dir**. Weitere Informationen zum Installieren und Verwenden von WSL findest du in [Windows-Subsystem für Linux: Installationsleitfaden für Windows 10](https://docs.microsoft.com/windows/wsl/install-win10). Linux-Verteilungen, die unter Windows mit WSL installiert werden können, enthalten:
+Windows-Subsystem für Linux (WSL) kann jetzt installiert werden, um die Ausführung einer Linux-Shell innerhalb von Windows zu unterstützen. Das bedeutet, dass Sie **bash** direkt in Windows integriert ausführen können, ganz gleich, für welche Linux-Verteilung Sie sich entscheiden. Mithilfe von WSL wird eine Umgebung bereitgestellt, die Mac-Benutzern sehr vertraut ist. Beispielsweise werden Dateien in einem aktuellen Verzeichnis mit **ls** aufgelistet, nicht wie in der traditionellen Windows-Befehlsshell mit **dir**. Weitere Informationen zum Installieren und Verwenden von WSL findest du in [Windows-Subsystem für Linux: Installationsleitfaden für Windows 10](/windows/wsl/install-win10). Linux-Verteilungen, die unter Windows mit WSL installiert werden können, enthalten:
 
 1. [Ubuntu 20.04 LTS](https://www.microsoft.com/store/apps/9n6svws3rx71)
 2. [Kali Linux](https://www.microsoft.com/store/apps/9PKR34TNCV07)
@@ -97,17 +97,17 @@ Windows-Subsystem für Linux (WSL) kann jetzt installiert werden, um die Ausfüh
 4. [openSUSE Leap 15.1](https://www.microsoft.com/store/apps/9NJFZK00FGKV)
 5. [SUSE Linux Enterprise Server 15 SP1](https://www.microsoft.com/store/apps/9PN498VPMF3Z)
 
-Um nur einige zu nennen. Weitere Informationen finden Sie in der [WSL-Installationsdokumentation](https://docs.microsoft.com/windows/wsl/install-win10#install-your-linux-distribution-of-choice). Die Installation können Sie direkt aus den [Microsoft Store](https://www.microsoft.com/search/shop/apps?q=linux&category=Developer+tools) durchführen.
+Um nur einige zu nennen. Weitere Informationen finden Sie in der [WSL-Installationsdokumentation](/windows/wsl/install-win10#install-your-linux-distribution-of-choice). Die Installation können Sie direkt aus den [Microsoft Store](https://www.microsoft.com/search/shop/apps?q=linux&category=Developer+tools) durchführen.
 
 ## <a name="windows-terminals"></a>Windows-Terminals
 
 Zusätzlich zu vielen Angeboten von Drittanbietern stellt Microsoft zwei „Terminals“ zur Verfügung: GUI-Anwendungen, die Zugriff auf Befehlszeilenshells und Anwendungen bieten.
 
-1. **[Windows-Terminal](https://docs.microsoft.com/windows/terminal/)** : Windows-Terminal ist eine neue, moderne, hochgradig konfigurierbare Befehlszeilen-Terminalanwendung, die eine sehr hohe Leistung, eine Befehlszeilen-Benutzeroberfläche mit niedriger Latenz, mehrere Registerkarten, geteilte Fensterbereiche, benutzerdefinierte Designs und Stile, mehrere „Profile“ für verschiedene Shells oder Befehlszeilen-Apps sowie beträchtliche Möglichkeiten zur Konfiguration und Personalisierung zahlreicher Aspekte Ihrer Befehlszeilen-Benutzeroberfläche bietet.
+1. **[Windows-Terminal](/windows/terminal/)** : Windows-Terminal ist eine neue, moderne, hochgradig konfigurierbare Befehlszeilen-Terminalanwendung, die eine sehr hohe Leistung, eine Befehlszeilen-Benutzeroberfläche mit niedriger Latenz, mehrere Registerkarten, geteilte Fensterbereiche, benutzerdefinierte Designs und Stile, mehrere „Profile“ für verschiedene Shells oder Befehlszeilen-Apps sowie beträchtliche Möglichkeiten zur Konfiguration und Personalisierung zahlreicher Aspekte Ihrer Befehlszeilen-Benutzeroberfläche bietet.
 
     Sie können Windows-Terminal verwenden, um Registerkarten zu öffnen, die mit PowerShell, WSL-Shells (wie Ubuntu oder Debian), der traditionellen Windows-Eingabeaufforderung oder jeder anderen Befehlszeilen-App (z. B. SSH, Azure CLI, Git Bash) verbunden sind.
 
-2. **[Konsole](https://docs.microsoft.com/windows/console/)** : Unter Mac und Linux starten Benutzer normalerweise ihre bevorzugte Terminalanwendung, die dann die Standardshell des Benutzers (z. B. BASH) erstellt und sich mit ihr verbindet.
+2. **[Konsole](/windows/console/)** : Unter Mac und Linux starten Benutzer normalerweise ihre bevorzugte Terminalanwendung, die dann die Standardshell des Benutzers (z. B. BASH) erstellt und sich mit ihr verbindet.
 
     Aufgrund einer Laune der Geschichte starten Windows-Benutzer jedoch traditionell ihre Shell, und Windows startet automatisch eine GUI-Konsolenanwendung und verbindet sie.
 

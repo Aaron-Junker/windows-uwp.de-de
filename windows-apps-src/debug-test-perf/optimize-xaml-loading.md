@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: beb6dde4036019e004d94e5f60e8f3583c78d775
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 86c6f9398a61865b014400bbf4a96c8a7ce8a231
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72980027"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154354"
 ---
 # <a name="optimize-your-xaml-markup"></a>Optimieren Ihres XAML-Markups
 
@@ -36,7 +36,7 @@ Hier betrachten wir einige weitere Möglichkeiten, um die Anzahl der Elemente zu
 
 Wenn Ihr XAML-Markup Elemente enthält, die nicht sofort angezeigt werden müssen, können Sie das Laden dieser Elemente zurückstellen, bis sie benötigt werden. Verzögern Sie beispielsweise die Erstellung nicht sichtbarer Inhalte wie sekundärer Registerkarten in der Benutzeroberfläche. Oder Sie zeigen Elemente in einer Rasteransicht standardmäßig an, geben aber dem Benutzer die Möglichkeit, die Daten stattdessen in einer Liste darzustellen. Sie können das Laden der Liste verzögern, bis sie benötigt wird.
 
-Verwenden Sie das Attribut [x:Load](../xaml-platform/x-load-attribute.md) anstelle der Eigenschaft [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.Visibility), um zu steuern, wann ein Element angezeigt wird. Wenn die Sichtbarkeit eines Elements auf **Collapsed** festgelegt ist, wird es zwar während des Renderns übersprungen, aber die Objektinstanz verbraucht trotzdem Arbeitsspeicher. Durch die Verwendung von „x:Load“ erstellt das Framework die Objektinstanz nur bei Bedarf, sodass der Speicherverbrauch geringer ist. Der Nachteil ist ein gewisser zusätzlicher Speicherverbrauch (ca. 600 Bytes), wenn die Benutzeroberfläche nicht geladen wird.
+Verwenden Sie das Attribut [x:Load](../xaml-platform/x-load-attribute.md) anstelle der Eigenschaft [Visibility](/uwp/api/windows.ui.xaml.uielement.Visibility), um zu steuern, wann ein Element angezeigt wird. Wenn die Sichtbarkeit eines Elements auf **Collapsed** festgelegt ist, wird es zwar während des Renderns übersprungen, aber die Objektinstanz verbraucht trotzdem Arbeitsspeicher. Durch die Verwendung von „x:Load“ erstellt das Framework die Objektinstanz nur bei Bedarf, sodass der Speicherverbrauch geringer ist. Der Nachteil ist ein gewisser zusätzlicher Speicherverbrauch (ca. 600 Bytes), wenn die Benutzeroberfläche nicht geladen wird.
 
 > [!NOTE]
 > Um Elemente verzögert zu laden, verwenden Sie das Attribut [x:Load](../xaml-platform/x-load-attribute.md) oder [x:DeferLoadStrategy](../xaml-platform/x-deferloadstrategy-attribute.md). Das Attribut „x:Load“ ist ab Windows 10 Creators Update (Version 1703, SDK-Build 15063) verfügbar. Die Mindestversion, auf die Ihr Visual Studio-Projekt abzielt, muss *Windows 10 Creators Update (10.0, Build 15063)* sein, damit „x:Load“ verwendet werden kann. Für frühere Versionen verwenden Sie „x:DeferLoadStrategy“.
@@ -124,7 +124,7 @@ Das ListView-Steuerelement und seine untergeordneten Elemente werden nicht in de
 
 ### <a name="use-layout-panel-properties"></a>Verwenden von Layoutbereichseigenschaften
 
-Layoutbereiche verfügen über eine [Background](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.background)-Eigenschaft, sodass es nicht erforderlich ist, ein [Rechteck](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) vor einem Bereich zu platzieren, um ihm Farbe zu verleihen.
+Layoutbereiche verfügen über eine [Background](/uwp/api/windows.ui.xaml.controls.panel.background)-Eigenschaft, sodass es nicht erforderlich ist, ein [Rechteck](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) vor einem Bereich zu platzieren, um ihm Farbe zu verleihen.
 
 **Ineffizient**
 
@@ -141,17 +141,17 @@ Layoutbereiche verfügen über eine [Background](https://docs.microsoft.com/uwp/
 <Grid Background="Black"/>
 ```
 
-Layoutbereiche verfügen auch über integrierte Rahmeneigenschaften, sodass Sie kein [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border)-Element um einen Layoutbereich platzieren müssen. Beispiele und weitere Informationen finden Sie unter [Optimieren des XAML-Layouts](optimize-your-xaml-layout.md).
+Layoutbereiche verfügen auch über integrierte Rahmeneigenschaften, sodass Sie kein [Border](/uwp/api/windows.ui.xaml.controls.border)-Element um einen Layoutbereich platzieren müssen. Beispiele und weitere Informationen finden Sie unter [Optimieren des XAML-Layouts](optimize-your-xaml-layout.md).
 
 ### <a name="use-images-in-place-of-vector-based-elements"></a>Verwenden von Bildern anstelle von vektorbasierten Elementen
 
-Wenn Sie dasselbe vektorbasierte Element häufig genug wiederverwenden, ist es effizienter, stattdessen ein [Image](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image)-Element zu verwenden. Vektorbasierte Elemente können aufwendiger sein, da die CPU jedes einzelne Element separat erstellen muss. Die Bilddatei muss hingegen nur einmal decodiert werden.
+Wenn Sie dasselbe vektorbasierte Element häufig genug wiederverwenden, ist es effizienter, stattdessen ein [Image](/uwp/api/windows.ui.xaml.controls.image)-Element zu verwenden. Vektorbasierte Elemente können aufwendiger sein, da die CPU jedes einzelne Element separat erstellen muss. Die Bilddatei muss hingegen nur einmal decodiert werden.
 
 ## <a name="optimize-resources-and-resource-dictionaries"></a>Optimieren von Ressourcen und Ressourcenverzeichnissen
 
 Normalerweise verwenden Sie [Ressourcenverzeichnisse](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md), um Ressourcen, auf die an mehreren Stellen in Ihrer App verwiesen werden soll, auf einer Art globalen Ebene zu speichern. Beispielsweise Stile, Pinsel, Vorlagen usw.
 
-Wir haben [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) dahingehend optimiert, dass nur angeforderte Ressourcen instanziiert werden. Es gibt aber Situationen, die Sie vermeiden sollten, damit Ressourcen nicht unnötig instanziiert werden.
+Wir haben [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) dahingehend optimiert, dass nur angeforderte Ressourcen instanziiert werden. Es gibt aber Situationen, die Sie vermeiden sollten, damit Ressourcen nicht unnötig instanziiert werden.
 
 ### <a name="resources-with-xname"></a>Ressourcen mit „x:Name“
 
@@ -159,7 +159,7 @@ Verwenden Sie das [x:Key-Attribut](../xaml-platform/x-key-attribute.md), um Ihre
 
 ### <a name="resourcedictionary-in-a-usercontrol"></a>„ResourceDictionary“ in einem „UserControl“-Element
 
-Ein innerhalb von [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) definiertes „ResourceDictionary“ führt zu Leistungseinbußen. Die Plattform erstellt für jede Instanz von „UserControl“ eine Kopie von „ResourceDictionary“. Bei einem häufig verwendeten Benutzersteuerelement empfiehlt es sich daher, „ResourceDictionary“ aus „UserControl“ zu entfernen und auf der Seitenebene zu platzieren.
+Ein innerhalb von [UserControl](/uwp/api/windows.ui.xaml.controls.usercontrol) definiertes „ResourceDictionary“ führt zu Leistungseinbußen. Die Plattform erstellt für jede Instanz von „UserControl“ eine Kopie von „ResourceDictionary“. Bei einem häufig verwendeten Benutzersteuerelement empfiehlt es sich daher, „ResourceDictionary“ aus „UserControl“ zu entfernen und auf der Seitenebene zu platzieren.
 
 ### <a name="resource-and-resourcedictionary-scope"></a>Ressourcen- und ResourceDictionary-Bereich
 
@@ -238,7 +238,7 @@ Um dieses Beispiel effizienter zu gestalten, verschieben Sie `SecondPageTextBrus
 
 ### <a name="consolidate-multiple-brushes-that-look-the-same-into-one-resource"></a>Zusammenfassen mehrerer gleichartiger Pinsel in einer Ressource
 
-Die XAML-Plattform speichert allgemein verwendete Objekte zwischen, um eine möglichst häufige Wiederverwendung zu ermöglichen. XAML kann jedoch nicht ohne Weiteres feststellen, ob es sich bei einem Pinsel, der in zwei unterschiedlichen Markupkomponenten deklariert ist, um denselben Pinsel handelt. Dieses Beispiel verwendet [SolidColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) zur Veranschaulichung, aber die Wahrscheinlichkeit und Bedeutung von [GradientBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientBrush) ist höher. Prüfen Sie auch auf Pinsel, die vordefinierte Farben verwenden – beispielsweise bezeichnen `"Orange"` und `"#FFFFA500"` dieselbe Farbe.
+Die XAML-Plattform speichert allgemein verwendete Objekte zwischen, um eine möglichst häufige Wiederverwendung zu ermöglichen. XAML kann jedoch nicht ohne Weiteres feststellen, ob es sich bei einem Pinsel, der in zwei unterschiedlichen Markupkomponenten deklariert ist, um denselben Pinsel handelt. Dieses Beispiel verwendet [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) zur Veranschaulichung, aber die Wahrscheinlichkeit und Bedeutung von [GradientBrush](/uwp/api/Windows.UI.Xaml.Media.GradientBrush) ist höher. Prüfen Sie auch auf Pinsel, die vordefinierte Farben verwenden – beispielsweise bezeichnen `"Orange"` und `"#FFFFA500"` dieselbe Farbe.
 
 **Ineffizient.**
 
@@ -281,15 +281,15 @@ Definieren Sie den Pinsel als Ressource, um die Duplizierung zu beheben. Wenn St
 
 Eine Überzeichnung tritt dort auf, wo mehrere Objekte dieselben Bildschirmpixel beanspruchen. Beachten Sie, dass Sie manchmal einen Kompromiss zwischen dieser Richtlinie und dem Wunsch zur Minimierung der Elementanzahl eingehen müssen.
 
-Verwenden Sie [**DebugSettings.IsOverdrawHeatMapEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.debugsettings.isoverdrawheatmapenabled) als visuelle Diagnose. Möglicherweise erkennen Sie, dass Objekte dargestellt werden, von denen Sie sich nicht wussten, dass sie in der Szene auftreten.
+Verwenden Sie [**DebugSettings.IsOverdrawHeatMapEnabled**](/uwp/api/windows.ui.xaml.debugsettings.isoverdrawheatmapenabled) als visuelle Diagnose. Möglicherweise erkennen Sie, dass Objekte dargestellt werden, von denen Sie sich nicht wussten, dass sie in der Szene auftreten.
 
 ### <a name="transparent-or-hidden-elements"></a>Transparente oder ausgeblendeten Elemente
 
-Wenn ein Element nicht angezeigt wird, da es transparent ist oder von anderen Elementen verdeckt wird, löschen Sie es einfach, wenn es nicht zum Layout beiträgt. Wenn das Element nicht in seinem visuellen Anfangszustand, aber in anderen visuellen Zuständen sichtbar ist, können Sie den Zustand mit „x:Load“ steuern oder [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) auf den Wert **Collapsed** für das Element selbst festlegen und in den entsprechenden Zuständen in **Visible** ändern. Es gibt Ausnahmen von dieser Heuristik: In der Regel wird der Wert, den eine Eigenschaft in den meisten visuellen Zuständen aufweist, am besten lokal für das Element festgelegt.
+Wenn ein Element nicht angezeigt wird, da es transparent ist oder von anderen Elementen verdeckt wird, löschen Sie es einfach, wenn es nicht zum Layout beiträgt. Wenn das Element nicht in seinem visuellen Anfangszustand, aber in anderen visuellen Zuständen sichtbar ist, können Sie den Zustand mit „x:Load“ steuern oder [Visibility](/uwp/api/windows.ui.xaml.uielement.visibility) auf den Wert **Collapsed** für das Element selbst festlegen und in den entsprechenden Zuständen in **Visible** ändern. Es gibt Ausnahmen von dieser Heuristik: In der Regel wird der Wert, den eine Eigenschaft in den meisten visuellen Zuständen aufweist, am besten lokal für das Element festgelegt.
 
 ### <a name="composite-elements"></a>Zusammengesetzte Elemente
 
-Verwenden Sie ein Verbundelement, anstatt mehrere Elemente übereinander zu stapeln, um einen Effekt zu erzielen. In diesem Beispiel ist das Ergebnis eine zweifarbige Form, wobei die obere Hälfte schwarz (vom Hintergrund von [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)) und die untere Hälfte grau ist (vom halbtransparenten weißen [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Objekt, das mit einer Alpha-Überblendung über den schwarzen Hintergrund von **Grid** gelegt wird). Hier werden 150 % der Pixel gefüllt, die erforderlich sind, um das Ergebnis zu erzielen.
+Verwenden Sie ein Verbundelement, anstatt mehrere Elemente übereinander zu stapeln, um einen Effekt zu erzielen. In diesem Beispiel ist das Ergebnis eine zweifarbige Form, wobei die obere Hälfte schwarz (vom Hintergrund von [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid)) und die untere Hälfte grau ist (vom halbtransparenten weißen [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Objekt, das mit einer Alpha-Überblendung über den schwarzen Hintergrund von **Grid** gelegt wird). Hier werden 150 % der Pixel gefüllt, die erforderlich sind, um das Ergebnis zu erzielen.
 
 **Ineffizient.**
 
@@ -346,11 +346,11 @@ Ein Layoutpanel kann zwei Zwecke verfolgen: einem Bereich eine Farbe zuzuweisen 
 </GridView>
 ```
 
-Wenn für das [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)-Objekt Treffertests durchgeführt werden müssen, legen Sie für den Hintergrund einen transparenten Wert fest.
+Wenn für das [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid)-Objekt Treffertests durchgeführt werden müssen, legen Sie für den Hintergrund einen transparenten Wert fest.
 
 ### <a name="borders"></a>Rahmen
 
-Verwenden Sie ein [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border)-Element, um einen Rahmen um ein Objekt zu zeichnen. In diesem Beispiel wird ein [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)-Objekt als provisorischer Rahmen für ein [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)-Steuerelement verwendet. Allerdings werden alle Pixel in der Mitte der Zelle überzeichnet.
+Verwenden Sie ein [Border](/uwp/api/windows.ui.xaml.controls.border)-Element, um einen Rahmen um ein Objekt zu zeichnen. In diesem Beispiel wird ein [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid)-Objekt als provisorischer Rahmen für ein [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox)-Steuerelement verwendet. Allerdings werden alle Pixel in der Mitte der Zelle überzeichnet.
 
 **Ineffizient.**
 
@@ -385,7 +385,7 @@ Achten Sie auf die Ränder. Zwei benachbarte Elemente überlappen sich (möglich
 
 ### <a name="cache-static-content"></a>Zwischenspeichern statischer Inhalte
 
-Eine andere Quelle für die Überzeichnung ist eine Form, die aus vielen überlappenden Elementen besteht. Wenn Sie [CacheMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.CacheMode) für die **UIElement**-Klasse mit der Verbundform auf [BitmapCache](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) festlegen, rendert die Plattform das Element für eine Bitmap einmalig und verwendet dann diese Bitmap für jeden Frame (anstelle der Überzeichnung).
+Eine andere Quelle für die Überzeichnung ist eine Form, die aus vielen überlappenden Elementen besteht. Wenn Sie [CacheMode](/uwp/api/Windows.UI.Xaml.Media.CacheMode) für die **UIElement**-Klasse mit der Verbundform auf [BitmapCache](/uwp/api/Windows.UI.Xaml.UIElement) festlegen, rendert die Plattform das Element für eine Bitmap einmalig und verwendet dann diese Bitmap für jeden Frame (anstelle der Überzeichnung).
 
 **Ineffizient.**
 
@@ -413,7 +413,7 @@ Das obige Bild ist das Ergebnis, aber hier folgt eine Karte der überzeichneten 
 </Canvas>
 ```
 
-Beachten Sie die Verwendung von [CacheMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.CacheMode). Verwenden Sie dieses Verfahren nicht, wenn eine der Teilformen animiert ist, da der Bitmapcache wahrscheinlich bei jedem Frame neu generiert werden muss, was dem Zweck widerspricht.
+Beachten Sie die Verwendung von [CacheMode](/uwp/api/Windows.UI.Xaml.Media.CacheMode). Verwenden Sie dieses Verfahren nicht, wenn eine der Teilformen animiert ist, da der Bitmapcache wahrscheinlich bei jedem Frame neu generiert werden muss, was dem Zweck widerspricht.
 
 ## <a name="use-xbf2"></a>Verwendung von XBF2
 

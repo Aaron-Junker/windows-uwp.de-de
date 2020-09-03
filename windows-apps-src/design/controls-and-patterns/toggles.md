@@ -12,20 +12,20 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d9cb44c91bcd556a10059005a8f19a75f90d3d9
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5c8df28335bf67c00f0429d6967e9013c73ec351
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081474"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154194"
 ---
 # <a name="toggle-switches"></a>Umschalter
 
 Der Umschalter stellt einen physischen Schalter dar, mit dem Benutzer Dinge ein- oder ausschalten können, wie ein Lichtschalter. Mit Umschaltersteuerelementen kannst du Benutzern zwei Optionen anbieten, die sich gegenseitig ausschließen (wie Ein/Aus), wobei die Auswahl einer Option unmittelbare Ergebnisse liefert.
 
-Zum Erstellen eines Umschaltersteuerelements verwendest du die [ToggleSwitch-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch).
+Zum Erstellen eines Umschaltersteuerelements verwendest du die [ToggleSwitch-Klasse](/uwp/api/windows.ui.xaml.controls.toggleswitch).
 
-> **Plattform-APIs:** [ToggleSwitch-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch), [IsOn-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.ison), [Toggled-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
+> **Plattform-APIs:** [ToggleSwitch-Klasse](/uwp/api/windows.ui.xaml.controls.toggleswitch), [IsOn-Eigenschaft](/uwp/api/windows.ui.xaml.controls.toggleswitch.ison), [Toggled-Ereignis](/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -97,7 +97,7 @@ stackPanel1.Children.Add(lightToggle);
 
 ### <a name="ison"></a>IsOn
 
-Der Schalter kann entweder ein- oder ausgeschaltet sein. Mit der Eigenschaft [IsOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.ison) kannst du den Zustand des Schalters ermitteln. Wenn der Schalter zur Steuerung des Zustands einer anderen binären Eigenschaft verwendet wird, können Sie wie hier gezeigt eine Bindung verwenden.
+Der Schalter kann entweder ein- oder ausgeschaltet sein. Mit der Eigenschaft [IsOn](/uwp/api/windows.ui.xaml.controls.toggleswitch.ison) kannst du den Zustand des Schalters ermitteln. Wenn der Schalter zur Steuerung des Zustands einer anderen binären Eigenschaft verwendet wird, können Sie wie hier gezeigt eine Bindung verwenden.
 
 ```xaml
 <StackPanel Orientation="Horizontal">
@@ -108,7 +108,7 @@ Der Schalter kann entweder ein- oder ausgeschaltet sein. Mit der Eigenschaft [Is
 
 ### <a name="toggled"></a>Toggled
 
-In anderen Fällen kannst du das [Toggled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)-Ereignis verarbeiten, um auf Zustandsänderungen zu reagieren.
+In anderen Fällen kannst du das [Toggled](/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)-Ereignis verarbeiten, um auf Zustandsänderungen zu reagieren.
 
 In diesem Beispiel wird veranschaulicht, wie in XAML und im Code ein Toggled-Ereignis hinzugefügt wird. Das Toggled-Ereignis wird behandelt, um einen Statusring ein- oder auszuschalten oder seine Sichtbarkeit zu ändern.
 
@@ -152,7 +152,7 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 
 ### <a name="onoff-labels"></a>Beschriftungen „Ein”/„Aus”
 
-Standardmäßig beinhaltet der Umschalter literalen Beschriftungen „Ein” und „Aus”, die automatisch lokalisiert werden. Du kannst diese Beschriftungen durch Festlegen der Eigenschaften [OnContent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.oncontent) und [OffContent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.offcontent) ersetzen.
+Standardmäßig beinhaltet der Umschalter literalen Beschriftungen „Ein” und „Aus”, die automatisch lokalisiert werden. Du kannst diese Beschriftungen durch Festlegen der Eigenschaften [OnContent](/uwp/api/windows.ui.xaml.controls.toggleswitch.oncontent) und [OffContent](/uwp/api/windows.ui.xaml.controls.toggleswitch.offcontent) ersetzen.
 
 In diesem Beispiel werden die Beschriftungen „Ein”/„Aus” durch die Beschriftungen „Einblenden”/„Ausblenden” ersetzt.
 
@@ -162,7 +162,7 @@ In diesem Beispiel werden die Beschriftungen „Ein”/„Aus” durch die Besch
               Toggled="ToggleSwitch_Toggled"/>
 ```
 
-Du kannst auch komplexeren Inhalt verwenden, indem du die Eigenschaften [OnContentTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.oncontenttemplate) und [OffContentTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.offcontenttemplate) festlegst.
+Du kannst auch komplexeren Inhalt verwenden, indem du die Eigenschaften [OnContentTemplate](/uwp/api/windows.ui.xaml.controls.toggleswitch.oncontenttemplate) und [OffContentTemplate](/uwp/api/windows.ui.xaml.controls.toggleswitch.offcontenttemplate) festlegst.
 
 ## <a name="recommendations"></a>Empfehlungen
 
@@ -175,7 +175,7 @@ Du kannst auch komplexeren Inhalt verwenden, indem du die Eigenschaften [OnConte
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [ToggleSwitch-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch)
+- [ToggleSwitch-Klasse](/uwp/api/windows.ui.xaml.controls.toggleswitch)
 - [Optionsfelder](radio-button.md)
 - [Umschaltfläche](toggles.md)
 - [Kontrollkästchen](checkbox.md)

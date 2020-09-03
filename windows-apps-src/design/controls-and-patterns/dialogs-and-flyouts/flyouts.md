@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e008f08d9bf98e309d895f2916ea8aaf84e8464
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 089518a340ba5c33eef5bc9bd883cbd04dcabeb9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969905"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160274"
 ---
 # <a name="flyouts"></a>Flyouts
 
@@ -28,7 +28,7 @@ Ein Flyout ist ein einfach ausblendbarer Container, der beliebige Benutzeroberfl
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](../images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). „WinUI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](../images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](../../style/rounded-corner.md). „WinUI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
 > **Plattform-APIs:** [Flyout-Klasse](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
@@ -70,7 +70,7 @@ In diesem Beispiel wird ein einfaches Flyout erstellt, das Text angezeigt, wenn 
 </Button>
 ````
 
-Wenn das Steuerelement nicht über eine Flyout-Eigenschaft verfügt, können Sie stattdessen die angefügte Eigenschaft [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.AttachedFlyoutProperty) verwenden. In diesem Fall müssen Sie zudem die [FlyoutBase.ShowAttachedFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase#Windows_UI_Xaml_Controls_Primitives_FlyoutBase_ShowAttachedFlyout_Windows_UI_Xaml_FrameworkElement_)-Methode aufrufen, um das Flyout anzuzeigen.
+Wenn das Steuerelement nicht über eine Flyout-Eigenschaft verfügt, können Sie stattdessen die angefügte Eigenschaft [FlyoutBase.AttachedFlyout](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.AttachedFlyoutProperty) verwenden. In diesem Fall müssen Sie zudem die [FlyoutBase.ShowAttachedFlyout](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase#Windows_UI_Xaml_Controls_Primitives_FlyoutBase_ShowAttachedFlyout_Windows_UI_Xaml_FrameworkElement_)-Methode aufrufen, um das Flyout anzuzeigen.
 
 In diesem Beispiel wird einem Bild ein einfaches Flyout hinzugefügt. Wenn der Benutzer auf das Bild tippt, zeigt die App das Flyout an.
 
@@ -132,7 +132,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 ````
 
 ## <a name="style-a-flyout"></a>Gestalten eines Flyouts
-Um ein Flyout zu formatieren, ändern Sie den [FlyoutPresenterStyle](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout.FlyoutPresenterStyle). In diesem Beispiel wird ein Absatz mit Textumbruch dargestellt. Zudem wird der Textblock für ein Bildschirmleseprogramm zugänglich gemacht.
+Um ein Flyout zu formatieren, ändern Sie den [FlyoutPresenterStyle](/uwp/api/Windows.UI.Xaml.Controls.Flyout.FlyoutPresenterStyle). In diesem Beispiel wird ein Absatz mit Textumbruch dargestellt. Zudem wird der Textblock für ein Bildschirmleseprogramm zugänglich gemacht.
 
 ![Zugängliches Flyout mit Textumbruch](../images/flyout-wrapping-text.png)
 

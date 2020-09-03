@@ -11,12 +11,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7c44baee7d3201e2e554604405afe337007dd510
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: e35041cce7e43f6eebed06b39f3ae2dbda55a4ae
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970955"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156794"
 ---
 # <a name="icons-for-windows-apps"></a>Symbole für Windows-Apps
 
@@ -39,7 +39,7 @@ Symbole können sowohl innerhalb als auch außerhalb von Apps vorkommen:
     :::column-end:::
 :::row-end:::
 
-In diesem Artikel werden Symbole innerhalb deiner App beschrieben. Informationen zu Symbolen außerhalb deiner App (App-Symbole) findest du im [Artikel zu App- und Kachelsymbolen](/windows/uwp/design/shell/tiles-and-notifications/app-assets).
+In diesem Artikel werden Symbole innerhalb deiner App beschrieben. Informationen zu Symbolen außerhalb deiner App (App-Symbole) findest du im [Artikel zu App- und Kachelsymbolen](./app-icons-and-logos.md).
 
 ## <a name="when-to-use-icons"></a>Wann Symbole verwendet werden sollten
 
@@ -100,7 +100,7 @@ Es muss nicht unbedingt „Segoe MDL2 Assets“ sein: Du kannst jede beliebige
 ### <a name="use-a-scalable-vector-graphics-svg-file"></a>Verwenden einer SVG-Datei (Scalable Vector Graphics)
 :::row:::
     :::column:::
-SVG-Ressourcen sind ideal für Symbole, da sie in jeder Größe und Auflösung gestochen scharf dargestellt werden. Die meisten Zeichenanwendungen verfügen über eine SVG-Exportfunktion. Eine entsprechende Anleitung findest du unter [SvgImageSource Class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.svgimagesource) (Klasse „SvgImageSource“).
+SVG-Ressourcen sind ideal für Symbole, da sie in jeder Größe und Auflösung gestochen scharf dargestellt werden. Die meisten Zeichenanwendungen verfügen über eine SVG-Exportfunktion. Eine entsprechende Anleitung findest du unter [SvgImageSource Class](/uwp/api/windows.ui.xaml.media.imaging.svgimagesource) (Klasse „SvgImageSource“).
     :::column-end:::
     :::column:::
         ![SVG-Bild](images/icons/icon-scale.gif)
@@ -156,7 +156,7 @@ Lege die Schriftfamilie der Schaltfläche auf `Segoe MDL2 Assets` und die Inhalt
 :::row:::
     :::column span="2":::
         <b>Schritt 2</b><br>
-Du kannst eines der Symbolelementobjekte verwenden: [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon), [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon), [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) oder [SymbolIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbolicon). Dadurch hast du mehr Symboltypen zur Auswahl, und du kannst auf Wunsch Symbole mit anderen Arten von Inhalten (beispielsweise Text) kombinieren:
+Du kannst eines der Symbolelementobjekte verwenden: [BitmapIcon](/uwp/api/windows.ui.xaml.controls.bitmapicon), [FontIcon](/uwp/api/windows.ui.xaml.controls.fonticon), [PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon) oder [SymbolIcon](/uwp/api/windows.ui.xaml.controls.symbolicon). Dadurch hast du mehr Symboltypen zur Auswahl, und du kannst auf Wunsch Symbole mit anderen Arten von Inhalten (beispielsweise Text) kombinieren:
     :::column-end:::
     :::column:::
         ![Erstellen einer Symbolschaltfläche, Schritt 2](images/icons/icon-text-step-2.svg)
@@ -176,7 +176,7 @@ Du kannst eines der Symbolelementobjekte verwenden: [BitmapIcon](https://docs.mi
 
 :::row:::
     :::column span:::
-Zusammengehörige Befehle wie „Ausschneiden“, „Kopieren“ und „Einfügen“ oder eine Reihe von Zeichenbefehlen für ein Fotobearbeitungsprogramm können auf einer [Befehlsleiste](../controls-and-patterns/app-bars.md) zusammengefasst werden. Eine Befehlsleiste enthält einzelne oder mehrere Schaltflächen oder Umschaltflächen der App-Leiste, die jeweils eine Aktion darstellen. Jede Schaltfläche verfügt über eine Eigenschaft vom Typ [Icon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon), die steuert, welches Symbol angezeigt wird. Das Symbol kann auf unterschiedliche Weise angegeben werden. 
+Zusammengehörige Befehle wie „Ausschneiden“, „Kopieren“ und „Einfügen“ oder eine Reihe von Zeichenbefehlen für ein Fotobearbeitungsprogramm können auf einer [Befehlsleiste](../controls-and-patterns/app-bars.md) zusammengefasst werden. Eine Befehlsleiste enthält einzelne oder mehrere Schaltflächen oder Umschaltflächen der App-Leiste, die jeweils eine Aktion darstellen. Jede Schaltfläche verfügt über eine Eigenschaft vom Typ [Icon](/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon), die steuert, welches Symbol angezeigt wird. Das Symbol kann auf unterschiedliche Weise angegeben werden. 
     :::column-end:::
     :::column:::
         ![Beispiel für eine Befehlsleiste mit Symbolen](images/icons/create-icon-command-bar.svg)
@@ -197,13 +197,13 @@ Die komfortabelste Methode ist die Verwendung der von uns bereitgestellten Liste
 </CommandBar>
 
 ```
-Die vollständige Liste mit Symbolnamen findest du in der [Symbolenumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
+Die vollständige Liste mit Symbolnamen findest du in der [Symbolenumeration](/uwp/api/windows.ui.xaml.controls.symbol). 
 
 Es gibt auch noch andere Möglichkeiten, um Symbole für eine Schaltfläche auf einer Befehlsleiste bereitzustellen:
 
-+ [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon): Das Symbol basiert auf einer Glyphe aus der angegebenen Schriftfamilie.
-+ [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon): Das Symbol basiert auf einer Bitmap-Bilddatei mit dem angegebenen **URI**.
-+ [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon): Das Symbol basiert auf Pfaddaten ([Path](/uwp/api/windows.ui.xaml.shapes.path)).
++ [FontIcon](/uwp/api/windows.ui.xaml.controls.fonticon): Das Symbol basiert auf einer Glyphe aus der angegebenen Schriftfamilie.
++ [BitmapIcon](/uwp/api/windows.ui.xaml.controls.bitmapicon): Das Symbol basiert auf einer Bitmap-Bilddatei mit dem angegebenen **URI**.
++ [PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon): Das Symbol basiert auf Pfaddaten ([Path](/uwp/api/windows.ui.xaml.shapes.path)).
 
 Weitere Informationen zu Befehlsleisten findest du in [diesem Artikel](../controls-and-patterns/app-bars.md). 
 

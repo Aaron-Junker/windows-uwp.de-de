@@ -8,25 +8,25 @@ author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 830c1cdf2e24e716d51642bc65b5b6783d0d784a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: e7e09069e11fc14d0a47086bc2594edc975c11d9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "69643376"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161454"
 ---
 # <a name="part-3-add-a-uwp-calendarview-control-using-xaml-islands"></a>Teil 3: Hinzufügen eines UWP-CalendarView-Steuerelements mithilfe von XAML Islands
 
 Dies ist der dritte Teil eines Tutorials, in dem das Modernisieren der WPF-Desktop-Beispiel-App Contoso Expenses veranschaulicht wird. Eine Übersicht über das Tutorial, die Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-App finden Sie unter [Tutorial: Modernisieren einer WPF-App](modernize-wpf-tutorial.md). In diesem Artikel wird davon ausgegangen, dass Sie [Teil 2](modernize-wpf-tutorial-2.md) bereits abgeschlossen haben.
 
-Im fiktiven Szenario dieses Tutorials möchte das Contoso-Entwicklungsteam die Auswahl des Datums für eine Spesenabrechnung auf einem mobilen Gerät vereinfachen. In diesem Teil des Tutorials fügen Sie der App ein UWP-[CalendarView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/calendar-view)-Steuerelement hinzu. Dabei handelt es sich um dasselbe Steuerelement, das für die Windows 10-Funktionen für Datum und Uhrzeit auf der Taskleiste verwendet wird.
+Im fiktiven Szenario dieses Tutorials möchte das Contoso-Entwicklungsteam die Auswahl des Datums für eine Spesenabrechnung auf einem mobilen Gerät vereinfachen. In diesem Teil des Tutorials fügen Sie der App ein UWP-[CalendarView](/windows/uwp/design/controls-and-patterns/calendar-view)-Steuerelement hinzu. Dabei handelt es sich um dasselbe Steuerelement, das für die Windows 10-Funktionen für Datum und Uhrzeit auf der Taskleiste verwendet wird.
 
 ![CalendarViewControl-Abbildung](images/wpf-modernize-tutorial/CalendarViewControl.png)
 
-Im Unterschied zum **InkCanvas**-Steuerelement, das Sie in [Teil 2](modernize-wpf-tutorial-2.md) hinzugefügt haben, bietet das Windows-Community-Toolkit keine umschlossene Version von UWP **CalendarView**, die in WPF-Apps eingesetzt werden kann. Als Alternative hosten Sie ein **InkCanvas** im generischen [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelement. Sie können dieses Steuerelement verwenden, um ein beliebiges UWP-Originalsteuerelement aus dem Windows SDK oder der WinUI-Bibliothek oder sogar ein beliebiges benutzerdefiniertes UWP-Steuerelement eines Drittanbieters zu hosten. Das **WindowsXamlHost**-Steuerelement steht im NuGet-Paket `Microsoft.Toolkit.Wpf.UI.XamlHost` zur Verfügung. Dieses Paket ist im NuGet-Paket `Microsoft.Toolkit.Wpf.UI.Controls` enthalten, das Sie in [Teil 2](modernize-wpf-tutorial-2.md) installiert haben.
+Im Unterschied zum **InkCanvas**-Steuerelement, das Sie in [Teil 2](modernize-wpf-tutorial-2.md) hinzugefügt haben, bietet das Windows-Community-Toolkit keine umschlossene Version von UWP **CalendarView**, die in WPF-Apps eingesetzt werden kann. Als Alternative hosten Sie ein **InkCanvas** im generischen [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelement. Sie können dieses Steuerelement verwenden, um ein beliebiges UWP-Originalsteuerelement aus dem Windows SDK oder der WinUI-Bibliothek oder sogar ein beliebiges benutzerdefiniertes UWP-Steuerelement eines Drittanbieters zu hosten. Das **WindowsXamlHost**-Steuerelement steht im NuGet-Paket `Microsoft.Toolkit.Wpf.UI.XamlHost` zur Verfügung. Dieses Paket ist im NuGet-Paket `Microsoft.Toolkit.Wpf.UI.Controls` enthalten, das Sie in [Teil 2](modernize-wpf-tutorial-2.md) installiert haben.
 
 > [!NOTE]
-> In diesem Tutorial wird nur veranschaulicht, wie [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) zum Hosten des ersten **CalendarView**-Steuerelements aus dem Windows SDK verwendet wird. Eine exemplarische Vorgehensweise, aus der Sie ersehen können, wie ein benutzerdefiniertes Steuerelement gehostet wird, finden Sie unter [Hosten eines benutzerdefinierten UWP-Steuerelements in einer WPF-App unter Verwendung von XAML Islands](host-custom-control-with-xaml-islands.md).
+> In diesem Tutorial wird nur veranschaulicht, wie [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) zum Hosten des ersten **CalendarView**-Steuerelements aus dem Windows SDK verwendet wird. Eine exemplarische Vorgehensweise, aus der Sie ersehen können, wie ein benutzerdefiniertes Steuerelement gehostet wird, finden Sie unter [Hosten eines benutzerdefinierten UWP-Steuerelements in einer WPF-App unter Verwendung von XAML Islands](host-custom-control-with-xaml-islands.md).
 
 Zum Verwenden des **WindowsXamlHost**-Steuerelements müssen Sie WinRT-APIs aus dem Code in der WPF-App direkt aufrufen. Das NuGet-Paket `Microsoft.Windows.SDK.Contracts` enthält die erforderlichen Verweise, mit denen Sie WinRT-APIs aus der App aufrufen können. Dieses Paket ist ebenfalls im NuGet-Paket `Microsoft.Toolkit.Wpf.UI.Controls` enthalten, das Sie in [Teil 2](modernize-wpf-tutorial-2.md) installiert haben.
 
@@ -94,7 +94,7 @@ Zum Verwenden des **WindowsXamlHost**-Steuerelements müssen Sie WinRT-APIs aus 
 
 Im nächsten Schritt aktualisieren Sie die App, damit sie das ausgewählte Datum verarbeitet, es auf dem Bildschirm anzeigt und das **Expense**-Objekt auffüllt, um es in der Datenbank zu speichern.
 
-UWP [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView) enthält zwei Elemente, die für dieses Szenario relevant sind:
+UWP [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView) enthält zwei Elemente, die für dieses Szenario relevant sind:
 
 - Die **SelectedDates**-Eigenschaft enthält das vom Benutzer ausgewählte Datum.
 - Das **SelectedDatesChanged**-Ereignis wird ausgelöst, wenn der Benutzer ein Datum auswählt.
@@ -230,6 +230,6 @@ Bei dem **WindowsXamlHost**-Steuerelement handelt es sich jedoch um ein generisc
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-An diesem Punkt im Tutorial haben Sie ein WPF-Datum/Uhrzeit-Steuerelement erfolgreich durch das UWP-**CalendarView**-Steuerelement ersetzt, das über die Maus- und Tastatureingabe hinaus auch Toucheingabe und digitale Stifte unterstützt. Obwohl das Windows-Community-Toolkit keine umschlossene Version des UWP-**CalendarView**-Steuerelements bereitstellt, das direkt in einer WPF-App verwendet werden kann, konnten Sie das Steuerelement mithilfe des generischen [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelements hosten.
+An diesem Punkt im Tutorial haben Sie ein WPF-Datum/Uhrzeit-Steuerelement erfolgreich durch das UWP-**CalendarView**-Steuerelement ersetzt, das über die Maus- und Tastatureingabe hinaus auch Toucheingabe und digitale Stifte unterstützt. Obwohl das Windows-Community-Toolkit keine umschlossene Version des UWP-**CalendarView**-Steuerelements bereitstellt, das direkt in einer WPF-App verwendet werden kann, konnten Sie das Steuerelement mithilfe des generischen [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelements hosten.
 
 Sie sind jetzt bereit für [Teil 4: Hinzufügen von Windows 10-Benutzeraktivitäten und -Benachrichtigungen](modernize-wpf-tutorial-4.md).

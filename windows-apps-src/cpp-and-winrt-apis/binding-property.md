@@ -5,16 +5,16 @@ ms.date: 06/21/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, XAML, Steuerelement, binden, Eigenschaft
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ba06ece905e6a91a2279f0fe78e867a8f943bb3
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: b6e663ec77c66d4a018d388da350794771312b77
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492935"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154384"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft
 
-Eine Eigenschaft, die effektiv an ein XAML-Steuerelement gebunden werden kann, wird als *Observable*-Eigenschaft bezeichnet. Dieses Konzept basiert auf dem Softwareentwurfsmuster, das als *Beobachter-Muster* bekannt ist. In diesem Thema erfährst du, wie du beobachtbare Eigenschaften in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) implementierst und XAML-Steuerelemente an sie bindest (Hintergrundinformationen findest Du unter [Datenbindung](/windows/uwp/data-binding)).
+Eine Eigenschaft, die effektiv an ein XAML-Steuerelement gebunden werden kann, wird als *Observable*-Eigenschaft bezeichnet. Dieses Konzept basiert auf dem Softwareentwurfsmuster, das als *Beobachter-Muster* bekannt ist. In diesem Thema erfährst du, wie du beobachtbare Eigenschaften in [C++/WinRT](./intro-to-using-cpp-with-winrt.md) implementierst und XAML-Steuerelemente an sie bindest (Hintergrundinformationen findest Du unter [Datenbindung](../data-binding/index.md)).
 
 > [!IMPORTANT]
 > Wichtige Konzepte und Begriffe im Zusammenhang mit der Nutzung und Erstellung von Laufzeitklassen mit C++/WinRT findest du unter [Verwenden von APIs mit C++/WinRT](consume-apis.md) sowie unter [Erstellen von APIs mit C++/WinRT](author-apis.md).
@@ -136,7 +136,7 @@ In der Mutatorfunktion **Title** wird überprüft, ob ein Wert festgelegt wird, 
 ## <a name="declare-and-implement-bookstoreviewmodel"></a>Deklarieren und Implementieren von **BookstoreViewModel**
 Unsere XAML-Hauptseite wird an ein Hauptansichtsmodell gebunden. Dieses Ansichtsmodell erhält mehrere Eigenschaften –unter anderem eine vom Typ **BookSku**. In diesem Schritt deklarieren und implementieren wir unsere Laufzeitklasse für das Hauptansichtsmodell.
 
-Füge ein neues Element vom Typ **Midl-Datei (.idl)** namens `BookstoreViewModel.idl` hinzu. Siehe auch [Einbeziehen von Laufzeitklassen in Midl-Dateien (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
+Füge ein neues Element vom Typ **Midl-Datei (.idl)** namens `BookstoreViewModel.idl` hinzu. Siehe auch [Einbeziehen von Laufzeitklassen in Midl-Dateien (.idl)](./author-apis.md#factoring-runtime-classes-into-midl-files-idl).
 
 ```idl
 // BookstoreViewModel.idl
@@ -306,11 +306,11 @@ runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
 }
 ```
 
-Dies hat den folgenden Grund. Alle Typen, die der XAML-Compiler überprüfen muss (einschließlich der in [{X:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) verwendeten), werden aus Windows-Metadaten (WinMD) gelesen. Sie müssen lediglich der Midl-Datei die schreibgeschützte Eigenschaft hinzufügen. Implementieren Sie dies nicht, denn die Implementierung erfolgt durch den automatisch generierten XAML-CodeBehind.
+Dies hat den folgenden Grund. Alle Typen, die der XAML-Compiler überprüfen muss (einschließlich der in [{X:Bind}](../xaml-platform/x-bind-markup-extension.md) verwendeten), werden aus Windows-Metadaten (WinMD) gelesen. Sie müssen lediglich der Midl-Datei die schreibgeschützte Eigenschaft hinzufügen. Implementieren Sie dies nicht, denn die Implementierung erfolgt durch den automatisch generierten XAML-CodeBehind.
 
 ## <a name="consuming-objects-from-xaml-markup"></a>Verwenden von Objekten aus XAML-Markup
 
-Alle Entitäten, die über die XAML-[ **{x:Bind}-Markuperweiterung**](/windows/uwp/xaml-platform/x-bind-markup-extension) genutzt werden, müssen in IDL öffentlich verfügbar gemacht werden. Wenn das XAML-Markup einen Verweis auf ein anderes Element enthält, das sich ebenfalls im Markup befindet, muss darüber hinaus der Getter für dieses Markup in IDL vorhanden sein.
+Alle Entitäten, die über die XAML-[ **{x:Bind}-Markuperweiterung**](../xaml-platform/x-bind-markup-extension.md) genutzt werden, müssen in IDL öffentlich verfügbar gemacht werden. Wenn das XAML-Markup einen Verweis auf ein anderes Element enthält, das sich ebenfalls im Markup befindet, muss darüber hinaus der Getter für dieses Markup in IDL vorhanden sein.
 
 ```xaml
 <Page x:Name="MyPage">

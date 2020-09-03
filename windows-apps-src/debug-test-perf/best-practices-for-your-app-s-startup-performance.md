@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 38e9d49d9ec717bc1d28305d83d12e2696a32b3b
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 8f8a7d49e8a0b9d0a2d182d2e3031ae485cf7c9e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492855"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157204"
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>Bewährte Methoden für die Leistung Ihrer App beim Starten
 
@@ -60,7 +60,7 @@ Um die Startzeit Ihrer App zu verbessern, führst du nur die Arbeit aus, die unb
 
 Ihre App kann interaktiv sein, selbst wenn Teile der App noch nicht voll funktionsfähig sind. Wenn von Ihrer App beispielsweise Daten angezeigt werden, deren Abruf einige Zeit in Anspruch nimmt, können Sie diesen Code separat vom Startcode der App ausführen, indem Sie die Daten asynchron abrufen. Wenn die Daten verfügbar sind, füllen Sie die Benutzeroberfläche der App mit den Daten auf.
 
-Viele APIs für die Universelle Windows-Plattform (UWP), die Daten abrufen, sind asynchron, sodass Sie Daten wahrscheinlich sowieso asynchron abrufen. Weitere Informationen zu asynchronen APIs finden Sie unter [Aufrufen asynchroner APIs in C# oder Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Wenn Sie Arbeit ausführen, für die keine asynchronen APIs verwendet werden, können Sie für lange ausgeführte Arbeit die Task-Klasse verwenden, damit der Benutzer mit der App interagieren kann. Dadurch reagiert Ihre App gegenüber dem Benutzer weiterhin, während die Daten geladen werden.
+Viele APIs für die Universelle Windows-Plattform (UWP), die Daten abrufen, sind asynchron, sodass Sie Daten wahrscheinlich sowieso asynchron abrufen. Weitere Informationen zu asynchronen APIs finden Sie unter [Aufrufen asynchroner APIs in C# oder Visual Basic](../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md). Wenn Sie Arbeit ausführen, für die keine asynchronen APIs verwendet werden, können Sie für lange ausgeführte Arbeit die Task-Klasse verwenden, damit der Benutzer mit der App interagieren kann. Dadurch reagiert Ihre App gegenüber dem Benutzer weiterhin, während die Daten geladen werden.
 
 Wenn es sehr lange dauert, bis ein Teil der Benutzeroberfläche Ihrer App geladen wird, sollten Sie in diesem Bereich eine Zeichenfolge wie „Aktuelle Daten werden abgerufen“ hinzufügen, damit der Benutzer weiß, dass die App noch arbeitet.
 
@@ -107,7 +107,7 @@ Im Fenster mit der [Visuellen Live-Struktur von Visual Studio](https://devblogs.
 
 ![Visuelle Live-Struktur:](images/live-visual-tree.png)
 
-**Verzögerung verwenden**. Das Reduzieren eines Elements oder das Festlegen der Deckkraft auf 0 verhindert nicht, dass das Element erstellt wird. Mit „x:Load” oder „x:DeferLoadStrategy“ können Sie das Laden eines UI-Elements verschieben und es erst dann laden, wenn es benötigt wird. Dies ist eine gute Möglichkeit, um die Verarbeitung von UI-Elementen aufzuschieben, die auf dem Startbildschirm nicht sichtbar sind. Sie können sie dann bei Bedarf oder im Rahmen einer Verzögerungslogik laden. Um das Laden auszulösen, müssen Sie für das Element nur FindName aufrufen. Ein Beispiel und weitere Informationen finden Sie unter [x:Load-Attribut](../xaml-platform/x-load-attribute.md) und [x:DeferLoadStrategy-Attribut](https://docs.microsoft.com/windows/uwp/xaml-platform/x-deferloadstrategy-attribute).
+**Verzögerung verwenden**. Das Reduzieren eines Elements oder das Festlegen der Deckkraft auf 0 verhindert nicht, dass das Element erstellt wird. Mit „x:Load” oder „x:DeferLoadStrategy“ können Sie das Laden eines UI-Elements verschieben und es erst dann laden, wenn es benötigt wird. Dies ist eine gute Möglichkeit, um die Verarbeitung von UI-Elementen aufzuschieben, die auf dem Startbildschirm nicht sichtbar sind. Sie können sie dann bei Bedarf oder im Rahmen einer Verzögerungslogik laden. Um das Laden auszulösen, müssen Sie für das Element nur FindName aufrufen. Ein Beispiel und weitere Informationen finden Sie unter [x:Load-Attribut](../xaml-platform/x-load-attribute.md) und [x:DeferLoadStrategy-Attribut](../xaml-platform/x-deferloadstrategy-attribute.md).
 
 **Virtualisierung**. Falls Ihre Benutzeroberfläche Listen- oder Wiederholungsinhalte enthält, empfehlen wir Ihnen dringend, die UI-Virtualisierung zu nutzen. Wenn die Listen-UI nicht virtualisiert ist, werden alle Elemente vorher erstellt, und dies kann den Startvorgang verlängern. Weitere Informationen finden Sie unter [Optimieren der ListView- und GridView-Benutzeroberfläche](optimize-gridview-and-listview.md).
 
@@ -146,13 +146,13 @@ Vor dem Start der App muss diese dem System mitteilen, was als Begrüßungsbilds
 </Package>
 ```
 
-Weitere Informationen finden Sie unter [Hinzufügen eines Begrüßungsbildschirms](https://docs.microsoft.com/windows/uwp/launch-resume/add-a-splash-screen).
+Weitere Informationen finden Sie unter [Hinzufügen eines Begrüßungsbildschirms](../launch-resume/add-a-splash-screen.md).
 
 Initialisieren Sie mit dem Konstruktor der App lediglich Datenstrukturen, die für die App unbedingt erforderlich sind. Der Konstruktor wird nur beim ersten Ausführen der App aufgerufen, aber nicht unbedingt bei jeder Aktivierung der App. So wird der Konstruktor beispielsweise nicht für eine ausgeführte App aufgerufen, die in den Hintergrund versetzt wurde und anschließend mittels Vertrag für „Suche“ aktiviert wird.
 
 ### <a name="phase-2"></a>Phase 2
 
-Eine App kann aus unterschiedlichen Gründen aktiviert werden, und diese müssen unter Umständen alle individuell behandelt werden. Durch Überschreiben der Methoden [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated), [**OnCachedFileUpdaterActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.oncachedfileupdateractivated), [**OnFileActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated), [**OnFileOpenPickerActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileopenpickeractivated), [**OnFileSavePickerActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfilesavepickeractivated), [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched), [**OnSearchActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onsearchactivated) und [**OnShareTargetActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onsharetargetactivated) können Sie jede Aktivierungsursache behandeln. In diesen Methoden muss die App unter anderem eine UI erstellen, sie [**Window.Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.content) zuweisen und anschließend [**Window.Activate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.activate) aufrufen. An diesem Punkt wird der Begrüßungsbildschirm durch die von der App erstellte UI ersetzt. Hierbei kann es sich entweder um einen Ladebildschirm oder bereits um die eigentliche UI der App handeln, sofern bei der Aktivierung genügend Informationen für deren Erstellung vorliegen.
+Eine App kann aus unterschiedlichen Gründen aktiviert werden, und diese müssen unter Umständen alle individuell behandelt werden. Durch Überschreiben der Methoden [**OnActivated**](/uwp/api/windows.ui.xaml.application.onactivated), [**OnCachedFileUpdaterActivated**](/uwp/api/windows.ui.xaml.application.oncachedfileupdateractivated), [**OnFileActivated**](/uwp/api/windows.ui.xaml.application.onfileactivated), [**OnFileOpenPickerActivated**](/uwp/api/windows.ui.xaml.application.onfileopenpickeractivated), [**OnFileSavePickerActivated**](/uwp/api/windows.ui.xaml.application.onfilesavepickeractivated), [**OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched), [**OnSearchActivated**](/uwp/api/windows.ui.xaml.application.onsearchactivated) und [**OnShareTargetActivated**](/uwp/api/windows.ui.xaml.application.onsharetargetactivated) können Sie jede Aktivierungsursache behandeln. In diesen Methoden muss die App unter anderem eine UI erstellen, sie [**Window.Content**](/uwp/api/windows.ui.xaml.window.content) zuweisen und anschließend [**Window.Activate**](/uwp/api/windows.ui.xaml.window.activate) aufrufen. An diesem Punkt wird der Begrüßungsbildschirm durch die von der App erstellte UI ersetzt. Hierbei kann es sich entweder um einen Ladebildschirm oder bereits um die eigentliche UI der App handeln, sofern bei der Aktivierung genügend Informationen für deren Erstellung vorliegen.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -267,9 +267,9 @@ Eine App kann aus unterschiedlichen Gründen aktiviert werden, und diese müssen
 > End Class 
 > ```
 
-Apps, die im Aktivierungshandler eine Ladeseite anzeigen, beginnen mit der UI-Erstellung im Hintergrund. Nach Erstellung dieses Elements tritt dessen [**FrameworkElement.Loaded**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.loaded)-Ereignis auf. Im Ereignishandler ersetzen Sie den Fensterinhalt (also den derzeit angezeigten Ladebildschirm) durch die neu erstellte Startseite.
+Apps, die im Aktivierungshandler eine Ladeseite anzeigen, beginnen mit der UI-Erstellung im Hintergrund. Nach Erstellung dieses Elements tritt dessen [**FrameworkElement.Loaded**](/uwp/api/windows.ui.xaml.frameworkelement.loaded)-Ereignis auf. Im Ereignishandler ersetzen Sie den Fensterinhalt (also den derzeit angezeigten Ladebildschirm) durch die neu erstellte Startseite.
 
-Bei Apps mit längerer Initialisierungsperiode ist das Anzeigen einer Ladeseite unverzichtbar. Abgesehen davon, dass der Benutzer Feedback zum Aktivierungsprozess erhält, wird der Prozess beendet, wenn [**Window.Activate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.activate) nicht innerhalb von 15 Sekunden nach dem Start des Aktivierungsprozesses aufgerufen wird.
+Bei Apps mit längerer Initialisierungsperiode ist das Anzeigen einer Ladeseite unverzichtbar. Abgesehen davon, dass der Benutzer Feedback zum Aktivierungsprozess erhält, wird der Prozess beendet, wenn [**Window.Activate**](/uwp/api/windows.ui.xaml.window.activate) nicht innerhalb von 15 Sekunden nach dem Start des Aktivierungsprozesses aufgerufen wird.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -339,7 +339,7 @@ Wie genau eine App auf die einzelnen Startphasen reagiert, liegt ganz bei Ihnen.
 
 Wiederverwendbarer Code liegt oft in Gestalt von in das Projekt einbezogenen Modulen (DLL-Dateien) vor. Zum Laden dieser Module muss auf den Datenträger zugegriffen werden, was – wie Sie sich vorstellen können – schnell einen größeren Mehraufwand bedeuten kann. Dieser Aspekt wirkt sich am stärksten bei einem Kaltstart aus, kann aber auch Auswirkungen auf den Warmstart haben. Im Falle von C# und Visual Basic versucht die CLR, die Auswirkungen bestmöglich zu verzögern, indem sie die Assemblys nur bei Bedarf lädt. Mit anderen Worten: Die CLR lädt ein Modul erst, wenn in einer ausgeführten Methode darauf verwiesen wird. Verweisen Sie im Startcode also nur auf Assemblys, die für den Start Ihrer App erforderlich sind, damit die CLR keine überflüssigen Module lädt. Falls Ihr Startpfad nicht verwendete Codepfade mit unnötigen Verweisen enthält, können Sie diese Codepfade in andere Methoden auslagern, um unnötige Ladevorgänge zu vermeiden.
 
-Eine weitere Möglichkeit zum Optimieren von Modulladevorgängen ist das Kombinieren von App-Modulen. Eine einzelne große Assembly wird in der Regel schneller geladen als zwei kleinere Assemblys. Dies ist allerdings nicht immer möglich. Außerdem sollten Sie Module nur dann kombinieren, wenn dieser Schritt keine großen Nachteile für die Entwicklerproduktivität oder die Wiederverwendbarkeit des Codes bedeutet. Welche Module beim Start geladen werden, können Sie mit Tools wie [PerfView](https://www.microsoft.com/download/details.aspx?id=28567) oder mit der [Windows-Leistungsanalyse](https://docs.microsoft.com/previous-versions/windows/desktop/xperf/windows-performance-analyzer--wpa-) ermitteln.
+Eine weitere Möglichkeit zum Optimieren von Modulladevorgängen ist das Kombinieren von App-Modulen. Eine einzelne große Assembly wird in der Regel schneller geladen als zwei kleinere Assemblys. Dies ist allerdings nicht immer möglich. Außerdem sollten Sie Module nur dann kombinieren, wenn dieser Schritt keine großen Nachteile für die Entwicklerproduktivität oder die Wiederverwendbarkeit des Codes bedeutet. Welche Module beim Start geladen werden, können Sie mit Tools wie [PerfView](https://www.microsoft.com/download/details.aspx?id=28567) oder mit der [Windows-Leistungsanalyse](/previous-versions/windows/desktop/xperf/windows-performance-analyzer--wpa-) ermitteln.
 
 ### <a name="make-smart-web-requests"></a>Verwenden intelligenter Webanforderungen
 

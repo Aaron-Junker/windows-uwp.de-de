@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 21049c995d467209b22fe8ea5c40d303911f2c2c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: aa8991e7fd0bbb825ff5280f01693f092125f573
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77521284"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161374"
 ---
 # <a name="tutorial-modernize-a-wpf-app"></a>Tutorial: Modernisieren einer WPF-App 
 
@@ -111,13 +111,13 @@ Ab Windows 10, Version 1903, kannst du mithilfe eines Features namens *XAML Isl
 
 Weitere Informationen findest du unter [Hosten von UWP XAML-Steuerelementen in Desktop-Apps (XAML Islands)](/windows/uwp/xaml-platform/xaml-host-controls). Dieses Tutorial führt dich durch die Vorgehensweise zur Verwendung von zwei verschiedenen Arten von XAML Islands-Steuerelementen:
 
-* Die [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)- und [MapControl](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mapcontrol)-Steuerelemente im Windows-Community-Toolkit. Diese WPF-Steuerelemente kapseln Schnittstelle und Funktionalität der entsprechenden UWP-Steuerelemente und können wie jedes andere WPF-Steuerelement im Visual Studio-Designer verwendet werden.
+* Die [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)- und [MapControl](/windows/communitytoolkit/controls/wpf-winforms/mapcontrol)-Steuerelemente im Windows-Community-Toolkit. Diese WPF-Steuerelemente kapseln Schnittstelle und Funktionalität der entsprechenden UWP-Steuerelemente und können wie jedes andere WPF-Steuerelement im Visual Studio-Designer verwendet werden.
 
-* Das UWP-Steuerelement [CalendarView](/windows/uwp/design/controls-and-patterns/calendar-view). Hierbei handelt es sich um ein UWP-Standardsteuerelement, das du mithilfe des [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelements im Windows-Community-Toolkit hostest.
+* Das UWP-Steuerelement [CalendarView](/windows/uwp/design/controls-and-patterns/calendar-view). Hierbei handelt es sich um ein UWP-Standardsteuerelement, das du mithilfe des [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelements im Windows-Community-Toolkit hostest.
 
 ### <a name="net-core-3"></a>.NET Core 3
 
-[.NET Core](https://docs.microsoft.com/dotnet/core/) ist ein Open Source-Framework, das eine plattformübergreifende, schlanke und leicht zu erweiternde Version des vollständigen .NET Framework implementiert. Im Vergleich zum vollständigen .NET Framework ist die Startzeit von .NET Core deutlich kürzer, und viele der APIs wurden optimiert.
+[.NET Core](/dotnet/core/) ist ein Open Source-Framework, das eine plattformübergreifende, schlanke und leicht zu erweiternde Version des vollständigen .NET Framework implementiert. Im Vergleich zum vollständigen .NET Framework ist die Startzeit von .NET Core deutlich kürzer, und viele der APIs wurden optimiert.
 
 Während der ersten Releases lag der Schwerpunkt von .NET Core auf der Unterstützung von Web- oder Back-End-Apps. Mit .NET Core kannst du problemlos skalierbare Web-Apps oder APIs erstellen, die unter Windows, Linux oder in Microservice-Architekturen wie Docker-Containern gehostet werden können.
 
@@ -126,4 +126,4 @@ Während der ersten Releases lag der Schwerpunkt von .NET Core auf der Unterstü
 > [!NOTE]
 > WPF und Windows Forms sind nicht plattformübergreifend, und es ist nicht möglich, WPF oder Windows Forms unter Linux und macOS auszuführen. Die Benutzeroberflächenkomponenten von WPF und Windows Forms hängen weiterhin vom Windows-Renderingsystem ab.
 
-Weitere Informationen finden Sie unter [Neues in .NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0).
+Weitere Informationen finden Sie unter [Neues in .NET Core 3.0](/dotnet/core/whats-new/dotnet-core-3-0).
