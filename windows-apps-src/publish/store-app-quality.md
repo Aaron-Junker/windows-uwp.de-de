@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Store-Richtlinienvereinbarung
 ms.localizationpriority: high
 ms.assetid: B15D4F19-4E6A-4C27-AD64-F03014D11BA9
-ms.openlocfilehash: d093a7b49a8c5ac00ca927614365d1b548e2f63a
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: ae4ade3cd7bef5434c8f5c9d9c6905c039e7e806
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77607253"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172844"
 ---
 # <a name="app-quality"></a>App-Qualität
 
@@ -42,7 +42,7 @@ Gestalten Sie Ihren **Titel** einprägsam und informativ. Ein aussagekräftiger 
 
 - Seien Sie kreativ und unverwechselbar. Ein Titel, der lediglich die Schreibweise eines anderen App-Namens variiert, kann Verwirrung und Durcheinander stiften. Durch einen unverwechselbaren Titel wird Ihre App hervorgehoben.
 - Wählen Sie einen Titel, der Informationen enthält. Titel wie „Meine erste App” oder „Client-App” sind zu allgemein.
-- Hilfreiche Vorschläge finden Sie im Artikel [Auswählen des App-Namens](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name#choosing-your-apps-name).
+- Hilfreiche Vorschläge finden Sie im Artikel [Auswählen des App-Namens](./create-your-app-by-reserving-a-name.md#choosing-your-apps-name).
 
 In der **Beschreibung** können Sie die wichtigsten Features Ihrer App vorstellen. Halten Sie die Beschreibung klar, kompakt und verständlich.
 
@@ -51,7 +51,7 @@ In der **Beschreibung** können Sie die wichtigsten Features Ihrer App vorstelle
 - Führen Sie die einzelnen Features Ihrer App im Features-Abschnitt der Metadaten auf, und fassen Sie die besten Funktionen in der App-Beschreibung zusammen, sodass Kunden wissen, was sie erhalten. Zählen Sie beispielsweise in der Beschreibung Ihrer Astronomie-App nicht nur die Planeten auf, sondern weisen Sie Ihre Kunden auch auf die spezielle App-Funktion zum Satelliten-Tracking hin. Insbesondere in Store-Segmenten mit großem Angebot müssen Sie deutlich machen, wodurch sich Ihre App von anderen unterscheidet und welche Vorteile sie bietet.
 - Sagen Sie Kunden die Wahrheit. Beschreiben Sie, welche Funktionen die App tatsächlich bietet. Beschreiben Sie z. B. keine Features, die in Ihrer App noch nicht verfügbar sind (es sei denn, Sie geben sie als geplant an).
 - Wenn die Funktion Ihrer App von einer anderen App abhängt, sollten Sie dies zu Beginn Ihrer Beschreibung angeben. Damit lassen Sie Ihre Kunden wissen, ob sie für Ihre App zusätzliche Software oder weitere Apps benötigen.
-- Nützliche Tipps dazu finden Sie im Artikel [Erstellen einer interessanten App-Beschreibung](https://docs.microsoft.com/windows/uwp/publish/write-a-great-app-description).
+- Nützliche Tipps dazu finden Sie im Artikel [Erstellen einer interessanten App-Beschreibung](./write-a-great-app-description.md).
 
 **Screenshots** and **Trailer** bieten Ihnen die Möglichkeit, Ihren Kunden eine Vorschau auf die herausragende Funktionalität Ihrer App zu zeigen. Setzen Sie sie sinnvoll ein, um die Qualität Ihrer App zu unterstreichen:
 
@@ -88,4 +88,4 @@ Kunden wissen es zu schätzen, wenn Sie auf ihr Feedback und ihre Anforderungen 
 ### <a name="see-also"></a>Siehe auch
 
 - [Richtlinien und Verhaltensregeln für den Microsoft Store](store-policies-and-code-of-conduct.md)
-- [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)
+- [Vereinbarung für App-Entwickler](/legal/windows/agreements/app-developer-agreement)

@@ -12,21 +12,21 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c130505ec79ca83698fd79df26464969afe79c36
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 988400ae16d19525acc1dc811c91fc5af9fd97d0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80893470"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172624"
 ---
 # <a name="list-view-and-grid-view"></a>Listenansicht und Rasteransicht
 
 Mit den meisten Anwendungen können Sätze von Daten, beispielsweise eine Bildergalerie oder ein Satz von E-Mails, bearbeitet und angezeigt werden. Das XAML-Benutzeroberflächenframework bietet ListView und GridView-Steuerelemente, die das Anzeigen und Bearbeiten von Daten in Ihrer App vereinfachen.  
 
-> **Wichtige APIs:** [ListView-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [GridView-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview), [ItemsSource-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [Items-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items)
+> **Wichtige APIs:** [ListView-Klasse](/uwp/api/windows.ui.xaml.controls.listview), [GridView-Klasse](/uwp/api/windows.ui.xaml.controls.gridview), [ItemsSource-Eigenschaft](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [Items-Eigenschaft](/uwp/api/windows.ui.xaml.controls.itemscontrol.items)
 
 > [!NOTE]
-> ListView und GridView sind beide von der Klasse [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) abgeleitet, sodass sie dieselbe Funktionalität haben, Daten jedoch unterschiedlich anzeigen. In diesem Artikel beziehen sich Aussagen zur Listenansicht sowohl auf die ListView- als auch die GridView-Steuerelemente, falls nicht anders angegeben. Möglicherweise werden Klassen wie ListView oder ListViewItem genannt. Das Präfix *List* kann jedoch durch *Grid* für das entsprechende Rastersteuerelement ersetzt werden (GridView oder GridViewItem). 
+> ListView und GridView sind beide von der Klasse [ListViewBase](/uwp/api/windows.ui.xaml.controls.listviewbase) abgeleitet, sodass sie dieselbe Funktionalität haben, Daten jedoch unterschiedlich anzeigen. In diesem Artikel beziehen sich Aussagen zur Listenansicht sowohl auf die ListView- als auch die GridView-Steuerelemente, falls nicht anders angegeben. Möglicherweise werden Klassen wie ListView oder ListViewItem genannt. Das Präfix *List* kann jedoch durch *Grid* für das entsprechende Rastersteuerelement ersetzt werden (GridView oder GridViewItem). 
 
 ListView und GridView bieten viele Vorteile für das Arbeiten mit Sammlungen. Sie sind einerseits leicht zu implementieren und bieten andererseits eine einfache Benutzeroberfläche, Interaktion und Scrolling, während sie trotzdem leicht anpassbar sind. ListView und GridView können an vorhandene dynamische Datenquellen gebunden werden, oder es können hart codierte Daten im eigentlichen XAML-Code bzw. im CodeBehind übergeben werden. 
 
@@ -36,7 +36,7 @@ Diese beiden Steuerelemente eignen sich für viele Anwendungsfälle, funktionier
 ## <a name="differences-between-listview-and-gridview"></a>Unterschiede zwischen ListView und GridView
 
 ### <a name="listview"></a>ListView
-ListView zeigt Daten vertikal in einer einzelnen Spalte an. ListView eignet sich besser für Elemente, deren Schwerpunkt auf Text liegt, und für Sammlungen, die von oben nach unten gelesen werden sollen (d.h. alphabetisch sortiert sind). Zu den gängigen Anwendungsfällen für ListView gehören Listen von Nachrichten und Suchergebnissen. Für Sammlungen, die in mehreren Spalten oder in einem Tabellenformat angezeigt werden müssen, sollte _nicht_ ListView, sondern stattdessen ein [DataGrid](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid)-Steuerelement verwendet werden.
+ListView zeigt Daten vertikal in einer einzelnen Spalte an. ListView eignet sich besser für Elemente, deren Schwerpunkt auf Text liegt, und für Sammlungen, die von oben nach unten gelesen werden sollen (d.h. alphabetisch sortiert sind). Zu den gängigen Anwendungsfällen für ListView gehören Listen von Nachrichten und Suchergebnissen. Für Sammlungen, die in mehreren Spalten oder in einem Tabellenformat angezeigt werden müssen, sollte _nicht_ ListView, sondern stattdessen ein [DataGrid](/windows/communitytoolkit/controls/datagrid)-Steuerelement verwendet werden.
 
 ![Eine Listenansicht mit gruppierten Daten](images/listview-grouped-example-resized-final.png)
 
@@ -47,13 +47,13 @@ GridView zeigt eine Sammlung von Elementen in Zeilen und Spalten an, für die ei
 
 ## <a name="which-collection-control-should-you-use-a-comparison-with-itemsrepeater"></a>Welches Steuerelement sollten Sie verwenden? Ein Vergleich mit ItemsRepeater
 
-ListView und GridView sind Steuerelemente, die sofort einsatzfähig sind und dank eigener integrierter Benutzeroberfläche und Bedienlogik beliebige Sammlungen anzeigen können. Das [ItemsRepeater](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/items-repeater)-Steuerelement wird ebenfalls zum Anzeigen von Sammlungen verwendet, es wurde aber als Baustein zum Erstellen eines benutzerdefinierten Steuerelements erstellt, das genau Ihren Anforderungen an die Benutzeroberfläche entspricht. Die wichtigsten Unterschiede, die Ihre Wahl des Steuerelements bestimmen sollten, sind unten aufgeführt:
+ListView und GridView sind Steuerelemente, die sofort einsatzfähig sind und dank eigener integrierter Benutzeroberfläche und Bedienlogik beliebige Sammlungen anzeigen können. Das [ItemsRepeater](./items-repeater.md)-Steuerelement wird ebenfalls zum Anzeigen von Sammlungen verwendet, es wurde aber als Baustein zum Erstellen eines benutzerdefinierten Steuerelements erstellt, das genau Ihren Anforderungen an die Benutzeroberfläche entspricht. Die wichtigsten Unterschiede, die Ihre Wahl des Steuerelements bestimmen sollten, sind unten aufgeführt:
 
 -   ListView und GridView sind funktionsreiche Steuerelemente, die viel bieten und nur wenig Anpassung erfordern. ItemsRepeater ist ein Baustein zum Erstellen Ihres eigenen Layoutsteuerelements und verfügt als solcher nicht über vergleichbare Funktionen und Funktionalität: Sie müssen alle erforderlichen Funktionen oder Interaktionen selbst implementieren.
 -   ItemsRepeater sollte verwendet werden, wenn Sie eine in hohem Maß benutzerdefinierte Benutzeroberfläche verwenden, die sich mithilfe von ListView oder GridView nicht herstellen lässt, oder wenn Sie eine Datenquelle verwenden, die für jedes Element ein stark unterschiedliches Verhalten erfordert.
 
 
-Weitere Informationen zu ItemsRepeater finden Sie in seinen [Richtlinien](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/items-repeater) und den Seiten der [API-Dokumentation](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2).
+Weitere Informationen zu ItemsRepeater finden Sie in seinen [Richtlinien](./items-repeater.md) und den Seiten der [API-Dokumentation](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2).
 
 ## <a name="examples"></a>Beispiele
 
@@ -73,7 +73,7 @@ Weitere Informationen zu ItemsRepeater finden Sie in seinen [Richtlinien](https:
 
 ## <a name="create-a-listview-or-gridview"></a>Erstellen einer ListView oder GridView
 
-ListView und GridView sind beide [ItemsControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol)-Typen, sie können also eine Sammlung von Elementen beliebigen Typs enthalten. Eine ListView oder GridView muss über Elemente in ihrer Sammlung [Items](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) verfügen, um irgendetwas auf dem Bildschirm darstellen zu können. Um die Ansicht auszufüllen, können Sie der Sammlung [Items](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) direkt Elemente hinzufügen oder die Eigenschaft [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) auf eine Datenquelle festlegen. 
+ListView und GridView sind beide [ItemsControl](/uwp/api/windows.ui.xaml.controls.itemscontrol)-Typen, sie können also eine Sammlung von Elementen beliebigen Typs enthalten. Eine ListView oder GridView muss über Elemente in ihrer Sammlung [Items](/uwp/api/windows.ui.xaml.controls.itemscontrol.items) verfügen, um irgendetwas auf dem Bildschirm darstellen zu können. Um die Ansicht auszufüllen, können Sie der Sammlung [Items](/uwp/api/windows.ui.xaml.controls.itemscontrol.items) direkt Elemente hinzufügen oder die Eigenschaft [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) auf eine Datenquelle festlegen. 
 
 > [!IMPORTANT]
 > Sie können Items oder ItemsSource zum Ausfüllen der Liste verwenden, jedoch nicht beide zugleich. Wenn Sie die ItemsSource-Eigenschaft festlegen und dann ein Element in XAML hinzufügen, wird das hinzugefügte Element ignoriert. Wenn Sie die ItemsSource-Eigenschaft festlegen und der Items-Sammlung ein Element in Code hinzufügen, wird eine Ausnahme ausgelöst.
@@ -82,7 +82,7 @@ Viele Beispiele in diesem Artikel füllen der Einfachheit halber die `Items`-Sam
 
 ### <a name="add-items-to-a-listview-or-gridview"></a>Hinzufügen von Elementen zu einer ListView oder GridView
 
-Sie können der [Items](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items)-Sammlung einer ListView oder GridView Elemente mithilfe von XAML oder Code hinzufügen, was zum gleichen Ergebnis führt. In der Regel fügen Sie Elemente mithilfe von XAML hinzu, wenn Sie nur über eine geringe Anzahl von Elementen verfügen, die sich nicht ändern und einfach definiert werden können, oder wenn die Elemente zur Laufzeit im Code generiert werden. 
+Sie können der [Items](/uwp/api/windows.ui.xaml.controls.itemscontrol.items)-Sammlung einer ListView oder GridView Elemente mithilfe von XAML oder Code hinzufügen, was zum gleichen Ergebnis führt. In der Regel fügen Sie Elemente mithilfe von XAML hinzu, wenn Sie nur über eine geringe Anzahl von Elementen verfügen, die sich nicht ändern und einfach definiert werden können, oder wenn die Elemente zur Laufzeit im Code generiert werden. 
 
 <u>Methode 1: Hinzufügen von Elementen zur Items-Sammlung</u>
 #### <a name="option-1-add-items-through-xaml"></a>Option 1: Hinzufügen von Elementen mithilfe von XAML
@@ -125,7 +125,7 @@ Beide oben aufgeführten Optionen führen zu der gleichen ListView, die unten da
 <br/>
 <u>Methode 2: Hinzufügen von Elementen durch Festlegen der ItemsSource</u>
 
-In der Regel verwenden Sie eine ListView oder GridView, um Daten aus Quellen wie einer Datenbank oder dem Internet anzuzeigen. Um eine ListView/GridView aus einer Datenquelle zu füllen, legen Sie deren Eigenschaft [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) auf eine Sammlung mit Datenelementen fest. Diese Methode funktioniert besser, wenn Ihre ListView oder GridView benutzerdefinierte Klassenobjekte enthalten soll, wie in den Beispielen unten dargestellt.
+In der Regel verwenden Sie eine ListView oder GridView, um Daten aus Quellen wie einer Datenbank oder dem Internet anzuzeigen. Um eine ListView/GridView aus einer Datenquelle zu füllen, legen Sie deren Eigenschaft [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) auf eine Sammlung mit Datenelementen fest. Diese Methode funktioniert besser, wenn Ihre ListView oder GridView benutzerdefinierte Klassenobjekte enthalten soll, wie in den Beispielen unten dargestellt.
 
 #### <a name="option-1-set-itemssource-in-c"></a>Option 1: Festlegen von ItemsSource in C#
 Dies ist die ItemsSource der Listenansicht im Code, direkt auf eine Instanz einer Sammlung festgelegt. 
@@ -196,23 +196,23 @@ Beide oben aufgeführte Optionen führen zu der gleichen ListView, die unten dar
 ![Eine einfache Listenansicht mit festgelegter ItemsSource](images/listview-basic-code-example-final.png)
 
 > [!IMPORTANT]
-> Ohne definierte Datenvorlage werden benutzerdefinierte Klassenobjekte in der ListView lediglich mit ihrem Zeichenfolgenwert dargestellt, wenn für sie eine [ToString()](https://docs.microsoft.com/uwp/api/windows.foundation.istringable.tostring)-Methode definiert wurde.
+> Ohne definierte Datenvorlage werden benutzerdefinierte Klassenobjekte in der ListView lediglich mit ihrem Zeichenfolgenwert dargestellt, wenn für sie eine [ToString()](/uwp/api/windows.foundation.istringable.tostring)-Methode definiert wurde.
 
  Der nächste Abschnitt befasst sich im Detail mit der ordnungsgemäßen visuellen Darstellung einfacher und benutzerdefinierter Klassenelemente in einer ListView oder GridView.
 
-Weitere Informationen zur Datenbindung finden Sie unter [Übersicht über Datenbindung](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart).
+Weitere Informationen zur Datenbindung finden Sie unter [Übersicht über Datenbindung](../../data-binding/data-binding-quickstart.md).
 
 > [!NOTE]
-> Wenn Sie gruppierte Daten in der Listenansicht anzeigen müssen, müssen Sie an eine [CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) binden. Die CollectionViewSource dient als Proxy für die Sammlungsklasse in XAML und ermöglicht die Unterstützung für Gruppierungen. Weitere Informationen finden Sie unter [CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource).
+> Wenn Sie gruppierte Daten in der Listenansicht anzeigen müssen, müssen Sie an eine [CollectionViewSource](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) binden. Die CollectionViewSource dient als Proxy für die Sammlungsklasse in XAML und ermöglicht die Unterstützung für Gruppierungen. Weitere Informationen finden Sie unter [CollectionViewSource](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource).
 
 ## <a name="customizing-the-look-of-items-with-a-datatemplate"></a>Anpassen der Darstellung Elementen mit einer Datenvorlage
 
-Eine Datenvorlage in einer ListView oder GridView definiert, wie die Elemente/Daten visualisiert werden. Datenelemente werden in der ListView standardmäßig als Zeichenfolgendarstellung des Datenobjekts angezeigt, an das sie gebunden sind. Sie können die Zeichenfolgendarstellung einer bestimmten Eigenschaft des Datenelements anzeigen, indem Sie den [DisplayMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) zur Eigenschaft festlegen.
+Eine Datenvorlage in einer ListView oder GridView definiert, wie die Elemente/Daten visualisiert werden. Datenelemente werden in der ListView standardmäßig als Zeichenfolgendarstellung des Datenobjekts angezeigt, an das sie gebunden sind. Sie können die Zeichenfolgendarstellung einer bestimmten Eigenschaft des Datenelements anzeigen, indem Sie den [DisplayMemberPath](/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) zur Eigenschaft festlegen.
 
-In der Regel möchten Sie jedoch eine ansprechendere Darstellung Ihrer Daten anzeigen. Um genau anzugeben, wie Elemente in der ListView/GridView angezeigt werden, erstellen Sie eine [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate). Der XAML-Code in der DataTemplate definiert das Layout und die Darstellung von Steuerelementen, die zum Anzeigen eines einzelnen Elements verwendet werden. Die Steuerelemente im Layout können an Eigenschaften eines Datenobjekts gebunden werden. Es ist auch möglich, statischen Inhalt intern zu definieren. 
+In der Regel möchten Sie jedoch eine ansprechendere Darstellung Ihrer Daten anzeigen. Um genau anzugeben, wie Elemente in der ListView/GridView angezeigt werden, erstellen Sie eine [DataTemplate](/uwp/api/Windows.UI.Xaml.DataTemplate). Der XAML-Code in der DataTemplate definiert das Layout und die Darstellung von Steuerelementen, die zum Anzeigen eines einzelnen Elements verwendet werden. Die Steuerelemente im Layout können an Eigenschaften eines Datenobjekts gebunden werden. Es ist auch möglich, statischen Inhalt intern zu definieren. 
 
 > [!NOTE]
-> Wenn Sie die [x:Bind-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) in DataTemplate verwenden, müssen Sie den Datentyp (`x:DataType`) für „DataTemplate“ angeben.
+> Wenn Sie die [x:Bind-Markuperweiterung](../../xaml-platform/x-bind-markup-extension.md) in DataTemplate verwenden, müssen Sie den Datentyp (`x:DataType`) für „DataTemplate“ angeben.
 
 #### <a name="simple-listview-data-template"></a>Einfache ListView-Datenvorlage
 In diesem Beispiel ist das Datenelement eine einfache Zeichenfolge. Eine DataTemplate wird inline innerhalb der ListView-Definition definiert, um links neben der Zeichenfolge ein Bild einzufügen und die Zeichenfolge blaugrün anzuzeigen. Dies ist die gleiche ListView, unter Verwendung von Methode 1 und Option 1 (oben angeführt) erstellt.
@@ -281,32 +281,32 @@ So sehen die Datenelemente aus, wenn sie mithilfe dieser Datenvorlage in einer L
 
 Datenvorlagen sind der bevorzugte Weg für die Definition des Aussehens Ihrer ListView. Sie können auch eine erhebliche Auswirkung auf die Leistung haben, wenn Ihre Liste eine große Anzahl von Elementen enthält.  
 
-Ihre Datenvorlage kann innerhalb der ListView/GridView-Definition inline (oben dargestellt) oder separat in einem Resources-Abschnitt definiert werden. Wenn sie außerhalb der eigentlichen ListView/GridView definiert wird, muss die DataTemplate mit einem [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute)-Attribut versehen und mithilfe dieses Schlüssels der [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)-Eigenschaft der ListView oder GridView zugewiesen werden.
+Ihre Datenvorlage kann innerhalb der ListView/GridView-Definition inline (oben dargestellt) oder separat in einem Resources-Abschnitt definiert werden. Wenn sie außerhalb der eigentlichen ListView/GridView definiert wird, muss die DataTemplate mit einem [x:Key](../../xaml-platform/x-key-attribute.md)-Attribut versehen und mithilfe dieses Schlüssels der [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)-Eigenschaft der ListView oder GridView zugewiesen werden.
 
 Weitere Informationen und Beispiele zur Verwendung von Datenvorlagen und Elementcontainern zur Definition des Aussehens von Elementen in Ihrer Liste oder Ihrem Raster finden Sie unter [Elementcontainer und Vorlagen](item-containers-templates.md). 
 
 ## <a name="change-the-layout-of-items"></a>Ändern des Layouts von Elementen
 
-Wenn Sie Elemente zu einer ListView oder GridView hinzufügen, bricht das Steuerelement automatisch alle Elemente in einem Elementcontainer um und ordnet anschließend alle Elementcontainer an. Die Anordnung dieser Elementcontainer ist von [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) des Steuerelements abhängig.  
-- Standardmäßig verwendet **ListView** ein [ItemsStackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel), das eine vertikale Liste wie diese erzeugt.
+Wenn Sie Elemente zu einer ListView oder GridView hinzufügen, bricht das Steuerelement automatisch alle Elemente in einem Elementcontainer um und ordnet anschließend alle Elementcontainer an. Die Anordnung dieser Elementcontainer ist von [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) des Steuerelements abhängig.  
+- Standardmäßig verwendet **ListView** ein [ItemsStackPanel](/uwp/api/windows.ui.xaml.controls.itemsstackpanel), das eine vertikale Liste wie diese erzeugt.
 
 ![Eine einfache Listenansicht](images/listview-simple.png)
 
-- **GridView** verwendet ein [ItemsWrapGrid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemswrapgrid), das Elemente horizontal hinzufügt, diese anschließend umbricht und einen vertikalen Bildlauf ausführt, wie hier gezeigt.
+- **GridView** verwendet ein [ItemsWrapGrid](/uwp/api/windows.ui.xaml.controls.itemswrapgrid), das Elemente horizontal hinzufügt, diese anschließend umbricht und einen vertikalen Bildlauf ausführt, wie hier gezeigt.
 
 ![Eine einfache Rasteransicht](images/gridview-simple.png)
 
 Sie können das Layout von Elementen ändern, indem Sie Eigenschaften im Elementpanel anpassen oder das Standardpanel durch ein anderes Panel ersetzen.
 
 > [!NOTE]
-> Achten Sie darauf, dass Sie Virtualisierung nicht deaktivieren, wenn Sie ItemsPanel ändern. Sowohl **ItemsStackPanel** als auch **ItemsWrapGrid** unterstützen Virtualisierung, damit diese sicher verwendet werden können. Wenn Sie ein anderes Panel verwenden, könnten Sie die Virtualisierung deaktivieren und die Leistung der Listenansicht beeinträchtigen. Weitere Informationen finden Sie in den Artikeln zur Listenansicht unter [Leistung](https://docs.microsoft.com/windows/uwp/debug-test-perf/performance-and-xaml-ui). 
+> Achten Sie darauf, dass Sie Virtualisierung nicht deaktivieren, wenn Sie ItemsPanel ändern. Sowohl **ItemsStackPanel** als auch **ItemsWrapGrid** unterstützen Virtualisierung, damit diese sicher verwendet werden können. Wenn Sie ein anderes Panel verwenden, könnten Sie die Virtualisierung deaktivieren und die Leistung der Listenansicht beeinträchtigen. Weitere Informationen finden Sie in den Artikeln zur Listenansicht unter [Leistung](../../debug-test-perf/performance-and-xaml-ui.md). 
 
-In diesem Beispiel wird gezeigt, wie eine **ListView** ihre Elementcontainer in einer horizontalen Liste anordnet, indem die [Orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel.orientation)-Eigenschaft von **ItemsStackPanel** geändert wird.
-Da die Listenansicht standardmäßig den vertikalen Bildlauf verwendet, müssen Sie auch einige Eigenschaften im internen [ScrollViewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) der Listenansicht anpassen, damit der Bildlauf horizontal durchgeführt wird.
-- [ScrollViewer.HorizontalScrollMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode) zu **Enabled** oder **Auto**
-- [ScrollViewer.HorizontalScrollBarVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility) zu **Auto** 
-- [ScrollViewer.VerticalScrollMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollmode) zu **Disabled** 
-- [ScrollViewer.VerticalScrollBarVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility) zu **Hidden** 
+In diesem Beispiel wird gezeigt, wie eine **ListView** ihre Elementcontainer in einer horizontalen Liste anordnet, indem die [Orientation](/uwp/api/windows.ui.xaml.controls.itemsstackpanel.orientation)-Eigenschaft von **ItemsStackPanel** geändert wird.
+Da die Listenansicht standardmäßig den vertikalen Bildlauf verwendet, müssen Sie auch einige Eigenschaften im internen [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer) der Listenansicht anpassen, damit der Bildlauf horizontal durchgeführt wird.
+- [ScrollViewer.HorizontalScrollMode](/uwp/api/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode) zu **Enabled** oder **Auto**
+- [ScrollViewer.HorizontalScrollBarVisibility](/uwp/api/windows.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility) zu **Auto** 
+- [ScrollViewer.VerticalScrollMode](/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollmode) zu **Disabled** 
+- [ScrollViewer.VerticalScrollBarVisibility](/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility) zu **Hidden** 
 
 > [!IMPORTANT]
 > Diese Beispiele werden mit unbeschränkter Breite der Listenansicht gezeigt, sodass die horizontalen Bildlaufleisten nicht angezeigt werden. Wenn Sie diesen Code ausführen, können Sie für ListView `Width="180"` festlegen, um die Bildlaufleisten anzuzeigen.
@@ -370,19 +370,19 @@ Wenn Sie in Ihrer Listenansicht können gruppierte Daten anzeigen möchten, best
 
 ## <a name="item-selection-and-interaction"></a>Auswahl von Elementen und Interaktion
 
-Sie können aus verschiedenen Möglichkeiten wählen, wie Benutzer mit einer Listenansicht interagieren können. Standardmäßig können Benutzer ein einzelnes Element auswählen. Sie können die Eigenschaft [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) ändern, um eine Mehrfachauswahl zu ermöglichen oder die Auswahl zu deaktivieren. Sie können die Eigenschaft [IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) festlegen, sodass ein Benutzer auf ein Element klickt, um eine Aktion aufzurufen (wie bei einer Schaltfläche), statt das Element auszuwählen.
+Sie können aus verschiedenen Möglichkeiten wählen, wie Benutzer mit einer Listenansicht interagieren können. Standardmäßig können Benutzer ein einzelnes Element auswählen. Sie können die Eigenschaft [SelectionMode](/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) ändern, um eine Mehrfachauswahl zu ermöglichen oder die Auswahl zu deaktivieren. Sie können die Eigenschaft [IsItemClickEnabled](/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) festlegen, sodass ein Benutzer auf ein Element klickt, um eine Aktion aufzurufen (wie bei einer Schaltfläche), statt das Element auszuwählen.
 
-> **Hinweis**&nbsp;&nbsp;Sowohl ListView als auch GridView verwenden die Enumeration [ListViewSelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewselectionmode) für ihre SelectionMode-Eigenschaften. IsItemClickEnabled ist standardmäßig **False**. Daher müssen Sie es lediglich festlegen, um den Klickmodus zu aktivieren.
+> **Hinweis**&nbsp;&nbsp;Sowohl ListView als auch GridView verwenden die Enumeration [ListViewSelectionMode](/uwp/api/windows.ui.xaml.controls.listviewselectionmode) für ihre SelectionMode-Eigenschaften. IsItemClickEnabled ist standardmäßig **False**. Daher müssen Sie es lediglich festlegen, um den Klickmodus zu aktivieren.
 
 In der folgenden Tabelle werden die Arten gezeigt, wie Benutzer mit einer Listenansicht interagieren können und wie Sie auf die jeweilige Interaktion reagieren können.
 
 Um diese Interaktion zu ermöglichen: | Verwenden Sie diese Einstellungen: | Behandeln Sie dieses Ereignis: | Verwenden Sie diese Eigenschaft zum Abrufen des ausgewählten Elements:
 ----------------------------|---------------------|--------------------|--------------------------------------------
-Keine Interaktion | [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) = **None**, [IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) = **False** | NICHT ZUTREFFEND | NICHT ZUTREFFEND 
-Einzelauswahl | SelectionMode = **Single**, IsItemClickEnabled = **False** | [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem), [SelectedIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex)  
-Mehrfachauswahl | SelectionMode = **Multiple**, IsItemClickEnabled = **False** | [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItems](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems)  
-Erweiterte Auswahl | SelectionMode = **Extended**, IsItemClickEnabled = **False** | [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItems](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems)  
-Klicken Sie im Menüband auf | SelectionMode = **None**, IsItemClickEnabled = **True** | [ItemClick](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.itemclick) | NICHT ZUTREFFEND 
+Keine Interaktion | [SelectionMode](/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) = **None**, [IsItemClickEnabled](/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) = **False** | NICHT ZUTREFFEND | NICHT ZUTREFFEND 
+Einzelauswahl | SelectionMode = **Single**, IsItemClickEnabled = **False** | [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItem](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem), [SelectedIndex](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex)  
+Mehrfachauswahl | SelectionMode = **Multiple**, IsItemClickEnabled = **False** | [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItems](/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems)  
+Erweiterte Auswahl | SelectionMode = **Extended**, IsItemClickEnabled = **False** | [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItems](/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems)  
+Klicken Sie im Menüband auf | SelectionMode = **None**, IsItemClickEnabled = **True** | [ItemClick](/uwp/api/windows.ui.xaml.controls.listviewbase.itemclick) | NICHT ZUTREFFEND 
 
 > **Hinweis**&nbsp;&nbsp;Ab Windows 10 können Sie IsItemClickEnabled aktivieren, um ein ItemClick-Ereignis auszulösen, während SelectionMode ebenfalls auf Single, Multiple oder Extended festgelegt ist. Wenn Sie dies tun, wird zuerst das ItemClick-Ereignis und anschließend das SelectionChanged-Ereignis ausgelöst. In einigen Fällen, wenn Sie beispielsweise zu einer anderen Seite im ItemClick-Ereignishandler navigieren, wird das SelectionChanged-Ereignis nicht ausgelöst, und das Element wird nicht ausgewählt.
 
@@ -416,7 +416,7 @@ Zusatztaste | Interaktion
 Keine | <li>Ein Benutzer kann ein einzelnes Element mit der LEERTASTE, per Mausklick oder durch Tippen auswählen.</li>
 STRG | <li>Ein Benutzer kann die Auswahl eines einzelnen Elements mit der LEERTASTE, per Mausklick oder durch Tippen aufheben.</li><li>Mit den Pfeiltasten kann ein Benutzer den Fokus unabhängig von der Auswahl verschieben.</li>
 
-Wenn SelectionMode **Single** ist, erhalten Sie das ausgewählte Datenelement aus der [SelectedItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem)-Eigenschaft. Sie erhalten den Index in der Sammlung des ausgewählten Elements mithilfe der [SelectedIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex)-Eigenschaft. Wenn kein Element ausgewählt ist, ist SelectedItem **null**, und SelectedIndex ist -1. 
+Wenn SelectionMode **Single** ist, erhalten Sie das ausgewählte Datenelement aus der [SelectedItem](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem)-Eigenschaft. Sie erhalten den Index in der Sammlung des ausgewählten Elements mithilfe der [SelectedIndex](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex)-Eigenschaft. Wenn kein Element ausgewählt ist, ist SelectedItem **null**, und SelectedIndex ist -1. 
  
 Wenn Sie versuchen, ein Element festzulegen, das nicht in der **Items**-Sammlung enthalten ist, wird der Vorgang ignoriert, und **SelectedItem** ist **null**. Wenn Sie jedoch versuchen, **SelectedIndex** auf einen Index festzulegen, die außerhalb des Bereichs der **Items** in der Liste ist, wird eine **System.ArgumentException**-Ausnahme ausgelöst. 
 
@@ -439,7 +439,7 @@ Keine | <li>Das Verhalten ist mit der Auswahl **Single** identisch.</li>
 STRG | <li>Ein Benutzer kann mehrerer Objekte mit der LEERTASTE, per Mausklick oder durch Tippen auswählen, um die Auswahl zum fokussierten Element zu verschieben.</li><li>Mit den Pfeiltasten kann ein Benutzer den Fokus unabhängig von der Auswahl verschieben.</li>
 UMSCHALTTASTE | <li>Benutzer können mehrere zusammenhängende Elemente auswählen, indem sie auf das erste Element in der Auswahl und anschließend auf das letzte Element in der Auswahl klicken oder tippen.</li><li>Mit den Pfeiltasten können Benutzer eine zusammenhängende Auswahl beginnend mit dem ausgewählten Element erstellen, wenn die UMSCHALTTASTE gedrückt wird.</li>
 
-Wenn SelectionMode **Multiple** oder **Extended** ist, können Sie die ausgewählten Datenelemente aus der [SelectedItems](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems)-Eigenschaft abrufen. 
+Wenn SelectionMode **Multiple** oder **Extended** ist, können Sie die ausgewählten Datenelemente aus der [SelectedItems](/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems)-Eigenschaft abrufen. 
 
 Die Eigenschaften **SelectedIndex**, **SelectedItem** und **SelectedItems** sind synchronisiert. Wenn Sie beispielsweise SelectedIndex auf-1 festlegen, wird SelectedItem auf **null** festgelegt und SelectedItems ist leer. Wenn Sie SelectedItem auf **null** festlegen, wird SelectedIndex auf-1 festgelegt und SelectedItems ist leer.
 
@@ -447,7 +447,7 @@ Im Mehrfachauswahlmodus enthält **SelectedItem** das Element, das zuerst ausgew
 
 ### <a name="respond-to-selection-changes"></a>Reagieren auf Änderungen der Auswahl
 
-Um auf Änderungen der Auswahl in einer Listenansicht zu reagieren, behandeln Sie das Ereignis [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged). Im Ereignishandlercode können Sie die Liste mit den ausgewählten Elementen aus der [SelectionChangedEventArgs.AddedItems](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.addeditems)-Eigenschaft abrufen. Sie können alle Elemente abrufen, deren Auswahl aus der [SelectionChangedEventArgs.RemovedItems](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.removeditems)-Eigenschaft aufgehoben wurde. Die AddedItems- und RemovedItems-Sammlungen enthalten höchstens 1 Element, wenn der Benutzer keinen Bereich von Elementen auswählt, indem er die UMSCHALTTASTE gedrückt hält.
+Um auf Änderungen der Auswahl in einer Listenansicht zu reagieren, behandeln Sie das Ereignis [SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged). Im Ereignishandlercode können Sie die Liste mit den ausgewählten Elementen aus der [SelectionChangedEventArgs.AddedItems](/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.addeditems)-Eigenschaft abrufen. Sie können alle Elemente abrufen, deren Auswahl aus der [SelectionChangedEventArgs.RemovedItems](/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.removeditems)-Eigenschaft aufgehoben wurde. Die AddedItems- und RemovedItems-Sammlungen enthalten höchstens 1 Element, wenn der Benutzer keinen Bereich von Elementen auswählt, indem er die UMSCHALTTASTE gedrückt hält.
 
 In diesem Beispiel werden die Behandlung des **SelectionChanged**-Ereignisses und der Zugriff auf die verschiedenen Elementsammlungen gezeigt.
 
@@ -553,16 +553,16 @@ private void ListView1_ItemClick(object sender, ItemClickEventArgs e)
 
 In manchen Fällen müssen Sie die Elementauswahl einer Listenansicht programmgesteuert bearbeiten. Angenommen, es gibt eine Schaltfläche **Alles auswählen**, um einen Benutzer alle Elemente in einer Liste auswählen zu lassen. In diesem Fall ist es in der Regel nicht sehr effizient, der Sammlung SelectedItems Elemente einzeln hinzuzufügen oder Elemente einzeln aus dieser zu entfernen. Jedes Element führt zu einem SelectionChanged-Ereignis. Wenn Sie direkt mit den Elementen arbeiten und nicht mit Indexwerten, wird die Virtualisierung des betreffenden Elements deaktiviert.
 
-Die Methoden [SelectAll](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectall), [SelectRange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectrange) und [DeselectRange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.deselectrange) stellen eine effizientere Möglichkeit dar, die Auswahl zu ändern, als die Verwendung der Eigenschaft SelectedItems. Diese Methoden führen mithilfe von Elementindexbereichen Auswahlen durch oder heben Auswahlen auf. Elemente, die virtualisiert sind, bleiben virtualisiert, da nur der Index verwendet wird. Alle Elemente im angegebenen Bereich werden ausgewählt (bzw. die Auswahl aller Elemente im angegeben Bereich wird aufgehoben), unabhängig vom ursprünglichen Auswahlzustand. Das SelectionChanged-Ereignis tritt nur einmal für jeden Aufruf dieser Methoden auf.
+Die Methoden [SelectAll](/uwp/api/windows.ui.xaml.controls.listviewbase.selectall), [SelectRange](/uwp/api/windows.ui.xaml.controls.listviewbase.selectrange) und [DeselectRange](/uwp/api/windows.ui.xaml.controls.listviewbase.deselectrange) stellen eine effizientere Möglichkeit dar, die Auswahl zu ändern, als die Verwendung der Eigenschaft SelectedItems. Diese Methoden führen mithilfe von Elementindexbereichen Auswahlen durch oder heben Auswahlen auf. Elemente, die virtualisiert sind, bleiben virtualisiert, da nur der Index verwendet wird. Alle Elemente im angegebenen Bereich werden ausgewählt (bzw. die Auswahl aller Elemente im angegeben Bereich wird aufgehoben), unabhängig vom ursprünglichen Auswahlzustand. Das SelectionChanged-Ereignis tritt nur einmal für jeden Aufruf dieser Methoden auf.
 
 > [!IMPORTANT]
 > Sie sollten diese Methoden nur aufrufen, wenn die SelectionMode-Eigenschaft auf Multiple oder Extended festgelegt ist. Wenn Sie SelectRange aufrufen, wenn der Auswahlmodus Single oder None ist, wird eine Ausnahme ausgelöst.
 
-Verwenden Sie bei der Auswahl von Elementen mit Indexbereichen die [SelectedRanges](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectedranges)-Eigenschaft, um alle ausgewählten Bereiche in der Liste abzurufen.
+Verwenden Sie bei der Auswahl von Elementen mit Indexbereichen die [SelectedRanges](/uwp/api/windows.ui.xaml.controls.listviewbase.selectedranges)-Eigenschaft, um alle ausgewählten Bereiche in der Liste abzurufen.
 
-Wenn ItemsSource [IItemsRangeInfo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.iitemsrangeinfo) implementiert, und Sie diese Methoden verwenden, um die Auswahl zu ändern, werden die Eigenschaften **AddedItems** und **RemovedItems** in SelectionChangedEventArgs nicht festgelegt. Das Festlegen dieser Eigenschaften erfordert die Deaktivierung der Virtualisierung des Elementobjekts. Verwenden Sie zum Abrufen der Elemente stattdessen die Eigenschaft **SelectedRanges**.
+Wenn ItemsSource [IItemsRangeInfo](/uwp/api/windows.ui.xaml.data.iitemsrangeinfo) implementiert, und Sie diese Methoden verwenden, um die Auswahl zu ändern, werden die Eigenschaften **AddedItems** und **RemovedItems** in SelectionChangedEventArgs nicht festgelegt. Das Festlegen dieser Eigenschaften erfordert die Deaktivierung der Virtualisierung des Elementobjekts. Verwenden Sie zum Abrufen der Elemente stattdessen die Eigenschaft **SelectedRanges**.
 
-Sie können alle Elemente in einer Sammlung auswählen, indem Sie die SelectAll-Methode aufrufen. Es gibt jedoch keine entsprechende Methode, um die Auswahl aller Elemente aufzuheben. Sie können die Auswahl aller Elemente aufheben, indem Sie DeselectRange aufrufen und einen [ItemIndexRange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.itemindexrange) mit einem Wert für [FirstIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.itemindexrange.firstindex) von 0 und einem Wert für [Length](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.itemindexrange.length) übergeben, der der Anzahl der Elemente in der Sammlung entspricht. Dies wird im Beispiel unten dargestellt, zusammen mit einer Option zum Auswählen aller Elemente.
+Sie können alle Elemente in einer Sammlung auswählen, indem Sie die SelectAll-Methode aufrufen. Es gibt jedoch keine entsprechende Methode, um die Auswahl aller Elemente aufzuheben. Sie können die Auswahl aller Elemente aufheben, indem Sie DeselectRange aufrufen und einen [ItemIndexRange](/uwp/api/windows.ui.xaml.data.itemindexrange) mit einem Wert für [FirstIndex](/uwp/api/windows.ui.xaml.data.itemindexrange.firstindex) von 0 und einem Wert für [Length](/uwp/api/windows.ui.xaml.data.itemindexrange.length) übergeben, der der Anzahl der Elemente in der Sammlung entspricht. Dies wird im Beispiel unten dargestellt, zusammen mit einer Option zum Auswählen aller Elemente.
 
 **XAML**
 ```xml

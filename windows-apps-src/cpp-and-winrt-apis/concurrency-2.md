@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Parallelität, async, asynchron, Asynchronität
 ms.localizationpriority: medium
-ms.openlocfilehash: ff00264d0806e7fbdfcabd000ec68857b1485dcd
-ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
+ms.openlocfilehash: e916465d664b5658eeb155874dfa00795a772622
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87296152"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170394"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>Erweiterte Parallelität und Asynchronie mit C++/WinRT
 
@@ -24,7 +24,7 @@ Eine Coroutine ist insofern eine Funktion wie jede andere, dass ein Aufrufer blo
 
 Bevor Sie rechnergebundene Aufgaben in einer Coroutine ausführen, müssen Sie die Ausführung an den Aufrufer zurückgeben (d. h. einen Anhaltepunkt einfügen), damit der Aufrufer nicht blockiert wird. Sofern Sie dazu noch keine `co_await`-Anweisung für einen anderen Vorgang verwenden, können Sie `co_await` für die [**winrt::resume_background**](/uwp/cpp-ref-for-winrt/resume-background)-Funktion ausführen. Dadurch wird die Steuerung an den Aufrufer zurückgegeben, und unmittelbar danach wird die Ausführung in einem Thread aus dem Threadpool fortgesetzt.
 
-Der in der Implementierung verwendete Threadpool ist der [Windows-Threadpool](https://docs.microsoft.com/windows/desktop/ProcThread/thread-pool-api) auf niedriger Ebene und daher optimal effizient.
+Der in der Implementierung verwendete Threadpool ist der [Windows-Threadpool](/windows/desktop/ProcThread/thread-pool-api) auf niedriger Ebene und daher optimal effizient.
 
 ```cppwinrt
 IAsyncOperation<uint32_t> DoWorkOnThreadPoolAsync()
@@ -639,7 +639,7 @@ int main()
 }
 ```
 
-**winrt::fire_and_forget** ist auch als Rückgabetyp des Ereignishandlers hilfreich, wenn Sie asynchrone Vorgänge in ihm ausführen müssen. Hier ist ein Beispiel (siehe auch [Starke und schwache Verweise in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine)).
+**winrt::fire_and_forget** ist auch als Rückgabetyp des Ereignishandlers hilfreich, wenn Sie asynchrone Vorgänge in ihm ausführen müssen. Hier ist ein Beispiel (siehe auch [Starke und schwache Verweise in C++/WinRT](./weak-references.md#safely-accessing-the-this-pointer-in-a-class-member-coroutine)).
 
 ```cppwinrt
 winrt::fire_and_forget MyClass::MyMediaBinder_OnBinding(MediaBinder const&, MediaBindingEventArgs args)

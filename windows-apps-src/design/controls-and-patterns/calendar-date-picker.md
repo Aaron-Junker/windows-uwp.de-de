@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bc62a70b3dc52440e88652cd2d1eec3d01f97cc
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 8e5ddaf909119830bd8c75c698396c08a7a98427
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968995"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173534"
 ---
 # <a name="calendar-date-picker"></a>Kalenderdatumsauswahl
 
@@ -27,9 +27,9 @@ Die Kalenderdatumsauswahl ist ein Dropdownsteuerelement, das für die Auswahl ei
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). WinUI ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](../style/rounded-corner.md). WinUI ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
-> **Plattform-APIs:** [CalendarDatePicker-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker), [Date-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.date), [DateChanged-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged)
+> **Plattform-APIs:** [CalendarDatePicker-Klasse](/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker), [Date-Eigenschaft](/uwp/api/windows.ui.xaml.controls.calendardatepicker.date), [DateChanged-Ereignis](/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -74,13 +74,13 @@ Die fertige Kalenderdatumsauswahl sieht wie folgt aus:
 
 ![Beispiel für eine Kalenderdatumsauswahl](images/calendar-date-picker-closed.png)
 
-Die Kalenderdatumsauswahl verfügt über eine interne [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView)-Klasse, um ein Datum auszuwählen. In CalendarDatePicker ist eine Teilmenge von CalendarView-Eigenschaften wie [IsTodayHighlighted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.istodayhighlighted) und [FirstDayOfWeek](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.firstdayofweek) vorhanden. Diese werden an die interne CalendarView-Klasse weitergeleitet, damit Sie sie ändern können. 
+Die Kalenderdatumsauswahl verfügt über eine interne [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView)-Klasse, um ein Datum auszuwählen. In CalendarDatePicker ist eine Teilmenge von CalendarView-Eigenschaften wie [IsTodayHighlighted](/uwp/api/windows.ui.xaml.controls.calendardatepicker.istodayhighlighted) und [FirstDayOfWeek](/uwp/api/windows.ui.xaml.controls.calendardatepicker.firstdayofweek) vorhanden. Diese werden an die interne CalendarView-Klasse weitergeleitet, damit Sie sie ändern können. 
 
-Sie können jedoch die [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selectionmode)-Eigenschaft der internen CalendarView-Klasse nicht ändern und somit keine Mehrfachauswahl zulassen. Falls Benutzer mehrere Tage auswählen sollen oder permanent ein Kalender sichtbar sein muss, bietet sich möglicherweise anstelle der Kalenderdatumsauswahl eine Kalenderansicht an. Weitere Informationen zum Ändern der Kalenderanzeige finden Sie im Artikel zur [Kalenderansicht](calendar-view.md).
+Sie können jedoch die [SelectionMode](/uwp/api/windows.ui.xaml.controls.calendarview.selectionmode)-Eigenschaft der internen CalendarView-Klasse nicht ändern und somit keine Mehrfachauswahl zulassen. Falls Benutzer mehrere Tage auswählen sollen oder permanent ein Kalender sichtbar sein muss, bietet sich möglicherweise anstelle der Kalenderdatumsauswahl eine Kalenderansicht an. Weitere Informationen zum Ändern der Kalenderanzeige finden Sie im Artikel zur [Kalenderansicht](calendar-view.md).
 
 ### <a name="selecting-dates"></a>Auswählen von Tagen
 
-Verwenden Sie die [Date](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.date)-Eigenschaft, um das ausgewählte Datum abzurufen oder festzulegen. Der Standardwert der „Date“-Eigenschaft lautet **null**. Wenn Benutzer ein Datum in der Kalenderansicht auswählen, wird diese Eigenschaft aktualisiert. Benutzer können die Auswahl eines Datums aufheben, indem sie in der Kalenderansicht auf das Datum klicken. 
+Verwenden Sie die [Date](/uwp/api/windows.ui.xaml.controls.calendardatepicker.date)-Eigenschaft, um das ausgewählte Datum abzurufen oder festzulegen. Der Standardwert der „Date“-Eigenschaft lautet **null**. Wenn Benutzer ein Datum in der Kalenderansicht auswählen, wird diese Eigenschaft aktualisiert. Benutzer können die Auswahl eines Datums aufheben, indem sie in der Kalenderansicht auf das Datum klicken. 
 
 Sie können das Datum im Code wie folgt festlegen.
 
@@ -88,18 +88,18 @@ Sie können das Datum im Code wie folgt festlegen.
 myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 ```
 
-Wenn Sie das Datum in Code festlegen, wird der Wert durch die Eigenschaften [MinDate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.mindate) und [MaxDate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.maxdate) beschränkt.
+Wenn Sie das Datum in Code festlegen, wird der Wert durch die Eigenschaften [MinDate](/uwp/api/windows.ui.xaml.controls.calendardatepicker.mindate) und [MaxDate](/uwp/api/windows.ui.xaml.controls.calendardatepicker.maxdate) beschränkt.
 - Wenn **Date** vor **MinDate** liegt, wird der Wert auf **MinDate** gesetzt.
 - Wenn **Date** nach **MaxDate** liegt, wird der Wert auf **MaxDate** gesetzt.
 
-Mithilfe des [DateChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged)-Ereignisses können Sie sich bei Änderungen am Date-Wert benachrichtigen lassen.
+Mithilfe des [DateChanged](/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged)-Ereignisses können Sie sich bei Änderungen am Date-Wert benachrichtigen lassen.
 
 > [!NOTE]
 > Wichtige Informationen zu Datumswerten finden Sie im Artikel zu Datums- und Uhrzeitsteuerelementen unter [DateTime- und Calendar-Werte](date-and-time.md#datetime-and-calendar-values).
 
 ### <a name="setting-a-header-and-placeholder-text"></a>Festlegen von Kopfzeilen- und Platzhaltertext
 
-Sie können der Kalenderdatumsauswahl eine [Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.header)-Eigenschaft (oder eine Beschriftung) und eine [PlaceholderText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.placeholdertext)-Eigenschaft (oder ein Wasserzeichen) hinzufügen, um Benutzern einen Hinweis zum Verwendungszweck zu geben. Um das Erscheinungsbild der Überschrift anzupassen, können Sie anstelle der Header-Eigenschaft die [HeaderTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.headertemplate)-Eigenschaft festlegen.
+Sie können der Kalenderdatumsauswahl eine [Header](/uwp/api/windows.ui.xaml.controls.calendardatepicker.header)-Eigenschaft (oder eine Beschriftung) und eine [PlaceholderText](/uwp/api/windows.ui.xaml.controls.calendardatepicker.placeholdertext)-Eigenschaft (oder ein Wasserzeichen) hinzufügen, um Benutzern einen Hinweis zum Verwendungszweck zu geben. Um das Erscheinungsbild der Überschrift anzupassen, können Sie anstelle der Header-Eigenschaft die [HeaderTemplate](/uwp/api/windows.ui.xaml.controls.calendardatepicker.headertemplate)-Eigenschaft festlegen.
 
 Als Standardtext für den Platzhalter wird „Datum auswählen“ angezeigt. Sie können diesen Text entfernen, indem Sie die PlaceholderText-Eigenschaft auf eine leere Zeichenfolge festlegen. Alternativ können Sie wie hier gezeigt einen benutzerdefinierten Text eingeben.
 

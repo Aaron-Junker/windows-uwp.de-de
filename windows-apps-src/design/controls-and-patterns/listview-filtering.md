@@ -7,15 +7,15 @@ ms.date: 12/3/2019
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: anawish
-ms.openlocfilehash: 24669b81c244339509e30a43a0da8a2b27e67eeb
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: b1ffa6374753343321f34d388eb994a62614cb15
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75302654"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172603"
 ---
 # <a name="filtering-collections-and-lists-through-user-input"></a>Filtern von Sammlungen und Listen mithilfe von Benutzereingaben
-Wenn Ihre Sammlung viele Elemente aufweist oder stark an Benutzerinteraktion gebunden ist, ist Filterung eine nützliche Funktion, die Sie implementieren können. Filtern mithilfe der in diesem Artikel beschriebenen Methoden kann in den meisten Steuerelementen für Sammlungen implementiert werden, einschließlich [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview) und [ItemsRepeater](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2). Viele Arten von Benutzereingaben können zum Filtern einer Sammlung verwendet werden – beispielsweise Kontrollkästchen, Optionsfelder und Schieberegler –, dieser Artikel konzentriert sich aber auf die Verwendung von textbasierten Benutzereingaben zum Aktualisieren einer ListView in Echtzeit, ausgehend von der Suche des Benutzers. 
+Wenn Ihre Sammlung viele Elemente aufweist oder stark an Benutzerinteraktion gebunden ist, ist Filterung eine nützliche Funktion, die Sie implementieren können. Filtern mithilfe der in diesem Artikel beschriebenen Methoden kann in den meisten Steuerelementen für Sammlungen implementiert werden, einschließlich [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView](/uwp/api/windows.ui.xaml.controls.gridview) und [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2). Viele Arten von Benutzereingaben können zum Filtern einer Sammlung verwendet werden – beispielsweise Kontrollkästchen, Optionsfelder und Schieberegler –, dieser Artikel konzentriert sich aber auf die Verwendung von textbasierten Benutzereingaben zum Aktualisieren einer ListView in Echtzeit, ausgehend von der Suche des Benutzers. 
 
 > [!NOTE]
 > Dieser Artikel konzentriert sich auf das Filtern in einer Listenansicht (ListView). Bitte beachten Sie, dass diese Filtermethode auch auf andere Sammlungssteuerelemente wie GridView, ItemsRepeater oder TreeView angewendet werden kann.
@@ -64,7 +64,7 @@ Damit das Filtern funktioniert, muss die ListView über eine Datenquelle verfüg
 </Grid>
 ```
 ## <a name="filtering-the-data"></a>Filtern der Daten
-[Linq](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries)-Abfragen ermöglichen des Gruppieren, Sortieren und Auswählen bestimmter Elemente in einer Sammlung. Zum Filtern einer Liste erstellen wir eine Linq-Abfrage, die nur Ausdrücke auswählt, die mit der vom Benutzer in der TextBox `FilterByLName` eingegebenen Suchabfrage bzw. dem eingegebenen Filterausdruck übereinstimmen. Das Abfrageergebnis kann einem [IEnumerable<T>](https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1)-Sammlungsobjekt zugewiesen werden. Sobald wir über diese Sammlung verfügen, können wir sie für den Vergleich mit der ursprünglichen Liste verwenden, um nicht passende Elemente zu entfernen und passende Elemente wieder einzufügen (falls der Benutzer die RÜCKTASTE verwendet).
+[Linq](/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries)-Abfragen ermöglichen des Gruppieren, Sortieren und Auswählen bestimmter Elemente in einer Sammlung. Zum Filtern einer Liste erstellen wir eine Linq-Abfrage, die nur Ausdrücke auswählt, die mit der vom Benutzer in der TextBox `FilterByLName` eingegebenen Suchabfrage bzw. dem eingegebenen Filterausdruck übereinstimmen. Das Abfrageergebnis kann einem [IEnumerable<T>](/dotnet/api/system.collections.generic.ienumerable-1)-Sammlungsobjekt zugewiesen werden. Sobald wir über diese Sammlung verfügen, können wir sie für den Vergleich mit der ursprünglichen Liste verwenden, um nicht passende Elemente zu entfernen und passende Elemente wieder einzufügen (falls der Benutzer die RÜCKTASTE verwendet).
 
 > [!NOTE]
 > Damit die ListView beim Hinzufügen und Entfernen von Elementen auf möglichst intuitive Weise animiert wird, ist es wichtig, Elemente aus der ItemsSource-Sammlung der ListView selbst zu entfernen bzw. sie dieser hinzuzufügen, statt eine neue Sammlung gefilterter Objekte zu erstellen und diese der ItemsSource-Eigenschaft der ListView hinzuzufügen.

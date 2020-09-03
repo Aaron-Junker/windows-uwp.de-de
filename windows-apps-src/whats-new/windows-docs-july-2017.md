@@ -5,12 +5,12 @@ keywords: Neuigkeiten, Update, Features, Anleitungen für Entwickler, Windows 10
 ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 65c3c2fb4b7a5a7f0b5f4b3c89773f3e21bd654d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: acec4384b5ce04548818a512270e66d7b4500e16
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684742"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174404"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im Juli 2017
 
@@ -98,21 +98,21 @@ Die neue TaskbarManager-Klasse ist für [Windows-Insider](https://insider.window
 
 ### <a name="media-playback"></a>Medienwiedergabe
 
-Dem grundlegenden Artikel [Wiedergeben von Audio- und Videoinhalten mit MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md) wurden neue Abschnitte hinzugefügt. Im Abschnitt [Wiedergeben von sphärischen Videos mit MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md) wird gezeigt, wie Sie sphärisch codiertes Videomaterial wiedergeben und Sichtfeld sowie Ausrichtung für unterstützte Videoformate anpassen. Der Abschnitt [Verwenden von MediaPlayer im Frame-Server-Modus](../audio-video-camera/play-audio-and-video-with-mediaplayer.md#use-mediaplayer-in-frame-server-mode) erläutert, wie Sie Frames aus einer Medienwiedergabe mit [MediaPlayer](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) auf eine Direct3D-Oberfläche kopieren. Dies ermöglicht Szenarien wie etwa das Anwenden von Echtzeiteffekten mit Pixel-Shadern. Der Beispielcode zeigt die schnelle Implementierung eines Weichzeichnereffekts für die Wiedergabe von Videos mithilfe von Win2D.
+Dem grundlegenden Artikel [Wiedergeben von Audio- und Videoinhalten mit MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md) wurden neue Abschnitte hinzugefügt. Im Abschnitt [Wiedergeben von sphärischen Videos mit MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md) wird gezeigt, wie Sie sphärisch codiertes Videomaterial wiedergeben und Sichtfeld sowie Ausrichtung für unterstützte Videoformate anpassen. Der Abschnitt [Verwenden von MediaPlayer im Frame-Server-Modus](../audio-video-camera/play-audio-and-video-with-mediaplayer.md#use-mediaplayer-in-frame-server-mode) erläutert, wie Sie Frames aus einer Medienwiedergabe mit [MediaPlayer](/uwp/api/Windows.Media.Playback.MediaPlayer) auf eine Direct3D-Oberfläche kopieren. Dies ermöglicht Szenarien wie etwa das Anwenden von Echtzeiteffekten mit Pixel-Shadern. Der Beispielcode zeigt die schnelle Implementierung eines Weichzeichnereffekts für die Wiedergabe von Videos mithilfe von Win2D.
 
 ### <a name="media-capture"></a>Medienerfassung
 
-Der Artikel [Verarbeiten von Medienframes mit MediaFrameReader](../audio-video-camera/process-media-frames-with-mediaframereader.md) wurde aktualisiert, um die Verwendung der neuen Klasse [MultiSourceMediaFrameReader](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader) zu erläutern, mit deren Hilfe Sie zeitkorrelierte Frames aus mehreren Medienquellen abrufen können. Dies ist hilfreich, wenn Sie Frames aus anderen Quellen wie einer Tiefenkamera oder Farbkamera verarbeiten und dabei sicherstellen müssen, dass die Frames aus jeder Quelle zeitnah zueinander erfasst wurden. Weitere Informationen finden Sie unter [Verwenden von MultiSourceMediaFrameReader zum Abrufen zeitkorrelierter Frames aus mehreren Quellen](../audio-video-camera/process-media-frames-with-mediaframereader.md#use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources).
+Der Artikel [Verarbeiten von Medienframes mit MediaFrameReader](../audio-video-camera/process-media-frames-with-mediaframereader.md) wurde aktualisiert, um die Verwendung der neuen Klasse [MultiSourceMediaFrameReader](/uwp/api/windows.media.capture.frames.multisourcemediaframereader) zu erläutern, mit deren Hilfe Sie zeitkorrelierte Frames aus mehreren Medienquellen abrufen können. Dies ist hilfreich, wenn Sie Frames aus anderen Quellen wie einer Tiefenkamera oder Farbkamera verarbeiten und dabei sicherstellen müssen, dass die Frames aus jeder Quelle zeitnah zueinander erfasst wurden. Weitere Informationen finden Sie unter [Verwenden von MultiSourceMediaFrameReader zum Abrufen zeitkorrelierter Frames aus mehreren Quellen](../audio-video-camera/process-media-frames-with-mediaframereader.md#use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources).
 
 ### <a name="scoped-search"></a>Begrenzter Suchbereich
 
-Der [konzeptionellen UWP-Dokumentation](../get-started/universal-application-platform-guide.md) und der [API-Referenz](https://docs.microsoft.com/uwp/api/) auf „docs.microsoft.com“ wurde der Bereich „UWP” hinzugefügt. Sofern dieser Bereich nicht deaktiviert ist, geben Suchvorgänge in diesen Umgebungen nur UWP-Dokumente zurück.
+Der [konzeptionellen UWP-Dokumentation](../get-started/universal-application-platform-guide.md) und der [API-Referenz](/uwp/api/) auf „docs.microsoft.com“ wurde der Bereich „UWP” hinzugefügt. Sofern dieser Bereich nicht deaktiviert ist, geben Suchvorgänge in diesen Umgebungen nur UWP-Dokumente zurück.
 
 ![Begrenzter Suchbereich](images/scoped-search.png)
 
 ### <a name="test-your-windows-app-for-windows-10-s"></a>Testen Ihrer Windows-App für Windows 10 S
 
-Testen Sie Ihre Windows-App, um sicherzustellen, dass sie korrekt auf Geräten unter Windows S ausgeführt wird. Anleitungen dazu finden Sie in [diesem neuen Handbuch](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-test-windows-s).
+Testen Sie Ihre Windows-App, um sicherzustellen, dass sie korrekt auf Geräten unter Windows S ausgeführt wird. Anleitungen dazu finden Sie in [diesem neuen Handbuch](/windows/msix/desktop/desktop-to-uwp-test-windows-s).
 
 ## <a name="samples"></a>Beispiele
 
@@ -124,7 +124,7 @@ Testen Sie Ihre Windows-App, um sicherzustellen, dass sie korrekt auf Geräten u
 
 ### <a name="shopping-app-sample"></a>Beispiel für eine Shopping-App
 
-[Ein Mini-App für einen einfachen Einkaufsvorgang, bei dem ein Benutzer Emojis erwerben kann](https://github.com/Microsoft/Windows-appsample-shopping). Diese App veranschaulicht, wie die Kaufabwicklung mit den [Payment Request-APIs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.payments) zu implementieren ist.
+[Ein Mini-App für einen einfachen Einkaufsvorgang, bei dem ein Benutzer Emojis erwerben kann](https://github.com/Microsoft/Windows-appsample-shopping). Diese App veranschaulicht, wie die Kaufabwicklung mit den [Payment Request-APIs](/uwp/api/windows.applicationmodel.payments) zu implementieren ist.
 
 ![Screenshot des Shopping-App-Beispiels](images/shoppingcart.png)  
 

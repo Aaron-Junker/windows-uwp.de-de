@@ -5,12 +5,12 @@ keywords: Neues, Neuigkeiten, Update, Features, Entwicklerleitfaden, Windows 10,
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cd84892f9d90a69379ac5a7f84dfa188adf1211e
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d9864c59a8bb8569861e9c239710a09602ffdcba
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258786"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174354"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>Neues in der Windows-Entwicklerdokumentation im Mai 2018
 
@@ -38,7 +38,7 @@ Visuelle Updates und kleinere Änderungen wurden an den folgenden Fluent Design-
 * [Ausrichtung, Rand, Abstand](../design/layout/alignment-margin-padding.md)
 * [Farbe](../design/style/color.md)
 * [Befehlsgrundlagen](../design/basics/commanding-basics.md)
-* [Fluent Design für Windows-Apps](../design/fluent-design-system/index.md)
+* [Fluent Design für Windows-Apps](/windows/apps/fluent-design-system)
 * [Einführung in das App-Design](../design/basics/design-and-ui-intro.md)
 * [Navigationsgrundlagen](../design/basics/navigation-basics.md)
 * [Reaktionsfähige Designtechniken](../design/layout/responsive-design.md)
@@ -55,13 +55,13 @@ Darüber hinaus wurden die folgenden Seiten mit völlig neuen Informationen übe
 
 ### <a name="app-installer-files-in-visual-studio"></a>App-Installer-Dateien in Visual Studio
 
-App-Installer-Dateien können nun mit Visual Studio 2017, Update 15.7 und höheren Versionen erstellt werden. Unter [Erstellen einer App-Installer-Datei mit Visual Studio](../packaging/create-appinstallerfile-vs.md) erfährst du, wie du mithilfe von Visual Studio eine App-Installer-Datei erstellst und automatische Updates für deine Apps aktivierst. Sollten Probleme auftreten, findest du unter [Problembehandlung bei der Installation der App-Installer-Datei](../packaging/troubleshoot-appinstaller-issues.md) Informationen zu häufigen Problemen sowie entsprechende Lösungen.
+App-Installer-Dateien können nun mit Visual Studio 2017, Update 15.7 und höheren Versionen erstellt werden. Unter [Erstellen einer App-Installer-Datei mit Visual Studio](/windows/msix/app-installer/create-appinstallerfile-vs) erfährst du, wie du mithilfe von Visual Studio eine App-Installer-Datei erstellst und automatische Updates für deine Apps aktivierst. Sollten Probleme auftreten, findest du unter [Problembehandlung bei der Installation der App-Installer-Datei](/windows/msix/app-installer/troubleshoot-appinstaller-issues) Informationen zu häufigen Problemen sowie entsprechende Lösungen.
 
 ### <a name="edge-webview-control-for-windows-forms-and-wpf-applications"></a>Edge-Steuerelement „WebView“ für Windows Forms- und WPF-Anwendungen
 
-Mit dem WebView-Steuerelement, das bislang nur für UWP-Anwendungen verfügbar war, kannst du nun Webinhalte in deiner Desktopanwendung anzeigen. Dieses Steuerelement verwendet die Renderingengine von Microsoft Edge, um eine Ansicht einzubetten, die HTML-Inhalte mit umfassender Formatierung von einem Remotewebserver, dynamisch generierten Code oder Inhaltsdateien rendert. Das WebView-Steuerelement ist im aktuellen [Windows-Community-Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/) enthalten.
+Mit dem WebView-Steuerelement, das bislang nur für UWP-Anwendungen verfügbar war, kannst du nun Webinhalte in deiner Desktopanwendung anzeigen. Dieses Steuerelement verwendet die Renderingengine von Microsoft Edge, um eine Ansicht einzubetten, die HTML-Inhalte mit umfassender Formatierung von einem Remotewebserver, dynamisch generierten Code oder Inhaltsdateien rendert. Das WebView-Steuerelement ist im aktuellen [Windows-Community-Toolkit](/windows/uwpcommunitytoolkit/) enthalten.
 
-In zukünftigen Releases des Windows-Community-Toolkits werden weitere ähnliche Steuerelemente wie „WebView“ bereitgestellt. Weitere Informationen findest du unter [Hosten von UWP-Steuerelementen in WPF- und Windows Forms-Anwendungen](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls).
+In zukünftigen Releases des Windows-Community-Toolkits werden weitere ähnliche Steuerelemente wie „WebView“ bereitgestellt. Weitere Informationen findest du unter [Hosten von UWP-Steuerelementen in WPF- und Windows Forms-Anwendungen](/windows/apps/desktop/modernize/xaml-islands).
 
 ### <a name="gaze-input-and-interactions"></a>Blickeingabe und -interaktionen
 
@@ -91,7 +91,7 @@ Optionale Pakete in deiner App können nun ausführbaren C#-Code enthalten. Info
 
 ### <a name="project-rome"></a>Project Rome
 
-Das Team von Project Rome hat seine iOS- und Android-SDKs überarbeitet, neue Features wie etwa Benutzeraktivitäten hinzugefügt und einen Großteil des Codes umgestaltet, um über verschiedene SDKs hinweg eine konsistente Programmierumgebung zu bieten. [Alle neuen API-bezogenen Referenz- und Anleitungsdokumente](https://docs.microsoft.com/windows/project-rome/) werden während der Entwicklerkonferenz Build 2018 veröffentlicht.
+Das Team von Project Rome hat seine iOS- und Android-SDKs überarbeitet, neue Features wie etwa Benutzeraktivitäten hinzugefügt und einen Großteil des Codes umgestaltet, um über verschiedene SDKs hinweg eine konsistente Programmierumgebung zu bieten. [Alle neuen API-bezogenen Referenz- und Anleitungsdokumente](/windows/project-rome/) werden während der Entwicklerkonferenz Build 2018 veröffentlicht.
 
 ### <a name="sets"></a>Gruppen
 

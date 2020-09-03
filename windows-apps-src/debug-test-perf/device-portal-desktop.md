@@ -6,12 +6,12 @@ ms.date: 08/20/2020
 ms.topic: article
 keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
-ms.openlocfilehash: dc3ca2379ae7dd704d96e383cc02314ee9423fb7
-ms.sourcegitcommit: 508fb9e763aa5967beebf7bf5e77d7ad12baa566
+ms.openlocfilehash: e485fcb5d6ca6ecf8c19124c482492ddfb2c5233
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88714497"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173604"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Geräteportal für Windows-Desktop
 
@@ -34,7 +34,7 @@ Sie haben im Device Portal folgende Möglichkeiten:
 Ab Windows 10, Version 1607, sind einige der neueren Funktionen für den Desktop nur verfügbar, wenn der Entwicklermodus aktiviert ist. Informationen zum Aktivieren des Entwicklermodus findest du unter [Aktivieren Ihres Geräts für die Entwicklung](../get-started/enable-your-device-for-development.md).
 
 > [!IMPORTANT]
-> In manchen Fällen wird der Entwicklermodus aufgrund von Problemen mit dem Netzwerk oder der Kompatibilität nicht ordnungsgemäß installiert. Lies den [entsprechenden Abschnitt von „Aktivieren Sie Ihr Gerät für die Entwicklung”](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package), um Hilfe bei der Behebung dieser Probleme zu erhalten.
+> In manchen Fällen wird der Entwicklermodus aufgrund von Problemen mit dem Netzwerk oder der Kompatibilität nicht ordnungsgemäß installiert. Lies den [entsprechenden Abschnitt von „Aktivieren Sie Ihr Gerät für die Entwicklung”](../get-started/enable-your-device-for-development.md#failure-to-install-developer-mode-package), um Hilfe bei der Behebung dieser Probleme zu erhalten.
 
 ### <a name="turn-on-device-portal"></a>Aktivieren des Geräteportals
 
@@ -117,11 +117,11 @@ Unter dem gleichen regkey-Pfad kannst du auch die Authentifizierungsanforderung 
 - `-DeleteSSL` 
     - Dadurch wird der für HTTPS-Verbindungen verwendete SSL-Zertifikat-Cache zurückgesetzt. Wenn du auf TLS-Verbindungsfehler stößt, die nicht umgangen werden können (im Gegensatz zur erwarteten Zertifikatswarnung), kann diese Option das Problem für dich beheben. 
 - `-SetCert <pfxPath> <pfxPassword>`
-    - Weitere Informationen findest du unter [Bereitstellen eines Geräteportals mit einem benutzerdefinierten SSL-Zertifikat](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-ssl).  
+    - Weitere Informationen findest du unter [Bereitstellen eines Geräteportals mit einem benutzerdefinierten SSL-Zertifikat](./device-portal-ssl.md).  
     - Auf diese Weise kannst du dein eigenes SSL-Zertifikat installieren, um die SSL-Warnseite zu reparieren, die normalerweise im Geräteportal angezeigt wird. 
 - `-Debug <various options for authentication, port selection, and tracing level>`
-    - Führe eine eigenständige Version des Geräteportals mit einer bestimmten Konfiguration und sichtbaren Debugmeldungen aus. Dies ist besonders nützlich für die Erstellung eines [gepackten Plugins](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin). 
-    - Lies den [Artikel im MSDN Magazine](https://msdn.microsoft.com/magazine/mt826332.aspx) mit Details darüber, wie du es als „System” ausführen kannst, um dein gepacktes Plugin vollständig zu testen.
+    - Führe eine eigenständige Version des Geräteportals mit einer bestimmten Konfiguration und sichtbaren Debugmeldungen aus. Dies ist besonders nützlich für die Erstellung eines [gepackten Plugins](./device-portal-plugin.md). 
+    - Lies den [Artikel im MSDN Magazine](/archive/msdn-magazine/2017/october/windows-device-portal-write-a-windows-device-portal-packaged-plug-in) mit Details darüber, wie du es als „System” ausführen kannst, um dein gepacktes Plugin vollständig zu testen.
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
@@ -150,4 +150,4 @@ Dieser Fehler wird möglicherweise angezeigt, wenn du über eine getaktete Inter
 ## <a name="see-also"></a>Weitere Informationen
 
 * [Übersicht über das Windows-Geräteportal](device-portal.md)
-* [Referenz zu Kern-APIs des Device Portal](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Referenz zu Kern-APIs des Device Portal](./device-portal-api-core.md)

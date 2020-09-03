@@ -5,12 +5,12 @@ keywords: Neuigkeiten, Update, Features, Anleitungen für Entwickler, Windows 10
 ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 824cdb74a809ae3f9ae2ed202a9889535021f711
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: cbaf2726e8f3e517fd0664c3d00b9a82ca018fbc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684727"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174414"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>Neuerungen in der Windows-Entwicklerdokumentation im August 2017
 
@@ -32,7 +32,7 @@ Sie können jetzt [bedingte XAML](../debug-test-perf/conditional-xaml.md) auspro
 
 ### <a name="game-mode"></a>Spielmodus
 
-Mithilfe der [Game Mode](https://docs.microsoft.com/previous-versions/windows/desktop/gamemode/game-mode-portal)-APIs für die Universelle Windows-Plattform (UWP) sorgen Sie für ein optimiertes Spielerlebnis, indem Sie den Spielmodus in Windows 10 nutzen. Diese APIs befinden sich im Header **&lt;expandedresources.h&gt;** .
+Mithilfe der [Game Mode](/previous-versions/windows/desktop/gamemode/game-mode-portal)-APIs für die Universelle Windows-Plattform (UWP) sorgen Sie für ein optimiertes Spielerlebnis, indem Sie den Spielmodus in Windows 10 nutzen. Diese APIs befinden sich im Header **&lt;expandedresources.h&gt;** .
 
 ![Spielmodus](images/game-mode.png)
 
@@ -45,29 +45,29 @@ Die [Microsoft Store-Übermittlungs-API](../monetize/create-and-manage-submissio
 
 ### <a name="data-schemas-for-store-products"></a>Datenschemas für Store-Produkte
 
-Wir haben den Artikel [Datenschemas für Store-Produkte](../monetize/data-schemas-for-store-products.md) hinzugefügt. Dieser Artikel enthält Schemas für auf den Store bezogenen Daten für mehrere Objekte im Namespace [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store), z.B. [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) und [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense).
+Wir haben den Artikel [Datenschemas für Store-Produkte](../monetize/data-schemas-for-store-products.md) hinzugefügt. Dieser Artikel enthält Schemas für auf den Store bezogenen Daten für mehrere Objekte im Namespace [Windows.Services.Store](/uwp/api/windows.services.store), z.B. [StoreProduct](/uwp/api/windows.services.store.storeproduct) und [StoreAppLicense](/uwp/api/windows.services.store.storeapplicense).
 
 ### <a name="desktop-bridge"></a>Desktop-Brücke
 
 Wir haben zwei Anleitungen hinzugefügt, mit deren Hilfe Sie für Benutzer von Windows 10 die neuen Möglichkeiten moderner Umgebungen bereitstellen können.
 
-Informieren Sie sich im Artikel [Verbessern Ihrer Desktopanwendung für Windows 10](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance) über die richtigen Dateien, und schreiben Sie dann Code, um die UWP-Erfahrung für Benutzer von Windows 10 zu verbessern.  
+Informieren Sie sich im Artikel [Verbessern Ihrer Desktopanwendung für Windows 10](/windows/apps/desktop/modernize/desktop-to-uwp-enhance) über die richtigen Dateien, und schreiben Sie dann Code, um die UWP-Erfahrung für Benutzer von Windows 10 zu verbessern.  
 
-Im Artikel [Erweitern Ihrer Desktopanwendung mit modernen UWP-Komponenten](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-extend) erfahren Sie, wie Sie moderne XAML-Benutzeroberflächen und andere UWP-Funktionen verwenden, die in einem UWP-App-Container ausgeführt werden müssen.
+Im Artikel [Erweitern Ihrer Desktopanwendung mit modernen UWP-Komponenten](/windows/apps/desktop/modernize/desktop-to-uwp-extend) erfahren Sie, wie Sie moderne XAML-Benutzeroberflächen und andere UWP-Funktionen verwenden, die in einem UWP-App-Container ausgeführt werden müssen.
 
 ### <a name="getting-started-with-point-of-service"></a>Erste Schritte mit Point Of Service-Geräten
 
-Wir haben den neuen Leitfaden [Erste Schritte mit Point Of Service-Geräten](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-get-started) hinzugefügt. Er umfasst Themen wie Geräteenumeration, Überprüfen von Gerätefunktionen, Anfordern von Geräten und die gemeinsame Nutzung von Geräten. 
+Wir haben den neuen Leitfaden [Erste Schritte mit Point Of Service-Geräten](../devices-sensors/pos-get-started.md) hinzugefügt. Er umfasst Themen wie Geräteenumeration, Überprüfen von Gerätefunktionen, Anfordern von Geräten und die gemeinsame Nutzung von Geräten. 
 
 ### <a name="xbox-live"></a>Xbox Live
 
 Wir haben Dokumentationen für Xbox Live-Entwickler hinzugefügt. Die Informationen beziehen sich sowohl auf UWP-Spiele als auch auf XDK-Spiele (Xbox Developer Kit).
 
-Im [Xbox Live-Entwicklerhandbuch](https://docs.microsoft.com//gaming/xbox-live/index) erfahren Sie, wie Sie die Xbox Live-APIs verwenden, um Ihr Spiel in das soziale Xbox Live-Spielenetzwerk zu integrieren.
+Im [Xbox Live-Entwicklerhandbuch](//gaming/xbox-live/index) erfahren Sie, wie Sie die Xbox Live-APIs verwenden, um Ihr Spiel in das soziale Xbox Live-Spielenetzwerk zu integrieren.
 
-Im [Xbox Live Creators-Programm](https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) können alle UWP-Spielentwickler für Xbox-Live geeignete Spiele entwickeln und veröffentlichen, sowohl für den PC als auch für Xbox One.
+Im [Xbox Live Creators-Programm](//gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) können alle UWP-Spielentwickler für Xbox-Live geeignete Spiele entwickeln und veröffentlichen, sowohl für den PC als auch für Xbox One.
 
-Weitere Informationen zu den Programmen und Features für Xbox Live-Entwickler finden Sie unter [Programmübersicht für Xbox Live-Entwickler](https://docs.microsoft.com//gaming/xbox-live/developer-program-overview).
+Weitere Informationen zu den Programmen und Features für Xbox Live-Entwickler finden Sie unter [Programmübersicht für Xbox Live-Entwickler](//gaming/xbox-live/developer-program-overview).
 
 ## <a name="videos"></a>Videos
 

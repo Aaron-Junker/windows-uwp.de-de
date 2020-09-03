@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fe3e4e23bc2be46d3ddb09d9ebf83b5fda5ce9d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e6c13fea8cbc9f4e8bc515219d26da98b58f32da
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173714"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411944"
 ---
 # <a name="uwp-on-xbox-one"></a>UWP auf Xbox One
 
@@ -32,15 +32,15 @@ Dieser Abschnitt enthält die Schritte bei der Einrichtung, Informationen zum Au
 |[Bekannte Probleme](known-issues.md)| Listet bekannte Probleme mit UWP auf Xbox One auf. |
 |[Häufig gestellte Fragen](frequently-asked-questions.md)| Häufig gestellte Fragen zu UWP auf Xbox One. |
 |[Tools](introduction-to-xbox-tools.md)| Beschreibt das Xbox One-spezifische Tool _Dev Home_, die Verwendung des Windows Device Portal und die Einrichtung von Visual Studio für die Entwicklung. In diesem Abschnitt werden neue Entwickler auch durch ihre erste UWP-Anwendung für Xbox geführt und die Verwendung des Fiddler-Tools zur Anzeige des Netzwerkdatenverkehrs erklärt. |
-| [Veranstaltung „App-Entwicklung auf Xbox“](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event) | Die Veranstaltung „App-Entwicklung auf Xbox“ ist ein hervorragender Ausgangspunkt für Entwickler, die noch keine Erfahrung mit dem Erstellen von Apps auf Xbox haben Schauen Sie sich die aufgezeichneten Sitzungen an, und lesen Sie die Blogbeiträge der Veranstaltung. |
+|[Veranstaltung „App-Entwicklung auf Xbox“](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event) | Die Veranstaltung „App-Entwicklung auf Xbox“ ist ein hervorragender Ausgangspunkt für Entwickler, die noch keine Erfahrung mit dem Erstellen von Apps auf Xbox haben Schauen Sie sich die aufgezeichneten Sitzungen an, und lesen Sie die Blogbeiträge der Veranstaltung. |
 |[Entwerfen für Xbox und Fernsehgeräte](../design/devices/designing-for-tv.md)| Beschreibt bewährte Methoden für das Entwerfen einer App, die auf einem Fernsehgerät angezeigt wird und einen Controller für die Eingabe verwendet. |
 |[Bewährte Methoden für Xbox](tailoring-for-xbox.md)| Beschreibt, wie Sie den Mausmodus deaktivieren, bis zu den Rändern des Bildschirms zeichnen und die Skalierung deaktivieren. |
 |[Einsatz von Sprache zum Aufrufen von UI-Elementen](ves-on-xbox.md)| Hier werden die bewährten Methoden zur Unterstützung der sprachgestützten Shell in UWP-Apps auf Xbox beschrieben. |
 |[Systemressourcen für UWP-Apps und -Spiele auf Xbox One](system-resource-allocation.md)| Beschreibt die verfügbaren Ressourcen für die Anwendung, wenn sie auf Xbox One ausgeführt wird. |
 |[Einführung in Anwendungen mit mehreren Benutzern](multi-user-applications.md)| Beschreibt Anwendungen mit mehreren Benutzern (Multi-User Applications, MUAs) auf Xbox One. |
-| [Automatisieren von Xbox One-Entwicklungsaufgaben](https://github.com/Microsoft/WindowsDevicePortalWrapper/tree/v0.9.4) | Das Projekt „WindowsDevicePortalWrapper“ auf GitHub bietet eine Bibliothek, mit der Sie gängige Entwicklungsaufgaben wie das Bereitstellen oder Starten einer App automatisieren können. Das Projekt enthält ein Beispiel (XboxWdpDriver.exe), das die Verwendung der APIs für allgemeine Aufgaben veranschaulicht. |
+|[Automatisieren von Xbox One-Entwicklungsaufgaben](https://github.com/Microsoft/WindowsDevicePortalWrapper/tree/v0.9.4) | Das Projekt „WindowsDevicePortalWrapper“ auf GitHub bietet eine Bibliothek, mit der Sie gängige Entwicklungsaufgaben wie das Bereitstellen oder Starten einer App automatisieren können. Das Projekt enthält ein Beispiel (XboxWdpDriver.exe), das die Verwendung der APIs für allgemeine Aufgaben veranschaulicht. |
 |[Portieren vorhandener Spiele zu Xbox](development-lanes-landing.md)|Basierend auf der Technologie, auf der Ihr Spiel entwickelt wurde, können wir Ihnen Schritt-für-Schritt-Anleitungen bereitstellen, die Ihnen helfen, Ihr Spiel mithilfe der UWP schneller für die Xbox bereitzustellen.|
-|[UWP-Funktionen, die noch nicht auf Xbox One unterstützt werden](/uwp/extension-sdks/uwp-limitations-on-xbox)|  Beschreibt die UWP-Funktionen, die auf Xbox One noch nicht voll funktionsfähig sind.|
+|[UWP-Funktionen, die nicht für Xbox unterstützt werden](/uwp/extension-sdks/uwp-limitations-on-xbox)|  Beschreibt die UWP-Funktionen, die auf Xbox One noch nicht voll funktionsfähig sind.|
 
 ## <a name="videos"></a>Videos
 

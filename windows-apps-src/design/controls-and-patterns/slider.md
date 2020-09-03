@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a51bfb262e81668d167a380a9f3572011dbf7e2c
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 484fb64497443708ec80f3d6ad80b40d14371af5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88943100"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173914"
 ---
 # <a name="sliders"></a>Schieberegler
 
@@ -29,9 +29,9 @@ Ein Schieberegler ist ein Steuerelement, über das der Benutzer aus einer Reihe 
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). „Windows UI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](../style/rounded-corner.md). „Windows UI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
-> **Plattform-APIs:** [Slider-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider), [Value-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value), [ValueChanged-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
+> **Plattform-APIs:** [Slider-Klasse](/uwp/api/windows.ui.xaml.controls.slider), [Value-Eigenschaft](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value), [ValueChanged-Ereignis](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -99,7 +99,7 @@ volumeSlider.ValueChanged += Slider_ValueChanged;
 stackPanel1.Children.Add(volumeSlider);
 ```
 
-Den Wert des Schiebereglers können Sie aus der [Value](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value)-Eigenschaft abrufen und festlegen. Zum Reagieren auf Werteänderungen können Sie die Value-Eigenschaft mithilfe der Datenbindung binden oder das [ValueChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)-Ereignis behandeln.
+Den Wert des Schiebereglers können Sie aus der [Value](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value)-Eigenschaft abrufen und festlegen. Zum Reagieren auf Werteänderungen können Sie die Value-Eigenschaft mithilfe der Datenbindung binden oder das [ValueChanged](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)-Ereignis behandeln.
 
 ```csharp
 private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -191,4 +191,4 @@ Ziehe beim Entwerfen eines benutzerdefinierten Schiebereglers Möglichkeiten zum
 
 ## <a name="related-topics"></a>Zugehörige Themen
 - [Umschaltfläche](toggles.md)
-- [Slider-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider)
+- [Slider-Klasse](/uwp/api/Windows.UI.Xaml.Controls.Slider)

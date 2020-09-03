@@ -8,12 +8,12 @@ ms.date: 08/07/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 418c33952c4be6be08683b5e396f423f771bb997
-ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
+ms.openlocfilehash: e3fcbcaa88fa39795ac078617c9a958ff3a997ac
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88502379"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173984"
 ---
 # <a name="guidelines-for-app-settings"></a>Richtlinien für App-Einstellungen
 
@@ -27,7 +27,7 @@ Hier sind Beispiele für App-Optionen, die zu einer Seite für App-Einstellungen
 - Optionen, die von den bevorzugten Benutzereinstellungen abhängen, wie Musik, Soundeffekte oder Farbdesigns.
 - App-Infos, die eher selten benötigt werden, z. B. Datenschutzrichtlinie, Hilfe, App-Version oder Copyright-Informationen.
 
-Befehle, die Teil des typischen App-Workflows sind (z. B. das Ändern der Pinselgröße in einer Zeichen-App), sollten sich nicht auf einer Einstellungsseite befinden. Weitere Informationen zur Platzierung von Befehlen finden Sie unter [Befehlsdesigngrundlagen](https://docs.microsoft.com/windows/uwp/layout/commanding-basics).
+Befehle, die Teil des typischen App-Workflows sind (z. B. das Ändern der Pinselgröße in einer Zeichen-App), sollten sich nicht auf einer Einstellungsseite befinden. Weitere Informationen zur Platzierung von Befehlen finden Sie unter [Befehlsdesigngrundlagen](../basics/commanding-basics.md).
 
 ## <a name="general-recommendations"></a>Allgemeine Empfehlungen
 
@@ -125,17 +125,17 @@ Wenn Sie eine Liste der gewünschten Elemente auf der Seite für App-Einstellung
     - [Hyperlinks](../controls-and-patterns/hyperlinks.md): Benutzer werden zu einer anderen Seite innerhalb der App oder zu einer externen Website weitergeleitet. Wenn ein Benutzer auf einen Hyperlink klickt, wird das Einstellungen-Flyout geschlossen.
     - [Schaltflächen](../controls-and-patterns/buttons.md): Benutzer können eine Aktion sofort ausführen, ohne das aktuell geöffnete Einstellungenflyout zu schließen.
 - Wenn eines der Steuerelemente deaktiviert ist, fügen Sie eine beschreibende Meldung hinzu. Platzieren Sie diese Meldung über dem deaktivierten Steuerelement.
-- Zeigen Sie Inhalte und Steuerelemente als einzelnen Block per Animation an, nachdem das Einstellungen-Flyout und die Überschrift eingeblendet wurden. Animieren Sie Inhalte mit der Animation [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) oder [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) mit einem Offset links von 100 Pixel.
+- Zeigen Sie Inhalte und Steuerelemente als einzelnen Block per Animation an, nachdem das Einstellungen-Flyout und die Überschrift eingeblendet wurden. Animieren Sie Inhalte mit der Animation [**enterPage**](/previous-versions/windows/apps/br212672(v=win.10)) oder [**EntranceThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) mit einem Offset links von 100 Pixel.
 - Verwenden Sie Abschnittsüberschriften, Absätze und Bezeichnungen, um Inhalte ggf. zu organisieren und zu erläutern.
 - Verwenden Sie zum Wiederholen von Einstellungen eine zusätzliche UI-Ebene oder ein Model zum Erweitern und Reduzieren. Beschränken Sie Hierarchien jedoch auf maximal zwei Ebenen. So könnte zum Beispiel in einer Wetter-App, deren Einstellungen sich auf die jeweilige Stadt beziehen, eine Liste mit Städten angezeigt werden. Der Benutzer muss dann nur auf die gewünschte Stadt zu tippen, um ein neues Flyout zu öffnen oder zu erweitern, um die Einstellungsoptionen anzuzeigen.
-- Wenn das Laden von Steuerelementen oder Webinhalten längere Zeit in Anspruch nimmt, informieren Sie den Benutzer mithilfe eines unbestimmten Statussteuerelements darüber, dass Informationen geladen werden. Weitere Informationen finden Sie unter [Richtlinien für Statussteuerelemente](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls).
+- Wenn das Laden von Steuerelementen oder Webinhalten längere Zeit in Anspruch nimmt, informieren Sie den Benutzer mithilfe eines unbestimmten Statussteuerelements darüber, dass Informationen geladen werden. Weitere Informationen finden Sie unter [Richtlinien für Statussteuerelemente](../controls-and-patterns/progress-controls.md).
 - Verwenden Sie keine Schaltflächen für die Navigation oder zum Übernehmen von Änderungen. Verwenden Sie Hyperlinks, um zu anderen Seiten zu navigieren, und speichern Sie Änderungen an App-Einstellungen automatisch, wenn ein Benutzer das Einstellungen-Flyout schließt, anstatt eine Schaltfläche für das Übernehmen von Änderungen zu verwenden.
 
 
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Befehlsdesigngrundlagen](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
-* [Richtlinien für Statussteuerelemente](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
-* [Speichern und Abrufen von App-Daten](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)
+* [Befehlsdesigngrundlagen](../basics/commanding-basics.md)
+* [Richtlinien für Statussteuerelemente](../controls-and-patterns/progress-controls.md)
+* [Speichern und Abrufen von App-Daten](./store-and-retrieve-app-data.md)
+* [**EntranceThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)

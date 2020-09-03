@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ae8094ac3fbb1de8958b1cc138953d3e1b887cc
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b414a1177bbfad670e3b623babce068a299a713e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970385"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172594"
 ---
 # <a name="masterdetails-pattern"></a>Master/Details-Muster
 
@@ -21,7 +21,7 @@ ms.locfileid: "82970385"
 
 Das Master/Details-Muster verfügt über einen Masterbereich (in der Regel mit einer [Listenansicht](lists.md)) und einen Detailbereich für Inhalte. Wenn ein Element in der Masterliste ausgewählt wird, wird der Detailbereich aktualisiert. Dieses Muster wird häufig für E-Mails und Adressbücher verwendet.
 
-> **Wichtige APIs:** [ListView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [SplitView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)
+> **Wichtige APIs:** [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView), [SplitView class](/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![Beispiel für das Master/Details-Muster](images/HIGSecOne_MasterDetail.png)
 
@@ -91,7 +91,7 @@ Um ein Master/Details-Muster für jede Bildschirmgröße zu implementieren, erst
 ![Adaptives Master/Details-Layout](images/patterns_masterdetail.png)
 
 ### <a name="create-an-adaptive-masterdetails-pattern"></a>Erstellen eines adaptiven Master/Detail-Musters
-Definiere zum Erstellen eines adaptiven Layouts verschiedene [**VisualStates**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visualstate)-Elemente für deine Benutzeroberfläche, und deklariere Haltepunkte für die verschiedenen Zustände mit [**AdaptiveTriggers**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger).
+Definiere zum Erstellen eines adaptiven Layouts verschiedene [**VisualStates**](/uwp/api/windows.ui.xaml.visualstate)-Elemente für deine Benutzeroberfläche, und deklariere Haltepunkte für die verschiedenen Zustände mit [**AdaptiveTriggers**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger).
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
@@ -110,5 +110,5 @@ In den folgenden Beispielen implementierst du das Master/Details-Muster mit adap
 - [Listen](lists.md)
 - [Suche](search.md)
 - [App- und Befehlsleisten](app-bars.md)
-- [ListView-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
-- [SplitView-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)
+- [ListView-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+- [SplitView-Klasse](/uwp/api/windows.ui.xaml.controls.splitview)

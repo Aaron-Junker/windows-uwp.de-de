@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bdd18fea2fe563fcee835e6b61e24d6a9b03d029
-ms.sourcegitcommit: f945df77f8a19961ba053ee62e593ec8e015038f
+ms.openlocfilehash: f7f273f3eb92efd30b432691f9faa05db0d6d013
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82989802"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173504"
 ---
 # <a name="command-bar-flyout"></a>Befehlsleisten-Flyout
 
@@ -36,13 +36,13 @@ Das Befehlsleisten-Flyout verfügt über zwei Anzeigemodi: *Reduziert* und *Erwe
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **CommandBarFlyout** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **CommandBarFlyout** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
 >**Windows-UI-Bibliotheks-APIs:** [CommandBarFlyout-Klasse](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout-Klasse](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 >
 >**Plattform-APIs:** [CommandBarFlyout-Klasse](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout-Klasse](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout), [AppBarButton-Klasse](/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton-Klasse](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator-Klasse](/uwp/api/windows.ui.xaml.controls.appbarseparator)
 >
-> Für CommandBarFlyout ist Windows 10 Version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) oder höher oder die [Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) erforderlich.
+> Für CommandBarFlyout ist Windows 10 Version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) oder höher oder die [Windows-UI-Bibliothek](/uwp/toolkits/winui/) erforderlich.
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -160,7 +160,7 @@ Sie können Befehle auch der **SecondaryCommands**-Sammlung hinzufügen. Sekund�
 
 ### <a name="app-bar-buttons"></a>App-Leistenschaltflächen
 
-Sie können PrimaryCommands und SecondaryCommands direkt mit Steuerelementen vom Typ [AppBarButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton), [AppBarToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton) und [AppBarSeparator](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) füllen.
+Sie können PrimaryCommands und SecondaryCommands direkt mit Steuerelementen vom Typ [AppBarButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarButton), [AppBarToggleButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton) und [AppBarSeparator](/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) füllen.
 
 Die Steuerelemente für die App-Leistenschaltfläche zeichnen sich durch ein Symbol und eine Textbeschriftung aus. Diese Steuerelemente sind für die Verwendung auf Befehlsleisten optimiert, und ihr Erscheinungsbild verändert sich abhängig davon, ob das Steuerelement auf der Befehlsleiste oder im Überlaufmenü angezeigt wird.
 
@@ -181,7 +181,7 @@ Hier werden mithilfe von AppBarElementContainer einem Befehlsleisten-Flyout zus�
 > [!TIP]
 > Standardmäßig werden die für die App-Canvas entworfenen Elemente in einer Befehlsleiste möglicherweise nicht richtig dargestellt. Wenn Sie ein Element mithilfe von AppBarElementContainer hinzufügen, müssen Sie einige Schritte ausführen, damit das Element mit anderen Elementen der Befehlsleiste übereinstimmt:
 >
-> - Überschreiben Sie die Standardpinsel mit [einfacher Formatierung](/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling), um den Hintergrund und den Rahmen des Elements an die App-Leistenschaltflächen anzupassen.
+> - Überschreiben Sie die Standardpinsel mit [einfacher Formatierung](./xaml-styles.md#lightweight-styling), um den Hintergrund und den Rahmen des Elements an die App-Leistenschaltflächen anzupassen.
 > - Passen Sie die Größe und die Position des Elements an.
 > - Umschließen Sie Symbole in einer Viewbox mit einer Breite und Höhe von 16 Pixel.
 
@@ -418,4 +418,4 @@ TextCommandBarFlyout kann nicht angepasst werden und wird von jedem Textsteuerel
 ## <a name="related-articles"></a>Verwandte Artikel
 
 - [Grundlagen des Befehlsdesigns für Windows-Apps](../basics/commanding-basics.md)
-- [CommandBar-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)
+- [CommandBar-Klasse](/uwp/api/Windows.UI.Xaml.Controls.CommandBar)

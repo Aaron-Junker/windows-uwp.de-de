@@ -6,17 +6,17 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 79022d1be13b98be4b086cbe452e55767ca0cedc
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: acdc8d5bb9a73bf5851dfd8f75f777c2a13bcdb1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492905"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173134"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>Erstellen einer „Hello, World“- -App in C++/CX
 
 > [!IMPORTANT]
-> In diesem Tutorial wird C++/CX verwendet. Microsoft hat C++/WinRT veröffentlicht: eine vollständig standardmäßige und moderne C++17-Sprachprojektion für Windows-Runtime-APIs (WinRT). Weitere Informationen zu dieser Sprache findest du unter [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/).
+> In diesem Tutorial wird C++/CX verwendet. Microsoft hat C++/WinRT veröffentlicht: eine vollständig standardmäßige und moderne C++17-Sprachprojektion für Windows-Runtime-APIs (WinRT). Weitere Informationen zu dieser Sprache findest du unter [C++/WinRT](../cpp-and-winrt-apis/index.md).
 
 Mit Microsoft Visual Studio kannst du eine App in C++/CX entwickeln, die unter Windows 10 mit einer XAML-definierten (Extensible Application Markup Language) Benutzeroberfläche ausgeführt wird.
 
@@ -26,7 +26,7 @@ Mit Microsoft Visual Studio kannst du eine App in C++/CX entwickeln, die unter W
 ## <a name="before-you-start"></a>Bevor Sie beginnen
 
 -   Für dieses Tutorial benötigst du Visual Studio Community oder eine der anderen Community-Versionen von Visual Studio sowie einen Computer mit Windows 10. Informationen zum Herunterladen finden Sie unter [Herunterladen der Tools](https://visualstudio.microsoft.com/downloads/).
--   Es wird davon ausgegangen, dass du über Grundkenntnisse in C++/CX und XAML verfügst und mit den Konzepten in der [XAML-Übersicht](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview) vertraut bist.
+-   Es wird davon ausgegangen, dass du über Grundkenntnisse in C++/CX und XAML verfügst und mit den Konzepten in der [XAML-Übersicht](../xaml-platform/xaml-overview.md) vertraut bist.
 -   Wir gehen davon aus, dass Sie das Standardfensterlayout in Visual Studio verwenden. Um das Layout auf das Standardlayout zurückzusetzen, klicken Sie in der Menüleiste auf **Fenster** > **Fensterlayout zurücksetzen**.
 
 ## <a name="comparing-c-desktop-apps-to-windows-apps"></a>Vergleich zwischen C++-Desktop-Apps und Windows-Apps
@@ -53,7 +53,7 @@ Wenn du bereits Windows-Desktop-Apps mit C++ programmiert hast, werden dir einig
 
 -   Sie programmieren in erster Linie für die Windows-Runtime – eine neue, navigationsfreundliche, objektorientierte API. Auf Windows-Geräten ist für einige Funktionen aber auch weiterhin Win32 verfügbar.
 
--   Sie verwenden C++/CX zum Verwenden oder Erstellen von Windows-Runtime-Objekten. C++/CX ermöglicht die Behandlung von C++-Ausnahmen, die Verwendung von Delegaten und Ereignissen sowie die automatische Verweiszählung dynamisch erstellter Objekte. Bei Verwendung von C++/CX sind die Details der zugrunde liegende COM- und Windows-Architektur im Code der App nicht zugänglich. Weitere Informationen finden Sie in der [Programmiersprachenreferenz für C++/CX](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx).
+-   Sie verwenden C++/CX zum Verwenden oder Erstellen von Windows-Runtime-Objekten. C++/CX ermöglicht die Behandlung von C++-Ausnahmen, die Verwendung von Delegaten und Ereignissen sowie die automatische Verweiszählung dynamisch erstellter Objekte. Bei Verwendung von C++/CX sind die Details der zugrunde liegende COM- und Windows-Architektur im Code der App nicht zugänglich. Weitere Informationen finden Sie in der [Programmiersprachenreferenz für C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx).
 
 -   Ihre App wird zu einem Paket kompiliert, das auch Metadaten zu den in der App enthaltenen Typen, den verwendeten Ressourcen und den benötigten Funktionen (Datei-, Internet- und Kamerazugriff usw.) enthält.
 
@@ -205,7 +205,7 @@ Lassen Sie uns der App einige Inhalte hinzufügen.
 **Schritt 1: Anpassen der Startseite**
 
 1.  Öffnen Sie im **Projektmappen-Explorer** die Datei „MainPage.xaml.cs“.
-2.  Erstellen Sie Steuerelemente für die Benutzeroberfläche, indem Sie den folgenden XAML-Code direkt vor dem schließenden Tag zum [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)-Stammelement hinzufügen. Er enthält ein [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) mit einem [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), in dem der Benutzer zur Eingabe seines Namens aufgefordert wird, ein [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)-Element, in das der Name eingegeben wird, sowie ein [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)- und ein weiteres **TextBlock**-Element.
+2.  Erstellen Sie Steuerelemente für die Benutzeroberfläche, indem Sie den folgenden XAML-Code direkt vor dem schließenden Tag zum [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid)-Stammelement hinzufügen. Er enthält ein [**StackPanel**](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) mit einem [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock), in dem der Benutzer zur Eingabe seines Namens aufgefordert wird, ein [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox)-Element, in das der Name eingegeben wird, sowie ein [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button)- und ein weiteres **TextBlock**-Element.
 
     ```xaml
     <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
@@ -221,7 +221,7 @@ Lassen Sie uns der App einige Inhalte hinzufügen.
 
 3.  Sie haben nun eine sehr einfache universelle Windows-App erstellt. Falls Sie wissen möchten, wie die UWP-App aussieht, drücken Sie F5, um die App zu erstellen, bereitzustellen und im Debugmodus auszuführen.
 
-Zunächst erscheint der standardmäßige Begrüßungsbildschirm. Er setzt sich aus einem Bild (Assets\\SplashScreen.scale-100.png) und einer Hintergrundfarbe zusammen, die in der Manifestdatei der App angegeben sind. Weitere Informationen zur Anpassung des Begrüßungsbildschirms finden Sie unter [Hinzufügen eines Begrüßungsbildschirms](https://docs.microsoft.com/previous-versions/windows/apps/hh465332(v=win.10)).
+Zunächst erscheint der standardmäßige Begrüßungsbildschirm. Er setzt sich aus einem Bild (Assets\\SplashScreen.scale-100.png) und einer Hintergrundfarbe zusammen, die in der Manifestdatei der App angegeben sind. Weitere Informationen zur Anpassung des Begrüßungsbildschirms finden Sie unter [Hinzufügen eines Begrüßungsbildschirms](/previous-versions/windows/apps/hh465332(v=win.10)).
 
 Wenn der Begrüßungsbildschirm verschwindet, wird Ihre App angezeigt. Die Hauptseite der App wird angezeigt.
 
@@ -231,21 +231,21 @@ Viel zu bieten hat sie zwar noch nicht, aber trotzdem: Herzlichen Glückwunsch! 
 
 Kehren Sie zu Visual Studio zurück, und drücken Sie Umschalt+F5, um den Debugmodus zu beenden und die App zu schließen.
 
-Weitere Informationen finden Sie unter [Ausführen einer Store-App über Visual Studio](https://msdn.microsoft.com/library/windows/apps/xaml/Hh441477(v=VS.140).aspx).
+Weitere Informationen finden Sie unter [Ausführen einer Store-App über Visual Studio](/visualstudio/debugger/run-store-apps-from-visual-studio).
 
-In der App können Sie Text in das [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)-Element eingeben, das Klicken auf [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) hat jedoch keinerlei Auswirkung. In späteren Schritten erstellen wir daher einen Ereignishandler für das [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignis der Schaltfläche, um eine personalisierte Begrüßung einzublenden.
+In der App können Sie Text in das [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox)-Element eingeben, das Klicken auf [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button) hat jedoch keinerlei Auswirkung. In späteren Schritten erstellen wir daher einen Ereignishandler für das [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignis der Schaltfläche, um eine personalisierte Begrüßung einzublenden.
 
 ## <a name="step-2-create-an-event-handler"></a>Schritt 2: Erstellen eines Ereignishandlers
 
-1.  Wählen Sie in „MainPage.xaml“ entweder in der XAML- oder in der Entwurfsansicht das [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)-Element „Say Hello“ aus dem zuvor hinzugefügten [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)-Element aus.
+1.  Wählen Sie in „MainPage.xaml“ entweder in der XAML- oder in der Entwurfsansicht das [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button)-Element „Say Hello“ aus dem zuvor hinzugefügten [**StackPanel**](/uwp/api/Windows.UI.Xaml.Controls.StackPanel)-Element aus.
 2.  Öffne durch Drücken von F4 das **Eigenschaftenfenster**, und wähle anschließend die Ereignisschaltfläche (![Ereignisschaltfläche](images/eventsbutton.png)) aus.
-3.  Suchen Sie das [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignis. Geben Sie im Textfeld den Namen der Funktion ein, die das **Click**-Ereignis behandelt. Gib für dieses Beispiel „Button\_Click“ ein.
+3.  Suchen Sie das [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignis. Geben Sie im Textfeld den Namen der Funktion ein, die das **Click**-Ereignis behandelt. Gib für dieses Beispiel „Button\_Click“ ein.
 
     ![Eigenschaftenfenster, Ereignisansicht](images/xaml-hw-event.png)
 
 4.  Drücken Sie die EINGABETASTE. Die Ereignishandlermethode wird in „MainPage.xaml.cpp“ erstellt und im Code-Editor geöffnet, sodass Sie den Code hinzufügen können, der beim Auftreten des Ereignisses ausgeführt werden soll.
 
-   Gleichzeitig wird in „MainPage.xaml“ der XAML-Code für das [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)-Element aktualisiert, um den [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignishandler wie folgt zu deklarieren:
+   Gleichzeitig wird in „MainPage.xaml“ der XAML-Code für das [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button)-Element aktualisiert, um den [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignishandler wie folgt zu deklarieren:
 
 ```xaml
 <Button Content="Say &quot;Hello&quot;" Click="Button_Click"/>
@@ -255,7 +255,7 @@ In der App können Sie Text in das [**TextBox**](https://docs.microsoft.com/uwp/
 
    Im Designer tritt ein Fehler beim Laden auf, wenn eine unbehandelte Ausnahme während des Renderns auftritt. Für das Rendern im Designer muss eine Entwurfszeitversion der Seite ausgeführt werden. Es ist möglicherweise hilfreich, den ausgeführten Benutzercode zu deaktivieren. Ändern Sie dazu die Einstellung im Dialogfeld **Tools, Optionen**. Deaktivieren Sie unter **XAML-Designer** die Option **Projektcode im XAML-Designer ausführen (falls unterstützt)** .
 
-5.  Füge in „MainPage.xaml.cpp“ dem gerade erstellten **Button\_Click**-Ereignishandler den folgenden Code hinzu. Dieser Code ruft den Namen des Benutzers aus dem [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)-Steuerelement `nameInput` ab und erstellt damit eine Begrüßung. Das [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Element `greetingOutput` zeigt das Ergebnis an.
+5.  Füge in „MainPage.xaml.cpp“ dem gerade erstellten **Button\_Click**-Ereignishandler den folgenden Code hinzu. Dieser Code ruft den Namen des Benutzers aus dem [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox)-Steuerelement `nameInput` ab und erstellt damit eine Begrüßung. Das [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Element `greetingOutput` zeigt das Ergebnis an.
 
 ```cpp
 void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
@@ -277,13 +277,13 @@ Das Erscheinungsbild Ihrer App lässt sich ganz einfach anpassen. Standardmäßi
 **So wechselst du zum dunklen Design**
 
 1.  Öffnen Sie „App.xaml“.
-2.  Bearbeiten Sie im öffnenden [**Application**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application)-Tag die [**RequestedTheme**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.requestedtheme)-Eigenschaft, und legen Sie ihren Wert auf **Dark** fest:
+2.  Bearbeiten Sie im öffnenden [**Application**](/uwp/api/Windows.UI.Xaml.Application)-Tag die [**RequestedTheme**](/uwp/api/windows.ui.xaml.application.requestedtheme)-Eigenschaft, und legen Sie ihren Wert auf **Dark** fest:
 
 ```xaml
 RequestedTheme="Dark"
 ```
 
-    Here's the full [**Application**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application) tag with the dark theme :
+    Here's the full [**Application**](/uwp/api/Windows.UI.Xaml.Application) tag with the dark theme :
 
 ```xaml
     <Application
@@ -309,25 +309,25 @@ Momentan ist der Text in der Windows-App ziemlich klein und nur schwer lesbar. L
 **So änderst du den Stil eines Elements**
 
 1.  Öffnen Sie „MainPage.xaml“ im Windows-Projekt.
-2.  Wählen Sie in der XAML- oder Entwurfsansicht das von Ihnen hinzugefügte [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Element „What’s your name?“ aus.
+2.  Wählen Sie in der XAML- oder Entwurfsansicht das von Ihnen hinzugefügte [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Element „What’s your name?“ aus.
 3.  Wählen Sie im Dialogfeld **Eigenschaften** (**F4**) rechts oben die Schaltfläche „Eigenschaften“ (![Schaltfläche „Eigenschaften“](images/propertiesbutton.png)) aus.
 4.  Erweitern Sie die Gruppe **Text** , und legen Sie den Schriftgrad auf „18 px“ fest.
 5.  Erweitern Sie die Gruppe **Sonstiges**, und suchen Sie dort nach der Eigenschaft **Style**.
 6.  Klicken Sie auf den Eigenschaftenmarker (das grüne Feld rechts neben der Eigenschaft **Style**), und wählen Sie anschließend **Systemressource** > **BaseTextBlockStyle** im Menü aus.
 
-     **BaseTextBlockStyle** ist eine Ressource, die in [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) in „<root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml“ definiert ist.
+     **BaseTextBlockStyle** ist eine Ressource, die in [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) in „<root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml“ definiert ist.
 
     ![Eigenschaftenfenster, Eigenschaftenansicht](images/xaml-hw-style-cpp.png)
 
-     Auf der XAML-Entwurfsoberfläche ändert sich die Textdarstellung. Im XAML-Editor wird der XAML-Code für [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) aktualisiert:
+     Auf der XAML-Entwurfsoberfläche ändert sich die Textdarstellung. Im XAML-Editor wird der XAML-Code für [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) aktualisiert:
 
 ```xaml
 <TextBlock Text="What's your name?" Style="{ThemeResource BaseTextBlockStyle}"/>
 ```
 
-7.  Wiederholen Sie den Vorgang, um den Schriftgrad festzulegen und **BaseTextBlockStyle** dem [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Element `greetingOutput` zuzuweisen.
+7.  Wiederholen Sie den Vorgang, um den Schriftgrad festzulegen und **BaseTextBlockStyle** dem [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Element `greetingOutput` zuzuweisen.
 
-    **Tipp:**   Obwohl sich in diesem [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Element kein Text befindet, zeigt eine blaue Umrandung seine Position an, wenn du den Mauszeiger über die XAML-Entwurfsoberfläche bewegst, sodass du ihn auswählen kannst.  
+    **Tipp:**   Obwohl sich in diesem [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Element kein Text befindet, zeigt eine blaue Umrandung seine Position an, wenn du den Mauszeiger über die XAML-Entwurfsoberfläche bewegst, sodass du ihn auswählen kannst.  
 
     Ihr XAML-Code sieht nun so aus:
 
@@ -348,11 +348,11 @@ Momentan ist der Text in der Windows-App ziemlich klein und nur schwer lesbar. L
 
 ### <a name="step-4-adapt-the-ui-to-different-window-sizes"></a>Schritt 4: Anpassen der UI an verschiedene Fenstergrößen
 
-Als Nächstes sorgen wir dafür, dass sich die UI verschiedenen Bildschirmgrößen anpasst, damit sie auch auf mobilen Geräten gut aussieht. Dazu fügen Sie ein [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager)-Element hinzu und legen Eigenschaften fest, die für die unterschiedlichen Ansichtszustände angewendet werden.
+Als Nächstes sorgen wir dafür, dass sich die UI verschiedenen Bildschirmgrößen anpasst, damit sie auch auf mobilen Geräten gut aussieht. Dazu fügen Sie ein [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager)-Element hinzu und legen Eigenschaften fest, die für die unterschiedlichen Ansichtszustände angewendet werden.
 
 **So passt du das UI-Layout an**
 
-1.  Fügen Sie im XAML-Editor nach dem Starttag des [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)-Stammelements den folgenden XAML-Block hinzu:
+1.  Fügen Sie im XAML-Editor nach dem Starttag des [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid)-Stammelements den folgenden XAML-Block hinzu:
 
 ```xaml
 <VisualStateManager.VisualStateGroups>
@@ -381,14 +381,14 @@ Als Nächstes sorgen wir dafür, dass sich die UI verschiedenen Bildschirmgröß
 
 ![Bildschirm der mobilen App mit Textdesign](images/hw10-screen2-mob.png)
 
-Wenn Sie bereits in früheren Versionen von XAML ein [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager)-Element genutzt haben, fällt Ihnen vielleicht auf, dass für den XAML-Code hier eine vereinfachte Syntax verwendet wird.
+Wenn Sie bereits in früheren Versionen von XAML ein [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager)-Element genutzt haben, fällt Ihnen vielleicht auf, dass für den XAML-Code hier eine vereinfachte Syntax verwendet wird.
 
-Das [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState)-Element mit dem Namen `wideState` verfügt über ein [**AdaptiveTrigger**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger)-Element, für das die [**MinWindowWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth)-Eigenschaft auf den Wert 641 festgelegt ist. Das bedeutet, dass der Zustand nur angewendet wird, wenn die Fensterbreite nicht geringer als die Mindestgröße von 641 DIP ist. Da Sie keine [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter)-Objekte für diesen Zustand definieren, werden die Layouteigenschaften verwendet, die Sie im XAML-Code für den Seiteninhalt festgelegt haben.
+Das [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState)-Element mit dem Namen `wideState` verfügt über ein [**AdaptiveTrigger**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger)-Element, für das die [**MinWindowWidth**](/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth)-Eigenschaft auf den Wert 641 festgelegt ist. Das bedeutet, dass der Zustand nur angewendet wird, wenn die Fensterbreite nicht geringer als die Mindestgröße von 641 DIP ist. Da Sie keine [**Setter**](/uwp/api/Windows.UI.Xaml.Setter)-Objekte für diesen Zustand definieren, werden die Layouteigenschaften verwendet, die Sie im XAML-Code für den Seiteninhalt festgelegt haben.
 
-Das zweite [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState)-Element `narrowState` verfügt über ein [**AdaptiveTrigger**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger)-Element, für das die [**MinWindowWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth)-Eigenschaft auf 0 festgelegt ist. Dieser Zustand wird angewendet, wenn die Fensterbreite größer 0, aber kleiner als 641 DIP ist. (Bei 641 DIPs wird `wideState` angewendet.) In diesem Zustand definierst du einige [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter)-Objekte, um die Layouteigenschaften der Steuerelemente auf der UI zu ändern:
+Das zweite [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState)-Element `narrowState` verfügt über ein [**AdaptiveTrigger**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger)-Element, für das die [**MinWindowWidth**](/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth)-Eigenschaft auf 0 festgelegt ist. Dieser Zustand wird angewendet, wenn die Fensterbreite größer 0, aber kleiner als 641 DIP ist. (Bei 641 DIPs wird `wideState` angewendet.) In diesem Zustand definierst du einige [**Setter**](/uwp/api/Windows.UI.Xaml.Setter)-Objekte, um die Layouteigenschaften der Steuerelemente auf der UI zu ändern:
 
 -   Verringern Sie den linken Rand des `contentPanel`-Elements von 120 auf 20.
--   Ändern Sie das [**Orientation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel.orientation)-Element des `inputPanel`-Elements von **Horizontal** in **Vertical**.
+-   Ändern Sie das [**Orientation**](/uwp/api/windows.ui.xaml.controls.stackpanel.orientation)-Element des `inputPanel`-Elements von **Horizontal** in **Vertical**.
 -   Fügen Sie dem `inputButton`-Element einen oberen Rand mit einer Breite von 4 DIP hinzu.
 
 ### <a name="summary"></a>Zusammenfassung
@@ -397,6 +397,6 @@ Herzlichen Glückwunsch! Sie haben das erste Lernprogramm abgeschlossen. Darin h
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Wenn du ein Projekt für universelle Windows-Apps für Windows 8.1 und/oder Windows Phone 8.1 besitzt, kannst du es zu Windows 10 portieren. Es gibt keinen automatischen Prozess dafür, du kannst das Projekt jedoch manuell portieren. Beginnen Sie mit einem neuen universellen Windows-Projekt, um die aktuelle Projektsystemstruktur und Manifestdateien abzurufen. Kopieren Sie dann die Codedateien in die Verzeichnisstruktur des Projekts, fügen Sie Ihrem Projekt Elemente hinzu, und schreiben Sie Ihren XAML-Code mithilfe von [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) gemäß den Anweisungen in diesem Thema um. Weitere Informationen finden Sie unter [Portieren eines Windows-Runtime 8-Projekts zu einem UWP-Projekt (Universelle Windows-Plattform)](https://docs.microsoft.com/windows/uwp/porting/w8x-to-uwp-porting-to-a-uwp-project) sowie unter [Portieren zur Universellen Windows-Plattform (C++)](https://msdn.microsoft.com/library/mt186164.aspx).
+Wenn du ein Projekt für universelle Windows-Apps für Windows 8.1 und/oder Windows Phone 8.1 besitzt, kannst du es zu Windows 10 portieren. Es gibt keinen automatischen Prozess dafür, du kannst das Projekt jedoch manuell portieren. Beginnen Sie mit einem neuen universellen Windows-Projekt, um die aktuelle Projektsystemstruktur und Manifestdateien abzurufen. Kopieren Sie dann die Codedateien in die Verzeichnisstruktur des Projekts, fügen Sie Ihrem Projekt Elemente hinzu, und schreiben Sie Ihren XAML-Code mithilfe von [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) gemäß den Anweisungen in diesem Thema um. Weitere Informationen finden Sie unter [Portieren eines Windows-Runtime 8-Projekts zu einem UWP-Projekt (Universelle Windows-Plattform)](../porting/w8x-to-uwp-porting-to-a-uwp-project.md) sowie unter [Portieren zur Universellen Windows-Plattform (C++)](/cpp/porting/porting-to-the-universal-windows-platform-cpp).
 
-Informationen dazu, wie du vorhandenen C++-Code in einer UWP-App verwenden kannst, um beispielsweise eine neue UWP-Benutzeroberfläche für eine vorhandene Anwendung zu erstellen, findest du unter [Vorgehensweise: Verwenden von vorhandenem C++-Code in einer UWP-App (Universelle Windows-Plattform)](https://msdn.microsoft.com/library/mt186162.aspx).
+Informationen dazu, wie du vorhandenen C++-Code in einer UWP-App verwenden kannst, um beispielsweise eine neue UWP-Benutzeroberfläche für eine vorhandene Anwendung zu erstellen, findest du unter [Vorgehensweise: Verwenden von vorhandenem C++-Code in einer UWP-App (Universelle Windows-Plattform)](/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app).

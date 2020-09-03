@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Windows 10, Microsoft, Python lernen, Python unter Windows für Anfänger, Python aus dem Microsoft Store installieren, Python mit VS Code, pygame unter Windows
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 5dee553fedc81f0b482d4b79f4d7d8be3a7bb106
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 076c62658431ba75bdbd7f385ced86f27fb2f7d0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493495"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174144"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>Erste Schritte bei der Verwendung von Python unter Windows für Anfänger
 
@@ -190,7 +190,7 @@ Wir empfehlen Ihnen die folgenden Ressourcen, um mehr über die Python-Entwicklu
 
 ### <a name="online-courses-for-learning-python"></a>Onlinekurse zum Erlernen von Python
 
-- [Einführung in Python auf Microsoft Learn:](https://docs.microsoft.com/learn/modules/intro-to-python/) Testen Sie die interaktive Microsoft Learn-Plattform, und gewinnen Sie Erfahrungspunkte für den Abschluss dieses Moduls mit Grundlagen zum Schreiben von einfachem Python-Code, zum Deklarieren von Variablen und zum Arbeiten mit Konsoleneingaben und -ausgaben. Die interaktive Sandboxumgebung ist ein idealer Ausgangspunkt für Benutzer, die noch keine Python-Entwicklungsumgebung eingerichtet haben.
+- [Einführung in Python auf Microsoft Learn:](/learn/modules/intro-to-python/) Testen Sie die interaktive Microsoft Learn-Plattform, und gewinnen Sie Erfahrungspunkte für den Abschluss dieses Moduls mit Grundlagen zum Schreiben von einfachem Python-Code, zum Deklarieren von Variablen und zum Arbeiten mit Konsoleneingaben und -ausgaben. Die interaktive Sandboxumgebung ist ein idealer Ausgangspunkt für Benutzer, die noch keine Python-Entwicklungsumgebung eingerichtet haben.
 
 - [Python bei Pluralsight: 8 Kurse, 29 Stunden:](https://app.pluralsight.com/paths/skills/python) Der Python-Lernpfad bei Pluralsight bietet Onlinekurse, die eine Vielzahl von Themen im Zusammenhang mit Python abdecken, einschließlich eines Tools, mit dem Sie Ihre Fähigkeiten messen und Lücken finden können.
 
@@ -208,4 +208,4 @@ Wir empfehlen Ihnen die folgenden Ressourcen, um mehr über die Python-Entwicklu
 
 - [Debuggen von Python:](https://code.visualstudio.com/docs/python/debugging) Beim Debuggen werden Fehler von einem Computerprogramm ermittelt und entfernt. In diesem Artikel wird beschrieben, wie Sie das Debuggen für Python mit VS Code initialisieren und konfigurieren, wie Sie Haltepunkte festlegen und überprüfen, ein lokales Skript anfügen, das Debugging für verschiedene App-Typen oder auf einem Remotecomputer ausführen und einige grundlegende Fehlerkorrekturen durchführen.
 
-- [Komponententests in Python:](https://code.visualstudio.com/docs/python/unit-testing) Erfahren Sie über eine exemplarische Vorgehensweise einige Hintergrundinformationen zu den Komponententests, die Aktivierung eines Testframeworks, das Erstellen und Ausführen von Tests und das Debuggen von Tests sowie über die Testkonfigurationseinstellungen. 
+- [Komponententests in Python:](https://code.visualstudio.com/docs/python/unit-testing) Erfahren Sie über eine exemplarische Vorgehensweise einige Hintergrundinformationen zu den Komponententests, die Aktivierung eines Testframeworks, das Erstellen und Ausführen von Tests und das Debuggen von Tests sowie über die Testkonfigurationseinstellungen.

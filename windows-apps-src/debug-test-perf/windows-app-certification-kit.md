@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, App-Zertifizierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 174ff4e588d75293ecb729312883f4792196c87a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 06ac1525a91426f6d39e20c9a9416154ad3d6f3e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79110104"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174024"
 ---
 # <a name="windows-app-certification-kit"></a>Zertifizierungskit für Windows-Apps
 
-Um eine [Windows-Zertifizierung](/windows/win32/win_cert/windows-certification-portal) für deine App zu erhalten oder sie für die [Veröffentlichung im Microsoft Store](/windows/uwp/publish/app-submissions) vorzubereiten, solltest du sie zunächst lokal validieren und testen. In diesem Thema wird gezeigt, wie du das [Zertifizierungskit für Windows-Apps](https://developer.microsoft.com/windows/develop/app-certification-kit) installierst und ausführst.
+Um eine [Windows-Zertifizierung](/windows/win32/win_cert/windows-certification-portal) für deine App zu erhalten oder sie für die [Veröffentlichung im Microsoft Store](../publish/app-submissions.md) vorzubereiten, solltest du sie zunächst lokal validieren und testen. In diesem Thema wird gezeigt, wie du das [Zertifizierungskit für Windows-Apps](https://developer.microsoft.com/windows/develop/app-certification-kit) installierst und ausführst.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -23,7 +23,7 @@ Voraussetzungen für das Testen einer universellen Windows-App:
 
 - Installieren und Ausführen von Windows 10.
 - Du musst das [Zertifizierungskit für Windows-Apps](https://developer.microsoft.com/windows/downloads/app-certification-kit/) installieren, das im Windows Software Development Kit (SDK) für Windows 10 enthalten ist.
-- Sie müssen [Ihr Gerät für die Entwicklung aktivieren](/windows/uwp/get-started/enable-your-device-for-development).
+- Sie müssen [Ihr Gerät für die Entwicklung aktivieren](../get-started/enable-your-device-for-development.md).
 - Sie müssen die zu testende Windows-App auf Ihrem Computer bereitstellen.
 
 > [!NOTE]
@@ -83,11 +83,11 @@ Voraussetzungen für das Testen einer universellen Windows-App:
 
 Die Leistungstestgrenzen des Zertifizierungskits für Windows-Apps basieren auf der Leistung eines Computers mit geringem Energieverbrauch.
 
-Die Merkmale des Computers, auf dem der Test ausgeführt wird, können die Testergebnisse beeinflussen. Um festzustellen, ob die Leistung deiner App den [Richtlinien für den Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies) entspricht, wird empfohlen, die App auf einem Computer mit geringem Energieverbrauch zu testen – beispielsweise auf einem Computer mit Intel Atom-Prozessor, einer Auflösung von 1366 × 768 (oder höher) und einem herkömmlichen Festplattenlaufwerk (kein Solid-State-Laufwerk).
+Die Merkmale des Computers, auf dem der Test ausgeführt wird, können die Testergebnisse beeinflussen. Um festzustellen, ob die Leistung deiner App den [Richtlinien für den Microsoft Store](/legal/windows/agreements/store-policies) entspricht, wird empfohlen, die App auf einem Computer mit geringem Energieverbrauch zu testen – beispielsweise auf einem Computer mit Intel Atom-Prozessor, einer Auflösung von 1366 × 768 (oder höher) und einem herkömmlichen Festplattenlaufwerk (kein Solid-State-Laufwerk).
 
-Da Computer mit geringem Energieverbrauch weiterentwickelt werden, können sich die Leistungsmerkmale im Laufe der Zeit ändern. Verwende die aktuellen [Richtlinien für den Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies), und teste deine App mit der aktuellen Version des Zertifizierungskits für Windows-Apps, um sicherzustellen, dass deine App den aktuellen Leistungsanforderungen entspricht.
+Da Computer mit geringem Energieverbrauch weiterentwickelt werden, können sich die Leistungsmerkmale im Laufe der Zeit ändern. Verwende die aktuellen [Richtlinien für den Microsoft Store](/legal/windows/agreements/store-policies), und teste deine App mit der aktuellen Version des Zertifizierungskits für Windows-Apps, um sicherzustellen, dass deine App den aktuellen Leistungsanforderungen entspricht.
 
 ## <a name="related-topics"></a>Zugehörige Themen
 
 - [Tests im Zertifizierungskit für Windows-Apps](windows-app-certification-kit-tests.md)
-- [Microsoft Store-Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies)
+- [Microsoft Store-Richtlinien](/legal/windows/agreements/store-policies)

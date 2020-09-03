@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Windows 10, Microsoft, pip, py.exe, Dateipfade, PYTHONPATH, Python-Entwicklung, Python-Paketerstellung
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 2541186a1dd0f205d88e1e14c146934490afff55
-ms.sourcegitcommit: b6138f9565252460ace6fa0acdc2a902e591681a
+ms.openlocfilehash: 4504e7550d19d2cc713284abebed43b6305b5dbd
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88243262"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174124"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>Häufig gestellte Fragen zum Verwenden von Python unter Windows
 
@@ -65,7 +65,7 @@ Die globale Festlegung dieser Variable über die Einstellungen für **Umgebungsv
 
 [Docker:](https://code.visualstudio.com/docs/azure/docker) Mit der [VS Code-Erweiterung](https://code.visualstudio.com/docs/azure/docker) können Sie mithilfe von Dockerfile- und docker-compose.yml-Vorlagen Dateien schnell packen und bereitstellen. (Generieren Sie die entsprechenden Dockerfiles für Ihr Projekt.)
 
-Mit [Azure Kubernetes Service (AKS)](https://docs.microsoft.com/azure/aks/) können Sie Containeranwendungen bereitstellen und verwalten und Ressourcen bedarfsgesteuert skalieren.
+Mit [Azure Kubernetes Service (AKS)](/azure/aks/) können Sie Containeranwendungen bereitstellen und verwalten und Ressourcen bedarfsgesteuert skalieren.
 
 ## <a name="what-if-i-need-to-work-across-different-machines"></a>Wie gehe ich vor, wenn ich auf verschiedenen Computern arbeiten muss?
 

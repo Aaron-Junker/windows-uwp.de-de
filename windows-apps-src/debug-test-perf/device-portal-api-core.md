@@ -7,12 +7,12 @@ ms.date: 04/19/2019
 ms.topic: article
 keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e091cc7ad62f69b9e76541101555493609b8a06
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c8615620e09d6f00881c1bb229d98f876a95978c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75955309"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173614"
 ---
 # <a name="device-portal-core-api-reference"></a>Referenz zu Kern-APIs des Device Portal
 
@@ -73,7 +73,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 
 **Anforderung**
 
-Mit dem folgenden Anforderungsformat kannst du eine [verwandte Gruppe](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/) installieren.
+Mit dem folgenden Anforderungsformat kannst du eine [verwandte Gruppe](/windows/msix/) installieren.
 
 | Methode      | Anforderungs-URI |
 | :------     | :------ |
@@ -174,7 +174,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 
 **Anforderung**
 
-Mit dem folgenden Anforderungsformat kannst du eine [verwandte Gruppe](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/) in losen Ordnern registrieren.
+Mit dem folgenden Anforderungsformat kannst du eine [verwandte Gruppe](/windows/msix/) in losen Ordnern registrieren.
 
 | Methode      | Anforderungs-URI |
 | :------     | :----- |
@@ -1373,7 +1373,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 | URI-Parameter | Beschreibung |
 | :---          | :--- |
 | autoreboot   | (**optional**) True oder False. Dieser Parameter gibt an, ob das System nach einem Fehler oder Einfrieren automatisch neu gestartet wird. |
-| dumptype   | (**optional**) Der Speicherabbildtyp. Die unterstützten Werte finden Sie unter [CrashDumpType-Enumeration](https://docs.microsoft.com/previous-versions/azure/reference/dn802457(v=azure.100)).|
+| dumptype   | (**optional**) Der Speicherabbildtyp. Die unterstützten Werte finden Sie unter [CrashDumpType-Enumeration](/previous-versions/azure/reference/dn802457(v=azure.100)).|
 | maxdumpcount   | (**optional**) Die maximale Anzahl der zu speichernden Speicherabbilder. |
 | overwrite   | (**optional**) True oder False. Dieser Parameter gibt an, ob alte Speicherabbilder überschrieben werden, wenn der durch *maxdumpcount* angegebene Höchstwert für die Anzahl von Speicherabbildern erreicht wurde. |
 

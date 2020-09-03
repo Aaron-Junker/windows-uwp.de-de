@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Store-Richtlinienvereinbarung
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: a68247637395c3f68bf1140479bc94cb8e0fcc33
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 4d7c30b49ea0e6276e1d7959a17086f7ff829915
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209355"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170910"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store-Richtlinien
 
@@ -113,7 +113,7 @@ Ihr Produkt darf nicht versuchen, die beschriebene Funktionalität über das dyn
 
 **10.2.2**
 
-Ihr Produkt darf keine Schadsoftware gemäß den Microsoft-Kriterien für [unerwünschte Software und Malware](https://docs.microsoft.com/windows/security/threat-protection/intelligence/criteria) enthalten oder aktivieren.
+Ihr Produkt darf keine Schadsoftware gemäß den Microsoft-Kriterien für [unerwünschte Software und Malware](/windows/security/threat-protection/intelligence/criteria) enthalten oder aktivieren.
 
 **10.2.4**
 
@@ -296,7 +296,7 @@ Falls Sie im Partner Center über die Funktion für Werbekampagnen Ihres Produkt
 
 Alle im Produkt angezeigten Werbeinhalte müssen die Anforderungen der [Annahmerichtlinie für Creatives](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies) von Microsoft erfüllen.
 
-Falls in Ihrem Produkt Werbung angezeigt wird, müssen alle angezeigten Inhalte den Anforderungen der [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) bezüglich Werbung entsprechen, einschließlich der folgenden Anforderungen:
+Falls in Ihrem Produkt Werbung angezeigt wird, müssen alle angezeigten Inhalte den Anforderungen der [Vereinbarung für App-Entwickler](/legal/windows/agreements/app-developer-agreement) bezüglich Werbung entsprechen, einschließlich der folgenden Anforderungen:
 
 **10.10.4**
 
@@ -355,7 +355,7 @@ Spielprodukte, die Xbox Live verwenden, müssen:
 
 Spielprodukte, die Xbox Live verwenden und Multiplayer-Gaming, benutzergenerierte Inhalte oder Benutzerkommunikation anbieten:
 - Dürfen den Spielbeginn erst zulassen, nachdem sich der Nutzer bei Xbox Live angemeldet hat
-- Müssen [Jugendschutz und Überwachungsmechanismen für Eltern](https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/check-user-privileges-in-unity) beachten
+- Müssen [Jugendschutz und Überwachungsmechanismen für Eltern](/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/check-user-privileges-in-unity) beachten
 
 **10.13.7**
 
@@ -477,4 +477,4 @@ Benutzergenerierte Inhalte sind Inhalte, die Benutzer zu einer App oder einem Pr
 
 - [Änderungsverlauf für Microsoft Store-Richtlinien](store-policies-change-history.md)
 - [Richtlinien und Verhaltensregeln für den Microsoft Store](store-policies-and-code-of-conduct.md)
-- [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)
+- [Vereinbarung für App-Entwickler](/legal/windows/agreements/app-developer-agreement)

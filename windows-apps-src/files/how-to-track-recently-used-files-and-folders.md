@@ -6,23 +6,23 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 318c58b393a33916df7bab51a4ef2690494d14fb
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 29d140672e80304bb0adb7081ba616e75d8d8ecd
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74259606"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173204"
 ---
 # <a name="track-recently-used-files-and-folders"></a>Nachverfolgen kürzlich verwendeter Dateien und Ordner
 
 **Wichtige APIs**
 
-- [**MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist)
-- [**FileOpenPicker**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-fileopenpicker)
+- [**MostRecentlyUsedList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist)
+- [**FileOpenPicker**](/uwp/schemas/appxpackage/appxmanifestschema/element-fileopenpicker)
 
 Sie können Dateien nachverfolgen, auf die häufig zugegriffen wird, indem Sie sie der Liste mit den zuletzt verwendeten Elementen (MRU) der App hinzufügen. Die Plattform verwaltet die MRU für Sie. Dabei werden Elemente nach der Zeit und dem Ort des letzten Zugriffs sortiert und die ältesten Elemente entfernt, wenn das Limit von 25 Elementen erreicht ist. Alle Apps besitzen eine eigene MRU.
 
-Ihre App-MRU-Liste wird durch die [**StorageItemMostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList)-Klasse repräsentiert, die Sie aus der statischen [**StorageApplicationPermissions.MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist)-Eigenschaft abrufen können. MRU-Elemente werden als [**IStorageItem**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem)-Objekte gespeichert. Das bedeutet, dass sowohl [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)-Objekte (die Dateien darstellen) als auch [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder)-Objekte (die Ordner darstellen) der MRU-Liste hinzugefügt werden können.
+Ihre App-MRU-Liste wird durch die [**StorageItemMostRecentlyUsedList**](/uwp/api/Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList)-Klasse repräsentiert, die Sie aus der statischen [**StorageApplicationPermissions.MostRecentlyUsedList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist)-Eigenschaft abrufen können. MRU-Elemente werden als [**IStorageItem**](/uwp/api/Windows.Storage.IStorageItem)-Objekte gespeichert. Das bedeutet, dass sowohl [**StorageFile**](/uwp/api/Windows.Storage.StorageFile)-Objekte (die Dateien darstellen) als auch [**StorageFolder**](/uwp/api/Windows.Storage.StorageFolder)-Objekte (die Ordner darstellen) der MRU-Liste hinzugefügt werden können.
 
 > [!NOTE]
 > Vollständige Beispiele finden Sie im [Beispiel zur Dateiauswahl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker) und im [Beispiel zum Dateizugriff](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess).
@@ -31,7 +31,7 @@ Ihre App-MRU-Liste wird durch die [**StorageItemMostRecentlyUsedList**](https://
 
 -   **Kenntnisse in der asynchronen Programmierung für Apps für die universelle Windows-Plattform (UWP)**
 
-    Informationen zum Schreiben von asynchronen Apps in C# oder Visual Basic finden Sie unter [Aufrufen asynchroner APIs in C# oder Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Informationen zum Schreiben von asynchronen Apps in C++ finden Sie unter [Asynchrone Programmierung in C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
+    Informationen zum Schreiben von asynchronen Apps in C# oder Visual Basic finden Sie unter [Aufrufen asynchroner APIs in C# oder Visual Basic](../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md). Informationen zum Schreiben von asynchronen Apps in C++ finden Sie unter [Asynchrone Programmierung in C++](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md).
 
 -   **Zugriffsberechtigungen für den Speicherort**
 
@@ -52,18 +52,18 @@ Ihre App-MRU-Liste wird durch die [**StorageItemMostRecentlyUsedList**](https://
     string mruToken = mru.Add(file, "profile pic");
     ```
 
-    [**StorageItemMostRecentlyUsedList.Add**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add) ist überladen. Im Beispiel verwenden wir [**Add(IStorageItem, String)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add), sodass wir der Datei Metadaten zuordnen können. Wenn Sie Metadaten festlegen, können Sie den Zweck des Elements festlegen, z. B. Profilauswahl. Sie können die Datei durch einen Aufruf von [**Add(IStorageItem)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add) auch ohne Metadaten der MRU-Liste hinzufügen. Beim Hinzufügen eines Elements zur MRU-Liste gibt die Methode eine eindeutig identifizierende Zeichenfolge zurück. Mit diesem sogenannten Token wird das Element abgerufen.
+    [**StorageItemMostRecentlyUsedList.Add**](/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add) ist überladen. Im Beispiel verwenden wir [**Add(IStorageItem, String)** ](/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add), sodass wir der Datei Metadaten zuordnen können. Wenn Sie Metadaten festlegen, können Sie den Zweck des Elements festlegen, z. B. Profilauswahl. Sie können die Datei durch einen Aufruf von [**Add(IStorageItem)** ](/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add) auch ohne Metadaten der MRU-Liste hinzufügen. Beim Hinzufügen eines Elements zur MRU-Liste gibt die Methode eine eindeutig identifizierende Zeichenfolge zurück. Mit diesem sogenannten Token wird das Element abgerufen.
 
 > [!TIP]
-> Sie benötigen das Token zum Abrufen eines Elements aus der MRU-Liste. Speichern Sie es daher an einem beliebigen Ort. Weitere Informationen zu App-Daten finden Sie unter [Verwalten von Anwendungsdaten](https://docs.microsoft.com/previous-versions/windows/apps/hh465109(v=win.10)).
+> Sie benötigen das Token zum Abrufen eines Elements aus der MRU-Liste. Speichern Sie es daher an einem beliebigen Ort. Weitere Informationen zu App-Daten finden Sie unter [Verwalten von Anwendungsdaten](/previous-versions/windows/apps/hh465109(v=win.10)).
 
 ## <a name="use-a-token-to-retrieve-an-item-from-the-mru"></a>Verwenden von Token zum Abrufen von Elementen aus der MRU-Liste
 
 Verwenden Sie die Abrufmethode, die für das abzurufende Element am besten geeignet ist.
 
--   Rufen Sie mit [**GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getfileasync) eine Datei als [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) ab.
--   Rufen Sie mit [**GetFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getfolderasync) einen Ordner als [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) ab.
--   Rufen Sie mit [**GetItemAsync**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getitemasync) ein allgemeines [**IStorageItem**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem)-Element ab, das eine Datei oder einen Ordner darstellen kann.
+-   Rufen Sie mit [**GetFileAsync**](/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getfileasync) eine Datei als [**StorageFile**](/uwp/api/Windows.Storage.StorageFile) ab.
+-   Rufen Sie mit [**GetFolderAsync**](/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getfolderasync) einen Ordner als [**StorageFolder**](/uwp/api/Windows.Storage.StorageFolder) ab.
+-   Rufen Sie mit [**GetItemAsync**](/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getitemasync) ein allgemeines [**IStorageItem**](/uwp/api/Windows.Storage.IStorageItem)-Element ab, das eine Datei oder einen Ordner darstellen kann.
 
 Im Folgenden erfahren Sie, wie Sie die Datei abrufen können, die gerade hinzugefügt wurde.
 
@@ -83,7 +83,7 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 }
 ```
 
-Mit [**AccessListEntryView**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.AccessListEntryView) können Sie Einträge in der MRU-Liste durchlaufen. Diese Einträge sind [**AccessListEntry**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.AccessListEntry)-Strukturen, die das Token und Metadaten für ein Element enthalten.
+Mit [**AccessListEntryView**](/uwp/api/Windows.Storage.AccessCache.AccessListEntryView) können Sie Einträge in der MRU-Liste durchlaufen. Diese Einträge sind [**AccessListEntry**](/uwp/api/Windows.Storage.AccessCache.AccessListEntry)-Strukturen, die das Token und Metadaten für ein Element enthalten.
 
 ## <a name="removing-items-from-the-mru-when-its-full"></a>Entfernen von Elementen aus der MRU-Liste beim Erreichen des Grenzwerts
 
@@ -91,9 +91,9 @@ Wenn das Limit von 25 Elementen der MRU-Liste erreicht ist und ein neues Element
 
 ## <a name="future-access-list"></a>Liste für zukünftigen Zugriff
 
-Genau wie eine MRU-Liste besitzt auch Ihre App eine Liste für zukünftigen Zugriff. Durch die Auswahl von Dateien und Ordnern erteilt der Benutzer Ihrer App die Berechtigung zum Zugreifen auf Elemente, auf die andernfalls nicht zugegriffen werden kann. Wenn Sie diese Elemente zu Ihrer Liste für zukünftigen Zugriff hinzufügen, behalten Sie die Berechtigung, wenn Ihre App später erneut auf diese Elemente zugreifen möchte. Ihre App-Liste für zukünftigen Zugriff wird durch die [**StorageItemAccessList**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.StorageItemAccessList)-Klasse dargestellt, die Sie aus der statischen [**StorageApplicationPermissions.FutureAccessList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist)-Eigenschaft abrufen.
+Genau wie eine MRU-Liste besitzt auch Ihre App eine Liste für zukünftigen Zugriff. Durch die Auswahl von Dateien und Ordnern erteilt der Benutzer Ihrer App die Berechtigung zum Zugreifen auf Elemente, auf die andernfalls nicht zugegriffen werden kann. Wenn Sie diese Elemente zu Ihrer Liste für zukünftigen Zugriff hinzufügen, behalten Sie die Berechtigung, wenn Ihre App später erneut auf diese Elemente zugreifen möchte. Ihre App-Liste für zukünftigen Zugriff wird durch die [**StorageItemAccessList**](/uwp/api/Windows.Storage.AccessCache.StorageItemAccessList)-Klasse dargestellt, die Sie aus der statischen [**StorageApplicationPermissions.FutureAccessList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist)-Eigenschaft abrufen.
 
 Wenn ein Benutzer ein Element auswählt, sollten Sie es Ihrer Liste für zukünftigen Zugriff und der MRU-Liste hinzufügen.
 
--   [  **FutureAccessList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) kann bis zu 1.000 Elemente enthalten. Denken Sie daran: Die Liste kann Ordner und Dateien enthalten. Das können also eine ganze Menge Ordner sein.
--   Die Plattform entfernt niemals Elemente aus der [**FutureAccessList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) für Sie. Wenn das Limit von 1.000 Elementen erreicht ist, können Sie kein weiteres hinzufügen, bis Sie mit der Methode [**Remove**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.remove) Platz geschaffen haben.
+-   [  **FutureAccessList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) kann bis zu 1.000 Elemente enthalten. Denken Sie daran: Die Liste kann Ordner und Dateien enthalten. Das können also eine ganze Menge Ordner sein.
+-   Die Plattform entfernt niemals Elemente aus der [**FutureAccessList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) für Sie. Wenn das Limit von 1.000 Elementen erreicht ist, können Sie kein weiteres hinzufügen, bis Sie mit der Methode [**Remove**](/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.remove) Platz geschaffen haben.

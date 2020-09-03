@@ -6,12 +6,12 @@ ms.date: 01/03/2019
 ms.topic: article
 keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
-ms.openlocfilehash: 059ce14f85ebe7d955ba2da8897ab47109f74a72
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5cf8dc0912420895091815e54f6399235fca552f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79401969"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173584"
 ---
 # <a name="device-portal-for-hololens"></a>Device Portal für HoloLens
 
@@ -21,8 +21,8 @@ ms.locfileid: "79401969"
 ### <a name="enable-device-portal"></a>Aktivieren des Geräteportals
 
 1. Schalten Sie die HoloLens ein, und setzen Sie sie auf.
-2. Führe die [Startgeste](https://docs.microsoft.com/hololens/hololens2-basic-usage#start-gesture) oder die [Öffnengeste](https://developer.microsoft.com/mixed-reality#Bloom) für HoloLens (1. Gen) aus, um das Hauptmenü zu starten.
-3. Visiere in HoloLens (1. Gen) die Kachel **Einstellungen** an, und führe die [Tipp](https://developer.microsoft.com/mixed-reality#Press_and_release)bewegung aus, oder wähle sie in HoloLens 2 aus, indem du [sie berührst oder einen Handstrahl verwendest](https://docs.microsoft.com/hololens/hololens2-basic-usage). Die Einstellungs-App wird gestartet, nachdem du sie ausgewählt hast.
+2. Führe die [Startgeste](/hololens/hololens2-basic-usage#start-gesture) oder die [Öffnengeste](https://developer.microsoft.com/mixed-reality#Bloom) für HoloLens (1. Gen) aus, um das Hauptmenü zu starten.
+3. Visiere in HoloLens (1. Gen) die Kachel **Einstellungen** an, und führe die [Tipp](https://developer.microsoft.com/mixed-reality#Press_and_release)bewegung aus, oder wähle sie in HoloLens 2 aus, indem du [sie berührst oder einen Handstrahl verwendest](/hololens/hololens2-basic-usage). Die Einstellungs-App wird gestartet, nachdem du sie ausgewählt hast.
 4. Wählen Sie das Menüelement **Aktualisieren** aus.
 5. Wählen Sie das Menüelement **Für Entwickler** aus.
 6. Aktivieren Sie den **Entwicklermodus**.
@@ -177,5 +177,5 @@ Klicken oder tippen Sie auf den Bereich unter „Virtual keyboard“, um das Sen
 ## <a name="see-also"></a>Siehe auch
 
 * [Übersicht über das Windows-Geräteportal](device-portal.md)
-* [Referenz zu Kern-APIs des Geräteportals](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core) (APIs für alle Windows 10-Geräte)
-* [Geräteportal Mixed-Reality-API-Referenz](https://docs.microsoft.com/windows/mixed-reality/device-portal-api-reference) (einer erweiterte Liste aller REST-APIs für HoloLens)
+* [Referenz zu Kern-APIs des Geräteportals](./device-portal-api-core.md) (APIs für alle Windows 10-Geräte)
+* [Geräteportal Mixed-Reality-API-Referenz](/windows/mixed-reality/device-portal-api-reference) (einer erweiterte Liste aller REST-APIs für HoloLens)

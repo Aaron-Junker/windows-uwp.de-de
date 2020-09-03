@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ef4255c8ea1eb9db34f652e5974a4f341e5500d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ac9e572da995da644cab1fbc997ee79fc3a11560
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80759450"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172014"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>Erstellen eines UWP-Spiels in JavaScript
 
@@ -52,7 +52,7 @@ Die einfachste Möglichkeit für den Einstieg besteht darin, auf der GitHub-Seit
 
 ![Klonen des Repositorys](images/JS2D_2.png)
 
-Du kannst das Projekt auch als ZIP-Datei herunterladen oder andere Standardverfahren zum Arbeiten mit [GitHub-Projekten](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples) nutzen.
+Du kannst das Projekt auch als ZIP-Datei herunterladen oder andere Standardverfahren zum Arbeiten mit [GitHub-Projekten](./get-app-samples.md) nutzen.
 
 Nachdem die Projektmappe in Visual Studio geladen wurde, werden verschiedene Dateien angezeigt, z. B.:
 
@@ -261,10 +261,10 @@ Nachdem du nun über eine UWP-App verfügst, kannst du sie im Microsoft Store ve
 Dieser Prozess umfasst mehrere Schritte.
 
 1. Du musst als Windows-Entwickler [registriert](https://developer.microsoft.com/store/register) sein.
-2. Du musst die [Prüfliste für die App-Übermittlung](https://docs.microsoft.com/windows/uwp/publish/app-submissions) verwenden.
-3. Die App muss zur [Zertifizierung](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process) eingereicht werden.
+2. Du musst die [Prüfliste für die App-Übermittlung](../publish/app-submissions.md) verwenden.
+3. Die App muss zur [Zertifizierung](../publish/the-app-certification-process.md) eingereicht werden.
 
-Weitere Informationen findest du unter [Veröffentlichen von Windows-Apps und -Spielen](https://docs.microsoft.com/windows/uwp/publish/).
+Weitere Informationen findest du unter [Veröffentlichen von Windows-Apps und -Spielen](../publish/index.md).
 
 ## <a name="suggestions-for-other-features"></a>Vorschläge für andere Features.
 

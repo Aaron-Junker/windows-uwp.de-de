@@ -6,12 +6,12 @@ ms.date: 04/09/2019
 ms.topic: article
 keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
-ms.openlocfilehash: 2292d97166d34905bb895aa3f53f864510a21f46
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: a4fc5cc5b8bc99e830d3c31604e581f8e57c1007
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74254761"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173634"
 ---
 # <a name="windows-device-portal-overview"></a>Übersicht über das Windows Device Portal
 
@@ -45,8 +45,8 @@ Anschluss | Im Entwicklermodus aktivieren | 80| 443 | http://127.0.0.1:10080
 
 Gerätespezifische Anweisungen zum Einrichten finden Sie in folgenden Artikeln:
 
-- [Geräteportal für HoloLens](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)
-- [Geräteportal für IoT](https://docs.microsoft.com/windows/iot-core/manage-your-device/DevicePortal)
+- [Geräteportal für HoloLens](./device-portal-hololens.md)
+- [Geräteportal für IoT](/windows/iot-core/manage-your-device/DevicePortal)
 - [Geräteportal für Mobilgeräte](device-portal-mobile.md)
 - [Geräteportal für Xbox](../xbox-apps/device-portal-xbox.md)
 - [Geräteportal für Windows-Desktop](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
@@ -169,7 +169,7 @@ Weitere Informationen zur Verwendung der ETW-Protokollierung finden Sie im Blogb
 
 ### <a name="performance-tracing"></a>Leistungsüberwachung
 
-Auf der Seite „Leistungsüberwachung“ können Sie die Ablaufverfolgungen des [Windows Performance Recorder (WPD)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448205(v=win.10)) vom Hostgerät anzeigen.
+Auf der Seite „Leistungsüberwachung“ können Sie die Ablaufverfolgungen des [Windows Performance Recorder (WPD)](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448205(v=win.10)) vom Hostgerät anzeigen.
 
 ![Seite „Leistungsüberwachung“ im Geräteportal](images/device-portal/mob-device-portal-perf-tracing.png)
 
@@ -178,7 +178,7 @@ Auf der Seite „Leistungsüberwachung“ können Sie die Ablaufverfolgungen des
 
 Klicken Sie auf **Beenden**, um die Ablaufverfolgung zu beenden. Bleiben Sie auf dieser Seite, bis der Download der Ablaufverfolgungsdatei (ETL) abgeschlossen ist.
 
-Aufgezeichnete ETL-Dateien können in [Windows Performance Analyzer](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10)) zur Analyse geöffnet werden.
+Aufgezeichnete ETL-Dateien können in [Windows Performance Analyzer](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10)) zur Analyse geöffnet werden.
 
 ### <a name="device-manager"></a>Geräte-Manager
 

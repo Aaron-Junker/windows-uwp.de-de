@@ -6,18 +6,18 @@ ms.date: 08/3/2020
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: 84766bb8d3fe22f947add2a3694e546738fc67a3
-ms.sourcegitcommit: dccba7256765116f06cf96143eb3cbaa12d7fe0b
+ms.openlocfilehash: 95f11f5bd9ff756611dfef96f260489a881fdd6d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87523526"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173704"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Neueste Aktualisierungen an der Dokumentation für Windows-Entwickler
 
 Die Dokumentation für Windows-Entwickler wird regelmäßig mit neuen und verbesserten Informationen und Inhalten aktualisiert. Die nachfolgend aufgeführten Dokumente gehören zu denjenigen, die bis zum 3. August 2020 umfassend überarbeitet wurden.
 
-Hinweis: Eine spezifische Liste der APIs, die als Teil von Windows 10 Build 19041 (auch als 2004 bezeichnet) hinzugefügt wurden, finden Sie in [dieser Liste](https://docs.microsoft.com/windows/uwp/whats-new/windows-10-build-19041-api-diff).
+Hinweis: Eine spezifische Liste der APIs, die als Teil von Windows 10 Build 19041 (auch als 2004 bezeichnet) hinzugefügt wurden, finden Sie in [dieser Liste](/windows/uwp/whats-new/windows-10-build-19041-api-diff).
 
 ## <a name="winrt-conceptual"></a>WinRT-Konzept
 <ul>

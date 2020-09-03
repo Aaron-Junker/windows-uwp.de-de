@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fca2695cbb57375964beff0f8a3fd9be603228c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5c5784490da53f15f4b7ac79d83b59391031748d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968925"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173564"
 ---
 # <a name="check-boxes"></a>Kontrollkästchen
 
@@ -29,7 +29,7 @@ Ein Kontrollkästchen dient zum Aktivieren oder Deaktivieren von Aktionselemente
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). „WinUI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](../style/rounded-corner.md). „WinUI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
 > **Plattform-APIs:** [CheckBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.CheckBox), [Checked-Ereignis](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked), [IsChecked-Eigenschaft](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
 
@@ -71,7 +71,7 @@ Benutzer können sowohl über **Kontrollkästchen** als auch über **Optionsfeld
 
 ## <a name="create-a-checkbox"></a>Erstellen eines Kontrollkästchens
 
-Um dem Kontrollkästchen eine Beschriftung zuzuweisen, legen Sie die [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content)-Eigenschaft fest. Die Beschriftung wird neben dem Kontrollkästchen angezeigt.
+Um dem Kontrollkästchen eine Beschriftung zuzuweisen, legen Sie die [Content](/uwp/api/windows.ui.xaml.controls.contentcontrol.content)-Eigenschaft fest. Die Beschriftung wird neben dem Kontrollkästchen angezeigt.
 
 Der folgende XAML-Code erstellt ein einzelnes Kontrollkästchen, mit dem vor dem Übermitteln eines Formulars den Servicebedingungen zugestimmt werden muss: 
 
@@ -89,14 +89,14 @@ checkBox1.Content = "I agree to the terms of service.";
 
 ### <a name="bind-to-ischecked"></a>Binden an „IsChecked“
 
-Mit der [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)-Eigenschaft können Sie den Aktivierungszustand des Kontrollkästchens ermitteln. Der Wert der IsChecked-Eigenschaft kann an einen anderen binären Wert gebunden werden.
-Da es sich bei „IsChecked“ aber um einen booleschen Wert vom Typ [Nullable](https://docs.microsoft.com/dotnet/api/system.nullable-1) handelt, müssen Sie entweder eine Umwandlung oder einen Wertkonverter verwenden, um sie an eine boolesche Eigenschaft zu binden. Dies hängt von dem tatsächlich verwendeten Bindungstyp ab. Nachfolgend finden Sie Beispiele für alle möglichen Typen. 
+Mit der [IsChecked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)-Eigenschaft können Sie den Aktivierungszustand des Kontrollkästchens ermitteln. Der Wert der IsChecked-Eigenschaft kann an einen anderen binären Wert gebunden werden.
+Da es sich bei „IsChecked“ aber um einen booleschen Wert vom Typ [Nullable](/dotnet/api/system.nullable-1) handelt, müssen Sie entweder eine Umwandlung oder einen Wertkonverter verwenden, um sie an eine boolesche Eigenschaft zu binden. Dies hängt von dem tatsächlich verwendeten Bindungstyp ab. Nachfolgend finden Sie Beispiele für alle möglichen Typen. 
 
-In diesem Beispiel wird die **IsChecked**-Eigenschaft des Kontrollkästchens zum Akzeptieren der Servicebedingungen an die [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled)-Eigenschaft der Schaltfläche zum Absenden gebunden. Die Schaltfläche zum Absenden wird nur aktiviert, wenn die Vertragsbedingungen akzeptiert werden.
+In diesem Beispiel wird die **IsChecked**-Eigenschaft des Kontrollkästchens zum Akzeptieren der Servicebedingungen an die [IsEnabled](/uwp/api/windows.ui.xaml.controls.control.isenabled)-Eigenschaft der Schaltfläche zum Absenden gebunden. Die Schaltfläche zum Absenden wird nur aktiviert, wenn die Vertragsbedingungen akzeptiert werden.
 
 #### <a name="using-xbind"></a>Verwenden von „x:Bind“
 
-> Hinweis&nbsp;&nbsp;Wir zeigen hier nur den relevanten Code. Weitere Informationen zur Datenbindung finden Sie unter [Übersicht über Datenbindung](../../data-binding/data-binding-quickstart.md). Bestimmte {x:Bind}-Informationen (z. B. Umwandlung) werden [hier](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) ausführlich beschrieben.
+> Hinweis&nbsp;&nbsp;Wir zeigen hier nur den relevanten Code. Weitere Informationen zur Datenbindung finden Sie unter [Übersicht über Datenbindung](../../data-binding/data-binding-quickstart.md). Bestimmte {x:Bind}-Informationen (z. B. Umwandlung) werden [hier](../../xaml-platform/x-bind-markup-extension.md) ausführlich beschrieben.
 
 ```xaml
 <StackPanel Grid.Column="2" Margin="40">
@@ -106,7 +106,7 @@ In diesem Beispiel wird die **IsChecked**-Eigenschaft des Kontrollkästchens zum
 </StackPanel>
 ```
 
-Wenn sich das Kontrollkästchen auch im Status **Unbestimmt** befinden kann, verwenden wir die [FallbackValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.fallbackvalue)-Eigenschaft der Bindung, um den booleschen Wert anzugeben, der diesen Zustand darstellt. In diesem Fall möchten wir auch nicht, dass die Schaltfläche „Senden“ aktiviert ist:
+Wenn sich das Kontrollkästchen auch im Status **Unbestimmt** befinden kann, verwenden wir die [FallbackValue](/uwp/api/windows.ui.xaml.data.binding.fallbackvalue)-Eigenschaft der Bindung, um den booleschen Wert anzugeben, der diesen Zustand darstellt. In diesem Fall möchten wir auch nicht, dass die Schaltfläche „Senden“ aktiviert ist:
 
 ```xaml
 <Button Content="Submit" 
@@ -157,7 +157,7 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 
 ### <a name="handle-click-and-checked-events"></a>Behandeln von Click- und Checked-Ereignissen
 
-Wenn bei einer Änderung des Kontrollkästchenzustands eine Aktion ausgeführt werden soll, behandeln Sie das [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignis oder die Ereignisse [Checked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) und [Unchecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.unchecked). 
+Wenn bei einer Änderung des Kontrollkästchenzustands eine Aktion ausgeführt werden soll, behandeln Sie das [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignis oder die Ereignisse [Checked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) und [Unchecked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.unchecked). 
 
 Das **Click**-Ereignis tritt bei jeder Änderung des Aktivierungszustands auf. Verwenden Sie beim Behandeln des Click-Ereignisses die **IsChecked**-Eigenschaft, um den Zustand des Kontrollkästchens zu ermitteln.
 
@@ -210,7 +210,7 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 
 ### <a name="use-the-indeterminate-state"></a>Verwenden des unbestimmten Zustands
 
-Das CheckBox-Steuerelement erbt von [ToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) und kann über drei Zustände verfügen: 
+Das CheckBox-Steuerelement erbt von [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) und kann über drei Zustände verfügen: 
 
 Bundesland/Kanton | Eigenschaft | Value
 ------|----------|------
@@ -218,7 +218,7 @@ Aktiviert | IsChecked | **true**
 Deaktiviert | IsChecked | **false** 
 Unbestimmt | IsChecked | **Null** 
 
-Damit das Kontrollkästchen einen unbestimmten Zustand meldet, müssen Sie die [IsThreeState](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.isthreestate)-Eigenschaft auf **true** festlegen. 
+Damit das Kontrollkästchen einen unbestimmten Zustand meldet, müssen Sie die [IsThreeState](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.isthreestate)-Eigenschaft auf **true** festlegen. 
 
 Bei gruppierbaren Optionen kann die gesamte Gruppe durch ein unbestimmtes Kontrollkästchen dargestellt werden. Verwenden Sie den unbestimmten Zustand des Kontrollkästchens, wenn ein Benutzer nur einige untergeordneten Elemente der Gruppe aktiviert.
 
@@ -331,6 +331,6 @@ private void SetCheckedState()
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [CheckBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
+- [CheckBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
 - [Optionsfelder](radio-button.md)
 - [Umschalter](toggles.md)

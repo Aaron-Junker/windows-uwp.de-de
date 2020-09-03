@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5f3e4eee486edd47901fc2b97a6e10c880cb04b1
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: b7f46679e03f367f8521630365362a4eb110332d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606299"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170564"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Hosten eines benutzerdefinierten UWP-Steuerelements in einer WPF-App unter Verwendung von XAML Islands
 
-Dieser Artikel veranschaulicht die Verwendung des [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelements im Windows Community Toolkit zum Hosten eines benutzerdefinierten UWP-Steuerelements in einer WPF-App, die auf .NET Core 3 ausgerichtet ist. Das benutzerdefinierte Steuerelement enthält verschiedene UWP-Originalsteuerelemente aus dem Windows SDK und bindet eine Eigenschaft eines der UWP-Steuerelemente an eine Zeichenfolge in der WPF-App. In diesem Artikel wird außerdem gezeigt, wie ein UWP-Steuerelement aus der [WinUI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) gehostet wird.
+Dieser Artikel veranschaulicht die Verwendung des [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelements im Windows Community Toolkit zum Hosten eines benutzerdefinierten UWP-Steuerelements in einer WPF-App, die auf .NET Core 3 ausgerichtet ist. Das benutzerdefinierte Steuerelement enthält verschiedene UWP-Originalsteuerelemente aus dem Windows SDK und bindet eine Eigenschaft eines der UWP-Steuerelemente an eine Zeichenfolge in der WPF-App. In diesem Artikel wird außerdem gezeigt, wie ein UWP-Steuerelement aus der [WinUI-Bibliothek](/uwp/toolkits/winui/) gehostet wird.
 
 Zwar wird in diesem Artikel das Vorgehen in einer WPF-App gezeigt, das Vorgehen für eine Windows Forms-App ist aber ähnlich. Eine Übersicht über das Hosten von UWP-Steuerelementen in WPF- und Windows Forms-Apps finden Sie in [diesem Artikel](xaml-islands.md#wpf-and-windows-forms-applications).
 
@@ -25,7 +25,7 @@ Zwar wird in diesem Artikel das Vorgehen in einer WPF-App gezeigt, das Vorgehen 
 
 Um ein benutzerdefiniertes UWP-Steuerelement in einer WPF-App (oder einer Windows Forms-App) zu hosten, benötigen Sie die folgenden Komponenten in Ihrer Projektmappe. Dieser Artikel stellt Anweisungen zum Erstellen jeder dieser Komponenten bereit.
 
-* **Projekt- und Quellcode für Ihre App**. Die Verwendung des [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelements zum Hosten benutzerdefinierter UWP-Steuerelemente wird nur in Apps für die Zielplattform .NET Core 3 unterstützt. Dieses Szenario wird in Apps für die Zielplattform .NET Framework nicht unterstützt.
+* **Projekt- und Quellcode für Ihre App**. Die Verwendung des [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelements zum Hosten benutzerdefinierter UWP-Steuerelemente wird nur in Apps für die Zielplattform .NET Core 3 unterstützt. Dieses Szenario wird in Apps für die Zielplattform .NET Framework nicht unterstützt.
 
 * **Das benutzerdefinierte UWP-Steuerelement**. Sie benötigen den Quellcode für das benutzerdefinierte UWP-Steuerelement, das Sie hosten möchten, damit Sie es mit Ihrer Anwendung kompilieren können. In der Regel ist das benutzerdefinierte Steuerelement in einem UWP-Klassenbibliotheks-Projekt definiert, auf das Sie in der Projektmappe Ihres WPF- oder Windows Forms-Projekts verweisen.
 
@@ -45,7 +45,7 @@ Befolgen Sie vor dem Einstieg diese Anweisungen, um ein WPF-Projekt zu erstellen
 
 2. Erstellen Sie in Visual Studio 2019 ein neues **WPF-App (.NET Core)** -Projekt.
 
-3. Vergewissern Sie sich, dass [Paketverweise](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) aktiviert sind:
+3. Vergewissern Sie sich, dass [Paketverweise](/nuget/consume-packages/package-references-in-project-files) aktiviert sind:
 
     1. Klicken Sie in Visual Studio auf **Extras > NuGet-Paket-Manager > Paket-Manager-Einstellungen**.
     2. Stellen Sie sicher, dass die Einstellung **Standardformat für Paketverwaltung** auf **PackageReference** festgelegt ist.
@@ -67,7 +67,7 @@ Befolgen Sie vor dem Einstieg diese Anweisungen, um ein WPF-Projekt zu erstellen
 
 ## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>Definieren einer XamlApplication-Klasse in einem UWP-App-Projekt
 
-Als Nächstes fügen Sie Ihrer Projektmappe ein UWP-App-Projekt hinzu und überarbeiten die `App`-Standardklasse in diesem Projekt, um sie von der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse abzuleiten, die im Windows-Community-Toolkit bereitgestellt wird. Diese Klasse unterstützt die [IXamlMetadaraProvider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider)-Schnittstelle, mit der deine App Metadaten für benutzerdefinierte UWP-XAML-Steuerelemente in Assemblys im aktuellen Verzeichnis der Anwendung zur Laufzeit ermitteln und laden kann. Diese Klasse initialisiert außerdem das UWP-XAML-Framework für den aktuellen Thread. 
+Als Nächstes fügen Sie Ihrer Projektmappe ein UWP-App-Projekt hinzu und überarbeiten die `App`-Standardklasse in diesem Projekt, um sie von der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse abzuleiten, die im Windows-Community-Toolkit bereitgestellt wird. Diese Klasse unterstützt die [IXamlMetadaraProvider](/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider)-Schnittstelle, mit der deine App Metadaten für benutzerdefinierte UWP-XAML-Steuerelemente in Assemblys im aktuellen Verzeichnis der Anwendung zur Laufzeit ermitteln und laden kann. Diese Klasse initialisiert außerdem das UWP-XAML-Framework für den aktuellen Thread. 
 
 1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappenknoten, und wählen Sie **Hinzufügen** -> **Neues Projekt** aus.
 2. Fügen Sie Ihrer Projektmappe ein Projekt vom Typ **Leere App (Universal Windows)** hinzu. Vergewissern Sie sich, dass sowohl die Zielversion als auch die mindestens erforderliche Version auf **Windows 10, Version 1903** oder höher festgelegt ist.
@@ -231,14 +231,14 @@ Wenn Sie bereits über ein benutzerdefiniertes Steuerelement verfügen, können 
 
 ## <a name="add-a-control-from-the-winui-library-to-the-custom-control"></a>Hinzufügen eines Steuerelements aus der WinUI-Bibliothek zum benutzerdefinierten Steuerelement
 
-Traditionell wurden UWP-Steuerelemente als Teil des Windows 10-Betriebssystems veröffentlicht und Entwicklern über das Windows SDK zur Verfügung gestellt. Die [WinUI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) ist ein alternativer Ansatz, bei dem aktualisierte Versionen von UWP-Steuerelementen aus dem Windows SDK in einem NuGet-Paket verteilt werden, das nicht an Windows SDK-Releases gebunden ist. Diese Bibliothek enthält darüber hinaus neue Steuerelemente, die nicht Teil des Windows SDK und der UWP-Standardplattform sind. Weitere Informationen finden Sie in der [Roadmap für die WinUI-Bibliothek](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md).
+Traditionell wurden UWP-Steuerelemente als Teil des Windows 10-Betriebssystems veröffentlicht und Entwicklern über das Windows SDK zur Verfügung gestellt. Die [WinUI-Bibliothek](/uwp/toolkits/winui/) ist ein alternativer Ansatz, bei dem aktualisierte Versionen von UWP-Steuerelementen aus dem Windows SDK in einem NuGet-Paket verteilt werden, das nicht an Windows SDK-Releases gebunden ist. Diese Bibliothek enthält darüber hinaus neue Steuerelemente, die nicht Teil des Windows SDK und der UWP-Standardplattform sind. Weitere Informationen finden Sie in der [Roadmap für die WinUI-Bibliothek](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md).
 
 In diesem Abschnitt wird veranschaulicht, wie Sie dem Benutzersteuerelement ein UWP-Steuerelement aus der WinUI-Bibliothek hinzufügen, sodass Sie dieses Steuerelement in Ihrer WPF-App hosten können.
 
 1. Installieren Sie im UWP-App-Projekt die neueste Releaseversion oder Vorabversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NuGet-Pakets.
 
     > [!NOTE]
-    > Wenn Ihre Desktop-App in einem [MSIX-Paket](https://docs.microsoft.com/windows/msix) gepackt ist, können Sie entweder eine Vorabversion oder eine Releaseversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NugGet-Pakets verwenden. Wenn Ihre Desktop-App nicht unter Verwendung von MSIX gepackt ist, müssen Sie eine Vorabversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NuGet-Pakets installieren.
+    > Wenn Ihre Desktop-App in einem [MSIX-Paket](/windows/msix) gepackt ist, können Sie entweder eine Vorabversion oder eine Releaseversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NugGet-Pakets verwenden. Wenn Ihre Desktop-App nicht unter Verwendung von MSIX gepackt ist, müssen Sie eine Vorabversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NuGet-Pakets installieren.
 
 2. Fügen Sie der App.xaml-Datei dieses Projekts dem `<xaml:XamlApplication>`-Element das folgende untergeordnete Element hinzu.
 
@@ -271,7 +271,7 @@ In diesem Abschnitt wird veranschaulicht, wie Sie dem Benutzersteuerelement ein 
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     ```
 
-5. Fügen Sie in derselben Datei ein `<winui:RatingControl />`-Element als untergeordnetes Element von `<StackPanel>` hinzu. Dieses Element fügt eine Instanz der [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol)-Klasse aus der WinUI-Bibliothek hinzu. Nachdem dieses Element hinzugefügt wurde, sollte das `<StackPanel>` nun ungefähr wie hier aussehen:
+5. Fügen Sie in derselben Datei ein `<winui:RatingControl />`-Element als untergeordnetes Element von `<StackPanel>` hinzu. Dieses Element fügt eine Instanz der [RatingControl](/uwp/api/microsoft.ui.xaml.controls.ratingcontrol)-Klasse aus der WinUI-Bibliothek hinzu. Nachdem dieses Element hinzugefügt wurde, sollte das `<StackPanel>` nun ungefähr wie hier aussehen:
 
     ```xml
     <StackPanel Background="LightCoral">
@@ -286,14 +286,14 @@ In diesem Abschnitt wird veranschaulicht, wie Sie dem Benutzersteuerelement ein 
 
 ## <a name="package-the-app"></a>Verpacken der App
 
-Sie können die WPF-App optional in einem [MSIX-Paket](https://docs.microsoft.com/windows/msix) für die Bereitstellung verpacken. MSIX ist eine moderne App-Pakettechnologie für Windows, die auf einer Kombination aus MSI-, APPX-, App-V- und ClickOnce-Installationstechnologien basiert.
+Sie können die WPF-App optional in einem [MSIX-Paket](/windows/msix) für die Bereitstellung verpacken. MSIX ist eine moderne App-Pakettechnologie für Windows, die auf einer Kombination aus MSI-, APPX-, App-V- und ClickOnce-Installationstechnologien basiert.
 
-Die folgenden Anweisungen veranschaulichen, wie Sie alle Komponenten in der Projektmappe in ein MSIX-Paket einschließen können, indem Sie die Option [Paketerstellungsprojekt für Windows-Anwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) in Visual Studio 2019 verwenden. Diese Schritte sind nur erforderlich, wenn Sie die WPF-App in einem MSIX-Paket verpacken möchten. Beachten Sie, dass diese Schritte derzeit einige Problemumgehungen beinhalten, die für das Szenario des Hostens benutzerdefinierter UWP-Steuerelemente spezifisch sind.
+Die folgenden Anweisungen veranschaulichen, wie Sie alle Komponenten in der Projektmappe in ein MSIX-Paket einschließen können, indem Sie die Option [Paketerstellungsprojekt für Windows-Anwendungen](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) in Visual Studio 2019 verwenden. Diese Schritte sind nur erforderlich, wenn Sie die WPF-App in einem MSIX-Paket verpacken möchten. Beachten Sie, dass diese Schritte derzeit einige Problemumgehungen beinhalten, die für das Szenario des Hostens benutzerdefinierter UWP-Steuerelemente spezifisch sind.
 
 > [!NOTE]
-> Wenn Sie sich entscheiden, Ihre Anwendung nicht für die Bereitstellung in einem [MSIX-Paket](https://docs.microsoft.com/windows/msix) zu verpacken, muss auf Computern zur Ausführung Ihrer App die [Visual C++-Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installiert sein.
+> Wenn Sie sich entscheiden, Ihre Anwendung nicht für die Bereitstellung in einem [MSIX-Paket](/windows/msix) zu verpacken, muss auf Computern zur Ausführung Ihrer App die [Visual C++-Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installiert sein.
 
-1. Fügen Sie Ihrer Projektmappe ein [Paketerstellungsprojekt für Windows-Anwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) hinzu. Wählen Sie beim Erstellen des Projekts **Windows 10, Version 1903 (10.0; Build 18362)** sowohl für **Zielversion** als auch für **Mindestversion** aus.
+1. Fügen Sie Ihrer Projektmappe ein [Paketerstellungsprojekt für Windows-Anwendungen](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) hinzu. Wählen Sie beim Erstellen des Projekts **Windows 10, Version 1903 (10.0; Build 18362)** sowohl für **Zielversion** als auch für **Mindestversion** aus.
 
 2. Klicken Sie im Paketprojekt mit der rechten Maustaste auf den Knoten **Anwendungen**, und wählen Sie **Verweis hinzufügen** aus. Wählen Sie in der Liste der Projekte das WPF-Projekt in Ihrer Projektmappe aus, und klicken Sie auf **OK**.
 
@@ -318,4 +318,4 @@ Die folgenden Anweisungen veranschaulichen, wie Sie alle Komponenten in der Proj
 
 * [Hosten von UWP-XAML-Steuerelementen in Desktop-Apps (XAML Islands)](xaml-islands.md)
 * [XAML Islands-Codebeispiele](https://github.com/microsoft/Xaml-Islands-Samples)
-* [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)
+* [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)

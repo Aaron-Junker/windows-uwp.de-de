@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f2421316be30d24ef44784974fc2c6c199a6570
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9b06767e5009a4d7654fa7937498319a1bbed671
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081489"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173884"
 ---
 # <a name="text-controls"></a>Textsteuerelemente
 
@@ -25,7 +25,7 @@ Textsteuerelemente bestehen aus Texteingabefeldern, Kennwortfeldern, Feldern mit
 - Für die Anzeige von schreibgeschütztem Text stehen die Steuerelemente [TextBlock](text-block.md) und [RichTextBlock](rich-text-block.md) zur Verfügung.
 - Dies sind die Steuerelemente zur Texteingabe und -bearbeitung: [TextBox](text-box.md), [RichEditBox](rich-edit-box.md), [AutoSuggestBox](auto-suggest-box.md) und [PasswordBox](password-box.md).
 
-> **Wichtige APIs:** [TextBlock-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [RichTextBlock-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [TextBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), [RichEditBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [AutoSuggestBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox), [PasswordBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+> **Wichtige APIs:** [TextBlock-Klasse](/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [RichTextBlock-Klasse](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [TextBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.TextBox), [RichEditBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [AutoSuggestBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox), [PasswordBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -35,17 +35,17 @@ Das zu verwendende Textsteuerelement hängt vom jeweiligen Szenario ab. Anhand d
 
 Verwenden Sie **TextBlock** zur Anzeige der überwiegenden Menge an schreibgeschütztem Text in Ihrer App. Sie können es zum Anzeigen von einzeiligem oder mehrzeiligem Text, Inlinelinks und Text mit Formatierung, z. B. fett, kursiv oder unterstrichen, verwenden.
 
-TextBlock ist in der Regel einfacher zu verwenden und bietet eine bessere Leistung beim Rendern von Text als RichTextBlock. Daher wird er in der Regel für App-UI-Text bevorzugt. Sie können über TextBlock in Ihrer App ganz einfach auf den Text zugreifen und ihn verwenden, indem Sie den Wert der [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text)-Eigenschaft abrufen.
+TextBlock ist in der Regel einfacher zu verwenden und bietet eine bessere Leistung beim Rendern von Text als RichTextBlock. Daher wird er in der Regel für App-UI-Text bevorzugt. Sie können über TextBlock in Ihrer App ganz einfach auf den Text zugreifen und ihn verwenden, indem Sie den Wert der [Text](/uwp/api/windows.ui.xaml.controls.textblock.text)-Eigenschaft abrufen.
 
 Er enthält außerdem viele der gleichen Formatierungsoptionen zum Anpassen des Renderns von Text. Du kannst zwar Zeilenumbrüche in den Text einfügen, aber TextBlock ist zum Anzeigen eines einzelnen Absatzes vorgesehen und unterstützt keinen Texteinzug.
 
 Verwenden Sie **RichTextBlock**, wenn Sie Unterstützung für mehrere Absätze, mehrspaltigen Text, andere komplexe Textlayouts oder Inline-UI-Elemente, z. B. Bilder, benötigen. RichTextBlock bietet mehrere Features für erweitertes Textlayout.
 
-Die Inhaltseigenschaft von RichTextBlock ist die [Blocks](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.blocks)-Eigenschaft, die über das [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph)-Element absatzbasierten Text unterstützt. Es bietet keine **Text**-Eigenschaft, die Sie zum einfachen Zugriff auf den Textinhalt des Steuerelements in Ihrer App verwenden können.  
+Die Inhaltseigenschaft von RichTextBlock ist die [Blocks](/uwp/api/windows.ui.xaml.controls.richtextblock.blocks)-Eigenschaft, die über das [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph)-Element absatzbasierten Text unterstützt. Es bietet keine **Text**-Eigenschaft, die Sie zum einfachen Zugriff auf den Textinhalt des Steuerelements in Ihrer App verwenden können.  
 
 ### <a name="text-input"></a>Texteingabe
 
-Ein **TextBox**-Steuerelement ermöglicht es Benutzern, unformatierten Text einzugeben und zu bearbeiten, z. B. in einem Formular. Mit der [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)-Eigenschaft können Sie den Text in einem TextBox abrufen und festlegen.
+Ein **TextBox**-Steuerelement ermöglicht es Benutzern, unformatierten Text einzugeben und zu bearbeiten, z. B. in einem Formular. Mit der [Text](/uwp/api/windows.ui.xaml.controls.textbox.text)-Eigenschaft können Sie den Text in einem TextBox abrufen und festlegen.
 
 Sie können das TextBox-Element als schreibgeschützt festlegen, dies sollte aber nur ein temporärer, bedingter Zustand sein. Wenn der Text nie bearbeitbar sein soll, ziehen Sie stattdessen die Verwendung eines TextBlock-Elements in Erwägung.
 
@@ -64,7 +64,7 @@ Es bestehen zahlreiche Möglichkeiten, Benutzereingaben in Ihrer App zu erhalten
 -   **Ist es praktisch umsetzbar, alle gültigen Werte effizient aufzuzählen?** Wenn dies der Fall ist, ziehen Sie die Verwendung eines der Auswahlsteuerelemente in Betracht, wie [Kontrollkästchen](checkbox.md), [Dropdownliste](lists.md), Listenfeld, [Optionsfeld](radio-button.md), [Schieberegler](slider.md), [Umschalter](toggles.md), [Datumsauswahl](date-and-time.md) oder Zeitauswahl.
 -   **Gibt es nur relativ wenige gültige Werte?** Wenn dies der Fall ist, sollten Sie eine [Einblendliste](lists.md) oder ein Listenfeld in Erwägung ziehen, insbesondere, wenn die Werte viele Zeichen enthalten.
 -   **Gelten für die Daten keinerlei Einschränkungen? Oder ist die Gültigkeit der Daten nur durch das Format (bestimmte Länge oder Zeichentypen) beschränkt?** Wenn ja, verwenden Sie einen Texteingabesteuerelement. Sie können die Anzahl der Zeichen, die eingegeben werden können, beschränken, und Sie können das Format in Ihrem App-Code überprüfen.
--   **Stellt der Wert einen Datentyp dar, der über ein spezielles allgemeines Steuerelement verfügt?** Ist dies der Fall, verwenden Sie das entsprechende Steuerelement anstelle eines Texteingabesteuerelements. Verwenden Sie anstelle eines Texteingabesteuerelements zum Beispiel [DatePicker](https://docs.microsoft.com/previous-versions/windows/apps/br211681(v=win.10)), um eine Dateneingabe zu akzeptieren.
+-   **Stellt der Wert einen Datentyp dar, der über ein spezielles allgemeines Steuerelement verfügt?** Ist dies der Fall, verwenden Sie das entsprechende Steuerelement anstelle eines Texteingabesteuerelements. Verwenden Sie anstelle eines Texteingabesteuerelements zum Beispiel [DatePicker](/previous-versions/windows/apps/br211681(v=win.10)), um eine Dateneingabe zu akzeptieren.
 -   Wenn die Daten streng numerisch sind:
     -   **Handelt es sich bei dem Wert, der eingegeben wird, um einen Näherungswert und/oder ist der Wert relativ zu einem anderen Wert auf derselben Seite?** Wenn dies der Fall ist, sollten Sie einen [Schieberegler](slider.md) verwenden.
     -   **Wäre es für Benutzer hilfreich, sofort Feedback zur Auswirkung von Einstellungsänderungen zu erhalten?** Wenn dies der Fall ist, sollten Sie einen [Schieberegler](slider.md) verwenden, eventuell zusammen mit einem begleitenden Steuerelement.
@@ -135,12 +135,12 @@ Um Benutzern die Eingabe von Daten mit der Bildschirmtastatur oder dem Soft Inpu
 
 Die Bildschirmtastatur kann für die Texteingabe verwendet werden, wenn Ihre App auf einem Gerät mit Touchscreen ausgeführt wird. Die Bildschirmtastatur wird aufgerufen, wenn der Benutzer auf ein bearbeitbares Eingabefeld wie etwa ein TextBox oder RichEditBox tippt. Benutzer können Daten in Ihre App schneller und einfacher eingeben, wenn Sie den Eingabeumfang des Textsteuerelements an die Art der Daten anpassen, die der Benutzer vermutlich eingeben wird. Der Eingabeumfang bietet dem System einen Hinweis auf die Art von Text, die vermutlich über das Steuerelement eingegeben wird. Auf diese Weise kann das System ein spezielles Bildschirmtastaturlayout für den Eingabetyp bereitstellen.
 
-Wird ein Textfeld beispielsweise nur verwendet, um eine vierstellige PIN einzugeben, legen Sie die [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope)-Eigenschaft auf **Number** fest. Dadurch wird das System angewiesen, die Zehnertastatur anzuzeigen, was dem Benutzer die Eingabe der PIN erleichtert.
+Wird ein Textfeld beispielsweise nur verwendet, um eine vierstellige PIN einzugeben, legen Sie die [InputScope](/uwp/api/windows.ui.xaml.controls.textbox.inputscope)-Eigenschaft auf **Number** fest. Dadurch wird das System angewiesen, die Zehnertastatur anzuzeigen, was dem Benutzer die Eingabe der PIN erleichtert.
 
 >Wichtig  
 >Durch diesen Eingabeumfang wird keine Eingabeüberprüfung durchgeführt, und der Benutzer kann Eingaben über eine Hardwaretastatur oder ein anderes Eingabegerät vornehmen. Die Benutzereingabe muss je nach Bedarf trotzdem in Ihrem Code überprüft werden.
 
-Weitere Informationen finden Sie unter [Verwenden des Eingabeumfangs zum Ändern der Bildschirmtastatur](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard).
+Weitere Informationen finden Sie unter [Verwenden des Eingabeumfangs zum Ändern der Bildschirmtastatur](../input/use-input-scope-to-change-the-touch-keyboard.md).
 
 ## <a name="color-fonts"></a>Farbige Schriftarten
 
@@ -158,7 +158,7 @@ Der gerenderte Text sieht wie folgt aus:
 
 ![Textblock mit farbiger Schriftart](images/text-block-color-fonts.png)
 
-Weitere Informationen finden Sie unter der [IsColorFontEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.iscolorfontenabled)-Eigenschaft.
+Weitere Informationen finden Sie unter der [IsColorFontEnabled](/uwp/api/windows.ui.xaml.controls.textblock.iscolorfontenabled)-Eigenschaft.
 
 ## <a name="guidelines-for-line-and-paragraph-separators"></a>Richtlinien für Zeilen- und Absatztrennzeichen
 
@@ -203,9 +203,9 @@ Für TextBox- und RichEditBox-Steuerelemente ist die Rechtschreibprüfung standa
 **Für Designer**
 - [Richtlinien zur Typografie](../style/typography.md)
 - [Symbolliste und Richtlinien für Segoe MDL2-Symbole](../style/segoe-ui-symbol-font.md)
-- [Hinzufügen von Suchfunktionen](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
+- [Hinzufügen von Suchfunktionen](/previous-versions/windows/apps/hh465231(v=win.10))
 
 **Für Entwickler (XAML)**
-- [TextBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [Windows.UI.Xaml.Controls PasswordBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [StringLength-Eigenschaft](https://docs.microsoft.com/dotnet/api/system.string.length)
+- [TextBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Windows.UI.Xaml.Controls PasswordBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [StringLength-Eigenschaft](/dotnet/api/system.string.length)

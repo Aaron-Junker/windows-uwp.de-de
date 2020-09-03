@@ -4,12 +4,12 @@ description: Installieren und Verwenden der Windows-UI-Bibliothek.
 ms.topic: reference
 ms.date: 07/15/2020
 keywords: windows 10, uwp, toolkit-sdk
-ms.openlocfilehash: 336439d35c74073db490772dbfdae4ca3e580625
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 94c23ab9573df576af89d9211ced70938fd5105f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492955"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174134"
 ---
 # <a name="getting-started-with-the-windows-ui-2x-library"></a>Erste Schritte mit der Windows-UI 2.x-Bibliothek
 
@@ -64,7 +64,7 @@ Optional kannst du „Vorabversion einbeziehen“ markieren, um die neuesten Vor
     ```
 
     > [!IMPORTANT]
-    > Die Reihenfolge der Ressourcen, die einem ResourceDictionary hinzugefügt werden, wirkt sich auf die Reihenfolge aus, in der sie angewendet werden. Das `XamlControlsResources`-Wörterbuch überschreibt viele Standardressourcenschlüssel und sollte daher zuerst zu `Application.Resources` hinzugefügt werden, damit keine anderen benutzerdefinierten Stile oder Ressourcen in der App überschrieben werden. Weitere Informationen zum Laden von Ressourcen findest du unter [ResourceDictionary- und XAML-Ressourcenreferenz](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references).
+    > Die Reihenfolge der Ressourcen, die einem ResourceDictionary hinzugefügt werden, wirkt sich auf die Reihenfolge aus, in der sie angewendet werden. Das `XamlControlsResources`-Wörterbuch überschreibt viele Standardressourcenschlüssel und sollte daher zuerst zu `Application.Resources` hinzugefügt werden, damit keine anderen benutzerdefinierten Stile oder Ressourcen in der App überschrieben werden. Weitere Informationen zum Laden von Ressourcen findest du unter [ResourceDictionary- und XAML-Ressourcenreferenz](/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references).
 
 5. Füge einen Verweis auf XAML-Seiten und deine Code-Behind-Seiten zum Toolkit hinzu.
 

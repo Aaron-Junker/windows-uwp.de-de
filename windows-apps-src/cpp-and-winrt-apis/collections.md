@@ -6,16 +6,16 @@ ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Sammlung
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4f1b15ec377b030a467dded634abe3fdde717896
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 886086dbc9e39490c87ee289623d9540910cf08d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68270152"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170404"
 ---
 # <a name="collections-with-cwinrt"></a>Sammlungen mit C++/WinRT
 
-Intern verfügt eine Windows-Runtime-Sammlung über viele komplizierte bewegliche Teile. Wenn du aber ein Sammlungsobjekt an eine Windows-Runtime-Funktion übergeben oder deine eigenen Sammlungseigenschaften und -typen implementieren möchtest, kannst du zur Unterstützung die in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) enthaltenen Funktionen und Basisklassen verwenden. Mit diesen Features wird für dich die Komplexität verringert, und du sparst viel Zeit und Aufwand.
+Intern verfügt eine Windows-Runtime-Sammlung über viele komplizierte bewegliche Teile. Wenn du aber ein Sammlungsobjekt an eine Windows-Runtime-Funktion übergeben oder deine eigenen Sammlungseigenschaften und -typen implementieren möchtest, kannst du zur Unterstützung die in [C++/WinRT](./intro-to-using-cpp-with-winrt.md) enthaltenen Funktionen und Basisklassen verwenden. Mit diesen Features wird für dich die Komplexität verringert, und du sparst viel Zeit und Aufwand.
 
 [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) ist die Windows-Runtime-Schnittstelle, die von Elementsammlungen mit zufälligem Zugriff implementiert wird. Wenn du **IVector** selbst implementieren würdest, müsstest du auch [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_), [**IVectorView**](/uwp/api/windows.foundation.collections.ivectorview_t_) und [**IIterator**](/uwp/api/windows.foundation.collections.iiterator_t_) implementieren. Auch wenn du *unbedingt* einen benutzerdefinierten Sammlungstyp benötigst, bedeutet dies sehr viel Arbeit. Wenn du aber über Daten in einem **std::vector**-Element (oder **std::map** oder **std::unordered_map**) verfügst und diese lediglich an eine Windows-Runtime-API übergeben möchtest, solltest du diesen Aufwand nach Möglichkeit vermeiden. *Dies ist möglich*, weil du in C++/WinRT Unterstützung bei der effizienten Erstellung von Sammlungen ohne größeren Aufwand erhältst.
 
@@ -29,7 +29,7 @@ In diesem Abschnitt wird die Erstellung einer Sammlung beschrieben, die anfängl
 
 Zum Abrufen eines neuen Objekts mit einem Typ, bei dem eine universelle Sammlung implementiert wird, kannst du die Funktionsvorlage [**winrt::single_threaded_vector**](/uwp/cpp-ref-for-winrt/single-threaded-vector) aufrufen. Das Objekt wird als [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) zurückgegeben. Dies ist die Schnittstelle, über die du die Funktionen und Eigenschaften des zurückgegebenen Objekts aufrufst.
 
-Falls du die folgenden Codebeispiele kopieren und direkt in die Hauptquellcodedatei eines Projekts vom Typ **Windows-Konsolenanwendung (C++/WinRT)** einfügen möchtest, musst du in den Projekteigenschaften zuerst die Option **Vorkompilierte Header nicht verwenden** festlegen.
+Wenn du die folgenden Codebeispiele kopieren und direkt in die Hauptquellcodedatei eines Projekts vom Typ **Windows-Konsolenanwendung (C++/WinRT)** einfügen möchtest, musst du in den Projekteigenschaften zuerst die Option **Vorkompilierte Header nicht verwenden** festlegen.
 
 ```cppwinrt
 // main.cpp

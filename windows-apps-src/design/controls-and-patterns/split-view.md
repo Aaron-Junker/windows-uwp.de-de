@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e5df29f4ce91bd272fd921b23b5fc05b6655d4c0
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 4c942c5748ef1d62dc86f6fa3d041bae651167f2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081539"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173904"
 ---
 # <a name="split-view-control"></a>Steuerelement für geteilte Ansicht
 
 Ein Steuerelement für die geteilte Darstellung verfügt über einen erweiterbaren/reduzierbaren Bereich und einen Inhaltsbereich.
 
-> **Wichtige APIs:** [SplitView-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView)
+> **Wichtige APIs:** [SplitView-Klasse](/uwp/api/Windows.UI.Xaml.Controls.SplitView)
 
 Dies ist ein Beispiel für die Verwendung von SplitView durch die Microsoft Edge-App, um den Hub anzuzeigen.
 

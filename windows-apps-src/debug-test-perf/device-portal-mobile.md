@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
-ms.openlocfilehash: fb9cd2861fe826d9e8d112f2729d2922c68194ce
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ff94c34c61dee4de8450ed0f4f89a1dfc6537f83
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72281890"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173594"
 ---
 # <a name="device-portal-for-mobile"></a>Geräteportal für Mobilgeräte
 
@@ -84,4 +84,4 @@ Das Geräteportal für mobile Geräte enthält den Standardsatz der Seiten. Ausf
 ## <a name="see-also"></a>Siehe auch
 
 * [Übersicht über das Windows-Geräteportal](device-portal.md)
-* [Referenz zur Kern-API des Geräteportals](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Referenz zur Kern-API des Geräteportals](./device-portal-api-core.md)

@@ -5,12 +5,12 @@ keywords: Neuigkeiten, Neues, Update, Features, Entwicklerleitfäden, Windows 1
 ms.date: 01/17/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7947fb6e71a9f2ddbedcd8e3ee8bab7b720dc444
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f1811e3b99077a3be676c57dc3420e88658f1d73
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74902472"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174364"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>Neues in der Windows-Entwicklerdokumentation im Januar 2019
 
@@ -64,7 +64,7 @@ Im Abschnitt [Häufig gestellte Fragen](/windows/communitytoolkit/controls/wpf-w
 
 ### <a name="japanese-era-change"></a>Änderung der japanischen Zeitrechnung
 
-Unter [Machen Sie Ihre Anwendung startklar für den Wechsel der japanischen Ära](../design/globalizing/japanese-era-change.md) erfährst du, wie du deine Windows-Anwendung für die Änderung der japanischen Zeitrechnung vorbereitest, die am 1. Mai 2019 stattfindet. [Diese Seite ist auch auf Japanisch verfügbar](/windows/uwp/design/globalizing/japanese-era-change).
+Unter [Machen Sie Ihre Anwendung startklar für den Wechsel der japanischen Ära](../design/globalizing/japanese-era-change.md) erfährst du, wie du deine Windows-Anwendung für die Änderung der japanischen Zeitrechnung vorbereitest, die am 1. Mai 2019 stattfindet. [Diese Seite ist auch auf Japanisch verfügbar](../design/globalizing/japanese-era-change.md).
 
 ## <a name="videos"></a>Videos
 

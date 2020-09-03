@@ -5,12 +5,12 @@ keywords: Neuigkeiten, Update, Features, Entwicklerleitfäden, Windows 10, Febr
 ms.date: 02/05/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cac61f398fff17ecfb824f2d869364097f38d5d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5277f3a35fc4390c8000bd13782cc9c71995677f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258821"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174374"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im Februar 2018
 
@@ -73,4 +73,4 @@ Mit dem Xbox Live Creators-Programm können Entwickler ihre UWP-Spiele schnell a
 
 ### <a name="motion-controller-tracking"></a>Nachverfolgung des Motion-Controllers
 
-Motion-Controller stellen die Hände des Benutzers in Windows Mixed Reality dar. [Sehen Sie sich das Video](https://www.youtube.com/watch?v=rkDpRllbLII) an, und erfahren Sie, wie Motion-Controller funktionieren, wenn sie sich innerhalb und außerhalb des Sichtfelds des Mixed Reality-Kopfhörers befinden, und [lesen Sie hier weitere Informationen zum Nachverfolgen des Controllers.](https://docs.microsoft.com/windows/mixed-reality/motion-controllers#controller_tracking_state%E2%80%9D)
+Motion-Controller stellen die Hände des Benutzers in Windows Mixed Reality dar. [Sehen Sie sich das Video](https://www.youtube.com/watch?v=rkDpRllbLII) an, und erfahren Sie, wie Motion-Controller funktionieren, wenn sie sich innerhalb und außerhalb des Sichtfelds des Mixed Reality-Kopfhörers befinden, und [lesen Sie hier weitere Informationen zum Nachverfolgen des Controllers.](/windows/mixed-reality/motion-controllers#controller_tracking_state%E2%80%9D)

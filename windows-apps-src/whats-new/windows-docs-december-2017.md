@@ -5,12 +5,12 @@ keywords: Neuigkeiten, Update, Features, Entwicklerleitfäden, Windows 10, Deze
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f785ad5d7898f838435e0a05cf8dea5c778e70f3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8d58fe1662c5ba13c2952fbd96414ab201f5ba27
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684753"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174384"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im Dezember 2017
 
@@ -22,7 +22,7 @@ Nach der [Installation der Tools und des SDKs](https://developer.microsoft.com/w
 
 ### <a name="windows-mixed-reality-enthusiasts-guide"></a>Windows Mixed Reality: Handbuch für Fans
 
-Für Mixed Reality-Interessierte werden im Handbuch für Fans ([Enthusiast's Guide](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/)) die wichtigsten Fragen zu Windows Mixed Reality beantwortet. 
+Für Mixed Reality-Interessierte werden im Handbuch für Fans ([Enthusiast's Guide](/windows/mixed-reality/enthusiast-guide/)) die wichtigsten Fragen zu Windows Mixed Reality beantwortet. 
 
 Das Handbuch enthält Folgendes: 
 - Häufig gestellte Fragen vor dem Kauf 
@@ -38,13 +38,13 @@ Das Handbuch enthält Folgendes:
 
 Du kannst deine UWP-Apps so entwerfen und optimieren, dass sowohl eine barrierefreie Benutzeroberfläche als auch Features für erfahrene Benutzer mit aktualisierten [Tastaturinteraktionen](../design/input/keyboard-interactions.md) bereitgestellt werden. Wir haben unsere Empfehlungen und Richtlinien gemäß den neuen Verbesserungen für diese Interaktionen aktualisiert, die mit dem Fall Creators Update hinzugefügt wurden.
 
-Weitere Informationen findest du unter [Zugriffstasten](../design/input/keyboard-accelerators.md) und im Artikel zu [benutzerdefinierten Tastaturinteraktionen](../design/input/custom-keyboard-interactions.md), um die Tastaturfunktionalität deiner Apps zu erweitern.
+Weitere Informationen findest du unter [Zugriffstasten](../design/input/keyboard-accelerators.md) und im Artikel zu [benutzerdefinierten Tastaturinteraktionen](../design/input/focus-navigation.md), um die Tastaturfunktionalität deiner Apps zu erweitern.
 
 Füge auf Geräten, die Interaktionen per Toucheingabe unterstützen, die Tastaturfunktionen mithilfe der Artikel [Reagieren auf die Anzeige der Bildschirmtastatur](../design/input/respond-to-the-presence-of-the-touch-keyboard.md) und [Verwenden des Eingabeumfangs zum Ändern der Bildschirmtastatur](../design/input/use-input-scope-to-change-the-touch-keyboard.md) hinzu.
 
 ### <a name="microsoft-collaborate"></a>Microsoft Collaborate
 
-Das „Microsoft Collaborate”-Portal enthält Tools und Dienste, um die Zusammenarbeit der Entwickler im Microsoft-Ökosystem durch die Freigabe von Engineering Systems-Arbeitselement (Fehler, Features usw.) und die Verteilung von Inhalten (Builds, Dokumente, Spezifikationen) zu optimieren. [Weitere Informationen](https://docs.microsoft.com/collaborate/)
+Das „Microsoft Collaborate”-Portal enthält Tools und Dienste, um die Zusammenarbeit der Entwickler im Microsoft-Ökosystem durch die Freigabe von Engineering Systems-Arbeitselement (Fehler, Features usw.) und die Verteilung von Inhalten (Builds, Dokumente, Spezifikationen) zu optimieren. [Weitere Informationen](/collaborate/)
 
 ![Microsoft Collaborate in Partner Center](images/microsoft_collaborate_screenshot.PNG)
 
@@ -52,9 +52,9 @@ Das „Microsoft Collaborate”-Portal enthält Tools und Dienste, um die Zusamm
 
 In Visual Studio 2017, Version 15.5, wurde die Vorlage für das **Paketerstellungsprojekt für Windows-Anwendungen** aktualisiert, damit das Integrieren eines UWP-Projekts deutlich vereinfacht wird. Du musst nicht mehr ein JavaScript-basiertes Paketerstellungsprojekt verwenden und dann das Paketmanifest manuell optimieren.  
 
-Weitere Hinweise zur Verwendung mit dieser neuen Vorlage zum Verpacken deiner Desktopanwendung findest du unter [Packen einer App mit Visual Studio](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
+Weitere Hinweise zur Verwendung mit dieser neuen Vorlage zum Verpacken deiner Desktopanwendung findest du unter [Packen einer App mit Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
 
-Weitere Hinweise dazu, wie du dein Paket einem UWP-Projekt hinzufügst, findest du im Artikel zum [Erweitern deiner Desktopanwendung mit modernen UWP-Komponenten](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-extend).
+Weitere Hinweise dazu, wie du dein Paket einem UWP-Projekt hinzufügst, findest du im Artikel zum [Erweitern deiner Desktopanwendung mit modernen UWP-Komponenten](/windows/apps/desktop/modernize/desktop-to-uwp-extend).
 
 ### <a name="subscription-add-ons-are-now-available-to-developers-in-the-windows-dev-center-insider-program"></a>Abonnement-Add-Ons sind jetzt für Entwickler im Windows Dev Center-Insider-Programm verfügbar
 
@@ -97,4 +97,4 @@ Das Beispiel [Customer Orders Database](https://github.com/Microsoft/Windows-app
 
 ### <a name="package-a-net-app-in-visual-studio"></a>Verpacken einer .NET-App in Visual Studio
 
-Es ist einfacher denn je, eine Desktop-App auf die Universelle Windows-Plattform zu übertragen. [Sieh dir das Video an](https://www.youtube.com/watch?v=fJkbYPyd08w), um zu erfahren, wie du deine .NET-App für die Verteilung verpacken kannst. Navigiere anschließend auf [diese Seite](../porting/desktop-to-uwp-packaging-dot-net.md), um weitere Informationen zu erhalten.
+Es ist einfacher denn je, eine Desktop-App auf die Universelle Windows-Plattform zu übertragen. [Sieh dir das Video an](https://www.youtube.com/watch?v=fJkbYPyd08w), um zu erfahren, wie du deine .NET-App für die Verteilung verpacken kannst. Navigiere anschließend auf [diese Seite](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net), um weitere Informationen zu erhalten.

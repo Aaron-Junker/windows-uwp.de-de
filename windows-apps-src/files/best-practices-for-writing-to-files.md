@@ -5,27 +5,27 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: dcbeffc7e3db8f3df9c197e8c388f30faf7ad03d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 844e1da1a4108673c353e91b8624376d9b98e976
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75685238"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173254"
 ---
 # <a name="best-practices-for-writing-to-files"></a>Bewährte Methoden zum Schreiben in Dateien
 
 **Wichtige APIs**
 
-* [**FileIO-Klasse**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)
-* [**PathIO-Klasse**](https://docs.microsoft.com/uwp/api/windows.storage.pathio)
+* [**FileIO-Klasse**](/uwp/api/Windows.Storage.FileIO)
+* [**PathIO-Klasse**](/uwp/api/windows.storage.pathio)
 
-Bei Entwicklern kann manchmal eine Reihe allgemeiner Probleme auftreten, wenn sie E/A-Vorgänge im Dateisystem mithilfe der **Write**-Methoden der Klassen [**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) und [**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio) ausführen. Dies sind beispielsweise häufig auftretende Probleme:
+Bei Entwicklern kann manchmal eine Reihe allgemeiner Probleme auftreten, wenn sie E/A-Vorgänge im Dateisystem mithilfe der **Write**-Methoden der Klassen [**FileIO**](/uwp/api/Windows.Storage.FileIO) und [**PathIO**](/uwp/api/windows.storage.pathio) ausführen. Dies sind beispielsweise häufig auftretende Probleme:
 
 * Eine Datei wird nur teilweise geschrieben.
 * Die App empfängt beim Aufrufen einer der Methoden eine Ausnahme.
 * Bei den Vorgängen bleiben TMP-Dateien zurück, deren Name ähnlich wie der Name der Zieldatei lautet.
 
-Die **Write**-Methoden der Klassen [**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) und [**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio) umfassen Folgendes:
+Die **Write**-Methoden der Klassen [**FileIO**](/uwp/api/Windows.Storage.FileIO) und [**PathIO**](/uwp/api/windows.storage.pathio) umfassen Folgendes:
 
 * **WriteBufferAsync**
 * **WriteBytesAsync**
@@ -39,31 +39,31 @@ Die **Write**-Methoden der Klassen [**FileIO**](https://docs.microsoft.com/uwp/a
 
 ## <a name="convenience-vs-control"></a>Komfort im Vergleich zu Kontrolle
 
-Ein [**StorageFile**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)-Objekt ist kein Filehandle wie das einheitliche Win32-Programmiermodell. Stattdessen ist eine [**StorageFile**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) eine Darstellung einer Datei mit Methoden zur Bearbeitung von deren Inhalten.
+Ein [**StorageFile**](/uwp/api/windows.storage.storagefile)-Objekt ist kein Filehandle wie das einheitliche Win32-Programmiermodell. Stattdessen ist eine [**StorageFile**](/uwp/api/windows.storage.storagefile) eine Darstellung einer Datei mit Methoden zur Bearbeitung von deren Inhalten.
 
 Dieses Konzept zu verstehen, ist hilfreich bei der Ausführung von E/A mit einer **StorageFile**. So stellt beispielsweise der Abschnitt [Schreiben in eine Datei](quickstart-reading-and-writing-files.md#writing-to-a-file) drei Möglichkeiten zum Schreiben in eine Datei vor:
 
-* Mithilfe der [**FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync)-Methode.
-* Durch das Erstellen eines Puffers mit anschließendem Aufrufen der [**FileIO.WriteBufferAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writebufferasync)-Methode.
+* Mithilfe der [**FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync)-Methode.
+* Durch das Erstellen eines Puffers mit anschließendem Aufrufen der [**FileIO.WriteBufferAsync**](/uwp/api/windows.storage.fileio.writebufferasync)-Methode.
 * Das Modell aus vier Schritten, bei dem ein Stream verwendet wird:
-  1. [Öffnen](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.openasync) Sie die Datei, um einen Stream abzurufen.
-  2. [Rufen Sie](https://docs.microsoft.com/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) einen Ausgabestream ab.
-  3. Erstellen Sie ein [**DataWriter**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter)-Objekt, und rufen Sie die entsprechende **Write**-Methode auf.
-  4. [Übernehmen](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter.storeasync) Sie die Daten in den Datenschreiber, und [leeren](https://docs.microsoft.com/uwp/api/windows.storage.streams.ioutputstream.flushasync) Sie den Ausgabestream.
+  1. [Öffnen](/uwp/api/windows.storage.storagefile.openasync) Sie die Datei, um einen Stream abzurufen.
+  2. [Rufen Sie](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) einen Ausgabestream ab.
+  3. Erstellen Sie ein [**DataWriter**](/uwp/api/windows.storage.streams.datawriter)-Objekt, und rufen Sie die entsprechende **Write**-Methode auf.
+  4. [Übernehmen](/uwp/api/windows.storage.streams.datawriter.storeasync) Sie die Daten in den Datenschreiber, und [leeren](/uwp/api/windows.storage.streams.ioutputstream.flushasync) Sie den Ausgabestream.
 
 Die ersten beiden Szenarien werden von Apps am häufigsten verwendet. Das Schreiben in die Datei in einem einzigen Vorgang ist einfacher zum Codieren und Verwalten. Außerdem entfällt dadurch für die App die Verantwortung, viele der Komplexitäten von Datei-E/A verarbeiten zu müssen. Dieser Komfort ist allerdings mit Nachteilen verbunden: der Verlust der Kontrolle über den gesamten Vorgang und der Möglichkeit zum Abfangen von Fehlern an bestimmten Punkten.
 
 ## <a name="the-transactional-model"></a>Das transaktionale Modell
 
-Die **Write**-Methoden der Klassen [**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) und [**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio) umschließen die Schritte im vorstehenden dritten „Write“-Modell mit einer hinzugefügten Ebene. Diese Ebene wird in einer Speichertransaktion gekapselt.
+Die **Write**-Methoden der Klassen [**FileIO**](/uwp/api/Windows.Storage.FileIO) und [**PathIO**](/uwp/api/windows.storage.pathio) umschließen die Schritte im vorstehenden dritten „Write“-Modell mit einer hinzugefügten Ebene. Diese Ebene wird in einer Speichertransaktion gekapselt.
 
-Um die Integrität der ursprünglichen Datei für den Fall zu schützen, dass beim Schreiben der Daten ein Fehler auftritt, verwenden die **Write**-Methoden ein transaktionales Modell, indem die Datei mit [**OpenTransactedWriteAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.opentransactedwriteasync) geöffnet wird. Dieser Vorgang erstellt ein [**StorageStreamTransaction**](https://docs.microsoft.com/uwp/api/windows.storage.storagestreamtransaction)-Objekt. Nachdem dieses Transaktionsobjekt erstellt wurde, schreiben die APIs die Daten ähnlich wie im [File Access](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)-Beispiel oder wie im Codebeispiel im Artikel zu [**StorageStreamTransaction**](https://docs.microsoft.com/uwp/api/windows.storage.storagestreamtransaction).
+Um die Integrität der ursprünglichen Datei für den Fall zu schützen, dass beim Schreiben der Daten ein Fehler auftritt, verwenden die **Write**-Methoden ein transaktionales Modell, indem die Datei mit [**OpenTransactedWriteAsync**](/uwp/api/windows.storage.storagefile.opentransactedwriteasync) geöffnet wird. Dieser Vorgang erstellt ein [**StorageStreamTransaction**](/uwp/api/windows.storage.storagestreamtransaction)-Objekt. Nachdem dieses Transaktionsobjekt erstellt wurde, schreiben die APIs die Daten ähnlich wie im [File Access](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)-Beispiel oder wie im Codebeispiel im Artikel zu [**StorageStreamTransaction**](/uwp/api/windows.storage.storagestreamtransaction).
 
 Das folgende Diagramm veranschaulicht die zugrunde liegenden Aufgaben, die von der **WriteTextAsync**-Methode bei einem erfolgreichen Schreibvorgang ausgeführt werden. Diese Abbildung zeigt eine vereinfachte Ansicht des Vorgangs. So werden darin beispielsweise Schritte wie die Textcodierung und der asynchrone Abschluss bei verschiedenen Threads übersprungen.
 
 ![UWP-API-Aufruf-Sequenzdiagramm zum Schreiben in eine Datei](images/file-write-call-sequence.svg)
 
-Die Verwendung der **Write**-Methoden für die Klassen [**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) und [**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio) statt des komplexeren Modells aus vier Schritten bietet die folgenden Vorteile:
+Die Verwendung der **Write**-Methoden für die Klassen [**FileIO**](/uwp/api/Windows.Storage.FileIO) und [**PathIO**](/uwp/api/windows.storage.pathio) statt des komplexeren Modells aus vier Schritten bietet die folgenden Vorteile:
 
 * Ein einziger API-Aufruf zum Verarbeiten aller Zwischenschritte, einschließlich Fehlern.
 * Wenn ein Fehler auftritt, wird die ursprüngliche Datei beibehalten.
@@ -94,11 +94,11 @@ Ihre App sollte während eines laufenden Schreibvorgangs keine Annahmen zu Daten
 
 ### <a name="readers"></a>Leser
 
-Wenn die Datei, in die geschrieben wird, auch von einem „polite“ Leser verwendet (d.h., mit [**FileAccessMode.Read**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode) geöffnet) wird, schlagen nachfolgende Lesevorgänge mit dem Fehler ERROR_OPLOCK_HANDLE_CLOSED (0x80070323) fehl. Manchmal wiederholen Apps während des laufenden **Schreibvorgangs** das Öffnen der Datei zum erneuten Lesen. Dies kann zu einer Racebedingung führen, bei der **Write** beim Versuch, die ursprüngliche Datei zu überschreiben, letztendlich fehlschlägt, weil die Datei nicht ersetzt werden kann.
+Wenn die Datei, in die geschrieben wird, auch von einem „polite“ Leser verwendet (d.h., mit [**FileAccessMode.Read**](/uwp/api/Windows.Storage.FileAccessMode) geöffnet) wird, schlagen nachfolgende Lesevorgänge mit dem Fehler ERROR_OPLOCK_HANDLE_CLOSED (0x80070323) fehl. Manchmal wiederholen Apps während des laufenden **Schreibvorgangs** das Öffnen der Datei zum erneuten Lesen. Dies kann zu einer Racebedingung führen, bei der **Write** beim Versuch, die ursprüngliche Datei zu überschreiben, letztendlich fehlschlägt, weil die Datei nicht ersetzt werden kann.
 
 ### <a name="files-from-knownfolders"></a>Dateien aus „KnownFolders“
 
-Ihre App ist möglicherweise nicht die einzige App, die versucht, auf eine Datei in einem der [**KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders) zuzugreifen. Es gibt keine Garantie dafür, dass bei einem erfolgreichen Vorgang die Inhalte, die eine App in die Datei geschrieben hat, bei ihrem nächsten Leseversuch dieser Datei konstant bleiben. Außerdem treten in diesem Szenario Fehler des Typs „Freigabe oder Zugriff verweigert“ häufiger auf.
+Ihre App ist möglicherweise nicht die einzige App, die versucht, auf eine Datei in einem der [**KnownFolders**](/uwp/api/Windows.Storage.KnownFolders) zuzugreifen. Es gibt keine Garantie dafür, dass bei einem erfolgreichen Vorgang die Inhalte, die eine App in die Datei geschrieben hat, bei ihrem nächsten Leseversuch dieser Datei konstant bleiben. Außerdem treten in diesem Szenario Fehler des Typs „Freigabe oder Zugriff verweigert“ häufiger auf.
 
 ### <a name="conflicting-io"></a>In Konflikt stehende E/A
 
@@ -114,7 +114,7 @@ Einige Fehler können je nach dem Typ der Dateien, der Häufigkeit des Zugriffs 
 
 * Dateien, die vom Benutzer im lokalen Datenordner Ihrer App erstellt und bearbeitet werden. Sie werden nur bei Verwendung Ihrer App erstellt und bearbeitet und sind nur innerhalb der App vorhanden.
 * App-Metadaten. Ihre App verwendet diese Dateien zum Nachverfolgen ihres eigenen Status.
-* Andere Dateien an Speicherorten des Dateisystems, an denen Ihre App über deklarierte Funktionen für den Zugriff verfügt. Sie befinden sich am häufigsten in einem der [**KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders).
+* Andere Dateien an Speicherorten des Dateisystems, an denen Ihre App über deklarierte Funktionen für den Zugriff verfügt. Sie befinden sich am häufigsten in einem der [**KnownFolders**](/uwp/api/Windows.Storage.KnownFolders).
 
 Ihre App hat vollständige Kontrolle über die ersten beiden Kategorien von Dateien, weil sie Teil der App-Paketdateien sind und darauf ausschließlich von Ihrer App zugegriffen wird. Bei Dateien in der letzten Kategorie muss Ihre App beachten, dass andere Apps und Betriebssystemdienste möglicherweise gleichzeitig darauf zugreifen.
 

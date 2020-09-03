@@ -5,12 +5,12 @@ keywords: Neuigkeiten, Update, Features, Entwicklerleitfäden, Windows 10, Augu
 ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 723cae783ba16fe5be9bb2076f96d4a5f823d733
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: eb6900b4d5ad529ee2e94f09439dda6abcaebac8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258838"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174394"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>Neuerungen in der Windows-Entwicklerdokumentation im August 2018
 
@@ -24,7 +24,7 @@ Nach der [Installation der Tools und des SDKs](https://developer.microsoft.com/w
 
 Die folgenden Features wurden den Windows Insider Preview-Builds hinzugefügt, die über das [Windows-Insider](https://insider.windows.com/)-Programm verfügbar sind.
 
-* Die [Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) umfasst eine Reihe von NuGet-Paketen, mit denen Steuerelemente und andere Benutzeroberflächenelemente für UWP-Apps bereitgestellt werden. Diese Pakete sind auch mit früheren Versionen von Windows 10 kompatibel, sodass deine App selbst dann funktioniert, wenn die Benutzer nicht mit der neuesten Betriebssystemversion arbeiten.
+* Die [Windows-UI-Bibliothek](/uwp/toolkits/winui/) umfasst eine Reihe von NuGet-Paketen, mit denen Steuerelemente und andere Benutzeroberflächenelemente für UWP-Apps bereitgestellt werden. Diese Pakete sind auch mit früheren Versionen von Windows 10 kompatibel, sodass deine App selbst dann funktioniert, wenn die Benutzer nicht mit der neuesten Betriebssystemversion arbeiten.
 
 * Über [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button), [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button) und [ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button) werden Schaltflächen-Steuerelemente mit speziellen Funktionen zur Verbesserung der Benutzeroberfläche deiner Apps bereitgestellt.
 
@@ -38,7 +38,7 @@ Die folgenden Features wurden den Windows Insider Preview-Builds hinzugefügt, d
 
 Das Package Support Framework ist ein Open-Source-Kit, über das du Korrekturen auf deine Win32-Anwendung anwenden kannst, wenn du keinen Zugriff auf den Quellcode hast, damit diese in einem MSIX-Container ausgeführt werden kann.
 
-Weitere Informationen findest du unter [Anwenden von Runtimekorrekturen auf ein MSIX-Paket mithilfe des Package Support Framework](../porting/package-support-framework.md).
+Weitere Informationen findest du unter [Anwenden von Runtimekorrekturen auf ein MSIX-Paket mithilfe des Package Support Framework](/windows/msix/psf/package-support-framework).
 
 ## <a name="developer-guidance"></a>Entwicklerleitfäden
 
@@ -52,7 +52,7 @@ Wir haben den Themen in unseren Dokumenten 250 [C++/WinRT](../cpp-and-winrt-apis
 
 ### <a name="project-rome"></a>Project Rome
 
-Die Website mit den [Project Rome-Dokumenten](https://docs.microsoft.com/windows/project-rome/) wurde neu organisiert, indem der Schwerpunkt auf die Features gelegt wurde. Entwickler sollten jetzt leichter finden können, wonach sie suchen, und die Implementierung der gewünschten Features für mehrere Plattformen wurde vereinfacht.
+Die Website mit den [Project Rome-Dokumenten](/windows/project-rome/) wurde neu organisiert, indem der Schwerpunkt auf die Features gelegt wurde. Entwickler sollten jetzt leichter finden können, wonach sie suchen, und die Implementierung der gewünschten Features für mehrere Plattformen wurde vereinfacht.
 
 ## <a name="videos"></a>Videos
 

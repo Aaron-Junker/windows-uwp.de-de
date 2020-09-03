@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fd561096dc53f85186698c981693693a6d3b9e64
-ms.sourcegitcommit: d95ccb47c616bd32c56e491490a6baf30185c8c5
+ms.openlocfilehash: 5a7c77f6c553408d2631fb3e324e67d79318f9b4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85295537"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170694"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>Windows-Runtime-APIs in Desktop-Apps aufrufen
 
@@ -36,7 +36,7 @@ Für .NET-Projekte bestehen zwei Optionen:
 
 #### <a name="to-use-the-nuget-option"></a>Verwenden der NuGet-Option
 
-1. Vergewissern Sie sich, dass [Paketverweise](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) aktiviert sind:
+1. Vergewissern Sie sich, dass [Paketverweise](/nuget/consume-packages/package-references-in-project-files) aktiviert sind:
 
     1. Klicken Sie in Visual Studio auf **Extras > NuGet-Paket-Manager > Paket-Manager-Einstellungen**.
     2. Achten Sie darauf, dass die Einstellung **Standardformat für Paketverwaltung** auf **PackageReference** festgelegt ist.
@@ -76,7 +76,7 @@ Für .NET-Projekte bestehen zwei Optionen:
 
 ### <a name="modify-a-c-win32-project-to-use-windows-runtime-apis"></a>Ändern eines C++-Win32-Projekts für die Verwendung von Windows Runtime-APIs
 
-Verwenden Sie [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/), um Windows Runtime-APIs zu nutzen. C++/WinRT ist eine vollständig standardisierte, moderne C++17-Programmiersprache für Windows-Runtime-APIs (WinRT), die als headerdateibasierte Bibliothek implementiert ist und Ihnen einen erstklassigen Zugriff auf die moderne Windows-API bietet.
+Verwenden Sie [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/), um Windows Runtime-APIs zu nutzen. C++/WinRT ist eine vollständig standardisierte, moderne C++17-Programmiersprache für Windows-Runtime-APIs (WinRT), die als headerdateibasierte Bibliothek implementiert ist und Ihnen einen erstklassigen Zugriff auf die moderne Windows-API bietet.
 
 Konfigurieren Ihres Projekts für C++/WinRT:
 
@@ -186,7 +186,7 @@ void UWP::ShowToast()
 }
 ```
 
-Weitere Informationen zu Benachrichtigungen finden Sie unter [Adaptive und interaktive Popupbenachrichtigungen](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts).
+Weitere Informationen zu Benachrichtigungen finden Sie unter [Adaptive und interaktive Popupbenachrichtigungen](/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts).
 
 ## <a name="support-windows-xp-windows-vista-and-windows-78-install-bases"></a>Unterstützung der Windows XP-, Windows Vista- und Windows 7/8-Installationsbasis
 
@@ -243,7 +243,7 @@ Der Compiler erstellt den Code nur dann, wenn die Konstante in der aktiven Build
 
 Sie können einen Satz von Binärdateien für alle Windows-Benutzer kompilieren, unabhängig davon, welche Version von Windows sie ausführen. Ihre Anwendung ruft Windows-Runtime-APIs nur dann auf, wenn der Benutzer Ihre Anwendung als verpackte Anwendung unter Windows 10 ausführt.
 
-Die einfachste Möglichkeit zum Hinzufügen von Laufzeitüberprüfungen zu Ihrem Code besteht darin, dieses NuGet-Paket zu installieren: [Desktop Bridge-Hilfsprogramme](https://www.nuget.org/packages/DesktopBridge.Helpers/) und anschließend die ``IsRunningAsUWP()``-Methode zu verwenden, um den gesamten Code zu deaktivieren, der Windows-Runtime-APIs aufruft. Weitere Informationen finden Sie in diesem Blogbeitrag: [Desktop Bridge: Identifizieren des Anwendungskontexts](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/).
+Die einfachste Möglichkeit zum Hinzufügen von Laufzeitüberprüfungen zu Ihrem Code besteht darin, dieses NuGet-Paket zu installieren: [Desktop Bridge-Hilfsprogramme](https://www.nuget.org/packages/DesktopBridge.Helpers/) und anschließend die ``IsRunningAsUWP()``-Methode zu verwenden, um den gesamten Code zu deaktivieren, der Windows-Runtime-APIs aufruft. Weitere Informationen finden Sie in diesem Blogbeitrag: [Desktop Bridge: Identifizieren des Anwendungskontexts](/archive/blogs/appconsult/desktop-bridge-identify-the-applications-context).
 
 ## <a name="related-samples"></a>Verwandte Beispiele
 

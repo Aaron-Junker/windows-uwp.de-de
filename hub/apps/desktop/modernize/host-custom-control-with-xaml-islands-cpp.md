@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 8c2133c4f1132b55d62149ad5aaf42e04fc5da5b
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: d61abe8b59f916ed56c1fefe0bda4b9f25b673a4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493320"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173724"
 ---
 # <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>Hosten eines benutzerdefinierten UWP-Steuerelements in einer C++-Win32-App
 
@@ -29,7 +29,7 @@ Um ein benutzerdefiniertes UWP-XAML-Steuerelement zu hosten, erstellst du im Rah
 
 * Visual Studio 2019, Version 16.4.3 oder höher.
 * SDK-Version 10.0.18362 für Windows 10, Version 1903 oder höher.
-* [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), installiert mit Visual Studio. C++/WinRT ist eine vollständig standardisierte, moderne C++17-Programmiersprache für Windows-Runtime-APIs (WinRT), die als headerdateibasierte Bibliothek implementiert ist und Ihnen einen erstklassigen Zugriff auf die moderne Windows-API bietet. Weitere Informationen findest du unter [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/).
+* [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), installiert mit Visual Studio. C++/WinRT ist eine vollständig standardisierte, moderne C++17-Programmiersprache für Windows-Runtime-APIs (WinRT), die als headerdateibasierte Bibliothek implementiert ist und Ihnen einen erstklassigen Zugriff auf die moderne Windows-API bietet. Weitere Informationen findest du unter [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/).
 
 ## <a name="create-a-desktop-application-project"></a>Erstellen eines Desktopanwendungsprojekts
 
@@ -176,7 +176,7 @@ Jetzt kannst du Code zum Projekt **MyUWPApp** hinzufügen, um diese Aufgaben aus
 
 ### <a name="define-a-xamlapplication-class"></a>Definieren einer XamlApplication-Klasse
 
-Als Nächstes überarbeitest du die **App**-Standardklasse im Projekt **MyUWPApp**, um sie von der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse abzuleiten, die im Windows-Community-Toolkit bereitgestellt wird. Diese Klasse unterstützt die [IXamlMetadaraProvider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider)-Schnittstelle, mit der deine App Metadaten für benutzerdefinierte UWP-XAML-Steuerelemente in Assemblys im aktuellen Verzeichnis der Anwendung zur Laufzeit ermitteln und laden kann. Diese Klasse initialisiert außerdem das UWP-XAML-Framework für den aktuellen Thread. Später in dieser exemplarischen Vorgehensweise aktualisierst du das Desktopprojekt, um eine Instanz dieser Klasse zu erstellen.
+Als Nächstes überarbeitest du die **App**-Standardklasse im Projekt **MyUWPApp**, um sie von der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse abzuleiten, die im Windows-Community-Toolkit bereitgestellt wird. Diese Klasse unterstützt die [IXamlMetadaraProvider](/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider)-Schnittstelle, mit der deine App Metadaten für benutzerdefinierte UWP-XAML-Steuerelemente in Assemblys im aktuellen Verzeichnis der Anwendung zur Laufzeit ermitteln und laden kann. Diese Klasse initialisiert außerdem das UWP-XAML-Framework für den aktuellen Thread. Später in dieser exemplarischen Vorgehensweise aktualisierst du das Desktopprojekt, um eine Instanz dieser Klasse zu erstellen.
 
   > [!NOTE]
   > Jede Projektmappe mit Verwendung von XAML Islands kann nur ein Projekt enthalten, das ein `XamlApplication`-Objekt definiert. Alle benutzerdefinierten UWP-XAML-Steuerelemente in deiner App nutzen gemeinsam dasselbe `XamlApplication`-Objekt. 
@@ -307,19 +307,19 @@ Bevor die App **MyDesktopWin32App** ein benutzerdefiniertes UWP-XAML-Steuereleme
 
 ### <a name="option-1-package-the-app-using-msix"></a>Option 1: Packen der App mit MSIX
 
-Du kannst die App für in einem [MSIX-Paket](https://docs.microsoft.com/windows/msix) die Bereitstellung packen. MSIX ist eine moderne App-Pakettechnologie für Windows, die auf einer Kombination aus MSI-, APPX-, App-V- und ClickOnce-Installationstechnologien basiert.
+Du kannst die App für in einem [MSIX-Paket](/windows/msix) die Bereitstellung packen. MSIX ist eine moderne App-Pakettechnologie für Windows, die auf einer Kombination aus MSI-, APPX-, App-V- und ClickOnce-Installationstechnologien basiert.
 
-1. Füge deiner Projektmappe ein [Paketerstellungsprojekt für Windows-Anwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) hinzu. Benenne das Projekt beim Erstellen als **MyDesktopWin32Project**, und wähle **Windows 10, Version 1903 (10.0; Build 18362)** sowohl für **Zielversion** als auch für **Mindestversion** aus.
+1. Füge deiner Projektmappe ein [Paketerstellungsprojekt für Windows-Anwendungen](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) hinzu. Benenne das Projekt beim Erstellen als **MyDesktopWin32Project**, und wähle **Windows 10, Version 1903 (10.0; Build 18362)** sowohl für **Zielversion** als auch für **Mindestversion** aus.
 
 2. Klicke im Paketprojekt mit der rechten Maustaste auf den Knoten **Anwendungen**, und wähle **Verweis hinzufügen** aus. Aktiviere in der Liste der Projekte das Kontrollkästchen neben dem Projekt **MyDesktopWin32App**, und klicke auf **OK**.
     ![Verweis auf Projekt](images/xaml-islands/xaml-island-cpp-6.png)
 
 > [!NOTE]
-> Wenn du deine Anwendung nicht in einem [MSIX-Paket](https://docs.microsoft.com/windows/msix) für die Bereitstellung packst, muss auf Computern zur Ausführung deiner App die [Visual C++-Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installiert sein.
+> Wenn du deine Anwendung nicht in einem [MSIX-Paket](/windows/msix) für die Bereitstellung packst, muss auf Computern zur Ausführung deiner App die [Visual C++-Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installiert sein.
 
 ### <a name="option-2-create-an-application-manifest"></a>Option 2: Erstellen eines Anwendungsmanifest
 
-Du kannst deiner App ein [Anwendungsmanifest](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) hinzufügen.
+Du kannst deiner App ein [Anwendungsmanifest](/windows/desktop/SbsCs/application-manifests) hinzufügen.
 
 1. Klicke mit der rechten Maustaste auf das Projekt **MyDesktopWin32App**, und wähle **Hinzufügen** -> **Neues Element** aus. 
 2. Klicke im Dialogfeld **Neues Element hinzufügen** im linken Bereich auf **Web**, und wähle **XML-Datei (.xml)** aus. 
@@ -514,16 +514,16 @@ Schließlich kannst du den Code zum Projekt **MyDesktopWin32App** hinzufügen, u
 
 ## <a name="add-a-control-from-the-winui-library-to-the-custom-control"></a>Hinzufügen eines Steuerelements aus der WinUI-Bibliothek zum benutzerdefinierten Steuerelement
 
-Traditionell wurden UWP-Steuerelemente als Teil des Windows 10-Betriebssystems veröffentlicht und Entwicklern über das Windows SDK zur Verfügung gestellt. Die [WinUI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) ist ein alternativer Ansatz, bei dem aktualisierte Versionen von UWP-Steuerelementen aus dem Windows SDK in einem NuGet-Paket verteilt werden, das nicht an Windows SDK-Releases gebunden ist. Diese Bibliothek enthält darüber hinaus neue Steuerelemente, die nicht Teil des Windows SDK und der UWP-Standardplattform sind. Weitere Informationen finden Sie in der [Roadmap für die WinUI-Bibliothek](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md).
+Traditionell wurden UWP-Steuerelemente als Teil des Windows 10-Betriebssystems veröffentlicht und Entwicklern über das Windows SDK zur Verfügung gestellt. Die [WinUI-Bibliothek](/uwp/toolkits/winui/) ist ein alternativer Ansatz, bei dem aktualisierte Versionen von UWP-Steuerelementen aus dem Windows SDK in einem NuGet-Paket verteilt werden, das nicht an Windows SDK-Releases gebunden ist. Diese Bibliothek enthält darüber hinaus neue Steuerelemente, die nicht Teil des Windows SDK und der UWP-Standardplattform sind. Weitere Informationen finden Sie in der [Roadmap für die WinUI-Bibliothek](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md).
 
 In diesem Abschnitt wird veranschaulicht, wie Sie dem Benutzersteuerelement ein UWP-Steuerelement aus der WinUI-Bibliothek hinzufügen, sodass Sie dieses Steuerelement in Ihrer WPF-App hosten können.
 
 1. Installieren Sie im **MyUWPApp**-Projekt die neueste Vorabversion oder Releaseversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NuGet-Pakets.
 
     > [!NOTE]
-    > Wenn Ihre Desktop-App in einem [MSIX-Paket](https://docs.microsoft.com/windows/msix) gepackt ist, können Sie entweder eine Vorabversion oder eine Releaseversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NugGet-Pakets verwenden. Wenn Ihre Desktop-App nicht unter Verwendung von MSIX gepackt ist, müssen Sie eine Vorabversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NuGet-Pakets installieren.
+    > Wenn Ihre Desktop-App in einem [MSIX-Paket](/windows/msix) gepackt ist, können Sie entweder eine Vorabversion oder eine Releaseversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NugGet-Pakets verwenden. Wenn Ihre Desktop-App nicht unter Verwendung von MSIX gepackt ist, müssen Sie eine Vorabversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NuGet-Pakets installieren.
 
-2. Fügen Sie der pch.h-Datei in diesem Projekt die folgenden `#include`-Anweisungen hinzu, und speichern Sie Ihre Änderungen. Diese Anweisungen holen einen erforderlichen Satz von Projektionsheadern aus der WinUI-Bibliothek in Ihr Projekt. Dieser Schritt ist für alle C++/WinRT-Projekte erforderlich, die die WinUI-Bibliothek verwenden. Weitere Informationen finden Sie in [diesem Artikel](https://docs.microsoft.com/uwp/toolkits/winui/getting-started#additional-steps-for-a-cwinrt-project).
+2. Fügen Sie der pch.h-Datei in diesem Projekt die folgenden `#include`-Anweisungen hinzu, und speichern Sie Ihre Änderungen. Diese Anweisungen holen einen erforderlichen Satz von Projektionsheadern aus der WinUI-Bibliothek in Ihr Projekt. Dieser Schritt ist für alle C++/WinRT-Projekte erforderlich, die die WinUI-Bibliothek verwenden. Weitere Informationen finden Sie in [diesem Artikel](/uwp/toolkits/winui/getting-started#additional-steps-for-a-cwinrt-project).
 
     ```cpp
     #include "winrt/Microsoft.UI.Xaml.Automation.Peers.h"
