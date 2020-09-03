@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Erste Schritte, UWP, Windows 10, Lernpfad, Datenbindung, Liste
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3cebf51bdf9fa9942a0b88ed7b4cf66204671781
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 097105d16d6d17807235ab61d36ab1fe185c8ca3
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71340335"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165054"
 ---
 # <a name="display-customers-in-a-list"></a>Anzeigen von Kunden in einer Liste
 
@@ -110,7 +110,7 @@ Sie haben Kunden in einer Liste angezeigt, aber die Datenbindung bietet noch meh
 
 Wenn Sie die Codeausschnitte von vorher befolgt haben, verwendet Ihre Bindung x:Bind und gibt keinen Modus an; folglich handelt es sich um eine einmalige Bindung. Wenn Sie Kunden direkt über die Benutzeroberfläche bearbeiten möchten, müssen Sie die Bindung in eine bidirektionale Bindung ändern, damit die Änderungen an den Daten zurück an die Kundenobjekte übergeben werden. Weitere Informationen finden Sie unter [Datenbindung im Detail](../data-binding/data-binding-in-depth.md).
 
-Die bidirektionale Bindung aktualisiert ebenfalls die Benutzeroberfläche, wenn die Datenquelle geändert wird. Damit dies funktioniert, müssen Sie [**INotifyPropertyChanged**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged) an der Quelle implementieren und sicherstellen, dass durch die Eigenschaftensetter das **PropertyChanged**-Ereignis ausgelöst wird. Üblicherweise rufen diese eine Hilfsmethode wie **OnPropertyChanged** auf, wie unten dargestellt:
+Die bidirektionale Bindung aktualisiert ebenfalls die Benutzeroberfläche, wenn die Datenquelle geändert wird. Damit dies funktioniert, müssen Sie [**INotifyPropertyChanged**](/dotnet/api/system.componentmodel.inotifypropertychanged) an der Quelle implementieren und sicherstellen, dass durch die Eigenschaftensetter das **PropertyChanged**-Ereignis ausgelöst wird. Üblicherweise rufen diese eine Hilfsmethode wie **OnPropertyChanged** auf, wie unten dargestellt:
 
 ```csharp
 public class Customer : INotifyPropertyChanged
@@ -165,13 +165,13 @@ Nachfolgend finden Sie eine kurze Zusammenfassung zu den APIs und weitere nützl
 
 | API | Beschreibung |
 |------|---------------|
-| [Datenvorlage](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) | Beschreibt die visuelle Struktur eines Datenobjekts, was die Anzeige bestimmter Elemente in der Benutzeroberfläche ermöglicht. |
+| [Datenvorlage](/uwp/api/Windows.UI.Xaml.DataTemplate) | Beschreibt die visuelle Struktur eines Datenobjekts, was die Anzeige bestimmter Elemente in der Benutzeroberfläche ermöglicht. |
 | [x:Bind](../xaml-platform/x-bind-markup-extension.md) | Dokumentation zur empfohlenen x:Bind-Markuperweiterung |
 | [Binding](../xaml-platform/binding-markup-extension.md) | Dokumentation zur älteren Binding-Markuperweiterung |
-| [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) | Ein UI-Steuerelement, das Datenelemente in einem vertikalen Stapel anzeigt |
-| [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | Ein einfaches Textsteuerelement zum Anzeigen bearbeitbarer Textdaten in der Benutzeroberfläche |
-| [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged) | Schnittstelle, um Daten feststellbar („observable“) zu machen und für eine Datenbindung bereitzustellen |
-| [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) | Die **ItemsSource**-Eigenschaft dieser Klasse ermöglicht das Binden von ListView an eine Datenquelle. |
+| [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView) | Ein UI-Steuerelement, das Datenelemente in einem vertikalen Stapel anzeigt |
+| [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox) | Ein einfaches Textsteuerelement zum Anzeigen bearbeitbarer Textdaten in der Benutzeroberfläche |
+| [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged) | Schnittstelle, um Daten feststellbar („observable“) zu machen und für eine Datenbindung bereitzustellen |
+| [ItemsControl](/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) | Die **ItemsSource**-Eigenschaft dieser Klasse ermöglicht das Binden von ListView an eine Datenquelle. |
 
 ### <a name="useful-docs"></a>Nützliche Dokumentation
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ae0fc2eca3d32a0e491ef0d8ca00ef22c05eb27f
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 4754af24bb7755cfa70a4f3b1f460e823985c90c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68935764"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166014"
 ---
 # <a name="tools-for-profiling-and-performance"></a>Tools für Profilerstellung und Leistung
 
@@ -24,6 +24,6 @@ Siehe auch:
 
 |           |             |
 |-----------|-------------|
-| [Analysieren der Leistung von UWP-Apps mit Visual Studio-Diagnosetools](https://docs.microsoft.com/visualstudio/profiling/profiling-tools) | Die Visual Studio-Profiler zeigen Ihnen, wieviel Zeit der Code Ihrer App während der Ausführung des Programms in Anspruch nimmt, und helfen Ihnen dadurch, Leistungsengpässe in Apps, Funktionen und Algorithmen zu finden. |
+| [Analysieren der Leistung von UWP-Apps mit Visual Studio-Diagnosetools](/visualstudio/profiling/profiling-tools) | Die Visual Studio-Profiler zeigen Ihnen, wieviel Zeit der Code Ihrer App während der Ausführung des Programms in Anspruch nimmt, und helfen Ihnen dadurch, Leistungsengpässe in Apps, Funktionen und Algorithmen zu finden. |
 | [XAML-Leistung: Techniken zur Maximierung der Benutzerfreundlichkeit von universellen Windows-Apps, die mit XAML erstellt wurden](https://channel9.msdn.com/Events/Build/2015/3-698) | In dieser //Build-Sitzung erhalten Sie Informationen zu neuen Plattformfeatures, neuen Features von Tools und neuen Techniken, mit denen Sie die Leistung Ihrer XAML-basierten universellen Windows-App enorm steigern können. |
 | [Neue XAML-Tools in Visual Studio](https://channel9.msdn.com/Events/Build/2015/2-697) | In dieser //Build-Sitzung erfahren Sie mehr über einige der neuen Funktionen in Visual Studio 2015, z. B. die neu gestaltete Blend-Umgebung, die UI-Debugtools und die XAML-Editor-Erweiterungen. Diese Tools stehen auch in Visual Studio 2019 zur Verfügung. |

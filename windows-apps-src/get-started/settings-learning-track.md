@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Erste Schritte, UWP, Windows 10, Lernpfad, Einstellungen, Einstellungen speichern, Einstellungen laden
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 490dd8f0f3841fae089626ec9c283d54cc0d8cd9
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 32594d14a9da62f9abeca81c048e4169a7e99029
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66370496"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168154"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>Speichern und Laden von Einstellungen in einer UWP-App
 
@@ -25,14 +25,14 @@ Wir betrachten Code zum Speichern und Laden von App-Einstellungen, einschließli
 
 Verwenden Sie App-Einstellungen, um Konfigurationsdaten wie Benutzereinstellungen und den App-Status zu speichern.  Gerätespezifische Einstellungen werden lokal gespeichert. Einstellungen für das jeweilige Gerät, auf dem Ihre App installiert ist, werden im Roaming-Datenspeicher gespeichert. Die Einstellungen werden zwischen Geräten synchronisiert, auf denen der Benutzer mit demselben Microsoft-Konto angemeldet ist und auf denen dieselbe Version der App installiert ist.
 
-Die folgenden Datentypen können für Einstellungen verwendet werden: Integer, Double, Float, Char, String, Point, DateTime u. a. Sie können auch Instanzen der [ApplicationDataCompositeValue](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue)-Klasse speichern, was nützlich ist, wenn mehrere Einstellungen als Einheit behandelt werden sollen. Beispielsweise sollten der Schriftartname und Schriftgrad für den Text im Lesebereich der App als eine Einheit gespeichert/wiederhergestellt werden. Dadurch wird verhindert, dass Einstellungen nicht mehr synchron sind, falls Einstellungen beim Roaming unterschiedlich schnell übermittelt werden.
+Die folgenden Datentypen können für Einstellungen verwendet werden: Integer, Double, Float, Char, String, Point, DateTime u. a. Sie können auch Instanzen der [ApplicationDataCompositeValue](/uwp/api/Windows.Storage.ApplicationDataCompositeValue)-Klasse speichern, was nützlich ist, wenn mehrere Einstellungen als Einheit behandelt werden sollen. Beispielsweise sollten der Schriftartname und Schriftgrad für den Text im Lesebereich der App als eine Einheit gespeichert/wiederhergestellt werden. Dadurch wird verhindert, dass Einstellungen nicht mehr synchron sind, falls Einstellungen beim Roaming unterschiedlich schnell übermittelt werden.
 
 Hier die wichtigsten APIs, die Sie zum Speichern oder Laden von App-Einstellungen benötigen:
 
-- [Windows.Storage.ApplicationData.Current.LocalSettings](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData#Windows_Storage_ApplicationData_LocalSettings) ruft den Container für Anwendungseinstellungen aus dem lokalen App-Datenspeicher ab. Speichern Sie darin Einstellungen, die nicht für das Roaming zwischen Geräten geeignet sind, da sie einen gerätespezifischen Status darstellen oder zu groß sind.
-- [Windows.Storage.ApplicationData.Current.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings#Windows_Storage_ApplicationData_RoamingSettings) ruft den Container für Anwendungseinstellungen aus dem Roaming-App-Datenspeicher ab. Diese Daten werden zwischen Geräten ausgetauscht.
-- [Windows.Storage.ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) ist ein Container, der App-Einstellungen als Schlüssel-Wert-Paare darstellt. Verwenden Sie diese Klasse zum Erstellen und Abrufen von Einstellungswerten.
-- [Windows.Storage.ApplicationDataCompositeValue](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue) stellt mehrere App-Einstellungen dar, die als Einheit serialisiert werden sollten. Dies ist nützlich, wenn eine Einstellung nicht unabhängig von einer anderen aktualisiert werden soll.
+- [Windows.Storage.ApplicationData.Current.LocalSettings](/uwp/api/Windows.Storage.ApplicationData#Windows_Storage_ApplicationData_LocalSettings) ruft den Container für Anwendungseinstellungen aus dem lokalen App-Datenspeicher ab. Speichern Sie darin Einstellungen, die nicht für das Roaming zwischen Geräten geeignet sind, da sie einen gerätespezifischen Status darstellen oder zu groß sind.
+- [Windows.Storage.ApplicationData.Current.RoamingSettings](/uwp/api/windows.storage.applicationdata.roamingsettings#Windows_Storage_ApplicationData_RoamingSettings) ruft den Container für Anwendungseinstellungen aus dem Roaming-App-Datenspeicher ab. Diese Daten werden zwischen Geräten ausgetauscht.
+- [Windows.Storage.ApplicationDataContainer](/uwp/api/windows.storage.applicationdatacontainer) ist ein Container, der App-Einstellungen als Schlüssel-Wert-Paare darstellt. Verwenden Sie diese Klasse zum Erstellen und Abrufen von Einstellungswerten.
+- [Windows.Storage.ApplicationDataCompositeValue](/uwp/api/Windows.Storage.ApplicationDataCompositeValue) stellt mehrere App-Einstellungen dar, die als Einheit serialisiert werden sollten. Dies ist nützlich, wenn eine Einstellung nicht unabhängig von einer anderen aktualisiert werden soll.
 
 ## <a name="save-app-settings"></a>Speichern von App-Einstellungen
 
@@ -86,17 +86,17 @@ Nachfolgend finden Sie eine kurze Zusammenfassung der APIs und anderer nützlich
 
 | API | Beschreibung |
 |------|---------------|
-| [ApplicationData.LocalSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder) | Ruft den Container der Anwendungseinstellungen aus dem lokalen App-Datenspeicher ab. |
-| [ApplicationData.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) | Ruft den Container der Anwendungseinstellungen aus dem Roaming-App-Datenspeicher ab. |
-| [ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) | Ein Container für App-Einstellungen, der das Erstellen, Löschen, Aufzählen und Durchlaufen der Containerhierarchie unterstützt. |
-| [Windows.UI.ApplicationSettings Namespace](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings) | Stellt Klassen bereit, mit denen Sie die App-Einstellungen definieren, die im Einstellungsbereich der Windows-Shell angezeigt werden. |
+| [ApplicationData.LocalSettings](/uwp/api/windows.storage.applicationdata.temporaryfolder) | Ruft den Container der Anwendungseinstellungen aus dem lokalen App-Datenspeicher ab. |
+| [ApplicationData.RoamingSettings](/uwp/api/windows.storage.applicationdata.roamingsettings) | Ruft den Container der Anwendungseinstellungen aus dem Roaming-App-Datenspeicher ab. |
+| [ApplicationDataContainer](/uwp/api/windows.storage.applicationdatacontainer) | Ein Container für App-Einstellungen, der das Erstellen, Löschen, Aufzählen und Durchlaufen der Containerhierarchie unterstützt. |
+| [Windows.UI.ApplicationSettings Namespace](/uwp/api/windows.ui.applicationsettings) | Stellt Klassen bereit, mit denen Sie die App-Einstellungen definieren, die im Einstellungsbereich der Windows-Shell angezeigt werden. |
 
 ### <a name="useful-docs"></a>Nützliche Dokumentation
 
 | Thema | Beschreibung |
 |-------|----------------|
-| [Richtlinien für App-Einstellungen](https://docs.microsoft.com/windows/uwp/design/app-settings/guidelines-for-app-settings) | Erläutert bewährte Methoden für das Erstellen und Anzeigen von App-Einstellungen. |
-| [Speichern und Abrufen von Einstellungen und anderen App-Daten](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#create-and-read-a-local-file) | Exemplarische Vorgehensweise zum Speichern und Abrufen von Einstellungen, einschließlich Roamingeinstellungen. |
+| [Richtlinien für App-Einstellungen](../design/app-settings/guidelines-for-app-settings.md) | Erläutert bewährte Methoden für das Erstellen und Anzeigen von App-Einstellungen. |
+| [Speichern und Abrufen von Einstellungen und anderen App-Daten](../design/app-settings/store-and-retrieve-app-data.md#create-and-read-a-local-file) | Exemplarische Vorgehensweise zum Speichern und Abrufen von Einstellungen, einschließlich Roamingeinstellungen. |
 
 ## <a name="useful-code-samples"></a>Nützliche Codebeispiele
 

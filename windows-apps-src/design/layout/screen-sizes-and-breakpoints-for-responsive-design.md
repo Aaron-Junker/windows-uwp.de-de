@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2e385f6b9977eead6aed52215080588e4f9d8c27
-ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
+ms.openlocfilehash: 32a66c92d4c079c99aed213d0e1aeae66b808d56
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84262771"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169404"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>Bildschirmgrößen und Haltepunkte
 
@@ -90,7 +90,7 @@ UWP-Apps skalieren deine Benutzeroberfläche automatisch, um sicherzustellen, da
 - Verwende bis zu zwei Spalten/Regionen.
 - Zeigen Sie das Suchfeld an.
 - Legen Sie für [Navigationsleiste](../controls-and-patterns/navigationview.md) den Streifenmodus fest, sodass immer ein schmaler Streifen mit Symbolen angezeigt wird.
-- Ziehen Sie weitere Anpassungen für [TV-Umgebungen](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN) in Erwägung.
+- Ziehen Sie weitere Anpassungen für [TV-Umgebungen](../devices/designing-for-tv.md) in Erwägung.
 
 ### <a name="large"></a>Groß
 - Legen Sie den linken und den rechten Fensterrand auf 24px fest, um eine visuelle Trennung zwischen dem linken und dem rechten Rand des App-Fensters zu erzielen.

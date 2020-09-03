@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f90ce11c9a35200121722f3b0a0ac7d7047e819
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 4a8c7f04b42adadda2eec904f7c8796289706f25
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081560"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169444"
 ---
 # <a name="rich-text-block"></a>Rich-Text-Block
 
@@ -24,7 +24,7 @@ ms.locfileid: "80081560"
 
 Rich-Text-Blöcke bieten verschiedene Features für erweitertes Textlayout, die Sie verwenden können, wenn Sie Unterstützung für Absätze, Inline-UI-Elemente oder komplexe Textlayouts benötigen.
 
-> **Plattform-APIs:** [RichTextBlock-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [RichTextBlockOverflow-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow), [Paragraph-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph), [Typography-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography)
+> **Plattform-APIs:** [RichTextBlock-Klasse](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [RichTextBlockOverflow-Klasse](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow), [Paragraph-Klasse](/uwp/api/Windows.UI.Xaml.Documents.Paragraph), [Typography-Klasse](/uwp/api/Windows.UI.Xaml.Documents.Typography)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -52,18 +52,18 @@ Weitere Informationen zur Auswahl des passenden Textsteuerelements finden Sie im
 
 ## <a name="create-a-rich-text-block"></a>Erstellen eines Rich-Text-Blocks
 
-Die Inhaltseigenschaft von RichTextBlock ist die [Blocks](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.blocks)-Eigenschaft, die über das [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph)-Element absatzbasierten Text unterstützt. Es bietet keine **Text**-Eigenschaft, die Sie zum einfachen Zugriff auf den Textinhalt des Steuerelements in Ihrer App verwenden können. RichTextBlock bietet jedoch verschiedene einzigartige Features, die TextBlock nicht bereitstellt. 
+Die Inhaltseigenschaft von RichTextBlock ist die [Blocks](/uwp/api/windows.ui.xaml.controls.richtextblock.blocks)-Eigenschaft, die über das [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph)-Element absatzbasierten Text unterstützt. Es bietet keine **Text**-Eigenschaft, die Sie zum einfachen Zugriff auf den Textinhalt des Steuerelements in Ihrer App verwenden können. RichTextBlock bietet jedoch verschiedene einzigartige Features, die TextBlock nicht bereitstellt. 
 
 Von RichTextBlock unterstützte Features:
-- Mehrere Absätze. Legen Sie den Einzug für Absätze mit der [TextIndent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.textindent)-Eigenschaft fest.
-- Inline-UI-Elemente. Verwenden Sie einen [InlineUIContainer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.InlineUIContainer), um UI-Elemente, z. B. Bilder, inline im Text anzuzeigen.
-- Überlaufcontainer. Verwenden Sie [RichTextBlockOverflow](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow)-Elemente, um mehrspaltige Textlayouts zu erstellen.
+- Mehrere Absätze. Legen Sie den Einzug für Absätze mit der [TextIndent](/uwp/api/windows.ui.xaml.controls.richtextblock.textindent)-Eigenschaft fest.
+- Inline-UI-Elemente. Verwenden Sie einen [InlineUIContainer](/uwp/api/Windows.UI.Xaml.Documents.InlineUIContainer), um UI-Elemente, z. B. Bilder, inline im Text anzuzeigen.
+- Überlaufcontainer. Verwenden Sie [RichTextBlockOverflow](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow)-Elemente, um mehrspaltige Textlayouts zu erstellen.
 
 ### <a name="paragraphs"></a>Absätze
 
-Sie definieren mit [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph)-Elementen die Textblöcke, die in einem RichTextBlock Steuerelement angezeigt werden sollen. Jeder RichTextBlock sollte mindestens einen Paragraph enthalten. 
+Sie definieren mit [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph)-Elementen die Textblöcke, die in einem RichTextBlock Steuerelement angezeigt werden sollen. Jeder RichTextBlock sollte mindestens einen Paragraph enthalten. 
 
-Mit der [RichTextBlock.TextIndent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.textindent)-Eigenschaft können Sie die Größe des Einzugs für alle Absätze in einem RichTextBlock festlegen. Sie können diese Einstellung für bestimmte Absätze in einem RichTextBlock überschreiben, indem Sie die [Paragraph.TextIndent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.paragraph.textindent)-Eigenschaft auf einen anderen Wert festlegen.
+Mit der [RichTextBlock.TextIndent](/uwp/api/windows.ui.xaml.controls.richtextblock.textindent)-Eigenschaft können Sie die Größe des Einzugs für alle Absätze in einem RichTextBlock festlegen. Sie können diese Einstellung für bestimmte Absätze in einem RichTextBlock überschreiben, indem Sie die [Paragraph.TextIndent](/uwp/api/windows.ui.xaml.documents.paragraph.textindent)-Eigenschaft auf einen anderen Wert festlegen.
 
 ```xaml
 <RichTextBlock TextIndent="12">
@@ -75,7 +75,7 @@ Mit der [RichTextBlock.TextIndent](https://docs.microsoft.com/uwp/api/windows.ui
 
 ### <a name="inline-ui-elements"></a>Inline-UI-Elemente
 
-Mit der [InlineUIContainer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.InlineUIContainer)-Klasse können Sie jedes UIElement inline im Text einbetten. Ein gängiges Szenario ist das Einfügen eines Inline-Elements vom Typ „Image“ in den Text. Sie können aber natürlich auch interaktive Elemente wie „Button“ oder „CheckBox“ verwenden.
+Mit der [InlineUIContainer](/uwp/api/Windows.UI.Xaml.Documents.InlineUIContainer)-Klasse können Sie jedes UIElement inline im Text einbetten. Ein gängiges Szenario ist das Einfügen eines Inline-Elements vom Typ „Image“ in den Text. Sie können aber natürlich auch interaktive Elemente wie „Button“ oder „CheckBox“ verwenden.
 
 Wenn Sie mehrere Elemente inline an der gleichen Position einbetten möchten, können Sie ein Panel als einzelnes untergeordnetes InlineUIContainer-Element verwenden und dann mehrere Elemente in diesem Panel platzieren.
 
@@ -95,7 +95,7 @@ In diesem Beispiel wird veranschaulicht, wie mithilfe eines InlineUIContainer ei
 
 ## <a name="overflow-containers"></a>Überlaufcontainer
 
-Sie können einen RichTextBlock mit [RichTextBlockOverflow](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow)-Elementen verwenden, um mehrspaltige Seitenlayouts oder andere erweiterte Seitenlayouts zu erstellen. Der Inhalt für ein RichTextBlockOverflow-Element stammt immer aus einem RichTextBlock-Element. Sie verknüpfen RichTextBlockOverflow-Elemente, indem Sie sie als OverflowContentTarget eines RichTextBlock-Elements oder eines anderen RichTextBlockOverflow-Elements festlegen.
+Sie können einen RichTextBlock mit [RichTextBlockOverflow](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow)-Elementen verwenden, um mehrspaltige Seitenlayouts oder andere erweiterte Seitenlayouts zu erstellen. Der Inhalt für ein RichTextBlockOverflow-Element stammt immer aus einem RichTextBlock-Element. Sie verknüpfen RichTextBlockOverflow-Elemente, indem Sie sie als OverflowContentTarget eines RichTextBlock-Elements oder eines anderen RichTextBlockOverflow-Elements festlegen.
 
 Hier ist ein einfaches Beispiel, in dem ein zweispaltiges Layout erstellt wird. Ein komplexeres Beispiel finden Sie im Abschnitt „Beispiele“.
 
@@ -121,7 +121,7 @@ Obwohl der RichTextBlock Nur-Text speichert, können Sie verschiedene Formatieru
 
 ### <a name="inline-elements"></a>Inline-Elemente
 
-Der [Windows.UI.Xaml.Documents](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents)-Namespace bietet eine Vielzahl von Inlinetextelementen, mit denen Sie Text formatieren können, z. B. Bold, Italic, Run, Span und LineBreak. Ein typisches Verfahren zum Formatieren von Textabschnitten ist das Einfügen des Texts in ein Run-Element oder Span-Element und das anschließende Festlegen der Eigenschaften für das Element.
+Der [Windows.UI.Xaml.Documents](/uwp/api/Windows.UI.Xaml.Documents)-Namespace bietet eine Vielzahl von Inlinetextelementen, mit denen Sie Text formatieren können, z. B. Bold, Italic, Run, Span und LineBreak. Ein typisches Verfahren zum Formatieren von Textabschnitten ist das Einfügen des Texts in ein Run-Element oder Span-Element und das anschließende Festlegen der Eigenschaften für das Element.
 
 Dies ist ein Paragraph, in dem der erste Ausdruck als fett formatierter blauer Text mit dem Schriftgrad 16 pt angezeigt wird.
 
@@ -134,7 +134,7 @@ Dies ist ein Paragraph, in dem der erste Ausdruck als fett formatierter blauer T
 
 ### <a name="typography"></a>Typografie
 
-Die angefügten Eigenschaften der [Typografie](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography)-Klasse ermöglichen den Zugriff auf eine Reihe von Microsoft OpenType-Typografieeigenschaften. Sie können diese angefügten Eigenschaften entweder für den RichTextBlock oder für einzelne Inlinetextelemente festlegen, wie hier gezeigt.
+Die angefügten Eigenschaften der [Typografie](/uwp/api/Windows.UI.Xaml.Documents.Typography)-Klasse ermöglichen den Zugriff auf eine Reihe von Microsoft OpenType-Typografieeigenschaften. Sie können diese angefügten Eigenschaften entweder für den RichTextBlock oder für einzelne Inlinetextelemente festlegen, wie hier gezeigt.
 
 ```xaml
 <RichTextBlock Typography.StylisticSet4="True">
@@ -159,13 +159,13 @@ Siehe „Typografie“ und „Richtlinien für Schriftarten“.
 
 **Für Designer**
 - [Richtlinien für die Rechtschreibprüfung](text-controls.md)
-- [Hinzufügen von Suchfunktionen](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
+- [Hinzufügen von Suchfunktionen](/previous-versions/windows/apps/hh465231(v=win.10))
 - [Richtlinien für die Texteingabe](text-controls.md)
 
 **Für Entwickler (XAML)**
-- [TextBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [Windows.UI.Xaml.Controls PasswordBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [TextBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Windows.UI.Xaml.Controls PasswordBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 
 
 **Für Entwickler (Sonstige)**
-- [StringLength-Eigenschaft](https://docs.microsoft.com/dotnet/api/system.string.length)
+- [StringLength-Eigenschaft](/dotnet/api/system.string.length)

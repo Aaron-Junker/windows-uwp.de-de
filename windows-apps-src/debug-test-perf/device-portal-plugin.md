@@ -6,18 +6,18 @@ ms.date: 07/06/2020
 ms.topic: article
 keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
-ms.openlocfilehash: b806344fa7e0517caf4d04efaaa605371a200202
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: f66650291e2966d6a3a6ac2b5d794006382d2fbf
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493205"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170024"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Schreiben eines benutzerdefinierten Plug-Ins für das Geräteportal
 
 Erfahre, wie du eine UWP-App schreibst, die mit dem Windows-Geräteportal eine Webseite hostet und Diagnoseinformationen bereitstellt.
 
-Seit dem Windows 10 Creators Update (Version 1703, Build 15063) kannst du die Diagnoseschnittstellen deiner App im Geräteportal hosten. In diesem Artikel werden die drei Aspekte beschrieben, die zum Erstellen eines DevicePortalProvider für deine App erforderlich sind: die [Anwendungspaketmanifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)-Änderungen, das Einrichten der App-Verbindung mit dem [Geräteportal-Dienst](/windows/uwp/debug-test-perf/device-portal) und das Behandeln eingehender Anforderungen.
+Seit dem Windows 10 Creators Update (Version 1703, Build 15063) kannst du die Diagnoseschnittstellen deiner App im Geräteportal hosten. In diesem Artikel werden die drei Aspekte beschrieben, die zum Erstellen eines DevicePortalProvider für deine App erforderlich sind: die [Anwendungspaketmanifest](/uwp/schemas/appxpackage/appx-package-manifest)-Änderungen, das Einrichten der App-Verbindung mit dem [Geräteportal-Dienst](./device-portal.md) und das Behandeln eingehender Anforderungen.
 
 ## <a name="create-a-new-uwp-app-project"></a>Erstellen eines neuen UWP-App-Projekts
 
@@ -75,10 +75,10 @@ Dazu sind zwei neue Funktionen erforderlich. Diese Funktionen müssen auch der D
 ```
 
 > [!NOTE]
-> Die Funktion „devicePortalProvider“ ist eingeschränkt („rescap“), das heißt, du musst zuerst die Zustimmung vom Store erhalten, bevor du deine App dort veröffentlichen kannst. Dies hindert dich jedoch nicht daran, deine App lokal per Querladen zu testen. Weitere Informationen zu eingeschränkten Funktionen findest du unter [Deklarationen von App-Funktionen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+> Die Funktion „devicePortalProvider“ ist eingeschränkt („rescap“), das heißt, du musst zuerst die Zustimmung vom Store erhalten, bevor du deine App dort veröffentlichen kannst. Dies hindert dich jedoch nicht daran, deine App lokal per Querladen zu testen. Weitere Informationen zu eingeschränkten Funktionen findest du unter [Deklarationen von App-Funktionen](../packaging/app-capability-declarations.md).
 
 ## <a name="set-up-your-background-task-and-winrt-component"></a>Einrichten der Hintergrundaufgabe und der WinRT-Komponente
-Um die Geräteportal-Verbindung einzurichten, muss deine App eine App-Dienstverbindung vom Geräteportal-Dienst mit der in deiner App ausgeführten Instanz des Geräteportals herstellen. Füge deiner Anwendung zu diesem Zweck eine neue WinRT-Komponente mit einer Klasse hinzu, die [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask) implementiert.
+Um die Geräteportal-Verbindung einzurichten, muss deine App eine App-Dienstverbindung vom Geräteportal-Dienst mit der in deiner App ausgeführten Instanz des Geräteportals herstellen. Füge deiner Anwendung zu diesem Zweck eine neue WinRT-Komponente mit einer Klasse hinzu, die [**IBackgroundTask**](/uwp/api/windows.applicationmodel.background.ibackgroundtask) implementiert.
 
 ```csharp
 namespace MySampleProvider {
@@ -88,7 +88,7 @@ namespace MySampleProvider {
     }
 ```
 
-Stelle sicher, dass der Name mit dem Namespace und dem Klassennamen übereinstimmt, die von AppService EntryPoint („MySampleProvider.SampleProvider“) eingerichtet wurden. Wenn du die erste Anforderung an deinen Geräteportal-Anbieter richtest, speichert das Geräteportal die Anforderung, startet die Hintergrundaufgabe deiner App, ruft die Methode **Run** auf und übergibt eine [**IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance). Damit richtet deine App dann eine [**DevicePortalConnection**](https://docs.microsoft.com/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnection)-Instanz ein.
+Stelle sicher, dass der Name mit dem Namespace und dem Klassennamen übereinstimmt, die von AppService EntryPoint („MySampleProvider.SampleProvider“) eingerichtet wurden. Wenn du die erste Anforderung an deinen Geräteportal-Anbieter richtest, speichert das Geräteportal die Anforderung, startet die Hintergrundaufgabe deiner App, ruft die Methode **Run** auf und übergibt eine [**IBackgroundTaskInstance**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance). Damit richtet deine App dann eine [**DevicePortalConnection**](/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnection)-Instanz ein.
 
 ```csharp
 // Implement background task handler with a DevicePortalConnection
@@ -108,10 +108,10 @@ public void Run(IBackgroundTaskInstance taskInstance) {
 }
 ```
 
-Es gibt zwei Ereignisse, die von der App behandelt werden müssen, um die Anforderungsverarbeitungsschleife abzuschließen: **Closed**, wenn der Geräteportal-Dienst heruntergefahren wird, und [**RequestReceived**](https://docs.microsoft.com/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs), bei dem eingehende HTTP-Anforderungen angezeigt und die Hauptfunktionen des Geräteportal-Anbieters bereitgestellt werden. 
+Es gibt zwei Ereignisse, die von der App behandelt werden müssen, um die Anforderungsverarbeitungsschleife abzuschließen: **Closed**, wenn der Geräteportal-Dienst heruntergefahren wird, und [**RequestReceived**](/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs), bei dem eingehende HTTP-Anforderungen angezeigt und die Hauptfunktionen des Geräteportal-Anbieters bereitgestellt werden. 
 
 ## <a name="handle-the-requestreceived-event"></a>Behandeln des RequestReceived-Ereignisses
-Das **RequestReceived**-Ereignis wird einmal für jede HTTP-Anforderung ausgelöst, die für die angegebene Handlerroute deines Plug-Ins erfolgt. Die Anforderungsbehandlungsschleife für Geräteportal-Anbieter ähnelt der in NodeJS Express: Die Anforderungs- und Antwortobjekte werden zusammen mit dem Ereignis bereitgestellt, und der Handler antwortet, indem er das Antwortobjekt ausfüllt. Bei Geräteportal-Anbietern verwenden das **RequestReceived**-Ereignis und seine Handler [**Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/uwp/api/windows.web.http.httprequestmessage)- und [**HttpResponseMessage**](https://docs.microsoft.com/uwp/api/windows.web.http.httpresponsemessage)-Objekte.   
+Das **RequestReceived**-Ereignis wird einmal für jede HTTP-Anforderung ausgelöst, die für die angegebene Handlerroute deines Plug-Ins erfolgt. Die Anforderungsbehandlungsschleife für Geräteportal-Anbieter ähnelt der in NodeJS Express: Die Anforderungs- und Antwortobjekte werden zusammen mit dem Ereignis bereitgestellt, und der Handler antwortet, indem er das Antwortobjekt ausfüllt. Bei Geräteportal-Anbietern verwenden das **RequestReceived**-Ereignis und seine Handler [**Windows.Web.Http.HttpRequestMessage**](/uwp/api/windows.web.http.httprequestmessage)- und [**HttpResponseMessage**](/uwp/api/windows.web.http.httpresponsemessage)-Objekte.   
 
 ```csharp
 // Sample RequestReceived echo handler: respond with an HTML page including the query and some additional process information. 
@@ -136,7 +136,7 @@ private void DevicePortalConnection_RequestReceived(DevicePortalConnection sende
 }
 ```
 
-In diesem Beispiel für einen Anforderungshandler rufen wir zunächst die Anforderungs- und Antwortobjekte aus dem Parameter *args* ab, erstellen dann eine Zeichenfolge mit der Anforderungs-URL und einige weitere HTML-Formatierungen. Dies wird als [**HttpStringContent**](https://docs.microsoft.com/uwp/api/windows.web.http.httpstringcontent)-Instanz in das Antwortobjekt eingefügt. Andere [**IHttpContent**](https://docs.microsoft.com/uwp/api/windows.web.http.ihttpcontent)-Klassen, z. B. diejenigen für „String“ und „Buffer“, sind ebenfalls zulässig.
+In diesem Beispiel für einen Anforderungshandler rufen wir zunächst die Anforderungs- und Antwortobjekte aus dem Parameter *args* ab, erstellen dann eine Zeichenfolge mit der Anforderungs-URL und einige weitere HTML-Formatierungen. Dies wird als [**HttpStringContent**](/uwp/api/windows.web.http.httpstringcontent)-Instanz in das Antwortobjekt eingefügt. Andere [**IHttpContent**](/uwp/api/windows.web.http.ihttpcontent)-Klassen, z. B. diejenigen für „String“ und „Buffer“, sind ebenfalls zulässig.
 
 Die Antwort wird dann als HTTP-Antwort festgelegt und dem Statuscode 200 (OK) zugeordnet. Sie sollte in dem Browser, der den ursprünglichen Aufruf vorgenommen hat, wie erwartet gerendert werden. Wenn der **RequestReceived**-Ereignishandler fertig ist, wird die Antwortnachricht automatisch an den Benutzer-Agent zurückgegeben: Es ist keine zusätzliche send-Methode erforderlich.
 
@@ -176,7 +176,7 @@ Statischer Inhalt, wird von einem Geräteportal-Anbieter an demselben Port wie d
 
 ![Ausgabe des Geräteportal-Plug-Ins](images/device-portal/plugin-output.png)
  
-Wichtig: Bei Verwendung der HttpPost-/DeleteExpect200-Methoden für webbRest erfolgt die [CSRF-Behandlung](https://docs.microsoft.com/aspnet/web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks) automatisch, sodass deine Webseite zustandsverändernde REST-APIs aufrufen kann.  
+Wichtig: Bei Verwendung der HttpPost-/DeleteExpect200-Methoden für webbRest erfolgt die [CSRF-Behandlung](/aspnet/web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks) automatisch, sodass deine Webseite zustandsverändernde REST-APIs aufrufen kann.  
 
 > [!NOTE] 
 > Der statische Inhalt im Geräteportal kann Breaking Changes unterliegen. APIs werden im Allgemeinen nicht sehr häufig geändert, aber es kann vorkommen – insbesondere in den Dateien *common.js* und *controls.js*. Daher sollte dein Anbieter diese Dateien nicht verwenden. 
@@ -197,6 +197,4 @@ Um deine Hintergrundaufgabe zu debuggen, musst du die Art und Weise ändern, wie
 
 ## <a name="related-topics"></a>Zugehörige Themen
 * [Übersicht über das Windows-Geräteportal](device-portal.md)
-* [Erstellen und Verwenden eines App-Diensts](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
-
-
+* [Erstellen und Verwenden eines App-Diensts](../launch-resume/how-to-create-and-consume-an-app-service.md)

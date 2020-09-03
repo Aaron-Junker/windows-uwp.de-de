@@ -6,12 +6,12 @@ ms.date: 04/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, registrieren, Entwicklerkonto
 ms.localizationpriority: medium
-ms.openlocfilehash: 6249de5bd039545073fdd8af6be3291e7e0136c4
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: e40f10d258c345edd9baeae623c2aaff994f36c8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74260542"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168144"
 ---
 # <a name="create-a-developer-account"></a>Erstellen eines Entwicklerkontos
 
@@ -25,5 +25,4 @@ Zur Verfügung stehen sowohl [Einzel- als auch Unternehmenskonten auf der ganzen
 
 ## <a name="have-a-name-for-your-app"></a>Haben Sie einen Namen für Ihre App?
 
-Sobald Sie Ihr Entwicklerkonto eröffnet haben, können Sie [Ihre App erstellen, indem Sie einen Namen reservieren](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name).
-
+Sobald Sie Ihr Entwicklerkonto eröffnet haben, können Sie [Ihre App erstellen, indem Sie einen Namen reservieren](../publish/create-your-app-by-reserving-a-name.md).

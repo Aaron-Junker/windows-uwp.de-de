@@ -7,22 +7,22 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
-ms.openlocfilehash: 9848fc9e330a725f52ce2a7fae8b13f300476cf7
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b4cd240882b920f06d06bf1143924a075e7cde53
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970195"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165544"
 ---
 # <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>Tutorial: Verwenden von Grid und StackPanel, um eine einfache Wetter-App zu erstellen
 
 Verwenden Sie zum Erstellen des Layouts für eine einfache Wetter-App mit XAML die Elemente **Grid** und **StackPanel**. Mit diesen Tools können Sie hervorragend aussehende Apps erstellen, die auf jedem Gerät mit Windows 10 funktionieren. Dieses Lernprogramm dauert 10 bis 20 Minuten.
 
-> **Wichtige APIs:** [Grid-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid), [StackPanel-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel)
+> **Wichtige APIs:** [Grid-Klasse](/uwp/api/windows.ui.xaml.controls.grid), [StackPanel-Klasse](/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## <a name="prerequisites"></a>Voraussetzungen
 - Windows 10 und Microsoft Visual Studio ab 2015. (Neueste Visual Studio-Version für aktuelle Entwicklungs- und Sicherheitsupdates empfohlen) [Klicke hier, um zu erfahren, wie Visual Studio eingerichtet wird](../../get-started/get-set-up.md).
-- Kenntnisse im Erstellen einer einfachen „Hello, World“-App mit XAML und C#. Wenn du noch keine hast, [klicke hier, um zu erfahren, wie eine „Hello World“-App erstellt wird](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
+- Kenntnisse im Erstellen einer einfachen „Hello, World“-App mit XAML und C#. Wenn du noch keine hast, [klicke hier, um zu erfahren, wie eine „Hello World“-App erstellt wird](../../get-started/create-a-hello-world-app-xaml-universal.md).
 
 ## <a name="step-1-create-a-blank-app"></a>Schritt 1: Erstellen einer leeren App
 1. Wählen Sie in Visual Studio **Datei** > **Neues Projekt** aus.
@@ -51,7 +51,7 @@ Um mit dem Erstellen eines Layouts zu beginnen, öffnen Sie **MainPage.xaml** mi
 
 Das neue **Raster** erstellt eine Reihe von zwei Zeilen und Spalten, die das Layout der App-Oberfläche definieren. Die erste Spalte hat die **Breite** „3\*“, während die zweite Spalte die Breite „5\*“ hat. Der horizontale Abstand zwischen den beiden Spalten wird hierdurch im Verhältnis 3:5 geteilt. Auf die gleiche Weise haben die beiden Zeilen die **Höhe** „2\*“ bzw. „\*“, damit **Grid** der ersten Zeile dreimal so viel Platz zuteilt wie der zweiten Zeile („\*“ entspricht „1\*“). Diese Seitenverhältnisse werden bewahrt, auch wenn die Fenstergröße oder das Gerät geändert werden.
 
-Informationen zu weiteren Methoden für die Größeneinstellung von Zeilen und Spalten finden Sie unter [Definieren von Layouts mit XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml).
+Informationen zu weiteren Methoden für die Größeneinstellung von Zeilen und Spalten finden Sie unter [Definieren von Layouts mit XAML](./layouts-with-xaml.md).
 
 Wenn Sie die Anwendung jetzt ausführen, wird Ihnen lediglich eine leere Seite angezeigt, da keiner der **Raster**-Bereiche Inhalte enthält. Um das **Raster** anzuzeigen, fügen wir Farbe hinzu.
 
@@ -120,6 +120,6 @@ Das war’s! Sie haben das Layout für eine einfache Wetter-App erstellt. Wenn S
 Wenn Sie möchten, können Sie mit dem Layout oben experimentieren und verschiedene Möglichkeiten erkunden, wie Sie Wetterdaten darstellen können.
 
 ## <a name="related-articles"></a>Verwandte Artikel
-Eine Einführung in das Entwerfen von Windows-App-Layouts finden Sie unter [Einführung in das Windows-App-Design](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro).
+Eine Einführung in das Entwerfen von Windows-App-Layouts finden Sie unter [Einführung in das Windows-App-Design](../basics/design-and-ui-intro.md).
 
-Informationen zum Erstellen von dynamischen Layouts, die an verschiedene Bildschirmgrößen angepasst werden können, finden Sie unter [Definieren von Seitenlayouts mit XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml).
+Informationen zum Erstellen von dynamischen Layouts, die an verschiedene Bildschirmgrößen angepasst werden können, finden Sie unter [Definieren von Seitenlayouts mit XAML](./layouts-with-xaml.md).

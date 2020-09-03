@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b1f3881081b22fd98e9956f3c2fe45922531677b
-ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
+ms.openlocfilehash: 7f71a11c76bc6318c9000a9468c7bd9574e0c5d0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85448410"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170034"
 ---
 # <a name="navigation-view"></a>Navigationsansicht
 
@@ -152,7 +152,7 @@ Der NavigationView-Bereich kann Folgendes enthalten:
 - [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator)-Objekte. Trennzeichen zum Gruppieren von Navigationselementen. Lege die [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity)-Eigenschaft auf „0“ fest, um das Trennzeichen als Leerzeichen zu rendern.
 - [NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader)-Objekte. Kopfzeile für Bezeichnungen von Elementgruppen.
 - Ein optionales [AutoSuggestBox](auto-suggest-box.md)-Steuerelement für die Suche auf App-Ebene. Weise das Steuerelement der [NavigationView.AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.navigationview.autosuggestbox)-Eigenschaft zu.
-- Ein optionaler Einstiegspunkt für [App-Einstellungen](../app-settings/app-settings-and-data.md). Lege zum Ausblenden des Einstellungselements die [IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible)-Eigenschaft auf **false** fest.
+- Ein optionaler Einstiegspunkt für [App-Einstellungen](../app-settings/guidelines-for-app-settings.md). Lege zum Ausblenden des Einstellungselements die [IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible)-Eigenschaft auf **false** fest.
 
 Der linke Bereich enthält außerdem Folgendes:
 
@@ -639,7 +639,7 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 ```
 
 > [!NOTE]
-> Erstellen Sie für die [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index)-Version dieses Codebeispiels zunächst ein neues Projekt, das auf der Projektvorlage **Leere App (C++/WinRT)** basiert. Fügen Sie den aufgeführten Quellcodedateien dann den Code in der Auflistung hinzu. Benennen Sie Ihr neues Projekt *NavigationViewCppWinRT*, um den Quellcode genau wie in der Auflistung gezeigt zu verwenden.
+> Erstellen Sie für die [C++/WinRT](../../cpp-and-winrt-apis/index.md)-Version dieses Codebeispiels zunächst ein neues Projekt, das auf der Projektvorlage **Leere App (C++/WinRT)** basiert. Fügen Sie den aufgeführten Quellcodedateien dann den Code in der Auflistung hinzu. Benennen Sie Ihr neues Projekt *NavigationViewCppWinRT*, um den Quellcode genau wie in der Auflistung gezeigt zu verwenden.
 
 ```cppwinrt
 // MainPage.idl
@@ -945,7 +945,7 @@ namespace winrt::NavigationViewCppWinRT::implementation
 
 Der oben gezeigte C#- und C++/WinRT-Code ist so konzipiert, dass Sie für beide Versionen dasselbe XAML-Markup verwenden können. Es gibt jedoch eine weitere Möglichkeit, die in diesem Abschnitt beschriebene C++/WinRT-Version zu implementieren, die Sie möglicherweise bevorzugen.
 
-Im Folgenden finden Sie eine alternative Version des **NavView_ItemInvoked**-Handlers. Das Verfahren in dieser Version des Handlers umfasst als Erstes das Speichern des vollständigen Typnamens der Seite (im Tag des [**NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)-Elements), zu der Sie navigieren möchten. Im Handler führst du das Unboxing für diesen Wert durch, wandelst ihn in ein [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename)-Objekt um und verwendest dieses Objekt, um zur Zielseite zu navigieren. Es ist nicht erforderlich, die Zuordnungsvariable mit dem Namen `_pages` aus dem obigen Beispiel zu nutzen. Sie können Komponententests erstellen, um zu bestätigen, dass die Werte in den Tags einen gültigen Typ aufweisen. Weitere Informationen findest du unter [Boxing und Unboxing von Skalarwerten für „IInspectable“ mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/boxing).
+Im Folgenden finden Sie eine alternative Version des **NavView_ItemInvoked**-Handlers. Das Verfahren in dieser Version des Handlers umfasst als Erstes das Speichern des vollständigen Typnamens der Seite (im Tag des [**NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)-Elements), zu der Sie navigieren möchten. Im Handler führst du das Unboxing für diesen Wert durch, wandelst ihn in ein [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename)-Objekt um und verwendest dieses Objekt, um zur Zielseite zu navigieren. Es ist nicht erforderlich, die Zuordnungsvariable mit dem Namen `_pages` aus dem obigen Beispiel zu nutzen. Sie können Komponententests erstellen, um zu bestätigen, dass die Werte in den Tags einen gültigen Typ aufweisen. Weitere Informationen findest du unter [Boxing und Unboxing von Skalarwerten für „IInspectable“ mit C++/WinRT](../../cpp-and-winrt-apis/boxing.md).
 
 ```cppwinrt
 void MainPage::NavView_ItemInvoked(
@@ -1575,7 +1575,7 @@ MainPage::MainPage()
 
 ### <a name="keyboarding-within-hierarchical-navigationview"></a>Tastaturunterstützung innerhalb einer hierarchischen NavigationView
 
-Benutzer können den Fokus mithilfe ihrer [Tastatur](/windows/uwp/design/input/keyboard-interactions) im der Navigationsansicht bewegen. Die Pfeiltasten machen innerhalb des Bereichs die „innere Navigation“ verfügbar und folgen den in der [Strukturansicht](/windows/uwp/design/controls-and-patterns/tree-view) bereitgestellten Interaktionen. Die Tastenaktionen ändern sich während der Navigation in der NavigationView oder dem zugehörigen Flyoutmenü, das in den Modi „Top“ und „Left-compact“ von HierarchicalNavigationView angezeigt wird. Im folgenden finden Sie die speziellen Aktionen, die jede Taste in einer hierarchischen NavigationView ausführen kann:
+Benutzer können den Fokus mithilfe ihrer [Tastatur](../input/keyboard-interactions.md) im der Navigationsansicht bewegen. Die Pfeiltasten machen innerhalb des Bereichs die „innere Navigation“ verfügbar und folgen den in der [Strukturansicht](./tree-view.md) bereitgestellten Interaktionen. Die Tastenaktionen ändern sich während der Navigation in der NavigationView oder dem zugehörigen Flyoutmenü, das in den Modi „Top“ und „Left-compact“ von HierarchicalNavigationView angezeigt wird. Im folgenden finden Sie die speziellen Aktionen, die jede Taste in einer hierarchischen NavigationView ausführen kann:
 
 | Schlüssel      |      Im Modus „Left“      |  Im Modus „Top“ | Im Flyout  |
 |----------|------------------------|--------------|------------|
@@ -1659,7 +1659,7 @@ In diesem Beispiel wird veranschaulicht, wie du die Designressourcen in „App.x
 
 > Für die `IsTitleBarAutoPaddingEnabled`-Eigenschaft ist die [Windows-UI-Bibliothek](/uwp/toolkits/winui/) 2,2 oder höher erforderlich.
 
-Einige Apps [passen die Titelleiste ihres Fensters an](/windows/uwp/design/shell/title-bar) und erweitern so den App-Inhalt auf den Bereich der Titelleiste. Wenn NavigationView das Stammelement in Apps ist, die ihren Inhalt **mithilfe der [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar)-API** in die Titelleiste erweitern, passt das Steuerelement die Position seiner interaktiven Elemente automatisch an, um eine Überlappung mit dem [ziehbaren Bereich](/windows/uwp/design/shell/title-bar#draggable-regions) zu vermeiden.
+Einige Apps [passen die Titelleiste ihres Fensters an](../shell/title-bar.md) und erweitern so den App-Inhalt auf den Bereich der Titelleiste. Wenn NavigationView das Stammelement in Apps ist, die ihren Inhalt **mithilfe der [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar)-API** in die Titelleiste erweitern, passt das Steuerelement die Position seiner interaktiven Elemente automatisch an, um eine Überlappung mit dem [ziehbaren Bereich](../shell/title-bar.md#draggable-regions) zu vermeiden.
 
 ![Eine App, die ihren Inhalt in die Titelleiste erweitert](images/navigation-view-with-titlebar-padding.png)
 

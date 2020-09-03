@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8d79d4f3394bcf8f7892f2c6dc3d4e0ca72972ab
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: c17d4c0aca4c59e18a13bf42bad16e6739938717
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970605"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168674"
 ---
 # <a name="writing-style"></a>Schreibstil
 
@@ -76,7 +76,7 @@ Benutzer überfliegen den Text und überspringen häufig mehrere Wörter. Machen
 
 ## <a name="style-conventions"></a>Stilkonventionen
 
-Wenn Sie sich selbst nicht als Schriftsteller betrachten, kann es einschüchternd sein, zu versuchen, diese Prinzipien und Empfehlungen umzusetzen. Aber keine Sorge – eine einfache und unkomplizierte Sprache ist eine hervorragende Möglichkeit, eine gute Benutzererfahrung bereitzustellen. Und wenn Sie immer noch nicht sicher sind, wie Sie Ihre Wörter strukturieren sollten, finden Sie hier einige hilfreiche Richtlinien. Und wenn Sie weitere Informationen benötigen, lesen Sie die [Microsoft-Stilvorgaben](https://docs.microsoft.com/style-guide/welcome/).
+Wenn Sie sich selbst nicht als Schriftsteller betrachten, kann es einschüchternd sein, zu versuchen, diese Prinzipien und Empfehlungen umzusetzen. Aber keine Sorge – eine einfache und unkomplizierte Sprache ist eine hervorragende Möglichkeit, eine gute Benutzererfahrung bereitzustellen. Und wenn Sie immer noch nicht sicher sind, wie Sie Ihre Wörter strukturieren sollten, finden Sie hier einige hilfreiche Richtlinien. Und wenn Sie weitere Informationen benötigen, lesen Sie die [Microsoft-Stilvorgaben](/style-guide/welcome/).
 
 ### <a name="addressing-the-user"></a>Benutzer ansprechen
 
@@ -228,7 +228,7 @@ Die gleichen Grundsätze und Empfehlungen gelten für Texte, die gesprochen werd
 
 ## <a name="accessibility-and-localization"></a>Lokalisierung und Barrierefreiheit
 
-Ihre App kann eine größere Zielgruppe erreichen, wenn sie die Barrierefreiheit und Lokalisierung bei der Programmierung berücksichtigen. Dies ist etwas, das nur durch Text erreicht werden kann, wobei eine unkomplizierte und freundliche Sprache ein guter Anfang ist. Weitere Informationen finden Sie unter [Barrierefreiheit im Überblick](https://docs.microsoft.com/windows/uwp/design/accessibility/accessibility-overview) und in den [Richtlinien für die Lokalisierung](https://docs.microsoft.com/windows/uwp/design/globalizing/globalizing-portal).
+Ihre App kann eine größere Zielgruppe erreichen, wenn sie die Barrierefreiheit und Lokalisierung bei der Programmierung berücksichtigen. Dies ist etwas, das nur durch Text erreicht werden kann, wobei eine unkomplizierte und freundliche Sprache ein guter Anfang ist. Weitere Informationen finden Sie unter [Barrierefreiheit im Überblick](../accessibility/accessibility-overview.md) und in den [Richtlinien für die Lokalisierung](../globalizing/globalizing-portal.md).
 
 * **Seien Sie hilfreich**, indem Sie unterschiedliche Erfahrungen berücksichtigen. Vermeiden Sie Ausdrücke, die möglicherweise nicht sinnvoll für ein internationales Publikum sind, und verwenden Sie keine Sätze, die Annahmen darüber machen, was der Benutzer tun oder lassen kann.
 

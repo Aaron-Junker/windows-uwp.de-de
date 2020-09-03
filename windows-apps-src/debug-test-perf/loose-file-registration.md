@@ -5,12 +5,12 @@ ms.date: 06/01/2018
 ms.topic: article
 keywords: Windows 10, UWP, Geräteportal, App-Manager, Bereitstellung, SDK
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bf3dab97be67a3b97aca4b3132bd9fe18691d15
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0fd5bf6be691974d956de0c71f4a1d11aa1a229f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75681931"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166094"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>Bereitstellen einer App über die Registrierung loser Dateien 
 
@@ -31,10 +31,10 @@ Ein loses Dateilayout ist ganz einfach das Platzieren von App-Inhalten in einem 
 
 ## <a name="how-to-register-a-loose-file-layout"></a>Registrieren eines losen Dateilayouts
 
-Windows bietet mehrere Entwicklertools zum Registrieren von losen Dateilayouts auf lokalen und Remotegeräten. Du kannst zwischen `WinDeployAppCmd` (Windows SDK-Tool), Windows-Geräteportal, PowerShell und [Visual Studio](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#register-layout-from-network) auswählen. Im Folgenden wird erläutert, wie du mit diesen Tools lose Dateien registrierst. Stelle zunächst sicher, dass du über das folgende Setup verfügst:
+Windows bietet mehrere Entwicklertools zum Registrieren von losen Dateilayouts auf lokalen und Remotegeräten. Du kannst zwischen `WinDeployAppCmd` (Windows SDK-Tool), Windows-Geräteportal, PowerShell und [Visual Studio](./deploying-and-debugging-uwp-apps.md#register-layout-from-network) auswählen. Im Folgenden wird erläutert, wie du mit diesen Tools lose Dateien registrierst. Stelle zunächst sicher, dass du über das folgende Setup verfügst:
 
 - Auf deinen Geräten muss Windows 10 Creators Update (Build 14965) oder höher ausgeführt werden.
-- Du musst den [Entwicklermodus](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) und die [Geräteerkennung](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#device-discovery) auf allen Geräten aktivieren.
+- Du musst den [Entwicklermodus](../get-started/enable-your-device-for-development.md) und die [Geräteerkennung](../get-started/enable-your-device-for-development.md#device-discovery) auf allen Geräten aktivieren.
 
 > [!IMPORTANT]
 > Die Registrierung loser Dateien ist nur auf Geräten verfügbar, die das SMB-Protokoll für Netzwerkfreigaben unterstützen: Desktop und Xbox. 
@@ -51,7 +51,7 @@ WinAppDeployCmd.exe registerfiles -remotedeploydir <Network Path> -ip <IP Addres
 
 **IP-Adresse:** IP-Adresse des Zielcomputers.
 
-**PIN des Zielcomputers:** PIN, sofern zum Herstellen einer Verbindung mit dem Zielgerät erforderlich. Wenn eine Authentifizierung erforderlich ist, wirst du aufgefordert, den Versuch mit der Option `-pin` zu wiederholen. Weitere Informationen zum Erhalten einer PIN findest du unter [Geräteerkennung](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#device-discovery).
+**PIN des Zielcomputers:** PIN, sofern zum Herstellen einer Verbindung mit dem Zielgerät erforderlich. Wenn eine Authentifizierung erforderlich ist, wirst du aufgefordert, den Versuch mit der Option `-pin` zu wiederholen. Weitere Informationen zum Erhalten einer PIN findest du unter [Geräteerkennung](../get-started/enable-your-device-for-development.md#device-discovery).
 
 ### <a name="windows-device-portal"></a>Windows-Geräteportal
 

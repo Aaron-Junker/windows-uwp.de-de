@@ -5,12 +5,12 @@ keywords: Gehostete Web-App, HWA, REST-API, einseitige App, SPA
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b9a6b80034dc8272226c9563960079434dff8e41
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3b2c8da824896b838776174cb22423181aae0e06
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684784"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168234"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>Erstellen einer Single-Page-Web-App mit REST API-Back-End
 
@@ -274,9 +274,9 @@ Mit dieser Änderung gibt die Methode **GET /game** alle Kartenwerte (einschlie�
 
 In der Azure-Dokumentation ist Folgendes erläutert:
 
- - [Registrieren einer neuen *API-App* mit dem Azure-Portal](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#createapiapp)
- - [Einrichten einer Git-Bereitstellung für deine API-App](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
- - [Bereitstellen deines API-App-Codes in Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
+ - [Registrieren einer neuen *API-App* mit dem Azure-Portal](/azure/app-service/app-service-web-tutorial-rest-api#createapiapp)
+ - [Einrichten einer Git-Bereitstellung für deine API-App](/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
+ - [Bereitstellen deines API-App-Codes in Azure](/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
 
 Versuche bei der Registrierung, deinen *App-Namen* abzugrenzen (um Benennungskonflikte mit anderen Benutzern zu vermeiden, die Varianten unter der URL *http://memorygameapi.azurewebsites.net* anfordern).
 
@@ -290,7 +290,7 @@ Hier sind einige nützliche Ressourcen für weiterführende Schritte:
 
  - [Erweitertes Node.js-Debugging mit Visual Studio Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 
- - [Dokumente für Azure Web + Mobil](https://docs.microsoft.com/azure/#pivot=services&panel=web)
+ - [Dokumente für Azure Web + Mobil](/azure/#pivot=services&panel=web)
 
  - [Azure DocumentDB-Dokumente](https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/)
 
@@ -635,13 +635,13 @@ Du kannst deine App jetzt in Azure (oder in einem anderen Cloudhostingdienst) zu
 Hier siehst du die grundlegenden Schritte für die Veröffentlichung im Microsoft Store:
 
  1. Erstellen eines [Windows-Entwicklerkontos](https://developer.microsoft.com/store/register)
- 2. Verwenden der [Prüfliste](https://docs.microsoft.com/windows/uwp/publish/app-submissions) für die App-Übermittlung
- 3. Übermitteln deiner App für die [Zertifizierung](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)
+ 2. Verwenden der [Prüfliste](../publish/app-submissions.md) für die App-Übermittlung
+ 3. Übermitteln deiner App für die [Zertifizierung](../publish/the-app-certification-process.md)
 
 Hier sind einige nützliche Ressourcen für weiterführende Schritte:
 
- - [Bereitstellen deines Anwendungsentwicklungsprojekts für Azure-Websites](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
+ - [Bereitstellen deines Anwendungsentwicklungsprojekts für Azure-Websites](/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
 
- - [Konvertieren deiner Webanwendung in eine App für die universelle Windows-Plattform (UWP)](https://docs.microsoft.com/microsoft-edge/progressive-web-apps)
+ - [Konvertieren deiner Webanwendung in eine App für die universelle Windows-Plattform (UWP)](/microsoft-edge/progressive-web-apps)
 
- - [Veröffentlichen von Windows-Apps](https://docs.microsoft.com/windows/uwp/publish/)
+ - [Veröffentlichen von Windows-Apps](../publish/index.md)

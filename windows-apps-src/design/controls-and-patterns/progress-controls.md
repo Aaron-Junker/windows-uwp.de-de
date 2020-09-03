@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 25ca05dc6c604d40092cdc28d186de4b835774b2
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: d5756c4cfff05b666eae245de76c1813f9a834df
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997997"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169674"
 ---
 # <a name="progress-controls"></a>Statussteuerelemente
 
@@ -27,15 +27,15 @@ Ein Statussteuerelement gibt dem Benutzer eine Rückmeldung, dass ein Vorgang mi
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **ProgressBar** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **ProgressBar** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
-> **APIs der Bibliothek „Windows UI“** [ProgressBar-Klasse](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar), [IsIndeterminate Eigenschaft](https://docs.microsoft.com/uwp/api/Microsoft.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing-Klasse](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressRing), [IsActive-Eigenschaft](https://docs.microsoft.com/uwp/api/Microsoft.ui.xaml.controls.progressring.isactive)
+> **APIs der Bibliothek „Windows UI“** [ProgressBar-Klasse](/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar), [IsIndeterminate Eigenschaft](/uwp/api/Microsoft.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing-Klasse](/uwp/api/Microsoft.UI.Xaml.Controls.ProgressRing), [IsActive-Eigenschaft](/uwp/api/Microsoft.ui.xaml.controls.progressring.isactive)
 >
-> **Plattform-APIs:** [ProgressBar-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [IsIndeterminate Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [IsActive-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
+> **Plattform-APIs:** [ProgressBar-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [IsIndeterminate Eigenschaft](/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [IsActive-Eigenschaft](/uwp/api/windows.ui.xaml.controls.progressring.isactive)
 
 > [!NOTE]
 > Es gibt zwei Versionen der ProgressBar- und ProgressRing-Steuerelemente: eine in der Plattform, dargestellt durch den Windows.UI.XAML-Namespace; die andere in der Bibliothek der Windows-Benutzeroberfläche, im Microsoft.UI.XAML-Namespace. Obwohl die APIs für ProgressRing und ProgressBar identisch sind, unterscheiden sich beiden Versionen in der Darstellung des Steuerelements. In diesem Dokument werden Abbildungen der neueren Version aus der Windows-Benutzeroberflächenbibliothek gezeigt.
-In diesem Dokument stellt der Alias **muxc** in XAML die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben dem [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)-Element Folgendes hinzugefügt:
+In diesem Dokument stellt der Alias **muxc** in XAML die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben dem [Page](/uwp/api/windows.ui.xaml.controls.page)-Element Folgendes hinzugefügt:
 
 ```xaml
 xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
@@ -211,5 +211,5 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [ProgressBar-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)
-- [ProgressRing-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)
+- [ProgressBar-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)
+- [ProgressRing-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)

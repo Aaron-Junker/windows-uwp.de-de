@@ -5,18 +5,18 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
 localizationpriority: medium
-ms.openlocfilehash: 3dbdf8d006472c288369fd528e89663aca5a9e10
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 551d937836f0dcf0094e54a503d2a8cd80a2f28b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970885"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169524"
 ---
 # <a name="page-layout"></a>Seitenlayout
 
-In Windows-Apps weist jede [**Seite**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) in der Regel Navigations-, Befehls- und Inhaltselemente auf. 
+In Windows-Apps weist jede [**Seite**](/uwp/api/Windows.UI.Xaml.Controls.Page) in der Regel Navigations-, Befehls- und Inhaltselemente auf. 
 
-Deine App kann mehrere Seiten umfassen: Wenn ein Benutzer eine Windows-App startet, erstellt der Anwendungscode einen [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame), der im [**Fenster**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) der Anwendung platziert wird. Der Frame kann dann zwischen den [**Seiteninstanzen**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) der Anwendung [navigieren](../basics/navigate-between-two-pages.md). 
+Deine App kann mehrere Seiten umfassen: Wenn ein Benutzer eine Windows-App startet, erstellt der Anwendungscode einen [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame), der im [**Fenster**](/uwp/api/windows.ui.xaml.window) der Anwendung platziert wird. Der Frame kann dann zwischen den [**Seiteninstanzen**](/uwp/api/Windows.UI.Xaml.Controls.Page) der Anwendung [navigieren](../basics/navigate-between-two-pages.md). 
 
 Die meisten Seiten folgen einer allgemeinen Layoutstruktur, und in diesem Artikel werden die erforderlichen Benutzeroberflächenelemente und deren Positionen auf einer Seite behandelt. 
 
@@ -33,7 +33,7 @@ Der linke Navigationsbereich oder das Muster [Navigationsbereich](../controls-an
 - Einstiegspunkt in App-Einstellungen
 - Einstiegspunkt in Kontoeinstellungen
 
-Das Steuerelement [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview) implementiert das Muster des linken Navigationsbereichs für UWP.
+Das Steuerelement [NavigationView](/uwp/api/windows.ui.xaml.controls.navigationview) implementiert das Muster des linken Navigationsbereichs für UWP.
 
 Wenn ein Navigationselement ausgewählt ist, sollte der Frame zur Seite des ausgewählten Elements navigieren.
 

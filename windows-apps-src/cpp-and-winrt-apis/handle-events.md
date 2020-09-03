@@ -5,16 +5,16 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, projiziert, Projizierung, behandeln, Ereignis, Delegat
 ms.localizationpriority: medium
-ms.openlocfilehash: cd67ea63fc633716cabf9a293a5faeeed6d24b70
-ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
+ms.openlocfilehash: 2d2470b1aa52f8aa4be7e07bf1dfe5213054b005
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87296179"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166244"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Behandeln von Ereignissen mithilfe von Delegaten in C++/WinRT
 
-In diesem Thema erfährst du, wie du Delegaten, die Ereignisse behandeln, mit [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) registrierst und widerrufst. Du kannst ein Ereignis mit jedem funktionsähnlichen C++-Standardobjekt behandeln.
+In diesem Thema erfährst du, wie du Delegaten, die Ereignisse behandeln, mit [C++/WinRT](./intro-to-using-cpp-with-winrt.md) registrierst und widerrufst. Du kannst ein Ereignis mit jedem funktionsähnlichen C++-Standardobjekt behandeln.
 
 > [!NOTE]
 > Informationen zum Installieren und Verwenden der C++/WinRT Visual Studio-Erweiterung (VSIX) und des NuGet-Pakets (die zusammen die Projektvorlage und Buildunterstützung bereitstellen) findest du unter [Visual Studio-Unterstützung für C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
@@ -314,6 +314,6 @@ Wenn du ein Ereignis mit der Memberfunktion eines Objekts oder im Rahmen einer L
 * [Funktion „winrt::implements::get_strong“](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Erstellen von Ereignissen in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events)
-* [Parallelität und asynchrone Vorgänge mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
-* [Starke und schwache Verweise in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references)
+* [Erstellen von Ereignissen in C++/WinRT](./author-events.md)
+* [Parallelität und asynchrone Vorgänge mit C++/WinRT](./concurrency.md)
+* [Starke und schwache Verweise in C++/WinRT](./weak-references.md)

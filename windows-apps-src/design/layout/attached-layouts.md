@@ -7,12 +7,12 @@ ms.date: 03/13/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ee88e32ed0ce0fd193fe79e48814a11f494d062
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 9f36035bea91f39d60f44ca9e16c768eb5d75e78
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970215"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165634"
 ---
 # <a name="attached-layouts"></a>Angefügte Layouts
 
@@ -22,12 +22,12 @@ In diesem Thema befassen wir uns damit, was das Erstellen eines angefügten Layo
 
 | **Abrufen der Windows-UI-Bibliothek** |
 | - |
-| Dieses Steuerelement ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| Dieses Steuerelement ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
 > **Wichtige APIs:**
 
 > * [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer)
-> * [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)
+> * [ItemsRepeater](../controls-and-patterns/items-repeater.md)
 > * [Layout](/uwp/api/microsoft.ui.xaml.controls.layout)
 >     * [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout)
 >     * [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)
@@ -44,7 +44,7 @@ Zum Durchführen des Layouts müssen für jedes Element zwei Fragen beantwortet 
 
 2. Welche ***Position*** soll das Element haben?
 
-Das XAML-Layoutsystem, das Antworten auf diese Fragen gibt, wird kurz im Rahmen der Erörterung von [benutzerdefinierten Panels](/windows/uwp/design/layout/custom-panels-overview) behandelt.
+Das XAML-Layoutsystem, das Antworten auf diese Fragen gibt, wird kurz im Rahmen der Erörterung von [benutzerdefinierten Panels](./custom-panels-overview.md) behandelt.
 
 ### <a name="containers-and-context"></a>Container und Kontext
 
@@ -55,7 +55,7 @@ Konzeptionell füllt ein XAML-[Panel](/uwp/api/windows.ui.xaml.controls.panel) z
 
 Aus diesem Grund wurde ein Panel in XAML häufig als Synonym für Layout verwendet, technisch erledigt es aber mehr.
 
-Der [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater) verhält sich ebenso wie ein Panel, im Gegensatz zu Panel macht er aber keine Eigenschaft „Children“ verfügbar, die es ermöglicht, untergeordnete UIElements hinzuzufügen oder zu entfernen.  Stattdessen wird die Lebensdauer seiner untergeordneten Elemente automatisch vom Framework so verwaltet, dass sie einer Sammlung von Datenelementen entspricht.  Zwar ist er nicht von Panel abgeleitet, er verhält sich aber wie ein Panel und wird vom Framework auch so behandelt.
+Der [ItemsRepeater](../controls-and-patterns/items-repeater.md) verhält sich ebenso wie ein Panel, im Gegensatz zu Panel macht er aber keine Eigenschaft „Children“ verfügbar, die es ermöglicht, untergeordnete UIElements hinzuzufügen oder zu entfernen.  Stattdessen wird die Lebensdauer seiner untergeordneten Elemente automatisch vom Framework so verwaltet, dass sie einer Sammlung von Datenelementen entspricht.  Zwar ist er nicht von Panel abgeleitet, er verhält sich aber wie ein Panel und wird vom Framework auch so behandelt.
 
 > [!NOTE]
 > Das [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) ist ein Container, der von Panel abgeleitet ist und seine Logik an das angefügte [Layout](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout)-Objekt delegiert.  LayoutPanel ist eine *Vorschauversion* und zurzeit nur in den *Vorabversions*-Drops des WinUI-Pakets erhältlich.
@@ -128,7 +128,7 @@ Entscheiden Sie zunächst, ob das Layout, das Sie erstellen müssen, UI-Virtuali
 **Ein paar Dinge, die Sie beachten müssen...**
 
 1. Nicht virtualisierende Layouts sind einfacher zu erstellen. Wenn die Anzahl der Elemente immer klein ist, wird die Erstellung eines nicht virtualisierenden Layouts empfohlen.
-2. Die Plattform bietet eine Reihe angefügter Layouts, die zusammen mit [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater#change-the-layout-of-items) und [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) funktionieren und allgemeine Anforderungen abdecken.  Machen Sie sich mit diesen vertraut, bevor Sie sich für die Definition eines benutzerdefinierten Layouts entscheiden.
+2. Die Plattform bietet eine Reihe angefügter Layouts, die zusammen mit [ItemsRepeater](../controls-and-patterns/items-repeater.md#change-the-layout-of-items) und [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) funktionieren und allgemeine Anforderungen abdecken.  Machen Sie sich mit diesen vertraut, bevor Sie sich für die Definition eines benutzerdefinierten Layouts entscheiden.
 3. Mit virtualisierenden Layouts geht im Vergleich mit nicht virtualisierenden Layouts immer ein gewisser Mehraufwand an Kosten/Komplexität einher.  Als Daumenregel lässt sich davon ausgehen, dass wenn die untergeordneten Elemente, die vom Layout verwaltet werden müssen, in einen Bereich passen, der die dreifache Fläche des Viewports aufweist, ein virtualisierendes Layout möglicherweise keinen großen Gewinn bringt. Die dreifache Größe wird detaillierter weiter unten in diesem Dokument erläutert, sie hängt aber mit der prinzipbedingten Asynchronität des Bildlaufs unter Windows und deren Einfluss auf die Virtualisierung zusammen.
 
 > [!TIP]
@@ -145,7 +145,7 @@ Der Basistyp [Layout](/uwp/api/microsoft.ui.xaml.controls.layout) weist zwei abg
 
 ## <a name="non-virtualizing-layout"></a>Nicht virtualisierendes Layout
 
-Die Vorgehensweise beim Erstellen eines nicht virtualisierenden Layouts sollte allen Benutzern vertraut sein, die ein [benutzerdefiniertes Panel](/windows/uwp/design/layout/custom-panels-overview) erstellt haben.  Es gelten dieselben Konzepte.  Der Hauptunterschied besteht darin, dass ein [NonVirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext) verwendet wird, um auf die [untergeordnete](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext.children) Sammlung zuzugreifen, und das Layout hat die Möglichkeit, den Zustand zu speichern.
+Die Vorgehensweise beim Erstellen eines nicht virtualisierenden Layouts sollte allen Benutzern vertraut sein, die ein [benutzerdefiniertes Panel](./custom-panels-overview.md) erstellt haben.  Es gelten dieselben Konzepte.  Der Hauptunterschied besteht darin, dass ein [NonVirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext) verwendet wird, um auf die [untergeordnete](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext.children) Sammlung zuzugreifen, und das Layout hat die Möglichkeit, den Zustand zu speichern.
 
 1. Leiten Sie vom Basistyp [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout) (anstelle von Panel) ab.
 2. *(Optional)* Definieren Sie Abhängigkeitseigenschaften, deren Änderung bewirkt, dass das Layout für ungültig erklärt wird.
@@ -246,7 +246,7 @@ Der Bildlauf unter Windows erfolgt asynchron zum UI-Thread. Er wird nicht durch 
 
 ![Realisierungrechteck](images/xaml-attached-layout-realizationrect.png)
 
-Da die Elementerstellung teuer ist, statten virtualisierende Container (z. B. [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)) das angefügte Layout zu Anfang mit einem [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) aus, das mit dem Viewport übereinstimmt. In Leerlaufzeiten kann der Container den Puffer vorbereiteter Inhalte durch wiederholtes Aufrufen des Layouts auffüllen, indem er ein zunehmend größeres Realisierungsrechteck verwendet. Dieses Verhalten stellt eine Leistungsoptimierung dar, die versucht, ein Gleichgewicht zwischen einer schnellen Startzeit und einem guten Schwenkverhalten zu bieten. Die maximale Größe des Puffers, der vom ItemsRepeater generiert wird, wird durch dessen Eigenschaften [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) und [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) gesteuert.
+Da die Elementerstellung teuer ist, statten virtualisierende Container (z. B. [ItemsRepeater](../controls-and-patterns/items-repeater.md)) das angefügte Layout zu Anfang mit einem [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) aus, das mit dem Viewport übereinstimmt. In Leerlaufzeiten kann der Container den Puffer vorbereiteter Inhalte durch wiederholtes Aufrufen des Layouts auffüllen, indem er ein zunehmend größeres Realisierungsrechteck verwendet. Dieses Verhalten stellt eine Leistungsoptimierung dar, die versucht, ein Gleichgewicht zwischen einer schnellen Startzeit und einem guten Schwenkverhalten zu bieten. Die maximale Größe des Puffers, der vom ItemsRepeater generiert wird, wird durch dessen Eigenschaften [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) und [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) gesteuert.
 
 **Wiederverwenden von Elementen (Recycling)**
 

@@ -11,16 +11,16 @@ design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a43c6592b5a9b243a19f3491ea54c05d10e7b0f7
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 0f2c9a80dbe821feb910636eb26e783ec7eb309a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970835"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169644"
 ---
 # <a name="person-picture-control"></a>Personenbild-Steuerelement
 
-Das Personenbild-Steuerelement zeigt das Avatar-Bild für eine Person an, sofern ein solches Bild verfügbar ist. Andernfalls werden die Initialen der Person oder eine allgemeine Glyphe angezeigt. Sie können das Steuerelement zum Anzeigen eines [Contact-Objekts](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) (eines Objekts, das die Kontaktinformationen einer Person verwaltet) verwenden, oder Sie können manuell Kontaktinformationen wie einen Anzeigenamen und ein Profilbild angeben.
+Das Personenbild-Steuerelement zeigt das Avatar-Bild für eine Person an, sofern ein solches Bild verfügbar ist. Andernfalls werden die Initialen der Person oder eine allgemeine Glyphe angezeigt. Sie können das Steuerelement zum Anzeigen eines [Contact-Objekts](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (eines Objekts, das die Kontaktinformationen einer Person verwaltet) verwenden, oder Sie können manuell Kontaktinformationen wie einen Anzeigenamen und ein Profilbild angeben.
 
 ![Das Personenbild-Steuerelement](images/person-picture/person-picture_hero.png)
 
@@ -30,9 +30,9 @@ Das Personenbild-Steuerelement zeigt das Avatar-Bild für eine Person an, sofern
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **PersonPicture** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **PersonPicture** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
-> **Plattform-APIs:** [PersonPicture-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [Contact-Klasse](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager-Klasse](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
+> **Plattform-APIs:** [PersonPicture-Klasse](/uwp/api/windows.ui.xaml.controls.personpicture), [Contact-Klasse](/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager-Klasse](/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -86,7 +86,7 @@ Zum Erstellen eines Personenbilds verwenden Sie die PersonPicture-Klasse. In die
 
 ## <a name="using-the-person-picture-control-to-display-a-contact-object"></a>Verwenden des Personenbild-Steuerelements zum Anzeigen eines Contact-Objekts
 
-Sie können das Personenauswahl-Steuerelement zum Anzeigen eines [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)-Objekts verwenden:
+Sie können das Personenauswahl-Steuerelement zum Anzeigen eines [Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact)-Objekts verwenden:
 
 ```xaml
 <Page
@@ -174,11 +174,11 @@ namespace SampleApp
 ```
 
 > [!NOTE]
-> Um den Code einfach zu halten, wird in diesem Beispiel ein neues Contact-Objekt erstellt. In einer echten App würden Sie dem Benutzer die Auswahl eines Kontakts überlassen, oder Sie würden einen [ContactManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) verwenden, um eine Liste der Kontakte abzufragen. Informationen zum Abrufen und Verwalten von Kontakten finden Sie in den [Artikeln zu Kontakten und Kalendern](../../contacts-and-calendar/index.md).
+> Um den Code einfach zu halten, wird in diesem Beispiel ein neues Contact-Objekt erstellt. In einer echten App würden Sie dem Benutzer die Auswahl eines Kontakts überlassen, oder Sie würden einen [ContactManager](/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) verwenden, um eine Liste der Kontakte abzufragen. Informationen zum Abrufen und Verwalten von Kontakten finden Sie in den [Artikeln zu Kontakten und Kalendern](../../contacts-and-calendar/index.md).
 
 ## <a name="determining-which-info-to-display"></a>Festlegen der anzuzeigenden Informationen
 
-Wenn Sie ein [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)-Objekt angeben, wird es vom Personenbild-Steuerelement ausgewertet, um zu ermitteln, welche Informationen angezeigt werden können.
+Wenn Sie ein [Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact)-Objekt angeben, wird es vom Personenbild-Steuerelement ausgewertet, um zu ermitteln, welche Informationen angezeigt werden können.
 
 Wenn ein Bild verfügbar ist, zeigt das Steuerelement erst gefundene Bild an; hierbei gilt die folgende Reihenfolge:
 

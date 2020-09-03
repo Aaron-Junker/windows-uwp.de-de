@@ -9,23 +9,23 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 098c46499e65c34e3699b09e137ea94c40590ef7
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 6afed2347bb3944c8ea5bd9b43e83d429973dc15
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968006"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169164"
 ---
 # <a name="reveal-focus"></a>Reveal Focus
 
 ![Herobild](images/header-reveal-focus.svg)
 
-Reveal Focus ist ein Lichteffekt für [10-Foot-Benutzeroberflächen](/windows/uwp/design/devices/designing-for-tv), z.B. Xbox One und Fernsehbildschirme. Er animiert den Rahmen von fokussierbaren Elementen wie z.B. Schaltflächen, wenn der Benutzer den Fokus eines Gamepad oder einer Bildschirmtastatur darauf verschiebt. Standardmäßig ist er deaktiviert, kann aber ganz einfach aktiviert werden. 
+Reveal Focus ist ein Lichteffekt für [10-Foot-Benutzeroberflächen](../devices/designing-for-tv.md), z.B. Xbox One und Fernsehbildschirme. Er animiert den Rahmen von fokussierbaren Elementen wie z.B. Schaltflächen, wenn der Benutzer den Fokus eines Gamepad oder einer Bildschirmtastatur darauf verschiebt. Standardmäßig ist er deaktiviert, kann aber ganz einfach aktiviert werden. 
 
-(Informationen zum Reveal Highlight-Effekt – einem Lichteffekt, der interaktive Elemente hervorhebt – finden Sie im [Artikel „Reveal Highlight“](/windows/uwp/design/style/reveal).)
+(Informationen zum Reveal Highlight-Effekt – einem Lichteffekt, der interaktive Elemente hervorhebt – finden Sie im [Artikel „Reveal Highlight“](./reveal.md).)
 
 
-> **Wichtige APIs:** [Eigenschaft „Application.FocusVisualKind“](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind), [Enumeration „FocusVisualKind“](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind), [Eigenschaft „Control.UseSystemFocusVisuals“](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
+> **Wichtige APIs:** [Eigenschaft „Application.FocusVisualKind“](/uwp/api/windows.ui.xaml.application.FocusVisualKind), [Enumeration „FocusVisualKind“](/uwp/api/windows.ui.xaml.focusvisualkind), [Eigenschaft „Control.UseSystemFocusVisuals“](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
 
 ## <a name="how-it-works"></a>Funktionsweise
 Reveal Focus lenkt die Aufmerksamkeit auf Elemente mit dem Fokus, indem ein animiertes Leuchten um den Rahmen des Elements herum eingeblendet wird:
@@ -70,7 +70,7 @@ Wie Sie sehen können, lässt sich Reveal Focus relativ einfach aktivieren, wenn
 
 ## <a name="customizing-reveal-focus"></a>Anpassen von Reveal Focus
 
-Sie können den Reveal Focus-Effekt anpassen, indem Sie die Eigenschaften der visuellen Fokuselemente bei jedem Steuerelement ändern: [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness), [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness), [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) und [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush). Mit diesen Eigenschaften können Sie die Farbe und Stärke des Fokusrechtecks anpassen. (Dies sind dieselben Eigenschaften, die Sie zum Erstellen von [visuellen Fokuselementen mit hoher Sichtbarkeit](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals) verwenden.) 
+Sie können den Reveal Focus-Effekt anpassen, indem Sie die Eigenschaften der visuellen Fokuselemente bei jedem Steuerelement ändern: [FocusVisualPrimaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness), [FocusVisualSecondaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness), [FocusVisualPrimaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) und [FocusVisualSecondaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush). Mit diesen Eigenschaften können Sie die Farbe und Stärke des Fokusrechtecks anpassen. (Dies sind dieselben Eigenschaften, die Sie zum Erstellen von [visuellen Fokuselementen mit hoher Sichtbarkeit](../input/guidelines-for-visualfeedback.md#high-visibility-focus-visuals) verwenden.) 
 
 Bevor Sie aber mit dem Anpassen beginnen, sollten Sie etwas mehr zu den Komponenten von Reveal Focus erfahren.
 
@@ -86,8 +86,8 @@ Verwenden Sie diese Eigenschaften, um die Stärke der Rahmentypen für ein Steue
 
 | Rahmentyp | Eigenschaft |
 | --- | --- |
-| Primärer, Leuchteffekt   | [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness)<br/> (Durch Ändern des primären Rahmens wird die Stärke des Leuchteffekts proportional geändert.)   |
-| Sekundärer   | [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)   |
+| Primärer, Leuchteffekt   | [FocusVisualPrimaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness)<br/> (Durch Ändern des primären Rahmens wird die Stärke des Leuchteffekts proportional geändert.)   |
+| Sekundärer   | [FocusVisualSecondaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)   |
 
 
 In diesem Beispiel wird die Rahmenstärke des visuellen Fokuselements für eine Schaltfläche geändert:
@@ -98,7 +98,7 @@ In diesem Beispiel wird die Rahmenstärke des visuellen Fokuselements für eine 
 
 ## <a name="customize-the-margin"></a>Anpassen des Rands
 
-Der Rand ist der Abstand zwischen den visuellen Grenzen des Steuerelements und dem Beginn des sekundären Rahmens der visuellen Fokuselemente. Der Standardrand hat eine Breite von 1 Pixel außerhalb der Grenzen des Steuerelements. Sie können diesen Rand individuell pro Steuerelement bearbeiten, indem Sie die Eigenschaft [FocusVisualMargin](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualMargin) ändern:
+Der Rand ist der Abstand zwischen den visuellen Grenzen des Steuerelements und dem Beginn des sekundären Rahmens der visuellen Fokuselemente. Der Standardrand hat eine Breite von 1 Pixel außerhalb der Grenzen des Steuerelements. Sie können diesen Rand individuell pro Steuerelement bearbeiten, indem Sie die Eigenschaft [FocusVisualMargin](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualMargin) ändern:
 
 ```xaml
 <Button FocusVisualPrimaryThickness="2" FocusVisualSecondaryThickness="1" FocusVisualMargin="-3"/>
@@ -108,12 +108,12 @@ Ein negativer Rand verschiebt den Rahmen weiter weg von der Mitte des Steuerelem
 
 ## <a name="customize-the-color"></a>Anpassen der Farbe
 
-Um die Farbe des visuellen Elements von Reveal Focus zu ändern, verwenden Sie die Eigenschaften [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) und [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush).
+Um die Farbe des visuellen Elements von Reveal Focus zu ändern, verwenden Sie die Eigenschaften [FocusVisualPrimaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) und [FocusVisualSecondaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush).
 
 | Eigenschaft | Standardressource | Standardwert der Ressource |
 | ---- | ---- | --- | 
-| [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) | SystemControlRevealFocusVisualBrush  | SystemAccentColor |
-| [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)  | SystemControlFocusVisualSecondaryBrush  | SystemAltMediumColor |
+| [FocusVisualPrimaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) | SystemControlRevealFocusVisualBrush  | SystemAccentColor |
+| [FocusVisualSecondaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)  | SystemControlFocusVisualSecondaryBrush  | SystemAltMediumColor |
 
 (Die Eigenschaft „FocusPrimaryBrush“ wird nur dann standardmäßig als **SystemControlRevealFocusVisualBrush**-Ressourcen verwendet, wenn **FocusVisualKind** auf **Reveal**  festgelegt ist. Andernfalls wird **SystemControlFocusVisualPrimaryBrush** verwendet.)
 
@@ -145,12 +145,12 @@ Um die Farbe aller visuellen Fokuselemente in der gesamten App zu ändern, setze
 </Application.Resources>
 ```
 
-Weitere Informationen zum Ändern der Farbe von visuellen Fokuselementen finden Sie unter [Farbbranding und -anpassung](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#color-branding--customizing).
+Weitere Informationen zum Ändern der Farbe von visuellen Fokuselementen finden Sie unter [Farbbranding und -anpassung](../input/guidelines-for-visualfeedback.md#color-branding--customizing).
 
 
 ## <a name="show-just-the-glow"></a>Nur den Leuchteffekt anzeigen
 
-Wenn Sie nur den Leuchteffekt ohne die primären oder sekundären visuellen Fokuselemente verwenden möchten, legen Sie die Eigenschaft [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) des Steuerelements einfach auf `Transparent` und die Eigenschaft [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness) auf `0` fest. In diesem Fall übernimmt der Leuchteffekt die Farbe des Steuerelementhintergrunds für ein randloses Erscheinungsbild. Sie können die Stärke des Leuchteffekts mithilfe von [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness) anpassen.
+Wenn Sie nur den Leuchteffekt ohne die primären oder sekundären visuellen Fokuselemente verwenden möchten, legen Sie die Eigenschaft [FocusVisualPrimaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) des Steuerelements einfach auf `Transparent` und die Eigenschaft [FocusVisualSecondaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness) auf `0` fest. In diesem Fall übernimmt der Leuchteffekt die Farbe des Steuerelementhintergrunds für ein randloses Erscheinungsbild. Sie können die Stärke des Leuchteffekts mithilfe von [FocusVisualPrimaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness) anpassen.
 
 ```xaml
 
@@ -172,10 +172,10 @@ Reveal Focus ist eine Komponente des Fluent Design-Systems, die Ihrer App Lichte
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Reveal Highlight](https://docs.microsoft.com/windows/uwp/design/style/reveal)
-- [Entwerfen für Xbox und Fernsehgeräte](/windows/uwp/design/devices/designing-for-tv)
-- [Interaktionen mit Gamepad und Fernbedienung](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
+- [Reveal Highlight](./reveal.md)
+- [Entwerfen für Xbox und Fernsehgeräte](../devices/designing-for-tv.md)
+- [Interaktionen mit Gamepad und Fernbedienung](../input/gamepad-and-remote-interactions.md)
 - [Beispiel für visuelle Fokuselemente](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
-- [Kompositionseffekte](https://docs.microsoft.com/windows/uwp/graphics/composition-effects)
+- [Kompositionseffekte](../../composition/composition-effects.md)
 - [Wissenschaft im System: Fluent Design und Tiefe](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [Wissenschaft im System: Fluent Design und Licht](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

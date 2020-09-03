@@ -8,20 +8,20 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 1a2b5722ab836e715bce1b4c94fab97e6a28646e
-ms.sourcegitcommit: cee2060bfc8489236e00e5951751bcc5bd632b0a
+ms.openlocfilehash: 0e8972a71feacd593edf98853ae1dcc0f88002fd
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84614910"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168894"
 ---
 # <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Hosten eines UWP-Standardsteuerelements in einer WPF-App unter Verwendung von XAML Islands
 
 In diesem Artikel werden zwei Möglichkeiten zum Hosten eines UWP-Standardsteuerelements (d. h. eines vom Windows SDK bereitgestellten UWP-Erstanbietersteuerelements) in einer WPF-App mithilfe von [XAML Islands](xaml-islands.md) veranschaulicht:
 
-* Es wird gezeigt, wie du die UWP-Steuerelemente [InkCanvas](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) und [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) unter Verwendung von [umschlossenen Steuerelementen](xaml-islands.md#wrapped-controls) im Windows-Community-Toolkit hostest. Diese Steuerelemente kapseln Schnittstelle und Funktionalität einer kleinen Teilmenge nützlicher UWP-Steuerelemente. Du kannst sie direkt zur Entwurfsoberfläche deines WPF- oder Windows Forms-Projekts hinzufügen und sie dann wie jedes andere WPF- oder Windows Forms-Steuerelement im Designer verwenden.
+* Es wird gezeigt, wie du die UWP-Steuerelemente [InkCanvas](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) und [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar) unter Verwendung von [umschlossenen Steuerelementen](xaml-islands.md#wrapped-controls) im Windows-Community-Toolkit hostest. Diese Steuerelemente kapseln Schnittstelle und Funktionalität einer kleinen Teilmenge nützlicher UWP-Steuerelemente. Du kannst sie direkt zur Entwurfsoberfläche deines WPF- oder Windows Forms-Projekts hinzufügen und sie dann wie jedes andere WPF- oder Windows Forms-Steuerelement im Designer verwenden.
 
-* Außerdem wird gezeigt, wie du ein [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView)-UWP-Steuerelement durch Verwendung des [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelements im Windows-Community-Toolkit hosten kannst. Da nur eine kleine Teilmenge der UWP-Steuerelemente in Form von umschlossenen Steuerelementen verfügbar ist, kannst du [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) verwenden, um jedes andere UWP-Standardsteuerelement zu hosten.
+* Außerdem wird gezeigt, wie du ein [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView)-UWP-Steuerelement durch Verwendung des [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelements im Windows-Community-Toolkit hosten kannst. Da nur eine kleine Teilmenge der UWP-Steuerelemente in Form von umschlossenen Steuerelementen verfügbar ist, kannst du [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) verwenden, um jedes andere UWP-Standardsteuerelement zu hosten.
 
 In diesem Artikel wird gezeigt, wie du UWP-Steuerelemente in einer WPF-App hosten kannst, aber das Vorgehen für eine Windows Forms-App ist ähnlich.
 
@@ -29,7 +29,7 @@ In diesem Artikel wird gezeigt, wie du UWP-Steuerelemente in einer WPF-App hoste
 
 Um ein UWP-Steuerelement in einer WPF-App (oder einer Windows Forms-App) zu hosten, benötigst du die folgenden Komponenten in deiner Projektmappe. Dieser Artikel stellt Anweisungen zum Erstellen jeder dieser Komponenten bereit.
 
-* **Projekt- und Quellcode für deine App**. Die Verwendung des [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelements zum Hosten von UWP-Originalsteuerelementen wird in Apps für die Zielplattformen .NET Framework und .NET Core 3 unterstützt.
+* **Projekt- und Quellcode für deine App**. Die Verwendung des [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelements zum Hosten von UWP-Originalsteuerelementen wird in Apps für die Zielplattformen .NET Framework und .NET Core 3 unterstützt.
 
 * **UWP-App-Projekt mit Definition einer Stammanwendungsklasse, die von XamlApplication abgeleitet ist**. Dein WPF- oder Windows Forms-Projekt muss Zugriff auf eine Instanz der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse haben, die durch das Windows-Community-Toolkit bereitgestellt wird, sodass benutzerdefinierte UWP XAML-Steuerelemente ermittelt und geladen werden können. Die empfohlene Vorgehensweise hierfür besteht darin, dieses Objekt in einem separaten UWP-App-Projekt zu definieren, das nicht Bestandteil der Projektmappe für Ihre WPF- oder Windows Forms-App ist. 
 
@@ -45,7 +45,7 @@ Befolgen Sie vor dem Einstieg diese Anweisungen, um ein WPF-Projekt zu erstellen
 
 1. Erstelle in Visual Studio 2019 ein neues **WPF-App (.NET Framework)** - oder **WPF-App (.NET Core)** -Projekt. Wenn du ein **WPF-App (.NET Core)** -Projekt erstellen möchtest, musst du zunächst die aktuelle Version des [.NET Core 3 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0) installieren.
 
-2. Stelle sicher, dass [Paketverweise](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) aktiviert sind:
+2. Stelle sicher, dass [Paketverweise](/nuget/consume-packages/package-references-in-project-files) aktiviert sind:
 
     1. Klicken Sie in Visual Studio auf **Extras > NuGet-Paket-Manager > Paket-Manager-Einstellungen**.
     2. Stellen Sie sicher, dass die Einstellung **Standardformat für Paketverwaltung** auf **PackageReference** festgelegt ist.
@@ -54,7 +54,7 @@ Befolgen Sie vor dem Einstieg diese Anweisungen, um ein WPF-Projekt zu erstellen
 
 4. Stelle sicher, dass im Fenster **NuGet-Paket-Manager** die Einstellung **Vorabversion einbeziehen** ausgewählt ist.
 
-5. Wähle die Registerkarte **Durchsuchen** aus, suche nach dem Paket [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) (Version v6.0.0 oder höher), und installiere das Paket. Dieses Paket enthält alle benötigten Elemente zur Verwendung der umschlossenen UWP-Steuerelemente für WPF (einschließlich der Steuerelemente [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas), [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) und [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)).
+5. Wähle die Registerkarte **Durchsuchen** aus, suche nach dem Paket [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) (Version v6.0.0 oder höher), und installiere das Paket. Dieses Paket enthält alle benötigten Elemente zur Verwendung der umschlossenen UWP-Steuerelemente für WPF (einschließlich der Steuerelemente [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas), [InkToolbar](/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) und [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)).
     > [!NOTE]
     > Windows Forms-Apps müssen das Paket [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) verwenden (Version v6.0.0 oder höher).
 
@@ -67,7 +67,7 @@ Befolgen Sie vor dem Einstieg diese Anweisungen, um ein WPF-Projekt zu erstellen
 
 ## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>Definieren einer XamlApplication-Klasse in einem UWP-App-Projekt
 
-Als Nächstes fügen Sie Ihrer Projektmappe ein UWP-App-Projekt hinzu und überarbeiten die `App`-Standardklasse in diesem Projekt, um sie von der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse abzuleiten, die im Windows-Community-Toolkit bereitgestellt wird. Diese Klasse unterstützt die [IXamlMetadaraProvider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider)-Schnittstelle, mit der deine App Metadaten für benutzerdefinierte UWP-XAML-Steuerelemente in Assemblys im aktuellen Verzeichnis der Anwendung zur Laufzeit ermitteln und laden kann. Diese Klasse initialisiert außerdem das UWP-XAML-Framework für den aktuellen Thread.
+Als Nächstes fügen Sie Ihrer Projektmappe ein UWP-App-Projekt hinzu und überarbeiten die `App`-Standardklasse in diesem Projekt, um sie von der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse abzuleiten, die im Windows-Community-Toolkit bereitgestellt wird. Diese Klasse unterstützt die [IXamlMetadaraProvider](/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider)-Schnittstelle, mit der deine App Metadaten für benutzerdefinierte UWP-XAML-Steuerelemente in Assemblys im aktuellen Verzeichnis der Anwendung zur Laufzeit ermitteln und laden kann. Diese Klasse initialisiert außerdem das UWP-XAML-Framework für den aktuellen Thread.
 
 > [!NOTE]
 > Wenngleich dieser Schritt zum Hosten eines UWP-Erstanbietersteuerelements nicht erforderlich ist, benötigt deine App das `XamlApplication`-Objekt, um die ganze Bandbreite an XAML Islands-Szenarien zu unterstützen, einschließlich des Hostings benutzerdefinierter UWP-Steuerelemente. Deshalb wird empfohlen, dass du immer ein `XamlApplication`-Objekt in einer Projektmappe definierst, in der du XAML Islands verwendest.
@@ -143,11 +143,11 @@ Als Nächstes fügst du Code zum Einstiegspunkt für deine WPF-App hinzu, um ein
 
 ## <a name="host-an-inkcanvas-and-inktoolbar-by-using-wrapped-controls"></a>Hosten von InkCanvas und InkToolbar mithilfe umschlossener Steuerelemente
 
-Nachdem du dein Projekt zur Verwendung von UWP XAML Islands konfiguriert hast, kannst du jetzt die umschlossenen UWP-Steuerelemente [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) und [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) zur App hinzufügen.
+Nachdem du dein Projekt zur Verwendung von UWP XAML Islands konfiguriert hast, kannst du jetzt die umschlossenen UWP-Steuerelemente [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) und [InkToolbar](/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) zur App hinzufügen.
 
 1. Öffne im **Projektmappen-Explorer** die Datei **MainWindow.xaml**.
 
-2. Füge dem **Window**-Element im oberen Bereich der XAML-Datei das folgende Attribut hinzu. So wird auf den XAML-Namespace für die umschlossenen UWP-Steuerelemente [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) und [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) verwiesen.
+2. Füge dem **Window**-Element im oberen Bereich der XAML-Datei das folgende Attribut hinzu. So wird auf den XAML-Namespace für die umschlossenen UWP-Steuerelemente [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) und [InkToolbar](/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) verwiesen.
 
     ```xml
     xmlns:Controls="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls"
@@ -167,7 +167,7 @@ Nachdem du dein Projekt zur Verwendung von UWP XAML Islands konfiguriert hast, k
             Title="MainWindow" Height="800" Width="800">
     ```
 
-3. Ersetze in der Datei **MainWindow.xaml** das vorhandene `<Grid>`-Element durch den folgenden XAML-Ausschnitt. Hiermit wird ein [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)- und ein [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar)-Steuerelement (mit dem **Controls**-Schlüsselwort als Präfix, das zuvor als Namespace definiert wurde) zu `<Grid>` hinzugefügt.
+3. Ersetze in der Datei **MainWindow.xaml** das vorhandene `<Grid>`-Element durch den folgenden XAML-Ausschnitt. Hiermit wird ein [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)- und ein [InkToolbar](/windows/communitytoolkit/controls/wpf-winforms/inktoolbar)-Steuerelement (mit dem **Controls**-Schlüsselwort als Präfix, das zuvor als Namespace definiert wurde) zu `<Grid>` hinzugefügt.
 
     ```xml
     <Grid Margin="10,50,10,10">
@@ -209,14 +209,14 @@ Nachdem du dein Projekt zur Verwendung von UWP XAML Islands konfiguriert hast, k
 
 ## <a name="host-a-calendarview-by-using-the-host-control"></a>Hosten einer CalendarView durch Verwendung des Hoststeuerelements
 
-Nachdem du die umschlossenen UWP-Steuerelemente [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) und [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) zur App hinzugefügt hast, kannst du jetzt das Steuerelement [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) verwenden, um der App eine [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView) hinzuzufügen.
+Nachdem du die umschlossenen UWP-Steuerelemente [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) und [InkToolbar](/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) zur App hinzugefügt hast, kannst du jetzt das Steuerelement [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) verwenden, um der App eine [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView) hinzuzufügen.
 
 > [!NOTE]
-> Das Steuerelement [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) wird vom Paket [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost) bereitgestellt. Dieses Paket ist im [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)-Paket enthalten, das du in einem vorherigen Schritt installiert hast.
+> Das Steuerelement [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) wird vom Paket [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost) bereitgestellt. Dieses Paket ist im [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)-Paket enthalten, das du in einem vorherigen Schritt installiert hast.
 
 1. Öffne im **Projektmappen-Explorer** die Datei **MainWindow.xaml**.
 
-2. Füge dem **Window**-Element im oberen Bereich der XAML-Datei das folgende Attribut hinzu. Dieses Attribut verweist auf den XAML-Namespace für das [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelement.
+2. Füge dem **Window**-Element im oberen Bereich der XAML-Datei das folgende Attribut hinzu. Dieses Attribut verweist auf den XAML-Namespace für das [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelement.
 
     ```xml
     xmlns:xamlhost="clr-namespace:Microsoft.Toolkit.Wpf.UI.XamlHost;assembly=Microsoft.Toolkit.Wpf.UI.XamlHost"
@@ -237,7 +237,7 @@ Nachdem du die umschlossenen UWP-Steuerelemente [InkCanvas](https://docs.microso
             Title="MainWindow" Height="800" Width="800">
     ```
 
-4. Ersetze in der Datei **MainWindow.xaml** das vorhandene `<Grid>`-Element durch den folgenden XAML-Ausschnitt. Hierdurch wird dem Raster eine Zeile hinzugefügt und das [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Objekt in die letzte Zeile eingefügt. Zum Hosten eines UWP-Steuerelements [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView) legt dieser XAML-Ausschnitt die `InitialTypeName`-Eigenschaft auf den vollqualifizierten Namen des Steuerelements fest. Darüber hinaus wird auf diese Weise ein Ereignishandler für das `ChildChanged`-Ereignis definiert, das ausgelöst wird, wenn das gehostete Steuerelement gerendert wurde.
+4. Ersetze in der Datei **MainWindow.xaml** das vorhandene `<Grid>`-Element durch den folgenden XAML-Ausschnitt. Hierdurch wird dem Raster eine Zeile hinzugefügt und das [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Objekt in die letzte Zeile eingefügt. Zum Hosten eines UWP-Steuerelements [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView) legt dieser XAML-Ausschnitt die `InitialTypeName`-Eigenschaft auf den vollqualifizierten Namen des Steuerelements fest. Darüber hinaus wird auf diese Weise ein Ereignishandler für das `ChildChanged`-Ereignis definiert, das ausgelöst wird, wenn das gehostete Steuerelement gerendert wurde.
 
     ```xml
     <Grid Margin="10,50,10,10">
@@ -291,14 +291,14 @@ Nachdem du die umschlossenen UWP-Steuerelemente [InkCanvas](https://docs.microso
 
 ## <a name="package-the-app"></a>Packen der App
 
-Sie können die WPF-App optional in einem [MSIX-Paket](https://docs.microsoft.com/windows/msix) für die Bereitstellung verpacken. MSIX ist eine moderne App-Pakettechnologie für Windows, die auf einer Kombination aus MSI-, APPX-, App-V- und ClickOnce-Installationstechnologien basiert.
+Sie können die WPF-App optional in einem [MSIX-Paket](/windows/msix) für die Bereitstellung verpacken. MSIX ist eine moderne App-Pakettechnologie für Windows, die auf einer Kombination aus MSI-, APPX-, App-V- und ClickOnce-Installationstechnologien basiert.
 
-Die folgenden Anweisungen veranschaulichen, wie Sie alle Komponenten in der Projektmappe in ein MSIX-Paket einschließen können, indem Sie die Option [Paketerstellungsprojekt für Windows-Anwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) in Visual Studio 2019 verwenden. Diese Schritte sind nur erforderlich, wenn du die WPF-App in einem MSIX-Paket packen möchtest.
+Die folgenden Anweisungen veranschaulichen, wie Sie alle Komponenten in der Projektmappe in ein MSIX-Paket einschließen können, indem Sie die Option [Paketerstellungsprojekt für Windows-Anwendungen](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) in Visual Studio 2019 verwenden. Diese Schritte sind nur erforderlich, wenn du die WPF-App in einem MSIX-Paket packen möchtest.
 
 > [!NOTE]
-> Wenn du deine Anwendung nicht in einem [MSIX-Paket](https://docs.microsoft.com/windows/msix) für die Bereitstellung packst, muss auf Computern zur Ausführung deiner App die [Visual C++-Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installiert sein.
+> Wenn du deine Anwendung nicht in einem [MSIX-Paket](/windows/msix) für die Bereitstellung packst, muss auf Computern zur Ausführung deiner App die [Visual C++-Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installiert sein.
 
-1. Fügen Sie Ihrer Projektmappe ein [Paketerstellungsprojekt für Windows-Anwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) hinzu. Wählen Sie beim Erstellen des Projekts **Windows 10, Version 1903 (10.0; Build 18362)** sowohl für **Zielversion** als auch für **Mindestversion** aus.
+1. Fügen Sie Ihrer Projektmappe ein [Paketerstellungsprojekt für Windows-Anwendungen](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) hinzu. Wählen Sie beim Erstellen des Projekts **Windows 10, Version 1903 (10.0; Build 18362)** sowohl für **Zielversion** als auch für **Mindestversion** aus.
 
 2. Klicken Sie im Paketprojekt mit der rechten Maustaste auf den Knoten **Anwendungen**, und wählen Sie **Verweis hinzufügen** aus. Wähle in der Liste der Projekte das WPF-Projekt in deiner Projektmappe aus, und klicke auf **OK**.
 
@@ -316,6 +316,6 @@ Die folgenden Anweisungen veranschaulichen, wie Sie alle Komponenten in der Proj
 
 * [Hosten von UWP-XAML-Steuerelementen in Desktop-Apps (XAML Islands)](xaml-islands.md)
 * [XAML Islands-Codebeispiele](https://github.com/microsoft/Xaml-Islands-Samples)
-* [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)
-* [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar)
-* [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)
+* [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)
+* [InkToolbar](/windows/communitytoolkit/controls/wpf-winforms/inktoolbar)
+* [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)

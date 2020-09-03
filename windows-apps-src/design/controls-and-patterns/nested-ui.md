@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a8b53eef3538ca637fa5b351b74125eebdfe2b3
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: e2d727c9b5e4c7e2912f0bcae8848149c8073f3b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942840"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169744"
 ---
 # <a name="nested-ui-in-list-items"></a>Geschachtelte UI bei Listenelementen
 
@@ -26,9 +26,9 @@ Eine geschachtelte UI ist eine Benutzeroberfläche (User Interface, UI) mit gesc
 
 Sie können dem Benutzer mit geschachtelten UIs weitere Optionen zur Verfügung stellen, mit denen sie wichtige Aktionen schneller ausführen können. Bedenken Sie jedoch, dass die Benutzeroberfläche komplizierter wird, je mehr Aktionen Sie anbieten. Wenn Sie diese Art von Benutzeroberfläche verwenden, sollten Sie besonders vorsichtig vorgehen. Dieser Artikel enthält Richtlinien, um die beste Vorgehensweise für Ihre UI zu ermitteln.
 
-> **Wichtige APIs:** [ListView-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [GridView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)
+> **Wichtige APIs:** [ListView-Klasse](/uwp/api/windows.ui.xaml.controls.listview), [GridView class](/uwp/api/windows.ui.xaml.controls.gridview)
 
-In diesem Artikel erläutern wir die Erstellung von geschachtelten UIs in [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)- und in [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)-Elementen. In diesem Abschnitt werden andere Formen von geschachtelten UIs nicht berücksichtigt, aber die hier gegebenen Konzepte lassen sich auf andere UIs übertragen. Bevor Sie beginnen, sollten Sie mit der allgemeinen Richtlinie für die Verwendung von ListView- und GridView-Steuerelementen in der Benutzeroberfläche vertraut sein, die in den Artikeln [Listen](lists.md) und [Listenansicht und Rasteransicht](listview-and-gridview.md) beschrieben wird.
+In diesem Artikel erläutern wir die Erstellung von geschachtelten UIs in [ListView](/uwp/api/windows.ui.xaml.controls.listview)- und in [GridView](/uwp/api/windows.ui.xaml.controls.gridview)-Elementen. In diesem Abschnitt werden andere Formen von geschachtelten UIs nicht berücksichtigt, aber die hier gegebenen Konzepte lassen sich auf andere UIs übertragen. Bevor Sie beginnen, sollten Sie mit der allgemeinen Richtlinie für die Verwendung von ListView- und GridView-Steuerelementen in der Benutzeroberfläche vertraut sein, die in den Artikeln [Listen](lists.md) und [Listenansicht und Rasteransicht](listview-and-gridview.md) beschrieben wird.
 
 In diesem Artikel verwenden wir die Begriffe *Liste*, *Listenelement* und *geschachtelte UI* entsprechend den folgenden Definitionen:
 - *Liste* bezeichnet eine Sammlung von Elementen in einer Listenansicht oder in einer Rasteransicht.
@@ -37,7 +37,7 @@ In diesem Artikel verwenden wir die Begriffe *Liste*, *Listenelement* und *gesch
 
 ![Komponenten von geschachtelten UIs](images/nested-ui-example-1.png)
 
-> HINWEIS&nbsp;&nbsp; ListView und GridView sind beide von der Klasse [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) abgeleitet, sodass sie dieselbe Funktionalität haben, sie zeigen die Daten jedoch unterschiedlich an. In diesem Artikel beziehen sich Aussagen zu Listen sowohl auf die ListView- als auch die GridView-Steuerelemente, wenn nicht anders angegeben.
+> HINWEIS&nbsp;&nbsp; ListView und GridView sind beide von der Klasse [ListViewBase](/uwp/api/windows.ui.xaml.controls.listviewbase) abgeleitet, sodass sie dieselbe Funktionalität haben, sie zeigen die Daten jedoch unterschiedlich an. In diesem Artikel beziehen sich Aussagen zu Listen sowohl auf die ListView- als auch die GridView-Steuerelemente, wenn nicht anders angegeben.
 
 ## <a name="primary-and-secondary-actions"></a>Primäre und sekundäre Aktionen
 
@@ -137,7 +137,7 @@ Bei Eingabe über eine Tastatur sollte der Benutzer wie folgt geleitet werden:
 - Von einem UI-Element links neben dem Listenelement aus übergibt die Tabulatortaste den Fokus an **A**.
 - Von UI-Element rechts neben dem Listenelement aus übergibt die Tastenkombination Umschalt+Tabulatortaste den Fokus an **C**.
 
-Um diese UI so zur Verfügung zu stellen, legen Sie [IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) für Ihre Liste auf **true** fest. [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) kann ein beliebiger Wert sein.
+Um diese UI so zur Verfügung zu stellen, legen Sie [IsItemClickEnabled](/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) für Ihre Liste auf **true** fest. [SelectionMode](/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) kann ein beliebiger Wert sein.
 
 Der Code zur Implementierung dieses Verhaltens finden Sie im Abschnitt [Beispiel](#example) dieses Artikels.
 
@@ -151,9 +151,9 @@ Diese Art von UI ist sehr viel komplizierter als die vorherigen Beispiele, es si
 
 
 Um diese UI so zur Verfügung zu stellen, legen Sie die folgenden Eigenschaften in der Liste fest:
-- [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) auf **None**.
-- [IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) auf **false**.
-- [IsFocusEngagementEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isfocusengagementenabled) auf **true**.
+- [SelectionMode](/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) auf **None**.
+- [IsItemClickEnabled](/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) auf **false**.
+- [IsFocusEngagementEnabled](/uwp/api/windows.ui.xaml.controls.control.isfocusengagementenabled) auf **true**.
 
 ```xaml
 <ListView SelectionMode="None" IsItemClickEnabled="False" >

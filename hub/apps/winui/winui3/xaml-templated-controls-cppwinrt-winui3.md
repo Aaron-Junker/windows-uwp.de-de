@@ -8,18 +8,18 @@ ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 7e2d69390ac9a0f564c99a94151dd967759477a3
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: e4cec3a0493bdea1c4e232e57cdd669ba19bc5ae
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493946"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168754"
 ---
 # <a name="templated-xaml-controls-for-uwp-and-winui-3-apps-with-cwinrt"></a>XAML-Steuerelemente in Vorlagen für UWP- und WinUI 3-Apps mit C++/WinRT
 
 In diesem Artikel werden Sie schrittweise durch das Erstellen eines XAML-Steuerelements mit Vorlagen für WinUI 3 mit C++/WinRT geführt. Steuerelemente mit Vorlagen erben von der **Microsoft.UI.Xaml.Controls.Control**-Klasse und besitzen visuelle Struktur sowie visuelles Verhalten, die mithilfe von XAML-Steuerelementvorlagen angepasst werden können. Dieser Artikel beschreibt dasselbe Szenario wie der Artikel [Benutzerdefinierte XAML-Steuerelemente (mit Vorlagen) mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl), wurde hinsichtlich der Verwendung von WinUI 3 angepasst.
 
-Bevor Sie die Schritte in diesem Artikel ausführen, sollten Sie sicherstellen, dass Ihre Entwicklungsumgebung für die Erstellung von WinUI 3-Apps konfiguriert ist. Informationen zum Setup finden Sie unter [Erste Schritte mit WinUI 3 für Desktop-Apps](/windows/apps/winui/winui3/get-started-winui3-for-desktop).
+Bevor Sie die Schritte in diesem Artikel ausführen, sollten Sie sicherstellen, dass Ihre Entwicklungsumgebung für die Erstellung von WinUI 3-Apps konfiguriert ist. Informationen zum Setup finden Sie unter [Erste Schritte mit WinUI 3 für Desktop-Apps](./get-started-winui3-for-desktop.md).
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>Erstellen einer leeren App (BgLabelControlApp)
 

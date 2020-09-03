@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: b4ce91e32b14bdf81b40b24e810e0bd86bcaa99b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 4ee8eb8ea34205f2e597bf41da61f5ab63714566
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67321087"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162834"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>Erstellen eines 3D-JavaScript-Spiels mit „three.js“
 
@@ -442,7 +442,7 @@ scene.add(controls.getObject());
 
 Die Kamera ist jetzt zwar verbunden, wir müssen jedoch noch die Interaktion mit der Maus und dem Controller ermöglichen, damit wir uns umsehen können. 
 
-Hier kommt die [Pointer Lock-API](https://docs.microsoft.com/microsoft-edge/dev-guide/dom/pointer-lock) ins Spiel: Mit ihr lassen sich Mausbewegungen mit unserer Kamera verknüpfen. Die Pointer Lock-API sorgt auch dafür, dass der Mauszeiger ausgeblendet wird, um die Immersion zu verbessern. Nach dem Drücken von ESC wird die Verbindung zwischen Maus und Kamera getrennt, und der Mauszeiger wird wieder angezeigt. Dazu fügen wir die Funktionen `getPointerLock()` und `lockChange()` hinzu.
+Hier kommt die [Pointer Lock-API](/microsoft-edge/dev-guide/dom/pointer-lock) ins Spiel: Mit ihr lassen sich Mausbewegungen mit unserer Kamera verknüpfen. Die Pointer Lock-API sorgt auch dafür, dass der Mauszeiger ausgeblendet wird, um die Immersion zu verbessern. Nach dem Drücken von ESC wird die Verbindung zwischen Maus und Kamera getrennt, und der Mauszeiger wird wieder angezeigt. Dazu fügen wir die Funktionen `getPointerLock()` und `lockChange()` hinzu.
 
 Die Funktion `getPointerLock()` lauscht auf einen Mausklick. Nach dem Klick versucht unser gerendertes Spiel (im Element `container`), die Kontrolle über die Maus zu erlangen. Wir fügen auch einen Ereignislistener hinzu, um zu erkennen, wenn der Spieler die Sperre aktiviert oder deaktiviert, wodurch wiederum `lockChange()` aufgerufen wird. 
 
@@ -1084,7 +1084,6 @@ Navigiere wieder zum Anfang der Seite, und sieh dir den [finalen CodePen](#intro
 Nachdem du nun über eine UWP-App verfügst, kannst du sie im Microsoft Store veröffentlichen (vorausgesetzt, du hast sie vorher verbessert). Dieser Prozess umfasst mehrere Schritte.
 
 1.  Du musst als Windows-Entwickler [registriert](https://developer.microsoft.com/store/register) sein.
-2.  Du musst die [Prüfliste für die App-Übermittlung](https://docs.microsoft.com/windows/uwp/publish/app-submissions) verwenden.
-3.  Die App muss zur [Zertifizierung](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process) eingereicht werden.
-Weitere Informationen findest du unter [Veröffentlichen von Windows-Apps und -Spielen](https://docs.microsoft.com/windows/uwp/publish/).
-
+2.  Du musst die [Prüfliste für die App-Übermittlung](../publish/app-submissions.md) verwenden.
+3.  Die App muss zur [Zertifizierung](../publish/the-app-certification-process.md) eingereicht werden.
+Weitere Informationen findest du unter [Veröffentlichen von Windows-Apps und -Spielen](../publish/index.md).

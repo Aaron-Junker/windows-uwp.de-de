@@ -6,16 +6,16 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: Windows 10, UWP, App-Zertifizierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 37c382fb81a4527b730840142643ff72b9020127
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: bdc9c3ee51523120f1e50ba9d2a2aba2b828be48
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730296"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169874"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Tests für Windows Desktop Bridge-Apps
 
-[Desktop-Brücke-Apps](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) sind Windows-Desktopanwendungen, die mit der [Desktop-Brücke](https://developer.microsoft.com/windows/bridges/desktop) in UWP-Apps (Universelle Windows-Plattform) konvertiert wurden. Nach der Konvertierung wird die Windows-Desktopanwendung gepackt, gewartet und als UWP-App-Paket (APPX- oder APPXBUNDLE-Datei) für Windows 10 Desktop bereitgestellt.
+[Desktop-Brücke-Apps](/windows/msix/desktop/desktop-to-uwp-root) sind Windows-Desktopanwendungen, die mit der [Desktop-Brücke](https://developer.microsoft.com/windows/bridges/desktop) in UWP-Apps (Universelle Windows-Plattform) konvertiert wurden. Nach der Konvertierung wird die Windows-Desktopanwendung gepackt, gewartet und als UWP-App-Paket (APPX- oder APPXBUNDLE-Datei) für Windows 10 Desktop bereitgestellt.
 
 ## <a name="required-versus-optional-tests"></a>Obligatorische im Vergleich zu optionalen Tests
 Optionale Tests für Windows Desktop-Brücke-Apps dienen nur zu Informationszwecken und nicht zur Bewertung Ihrer App während des Aufnahmeverfahrens für den Microsoft Store. Wir empfehlen das Prüfen dieser Testergebnisse, um Apps mit höherer Qualität zu erstellen. Die gesamten Kriterien für die Aufnahme in den Microsoft Store werden von den obligatorischen Tests und nicht von den optionalen Tests bestimmt.
@@ -30,7 +30,7 @@ Dieser Test stellt sicher, dass alle portierbaren ausführbaren Dateien (PE-Date
 Der Test überprüft alle portierbaren ausführbaren Dateien im Paket und die Header auf eine Signatur. Alle PE-Dateien sollten digital signiert sein. Eine Warnung wird generiert, wenn PE-Dateien nicht signiert sind.
  
 **Korrekturmaßnahmen**  
-Digital signierte Dateien werden immer empfohlen. Weitere Informationen findest du unter [Einführung in das Codesignieren](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85)).
+Digital signierte Dateien werden immer empfohlen. Weitere Informationen findest du unter [Einführung in das Codesignieren](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85)).
 
 ### <a name="2-file-association-verbs"></a>2. Dateizuordnungsverben 
 **Hintergrund**  
@@ -40,7 +40,7 @@ Dieser Test überprüft die Registrierung des Pakets auf registrierte Dateizuord
 Konvertierte Desktopanwendungen können um eine große Palette von Windows-Runtime-APIs erweitert werden. Dieser Test überprüft, dass die UWP-Binärdateien in der App keine Nicht-Windows-Runtime-APIs aufrufen. In UWP-Binärdateien ist das Flag **AppContainer** festgelegt.
 
 **Korrekturmaßnahmen**  
-Siehe [Desktop-zu-UWP-Brücke: App-Erweiterungen](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions) findest du eine Erläuterung dieser Erweiterungen und ihrer ordnungsgemäßen Verwendung. 
+Siehe [Desktop-zu-UWP-Brücke: App-Erweiterungen](/windows/apps/desktop/modernize/desktop-to-uwp-extensions) findest du eine Erläuterung dieser Erweiterungen und ihrer ordnungsgemäßen Verwendung. 
 
 ### <a name="3-debug-configuration-test"></a>3. Test der Debugkonfiguration
 Dieser Test stellt sicher, dass es sich beim MSIX- oder APPX-Paket nicht um einen Debugbuild handelt.
@@ -118,14 +118,14 @@ Das Bild "{Bildname}" fehlt im Paket.  | Ein erforderliches Bild fehlt. In der t
 Das Bild "{Bildname}" ist keine gültige Bilddatei.  | Stellen Sie sicher, dass alle Bilder der App den Einschränkungen für Dateiformattypen entsprechen. In der tatsächlichen Meldung enthält „{image name}“ den Namen des ungültigen Bilds. 
 Das Bild „BadgeLogo“ enthält einen ungültigen ABGR-Wert {value} an der Position (x, y). Das Pixel muss weiß (##FFFFFF) oder transparent (00######) sein.  | Das Signallogo ist ein Bild, das neben der Signalbenachrichtigung angezeigt wird, um die App auf dem Sperrbildschirm zu identifizieren. Dieses Bild muss einfarbig sein (es darf nur weiße und transparente Pixel enthalten). In der tatsächlichen Meldung enthält {Wert} den Namen des ungültigen Farbwerts im Bild. 
 Das Bild „BadgeLogo“ enthält einen ABGR-Wert {Wert} an der Position (x, y), der für ein Bild mit hohem Kontrast (Weiß) ungültig ist. Das Pixel muss (##2A2A2A) oder dunkler oder transparent (00######) sein.  | Das Signallogo ist ein Bild, das neben der Signalbenachrichtigung angezeigt wird, um die App auf dem Sperrbildschirm zu identifizieren. Da das Signallogo bei hohem Kontrast (weiß) auf einem weißen Hintergrund angezeigt wird, muss es sich um eine dunkle Version des normalen Signallogos handeln. Bei hohem Kontrast (Weiß) darf das Signallogo nur Pixel enthalten, die dunkler als (##2A2A2A) oder transparent sind. In der tatsächlichen Meldung enthält {Wert} den Namen des ungültigen Farbwerts im Bild. 
-Für das Bild muss mindestens eine Variante ohne TargetSize-Qualifizierer definiert sein. Sie müssen einen Scale-Qualifizierer definieren oder „Scale” und „TargetSize” nicht angeben. In diesem Fall wird „Scale-100” verwendet.  | Weitere Informationen findest du in den Anleitungen unter [Reaktionsfähiges Design](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design) und [App-Ressourcen](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data). 
+Für das Bild muss mindestens eine Variante ohne TargetSize-Qualifizierer definiert sein. Sie müssen einen Scale-Qualifizierer definieren oder „Scale” und „TargetSize” nicht angeben. In diesem Fall wird „Scale-100” verwendet.  | Weitere Informationen findest du in den Anleitungen unter [Reaktionsfähiges Design](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) und [App-Ressourcen](../design/app-settings/store-and-retrieve-app-data.md). 
 Das Paket enthält keine Datei „resources.pri”.  | Wenn das App-Manifest lokalisierbaren Inhalt enthält, müssen Sie sicherstellen, dass das Paket der App eine gültige Datei „resources.pri“ enthält. 
 Die Datei „resources.pri“ muss eine Ressourcenzuordnung enthalten, bei der der Name dem Paketnamen „{vollständiger Paketname}“ entspricht.  | Dieser Fehler wird angezeigt, wenn das Manifest geändert wird und der Name der Ressourcenzuordnung in „resources.pri“ dem Paketnamen im Manifest nicht mehr entspricht. In der tatsächlichen Meldung enthält „{vollständiger Paketname}“ den Paketnamen, den „resources.pri“ enthalten muss. Um diesen Fehler zu beheben, musst du die Datei „resources.pri“ neu erstellen. Am besten erstellst du dazu das App-Paket neu. 
 Für die Datei „resources.pri“ darf „Automatisch zusammenführen“ nicht aktiviert sein.  | „MakePRI.exe“ unterstützt eine Option mit dem Namen AutoMerge. Standardmäßig ist AutoMerge deaktiviert. Falls aktiviert, führt AutoMerge die App-Sprachpaketressourcen zur Laufzeit in einer einzelnen Datei (resources.pri) zusammen. Für Apps, die du über den Microsoft Store vertreiben möchtest, wird dies nicht empfohlen. Die Datei „resources.pri“ einer über den Microsoft Store vertriebenen App muss sich im Stammverzeichnis des App-Pakets befinden und alle von der App unterstützten Sprachverweise enthalten. 
-Die Zeichenfolge „{string}“ entspricht nicht der Längenbeschränkung von maximal {number} Zeichen.  | Weitere Informationen finden Sie unter [App-Paketanforderungen](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements). In der tatsächlichen Meldung wird „{string}“ durch die Zeichenfolge mit dem Fehler ersetzt, und {number} enthält die maximale Länge. 
+Die Zeichenfolge „{string}“ entspricht nicht der Längenbeschränkung von maximal {number} Zeichen.  | Weitere Informationen finden Sie unter [App-Paketanforderungen](../publish/app-package-requirements.md). In der tatsächlichen Meldung wird „{string}“ durch die Zeichenfolge mit dem Fehler ersetzt, und {number} enthält die maximale Länge. 
 Die Zeichenfolge „{string}“ darf keine führenden/nachgestellten Leerzeichen enthalten.  | Das Schema für die Elemente im App-Manifest lässt führende oder nachgestellte Leerzeichen nicht zu. In der tatsächlichen Meldung wird „{string}“ durch die Zeichenfolge mit dem Fehler ersetzt. Stellen Sie sicher, dass keiner der lokalisierten Werte der Manifestfelder in „resources.pri“ führende oder nachgestellte Leerzeichen enthält. 
-Die Zeichenfolge darf nicht leer sein (Länge größer 0 (null)).  | Weitere Informationen finden Sie unter [App-Paketanforderungen](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements). 
-In der Datei „resources.pri” ist keine Standardressource angegeben.  | Weitere Informationen findest du in der Anleitung unter [App-Ressourcen](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data). In der Standardbuildkonfiguration nimmt Visual Studio nur Bildressourcen mit der Skalierung 200 % in das App-Paket auf, wenn ein Bündel generiert wird, andere Ressourcen werden im Ressourcenpaket abgelegt. Stelle sicher, dass du entweder Bildressourcen mit der Skalierung 200 % einschliest oder dein Projekt für die Aufnahme der vorhandenen Ressourcen konfigurierst. 
+Die Zeichenfolge darf nicht leer sein (Länge größer 0 (null)).  | Weitere Informationen finden Sie unter [App-Paketanforderungen](../publish/app-package-requirements.md). 
+In der Datei „resources.pri” ist keine Standardressource angegeben.  | Weitere Informationen findest du in der Anleitung unter [App-Ressourcen](../design/app-settings/store-and-retrieve-app-data.md). In der Standardbuildkonfiguration nimmt Visual Studio nur Bildressourcen mit der Skalierung 200 % in das App-Paket auf, wenn ein Bündel generiert wird, andere Ressourcen werden im Ressourcenpaket abgelegt. Stelle sicher, dass du entweder Bildressourcen mit der Skalierung 200 % einschliest oder dein Projekt für die Aufnahme der vorhandenen Ressourcen konfigurierst. 
 In der Datei „resources.pri“ ist kein Ressourcenwert angegeben.  | Stellen Sie sicher, dass für das App-Manifest gültige Ressourcen in „resources.pri“ definiert sind. 
 Die Größe der Bilddatei {Dateiname} muss unter 204800 Bytes liegen.  | Verringern Sie die Größe der angegebenen Bilder. 
 Die Datei {Dateiname} darf keinen Abschnitt mit umgekehrter Zuordnung enthalten.  | Die umgekehrte Zuordnung wird zwar während des Debuggens mit F5 in Visual Studio beim Aufrufen von „makepri.exe“ generiert, sie kann jedoch entfernt werden, indem „makepri.exe“ beim Generieren einer PRI-Datei ohne den Parameter „/m“ ausgeführt wird. 
@@ -150,16 +150,16 @@ Ersetzen Sie Standardbilder durch eigene Bilder, die über Aussagekraft für Ihr
 Apps müssen ein korrekt formatiertes App-Manifest besitzen.
 
 **Testdetails**  
-Überprüft das App-Manifest, um sicherzustellen, dass der Inhalt der Beschreibung in den [App-Paketanforderungen](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements) entspricht. Die folgenden Prüfungen werden in diesem Test ausgeführt:
+Überprüft das App-Manifest, um sicherzustellen, dass der Inhalt der Beschreibung in den [App-Paketanforderungen](../publish/app-package-requirements.md) entspricht. Die folgenden Prüfungen werden in diesem Test ausgeführt:
 * **Dateierweiterungen und Protokolle**  
 Deine App kann die Dateitypen deklarieren, denen sie zugeordnet werden kann. Eine Deklaration einer großen Anzahl ungewöhnlicher Dateitypen sorgt für eine schlechtere Benutzererfahrung. Mit diesem Test wird die Anzahl von Dateierweiterungen beschränkt, die einer App zugeordnet werden können.
 * **Framework-Abhängigkeitsregel**  
 Mit diesem Test wird die Anforderung erzwungen, dass Apps geeignete Abhängigkeiten von der UWP deklarieren. Für den Test tritt ein Fehler auf, wenn eine unzulässige Abhängigkeit besteht. Bei einem Konflikt zwischen der Betriebssystemversion, auf die die App abzielt, und den eingerichteten Frameworkabhängigkeiten schlägt der Test fehl. Der Test schlägt ebenfalls fehl, wenn sich die App auf eine „Vorschauversion“ der Framework-DLLs bezieht.
 * **Überprüfung der prozessübergreifenden Kommunikation (Inter-process Communication, IPC)**  
-Dieser Test setzt die Anforderung durch, dass Desktop-Brücke-Apps außerhalb des App-Containers nicht mit Desktopkomponenten kommunizieren. Die prozessübergreifende Kommunikation ist nur für quergeladene Apps vorgesehen. Apps, die für [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) den Namen `DesktopApplicationPath` angeben, bestehen diesen Test nicht.  
+Dieser Test setzt die Anforderung durch, dass Desktop-Brücke-Apps außerhalb des App-Containers nicht mit Desktopkomponenten kommunizieren. Die prozessübergreifende Kommunikation ist nur für quergeladene Apps vorgesehen. Apps, die für [**ActivatableClassAttribute**](/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) den Namen `DesktopApplicationPath` angeben, bestehen diesen Test nicht.  
 
 **Korrekturmaßnahme**  
-Gleichen Sie das App-Manifest mit den [App-Paketanforderungen](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements) ab.
+Gleichen Sie das App-Manifest mit den [App-Paketanforderungen](../publish/app-package-requirements.md) ab.
 
 
 #### <a name="32-application-count"></a>3.2 Anzahl von Anwendungen
@@ -217,10 +217,10 @@ Dieser Test überprüft alle UWP-Komponenten in der App:
 Dies kann korrigiert werden, indem sichergestellt wird, dass die App als Releasebuild und nicht als ein Debugbuild kompiliert wurde. 
 
 > [!NOTE]
-> Der Debugbuild einer App besteht diesen Test nicht, auch wenn die App nur [APIs für UWP-Apps](https://docs.microsoft.com/uwp/) verwendet. Prüfe die Fehlermeldungen, um die vorliegende API zu ermitteln, die keine für UWP-Apps zulässige API ist. 
+> Der Debugbuild einer App besteht diesen Test nicht, auch wenn die App nur [APIs für UWP-Apps](/uwp/) verwendet. Prüfe die Fehlermeldungen, um die vorliegende API zu ermitteln, die keine für UWP-Apps zulässige API ist. 
 
 > [!NOTE]
-> C++-Apps, die in einer Debugkonfiguration erstellt wurden, bestehen diesen Test nicht. Dies gilt auch, wenn für die Konfiguration nur APIs aus dem Windows SDK für UWP-Apps verwendet werden. Weitere Informationen findest du unter [Alternativen zu Windows-APIs in UWP-Apps](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps).
+> C++-Apps, die in einer Debugkonfiguration erstellt wurden, bestehen diesen Test nicht. Dies gilt auch, wenn für die Konfiguration nur APIs aus dem Windows SDK für UWP-Apps verwendet werden. Weitere Informationen findest du unter [Alternativen zu Windows-APIs in UWP-Apps](/uwp/win32-and-com/win32-and-com-for-uwp-apps).
 
 ### <a name="6-user-account-control-uac-test"></a>6. Test der Benutzerkontensteuerung (User Account Control; UAC)  
 
@@ -231,7 +231,7 @@ Stellt sicher, dass die App zur Laufzeit nicht die Benutzerkontensteuerung anfor
 Eine App kann gemäß Microsoft Store-Richtlinie nicht erhöhte Administratorrechte oder UIAccess anfordern. Erhöhte Sicherheitsberechtigungen werden nicht unterstützt. 
 
 **Korrekturmaßnahmen**  
-Apps müssen als interaktiver Benutzer ausgeführt werden. Weitere Details findest du unter [Übersicht über die Benutzeroberflächenautomatisierungs-Sicherheit](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-security-overview?redirectedfrom=MSDN).
+Apps müssen als interaktiver Benutzer ausgeführt werden. Weitere Details findest du unter [Übersicht über die Benutzeroberflächenautomatisierungs-Sicherheit](/dotnet/framework/ui-automation/ui-automation-security-overview).
 
  
 ### <a name="7-windows-runtime-metadata-validation"></a>7. Windows-Runtime-Metadatenvalidierung
@@ -286,4 +286,4 @@ Entferne alle Signaturschlüssel für privaten Code (wie z. B. PFX- und SNK-Dat
 
 ## <a name="related-topics"></a>Zugehörige Themen
 
-* [Microsoft Store-Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies)
+* [Microsoft Store-Richtlinien](/legal/windows/agreements/store-policies)

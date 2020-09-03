@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 489215c0289695832cb895d8566063a93ae2336c
-ms.sourcegitcommit: 577a54d36145f91c8ade8e4509d4edddd8319137
+ms.openlocfilehash: f59bb821b65eda89aa1fbc88e9c38d5789f61f6e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83867350"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163424"
 ---
 # <a name="tabview"></a>TabView
 
@@ -24,12 +24,12 @@ Das TabView-Steuerelement bietet eine Möglichkeit, eine Reihe von Registerkarte
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **TabView** erfordert die Windows-UI-Bibliothek. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **TabView** erfordert die Windows-UI-Bibliothek. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
 > **Windows-UI-Bibliotheks-APIs:** [TabView-Klasse](/uwp/api/microsoft.ui.xaml.controls.tabview), [TabViewItem-Klasse](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 
 > [!TIP]
-> In diesem Dokument stellt der Alias **muxc** in XAML die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben dem [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)-Element Folgendes hinzugefügt: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> In diesem Dokument stellt der Alias **muxc** in XAML die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben dem [Page](/uwp/api/windows.ui.xaml.controls.page)-Element Folgendes hinzugefügt: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
 >Im CodeBehind stellt ebenfalls der Alias **muxc** in C# die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben am Anfang der Datei die folgende **using**-Anweisung hinzugefügt: `using muxc = Microsoft.UI.Xaml.Controls;`
 
@@ -44,7 +44,7 @@ Im Allgemeinen gibt es für Benutzeroberflächen mit Registerkarten zwei verschi
 - Benutzer können Dokumente oder Webseiten direkt auf Registerkarten öffnen.
 - Benutzer können Registerkarten mithilfe von Drag & Drop zwischen Fenstern verschieben.
 
-Wenn eine TabView für Ihre App nicht geeignet ist, sollten Sie Steuerelemente wie [Pivot](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot) oder [NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview) verwenden.
+Wenn eine TabView für Ihre App nicht geeignet ist, sollten Sie Steuerelemente wie [Pivot](./pivot.md) oder [NavigationView](./navigationview.md) verwenden.
 
 ## <a name="anatomy"></a>Aufbau
 
@@ -104,7 +104,7 @@ Anstatt dass Registerkarten eine eigene Zeile unter der Titelleiste eines Fenste
 
 Da ein Benutzer ein Fenster anhand seiner Titelleiste ziehen kann, um das Fenster neu zu positionieren, ist es wichtig, dass die Titelleiste nicht vollständig mit Registerkarten ausgefüllt ist. Daher müssen Sie bei der Anzeige von Registerkarten in einer Titelleiste einen Teil der Titelleiste angeben, der als ziehbarer Bereich reserviert werden soll. Wenn Sie keinen ziehbaren Bereich angeben, wird die gesamte Titelleiste ziehbar, was verhindert, dass Ihre Registerkarten Eingabeereignisse empfangen. Wenn Ihre TabView in der Titelleiste eines Fensters angezeigt wird, sollten Sie immer einen [TabStripFooter](/uwp/api/microsoft.ui.xaml.controls.tabview.tabstripfooter) in Ihre [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) aufnehmen und diesen als ziehbaren Bereich markieren.
 
-Weitere Informationen finden Sie unter [Anpassen der Titelleiste](https://docs.microsoft.com/windows/uwp/design/shell/title-bar).
+Weitere Informationen finden Sie unter [Anpassen der Titelleiste](../shell/title-bar.md).
 
 ![Registerkarten in der Titelleiste](images/tabview/tab-extend-to-title.png)
 
@@ -329,6 +329,6 @@ private void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerato
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [MasterDetails](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/master-details)
-- [NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview)
-- [Pivot](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot)
+- [MasterDetails](./master-details.md)
+- [NavigationView](./navigationview.md)
+- [Pivot](./pivot.md)

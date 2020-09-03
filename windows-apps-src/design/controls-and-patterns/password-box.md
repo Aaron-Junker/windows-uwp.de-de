@@ -12,12 +12,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b68b5bc5fc6042d7abeae6944c351af178b70874
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: 2bca2777145dd513cd19bfe1b002b5ec81d78c62
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86998017"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169734"
 ---
 # <a name="password-box"></a>Kennwortfeld
 
@@ -29,9 +29,9 @@ Standardmäßig ermöglicht es das Kennwortfeld dem Benutzer, durch Gedrückthal
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). WinUI ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](../style/rounded-corner.md). WinUI ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
-> **Plattform-APIs:** [PasswordBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox), [Kennworteigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.password), [PasswordChar-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar), [PasswordRevealMode-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode), [PasswordChanged-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
+> **Plattform-APIs:** [PasswordBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox), [Kennworteigenschaft](/uwp/api/windows.ui.xaml.controls.passwordbox.password), [PasswordChar-Eigenschaft](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar), [PasswordRevealMode-Eigenschaft](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode), [PasswordChanged-Ereignis](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -71,7 +71,7 @@ Durch Drücken der Schaltfläche zur Offenlegung des Kennworts auf der rechten S
 
 ## <a name="create-a-password-box"></a>Erstellen eines Kennwortfelds
 
-Verwenden Sie die [Password](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.password)-Eigenschaft, um den Inhalt des Kennwortfelds abzurufen oder festzulegen. Dies kann im Handler für das [PasswordChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)-Ereignis erfolgen, um die Überprüfung durchzuführen, während der Benutzer das Kennwort eingibt. Oder Sie können ein weiteres Ereignis, z. B. ein [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignis der Schaltfläche, verwenden, um die Überprüfung durchzuführen, nachdem der Benutzer die Texteingabe abgeschlossen hat.
+Verwenden Sie die [Password](/uwp/api/windows.ui.xaml.controls.passwordbox.password)-Eigenschaft, um den Inhalt des Kennwortfelds abzurufen oder festzulegen. Dies kann im Handler für das [PasswordChanged](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)-Ereignis erfolgen, um die Überprüfung durchzuführen, während der Benutzer das Kennwort eingibt. Oder Sie können ein weiteres Ereignis, z. B. ein [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignis der Schaltfläche, verwenden, um die Überprüfung durchzuführen, nachdem der Benutzer die Texteingabe abgeschlossen hat.
 
 Dieser XAML-Code für ein Kennwortfeld-Steuerelement zeigt das Standardaussehen des Kennwortfelds. Wenn der Benutzer ein Kennwort eingibt, wird überprüft, ob es dem Literalwert „Password“ entspricht. In diesem Fall wird dem Benutzer eine Meldung angezeigt.
 
@@ -103,7 +103,7 @@ Dies ist das Ergebnis, wenn der Code ausgeführt und als Kennwort „Password“
 
 ### <a name="password-character"></a>Kennwortzeichen
 
-Durch Festlegen der [PasswordChar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar)-Eigenschaft können Sie das zum Maskieren des Kennworts verwendete Zeichen ändern. Hier wird das standardmäßige Aufzählungszeichen durch ein Sternchen ersetzt.
+Durch Festlegen der [PasswordChar](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar)-Eigenschaft können Sie das zum Maskieren des Kennworts verwendete Zeichen ändern. Hier wird das standardmäßige Aufzählungszeichen durch ein Sternchen ersetzt.
 
 ```xaml
 <PasswordBox x:Name="passwordBox" Width="200" PasswordChar="*"/>
@@ -115,7 +115,7 @@ Das Ergebnis sieht wie folgt aus.
 
 ### <a name="headers-and-placeholder-text"></a>Kopf- und Platzhaltertext
 
-Mit den Eigenschaften [Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.header) und [PlaceholderText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.placeholdertext) können Sie den Kontext für das Kennwortfeld angeben. Dies ist besonders hilfreich, wenn mehrere Felder vorhanden sind, z. B. in einem Formular zum Ändern des Kennworts.
+Mit den Eigenschaften [Header](/uwp/api/windows.ui.xaml.controls.passwordbox.header) und [PlaceholderText](/uwp/api/windows.ui.xaml.controls.passwordbox.placeholdertext) können Sie den Kontext für das Kennwortfeld angeben. Dies ist besonders hilfreich, wenn mehrere Felder vorhanden sind, z. B. in einem Formular zum Ändern des Kennworts.
 
 ```xaml
 <PasswordBox x:Name="passwordBox" Width="200" Header="Password" PlaceholderText="Enter your password"/>
@@ -125,7 +125,7 @@ Mit den Eigenschaften [Header](https://docs.microsoft.com/uwp/api/windows.ui.xam
 
 ### <a name="maximum-length"></a>Maximale Länge
 
-Geben Sie die maximale Anzahl von Zeichen an, die der Benutzer eingeben darf, indem Sie die [MaxLength](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.maxlength)-Eigenschaft festlegen. Es gibt keine Eigenschaft zum Festlegen einer Mindestlänge. Sie können jedoch im App-Code die Kennwortlänge überprüfen und weitere Überprüfungen durchführen.
+Geben Sie die maximale Anzahl von Zeichen an, die der Benutzer eingeben darf, indem Sie die [MaxLength](/uwp/api/windows.ui.xaml.controls.passwordbox.maxlength)-Eigenschaft festlegen. Es gibt keine Eigenschaft zum Festlegen einer Mindestlänge. Sie können jedoch im App-Code die Kennwortlänge überprüfen und weitere Überprüfungen durchführen.
 
 ## <a name="password-reveal-mode"></a>Kennwortanzeigemodus
 
@@ -137,17 +137,17 @@ Das Kennwortfeld verfügt über eine integrierte Schaltfläche, mit der Benutzer
 
 Standardmäßig wird die Schaltfläche zum Anzeigen des Kennworts (oder die Vorschau-Schaltfläche) angezeigt. Der Benutzer muss die Schaltfläche gedrückt halten, um das Kennwort anzuzeigen, sodass ein hohes Maß an Sicherheit gewährleistet ist.
 
-Der Wert der [PasswordRevealMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode)-Eigenschaft ist nicht der einzige Faktor, der bestimmt, ob eine Schaltfläche zum Anzeigen des Kennworts für den Benutzer sichtbar ist. Weitere Faktoren sind, ob das Steuerelement mit einer größeren Breite als der Mindestbreite angezeigt wird, ob das Kennwortfeld den Fokus hat und ob das Texteingabefeld mindestens ein Zeichen enthält. Die Schaltfläche zum Anzeigen des Kennworts wird nur angezeigt, wenn das Kennwortfeld zum ersten Mal den Fokus erhält und ein Zeichen eingegeben wird. Wenn PasswordBox den Fokus verliert und ihn anschließend wieder erhält, wird die Schaltfläche zum Anzeigen des Kennworts nicht angezeigt, es sei denn, das Kennwort wird gelöscht und die Zeichen werden erneut eingegeben.
+Der Wert der [PasswordRevealMode](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode)-Eigenschaft ist nicht der einzige Faktor, der bestimmt, ob eine Schaltfläche zum Anzeigen des Kennworts für den Benutzer sichtbar ist. Weitere Faktoren sind, ob das Steuerelement mit einer größeren Breite als der Mindestbreite angezeigt wird, ob das Kennwortfeld den Fokus hat und ob das Texteingabefeld mindestens ein Zeichen enthält. Die Schaltfläche zum Anzeigen des Kennworts wird nur angezeigt, wenn das Kennwortfeld zum ersten Mal den Fokus erhält und ein Zeichen eingegeben wird. Wenn PasswordBox den Fokus verliert und ihn anschließend wieder erhält, wird die Schaltfläche zum Anzeigen des Kennworts nicht angezeigt, es sei denn, das Kennwort wird gelöscht und die Zeichen werden erneut eingegeben.
 
 > **Achtung**&nbsp;&nbsp;Vor Windows 10 wurde die Schaltfläche zum Anzeigen des Kennworts nicht standardmäßig angezeigt. Wenn die Sicherheit Ihrer App erfordert, dass das Kennwort immer verdeckt ist, muss „PasswordRevealMode“ auf „Hidden“ festgelegt werden.
 
 ### <a name="hidden-and-visible-modes"></a>Ausblendungs- und Anzeigemodus
 
-Mit den weiteren [PasswordRevealMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordRevealMode)-Aufzählungswerten **Hidden** und **Visible** blenden Sie die Schaltfläche zum Anzeigen des Kennworts aus. Sie können programmgesteuert festlegen, ob das Kennwort verdeckt wird.
+Mit den weiteren [PasswordRevealMode](/uwp/api/Windows.UI.Xaml.Controls.PasswordRevealMode)-Aufzählungswerten **Hidden** und **Visible** blenden Sie die Schaltfläche zum Anzeigen des Kennworts aus. Sie können programmgesteuert festlegen, ob das Kennwort verdeckt wird.
 
-Um das Kennwort immer zu verdecken, legen Sie „PasswordRevealMode“ auf „Hide“ fest. Wenn das Kennwort nicht immer verdeckt sein muss, können Sie eine benutzerdefinierte Benutzeroberfläche bereitstellen, die dem Benutzer das Umschalten von „PasswordRevealMode“ zwischen „Hidden“ and „Visible“ ermöglicht. Sie können z. B. ein Kontrollkästchen verwenden, um umzuschalten, ob das Kennwort verdeckt wird, wie im folgenden Beispiel gezeigt wird. Sie können auch andere Steuerelemente wie [ToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton) verwenden, damit der Benutzer zwischen den Modi wechseln kann.
+Um das Kennwort immer zu verdecken, legen Sie „PasswordRevealMode“ auf „Hide“ fest. Wenn das Kennwort nicht immer verdeckt sein muss, können Sie eine benutzerdefinierte Benutzeroberfläche bereitstellen, die dem Benutzer das Umschalten von „PasswordRevealMode“ zwischen „Hidden“ and „Visible“ ermöglicht. Sie können z. B. ein Kontrollkästchen verwenden, um umzuschalten, ob das Kennwort verdeckt wird, wie im folgenden Beispiel gezeigt wird. Sie können auch andere Steuerelemente wie [ToggleButton](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton) verwenden, damit der Benutzer zwischen den Modi wechseln kann.
 
-In diesem Beispiel wird gezeigt, wie Sie mit einem [CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox)-Steuerelement dem Benutzer das Wechseln des Anzeigemodus eines Kennwortfelds ermöglichen.
+In diesem Beispiel wird gezeigt, wie Sie mit einem [CheckBox](/uwp/api/Windows.UI.Xaml.Controls.CheckBox)-Steuerelement dem Benutzer das Wechseln des Anzeigemodus eines Kennwortfelds ermöglichen.
 
 ```xaml
 <StackPanel Width="200">
@@ -181,7 +181,7 @@ Dieses Kennwortfeld sieht in etwa so aus.
 
 Um Benutzern die Eingabe von Daten mit der Bildschirmtastatur oder dem Soft Input Panel (SIP) zu erleichtern, können Sie den Eingabeumfang des Textsteuerelements an die Art der Daten anpassen, die der Benutzer vermutlich eingeben wird. Das Kennwortfeld unterstützt nur die Eingabeumfangwerte **Password** und **NumericPin**. Andere Werte werden ignoriert.
 
-Weitere Informationen zur Verwendung von Eingabeumfängen finden Sie unter [Verwenden des Eingabeumfangs zum Ändern der Bildschirmtastatur](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard).
+Weitere Informationen zur Verwendung von Eingabeumfängen finden Sie unter [Verwenden des Eingabeumfangs zum Ändern der Bildschirmtastatur](../input/use-input-scope-to-change-the-touch-keyboard.md).
 
 ## <a name="recommendations"></a>Empfehlungen
 
@@ -201,8 +201,8 @@ Weitere Informationen zur Verwendung von Eingabeumfängen finden Sie unter [Verw
 [Textsteuerelemente](text-controls.md)
 
 - [Richtlinien für die Rechtschreibprüfung](text-controls.md)
-- [Hinzufügen von Suchfunktionen](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
+- [Hinzufügen von Suchfunktionen](/previous-versions/windows/apps/hh465231(v=win.10))
 - [Richtlinien für die Texteingabe](text-controls.md)
-- [TextBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [Windows.UI.Xaml.Controls PasswordBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [StringLength-Eigenschaft](https://docs.microsoft.com/dotnet/api/system.string.length)
+- [TextBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Windows.UI.Xaml.Controls PasswordBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [StringLength-Eigenschaft](/dotnet/api/system.string.length)

@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a74d98298f2c51059d8293022817e91ba573cf45
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5e3bcbfc338d629bbda1036ef722d75ed6df37cd
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970695"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169754"
 ---
 # <a name="number-box"></a>Zahlenfeld
 
@@ -22,18 +22,18 @@ Stellt ein Steuerelement dar, das zum Anzeigen und Bearbeiten von Zahlen verwend
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **NumberBox** erfordert die Windows-UI-Bibliothek. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **NumberBox** erfordert die Windows-UI-Bibliothek. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
-**Windows-UI-Bibliotheks-APIs:** [NumberBox-Klasse](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.NumberBox)
+**Windows-UI-Bibliotheks-APIs:** [NumberBox-Klasse](/uwp/api/microsoft.ui.xaml.controls.NumberBox)
 
 > [!TIP]
-> In diesem Dokument stellt der Alias **muxc** in XAML die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben dem [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)-Element Folgendes hinzugefügt: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> In diesem Dokument stellt der Alias **muxc** in XAML die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben dem [Page](/uwp/api/windows.ui.xaml.controls.page)-Element Folgendes hinzugefügt: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
 >Im CodeBehind stellt ebenfalls der Alias **muxc** in C# die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben am Anfang der Datei die folgende **using**-Anweisung hinzugefügt: `using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
-Sie können ein NumberBox-Steuerelement verwenden, um mathematische Eingaben zu erfassen und anzuzeigen. Wenn Sie ein editierbares Textfeld benötigen, das auch andere Werte als Zahlen akzeptiert, verwenden Sie das [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)-Steuerelement. Wenn Sie ein editierbares Textfeld benötigen, das Kennwörter oder andere vertrauliche Eingaben akzeptiert, verwenden Sie [PasswordBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox). Wenn Sie ein Textfeld zur Eingabe von Suchbegriffen benötigen, verwenden Sie [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox). Informationen zum Eingeben oder Bearbeiten von formatiertem Text finden Sie unter [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox).
+Sie können ein NumberBox-Steuerelement verwenden, um mathematische Eingaben zu erfassen und anzuzeigen. Wenn Sie ein editierbares Textfeld benötigen, das auch andere Werte als Zahlen akzeptiert, verwenden Sie das [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox)-Steuerelement. Wenn Sie ein editierbares Textfeld benötigen, das Kennwörter oder andere vertrauliche Eingaben akzeptiert, verwenden Sie [PasswordBox](/uwp/api/windows.ui.xaml.controls.passwordbox). Wenn Sie ein Textfeld zur Eingabe von Suchbegriffen benötigen, verwenden Sie [AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.autosuggestbox). Informationen zum Eingeben oder Bearbeiten von formatiertem Text finden Sie unter [RichEditBox](/uwp/api/windows.ui.xaml.controls.richeditbox).
 
 ## <a name="examples"></a>Beispiele
 
@@ -53,7 +53,7 @@ Sie können ein NumberBox-Steuerelement verwenden, um mathematische Eingaben zu 
 
 ### <a name="create-a-simple-numberbox"></a>Erstellen einer einfachen NumberBox
 
-Hier sehen Sie den XAML-Code für ein einfaches NumberBox-Steuerelement in der Standarddarstellung. Verwenden Sie [x:Bind](/windows/uwp/xaml-platform/x-bind-markup-extension#property-path), um sicherzustellen, dass die dem Benutzer angezeigten Daten stets mit den in Ihrer App gespeicherten Daten synchron sind.
+Hier sehen Sie den XAML-Code für ein einfaches NumberBox-Steuerelement in der Standarddarstellung. Verwenden Sie [x:Bind](../../xaml-platform/x-bind-markup-extension.md#property-path), um sicherzustellen, dass die dem Benutzer angezeigten Daten stets mit den in Ihrer App gespeicherten Daten synchron sind.
 
 ```xaml
 <muxc:NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />

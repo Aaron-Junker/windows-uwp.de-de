@@ -9,12 +9,12 @@ ms.custom: 19H1
 keywords: Windows 10, UWP
 pm-contact: chigy
 ms.localizationpriority: medium
-ms.openlocfilehash: 2655abd69f0f02efada9de5bab22e463c86b5d7e
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: fc2adb295df97cf1af49608d15c135b9f56b4594
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970185"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165564"
 ---
 # <a name="z-depth-and-shadow"></a>Z-Tiefe und Schatten
 
@@ -54,7 +54,7 @@ Hier sehen Sie, wie ThemeShadow für ein MenuFlyout implementiert wurde. MenuFly
 Die folgenden allgemeinen Steuerelemente verwenden automatisch ThemeShadow, um Schatten von 32 Pixel Tiefe zu werfen, sofern nichts anderes angegeben ist:
 
 - [Kontextmenü](../controls-and-patterns/menus.md), [Befehlsleiste](../controls-and-patterns/app-bars.md), [Befehlsleisten-Flyout](../controls-and-patterns/command-bar-flyout.md), [MenuBar](../controls-and-patterns/menus.md#create-a-menu-bar)
-- [Dialogfelder und Flyouts](../controls-and-patterns/dialogs.md) (Dialogfeld bei 64 Pixel)
+- [Dialogfelder und Flyouts](../controls-and-patterns/dialogs-and-flyouts/index.md) (Dialogfeld bei 64 Pixel)
 - [NavigationView](../controls-and-patterns/navigationview.md)
 - [ComboBox](../controls-and-patterns/combo-box.md), [DropDownButton, SplitButton, ToggleSplitButton](../controls-and-patterns/buttons.md)
 - [TeachingTip](../controls-and-patterns/dialogs-and-flyouts/teaching-tip.md)
@@ -96,9 +96,9 @@ PopupRectangle.Translation += new Vector3(0, 0, 32);
 
 ### <a name="disabling-default-themeshadow-on-custom-flyout-controls"></a>Deaktivieren von standardmäßigem ThemeShadow für benutzerdefinierte Flyout-Steuerelemente
 
-Steuerelemente, die auf [Flyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.flyout), [DatePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepickerflyout), [MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.menuflyout) oder [TimePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepickerflyout) basieren, verwenden automatisch ThemeShadow, um einen Schatten zu werfen.
+Steuerelemente, die auf [Flyout](/uwp/api/Windows.UI.Xaml.Controls.flyout), [DatePickerFlyout](/uwp/api/windows.ui.xaml.controls.datepickerflyout), [MenuFlyout](/uwp/api/Windows.UI.Xaml.Controls.menuflyout) oder [TimePickerFlyout](/uwp/api/windows.ui.xaml.controls.timepickerflyout) basieren, verwenden automatisch ThemeShadow, um einen Schatten zu werfen.
 
-Wenn der Standardschatten auf dem Inhalt Ihres Steuerelements nicht richtig aussieht, können Sie es deaktivieren, indem Sie die [IsDefaultShadowEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled)-Eigenschaft für den zugeordneten FlyoutPresenter auf `false` festlegen:
+Wenn der Standardschatten auf dem Inhalt Ihres Steuerelements nicht richtig aussieht, können Sie es deaktivieren, indem Sie die [IsDefaultShadowEnabled](/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled)-Eigenschaft für den zugeordneten FlyoutPresenter auf `false` festlegen:
 
 ```xaml
 <Flyout>
@@ -154,7 +154,7 @@ Rectangle2.Translation += new Vector3(120, 0, 32);
 
 ## <a name="drop-shadow"></a>Schlagschatten
 
-DropShadow reagiert nicht automatisch auf seine Umgebung und verwendet keine Lichtquellen. Beispielimplementierungen finden Sie in der [DropShadow-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.composition.dropshadow).
+DropShadow reagiert nicht automatisch auf seine Umgebung und verwendet keine Lichtquellen. Beispielimplementierungen finden Sie in der [DropShadow-Klasse](/uwp/api/windows.ui.composition.dropshadow).
 
 ## <a name="which-shadow-should-i-use"></a>Welchen Schatten soll ich verwenden?
 
