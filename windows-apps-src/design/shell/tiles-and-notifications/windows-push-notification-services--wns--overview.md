@@ -1,5 +1,5 @@
 ---
-Description: Mithilfe des Windows-Pushbenachrichtigungsdiensts (WNS) können Drittanbieterentwickler Popup-, Kachel-, Signalupdates und unformatierte Updates von ihren eigenen Clouddiensten aus senden. Dadurch steht ein Mechanismus zur Verfügung, mit dem Sie Ihren Benutzern auf energieeffiziente und verlässliche Weise neue Updates bereitstellen können.
+description: Mithilfe des Windows-Pushbenachrichtigungsdiensts (WNS) können Drittanbieterentwickler Popup-, Kachel-, Signalupdates und unformatierte Updates von ihren eigenen Clouddiensten aus senden. Dadurch steht ein Mechanismus zur Verfügung, mit dem Sie Ihren Benutzern auf energieeffiziente und verlässliche Weise neue Updates bereitstellen können.
 title: Übersicht über Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS)
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 03/06/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 98248aff8f16305b9fa335d4c77ca1a03bc46686
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bd910c42743577a83491386f5c667dd09722ba9b
+ms.sourcegitcommit: 8171695ade04a762f19723f0b88e46e407375800
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156744"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89494376"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Übersicht über Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS) 
 
@@ -184,7 +184,6 @@ Dieses Diagramm veranschaulicht den Datenfluss:
 
 ## <a name="expiration-of-tile-and-badge-notifications"></a>Ablauf der Kachel- und Signalbenachrichtigungen
 
-
 Standardmäßig laufen die Kachel- und Signalbenachrichtigungen drei Tage, nachdem sie heruntergeladen wurden, ab. Wenn eine Benachrichtigung abläuft, wird der Inhalt von der Kachel oder aus der Warteschlange entfernt und nicht mehr angezeigt. Daher wird empfohlen, für alle Kachel- und Signalbenachrichtigungen eine Gültigkeitsdauer festzulegen. Verwenden Sie eine Ablaufzeit, die für Ihre App sinnvoll ist. So können Sie sicherstellen, dass der Inhalt einer Kachel nur so lange beibehalten wird, wie er von Bedeutung ist. Eine explizite Ablaufzeit ist für Inhalte mit definierter Lebensdauer von großer Bedeutung. Durch sie wird außerdem sichergestellt, dass veraltete Inhalte entfernt werden, wenn Ihr Clouddienst keine Benachrichtigungen mehr sendet oder der Benutzer die Verbindung mit dem Netzwerk für längere Zeit trennt.
 
 Ihr clouddienst kann für jede Benachrichtigung einen Ablauf festlegen, indem Sie den HTTP-Header "X-WNS-TTL" festlegen, um die Zeit (in Sekunden) anzugeben, die die Benachrichtigung nach dem Senden gültig bleibt. Weitere Informationen finden Sie unter [Push Notification Service Request und Response Headers](/previous-versions/windows/apps/hh465435(v=win.10)).
@@ -192,7 +191,6 @@ Ihr clouddienst kann für jede Benachrichtigung einen Ablauf festlegen, indem Si
 Während eines aktiven Börsenhandelstags können Sie beispielsweise die Gültigkeitsdauer für eine Aktienpreisaktualisierung gegenüber dem Sendeintervall verdoppeln (wie z. B. eine Stunde nach Empfang beim Senden von Benachrichtigungen zu jeder halben Stunde). Als weiteres Beispiel dient eine News-App, bei der festgestellt wird, dass ein Intervall von einem Tag für eine tägliche Kachelaktualisierung angemessen ist.
 
 ## <a name="push-notifications-and-battery-saver"></a>Pushbenachrichtigungen und Stromsparmodus
-
 
 Der Stromsparmodus schränkt Hintergrundaktivitäten auf dem Gerät ein und verlängert dadurch die Akkulaufzeit. In Windows 10 kann der Benutzer den Stromsparmodus auf die automatische Aktivierung festlegen, wenn der Akku einen bestimmten Schwellenwert unterschreitet. Wenn der Stromsparmodus aktiviert ist, ist der Empfang von Pushbenachrichtigungen deaktiviert, um Energie zu sparen. Es gibt allerdings einige Ausnahmen. Mit den folgenden Einstellungen in Windows 10 (in der **Einstellungs**-App) kann der Stromsparmodus so eingerichtet werden, dass Ihre App auch bei aktiviertem Stromsparmodus Pushbenachrichtigungen empfängt.
 
@@ -206,11 +204,9 @@ Falls Pushbenachrichtigungen bei Ihrer App sehr wichtig sind, sollten Sie die Be
 > [!TIP]
 > Bei der Benachrichtigung des Benutzers über die Einstellungen des Akku Schoners empfiehlt es sich, die Nachricht in Zukunft zu unterdrücken. Das Kontrollkästchen `dontAskMeAgainBox` im folgenden Beispiel speichert z. B. die Benutzereinstellung in [**LocalSettings**](/uwp/api/Windows.Storage.ApplicationData.LocalSettings).
 
- 
+Im folgenden finden Sie ein Beispiel dafür, wie Sie überprüfen können, ob Akku Schoner in Windows 10 aktiviert ist. In diesem Beispiel wird der Benutzer benachrichtigt, und die Einstellungs-App wird gestartet, um **Einstellungen für Stromsparmodus** anzuzeigen. Mit dem Kontrollkästchen `dontAskAgainSetting` kann der Benutzer die Meldung unterdrücken, wenn er nicht erneut benachrichtigt werden möchte.
 
-Das folgende Beispiel zeigt, wie Sie in Windows 10 überprüfen, ob der Stromsparmodus aktiviert ist. In diesem Beispiel wird der Benutzer benachrichtigt, und die Einstellungs-App wird gestartet, um **Einstellungen für Stromsparmodus** anzuzeigen. Mit dem Kontrollkästchen `dontAskAgainSetting` kann der Benutzer die Meldung unterdrücken, wenn er nicht erneut benachrichtigt werden möchte.
-
-```cs
+```csharp
 using System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -255,6 +251,62 @@ async public void CheckForEnergySaving()
 }
 ```
 
+```cppwinrt
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Storage.h>
+#include <winrt/Windows.System.h>
+#include <winrt/Windows.System.Power.h>
+#include <winrt/Windows.UI.Xaml.h>
+#include <winrt/Windows.UI.Xaml.Controls.h>
+#include <winrt/Windows.UI.Xaml.Navigation.h>
+using namespace winrt;
+using namespace winrt::Windows::Foundation;
+using namespace winrt::Windows::Storage;
+using namespace winrt::Windows::System;
+using namespace winrt::Windows::System::Power;
+using namespace winrt::Windows::UI::Xaml;
+using namespace winrt::Windows::UI::Xaml::Controls;
+using namespace winrt::Windows::UI::Xaml::Navigation;
+...
+winrt::fire_and_forget CheckForEnergySaving()
+{
+    // Get reminder preference from LocalSettings.
+    bool dontAskAgain{ false };
+    auto localSettings = ApplicationData::Current().LocalSettings();
+    IInspectable dontAskSetting = localSettings.Values().Lookup(L"dontAskAgainSetting");
+    if (!dontAskSetting)
+    {
+        // Setting doesn't exist.
+        dontAskAgain = false;
+    }
+    else
+    {
+        // Retrieve setting value
+        dontAskAgain = winrt::unbox_value<bool>(dontAskSetting);
+    }
+
+    // Check whether battery saver is on, and whether it's okay to raise dialog.
+    if ((PowerManager::EnergySaverStatus() == EnergySaverStatus::On) && (!dontAskAgain))
+    {
+        // Check dialog results.
+        ContentDialogResult dialogResult = co_await saveEnergyDialog().ShowAsync();
+        if (dialogResult == ContentDialogResult::Primary)
+        {
+            // Launch battery saver settings
+            // (settings are available only when a battery is present).
+            co_await Launcher::LaunchUriAsync(Uri(L"ms-settings:batterysaver-settings"));
+        }
+
+        // Save reminder preference.
+        if (dontAskAgainBox().IsChecked())
+        {
+            // Don't raise the dialog again.
+            localSettings.Values().Insert(L"dontAskAgainSetting", winrt::box_value(true));
+        }
+    }
+}
+```
+
 Dies ist der XAML-Code für das in diesem Beispiel vorgestellte [**ContentDialog**](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog).
 
 ```xaml
@@ -275,8 +327,7 @@ Dies ist der XAML-Code für das in diesem Beispiel vorgestellte [**ContentDialog
 </ContentDialog>
 ```
 
-## <a name="related-topics"></a>Zugehörige Themen
-
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md)
 * [Schnellstart: Senden einer Pushbenachrichtigung](/previous-versions/windows/apps/hh868252(v=win.10))
@@ -287,6 +338,3 @@ Dies ist der XAML-Code für das in diesem Beispiel vorgestellte [**ContentDialog
 * [Anforderungs- und Antwortheader des Pushbenachrichtigungsdiensts](/previous-versions/windows/apps/hh465435(v=win.10))
 * [Richtlinien und Prüfliste für Pushbenachrichtigungen]()
 * [Unformatierte Benachrichtigungen](/previous-versions/windows/apps/hh761488(v=win.10))
- 
-
- 
