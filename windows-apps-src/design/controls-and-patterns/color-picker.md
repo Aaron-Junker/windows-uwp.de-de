@@ -1,5 +1,5 @@
 ---
-Description: Mithilfe eines Farbwählers kann der Benutzer Farben suchen und auswählen.
+description: Erfahren Sie, wie Sie eine Farbauswahl verwenden können, mit der Benutzer Farben durchsuchen und auswählen oder Farben in RGB-, HSV- oder Hexadezimalformaten angeben können.
 title: Farbwähler
 label: Color Picker
 template: detail.hbs
@@ -11,12 +11,12 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e7661beb52438640c570e1a5ec4d7f60502e119
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: c6739263917ab48040a2780a750948215d8d6361
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968895"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173514"
 ---
 # <a name="color-picker"></a>Farbauswahl
 
@@ -28,7 +28,7 @@ Mithilfe eines Farbwählers können Benutzer Farben suchen und auswählen. Stand
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **ColorPicker** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **ColorPicker** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
 > **Windows-UI-Bibliotheks-APIs:** [ColorPicker-Klasse](/uwp/api/microsoft.ui.xaml.controls.colorpicker), [Color-Eigenschaft](/uwp/api/microsoft.ui.xaml.controls.colorpicker.Color), [ColorChanged-Ereignis](/uwp/api/microsoft.ui.xaml.controls.colorpicker.ColorChanged)
 >
@@ -64,7 +64,7 @@ In diesem Beispiel zeigen wir Ihnen, wie Sie einen Standardfarbwähler in XAML e
 <ColorPicker x:Name="myColorPicker"/>
 ```
 
-Der Farbwähler zeigt standardmäßig eine Vorschau der ausgewählten Farbe in dem rechteckigen Balken neben dem Farbspektrum an. Um auf die ausgewählte Farbe zuzugreifen und sie in Ihrer App zu verwenden, können Sie entweder das Ereignis [ColorChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged) oder die Eigenschaft [Color](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color) verwenden. Detaillierten Code finden Sie in den nachfolgenden Beispielen.
+Der Farbwähler zeigt standardmäßig eine Vorschau der ausgewählten Farbe in dem rechteckigen Balken neben dem Farbspektrum an. Um auf die ausgewählte Farbe zuzugreifen und sie in Ihrer App zu verwenden, können Sie entweder das Ereignis [ColorChanged](/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged) oder die Eigenschaft [Color](/uwp/api/windows.ui.xaml.controls.colorpicker.Color) verwenden. Detaillierten Code finden Sie in den nachfolgenden Beispielen.
 
 ### <a name="bind-to-the-chosen-color"></a>Binden an die ausgewählte Farbe
 
@@ -155,7 +155,7 @@ Benötigt der Benutzer präzise Kontrolle, beispielsweise in einer Grafikdesign-
 
 #### <a name="show-the-circle-spectrum"></a>Anzeigen eines kreisförmigen Spektrums
 
-In diesem Beispiel wird demonstriert, wie Sie den Farbwähler mithilfe der Eigenschaft [ColorSpectrumShape](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorSpectrumShape) so konfigurieren können, dass statt des standardmäßigen quadratischen Farbspektrums ein kreisförmiges Farbspektrum angezeigt wird.
+In diesem Beispiel wird demonstriert, wie Sie den Farbwähler mithilfe der Eigenschaft [ColorSpectrumShape](/uwp/api/windows.ui.xaml.controls.colorpicker.ColorSpectrumShape) so konfigurieren können, dass statt des standardmäßigen quadratischen Farbspektrums ein kreisförmiges Farbspektrum angezeigt wird.
 
 ```xaml
 <ColorPicker x:Name="myColorPicker"

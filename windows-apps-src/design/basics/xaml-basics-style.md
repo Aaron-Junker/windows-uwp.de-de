@@ -1,16 +1,16 @@
 ---
 title: Erstellen benutzerdefinierter Stile
-description: In diesem Artikel werden die Grundlagen der Gestaltung von UI-Elementen in XAML behandelt.
+description: In diesem Tutorial erfahren Sie, wie Sie benutzerdefinierte Stile und Schieberegler erstellen, um die Benutzeroberfläche Ihrer XAML-App anzupassen.
 keywords: XAML, UWP, Erste Schritte
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 60a62a80017b2c77acfc2604daf909ae1ec9fd36
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 6d3423e9d78e2519f2d3c9ad1fc2c0b099de0349
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942960"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160774"
 ---
 # <a name="tutorial-create-custom-styles"></a>Tutorial: Erstellen benutzerdefinierter Stile
 
@@ -76,11 +76,11 @@ Drücke F5, um die App zu kompilieren und auszuführen. Der erste Bildschirm zei
 
 1. Verwenden Sie ein `Polygon`-Element, um eine Hintergrundform für den Belichtungsschieberegler zu erstellen.
 
-    Im [Namespace „Windows.UI.Xaml.Shapes“](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Shapes) stehen sieben Formen zur Auswahl. Es gibt eine Ellipse, ein Rechteck und einen sogenannten Pfad, mit dem du eine beliebige Form zeichnen kannst (ja, sogar ein Einhorn).
+    Im [Namespace „Windows.UI.Xaml.Shapes“](/uwp/api/Windows.UI.Xaml.Shapes) stehen sieben Formen zur Auswahl. Es gibt eine Ellipse, ein Rechteck und einen sogenannten Pfad, mit dem du eine beliebige Form zeichnen kannst (ja, sogar ein Einhorn).
 
     ![Ein Einhorn](../basics/images/xaml-basics/unicorn.png)
 
-    > **Weitere Informationen:** Im Artikel [Zeichnen von Formen](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/shapes) erfährst du alles, was du über XAML-Formen wissen musst.
+    > **Weitere Informationen:** Im Artikel [Zeichnen von Formen](../controls-and-patterns/shapes.md) erfährst du alles, was du über XAML-Formen wissen musst.
 
     Wir möchten ein dreieckiges Widget erstellen, das in etwa so aussieht wie die Lautstärkeregelung an einer Stereoanlage.
 
@@ -200,7 +200,7 @@ Herzlichen Glückwunsch! Der erste Teil ist geschafft. Falls Sie an einer Stelle
 
 Einer der Vorteile von XAML-Stilen besteht darin, dass sie den Programmieraufwand erheblich verringern und die Aktualisierung der App-Darstellung deutlich vereinfachen.
 
-Um einen Stil zu definieren, wird der Eigenschaft [Resources](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Resources) eines Elements, in dem sich das zu gestaltende Steuerelement befindet, ein Element vom Typ [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) hinzugefügt.  Wenn du deinen Stil der Eigenschaft `Page.Resources` hinzufügst, stehen deine Stile für die gesamte Seite zur Verfügung. Wenn du deinen Stil der Eigenschaft `Application.Resources` in der Datei „App.xaml“ hinzufügst, steht der Stil für die gesamte App zur Verfügung.
+Um einen Stil zu definieren, wird der Eigenschaft [Resources](/uwp/api/windows.ui.xaml.frameworkelement.Resources) eines Elements, in dem sich das zu gestaltende Steuerelement befindet, ein Element vom Typ [Style](/uwp/api/Windows.UI.Xaml.Style) hinzugefügt.  Wenn du deinen Stil der Eigenschaft `Page.Resources` hinzufügst, stehen deine Stile für die gesamte Seite zur Verfügung. Wenn du deinen Stil der Eigenschaft `Application.Resources` in der Datei „App.xaml“ hinzufügst, steht der Stil für die gesamte App zur Verfügung.
 
 Du kannst benannte Stile und allgemeine Stile erstellen. Ein benannter Stil muss explizit auf bestimmte Steuerelemente angewendet werden. Ein allgemeiner Stil wird auf alle Steuerelemente angewendet, die dem angegebenen Zieltyp (`TargetType`) entsprechen.
 

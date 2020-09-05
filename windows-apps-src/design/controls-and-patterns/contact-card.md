@@ -1,5 +1,5 @@
 ---
-Description: Eine Schaltfläche ermöglicht dem Benutzer das unmittelbare Auslösen einer Aktion.
+description: Erfahren Sie, wie Sie Visitenkarten verwenden, damit Benutzer Kontaktinformationen wie Namen, Telefonnummern und Adressen anzeigen und bearbeiten können.
 title: Visitenkarte
 ms.date: 03/07/2018
 ms.topic: article
@@ -9,12 +9,12 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 274481b2a282b025a637f7f6cc54dc0161c3e61d
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 2817977533b63df8498faa1ecbc5cc57a4987c30
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968755"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160594"
 ---
 # <a name="contact-card"></a>Visitenkarte
 
@@ -174,12 +174,12 @@ private void onUserClickShowContactCard()
 
 ## <a name="retrieving-real-contacts"></a>Abrufen von „echten“ Kontakten
 
-In den Beispielen in diesem Artikel wird ein einfacher Kontakt erstellt. In einer echten App würden Sie wahrscheinlich einen vorhandenen Kontakt abrufen. Anweisungen finden Sie im Artikel [Kontakte und Kalender](/windows/uwp/contacts-and-calendar/).
+In den Beispielen in diesem Artikel wird ein einfacher Kontakt erstellt. In einer echten App würden Sie wahrscheinlich einen vorhandenen Kontakt abrufen. Anweisungen finden Sie im Artikel [Kontakte und Kalender](../../contacts-and-calendar/index.md).
 
 
 
 
 ## <a name="related-articles"></a>Verwandte Artikel
-- [Kontakte und Kalender](/windows/uwp/contacts-and-calendar/)
+- [Kontakte und Kalender](../../contacts-and-calendar/index.md)
 - [Beispiel für Visitenkarten](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards)
 - [Steuerelement für Bilder von Personen](/windows/uwp/controls-and-patterns/person-picture/)

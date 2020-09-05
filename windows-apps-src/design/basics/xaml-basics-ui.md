@@ -1,16 +1,16 @@
 ---
 title: Erstellen einer Benutzeroberfläche – Tutorial
-description: In diesem Artikel werden die Grundlagen beim Erstellen von Benutzeroberflächen in XAML beschrieben.
+description: In diesem Tutorial erfahren Sie, wie Sie mit Hilfe der XAML-Tools in Visual Studio eine einfache Benutzeroberfläche für ein Bildbearbeitungsprogramm erstellen.
 keywords: XAML, UWP, Erste Schritte
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 22cf8dc09022f841ff1f4e149232a949e7b82d20
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: e4c2c8d52069bf074897ec09fa44f550066b28b5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942880"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160754"
 ---
 # <a name="tutorial-create-a-user-interface"></a>Tutorial: Erstellen einer Benutzeroberfläche
 
@@ -185,7 +185,7 @@ So fügst du ein Steuerelement mit dem XAML-Editor hinzu:
     </RelativePanel>
     ```
 
-    Weitere Informationen zum Layout mit `RelativePanel` findest du unter [Layoutpanels](/windows/uwp/layout/layout-panels#relativepanel).
+    Weitere Informationen zum Layout mit `RelativePanel` findest du unter [Layoutpanels](../layout/layout-panels.md#relativepanel).
 
 2. Füge unterhalb des `TextBlock`-Elements ein `GridView`-Steuerelement mit dem Namen **ImageGridView** hinzu. Legen Sie die _angefügten Eigenschaften_ des `RelativePanel` fest, um das Steuerelement unter dem Titeltext zu platzieren, und geben Sie an, dass es sich über die gesamte Bildschirmbreite erstrecken soll.
 
@@ -213,7 +213,7 @@ So fügst du ein Steuerelement mit dem XAML-Editor hinzu:
     </RelativePanel>
     ```
 
-    Weitere Informationen zu angefügten Paneleigenschaften findest du unter [Layoutpanels](/windows/uwp/layout/layout-panels).
+    Weitere Informationen zu angefügten Paneleigenschaften findest du unter [Layoutpanels](../layout/layout-panels.md).
 
 3. Damit das `GridView`-Steuerelement Elemente anzeigt, musst du ihm eine Sammlung von Daten hinzufügen, die angezeigt werden können. Öffnen Sie **MainPage.xaml.cs**, und suchen Sie die `GetItemsAsync`-Methode. Diese Methode füllt eine Sammlung mit dem Namen **Images** auf, eine Eigenschaft, die wir unter **MainPage** hinzugefügt haben.
 
@@ -232,7 +232,7 @@ Dies ist ein guter Ausgangspunkt zum Ausführen der App. Stellen Sie sicher, das
 Sie werden feststellen, dass in der App noch keine Bilder angezeigt werden. Standardmäßig wird der `ToString`-Wert des Datentyps, der sich in der Sammlung befindet, angezeigt. Als Nächstes erstellen Sie eine Datenvorlage, die definiert, wie die Daten angezeigt werden.
 
 > [!NOTE]
-> Weitere Informationen zu Layouts mit `RelativePanel` findest du im Artikel [Layoutpanels](/windows/uwp/layout/layout-panels#relativepanel). Informiere dich, und experimentiere dann mit einigen anderen Layouts, indem du die angefügten `RelativePanel`-Eigenschaften auf `TextBlock` und `GridView` festlegst.
+> Weitere Informationen zu Layouts mit `RelativePanel` findest du im Artikel [Layoutpanels](../layout/layout-panels.md#relativepanel). Informiere dich, und experimentiere dann mit einigen anderen Layouts, indem du die angefügten `RelativePanel`-Eigenschaften auf `TextBlock` und `GridView` festlegst.
 
 ## <a name="part-3-add-a-datatemplate-object-to-display-your-data"></a>Teil 3: Hinzufügen eines DataTemplate-Objekts zum Anzeigen deiner Daten
 
@@ -267,7 +267,7 @@ So fügst du eine Datenvorlage einer Rasteransicht hinzu:
       NavigationCacheMode="Enabled">
     ```
 
-    Weitere Informationen zu XAML-Namespaces finden Sie unter [XAML-Namespaces und Namespacezuordnung](/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping).
+    Weitere Informationen zu XAML-Namespaces finden Sie unter [XAML-Namespaces und Namespacezuordnung](../../xaml-platform/xaml-namespaces-and-namespace-mapping.md).
 
 3. Klicken Sie mit der rechten Maustaste unter Dokumentgliederung auf **ImageGridView**. Wähle im Kontextmenü die Option **Weitere Vorlagen bearbeiten** > **Generierten Inhalt bearbeiten (ItemTemplate)**  > **Leere ... erstellen** aus. Das Dialogfeld **Ressource erstellen** wird geöffnet.
 
@@ -317,7 +317,7 @@ So fügst du eine Datenvorlage einer Rasteransicht hinzu:
     </Grid>
     ```
 
-    Weitere Informationen zu `Grid`-Layouts findest du unter [Layoutpanels](https://docs.microsoft.com/windows/uwp/layout/layout-panels#grid).
+    Weitere Informationen zu `Grid`-Layouts findest du unter [Layoutpanels](../layout/layout-panels.md#grid).
 
 6. Füge dem `Grid`-Layout Steuerelemente hinzu.
 
@@ -325,7 +325,7 @@ So fügst du eine Datenvorlage einer Rasteransicht hinzu:
 
     b. Fügen Sie `TextBlock`-Steuerelemente zum Anzeigen des Namens, Dateityps und der Dimensionen des Bilds hinzu. Verwenden Sie hierzu `StackPanel`-Steuerelemente, um die Textblöcke anzuordnen. Verwenden Sie die angefügte `Grid.Row`-Eigenschaft, um das äußerste `StackPanel`-Element in der zweiten Zeile (Zeile 1) zu platzieren.
 
-    Weitere Informationen zu `StackPanel`-Layouts findest du unter [Layoutpanels](https://docs.microsoft.com/windows/uwp/layout/layout-panels#stackpanel)
+    Weitere Informationen zu `StackPanel`-Layouts findest du unter [Layoutpanels](../layout/layout-panels.md#stackpanel)
 
     c. Fügen Sie dem äußeren (vertikalen) `StackPanel`-Steuerelement das `RatingControl`-Element hinzu. Platziere es nach dem inneren (horizontalen) `StackPanel`.
 

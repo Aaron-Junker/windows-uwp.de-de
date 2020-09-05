@@ -1,16 +1,16 @@
 ---
 title: Hinzufügen von WebVR-Support zu einem Babylon.js-3D-Spiel
-description: Es wird beschrieben, wie du einem vorhandenen Babylon.js-3D-Spiel WebVR-Unterstützung hinzufügst.
+description: In diesem Tutorial erfahren Sie, wie Sie WebVR-Virtual Reality-Unterstützung zu einem bestehenden Babylon.js-3D-Spiel hinzufügen.
 ms.date: 11/29/2017
 ms.topic: article
 keywords: WebVR, Edge, Webentwicklung, Babylon, Babylonjs, Babylon.js, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: ff350f8ce08f566b8c95c3c46faad330923e4b2e
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: a01e459160025e9ed1b83fbe81da6d562340691e
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75685202"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094547"
 ---
 # <a name="adding-webvr-support-to-a-3d-babylonjs-game"></a>Hinzufügen von WebVR-Support zu einem Babylon.js-3D-Spiel
 

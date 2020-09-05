@@ -5,16 +5,16 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ef518c9974fb4c8bc0f09f442f4b78be1c9c85d2
-ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
+ms.openlocfilehash: f4d2e4c2c1cfde922e46ddea189ab93447f2b323
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775835"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411954"
 ---
 # <a name="conditional-xaml"></a>Bedingtes XAML
 
-*Bedingtes XAML* bietet eine Möglichkeit, die Methode [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) in XAML-Markup zu verwenden. Sie sind damit in der Lage, im Markup nur dann Eigenschaften festzulegen und Objekte zu initialisieren, wenn die entsprechende API vorhanden ist, ohne CodeBehind zu verwenden. Elemente oder Attribute werden selektiv analysiert, um zu bestimmen, ob sie zur Laufzeit zur Verfügung stehen. Bedingte Anweisungen werden zur Laufzeit ausgewertet, und Elemente, die mit einem bedingten XAML-Tag gekennzeichnet sind, werden analysiert, wenn ihre Auswertung **true** ergibt. Andernfalls werden sie ignoriert.
+*Bedingtes XAML* bietet eine Möglichkeit, die Methode [ApiInformation.IsApiContractPresent](/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) in XAML-Markup zu verwenden. Sie sind damit in der Lage, im Markup nur dann Eigenschaften festzulegen und Objekte zu initialisieren, wenn die entsprechende API vorhanden ist, ohne CodeBehind zu verwenden. Elemente oder Attribute werden selektiv analysiert, um zu bestimmen, ob sie zur Laufzeit zur Verfügung stehen. Bedingte Anweisungen werden zur Laufzeit ausgewertet, und Elemente, die mit einem bedingten XAML-Tag gekennzeichnet sind, werden analysiert, wenn ihre Auswertung **true** ergibt. Andernfalls werden sie ignoriert.
 
 Bedingtes XAML ist ab dem Creators Update (Version 1703, Build 15063) verfügbar. Die Verwendung von bedingtem XAML setzt voraus, dass Sie in Ihrem Visual Studio-Projekt Build 15063 (Creators Update) oder höher als Mindestversion und eine höhere Version als Zielversion festlegen. Weitere Informationen zum Konfigurieren Ihres Visual Studio-Projekts finden Sie unter [Versionsadaptive Apps](version-adaptive-apps.md).
 
@@ -59,7 +59,7 @@ Wir besprechen diese Methoden weiter unten in diesem Artikel.
 
 In diesem Beispiel zeigen Sie „Hello, Conditional XAML“ als Inhalt eines Textblocks an, wenn die App mit dem Fall Creators Update oder später läuft, und standardmäßig keinen Inhalt, wenn sie unter einer früheren Version läuft.
 
-Zuerst definieren Sie einen benutzerdefinierten Namespace mit dem Präfix „contract5Present“ und verwenden den standardmäßigen XAML-Namespace (https://schemas.microsoft.com/winfx/2006/xaml/presentation) als das Schema, das die Eigenschaft [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.Text) enthält). Um daraus einen bedingten Namespace zu machen, fügen Sie das Trennzeichen „?“ hinter dem Schema hinzu.
+Zuerst definieren Sie einen benutzerdefinierten Namespace mit dem Präfix „contract5Present“ und verwenden den standardmäßigen XAML-Namespace (https://schemas.microsoft.com/winfx/2006/xaml/presentation) als das Schema, das die Eigenschaft [TextBlock.Text](/uwp/api/windows.ui.xaml.controls.textblock.Text) enthält). Um daraus einen bedingten Namespace zu machen, fügen Sie das Trennzeichen „?“ hinter dem Schema hinzu.
 
 Dann definieren Sie eine Bedingung, die **true** auf Geräten zurückgibt, die das Fall Creators Update ausführen. Sie können die ApiInformation-Methode **IsApiContractPresent** verwenden, um zu prüfen, ob die 5. Version von „UniversalApiContract“ vorliegt. Version 5 von „UniversalApiContract“ wurde mit dem Fall Creators Update (SDK 16299) veröffentlicht.
 
@@ -159,7 +159,7 @@ Hier ist ein weiteres Beispiel, das die Hintergrundfarbe einer Schaltfläche fes
 
 Bisher haben Sie erfahren, wie Eigenschaften mithilfe von bedingtem XAML festgelegt werden. Sie können aber auch Steuerelemente bedingt instanziieren, je nach dem API-Vertrag, der zur Laufzeit verfügbar ist
 
-Hier wird ein [ColorPicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker) instanziiert, wenn die App unter Fall Creators Update ausgeführt wird, in der das Steuerelement verfügbar ist. Der ColorPicker ist erst ab Fall Creators Update verfügbar. Wenn die App unter früheren Versionen ausgeführt wird, verwenden Sie eine [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox), um eine vereinfachte Farbauswahl für den Benutzer bereitzustellen.
+Hier wird ein [ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker) instanziiert, wenn die App unter Fall Creators Update ausgeführt wird, in der das Steuerelement verfügbar ist. Der ColorPicker ist erst ab Fall Creators Update verfügbar. Wenn die App unter früheren Versionen ausgeführt wird, verwenden Sie eine [ComboBox](/uwp/api/windows.ui.xaml.controls.combobox), um eine vereinfachte Farbauswahl für den Benutzer bereitzustellen.
 
 ```xaml
 <contract5Present:ColorPicker x:Name="colorPicker"
@@ -244,7 +244,7 @@ Wenn die App unter Fall Creators Update ausgeführt wird, verwenden Sie einen Co
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Anleitung für UWP-Apps](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+- [Anleitung für UWP-Apps](../get-started/universal-application-platform-guide.md)
 - [Dynamisches Erkennen von Features mithilfe von API-Verträgen](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
 - [API-Verträge](https://channel9.msdn.com/Events/Build/2015/3-733) (Video für Build 2015)
-- [API-Verträge der universellen Gerätefamilie](/uwp/extension-sdks/windows-universal-sdk)
+- [Programmieren mit Erweiterungs-SDKs](/uwp/extension-sdks/device-families-overview)

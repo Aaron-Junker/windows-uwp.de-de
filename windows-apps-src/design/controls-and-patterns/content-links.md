@@ -1,6 +1,6 @@
 ---
-Description: Verwenden Sie Links zu Inhalten, um umfangreiche Daten in Ihre Textsteuerelemente einzubetten.
 title: Links zu Inhalten in Textsteuerelementen
+description: Erfahren Sie, wie Sie Inhaltslinks verwenden, um umfangreiche Daten in die TextBlock-, RichTextBlock- und RichEditBox-Steuerelemente einzubetten.
 label: Content links
 template: detail.hbs
 ms.date: 03/07/2018
@@ -10,12 +10,12 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: b72d7fced63a4c3ef4b1b233afcbb9f9874d9a3f
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8a35e065a44eb55b84f6b70f5833c8652188a8c9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68796714"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174644"
 ---
 # <a name="content-links-in-text-controls"></a>Links zu Inhalten in Textsteuerelementen
 
@@ -162,7 +162,7 @@ Die Personenauswahl erstellt eine ContentLinkInfo mit einem Uri, der das **ms-Pe
 - Wenn LinkContentKind nicht „Personen“ entspricht, wird die **Personen**-App geöffnet. Dies kann beispielsweise der Fall sein, wenn Sie die LinkContentKind im ContentLinkChanged-Ereignishandler geändert haben.
 
 > [!TIP]
-> Weitere Informationen zum Öffnen anderer Apps und Websites über Ihre App finden Sie unter [Starten einer App mit einem URI](/windows/uwp/launch-resume/launch-app-with-uri).
+> Weitere Informationen zum Öffnen anderer Apps und Websites über Ihre App finden Sie unter [Starten einer App mit einem URI](../../launch-resume/launch-app-with-uri.md).
 
 #### <a name="invoked"></a>Aufgerufen
 
@@ -303,7 +303,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 ```
 
 > [!TIP]
-> Wenn Sie einen ContentLink in einem Textsteuerelement mit anderen Textelementen in XAML verwenden, platzieren Sie den Inhalt in einem [Span](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span)-Container und wenden das Attribut `xml:space="preserve"` auf den Span-Container an, um die Leerstelle zwischen dem ContentLink und anderen Elementen beizubehalten.
+> Wenn Sie einen ContentLink in einem Textsteuerelement mit anderen Textelementen in XAML verwenden, platzieren Sie den Inhalt in einem [Span](/uwp/api/windows.ui.xaml.documents.span)-Container und wenden das Attribut `xml:space="preserve"` auf den Span-Container an, um die Leerstelle zwischen dem ContentLink und anderen Elementen beizubehalten.
 
 ## <a name="examples"></a>Beispiele
 

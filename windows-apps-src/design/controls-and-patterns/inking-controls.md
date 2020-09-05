@@ -1,5 +1,5 @@
 ---
-Description: Beschreibung der Freihandtools
+description: Erfahren Sie mehr über die InkCanvas- und InkToolbar-Steuerelemente, die Freihandeingabe und Freihandfunktionen in Windows-Apps erleichtern.
 title: Steuerelemente für Freihandeingaben
 label: Inking Controls
 template: detail.hbs
@@ -8,18 +8,18 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: 56104dd5608356b47a405c37eba71e544c5ba23c
-ms.sourcegitcommit: 37e4af3ba203295c7e88448414cf7ea537ab5402
+ms.openlocfilehash: a856d0ef6864b70a2927c35205fb0addca3e4056
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84257431"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173964"
 ---
 # <a name="inking-controls"></a>Steuerelemente für Freihandeingaben
 
 
 
-Es gibt zwei verschiedene Steuerelemente, die Freihandeingaben in Windows-Apps erleichtern: [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) und [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
+Es gibt zwei verschiedene Steuerelemente, die Freihandeingaben in Windows-Apps erleichtern: [InkCanvas](/uwp/api/windows.ui.xaml.controls.inkcanvas) und [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar).
 
 Das InkCanvas-Steuerelement rendert Stifteingaben entweder als Freihandstrich (mit Standardeinstellungen für Farbe und Breite) oder als Radierstrich. Dieses Steuerelement ist eine transparente Überlagerung, die keine integrierte Benutzeroberfläche zum Ändern der Standardeigenschaften von Freihandstrichen enthält.
 
@@ -35,7 +35,7 @@ Das InkToolbar-Steuerelement enthält standardmäßig Schaltflächen zum Zeichne
 
 <img src="images/ink-tools-invoked-toolbar.png" width="300" alt="InkToolbar palette flyout">
 
-> **Wichtige APIs:** [InkCanvas-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), [InkToolbar-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), [InkPresenter-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
+> **Wichtige APIs:** [InkCanvas-Klasse](/uwp/api/windows.ui.xaml.controls.inkcanvas), [InkToolbar-Klasse](/uwp/api/windows.ui.xaml.controls.inktoolbar), [InkPresenter-Klasse](/uwp/api/windows.ui.input.inking.inkpresenter), [Windows.UI.Input.Inking](/uwp/api/Windows.UI.Input.Inking)
 
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
@@ -47,7 +47,7 @@ Standardmäßig werden Striche als Freihandeingabe gerendert, wenn die Stiftspit
 Kombinieren Sie das InkCanvas-Steuerelement mit einem InkToolbar-Steuerelement, um eine Benutzeroberfläche zum Aktivieren von Freihandfeatures und Festlegen grundlegender Freihandeigenschaften wie Strichgröße, Farbe und Form der Stiftspitze bereitzustellen.
 
 > [!NOTE] 
-> Verwenden Sie das zugrunde liegende [InkPresenter-Objekt](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), wenn Sie umfassendere Anpassungen am Rendering von Freihandeingaben für ein InkCanvas-Steuerelement vornehmen möchten.
+> Verwenden Sie das zugrunde liegende [InkPresenter-Objekt](/uwp/api/windows.ui.input.inking.inkpresenter), wenn Sie umfassendere Anpassungen am Rendering von Freihandeingaben für ein InkCanvas-Steuerelement vornehmen möchten.
 
 ## <a name="examples"></a>Beispiele
 
@@ -84,7 +84,7 @@ Zum Hinzufügen eines InkCanvas-Steuerelements zu Ihrer App ist nur eine Markupz
 ```
 
 > [!NOTE]
-> Ausführliche Informationen zur Anpassung von „InkCanvas” mit „InkPresenter” finden Sie im Artikel [Zeichenstiftinteraktionen und Windows Ink in Windows-Apps](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions).
+> Ausführliche Informationen zur Anpassung von „InkCanvas” mit „InkPresenter” finden Sie im Artikel [Zeichenstiftinteraktionen und Windows Ink in Windows-Apps](../input/pen-and-stylus-interactions.md).
 
 Das InkToolbar-Steuerelement muss in Verbindung mit einem InkCanvas-Steuerelement verwendet werden. Zum Einbinden eines InkToolbar-Steuerelements (mit allen integrierten Tools) in Ihre App ist nur eine zusätzliche Markupzeile erforderlich:
 
@@ -170,6 +170,6 @@ Der Radierer verfügt ebenfalls über ein Flyout mit dem Befehl **Freihand volls
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Stiftinteraktionen und Windows Ink in Windows-Apps](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
-- [Erkennen von Windows Ink-Strichen als Text und Formen](https://docs.microsoft.com/windows/uwp/design/input/convert-ink-to-text)
-- [Speichern und Abrufen der Daten zu Windows Ink-Strichen](https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink)
+- [Stiftinteraktionen und Windows Ink in Windows-Apps](../input/pen-and-stylus-interactions.md)
+- [Erkennen von Windows Ink-Strichen als Text und Formen](../input/convert-ink-to-text.md)
+- [Speichern und Abrufen der Daten zu Windows Ink-Strichen](../input/save-and-load-ink.md)

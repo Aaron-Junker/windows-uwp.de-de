@@ -1,6 +1,6 @@
 ---
-Description: Verwenden Sie eine invertierte Liste, um neue Einträge unten einzufügen.
 title: Invertierte Listen
+description: Erfahren Sie, wie Sie eine invertierte Liste erstellen und diese zum Hinzufügen neuer Elemente am unteren Rand eines ListView-Steuerelements in einer universellen Windows-Plattform-App (UWP) verwenden.
 label: Inverted lists
 template: detail.hbs
 ms.date: 05/19/2017
@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c552109b243688c2618425adce797c4d208eac31
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 40e99ecb4719569e95b55a8cafb411df26ed265e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66364774"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169884"
 ---
 # <a name="inverted-lists"></a>Invertierte Listen
 
@@ -24,7 +24,7 @@ ms.locfileid: "66364774"
 
 Mit einer Listenansicht können Sie eine Unterhaltung in einer Chat-Darstellung optisch so aufbereitet darstellen, dass die beiden Gesprächspartner voneinander abgehoben sind.  Mit unterschiedlichen Farben und alternierender horizontaler Ausrichtung zur Kennzeichnung der Nachrichten des Absenders/Empfängers lassen sich Unterhaltungen leichter lesen und durchblättern.
 
-> **Wichtige APIs:**  [ListView-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [ItemsStackPanel-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel), [ItemsUpdatingScrollMode-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode)
+> **Wichtige APIs:**  [ListView-Klasse](/uwp/api/windows.ui.xaml.controls.listview), [ItemsStackPanel-Klasse](/uwp/api/windows.ui.xaml.controls.itemsstackpanel), [ItemsUpdatingScrollMode-Eigenschaft](/uwp/api/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode)
  
 Sie müssen die Liste in der Regel so anzeigen, dass sie von unten nach oben anstelle von oben nach unten wächst.  Wenn eine neue Nachricht eintrifft und am Ende hinzugefügt wird, werden die vorherigen Nachrichten nach oben verschoben, um die Aufmerksamkeit des Benutzers auf die aktuelle Nachricht zu richten.  Wenn der Benutzer jedoch einen Bildlauf zu den vorherigen Antworten durchführt, darf eine neue Nachricht nicht dazu führen, das automatisch diese Nachricht angezeigt wird, weil dies den Benutzer beim Lesen der vorherigen Nachrichten stören würde.
 
@@ -32,7 +32,7 @@ Sie müssen die Liste in der Regel so anzeigen, dass sie von unten nach oben ans
 
 ## <a name="create-an-inverted-list"></a>Erstellen einer invertierten Liste
 
-Verwenden Sie zum Erstellen einer invertierten Liste eine Listenansicht mit einem [ItemsStackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel) als Elementpanel. Legen Sie bei ItemsStackPanel die [ItemsUpdatingScrollMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode)-Eigenschaft auf [KeepLastItemInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsupdatingscrollmode) fest.
+Verwenden Sie zum Erstellen einer invertierten Liste eine Listenansicht mit einem [ItemsStackPanel](/uwp/api/windows.ui.xaml.controls.itemsstackpanel) als Elementpanel. Legen Sie bei ItemsStackPanel die [ItemsUpdatingScrollMode](/uwp/api/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode)-Eigenschaft auf [KeepLastItemInView](/uwp/api/windows.ui.xaml.controls.itemsupdatingscrollmode) fest.
 
 > [!IMPORTANT]
 > Der Enumerationswert **KeepLastItemInView** ist ab Windows 10, Version 1607, verfügbar. Wenn Ihre App unter einer früheren Version von Windows 10 ausgeführt wird, können Sie diesen Wert nicht verwenden.

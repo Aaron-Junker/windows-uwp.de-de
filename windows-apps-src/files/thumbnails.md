@@ -1,18 +1,18 @@
 ---
-Description: 'Gewusst wie: Verwenden von Miniaturbildern zur Unterstützung von Benutzern beim Anzeigen einer Vorschau für Dateien in UWP-Apps.'
 title: Richtlinien für Miniaturbilder in UWP-Apps
+description: Erfahren Sie, wie Miniaturbilder als Dateivorschau für Benutzer verwendet werden, während diese in Ihrer universellen Windows-Plattform-App (UWP) navigieren.
 label: Thumbnail images
 template: detail.hbs
 ms.date: 12/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 15984e00b036bf44d6e4a7f60cb6435ea1add291
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: df0d2364762d75793f3f00856b06e8ae506cb327
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63808714"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165596"
 ---
 # <a name="thumbnail-images"></a>Miniaturbilder
 
@@ -20,7 +20,7 @@ Diese Richtlinien beschreiben, wie Miniaturbilder als Dateivorschau für Benutze
 
 **Wichtige APIs**
 
--   [**ThumbnailMode**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)
+-   [**ThumbnailMode**](/uwp/api/windows.storage.fileproperties.thumbnailmode)
 
 ## <a name="should-my-app-include-thumbnails"></a>Sollte meine App Miniaturbilder enthalten?
 
@@ -36,7 +36,7 @@ Verwende Miniaturbilder in folgenden Fällen:
     ![Videovorschau](images/thumbnail-preview.png)
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
-- Gib den [Miniaturbildmodus](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode) (PicturesView, VideosView, DocumentsView, MusicView, ListView oder SingleItem) an, wenn du Miniaturbilder abrufst. So stellst du sicher, dass Miniaturbilder für den jeweiligen Dateityp optimiert sind, den Benutzer anzeigen möchten. 
+- Gib den [Miniaturbildmodus](/uwp/api/windows.storage.fileproperties.thumbnailmode) (PicturesView, VideosView, DocumentsView, MusicView, ListView oder SingleItem) an, wenn du Miniaturbilder abrufst. So stellst du sicher, dass Miniaturbilder für den jeweiligen Dateityp optimiert sind, den Benutzer anzeigen möchten. 
     - Verwende den SingleItem-Modus, um unabhängig vom Dateityp ein Miniaturbild für ein einzelnes Element abzurufen. Die anderen Miniaturbildmodi dienen zum Anzeigen einer Vorschau mit mehreren Dateien. 
 
 - Zeige anstelle von Miniaturbildern generische Platzhalterbilder an, während die Miniaturbilder geladen werden. Bei Verwendung von Platzhaltern erscheint deine App reaktionsfähiger, weil Benutzer mit der Vorschau interagieren können, bevor das Miniaturbild geladen wurde. 
@@ -55,7 +55,7 @@ Verwende Miniaturbilder in folgenden Fällen:
 - Zeige für Bild- und Videodateien keine zusätzlichen Dateiinformationen an. In den meisten Fällen ist ein Miniaturbild für Benutzer ausreichend, die Bilder und Videos durchsuchen. 
 
 ## <a name="additional-usage-guidelines"></a>Weitere Richtlinien zur Verwendung
-Empfohlene [Miniaturbildmodi](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode) und deren Features:
+Empfohlene [Miniaturbildmodi](/uwp/api/windows.storage.fileproperties.thumbnailmode) und deren Features:
 
 <table>
 <tr>
@@ -163,8 +163,8 @@ Andernfalls wird kein Miniaturbild abgerufen.</td>
 </div>
 
 ## <a name="related-topics"></a>Zugehörige Themen
-- [ThumbnailMode-Enumeration](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)
-- [StorageItemThumbnail-Klasse](https://docs.microsoft.com/uwp/api/Windows.Storage.FileProperties.StorageItemThumbnail)
-- [StorageFile-Klasse](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)
+- [ThumbnailMode-Enumeration](/uwp/api/windows.storage.fileproperties.thumbnailmode)
+- [StorageItemThumbnail-Klasse](/uwp/api/Windows.Storage.FileProperties.StorageItemThumbnail)
+- [StorageFile-Klasse](/uwp/api/windows.storage.storagefile)
 - [Beispiel für Datei- und Ordnerminiaturbild (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileThumbnails)
 - [Listen- und Rasteransicht](../design/controls-and-patterns/lists.md)

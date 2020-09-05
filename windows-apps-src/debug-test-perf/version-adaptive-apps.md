@@ -5,12 +5,12 @@ ms.date: 05/17/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b947d0b6cc83dc6bca45efb7103a933e79972e3b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: bb676ba5dbb92b1aa6dfb8888da90a8528e2dfa1
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67317449"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412034"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>Versionsadaptive Apps: Verwenden neuer APIs bei gleichzeitiger Gewährleistung der Kompatibilität mit früheren Versionen
 
@@ -65,7 +65,7 @@ Sie können jede beliebige veröffentlichte Version des SDKs aus dem [Windows S
 
 ## <a name="perform-api-checks"></a>Durchführen von API-Überprüfungen
 
-Der Schlüssel für versionsadaptive Apps ist die Kombination von API-Verträgen und [ApiInformation](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation)-Klasse. Mit dieser Klasse können Sie erkennen, ob ein angegebener API-Vertrag, Typ oder Member vorhanden ist, damit Sie API-Aufrufe problemlos über eine Vielzahl von Geräten und Betriebssystemversionen vornehmen können.
+Der Schlüssel für versionsadaptive Apps ist die Kombination von API-Verträgen und [ApiInformation](/uwp/api/windows.foundation.metadata.apiinformation)-Klasse. Mit dieser Klasse können Sie erkennen, ob ein angegebener API-Vertrag, Typ oder Member vorhanden ist, damit Sie API-Aufrufe problemlos über eine Vielzahl von Geräten und Betriebssystemversionen vornehmen können.
 
 ### <a name="api-contracts"></a>API-Verträge
 
@@ -81,10 +81,10 @@ Was ist ein API-Vertrag? Im Wesentlichen ist ein API-Vertrag ein Feature – ein
 
 In einem API-Vertrag sind logisch zusammenhängende Typen zusammengefasst. Ab Windows 10 ist jede Windows-Runtime-API Mitglied eines API-Vertrags. Mit API-Verträgen überprüfen Sie die Verfügbarkeit eines bestimmten Features oder einer API auf dem Gerät. Diese Überprüfung der Funktionalität eines Gerät ist effektiver als die Suche nach einem bestimmten Gerät oder Betriebssystem. Eine Plattform, die eine API eines API-Vertrags implementiert, muss jede API in diesem API-Vertrag implementieren. Sie können somit testen, ob das ausgeführte Betriebssystem einen bestimmten API-Vertrag unterstützt und, falls das der Fall ist, eine beliebige API aus dem API-Vertrag aufrufen, ohne jede einzeln zu überprüfen.
 
-Der größte und am häufigsten verwendete API-Vertrag ist der **Windows.Foundation.UniversalApiContract**. Er enthält die meisten APIs für die Universelle Windows-Plattform. Die Dokumentation [Erweiterungs-SDKs für Gerätefamilien und API-Verträge](https://docs.microsoft.com/uwp/extension-sdks/) beschreibt die Vielzahl der verfügbaren API-Verträge. In den meisten von ihnen sind APIs mit ähnlicher Funktionalität zusammengefasst.
+Der größte und am häufigsten verwendete API-Vertrag ist der **Windows.Foundation.UniversalApiContract**. Er enthält die meisten APIs für die Universelle Windows-Plattform. Die Dokumentation [Erweiterungs-SDKs für Gerätefamilien und API-Verträge](/uwp/extension-sdks/) beschreibt die Vielzahl der verfügbaren API-Verträge. In den meisten von ihnen sind APIs mit ähnlicher Funktionalität zusammengefasst.
 
 > [!NOTE]
-> Für eine installierte Vorabversion des Windows Software Development Kit (SDK), die noch nicht dokumentiert ist, finden Sie Informationen über die Unterstützung von API-Verträgen in der Datei „Platform.xml” im SDK-Installationsordner unter „\(Programmdateien (x86))\Windows Kits\10\Platforms\<Plattform>\<SDK-Version>\Platform.xml“.
+> Für eine installierte Vorabversion des Windows Software Development Kit (SDK), die noch nicht dokumentiert ist, finden Sie Informationen über die Unterstützung von API-Verträgen in der Datei „Platform.xml” im SDK-Installationsordner unter „\(Programmdateien (x86))\Windows Kits\10\Platforms\<platform>\<SDK version>\Platform.xml“.
 
 ### <a name="version-adaptive-code-and-conditional-xaml"></a>Versionsadaptiver Code und bedingtes XAML
 
@@ -105,6 +105,6 @@ Weitere Informationen über Remotedebugging finden Sie unter [Bereitstellen und 
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Was ist eine UWP-App?](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+- [Was ist eine UWP-App?](../get-started/universal-application-platform-guide.md)
 - [Dynamisches Erkennen von Features mithilfe von API-Verträgen](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
 - [API-Verträge](https://channel9.msdn.com/Events/Build/2015/3-733) (Video für Build 2015)

@@ -1,16 +1,16 @@
 ---
 title: Erstellen von Datenbindungen
-description: In diesem Artikel werden die Grundlagen der Datenbindung in XAML behandelt.
+description: Befolgen Sie dieses Tutorial zum Erstellen von Datenbindungen mithilfe von XAML und C#, um einen direkten Link zwischen Ihrer Benutzeroberfläche und den Daten bilden.
 keywords: XAML, UWP, Erste Schritte
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ac0603aab5abdc9aef54264c7e8d5bf9ae848889
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 5d3363dcc47ef43fe65b3c954b213a81cc5165e1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88943120"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166284"
 ---
 # <a name="tutorial-create-data-bindings"></a>Tutorial: Erstellen von Datenbindungen
 
@@ -627,5 +627,5 @@ Möglicherweise ist dir aufgefallen: Wenn du den Zoomfaktor auf der Detailseite 
 
 Du solltest in diesem Tutorial alle benötigten Informationen erhalten haben, aber wenn du weitere Unterstützung benötigst, erreichst du die Dokumente zur Datenbindung mit wenigen Mausklicks. Beginne hier:
 
-+ [Markuperweiterung {x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
-+ [Datenbindung im Detail](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
++ [Markuperweiterung {x:Bind}](../xaml-platform/x-bind-markup-extension.md)
++ [Datenbindung im Detail](./data-binding-in-depth.md)

@@ -1,23 +1,23 @@
 ---
 title: Arbeiten mit Dateien
-description: Hier erfährst du, wie du auf der universellen Windows-Plattform mit Dateien arbeitest.
+description: Hier lernen Sie die Haupt-APIs und die benötigten Typen kennen, um Dateien aus einer UWP-App (Universelle Windows-Plattform) zu lesen bzw. in eine UWP-App zu schreiben.
 ms.date: 05/01/2018
 ms.topic: article
 keywords: Erste Schritte, UWP, Windows 10, Lernpfad, Dateien, Datei-E/A, Datei lesen, Datei schreiben, Datei erstellen, Text schreiben, Text lesen
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c36f4885dffa86452543f05f5b7a59a882d25710
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: fea8437a533d3559c912e48241720bddd01ed96d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730055"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158964"
 ---
 # <a name="work-with-files"></a>Arbeiten mit Dateien
 
 In diesem Thema erfährst du alles, was du wissen musst, um Dateien aus einer UWP-App (Universelle Windows-Plattform) zu lesen bzw. in eine UWP-App zu schreiben. Hier findest du grundlegende Informationen zu den wichtigsten APIs und Typen sowie Links zu weiterführenden Informationen.
 
-Dieser Artikel ist kein Tutorial. Ein Tutorial findest du unter [Erstellen, Schreiben und Lesen einer Datei](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files). Darin wird gezeigt, wie du eine Datei erstellst, liest und schreibst und wie du Puffer und Streams verwendest. Bei Interesse kannst du dir auch aus [Beispiel zum Dateizugriff](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) ansehen. Dort erfährst du, wie du eine Datei erstellst, liest, schreibst, kopierst und löschst. Außerdem erfährst du, wie du Dateieigenschaften abrufst und eine Datei oder einen Ordner speicherst, sodass deine App mühelos erneut darauf zugreifen kann.
+Dieser Artikel ist kein Tutorial. Ein Tutorial findest du unter [Erstellen, Schreiben und Lesen einer Datei](../files/quickstart-reading-and-writing-files.md). Darin wird gezeigt, wie du eine Datei erstellst, liest und schreibst und wie du Puffer und Streams verwendest. Bei Interesse kannst du dir auch aus [Beispiel zum Dateizugriff](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) ansehen. Dort erfährst du, wie du eine Datei erstellst, liest, schreibst, kopierst und löschst. Außerdem erfährst du, wie du Dateieigenschaften abrufst und eine Datei oder einen Ordner speicherst, sodass deine App mühelos erneut darauf zugreifen kann.
 
 Wir sehen uns Code zum Schreiben und Lesen von Text in einer Datei an, und du erfährst, wie du auf den lokalen und temporären Ordner sowie auf den Roamingordner der App zugreifst.
 
@@ -25,17 +25,17 @@ Wir sehen uns Code zum Schreiben und Lesen von Text in einer Datei an, und du er
 
 Im Anschluss findest du die wichtigsten Typen, die du im Zusammenhang mit dem Lesen und Schreiben von Text aus einer bzw. in eine Datei kennen musst:
 
-- [Windows.Storage.StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) stellt eine Datei dar. Diese Klasse enthält Eigenschaften, die Informationen zur Datei liefern, sowie Methoden zum Erstellen, Öffnen, Kopieren, Löschen und Umbenennen von Dateien.
-Möglicherweise bist du es gewohnt, mit Zeichenfolgenpfaden zu arbeiten. Es gibt zwar einige Windows-Runtime-APIs, die einen Zeichenfolgenpfad verwenden, in der Regel wird zur Darstellung einer Datei jedoch ein **StorageFile**-Element verwendet, da einige Dateien, mit denen du in UWP arbeitest, unter Umständen keinen oder einen eher unhandlichen Pfad haben. Verwende [StorageFile.GetFileFromPathAsync()](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync), um einen Zeichenfolgenpfad in ein **StorageFile**-Element zu konvertieren. 
+- [Windows.Storage.StorageFile](/uwp/api/windows.storage.storagefile) stellt eine Datei dar. Diese Klasse enthält Eigenschaften, die Informationen zur Datei liefern, sowie Methoden zum Erstellen, Öffnen, Kopieren, Löschen und Umbenennen von Dateien.
+Möglicherweise bist du es gewohnt, mit Zeichenfolgenpfaden zu arbeiten. Es gibt zwar einige Windows-Runtime-APIs, die einen Zeichenfolgenpfad verwenden, in der Regel wird zur Darstellung einer Datei jedoch ein **StorageFile**-Element verwendet, da einige Dateien, mit denen du in UWP arbeitest, unter Umständen keinen oder einen eher unhandlichen Pfad haben. Verwende [StorageFile.GetFileFromPathAsync()](/uwp/api/windows.storage.storagefile.getfilefrompathasync), um einen Zeichenfolgenpfad in ein **StorageFile**-Element zu konvertieren. 
 
-- Mit der Klasse [FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio) kannst du ganz einfach Text lesen und schreiben. Sie kann auch ein Bytearray oder den Inhalt eines Puffers lesen/schreiben. Diese Klasse ist der Klasse [PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio) sehr ähnlich. Der Hauptunterschied besteht darin, dass anstelle eines Zeichenfolgenpfads wie bei **PathIO** ein **StorageFile**-Element verwendet wird.
-- [Windows.Storage.StorageFolder](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder) stellt einen Ordner (Verzeichnis) dar. Diese Klasse verfügt über Methoden zum Erstellen von Dateien, zum Abfragen des Inhalts eines Ordners und zum Erstellen, Umbenennen und Löschen von Ordnern sowie über Eigenschaften, die Informationen zu einem Ordner bereitstellen. 
+- Mit der Klasse [FileIO](/uwp/api/windows.storage.fileio) kannst du ganz einfach Text lesen und schreiben. Sie kann auch ein Bytearray oder den Inhalt eines Puffers lesen/schreiben. Diese Klasse ist der Klasse [PathIO](/uwp/api/windows.storage.pathio) sehr ähnlich. Der Hauptunterschied besteht darin, dass anstelle eines Zeichenfolgenpfads wie bei **PathIO** ein **StorageFile**-Element verwendet wird.
+- [Windows.Storage.StorageFolder](/uwp/api/windows.storage.storagefolder) stellt einen Ordner (Verzeichnis) dar. Diese Klasse verfügt über Methoden zum Erstellen von Dateien, zum Abfragen des Inhalts eines Ordners und zum Erstellen, Umbenennen und Löschen von Ordnern sowie über Eigenschaften, die Informationen zu einem Ordner bereitstellen. 
 
 Gängige Methoden zum Abrufen eines **StorageFolder**-Elements sind:
 
-- [Windows.Storage.Pickers.FolderPicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.folderpicker): Ermöglicht es dem Benutzer, zum gewünschten Ordner zu navigieren.
-- [Windows.Storage.ApplicationData.Current](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current): Stellt das spezifische **StorageFolder**-Element für einen der lokalen Ordner der App bereit (etwa den lokalen oder temporären Ordner oder den Roamingordner).
-- [Windows.Storage.KnownFolders](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders): Stellt das **StorageFolder**-Element für bekannte Bibliotheken wie Musik- oder Bildbibliotheken bereit.
+- [Windows.Storage.Pickers.FolderPicker](/uwp/api/windows.storage.pickers.folderpicker): Ermöglicht es dem Benutzer, zum gewünschten Ordner zu navigieren.
+- [Windows.Storage.ApplicationData.Current](/uwp/api/windows.storage.applicationdata.current): Stellt das spezifische **StorageFolder**-Element für einen der lokalen Ordner der App bereit (etwa den lokalen oder temporären Ordner oder den Roamingordner).
+- [Windows.Storage.KnownFolders](/uwp/api/windows.storage.knownfolders): Stellt das **StorageFolder**-Element für bekannte Bibliotheken wie Musik- oder Bildbibliotheken bereit.
 
 ## <a name="write-text-to-a-file"></a>Schreiben von Text in eine Datei
 
@@ -78,7 +78,7 @@ Auf der UWP-Plattform ist der Ordnerzugriff eingeschränkt, um die Integrität u
 
 ### <a name="app-folders"></a>App-Ordner
 
-Bei der Installation einer UWP-App werden unter „C:\Benutzer\<Benutzername>\AppData\Local\Packages\<Bezeichner des App-Pakets>\“ mehrere Ordner erstellt, in denen unter anderem die lokalen und temporären Dateien sowie die Roamingdateien der App gespeichert werden. Die App muss für den Zugriff auf diese Ordner keinerlei Funktionen deklarieren, und andere Apps können nicht auf diese Ordner zugreifen. Bei der Deinstallation der App werden diese Ordner ebenfalls entfernt.
+Bei der Installation einer UWP-App werden unter „C:\Benutzer\<user name>\AppData\Local\Packages\<app package identifier>\“ mehrere Ordner erstellt, in denen unter anderem die lokalen und temporären Dateien sowie die Roamingdateien der App gespeichert werden. Die App muss für den Zugriff auf diese Ordner keinerlei Funktionen deklarieren, und andere Apps können nicht auf diese Ordner zugreifen. Bei der Deinstallation der App werden diese Ordner ebenfalls entfernt.
 
 Im Anschluss folgen einige der häufig verwendeten App-Ordner:
 
@@ -90,17 +90,17 @@ Im Anschluss folgen einige der häufig verwendeten App-Ordner:
 
 ### <a name="access-the-rest-of-the-file-system"></a>Zugreifen auf das restliche Dateisystem
 
-Eine UWP-App muss deklarieren, dass sie auf eine bestimmte Benutzerbibliothek zugreifen möchte. Hierzu muss ihrem Manifest die entsprechende Funktion hinzugefügt werden. Der Benutzer muss dann bei der Installation der App den Zugriff auf die angegebene Bibliothek autorisieren. Andernfalls wird die App nicht installiert. Es stehen Funktionen für den Zugriff auf die Bild-, Video- und Musikbibliothek zur Verfügung. Eine vollständige Liste findest du unter [Deklarationen von App-Funktionen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations). Verwende die Klasse [Windows.Storage.KnownFolders](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders), um ein **StorageFolder**-Element für diese Bibliotheken abzurufen.
+Eine UWP-App muss deklarieren, dass sie auf eine bestimmte Benutzerbibliothek zugreifen möchte. Hierzu muss ihrem Manifest die entsprechende Funktion hinzugefügt werden. Der Benutzer muss dann bei der Installation der App den Zugriff auf die angegebene Bibliothek autorisieren. Andernfalls wird die App nicht installiert. Es stehen Funktionen für den Zugriff auf die Bild-, Video- und Musikbibliothek zur Verfügung. Eine vollständige Liste findest du unter [Deklarationen von App-Funktionen](../packaging/app-capability-declarations.md). Verwende die Klasse [Windows.Storage.KnownFolders](/uwp/api/windows.storage.knownfolders), um ein **StorageFolder**-Element für diese Bibliotheken abzurufen.
 
 #### <a name="documents-library"></a>Dokumentbibliothek
 
-Es gibt zwar eine Funktion für den Zugriff auf die Dokumentbibliothek des Benutzers, diese Funktion ist jedoch eingeschränkt. Das bedeutet, dass für eine App, die sie deklariert, eine spezielle Genehmigung eingeholt werden muss, damit sie vom Microsoft Store akzeptiert wird. Sie ist nicht für die allgemeine Verwendung vorgesehen. Verwende stattdessen die Datei- oder Ordnerauswahl (siehe [Öffnen von Dateien und Ordnern mit einer Auswahl](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers) und [Speichern einer Datei mit einer Auswahl](https://docs.microsoft.com/windows/uwp/files/quickstart-save-a-file-with-a-picker)). Sie ermöglicht es dem Benutzer, zu dem Ordner oder der Datei zu navigieren. Wenn der Benutzer zu einem Ordner oder einer Datei navigiert, erteilt er der App dadurch implizit eine Zugriffsberechtigung für den Ordner oder die Datei, und das System lässt den Zugriff zu.
+Es gibt zwar eine Funktion für den Zugriff auf die Dokumentbibliothek des Benutzers, diese Funktion ist jedoch eingeschränkt. Das bedeutet, dass für eine App, die sie deklariert, eine spezielle Genehmigung eingeholt werden muss, damit sie vom Microsoft Store akzeptiert wird. Sie ist nicht für die allgemeine Verwendung vorgesehen. Verwende stattdessen die Datei- oder Ordnerauswahl (siehe [Öffnen von Dateien und Ordnern mit einer Auswahl](../files/quickstart-using-file-and-folder-pickers.md) und [Speichern einer Datei mit einer Auswahl](../files/quickstart-save-a-file-with-a-picker.md)). Sie ermöglicht es dem Benutzer, zu dem Ordner oder der Datei zu navigieren. Wenn der Benutzer zu einem Ordner oder einer Datei navigiert, erteilt er der App dadurch implizit eine Zugriffsberechtigung für den Ordner oder die Datei, und das System lässt den Zugriff zu.
 
 #### <a name="general-access"></a>Allgemeiner Zugriff
 
-Alternativ kann deine App auch die eingeschränkte Funktion [broadFileSystem](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) im Manifest deklarieren. Diese erfordert ebenfalls eine Microsoft Store-Genehmigung. Die App kann dann auf jede Datei zugreifen, auf die der Benutzer Zugriff hat – ganz ohne Datei- oder Ordnerauswahl.
+Alternativ kann deine App auch die eingeschränkte Funktion [broadFileSystem](../packaging/app-capability-declarations.md) im Manifest deklarieren. Diese erfordert ebenfalls eine Microsoft Store-Genehmigung. Die App kann dann auf jede Datei zugreifen, auf die der Benutzer Zugriff hat – ganz ohne Datei- oder Ordnerauswahl.
 
-Eine umfassende Liste der Speicherorte, auf die Apps zugreifen können, findest du unter [Berechtigungen für den Dateizugriff](https://docs.microsoft.com/windows/uwp/files/file-access-permissions).
+Eine umfassende Liste der Speicherorte, auf die Apps zugreifen können, findest du unter [Berechtigungen für den Dateizugriff](../files/file-access-permissions.md).
 
 ## <a name="useful-apis-and-docs"></a>Nützliche APIs und Dokumente
 
@@ -110,39 +110,39 @@ Hier findest du einen kurzen Überblick über die APIs und andere nützliche Dok
 
 | API | Beschreibung |
 |------|---------------|
-|  [Windows.Storage.StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) | Stellt Informationen zur Datei sowie Methoden zum Erstellen, Öffnen, Kopieren, Löschen und Umbenennen von Dateien bereit. |
-| [Windows.Storage.StorageFolder](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder) | Stellt Informationen zum Ordner sowie Methoden zum Erstellen von Dateien und Methoden zum Erstellen, Umbenennen und Löschen von Ordnern bereit. |
-| [FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio) |  Bietet eine einfache Möglichkeit zum Lesen und Schreiben von Text. Diese Klasse kann auch ein Bytearray oder den Inhalt eines Puffers lesen/schreiben. |
-| [PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio) | Bietet eine einfache Möglichkeit zum Lesen und Schreiben von Text aus einer bzw. in eine Datei unter Angabe eines Zeichenfolgenpfads für die Datei. Diese Klasse kann auch ein Bytearray oder den Inhalt eines Puffers lesen/schreiben. |
-| [DataReader](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader) & [DataWriter](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter) |  Ermöglicht das Lesen und Schreiben von Puffern, Bytes, ganzen Zahlen, GUIDs, Zeitspannen und Ähnlichem aus einem bzw. in einen Stream. |
-| [Windows.Storage.ApplicationData.Current](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current) | Ermöglicht den Zugriff auf die Ordner, die für die App erstellt wurden – beispielsweise auf den lokalen Ordner, den Roamingordner und den Ordner für temporäre Dateien. |
-| [Windows.Storage.Pickers.FolderPicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.folderpicker) |  Ermöglicht es dem Benutzer, einen Ordner auszuwählen, und gibt dafür ein **StorageFolder**-Element zurück. So erhältst du Zugriff auf Speicherorte, auf die die App standardmäßig nicht zugreifen kann. |
-| [Windows.Storage.Pickers.FileOpenPicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker) | Ermöglicht es dem Benutzer, eine Datei auszuwählen und zu öffnen, und gibt dafür ein **StorageFile**-Element zurück. So erhältst du Zugriff auf eine Datei, auf die die App standardmäßig nicht zugreifen kann. |
-| [Windows.Storage.Pickers.FileSavePicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker) | Ermöglicht es dem Benutzer, den Dateinamen, die Erweiterung und den Speicherort für eine Datei auszuwählen. Gibt ein **StorageFile**-Element zurück. So kannst du eine Datei an einem Speicherort speichern, auf den die App standardmäßig keinen Zugriff hat. |
-|  [Windows.Storage.Streams-Namespace](https://docs.microsoft.com/uwp/api/windows.storage.streams) | Ermöglicht das Lesen und Schreiben von Streams. Sieh dir insbesondere die Klassen [DataReader](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader) und [DataWriter](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter) zum Lesen und Schreiben von Puffern, Bytes, ganzen Zahlen, GUIDs, Zeitspannen und Ähnlichem an. |
+|  [Windows.Storage.StorageFile](/uwp/api/windows.storage.storagefile) | Stellt Informationen zur Datei sowie Methoden zum Erstellen, Öffnen, Kopieren, Löschen und Umbenennen von Dateien bereit. |
+| [Windows.Storage.StorageFolder](/uwp/api/windows.storage.storagefolder) | Stellt Informationen zum Ordner sowie Methoden zum Erstellen von Dateien und Methoden zum Erstellen, Umbenennen und Löschen von Ordnern bereit. |
+| [FileIO](/uwp/api/windows.storage.fileio) |  Bietet eine einfache Möglichkeit zum Lesen und Schreiben von Text. Diese Klasse kann auch ein Bytearray oder den Inhalt eines Puffers lesen/schreiben. |
+| [PathIO](/uwp/api/windows.storage.pathio) | Bietet eine einfache Möglichkeit zum Lesen und Schreiben von Text aus einer bzw. in eine Datei unter Angabe eines Zeichenfolgenpfads für die Datei. Diese Klasse kann auch ein Bytearray oder den Inhalt eines Puffers lesen/schreiben. |
+| [DataReader](/uwp/api/windows.storage.streams.datareader) & [DataWriter](/uwp/api/windows.storage.streams.datawriter) |  Ermöglicht das Lesen und Schreiben von Puffern, Bytes, ganzen Zahlen, GUIDs, Zeitspannen und Ähnlichem aus einem bzw. in einen Stream. |
+| [Windows.Storage.ApplicationData.Current](/uwp/api/windows.storage.applicationdata.current) | Ermöglicht den Zugriff auf die Ordner, die für die App erstellt wurden – beispielsweise auf den lokalen Ordner, den Roamingordner und den Ordner für temporäre Dateien. |
+| [Windows.Storage.Pickers.FolderPicker](/uwp/api/windows.storage.pickers.folderpicker) |  Ermöglicht es dem Benutzer, einen Ordner auszuwählen, und gibt dafür ein **StorageFolder**-Element zurück. So erhältst du Zugriff auf Speicherorte, auf die die App standardmäßig nicht zugreifen kann. |
+| [Windows.Storage.Pickers.FileOpenPicker](/uwp/api/windows.storage.pickers.fileopenpicker) | Ermöglicht es dem Benutzer, eine Datei auszuwählen und zu öffnen, und gibt dafür ein **StorageFile**-Element zurück. So erhältst du Zugriff auf eine Datei, auf die die App standardmäßig nicht zugreifen kann. |
+| [Windows.Storage.Pickers.FileSavePicker](/uwp/api/windows.storage.pickers.filesavepicker) | Ermöglicht es dem Benutzer, den Dateinamen, die Erweiterung und den Speicherort für eine Datei auszuwählen. Gibt ein **StorageFile**-Element zurück. So kannst du eine Datei an einem Speicherort speichern, auf den die App standardmäßig keinen Zugriff hat. |
+|  [Windows.Storage.Streams-Namespace](/uwp/api/windows.storage.streams) | Ermöglicht das Lesen und Schreiben von Streams. Sieh dir insbesondere die Klassen [DataReader](/uwp/api/windows.storage.streams.datareader) und [DataWriter](/uwp/api/windows.storage.streams.datawriter) zum Lesen und Schreiben von Puffern, Bytes, ganzen Zahlen, GUIDs, Zeitspannen und Ähnlichem an. |
 
 ### <a name="useful-docs"></a>Nützliche Dokumentation
 
 | Thema | Beschreibung |
 |-------|----------------|
-| [Windows.Storage Namespace](https://docs.microsoft.com/uwp/api/windows.storage) | API-Referenzdokumentation |
-| [Dateien, Ordner und Bibliotheken](https://docs.microsoft.com/windows/uwp/files/) | Konzeptdokumentation |
-| [Erstellen, Schreiben und Lesen einer Datei](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files) | Behandelt das Erstellen, Lesen und Schreiben von Text, binären Daten und Streams. |
+| [Windows.Storage Namespace](/uwp/api/windows.storage) | API-Referenzdokumentation |
+| [Dateien, Ordner und Bibliotheken](../files/index.md) | Konzeptdokumentation |
+| [Erstellen, Schreiben und Lesen einer Datei](../files/quickstart-reading-and-writing-files.md) | Behandelt das Erstellen, Lesen und Schreiben von Text, binären Daten und Streams. |
 | [Erste Schritte zum lokalen Speichern von App-Daten](https://blogs.windows.com/buildingapps/2016/05/10/getting-started-storing-app-data-locally/#pCbJKGjcShh5DTV5.97) | Neben den bewährten Methoden zum Speichern lokaler Daten wird hier auch der Zweck der Ordner „LocalSettings“ und „LocalCache“ erläutert. |
 | [Erste Schritte mit Roaming-App-Daten](https://blogs.windows.com/buildingapps/2016/05/03/getting-started-with-roaming-app-data/#RgjgLt5OkU9DbVV8.97) | Eine zweiteilige Reihe zur Verwendung von Roaming-App-Daten. |
-| [Richtlinien für das Roaming von Anwendungsdaten](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | Berücksichtige diese Richtlinien für das Datenroaming bei der Entwicklung deiner App. |
-| [Speichern und Abrufen von Einstellungen und anderen App-Daten](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | Bietet eine Übersicht über die verschiedenen App-Datenspeicher (etwa über den lokalen und temporären Ordner und den Roamingordner). Der Abschnitt [Roamingdaten](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#roaming-data) enthält Richtlinien und weitere Informationen zum Schreiben von Daten, die mittels Roaming zwischen Geräten übertragen werden. |
-| [Berechtigungen für den Dateizugriff](https://docs.microsoft.com/windows/uwp/files/file-access-permissions) | Informationen zu den Speicherorten des Dateisystems, auf die deine App zugreifen kann. |
-| [Öffnen von Dateien und Ordnern mit einer Auswahl](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers) | Hier erfährst du, wie du auf Dateien und Ordner zugreifst, indem du dem Benutzer eine Auswahlbenutzeroberfläche zur Verfügung stellst. |
-| [Windows.Storage.Streams](https://docs.microsoft.com/uwp/api/windows.storage.streams) | Typen zum Lesen und Schreiben von Streams. |
-| [Dateien und Ordner in den Musik-, Bild- und Videobibliotheken](https://docs.microsoft.com/windows/uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries) | Hier erfährst du, wie du Ordner aus Bibliotheken entfernst, die Liste der Ordner in einer Bibliothek abrufst und gespeicherte Fotos, Musik und Videos erkennst. |
+| [Richtlinien für das Roaming von Anwendungsdaten](../design/app-settings/store-and-retrieve-app-data.md) | Berücksichtige diese Richtlinien für das Datenroaming bei der Entwicklung deiner App. |
+| [Speichern und Abrufen von Einstellungen und anderen App-Daten](../design/app-settings/store-and-retrieve-app-data.md) | Bietet eine Übersicht über die verschiedenen App-Datenspeicher (etwa über den lokalen und temporären Ordner und den Roamingordner). Der Abschnitt [Roamingdaten](../design/app-settings/store-and-retrieve-app-data.md#roaming-data) enthält Richtlinien und weitere Informationen zum Schreiben von Daten, die mittels Roaming zwischen Geräten übertragen werden. |
+| [Berechtigungen für den Dateizugriff](../files/file-access-permissions.md) | Informationen zu den Speicherorten des Dateisystems, auf die deine App zugreifen kann. |
+| [Öffnen von Dateien und Ordnern mit einer Auswahl](../files/quickstart-using-file-and-folder-pickers.md) | Hier erfährst du, wie du auf Dateien und Ordner zugreifst, indem du dem Benutzer eine Auswahlbenutzeroberfläche zur Verfügung stellst. |
+| [Windows.Storage.Streams](/uwp/api/windows.storage.streams) | Typen zum Lesen und Schreiben von Streams. |
+| [Dateien und Ordner in den Musik-, Bild- und Videobibliotheken](../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | Hier erfährst du, wie du Ordner aus Bibliotheken entfernst, die Liste der Ordner in einer Bibliothek abrufst und gespeicherte Fotos, Musik und Videos erkennst. |
 
 ## <a name="useful-code-samples"></a>Nützliche Codebeispiele
 
 | Codebeispiel | Beschreibung |
 |-----------------|---------------|
-| [Beispiel für Anwendungsdaten](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/applicationdata/) | Zeigt, wie du mithilfe der Anwendungsdaten-APIs benutzerspezifische Daten speichern und abrufen kannst. |
+| [Beispiel für Anwendungsdaten](/samples/microsoft/windows-universal-samples/applicationdata/) | Zeigt, wie du mithilfe der Anwendungsdaten-APIs benutzerspezifische Daten speichern und abrufen kannst. |
 | [Beispiel zum Dateizugriff](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | Veranschaulicht das Erstellen, Lesen, Schreiben, Kopieren und Löschen einer Datei. |
-| [Beispiel zur Dateiauswahl](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/filepicker/) | Zeigt, wie auf Dateien und Ordner zugegriffen werden kann, indem dem Benutzer die Möglichkeit gegeben wird, diese über die Benutzeroberfläche auszuwählen. Außerdem erfährst du hier, wie du eine Datei so speicherst, dass der Benutzer den Namen, Dateityp und Speicherort der zu speichernden Datei angeben kann. |
-| [JSON-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | Veranschaulicht das Codieren und Decodieren von JSON-Objekten (JavaScript Object Notation), Arrays, Zeichenfolgen, Zahlen und booleschen Werten mithilfe des [Windows.Data.Json-Namespace](https://docs.microsoft.com/uwp/api/Windows.Data.Json). |
+| [Beispiel zur Dateiauswahl](/samples/microsoft/windows-universal-samples/filepicker/) | Zeigt, wie auf Dateien und Ordner zugegriffen werden kann, indem dem Benutzer die Möglichkeit gegeben wird, diese über die Benutzeroberfläche auszuwählen. Außerdem erfährst du hier, wie du eine Datei so speicherst, dass der Benutzer den Namen, Dateityp und Speicherort der zu speichernden Datei angeben kann. |
+| [JSON-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | Veranschaulicht das Codieren und Decodieren von JSON-Objekten (JavaScript Object Notation), Arrays, Zeichenfolgen, Zahlen und booleschen Werten mithilfe des [Windows.Data.Json-Namespace](/uwp/api/Windows.Data.Json). |
 | [Weitere Codebeispiele](https://developer.microsoft.com/windows/samples) | Wähle in der Dropdownliste mit den Kategorien die Option **Dateien, Ordner und Bibliotheken** aus. |

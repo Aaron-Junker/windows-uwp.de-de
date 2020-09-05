@@ -1,16 +1,16 @@
 ---
 title: Verwenden einer MongoDB-Datenbank in einer UWP-App
-description: Verwenden einer MongoDB-Datenbank in einer UWP-App
+description: Erfahren Sie, wie Sie Ihre universelle Windows-Plattform-App (UWP) direkt mit einer MongoDB-Datenbank verbinden und die Verbindung programmgesteuert testen.
 ms.date: 03/28/2019
 ms.topic: article
 keywords: Windows 10, UWP, MongoDB, Datenbank
 ms.localizationpriority: medium
-ms.openlocfilehash: ea3e630a3bb0b8fc5f7f4168b0b946f115b97446
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: aaa035393e49d6bdad49faa806485cc51d21bb84
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67713999"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043512"
 ---
 # <a name="use-a-mongodb-database"></a>Verwenden einer MongoDB-Datenbank
 Dieser Artikel enthält die erforderlichen Schritte zur Verwendung einer MongoDB-Datenbank in einer UWP-App. Er enthält auch einen kleinen Codeausschnitt zur Veranschaulichung, wie Sie im Code mit der Datenbank interagieren können.

@@ -1,17 +1,17 @@
 ---
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: Aktivieren Ihres Geräts für die Entwicklung
-description: Konfigurieren Sie Ihr Windows 10-Gerät für die Entwicklung und das Debugging.
+description: Erfahren Sie, wie Sie Ihr Windows 10-Gerät für Entwicklung und Debuggen aktivieren, indem Sie den Entwicklermodus in Visual Studio aktivieren.
 keywords: Erste Schritte Entwicklerlizenz Visual Studio, Entwicklerlizenz Gerät aktivieren
 ms.date: 05/22/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4402200726da93bb820946c9849d8c15bd1c5d8d
-ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
+ms.openlocfilehash: 702e3aa166501c3e9974398ae5b89e832cfa7391
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85448390"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159054"
 ---
 # <a name="enable-your-device-for-development"></a>Aktivieren Ihres Geräts für die Entwicklung
 
@@ -62,9 +62,9 @@ Die folgende Abbildung zeigt Entwicklerfeatures für Windows 10:
 Weitere Informationen zum Geräteportal findest du in der [Übersicht über das Windows-Geräteportal](../debug-test-perf/device-portal.md).
 
 Gerätespezifische Anweisungen zum Einrichten finden Sie in folgenden Artikeln:
-- [Geräteportal für Windows-Desktop](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [Geräteportal für HoloLens](https://docs.microsoft.com/windows/mixed-reality/using-the-windows-device-portal)
-- [Geräteportal für IoT](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
+- [Geräteportal für Windows-Desktop](../debug-test-perf/device-portal-desktop.md)
+- [Geräteportal für HoloLens](/windows/mixed-reality/using-the-windows-device-portal)
+- [Geräteportal für IoT](/windows/iot-core/manage-your-device/DevicePortal)
 - [Geräteportal für Mobilgeräte](../debug-test-perf/device-portal-mobile.md)
 - [Geräteportal für Xbox](../xbox-apps/device-portal-xbox.md)
 
@@ -75,7 +75,7 @@ Solltest du Probleme beim Aktivieren des Entwicklermodus oder des Geräteportals
 > [!NOTE]
 > Ab dem neuesten Windows 10-Update ist das Querladen standardmäßig aktiviert. Sie können nun ein signiertes MSIX-Paket ohne besondere Konfiguration auf einem Gerät bereitstellen. Wenn Sie eine frühere Version von Windows 10 verwenden, erlauben Ihnen Ihre Standardeinstellungen nur das Ausführen von Apps aus dem Microsoft Store, und Sie müssen das Querladen aktivieren, um Apps aus Nicht-Microsoft-Quellen zu installieren.
 
-Die Einstellung für das Querladen von Apps wird normalerweise von Unternehmen oder Bildungseinrichtungen verwendet, die benutzerdefinierte Apps auf verwalteten Geräten installieren müssen, ohne den Microsoft Store zu nutzen, oder von anderen Benutzern, die Apps aus Microsoft-fremden Quellen ausführen müssen. In diesem Fall erzwingt die Organisation häufig eine Richtlinie, um die Einstellung *UWP-Apps* zu deaktivieren, wie oben in der Abbildung der Einstellungsseite gezeigt. Die Organisation stellt außerdem das erforderliche Zertifikat und den Installationsspeicherort zum Querladen von Apps bereit. Weitere Informationen finden Sie in den TechNet-Artikeln [Querladen von Apps in Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) und [Microsoft Intune-Grundlagen](https://docs.microsoft.com/mem/intune/fundamentals/).
+Die Einstellung für das Querladen von Apps wird normalerweise von Unternehmen oder Bildungseinrichtungen verwendet, die benutzerdefinierte Apps auf verwalteten Geräten installieren müssen, ohne den Microsoft Store zu nutzen, oder von anderen Benutzern, die Apps aus Microsoft-fremden Quellen ausführen müssen. In diesem Fall erzwingt die Organisation häufig eine Richtlinie, um die Einstellung *UWP-Apps* zu deaktivieren, wie oben in der Abbildung der Einstellungsseite gezeigt. Die Organisation stellt außerdem das erforderliche Zertifikat und den Installationsspeicherort zum Querladen von Apps bereit. Weitere Informationen finden Sie in den TechNet-Artikeln [Querladen von Apps in Windows 10](/windows/deploy/sideload-apps-in-windows-10) und [Microsoft Intune-Grundlagen](/mem/intune/fundamentals/).
 
 Spezifische Informationen für Gerätefamilien
 
@@ -122,7 +122,7 @@ In früheren Versionen von Windows 10 Mobile enthielt das Menü „Entwicklerei
 
 Es gibt verschiedene Tools, mit denen du eine App von einem Windows 10-PC aus auf einem Windows 10-Gerät bereitstellen kannst. Beide Geräte müssen über eine kabelgebundene oder drahtlose Verbindung mit dem gleichen Subnetz des Netzwerks verbunden sein oder über USB verbunden werden. Bei beiden Methoden wird lediglich das App-Paket (APPX-/APPXBUNDLE-Datei) installiert. Zertifikate werden nicht installiert.
 
--   Verwenden Sie das Tool für die Windows 10-Anwendungsbereitstellung (WinAppDeployCmd). Weitere Informationen zum [Tool WinAppDeployCmd](https://docs.microsoft.com/previous-versions/windows/apps/mt203806(v=vs.140)).
+-   Verwenden Sie das Tool für die Windows 10-Anwendungsbereitstellung (WinAppDeployCmd). Weitere Informationen zum [Tool WinAppDeployCmd](/previous-versions/windows/apps/mt203806(v=vs.140)).
 -   Über das [Geräteportal](../debug-test-perf/device-portal.md) kannst du von deinem Browser aus Bereitstellungen auf einem mobilen Gerät mit Windows 10 (ab Version 1511) durchführen. Im Geräteportal können Sie auf der Seite **[Apps](../debug-test-perf/device-portal.md#apps-manager)** ein App-Paket (APPX) hochladen und auf dem Gerät installieren.
 
 ## <a name="failure-to-install-developer-mode-package"></a>Fehler beim Installieren des Entwicklermoduspakets
@@ -231,8 +231,8 @@ Fehler: DEP0700: Registrierung der App fehlgeschlagen.
 ## <a name="see-also"></a>Weitere Informationen
 
 * [Deine erste App](your-first-app.md)
-* [Veröffentlichen deiner UWP-App](https://docs.microsoft.com/windows/uwp/publish/)
-* [Anleitungen zur Entwicklung von UWP App](https://docs.microsoft.com/windows/uwp/develop/)
+* [Veröffentlichen deiner UWP-App](../publish/index.md)
+* [Anleitungen zur Entwicklung von UWP App](../develop/index.md)
 * [Codebeispiele für UWP-Entwickler](https://developer.microsoft.com/windows/samples)
 * [Was ist eine UWP-App?](universal-application-platform-guide.md)
 * [Registrieren für ein Windows-Konto](sign-up.md)

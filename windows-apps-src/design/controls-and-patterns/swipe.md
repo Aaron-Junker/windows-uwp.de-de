@@ -3,22 +3,22 @@ pm-contact: kisai
 design-contact: ksulliv
 dev-contact: Shmazlou
 doc-status: Published
-Description: Bei wischgestenbasierten Befehlen handelt es sich um Beschleuniger für die Toucheingabe für Kontextmenüs.
-title: Swipe
+description: Lernen Sie, wie Sie wischgestenbasierte Befehle als Beschleuniger für die Toucheingabe für Kontextmenüs verwenden, damit Benutzer denselben Vorgang für mehrere Elemente in schneller Folge ausführen können.
+title: Wischen
 label: Swipe
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 315edbddccc51b7e742bf9beffad8497a104ce03
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f81e440670ccee34269ddbe5d55d93637b8d89df
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80614093"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043552"
 ---
-# <a name="swipe"></a>Swipe
+# <a name="swipe"></a>Wischen
 
 Wischgestenbasierte Befehle sind ein Beschleuniger für Kontextmenüs. Benutzer können damit per Toucheingabe leicht häufig verwendete Aktionen ausführen, ohne Zustände innerhalb der App ändern zu müssen.
 
@@ -34,7 +34,7 @@ Wischgestenbasierte Befehle sparen Platz. Sie eignen sich in Situationen, in den
 
 Wischgestenbasierte Befehle sollten bei einer großen Gruppe von Elementen verwendet werden, die jeweils ein bis drei Aktionen enthalten, die ein Benutzer möglicherweise regelmäßig ausführen möchte. Zu diesen Aktionen zählen u. a. folgende:
 
-- Löschen
+- Wird gelöscht
 - Markieren oder Archivieren
 - Speichern oder Herunterladen
 - Antworten
@@ -209,10 +209,10 @@ Bei dem Datenelement handelt es sich um DataContext von SwipeControl. In deinem 
 
 In diesem speziellen Fall hast du das Element aus der Liste entfernt, sodass der endgültige visuelle Zustand des gewischten Elements nicht von Bedeutung ist. In Situationen, in denen du einfach eine Aktion ausführen und die wischgestenbasierte Steuerung danach wieder zuklappen möchtest, kannst du die Eigenschaft [BehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipeitem.BehaviorOnInvoked) auf einen der [SwipeBehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipebehavioroninvoked)-Enumerationswerte festlegen.
 
-- **Auto**
+- **Automatisch**
   - Im Ausführungsmodus bleibt das geöffnete Wischelement beim Aufrufen geöffnet.
   - Im Einblendmodus wird das geöffnete Wischelement beim Aufrufen zugeklappt.
-- **Close**
+- **Schließen**
   - Wenn das Element aufgerufen wird, wird das Steuerelement „Wischen“ immer zugeklappt und kehrt unabhängig vom jeweiligen Modus zum Normalzustand zurück.
 - **RemainOpen**
   - Wenn das Element aufgerufen wird, bleibt das Steuerelement „Wischen“ unabhängig vom jeweiligen Modus immer geöffnet.
@@ -225,7 +225,7 @@ Hier wird ein Wischelement vom Typ _reply_ so festgelegt, dass es nach dem Aufru
            BehaviorOnInvoked = "Close"/>
 ```
 
-## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
+## <a name="dos-and-donts"></a>Empfehlungen für die Vorgehensweise
 
 - Verwende den Wischvorgang nicht für FlipViews, Hubs oder Pivots. Die Kombination kann aufgrund von widersprüchlichen Wischrichtungen für den Benutzer verwirrend sein.
 - Kombiniere horizontales Wischen nicht mit horizontaler Navigation bzw. vertikales Wischen nicht mit vertikaler Navigation.

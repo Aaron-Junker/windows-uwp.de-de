@@ -1,6 +1,6 @@
 ---
-Description: Verteilen einer mit der Desktop-Brücke gepackten App
 title: Veröffentliche deine gepackte Desktopanwendung im Microsoft Store, oder lade sie auf einem oder mehreren Geräten quer.
+description: Erfahren Sie, wie Sie die Desktop-Brücke verwenden, um eine gepackte Desktopanwendung im Microsoft Store zu verteilen oder sie auf einem oder mehreren Geräten querzuladen.
 ms.date: 05/18/2018
 ms.topic: article
 keywords: Windows 10, UWP
@@ -8,12 +8,12 @@ ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eb57e8cea83a4d45087be4c4685ada8d108fa7a
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: 469ed71fcb42894b2dfd179ce21f44da3702705e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334497"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170644"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>Verteilen einer gepackten Desktop-App
 
@@ -166,4 +166,4 @@ private void RemoveDesktopApp()
 
 Haben Sie Fragen? Frage uns auf Stack Overflow. Unser Team überwacht diese [Tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Du kannst uns auch [hier](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D) fragen.
 
-Wenn beim Veröffentlichen deiner Anwendung im Store Probleme auftreten, enthält dieser [Blogbeitrag](https://blogs.msdn.microsoft.com/appconsult/2017/09/25/preparing-a-desktop-bridge-application-for-the-store-submission/) einige hilfreiche Tipps.
+Wenn beim Veröffentlichen deiner Anwendung im Store Probleme auftreten, enthält dieser [Blogbeitrag](/archive/blogs/appconsult/preparing-a-desktop-bridge-application-for-the-store-submission) einige hilfreiche Tipps.

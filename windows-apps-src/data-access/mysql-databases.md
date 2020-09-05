@@ -1,16 +1,16 @@
 ---
 title: Verwenden einer MySQL-Datenbank in einer UWP-App
-description: Verwenden einer MySQL-Datenbank in einer UWP-App
+description: Erfahren Sie, wie Sie von Ihrer UWP-App aus eine Verbindung zu einer MySQL-Datenbank herstellen, und wie Sie Ihre Verbindung anhand von Beispielcode testen.
 ms.date: 03/28/2019
 ms.topic: article
 keywords: Windows 10, UWP, MySQL, Datenbank
 ms.localizationpriority: medium
-ms.openlocfilehash: bfed9c0a0c4198095b9be48fe71832bdfca67718
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 669755b9dc56277668ade777ef98a9ec256b9a59
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67713791"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054320"
 ---
 # <a name="use-a-mysql-database"></a>Verwenden einer MySQL-Datenbank
 Dieser Artikel enthält die erforderlichen Schritte zur Verwendung einer MySQL-Datenbank in einer UWP-App. Er enthält auch einen kleinen Codeausschnitt zur Veranschaulichung, wie Sie im Code mit der Datenbank interagieren können.

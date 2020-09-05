@@ -1,16 +1,16 @@
 ---
 title: Experimentelle APIs
-description: Grundlegendes zu experimentellen APIs
+description: Erfahren Sie, wie Entwickler experimentelle APIs mithilfe von Test-Flight unter Verwendung von Windows Insider-SDKs ausprobieren können.
 ms.date: 11/13/2017
 ms.topic: article
 keywords: Windows 10, UWP, experimentell, API
 ms.localizationpriority: medium
-ms.openlocfilehash: 542e007d07d490c2f18077e646f7598bfd2587c3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5a4813e7b4ae1e3dd16017066758aa8a35d0570a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684913"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170804"
 ---
 # <a name="experimental-apis"></a>Experimentelle APIs
 
@@ -25,7 +25,7 @@ Diese Warnungen schützt dich vor der Erstellung von Abhängigkeiten von experim
 
 Standardmäßig sind diese APIs zur Laufzeit deaktiviert, und ein Aufruf der APIs führt zu einer Laufzeitausnahme. Das ist eine weitere Vorsichtsmaßnahme, um unbeabsichtigte Abhängigkeiten und eine umfangreiche Verteilung von Apps zu verhindern, die experimentelle APIs nutzen.
 
-Um diese APIs für experimentelle Zwecke zu aktivieren, verwendest du das Plug-In für Features des [Windows-Geräteportals (Windows Device Portal, WDP)](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal), um das Feature zu aktivieren, das der aufzurufenden API entspricht.
+Um diese APIs für experimentelle Zwecke zu aktivieren, verwendest du das Plug-In für Features des [Windows-Geräteportals (Windows Device Portal, WDP)](../debug-test-perf/device-portal.md), um das Feature zu aktivieren, das der aufzurufenden API entspricht.
 
 Für die Dokumentation der jeweiligen experimentellen API ist das entsprechende Team zuständig.
 

@@ -1,16 +1,16 @@
 ---
 title: Verwenden einer SQLite-Datenbank in einer UWP-App
-description: Sie können eine SQLite-Datenbank in einer UWP-App verwenden.
+description: Hier erfahren Sie, wie Sie eine SQLite-Datenbank in einer UWP-App verwenden, um Daten in einer einfachen Datenbank auf dem Gerät des Benutzers zu speichern und abzurufen.
 ms.date: 06/26/2020
 ms.topic: article
 keywords: Windows 10, UWP, SQLite, Datenbank
 ms.localizationpriority: medium
-ms.openlocfilehash: 0db89408d5bc0af8b9101768a6498e70f9be6147
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: 15a6cd4313a13abfa7897de62c80024a09ad1f71
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997937"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154534"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>Verwenden einer SQLite-Datenbank in einer UWP-App
 Sie können SQLite verwenden, um Daten in einer einfachen Datenbank auf dem Gerät des Benutzers zu speichern und abzurufen. Dieser Leitfaden zeigt Ihnen wie.
@@ -35,11 +35,11 @@ Wir empfehlen, dass Sie entweder Entity Framework Core oder die Open-Source-[SQL
 
 Entity Framework (EF) ist eine objektrelationale Zuordnung, die Ihnen über domänenspezifische Objekte die Verwendung relationaler Daten ermöglicht. Wenn Sie dieses Framework bereits für die Arbeit mit Daten in anderen .NET-Apps verwendet haben, können Sie diesen Code in eine UWP-App migrieren. Es funktioniert mit entsprechenden Änderungen an der Verbindungszeichenfolge.
 
-Weitere Informationen finden Sie unter [Erste Schritte mit EF Core auf der Universellen Windows-Plattform (UWP) mit einer neuen Datenbank](https://docs.microsoft.com/ef/core/get-started/uwp/getting-started).
+Weitere Informationen finden Sie unter [Erste Schritte mit EF Core auf der Universellen Windows-Plattform (UWP) mit einer neuen Datenbank](/ef/core/get-started/uwp/getting-started).
 
 ### <a name="sqlite-library"></a>SQLite-Bibliothek
 
-Die [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0)-Bibliothek implementiert die Schnittstellen im [System.Data.Common](https://docs.microsoft.com/dotnet/api/system.data.common)-Namespace. Microsoft pflegt diese Implementierungen aktiv und bietet einen intuitiven Wrapper für die native SQLite-API auf niedriger Ebene.
+Die [Microsoft.Data.Sqlite](/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0)-Bibliothek implementiert die Schnittstellen im [System.Data.Common](/dotnet/api/system.data.common)-Namespace. Microsoft pflegt diese Implementierungen aktiv und bietet einen intuitiven Wrapper für die native SQLite-API auf niedriger Ebene.
 
 Der Rest dieses Leitfadens hilft Ihnen bei der Verwendung dieser Bibliothek.
 
@@ -75,7 +75,7 @@ Wählen Sie die Registerkarte **Durchsuchen** aus, und suchen Sie nach dem Paket
 
 ![SQLite-Paket](images/sqlite-package.png)
 
-Gehen Sie zum Abschnitt [Hinzufügen und Abrufen von Daten in einer SQLite-Datenbank](/windows/uwp/data-access/sqlite-databases#add-and-retrieve-data-in-a-sqlite-database) in diesem Leitfaden.
+Gehen Sie zum Abschnitt [Hinzufügen und Abrufen von Daten in einer SQLite-Datenbank](#add-and-retrieve-data-in-a-sqlite-database) in diesem Leitfaden.
 
 ### <a name="the-minimum-version-of-your-project-targets-the-fall-creators-update"></a>Die Mindestversion Ihres Projekts zielt auf das Fall Creators Update ab.
 
@@ -200,7 +200,7 @@ public async static void InitializeDatabase()
 
 Dieser Code erstellt die SQLite-Datenbank und speichert sie im lokalen Datenspeicher der Anwendung.
 
-In diesem Beispiel benennen wir die Datenbank als ``sqlliteSample.db``. Sie können aber jeden beliebigen Namen verwenden, solange Sie diesen Namen in allen instanziierten [SqliteConnection](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqliteconnection?view=msdata-sqlite-2.0.0)-Objekten verwenden.
+In diesem Beispiel benennen wir die Datenbank als ``sqlliteSample.db``. Sie können aber jeden beliebigen Namen verwenden, solange Sie diesen Namen in allen instanziierten [SqliteConnection](/dotnet/api/microsoft.data.sqlite.sqliteconnection?view=msdata-sqlite-2.0.0)-Objekten verwenden.
 
 Rufen Sie im Konstruktor der Datei **App.xaml.cs** Ihres UWP-Projekts die ``InitializeDatabase``-Methode der **DataAccess**-Klasse auf.
 
@@ -277,9 +277,9 @@ public static List<String> GetData()
 }
 ```
 
-Die [Read](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqlitedatareader.read?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_Read)-Methode durchläuft die Zeilen der zurückgegebenen Daten. Sie gibt **true** zurück, wenn noch Zeilen übrig sind, andernfalls **false**.
+Die [Read](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.read?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_Read)-Methode durchläuft die Zeilen der zurückgegebenen Daten. Sie gibt **true** zurück, wenn noch Zeilen übrig sind, andernfalls **false**.
 
-Die [GetString](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getstring?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetString_System_Int32_)-Methode gibt den Wert der angegebenen Spalte als Zeichenfolge zurück. Sie akzeptiert einen Ganzzahlwert, der die nullbasierte Spalten-Ordinalzahl der gewünschten Daten darstellt. Sie können Methoden wie [GetDataTime](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getdatetime?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetDateTime_System_Int32_) und [GetBoolean](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getboolean?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetBoolean_System_Int32_) verwenden. Wählen Sie eine Methode für den Datentyp der Spalte aus.
+Die [GetString](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getstring?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetString_System_Int32_)-Methode gibt den Wert der angegebenen Spalte als Zeichenfolge zurück. Sie akzeptiert einen Ganzzahlwert, der die nullbasierte Spalten-Ordinalzahl der gewünschten Daten darstellt. Sie können Methoden wie [GetDataTime](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getdatetime?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetDateTime_System_Int32_) und [GetBoolean](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getboolean?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetBoolean_System_Int32_) verwenden. Wählen Sie eine Methode für den Datentyp der Spalte aus.
 
 Der Ordinalparameter ist in diesem Beispiel nicht so wichtig, da wir alle Einträge in einer einzigen Spalte auswählen. Wenn jedoch mehrere Spalten Teil Ihrer Abfrage sind, verwenden Sie den Ordinalwert, um die Spalte zu erhalten, aus der Sie Daten abrufen möchten.
 
@@ -316,7 +316,7 @@ private void AddData(object sender, RoutedEventArgs e)
 }
 ```
 
-Das war's. Erkunden Sie [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0), um zu erfahren, welche weiteren Vorgänge Sie mit Ihrer SQLite-Datenbank ausführen können. Besuchen Sie die Links unten, um mehr über andere Möglichkeiten der Datenverwendung in Ihrer UWP-App zu erfahren.
+Das war's. Erkunden Sie [Microsoft.Data.Sqlite](/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0), um zu erfahren, welche weiteren Vorgänge Sie mit Ihrer SQLite-Datenbank ausführen können. Besuchen Sie die Links unten, um mehr über andere Möglichkeiten der Datenverwendung in Ihrer UWP-App zu erfahren.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
@@ -326,7 +326,7 @@ Informationen hierzu finden Sie unter [Verwenden einer SQL Server-Datenbank in e
 
 **Nutzen des gleichen Codes für verschiedene Apps auf verschiedenen Plattformen**
 
-Weitere Informationen finden Sie unter [Migrieren von einer Desktopanwendung zu UWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate).
+Weitere Informationen finden Sie unter [Migrieren von einer Desktopanwendung zu UWP](../porting/desktop-to-uwp-migrate.md).
 
 **Hinzufügen von Master/Detail-Seiten mit Azure SQL-Back-Ends**
 

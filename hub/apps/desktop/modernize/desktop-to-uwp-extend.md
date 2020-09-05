@@ -1,18 +1,18 @@
 ---
-Description: Erweitern deiner Desktopanwendung mit Windows-Benutzeroberflächen und -Komponenten
 title: Erweitern deiner App mit Windows-Benutzeroberfläche und -Komponenten
+description: Erweitern Sie Ihre Desktopanwendung mit UWP-Projekten und Windows-Runtime-Komponenten, um moderne Windows 10-Umgebungen hinzuzufügen.
 ms.date: 06/08/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 73e867071058dfde71979318d6d711d79460f30b
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: 29064390e4e198d1220d40ff5ce58a63ea41e29a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334552"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172784"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>Erweitern deiner Desktop-App mit modernen UWP-Komponenten
 
@@ -21,7 +21,7 @@ Einige Windows 10-Umgebungen (z. B. eine für Touchbedienung aktivierte Benutz
 In vielen Fällen kannst du die Windows-Runtime-APIs direkt in deiner Desktopanwendung aufrufen. Bevor du diese Anleitung liest, siehe [Verbessern für Windows 10](desktop-to-uwp-enhance.md).
 
 > [!NOTE]
-> Für die im vorliegenden Artikel beschriebenen Features muss deine Desktop-App eine [Paketidentität](modernize-packaged-apps.md) aufweisen, entweder durch das [Packen deiner Desktop-App in einem MSIX-Paket](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) oder durch das [Gewähren einer App-Identität durch Verwendung eines Pakets mit geringer Datendichte](grant-identity-to-nonpackaged-apps.md).
+> Für die im vorliegenden Artikel beschriebenen Features muss deine Desktop-App eine [Paketidentität](modernize-packaged-apps.md) aufweisen, entweder durch das [Packen deiner Desktop-App in einem MSIX-Paket](/windows/msix/desktop/desktop-to-uwp-root) oder durch das [Gewähren einer App-Identität durch Verwendung eines Pakets mit geringer Datendichte](grant-identity-to-nonpackaged-apps.md).
 
 Wenn du bereit bist, lass uns anfangen.
 
@@ -37,7 +37,7 @@ Diese Abbildung zeigt ein Beispiel einer Projektmappe.
 
 ![Erweitern des Startprojekts](images/desktop-to-uwp/extend-start-project.png)
 
-Wenn deine Projektmappe kein Paketerstellungsprojekt enthält, siehe [Packen deiner Desktopanwendung mit Visual Studio](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
+Wenn deine Projektmappe kein Paketerstellungsprojekt enthält, siehe [Packen deiner Desktopanwendung mit Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
 
 ### <a name="configure-the-desktop-application"></a>Konfigurieren der Desktopanwendung
 
@@ -175,7 +175,7 @@ Du kannst auch **Package.appxmanifest** im Designer öffnen, die Registerkarte *
 
 ### <a name="start-the-uwp-app"></a>Starten der UWP-App
 
-Erstelle zunächst in deiner Desktopanwendung einen [Uri](https://docs.microsoft.com/dotnet/api/system.uri), der den Protokollnamen und alle Parameter enthält, die an die UWP-App übergeben werden sollen. Rufe dann die [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)-Methode auf.
+Erstelle zunächst in deiner Desktopanwendung einen [Uri](/dotnet/api/system.uri), der den Protokollnamen und alle Parameter enthält, die an die UWP-App übergeben werden sollen. Rufe dann die [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync)-Methode auf.
 
 ```csharp
 
@@ -366,7 +366,7 @@ Diese Erweiterung ermöglicht es der UWP-Anwendung, die Desktopanwendung zu star
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
 
-Für Instanzen der Desktopanwendung, die bereits vom Benutzer geöffnet sind, könnten wir auch das [FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher)-Ereignis behandeln und den Pfad zum Speicherort der Datei übergeben. Auf diese Weise wird in allen geöffneten Instanzen der Desktopanwendung das freigegebene Foto angezeigt.
+Für Instanzen der Desktopanwendung, die bereits vom Benutzer geöffnet sind, könnten wir auch das [FileSystemWatcher](/dotnet/api/system.io.filesystemwatcher)-Ereignis behandeln und den Pfad zum Speicherort der Datei übergeben. Auf diese Weise wird in allen geöffneten Instanzen der Desktopanwendung das freigegebene Foto angezeigt.
 
 ```csharp
 ...

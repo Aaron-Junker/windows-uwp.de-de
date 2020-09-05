@@ -5,15 +5,15 @@ ms.date: 05/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: 663e0dddb9823e35e2d31ba9667bd3d16bd1d5de
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f7e7000a70a71f8ad90fd38c74d6e29882b4cbaa
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79510993"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157256"
 ---
 # <a name="move-to-cwinrt-from-wrl"></a>Umstellen von WRL auf C++/WinRT
-In diesem Thema wird gezeigt, wie Sie Code der [C++-Vorlagenbibliothek für Windows-Runtime (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) zum entsprechenden Äquivalent in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) portieren.
+In diesem Thema wird gezeigt, wie Sie Code der [C++-Vorlagenbibliothek für Windows-Runtime (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) zum entsprechenden Äquivalent in [C++/WinRT](./intro-to-using-cpp-with-winrt.md) portieren.
 
 Der erste Schritt beim Portieren zu C++/WinRT besteht darin, C++/WinRT-Unterstützung manuell Ihrem Projekt hinzuzufügen (siehe [Visual Studio-Unterstützung für C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Installieren Sie zu diesem Zweck das [Microsoft.Windows.CppWinRT NuGet-Paket](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) in Ihrem Projekt. Öffne das Projekt in Visual Studio, klicke auf **Projekt** \> **NuGet-Pakete verwalten**. \> **Durchsuchen**, geben oder fügen Sie **Microsoft.Windows.CppWinRT** in das Suchfeld ein, wählen Sie das Element in den Suchergebnissen aus, und klicken Sie dann auf **Installieren**, um das Paket für das Projekt zu installieren. Eine Auswirkung dieser Änderung ist, dass die Unterstützung für [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) im Projekt deaktiviert wird. Wenn Sie C++/CX im Projekt verwenden, können Sie die Unterstützung deaktiviert lassen und Ihren C++/CX-Code in C++/WinRT aktualisieren (siehe [Wechsel zu C++/WinRT von C++/CX](move-to-winrt-from-cx.md)). Sie können die Unterstützung auch wieder aktivieren (in den Projekteigenschaften, **C/C++** \> **Allgemein** \> **Windows-Runtime-Erweiterung verwenden** \> **Ja (/ZW)** ), und sich zunächst auf das Portieren des WRL-Codes konzentrieren. C++/CX- und C++/WinRT-Code kann in demselben Projekt gleichzeitig vorhanden sein, mit Ausnahme von XAML-Compilerunterstützung und der Windows-Runtime-Komponenten (siehe [Umstellen von C++/CX auf C++/WinRT](move-to-winrt-from-cx.md)).
 

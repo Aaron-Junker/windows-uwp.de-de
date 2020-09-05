@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: Windows Win32, Desktopentwicklung
-ms.openlocfilehash: 778c15bc511404fad9cf5713876f89c7fef56165
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: d4415bc703acf0b94f6f8a6fe8aab053620336c6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493005"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168904"
 ---
 # <a name="choose-your-app-platform"></a>Auswählen Ihrer App-Plattform
 
@@ -51,12 +51,12 @@ WPF ist die etablierte Plattform für verwaltete Windows-Anwendungen mit Zugriff
 
 Weitere Informationen zu WPF finden Sie in den folgenden Artikeln:
 
-* [Erste Schritte (WPF)](https://docs.microsoft.com/dotnet/framework/wpf/getting-started/)
+* [Erste Schritte (WPF)](/dotnet/framework/wpf/getting-started/)
 * [Projektvorlagen](visual-studio-templates.md#net-templates)
 * [Erstellen Ihrer ersten App (.NET Core)](/visualstudio/get-started/csharp/tutorial-wpf/)
 * [Erstellen Ihrer ersten App (.NET Framework)](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application/)
 * [Migrieren von WPF-Apps zu .NET Core](/dotnet/desktop-wpf/migration/convert-project-from-net-framework/)
-* [API-Referenz (.NET)](https://docs.microsoft.com/dotnet/api/index)
+* [API-Referenz (.NET)](/dotnet/api/index)
 * [Beispiele](https://github.com/Microsoft/WPF-Samples)
 
 ## <a name="windows-forms"></a>Windows Forms
@@ -65,11 +65,11 @@ Windows Forms ist die ursprüngliche Plattform für verwaltete Windows-Anwendung
 
 Weitere Informationen zu Windows Forms finden Sie in den folgenden Artikeln:
 
-* [Erste Schritte mit Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms)
+* [Erste Schritte mit Windows Forms](/dotnet/framework/winforms/getting-started-with-windows-forms)
 * [Projektvorlagen](visual-studio-templates.md#net-templates)
 * [Erstellen Ihrer ersten Windows Forms-App](/dotnet/framework/winforms/creating-a-new-windows-form)
 * [Tutorial: Erstellen eines Bildanzeigeprogramms](/visualstudio/ide/tutorial-1-create-a-picture-viewer?view=vs-2019)
-* [API-Referenz (.NET)](https://docs.microsoft.com/dotnet/api/index)
+* [API-Referenz (.NET)](/dotnet/api/index)
 * [Erweitern von Windows Forms-Apps](/dotnet/framework/winforms/advanced/)
 
 ## <a name="win32"></a>Win32
@@ -125,8 +125,12 @@ In der folgenden Tabelle werden die verschiedenen Merkmale von Windows Forms, WP
 
 ### <a name="progressive-web-apps-pwas"></a>Progressive Web Apps (PWAs)
 
-PWAs ermöglichen es Entwicklern, ihren Website-Code so zu verpacken, dass er wie eine Anwendung auf Windows 10-PCs installiert und ausgeführt werden kann. Weitere Informationen finden Sie unter [Progressive Web Apps](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started).
+PWAs ermöglichen es Entwicklern, ihren Website-Code so zu verpacken, dass er wie eine Anwendung auf Windows 10-PCs installiert und ausgeführt werden kann. Weitere Informationen finden Sie unter [Progressive Web Apps](/microsoft-edge/progressive-web-apps/get-started).
 
 ### <a name="xamarin"></a>Xamarin
 
 Xamarin dient zum Erstellen von plattformübergreifenden Anwendungen für Windows 10, die auch unter iOS und Android verwendet werden können. Weitere Informationen finden Sie unter [Xamarin](https://docs.microsoft.com/xamarin/xamarin-forms/get-started/index).
+
+### <a name="uno-platform"></a>Uno-Plattform
+
+Die Uno-Plattform ermöglicht die Ausführung von Windows UWP-basiertem Code (C# und XAML) unter iOS, Android und WebAssembly. Sie enthält vollständige API-Definitionen für UWP in [Windows 10 2004 (19041)](/windows/uwp/whats-new/windows-10-build-19041) sowie die Implementierung von Teilen der UWP-API, wie z. B. [Windows.UI.Xaml](/uwp/api/windows.ui.xaml.documents?view=winrt-19041), damit UWP-Anwendungen auf diesen Plattformen ausgeführt werden können. Weitere Informationen finden Sie in der [Dokumentation zur Uno-Plattform](https://platform.uno/docs/articles/intro.html).

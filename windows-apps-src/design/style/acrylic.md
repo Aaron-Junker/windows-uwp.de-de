@@ -1,5 +1,5 @@
 ---
-description: Eine Art von Pinsel, der eine durchscheinende Textur erzeugt.
+description: Lernen Sie den Umgang mit Acryl, einem Pinseltyp, der eine durchscheinende Struktur erzeugt, um Tiefe zu verleihen und eine visuelle Hierarchie herzustellen.
 title: Acryl-Material
 template: detail.hbs
 ms.date: 08/09/2017
@@ -10,20 +10,20 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d969c5282fa03fb11d108d2b2c8e0fe44dfde49
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 6f7d431950e17b9908d079db9247d997ef8adadb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968455"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174584"
 ---
 # <a name="acrylic-material"></a>Acryl-Material
 
 ![Herobild](images/header-acrylic.svg)
 
-Acryl ist eine Art von [Pinsel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush), der eine durchscheinende Textur erzeugt. Sie können Acryl auf App-Oberflächen anwenden, um Tiefe hinzuzufügen und eine visuelle Hierarchie herzustellen.  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
+Acryl ist eine Art von [Pinsel](/uwp/api/Windows.UI.Xaml.Media.Brush), der eine durchscheinende Textur erzeugt. Sie können Acryl auf App-Oberflächen anwenden, um Tiefe hinzuzufügen und eine visuelle Hierarchie herzustellen.  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
 
-> **Wichtige APIs:** [AcrylicBrush-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.acrylicbrush), [Background-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.Background)
+> **Wichtige APIs:** [AcrylicBrush-Klasse](/uwp/api/windows.ui.xaml.media.acrylicbrush), [Background-Eigenschaft](/uwp/api/windows.ui.xaml.controls.control.Background)
 
 :::row:::
     :::column:::
@@ -87,7 +87,7 @@ Für Apps mit Menü-Flyouts, nicht modalen Popups oder einfach ausblendbaren Ber
 
 ![E-Mail-App-Muster mit einem Informations-Flyout](images/Mail_TransientContextMenu.png)
 
-Viele unserer Steuerelemente verwenden standardmäßig Acryl. [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus), [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box), [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) und ähnliche Steuerelemente mit einfach ausblendbaren Popups verwenden alle das kurzlebige Acryl, wenn sie aufgerufen werden.
+Viele unserer Steuerelemente verwenden standardmäßig Acryl. [MenuFlyouts](../controls-and-patterns/menus.md), [AutoSuggestBox](../controls-and-patterns/auto-suggest-box.md), [ComboBox](/uwp/api/windows.ui.xaml.controls.combobox) und ähnliche Steuerelemente mit einfach ausblendbaren Popups verwenden alle das kurzlebige Acryl, wenn sie aufgerufen werden.
 
 > [!Note]
 > Das Rendern von Acryloberflächen ist GPU-intensiv, wodurch der Energieverbrauch des Geräts erhöht und die Akkulaufzeit verkürzt werden kann. Acryleffekte werden automatisch deaktiviert, wenn Geräte in den Stromsparmodus versetzt werden, und die Benutzer können Acryleffekte für alle Apps wahlweise deaktivieren.
@@ -246,7 +246,7 @@ else
 
 ## <a name="extend-acrylic-into-the-title-bar"></a>Ausdehnen von Acryl in die Titelleiste
 
-Um Ihrem App-Fenster ein nahtloses Aussehen zu verleihen, können Sie im Acryl im Titelleistenbereich verwenden. In diesem Beispiel wird Acryl in die Titelleiste ausgedehnt, indem die [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) der Eigenschaften des Objekts [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) und [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) auf [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors.Transparent) festgelegt werden.
+Um Ihrem App-Fenster ein nahtloses Aussehen zu verleihen, können Sie im Acryl im Titelleistenbereich verwenden. In diesem Beispiel wird Acryl in die Titelleiste ausgedehnt, indem die [ApplicationViewTitleBar](/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) der Eigenschaften des Objekts [ButtonBackgroundColor](/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) und [ButtonInactiveBackgroundColor](/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) auf [Colors.Transparent](/uwp/api/Windows.UI.Colors.Transparent) festgelegt werden.
 
 ```csharp
 private void ExtendAcrylicIntoTitleBar()
@@ -258,7 +258,7 @@ private void ExtendAcrylicIntoTitleBar()
 }
 ```
 
-Dieser Code kann in die [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_)-Methode Ihre App eingefügt werden (_App.xaml.cs_), nach dem Aufruf von [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate) wie hier gezeigt, oder auf der ersten Seite Ihrer App.
+Dieser Code kann in die [OnLaunched](/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_)-Methode Ihre App eingefügt werden (_App.xaml.cs_), nach dem Aufruf von [Window.Activate](/uwp/api/windows.ui.xaml.window.Activate) wie hier gezeigt, oder auf der ersten Seite Ihrer App.
 
 ```csharp
 // Call your extend acrylic code in the OnLaunched event, after

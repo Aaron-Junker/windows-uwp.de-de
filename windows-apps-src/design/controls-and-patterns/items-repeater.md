@@ -7,12 +7,12 @@ ms.date: 02/01/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c66fc2b07b5ee5ce87b6c1f37657b3eec49f3105
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 20aeda53af3b4b11c1562d2ed22b099a3377d3c7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970405"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172634"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
@@ -26,7 +26,7 @@ Vom Konzept her können Sie sich [ItemsRepeater](/uwp/api/microsoft.ui.xaml.cont
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **ItemsRepeater** ist in der Bibliothek „Windows UI“ enthalten, einem NuGet-Paket mit neuen Steuerelementen und Benutzeroberflächenfeatures für Windows-Apps. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **ItemsRepeater** ist in der Bibliothek „Windows UI“ enthalten, einem NuGet-Paket mit neuen Steuerelementen und Benutzeroberflächenfeatures für Windows-Apps. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
 > **APIs der Bibliothek „Windows UI“** [ItemsRepeater-Klasse](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 >
@@ -95,7 +95,7 @@ ItemsRepeater itemsRepeater1 = new ItemsRepeater();
 itemsRepeater1.ItemsSource = Items;
 ```
 
-Sie können die **ItemsSource**-Eigenschaft auch an eine Sammlung in XAML binden. Weitere Informationen zur Datenbindung finden Sie unter [Übersicht über Datenbindung](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart).
+Sie können die **ItemsSource**-Eigenschaft auch an eine Sammlung in XAML binden. Weitere Informationen zur Datenbindung finden Sie unter [Übersicht über Datenbindung](../../data-binding/data-binding-quickstart.md).
 
 
 ```xaml
@@ -111,7 +111,7 @@ In der Regel möchten Sie jedoch eine ansprechendere Darstellung Ihrer Daten anz
 In diesem Beispiel ist das Datenobjekt eine einfache Zeichenfolge. Die **DataTemplate**-Instanz enthält ein Bild links neben dem Text und legt für die **TextBlock**-Instanz fest, dass die Zeichenfolge in Blaugrün angezeigt werden soll.
 
 > [!NOTE]
-> Wenn Sie die [x:Bind-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) in **DataTemplate** verwenden, müssen Sie „DataType“ (`x:DataType`) für „DataTemplate“ angeben.
+> Wenn Sie die [x:Bind-Markuperweiterung](../../xaml-platform/x-bind-markup-extension.md) in **DataTemplate** verwenden, müssen Sie „DataType“ (`x:DataType`) für „DataTemplate“ angeben.
 
 ```xaml
 <DataTemplate x:DataType="x:String">
@@ -207,9 +207,9 @@ In dieser Liste sind die verfügbaren Schnittstellen aufgeführt und ist beschri
 
     Hiermit wird es dem Steuerelement, wie bei der **INotifyCollectionChanged**-Schnittstelle, ermöglicht, auf Änderungen in der Datenquelle zu überwachen und zu reagieren.
 
-    **Warnung**: Windows.Foundation.IObservableVector\<T> unterstützt keine Aktion zum Verschieben (Move-Aktion). Dies kann dazu führen, dass die Benutzeroberfläche für ein Element ihren visuellen Zustand verliert.  Beispiel: Ein Element, das derzeit ausgewählt ist oder den Fokus hat, verliert den Fokus verliert und ist nicht mehr ausgewählt, wenn das Verschieben durch ein Entfernen (Remove) gefolgt von einem Hinzufügen (Add) erfolgt.
+    **Warnung**: „Windows.Foundation.IObservableVector\<T>“ unterstützt keine Aktion zum Verschieben (Move-Aktion). Dies kann dazu führen, dass die Benutzeroberfläche für ein Element ihren visuellen Zustand verliert.  Beispiel: Ein Element, das derzeit ausgewählt ist oder den Fokus hat, verliert den Fokus verliert und ist nicht mehr ausgewählt, wenn das Verschieben durch ein Entfernen (Remove) gefolgt von einem Hinzufügen (Add) erfolgt.
 
-    „Platform.Collections.Vector\<T>“ verwendet „IObservableVector\<T>“ und hat dieselbe Einschränkung. Muss eine Move-Aktion unterstützt werden, verwenden Sie die **INotifyCollectionChanged**-Schnittstelle.  Die .NET-Klasse „ObservableCollection\<T>“ verwendet **INotifyCollectionChanged**.
+    „Platform.Collections.Vector\<T>“ verwendet „IObservableVector\<T>“ und hat dieselbe Einschränkung. Muss eine Move-Aktion unterstützt werden, verwenden Sie die **INotifyCollectionChanged**-Schnittstelle.  Die .NET-Klasse „ObservableCollection\<T>“ verwendet „**INotifyCollectionChanged**“.
 
 - [IKeyIndexMapping](/uwp/api/microsoft.ui.xaml.controls.ikeyindexmapping)
 
@@ -774,14 +774,14 @@ public class MyPage : Page
 
 ## <a name="enable-accessibility"></a>Aktivieren von Barrierefreiheit
 
-[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) stellt keine Standardbenutzeroberfläche für Barrierefreiheit bereit. Die Dokumentation zu [Benutzerfreundlichkeit in Windows-Apps](/windows/uwp/design/usability) bietet eine Fülle von Informationen dazu, wie Sie sicherstellen können, dass Ihre App eine inklusive Benutzeroberfläche bereitstellt. Wenn Sie die „ItemsRepeater“-Klasse verwenden, um ein benutzerdefiniertes Steuerelement zu erstellen, sollten Sie die Dokumentation zu [Benutzerdefinierte Automatisierungspeers](/windows/uwp/design/accessibility/custom-automation-peers) lesen.
+[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) stellt keine Standardbenutzeroberfläche für Barrierefreiheit bereit. Die Dokumentation zu [Benutzerfreundlichkeit in Windows-Apps](../usability/index.md) bietet eine Fülle von Informationen dazu, wie Sie sicherstellen können, dass Ihre App eine inklusive Benutzeroberfläche bereitstellt. Wenn Sie die „ItemsRepeater“-Klasse verwenden, um ein benutzerdefiniertes Steuerelement zu erstellen, sollten Sie die Dokumentation zu [Benutzerdefinierte Automatisierungspeers](../accessibility/custom-automation-peers.md) lesen.
 
 ### <a name="keyboarding"></a>Tastaturunterstützung
-Die Mindesttastaturunterstützung für Fokusbewegung, die „ItemsRepeater“ bietet, basiert auf der zu XAML gehörenden [direktionalen 2D-Navigation für die Tastatur](/windows/uwp/design/input/focus-navigation#2d-directional-navigation-for-keyboard).
+Die Mindesttastaturunterstützung für Fokusbewegung, die „ItemsRepeater“ bietet, basiert auf der zu XAML gehörenden [direktionalen 2D-Navigation für die Tastatur](../input/focus-navigation.md#2d-directional-navigation-for-keyboard).
 
 ![Richtungsnavigation (direktionale Navigation)](/windows/uwp/design/input/images/keyboard/directional-navigation.png)
 
-Der [XYFocusKeyboardNavigation-Modus](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) von „ItemsRepeater“ ist standardmäßig aktiviert (_Enabled_). Je nach gewünschter Oberfläche bietet es sich an, Unterstützung für allgemeine [Tastaturinteraktionen](/windows/uwp/design/input/keyboard-interactions), etwa „Pos1“ (Home), „Ende“ (End), „Bild auf“ (PageUp) und „Bild ab“ (PageDown), hinzuzufügen.
+Der [XYFocusKeyboardNavigation-Modus](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) von „ItemsRepeater“ ist standardmäßig aktiviert (_Enabled_). Je nach gewünschter Oberfläche bietet es sich an, Unterstützung für allgemeine [Tastaturinteraktionen](../input/keyboard-interactions.md), etwa „Pos1“ (Home), „Ende“ (End), „Bild auf“ (PageUp) und „Bild ab“ (PageDown), hinzuzufügen.
 
 „ItemsRepeater“ stellt nicht automatisch sicher, dass die Standardaktivierreihenfolge für die enthaltenen Elemente (ob virtualisiert oder nicht) mit der Reihenfolge identisch ist, in der die Elemente in den Daten vorliegen. Standardmäßig ist die [TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement.tabfocusnavigation)-Eigenschaft von „ItemsRepeater“ auf [Once](/uwp/api/windows.ui.xaml.input.keyboardnavigationmode) anstelle der üblichen Standardeinstellung von _Local_ festgelegt.
 

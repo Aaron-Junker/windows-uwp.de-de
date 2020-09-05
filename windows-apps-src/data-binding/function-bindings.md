@@ -1,16 +1,16 @@
 ---
-description: Die xBind-Markuperweiterung ermöglicht die Verwendung von Funktionen im Markup.
+description: Erfahren Sie mehr über die Verwendung von Funktionen als Blattschritt des Datenbindungspfads in der xBind-Markuperweiterung.
 title: Funktionen in x:Bind
 ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows 10, UWP, xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d74e99526ed5531db92ba88a1053e07a3fc993b
-ms.sourcegitcommit: c7f33dbe9516d28664df1b91e03edca3cb9fb0c8
+ms.openlocfilehash: 4d677767f7eb73bf46784b3f256b511e54013548
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87871686"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170044"
 ---
 # <a name="functions-in-xbind"></a>Funktionen in x:Bind
 
@@ -23,7 +23,7 @@ Ab Windows 10, Version 1607, unterstützt **{x: Bind}** die Verwendung einer Fu
 - Eine Möglichkeit, Bindungen von mehr als einem Parameter abhängig zu machen
 
 > [!NOTE]
-> Wenn Sie Funktionen für **{x: Bind}** verwenden möchten, muss die Ziel-SDK-Version 14393 oder höher sein. Sie können keine Funktionen verwenden, wenn Ihre App für frühere Versionen von Windows 10 bestimmt ist. Weitere Informationen zu Zielversionen finden Sie unter [Versionsadaptiver Code](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> Wenn Sie Funktionen für **{x: Bind}** verwenden möchten, muss die Ziel-SDK-Version 14393 oder höher sein. Sie können keine Funktionen verwenden, wenn Ihre App für frühere Versionen von Windows 10 bestimmt ist. Weitere Informationen zu Zielversionen finden Sie unter [Versionsadaptiver Code](../debug-test-perf/version-adaptive-code.md).
 
 Im folgenden Beispiel werden Hintergrund und Vordergrund des Elements an Funktionen gebunden, um eine Konvertierung basierend auf dem Farbparameter durchzuführen
 

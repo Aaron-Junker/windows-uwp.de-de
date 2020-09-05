@@ -1,17 +1,17 @@
 ---
 title: Lernpfad – Erstellen und Konfigurieren eines Formulars
-description: Erfahren Sie, wie Sie ein stabiles Formular in Ihrer App erstellen.
+description: Erfahren Sie, wie Sie ein robustes Formular in einer UWP-App erstellen und konfigurieren, um die Eingabe einer beträchtlichen Menge von Informationen zu verarbeiten.
 ms.date: 05/07/2018
 ms.topic: article
 keywords: Erste Schritte, UWP, Windows 10, Lernpfad, Layout, Formular
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 02cb15d948bf35b1c449bb430c9c31dd33d9eec6
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: a674514bfeb2acbc545e59cf1b3fc6e59d697215
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79543973"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304522"
 ---
 # <a name="create-and-customize-a-form"></a>Erstellen und Anpassen eines Formulars
 
@@ -51,7 +51,7 @@ Sie müssen Ihr Formular mit verschiedenen [XAML-Steuerelementen](../design/cont
 * Mit [ToggleSwitch](../design/controls-and-patterns/toggles.md) kann ein Benutzer zwischen zwei Optionen auswählen.
 * Mit [DatePicker](../design/controls-and-patterns/date-picker.md) kann ein Benutzer einen Datumswert auswählen.
 * Mit [TimePicker](../design/controls-and-patterns/time-picker.md) kann ein Benutzer einen Wert für die Uhrzeit auswählen.
-* [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox) lässt sich erweitern, um eine Liste mit auswählbaren Elementen anzuzeigen. Weitere Informationen dazu erhalten Sie [hier](../design/controls-and-patterns/combo-box.md).
+* [ComboBox](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) lässt sich erweitern, um eine Liste mit auswählbaren Elementen anzuzeigen. Weitere Informationen dazu erhalten Sie [hier](../design/controls-and-patterns/combo-box.md).
 
 Sie können auch [Schaltflächen](../design/controls-and-patterns/buttons.md) zum Speichern oder Abbrechen hinzufügen.
 
@@ -155,10 +155,10 @@ Nachfolgend finden Sie eine kurze Zusammenfassung zu den APIs und weitere nützl
 | API | Beschreibung |
 |------|---------------|
 | [Nützliche Steuerelemente für Formulare](../design/controls-and-patterns/forms.md#input-controls) | Eine Liste nützlicher Eingabesteuerelemente für das Erstellen von Formularen und ein allgemeiner Überblick zu ihrer Verwendung |
-| [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) | Ein Panel zum Anordnen von Elementen in Layouts mit mehreren Zeilen und Spalten |
-| [RelativePanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | Ein Panel zum Anordnen von Elementen im Verhältnis zu anderen Elementen und zu den Grenzen des Panels |
-| [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) | Ein Panel zum Anordnen von Elementen in einer einzigen horizontalen oder vertikalen Linie |
-| [VisualState](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) | Ermöglicht es Ihnen, das Erscheinungsbild von Benutzeroberflächenelementen festzulegen, wenn sie einen bestimmten Zustand aufweisen. |
+| [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid) | Ein Panel zum Anordnen von Elementen in Layouts mit mehreren Zeilen und Spalten |
+| [RelativePanel](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | Ein Panel zum Anordnen von Elementen im Verhältnis zu anderen Elementen und zu den Grenzen des Panels |
+| [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) | Ein Panel zum Anordnen von Elementen in einer einzigen horizontalen oder vertikalen Linie |
+| [VisualState](/uwp/api/Windows.UI.Xaml.VisualState) | Ermöglicht es Ihnen, das Erscheinungsbild von Benutzeroberflächenelementen festzulegen, wenn sie einen bestimmten Zustand aufweisen. |
 
 ### <a name="useful-docs"></a>Nützliche Dokumentation
 

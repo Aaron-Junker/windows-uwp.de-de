@@ -1,5 +1,5 @@
 ---
-Description: Mit Optionsfeldern können Benutzer eine oder mehrere Optionen auswählen.
+description: Erfahren Sie, wie Sie Optionsfelder verwenden, um Benutzern zu ermöglichen, eine Option aus einer Sammlung von zwei oder mehr sich gegenseitig ausschließenden, aber verwandten Optionen auszuwählen.
 title: Richtlinien für Optionsfelder
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: dc6f5eb32cdedf442b6866e1e53be85edfb98dcb
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 7d09eaefff193a8283fd4bad68528b8976e0b63b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493435"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169784"
 ---
 # <a name="radio-buttons"></a>Optionsfelder
 
@@ -33,7 +33,7 @@ Das singuläre Verhalten einer Optionsfeldgruppe (RadioButtons) unterscheidet si
 
 | &nbsp; | &nbsp; |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement RadioButtons ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement RadioButtons ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows-UI-Bibliothek](/uwp/toolkits/winui/). |
 
 **Windows-UI-Bibliotheks-APIs:** 
 * [RadioButtons-Klasse](/uwp/api/microsoft.ui.xaml.controls.radiobuttons)
@@ -42,9 +42,9 @@ Das singuläre Verhalten einer Optionsfeldgruppe (RadioButtons) unterscheidet si
 * [SelectedIndex-Eigenschaft](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex)
 
 **Plattform-APIs:** 
-* [RadioButton-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton)
-* [Checked-Ereignis](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)
-* [IsChecked-Eigenschaft](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
+* [RadioButton-Klasse](/uwp/api/Windows.UI.Xaml.Controls.RadioButton)
+* [Checked-Ereignis](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)
+* [IsChecked-Eigenschaft](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -129,7 +129,7 @@ Bei der spaltenweisen Reihenfolge wechselt der Fokus von oben nach unten und von
 
 Wenn bei zeilenweise absteigender Reihenfolge (Eingabe der Elemente von links nach rechts und von oben nach unten) der Fokus auf dem letzten Element in einer Zeile liegt und die NACH-RECHTS-TASTE gedrückt wird, wird der Fokus zum ersten Element in der nächsten Zeile verlagert. Dieses selbe Verhalten tritt auch umgekehrt auf: Wenn der Fokus auf dem ersten Element in einer Zeile liegt und die NACH-LINKS-TASTE gedrückt wird, wird der Fokus auf das letzte Element in der vorherigen Zeile verlagert.
 
-Weitere Informationen finden Sie unter [Tastaturinteraktionen](https://docs.microsoft.com/windows/uwp/design/input/keyboard-interactions#wrapping-homogeneous-list-and-grid-view-items).
+Weitere Informationen finden Sie unter [Tastaturinteraktionen](../input/keyboard-interactions.md#wrapping-homogeneous-list-and-grid-view-items).
 
 ##### <a name="wrapping"></a>Umbruch
 
@@ -377,4 +377,4 @@ Die folgenden Bilder veranschaulichen, wie Sie die Optionsfelder in einer RadioB
 
 ### <a name="for-developers-xaml"></a>Für Entwickler (XAML)
 
-- [RadioButton-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.radiobutton)
+- [RadioButton-Klasse](/uwp/api/windows.ui.xaml.controls.radiobutton)

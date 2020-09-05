@@ -1,6 +1,6 @@
 ---
 title: Verwenden der visuellen Ebene mit Win32
-description: Verwende die visuelle Ebene, um die Benutzeroberfläche deiner Win32-Desktop-App zu verbessern.
+description: Erfahren Sie, wie die Composition-APIs von Windows-Runtime der universellen Windows-Plattform (UWP), auch als visuelle Ebene bezeichnet, verwenden werden, um die Benutzeroberfläche einer Win32 C++-App zu verbessern.
 template: detail.hbs
 ms.date: 03/18/2019
 ms.topic: article
@@ -8,12 +8,12 @@ keywords: UWP, Rendering, Komposition, Win32
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
-ms.openlocfilehash: c9b4ec38b0dd1f6eca3f43cfded74c6292c08100
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 98811d890aa496e05c38009dedea6978386d5e4a
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66215189"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043472"
 ---
 # <a name="using-the-visual-layer-with-win32"></a>Verwenden der visuellen Ebene mit Win32
 

@@ -1,5 +1,5 @@
 ---
-Description: Ein Texteingabefeld, das während der Benutzereingabe Vorschläge anzeigt.
+description: Erfahren Sie, wie Sie Listen- und Kombinationsfelder, auch Dropdownlisten genannt, zum Darstellen von Listen mit Elementen verwenden, aus denen Benutzer auswählen können.
 title: Kombinationsfeld und Listenfeld
 label: Combo box and list box
 template: detail.hbs
@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 65f65fc62f839e379535f4e1a3df8a188620fed9
-ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
+ms.openlocfilehash: 911585d4e00c5e6c6aea66a72488c48f4d6ffb6d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88502359"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173494"
 ---
 # <a name="combo-box-and-list-box"></a>Kombinationsfeld und Listenfeld
 
@@ -31,7 +31,7 @@ Wenn das Kombinationsfeld geschlossen ist, wird entweder die aktuelle Auswahl an
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). „WinUI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](../style/rounded-corner.md). „WinUI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
 > **Plattform-APIs:** [ComboBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [IsEditable-Eigenschaft](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [Text-Eigenschaft](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [TextSubmitted-Ereignis](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
@@ -337,6 +337,6 @@ In einem Listenfeld kann der Benutzer ein einzelnes Element oder mehrere Element
 - [Textsteuerelemente](text-controls.md)
 - [Rechtschreibprüfung](text-controls.md)
 - [Suche](search.md)
-- [TextBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [Windows.UI.Xaml.Controls PasswordBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [StringLength-Eigenschaft](https://docs.microsoft.com/dotnet/api/system.string.length)
+- [TextBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Windows.UI.Xaml.Controls PasswordBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [StringLength-Eigenschaft](/dotnet/api/system.string.length)

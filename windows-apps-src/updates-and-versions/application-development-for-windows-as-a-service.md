@@ -1,17 +1,17 @@
 ---
 title: App-Entwicklung für Windows as a Service (WaaS)
-description: Entkoppeln Sie die App-Freigabe und -Unterstützung von bestimmten Windows-Builds.
+description: Erfahren Sie mehr über den Windows as a Service (WaaS)-Ansatz für Innovation, Entwicklung und Bereitstellung sowie über das communityzentrierte Windows-Insider-Testprogramm.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
-ms.openlocfilehash: 47be38c6d7a5374b06789beede02647ef9b264d8
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c035a97b1750c8f285689f2b2f82f3766a6c06ad
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75737633"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173794"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>Anwendungsentwicklung für Windows as a Service
 
@@ -20,7 +20,7 @@ ms.locfileid: "75737633"
 -   Windows 10 Mobile
 -   Windows 10 IoT Core 
 
-Heute basieren die Erwartungen von Benutzern häufig auf geräteorientierten Umgebungen, und vollständige Produktzyklen dürfen daher höchstens in Monaten und nicht in Jahren gemessen werden. Darüber hinaus müssen neue Versionen auf kontinuierlicher Basis verfügbar gemacht und mit minimaler Beeinträchtigung der Funktionsweise bereitgestellt werden. Microsoft hat Windows 10 so entwickelt, dass diese Anforderungen erfüllt werden, und dazu ein neues Konzept für die Entwicklung und Bereitstellung von Innovationen implementiert, das als [Windows as a Service (WaaS)](https://docs.microsoft.com/windows/deployment/update/waas-overview) bezeichnet wird. Der Schlüssel zu deutlich kürzeren Produktzyklen bei gleichzeitiger Beibehaltung eines hohen Qualitätsniveaus ist ein innovatives, Community-orientiertes Testkonzept, das Microsoft für Windows 10 implementiert hat. Die Community, deren Mitglieder als „Windows-Insider“ bezeichnet werden, besteht aus Millionen von Benutzern auf der ganzen Welt. Wenn sich Windows-Insider an der Community beteiligen, testen sie im Laufe eines Produktzyklus viele Builds und geben Microsoft ihr Feedback im Rahmen eines iterativen Prozesses, der als Test-Flighting bezeichnet wird.
+Heute basieren die Erwartungen von Benutzern häufig auf geräteorientierten Umgebungen, und vollständige Produktzyklen dürfen daher höchstens in Monaten und nicht in Jahren gemessen werden. Darüber hinaus müssen neue Versionen auf kontinuierlicher Basis verfügbar gemacht und mit minimaler Beeinträchtigung der Funktionsweise bereitgestellt werden. Microsoft hat Windows 10 so entwickelt, dass diese Anforderungen erfüllt werden, und dazu ein neues Konzept für die Entwicklung und Bereitstellung von Innovationen implementiert, das als [Windows as a Service (WaaS)](/windows/deployment/update/waas-overview) bezeichnet wird. Der Schlüssel zu deutlich kürzeren Produktzyklen bei gleichzeitiger Beibehaltung eines hohen Qualitätsniveaus ist ein innovatives, Community-orientiertes Testkonzept, das Microsoft für Windows 10 implementiert hat. Die Community, deren Mitglieder als „Windows-Insider“ bezeichnet werden, besteht aus Millionen von Benutzern auf der ganzen Welt. Wenn sich Windows-Insider an der Community beteiligen, testen sie im Laufe eines Produktzyklus viele Builds und geben Microsoft ihr Feedback im Rahmen eines iterativen Prozesses, der als Test-Flighting bezeichnet wird.
 
 Als sogenannte Test-Flights verteilte Builds bieten dem Technikteam von Windows wichtige Daten dazu, wie gut die Builds in der Praxis funktionieren. Das Durchführen von Test-Flights mit Windows-Insiders ermöglicht Microsoft auch das Testen von Builds auf vielfältigeren Hardwareprodukten sowie in vielfältigeren Anwendungen und Netzwerkumgebungen, als dies früher möglich war, um potenzielle Probleme schneller zu erkennen. Microsoft ist daher überzeugt, dass das Community-orientierte Test-Flighting sowohl die schnellere Bereitstellung von Innovationen, als auch eine höhere Qualität bei öffentlichen Freigaben als je zuvor ermöglichen wird.
 
@@ -42,7 +42,7 @@ In der folgenden Tabelle sind die verschiedenen Wartungskanäle und ihre wichtig
 | Halbjährlicher Kanal | Ungefähr vier Monate nach der ersten Veröffentlichung durch Microsoft | 18 Monate ab der ersten Veröffentlichung | Ermöglicht zusätzliche Zeit zum Testen der neuen Featureupgrades vor der Bereitstellung | Pro, Education, Enterprise, Mobile Enterprise, IoT Core Pro |
 | Long-Term Servicing Channel (LTSC) | Unmittelbar nach der Veröffentlichung durch Microsoft | 10 Jahre | Ermöglicht die langfristige Bereitstellung ausgewählter Windows 10-Releases in Konfigurationen mit geringen Änderungen | Enterprise LTSB |
 
-Weitere Informationen finden Sie unter [Windows 10-Wartungsoptionen für Updates und Upgrades](https://docs.microsoft.com/windows/deployment/update/waas-overview#servicing-channels).
+Weitere Informationen finden Sie unter [Windows 10-Wartungsoptionen für Updates und Upgrades](/windows/deployment/update/waas-overview#servicing-channels).
 
 ## <a name="supporting-apps-in-windows-as-a-service"></a>Unterstützen von Apps in Windows as a Service
 
@@ -90,7 +90,7 @@ Einige Apps überprüfen die Version und geben einfach eine Warnung an den Benut
 -   Wenn die App von bestimmten API-Funktionen abhängig ist, stellen Sie sicher, dass sie auf die richtige API-Version ausgerichtet ist.
 -   Die Änderung muss über APISet oder eine andere öffentliche API erkannt werden. Die Version darf nicht stellvertretend für ein Feature oder einen Fix verwendet werden. Wenn für bedeutende Änderungen keine ordnungsgemäße Prüfung verfügbar gemacht wird, liegt ein Fehler vor.
 -   Achten Sie darauf, dass die App KEINE ungewöhnliche Versionsprüfung vornimmt, z. B. über die Registrierung, Dateiversionen, Offsets, den Kernelmodus, Treiber oder auf andere Weise. Wenn eine Versionsprüfung für die App unverzichtbar ist, verwenden Sie die GetVersion-APIs, die die Hauptversion, Nebenversion und Buildnummer zurückgeben sollten.
--   Beachten Sie bei Verwendung der [GetVersion](https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversion?redirectedfrom=MSDN)-API, dass sich ihr Verhalten seit Windows 8.1 geändert hat.
+-   Beachten Sie bei Verwendung der [GetVersion](/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversion)-API, dass sich ihr Verhalten seit Windows 8.1 geändert hat.
 
 Als Entwickler von Antischadsoftware- oder Firewall-Apps sollten Sie sich über Ihre üblichen Feedbackkanäle und über das Windows-Insider-Programm informieren.
 
@@ -158,4 +158,4 @@ Lassen Sie uns wissen, wie Ihre App mit Test-Flight-Builds funktioniert. Wenn di
 
 
 ## <a name="related-topics"></a>Zugehörige Themen
-[Windows 10-Wartungsoptionen für Updates und Upgrades](https://docs.microsoft.com/windows/manage/introduction-to-windows-10-servicing)
+[Windows 10-Wartungsoptionen für Updates und Upgrades](/windows/manage/introduction-to-windows-10-servicing)

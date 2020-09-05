@@ -1,5 +1,5 @@
 ---
-Description: Listen zeigen und ermöglichen die Interaktion mit sammlungsbasierten Inhalten.
+description: Erfahren Sie mehr über Sammlungen und Listen als Darstellung mehrerer verwandter Datenelemente, die gemeinsam angezeigt werden. 
 title: Sammlungen und Listen
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Collections and Lists
@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9896003fb1d55a2dbb57468848edd66a3d8d8d88
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ede68414d86f333b516be81cbae83ea58dc83ba0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970395"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169914"
 ---
 # <a name="collections-and-lists"></a>Sammlungen und Listen
 
 Sowohl Sammlungen als auch Listen beziehen sich auf die Darstellung mehrerer verwandter Datenelemente, die gemeinsam angezeigt werden. Sammlungen können auf mehrere Arten und durch mehrere unterschiedliche Sammlungssteuerelemente dargestellt werden (können auch als Sammlungsansichten bezeichnet werden). Sammlungssteuerelemente zeigen und ermöglichen Interaktionen mit sammlungsbasierten Inhalten wie einer Liste mit Kontakten, einer Liste mit Daten, einer Sammlung von Bildern usw.
 
-> **Wichtige APIs:** [ListView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [FlipView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [TreeView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview), [ItemsRepeater class](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
+> **Wichtige APIs:** [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView class](/uwp/api/Windows.UI.Xaml.Controls.GridView), [FlipView class](/uwp/api/windows.ui.xaml.controls.flipview), [TreeView class](/uwp/api/windows.ui.xaml.controls.treeview), [ItemsRepeater class](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
 
 Zu den in diesem Artikel behandelten Steuerelementen gehören:
 
@@ -35,14 +35,14 @@ Zu den in diesem Artikel behandelten Steuerelementen gehören:
 
 Entwurfsrichtlinien, Funktionen und Beispiele für jedes Steuerelement findest du weiter unten.
 
-Jedes dieser Steuerelemente (mit Ausnahme von ItemsRepeater) bietet integrierte Stile und Interaktionen. Um jedoch die visuelle Darstellung Ihrer Sammlungsansicht und der darin enthaltenen Elemente weiter anzupassen, wird ein [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) verwendet. Ausführliche Informationen zu Datenvorlagen und zum Anpassen der Darstellung einer Sammlungsansicht findest du auf der Seite [Elementcontainer und -vorlagen](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/item-containers-templates).
+Jedes dieser Steuerelemente (mit Ausnahme von ItemsRepeater) bietet integrierte Stile und Interaktionen. Um jedoch die visuelle Darstellung Ihrer Sammlungsansicht und der darin enthaltenen Elemente weiter anzupassen, wird ein [DataTemplate](/uwp/api/Windows.UI.Xaml.DataTemplate) verwendet. Ausführliche Informationen zu Datenvorlagen und zum Anpassen der Darstellung einer Sammlungsansicht findest du auf der Seite [Elementcontainer und -vorlagen](./item-containers-templates.md).
 
 Jedes dieser Steuerelemente (mit Ausnahme von ItemsRepeater) verfügt außerdem über ein integriertes Verhalten, das die Auswahl einzelner oder mehrerer Elemente ermöglicht. Weitere Informationen findest du unter [Übersicht über Auswahlmodi](selection-modes.md).
 
-Eines der Szenarien, die in diesem Artikel nicht behandelt werden, ist das Anzeigen von Sammlungen in einer Tabelle oder über mehrere Spalten. Wenn du eine Sammlung in diesem Format anzeigen möchten, bietet es sich an, das [DataGrid-Steuerelement](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) aus dem [Windows Community Toolkit](https://docs.microsoft.com/windows/communitytoolkit/) zu verwenden. 
+Eines der Szenarien, die in diesem Artikel nicht behandelt werden, ist das Anzeigen von Sammlungen in einer Tabelle oder über mehrere Spalten. Wenn du eine Sammlung in diesem Format anzeigen möchten, bietet es sich an, das [DataGrid-Steuerelement](/windows/communitytoolkit/controls/datagrid) aus dem [Windows Community Toolkit](/windows/communitytoolkit/) zu verwenden. 
 
 > **Windows 10 Fall Creators Update – Verhaltensänderung**: Beim Schwenken/Bildlauf in der Liste der Windows-Apps wird jetzt standardmäßig anstelle des Ausführens der Auswahl ein aktiver Stift verwendet (z. B. Toucheingabe, Touchpad und passiver Stift).
-> Wenn Ihre App vom vorherigen Verhalten abhängig ist, können Sie die Stift-Bildlaufaktionen außer Kraft setzen und auf das vorherige Verhalten zurückzusetzen. Weitere Details finden Sie im API-Referenzthema für die [ScrollViewer-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer).
+> Wenn Ihre App vom vorherigen Verhalten abhängig ist, können Sie die Stift-Bildlaufaktionen außer Kraft setzen und auf das vorherige Verhalten zurückzusetzen. Weitere Details finden Sie im API-Referenzthema für die [ScrollViewer-Klasse](/uwp/api/windows.ui.xaml.controls.scrollviewer).
 
 ## <a name="examples"></a>Beispiele
 
@@ -277,7 +277,7 @@ Verwende in folgenden Fällen ein „ItemsRepeater“-Steuerelement:
 
 ### <a name="examples"></a>Beispiele
 
-Die folgenden drei Beispiele sind alle ItemsRepeater-Steuerelemente, die an dieselbe Datenquelle (eine Sammlung von Zahlen) gebunden sind. Die Sammlung von Zahlen wird auf drei Arten dargestellt, wobei jedes der unten dargestellten ItemsRepeater-Steuerelemente unter Verwendung eines anderen benutzerdefinierten [Layouts](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.layout) und einer anderen benutzerdefinierten [ItemTemplate](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate?view=winui-2.2) benutzt wurde.
+Die folgenden drei Beispiele sind alle ItemsRepeater-Steuerelemente, die an dieselbe Datenquelle (eine Sammlung von Zahlen) gebunden sind. Die Sammlung von Zahlen wird auf drei Arten dargestellt, wobei jedes der unten dargestellten ItemsRepeater-Steuerelemente unter Verwendung eines anderen benutzerdefinierten [Layouts](/uwp/api/microsoft.ui.xaml.controls.layout) und einer anderen benutzerdefinierten [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate?view=winui-2.2) benutzt wurde.
 
 ![ItemsRepeater mit horizontalen Balken](images/itemsrepeater-1.png)
 ![ItemsRepeater mit vertikalen Balken](images/itemsrepeater-2.png)
@@ -332,7 +332,7 @@ Die folgenden drei Beispiele sind alle ItemsRepeater-Steuerelemente, die an dies
 - [Miniaturbilder](../../files/thumbnails.md)
 
 **API-Referenz**
-- [ListView-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
-- [GridView-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
-- [ComboBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
-- [ListBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)
+- [ListView-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+- [GridView-Klasse](/uwp/api/Windows.UI.Xaml.Controls.GridView)
+- [ComboBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
+- [ListBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ListBox)

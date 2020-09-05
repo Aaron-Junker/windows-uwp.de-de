@@ -1,6 +1,6 @@
 ---
-Description: Ein Texteingabefeld, das während der Benutzereingabe Vorschläge anzeigt.
 title: Richtlinien für Felder mit automatischen Vorschlägen
+description: Erfahren Sie, wie Sie ein AutoSuggestBox-Element verwenden, um eine Liste mit Vorschlägen bereitzustellen, aus der Benutzer während der Eingabe auswählen können.
 ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
 dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
@@ -12,12 +12,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 59fef3ea55d6aa0ddfa2ef809634be7565d54f90
-ms.sourcegitcommit: db48036af630f33f0a2f7a908bfdfec945f3c241
+ms.openlocfilehash: 6eaa57aa5e3ae9d60a9c199c8011da95cd7147e2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84437178"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160654"
 ---
 # <a name="auto-suggest-box"></a>Feld mit automatischen Vorschlägen
 
@@ -29,9 +29,9 @@ Verwenden Sie ein AutoSuggestBox-Element, um eine Liste mit Vorschlägen bereitz
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). „Windows UI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](../style/rounded-corner.md). „Windows UI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
-> **Plattform-APIs:** [Klasse „AutoSuggestBox“](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox), [Ereignis „TextChanged“](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged), [Ereignis „SuggestionChosen“](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen), [Ereignis „QuerySubmitted“](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted)
+> **Plattform-APIs:** [Klasse „AutoSuggestBox“](/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox), [Ereignis „TextChanged“](/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged), [Ereignis „SuggestionChosen“](/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen), [Ereignis „QuerySubmitted“](/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -78,9 +78,9 @@ Zum Verwenden eines AutoSuggestBox-Elements müssen Sie auf drei Benutzeraktione
 
 ### <a name="text-changed"></a>Text geändert
 
-Das [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged)-Ereignis tritt auf, wenn der Inhalt des Textfelds aktualisiert wird. Verwenden Sie die [Reason](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason)-Eigenschaft für die Ereignisargumente, um zu ermitteln, ob die Änderung aufgrund einer Benutzereingabe erfolgt ist. Wenn der Grund für die Änderung **UserInput** lautet, filtern Sie Ihre Daten basierend auf der Eingabe. Legen Sie die gefilterten Daten anschließend als [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) des AutoSuggestBox-Elements fest, um die Vorschlagsliste zu aktualisieren.
+Das [TextChanged](/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged)-Ereignis tritt auf, wenn der Inhalt des Textfelds aktualisiert wird. Verwenden Sie die [Reason](/uwp/api/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason)-Eigenschaft für die Ereignisargumente, um zu ermitteln, ob die Änderung aufgrund einer Benutzereingabe erfolgt ist. Wenn der Grund für die Änderung **UserInput** lautet, filtern Sie Ihre Daten basierend auf der Eingabe. Legen Sie die gefilterten Daten anschließend als [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) des AutoSuggestBox-Elements fest, um die Vorschlagsliste zu aktualisieren.
 
-Um zu steuern, wie Elemente in der Vorschlagsliste angezeigt werden, können Sie [DisplayMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) oder [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) verwenden.
+Um zu steuern, wie Elemente in der Vorschlagsliste angezeigt werden, können Sie [DisplayMemberPath](/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) oder [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) verwenden.
 
 - Wenn Sie den Text einer einzelnen Eigenschaft des Datenelements anzeigen möchten, legen Sie die DisplayMemberPath-Eigenschaft fest, um auszuwählen, welche Eigenschaft Ihres Objekts in der Vorschlagsliste angezeigt werden soll.
 - Verwenden Sie zum Definieren einer benutzerdefinierten Darstellung für jedes Element in der Liste die ItemTemplate-Eigenschaft.
@@ -89,19 +89,19 @@ Um zu steuern, wie Elemente in der Vorschlagsliste angezeigt werden, können Sie
 
 Wenn ein Benutzer mit der Tastatur durch die Vorschlagsliste navigiert, müssen Sie den Text im Textfeld entsprechend aktualisieren.
 
-Sie können die [TextMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textmemberpath)-Eigenschaft festlegen, um auszuwählen, welche Eigenschaft des Datenobjekts im Textfeld angezeigt werden soll. Wenn Sie ein TextMemberPath-Element angeben, wird das Textfeld automatisch aktualisiert. Sie sollten in der Regel den gleichen Wert für DisplayMemberPath and TextMemberPath angeben, damit der Text in der Vorschlagsliste und im Textfeld identisch ist.
+Sie können die [TextMemberPath](/uwp/api/windows.ui.xaml.controls.autosuggestbox.textmemberpath)-Eigenschaft festlegen, um auszuwählen, welche Eigenschaft des Datenobjekts im Textfeld angezeigt werden soll. Wenn Sie ein TextMemberPath-Element angeben, wird das Textfeld automatisch aktualisiert. Sie sollten in der Regel den gleichen Wert für DisplayMemberPath and TextMemberPath angeben, damit der Text in der Vorschlagsliste und im Textfeld identisch ist.
 
-Wenn Sie mehr als eine einfache Eigenschaft anzeigen müssen, behandeln Sie das [SuggestionChosen](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen)-Ereignis, um das Textfeld mit benutzerdefiniertem Text basierend auf dem ausgewählten Element zu füllen.
+Wenn Sie mehr als eine einfache Eigenschaft anzeigen müssen, behandeln Sie das [SuggestionChosen](/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen)-Ereignis, um das Textfeld mit benutzerdefiniertem Text basierend auf dem ausgewählten Element zu füllen.
 
 ### <a name="query-submitted"></a>Abfrage gesendet
 
-Behandeln Sie das [QuerySubmitted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted) -Ereignis, um eine passende Abfrageaktion für die App durchzuführen und das Ergebnis dem Benutzer anzuzeigen.
+Behandeln Sie das [QuerySubmitted](/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted) -Ereignis, um eine passende Abfrageaktion für die App durchzuführen und das Ergebnis dem Benutzer anzuzeigen.
 
 Das QuerySubmitted-Ereignis tritt ein, wenn ein Benutzer eine Abfragezeichenfolge absendet. Der Benutzer kann diesen Schritt wie folgt ausführen:
-- Mit dem Fokus auf dem Textfeld EINGABETASTE drücken oder auf das Abfragesymbol klicken. Die [ChosenSuggestion](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion)-Eigenschaft für die Ereignisargumente lautet **null**.
+- Mit dem Fokus auf dem Textfeld EINGABETASTE drücken oder auf das Abfragesymbol klicken. Die [ChosenSuggestion](/uwp/api/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion)-Eigenschaft für die Ereignisargumente lautet **null**.
 - Mit dem Fokus auf der Vorschlagsliste EINGABETASTE drücken oder auf ein Element klicken oder tippen. Die ChosenSuggestion-Eigenschaft für die Ereignisargumente enthält das Element, das in der Liste ausgewählt wurde.
 
-In allen Fällen enthält die [QueryText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext)-Eigenschaft für die Ereignisargumente den Text aus dem Textfeld.
+In allen Fällen enthält die [QueryText](/uwp/api/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext)-Eigenschaft für die Ereignisargumente den Text aus dem Textfeld.
 
 Dies ist ein einfaches AutoSuggestBox-Element mit den erforderlichen Ereignishandlern.
 
@@ -149,7 +149,7 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
 Verwenden Sie ein AutoSuggestBox-Element, um eine Liste mit Vorschlägen bereitzustellen, aus der Benutzer während der Eingabe auswählen können.
 
-Standardmäßig wird für das Texteingabefeld keine Abfrageschaltfläche angezeigt. Sie können die [QueryIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.queryicon) -Eigenschaft festlegen, um eine Schaltfläche mit dem angegebenen Symbol rechts vom Textfeld hinzuzufügen. Wenn das AutoSuggestBox-Element wie ein typisches Suchfeld aussehen soll, fügen Sie beispielsweise wie folgt ein Suchsymbol hinzu.
+Standardmäßig wird für das Texteingabefeld keine Abfrageschaltfläche angezeigt. Sie können die [QueryIcon](/uwp/api/windows.ui.xaml.controls.autosuggestbox.queryicon) -Eigenschaft festlegen, um eine Schaltfläche mit dem angegebenen Symbol rechts vom Textfeld hinzuzufügen. Wenn das AutoSuggestBox-Element wie ein typisches Suchfeld aussehen soll, fügen Sie beispielsweise wie folgt ein Suchsymbol hinzu.
 
 ```xaml
 <AutoSuggestBox QueryIcon="Find"/>
@@ -190,6 +190,6 @@ Hier ist ein AutoSuggestBox-Element mit einem Suchsymbol dargestellt.
 - [Textsteuerelemente](text-controls.md)
 - [Rechtschreibprüfung](text-controls.md)
 - [Suche](search.md)
-- [TextBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [Windows.UI.Xaml.Controls PasswordBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [StringLength-Eigenschaft](https://docs.microsoft.com/dotnet/api/system.string.length)
+- [TextBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Windows.UI.Xaml.Controls PasswordBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [StringLength-Eigenschaft](/dotnet/api/system.string.length)

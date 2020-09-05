@@ -1,7 +1,7 @@
 ---
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
 title: Erstellen, Schreiben und Lesen einer Datei
-description: Lesen und Schreiben Sie eine Datei mithilfe eines StorageFile-Objekts.
+description: Erfahren Sie, wie Sie mit den universellen Windows-Plattform-Objekten (UWP) „FileIO“, „StorageFolder“ und „StorageFile“ eine Datei erstellen, darin schreiben und lesen können.
 ms.date: 12/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: 0dbe5e2f1cc32a3d1b52572f71fba7547af99f17
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 89bdd0793c7af26ccd56bc2494ab6d60a6574df0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258566"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168384"
 ---
 # <a name="create-write-and-read-a-file"></a>Erstellen, Schreiben und Lesen einer Datei
 
@@ -35,7 +35,7 @@ Lesen und Schreiben Sie eine Datei mithilfe eines [**StorageFile**](/uwp/api/win
 
 -   **Kenntnisse in der asynchronen Programmierung für Apps für die universelle Windows-Plattform (UWP)**
 
-    Informationen zum Schreiben von asynchronen Apps in C# oder Visual Basic finden Sie unter [Aufrufen asynchroner APIs in C# oder Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Informationen zum Schreiben asynchroner Apps in C++/WinRT findest du unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency). Informationen zum Schreiben von asynchronen Apps in C++/CX findest du unter [Asynchrone Programmierung in C++/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
+    Informationen zum Schreiben von asynchronen Apps in C# oder Visual Basic finden Sie unter [Aufrufen asynchroner APIs in C# oder Visual Basic](../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md). Informationen zum Schreiben asynchroner Apps in C++/WinRT findest du unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](../cpp-and-winrt-apis/concurrency.md). Informationen zum Schreiben von asynchronen Apps in C++/CX findest du unter [Asynchrone Programmierung in C++/CX](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md).
 
 -   **Kenntnisse darin, wie die Datei abgerufen wird, aus der du lesen und/oder in die du schreiben möchtest**
 
@@ -254,7 +254,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
     ```
 
-2.  Rufe dann einen Ausgabestream ab, indem du in `stream` die [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)-Methode aufrufst. Füge diesen bei Verwendung von C# in eine **using**-Anweisung ein, um die Lebensdauer des Ausgabestreams zu verwalten. Bei Verwendung von [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) kannst du die Lebensdauer steuern, indem du sie in einen Block einschließt oder auf `nullptr` festlegst, wenn du damit fertig bist.
+2.  Rufe dann einen Ausgabestream ab, indem du in `stream` die [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)-Methode aufrufst. Füge diesen bei Verwendung von C# in eine **using**-Anweisung ein, um die Lebensdauer des Ausgabestreams zu verwalten. Bei Verwendung von [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) kannst du die Lebensdauer steuern, indem du sie in einen Block einschließt oder auf `nullptr` festlegst, wenn du damit fertig bist.
 
     ```csharp
     using (var outputStream = stream.GetOutputStreamAt(0))
