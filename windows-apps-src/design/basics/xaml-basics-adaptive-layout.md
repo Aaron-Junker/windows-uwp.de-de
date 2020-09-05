@@ -1,16 +1,16 @@
 ---
 title: 'Tutorial: Erstellen von adaptiven Layouts'
-description: In diesem Artikel werden die Grundlagen für adaptives Layout in XAML behandelt
+description: Erfahren Sie, wie Sie die adaptiven Layoutfeatures in XAML nutzen können, um Apps zu erstellen, die in jeder Fenstergröße gut aussehen.
 keywords: XAML, UWP, Erste Schritte
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b172f2da7fa8953045db4eab3818df02ce43e00c
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 8e1498836772c3c279a1b9d85d76070b29593f5e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942890"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174474"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>Tutorial: Erstellen von adaptiven Layouts
 
@@ -60,11 +60,11 @@ Führen Sie die App aus. Sie sieht im Vollbildmodus gut aus, aber die Benutzerob
 
 ![Kleines Fenster: vorher](../basics/images/xaml-basics/adaptive-layout-small-before.png)
 
-Weitere Informationen zum App-Layout finden Sie im Abschnitt [Layout](/windows/uwp/design/layout/) der Dokumentation.
+Weitere Informationen zum App-Layout finden Sie im Abschnitt [Layout](../layout/index.md) der Dokumentation.
 
 ### <a name="add-window-breakpoints"></a>Hinzufügen von Fensterbreakpoints
 
-Der erste Schritt besteht darin, die _Breakpoints_ zu definieren, an denen verschiedene visuelle Zustände angewendet werden. Weitere Informationen zu den Breakpoints für kleine, mittlere und große Bildschirme finden Sie unter [Bildschirmgrößen und Breakpoints](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design).
+Der erste Schritt besteht darin, die _Breakpoints_ zu definieren, an denen verschiedene visuelle Zustände angewendet werden. Weitere Informationen zu den Breakpoints für kleine, mittlere und große Bildschirme finden Sie unter [Bildschirmgrößen und Breakpoints](../layout/screen-sizes-and-breakpoints-for-responsive-design.md).
 
 Öffnen Sie „App.xaml“ im Projektmappen-Explorer, und fügen Sie den folgenden Code nach `MergedDictionaries` vor dem schließenden `</ResourceDictionary>`-Tag hinzu.
 
@@ -264,12 +264,12 @@ Führen Sie die App aus. Wenn die App geladen wird, versuchen Sie, die Größe d
 
 ## <a name="going-further"></a>Vertiefung
 
-Nach Abschluss dieser Übung verfügen Sie über ausreichende Kenntnisse über das adaptive Layout, um selbst weiter zu experimentieren. Als größere Herausforderung können Sie versuchen, das Layout für größere Bildschirmgrößen zu optimieren, wie z. B. für Surface Hub. Wenn Sie ein Surface Hub-Layout testen möchten, finden Sie weitere Informationen unter [Testen von Surface Hub-Apps mit Visual Studio](/windows/uwp/debug-test-perf/test-surface-hub-apps-using-visual-studio).
+Nach Abschluss dieser Übung verfügen Sie über ausreichende Kenntnisse über das adaptive Layout, um selbst weiter zu experimentieren. Als größere Herausforderung können Sie versuchen, das Layout für größere Bildschirmgrößen zu optimieren, wie z. B. für Surface Hub. Wenn Sie ein Surface Hub-Layout testen möchten, finden Sie weitere Informationen unter [Testen von Surface Hub-Apps mit Visual Studio](../../debug-test-perf/test-surface-hub-apps-using-visual-studio.md).
 
 Wenn Sie Probleme haben, finden Sie weitere Unterstützung in den folgenden Abschnitten von [Definieren von Seitenlayouts mit XAML](../layout/layouts-with-xaml.md).
 
-+ [Visuelle Zustände und Zustandsauslöser](/windows/uwp/design/layout/layouts-with-xaml#visual-states-and-state-triggers)
-+ [Maßgeschneiderte Layouts](/windows/uwp/design/layout/layouts-with-xaml#tailored-layouts)
++ [Visuelle Zustände und Zustandsauslöser](../layout/layouts-with-xaml.md#visual-states-and-state-triggers)
++ [Maßgeschneiderte Layouts](../layout/layouts-with-xaml.md#tailored-layouts)
 
 Auch wenn Sie weitere Informationen erhalten möchten, wie die erste Fotobearbeitungs-App erstellt wurde, sehen Sie sich diese Lernprogramme zu [Benutzeroberflächen](../basics/xaml-basics-ui.md) und [Datenbindung](../../data-binding/xaml-basics-data-binding.md) in XAML an.
 

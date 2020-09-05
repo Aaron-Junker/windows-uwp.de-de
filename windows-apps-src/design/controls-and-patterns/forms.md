@@ -1,16 +1,16 @@
 ---
-Description: Layoutrichtlinien für Formulare in Windows-Apps.
 title: Formulare
+description: Lernen Sie die Richtlinien für den Entwurf und die Erstellung von XAML-Layouts für Formulare in einer universellen Windows-Plattform-App (UWP) kennen.
 template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: Windows 10, UWP, Fluent
-ms.openlocfilehash: 69ffaf4ff67d4ee78e78c195d759ae242a069e8e
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 0113cbf50601a3db717753ab2e12524fa281daba
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968511"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304692"
 ---
 # <a name="forms"></a>Formulare
 Ein Formular ist eine Gruppe von Steuerelementen, die Daten von Benutzern sammeln und übermitteln. Formulare werden in der Regel für Seiten mit Einstellungen und Umfragen, zum Erstellen von Konten und für vieles mehr verwendet. 
@@ -45,8 +45,8 @@ Die andere Art von Formular ermöglicht es Benutzern zu entscheiden, ob sie Date
 Diese Art von Formular bietet Benutzern eine größere Flexibilität hinsichtlich ihrer Antworten. Im Allgemeinen enthalten derartige Formulare Freiform-Eingabefelder, sodass eine größere Bandbreite von Antworten möglich ist. Um bei der Übermittlung gültige Benutzereingaben und ordnungsgemäß formatierte Daten sicherzustellen, sollten Sie folgende Empfehlungen befolgen:
 
 - Schließen Sie mit dem richtigen Steuerelement aus, dass ungültige Informationen übermittelt werden (verwenden Sie z. B. ein CalendarDatePicker-Steuerelement anstelle eines TextBox-Steuerelements für Datumsangaben). Weitere Informationen zum Auswählen der richtigen Eingabesteuerelemente für das Formular finden Sie weiter unten im Abschnitt „Eingabesteuerelemente“.
-- Geben Sie bei Verwendung von TextBox-Steuerelementen Benutzern mit der [PlaceholderText](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox.PlaceholderText)-Eigenschaft einen Hinweis, welches Eingabeformat gewünscht wird.
-- Stellen Sie für Benutzer die geeignete Bildschirmtastatur bereit, indem Sie die erwartete Eingabe eines Steuerelements mit der [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscope)-Eigenschaft angeben.
+- Geben Sie bei Verwendung von TextBox-Steuerelementen Benutzern mit der [PlaceholderText](/uwp/api/Windows.UI.Xaml.Controls.TextBox.PlaceholderText)-Eigenschaft einen Hinweis, welches Eingabeformat gewünscht wird.
+- Stellen Sie für Benutzer die geeignete Bildschirmtastatur bereit, indem Sie die erwartete Eingabe eines Steuerelements mit der [InputScope](/uwp/api/windows.ui.xaml.input.inputscope)-Eigenschaft angeben.
 - Heben Sie erforderliche Eingaben in der Bezeichnung mit einem Sternchen (*) hervor.
 - Deaktivieren Sie die Schaltfläche zum Übermitteln, bis alle erforderlichen Informationen eingetragen wurden.
 - Wenn bei der Übermittlung ungültige Daten festgestellt werden, kennzeichnen Sie die Steuerelemente mit ungültigen Eingaben mit hervorgehobenen Feldern oder Rahmen, und fordern Sie den Benutzer auf, das Formular erneut zu übermitteln.
@@ -58,7 +58,7 @@ Diese Art von Formular bietet Benutzern eine größere Flexibilität hinsichtlic
 Befolgen Sie die nachstehenden Empfehlungen für das Entwerfen von Formularlayouts, um die Benutzerfreundlichkeit zu steigern und sicherzustellen, dass Benutzer die richtigen Informationen eingeben können. 
 
 ### <a name="labels"></a>Bezeichnungen
-[Beschriftungen](labels.md) sollten linksbündig ausgerichtet und über dem Steuerelement platziert sein. Viele Steuerelemente verfügen über eine integrierte Header-Eigenschaft zum Anzeigen der Beschriftung. Für Steuerelemente ohne Header-Eigenschaft oder zum Beschriften von Steuerelementgruppen können Sie stattdessen ein [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Element verwenden.
+[Beschriftungen](labels.md) sollten linksbündig ausgerichtet und über dem Steuerelement platziert sein. Viele Steuerelemente verfügen über eine integrierte Header-Eigenschaft zum Anzeigen der Beschriftung. Für Steuerelemente ohne Header-Eigenschaft oder zum Beschriften von Steuerelementgruppen können Sie stattdessen ein [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Element verwenden.
 
 Beschriften Sie beim [Entwerfen für Barrierefreiheit](../accessibility/accessibility.md) alle einzelnen Steuerelemente und Steuerelementgruppen, damit diese sowohl für Benutzer als auch für die Sprachausgabe eindeutig sind. 
 
@@ -128,8 +128,8 @@ Control | Verwendung | Beispiel
 Control | Verwendung | Beispiel
 - | - | -
 [ComboBox](combo-box.md) | Starten im kompakten Modus und Erweitern, um die Liste der auswählbaren Elemente anzuzeigen | Auswählen aus einer langen Liste von Elementen, z. B. Status oder Länder/Regionen
-[ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | Kategorisieren von Elementen und Zuweisen von Gruppenüberschriften, Verschieben von Elementen per Drag & Drop, Überprüfen von Inhalten und Neuanordnen von Elementen | Bilden einer Rangfolge für Optionen
-[GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | Anordnen und Durchsuchen von bildbasierten Sammlungen | Auswählen eines Fotos, einer Farbe oder Anzeigedesigns
+[ListView](./lists.md#list-views) | Kategorisieren von Elementen und Zuweisen von Gruppenüberschriften, Verschieben von Elementen per Drag & Drop, Überprüfen von Inhalten und Neuanordnen von Elementen | Bilden einer Rangfolge für Optionen
+[GridView](./lists.md#grid-views) | Anordnen und Durchsuchen von bildbasierten Sammlungen | Auswählen eines Fotos, einer Farbe oder Anzeigedesigns
 
 ### <a name="numeric-input"></a>Numerische Eingabe
 Control | Verwendung | Beispiel
