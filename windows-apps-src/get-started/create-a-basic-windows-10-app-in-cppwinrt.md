@@ -54,7 +54,7 @@ Wie Sie vielleicht wissen, sind alle Klassen in einer UWP-App (Universelle Windo
 
 Jeder XAML-Seitentyp in Ihrem Projekt muss ein Windows-Runtime Typ sein. Somit ist **MainPage** auch ein Windows-Runtime-Typ. Es handelt sich insbesondere um eine *Laufzeitklasse*. Jeder Typ, der von einer XAML-Seite verwendet wird, muss also auch ein Windows-Runtime-Typ sein. Wenn Sie eine [Windows-Runtime-Komponenten](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) schreiben und einen Typ erstellen möchten, der von einer anderen App genutzt werden kann, erstellen Sie einen Windows-Runtime-Typ. In anderen Fällen kann Ihr Typ auch ein regulärer C++-Typ sein. Im Allgemeinen kann ein Windows-Runtime-Typ mithilfe jeder beliebigen Windows-Runtime-Sprache genutzt werden.
 
-Ein guter Indikator, dass ein Typ ein Windows-Runtime-Typ ist, ist, dass er in der [Microsoft Interface Definition Language (MIDL) in einer Schnittstellendefinitionssprach-Datei (Interface Definition Language-Datei, ) definiert ist. Nehmen wir **MainPage** als Beispiel.
+Ein guter Indikator, dass ein Typ ein Windows-Runtime-Typ ist, ist, dass er in der [Microsoft Interface Definition Language (MIDL)](/uwp/midl-3/) in einer Schnittstellendefinitionssprach-Datei (Interface Definition Language-Datei,`.idl` ) definiert ist. Nehmen wir **MainPage** als Beispiel.
 
 ```idl
 // MainPage.idl
