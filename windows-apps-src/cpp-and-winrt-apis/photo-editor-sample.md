@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Beispiel, Anwendung, Beispielanwendung, Foto, Editor, Foto-Editor
 ms.localizationpriority: medium
-ms.openlocfilehash: fb89deaef8c221df9a28f0350f0c860e8da3802d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9f72fc1737e697427b22f65147260bdadebc9605
+ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154413"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89643793"
 ---
 # <a name="photo-editor-cwinrt-sample-application"></a>C++/WinRT-Beispielanwendung eines Foto-Editors
 
@@ -28,3 +28,5 @@ Der Foto-Editor ist eine UWP-Beispielanwendung (Universelle Windows-Plattform), 
 - Verwendung des externen Win2D-NuGet-Pakets sowie von [Windows::UI::Composition](/uwp/api/windows.ui.composition) für Bildeffekte
 - XAML-Datenbindung – einschließlich der [{x:Bind}-Markuperweiterung](../xaml-platform/x-bind-markup-extension.md)
 - XAML-Formatierung und Anpassung der Benutzeroberfläche – einschließlich [verbundener Animationen](../design/motion/connected-animation.md)
+
+Siehe auch [Wo finde ich C++/WinRT-Beispiel-Apps?](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-cwinrt-sample-apps).

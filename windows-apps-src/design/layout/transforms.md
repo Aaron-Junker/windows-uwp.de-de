@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: eabab5cd0c025e177f56db9555777c3579530f3d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7168895a690b8602e67b8e05832c74b8ddf4d67d
+ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169374"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89643816"
 ---
 # <a name="transforms-overview"></a>Transformationen – Übersicht
 
@@ -109,8 +109,8 @@ Die mathematische Beschreibung einer Transformation ist ggf. hilfreich, wenn Sie
 
 |                                             |                                             |     |
 |---------------------------------------------|---------------------------------------------|-----|
-| [**M11**](/uwp/api/windows.ui.xaml.media.matrix.m11)         | [**M21**](/uwp/api/windows.ui.xaml.media.matrix.m21)         | 0   |
-| [**M12**](/uwp/api/windows.ui.xaml.media.matrix.m12)         | [**M22**](/uwp/api/windows.ui.xaml.media.matrix.m22)         | 0   |
+| [**M11**](/uwp/api/windows.ui.xaml.media.matrix.m11)         | [**M12**](/uwp/api/windows.ui.xaml.media.matrix.m12)         | 0   |
+| [**M21**](/uwp/api/windows.ui.xaml.media.matrix.m21)         | [**M22**](/uwp/api/windows.ui.xaml.media.matrix.m22)         | 0   |
 | [**OffsetX**](/uwp/api/windows.ui.xaml.media.matrix.offsetx) | [**OffsetY**](/uwp/api/windows.ui.xaml.media.matrix.offsety) | 1   |
 
  
