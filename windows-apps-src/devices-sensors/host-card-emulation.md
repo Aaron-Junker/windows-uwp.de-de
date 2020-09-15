@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 80b3c4f46e595eedd2c6a259a03348822c9f51bc
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e7075f0de1ce01e9157c520f28b0b0dd70260498
+ms.sourcegitcommit: bc8add1675070506371c1881b41c3727f1b55720
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172224"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90093122"
 ---
 # <a name="create-an-nfc-smart-card-app"></a>Erstellen einer NFC-Smartcard-App
 
@@ -383,9 +383,5 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Uicc);
 ```
 
-<<<<<<< HEAD
-> [!Important]
+> [!IMPORTANT]
 > Die Legacyunterstützung des binären SMS-Abfangverfahrens in Windows Phone 8.1 wurde entfernt und in Windows 10 Mobile durch eine neue, umfassendere SMS-Unterstützung ersetzt. Alle älteren Windows Phone 8.1-Apps, die hierauf basieren, müssen aktualisiert werden, damit sie die neuen Windows 10 Mobile-SMS-APIs nutzen.
-=======
-<b>Wichtig</b>    Die ältere Unterstützung für die binäre SMS-Abfang Unterstützung in Windows Phone 8,1 wurde entfernt und durch eine neue breitere SMS-Unterstützung in Windows 10 Mobile ersetzt, aber alle älteren Windows Phone 8,1-apps, die sich auf befinden, müssen aktualisiert werden, um die neuen Windows 10 Mobile SMS-APIs
->>>>>>> 05b1708b6... Links: Windows-UWP
