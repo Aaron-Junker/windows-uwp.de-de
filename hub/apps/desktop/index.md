@@ -1,18 +1,18 @@
 ---
-Description: Es wird beschrieben, wie Sie in das Erstellen von Desktop-Apps für Windows-PCs einsteigen, z. B. das Auswählen der richtigen App-Plattform für neue Apps und das Modernisieren von vorhandenen Apps für Windows 10.
+description: Es wird beschrieben, wie Sie in das Erstellen von Desktop-Apps für Windows-PCs einsteigen, z. B. das Auswählen der richtigen App-Plattform für neue Apps und das Modernisieren von vorhandenen Apps für Windows 10.
 title: Erstellen von Desktop-Apps für Windows-PCs
 ms.topic: article
-ms.date: 11/04/2019
+ms.date: 9/10/2020
 keywords: Windows Win32, Desktopentwicklung
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f4b790978449bd6d5c279a5405c22db51cd0724
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6539f436e46f351efc355d361c0677b9fedee546
+ms.sourcegitcommit: 2bb975d5df38d294277f57bf8b6a06d9bf87ca9b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170724"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90046816"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>Erstellen von Desktop-Apps für Windows-PCs
 
@@ -98,10 +98,11 @@ Wenn Sie eine neue Desktop-App für Windows erstellen, finden Sie hier einige Re
 
 ## <a name="related-documentation-and-technologies"></a>Verwandte Dokumentation und Technologien
 
-| Ressource | Beschreibung |
+| Ressource | BESCHREIBUNG |
 |---------|-------------|
-| [.NET Core 3.0](/dotnet/core/whats-new/dotnet-core-3-0) | Erfahren Sie mehr über die neuesten Features von .NET Core 3.0, einschließlich Erweiterungen für WPF- und Windows Forms-Apps. |
-| [Desktophandbuch für WPF und .NET Core 3.0](/dotnet/desktop-wpf/overview/index) | Entwickeln Sie WPF-Apps mit .NET Core 3.0 als Ziel, anstelle des vollständigen .NET Frameworks.  |
+| [.NET Core 3.1](/dotnet/core/whats-new/dotnet-core-3-1) | Erfahren Sie mehr über die neuesten Features von .NET Core 3.1, einschließlich Erweiterungen für WPF- und Windows Forms-Apps. |
+| [.NET 5](/dotnet/core/dotnet-five) | In diesem Artikel werden die Komponenten von .NET 5 erläutert, dem nächsten Release von .NET Core nach Version 3.1. |
+| [Desktophandbuch für WPF und .NET Core](/dotnet/desktop-wpf/overview/index) | Entwickeln Sie WPF-Apps speziell für .NET Core anstatt für das gesamte .NET Framework.  |
 | [Azure](/azure/) | Erweitern Sie die Reichweite Ihrer Apps mit Azure Cloud Services. |
 | [Visual Studio](/visualstudio/) | Erfahren Sie, wie Sie Visual Studio zum Entwickeln von Apps und Diensten verwenden. |
 | [MSIX](/windows/msix/) | Sie können Windows-Apps in einem modernen und universellen Paketformat verpacken und bereitstellen. |
