@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 70f71265ff763ff8a160705694476e03bf8b6667
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d85df48b4f43759013f80623595d919ac6c77337
+ms.sourcegitcommit: ef3cdca5e9b8f032f46174da4574cb5593d32d56
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166354"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90593434"
 ---
 # <a name="composition-visual"></a>Visuelle Kompositionselemente
 
@@ -19,17 +19,21 @@ Visuelle Kompositionselemente bilden die visuelle Struktur, die die Grundlage f�
 
 ## <a name="visuals"></a>Visuals
 
-Es gibt drei Arten visueller Elemente, aus denen sich die visuelle Struktur zusammensetzt, sowie eine grundlegende Pinselklasse mit mehreren Unterklassen, die Einfluss auf den Inhalt eines visuellen Elements hat:
+Es gibt mehrere visuelle Typen, aus denen die visuelle Struktur besteht, sowie eine Basis Pinsel Klasse mit mehreren Unterklassen, die sich auf den Inhalt eines visuellen Elements auswirken:
 
 - [**Visual**](/uwp/api/Windows.UI.Composition.Visual) – Basisobjekt; umfasst den Großteil der Eigenschaften. Diese werden von anderen visuellen Objekten geerbt.
 - [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual): abgeleitet von [**Visual**](/uwp/api/Windows.UI.Composition.Visual). Fügt die Fähigkeit zum Erstellen von untergeordneten Elementen hinzu.
-- [**Spritevisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) – wird von [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual) abgeleitet und bietet die Möglichkeit, einen Pinsel zuzuordnen, sodass die Visualisierung Pixel, einschließlich Bildern, Effekten oder einer voll Tonfarbe, Renderern kann.
+  - [**Spritevisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) – wird von [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual)abgeleitet. Bietet die Möglichkeit, einen Pinsel zuzuordnen, sodass die Visualisierung Pixel, einschließlich Bildern, Effekten oder einer voll Tonfarbe, Renderern kann.
+  - [**Layervisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) – wird von [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual)abgeleitet. Untergeordnete Elemente des visuellen Elements werden zu einer einzelnen Ebene vereinfacht.<br/>(_Eingeführt in Windows 10, Version 1607, SDK 14393._)
+  - [**Shapevisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) – wird von [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual)abgeleitet. Ein visueller Struktur Knoten, der der Stamm einer compositionshape ist.<br/>(_Eingeführt in Windows 10, Version 1803, SDK 17134._)
+  - [**Redirectvisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) – wird von [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual)abgeleitet. Der Inhalt wird von der Visualisierung von einem anderen visuellen Element abgerufen.<br/>(_Eingeführt in Windows 10, Version 1809, SDK 17763._)
+  - [**Scenevisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) – wird von [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual)abgeleitet. Eine Container Visualisierung für die Knoten einer 3D-Szene.<br/>(_Eingeführt in Windows 10, Version 1903, SDK 18362._)
 
-Sie können mit dem [**compositionbrush**](/uwp/api/Windows.UI.Composition.CompositionBrush) und seinen Unterklassen, einschließlich [**compositioncolorbrush**](/uwp/api/Windows.UI.Composition.CompositionColorBrush), [**compositionsurfacebrush**](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) und [**compositioneffectbrush**](/uwp/api/Windows.UI.Composition.CompositionEffectBrush), Inhalte und Effekte auf spritevisuals anwenden. Weitere Informationen zu Pinsel finden Sie in der Übersicht über den [**compositionbrush**](./composition-brushes.md).
+Sie können mit dem [**compositionbrush**](/uwp/api/Windows.UI.Composition.CompositionBrush) und seinen Unterklassen, einschließlich [**compositioncolorbrush**](/uwp/api/Windows.UI.Composition.CompositionColorBrush), [**compositionsurfacebrush**](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) und [**compositioneffectbrush**](/uwp/api/Windows.UI.Composition.CompositionEffectBrush), Inhalte und Effekte auf spritevisuals anwenden. Weitere Informationen zu Pinsel finden Sie unter [**Übersicht über compositionbrush**](./composition-brushes.md).
 
 ## <a name="the-compositionvisual-sample"></a>Das CompositionVisual-Beispiel
 
-Hier sehen Sie einen Beispielcode, der die drei verschiedenen visuellen Typen veranschaulicht, die zuvor aufgelistet wurden. Dieses Beispiel veranschaulicht keine Konzepte wie Animationen oder komplexere Effekte. Es enthält die Bausteine, die alle diese Systeme verwenden. (Der vollständige Beispielcode ist am Ende dieses Artikels aufgeführt.)
+Hier sehen Sie einen Beispielcode, der die drei verschiedenen visuellen Typen veranschaulicht, die zuvor aufgelistet wurden. Obwohl in diesem Beispiel keine Konzepte wie Animationen oder komplexere Effekte behandelt werden, sind die Bausteine enthalten, die von all diesen Systemen verwendet werden. (Der vollständige Beispielcode ist am Ende dieses Artikels aufgeführt.)
 
 Im Beispiel gibt es eine Reihe von voll Tonfarbe-Quadraten, die auf den Bildschirm geklickt und gezogen werden können. Durch Klicken auf ein Quadrat gelangt dieses in den Vordergrund, dreht sich um 45 Grad und wird während der Bewegung undurchsichtig.
 
@@ -78,7 +82,7 @@ Wie bei anderen Objekten in der API kann " [**insetclip**](/uwp/api/Windows.UI.C
 
 ## <a name="span-idrotating_a_clipspanspan-idrotating_a_clipspanspan-idrotating_a_clipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>Drehen von Clips
 
-Ein [**Visual**](/uwp/api/Windows.UI.Composition.Visual)-Objekt kann mit einer Drehung transformiert werden. Beachten Sie, dass [**RotationAngle**](/uwp/api/windows.ui.composition.visual.rotationangle) Radianten und Grad unterstützt. Der Standardwert ist „Radianten“. Wie im folgenden Codeausschnitt dargestellt, ist es jedoch ganz einfach, einen Wert in Grad anzugeben:
+Ein [**Visual**](/uwp/api/Windows.UI.Composition.Visual)-Objekt kann mit einer Drehung transformiert werden. Beachten Sie, dass [**RotationAngle**](/uwp/api/windows.ui.composition.visual.rotationangle) Radianten und Grad unterstützt. Standardmäßig wird das Bogenmaß verwendet, aber es ist leicht, Grad festzulegen, wie im folgenden Code Ausschnitt gezeigt:
 
 ```cs
 child.RotationAngleInDegrees = 45.0f;
