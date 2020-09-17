@@ -6,12 +6,12 @@ ms.date: 11/26/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a80c130de1966973fe928480009eaa3bd0a8887
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e359fd18da67da15bb33e8980f0e0e7419001460
+ms.sourcegitcommit: b99e2f4dffa603b68c2a8273fe6313432f91b353
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171247"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90569363"
 ---
 # <a name="networking-and-web-services"></a>Netzwerk- und Webdienste
 
@@ -20,7 +20,7 @@ Die folgenden Netzwerk- und Webdiensttechnologien sind für Entwickler von UWP (
 | Thema | Beschreibung |
 | - | - |
 | [Netzwerkgrundlagen](networking-basics.md) | Aktionen, die Sie für eine netzwerkfähige App ausführen müssen. |
-| [Welche Netzwerktechnologie?](which-networking-technology.md) | Eine kurze Übersicht über die Netzwerktechnologien, die für UWP-Entwickler zur Verfügung stehen, mit Vorschlägen zum Auswählen der Technologien, die für Ihre App geeignet sind. |
+| [Welche Netzwerktechnologie?](which-networking-technology.md) | Eine Übersicht über die Netzwerktechnologien, die für UWP-Entwickler zur Verfügung stehen, mit Vorschlägen zum Auswählen der Technologien, die für Ihre App geeignet sind. |
 | [Netzwerkkommunikation im Hintergrund](network-communications-in-the-background.md) | Um die Netzwerkkommunikation fortzusetzen, während sie sich nicht im Vordergrund befindet, kann eine App Hintergrundaufgaben und entweder Socketbroker- oder Steuerkanaltrigger verwenden. |
 | [Sockets](sockets.md) | Sockets sind eine einfache Datenübertragungstechnologie und bilden die Grundlage zahlreicher Netzwerkprotokollimplementierungen. UWP bietet TCP- und UDP-Socketklassen für Client-Server- oder Peer-to-Peer-Anwendungen, unabhängig davon, ob Verbindungen langlebig sind oder keine bestehende Verbindung erforderlich ist. |
 | [WebSockets](websockets.md) | WebSockets stellt einen Mechanismus für die schnelle und sichere bidirektionale Kommunikation zwischen einem Client und einem Server über das Web mithilfe von HTTP(S) bereit und unterstützt sowohl UTF-8-Nachrichten als auch binäre Nachrichten. |
