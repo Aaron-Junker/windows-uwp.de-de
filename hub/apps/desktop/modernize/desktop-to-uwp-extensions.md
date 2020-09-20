@@ -1,19 +1,19 @@
 ---
 description: Du kannst Erweiterungen nutzen, um deine gepackte Desktop-App in vordefinierter Weise in Windows 10 zu integrieren.
 title: Modernisieren vorhandener Desktop-Apps mit Desktop-Brücke
-ms.date: 08/25/2020
+ms.date: 09/11/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b18afdeecb3e70f958b3d8908027e59f8c4c1f9e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e0a8a7bf38fbf44fd3544d7912729bbd42672f34
+ms.sourcegitcommit: 7c49f789f5b382b5b12efed6a81cbb4a25d44bd9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172724"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90026325"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Integrieren deiner Desktop-App in Windows 10 und UWP
 
@@ -1164,8 +1164,8 @@ Du kannst deine Anwendung als Option für die automatische Wiedergabe anzeigen, 
 |ProviderDisplayName | Eine Zeichenfolge, die deine App oder deinen Dienst repräsentiert (beispielsweise „Contoso-Videoplayer“). |
 |ContentEvent |Der Name eines Inhaltsereignisses, durch das Benutzer eine Aufforderung zu deinem ``ActionDisplayName`` und ``ProviderDisplayName`` erhalten. Ein Inhaltsereignis wird ausgelöst, wenn ein Volumegerät wie etwa die Speicherkarte einer Kamera, eine DVD oder ein USB-Stick in den PC eingelegt bzw. daran angeschlossen wird. Die vollständige Liste dieser Ereignisse findest du [hier](/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference).  |
 |Verb |Die Einstellung „Verb“ dient zum Angeben eines Werts, der für die ausgewählte Option an deine App übergeben wird. Sie können mehrere Startaktionen für Ereignisse der automatischen Wiedergabe angeben und mit der Einstellung Verb ermitteln, welche Option ein Benutzer für Ihre App ausgewählt hat. Für welche Option sich der Benutzer entschieden hat, erfahren Sie durch Überprüfen der verb-Eigenschaft der an die App übergebenen Startereignisargumente. Für die Einstellung Verb können Sie einen beliebigen Wert verwenden. Einzige Ausnahme ist open: Dieser Wert ist reserviert. |
-|DropTargetHandler |Die Klassen-ID der Anwendung, die die [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)-Schnittstelle implementiert. Dateien von Wechselmedien werden an die [Drop](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__)-Methode deiner [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)-Implementierung übergeben.  |
-|Parameter |Du musst die [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)-Schnittstelle nicht für alle Inhaltsereignisse implementieren. Für jedes der Inhaltsereignisse kannst du Befehlszeilenparameter bereitstellen, anstatt die [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)-Schnittstelle zu implementieren. Bei diesen Ereignissen verwendet die automatische Wiedergabe diese Befehlszeilenparameter, um deine App zu starten. Du kannst durch eine Analyse dieser Parameter im Initialisierungscode deiner App festzustellen, ob sie von der automatischen Wiedergabe gestartet wurde, und dann deine benutzerdefinierte Implementierung bereitstellen. |
+|DropTargetHandler |Die Klassen-ID der Anwendung, die die [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget)-Schnittstelle implementiert. Dateien von Wechselmedien werden an die [Drop](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__)-Methode deiner [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget)-Implementierung übergeben.  |
+|Parameter |Du musst die [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget)-Schnittstelle nicht für alle Inhaltsereignisse implementieren. Für jedes der Inhaltsereignisse kannst du Befehlszeilenparameter bereitstellen, anstatt die [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget)-Schnittstelle zu implementieren. Bei diesen Ereignissen verwendet die automatische Wiedergabe diese Befehlszeilenparameter, um deine App zu starten. Du kannst durch eine Analyse dieser Parameter im Initialisierungscode deiner App festzustellen, ob sie von der automatischen Wiedergabe gestartet wurde, und dann deine benutzerdefinierte Implementierung bereitstellen. |
 |DeviceEvent |Der Name eines Geräteereignisses, bei dem Benutzer eine Aufforderung zu deinem ``ActionDisplayName`` und ``ProviderDisplayName`` erhalten. Ein Geräteereignis wird ausgelöst, wenn ein Gerät an den PC angeschlossen wird. Geräteereignisse beginnen mit der Zeichenfolge ``WPD`` und sind [hier](/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference) aufgelistet. |
 |HWEventHandler |Die Klassen-ID der App, die die [IHWEventHandler](/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler)-Schnittstelle implementiert. |
 |InitCmdLine |Der Zeichenfolgenparameter, den du an die [Initialize](/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize)-Methode der [IHWEventHandler](/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler)-Schnittstelle übergeben möchtest. |
@@ -1277,6 +1277,9 @@ Ein Beispiel zur Verwendung dieser Erweiterung findest du [hier](https://github.
 ### <a name="share-fonts-with-other-windows-applications"></a>Freigeben von Schriftarten für andere Windows-Anwendungen
 
 Gibt deine benutzerdefinierten Schriftarten für andere Windows-Anwendungen frei.
+
+> [!NOTE]
+> Bevor Sie eine App, die diese Erweiterung verwendet, beim Store einreichen können, müssen Sie zunächst die Genehmigung des Store-Teams einholen. Um eine Genehmigung zu erhalten, wechseln Sie zu [https://aka.ms/storesupport](https://aka.ms/storesupport), klicken Sie auf **Kontakt**, und wählen Sie die Optionen aus, die für das Einreichen von Apps an das Dashboard relevant sind. Dieser Genehmigungsprozess trägt dazu bei, sicherzustellen, dass keine Konflikte zwischen den von Ihrer App installierten Schriftarten und den mit dem Betriebssystem installierten Schriftarten auftreten. Wenn Sie keine Genehmigung erhalten, erhalten Sie beim Senden Ihrer App einen Fehler ähnlich dem folgenden: „Überprüfungsfehler bei der Paketannahme: Die Erweiterung „windows.sharedFonts“ kann nicht mit diesem Konto verwendet werden. Wenn Sie eine Berechtigung zum Verwenden dieser Erweiterung anfordern möchten, wenden Sie sich an unser Supportteam.“
 
 #### <a name="xml-namespaces"></a>XML-Namespaces
 

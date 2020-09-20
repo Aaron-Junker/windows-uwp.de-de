@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: 31ced6c31b126986171c81e03b68a0a1cccc44f2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 997a0c32de9d6ee803095f5c708f6ed8cedaf141
+ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160354"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89643839"
 ---
 # <a name="teaching-tip"></a>Unterrichtstipp
 
@@ -106,9 +106,11 @@ Dies ist das Ergebnis, wenn die Seite mit der Schaltfläche und dem Unterrichtst
 
 ![Eine Beispiel-App mit einem Unterrichtstipp, der auf die Schaltfläche „Speicher“ verweist Der Tipptitel lautet „Saving automatically“ (Automatisch speichern) und der Untertitel lautet „We save your changes as you go - so you never have to.“ (Wir speichern deine Änderungen während der Arbeit, damit du das nicht tun musst.). Rechts oben im Unterrichtstipp gibt es eine Schaltfläche zum Schließen.](../images/teaching-tip-targeted.png)
 
+Im obigen Beispiel werden die Eigenschaften [Title](/uwp/api/microsoft.ui.xaml.controls.teachingtip.title) und [Subtitle](/uwp/api/microsoft.ui.xaml.controls.teachingtip.subtitle) verwendet, um den Titel und Untertitel des Unterrichtstipps festzulegen. Die Eigenschaft [Target](/uwp/api/microsoft.ui.xaml.controls.teachingtip.target) wird auf „SaveButton“ festgelegt, um die visuelle Verbindung zwischen ihr und der Schaltfläche herzustellen. Um den Unterrichtstipp anzuzeigen, wird seine Eigenschaft [IsOpen](/uwp/api/microsoft.ui.xaml.controls.teachingtip.isopen) auf `true` festgelegt.
+
 ### <a name="non-targeted-tips"></a>Nicht zielgerichtete Tipps
 
-Nicht alle Tipps beziehen sich auf ein Element auf dem Bildschirm. Für diese Szenarien wird die Zieleigenschaft nicht festgelegt, und der Unterrichtstipp wird stattdessen relativ zu den Rändern des XAML-Stamms angezeigt. Allerdings kann bei einem Unterrichtstipp die Spitze entfernt werden, während die Platzierung in Bezug zum Element der Benutzeroberfläche durch Festlegen der TailVisibility-Eigenschaft auf „Collapsed“ beibehalten wird. Das folgende Beispiel zeigt einen nicht zielgerichteten Unterrichtstipp.
+Nicht alle Tipps beziehen sich auf ein Element auf dem Bildschirm. Für diese Szenarien wird kein Ziel festgelegt, und der Unterrichtstipp wird stattdessen relativ zu den Rändern des XAML-Stamms angezeigt. Allerdings kann bei einem Unterrichtstipp die Spitze entfernt werden, während die Platzierung in Bezug zum Element der Benutzeroberfläche durch Festlegen der Eigenschaft [TailVisibility](/uwp/api/microsoft.ui.xaml.controls.teachingtip.tailvisibility) auf „Collapsed“ beibehalten wird. Das folgende Beispiel zeigt einen nicht zielgerichteten Unterrichtstipp.
 
 ```xaml
 <Button x:Name="SaveButton" Content="Save" />
@@ -125,7 +127,7 @@ In diesem Beispiel befindet sich TeachingTip in der Elementstruktur anstatt in R
 
 ### <a name="preferred-placement"></a>Bevorzugte Platzierung
 
-Der Unterrichtstipp repliziert das [FlyoutPlacementMode](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode)-Platzierungsverhalten des Flyouts mit der Eigenschaft „TeachingTipPlacementMode“. Der Standardmodus für die Platzierung versucht, einen zielgerichteten Unterrichtstipp über dem Ziel zu platzieren, während ein nicht zielgerichteter Unterrichtstipp in der Mitte unter dem XAML-Stamm platziert wird. So wie beim Flyout wird automatisch ein anderer Platzierungsmodus ausgewählt, wenn der bevorzugte Platzierungsmodus nicht genug Platz für die Anzeige des Unterrichtstipps lässt.
+Der Unterrichtstipp repliziert das [FlyoutPlacementMode](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode)-Platzierungsverhalten des Flyouts mit der Eigenschaft [PreferredPlacement](/uwp/api/microsoft.ui.xaml.controls.teachingtip.preferredplacement). Der Standardmodus für die Platzierung versucht, einen zielgerichteten Unterrichtstipp über dem Ziel zu platzieren, während ein nicht zielgerichteter Unterrichtstipp in der Mitte unter dem XAML-Stamm platziert wird. So wie beim Flyout wird automatisch ein anderer Platzierungsmodus ausgewählt, wenn der bevorzugte Platzierungsmodus nicht genug Platz für die Anzeige des Unterrichtstipps lässt.
 
 Weitere Informationen zu Anwendungen, die Gamepadeingaben vorhersagen, findest du unter [Gamepad und Fernbedienung]( ../../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction). Es wird empfohlen, den Zugriff des Gamepads auf alle Unterrichtstipps mit allen möglichen Konfigurationen der Benutzeroberfläche einer App zu testen.
 
@@ -168,7 +170,7 @@ Das folgende Diagramm zeigt das Ergebnis aller 13 PreferredPlacement-Modi, die f
 
 ### <a name="add-a-placement-margin"></a>Hinzufügen eines Platzierungsrands
 
-Mithilfe der PlacementMargin-Eigenschaft kannst du steuern, wie weit ein zielgerichteter Unterrichtstipp vom Ziel entfernt ist und wie weit ein nicht zielgerichteter Unterrichtstipp von den Rändern des XAML-Stamms entfernt ist. PlacementMargin verfügt wie [Margin](/uwp/api/windows.ui.xaml.frameworkelement.margin) über vier Werte (left, right, top und bottom), sodass nur die relevanten Werte verwendet werden. PlacementMargin.Left gilt beispielsweise, wenn sich der Tipp links vom Ziel oder am linken Rand des XAML-Stamms befindet.
+Mithilfe der Eigenschaft [PlacementMargin](/uwp/api/microsoft.ui.xaml.controls.teachingtip.placementmargin) können Sie steuern, wie weit ein zielgerichteter Unterrichtstipp vom Ziel entfernt ist und wie weit ein nicht zielgerichteter Unterrichtstipp von den Rändern des XAML-Stamms entfernt ist. PlacementMargin verfügt wie [Margin](/uwp/api/windows.ui.xaml.frameworkelement.margin) über vier Werte (left, right, top und bottom), sodass nur die relevanten Werte verwendet werden. PlacementMargin.Left gilt beispielsweise, wenn sich der Tipp links vom Ziel oder am linken Rand des XAML-Stamms befindet.
 
 Das folgende Beispiel zeigt einen nicht zielgerichteten Tipp, bei dem die PlacementMargin-Werte „Left“/„Top“/„Right“/„Bottom“ jeweils auf 80 festgelegt sind.
 
@@ -188,7 +190,7 @@ Das folgende Beispiel zeigt einen nicht zielgerichteten Tipp, bei dem die Placem
 
 ### <a name="add-content"></a>Inhalt hinzufügen
 
-Mithilfe der Content-Eigenschaft kannst du Inhalt zu einem Unterrichtstipp hinzufügen. Wenn mehr Inhalte angezeigt werden sollen, als die Größe eines Lerntipps zulässt, wird automatisch eine Bildlaufleiste aktiviert, damit ein Benutzer im Inhaltsbereich einen Bildlauf durchführen kann.
+Mithilfe der [Content](/uwp/api/windows.ui.xaml.controls.contentcontrol.content)-Eigenschaft können Sie Inhalt zu einem Unterrichtstipp hinzufügen. Wenn mehr Inhalte angezeigt werden sollen, als die Größe eines Lerntipps zulässt, wird automatisch eine Bildlaufleiste aktiviert, damit ein Benutzer im Inhaltsbereich einen Bildlauf durchführen kann.
 
 ```xaml
 <Button x:Name="SaveButton" Content="Save">
@@ -210,11 +212,11 @@ Mithilfe der Content-Eigenschaft kannst du Inhalt zu einem Unterrichtstipp hinzu
 
 ### <a name="add-buttons"></a>Hinzufügen von Schaltflächen
 
-Standardmäßig wird neben dem Titel eines Unterrichtstipps die Schaltfläche „X“ zum Schließen angezeigt. Die Schließen-Schaltfläche kann mit der Eigenschaft „CloseButtonContent“ angepasst werden. In dem Fall wird die Schaltfläche an den unteren Rand des Unterrichtstipps verschoben.
+Standardmäßig wird neben dem Titel eines Unterrichtstipps die Schaltfläche „X“ zum Schließen angezeigt. Die Schließen-Schaltfläche kann mit der Eigenschaft [CloseButtonContent](/uwp/api/microsoft.ui.xaml.controls.teachingtip.closebuttoncontent) angepasst werden. In dem Fall wird die Schaltfläche an den unteren Rand des Unterrichtstipps verschoben.
 
 **Hinweis: Bei einfach ausblendbaren Tipps wird keine Schließen-Schaltfläche angezeigt**
 
-Eine Schaltfläche für benutzerdefinierte Aktionen kann durch Festlegen der ActionButtonContent-Eigenschaft hinzugefügt werden (und optional den Eigenschaften „ActionButtonCommand“ und „ActionButtonCommandParameter“).
+Eine Schaltfläche für benutzerdefinierte Aktionen kann durch Festlegen der [ActionButtonContent](/uwp/api/microsoft.ui.xaml.controls.teachingtip.actionbuttoncontent)-Eigenschaft hinzugefügt werden (und optional den Eigenschaften [ActionButtonCommand](/uwp/api/microsoft.ui.xaml.controls.teachingtip.actionbuttoncommand) und [ActionButtonCommandParameter](/uwp/api/microsoft.ui.xaml.controls.teachingtip.actionbuttoncommandparameter)).
 
 ```xaml
 <Button x:Name="SaveButton" Content="Save">
@@ -239,7 +241,7 @@ Eine Schaltfläche für benutzerdefinierte Aktionen kann durch Festlegen der Act
 
 ### <a name="hero-content"></a>Hero-Inhalt
 
-Mithilfe der Eigenschaft „HeroContent“ kannst du randlose Inhalte zu einem Unterrichtstipp hinzufügen. Die Platzierung des Hero-Inhalts kann mit der Eigenschaft „HeroContentPlacement“ auf oben oder unten in einem Unterrichtstipp festgelegt werden.
+Mithilfe der Eigenschaft [HeroContent](/uwp/api/microsoft.ui.xaml.controls.teachingtip.herocontent) können randlose Inhalte zu einem Unterrichtstipp hinzugefügt werden. Die Platzierung des Hero-Inhalts kann mit der Eigenschaft [HeroContentPlacement](/uwp/api/microsoft.ui.xaml.controls.teachingtip.herocontentplacement) auf oben oder unten in einem Unterrichtstipp festgelegt werden.
 
 ```xaml
 <Button x:Name="SaveButton" Content="Save">
@@ -260,7 +262,7 @@ Mithilfe der Eigenschaft „HeroContent“ kannst du randlose Inhalte zu einem U
 
 ### <a name="add-an-icon"></a>Hinzufügen eines Symbols
 
-Neben dem Titel und dem Untertitel kannst du mithilfe der Eigenschaft „IconSource“ ein Symbol hinzufügen. Die empfohlene Symbolgröße ist u. a. 16 px, 24 px und 32 px.
+Neben dem Titel und dem Untertitel können Sie mithilfe der Eigenschaft [IconSource](/uwp/api/microsoft.ui.xaml.controls.teachingtip.iconsource) ein Symbol hinzufügen. Die empfohlene Symbolgröße ist u. a. 16 px, 24 px und 32 px.
 
 ```xaml
 <Button x:Name="SaveButton" Content="Save">
@@ -281,7 +283,7 @@ Neben dem Titel und dem Untertitel kannst du mithilfe der Eigenschaft „IconSou
 
 ### <a name="enable-light-dismiss"></a>Einfaches Ausblenden
 
-Die Funktion zum einfachen Ausblenden ist standardmäßig deaktiviert, kann aber aktiviert werden, damit ein Unterrichtstipp geschlossen wird, wenn der Benutzer beispielsweise einen Bildlauf durchführt oder mit anderen Elementen der Anwendung interagiert. Aufgrund dieser Verhaltensweise sind einfach ausblendbare Tipps die beste Lösung, wenn ein Tipp in einem bildlauffähigen Bereich platziert werden muss.
+Die Funktion zum einfachen Ausblenden ist standardmäßig deaktiviert, kann aber durch Festlegen der Eigenschaft [IsLightDismissEnabled](/uwp/api/microsoft.ui.xaml.controls.teachingtip.islightdismissenabled) aktiviert werden, damit ein Unterrichtstipp geschlossen wird, wenn der Benutzer beispielsweise einen Bildlauf durchführt oder mit anderen Elementen der Anwendung interagiert. Aufgrund dieser Verhaltensweise sind einfach ausblendbare Tipps die beste Lösung, wenn ein Tipp in einem bildlauffähigen Bereich platziert werden muss.
 
 Die Schließen-Schaltfläche wird aus einem einfach ausblendbaren Unterrichtstipp automatisch entfernt, damit dieses Verhalten für die Benutzer offensichtlich ist.
 
@@ -299,7 +301,7 @@ Die Schließen-Schaltfläche wird aus einem einfach ausblendbaren Unterrichtstip
 
 ### <a name="escaping-the-xaml-root-bounds"></a>Umgehen der Begrenzungen des XAML-Stamms
 
-Ab Windows 10, Version 1903 (Build 18362), kann ein Unterrichtstipp die Begrenzungen des XAML-Stamms und des Bildschirms verlassen, indem die Eigenschaft `ShouldConstrainToRootBounds` festgelegt wird. Wenn diese Eigenschaft aktiviert ist, bleibt der Unterrichtstipp nicht innerhalb der Begrenzungen des XAML-Stamms und wird immer dem festgelegten `PreferredPlacement`-Modus entsprechend platziert. Aktiviere die Eigenschaft `IsLightDismissEnabled`, und lege den `PreferredPlacement`-Modus relativ mittig im XAML-Stamm fest, um die größtmögliche Benutzerfreundlichkeit sicherzustellen.
+Ab Windows 10, Version 1903 (Build 18362), kann ein Unterrichtstipp die Begrenzungen des XAML-Stamms und des Bildschirms umgehen. Legen Sie hierfür die Eigenschaft [ShouldConstrainToRootBounds](/uwp/api/microsoft.ui.xaml.controls.teachingtip.shouldconstraintorootbounds) fest. Wenn diese Eigenschaft aktiviert ist, bleibt der Unterrichtstipp nicht innerhalb der Begrenzungen des XAML-Stamms und wird immer dem festgelegten `PreferredPlacement`-Modus entsprechend platziert. Aktiviere die Eigenschaft `IsLightDismissEnabled`, und lege den `PreferredPlacement`-Modus relativ mittig im XAML-Stamm fest, um die größtmögliche Benutzerfreundlichkeit sicherzustellen.
 
 In früheren Versionen von Windows wird diese Eigenschaft ignoriert, und der Unterrichtstipp bleibt immer innerhalb der Begrenzungen des XAML-Stamms.
 
@@ -319,7 +321,7 @@ In früheren Versionen von Windows wird diese Eigenschaft ignoriert, und der Unt
 
 ### <a name="canceling-and-deferring-close"></a>Abbrechen und Verzögern des Vorgangs zum Schließen
 
-Das Schließen-Ereignis kann verwendet werden, um das Schließen eines Unterrichtstipps abzubrechen und/oder zu verzögern. Dadurch kannst du den Unterrichtstipp offen lassen oder etwas Zeit einräumen, damit eine Aktion oder eine benutzerdefinierte Animation ausgeführt wird. Wenn das Schließen eines Unterrichtstipps abgebrochen wird, wechselt IsOpen wieder zu „true“, während der Verzögerung wird jedoch die Einstellung „false“ beibehalten. Programmgesteuertes Schließen kann auch abgebrochen werden.
+Das [Schließen](/uwp/api/microsoft.ui.xaml.controls.teachingtip.closing)-Ereignis kann verwendet werden, um das Schließen eines Unterrichtstipps abzubrechen und/oder zu verzögern. Dadurch kannst du den Unterrichtstipp offen lassen oder etwas Zeit einräumen, damit eine Aktion oder eine benutzerdefinierte Animation ausgeführt wird. Wenn das Schließen eines Unterrichtstipps abgebrochen wird, wechselt IsOpen wieder zu „true“, während der Verzögerung wird jedoch die Einstellung „false“ beibehalten. Programmgesteuertes Schließen kann auch abgebrochen werden.
 
 > [!NOTE]
 > Wenn keine Platzierungsoption es erlaubt, dass ein Unterrichtstipp vollständig angezeigt wird, durchläuft dieser seinen Ereignislebenszyklus, um ein Schließen zu erzwingen, wenn auf keine Schließen-Schaltfläche zugegriffen werden kann. Wenn die App das Schließen-Ereignis abbricht, bleibt der Unterrichtstipp u. U. offen, wenn auf keine Schließen-Schaltfläche zugegriffen werden kann.

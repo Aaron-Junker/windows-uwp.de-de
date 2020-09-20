@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, uwp, Standard, C++, cpp, winrt, Projektion, Erste Schritte
 ms.localizationpriority: medium
-ms.openlocfilehash: 412f34d21ddb24f637450fdfc71214c360445841
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d7dc6455219510d75307df02571fc506b909553c
+ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170194"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89643824"
 ---
 # <a name="get-started-with-cwinrt"></a>Erste Schritte mit C++/WinRT
 
@@ -180,6 +180,10 @@ Das Erstellen von APIs mit C++/WinRT ist etwas komplizierter als deren Verwendun
 Dieses Szenario dient dem Entwickeln von Anwendungen und Steuerelementen im XAML-UI-Framework. Das Arbeiten in einer XAML-Anwendung vereint Nutzung und Erstellung. Da XAML heute jedoch das vorherrschende UI-Framework unter Windows ist und dessen Auswirkungen auf die Windows-Runtime entsprechend zunehmen, verdient es eine eigene Kategorie von Szenarien.
 
 Beachten Sie, dass XAML am besten für Programmiersprachen geeignet ist, die Reflektion unterstützen. In C++/WinRT müssen Sie manchmal einen etwas höheren Aufwand betreiben, um mit dem XAML-Framework zusammenzuarbeiten. Alle diese Fälle werden in der Dokumentation behandelt. Ein guter Ausgangspunkt ist [XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft](./binding-property.md) sowie [Benutzerdefinierte (vorlagenbasierte) XAML-Steuerelemente mit C++/WinRT](./xaml-cust-ctrl.md).
+
+## <a name="sample-apps-written-in-cwinrt"></a>Beispiel-Apps in C++/WinRT
+
+Unter [Wo finde ich C++/WinRT-Beispiel-Apps?](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-cwinrt-sample-apps) finden Sie weitere Informationen.
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [SyndicationClient::RetrieveFeedAsync-Methode](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)

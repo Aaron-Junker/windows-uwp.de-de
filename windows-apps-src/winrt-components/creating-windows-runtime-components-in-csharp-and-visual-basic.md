@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 7a1235159b0f9d69e7fcedd334aeb9e9246d3d2b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 57d46ea1f88395624943135247a8f610112aaf90
+ms.sourcegitcommit: 21eb13a50402bf5442a5f0a4bf34800d1dc679c4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174294"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90804730"
 ---
 # <a name="windows-runtime-components-with-c-and-visual-basic"></a>Komponenten für Windows-Runtime in C# und Visual Basic
 
@@ -51,7 +51,7 @@ Wenn Sie die Komponente als Teil einer UWP-App mit C++ testen, können Sie verwa
 ## <a name="to-debug-both-native-c-code-and-managed-code"></a>So debuggen Sie systemeigenen C++-Code und verwalteten Code
 1.  Öffnen Sie das Kontextmenü für das Visual C++-Projekt, und wählen Sie **Eigenschaften** aus.
 2.  Wählen Sie auf den Eigenschaftenseiten unter **Konfigurationseigenschaften** die Option **Debuggen** aus.
-3.  Wählen Sie **Debuggertyp** aus, und ändern Sie dann in der Dropdownliste **Nur systemeigen** in **Gemischt (verwaltet und systemeigen)**. Klicken Sie auf **OK**.
+3.  Wählen Sie **Debuggertyp** aus, und ändern Sie dann in der Dropdownliste **Nur systemeigen** in **Gemischt (verwaltet und systemeigen)**. Wählen Sie **OK** aus.
 4.  Legen Sie Haltepunkte im systemeigenen und verwalteten Code fest.
 
 Wenn Sie die Komponente als Teil einer UWP-App mit JavaScript testen, befindet sich die Projekt Mappe standardmäßig im JavaScript-Debugmodus. In Visual Studio ist das gleichzeitige Debuggen von JavaScript und verwaltetem Code nicht möglich.
@@ -59,7 +59,7 @@ Wenn Sie die Komponente als Teil einer UWP-App mit JavaScript testen, befindet s
 ## <a name="to-debug-managed-code-instead-of-javascript"></a>So debuggen Sie verwalteten Code anstelle von JavaScript
 1.  Öffnen Sie das Kontextmenü für das JavaScript-Projekt, und wählen Sie **Eigenschaften** aus.
 2.  Wählen Sie auf den Eigenschaftenseiten unter **Konfigurationseigenschaften** die Option **Debuggen** aus.
-3.  Wählen Sie **Debuggertyp** aus, und ändern Sie in der Dropdownliste **Nur Skript** in **Nur verwaltet**. Klicken Sie auf **OK**.
+3.  Wählen Sie **Debuggertyp** aus, und ändern Sie in der Dropdownliste **Nur Skript** in **Nur verwaltet**. Wählen Sie **OK** aus.
 4.  Legen Sie Haltepunkte im verwaltetem Code fest, und debuggen Sie wie gewohnt.
 
 ## <a name="passing-windows-runtime-types-to-managed-code"></a>Übergeben von Windows-Runtime Typen an verwalteten Code
@@ -280,6 +280,13 @@ Wenn Sie benutzerdefinierte Ereignisaccessoren implementieren (in Visual Basic e
 Nachdem Sie eine Komponente für Windows-Runtime für eigene Zwecke erstellt haben, stellen Sie möglicherweise fest, dass die Funktionen, die diese kapselt, für andere Entwickler nützlich sind. Sie haben zwei Optionen, um eine Komponente für die Verteilung an andere Entwickler zu packen. Siehe [Verteilen einer verwalteten Komponente für Windows-Runtime](/previous-versions/windows/apps/jj614475(v=vs.140)).
 
 Weitere Informationen zu Visual Basic-und c#-sprach Features sowie zu .NET-Unterstützung für die Windows-Runtime finden Sie unter [Visual Basic-und c#-Sprachreferenz](/visualstudio/welcome-to-visual-studio-2015?view=vs-2015).
+
+
+## <a name="troubleshooting"></a>Problembehandlung
+
+| Symptom | Problembehandlung |
+|---------|--------|
+|Wenn Sie in einer C++/WinRT-App eine [c#-Windows-Runtime Komponente](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic) verwenden, die XAML verwendet, erzeugt der Compiler einen Fehler in der Form "*" MyNamespace_XamlTypeInfo ": ist kein Member von" WinRT:: mynamespace "*, &mdash; wobei" *MyNamespace* "der Name des Namespace der Windows-Runtime Komponente ist. | `pch.h`Fügen Sie in in der C++-App/WinRT-APP das `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>` &mdash; Ersetzen von *MyNamespace* nach Bedarf hinzu. |
 
 ## <a name="related-topics"></a>Zugehörige Themen
 * [.NET für UWP-Apps](/dotnet/api/index?view=dotnet-uwp-10.0)

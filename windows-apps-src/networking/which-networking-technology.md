@@ -1,22 +1,21 @@
 ---
 ms.assetid: 2CC2E526-DACB-4008-9539-DA3D0C190290
-description: Eine kurze Übersicht über die Netzwerktechnologien, die für UWP-Entwickler zur Verfügung stehen, mit Vorschlägen zum Auswählen der Technologien, die für Ihre App geeignet sind.
+description: Eine Übersicht über die Netzwerktechnologien, die für UWP-Entwickler zur Verfügung stehen, mit Vorschlägen zum Auswählen der Technologien, die für Ihre App geeignet sind.
 title: Welche Netzwerktechnologie?
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 05aec42d4a8eef1d78ddd425f1e90e06cb610c0a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b3f14e06f5e6f7508c90df9f04265740daaccb49
+ms.sourcegitcommit: b99e2f4dffa603b68c2a8273fe6313432f91b353
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158164"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90569386"
 ---
 # <a name="which-networking-technology"></a>Welche Netzwerktechnologie?
 
-
-Eine kurze Übersicht über die Netzwerktechnologien, die für UWP-Entwickler zur Verfügung stehen, mit Vorschlägen zum Auswählen der Technologien, die für Ihre App geeignet sind.
+Eine Übersicht über die Netzwerktechnologien, die für UWP-Entwickler zur Verfügung stehen, mit Vorschlägen zum Auswählen der Technologien, die für Ihre App geeignet sind.
 
 ## <a name="sockets"></a>Sockets
 
@@ -87,7 +86,7 @@ Ein neues Feature für die Hintergrundübertragung in Windows 10 ist die Möglic
 
 ### <a name="connection-quality"></a>Verbindungsqualität
 
-Mit der [**Windows.Networking.Connectivity**](/uwp/api/Windows.Networking.Connectivity)-API können Sie auf Informationen zu Netzwerkkonnektivität, Kosten und Nutzung zugreifen. Weitere Informationen zur Verwendung dieser API finden Sie unter [Zugreifen auf den Netzwerkverbindungsstatus und Verwalten von Netzwerkkosten](/previous-versions/windows/apps/hh452983(v=win.10)).
+Mit den APIs im [**Windows.Networking.Connectivity**](/uwp/api/Windows.Networking.Connectivity)-Namespace können Sie auf Informationen zu Netzwerkkonnektivität, Kosten und Nutzung zugreifen. Weitere Informationen zur Verwendung dieser API finden Sie unter [Zugreifen auf den Netzwerkverbindungsstatus und Verwalten von Netzwerkkosten](/previous-versions/windows/apps/hh452985(v=win.10)).
 
 ### <a name="dns-service-discovery"></a>DNS Service Discovery (DNS-SD)
 
@@ -103,7 +102,7 @@ Mit der [**Windows.Networking.PushNotifications**](/uwp/api/Windows.Networking.P
 
 ### <a name="near-field-communications"></a>Nahfeldkommunikation (Near Field Communication, NFC)
 
-Mit der [**Windows.Networking.Proximity**](/uwp/api/Windows.Networking.Proximity)-API können Sie Nahfeldkommunikation für Apps verwenden, die die Näherung oder das Koppeln mit Geräten nutzen, um eine einfache Datenübertragung zu ermöglichen. Weitere Informationen zum Verwenden dieser API finden Sie unter [Unterstützen von Näherung und Koppeln](/previous-versions/windows/apps/hh465229(v=win.10)).
+Mit der [**Windows.Networking.Proximity**](/uwp/api/Windows.Networking.Proximity)-API können Sie Nahfeldkommunikation für Apps verwenden, die die Näherung oder das Koppeln mit Geräten nutzen, um eine einfache Datenübertragung zu ermöglichen. Weitere Informationen zum Verwenden dieser API finden Sie unter [Näherung und Koppeln](/previous-versions/windows/apps/hh465221(v=win.10)).
 
 ### <a name="rssatom-feeds"></a>RSS-/Atom-Feeds
 

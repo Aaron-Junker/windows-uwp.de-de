@@ -1,5 +1,5 @@
 ---
-Description: Ein Statussteuerelement gibt dem Benutzer eine Rückmeldung, dass ein Vorgang mit langer Laufzeit ausgeführt wird.
+description: Ein Statussteuerelement gibt dem Benutzer eine Rückmeldung, dass ein Vorgang mit langer Laufzeit ausgeführt wird.
 title: Richtlinien für Statussteuerelemente
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d5756c4cfff05b666eae245de76c1813f9a834df
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fbd9ed95137263f4ddad44e2272d4d77aced241f
+ms.sourcegitcommit: 234bb7c896b990f624b2b8789820b92426e52291
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169674"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90013378"
 ---
 # <a name="progress-controls"></a>Statussteuerelemente
 
@@ -61,13 +61,12 @@ Es gibt zwei Steuerelemente, die dem Benutzer anzeigen, dass ein Vorgang ausgef�
 
 Ein Statussteuerelement ist zudem schreibgeschützt und nicht interaktiv. Dies bedeutet, dass der Benutzer diese Steuerelemente nicht direkt aufrufen oder verwenden kann.
 
-![ProgressBar-Status](images/progress-bar-two-states.png)
+|Control|Anzeige|
+|---|---|
+| Unbestimmtes ProgressBar-Element | ![ProgressBar – unbestimmt](images/progressbar-indeterminate.gif) |
+| Bestimmtes ProgressBar-Element | ![ProgressBar – bestimmt](images/progressbar-determinate.png)|
+| Unbestimmtes ProgressRing-Element | ![ProgressRing-Status](images/progressring-indeterminate.gif)|
 
-*Von oben nach unten – unbestimmtes ProgressBar-Element und bestimmtes ProgressBar-Element*
-
-![ProgressRing-Status](images/ProgressRing_SingleState.png)
-
-*Ein unbestimmtes ProgressRing-Element*
 
 ## <a name="examples"></a>Beispiele
 

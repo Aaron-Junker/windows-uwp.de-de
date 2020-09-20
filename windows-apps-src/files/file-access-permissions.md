@@ -2,7 +2,7 @@
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: Berechtigungen für den Dateizugriff
 description: Apps können standardmäßig auf bestimmte Dateisystemspeicherorte zugreifen. Apps können darüber hinaus mithilfe der Dateiauswahl oder über die Deklaration von Funktionen auf weitere Speicherorte zugreifen.
-ms.date: 12/19/2018
+ms.date: 09/10/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
@@ -11,18 +11,19 @@ dev_langs:
 - cppwinrt
 - cpp
 - javascript
-ms.openlocfilehash: d12ff61858d6d1434d07e00c70868697fefa1832
-ms.sourcegitcommit: b66796c73f14da63794efa66c8ded2caa25da0f7
+ms.custom: contperfq1
+ms.openlocfilehash: 6bb0e44fa5ea31d73feebdfb9ced9951cc2bc937
+ms.sourcegitcommit: 2050175043c8c175be3312f17769b4af241b3275
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89285441"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90027649"
 ---
 # <a name="file-access-permissions"></a>Berechtigungen für den Dateizugriff
 
 UWP-Apps (Universelle Windows Plattform) können standardmäßig auf bestimmte Dateisystemspeicherorte zugreifen. Apps können darüber hinaus mithilfe der Dateiauswahl oder über die Deklaration von Funktionen auf weitere Speicherorte zugreifen.
 
-## <a name="the-locations-that-all-apps-can-access"></a>Für alle Apps zugängliche Speicherorte
+## <a name="locations-that-all-apps-can-access"></a>Für alle Apps zugängliche Speicherorte
 
 Bei Erstellung einer neuen App können Sie standardmäßig auf folgende Dateisystemspeicherorte zugreifen:
 
