@@ -7,12 +7,12 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: Windows 10, UWP, WNS, Windows-Benachrichtigungsdienst, Benachrichtigung, Windows, Firewall, Problembehandlung, IP, Datenverkehr, Unternehmen, Netzwerk, IPv4, VIP, FQDN, öffentliche IP-Adresse
 ms.localizationpriority: medium
-ms.openlocfilehash: a2eb09a0b1cc6f135a23b038207bb442eb741bf8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4277b46728464630bf478b1f78008e92b4e3fe99
+ms.sourcegitcommit: 41dbee78d827107c224a9136c26f90be4dfe12ad
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169204"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90845529"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>Unternehmens Firewall-und Proxy Konfigurationen zur Unterstützung von WNS-Datenverkehr
 
@@ -22,9 +22,9 @@ Viele Unternehmen verwenden Firewalls zum Blockieren von unerwünschtem Netzwerk
 ## <a name="proxy-support"></a>Proxyunterstützung
 
 > [!Note]
-> Windows-Clients unterstützen **nicht** alle Proxys, die Verbindung mit WNS muss eine direkte Verbindung sein.
+> WNS-Pushbenachrichtigungen unter Windows unterstützen derzeit nicht alle Proxys. Um optimale Ergebnisse zu erzielen, muss die Verbindung mit WNS eine direkte Verbindung sein.
 
-**Demnächst!** Wir untersuchen aktiv verschiedene Netzwerkkonfigurationen, Proxys und Firewalls. Wir werden diese Seite mit weiteren Details zu allgemeinen Unternehmens Szenarien und WNS-Unterstützung aktualisieren.
+Wir untersuchen aktiv verschiedene Netzwerkkonfigurationen, Proxys und Firewalls. Wir werden diese Seite mit weiteren Details zu allgemeinen Unternehmens Szenarien und WNS-Unterstützung aktualisieren.
 
 
 ## <a name="what-information-should-be-added-to-the-allowlist"></a>Welche Informationen sollten der Zulassungs hinzugefügt werden?
@@ -70,7 +70,7 @@ Unabhängig von der Methode, die Sie unten auswählen, müssen Sie Netzwerk Date
 ### <a name="terms-and-notations"></a>Nutzungsbedingungen
 Im folgenden finden Sie Erläuterungen zu den im obigen XML-Code Ausschnitt verwendeten Notations-und Element Elementen.
 
-| Begriff | Erklärung |
+| Begriff | Erläuterung |
 |---|---|
 | **Punkt-Dezimal Schreibweise (d. h. 64.4.28.0/26)** | Mit der Punkt-Dezimal Schreibweise kann der Bereich der IP-Adressen beschrieben werden. 64.4.28.0/26 bedeutet beispielsweise, dass die ersten 26 Bits von 64.4.28.0 konstant sind, während die letzten 6 Bits variabel sind.  In diesem Fall ist der IPv4-Bereich 64.4.28.0-64.4.28.63. |
 | **Clientdns** | Dies sind die voll qualifizierten Domänen Namen (FQDN)-Filter für die Client Geräte (Windows-PCs, Desktops), die Benachrichtigungen von WNS empfangen. Diese müssen über die Firewall zugelassen werden, damit WNS-Clients die WNS-Funktionalität verwenden können.  Es wird empfohlen,-List durch die FQDNs anstelle der IP-/VIP-Bereiche zuzulassen, da diese nie geändert werden. |
