@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Steuern, IRS, interner Umsatz Dienst, Steuern, Einkommen steuern, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a385c9c351dc0bb5db857fe7d1f5f267347f1f1
-ms.sourcegitcommit: 31c925736391ab166c06f34258564b00aeebd83a
+ms.openlocfilehash: 6493e20dbc0e38405a7cd30fc22acb9973098431
+ms.sourcegitcommit: 97002cc3e5942f43ab0f14f4ad70543a63db0c03
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428916"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91128970"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>Kennenlernen der von Microsoft ausgestellten IRS-Steuerformulare
 
@@ -36,17 +36,18 @@ Die Steuerformulare werden von den folgenden Adressen an Sie gesendet:
 | Geschäftsgruppe         | Juristische Entität          | Adresse                                          |
 |------------------------|-----------------------|--------------------------------------------------|
 | Windows, Office, Azure | Microsoft Corporation | One Microsoft Way<br>Redmond, WA 98052 USA        |
-| Werbung            | Microsoft Online Inc. | 6880 Sierra Center Park Way<br>Reno, NV 98511 USA |
+| Werbung            | Microsoft Online Inc. | 6880 Sierra Center Parkway<br>Reno, NV 98511 USA |
 
 **Nicht-US-Bürger:**
+
 | Geschäftsgruppe         | Juristische Entität          | Adresse                                          |
 |------------------------|-----------------------|--------------------------------------------------|
-| Windows, Office, Azure | Microsoft Ireland Operations Limited (Zahlung erfolgt durch Microsoft Corporation über Microsoft Irland, das als qualifizierter Vermittler für Microsoft Corporation fungiert) | One Microsoft Place<br>Südcounty- &nbsp; &nbsp; Geschäfts &nbsp; Park<br>Leopardstown, Dublin 18 Irland|
-| Werbung\*          | Microsoft Ireland Operations Limited (Zahlung erfolgt durch Microsoft Online Inc. über Microsoft Irland, das als Auszahlungs-Agent für Microsoft Online Inc. fungiert) | One Microsoft Place<br>Südcounty- &nbsp; &nbsp; Geschäfts &nbsp; Park<br>Leopardstown, Dublin 18 Irland |
-| Werbung            | Microsoft Online Inc. | 6880 Sierra Center Park Way<br>Reno, NV 98511 USA |
+| Windows, Office, Azure | Microsoft Ireland Operations Limited (Zahlung erfolgt durch Microsoft Corporation über Microsoft Irland, das als qualifizierter Vermittler für Microsoft Corporation fungiert) | One Microsoft Place<br>Südcounty- &nbsp; &nbsp; Geschäfts &nbsp; Park<br>Leopardstown, Dublin 18, D18 P521, Irland|
+| Werbung\*          | Microsoft Ireland Operations Limited (Zahlung erfolgt durch Microsoft Online Inc. über Microsoft Irland, das als Auszahlungs-Agent für Microsoft Online Inc. fungiert) | One Microsoft Place<br>Südcounty- &nbsp; &nbsp; Geschäfts &nbsp; Park<br>Leopardstown, Dublin 18, D18 P521, Irland |
+| Werbung            | Microsoft Online Inc. | 6880 Sierra Center Parkway<br>Reno, NV 98511 USA |
 
 >[!NOTE]
-> \*Die Bürger der folgenden Länder, die Werbeeinnahmen verdienen, werden über Microsoft Ireland Operations Limited bezahlt: Österreich, Belgien, Bulgarien, Kroatien, Zypern, Tschechien, Dänemark, Estland, Finnland, Frankreich, Deutschland, Griechenland, Ungarn, Irland, China, Italien, Lettland, Liechtenstein, Litauen, Luxemburg, Malta, Monaco, Niederlande, Norwegen, Polen, Portugal, Rumänien, Slowakei, Slowenien, Südafrika, Spanien, Schweden, Schweiz, Vereinigtes Königreich
+> \* Die Bürger der folgenden Länder, die Werbeeinnahmen verdienen, werden über Microsoft Ireland Operations Limited bezahlt: Österreich, Belgien, Bulgarien, Kroatien, Zypern, Tschechien, Dänemark, Estland, Finnland, Frankreich, Deutschland, Griechenland, Ungarn, Irland, China, Italien, Lettland, Liechtenstein, Litauen, Luxemburg, Malta, Monaco, Niederlande, Norwegen, Polen, Portugal, Rumänien, Slowakei, Slowenien, Südafrika, Spanien, Schweden, Schweiz, Vereinigtes Königreich
 
 ## <a name="for-developers-located-in-the-united-states"></a>Für Entwickler in den USA
 
@@ -104,8 +105,8 @@ Ich habe mindestens $600 Zahlungen im Zusammenhang mit den App-Verkäufen von Mi
   <tr>
     <td valign="top"><b>Warum wurde Steuer auf meine Zahlungen einbehalten, als ich ein Formular W8 ausgefüllt habe?</b></td>
     <td valign="top">Steuern werden in einem der folgenden Fälle einbehalten:<br>
-     1.Sie haben den Steuer Vertragsabschnitt von W8 nicht ordnungsgemäß vervollständigt, oder<br>
-     2.Sie sind in einem Land ansässig, das nicht über einen Steuer Vertrag mit dem USA verfügt.<br><br>Sie können das Partner Center jederzeit aufrufen, um ein aktualisiertes W8-Formular zu übermitteln.<br><br><b>Hinweis</b>: nicht alle Einkommen unterliegen der Steuerverweigerung.</td>
+     1. Sie haben den Steuer Vertragsabschnitt von W8 nicht ordnungsgemäß vervollständigt, oder<br>
+     2. Sie sind in einem Land ansässig, das nicht über einen Steuer Vertrag mit dem USA verfügt.<br><br>Sie können das Partner Center jederzeit aufrufen, um ein aktualisiertes W8-Formular zu übermitteln.<br><br><b>Hinweis</b>: nicht alle Einkommen unterliegen der Steuerverweigerung.</td>
   </tr>
   <tr>
     <td valign="top"><b>Ich habe ein aktualisiertes W8-Formular mit gültigen Vertragsinformationen übermittelt. Kann Microsoft mir die zurück haltene Frage erstatten?</b></td>
