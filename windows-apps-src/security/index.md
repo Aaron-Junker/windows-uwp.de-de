@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
-ms.openlocfilehash: 3169ee9b2674112964ced83bc3a34637846eb225
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9a565c9bdec6932d0e8ca376f677c309991773d6
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167194"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219723"
 ---
 # <a name="security"></a>Sicherheit
 
@@ -31,7 +31,7 @@ Der [Abschnitt zu Authentifizierung und Benutzeridentität](authentication-and-u
 <tr><th>Thema</th><th>BESCHREIBUNG</th></tr>
 <tr><td><a href="credential-locker.md">Schließfach für Anmeldeinformationen</a></td><td>In diesem Artikel wird beschrieben, wie Apps mit dem Schließfach für Anmeldeinformationen Benutzeranmeldeinformationen sicher speichern und abrufen können und per Roaming mit dem Microsoft-Konto des Benutzers zwischen Geräten übertragen können.</td></tr>
 
-<tr><td><a href="fingerprint-biometrics.md">Biometrischer Fingerabdruck</a> </td><td>In diesem Artikel wird beschrieben, wie Sie Ihrer App einen biometrischen Fingerabdruck hinzufügen. Sie können die Sicherheit Ihrer App erhöhen, indem Sie die Anforderung einer Authentifizierung per Fingerabdruck integrieren, wenn die Zustimmung des Benutzers für eine bestimmte Aktion erforderlich ist. So können Sie beispielsweise die Authentifizierung per Fingerabdruck vor der Autorisierung eines In-App-Kaufs oder vor dem Zugriff auf eingeschränkte Ressourcen anfordern. Die Verwaltung der Authentifizierung per Fingerabdruck erfolgt mithilfe der <a href="/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier">UserConsentVerifier</a>-Klasse im <a href="https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI">Windows.Security.Credentials.UI</a>-Namespace.</td></tr>
+<tr><td><a href="fingerprint-biometrics.md">Biometrischer Fingerabdruck</a> </td><td>In diesem Artikel wird beschrieben, wie Sie Ihrer App einen biometrischen Fingerabdruck hinzufügen. Sie können die Sicherheit Ihrer App erhöhen, indem Sie die Anforderung einer Authentifizierung per Fingerabdruck integrieren, wenn die Zustimmung des Benutzers für eine bestimmte Aktion erforderlich ist. So können Sie beispielsweise die Authentifizierung per Fingerabdruck vor der Autorisierung eines In-App-Kaufs oder vor dem Zugriff auf eingeschränkte Ressourcen anfordern. Die Verwaltung der Authentifizierung per Fingerabdruck erfolgt mithilfe der <a href="/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier">UserConsentVerifier</a>-Klasse im <a href="/uwp/api/Windows.Security.Credentials.UI">Windows.Security.Credentials.UI</a>-Namespace.</td></tr>
 <tr><td><a href="microsoft-passport.md">Microsoft Passport und Windows Hello</a></td><td>In diesem Artikel wird die neue Microsoft Passport-Technologie von Windows 10 beschrieben und erörtert, wie Entwickler diese Technologie implementieren, um ihre Apps und Back-End-Dienste zu schützen. Darin werden die spezifischen Funktionen dieser Technologien hervorgehoben, die dabei helfen, aus herkömmlichen Anmeldeinformationen erwachsende Bedrohungen zu mindern. Darüber hinaus bietet sie eine Anleitung darüber, wie diese Technologien als Bestandteil Ihrer Windows 10-Einführung entworfen und bereitgestellt werden. </td></tr>
 <tr><td><a href="microsoft-passport-login.md">Erstellen einer Microsoft Passport-Anmelde-App</a></td><td>Teil 1 der umfassenden exemplarischen Vorgehensweise zum Erstellen einer Windows 10-App für die Universelle Windows-Plattform (UWP), die Microsoft Passport als Alternative zu herkömmlichen Authentifizierungssystemen mit Benutzername und Kennwort verwendet.</td></tr>
 <tr><td><a href="microsoft-passport-login-auth-service.md">Erstellen eines Microsoft Passport-Anmeldediensts</a></td><td>Teil 2 der umfassenden exemplarischen Vorgehensweise zum Verwenden von Microsoft Passport als Alternative zu herkömmlichen Authentifizierungssystemen mit Benutzername und Kennwort in Windows 10-Apps für die universelle Windows-Plattform (UWP).</td></tr>

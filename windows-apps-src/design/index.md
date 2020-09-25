@@ -2,17 +2,17 @@
 description: Fluent Design-Richtlinien und UI-Codebeispiele zum Erstellen von Apps auf Windows 10
 keywords: UWP-Formatanleitungen, Designanleitungen, Typografie, Bewegung, Ton, Bewegung, App-Entwicklung
 title: Entwurf und Code für Windows-Apps
-ms.date: 05/06/2019
+ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 01e613088bba3c1e552180f398907145c6254705
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: aa5d81a96f3f7991597e7a7c49013de475e95e23
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970345"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218403"
 ---
 # <a name="design-and-code-windows-apps"></a>Entwerfen und Codieren von Windows-Apps
 

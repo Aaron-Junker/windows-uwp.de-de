@@ -7,12 +7,12 @@ keywords: Windows Win32, Desktopentwicklung
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 6539f436e46f351efc355d361c0677b9fedee546
-ms.sourcegitcommit: 2bb975d5df38d294277f57bf8b6a06d9bf87ca9b
+ms.openlocfilehash: 34b860916b90d1adc8ae9e7ae8c8ac7950125ce7
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90046816"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216743"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>Erstellen von Desktop-Apps für Windows-PCs
 
@@ -39,24 +39,24 @@ Es gibt vier Hauptplattformen zum Entwickeln von Desktop-Apps für Windows-PCs. 
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://docs.microsoft.com/windows/uwp/">Universelle Windows-Plattform (UWP)</a></td>
+<td><a href="/windows/uwp/">Universelle Windows-Plattform (UWP)</a></td>
 <td><p>Die führende Plattform für Windows 10-Apps und Spiele. Sie können UWP-Apps erstellen, die ausschließlich UWP-Steuerelemente und -APIs verwenden, oder Sie verwenden UWP-Steuerelemente und -APIs in Desktop-Apps, die mit einer der anderen Plattformen erstellt wurden.</p></td>
 <td><a href="/windows/uwp/get-started/">Erste Schritte</a><br/><a href="/uwp/">API-Referenz</a><br/><a href="https://github.com/Microsoft/Windows-universal-samples">Beispiele</a></td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows/win32/">C++/Win32</a></td>
+<td><a href="/windows/win32/">C++/Win32</a></td>
 <td><p>Die Plattform der Wahl für native Windows-Apps, die direkten Zugriff auf Windows und Hardware erfordern.</p></td>
 <td><a href="/windows/win32/desktop-programming/">Erste Schritte</a><br/><a href="/windows/win32/apiindex/windows-api-list/">API-Referenz</a><br/><a href="https://github.com/Microsoft/Windows-classic-samples">Beispiele</a></td>
 </tr>
 <tr class="odd">
 <td><a href="/dotnet/framework/wpf/">WPF</a></td>
-<td><p>Die festgelegte. NET-basierte Plattform für grafisch aufbereitet verwaltete Windows-Apps mit einem XAML-Benutzeroberflächenmodell. Diese Apps können als Ziel <a href="https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> oder das vollständige .NET Framework haben.</p></td>
-<td><a href="/dotnet/framework/wpf/getting-started/">Erste Schritte</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API-Referenz (.NET)</a><br/><a href="https://github.com/Microsoft/WPF-Samples">Beispiele</a></td>
+<td><p>Die festgelegte. NET-basierte Plattform für grafisch aufbereitet verwaltete Windows-Apps mit einem XAML-Benutzeroberflächenmodell. Diese Apps können als Ziel <a href="/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> oder das vollständige .NET Framework haben.</p></td>
+<td><a href="/dotnet/framework/wpf/getting-started/">Erste Schritte</a><br/><a href="/dotnet/api/index">API-Referenz (.NET)</a><br/><a href="https://github.com/Microsoft/WPF-Samples">Beispiele</a></td>
 </tr>
 <tr class="even">
 <td><a href="/dotnet/framework/winforms/">Windows Forms</a></td>
-<td><p>Eine .NET-basierte Plattform, die für verwaltete branchenspezifische Apps mit einem vereinfachten Benutzeroberflächenmodell entwickelt wurde. Diese Apps können als Ziel <a href="https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> oder das vollständige .NET Framework haben.</p></td>
-<td><a href="/dotnet/framework/winforms/getting-started-with-windows-forms">Erste Schritte</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API-Referenz (.NET)</a></td>
+<td><p>Eine .NET-basierte Plattform, die für verwaltete branchenspezifische Apps mit einem vereinfachten Benutzeroberflächenmodell entwickelt wurde. Diese Apps können als Ziel <a href="/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> oder das vollständige .NET Framework haben.</p></td>
+<td><a href="/dotnet/framework/winforms/getting-started-with-windows-forms">Erste Schritte</a><br/><a href="/dotnet/api/index">API-Referenz (.NET)</a></td>
 </tr>
 </tbody>
 </table>

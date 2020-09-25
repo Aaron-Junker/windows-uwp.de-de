@@ -2,17 +2,17 @@
 description: Erhalten Sie die neuesten Downloads und Tools für das Benutzeroberflächenlayout und Steuerelementdesign für Windows-Apps.
 keywords: Layout von UWP-Apps, Benutzeroberflächendesigns, Downloads, UWP-Tools, Layout von Windows-Apps, Windows-UI-Tools
 title: Design-Toolkits und Beispiele für Windows-Apps
-ms.date: 03/23/2020
+ms.date: 09/24/2020
 ms.topic: conceptual
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8336da43767931c439ea79fd9e3824f1a4cc3893
-ms.sourcegitcommit: 47899c30a39087bca1f058a4395cf58daacf5ae9
+ms.openlocfilehash: 36b264b203627761d2872b0f9b8dade81099b149
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345484"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216713"
 ---
 # <a name="design-toolkits-and-samples-for-windows-apps"></a>Design-Toolkits und Beispiele für Windows-Apps
 
@@ -68,7 +68,7 @@ Hilfsfunktionen, benutzerdefinierte Steuerelemente und App-Dienste<br />
     :::column-end:::
 :::row-end:::
 
-## <a name="fonts"></a>Fonts
+## <a name="fonts"></a>Schriftarten
 
 * <a href="https://aka.ms/SegoeFonts">Symbolschriftarten Segoe UI und MDL2 (nur Mac)</a>
 * <a href="https://aka.ms/hololensiconfont">Hololens-Symbolschriftart (nur Windows)</a>
