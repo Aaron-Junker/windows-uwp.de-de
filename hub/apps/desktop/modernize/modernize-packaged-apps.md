@@ -1,5 +1,5 @@
 ---
-Description: Erfahre, wie du moderne Oberflächen für Windows 10-Benutzer in eine Desktopanwendung einfügen kannst, die du in ein Windows-Anwendungspaket gepackt hast.
+description: Erfahre, wie du moderne Oberflächen für Windows 10-Benutzer in eine Desktopanwendung einfügen kannst, die du in ein Windows-Anwendungspaket gepackt hast.
 title: Modernisieren gepackter Desktop-Apps
 ms.date: 04/22/2019
 ms.topic: article
@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d1ce2e7dc434558ac1efd52f6def99d63b38c57e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: adcf1e26ba5ebd2d4fb3b901e27e49da4b6d89dd
+ms.sourcegitcommit: 5d7168ebc9f43aa13051446aff45a46600e6aafe
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161514"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90783042"
 ---
 # <a name="features-that-require-package-identity"></a>Features, für die Paketidentität benötigt wird
 
@@ -33,6 +33,12 @@ Die folgende Liste von Windows-Runtime-APIs erfordert, dass eine Paketidentität
 Wenn deine Anwendung mit dem System integriert werden muss (z. B. zum Einrichten der Firewallregeln), kannst du diese Dinge im Paketmanifest deiner Anwendung beschreiben und das System erledigt den Rest. Für die meisten dieser Aufgaben musst du gar keinen Code schreiben. Mit etwas XML im Manifest, kannst du Aktionen wie etwa das Starten eines Prozesses bei der Anmeldung eines Benutzers, die Integration deiner Anwendung in den Datei-Explorer und das Hinzufügen deiner Anwendung zu einer Liste der Druckerziele, die in anderen Apps angezeigt wird, durchführen.
 
 Weitere Informationen findest du unter [Integrieren deiner Desktop-App mit Paketerweiterungen](desktop-to-uwp-extensions.md).
+
+## <a name="get-activation-info-for-packaged-apps"></a>Erhalten von Aktivierungsinformationen für App-Pakete
+
+Ab Windows 10, Version 1809, können gepackte Desktop-Apps bestimmte Arten von Aktivierungsinformationen während des Starts abrufen. Sie können beispielsweise Informationen zur App-Aktivierung beim Öffnen einer Datei, beim Klicken auf ein interaktives Popup oder beim Verwenden eines Protokolls abrufen.
+
+Weitere Informationen finden Sie unter [Abrufen von Aktivierungsinformationen für gepackte Apps](get-activation-info-for-packaged-apps.md).
 
 ## <a name="extend-with-uwp-components"></a>Erweitern mit UWP-Komponenten
 

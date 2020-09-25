@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e58315ed70b889e1369e8c13a563f320c0ca1948
-ms.sourcegitcommit: a222ad0e2d97e35a60000c473808c678395376ee
+ms.openlocfilehash: 2b0d6bb305490e05c2670f0e0a326601c51a8373
+ms.sourcegitcommit: 609441402c17d92e7bfac83a6056909bb235223c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89479080"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90837815"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>Windows-Runtime-APIs in Desktop-Apps aufrufen
 
@@ -23,18 +23,47 @@ Richten Sie zunächst Ihr Projekt mit den erforderlichen Verweisen ein. Rufen Si
 
 Einige Windows-Runtime-APIs werden nur in Desktop-Apps unterstützt, die über [Paket-Identität](modernize-packaged-apps.md) verfügen. Weitere Informationen finden Sie unter [Verfügbare Windows-Runtime-APIs](desktop-to-uwp-supported-api.md).
 
-## <a name="set-up-your-project"></a>Einrichten Ihres Projekts
+## <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>Ändern eines .NET-Projekts für die Verwendung von Windows Runtime-APIs
 
-Um Windows-Runtime-APIs zu verwenden, müssen Sie einige Änderungen am Projekt vornehmen.
+Für .NET-Projekte bestehen mehrere Optionen:
 
-### <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>Ändern eines .NET-Projekts für die Verwendung von Windows Runtime-APIs
+* Ab .NET 5 Preview 8 können Sie einen Zielframeworkmoniker (TFM) zu Ihrer Projektdatei hinzufügen, um auf WinRT-APIs zuzugreifen. Diese Option wird in Projekten unterstützt, die auf Windows 10, Version 1809 oder höher, ausgerichtet sind.
+* Für frühere .NET-Versionen können Sie das NuGet-Paket `Microsoft.Windows.SDK.Contracts` installieren, um alle notwendigen Referenzen zu Ihrem Projekt hinzuzufügen. Diese Option wird in Projekten unterstützt, die auf Windows 10, Version 1803 oder höher, ausgerichtet sind.
+* Wenn Ihr Projekt auf mehrere Ziele ausgerichtet ist – .NET 5 Preview 8 (oder höher) und frühere Versionen von .NET – können Sie die Projektdatei so konfigurieren, dass beide Optionen verwendet werden (Multi-Targeting).
 
-Für .NET-Projekte bestehen zwei Optionen:
+### <a name="net-5-preview-8-and-later-use-the-target-framework-moniker-option"></a>.NET 5 Preview 8 und höher: Verwenden der Zielframeworkmoniker-Option 
 
-* Wenn Ihre App auf Windows 10, Version 1803 oder höher, ausgerichtet ist, können Sie ein NuGet-Paket installieren, das alle erforderlichen Verweise bereitstellt.
-* Alternativ können Sie die Verweise manuell hinzufügen.
+Diese Option wird nur in Projekten unterstützt, die .NET 5 Preview 8 (oder ein früheres Release) verwenden und auf Windows 10, Version 1809, oder ein späteres Release des Betriebssystems ausgerichtet sind. Weitere Hintergrundinformationen zu diesem Szenario finden Sie in [diesem Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/).
 
-#### <a name="to-use-the-nuget-option"></a>Verwenden der NuGet-Option
+1. Klicken Sie bei in Visual Studio geöffnetem Projekt mit der rechten Maustaste im **Projektmappen-Explorer** auf das Projekt, und wählen Sie **Projektdatei bearbeiten** aus. Ihre Projektdatei sollte etwa wie folgt aussehen.
+
+    ```csharp
+    <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+      <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+        <UseWindowsForms>true</UseWindowsForms>
+      </PropertyGroup>
+    </Project>
+    ```
+
+2. Ersetzen Sie den Wert des **TargetFramework**-Elements durch eine der folgenden Zeichenfolgen:
+
+    * **net5.0-windows10.0.17763.0**: Verwenden Sie diesen Wert, wenn Ihre App auf Windows 10, Version 1809, ausgerichtet ist.
+    * **net5.0-windows10.0.18362.0**: Verwenden Sie diesen Wert, wenn Ihre App auf Windows 10, Version 1903, ausgerichtet ist.
+    * **net5.0-windows10.0.19041.0**: Verwenden Sie diesen Wert, wenn Ihre App auf Windows 10, Version 2004, ausgerichtet ist.
+
+    Das folgende Element ist zum Beispiel für ein Projekt bestimmt, das auf Windows 10, Version 2004, ausgerichtet ist.
+
+    ```csharp
+    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    ```
+
+3. Speichern Sie Ihre Änderungen, und schließen Sie die Projektdatei.
+
+### <a name="earlier-versions-of-net-install-the-microsoftwindowssdkcontracts-nuget-package"></a>Frühere .NET-Versionen: Installieren Sie das NuGet-Paket „Microsoft.Windows.SDK.Contracts“.
+
+Verwenden Sie diese Option, wenn Ihre Anwendung .NET Core 3.x, .NET 5 Preview 7 (oder früher) oder das .NET Framework verwendet. Diese Option wird in Projekten unterstützt, die auf Windows 10, Version 1803, oder ein späteres Release des Betriebssystems ausgerichtet sind.
 
 1. Vergewissern Sie sich, dass [Paketverweise](/nuget/consume-packages/package-references-in-project-files) aktiviert sind:
 
@@ -47,34 +76,74 @@ Für .NET-Projekte bestehen zwei Optionen:
 
 4. Nachdem Sie das `Microsoft.Windows.SDK.Contracts`-Paket gefunden haben, wählen Sie im rechten Bereich des **NuGet-Paket-Manager**-Fensters die **Version** des Pakets aus, das Sie installieren möchten, ausgehend von der Windows 10-Version, die Sie als Zielplattform festlegen möchten:
 
+    * **10.0.19041.xxxx**: Wählen Sie dies für Windows 10, Version 2004.
     * **10.0.18362.xxxx**: Wählen Sie dies für Windows 10, Version 1903.
     * **10.0.17763.xxxx**: Wählen Sie dies für Windows 10, Version 1809.
     * **10.0.17134.xxxx**: Wählen Sie dies für Windows 10, Version 1803.
 
 5. Klicken Sie auf **Installieren**.
 
-#### <a name="to-add-the-required-references-manually"></a>Manuelles Hinzufügen der erforderlichen Verweise
+### <a name="configure-projects-that-multi-target-different-versions-of-net"></a>Konfigurieren von Projekten, die auf verschiedene Versionen von .NET ausgerichtet sind (Multi-Targeting)
 
-1. Öffnen Sie das **Verweis-Manager**-Dialogfeld, wählen Sie die **Durchsuchen**-Schaltfläche, und wählen Sie dann **Alle Dateien** aus.
+Wenn Ihr Projekt auf mehrere Ziele ausgerichtet ist – .NET 5 Preview 8 (oder höher) sowie frühere Versionen (beispielweise .NET Core 3.x und das .NET Framework) – können Sie die Projektdatei so konfigurieren, dass der Zielframeworkmoniker verwendet wird, um die WinRT API-Referenzen für .NET 5 Preview 8 (oder höher) automatisch per Pull abzurufen und das `Microsoft.Windows.SDK.Contracts`-NuGet-Paket für frühere Versionen zu verwenden.
 
-    ![Dialogfeld „Verweis hinzufügen“](images/desktop-to-uwp/browse-references.png)
+1. Klicken Sie bei in Visual Studio geöffnetem Projekt mit der rechten Maustaste im **Projektmappen-Explorer** auf das Projekt, und wählen Sie **Projektdatei bearbeiten** aus. Das folgende Beispiel zeigt eine Projektdatei für eine App, die .NET Core 3.1 verwendet.
 
-2. Fügen Sie allen folgenden Dateien einen Verweis hinzu.
+    ```csharp
+    <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+      <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <UseWindowsForms>true</UseWindowsForms>
+      </PropertyGroup>
+    </Project>
+    ```
 
-    |File|Speicherort|
-    |--|--|
-    |System.Runtime.WindowsRuntime.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |System.Runtime.WindowsRuntime.UI.Xaml.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |System.Runtime.InteropServices.WindowsRuntime.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |windows.winmd|C:\Programme (x86)\Windows Kits\10\UnionMetadata\\<*SDK-Version*>\Facade|
-    |Windows.Foundation.UniversalApiContract.winmd|C:\Programme (x86)\Windows Kits\10\References\\<*SDK-Version*>\Windows.Foundation.UniversalApiContract\\<*Version*>|
-    |Windows.Foundation.FoundationContract.winmd|C:\Programme (x86)\Windows Kits\10\References\\<*SDK-Version*>\Windows.Foundation.FoundationContract\\<*Version*>|
+2. Ersetzen Sie das **TargetFramework**-Element in der Datei durch ein **TargetFrameworks**-Element (beachten Sie den Plural). Geben Sie in diesem Element die Zielframeworkmoniker für alle Versionen von .NET an, die Sie als Ziel verwenden möchten, getrennt durch Semikolons. 
 
-3. Legen Sie im Fenster **Eigenschaften** das Feld **Lokale Kopie** für jede *WINMD*-Datei auf **Falsch** fest.
+    * Für .NET 5 Preview 8 oder höher verwenden Sie einen der folgenden Zielframeworkmoniker:
+        * **net5.0-windows10.0.17763.0**: Verwenden Sie diesen Wert, wenn Ihre App auf Windows 10, Version 1809, ausgerichtet ist.
+        * **net5.0-windows10.0.18362.0**: Verwenden Sie diesen Wert, wenn Ihre App auf Windows 10, Version 1903, ausgerichtet ist.
+        * **net5.0-windows10.0.19041.0**: Verwenden Sie diesen Wert, wenn Ihre App auf Windows 10, Version 2004, ausgerichtet ist.
+    * Verwenden Sie für .NET Core 3.x **netcoreapp3.0** oder **netcoreapp3.1**.
+    * Verwenden Sie für .NET Framework **net46**.
 
-    ![Feld „Lokal kopieren“](images/desktop-to-uwp/copy-local-field.png)
+    Das folgende Beispiel veranschaulicht, wie .NET Core 3.1 und .NET 5 Preview 8 (für Windows 10, Version 2004) auf mehrere Ziele ausgerichtet werden können.
 
-### <a name="modify-a-c-win32-project-to-use-windows-runtime-apis"></a>Ändern eines C++-Win32-Projekts für die Verwendung von Windows Runtime-APIs
+    ```csharp
+    <TargetFrameworks>netcoreapp3.1;net5.0-windows10.0.19041.0</TargetFrameworks>
+    ```
+
+3. Fügen Sie nach dem **PropertyGroup**-Element ein **PackageReference**-Element hinzu, das eine bedingte Anweisung enthält, die das NuGet-Paket `Microsoft.Windows.SDK.Contracts` für alle Versionen von .NET Core 3.x oder .NET Framework installiert, auf die Ihre App ausgerichtet ist. Das **PackageReference**-Element muss ein untergeordnetes Element des **ItemGroup**-Elements sein. Das folgende Beispiel veranschaulicht die Vorgehensweise für .NET Core 3.1.
+
+    ```csharp
+    <ItemGroup>
+      <PackageReference Condition="'$(TargetFramework)' == 'netcoreapp3.1'"
+                        Include="Microsoft.Windows.SDK.Contracts"
+                        Version="10.0.19041.0" />
+    </ItemGroup>
+    ```
+
+    Wenn Sie fertig sind, sollte Ihre Projektdatei etwa wie folgt aussehen.
+
+    ```csharp
+    <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+      <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFrameworks>netcoreapp3.1;net5.0-windows10.0.19041.0</TargetFrameworks>
+        <UseWPF>true</UseWPF>
+      </PropertyGroup>
+      <ItemGroup>
+        <PackageReference Condition="'$(TargetFramework)' == 'netcoreapp3.1'"
+                         Include="Microsoft.Windows.SDK.Contracts"
+                         Version="10.0.19041.0" />
+      </ItemGroup>
+    </Project>
+    ```
+
+4. Speichern Sie Ihre Änderungen, und schließen Sie die Projektdatei.
+
+## <a name="modify-a-c-win32-project-to-use-windows-runtime-apis"></a>Ändern eines C++-Win32-Projekts für die Verwendung von Windows Runtime-APIs
 
 Verwenden Sie [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/), um Windows Runtime-APIs zu nutzen. C++/WinRT ist eine vollständig standardisierte, moderne C++17-Programmiersprache für Windows-Runtime-APIs (WinRT), die als headerdateibasierte Bibliothek implementiert ist und Ihnen einen erstklassigen Zugriff auf die moderne Windows-API bietet.
 

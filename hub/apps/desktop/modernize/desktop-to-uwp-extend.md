@@ -7,12 +7,12 @@ keywords: Windows 10, UWP
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 29064390e4e198d1220d40ff5ce58a63ea41e29a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d0a1d1b7685ae76c26c94fa104b6c0ff6334364d
+ms.sourcegitcommit: 609441402c17d92e7bfac83a6056909bb235223c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172784"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90837825"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>Erweitern deiner Desktop-App mit modernen UWP-Komponenten
 
@@ -43,7 +43,7 @@ Wenn deine Projektmappe kein Paketerstellungsprojekt enthält, siehe [Packen dei
 
 Stelle sicher, dass deine Desktopanwendung Verweise auf die Dateien aufweist, die du für den Aufruf der Windows-Runtime-APIs benötigst.
 
-Informationen hierzu findest du im Abschnitt [Einrichten deines Projekts](desktop-to-uwp-enhance.md#set-up-your-project).
+Weitere Informationen hierzu finden Sie unter [Aufrufen von Windows-Runtime-APIs in Desktop-Apps](desktop-to-uwp-enhance.md).
 
 ### <a name="add-a-uwp-project"></a>Hinzufügen eines UWP-Projekts
 
@@ -51,15 +51,15 @@ Füge deiner Projektmappe eine **Leere App (Universelle Windows-App)** hinzu.
 
 Hier erstellst du eine moderne XAML-Benutzeroberfläche oder verwendest APIs, die nur innerhalb eines UWP-Prozesses ausgeführt werden.
 
-![UWP-Projekt](images/desktop-to-uwp/add-uwp-project-to-solution.png)
+![Neues Projekt hinzufügen](images/desktop-to-uwp/add-uwp-project-to-solution.png)
 
 Klicke in deinem Paketerstellungsprojekt mit der rechten Maustaste auf den Knoten **Anwendungen**, und klicke dann auf **Verweis hinzufügen**.
 
-![Verweis auf UWP-Projekt](images/desktop-to-uwp/add-uwp-project-reference.png)
+![Hinzuzufügender Verweis](images/desktop-to-uwp/add-uwp-project-reference.png)
 
 Füge dann einen Verweis auf das UWP-Projekt hinzu.
 
-![Verweis auf UWP-Projekt](images/desktop-to-uwp/choose-uwp-project.png)
+![Auswählen eines UWP-Projekts](images/desktop-to-uwp/choose-uwp-project.png)
 
 Deine Projektmappe sieht etwa wie folgt aus:
 
@@ -471,7 +471,7 @@ Wähle dann die gewünschten Eigenschaften aus. Unser Beispiel verwendet die **T
 
 Gib den vollqualifizierten Namen der Klasse in der Windows-Runtime-Komponente an, die die Hintergrundaufgabe implementiert.
 
-![Timer-Eigenschaft](images/desktop-to-uwp/background-task-entry-point.png)
+![Festlegen eines Einstiegspunkts](images/desktop-to-uwp/background-task-entry-point.png)
 
 <a id="register-background-task"></a>
 
