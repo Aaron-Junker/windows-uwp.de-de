@@ -3,19 +3,19 @@ Description: Erfahren Sie, wie Sie die Fokus Navigation mit Tastatur-, Gamepad-u
 title: Programmgesteuerte Fokusnavigation mit Tastatur, Gamepad und Bedienungshilfen
 label: Programmatic focus navigation
 keywords: Tastatur, Spiele Controller, Remote Steuerung, Navigation, Navigations Strategie, Eingabe, Benutzerinteraktion, Barrierefreiheit, Nutzbarkeit
-ms.date: 03/19/2018
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 887d8329cc95d735ba33ff8dafc5105874206eaf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ef2e62404766d822343537cea2aca8e512482093
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172544"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220533"
 ---
 # <a name="programmatic-focus-navigation"></a>Programmgesteuerte Fokusnavigation
 

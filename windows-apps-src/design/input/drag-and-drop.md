@@ -1,19 +1,19 @@
 ---
 description: In diesem Artikel wird erläutert, wie Sie Drag & Drop in Ihrer Windows-app hinzufügen.
-title: Drag & Drop
+title: Drag &amp; Drop
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e661eb0859e9720e31fabb6e5a7b33857de28b7
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 8ab8d696ddb1a4ef9e3dc3549754cbf51fc91374
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363673"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220543"
 ---
-# <a name="drag-and-drop"></a>Drag & Drop
+# <a name="drag-and-drop"></a>Drag &amp; Drop
 
 Drag & Drop ist eine intuitive Methode zum Übertragen von Daten in einer Anwendung oder zwischen Anwendungen auf dem Windows-Desktop. Mithilfe von Drag & Drop kann der Benutzerdaten zwischen Anwendungen oder innerhalb einer Anwendung mithilfe einer Standard Bewegung übertragen (drücken Sie-Hold-und-Pan mit dem Finger oder drücken und Schwenken mit einer Maus oder einem Tablettstift).
 
@@ -109,7 +109,7 @@ Die [UIElement](/uwp/api/windows.ui.xaml.uielement) -Klasse erledigt den größt
 
 
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 * [App-zu-App-Kommunikation](index.md)
 * [AllowDrop](/uwp/api/windows.ui.xaml.uielement.allowdrop)

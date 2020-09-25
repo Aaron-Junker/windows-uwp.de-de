@@ -2,16 +2,16 @@
 title: Anfordern eines Kartenauthentifizierungsschlüssels
 description: Ihre universelle Windows-App muss authentifiziert werden, bevor sie die MapControl-Klasse und Kartendienste im Windows.Services.Maps-Namespace verwenden kann.
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Karten Authentifizierungsschlüssel, Karten Steuerelement
 ms.localizationpriority: medium
-ms.openlocfilehash: 195c643fe10daf45ae709962a3b675162874c77b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: da98ea9f09ef5d7804b07b7066847afbab7a2681
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171834"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220523"
 ---
 # <a name="request-a-maps-authentication-key"></a>Anfordern eines Kartenauthentifizierungsschlüssels
 

@@ -5,15 +5,15 @@ ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
 keywords: Touch, Zeiger, Eingabe, Benutzerinteraktion
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 537d5aa08f61471c43ca8a965369bdd9dcdee7d3
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 14be47fa701742c73048e70c0842cb421c52a7e5
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165750"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220513"
 ---
 # <a name="touch-interactions"></a>Toucheingabe-Interaktionen
 
@@ -57,7 +57,7 @@ In der folgenden Tabelle werden einige der Unterschiede zwischen Eingabegeräten
 
 <table>
 <tbody><tr><th>Faktor</th><th>Toucheingabe-Interaktionen</th><th>Interaktionen über Maus, Tastatur oder Zeichen- bzw. Eingabestift</th><th>Touchpad</th></tr>
-<tr><td rowspan="3">Genauigkeit</td><td>Der Kontaktbereich einer Fingerspitze ist größer als eine einzige xy-Koordinate. Dadurch erhöht sich die Wahrscheinlichkeit, dass Befehle unbeabsichtigt aktiviert werden.</td><td>Maus und Zeichen- oder Eingabestift liefern eine präzise xy-Koordinate.</td><td>Identisch mit der Maus.</td></tr>
+<tr><td rowspan="3">Precision</td><td>Der Kontaktbereich einer Fingerspitze ist größer als eine einzige xy-Koordinate. Dadurch erhöht sich die Wahrscheinlichkeit, dass Befehle unbeabsichtigt aktiviert werden.</td><td>Maus und Zeichen- oder Eingabestift liefern eine präzise xy-Koordinate.</td><td>Identisch mit der Maus.</td></tr>
 <tr><td>Die Form des Kontaktbereichs ändert sich während der Bewegung.  </td><td>Mausbewegungen und Striche mit Zeichen- oder Eingabestift liefern eine präzise xy-Koordinate. Die Tastatur hat einen expliziten Fokus.</td><td>Identisch mit der Maus.</td></tr>
 <tr><td>Es gibt keinen Mauscursor, der die Zielbestimmung unterstützt.</td><td>Der Fokus von Mauscursor, Zeichen- oder Eingabestiftcursor und Tastatur unterstützt die Zielbestimmung.</td><td>Identisch mit der Maus.</td></tr>
 <tr><td rowspan="3">Menschliche Anatomie</td><td>Bewegungen mit den Fingerspitzen sind ungenau, da es schwierig ist, mit den Fingern eine lineare Bewegung auszuführen. Dies liegt an der Krümmung der Handgelenke und der Anzahl der an der Bewegung beteiligten Gelenke.</td><td>Es ist leichter, mit der Maus oder mit einem Zeichen- oder Eingabestift eine Bewegung in gerader Linie auszuführen, da die Hand, die diese Geräte steuert, eine kürzere physische Strecke zurücklegen muss als der Cursor auf dem Bildschirm.</td><td>Identisch mit der Maus.</td></tr>
@@ -192,7 +192,7 @@ Zum Bereitstellen von angepasster Toucheingabeunterstützung können Sie verschi
 
 Hier sehen Sie den grundlegenden Satz von Touchgesten, die von der UWP unterstützt werden.
 
-| Name           | Typ                 | BESCHREIBUNG                                                                            |
+| Name           | type                 | BESCHREIBUNG                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|
 | Tippen            | Statische Geste       | Der Bildschirm wird mit einem Finger berührt, und der Finger wird wieder angehoben.                                            |
 | Drücken und Halten | Statische Geste       | Ein Finger berührt den Bildschirm und bleibt auf dem Bildschirm.                                      |

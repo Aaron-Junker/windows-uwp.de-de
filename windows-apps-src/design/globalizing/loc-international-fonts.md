@@ -2,16 +2,16 @@
 Description: Dieses Thema enthält eine Liste der verfügbaren Schriftarten für Windows-apps, die in anderen Sprachen als US-Englisch lokalisiert werden.
 title: Internationale Schriftarten
 template: detail.hbs
-ms.date: 11/02/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisier barkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: aa0b560ad684ba230e0a498b9069d24d510f49c0
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 1200b80347a67bb1c9a6414a18697ca9d30bc29f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970905"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220603"
 ---
 # <a name="international-fonts"></a>Internationale Schriftarten
 
@@ -30,7 +30,7 @@ In der folgenden Tabelle wird in der Spalte "Sprachtag" das [bcp-47-sprach Kennz
 | Aserbaidschanisch (lateinisch) | az-Latn-AZ | Segoe UI |
 | Bangla (Bangladesch) | bn-BD | Nirmala UI |
 | Bangla (Indien) | bn-IN | Nirmala UI |
-| Baskisch (Baskisch) | eu-ES | Segoe UI |
+| Baskisch (Baskenland) | eu-ES | Segoe UI |
 | Belarussisch | be-BY | Segoe UI |
 | Bosnisch (Lateinisch) | bs-Latn-BA | Segoe UI |
 | Bulgarisch | bg-BG | Segoe UI |
@@ -50,7 +50,7 @@ In der folgenden Tabelle wird in der Spalte "Sprachtag" das [bcp-47-sprach Kennz
 | Filipino | fil-PH | Segoe UI |
 | Finnisch | fi-FI | Segoe UI |
 | Französisch | fr-FR | Segoe UI |
-| Galizisch | gl-ES | Segoe UI |
+| Galicisch | gl-ES | Segoe UI |
 | Georgisch | ka-GE | Segoe UI |
 | Deutsch | de-DE | Segoe UI |
 | Griechisch | el-GR | Segoe UI |
@@ -99,9 +99,9 @@ In der folgenden Tabelle wird in der Spalte "Sprachtag" das [bcp-47-sprach Kennz
 | Quechua | quz-PE | Segoe UI |
 | Rumänisch | ro-RO | Segoe UI |
 | Russisch | ru-RU | Segoe UI |
-| Schottisches Gälisch | gd-GB | Segoe UI |
+| Schottisch-Gälisch | gd-GB | Segoe UI |
 | Serbisch (Kyrillisch, Bosnien und Herzegowina) | sr-Cyrl-BA | Segoe UI |
-| Serbisch (kyrillisch, Serbien) | SR-Cyrl-CS | Segoe UI |
+| Serbisch (Kyrillisch, Serbien) | SR-Cyrl-CS | Segoe UI |
 | Serbisch (Lateinisch) | sr-Latn-CS | Segoe UI |
 | Nord-Sotho | nso-ZA | Segoe UI |
 | Tswana | tn-ZA | Segoe UI |
@@ -112,17 +112,17 @@ In der folgenden Tabelle wird in der Spalte "Sprachtag" das [bcp-47-sprach Kennz
 | Spanisch | es-ES | Segoe UI |
 | Schwedisch | sv-SE | Segoe UI |
 | Tadschikisch (Kyrillisch) | tg-Cyrl-TJ | Segoe UI |
-| Tamilisch | ta-IN | Nirmala UI |
+| Tamil | ta-IN | Nirmala UI |
 | Tatarisch | tt-RU | Segoe UI |
 | Telugu | te-IN | Nirmala UI |
-| Thailändisch | th-TH | Leelawadee UI |
+| Thai | th-TH | Leelawadee UI |
 | Tigrinya | ti-ET | Ebrima |
 | Türkisch | tr-TR | Segoe UI |
 | Turkmenisch | tk-TM | Segoe UI |
 | Ukrainisch | uk-UA | Segoe UI |
 | Urdu | ur-PK | Segoe UI |
 | Uigurisch | ug-CN | Segoe UI |
-| Usbekisch (lateinisch) | uz-Latn-UZ | Segoe UI |
+| Usbekisch (Lateinisch) | uz-Latn-UZ | Segoe UI |
 | Valencianisch | ca-ES-valencia | Segoe UI |
 | Vietnamesisch | vi-VN | Segoe UI |
 | Walisisch | cy-GB | Segoe UI |

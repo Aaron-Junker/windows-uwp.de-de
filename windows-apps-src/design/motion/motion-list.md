@@ -4,16 +4,16 @@ title: Hinzufügen und Löschen von Animationen
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a2a61dd70915195673dacaed78510eb7b7c2f2f0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 105b2fe5f7f267d8a5a82473332747584b02316c
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172404"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220373"
 ---
 # <a name="add-and-delete-animations"></a>Hinzufügen und Löschen von Animationen
 

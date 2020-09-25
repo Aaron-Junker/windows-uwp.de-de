@@ -2,16 +2,16 @@
 Description: Wenn die von Ihnen bereitgestellten Pakete auf unterschiedliche Betriebssysteme ausgerichtet sind, können Sie Teile Ihres Store-Eintrags für verschiedene Zielbetriebssysteme anpassen.
 title: Erstellen plattformspezifischer Store-Einträge
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
-ms.date: 10/31/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, anpassen, auflisten, Beschreibung, früher
 ms.localizationpriority: medium
-ms.openlocfilehash: 475526662737eaa5b95267e36016e342c6652a89
-ms.sourcegitcommit: 96b7be654a0922eeb421b5fa51ebfc586abe74fe
+ms.openlocfilehash: b0008095ac027a1ef1d17b655610a3ad50a6596b
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84945958"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220503"
 ---
 # <a name="create-platform-specific-store-listings"></a>Erstellen plattformspezifischer Store-Einträge
 
