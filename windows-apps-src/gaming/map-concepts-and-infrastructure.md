@@ -4,14 +4,14 @@ description: Machen Sie sich zu Beginn des Prozesses zur ersten Portierung Ihrer
 ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Spiele, OpenGL, Direct3D, Portieren
+keywords: Windows 10, UWP, Games, OpenGL, Direct3D, portieren
 ms.localizationpriority: medium
-ms.openlocfilehash: 525b97700b1362bb19a1b328183f3cbf9da3b006
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d2f889e72215659c21990d84539670bfccddd340
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368525"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220053"
 ---
 # <a name="map-opengl-es-20-to-direct3d-11"></a>Zuordnen von OpenGL ES 2.0 zu Direct3D 11
 
@@ -27,25 +27,25 @@ Machen Sie sich zu Beginn des Prozesses zur ersten Portierung Ihrer Grafikarchit
 <thead>
 <tr class="header">
 <th align="left">Thema</th>
-<th align="left">Beschreibung</th>
+<th align="left">BESCHREIBUNG</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="compare-opengl-es-2-0-api-design-to-directx.md">Planen Sie Ihre Portieren von OpenGL ES 2.0 zu Direct3D</a></p></td>
+<td align="left"><p><a href="compare-opengl-es-2-0-api-design-to-directx.md">Planen der Portierung von OpenGL ES 2.0 zu Direct3D</a></p></td>
 <td align="left"><p>Wenn Sie ein Spiel von der iOS- oder Android-Plattform portieren, haben Sie vermutlich erheblich in OpenGL ES 2.0 investiert. Beim Vorbereiten der Portierung Ihrer Grafikpipeline-Codebasis zu Direct3D 11 und der Windows-Runtime sind im Vorfeld einige Dinge zu beachten.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="moving-from-egl-to-dxgi.md">Vergleichen Sie EGL-Code DXGI und Direct3D</a></p></td>
+<td align="left"><p><a href="moving-from-egl-to-dxgi.md">Vergleichen des EGL-Codes mit DXGI und Direct3D</a></p></td>
 <td align="left"><p>Die DirectX-Grafikschnittstelle (DXGI) und verschiedene Direct3D-APIs erfüllen die gleiche Rolle wie EGL. In diesem Thema werden die DXGI und Direct3D 11 aus Sicht von EGL erläutert.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="porting-uniforms-and-attributes.md">Vergleichen von Puffern, Uniformen und Vertex-Attribute zu Direct3D OpenGL ES 2.0</a></p></td>
+<td align="left"><p><a href="porting-uniforms-and-attributes.md">Vergleichen von OpenGL ES 2.0-Puffern, uniform-Variablen und Vertexattributen mit Direct3D</a></p></td>
 <td align="left"><p>Während des Portierens zu Direct3D 11 aus OpenGL ES 2.0 müssen Sie die Syntax und das API-Verhalten zum Übergeben von Daten zwischen der App und den Shaderprogrammen ändern.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="change-your-shader-loading-code.md">Vergleichen Sie die OpenGL ES 2.0-Shader-Pipeline, um Direct3D</a></p></td>
-<td align="left"><p>Vom Konzept her ist die Direct3D 11-Shaderpipeline der in OpenGL ES 2.0 sehr ähnlich. Hinsichtlich des API-Entwurfs sind die Hauptkomponenten für die Erstellung und Verwaltung der Shaderstufen jedoch Teile der zwei primären Schnittstellen <a href="https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1"><strong>ID3D11Device1</strong></a> und <a href="https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1"><strong>ID3D11DeviceContext1</strong></a>. In diesem Thema versuchen wir, allgemeine Muster der OpenGL ES 2.0-Shaderpipeline-API den Direct3D 11-Entsprechungen in diesen Schnittstellen zuzuordnen.</p></td>
+<td align="left"><p><a href="change-your-shader-loading-code.md">Vergleichen der OpenGL ES 2.0-Shaderpipeline mit Direct3D</a></p></td>
+<td align="left"><p>Vom Konzept her ist die Direct3D 11-Shaderpipeline der in OpenGL ES 2.0 sehr ähnlich. Hinsichtlich des API-Entwurfs sind die Hauptkomponenten für die Erstellung und Verwaltung der Shaderstufen jedoch Teile der zwei primären Schnittstellen <a href="/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1"><strong>ID3D11Device1</strong></a> und <a href="/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1"><strong>ID3D11DeviceContext1</strong></a>. In diesem Thema versuchen wir, allgemeine Muster der OpenGL ES 2.0-Shaderpipeline-API den Direct3D 11-Entsprechungen in diesen Schnittstellen zuzuordnen.</p></td>
 </tr>
 </tbody>
 </table>
@@ -60,7 +60,3 @@ In diesen Themen wird die OpenGL ES 2.0-Spezifikation von Khronos mit der plat
  
 
  
-
-
-
-

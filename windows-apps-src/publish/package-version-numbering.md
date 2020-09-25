@@ -2,16 +2,16 @@
 Description: Der Microsoft Store erzwingt bestimmte Regeln im Zusammenhang mit Versionsnummern, die in unterschiedlichen Betriebssystemversionen etwas unterschiedlich funktionieren.
 title: Paketversionsnummern
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
-ms.date: 10/31/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 01e3a1d012e6c309f1c486417708457dd31c2c22
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b09c5688fd8a043d1a4ca1783af046398b504050
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171004"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219733"
 ---
 # <a name="package-version-numbering"></a>Paketversionsnummern
 
@@ -79,10 +79,10 @@ Im folgenden finden Sie einige Beispiele dafür, was in verschiedenen Versionsnu
 
 | Version der App im Store  | Hochgeladene Version | Nachdem sich die neue Version im Speicher befindet, wird Sie in einem neuen Erwerb installiert. | Nachdem sich die neue Version im Speicher befindet, wird Sie aktualisiert, wenn die APP bereits von einem Kunden verwendet wird. |
 |---------------------------------------------|-----------------------------|--------------------------------------------------------------------------------------------|----------|
-| Nichts                                     | x86, v1.0.0.0               | x86, v1.0.0.0 auf x86- und x64-PCs                                                | Nichts. |
+| Nothing                                     | x86, v1.0.0.0               | x86, v1.0.0.0 auf x86- und x64-PCs                                                | Nichts. |
 | x86, v1.0.0.0                               | x64, v1.0.0.0               | v1.0.0.0 für die Architektur des Kunden                                                   | Nichts. Die Versionsnummern sind identisch. |
 | x86, v1.0.0.0 <br> x64, v1.0.0.0            | x64, v1.0.0.1               | v1.0.0.0 für Kunden mit einem x86-PC <br> v1.0.0.1 für Kunden mit einem x64-PC                 | Nichts für Kunden, die die App auf einem x86-PC ausführen. <br> v1.0.0.0 wird für Kunden, die die App auf einem x64-PC ausführen, auf v1.0.0.1 aktualisiert. <br> **Hinweis**    Wenn die x86-Version der APP auf einem x64-Computer ausgeführt wird, wird die APP erst dann auf die x64-Version aktualisiert, wenn der Kunde deinstalliert und neu installiert wird. |
-| Nichts                                     | Neutral, v1.0.0.1           | Neutral, v1.0.0.1 auf allen PCs                                                         | Nichts. |
+| Nothing                                     | Neutral, v1.0.0.1           | Neutral, v1.0.0.1 auf allen PCs                                                         | Nichts. |
 | Neutral, v1.0.0.1                           | x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | v1.0.0.0 für die Architektur des PC des Kunden.          | Nichts. Kunden mit der neutralen Version v1.0.0.1 verwenden weiter diese Version der App. |
 | Neutral, v1.0.0.1 <br> x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | v1.0.0.1 für die Architektur des PC des Kunden. | Nichts für Kunden mit der neutralen Version v1.0.0.1. <br> v1.0.0.0 wird für Kunden, die die Version v1.0.0.0 der App für die spezifische Architektur ihres PC verwenden, auf v1.0.0.1 aktualisiert. |
 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | x86, v1.0.0.2 <br> x64, v1.0.0.2 <br> ARM, v1.0.0.2 | v1.0.0.2 für die Architektur des PC des Kunden.  | v1.0.0.1 wird für Kunden, die die Version v1.0.0.1 der App für die spezifische Architektur ihres PC verwenden, auf v1.0.0.2 aktualisiert. |

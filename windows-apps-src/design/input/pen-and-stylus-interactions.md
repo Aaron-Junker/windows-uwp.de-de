@@ -5,15 +5,15 @@ ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in Windows apps
 template: detail.hbs
 keywords: Windows Ink, Windows-Freihandeingabe, DirectInk, InkPresenter, InkCanvas, Handschrifterkennung, Benutzerinteraktion, Eingabe
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3733c98c81a23fbc5b369297b45f1c1e5183c198
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 34e41ff4b6fa402e8a1857a2ea406c9e63e7c868
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173384"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216963"
 ---
 # <a name="pen-interactions-and-windows-ink-in-windows-apps"></a>Stiftinteraktionen und Windows Ink in Windows-Apps
 

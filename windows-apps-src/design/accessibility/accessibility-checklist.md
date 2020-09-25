@@ -4,16 +4,16 @@ ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: Prüfliste für die Barrierefreiheit
 label: Accessibility checklist
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 44864a0743443d976456f73a3bae5041fd63770e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d6b9340f55064ff89c0b047cbb6d7407574da3d6
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163464"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216393"
 ---
 # <a name="accessibility-checklist"></a>Prüfliste für die Barrierefreiheit
 
@@ -41,7 +41,7 @@ Hier finden Sie eine Prüfliste, die Sie verwenden können, um den Zugriff auf I
 
 3. Sicherstellen, dass Text eine lesbare Größe ist
 
-    * Windows umfasst verschiedene Tools und Einstellungen für die Barrierefreiheit, die Benutzer nutzen und ihren eigenen Anforderungen und Vorlieben zum Lesen von Text anpassen können. Dazu zählen unter anderem folgende Einstellungen:
+    * Windows umfasst verschiedene Tools und Einstellungen für die Barrierefreiheit, die Benutzer nutzen und ihren eigenen Anforderungen und Vorlieben zum Lesen von Text anpassen können. Dazu gehören:
         * Das Bildschirm Vergrößerungs Tool, das einen ausgewählten Bereich der Benutzeroberfläche vergrößert. Sie sollten sicherstellen, dass das Layout des Texts in der APP die Verwendung der Bildschirmlupe nicht erschwert.
         * Globale Skalierungs-und Auflösungseinstellungen in **Einstellungen->System >Anzeige >Skalierung und Layout**. Welche Größen Anpassungsoptionen verfügbar sind, kann variieren, je nachdem, welche Möglichkeiten das Anzeigegerät hat.
         * Einstellungen für die Textgröße in den **Einstellungen->einfache Zugriffs >Anzeige**. Passen Sie die Einstellung **Text vergrößern** an, um nur die Textgröße in unterstützenden Steuerelementen für alle Anwendungen und Bildschirme anzugeben (alle UWP-Text Steuerelemente unterstützen die Text Skalierung ohne Anpassung oder Vorlagen).

@@ -4,16 +4,16 @@ ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: Entwerfen inklusiver Software unter Windows 10
 label: Designing inclusive software
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f7286394f68d6cda82581a825117f12ce98493ba
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 795344a7a03344c5f8aeea26252e1e0610d9d8c3
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234085"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219863"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>Entwerfen inklusiver Software für Windows 10  
 
@@ -23,7 +23,7 @@ Microsoft entwickelt seine Designprinzipien und -verfahren kontinuierlich weiter
 
 Diese neue Designphilosophie heißt inklusives Design. Unser Ziel ist es, Software von Grund auf für alle Arten von Benutzern zu entwickeln. Dies steht im Gegensatz zu der Auffassung, dass Eingabehilfen erst am Ende des Entwicklungsprozesses erstellt werden, um die Anforderungen einer kleinen Gruppe von Benutzern zu erfüllen.
 
-„Wir definieren eine Behinderung als den Konflikt zwischen den Anforderungen einer einzelnen Person und dem angebotenen Dienst, dem angebotenen Produkt oder der angebotenen Umgebung. Jeder Benutzer kann eine Behinderung erleiden. Es ist eine allgemeine menschliche Erfahrung, ausgeschlossen zu werden.“  \-aus dem [inklusiven](https://www.microsoft.com/design/inclusive/) Video  
+„Wir definieren eine Behinderung als den Konflikt zwischen den Anforderungen einer einzelnen Person und dem angebotenen Dienst, dem angebotenen Produkt oder der angebotenen Umgebung. Jeder Benutzer kann eine Behinderung erleiden. Es ist eine allgemeine menschliche Erfahrung, ausgeschlossen zu werden.“  \- aus dem [inklusiven](https://www.microsoft.com/design/inclusive/) Video  
 
 Mithilfe des inklusiven Designs werden bessere Produkte für alle erstellt. Es geht darum, die gesamte Bandbreite der menschlichen Vielfalt zu berücksichtigen. Denken Sie an die Bordsteinabsenkungen, die Sie jetzt in den Kreuzungsbereichen der meisten Bürgersteige finden. Diese sind eindeutig zur Verwendung durch Rollstuhlfahrer bestimmt. Aber jetzt werden sie von fast jedem verwendet, einschließlich Personen mit Kinderwägen, Radfahrern und Skateboardern. Sogar Fußgänger verwenden oft Bordsteinabsenkungen, da sie einfach vorhanden und komfortabel sind. Fernbedienungen könnten als Hilfstechnologie (Assistive Technology, AT) für Personen mit körperlichen Einschränkungen betrachtet werden. Es ist heute jedoch fast unmöglich, einen Fernseher ohne Fernbedienung zu kaufen. Bevor Kinder lernen, ihre Schuhe zuzubinden, können sie Schuhe zum Reinschlüpfen oder leicht zu schließende Schuhe tragen. Schuhe, die leicht an- und auszuziehen sind, werden häufig in Kulturen bevorzugt, in denen Schuhe vor dem Betreten eines Hauses ausgezogen werden. Sie sind auch besser für Personen mit Bewegungseinschränkungen an den Händen geeignet, etwa Personen mit Arthritis oder einem vorübergehend gebrochenen Handgelenk.
 
@@ -108,4 +108,4 @@ Befolgen Sie diese sieben Schritte, um sicherzustellen, dass Ihre Software inklu
 * [Entwickeln von barrierefreier Software](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Entwickler-Hub für Barrierefreiheit in Microsoft](https://developer.microsoft.com/windows/accessible-apps)
 * [Entwickeln von barrierefreien Windows-Apps](developing-inclusive-windows-apps.md) 
-* [Barrierefreiheit](accessibility.md)
+* [Bedienungshilfen](accessibility.md)

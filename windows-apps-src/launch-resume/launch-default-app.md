@@ -6,12 +6,12 @@ ms.date: 06/26/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ff40b506ef305ac4bc651864da34fe746f6229a3
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ad25d4ba5d8dfe638d3de3e210f69ea204c48a14
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164854"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220013"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>Starten der Standard-App für einen URI
 
@@ -56,7 +56,7 @@ Im Allgemeinen kann die App nicht die App auswählen, die gestartet wird. Der Be
 
 Verwenden Sie die Methode [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync), um einen URI zu starten. Beim Aufrufen dieser Methode muss Ihre App im Vordergrund ausgeführt werden, d. h., sie muss für den Benutzer sichtbar sein. Durch diese Anforderung wird sichergestellt, dass der Benutzer zu jedem Zeitpunkt die Kontrolle behält. Verknüpfen Sie alle URI-Startvorgänge direkt mit der Benutzeroberfläche Ihrer App, um sicherzustellen, dass diese Anforderung erfüllt wird. Der Benutzer muss immer eine Aktion ausführen, um einen URI zu starten. Wenn Sie versuchen, einen URI zu starten, und Ihre App befindet sich nicht im Vordergrund, schlägt der Start fehl und Ihr Fehlerrückruf wird aufgerufen.
 
-Erstellen Sie zunächst ein [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri)-Objekt, das den URI darstellt, und übergeben Sie es anschließend an die Methode [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync). Verwenden Sie das Ergebnis, um zu überprüfen, ob der Aufruf erfolgreich war, wie im folgenden Beispiel gezeigt.
+Erstellen Sie zunächst ein [**System.Uri**](/dotnet/api/system.uri)-Objekt, das den URI darstellt, und übergeben Sie es anschließend an die Methode [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync). Verwenden Sie das Ergebnis, um zu überprüfen, ob der Aufruf erfolgreich war, wie im folgenden Beispiel gezeigt.
 
 ```cs
 private async void launchURI_Click(object sender, RoutedEventArgs e)
@@ -82,7 +82,7 @@ In einigen Fällen wird der Benutzer vom Betriebssystem aufgefordert, zu überpr
 
 ![Überlagerndes Warndialogfeld in der App auf grauem Hintergrund. Im Dialogfeld wird der Benutzer gefragt, ob die App gewechselt werden soll. Unten rechts sind die Schaltflächen „Ja“ und „Nein“ vorhanden. Die Schaltfläche „Nein“ ist hervorgehoben.](images/warningdialog.png)
 
-Wenn diese Aufforderung immer auftreten soll, verwenden Sie das [**Windows.System. Launcheroptions. treatasuntrusted**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.treatasuntrusted) -Eigenschaft, die dem Betriebssystem mitteilt, dass eine Warnung angezeigt werden soll.
+Wenn diese Aufforderung immer auftreten soll, verwenden Sie das [**Windows.System. Launcheroptions. treatasuntrusted**](/uwp/api/windows.system.launcheroptions.treatasuntrusted) -Eigenschaft, die dem Betriebssystem mitteilt, dass eine Warnung angezeigt werden soll.
 
 ```cs
 // The URI to launch
@@ -102,7 +102,7 @@ Es kann jedoch sein, dass der Benutzer nicht über die erforderliche App zum Bea
 
 Empfehlungen sind auch nützlich, wenn mehr als eine App zum Behandeln eines URI-Schema registriert wurde. Durch die Empfehlung einer bestimmten App öffnet Windows die App, wenn sie bereits installiert ist.
 
-Rufen Sie dazu die Methode [**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_) auf, wobei [**LauncherOptions.preferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) auf den Paketfamiliennamen der empfohlenen App im Store festgelegt ist. Diese Info wird vom Betriebssystem verwendet, um die allgemeine Option zum Suchen einer App im Store durch eine spezifische Option zum Erwerben der empfohlenen App im Store zu ersetzen.
+Rufen Sie dazu die Methode [**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)**](/uwp/api/windows.system.launcher.launchuriasync#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_) auf, wobei [**LauncherOptions.preferredApplicationPackageFamilyName**](/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) auf den Paketfamiliennamen der empfohlenen App im Store festgelegt ist. Diese Info wird vom Betriebssystem verwendet, um die allgemeine Option zum Suchen einer App im Store durch eine spezifische Option zum Erwerben der empfohlenen App im Store zu ersetzen.
 
 ```cs
 // Set the recommended app
@@ -228,7 +228,7 @@ Verwenden Sie das Schema **MS-Settings:** URI, um [die Windows-Einstellungs-APP 
 
 ![Datenschutzeinstellungen für die Kamera.](images/privacyawarenesssettingsapp.png)
 
-Weitere Informationen finden Sie unter [Starten der Einstellungs-App von Windows](launch-settings-app.md) und [Richtlinien für Apps mit Berücksichtigung von Datenschutz](https://docs.microsoft.com/windows/uwp/security/index).
+Weitere Informationen finden Sie unter [Starten der Einstellungs-App von Windows](launch-settings-app.md) und [Richtlinien für Apps mit Berücksichtigung von Datenschutz](../security/index.md).
 
 ### <a name="store-app-uri-scheme"></a>URI-Schema für die Store-App
 

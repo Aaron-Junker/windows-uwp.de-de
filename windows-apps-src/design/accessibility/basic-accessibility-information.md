@@ -4,16 +4,16 @@ ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
 title: Verfügbarmachen von grundlegenden Informationen zur Barrierefreiheit
 label: Expose basic accessibility information
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 723108b1a4e90de4cf378d8cdafcaae92bec2682
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: da0ad6c0121f81a4854728f4441e0407a6302f54
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157094"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217463"
 ---
 # <a name="expose-basic-accessibility-information"></a>Verfügbarmachen von grundlegenden Informationen zur Barrierefreiheit  
 
@@ -83,7 +83,7 @@ XAML
   AutomationProperties.Name="An image of a customer using the product."/>
 ```
 
-Alternativ können Sie eine Textbeschriftung hinzufügen, die in der sichtbaren Benutzeroberfläche angezeigt wird und gleichzeitig als Information zur Barrierefreiheit für die Beschriftung des Bildinhalts dient. Ein Beispiel:
+Alternativ können Sie eine Textbeschriftung hinzufügen, die in der sichtbaren Benutzeroberfläche angezeigt wird und gleichzeitig als Information zur Barrierefreiheit für die Beschriftung des Bildinhalts dient. Hier sehen Sie ein Beispiel:
 
 XAML
 ```xml

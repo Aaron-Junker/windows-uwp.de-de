@@ -4,16 +4,16 @@ title: Mausinteraktionen
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 242f7c30260956bc84478153f39b0da4d8461e12
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 84390e7b929412e4058c1a7e6507ff171344bd53
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173404"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218933"
 ---
 # <a name="mouse-interactions"></a>Mausinteraktionen
 
@@ -86,7 +86,7 @@ Ein kompakter Satz von Mausinteraktionen wird durchgängig im ganzen System verw
 
 ## <a name="mouse-input-events"></a>Mauseingabe Ereignisse
 
-Die meisten Maus Eingaben können durch die allgemeinen Routing Eingabeereignisse behandelt werden, die von allen [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) -Objekten unterstützt werden. Dazu zählen unter anderem folgende Einstellungen:
+Die meisten Maus Eingaben können durch die allgemeinen Routing Eingabeereignisse behandelt werden, die von allen [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) -Objekten unterstützt werden. Dazu gehören:
 
 - [**Bringingeviewangeforderten**](/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
 - [**Charakteristik empfangen**](/uwp/api/windows.ui.xaml.uielement.characterreceived)

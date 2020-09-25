@@ -4,18 +4,18 @@ title: Tastaturkürzel
 label: Keyboard accelerators
 template: detail.hbs
 keywords: Tastatur, Accelerator, Zugriffstaste, Tastenkombinationen, Barrierefreiheit, Navigation, Fokus, Text, Eingabe, Benutzerinteraktionen, Gamepad, Remote
-ms.date: 10/10/2017
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a3231f608984c9d1f67df71de9cab4cfecd9a13
-ms.sourcegitcommit: deb2867924ce16efcabfa011892157b7aa4fa2d2
+ms.openlocfilehash: 02fba8027c5bddec5e5c501783b32dbab5642db9
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187895"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219953"
 ---
 # <a name="keyboard-accelerators"></a>Tastaturkürzel
 
@@ -219,7 +219,7 @@ Wenn keine Entsprechung gefunden wird, ist die Zugriffstaste ungültig, und es w
 
 Das aufgerufene Ereignis des [keyboardaccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator) -Objekts wird ausgelöst, wenn die Zugriffstaste ausgeführt wird. Das [keyboardacceleratorinvokeabventargs](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs) -Ereignis Objekt enthält die folgenden Eigenschaften:
 
-- [**Behandelt**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (boolesch): Wenn diese Einstellung auf "true" festgelegt wird, wird verhindert, dass das Ereignis das-Steuerelement Muster auslöst, und das Der Standardwert ist false.
+- [**Behandelt**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (boolesch): Wenn diese Einstellung auf "true" festgelegt wird, wird verhindert, dass das Ereignis das-Steuerelement Muster auslöst, und das Die Standardeinstellung ist „false“.
 - - [**Element**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element) (DependencyObject): das der Zugriffstaste zugeordnete Objekt.
 - [**Keyboardaccelerator**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator): die Tastenkombination, mit der das aufgerufene Ereignis ausgelöst wird.
 
@@ -331,7 +331,7 @@ Es wird empfohlen, Tastaturbeschleuniger in Windows-Anwendungen konsistent zu ma
 
 Dies ist möglicherweise aufgrund von Unterschieden in der Funktionalität von apps nicht immer möglich.
 
-| **Bearbeitung läuft** | **Allgemeine Tastatur Beschleunigung** |
+| **Bearbeiten** | **Allgemeine Tastatur Beschleunigung** |
 | ------------- | ----------------------------------- |
 | Bearbeitungsmodus starten | STRG + E |
 | Alle Elemente in einem Steuerelement oder Fenster mit Fokus auswählen | STRG+A |
@@ -364,7 +364,7 @@ Dies ist möglicherweise aufgrund von Unterschieden in der Funktionalität von a
 | Verkleinern | STRG +- | 
 | In Standardansicht Zoomen | STRG + 0 | 
 | Speichern | STRG+ S | 
-| Schließen | STRG + W | 
+| Close (Schließen) | STRG + W | 
 | Drucken | STRG+P | 
 
 Beachten Sie, dass einige der Kombinationen für lokalisierte Versionen von Windows nicht gültig sind. Beispielsweise wird in der spanischen Version von Windows STRG + N als fett formatiert anstelle von STRG + B verwendet. Es wird empfohlen, lokalisierte Tastaturbeschleuniger bereitzustellen, wenn die APP lokalisiert wird.

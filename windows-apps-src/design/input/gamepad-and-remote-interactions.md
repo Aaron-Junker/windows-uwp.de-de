@@ -5,16 +5,16 @@ ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
 label: Gamepad and remote interactions
 template: detail.hbs
 isNew: true
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f5efe2fe1e8a4e24df175a0d019834cd0ba90388
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7f11cde619b783292e4880927c68b6ae8ff38323
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172554"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217184"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>Interaktionen mit Gamepad und Fernbedienung
 
@@ -548,14 +548,14 @@ Einige Steuerelemente führen häufig genug dazu, dass Benutzer in einem Steuere
 
 | Control               | Standardeinstellung in Bezug auf die Fokusaktivierung  |
 |-----------------------|---------------------------|
-| CalendarDatePicker    | Ein                        |
+| CalendarDatePicker    | Andererseits                        |
 | FlipView              | Aus                       |
 | GridView              | Aus                       |
 | ListBox               | Aus                       |
 | ListView              | Aus                       |
 | ScrollViewer          | Aus                       |
 | SemanticZoom          | Aus                       |
-| Slider                | Ein                        |
+| Schieberegler                | Andererseits                        |
 
 Alle anderen Windows-Steuerelemente führen zu keinem Verhalten oder visuellen Änderungen, wenn dies der Fall ist `IsFocusEngagementEnabled="True"` .
 

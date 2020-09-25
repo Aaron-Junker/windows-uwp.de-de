@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, ACPI, GPIO, I2C, SPI, UEFI
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: b3e04399bb7fb0d40cf42789587aa132ee20e789
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a5841a8a53c18969e8ca9171bb7b3e1af0273170
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165504"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216794"
 ---
 # <a name="enable-user-mode-access-to-gpio-i2c-and-spi"></a>Aktivieren des Benutzermoduszugriffs auf GPIO, I2C und SPI
 
@@ -614,7 +614,7 @@ Zusätzlich zum Arbeitsspeicher und den Interruptressourcen, die normalerweise v
 - CLIENT_ConnectFunctionConfigPins – Aufgerufen von `GpioClx`, damit der Miniporttreiber die angegebene Muxing-Konfiguration anwendet.
 - CLIENT_ConnectFunctionConfigPins – Aufgerufen von `GpioClx`, damit der Miniporttreiber die angegebene Muxing-Konfiguration rückgängig macht.
 
-Unter [GpioClx-Ereignisrückruffunktionen](https://docs.microsoft.com/previous-versions/hh439464(v=vs.85)) finden Sie eine Beschreibung dieser Routinen.
+Unter [GpioClx-Ereignisrückruffunktionen](/previous-versions/hh439464(v=vs.85)) finden Sie eine Beschreibung dieser Routinen.
 
 Zusätzlich zu diesen beiden neuen DDIs, sollten bestehende DDIs auf Pin-Muxing-Kompatibilität überprüft werden:
 
@@ -633,11 +633,11 @@ Das folgende Diagramm zeigt die Abhängigkeiten zwischen den einzelnen Komponent
 
 Bei Gerätinitialisierung analysieren die `SpbCx`- und `SerCx`-Frameworks alle `MsftFunctionConfig()`-Ressourcen, die dem Gerät als Hardwareressourcen bereitgestellt werden. SpbCx/SerCx erwerben dann Pin-Muxing-Ressourcen bzw. geben diese bei Bedarf frei.
 
-`SpbCx` wendet die PIN-muxing-Konfiguration im *IRP_MJ_CREATE* Handler an, kurz bevor der [evtspbtargetconnect ()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_connect) -Rückruf des Client Treibers aufgerufen wird. Wenn die Muxing-Konfiguration nicht angewendet werden kann, wird der `EvtSpbTargetConnect()`-Rückruf des Controllertreibers nicht aufgerufen. Daher kann ein SPB-Controllertreiber davon ausgehen, dass Pins an die SPB-Funktion gemuxt werden, wenn `EvtSpbTargetConnect()` aufgerufen wird.
+`SpbCx` wendet die PIN-muxing-Konfiguration im *IRP_MJ_CREATE* Handler an, kurz bevor der [evtspbtargetconnect ()](/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_connect) -Rückruf des Client Treibers aufgerufen wird. Wenn die Muxing-Konfiguration nicht angewendet werden kann, wird der `EvtSpbTargetConnect()`-Rückruf des Controllertreibers nicht aufgerufen. Daher kann ein SPB-Controllertreiber davon ausgehen, dass Pins an die SPB-Funktion gemuxt werden, wenn `EvtSpbTargetConnect()` aufgerufen wird.
 
 `SpbCx` stellt die PIN-muxing-Konfiguration im *IRP_MJ_CLOSE* Handler wieder her, nachdem der [evtspbtargetdisconnect ()](/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_disconnect) -Rückruf des Controller Treibers aufgerufen wurde. Das Ergebnis ist, dass Pins an die SPB-Funktion gemuxt werden, sobald ein peripherer Treiber einen Handle für den SPB-Controllertreiber öffnet. Das Muxing wird entfernt, wenn der periphere Treiber seinen Handle schließt.
 
-`SerCx` verhält sich ähnlich. `SerCx`Ruft `MsftFunctionConfig()` vor dem Aufrufen des [EvtSerCx2FileOpen ()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileopen) -Rückrufs des Controller Treibers alle Ressourcen im *IRP_MJ_CREATE* Handlers ab und gibt alle Ressourcen im IRP_MJ_CLOSE Handler frei, kurz nachdem der [EvtSerCx2FileClose](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileclose) -Rückruf des Controller Treibers aufgerufen wurde.
+`SerCx` verhält sich ähnlich. `SerCx`Ruft `MsftFunctionConfig()` vor dem Aufrufen des [EvtSerCx2FileOpen ()](/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileopen) -Rückrufs des Controller Treibers alle Ressourcen im *IRP_MJ_CREATE* Handlers ab und gibt alle Ressourcen im IRP_MJ_CLOSE Handler frei, kurz nachdem der [EvtSerCx2FileClose](/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileclose) -Rückruf des Controller Treibers aufgerufen wurde.
 
 Die Auswirkung des dynamischen Pin-Muxing für `SerCx` und `SpbCx`-Controllertreiber besteht darin, dass sie Pins tolerieren müssen, bei denen das Muxing von der SPB-/UART-Funktion zu bestimmten Zeiten entfernt wird. Controllertreiber müssen wird davon ausgehen, dass Pins nicht gemuxt werden, bis `EvtSpbTargetConnect()` oder `EvtSerCx2FileOpen()` aufgerufen wird. Pins werden nicht zwangsläufig während der folgenden Rückrufe an eine SPB-/UART-Funktion gemuxt. Folgende Liste ist nicht vollständig, sie stellt jedoch die am häufigsten verwendeten PNP-Routinen dar, die von Controllertreibern implementiert werden.
 

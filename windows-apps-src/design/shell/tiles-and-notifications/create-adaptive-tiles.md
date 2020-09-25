@@ -4,16 +4,16 @@ title: Erstellen adaptiver Kacheln
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cee236b385b6129e7ab1a9cacd549f217f6e734
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c60794a52c3d8a5f597d4ab2d09490405c98f85a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175604"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218373"
 ---
 # <a name="create-adaptive-tiles"></a>Erstellen adaptiver Kacheln
 
@@ -284,7 +284,7 @@ Wenn Sie in der Benachrichtigungsnutzlast kein Branding angeben, wird das Brandi
 
  
 
-## <a name="display-name"></a>Anzeigename
+## <a name="display-name"></a>Angezeigter Name
 
 
 Sie können den Anzeigenamen einer Benachrichtigung überschreiben, indem Sie für das **displayName**-Attribut die gewünschte Textzeichenfolge eingeben. Wie beim Branding können Sie dies für das [tilevisual](../tiles-and-notifications/tile-schema.md#tilevisual) -Element angeben, das sich auf die gesamte Benachrichtigungs Nutzlast auswirkt, oder auf das [tilebinding](../tiles-and-notifications/tile-schema.md#tilebinding) -Element, das sich nur auf einzelne Kacheln auswirkt.

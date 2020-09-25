@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: Windows 10, UWP, Games, Input, Registry, Custom
 ms.localizationpriority: medium
-ms.openlocfilehash: ac2ca98a067fb88dfcdc86c4e4ee4047b82206bc
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1f3a49ae2c6fc283d479086759744eb51d8b33ce
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159274"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220064"
 ---
 # <a name="registry-data-for-game-controllers"></a>Registrierungsdaten für Spielecontroller
 
@@ -54,7 +54,7 @@ In der folgenden Tabelle werden die erwarteten Werte unter dem Stammverzeichnis 
     </tr>
 </table>
 
-Das Installationsprogramm des Geräts sollte diese Daten der Registrierung hinzufügen (entweder über Setup oder eine [INF-Datei](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)).
+Das Installationsprogramm des Geräts sollte diese Daten der Registrierung hinzufügen (entweder über Setup oder eine [INF-Datei](/windows-hardware/drivers/install/inf-files)).
 
 Die Unterschlüssel unter dem Stammverzeichnis des Geräts werden in den folgenden Abschnitten ausführlich beschrieben.
 
@@ -543,9 +543,9 @@ In der folgenden Tabelle sind die erforderlichen und optionalen Unterschlüssel 
     </tr>
 </table>
 
-Weitere Informationen zu UI-Navigations Controllern und den obigen Befehlen finden Sie unter [UI-Navigations Controller](https://docs.microsoft.com/windows/uwp/gaming/ui-navigation-controller).
+Weitere Informationen zu UI-Navigations Controllern und den obigen Befehlen finden Sie unter [UI-Navigations Controller](./ui-navigation-controller.md).
 
-## <a name="keys"></a>Tasten
+## <a name="keys"></a>Schlüssel
 
 In den folgenden Abschnitten wird der Inhalt der einzelnen Unterschlüssel unter den Schlüsseln **Gamepad**, **racingwheel**, **arcadebug**, **Flightstick**und **UINavigation** erläutert.
 
@@ -597,7 +597,7 @@ In der folgenden Tabelle sind die Werte aufgelistet, die zum Zuordnen einer Scha
         </td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Schalter</td>
+        <td rowspan="3" style="vertical-align: middle;">Switch</td>
         <td>Switchindex</td>
         <td>DWORD</td>
         <td>Ja</td>
@@ -654,8 +654,8 @@ In der folgenden Tabelle sind die Werte aufgelistet, die zum Zuordnen einer Achs
                     <th>Axisvalue</th>
                 </tr>
                 <tr>
-                    <td>FALSE</td>
-                    <td>0.0</td>
+                    <td>false</td>
+                    <td>0,0</td>
                 </tr>
                 <tr>
                     <td>TRUE</td>
@@ -677,24 +677,24 @@ In der folgenden Tabelle sind die Werte aufgelistet, die zum Zuordnen einer Achs
                     <th>Axisvalue</th>
                 </tr>
                 <tr>
-                    <td>FALSE</td>
-                    <td>FALSE</td>
-                    <td>0.5</td>
+                    <td>false</td>
+                    <td>false</td>
+                    <td>0,5</td>
                 </tr>
                 <tr>
-                    <td>FALSE</td>
+                    <td>false</td>
                     <td>TRUE</td>
                     <td>1.0</td>
                 </tr>
                 <tr>
                     <td>TRUE</td>
-                    <td>FALSE</td>
-                    <td>0.0</td>
+                    <td>false</td>
+                    <td>0,0</td>
                 </tr>
                 <tr>
                     <td>TRUE</td>
                     <td>TRUE</td>
-                    <td>0.5</td>
+                    <td>0,5</td>
                 </tr>
             </table>
         </td>
@@ -713,7 +713,7 @@ In der folgenden Tabelle sind die Werte aufgelistet, die zum Zuordnen einer Achs
         <td>Gibt an, dass der Wert der zugeordneten Achse umgekehrt werden soll, bevor er zurückgegeben wird.</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Schalter</td>
+        <td rowspan="3" style="vertical-align: middle;">Switch</td>
         <td>Switchindex</td>
         <td>DWORD</td>
         <td>Ja</td>
@@ -747,11 +747,11 @@ In der folgenden Tabelle sind die Werte aufgelistet, die zum Zuordnen einer Achs
                 </tr>
                 <tr>
                     <td>Zentrum</td>
-                    <td>0.5</td>
+                    <td>0,5</td>
                 </tr>
                 <tr>
                     <td>Nach unten</td>
-                    <td>0.0</td>
+                    <td>0,0</td>
                 </tr>
             </table>
         </td>
@@ -781,19 +781,19 @@ In der folgenden Tabelle sind die Werte aufgelistet, die zum Zuordnen einer Achs
                 </tr>
                 <tr>
                     <td>Zentrum</td>
-                    <td>0.5</td>
+                    <td>0,5</td>
                 </tr>
                 <tr>
                     <td>Nach unten</td>
-                    <td>0.0</td>
+                    <td>0,0</td>
                 </tr>
                 <tr>
                     <td>DownRight</td>
-                    <td>0.0</td>
+                    <td>0,0</td>
                 </tr>
                 <tr>
                     <td>DownLeft</td>
-                    <td>0.0</td>
+                    <td>0,0</td>
                 </tr>
             </table>
         </td>
@@ -898,7 +898,7 @@ Switchpositionen können entweder aus einem Satz von Schaltflächen im Schaltfl�
         <td>DWORD</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Schalter</td>
+        <td rowspan="3" style="vertical-align: middle;">Switch</td>
         <td>Switchindex</td>
         <td>DWORD</td>
         <td>Index im <b>rawgamecontroller</b> -switcharray.
@@ -1051,7 +1051,7 @@ Bezeichnungen sollten unter dem Schlüssel **Bezeichnungen** unter dem Stamm des
 
 ### <a name="button-labels"></a>Schaltflächenbeschriftungen
 
-Die **Tasten** Kombination ordnet jede der Schaltflächen-Positionen im **rawgamecontroller**-Schaltflächen Array einer Zeichenfolge zu. Jede Zeichenfolge wird intern dem entsprechenden [gamecontrollerbuttonlabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) -Enumerationswert zugeordnet. Wenn ein Gamepad z. b. über zehn Schaltflächen verfügt und die Reihenfolge, in der der **rawgamecontroller** die Schaltflächen analysiert und Sie im Schaltflächen Bericht anzeigt, sieht wie folgt aus:
+Die **Tasten** Kombination ordnet jede der Schaltflächen-Positionen im **rawgamecontroller**-Schaltflächen Array einer Zeichenfolge zu. Jede Zeichenfolge wird intern dem entsprechenden [gamecontrollerbuttonlabel](/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) -Enumerationswert zugeordnet. Wenn ein Gamepad z. b. über zehn Schaltflächen verfügt und die Reihenfolge, in der der **rawgamecontroller** die Schaltflächen analysiert und Sie im Schaltflächen Bericht anzeigt, sieht wie folgt aus:
 
 ```cpp
 Menu,               // Index 0
@@ -1117,7 +1117,7 @@ Die Bezeichnungen sollten in dieser Reihenfolge unter der **Schalt** Flächen Ta
 
 ### <a name="axis-labels"></a>Achsen Bezeichnungen
 
-Der **Achsen** Schlüssel ordnet jede der Achsen Positionen im Achsen Array von **rawgamecontroller**einer der Bezeichnungen zu, die in der [gamecontrollerbuttonlabel-Enum](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) genau wie die Schaltflächen Bezeichnungen aufgelistet sind. Weitere Informationen finden Sie im Beispiel unter [Schaltflächen Bezeichnungen](#button-labels).
+Der **Achsen** Schlüssel ordnet jede der Achsen Positionen im Achsen Array von **rawgamecontroller**einer der Bezeichnungen zu, die in der [gamecontrollerbuttonlabel-Enum](/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) genau wie die Schaltflächen Bezeichnungen aufgelistet sind. Weitere Informationen finden Sie im Beispiel unter [Schaltflächen Bezeichnungen](#button-labels).
 
 ### <a name="switch-labels"></a>Bezeichnungen wechseln
 

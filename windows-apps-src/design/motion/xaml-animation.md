@@ -2,16 +2,16 @@
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
 title: Übersicht über Animationen
 description: Verwenden Sie die Animationen aus der Windows-Runtime-Animationsbibliothek, um das Windows-Erscheinungsbild in Ihre App zu integrieren.
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 546e376bc6c66c368387ddd6f67d21dc7dde582d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 40752da17591c9eca16f46fbd244d4507a38b1fb
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173844"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220003"
 ---
 # <a name="animations-in-xaml"></a>Animationen in XAML
 

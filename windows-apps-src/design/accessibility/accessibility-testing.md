@@ -4,16 +4,16 @@ ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
 title: Barrierefreiheitstests
 label: Accessibility testing
 template: detail.hbs
-ms.date: 05/18/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1144f6edfab73069a8645e464a2aa8de3e5e2ed6
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: 1da900732257babc0d53453fa4b9b2c9196e7e6d
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854756"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216413"
 ---
 # <a name="accessibility-testing"></a>Barrierefreiheitstests  
 
@@ -129,7 +129,7 @@ Außerdem können Sie testen, ob in der Elementansicht der Benutzeroberflächena
 
 ## <a name="related-topics"></a>Zugehörige Themen
 
-- [Barrierefreiheit](accessibility.md)
+- [Bedienungshilfen](accessibility.md)
 - [Nicht empfehlenswerte Methoden](practices-to-avoid.md)
 - [Benutzeroberflächenautomatisierung](/windows/desktop/WinAuto/entry-uiauto-win32)
 - [Barrierefreiheit in Windows](https://www.microsoft.com/accessibility/)

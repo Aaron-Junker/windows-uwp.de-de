@@ -4,16 +4,16 @@ title: Hinzufügen eines InkToolbar-Elements zu einer Windows-App
 label: Add an InkToolbar to a Windows app
 template: detail.hbs
 keywords: Windows Ink, Windows-Freihandeingabe, DirectInk, InkPresenter, InkCanvas, InkToolbar, Universelle Windows-Platform, UWP, Benutzerinteraktion, Eingabe
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
-ms.openlocfilehash: 721e54fc7e0fc9d6e6dc18109ea39b1326534646
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 20446af1f0d62f0c6b18a0ff675818fe41db1740
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156984"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219743"
 ---
 # <a name="add-an-inktoolbar-to-a-windows-app"></a>Hinzufügen eines InkToolbar-Elements zu einer Windows-App
 

@@ -3,15 +3,15 @@ ms.assetid: ''
 title: Unterstützung von Freihand in Ihrer Windows-App
 description: In diesem schrittweisen Tutorial erfahren Sie, wie Sie das Schreiben und zeichnen mit Windows Ink in einer Basic universelle Windows-Plattform-app (UWP) unterstützen.
 keywords: frei Hand Eingaben, Tutorial
-ms.date: 01/25/2018
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ed230fc9beb158df050f314a0142f250c2a8691
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: a0660312746a88a61ccb7b2ca9c01d720ebb2be3
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304602"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219693"
 ---
 # <a name="tutorial-support-ink-in-your-windows-app"></a>Tutorial: unterstützen von Freihand in Ihrer Windows-App
 
@@ -119,7 +119,7 @@ Fügen Sie zum Hinzufügen grundlegender Freihand-Funktionen einfach ein [**InkC
     <InkCanvas x:Name="inkCanvas" />
 ```
 
-Das war's. 
+Das ist alles! 
 
 Führen Sie die App nun erneut aus. Machen Sie sich mit Scribble, schreiben Sie Ihren Namen, oder zeichnen Sie Ihr selbst Format (wenn Sie einen Spiegel haben oder einen sehr guten Speicher haben).
 

@@ -4,16 +4,16 @@ title: Einführung in die Interaktion
 ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: dc220d1b5489faf96653472880dc06124c10b047
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: dde0e5479533aed225dbadc68b325afede050dbb
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173444"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219673"
 ---
 # <a name="interaction-primer"></a>Einführung in die Interaktion
 
@@ -89,7 +89,7 @@ Ein Sprachbefehl ist eine einzelne, in einer Sprachbefehldefinitions-Datei (VCD-
 [Cortana-Entwurfs Richtlinien](/cortana/skills/cortana-design-guidelines)
  
 
-## <a name="speech"></a>Spracheingabe
+## <a name="speech"></a>Spracheingabe/-ausgabe
 
 Die Spracherkennung ist eine effektive und natürliche Möglichkeit, mit Apps zu kommunizieren. Sie bietet eine unkomplizierte und präzise Möglichkeit der Kommunikation mit Apps; damit können Benutzer in einer Vielzahl von Situationen produktiv arbeiten und auf dem Laufenden bleiben.
 
@@ -113,7 +113,7 @@ Mit Text-zu-Sprache (auch als TTS oder Sprachsynthese bezeichnet) werden Informa
 
 Es gibt drei Modi der Sprachinteraktion:
 
-**Analyse natürlicher Sprache**
+**Natürliche Sprache**
 
 Mit natürlicher Sprache kommunizieren wir laufend mündlich mit anderen Personen. Unsere Sprache variiert in Abhängigkeit von der jeweiligen Person oder Situation, sie wird jedoch generell verstanden. Wenn dies nicht der Fall ist, verwenden wir häufig andere Wörter oder eine abweichende Wortreihenfolge, um die gleichen Gedanken zu vermitteln.
 
@@ -171,7 +171,7 @@ Sie müssen stiftspezifische Benutzeroberflächenbefehle (oder Angebote) zur Unt
 [Designrichtlinien für die Zeichenstifteingabe](./pen-and-stylus-interactions.md)
  
 
-## <a name="touch"></a>Touch
+## <a name="touch"></a>Toucheingabe
 
 Bei der Toucheingabe können mit einem oder mehreren Fingern ausgeführte Gesten verwendet werden, um die direkte Manipulation von UI-Elementen (wie etwa Verschieben, Drehen, Ändern der Größe oder Bewegen) zu emulieren. Außerdem können die Gesten auch als alternative Eingabemethode (ähnlich einer Maus- oder Stifteingabe) oder als ergänzende Eingabemethode (zum Modifizieren anderer Eingaben; also beispielsweise zum Verwischen eines mit einem Stift gezeichneten Freihandstrichs) verwendet werden. Diese berührungsbasierte Bedienung wird von Benutzern unter Umständen als natürlicher wahrgenommen als die symbolbasierte Interaktion auf einem Bildschirm.
 

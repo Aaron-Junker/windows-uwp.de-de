@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a31c762c002e711a87e99e2f97de6c26e2c8b48
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5d9571fa5abc07272d1b48c40274cbb952c0d754
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172984"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216353"
 ---
 # <a name="launch-the-microsoft-store-app"></a>Starten der Microsoft Store-App
 
@@ -41,7 +41,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td rowspan="4">Startet die Seite mit Produktdetails für ein Produkt. <p>Store-ID wird für Kunden mit Windows 10 empfohlen und funktioniert für alle Betriebssystemversionen. Die früheren Verfahren hierfür (Beispiel: PFN) werden jedoch weiterhin unterstützt.</p>
-<p>Diese Werte finden Sie im <a href="https://partner.microsoft.com/dashboard">Partner Center</a> auf der Seite <a href="https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details">App-Identität</a> im Abschnitt App-Verwaltung für jede APP.</p>
+<p>Diese Werte finden Sie im <a href="https://partner.microsoft.com/dashboard">Partner Center</a> auf der Seite <a href="/windows/uwp/publish/view-app-identity-details">App-Identität</a> im Abschnitt App-Verwaltung für jede APP.</p>
 </td>
 <td>
 Store-ID <p>(Empfohlen)</p>

@@ -3,16 +3,16 @@ description: Erfahren Sie, wie Sie sekundäre Kacheln an die Taskleiste anheften
 title: Anheften von sekundären Kacheln an die Taskleiste
 label: Pin secondary tiles to taskbar
 template: detail.hbs
-ms.date: 11/28/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, an Taskleiste anheften, sekundäre Kachel, sekundäre Kacheln an Taskleiste anheften, Verknüpfung
 ms.localizationpriority: medium
-ms.openlocfilehash: 23feaf6cbc2293951116167662ab5647e3d35c44
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 22f49fba21e4d3f997efee1a59123ab453e555ea
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172324"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220223"
 ---
 # <a name="pin-secondary-tiles-to-taskbar"></a>Anheften von sekundären Kacheln an die Taskleiste
 
@@ -26,7 +26,7 @@ Wie beim anheften sekundärer Kacheln, können Sie sekundäre Kacheln an die Tas
 > **Erfordert das Update vom Oktober 2018**: Sie müssen das SDK 17763 als Ziel haben und Build 17763 oder höher ausführen, um an die Taskleiste anzuheften.
 
 
-## <a name="guidance"></a>Leitfaden
+## <a name="guidance"></a>Anleitungen
 
 Eine sekundäre Kachel bietet Benutzern eine konsistente und effiziente Möglichkeit, direkt auf bestimmte Bereiche innerhalb einer APP zuzugreifen. Obwohl ein Benutzer entscheidet, ob eine sekundäre Kachel an die Taskleiste angeheftet werden soll, werden die gepinbaren Bereiche in einer APP vom Entwickler bestimmt. Weitere Anleitungen finden Sie unter [Leitfaden für sekundäre Kacheln](secondary-tiles-guidance.md).
 

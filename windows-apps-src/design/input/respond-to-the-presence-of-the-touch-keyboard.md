@@ -5,14 +5,14 @@ ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
 keywords: Tastatur, Barrierefreiheit, Navigation, Fokus, Text, Eingabe, Benutzerinteraktionen
-ms.date: 07/13/2018
+ms.date: 09/24/2020
 ms.topic: article
-ms.openlocfilehash: cc3577a116e47ca054e7dea5dbbb657fa37cb8b6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4af7e7533ebd985a22eedd2e11f35d8bf5f5dc8a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173354"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216903"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>Reagieren auf die Anzeige der Bildschirmtastatur
 
@@ -41,7 +41,7 @@ Sie sollten über ein grundlegendes Verständnis der standardmäßigen Tastaturi
 
 Wenn Sie mit der Entwicklung von Windows-apps noch nicht vertraut sind, können Sie sich diese Themen ansehen, um sich mit den hier behandelten Technologien vertraut zu machen.
 
-- [Erste App erstellen](../../get-started/your-first-app.md)
+- [Erstellen der ersten App](../../get-started/your-first-app.md)
 - Informationen zu Ereignissen finden Sie unter [Übersicht über Ereignisse und Routingereignisse](../../xaml-platform/events-and-routed-events-overview.md).
 
 **Richtlinien für die Benutzer Leistung:**

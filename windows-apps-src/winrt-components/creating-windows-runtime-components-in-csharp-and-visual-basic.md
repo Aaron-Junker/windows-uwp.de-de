@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 57d46ea1f88395624943135247a8f610112aaf90
-ms.sourcegitcommit: 21eb13a50402bf5442a5f0a4bf34800d1dc679c4
+ms.openlocfilehash: e78171fa182d44f1699bc35643265fddb87824f4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90804730"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220293"
 ---
 # <a name="windows-runtime-components-with-c-and-visual-basic"></a>Komponenten für Windows-Runtime in C# und Visual Basic
 
@@ -286,7 +286,7 @@ Weitere Informationen zu Visual Basic-und c#-sprach Features sowie zu .NET-Unter
 
 | Symptom | Problembehandlung |
 |---------|--------|
-|Wenn Sie in einer C++/WinRT-App eine [c#-Windows-Runtime Komponente](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic) verwenden, die XAML verwendet, erzeugt der Compiler einen Fehler in der Form "*" MyNamespace_XamlTypeInfo ": ist kein Member von" WinRT:: mynamespace "*, &mdash; wobei" *MyNamespace* "der Name des Namespace der Windows-Runtime Komponente ist. | `pch.h`Fügen Sie in in der C++-App/WinRT-APP das `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>` &mdash; Ersetzen von *MyNamespace* nach Bedarf hinzu. |
+|Wenn Sie in einer C++/WinRT-App eine [c#-Windows-Runtime Komponente]() verwenden, die XAML verwendet, erzeugt der Compiler einen Fehler in der Form "*" MyNamespace_XamlTypeInfo ": ist kein Member von" WinRT:: mynamespace "*, &mdash; wobei" *MyNamespace* "der Name des Namespace der Windows-Runtime Komponente ist. | `pch.h`Fügen Sie in in der C++-App/WinRT-APP das `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>` &mdash; Ersetzen von *MyNamespace* nach Bedarf hinzu. |
 
 ## <a name="related-topics"></a>Zugehörige Themen
 * [.NET für UWP-Apps](/dotnet/api/index?view=dotnet-uwp-10.0)

@@ -4,16 +4,16 @@ title: Verschieben
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e77485bd2febe2ee032f9a0c3ceada31c2807ee0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3a5e26d48ef74631e732fb043e909869945a6366
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172494"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217050"
 ---
 # <a name="guidelines-for-panning"></a>Anleitungen für das Verschieben
 
@@ -80,7 +80,7 @@ Das Verschieben per Toucheingabe mittels Streif- oder Ziehbewegung mit einem ode
 
 > <div id="main">
 > <strong>Windows 10 Fall Creators Update-Verhaltensänderung</strong> Standardmäßig wird in Windows-Apps (z. b. Touch, Touchpad und passiver Stift) ein aktiver Stift in Windows-Apps (z. b. Touch, Touchpad und passiver  
-> Wenn Ihre App vom vorherigen Verhalten abhängig ist, können Sie die Stift-Bildlaufaktionen außer Kraft setzen und auf das vorherige Verhalten zurückzusetzen. Weitere Details finden Sie im API-Referenzthema für die <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer-Klasse</a>.
+> Wenn Ihre App vom vorherigen Verhalten abhängig ist, können Sie die Stift-Bildlaufaktionen außer Kraft setzen und auf das vorherige Verhalten zurückzusetzen. Weitere Details finden Sie im API-Referenzthema für die <a href="/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer-Klasse</a>.
 > </div>
 
 Je nach Eingabegerät verwendet der Benutzer eine der folgenden Methoden, um die Anzeige in einem verschiebbaren Bereich zu verschieben:

@@ -5,15 +5,15 @@ ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
 label: Specify the speech recognizer language
 template: detail.hbs
 keywords: Sprache, Stimme, Spracherkennung, natürliche Sprache, diktieren, Eingabe, Benutzerinteraktion
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d4eb10bff1bbbda3bc10a8a1d770fecf6b4042e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a19e4ec876ca5dfa313c56e5653b3a27a4155765
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173314"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219933"
 ---
 # <a name="specify-the-speech-recognizer-language"></a>Festlegen der Sprache für die Spracherkennung
 
@@ -33,7 +33,7 @@ Sie sollten über Grundkenntnisse in den Bereichen Spracherkennung und Erkennung
 
 Wenn Sie mit der Entwicklung von Windows-apps noch nicht vertraut sind, können Sie sich diese Themen ansehen, um sich mit den hier behandelten Technologien vertraut zu machen.
 
--   [Erste App erstellen](../../get-started/your-first-app.md)
+-   [Erstellen der ersten App](../../get-started/your-first-app.md)
 -   Informationen zu Ereignissen finden Sie unter [Übersicht über Ereignisse und Routingereignisse](../../xaml-platform/events-and-routed-events-overview.md).
 
 **Richtlinien für die Benutzer Leistung:**

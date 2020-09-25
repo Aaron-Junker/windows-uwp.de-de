@@ -3,15 +3,15 @@ Description: Nachdem Sie Ihre App durch die Reservierung eines Namens erstellt h
 title: App-Übermittlungen
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: Prüfliste, Windows, UWP, Übermittlung, Übermittlung, Spiel, APP, Übermittlung
-ms.date: 10/31/2018
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1359fb530dec1a35b2ab2994442b65ec441cc0ac
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 99b4d7412727e5f195c32d3f3c21fe82b284e658
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158064"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219973"
 ---
 # <a name="app-submissions"></a>App-Übermittlungen
 
@@ -91,7 +91,7 @@ Sie benötigen alle erforderlichen Informationen für mindestens eine der von Ih
 | Feldname                    | Notizen                                       | Weitere Informationen                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **Beschreibung**               | Erforderlich                                    | [Erstellen einer interessanten App-Beschreibung](write-a-great-app-description.md) |
-| **Neuerungen in dieser Version**   | Optional                                 | [Anmerkungen zu dieser Version](create-app-store-listings.md#whats-new-in-this-version)       |
+| **Neuerungen in dieser Version**   | Optional                                 | [Versionshinweise](create-app-store-listings.md#whats-new-in-this-version)       |
 | **App-Features**              | Optional                                    | [Produkt Features](create-app-store-listings.md#product-features)         |
 | **Screenshots**               | Erforderlich (mindestens ein Screenshot; vier oder mehr empfohlen)          | [Screenshots](app-screenshots-and-images.md#screenshots)          |
 | **Store-Logos**               | Empfohlen erforderlich für einige Betriebssystemversionen | [Store-Logos](app-screenshots-and-images.md#store-logos)             |

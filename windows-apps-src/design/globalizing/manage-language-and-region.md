@@ -3,16 +3,16 @@ Description: In diesem Thema werden die Begriffe Benutzerprofil-Sprachliste, App
 title: Benutzerprofilsprachen und App-Manifest-Sprachen verstehen
 ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
 template: detail.hbs
-ms.date: 11/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisier barkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: c4f1857ba4afe5eba271f7022c64aca26eb6b6b8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ee2ba09c9b8b307a56bd71e720a9f6db8f45a813
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156934"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220243"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>Benutzerprofilsprachen und App-Manifest-Sprachen verstehen
 Ein Windows-Benutzer kann mit den **Einstellungen**  >  **Zeit & sprach**  >  **Region & Sprache** eine geordnete Liste von bevorzugten Anzeige Sprachen oder nur eine einzige bevorzugte Anzeige Sprache konfigurieren. Eine Sprache kann über eine regionale Variante verfügen. Sie können z. b. Spanisch als gesprochen in Spanien, Spanisch, wie in Mexiko gesprochen, Spanisch (Spanisch, wie in der USA gesprochen) auswählen.

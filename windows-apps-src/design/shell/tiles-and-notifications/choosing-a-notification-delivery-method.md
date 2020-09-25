@@ -4,16 +4,16 @@ title: Auswählen einer Methode für die Übermittlung von Benachrichtigungen
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 166ff20e792c5cf4a5969e954ed1b7d04e5c5c9f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a7a929cb88e20cc47562ab4920fd0fc94304fae2
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173294"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219153"
 ---
 # <a name="choose-a-notification-delivery-method"></a>Auswählen einer Methode für die Übermittlung von Benachrichtigungen
 
@@ -61,7 +61,7 @@ In dieser Tabelle sind die Benachrichtigungsübermittlungstypen zusammengefasst.
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">Scheduled</td>
+<td align="left">Geplant</td>
 <td align="left">Kachel, Popup</td>
 <td align="left">Eine Reihe von API-Aufrufen, die eine Benachrichtigung im Voraus so planen, dass zum von Ihnen angegebenen Zeitpunkt eine Aktualisierung vorgenommen wird.</td>
 <td align="left"><ul>

@@ -2,16 +2,16 @@
 Description: Auf der Seite Pakete können Sie alle Paketdateien (. appxupload,. AppX,. appxbundle und/oder. xap) für die von Ihnen übermittelt App hochladen.
 title: Hochladen von App-Paketen
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
-ms.date: 10/02/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Pakete, Upload, Hochladen von Paketen
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c3c55d351ebd3b956d57c6c7e623e88e7fa88c1
-ms.sourcegitcommit: 96b7be654a0922eeb421b5fa51ebfc586abe74fe
+ms.openlocfilehash: 0b4fc0c9dfeed1183a1653b525d0f8cc8a62a4c1
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84945938"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220213"
 ---
 # <a name="upload-app-packages"></a>Hochladen von App-Paketen
 

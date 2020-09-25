@@ -3,16 +3,16 @@ Description: Entdecken Sie die verschiedenen Optionen für Desktop-Win32-Apps zu
 title: Popup Benachrichtigungen aus Desktop-Apps
 label: Toast notifications from desktop apps
 template: detail.hbs
-ms.date: 05/01/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, Popup Benachrichtigungen, Desktop Bridge, msix, sparsesloadpaket, Optionen für das Senden von Toasts, com-Server, com-Activator, com, gefälschtes com, Nein com, ohne com, Send Toast
 ms.localizationpriority: medium
-ms.openlocfilehash: e2a70ebddd649b43424222e40165b19c9d567850
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 478c478fa6892e4b61ac1a7d6e22089720e96ca7
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156714"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220072"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>Popup Benachrichtigungen aus Desktop-Apps
 
@@ -28,7 +28,7 @@ In diesem Artikel werden die Optionen aufgelistet, die Sie zum Senden einer Popu
 
 In der folgenden Tabelle werden die Optionen für die Unterstützung von Popups innerhalb Ihrer Desktop-App und die entsprechenden unterstützten Funktionen veranschaulicht. Sie können die Tabelle verwenden, um die beste Option für Ihr Szenario auszuwählen.<br/><br/>
 
-| Option | Visuals | Actions | Eingaben | Prozess interne Aktivierung |
+| Option | Visuals | Aktionen | Eingaben | Prozess interne Aktivierung |
 | -- | -- | -- | -- | -- |
 | [COM-Activator](#preferred-option---com-activator) | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Keine com/Stub-CLSID](#alternative-option---no-com--stub-clsid) | ✔️ | ✔️ | ❌ | ❌ |
@@ -38,7 +38,7 @@ In der folgenden Tabelle werden die Optionen für die Unterstützung von Popups 
 
 Dies ist die bevorzugte Option für Desktop-Apps und unterstützt alle Benachrichtigungs Features. Machen Sie sich keine Angst vor "com Activator". Wir verfügen über eine Bibliothek [für c#](send-local-toast-desktop.md) -und [C++-apps](send-local-toast-desktop-cpp-wrl.md) , die dies sehr einfach macht, auch wenn Sie noch nie einen com-Server geschrieben haben.<br/><br/>
 
-| Visuals | Actions | Eingaben | Prozess interne Aktivierung |
+| Visuals | Aktionen | Eingaben | Prozess interne Aktivierung |
 | -- | -- | -- | -- |
 | ✔️ | ✔️ | ✔️ | ✔️ |
 
@@ -61,7 +61,7 @@ Informationen zur Verwendung dieser Option finden Sie unter [Senden einer lokale
 
 Dies ist eine alternative Option, wenn Sie einen com-Activator nicht implementieren können. Sie werden jedoch einige Features Opfern, wie z. b. Eingabe Unterstützung (Textfelder auf den-Auffassungen) und Prozess interne Aktivierung.<br/><br/>
 
-| Visuals | Actions | Eingaben | Prozess interne Aktivierung |
+| Visuals | Aktionen | Eingaben | Prozess interne Aktivierung |
 | -- | -- | -- | -- |
 | ✔️ | ✔️ | ❌ | ❌ |
 

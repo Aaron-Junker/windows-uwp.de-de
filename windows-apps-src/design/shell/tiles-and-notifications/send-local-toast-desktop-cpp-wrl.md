@@ -3,16 +3,16 @@ Description: Erfahren Sie, wie Win32-C++ WRL-apps lokale Popup Benachrichtigunge
 title: Senden von Popupbenachrichtigungen über C++ WRL-Apps
 label: Send a local toast notification from desktop C++ WRL apps
 template: detail.hbs
-ms.date: 03/07/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, Popup Benachrichtigungen, Toast senden, lokalen Toast senden, Desktop Bridge, msix, Sparse-Paket, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: e1aae390cf9047c8c93b4d24084c87bc90af8d80
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f90733cb4b549b7b8f088d6ecfa652941b0769b1
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172304"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220143"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Senden von Popupbenachrichtigungen über C++ WRL-Apps
 
@@ -421,8 +421,8 @@ In Windows 8 wurden Popup Benachrichtigungen eingeführt, aber es wurden die Leg
 | OS | Mit dem generischen | COM-Activator | Legacy-Popup Vorlagen |
 | -- | ------------ | ------------- | ---------------------- |
 | Windows 10 | Unterstützt | Unterstützt | Unterstützt (com-Server wird jedoch nicht aktiviert) |
-| Windows 8.1/8 | Nicht zutreffend | – | Unterstützt |
-| Windows 7 und niedriger | Nicht zutreffend | Nicht zutreffend | Nicht zutreffend |
+| Windows 8.1/8 | – | – | Unterstützt |
+| Windows 7 und niedriger | – | – | – |
 
 Um zu prüfen, ob Sie unter Windows 10 ausgeführt werden, schließen Sie den `<VersionHelpers.h>` -Header ein, und überprüfen Sie die **IsWindows10OrGreater** -Methode Wenn dies true zurückgibt, rufen Sie weiterhin alle Methoden auf, die in dieser Dokumentation beschrieben werden. 
 

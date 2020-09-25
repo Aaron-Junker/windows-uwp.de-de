@@ -2,16 +2,16 @@
 Description: Wenn Ihre App anzeigen mithilfe des Microsoft Advertising SDK anzeigt, verwenden Sie die Seite in-App-ADS von Partner Center, um ihre Verwendung von anzeigen zu verwalten.
 title: In-App-Anzeigen
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
-ms.date: 03/25/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a1683cdad189b9e369700e25b47a6f0bf0796702
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c8d01042fec7435652c819f29e3a791a5623a947
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171024"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220263"
 ---
 # <a name="in-app-ads"></a>In-App-Anzeigen
 

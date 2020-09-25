@@ -2,16 +2,16 @@
 Description: Mit dem Verwendungs Bericht in Partner Center können Sie sehen, wie Kunden Ihre APP verwenden.
 title: Nutzungsbericht
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
-ms.date: 10/31/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Verwendung, benutzerdefiniertes Ereignis, Bericht, Telemetrie, Benutzersitzungen
 ms.localizationpriority: medium
-ms.openlocfilehash: d2839112d36822be5eb8297b838cdc38bab5c71b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a794018b2fcdd07017ee3441e65c6200e7436304
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167274"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220203"
 ---
 # <a name="usage-report"></a>Nutzungsbericht
 

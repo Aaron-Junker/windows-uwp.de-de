@@ -4,16 +4,16 @@ ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 title: Entwickeln von barrierefreien Windows 10-Apps
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 37fb7cc81d1a86a159526af5d580a02482d13f9a
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 856ed1222cd393ec2730226f9c4faadf7e9ad0d7
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233977"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219813"
 ---
 # <a name="developing-inclusive-windows-apps"></a>Entwickeln von barrierefreien Windows-Apps  
 
@@ -32,7 +32,7 @@ Programmgesteuerter Zugriff ist wichtig für die Barrierefreiheit in Apps. Dies 
 
 Weitere Informationen zur Bereitstellung der UI-Elemente Ihrer App für Hilfstechnologien (AT) finden Sie unter [Grundlegende Informationen zur Barrierefreiheit verfügbar machen](basic-accessibility-information.md).
 
-## <a name="keyboard-navigation"></a>Navigation mithilfe der Tastatur  
+## <a name="keyboard-navigation"></a>Tastaturnavigation  
 Für Benutzer, die blind sind oder deren Beweglichkeit eingeschränkt ist, ist die Navigation auf der Benutzeroberfläche mit einer Tastatur äußerst wichtig. Allerdings sollten nur UI-Steuerelemente einen Tastaturfokus erhalten, die eine Benutzerinteraktion erfordern. Komponenten, die keine Aktion erfordern, z. B. statische Bilder, erfordern keinen Tastaturfokus.  
 
 Es ist wichtig, zu beachten, dass im Gegensatz zur Navigation mit einer Maus oder per Fingereingabe die Tastaturnavigation linear ist. Bei der Tastaturnavigation sollten Sie überlegen, wie der Benutzer mit Ihrem Produkt interagiert und was die logische Navigation wird. In westeuropäischen Kulturkreisen liest man von links nach rechts und von oben nach unten. Es ist daher üblich, dieses Muster für die Navigation per Tastatur zu verwenden.  
@@ -86,4 +86,4 @@ Weitere Details finden Sie im vollständigen Thema [Prüfliste für die Barriere
 * [Nicht empfehlenswerte Praktiken für die Barrierefreiheit](practices-to-avoid.md)
 * [Entwickeln von barrierefreier Software](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Entwickler-Hub für Barrierefreiheit in Microsoft](https://developer.microsoft.com/windows/accessible-apps)
-* [Barrierefreiheit](accessibility.md)
+* [Bedienungshilfen](accessibility.md)

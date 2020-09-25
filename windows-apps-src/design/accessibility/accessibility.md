@@ -1,27 +1,27 @@
 ---
 Description: Führt Barrierefreiheits Konzepte ein, die sich auf Windows-apps beziehen.
 ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
-title: Zugriff
+title: Barrierefreiheit
 label: Accessibility
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8af42f2d2ddeecffef914339e748acf05558b8ae
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 67f98db338d201dd4ef80c7b5f265aba3f6fbfd4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163374"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216373"
 ---
-# <a name="accessibility"></a>Zugriff  
+# <a name="accessibility"></a>Barrierefreiheit  
 
 Barrierefreiheit bezieht sich auf das Erstellen von Umgebungen, mit denen Ihre Windows-Anwendung von Benutzern verwendet werden kann, die Technologie in einer Vielzahl von Umgebungen verwenden und sich mit einer Vielzahl von Anforderungen und Erfahrungen an Ihre Benutzeroberfläche wenden. Für bestimmte Situationen gelten gesetzlich vorgeschriebene Vorgaben im Hinblick auf Barrierefreiheit. Es wird jedoch empfohlen, die Barrierefreiheit unabhängig von gesetzlichen Anforderungen zu berücksichtigen, um sicherzustellen, dass Ihre Apps die größtmögliche Benutzergruppe erreichen.
 
 > Außerdem gibt es eine Microsoft Store Deklaration bezüglich des Zugriffs auf die app.
 
-| Artikel | BESCHREIBUNG |
+| Artikel | Beschreibung |
 |---------|-------------|
 | [Barrierefreiheit im Überblick](accessibility-overview.md) | Dieser Artikel stellt eine Übersicht über die Konzepte und Technologien im Zusammenhang mit Barrierefreiheits Szenarien für Windows-apps dar. |
 | [Entwerfen von barrierefreier Software](designing-inclusive-software.md) | Erfahren Sie mehr über die Entwicklung eines inklusiven Entwurfs mit Windows-Apps für Windows 10.  Entwerfen und erstellen Sie inklusive Software unter Berücksichtigung der Barrierefreiheit. |

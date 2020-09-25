@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Game, DirectX, Load, rasterize, Mesh, Bitmap, 2D, 3D
 ms.localizationpriority: medium
-ms.openlocfilehash: 1718677dce325cccc535e603aca1910eb83d1de0
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: a982c1a57733e8ea9fc4d53974e4c5aec8e373dd
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053580"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218023"
 ---
 # <a name="fundamentals-of-directx-programming"></a>Grundlagen der DirectX-Programmierung
 
@@ -42,7 +42,7 @@ Das Thema Laden von Ressourcen in Ihrem DirectX-Spiel führt Sie durch die grund
 <td align="left"><p>Erstellen Sie 2D-Grafiken mit DirectX.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/uwp/graphics-concepts/index">Lernanleitung für Direct3D-Grafiken</a></p></td>
+<td align="left"><p><a href="/windows/uwp/graphics-concepts/index">Lernanleitung für Direct3D-Grafiken</a></p></td>
 <td align="left"><p>Verstehen Sie die Direct3D-Grafik Konzepte.</p></td>
 </tr>
 <tr class="odd">

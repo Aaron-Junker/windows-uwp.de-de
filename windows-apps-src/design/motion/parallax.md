@@ -4,7 +4,7 @@ description: Erfahren Sie, wie Sie mit dem Steuerelement "Parser" in einer UWP-A
 ms.assetid: ''
 label: Parallax View
 template: detail.hbs
-ms.date: 08/09/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: abarlow
@@ -12,12 +12,12 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5eac1b5d95dff4887258278f9ff700adaf663194
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 702d856ec15391875f369b6145a715ade3092afb
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175544"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220253"
 ---
 # <a name="parallax"></a>Parallax
 
@@ -45,7 +45,7 @@ ms.locfileid: "89175544"
 
 ## <a name="parallax-and-the-fluent-design-system"></a>"Parser" und "flüssiges Design System"
 
- Mit dem Fluent Design-System können Sie moderne, klare Benutzeroberflächen erstellen, die Licht, Tiefe, Bewegung, Material und Skalierung enthalten. "Parser" ist eine fließende Entwurfs System Komponente, die Ihre APP um Bewegung, Tiefe und Skalierung erweitert. Weitere Informationen finden Sie in der [Übersicht über Fluent Design](/windows/apps/fluent-design-system).
+ Mit dem Fluent Design-System erstellen Sie moderne Oberflächen, die Licht, Tiefe, Bewegung, Material und Skalierungsmöglichkeiten beinhalten. "Parser" ist eine fließende Entwurfs System Komponente, die Ihre APP um Bewegung, Tiefe und Skalierung erweitert. Weitere Informationen finden Sie in der [Übersicht über Fluent Design](/windows/apps/fluent-design-system).
 
 ## <a name="how-it-works-in-a-user-interface"></a>Funktionsweise in einer Benutzeroberfläche
 

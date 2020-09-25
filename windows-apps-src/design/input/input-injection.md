@@ -4,15 +4,15 @@ title: Simulieren der Benutzereingabe über die Eingabeeinfügung
 label: Input injection
 template: detail.hbs
 keywords: Gerät, Digitalisierer, Eingabe, Interaktion, Injektion
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f06414362b6a821233eabfb396ae59001f35c30d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e4e1497ea30400c550cb0cbb2309801ff8145fd6
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156894"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219683"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>Simulieren der Benutzereingabe über die Eingabeeinfügung
 
@@ -26,7 +26,7 @@ Die Eingabe Injektion ermöglicht der Windows-Anwendung, Eingaben aus einer Viel
 
 Input Injection eignet sich für Windows-apps und-Tools, die Funktionen bereitstellen müssen, die Barrierefreiheit, Tests (Ad-hoc, automatisiert) sowie RAS-und Support Features enthalten.
 
-## <a name="setup"></a>Einrichten
+## <a name="setup"></a>Setup
 
 Wenn Sie die eingabeinjection-APIs in Ihrer Windows-App verwenden möchten, müssen Sie dem App-Manifest Folgendes hinzufügen:
 

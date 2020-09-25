@@ -4,19 +4,19 @@ Description: Erfahren Sie, wie Sie Ihre Windows-apps entwerfen und optimieren, u
 label: Gaze interactions
 template: detail.hbs
 keywords: Blick, Augen Verfolgung, Kopf Nachverfolgung, Blickpunkt, Eingabe, Benutzerinteraktion, Barrierefreiheit, Nutzbarkeit
-ms.date: 05/01/2018
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: Jake Cohen
 dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c91de7eb0200780b04bad1853cb49caf41a22bc0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fa08cb65afc46069e48263344270e1e3b1a3d5f5
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172504"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217023"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-windows-apps"></a>Blick Interaktionen und Eye Tracking in Windows-apps
 
@@ -29,7 +29,7 @@ Unterstützung für die Nachverfolgung der Ansicht, Aufmerksamkeit und Präsenz 
 
 **Wichtige APIs**: [Windows. Devices. Input. Preview](/uwp/api/windows.devices.input.preview), [gazedevicepreview](/uwp/api/windows.devices.input.preview.gazedevicepreview), [gazepointpreview](/uwp/api/windows.devices.input.preview.gazepointpreview), [gazeinputsourcepreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
 
-## <a name="overview"></a>Überblick
+## <a name="overview"></a>Übersicht
 
 Die Anzeige von Blick auf die Leistung ist eine leistungsstarke Möglichkeit zur Interaktion und Verwendung von Windows-Anwendungen, die besonders nützlich als Hilfstechnologie für Benutzer mit neuronalen Krankheiten (z. b. als) und anderen Behinderungen mit beeinträchtigtem Muskel-oder Nervenfunktionen sind.
 
@@ -44,7 +44,7 @@ Aufgrund der potenziell sensiblen personenbezogenen Daten, die von Augen Verfolg
 
 Außerdem müssen Sie, wenn Ihre APP Augen Verfolgungs Daten sammelt, speichert oder überträgt, dies in den Datenschutzbestimmungen Ihrer APP beschreiben und alle anderen Anforderungen für **persönliche Informationen** im [App-Entwickler Vertrag](/legal/windows/agreements/app-developer-agreement) und die Microsoft Store- [Richtlinien](/legal/windows/agreements/store-policies)einhalten.
 
-## <a name="setup"></a>Einrichtung
+## <a name="setup"></a>Setup
 
 Wenn Sie die Blick Eingabe-APIs in Ihrer Windows-App verwenden möchten, müssen Sie folgende Schritte ausführen: 
 

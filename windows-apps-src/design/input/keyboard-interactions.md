@@ -5,18 +5,18 @@ ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
 keywords: Tastatur, Barrierefreiheit, Navigation, Fokus, Text, Eingabe, Benutzerinteraktionen, Gamepad, Remote
-ms.date: 03/29/2017
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: f4f2e9e13f492dd9a38d737c0c86dd3b1e632279
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ae3d4826c4468cabea318ed230da0cfbb4d5f24b
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173484"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219113"
 ---
 # <a name="keyboard-interactions"></a>Tastaturinteraktionen
 
@@ -123,7 +123,7 @@ Für UWP-apps wird der anfängliche Fokus auf das-Element mit dem höchsten [Tab
 
 #### <a name="set-initial-focus-on-the-most-logical-element"></a>Legen Sie den anfänglichen Fokus auf das logischste Element fest.
 
-Legen Sie den anfänglichen Fokus auf das UI-Element für die erste oder primäre Aktion fest, die Benutzer am wahrscheinlichsten beim Starten der APP oder beim Navigieren zu einer Seite ausführen. Beispiele hierfür sind:
+Legen Sie den anfänglichen Fokus auf das UI-Element für die erste oder primäre Aktion fest, die Benutzer am wahrscheinlichsten beim Starten der APP oder beim Navigieren zu einer Seite ausführen. Beispiele:
 -   Eine Foto-APP, bei der der Fokus auf das erste Element in einem Katalog festgelegt ist
 -   Eine Musik-app, bei der Fokus auf die Wiedergabe Schaltfläche gesetzt ist
 
@@ -142,7 +142,7 @@ Die Tastaturnavigation wird in der Regel über die Tab-Taste und die Pfeiltasten
 Standardmäßig folgen UWP-Steuerelemente diesen grundlegenden Tastatur Verhalten:
 -   **Tab-Taste** Navigieren zwischen handlungsfähigen/aktiven Steuerelementen in der Aktivier Reihenfolge.
 -   **UMSCHALT + TAB** Navigation Steuerelemente in umgekehrter Aktivier Reihenfolge. Wenn der Benutzer im Steuerelement mithilfe der Pfeiltaste navigiert hat, wird der Fokus auf den letzten bekannten Wert im Steuerelement festgelegt.
--   **Pfeiltasten** machen eine Steuerelement spezifische "innere Navigation" verfügbar, wenn der Benutzer in "innere Navigation" wechselt, und die Pfeiltasten werden nicht aus einem Steuerelement navigiert. Beispiele hierfür sind:
+-   **Pfeiltasten** machen eine Steuerelement spezifische "innere Navigation" verfügbar, wenn der Benutzer in "innere Navigation" wechselt, und die Pfeiltasten werden nicht aus einem Steuerelement navigiert. Beispiele:
     -   Nach-oben/nach-unten-Taste Verschiebt den Fokus in `ListView` und `MenuFlyout`
     -   Aktuell ausgewählte Werte für `Slider` und ändern `RatingsControl`
     -   Einfügemarke in verschieben `TextBox`
@@ -320,7 +320,7 @@ Fügen Sie Unterstützung für die Pfeiltasten Navigation in Erwägung, wenn Sie
       <p><img src="images/keyboard/dialog.png" alt="Dialog buttons"/></p>
       <p><sup>Dialog Felder</sup></p>
       <p><img src="images/keyboard/radiobutton.png" alt="Radio buttons"/></p>
-      <p><sup>Radiobuttons</sup></p>     
+      <p><sup>RadioButtons</sup></p>     
     </td>
     <td>
       <p><img src="images/keyboard/appbar.png" alt="AppBar buttons"/></p>
@@ -405,8 +405,8 @@ Das folgende Beispiel zeigt einige Schlüssel Zuordnungen zwischen Tastatur, Gam
 | LeerZchn         | A-Taste                            | Schaltfläche auswählen       |
 | EINGABETASTE         | A-Taste                            | Schaltfläche auswählen       |
 | Escape        | B-Taste                            | Zurück-Schaltfläche         |
-| Start/Ende      | Nicht zutreffend                                 | Nicht zutreffend                 |
-| Seite nach oben/unten  | Schaltfläche "auslöst" für vertikalen Bildlauf, Schaltfläche "Stoß Leiste"   | Nicht zutreffend                 |
+| Start/Ende      | –                                 | –                 |
+| Seite nach oben/unten  | Schaltfläche "auslöst" für vertikalen Bildlauf, Schaltfläche "Stoß Leiste"   | –                 |
 
 Einige wichtige Unterschiede, die Sie beim Entwerfen der UWP-App für die Verwendung mit Gamepad und der Verwendung der Remote Steuerung berücksichtigen sollten, sind:
 -   Der Text Eintrag erfordert, dass der Benutzer ein-Steuerelement zum Aktivieren eines Text Steuer Elements drückt.

@@ -3,16 +3,16 @@ description: Beschreibt die erforderlichen Schritte, um sicherzustellen, dass Ih
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: Designs mit hohem Kontrast
 template: detail.hbs
-ms.date: 09/28/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 79ade0e3a823282fb970f470e1a902b1bc30c592
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b5e9b823ca335370f6cde22ef6417a6823851c18
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157054"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219873"
 ---
 # <a name="high-contrast-themes"></a>Designs mit hohem Kontrast  
 

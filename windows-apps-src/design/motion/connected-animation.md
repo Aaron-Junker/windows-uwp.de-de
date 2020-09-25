@@ -2,19 +2,19 @@
 description: Mit verbundenen Animationen können Sie dynamische und ansprechende Navigationsfunktionen erstellen, indem Sie den Übergang eines Elements zwischen zwei verschiedenen Ansichten animieren.
 title: Verbundene Animationen
 template: detail.hbs
-ms.date: 10/04/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ff252faf4dd49929ec46c2ceaa02f94011e6b225
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 770f859cfb90dde4f3960492479beb6192c12c8f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169324"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217783"
 ---
 # <a name="connected-animation-for-windows-apps"></a>Verbundene Animation für Windows-apps
 
@@ -55,7 +55,7 @@ In diesem kurzen Video wird eine APP mit einer verbundenen Animation zum Animier
 
 ## <a name="connected-animation-and-the-fluent-design-system"></a>Verbundene Animation und das fließende Entwurfs System
 
- Mit dem Fluent Design-System können Sie moderne, klare Benutzeroberflächen erstellen, die Licht, Tiefe, Bewegung, Material und Skalierung enthalten. Connected Animation ist eine fließende Entwurfs System Komponente, die Bewegung zu Ihrer APP hinzufügt. Weitere Informationen finden Sie in der [Übersicht über Fluent Design](/windows/apps/fluent-design-system).
+ Mit dem Fluent Design-System erstellen Sie moderne Oberflächen, die Licht, Tiefe, Bewegung, Material und Skalierungsmöglichkeiten beinhalten. Connected Animation ist eine fließende Entwurfs System Komponente, die Bewegung zu Ihrer APP hinzufügt. Weitere Informationen finden Sie in der [Übersicht über Fluent Design](/windows/apps/fluent-design-system).
 
 ## <a name="why-connected-animation"></a>Warum verbundene Animation?
 

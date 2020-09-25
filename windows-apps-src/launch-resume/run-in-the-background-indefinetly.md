@@ -6,12 +6,12 @@ keywords: Hintergrundaufgabe, erweiterte Ausführung, Ressourcen, Limits, Hinter
 ms.date: 10/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 33b41c432edde42bc31daa1d5631f60fb38d8397
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: f843c23a4a1e0738cfc05e96009b2597f4919809
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304502"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217653"
 ---
 # <a name="run-in-the-background-indefinitely"></a>Unbegrenzte Ausführung im Hintergrund
 
@@ -30,7 +30,7 @@ Die `extendedExecutionUnconstrained` Funktion wird als eingeschränkte Funktion 
 > [!NOTE]
 > Fügen Sie die XML-Namespace Deklaration *xmlns: rescap* hinzu, und verwenden Sie das cmdx *-Präfix zum* Deklarieren der Funktion.
 >
-> Weitere Informationen finden Sie im Abschnitt eingeschränkte Funktionen von App-Funktions [Deklarationen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+> Weitere Informationen finden Sie im Abschnitt eingeschränkte Funktionen von App-Funktions [Deklarationen](../packaging/app-capability-declarations.md).
 >
 
 _Package.appxmanifest_
@@ -79,7 +79,7 @@ Im universelle Windows-Plattform handelt es sich bei Hintergrundaufgaben um Proz
 > [!NOTE]
 > Fügen Sie die XML-Namespace Deklaration *xmlns: rescap* hinzu, und verwenden Sie das cmdx *-Präfix zum* Deklarieren der Funktion.
 >
-> Weitere Informationen finden Sie im Abschnitt eingeschränkte Funktionen von App-Funktions [Deklarationen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+> Weitere Informationen finden Sie im Abschnitt eingeschränkte Funktionen von App-Funktions [Deklarationen](../packaging/app-capability-declarations.md).
 >
 
 _Package.appxmanifest_

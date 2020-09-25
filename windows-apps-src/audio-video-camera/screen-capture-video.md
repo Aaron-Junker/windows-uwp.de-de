@@ -1,5 +1,5 @@
 ---
-title: Bildschirmaufnahme zu Video
+title: Bildschirmaufnahme in Video
 description: In diesem Artikel wird beschrieben, wie Sie Frames, die auf dem Bildschirm aufgezeichnet wurden, mit den Windows. Graphics. Capture-APIs in eine Videodatei codieren.
 ms.date: 07/28/2020
 ms.topic: article
@@ -7,16 +7,16 @@ dev_langs:
 - csharp
 keywords: Windows 10, UWP, Bildschirmaufnahme, Video
 ms.localizationpriority: medium
-ms.openlocfilehash: ae1eb68e480b4c9b4b4fc88452a68f39f8461a79
-ms.sourcegitcommit: 14c0b1ea2447a81ddf31982b40e19a74ecc6d59e
+ms.openlocfilehash: d8f70748d025d50d19dbf2cb184ae841cced7f8a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89310084"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218633"
 ---
-# <a name="screen-capture-to-video"></a>Bildschirmaufnahme zu Video
+# <a name="screen-capture-to-video"></a>Bildschirmaufnahme in Video
 
-In diesem Artikel wird beschrieben, wie Sie Frames, die auf dem Bildschirm aufgezeichnet wurden, mit den Windows. Graphics. Capture-APIs in eine Videodatei codieren. Weitere Informationen zum Aufzeichnen von Bildschirmen finden Sie unter [screeen Capture](screen-capture-video). 
+In diesem Artikel wird beschrieben, wie Sie Frames, die auf dem Bildschirm aufgezeichnet wurden, mit den Windows. Graphics. Capture-APIs in eine Videodatei codieren. Weitere Informationen zum Aufzeichnen von Bildschirmen finden Sie unter [screeen Capture](./screen-capture.md).
 
 ## <a name="overview-of-the-video-capture-process"></a>Übersicht über den Video Erfassungsprozess
 Dieser Artikel enthält eine exemplarische Vorgehensweise für eine Beispiel-APP, die den Inhalt eines Fensters in einer Videodatei aufzeichnet. Obwohl es möglicherweise so aussieht, als ob ein Großteil des Codes erforderlich ist, um dieses Szenario zu implementieren, ist die Struktur auf hoher Ebene einer screenrecorder-APP ziemlich einfach. Der Bildschirm Aufzeichnungsprozess verwendet drei primäre UWP-Features:
@@ -55,21 +55,21 @@ Mit der in diesem Abschnitt beschriebenen **setupcoding** -Methode werden einige
 
 - **Erstellen Sie ein mediaencodingprofile-und videostreamdescriptor-Element.** Eine Instanz der [MediaStreamSource](/uwp/api/windows.media.core.mediastreamsource) -Klasse übernimmt Bilder, die auf dem Bildschirm aufgezeichnet werden, und codiert Sie in einen Videostream. Anschließend wird der Videostream von der [mediatranscoder](/uwp/api/windows.media.transcoding.mediatranscoder) -Klasse in eine Videodatei transcodiert. Ein [videostreamdecriptor](/uwp/api/windows.media.core.videostreamdescriptor) stellt Codierungs Parameter (z. b. Auflösung und Framerate) für **MediaStreamSource**bereit. Die Videodatei Codierungs Parameter für **mediatranscoder** werden mit einem [mediaencodingprofile](/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile)angegeben. Beachten Sie, dass die für die Videocodierung verwendete Größe nicht mit der Größe des erfassten Fensters identisch sein muss. um dieses Beispiel einfach zu halten, sind die Codierungs Einstellungen jedoch hart codiert, um die tatsächlichen Dimensionen des Erfassungs Elements zu verwenden.
 
-- **Erstellen Sie die Objekte MediaStreamSource und mediatranscoder.** Wie bereits erwähnt, codiert das **MediaStreamSource** -Objekt einzelne Frames in einen Videostream. Nennen Sie den Konstruktor für diese Klasse, und übergeben Sie das im vorherigen Schritt erstellte **mediaencodingprofile** . Legen Sie die Pufferzeit auf NULL fest, und registrieren Sie die Handler für das [Start](uwp/api/windows.media.core.mediastreamsource.starting) -und das [samplerequessierte](/uwp/api/windows.media.core.mediastreamsource.samplerequested) -Ereignis, das weiter unten in diesem Artikel dargestellt wird. Erstellen Sie als nächstes eine neue Instanz der **mediatranscoder** -Klasse, und aktivieren Sie die Hardwarebeschleunigung.
+- **Erstellen Sie die Objekte MediaStreamSource und mediatranscoder.** Wie bereits erwähnt, codiert das **MediaStreamSource** -Objekt einzelne Frames in einen Videostream. Nennen Sie den Konstruktor für diese Klasse, und übergeben Sie das im vorherigen Schritt erstellte **mediaencodingprofile** . Legen Sie die Pufferzeit auf NULL fest, und registrieren Sie die Handler für das [Start](/uwp/api/windows.media.core.mediastreamsource.starting) -und das [samplerequessierte](/uwp/api/windows.media.core.mediastreamsource.samplerequested) -Ereignis, das weiter unten in diesem Artikel dargestellt wird. Erstellen Sie als nächstes eine neue Instanz der **mediatranscoder** -Klasse, und aktivieren Sie die Hardwarebeschleunigung.
 
 - **Erstellen einer Ausgabedatei** Der letzte Schritt in dieser Methode besteht darin, eine Datei zu erstellen, in die das Video transcodiert wird. In diesem Beispiel erstellen wir einfach eine eindeutig benannte Datei im Ordner "Videos Library" auf dem Gerät. Beachten Sie, dass Ihre APP für den Zugriff auf diesen Ordner die "Videos Library"-Funktion im App-Manifest angeben muss. Nachdem die Datei erstellt wurde, öffnen Sie Sie für Lese-und Schreibvorgänge, und übergeben Sie den resultierenden Stream an die **encodeasync** -Methode, die als nächstes angezeigt wird.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ScreenRecorderExample/cs/MainPage.xaml.cs" id="snippet_SetupEncoding":::
 
 ## <a name="start-encoding"></a>Codierung starten
-Nachdem die Hauptobjekte initialisiert wurden, wird die **encodeasync** -Methode implementiert, um den Aufzeichnungs Vorgang zu starten. Diese Methode prüft zunächst, ob Sie nicht bereits aufzeichnen, und wenn nicht, ruft Sie die Hilfsmethode **startcapture** auf, um mit dem Erfassen von Frames auf dem Bildschirm zu beginnen. Diese Methode wird weiter unten in diesem Artikel gezeigt. Als nächstes wird [preparemediastreamsourcetranscodeasync](/uwp/api/windows.media.transcoding.mediatranscoder.preparemediastreamsourcetranscodeasync) aufgerufen, um den **mediatranscoder** zum transcodieren des Videodaten Stroms bereitzustellen, der vom **MediaStreamSource** -Objekt in den ausgabedateistream erstellt wurde. dabei wird das Codierungs Profil verwendet, das im vorherigen Abschnitt erstellt wurde. Nachdem der Transcoder vorbereitet wurde, können Sie [transcodeasync](/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) aufrufen, um die Transcodierung zu starten. Weitere Informationen zur Verwendung von **mediatranscoder**finden Sie unter [transcodieren von Mediendateien](/windows/uwp/audio-video-camera/transcode-media-files).
+Nachdem die Hauptobjekte initialisiert wurden, wird die **encodeasync** -Methode implementiert, um den Aufzeichnungs Vorgang zu starten. Diese Methode prüft zunächst, ob Sie nicht bereits aufzeichnen, und wenn nicht, ruft Sie die Hilfsmethode **startcapture** auf, um mit dem Erfassen von Frames auf dem Bildschirm zu beginnen. Diese Methode wird weiter unten in diesem Artikel gezeigt. Als nächstes wird [preparemediastreamsourcetranscodeasync](/uwp/api/windows.media.transcoding.mediatranscoder.preparemediastreamsourcetranscodeasync) aufgerufen, um den **mediatranscoder** zum transcodieren des Videodaten Stroms bereitzustellen, der vom **MediaStreamSource** -Objekt in den ausgabedateistream erstellt wurde. dabei wird das Codierungs Profil verwendet, das im vorherigen Abschnitt erstellt wurde. Nachdem der Transcoder vorbereitet wurde, können Sie [transcodeasync](/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) aufrufen, um die Transcodierung zu starten. Weitere Informationen zur Verwendung von **mediatranscoder**finden Sie unter [transcodieren von Mediendateien](./transcode-media-files.md).
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ScreenRecorderExample/cs/MainPage.xaml.cs" id="snippet_EncodeAsync":::
 
 ## <a name="handle-mediastreamsource-events"></a>Verarbeiten von MediaStreamSource-Ereignissen
 Das **MediaStreamSource** -Objekt übernimmt Frames, die auf dem Bildschirm aufgezeichnet werden, und transformiert Sie in einen Videostream, der mithilfe von **mediatranscoder**in einer Datei gespeichert werden kann. Die Frames werden mithilfe von Handlern für die Ereignisse des Objekts an die **MediaStreamSource** übergeben.
 
-Das [samplerequraised](/uwp/api/windows.media.core.mediastreamsource.samplerequested) -Ereignis wird ausgelöst, wenn **MediaStreamSource** für einen neuen Videoframe bereit ist. Nachdem Sie sichergestellt haben, dass wir gerade aufzeichnen, wird die Hilfsmethode **waitfornewframe** aufgerufen, um einen neuen Frame, der vom Bildschirm aufgezeichnet wird, zu erhalten. Diese Methode, die weiter unten in diesem Artikel gezeigt wird, gibt ein [ID3D11Surface](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) -Objekt zurück, das den aufgezeichneten Frame enthält. In diesem Beispiel wrappen wir die **IDirect3DSurface** -Schnittstelle in einer Hilfsklasse, die auch die Systemzeit speichert, zu der der Frame aufgezeichnet wurde. Sowohl die Frame-als auch die Systemzeit werden an die [MediaStreamSample. CreateFromDirect3D11Surface](/uwp/api/windows.media.core.mediastreamsample.createfromdirect3d11surface) Factory-Methode und das resultierende [MediaStreamSample](/uwp/api/windows.media.core.mediastreamsample) -Objekt auf die [mediastreamsourcesamplerequest. Sample](MediaStreamSourceSampleRequest.Sample) -Eigenschaft von [mediastreamsourcesamplerequestedeventargs](/uwp/api/windows.media.core.mediastreamsourcesamplerequestedeventargs)festgelegt. Auf diese Weise wird der erfasste Frame für **MediaStreamSource**bereitgestellt.
+Das [samplerequraised](/uwp/api/windows.media.core.mediastreamsource.samplerequested) -Ereignis wird ausgelöst, wenn **MediaStreamSource** für einen neuen Videoframe bereit ist. Nachdem Sie sichergestellt haben, dass wir gerade aufzeichnen, wird die Hilfsmethode **waitfornewframe** aufgerufen, um einen neuen Frame, der vom Bildschirm aufgezeichnet wird, zu erhalten. Diese Methode, die weiter unten in diesem Artikel gezeigt wird, gibt ein [ID3D11Surface](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) -Objekt zurück, das den aufgezeichneten Frame enthält. In diesem Beispiel wrappen wir die **IDirect3DSurface** -Schnittstelle in einer Hilfsklasse, die auch die Systemzeit speichert, zu der der Frame aufgezeichnet wurde. Sowohl die Frame-als auch die Systemzeit werden an die [MediaStreamSample. CreateFromDirect3D11Surface](/uwp/api/windows.media.core.mediastreamsample.createfromdirect3d11surface) Factory-Methode und das resultierende [MediaStreamSample](/uwp/api/windows.media.core.mediastreamsample) -Objekt auf die [mediastreamsourcesamplerequest. Sample](/uwp/api/windows.media.core.mediastreamsourcesamplerequest.sample) -Eigenschaft von [mediastreamsourcesamplerequestedeventargs](/uwp/api/windows.media.core.mediastreamsourcesamplerequestedeventargs)festgelegt. Auf diese Weise wird der erfasste Frame für **MediaStreamSource**bereitgestellt.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ScreenRecorderExample/cs/MainPage.xaml.cs" id="snippet_OnMediaStreamSourceSampleRequested":::
 
@@ -152,5 +152,5 @@ Die folgenden hilfsapis werden definiert, um die Erstellung von Direct3D-und sha
 
 ## <a name="see-also"></a>Weitere Informationen
 
-* [Windows. Graphics. Capture-Namespace](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [Windows. Graphics. Capture-Namespace](/uwp/api/windows.graphics.capture)
 * [Bildschirmaufnahme](screen-capture.md)

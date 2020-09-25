@@ -1,16 +1,16 @@
 ---
 title: Alternative Pushkanäle mit VAPID in UWP
 description: Anleitungen zum Verwenden alternativer pushkanäle mit dem vapid-Protokoll aus einer Windows-App
-ms.date: 01/10/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, WinRT-API, WNS
 localizationpriority: medium
-ms.openlocfilehash: 4bca7e4159c0a4950c95d5d5ef2f34362175a8a7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 79ea88cb457e9a0d7ba33ef51a184e6f52ab19c4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173304"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219273"
 ---
 # <a name="alternate-push-channels-using-vapid-in-windows"></a>Alternative pushkanäle mit vapid in Windows 
 Ab dem Fall Creators Update können Windows-Apps die vapid-Authentifizierung verwenden, um Pushbenachrichtigungen zu senden.  
@@ -110,6 +110,6 @@ Wenn Sie eine andere Form der Verschlüsselung verwenden möchten, ist der Schl�
 
 ## <a name="related-topics"></a>Zugehörige Themen
 - [Benachrichtigungskanaltypen](channel-types.md)
-- [Windows-Pushbenachrichtigungsdienst (Windows Push Notification Services, WNS)](windows-push-notification-services--wns--overview.md)
+- [Windows-Pushbenachrichtigungsdienste (WNS)](windows-push-notification-services--wns--overview.md)
 - [Pushnotificationchannel-Klasse](/uwp/api/windows.networking.pushnotifications.pushnotificationchannel)
 - [Pushnotificationchannelmanager-Klasse](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager)

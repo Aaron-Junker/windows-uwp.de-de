@@ -1,18 +1,18 @@
 ---
-Description: Die Benachrichtigungs Schnellansicht ist eine neue Windows-App im Store, die Entwicklern beim Entwerfen adaptiver Live-Kacheln für Windows 10 hilft.
+Description: Notifications Visualizer ist eine neue Windows-App im Store, die Entwickler dabei unterstützt, adaptive Live-Kacheln für Windows 10 zu entwerfen.
 title: Notifications Visualizer
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f9dc51a8ba387018a50e95702db1c539e889a5d
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: b50dc41a52d478afc9ed2fc9cf94d94dedb18ef4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234686"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219923"
 ---
 # <a name="notifications-visualizer"></a>Notifications Visualizer
 

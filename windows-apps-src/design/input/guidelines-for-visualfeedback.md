@@ -5,15 +5,15 @@ ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
 keywords: Visuelles Feedback, Fokus-Feedback, Touch-Feedback, Kontaktvisualisierung, Eingabe, Interaktion
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ced83ca771f4954f8e42dc42e0882d1a5b7c6b1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1afc1c884a7a01ef1021f37476d1e29430c62e3c
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172454"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219833"
 ---
 # <a name="guidelines-for-visual-feedback"></a>Richtlinien für visuelles Feedback
 
@@ -58,7 +58,7 @@ Im Folgenden finden Sie einige Beispiele für integrierte Kontaktvisualisierunge
 
 Alle Windows-Apps zeigen ein stärker definiertes visuelles Fokuselement um interaktive Steuerelemente innerhalb der Anwendung herum. Diese neuen visuellen Fokuselemente können vollständig angepasst und auch gelöscht werden, wenn nötig.
 
-Für die **10-Fuß-** Darstellung, die typisch für die Verwendung von Xbox und TV ist, unterstützt Windows den **Fokus**, einen Beleuchtungs Effekt, der den Rahmen von Fokus baren Elementen animiert, wie z. b. eine Schaltfläche, wenn Sie den Fokus über Gamepad oder Tastatureingaben erhalten. Weitere Informationen finden Sie unter [Entwerfen für Xbox und TV](../devices/designing-for-tv.md#reveal-focus).
+Für die **10-Fuß-** Darstellung, die typisch für die Verwendung von Xbox und TV ist, unterstützt Windows den **Fokus**, einen Beleuchtungs Effekt, der den Rahmen von Fokus baren Elementen animiert, wie z. b. eine Schaltfläche, wenn Sie den Fokus über Gamepad oder Tastatureingaben erhalten.
 
 ## <a name="color-branding--customizing"></a>Farbbranding und -anpassung
 
@@ -116,7 +116,7 @@ Um die Farben pro Steuerelement zu ändern, bearbeiten Sie einfach die Eigenscha
 
 - [Benutzerdefinierte Benutzerinteraktionen](../layout/index.md)
 
-### <a name="samples"></a>Proben
+### <a name="samples"></a>Beispiele
 
 - [Einfaches Eingabebeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
 - [Eingabebeispiel mit geringer Latenz](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)

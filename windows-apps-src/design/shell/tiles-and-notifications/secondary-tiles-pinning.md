@@ -3,16 +3,16 @@ description: Erfahren Sie, wie Sie eine sekundäre Kachel erstellen und Sie Prog
 title: Anheften von sekundären Kacheln an „Start“
 label: Pin secondary tiles to Start
 template: detail.hbs
-ms.date: 05/25/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, sekundäre Kacheln, PIN, anheften, Schnellstart, Codebeispiel, Beispiel, "secondarytile"
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e3949bd4534d32f202aaec78b91eb8c780e6db8
-ms.sourcegitcommit: e273e5901bfa6596dfef4cc741bb1c42614c25ab
+ms.openlocfilehash: 0fc83fca642ae75404180edf5fad177b92153e35
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89238285"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220383"
 ---
 # <a name="pin-secondary-tiles-to-start"></a>Anheften von sekundären Kacheln an „Start“
 

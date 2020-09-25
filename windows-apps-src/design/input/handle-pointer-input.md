@@ -5,15 +5,15 @@ ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
 keywords: Stift, Maus, Touchpad, Toucheingabe, Zeiger, Eingabe, Benutzerinteraktionen
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f544b73e069827f3c680db45797081605ce41b63
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 11402ae9f2ea99c583d82d1998ad238eac44576c
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173454"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219853"
 ---
 # <a name="handle-pointer-input"></a>Behandeln von Zeigereingaben
 
@@ -58,7 +58,7 @@ Windows-Apps können auf die folgenden Zeiger Ereignisse lauschen:
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled"><strong>PointerCanceled</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointercanceled"><strong>PointerCanceled</strong></a></p></td>
 <td align="left"><p>Tritt auf, wenn ein Zeiger von der Plattform abgebrochen wird. Dies kann in den folgenden Situationen vorkommen:</p>
 <ul>
 <li>Touchzeiger werden abgebrochen, wenn ein Zeichenstift innerhalb des Bereichs der Eingabeoberfläche erkannt wird.</li>
@@ -69,7 +69,7 @@ Windows-Apps können auf die folgenden Zeiger Ereignisse lauschen:
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>Tritt auf, wenn ein anderes Benutzeroberflächenelement den Zeiger erfasst, der Zeiger freigegeben wurde oder ein anderer Zeiger programmgesteuert erfasst wurde.</p>
 <div class="alert">
 <strong>Hinweis</strong>    Es ist kein entsprechendes Zeiger Aufzeichnungs Ereignis vorhanden.
@@ -79,43 +79,43 @@ Windows-Apps können auf die folgenden Zeiger Ereignisse lauschen:
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered"><strong>PointerEntered</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerentered"><strong>PointerEntered</strong></a></p></td>
 <td align="left"><p>Tritt auf, wenn der Zeiger in den Begrenzungsbereich eines Elements eintritt. Dies kann geringfügig anders für Touch-, Touchpad-, Maus- und Stifteingaben passieren.</p>
 <ul>
 <li>Für Toucheingaben ist zur Auslösung dieses Ereignisses eine Fingerkontakt erforderlich, entweder über eine direkte Toucheingabe oder durch Bewegen in den Begrenzungsbereich des Elements.</li>
 <li>Maus und Touchpad haben beide einen Cursor auf dem Bildschirm, der immer sichtbar ist und dieses Ereignis auslöst, auch wenn keine Maus- oder Touchpadtaste gedrückt wird.</li>
-<li>Wie bei der Toucheingabe löst der Stift das Ereignis über eine direkte Stifteingabe oder durch Bewegen in den Begrenzungsbereich des Elements aus. Pen hat jedoch auch einen Hover-Zustand (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">isinrange</a>), der dieses Ereignis auslöst, wenn true.</li>
+<li>Wie bei der Toucheingabe löst der Stift das Ereignis über eine direkte Stifteingabe oder durch Bewegen in den Begrenzungsbereich des Elements aus. Pen hat jedoch auch einen Hover-Zustand (<a href="/uwp/api/windows.ui.xaml.input.pointer.isinrange">isinrange</a>), der dieses Ereignis auslöst, wenn true.</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>PointerExited</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>PointerExited</strong></a></p></td>
 <td align="left"><p>Tritt auf, wenn der Zeiger den Begrenzungsbereich eines Elements verlässt. Dies kann geringfügig anders für Touch-, Touchpad-, Maus- und Stifteingaben passieren.</p>
 <ul>
 <li>Die Toucheingabe erfordert einen Fingerkontakt und löst dieses Ereignis aus, wenn sich der Mauszeiger aus dem Begrenzungsbereich des Elements heraus bewegt.</li>
 <li>Maus und Touchpad haben beide einen Cursor auf dem Bildschirm, der immer sichtbar ist und dieses Ereignis auslöst, auch wenn keine Maus- oder Touchpadtaste gedrückt wird.</li>
-<li>Wie bei der Toucheingabe löst der Stift dieses Ereignis beim Bewegen aus dem Begrenzungsbereich des Elements heraus aus. Pen hat jedoch auch einen Hover-Zustand (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">isinrange</a>), der dieses Ereignis auslöst, wenn sich der Status von true in false ändert.</li>
+<li>Wie bei der Toucheingabe löst der Stift dieses Ereignis beim Bewegen aus dem Begrenzungsbereich des Elements heraus aus. Pen hat jedoch auch einen Hover-Zustand (<a href="/uwp/api/windows.ui.xaml.input.pointer.isinrange">isinrange</a>), der dieses Ereignis auslöst, wenn sich der Status von true in false ändert.</li>
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved"><strong>PointerMoved</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointermoved"><strong>PointerMoved</strong></a></p></td>
 <td align="left"><p>Tritt auf, wenn ein Zeiger Koordinaten, Schaltflächenzustand, Druck, Neigung oder Kontaktgeometrie (z. B. Breite und Höhe) innerhalb des Begrenzungsbereichs eines Elements ändert. Dies kann geringfügig anders für Touch-, Touchpad-, Maus- und Stifteingaben passieren.</p>
 <ul>
 <li>Die Toucheingabe erfordert einen Fingerkontakt und löst dieses Ereignis nur aus, wenn ein Kontakt innerhalb des Begrenzungsbereichs des Elements besteht.</li>
 <li>Maus und Touchpad haben beide einen Cursor auf dem Bildschirm, der immer sichtbar ist und dieses Ereignis auslöst, auch wenn keine Maus- oder Touchpadtaste gedrückt wird.</li>
-<li>Wie bei der Toucheingabe löst der Stift dieses Ereignis aus, wenn ein Kontakt innerhalb des Begrenzungsbereichs des Elements besteht. Pen hat jedoch auch einen Hover-Zustand (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">isinrange</a>), der bei true und innerhalb des umgebenden Bereichs des Elements dieses Ereignis auslöst.</li>
+<li>Wie bei der Toucheingabe löst der Stift dieses Ereignis aus, wenn ein Kontakt innerhalb des Begrenzungsbereichs des Elements besteht. Pen hat jedoch auch einen Hover-Zustand (<a href="/uwp/api/windows.ui.xaml.input.pointer.isinrange">isinrange</a>), der bei true und innerhalb des umgebenden Bereichs des Elements dieses Ereignis auslöst.</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a></p></td>
 <td align="left"><p>Tritt auf, wenn der Zeiger eine Drückaktion (z. B. eine Fingereingabe, gedrückte Maustaste, Stifteingabe oder gedrückte Touchpadtaste) innerhalb des Begrenzungsbereichs eines Elements angibt.</p>
 <p><a href="/uwp/api/windows.ui.xaml.uielement.capturepointer">Capturepointer</a> muss vom Handler für dieses Ereignis aufgerufen werden.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a></p></td>
 <td align="left"><p>Tritt auf, wenn der Zeiger eine Loslass-Aktion (z. B. ein Finger bewegt sich nach oben, Maustaste, Stift oder Touchpadtaste werden losgelassen) innerhalb des Begrenzungsbereichs eines Elements anzeigt, oder wenn der Zeiger außerhalb des Begrenzungsbereichs erfasst wird.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged"><strong>PointerWheelChanged</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged"><strong>PointerWheelChanged</strong></a></p></td>
 <td align="left"><p>Tritt auf, wenn das Mausrad bewegt wird.</p>
 <p>Die Mauseingabe wird einem einzelnen Zeiger zugeordnet, der bei der ersten Ermittlung einer Mauseingabe zugewiesen wird. Wenn Sie auf eine Maustaste klicken (Links, Rad oder rechts), wird eine sekundäre Zuordnung zwischen dem-Zeiger und dieser Schaltfläche durch das <a href="/uwp/api/windows.ui.xaml.uielement.pointermoved">pointermove</a> -Ereignis erstellt.</p></td>
 </tr>

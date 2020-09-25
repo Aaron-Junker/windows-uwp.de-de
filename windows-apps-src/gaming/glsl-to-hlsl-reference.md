@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, GLSL, HLSL, OpenGL, DirectX, Shader
 ms.localizationpriority: medium
-ms.openlocfilehash: d4b49edac6a6a9c2824cfa556a2ff02eb9f36f9c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b6be3cf92162b0e871a04712754a882506767cd6
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175304"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218173"
 ---
 # <a name="glsl-to-hlsl-reference"></a>GLSL-zu-HLSL-Referenz
 
@@ -94,7 +94,7 @@ Folgende allgemeine Unterschiede bestehen zwischen GLSL und HLSL:
 <td align="left">Zeilenmatrizen (Standard)</td>
 <td align="left">Spaltenmatrizen (Standard)
 <div class="alert">
-<strong>Hinweis</strong>    Verwenden Sie den <strong>row_major</strong> Type-Modifier, um das Layout für eine Variable zu ändern. Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-variable-syntax">Variablensyntax</a>. Sie können auch ein Compilerkennzeichen oder ein Pragma angeben, um den globalen Standardwert zu ändern.
+<strong>Hinweis</strong>    Verwenden Sie den <strong>row_major</strong> Type-Modifier, um das Layout für eine Variable zu ändern. Weitere Informationen finden Sie unter <a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-variable-syntax">Variablensyntax</a>. Sie können auch ein Compilerkennzeichen oder ein Pragma angeben, um den globalen Standardwert zu ändern.
 </div>
 <div>
  
@@ -137,7 +137,7 @@ In GLSL wenden Sie Modifizierer (Qualifizierer) auf eine globale Shadervariablen
 <p>Sie übergeben eine Uniform-Variable vom App-Code in die Vertex- und/oder Fragment-Shader. Sie müssen die Werte aller Uniform-Variablen festlegen, bevor Sie Dreiecke mit den Shadern zeichnen, damit ihre Werte gleich bleiben, während ein Dreieckgitter gezeichnet wird. Diese Werte sind einheitlich. Einige Uniform-Variablen werden für den gesamten Frame festgelegt und andere speziell für ein bestimmtes Vertex-/Pixelshaderpaar.</p>
 <p>Uniform-Variablen sind Variablen, die pro Polygon gelten.</p></td>
 <td align="left"><p>Verwenden Sie einen Konstantenpuffer.</p>
-<p>Siehe <a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-constant-how-to">So wird's gemacht: Erstellen eines Konstantenpuffers</a> und <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants">Shaderkonstanten</a>.</p></td>
+<p>Siehe <a href="/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-constant-how-to">So wird's gemacht: Erstellen eines Konstantenpuffers</a> und <a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants">Shaderkonstanten</a>.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Maß</strong></p>
@@ -147,8 +147,8 @@ In GLSL wenden Sie Modifizierer (Qualifizierer) auf eine globale Shadervariablen
 <tr class="odd">
 <td align="left"><p><strong>attribute</strong></p>
 <p>Ein Attribut ist Teil der Beschreibung eines Scheitelpunkts, die Sie vom App-Code an den Vertex-Shader übergeben. Anders als bei einer Uniform-Variable legen Sie den Wert jedes Attributs für jeden Scheitelpunkt fest, sodass jeder Scheitelpunkt einen anderen Wert haben kann. Attributvariablen sind Variablen, die pro Scheitelpunkt gelten.</p></td>
-<td align="left"><p>Definieren Sie einen Scheitelpunktpuffer in Ihrem Direct3D-App-Code, und passen Sie ihn an die im Vertex-Shader definierte Scheitelpunkteingabe an. Optional können Sie einen Indexpuffer definieren. Siehe <a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-vertex-how-to">So wird's gemacht: Erstellen eines Scheitelpunktpuffers</a> und <a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-index-how-to">So wird's gemacht: Erstellen eines Indexpuffers</a>.</p>
-<p>Erstellen Sie ein Eingabelayout in Ihrem Direct3D-App-Code, und passen Sie die Semantikwerte an die Werte in der Scheitelpunkteingabe an. Siehe <a href="https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage-getting-started">Erstellen des Eingabelayouts</a>.</p></td>
+<td align="left"><p>Definieren Sie einen Scheitelpunktpuffer in Ihrem Direct3D-App-Code, und passen Sie ihn an die im Vertex-Shader definierte Scheitelpunkteingabe an. Optional können Sie einen Indexpuffer definieren. Siehe <a href="/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-vertex-how-to">So wird's gemacht: Erstellen eines Scheitelpunktpuffers</a> und <a href="/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-index-how-to">So wird's gemacht: Erstellen eines Indexpuffers</a>.</p>
+<p>Erstellen Sie ein Eingabelayout in Ihrem Direct3D-App-Code, und passen Sie die Semantikwerte an die Werte in der Scheitelpunkteingabe an. Siehe <a href="/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage-getting-started">Erstellen des Eingabelayouts</a>.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>const</strong></p>
@@ -185,7 +185,7 @@ Ziehen Sie beim Portieren Ihrer GLSL-Typen zu HLSL die folgende Tabelle zurate.
 <td align="left">Skalare Typen: float, int, bool</td>
 <td align="left"><p>Skalare Typen: float, int, bool</p>
 <p>also, uint, double</p>
-<p>Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-scalar">Skalare Typen</a>.</p></td>
+<p>Weitere Informationen finden Sie unter <a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-scalar">Skalare Typen</a>.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Vektortyp</p>
@@ -207,8 +207,8 @@ Ziehen Sie beim Portieren Ihrer GLSL-Typen zu HLSL die folgende Tabelle zurate.
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-vector">Vektortyp</a> und <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-appendix-keywords">Schlüsselwörter</a></p>
-<p>Der Vektor verfügt auch über eine Typdefinition "float4" (typedef vector &lt;float, 4&gt; vector;). Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-user-defined">Benutzerdefinierter Typ</a>.</p></td>
+<p>Weitere Informationen finden Sie unter <a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-vector">Vektortyp</a> und <a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-appendix-keywords">Schlüsselwörter</a></p>
+<p>Der Vektor verfügt auch über eine Typdefinition "float4" (typedef vector &lt;float, 4&gt; vector;). Weitere Informationen finden Sie unter <a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-user-defined">Benutzerdefinierter Typ</a>.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Matrixtyp</p>
@@ -233,7 +233,7 @@ Ziehen Sie beim Portieren Ihrer GLSL-Typen zu HLSL die folgende Tabelle zurate.
 </ul>
 <p>Sie können auch den <a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-matrix">Matrixtyp</a> verwenden, um eine Matrix zu definieren.</p>
 <p>Beispiel: matrix &lt;float, 2, 2&gt; fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
-<p>Die Matrix verfügt auch über eine Typdefinition "float4x4" (typedef matrix &lt;float, 4, 4&gt; matrix;). Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-user-defined">Benutzerdefinierter Typ</a>.</p></td>
+<p>Die Matrix verfügt auch über eine Typdefinition "float4x4" (typedef matrix &lt;float, 4, 4&gt; matrix;). Weitere Informationen finden Sie unter <a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-user-defined">Benutzerdefinierter Typ</a>.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Genauigkeitsqualifizierer für "float", "int" und "sampler"</p>
@@ -254,18 +254,18 @@ Ziehen Sie beim Portieren Ihrer GLSL-Typen zu HLSL die folgende Tabelle zurate.
 <p>Min. 2.8-Bit-Festpunktwert mit Vorzeichen (2 Bits ganze Zahl und 8 Bits Nachkommakomponente). Die 8-Bit-Nachkommakomponente kann inklusive 1 sein (anstelle von exklusive), um den kompletten Bereich von -2 bis 2 zu verwenden.</p></li>
 <li>min16int: min. 16-Bit-Ganzzahl mit Vorzeichen</li>
 <li><p>min12int: min. 12-Bit-Ganzzahl mit Vorzeichen</p>
-<p>Dieser Typ dient für "10Level9" (<a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">9_x-Funktionsebenen</a>). Ganze Zahlen werden dort durch Gleitkommazahlen dargestellt. Dies ist die Genauigkeit, die Sie erhalten, wenn Sie eine ganze Zahl mit einer 16-Bit-Gleitkommazahl emulieren.</p></li>
+<p>Dieser Typ dient für "10Level9" (<a href="/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">9_x-Funktionsebenen</a>). Ganze Zahlen werden dort durch Gleitkommazahlen dargestellt. Dies ist die Genauigkeit, die Sie erhalten, wenn Sie eine ganze Zahl mit einer 16-Bit-Gleitkommazahl emulieren.</p></li>
 <li>min16uint: min. 16-Bit-Ganzzahl ohne Vorzeichen</li>
 </ul>
-<p>Weitere Informationen finden Sie unter <a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-scalar">Skalare Typen</a> und <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/using-hlsl-minimum-precision">Verwenden der HLSL-Mindestgenauigkeit</a>.</p></td>
+<p>Weitere Informationen finden Sie unter <a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-scalar">Skalare Typen</a> und <a href="/windows/desktop/direct3dhlsl/using-hlsl-minimum-precision">Verwenden der HLSL-Mindestgenauigkeit</a>.</p></td>
 </tr>
 <tr class="odd">
 <td align="left">sampler2D</td>
-<td align="left"><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d">Texture2D</a></td>
+<td align="left"><a href="/windows/desktop/direct3dhlsl/sm5-object-texture2d">Texture2D</a></td>
 </tr>
 <tr class="even">
 <td align="left">samplerCube</td>
-<td align="left"><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-type">TextureCube</a></td>
+<td align="left"><a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-type">TextureCube</a></td>
 </tr>
 </tbody>
 </table>

@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b1ba0205a837383e1c646664c0550e055227412
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 12a7c7ebd250fec8d944c4cba467a92ff67bd33d
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173064"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219793"
 ---
 # <a name="input-assembler-ia-stage"></a>Eingabe Assembler-Stufe (IA)
 
@@ -61,7 +61,7 @@ In der IA-Phase werden die Daten in primitive assembliert und vom systemgenerier
 </tr>
 <tr class="even">
 <td align="left"><p><a href="using-system-generated-values.md">Verwenden von systemgenerierten Werten</a></p></td>
-<td align="left"><p>Vom System generierte Werte werden von der Eingabe Assembler-Stufe (IA) generiert (basierend auf der vom Benutzer bereitgestellten Eingabe <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics">Semantik</a>), um bestimmte Effizienz bei shadervorgängen zu ermöglichen. Durch das Anfügen von Daten, z. b. eine Instanz-ID (sichtbar für die <a href="vertex-shader-stage--vs-.md">Vertex-Shader-Phase</a>), eine Scheitelpunkt-ID (sichtbar für vs) oder eine primitive ID (sichtbar für <a href="geometry-shader-stage--gs-.md">Geometrie-Shader (GS) Stage</a> / <a href="pixel-shader-stage--ps-.md">Pixel Shader (PS)</a>), kann eine nachfolgende Shader-Phase nach diesen System Werten suchen, um die Verarbeitung in</p></td>
+<td align="left"><p>Vom System generierte Werte werden von der Eingabe Assembler-Stufe (IA) generiert (basierend auf der vom Benutzer bereitgestellten Eingabe <a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics">Semantik</a>), um bestimmte Effizienz bei shadervorgängen zu ermöglichen. Durch das Anfügen von Daten, z. b. eine Instanz-ID (sichtbar für die <a href="vertex-shader-stage--vs-.md">Vertex-Shader-Phase</a>), eine Scheitelpunkt-ID (sichtbar für vs) oder eine primitive ID (sichtbar für <a href="geometry-shader-stage--gs-.md">Geometrie-Shader (GS) Stage</a> / <a href="pixel-shader-stage--ps-.md">Pixel Shader (PS)</a>), kann eine nachfolgende Shader-Phase nach diesen System Werten suchen, um die Verarbeitung in</p></td>
 </tr>
 </tbody>
 </table>

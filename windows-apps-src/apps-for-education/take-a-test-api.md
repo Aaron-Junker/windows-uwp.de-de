@@ -2,16 +2,16 @@
 Description: Mit der JavaScript-API für die App „Prüfung“ von Microsoft können Sie zuverlässige Bewertungen durchführen. „Prüfung“ stellt einen sicheren Browser bereit, der die Lernenden daran hindert, während eines Tests andere Computer- oder Internet-Ressourcen zu verwenden.
 title: JavaScript-API für Prüfung.
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
-ms.date: 08/08/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Bildung
 ms.localizationpriority: medium
-ms.openlocfilehash: f5894e80c11d69c91be8492b80c3200e15a3dc31
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2eeb190fc95e46a95813affd432948d38c0328a4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161264"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218393"
 ---
 # <a name="take-a-test-javascript-api"></a>JavaScript-API für Prüfung
 
@@ -36,7 +36,7 @@ Der Security-Namespace ermöglicht das Sperren des Geräts, das Überprüfen der
 |[isEnvironmentSecure](#isEnvironmentSecure) | Stellt fest, ob auf das Gerät noch der Sperrmodus-Kontext angewendet wird. |
 |[getdebug-Info](#getDeviceInfo) | Ruft Details zur Plattform ab, auf der die Testanwendung ausgeführt wird. |
 |[examineprocesslist](#examineProcessList)|Ruft die Liste der laufenden Benutzer-und System Prozesse ab.|
-|[ihrer](#close) | Schließt den Browser und entsperrt das Gerät. |
+|[close](#close) | Schließt den Browser und entsperrt das Gerät. |
 |[getpermissivemode](#getPermissiveMode)|Überprüft, ob der einschränkend Modus ein-oder ausgeschaltet ist.|
 |[setpermissivemode](#setPermissiveMode)|Schaltet den Modus für den Modus ein oder aus.|
 |[EmptyClipboard](#emptyClipBoard)|Löscht die System Zwischenablage.|
@@ -58,7 +58,7 @@ Sperrt das Gerät. Wird auch zum Entsperren des Geräts verwendet. Die Test-Weba
 `void SecureBrowser.security.lockDown(Boolean enable, Function onSuccess, Function onError);`
 
 **Parameter**  
-* `enable` - " **true** ", um die app "Take-a-Test" über dem Sperrbildschirm auszuführen und die in diesem [Dokument](https://docs.microsoft.com/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)erläuterten Richtlinien anzuwenden. **false** beendet die Ausführung von Take-a-Test über dem Sperrbildschirm und schließt Sie, es sei denn, die APP ist nicht gesperrt. in diesem Fall hat dies keine Auswirkungen.  
+* `enable` - " **true** ", um die app "Take-a-Test" über dem Sperrbildschirm auszuführen und die in diesem [Dokument](/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)erläuterten Richtlinien anzuwenden. **false** beendet die Ausführung von Take-a-Test über dem Sperrbildschirm und schließt Sie, es sei denn, die APP ist nicht gesperrt. in diesem Fall hat dies keine Auswirkungen.  
 * `onSuccess` -[optional] die Funktion, die aufgerufen wird, nachdem die Sperrung erfolgreich aktiviert oder deaktiviert wurde. Sie muss das Format aufweisen `Function(Boolean currentlockdownstate)` .  
 * `onError` -[optional] die Funktion, die aufgerufen werden soll, wenn der Sperr Vorgang fehlgeschlagen ist. Sie muss das Format aufweisen `Function(Boolean currentlockdownstate)` .  
 
@@ -132,7 +132,7 @@ Windows 10, Version 1709
 
 <span id="close"/>
 
-### <a name="close"></a>close
+### <a name="close"></a>schließen
 Schließt den Browser und entsperrt das Gerät. Die Testanwendung sollte diese aufrufen, wenn der Benutzer zum Beenden des Browsers entscheidet.
 
 **Syntax**  

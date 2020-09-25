@@ -1,21 +1,21 @@
 ---
 Description: Erfahren Sie, wie Sie mithilfe von Kacheln, Signalen, Popups und Benachrichtigungen Einstiegspunkte in Ihre App bereitstellen und Benutzer auf dem neuesten Stand halten können.
-title: Badge-Benachrichtigungen für Windows-apps
+title: Signalbenachrichtigungen für Windows-Apps
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d3aa9658e8a57a7993eb79d164b1e17ac23b9ac
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: e8d3cf69da80b13ff334d89027f3ea366ac3accd
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970875"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219393"
 ---
-# <a name="badge-notifications-for-windows-apps"></a>Badge-Benachrichtigungen für Windows-apps
+# <a name="badge-notifications-for-windows-apps"></a>Signalbenachrichtigungen für Windows-Apps
 
  
 
@@ -34,7 +34,7 @@ Benachrichtigungssignale werden unabhängig davon, ob die App gerade ausgeführt
 
 <table>
     <tr>
-        <th>Value</th>
+        <th>Wert</th>
         <th>Badge</th>
         <th>XML</th>
     </tr>
@@ -100,7 +100,7 @@ Anstelle einer Zahl kann in einem Signal eine der nicht erweiterbaren Statusglyp
     <td>`<badge value="busy"/>`</td>
 </tr>
 <tr>
-    <td>Fehler</td>
+    <td>error</td>
     <td><img src="images/badges/badge-error.png" alt="Glyph" /></td>
     <td>`<badge value="error"/>`</td>
 </tr>
@@ -194,7 +194,7 @@ private void clearBadge()
 }
 ````
 
-## <a name="get-the-sample-code"></a>Laden Sie den Beispielcode herunter
+## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
 * [Benachrichtigungsbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)<br/> Zeigt, wie Sie Live-Kacheln erstellen, Signalupdates senden und Popupbenachrichtigungen anzeigen können. 
 

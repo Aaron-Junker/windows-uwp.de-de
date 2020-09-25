@@ -3,15 +3,15 @@ ms.assetid: ''
 title: Unterstützen von Surface Dial (und anderen Radgeräten) in Ihrer Windows-App
 description: Ein Schritt-für-Schritt-Tutorial zum Hinzufügen von Unterstützung für die Oberfläche (und andere radgeräte) zu Ihrer Windows-app.
 keywords: wählen, radiales, Tutorial
-ms.date: 03/11/2019
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8edd7a9345f93d3cf0abe76f68c321a977ee2e50
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: cc1618432d35687fe1bfa619396bc2b798dd40bf
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173374"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216923"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-windows-app"></a>Tutorial: unterstützen der Oberflächen Wahl (und anderer radgeräte) in der Windows-App
 

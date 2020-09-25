@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Games, DirectX, Port, Direct3D 9, Direct3D 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e194ab79b8ba0a5dc79d4ad24f808d3613a0c98
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f93b1d733efec2d52ca364f2f97a6d0f424019ad
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158994"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216563"
 ---
 # <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>Exemplarische Vorgehensweise Portieren einer einfachen Direct3D 9-App zu DirectX 11 und zur universellen Windows-Plattform (UWP)
 
@@ -41,7 +41,7 @@ In dieser Portierungsübung wird veranschaulicht, wie Sie ein einfaches Renderin
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md">Portieren der Spielschleife</a></p></td>
-<td align="left"><p>Zeigt, wie ein Fenster für ein UWP-Spiel implementiert wird und wie die Spiel Schleife übernommen wird, einschließlich der Erstellung einer <a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView"><strong>iframeworkview</strong></a> zum Steuern eines Vollbild- <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow"><strong>corewindow</strong></a>.</p></td>
+<td align="left"><p>Zeigt, wie ein Fenster für ein UWP-Spiel implementiert wird und wie die Spiel Schleife übernommen wird, einschließlich der Erstellung einer <a href="/uwp/api/Windows.ApplicationModel.Core.IFrameworkView"><strong>iframeworkview</strong></a> zum Steuern eines Vollbild- <a href="/uwp/api/Windows.UI.Core.CoreWindow"><strong>corewindow</strong></a>.</p></td>
 </tr>
 </tbody>
 </table>
