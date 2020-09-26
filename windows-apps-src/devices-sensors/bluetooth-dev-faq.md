@@ -1,17 +1,17 @@
 ---
 title: Bluetooth-Entwickler – Häufig gestellte Fragen
 description: Dieser Artikel bietet Antworten auf häufig gestellte Fragen zu den UWP-Bluetooth-APIs.
-ms.date: 02/08/2017
+ms.date: 09/25/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d41e49f599e1fe5e835443f7c8cb732e625491e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1a5ff129afcee21b0b1b41212fb900235d5b21b4
+ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168594"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353720"
 ---
 # <a name="bluetooth-developer-faq"></a>Bluetooth-Entwickler – Häufig gestellte Fragen
 
@@ -32,7 +32,7 @@ Verwenden Sie die GATT-APIs, wenn Sie mit einem Gerät kommunizieren, das Blueto
 Die RFCOMM-APIs geben Entwicklern einen Socket für die Ausführung bidirektionaler serieller Port-Kommunikation. Wenn Sie einen Socket haben, sind die Methoden zum Schreiben und lesen Recht Standard. Eine Implementierung dieser wird im [RFCOMM-Chat Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat)dargestellt. 
 
 **Verwendung von Bluetooth RFCOMM nicht** 
-- Anbot. Das Bluetooth GATT-Protokoll verfügt über einen bestimmten Befehl für diesen und führt zu einer deutlich geringeren Stromversorgung und schnelleren Reaktionszeiten. 
+- Benachrichtigungen. Das Bluetooth GATT-Protokoll verfügt über einen bestimmten Befehl für diesen und führt zu einer deutlich geringeren Stromversorgung und schnelleren Reaktionszeiten. 
 - Überprüfen der Near-oder Anwesenheits Erkennung. Die Verwendung der Ankündigungs- [APIs](/uwp/api/windows.devices.bluetooth.advertisement) und die Verbindung über Bluetooth Le ist besser. 
 
 
@@ -76,10 +76,12 @@ Nein. Dabei handelt es sich um ein Hardware abhängiges Feature, aber es wird ei
 
 ## <a name="can-i-access-these-apis-from-win32"></a>Kann ich von Win32 aus auf diese APIs zugreifen?
 
-Ja, alle diese APIs sollten funktionieren. In diesem Blog wird ausführlich beschrieben, wie Sie [Windows-APIs aus Desktop Anwendungen](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/)abrufen können. 
-## <a name="is-this-functionality-supposed-to-exist-on--insert-sku-here-"></a>Sollte diese Funktion in der *Einfügungs-SKU*vorhanden sein.
+Ja, alle diese APIs sollten funktionieren. In diesem Blog wird ausführlich beschrieben, wie Sie [Windows-APIs aus Desktop Anwendungen](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/)abrufen können.
 
-**Bluetooth Le**: Ja, die gesamte Funktionalität ist in onecore vorhanden und sollte auf den neuesten Geräten verfügbar sein. 
-> Einschränkungen: die Peripherie Rolle ist Hardware abhängig, und einige Windows Server-Editionen unterstützen Bluetooth nicht. 
+## <a name="is-this-functionality-supposed-to-exist-on-a-specific-sku"></a>Sollte diese Funktion für eine bestimmte SKU vorhanden sein?
+
+**Bluetooth Le**: Ja, die gesamte Funktionalität ist in onecore vorhanden und sollte auf den neuesten Geräten verfügbar sein.
+
+> Einschränkungen: die Peripherie Rolle ist Hardware abhängig, und einige Windows Server-Editionen unterstützen Bluetooth nicht.
 
 **Bluetooth BR/EDR (klassisch)**: einige Variationen sind vorhanden, aber meistens verfügen Sie über eine sehr ähnliche Profil Ebenen-Unterstützung. Weitere Informationen finden Sie in der Dokumentation zu [RFCOMM](send-or-receive-files-with-rfcomm.md) und den folgenden unterstützten Profil Dokumenten für [PC](https://support.microsoft.com/help/10568/windows-10-supported-bluetooth-profiles) und [Telefon](https://support.microsoft.com/help/10569/windows-10-mobile-supported-bluetooth-profiles) .

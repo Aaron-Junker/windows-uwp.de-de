@@ -5,12 +5,12 @@ ms.date: 06/26/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fd5f2b76af856dd66e2dfd0ee2b3e429199e6a19
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2d4ec2c3d849833b4a1673c4a4f425f32c42d00f
+ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172284"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353760"
 ---
 # <a name="bluetooth-gatt-client"></a>Bluetooth GATT-Client
 
@@ -110,6 +110,14 @@ bluetoothLeDevice.Dispose();
 
 Wenn die APP erneut auf das Gerät zugreifen muss, wird durch einfaches erneutes Erstellen des Geräte Objekts und durch den Zugriff auf ein Merkmal (im nächsten Abschnitt erläutert) das Betriebssystem zum erneuten Herstellen der Verbindung bei Bedarf zurückgeführt. Wenn sich das Gerät in der Nähe befindet, erhalten Sie Zugriff auf das Gerät. andernfalls wird ein Fehler mit der Fehlermeldung zurückgegeben.  
 
+> [!NOTE]
+> Durch das Erstellen eines [bluetoothledevice](/uwp/api/windows.devices.bluetooth.bluetoothledevice) -Objekts durch Aufrufen dieser Methode allein (notwendigerweise) wird keine Verbindung initiiert. Wenn Sie eine Verbindung initiieren möchten, legen Sie " [gattsession. wart Connection](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattsession.maintainconnection) " auf fest `true` , oder führen Sie eine nicht zwischengespeicherte Dienst Ermittlungsmethode für **bluetoothledevice**aus, oder führen Sie einen Lese-/Schreibvorgang für das Gerät aus
+>
+> - Wenn " **gattsession. wart Connection** " auf "true" festgelegt ist, wartet das System unbegrenzt auf eine Verbindung, und die Verbindung wird hergestellt, wenn das Gerät verfügbar ist. Es gibt nichts, auf den Ihre Anwendung warten kann, da " **gattsession. wart Connection** " eine Eigenschaft ist.
+> - Für Dienst Ermittlung und Lese-/Schreibvorgänge in GATT wartet das System eine endliche, aber Variable Zeit. Alles von sofortiger Zeit bis zu wenigen Minuten. Faktoren beinhaltet den Datenverkehr auf dem Stapel und wie die Anforderung in die Warteschlange eingereiht wird. Wenn keine andere ausstehende Anforderung vorhanden ist und das Remote Gerät nicht erreichbar ist, wartet das System sieben (7) Sekunden, bevor ein Timeout eintritt. Wenn andere ausstehende Anforderungen vorhanden sind, kann jede der Anforderungen in der Warteschlange sieben (7) Sekunden in Anspruch nehmen, sodass sich die weiter unten in der Warteschlange befindet, je länger Sie warten.
+>
+> Der Verbindungsprozess kann derzeit nicht abgebrochen werden.
+
 ## <a name="enumerating-supported-services-and-characteristics"></a>Auflisten unterstützter Dienste und Merkmale
 
 Nachdem Sie nun über ein bluetoothledevice-Objekt verfügen, besteht der nächste Schritt darin, herauszufinden, welche Daten das Gerät verfügbar macht. Der erste Schritt besteht darin, Dienste abzufragen:
@@ -201,7 +209,7 @@ Vor dem erhalten von Benachrichtigungen sind zwei Dinge zu berücksichtigen:
 - In Client Merkmal konfigurationsdeskriptor schreiben (cccd)
 - Behandeln des Merkmals. ValueChanged-Ereignisses
 
-Beim Schreiben auf die cccd wird dem Server Gerät mitgeteilt, dass dieser Client jedes Mal wissen möchte, wenn sich ein bestimmter Merkmals Wert ändert. Gehen Sie dazu wie folgt vor:
+Beim Schreiben auf die cccd wird dem Server Gerät mitgeteilt, dass dieser Client jedes Mal wissen möchte, wenn sich ein bestimmter Merkmals Wert ändert. Gehen Sie dazu folgendermaßen vor:
 
 ```csharp
 GattCommunicationStatus status = await selectedCharacteristic.WriteClientCharacteristicConfigurationDescriptorAsync(
