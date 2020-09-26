@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d85df48b4f43759013f80623595d919ac6c77337
-ms.sourcegitcommit: ef3cdca5e9b8f032f46174da4574cb5593d32d56
+ms.openlocfilehash: a488126de73fccfd8a783ddde98b4245b46ced39
+ms.sourcegitcommit: 651a6b9769fad1736ab16e2a4e423258889b248e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90593434"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91366866"
 ---
 # <a name="composition-visual"></a>Visuelle Kompositionselemente
 
@@ -24,10 +24,10 @@ Es gibt mehrere visuelle Typen, aus denen die visuelle Struktur besteht, sowie e
 - [**Visual**](/uwp/api/Windows.UI.Composition.Visual) – Basisobjekt; umfasst den Großteil der Eigenschaften. Diese werden von anderen visuellen Objekten geerbt.
 - [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual): abgeleitet von [**Visual**](/uwp/api/Windows.UI.Composition.Visual). Fügt die Fähigkeit zum Erstellen von untergeordneten Elementen hinzu.
   - [**Spritevisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) – wird von [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual)abgeleitet. Bietet die Möglichkeit, einen Pinsel zuzuordnen, sodass die Visualisierung Pixel, einschließlich Bildern, Effekten oder einer voll Tonfarbe, Renderern kann.
-  - [**Layervisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) – wird von [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual)abgeleitet. Untergeordnete Elemente des visuellen Elements werden zu einer einzelnen Ebene vereinfacht.<br/>(_Eingeführt in Windows 10, Version 1607, SDK 14393._)
-  - [**Shapevisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) – wird von [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual)abgeleitet. Ein visueller Struktur Knoten, der der Stamm einer compositionshape ist.<br/>(_Eingeführt in Windows 10, Version 1803, SDK 17134._)
-  - [**Redirectvisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) – wird von [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual)abgeleitet. Der Inhalt wird von der Visualisierung von einem anderen visuellen Element abgerufen.<br/>(_Eingeführt in Windows 10, Version 1809, SDK 17763._)
-  - [**Scenevisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) – wird von [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual)abgeleitet. Eine Container Visualisierung für die Knoten einer 3D-Szene.<br/>(_Eingeführt in Windows 10, Version 1903, SDK 18362._)
+  - [**Layervisual**](/uwp/api/Windows.UI.Composition.LayerVisual) – wird von [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual)abgeleitet. Untergeordnete Elemente des visuellen Elements werden zu einer einzelnen Ebene vereinfacht.<br/>(_Eingeführt in Windows 10, Version 1607, SDK 14393._)
+  - [**Shapevisual**](/uwp/api/Windows.UI.Composition.ShapeVisual) – wird von [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual)abgeleitet. Ein visueller Struktur Knoten, der der Stamm einer compositionshape ist.<br/>(_Eingeführt in Windows 10, Version 1803, SDK 17134._)
+  - [**Redirectvisual**](/uwp/api/Windows.UI.Composition.RedirectVisual) – wird von [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual)abgeleitet. Der Inhalt wird von der Visualisierung von einem anderen visuellen Element abgerufen.<br/>(_Eingeführt in Windows 10, Version 1809, SDK 17763._)
+  - [**Scenevisual**](/uwp/api/windows.ui.composition.scenes.scenevisual) – wird von [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual)abgeleitet. Eine Container Visualisierung für die Knoten einer 3D-Szene.<br/>(_Eingeführt in Windows 10, Version 1903, SDK 18362._)
 
 Sie können mit dem [**compositionbrush**](/uwp/api/Windows.UI.Composition.CompositionBrush) und seinen Unterklassen, einschließlich [**compositioncolorbrush**](/uwp/api/Windows.UI.Composition.CompositionColorBrush), [**compositionsurfacebrush**](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) und [**compositioneffectbrush**](/uwp/api/Windows.UI.Composition.CompositionEffectBrush), Inhalte und Effekte auf spritevisuals anwenden. Weitere Informationen zu Pinsel finden Sie unter [**Übersicht über compositionbrush**](./composition-brushes.md).
 

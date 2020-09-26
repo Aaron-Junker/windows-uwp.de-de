@@ -5,14 +5,15 @@ ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
 ms.date: 03/06/2020
 ms.topic: article
+ms.custom: contperfq1
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bd910c42743577a83491386f5c667dd09722ba9b
-ms.sourcegitcommit: 8171695ade04a762f19723f0b88e46e407375800
+ms.openlocfilehash: 22d891253074387223dba1ad9084a2105cf530dd
+ms.sourcegitcommit: 651a6b9769fad1736ab16e2a4e423258889b248e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89494376"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91366886"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Übersicht über Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS) 
 
@@ -33,50 +34,7 @@ Das folgende Diagramm gibt Aufschluss über den vollständigen Datenfluss beim S
 
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>Registrieren Ihrer App und Empfangen der Anmeldeinformationen für Ihren Clouddienst
 
-Um Benachrichtigungen mithilfe von WNS senden zu können, muss Ihre App zunächst beim Dashboard des Store registriert werden. 
-
-Jede App verfügt über einen eigenen Satz von Anmeldeinformationen für den zugehörigen Clouddienst. Mit diesen Anmeldeinformationen können keine Benachrichtigungen an andere Apps gesendet werden.
-
-### <a name="step-1-register-your-app-with-the-dashboard"></a>Schritt 1: Registrieren Ihrer APP mit dem Dashboard
-
-Bevor Sie Benachrichtigungen über WNS senden können, muss Ihre APP beim Partner Center-Dashboard registriert werden. Dadurch erhalten Sie die Anmeldeinformationen für Ihre App, mit denen sich Ihr Clouddienst gegenüber WNS authentifizieren kann. Diese Anmeldeinformationen bestehen aus einer Paket-Sicherheits-ID (Security Identifier, SID) und einem geheimen Schlüssel. Melden Sie sich bei [Partner Center](https://partner.microsoft.com/dashboard)an, um diese Registrierung durchzuführen. Nachdem Sie die App erstellt haben, finden Sie weitere Informationen unter [Product Management-WNS/mpns](https://apps.dev.microsoft.com/) für instranunctions zum Abrufen der Anmelde Informationen (wenn Sie die Live Services-Lösung verwenden möchten, folgen Sie dem Link **Live Services-Website** auf dieser Seite).
-
-So registrieren Sie sich:
-1.    Wechseln Sie zur Seite "Windows Store-Apps" im Partner Center, und melden Sie sich mit Ihrem persönlichen Microsoft-Konto an (Beispiel: johndoe@outlook.com , janedoe@xboxlive.com ).
-2.    Nachdem Sie sich angemeldet haben, klicken Sie auf den Link Dashboard.
-3.    Wählen Sie auf dem Dashboard neue APP erstellen aus.
-
-![WNS-App-Registrierung](../images/wns-create-new-app.png)
-
-4.    Erstellen Sie Ihre APP, indem Sie einen APP-Namen reservieren. Geben Sie einen eindeutigen Namen für Ihre APP an. Geben Sie den Namen ein, und klicken Sie auf die Schaltfläche Product Name reservieren Wenn der Name verfügbar ist, ist er für Ihre APP reserviert. Nachdem Sie einen Namen für Ihre APP erfolgreich reserviert haben, können die anderen Details geändert werden, wenn Sie dies zu diesem Zeitpunkt auswählen.
-
-![WNS-Reserve Produktname](../images/wns-reserve-poduct-name.png)
- 
-### <a name="step-2-obtain-the-identity-values-and-credentials-for-your-app"></a>Schritt 2: Abrufen der Identitäts Werte und Anmelde Informationen für Ihre APP
-
-Wenn Sie einen Namen für die APP reserviert haben, hat der Windows Store ihre zugehörigen Anmelde Informationen erstellt. Außerdem wurden zugeordnete Identitäts Werte – Name und Verleger – zugewiesen, die in der Manifest-Datei Ihrer APP (Package. appxmanifest) vorhanden sein müssen. Wenn Sie Ihre APP bereits in den Windows Store hochgeladen haben, werden diese Werte automatisch dem Manifest hinzugefügt. Wenn Sie Ihre APP nicht hochgeladen haben, müssen Sie die Identitäts Werte manuell zum Manifest hinzufügen.
-
-1.    Wählen Sie den Dropdown Pfeil "Product Management" aus.
-
-![WNS-Produktverwaltung](../images/wns-product-management.png)
-
-2.    Wählen Sie in der Dropdown Liste Product Management den Link WNS/mpns aus.
-
-![WNS-Produktmanagement fortgesetzt](../images/wns-product-management2.png)
- 
-3.    Klicken Sie auf der Seite WNS/mpns auf den Link Live Services-Site, der im Abschnitt Windows Push Notification Services (WNS) und Microsoft Azure Mobile Services gefunden wurde.
-
-![WNS-Live Dienste](../images/wns-live-services-page.png)
- 
-4.    Im Anwendungs Registrierungs Portal (zuvor auf der Seite Live Services-Seite) finden Sie ein Identitätselement, das Sie in das Manifest Ihrer APP einschließen können. Dies schließt die geheimen App-Schlüssel, die paketsicherheitskennung und die Anwendungs Identität ein. Öffnen Sie das Manifest in einem Text-Editor, und fügen Sie dieses Element hinzu, wie die Seite anweist.    
-
-> [!NOTE]
-> Wenn Sie mit einem Aad-Konto angemeldet sind, müssen Sie sich an den Microsoft-Konto Besitzer wenden, der die APP registriert hat, um die zugehörigen geheimen App-Schlüssel zu erhalten. Wenn Sie Hilfe beim Auffinden dieser Kontaktperson benötigen, klicken Sie auf das Zahnrad in der rechten oberen Ecke des Bildschirms, und klicken Sie dann auf Entwicklereinstellungen, und die e-Mail-Adresse der Person, die die APP mit Ihrem Microsoft-Konto erstellt hat, wird dort
- 
-5.    Laden Sie die SID und den geheimen Client Schlüssel auf Ihren cloudserver hoch.
-
-> [!Important]
-> Die SID und der geheime Client Schlüssel sollten sicher gespeichert werden, und der Zugriff darauf erfolgt über den clouddienst. Durch die Offenlegung oder den Diebstahl dieser Informationen kann es einem Angreifer ermöglichen, Benachrichtigungen ohne Ihre Berechtigung oder Ihr Wissen an Ihre Benutzer zu senden.
+Bevor Sie Benachrichtigungen mithilfe von WNS senden können, muss Ihre APP im Store-Dashboard registriert werden, wie [hier](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification)beschrieben.
 
 ## <a name="requesting-a-notification-channel"></a>Anfordern eines Benachrichtigungskanals
 
@@ -327,7 +285,7 @@ Dies ist der XAML-Code für das in diesem Beispiel vorgestellte [**ContentDialog
 </ContentDialog>
 ```
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md)
 * [Schnellstart: Senden einer Pushbenachrichtigung](/previous-versions/windows/apps/hh868252(v=win.10))
