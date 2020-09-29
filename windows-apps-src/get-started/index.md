@@ -5,12 +5,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: Erste Schritte, Windows 10, UWP, XAML, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 39f45b7604e71c4b57439f8c3e89548614758484
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: e832ac783c43058b24cb0d341d17ad52ff7dcc05
+ms.sourcegitcommit: 9940ed6431aadbd8d4e54ca23d8ae44d3a2d048d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80614983"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91403885"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Erste Schritte mit Windows 10-Apps
 
@@ -25,7 +25,7 @@ Entwickeln Sie Apps, die auf allen Windows 10-Geräten funktionieren, oder opti
         <p style="margin-top: 0px; margin-bottom: 50px">Mit Windows 10 und der universellen Windows-Plattform können Sie Apps erstellen, die auf allen Windows-Gerätetypen einwandfrei funktionieren und aussehen, oder vorhandene Apps mit modernen Funktionen aktualisieren.</p>
         <br>
         <a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">Was ist eine Windows-App?</a><br/>
-        <a href="//developer.microsoft.com/windows/apps/design">Design und Benutzeroberfläche</a><br/>
+        <a href="https://docs.microsoft.com/windows/uwp/design/">Design und Benutzeroberfläche</a><br/>
     :::column-end:::
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/biztalk-host-integration-install-configure.svg" alt="Setup illustration" />
@@ -49,7 +49,7 @@ Entwickeln Sie Apps, die auf allen Windows 10-Geräten funktionieren, oder opti
 :::row:::
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/biztalk-get-started-get-started.svg" alt="Tutorials illustration" />
-        <h3 style="margin-top: 10px; margin-bottom: 0px">Lernprogramme</h3>
+        <h3 style="margin-top: 10px; margin-bottom: 0px">Tutorials</h3>
         <p style="margin-top: 0px; margin-bottom: 50px">Suchen Sie nach einer Anleitung zur Lernerfahrung? Diese Tutorials unterstützen Sie.</p>
         <br>
         <a href="//docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui">Grundlagen der Benutzeroberfläche</a><br/>
@@ -80,19 +80,19 @@ Entwickeln Sie Apps, die auf allen Windows 10-Geräten funktionieren, oder opti
 
 :::row:::
     :::column:::
-        <h3 style="margin-top: 10px; margin-bottom: 0px">Entwicklungstools</h3>
+        <h3 style="margin-top: 10px; margin-bottom: 0px">Entwicklertools</h3>
         <a href="https://github.com/Microsoft/WindowsTemplateStudio/">Windows Template Studio</a><br/>
         <a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows-Community-Toolkit</a><br/>
-        <a href="//developer.microsoft.com/windows/downloads/virtual-machines">Virtuelle Computer.</a><br/>
-        <a href="//docs.microsoft.com/windows/wsl/about">Bash on Ubuntu unter Windows</a><br/>
+        <a href="//developer.microsoft.com/windows/downloads/virtual-machines">Virtuelle Computer</a><br/>
+        <a href="//docs.microsoft.com/windows/wsl/about">Bash auf Ubuntu unter Windows</a><br/>
     :::column-end:::
     :::column:::
         <h3 style="margin-top: 10px; margin-bottom: 0px">Noch keine Erfahrung auf dem Gebiet der Entwicklung?</h3>
-        <a href="//docs.microsoft.com/learn/browse/?products=windows&resource_type=module">Windows auf Microsoft Learn</a><br/>
+        <a href="//docs.microsoft.com/learn/browse/%3Fproducts=windows&resource_type=module">Windows auf Microsoft Learn</a><br/>
     :::column-end:::
     :::column:::
         <h3 style="margin-top: 10px; margin-bottom: 0px">Erkunden Sie zugehörige Dokumente.</h3>
-        <a href="//docs.microsoft.com/dotnet/csharp/">C#-Handbuch</a><br/>
+        <a href="//docs.microsoft.com/dotnet/csharp/">Leitfaden für C#</a><br/>
         <a href="//docs.microsoft.com/visualstudio/ide/">Visual Studio</a><br/>
     :::column-end:::
 :::row-end:::
