@@ -6,12 +6,12 @@ ms.date: 05/29/2020
 ms.topic: article
 keywords: Windows 10, UWP, Mobile-Operatoren, Mobile Abrechnung, Abrechnung mobiler Bediener
 ms.localizationpriority: medium
-ms.openlocfilehash: 2be7938faddaf50c96005f32c77f523ebf4061e3
-ms.sourcegitcommit: ae195892efb9d3abd1190776617984d4219c6777
+ms.openlocfilehash: 9dbdd2a86d33cf1392844294952eb9223676e256
+ms.sourcegitcommit: 426ccbdaa26bd16c7f0b270e8a51ac4ba87a5b60
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85913236"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91590649"
 ---
 # <a name="mobile-operator-billing"></a>Abrechnung über den Mobilfunkanbieter
 
@@ -32,7 +32,7 @@ Die Abrechnung mobiler Bediener wird derzeit von diesen mobilen Operatoren unter
 | Australien            | Optus                                                   |
 | Österreich              | A1 Telekom, Hutchison 3G Österreich, T-Mobile/Tele. Ring  |
 | Belgien              | Basis, der Proxy                                          |
-| Canada               | Telus                                                   |
+| Kanada               | Telus                                                   |
 | Tschechien              | T-Mobile                                                |
 | Dänemark              | 3, TDC/YouSee, Telenor, Telia                         |
 | Finnland              | DNA, Elisa                                              |
@@ -52,6 +52,5 @@ Die Abrechnung mobiler Bediener wird derzeit von diesen mobilen Operatoren unter
 | Schweiz          | Sonnenaufgang, Swisscom                                       |
 | Taiwan               | FarEasTone                                              |
 | Türkei               | Turkcell                                                |
-| Vereinigte Arabische Emirate | Etisalat                                                |
 | USA        | Sprint, Verizon                                         |
 | Vereinigtes Königreich       | 3 UK, EE, O2, Vodaphone                                 |
