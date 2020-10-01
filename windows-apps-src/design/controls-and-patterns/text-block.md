@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 83e27ef72aea195268d5163dea3b050f48547d5c
-ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
+ms.openlocfilehash: aa72b01e6c567e55e36e7f182ca962367346980c
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89412024"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220423"
 ---
 # <a name="text-block"></a>Textblock
 
@@ -85,7 +85,7 @@ Bestimmte Bedingungen erfordern TextBlock, um auf einen prozessorintensiven Code
 - [CharacterSpacing](/uwp/api/windows.ui.xaml.controls.textblock.characterspacing): Nur der Standardwert 0 ist ein schneller Pfad.
 - [TextTrimming](/uwp/api/windows.ui.xaml.controls.textblock.texttrimming): Nur die Werte **None**, **CharacterEllipsis** und **WordEllipsis** sind schnelle Pfade. Der **Clip**-Wert deaktiviert den schnellen Pfad.
 
-> **Hinweis**&nbsp;&nbsp;Vor Windows 10, Version 1607 wird der schnelle Pfad durch weitere Eigenschaften beeinflusst. Wenn Ihre App unter einer früheren Windows-Version ausgeführt wird, wird Text unter diesen Bedingungen auf dem langsamen Pfad gerendert. Weitere Informationen zu Versionen finden Sie unter [Versionsadaptiver Code](/windows/uwp/debug-test-perf/version-adaptive-code).
+> **Hinweis**&nbsp;&nbsp;Vor Windows 10, Version 1607 wird der schnelle Pfad durch weitere Eigenschaften beeinflusst. Wenn Ihre App unter einer früheren Windows-Version ausgeführt wird, wird Text unter diesen Bedingungen auf dem langsamen Pfad gerendert. Weitere Informationen zu Versionen finden Sie unter [Versionsadaptiver Code](../../debug-test-perf/version-adaptive-code.md).
 - [Typografie](/uwp/api/Windows.UI.Xaml.Documents.Typography): Nur die Standardwerte für die verschiedenen Typography-Eigenschaften sind schnelle Pfade.
 - [LineStackingStrategy](/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy): Wenn [LineHeight](/uwp/api/windows.ui.xaml.controls.textblock.lineheight) nicht 0 ist, deaktivieren die **BaselineToBaseline**- und **MaxHeight**-Werte den schnellen Pfad.
 - [IsTextSelectionEnabled](/uwp/api/windows.ui.xaml.controls.textblock.istextselectionenabled): Nur **false** ist ein schneller Pfad. Wenn diese Eigenschaft auf **true** festgelegt wird, wird der schnelle Pfad deaktiviert.

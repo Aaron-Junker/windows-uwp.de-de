@@ -3,7 +3,7 @@ Description: Dialogfelder und Flyouts zeigen vorübergehende UI-Elemente an, die
 title: Dialogfeld-Steuerelemente
 label: Dialogs
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 31e916f6dda56b43aaf63aabcacecd1177b4166e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1a91b67fee8a6684537411257959c03c454f7514
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160304"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218943"
 ---
 # <a name="dialog-controls"></a>Dialogfeld-Steuerelemente
 

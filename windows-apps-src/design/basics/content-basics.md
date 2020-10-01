@@ -5,16 +5,16 @@ ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
 op-migration-status: ready
-ms.date: 12/01/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ea7d6da9461aa3c8dc2bd4d3f50c5d14c3928bb
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 4d46f987ef9eb74c4d0aa4585c3c0cce5e5ca4fd
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233936"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220553"
 ---
 # <a name="content-design-basics-for-windows-apps"></a>Grundlagen des Inhaltsdesigns für Windows-Apps
 

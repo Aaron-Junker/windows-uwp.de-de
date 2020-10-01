@@ -5,12 +5,12 @@ keywords: Neuigkeiten, Update, Features, Entwicklerleitfäden, Windows 10, Augu
 ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: eb6900b4d5ad529ee2e94f09439dda6abcaebac8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 92ed09940800160af8fcff6aec7dde26144cffe9
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174394"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220333"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>Neuerungen in der Windows-Entwicklerdokumentation im August 2018
 
@@ -58,7 +58,7 @@ Die Website mit den [Project Rome-Dokumenten](/windows/project-rome/) wurde neu 
 
 ### <a name="xbox-live-unity-plugin"></a>Xbox Live-Unity-Plug-In
 
-Das Xbox Live-Unity-Plug-In ermöglicht das Hinzufügen von Xbox Live-Anmeldung, Statistiken, Freundeslisten, Cloudspeicher und Bestenlisten zu deinem Titel. [Sieh dir das Video an](https://youtu.be/fVQZ-YgwNpY), um mehr zu erfahren, und [lade anschließend das GitHub-Paket herunter](https://aka.ms/UnityPlugin), um zu beginnen.
+Das Xbox Live-Unity-Plug-In ermöglicht das Hinzufügen von Xbox Live-Anmeldung, Statistiken, Freundeslisten, Cloudspeicher und Bestenlisten zu deinem Titel. [Sieh dir das Video an](https://youtu.be/fVQZ-YgwNpY), um mehr zu erfahren, und [lade anschließend das GitHub-Paket herunter](/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/live-cr-unity-win10-nav?WT.mc_id=windowsdocs-twi), um zu beginnen.
 
 ### <a name="one-dev-question"></a>One Dev Question
 

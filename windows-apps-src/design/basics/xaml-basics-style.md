@@ -2,15 +2,15 @@
 title: Erstellen benutzerdefinierter Stile
 description: In diesem Tutorial erfahren Sie, wie Sie benutzerdefinierte Stile und Schieberegler erstellen, um die Benutzeroberfläche Ihrer XAML-App anzupassen.
 keywords: XAML, UWP, Erste Schritte
-ms.date: 08/20/2020
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d3423e9d78e2519f2d3c9ad1fc2c0b099de0349
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1ff5df0d56d5be6b2cbb93814d01fed48a626797
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160774"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219093"
 ---
 # <a name="tutorial-create-custom-styles"></a>Tutorial: Erstellen benutzerdefinierter Stile
 

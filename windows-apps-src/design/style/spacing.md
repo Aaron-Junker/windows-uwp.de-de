@@ -2,16 +2,16 @@
 title: Abstände und Größen
 description: Die neuen Fluent-Steuerelementstilarten Standard und Compact stellen unabhängig von Gerät und Eingabemethode eine vertraute Benutzeroberfläche sicher.
 keywords: UWP, Windows 10, Steuerelemente, Größe, Dichte, Standard, Compact
-ms.date: 04/19/2019
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 37bc5688321249428405e730d366eb987a81bd66
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: aa4d1fa64f23f417957b4590bb3a846f00653869
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159844"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217753"
 ---
 # <a name="control-size-and-density"></a>Größe und Dichte des Steuerelements
 

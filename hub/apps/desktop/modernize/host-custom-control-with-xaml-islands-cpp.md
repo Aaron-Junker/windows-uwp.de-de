@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 82eaee6b29336559455a86dfdba3debc288babbb
-ms.sourcegitcommit: fd6ca4e9426a5fe46138012d1fecf56f9f621a3f
+ms.openlocfilehash: c74e6fbb8907a25af6fe6e4ad6439dbaca425b84
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90825273"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216773"
 ---
 # <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>Hosten eines benutzerdefinierten UWP-Steuerelements in einer C++-Win32-App
 
@@ -561,7 +561,7 @@ In diesem Abschnitt wird veranschaulicht, wie Sie dem Benutzersteuerelement ein 
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     ```
 
-5. Fügen Sie in derselben Datei ein `<winui:RatingControl />`-Element als untergeordnetes Element von `<StackPanel>` hinzu, und speichern Sie Ihre Änderungen. Dieses Element fügt eine Instanz der [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol)-Klasse aus der WinUI-Bibliothek hinzu. Nachdem dieses Element hinzugefügt wurde, sollte das `<StackPanel>` nun ungefähr wie hier aussehen:
+5. Fügen Sie in derselben Datei ein `<winui:RatingControl />`-Element als untergeordnetes Element von `<StackPanel>` hinzu, und speichern Sie Ihre Änderungen. Dieses Element fügt eine Instanz der [RatingControl](/uwp/api/microsoft.ui.xaml.controls.ratingcontrol)-Klasse aus der WinUI-Bibliothek hinzu. Nachdem dieses Element hinzugefügt wurde, sollte das `<StackPanel>` nun ungefähr wie hier aussehen:
 
     ```xml
     <StackPanel HorizontalAlignment="Center" Spacing="10" 

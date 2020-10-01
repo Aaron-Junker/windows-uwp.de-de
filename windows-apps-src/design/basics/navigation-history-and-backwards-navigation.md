@@ -3,16 +3,16 @@ Description: In diesem Artikel erfahren Sie, wie Sie die Rückwärtsnavigation z
 title: Navigationsverlauf und Rückwärtsnavigation
 template: detail.hbs
 op-migration-status: ready
-ms.date: 04/09/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fe9cbb9fdc9d73a38642a4f5894b1ef0f8182e69
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f3eb7ff033a81e358cb74e670b3235ade17e8a87
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174514"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220043"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Navigationsverlauf und Rückwärtsnavigation für Windows-Apps
 
@@ -336,14 +336,14 @@ Wenn Sie Ihre eigene Zurück-Stapelnavigation bereitstellen möchten, sollte die
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>Seite zu Seite, gleiche Peer-Gruppe, kein Bildschirmnavigationselement</strong>
-<p>Der Benutzer navigiert von einer Seite zu einer anderen mit derselben Peer-Gruppe. Es ist kein Bildschirmnavigationselement (wie <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>) vorhanden, das die direkte Navigation zu beiden Seiten ermöglicht.</p></td>
+<p>Der Benutzer navigiert von einer Seite zu einer anderen mit derselben Peer-Gruppe. Es ist kein Bildschirmnavigationselement (wie <a href="/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>) vorhanden, das die direkte Navigation zu beiden Seiten ermöglicht.</p></td>
 <td style="vertical-align:top;"><strong>Ja</strong>
 <p>In der folgenden Abbildung navigiert der Benutzer zwischen zwei Seiten in derselben Peer-Gruppe, und die Navigation sollte dem Navigationsverlauf hinzugefügt werden.</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>Seite zu Seite, gleiche Peer-Gruppe, mit einem Bildschirmnavigationselement</strong>
-<p>Der Benutzer navigiert von einer Seite zu einer anderen in derselben Peer-Gruppe. Beide Seiten werden im gleichen Navigationselement angezeigt, z. B. in <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>.</p></td>
+<p>Der Benutzer navigiert von einer Seite zu einer anderen in derselben Peer-Gruppe. Beide Seiten werden im gleichen Navigationselement angezeigt, z. B. in <a href="/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>.</p></td>
 <td style="vertical-align:top;"><strong>Das kommt darauf an</strong>
 <p>Ja, fügen Sie es dem Navigationsverlauf hinzu, jedoch mit zwei Ausnahmen. Wenn Sie davon ausgehen, dass Benutzer Ihrer App häufig zwischen Seiten in der Peer-Gruppe wechseln, oder wenn Sie die Navigationshierarchie beibehalten möchten, dann fügen Sie es dem Navigationsverlauf nicht hinzu. Wenn der Benutzer in diesem Fall die Zurück-Schaltfläche drückt, wird wieder die letzte Seite aufgerufen, die geöffnet war, bevor der Benutzer zur aktuellen Peer-Gruppe navigierte. </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>

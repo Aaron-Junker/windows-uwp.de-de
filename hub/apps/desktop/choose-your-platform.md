@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: Windows Win32, Desktopentwicklung
-ms.openlocfilehash: d4415bc703acf0b94f6f8a6fe8aab053620336c6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0aa439010138af80f91c4e02776163577658d6cc
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168904"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216733"
 ---
 # <a name="choose-your-app-platform"></a>Auswählen Ihrer App-Plattform
 
@@ -129,7 +129,7 @@ PWAs ermöglichen es Entwicklern, ihren Website-Code so zu verpacken, dass er wi
 
 ### <a name="xamarin"></a>Xamarin
 
-Xamarin dient zum Erstellen von plattformübergreifenden Anwendungen für Windows 10, die auch unter iOS und Android verwendet werden können. Weitere Informationen finden Sie unter [Xamarin](https://docs.microsoft.com/xamarin/xamarin-forms/get-started/index).
+Xamarin dient zum Erstellen von plattformübergreifenden Anwendungen für Windows 10, die auch unter iOS und Android verwendet werden können. Weitere Informationen finden Sie unter [Xamarin](/xamarin/xamarin-forms/get-started/index).
 
 ### <a name="uno-platform"></a>Uno-Plattform
 

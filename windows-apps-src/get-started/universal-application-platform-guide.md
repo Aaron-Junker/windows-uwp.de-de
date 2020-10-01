@@ -7,12 +7,12 @@ ms.topic: article
 ms.custom: contperfq1
 keywords: Windows 10, UWP, universell
 ms.localizationpriority: medium
-ms.openlocfilehash: 29e5171d0c6737bdf3d8064566b8ec2731e68978
-ms.sourcegitcommit: b99e2f4dffa603b68c2a8273fe6313432f91b353
+ms.openlocfilehash: 416df29fcb6ac007375ff9cf2a8f22d80a12b73e
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90569395"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219823"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>Was ist eine App der universellen Windows-Plattform (UWP)?
 
@@ -23,9 +23,9 @@ Informationen zum Herunterladen der Tools, die Sie benötigen, um mit der Erstel
 
 ## <a name="where-does-uwp-fit-in-the-microsoft-development-story"></a>Wie passt UWP in die Microsoft-Entwicklungsgeschichte?
 
-UWP ist eine Möglichkeit zum Erstellen von Apps, die auf Windows 10-Geräten ausgeführt werden können, und lässt die Kombination mit anderen Plattformen zu. UWP-Apps können Win32-APIs und .NET-Klassen verwenden (weitere Informationen finden Sie unter [API-Sammlungen für UWP-Apps](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85)), [DLLs für UWP-Apps](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85)) und [.NET für UWP-Apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)).
+UWP ist eine Möglichkeit zum Erstellen von Apps, die auf Windows 10-Geräten ausgeführt werden können, und lässt die Kombination mit anderen Plattformen zu. UWP-Apps können Win32-APIs und .NET-Klassen verwenden (weitere Informationen finden Sie unter [API-Sammlungen für UWP-Apps](/previous-versions/mt186421(v=vs.85)), [DLLs für UWP-Apps](/previous-versions/mt186422(v=vs.85)) und [.NET für UWP-Apps](/dotnet/api/index?view=dotnet-uwp-10.0)).
 
-Die Microsoft-Entwicklungsgeschichte entwickelt sich ständig weiter, und zusammen mit Initiativen wie [WinUI](https://docs.microsoft.com/windows/apps/winui/), [MSIX](https://docs.microsoft.com/windows/msix/) und [Project Reunion](https://github.com/microsoft/ProjectReunion) ist UWP ein leistungsstarkes Tool für die Erstellung von Clientanwendungen.
+Die Microsoft-Entwicklungsgeschichte entwickelt sich ständig weiter, und zusammen mit Initiativen wie [WinUI](/windows/apps/winui/), [MSIX](/windows/msix/) und [Project Reunion](https://github.com/microsoft/ProjectReunion) ist UWP ein leistungsstarkes Tool für die Erstellung von Clientanwendungen.
 
 
 ## <a name="features-of-a-uwp-app"></a>Funktionen einer UWP-App
@@ -83,7 +83,7 @@ Ihre App wird in einem Store für allgemeine Apps für Windows 10-Geräte wie P
 
 Da UWP-Apps und [Application Insights](https://azure.microsoft.com/services/application-insights/) integriert sind, stehen detaillierte Telemetrie- und Analysedaten zur Verfügung. Das Tool hilft, das Benutzerverhalten zu analysieren und Ihre Apps zu optimieren.
 
-UWP-Apps können mit [MSIX](https://docs.microsoft.com/windows/msix/) gepackt und über den Microsoft Store oder auf andere Weise verteilt werden. MSIX ermöglicht die Aktualisierung von Apps, unabhängig davon, wie sie verteilt werden. Informationen hierzu finden Sie unter [Aktualisieren von nicht im Store veröffentlichten App-Paketen aus Ihrem Code](https://docs.microsoft.com/windows/msix/non-store-developer-updates).
+UWP-Apps können mit [MSIX](/windows/msix/) gepackt und über den Microsoft Store oder auf andere Weise verteilt werden. MSIX ermöglicht die Aktualisierung von Apps, unabhängig davon, wie sie verteilt werden. Informationen hierzu finden Sie unter [Aktualisieren von nicht im Store veröffentlichten App-Paketen aus Ihrem Code](/windows/msix/non-store-developer-updates).
 
 ### <a name="monetize-your-app"></a>Monetarisieren Ihrer App
 

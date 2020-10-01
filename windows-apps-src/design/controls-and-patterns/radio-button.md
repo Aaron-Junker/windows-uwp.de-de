@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ee933bd28594263e61e654b14b0541c6fa9ed41b
-ms.sourcegitcommit: 875bd348608547e7a66fa4b460efe64b3246807e
+ms.openlocfilehash: 9d6fe34d9f53142cfe2148f79bf936a473012a49
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90080842"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219053"
 ---
 # <a name="radio-buttons"></a>Optionsfelder
 
@@ -45,41 +45,41 @@ Das singuläre Verhalten einer Optionsfeldgruppe (RadioButtons) unterscheidet si
 >Es gibt zwei Möglichkeiten, Optionsfeldgruppen zu erstellen.
 >
 >- Beginnend mit WinUI 2.3 empfehlen wir das Steuerelement **[RadioButtons](/uwp/api/microsoft.ui.xaml.controls.radiobuttons)** . Dieses Steuerelement vereinfacht das Layout, regelt Tastaturnavigation und Barrierefreiheit und unterstützt die Bindung an eine Datenquelle.
->- Sie können Gruppen einzelner **[RadioButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton)** -Steuerelemente verwenden. Wenn Ihre Anwendung nicht WinUI 2.3 oder höher verwendet, ist dies die einzige Option.
+>- Sie können Gruppen einzelner **[RadioButton](/uwp/api/Windows.UI.Xaml.Controls.RadioButton)** -Steuerelemente verwenden. Wenn Ihre Anwendung nicht WinUI 2.3 oder höher verwendet, ist dies die einzige Option.
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
 Verwenden Sie Optionsfelder, um Benutzern zu ermöglichen, eine Auswahl aus zwei oder mehr Optionen, die sich gegenseitig ausschließen, zu treffen.
 
-:::image type="content" source="images/radiobutton_basic.png" alt-text="Eine RadioButtons-Gruppe mit einem aktivierten Optionsfeld.":::
+:::image type="content" source="images/radiobutton_basic.png" alt-text="Beispiel für eine RadioButtons-Gruppe mit einem aktivierten Optionsfeld.":::
 
 Verwenden Sie Optionsfelder, wenn Benutzer alle Optionen sehen müssen, bevor sie eine Auswahl treffen. Optionsfelder heben alle Optionen gleichermaßen hervor, was bedeutet, dass manche Optionen möglicherweise mehr Aufmerksamkeit auf sich ziehen, als eigentlich erforderlich oder wünschenswert ist.
 
 Wenn nicht alle Optionen dieselbe Aufmerksamkeit benötigen, erwägen Sie die Verwendung anderer Steuerelemente. Um beispielsweise eine einzelne beste Option für die meisten Benutzer und in den meisten Situationen zu empfehlen, verwenden Sie ein [Kombinationsfeld](combo-box.md), um diese beste Option als Standardoption anzuzeigen.
 
-:::image type="content" source="images/combo_box_collapsed.png" alt-text="Ein Kombinationsfeld mit angezeigter Standardoption.":::
+:::image type="content" source="images/combo_box_collapsed.png" alt-text="Beispiel für eine RadioButtons-Gruppe mit einem aktivierten Optionsfeld.":::
 
 Wenn es nur zwei mögliche Optionen gibt, die sich eindeutig als binäre Auswahl ausdrücken lassen, wie z. B. ein/aus oder ja/nein, kombinieren Sie sie in einem einzigen [Kontrollkästchen](checkbox.md) oder [Umschalter](toggles.md). Verwenden Sie beispielsweise ein einzelnes Kontrollkästchen für „Ich stimme zu“ anstelle von zwei Optionsfeldern für „Ich stimme zu“ und „Ich stimme nicht zu“.
 
 Verwenden Sie nicht zwei Optionsfelder für eine einfache binäre Auswahl:
 
-:::image type="content" source="images/radiobutton-vs-checkbox-rb.png" alt-text="Zwei Optionsfelder für die Darstellung einer binären Auswahl":::
+:::image type="content" source="images/radiobutton-vs-checkbox-rb.png" alt-text="Beispiel für eine RadioButtons-Gruppe mit einem aktivierten Optionsfeld.":::
 
 Verwenden Sie stattdessen ein Kontrollkästchen:
 
-:::image type="content" source="images/radiobutton-vs-checkbox-cb.png" alt-text="Ein Kontrollkästchen ist eine gute Alternative zum Anbieten einer binären Auswahl.":::
+:::image type="content" source="images/radiobutton-vs-checkbox-cb.png" alt-text="Beispiel für eine RadioButtons-Gruppe mit einem aktivierten Optionsfeld.":::
 
 Wenn Benutzer mehrere Optionen auswählen können, verwenden Sie [Kontrollkästchen](checkbox.md).
 
-:::image type="content" source="images/checkbox2.png" alt-text="Kontrollkästchen unterstützen Mehrfachauswahl":::
+:::image type="content" source="images/checkbox2.png" alt-text="Beispiel für eine RadioButtons-Gruppe mit einem aktivierten Optionsfeld.":::
 
 Wenn die Optionen des Benutzers in einem Wertebereich liegen (z. B. *10, 20, 30, ... 100*), verwenden Sie ein [Schieberegler](slider.md)-Steuerelement.
 
-:::image type="content" source="images/controls/slider.png" alt-text="Ein Schieberegler-Steuerelement, das einen Wert aus einem Wertebereich anzeigt.":::
+:::image type="content" source="images/controls/slider.png" alt-text="Beispiel für eine RadioButtons-Gruppe mit einem aktivierten Optionsfeld.":::
 
 Wenn mehr als acht Optionen vorhanden sind, verwenden Sie ein [Kombinationsfeld](combo-box.md).
 
-:::image type="content" source="images/combo_box_scroll.png" alt-text="Ein Listenfeld, das mehrere Optionen anzeigt.":::
+:::image type="content" source="images/combo_box_scroll.png" alt-text="Beispiel für eine RadioButtons-Gruppe mit einem aktivierten Optionsfeld.":::
 
 Wenn die verfügbaren Optionen auf dem aktuellen Kontext einer App basieren oder anderweitig dynamisch variieren können, verwenden Sie ein Listensteuerelement.
 
@@ -294,7 +294,7 @@ Hier deklarieren Sie ein einfaches `RadioButtons`-Steuerelement mit drei Optione
 
 Das Ergebnis sieht wie folgt aus:
 
-:::image type="content" source="images/radiobuttons-default-group.png" alt-text="Eine Gruppe von drei Optionsfeldern":::
+:::image type="content" source="images/radiobuttons-default-group.png" alt-text="Beispiel für eine RadioButtons-Gruppe mit einem aktivierten Optionsfeld.":::
 
 Um eine Aktion auszuführen, wenn der Benutzer eine Option auswählt, wird das Ereignis [SelectionChanged](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged) verarbeitet. Hier ändern Sie die Hintergrundfarbe eines [Border](/uwp/api/windows.ui.xaml.controls.border)-Elements mit dem Namen „ExampleBorder“ (`<Border x:Name="ExampleBorder" Width="100" Height="100"/>`).
 
@@ -344,7 +344,7 @@ Hier werden [SymbolIcon](/uwp/api/windows.ui.xaml.controls.symbolicon)-Elemente 
 </muxc:RadioButtons>
 ```
 
-:::image type="content" source="images/radiobuttons-symbolicon.png" alt-text="Eine Gruppe von Optionsschaltflächen mit Symbolen":::
+:::image type="content" source="images/radiobuttons-symbolicon.png" alt-text="Beispiel für eine RadioButtons-Gruppe mit einem aktivierten Optionsfeld.":::
 
 Sie können auch einzelne [RadioButton](/uwp/api/Windows.UI.Xaml.Controls.RadioButton)-Steuerelemente verwenden, um die `RadioButtons`-Elemente aufzufüllen. Dies ist ein Sonderfall, den wir zu einem späteren Zeitpunkt erörtern. Siehe [RadioButton-Steuerelemente in einer RadioButtons-Gruppe]().
 
@@ -443,7 +443,7 @@ Standardmäßig ordnet das `RadioButtons`-Steuerelement seine Optionsfelder vert
 </muxc:RadioButtons>
 ```
 
-:::image type="content" source="images/radiobuttons-multi-column.png" alt-text="Optionsfelder in zwei dreispaltigen Gruppen.":::
+:::image type="content" source="images/radiobuttons-multi-column.png" alt-text="Beispiel für eine RadioButtons-Gruppe mit einem aktivierten Optionsfeld.":::
 
 > [!TIP]
 > Um Elemente in einer einzigen horizontalen Zeile anzuordnen, setzen Sie `MaxColumns` gleich der Anzahl der Elemente in der Gruppe.
@@ -552,7 +552,7 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 Diese beiden Gruppen von `RadioButton`-Steuerelementen sehen wie folgt aus:
 
-:::image type="content" source="images/radio-button-groups.png" alt-text="Optionsfelder in zwei Gruppen":::
+:::image type="content" source="images/radio-button-groups.png" alt-text="Beispiel für eine RadioButtons-Gruppe mit einem aktivierten Optionsfeld.":::
 
 ### <a name="radio-button-states"></a>Optionsfeldzustände
 
@@ -578,9 +578,9 @@ Der Standardabstand der einzelnen `RadioButton`-Steuerelemente unterscheidet sic
 
 Die folgenden Abbildungen zeigen die bevorzugten Abstände der Optionsfelder in einer Gruppe.
 
-:::image type="content" source="images/radiobutton-layout.png" alt-text="Bild mit einer Gruppe von Optionsfeldern, vertikal angeordnet.":::
+:::image type="content" source="images/radiobutton-layout.png" alt-text="Beispiel für eine RadioButtons-Gruppe mit einem aktivierten Optionsfeld.":::
 
-:::image type="content" source="images/radiobutton-redline.png" alt-text="Bild mit angezeigten Abstandsführungslinien für Optionsfelder.":::
+:::image type="content" source="images/radiobutton-redline.png" alt-text="Beispiel für eine RadioButtons-Gruppe mit einem aktivierten Optionsfeld.":::
 
 > [!NOTE]
 > Wenn Sie ein WinUI-RadioButtons-Steuerelement verwenden, sind Abstand, Ränder und Ausrichtung bereits optimiert.

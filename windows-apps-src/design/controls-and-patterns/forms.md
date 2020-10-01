@@ -2,15 +2,15 @@
 title: Formulare
 description: Lernen Sie die Richtlinien für den Entwurf und die Erstellung von XAML-Layouts für Formulare in einer universellen Windows-Plattform-App (UWP) kennen.
 template: detail.hbs
-ms.date: 11/07/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Fluent
-ms.openlocfilehash: 0113cbf50601a3db717753ab2e12524fa281daba
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: 0c55d98d0680142ad1d4f319b8910fd335fe8d5f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304692"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219463"
 ---
 # <a name="forms"></a>Formulare
 Ein Formular ist eine Gruppe von Steuerelementen, die Daten von Benutzern sammeln und übermitteln. Formulare werden in der Regel für Seiten mit Einstellungen und Umfragen, zum Erstellen von Konten und für vieles mehr verwendet. 

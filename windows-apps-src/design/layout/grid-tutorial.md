@@ -2,17 +2,17 @@
 Description: Dieses Tutorial begleitet dich durch die Erstellung einer einfachen Anwendungsbenutzeroberfläche. Es erläutert und veranschaulicht die Verwendung von Grid und StackPanel, zwei der häufigsten XAML-Elemente.
 title: Verwende Grid und StackPanel, um eine einfache App zu erstellen.
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
-ms.openlocfilehash: b4cd240882b920f06d06bf1143924a075e7cde53
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3fa22f303f308b38a59a804604752712895b0ea0
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165544"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219373"
 ---
 # <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>Tutorial: Verwenden von Grid und StackPanel, um eine einfache Wetter-App zu erstellen
 

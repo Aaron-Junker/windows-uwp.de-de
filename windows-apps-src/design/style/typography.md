@@ -1,17 +1,17 @@
 ---
 description: Erfahren Sie, wie Sie die Typografie in Ihrer App verwenden, um Benutzern Inhalte leicht verständlich zu machen.
 title: Typografie in Windows-Apps
-ms.date: 04/06/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 555459d427eae045d3cf7eda45a97ec806717380
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3e9e9e501f1c4277121e7694e8213ccea51c5297
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175514"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218133"
 ---
 # <a name="typography-in-windows-apps"></a>Typografie in Windows-Apps
 

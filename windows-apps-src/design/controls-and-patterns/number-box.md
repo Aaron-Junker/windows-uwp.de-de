@@ -2,17 +2,17 @@
 Description: Ein Zahlenfeld (NumberBox) ist ein Steuerelement, das zum Anzeigen und Bearbeiten von Zahlen verwendet werden kann.
 title: Zahlenfeld
 template: detail.hbs
-ms.date: 11/27/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e3bcbfc338d629bbda1036ef722d75ed6df37cd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9e0cd1979ca1929adc35537dfd3efccc97466391
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169754"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217973"
 ---
 # <a name="number-box"></a>Zahlenfeld
 
@@ -174,7 +174,7 @@ Im Hinblick auf Dezimaltrennzeichen und Tausendertrennzeichen wird die von einem
 
 ### <a name="input-scope"></a>Eingabebereich
 
-`Number` wird für den [Eingabebereich](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue) verwendet. Dieser Eingabebereich ist für die Funktion mit den Zahlen 0–9 vorgesehen. Diese Einstellung kann überschrieben werden, alternative InputScope-Typen werden aber nicht explizit unterstützt.
+`Number` wird für den [Eingabebereich](/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue) verwendet. Dieser Eingabebereich ist für die Funktion mit den Zahlen 0–9 vorgesehen. Diese Einstellung kann überschrieben werden, alternative InputScope-Typen werden aber nicht explizit unterstützt.
 
 ### <a name="not-a-number"></a>Not a Number (NaN, kein Zahlenwert)
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, App-Zertifizierung
 ms.localizationpriority: medium
-ms.openlocfilehash: bb647d844c32286a2d612231b3069430f11fcad0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3205ef65922cfe9cf44fbf0a24c90b4e592ca663
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174014"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216423"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Tests im Zertifizierungskit für Windows-Apps
 
@@ -412,7 +412,7 @@ Orientieren Sie sich an der folgenden Tabelle.
 <tr><td>
 <p>Für das Bild muss mindestens eine Variante ohne TargetSize-Qualifizierer definiert sein. Sie müssen einen Scale-Qualifizierer definieren oder „Scale” und „TargetSize” nicht angeben. In diesem Fall wird „Scale-100” verwendet.</p>
 </td><td>
-<p>Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">Reaktionsfähiges Design für UWP-Apps (Universelle Windows-Plattform) – Grundlagen</a> und <a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">Richtlinien für App-Ressourcen</a>.</p>
+<p>Weitere Informationen finden Sie unter <a href="/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">Reaktionsfähiges Design für UWP-Apps (Universelle Windows-Plattform) – Grundlagen</a> und <a href="/windows/uwp/app-settings/store-and-retrieve-app-data">Richtlinien für App-Ressourcen</a>.</p>
 </td></tr>
 <tr><td>
 <p>Das Paket enthält keine Datei „resources.pri”.</p>
@@ -434,7 +434,7 @@ Orientieren Sie sich an der folgenden Tabelle.
 <tr><td>
 <p>Die Zeichenfolge „{string}“ entspricht nicht der Längenbeschränkung von maximal {number} Zeichen.</p>
 </td><td>
-<p>Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">App-Paketanforderungen</a>.</p>
+<p>Weitere Informationen finden Sie unter <a href="/windows/uwp/publish/app-package-requirements">App-Paketanforderungen</a>.</p>
 <p>In der tatsächlichen Meldung wird „{string}“ durch die Zeichenfolge mit dem Fehler ersetzt, und {number} enthält die maximale Länge.</p>
 </td></tr>
 <tr><td>
@@ -447,12 +447,12 @@ Orientieren Sie sich an der folgenden Tabelle.
 <tr><td>
 <p>Die Zeichenfolge darf nicht leer sein (Länge größer 0 (null)).</p>
 </td><td>
-<p>Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">App-Paketanforderungen</a>.</p>
+<p>Weitere Informationen finden Sie unter <a href="/windows/uwp/publish/app-package-requirements">App-Paketanforderungen</a>.</p>
 </td></tr>
 <tr><td>
 <p>In der Datei „resources.pri” ist keine Standardressource angegeben.</p>
 </td><td>
-<p>Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">Richtlinien für App-Ressourcen</a>.</p>
+<p>Weitere Informationen finden Sie unter <a href="/windows/uwp/app-settings/store-and-retrieve-app-data">Richtlinien für App-Ressourcen</a>.</p>
 <p>In der Standardbuildkonfiguration nimmt Visual Studio nur Bildressourcen mit der Skalierung 200 % in das App-Paket auf, wenn ein Bündel generiert wird, andere Ressourcen werden im Ressourcenpaket abgelegt. Stellen Sie sicher, dass Sie entweder Bildressourcen mit der Skalierung 200 % einschließen oder Ihr Projekt für die Aufnahme der vorhandenen Ressourcen konfigurieren.</p>
 </td></tr>
 <tr><td>

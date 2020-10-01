@@ -7,16 +7,16 @@ keywords: Windows 10, UWP
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 748646ce335e9e68ee7a22131ebd305db94e9801
-ms.sourcegitcommit: 5d7168ebc9f43aa13051446aff45a46600e6aafe
+ms.openlocfilehash: 5593b59a542f014e482c590b8d534804c836a1a7
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90799849"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216723"
 ---
 # <a name="get-activation-info-for-packaged-apps"></a>Erhalten von Aktivierungsinformationen für App-Pakete
 
-Ab Windows 10, Version 1809, können gepackte Desktop-Apps die Methode [AppInstance.GetActivatedEventArgs](/uwp/api/windows.applicationmodel.appinstance.getactivatedeventargs) aufrufen, um bestimmte Arten von App-Aktivierungsinformationen während des Starts abzurufen. Sie können diese Methode beispielsweise aufrufen, um Informationen zur App-Aktivierung beim Öffnen einer Datei, beim Klicken auf ein interaktives Popup oder beim Verwenden eines Protokolls abzurufen. Ab Windows 10, Version 2004, wird dieses Feature auch in Apps unterstützt, die [Sparse Packages](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) verwenden.
+Ab Windows 10, Version 1809, können gepackte Desktop-Apps die Methode [AppInstance.GetActivatedEventArgs](/uwp/api/windows.applicationmodel.appinstance.getactivatedeventargs) aufrufen, um bestimmte Arten von App-Aktivierungsinformationen während des Starts abzurufen. Sie können diese Methode beispielsweise aufrufen, um Informationen zur App-Aktivierung beim Öffnen einer Datei, beim Klicken auf ein interaktives Popup oder beim Verwenden eines Protokolls abzurufen. Ab Windows 10, Version 2004, wird dieses Feature auch in Apps unterstützt, die [Sparse Packages](./grant-identity-to-nonpackaged-apps.md) verwenden.
 
 > [!NOTE]
 > Zusätzlich zum Abrufen bestimmter Arten von Aktivierungsinformationen mit der Methode [AppInstance.GetActivatedEventArgs](/uwp/api/windows.applicationmodel.appinstance.getactivatedeventargs), wie in diesem Artikel beschrieben, können Sie auch Aktivierungsinformationen für Hintergrundaufgaben abrufen, indem Sie eine COM-Klasse definieren. Weitere Informationen finden Sie unter [Erstellen und Registrieren einer WinMain-COM-Hintergrundaufgabe](/windows/uwp/launch-resume/create-and-register-a-winmain-background-task).
@@ -66,10 +66,10 @@ Sie können die Methode [AppInstance.GetActivatedEventArgs](/uwp/api/windows.app
 
 | Ereignisargumanttyp | Paketerweiterung | Verwandte Dokumentation | 
 |-------------------|-----------------|-----------------------|
-| [ShareTargetActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.sharetargetactivatedeventargs) | [uap:ShareTarget](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-sharetarget) | [Festlegen deiner Desktopanwendung als Freigabeziel](/windows/apps/desktop/modernize/desktop-to-uwp-extend#making-your-desktop-application-a-share-target) |
-| [ProtocolActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.protocolactivatedeventargs) | [uap:Protocol](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol) | [Starten deiner Anwendung über ein Protokoll](/windows/apps/desktop/modernize/desktop-to-uwp-extensions#start-your-application-by-using-a-protocol) |
+| [ShareTargetActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.sharetargetactivatedeventargs) | [uap:ShareTarget](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-sharetarget) | [Festlegen deiner Desktopanwendung als Freigabeziel](./desktop-to-uwp-extend.md#making-your-desktop-application-a-share-target) |
+| [ProtocolActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.protocolactivatedeventargs) | [uap:Protocol](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol) | [Starten deiner Anwendung über ein Protokoll](./desktop-to-uwp-extensions.md#start-your-application-by-using-a-protocol) |
 | [ToastNotificationActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.toastnotificationactivatedeventarg) | desktop:ToastNotificationActivation | [Popupbenachrichtigungen über Desktop-Apps](/windows/uwp/design/shell/tiles-and-notifications/toast-desktop-apps). |
-| [StartupTaskActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.startuptaskactivatedeventargs)  | desktop:StartupTask | [Starten einer ausführbaren Datei, wenn sich Benutzer bei Windows anmelden](/windows/apps/desktop/modernize/desktop-to-uwp-extensions#start-an-executable-file-when-users-log-into-windows) |
-| [FileActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.fileactivatedeventargs) | [uap:FileTypeAssociation](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation) | [Zuordnen einer gepackten Anwendung zu einer Gruppe von Dateitypen](/windows/apps/desktop/modernize/desktop-to-uwp-extensions#associate-your-packaged-application-with-a-set-of-file-types) |
+| [StartupTaskActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.startuptaskactivatedeventargs)  | desktop:StartupTask | [Starten einer ausführbaren Datei, wenn sich Benutzer bei Windows anmelden](./desktop-to-uwp-extensions.md#start-an-executable-file-when-users-log-into-windows) |
+| [FileActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.fileactivatedeventargs) | [uap:FileTypeAssociation](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation) | [Zuordnen einer gepackten Anwendung zu einer Gruppe von Dateitypen](./desktop-to-uwp-extensions.md#associate-your-packaged-application-with-a-set-of-file-types) |
 | [VoiceCommandActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.voicecommandactivatedeventargs) | Keine | [Behandeln der Aktivierung und Ausführen von Sprachbefehlen](/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana) |
 | [LaunchActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) | Keine |  |

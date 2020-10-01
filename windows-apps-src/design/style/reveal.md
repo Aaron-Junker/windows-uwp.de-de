@@ -2,7 +2,7 @@
 description: Reveal ist ein Lichteffekt, der die interaktiven Elemente Ihrer App mit Tiefe und Fokus versehen kann.
 title: Reveal Highlight
 template: detail.hbs
-ms.date: 08/09/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: kisai
@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 24ac07b8caacd4369bcbadf2a4019bbcbde59c6b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 23f23cd65564df5f224696faabae74aa4465a438
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159974"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216866"
 ---
 # <a name="reveal-highlight"></a>Reveal Highlight
 

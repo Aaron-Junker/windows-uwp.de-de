@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, uwp, Standard, C++, cpp, winrt, Projektion, Erste Schritte
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b1ec459875b909e62c1d4a615db57343d660e9b
-ms.sourcegitcommit: 41dbee78d827107c224a9136c26f90be4dfe12ad
+ms.openlocfilehash: f38269acd9f1d6e2e830b51b3fcfa3a9014f2d7e
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90845559"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219903"
 ---
 # <a name="get-started-with-cwinrt"></a>Erste Schritte mit C++/WinRT
 
@@ -183,7 +183,7 @@ Beachten Sie, dass XAML am besten für Programmiersprachen geeignet ist, die Ref
 
 ## <a name="sample-apps-written-in-cwinrt"></a>Beispiel-Apps in C++/WinRT
 
-Unter [Wo finde ich C++/WinRT-Beispiel-Apps?](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-cwinrt-sample-apps) finden Sie weitere Informationen.
+Unter [Wo finde ich C++/WinRT-Beispiel-Apps?](./faq.md#where-can-i-find-cwinrt-sample-apps) finden Sie weitere Informationen.
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [SyndicationClient::RetrieveFeedAsync-Methode](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)

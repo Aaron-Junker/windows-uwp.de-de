@@ -4,7 +4,7 @@ title: Kontextbefehle
 ms.assetid: ''
 label: Contextual commanding in collections
 template: detail.hbs
-ms.date: 10/25/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: chigy
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8138256dbde751768e5d9a707ffc1ad23ace7494
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 56c845186c9e5351abefd4a6d53175e43b11ae58
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173524"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217533"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>Kontextbefehle für Sammlungen und Listen
 

@@ -2,19 +2,19 @@
 description: Reveal Focus ist ein Lichteffekt, der den Rahmen von fokussierbaren Elementen animiert, wenn der Benutzer den Fokus eines Gamepad oder einer Bildschirmtastatur darauf verschiebt.
 title: Reveal Focus
 template: detail.hbs
-ms.date: 03/01/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 6afed2347bb3944c8ea5bd9b43e83d429973dc15
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 15ddbd46f2e4177b53701259feecd03d8306064b
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169164"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218113"
 ---
 # <a name="reveal-focus"></a>Reveal Focus
 

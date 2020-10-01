@@ -4,19 +4,19 @@ Description: Mit dem TextBox-Steuerelement können Benutzer Text in eine App ein
 title: Textfeld
 label: Text box
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e304f7b3df5ffbf00fb11554b11c0e48ddadc4b5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f28e3e26d56f5741ceb0e5be13288c7dbd6c722f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173924"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220473"
 ---
 # <a name="text-box"></a>Textfeld
 

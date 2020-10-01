@@ -3,7 +3,7 @@ description: Zeigt das Avatar-Bild für eine Person an, sofern ein solches Bild 
 title: Personenbild-Steuerelement
 template: detail.hbs
 label: Parallax View
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: trestar
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f2c9a80dbe821feb910636eb26e783ec7eb309a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c4967a63a4417f284c0735153a1b7a543e82e54c
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169644"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217863"
 ---
 # <a name="person-picture-control"></a>Personenbild-Steuerelement
 

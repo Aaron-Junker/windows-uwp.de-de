@@ -3,7 +3,7 @@ Description: Passen Sie die integrierte Handschriftansicht für Freihandeingaben
 title: Texteingabe mit der Handschriftansicht
 label: Text input with the handwriting view
 template: detail.hbs
-ms.date: 10/13/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: sewen
@@ -11,12 +11,12 @@ design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e7c25a77b552ffc187a4e49a02b7facd771e8258
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 64963128679f3bb50afe1ba4c939ec6367ad9561
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175584"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218803"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>Texteingabe mit der Handschriftansicht
 
@@ -316,6 +316,7 @@ private double GetPopupVerticalOffset()
 Wie bei allen XAML-Framework-Steuerelementen können Sie sowohl die visuelle Struktur als auch das visuelle Verhalten einer [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) an Ihre spezifischen Anforderungen anpassen.
 
 Ein komplettes Beispiel zum Erstellen einer benutzerdefinierten Vorlage finden Sie in der Anleitung [Erstellen benutzerdefinierter Transportsteuerelemente](./custom-transport-controls.md) bzw. im [Beispiel für ein benutzerdefiniertes Bearbeitungssteuerelement](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).
+
 
 
 

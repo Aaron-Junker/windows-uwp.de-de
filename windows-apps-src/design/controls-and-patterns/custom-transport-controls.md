@@ -4,16 +4,16 @@ title: Erstellen benutzerdefinierter Medientransportsteuerelemente
 ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
 label: Create custom media transport controls
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f5dd1a27cb02a33a8d760f4d902a42c6619ad796
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fc68410a0e68d1c642057664bc9641669282bd7f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160414"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219543"
 ---
 # <a name="create-custom-transport-controls"></a>Erstellen benutzerdefinierter Transportsteuerelemente
 
@@ -217,7 +217,7 @@ Das Anpassen von MediaTransportControls kann beispielsweise erforderlich sein, w
 
 Sie müssen es dem CommandBar-Element an der entsprechenden Position hinzufügen. (Weitere Informationen finden Sie im Abschnitt „Verwenden des Überlaufmenüs“.) Die Platzierung in der Benutzeroberfläche wird durch die Position der Schaltfläche im Markup bestimmt. Wenn diese Schaltfläche als letztes Element in den primären Befehlen angezeigt werden soll, fügen Sie sie am Ende der Liste der primären Befehle hinzu.
 
-Sie können auch das Symbol für die Schaltfläche anpassen. Weitere Informationen finden Sie in der Referenz zu <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton"><b>AppBarButton</b></a>.
+Sie können auch das Symbol für die Schaltfläche anpassen. Weitere Informationen finden Sie in der Referenz zu <a href="/uwp/api/Windows.UI.Xaml.Controls.AppBarButton"><b>AppBarButton</b></a>.
     
 
 2. Rufen Sie in der [**OnApplyTemplate**](/uwp/api/windows.ui.xaml.frameworkelement.onapplytemplate)-Überschreibung die Schaltfläche aus der Vorlage ab, und registrieren Sie einen Handler für das dazugehörige [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignis. Dieser Code wird in die `CustomMediaTransportControls`-Klasse eingefügt.

@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: Windows 10, UWP, Debuggen, Testen, Leistung
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f1ff6a98182f4832a2a1b82bf8ceca4aa176c36
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c18cb3c5b8a979e7c7c6485e6989736d818613ba
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157263"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220353"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>Bereitstellen und Debuggen von UWP-Apps
 
@@ -178,7 +178,7 @@ Hilfe hierzu bieten die folgenden Beispiele:
   - **Ordnerpfad des Layouts** = `\\NETWORK-SHARE\Layouts\App1`
   - **Paketregistrierungspfad** = `\\NETWORK-SHARE\Layouts\App1`
 
-Wenn Sie das Layout zunächst über das Netzwerk registrieren, werden Ihre Anmeldeinformationen auf dem Zielgerät zwischengespeichert, sodass Sie sich nicht immer wieder anmelden müssen. Um zwischengespeicherte Anmeldeinformationen zu entfernen, verwenden Sie [WinAppDeployCmd.exe Tool](https://docs.microsoft.com/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool) (Teil des Windows 10-SDKs) mit dem Befehl **Deletecreds**.
+Wenn Sie das Layout zunächst über das Netzwerk registrieren, werden Ihre Anmeldeinformationen auf dem Zielgerät zwischengespeichert, sodass Sie sich nicht immer wieder anmelden müssen. Um zwischengespeicherte Anmeldeinformationen zu entfernen, verwenden Sie [WinAppDeployCmd.exe Tool](../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md) (Teil des Windows 10-SDKs) mit dem Befehl **Deletecreds**.
 
 Beim Registrieren des Geräts über das Netzwerk können Sie **Alle Dateien auf dem Gerät beibehalten** nicht auswählen, da keine Dateien physisch auf das Remotegerät kopiert werden.
 
