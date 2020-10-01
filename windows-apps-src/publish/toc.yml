@@ -116,17 +116,6 @@
   items:
     - name: Generieren von Werbecodes
       href: ../publish/generate-promotional-codes.md
-    - name: Erstellen einer Anzeigenkampagne für Ihre App
-      href: ../publish/create-an-ad-campaign-for-your-app.md
-      items:
-        - name: Verwalten Ihrer Anzeigenkampagne
-          href: ../publish/managing-your-ad-campaign.md
-        - name: Über Eigenwerbung
-          href: ../publish/about-house-ads.md
-        - name: Informationen zu Community-Anzeigen
-          href: ../publish/about-community-ads.md
-        - name: Häufige Fragen zu Anzeigenkampagnen
-          href: ../publish/common-questions.md
     - name: Erstellen einer Werbekampagne für benutzerdefinierte Apps
       href: ../publish/create-a-custom-app-promotion-campaign.md
     - name: Anbieten vergünstigter Apps und Add-Ons
