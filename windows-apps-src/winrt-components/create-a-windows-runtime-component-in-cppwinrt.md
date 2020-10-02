@@ -5,12 +5,12 @@ ms.date: 07/06/2020
 ms.topic: article
 keywords: Windows 10, UWP, Windows, Runtime, Komponente, Komponenten, Windows-Runtime Komponente, WRC, C++/WinRT
 ms.localizationpriority: medium
-ms.openlocfilehash: adf13308b1a2c360d7db53ded4edfe866de6c260
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 12fa7c499dd0203a489b5657f1e3e2634bdad8b1
+ms.sourcegitcommit: a93a309a11cdc0931e2f3bf155c5fa54c23db7c3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220313"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646293"
 ---
 # <a name="windows-runtime-components-with-cwinrt"></a>Windows-Runtime-Komponenten mit C++/WinRT
 
@@ -25,7 +25,7 @@ Wenn Sie die C++/WinRT-Komponente erstellen, können Sie im allgemeinen Typen au
 
 Im restlichen Teil dieses Themas erfahren Sie, wie Sie eine Windows-Runtime Komponente in C++/WinRT erstellen und dann in einer Anwendung verwenden.
 
-Die Windows-Runtime Komponente, die Sie in diesem Thema erstellen, enthält eine Lauf Zeit Klasse, die ein Bankkonto darstellt. Das Thema veranschaulicht auch eine Core-APP, die die Bankkonto-Lauf Zeit Klasse nutzt und eine Funktion aufruft, um das Guthaben anzupassen.
+Die Windows-Runtime Komponente, die Sie in diesem Thema erstellen, enthält eine Lauf Zeit Klasse, die ein Thermometer darstellt. Außerdem wird in diesem Thema eine Core-App veranschaulicht, die die Thermometer-Lauf Zeit Klasse nutzt und eine Funktion aufruft, mit der die Temperatur angepasst wird.
 
 > [!NOTE]
 > Informationen zum Installieren und Verwenden der Visual Studio-Erweiterung (VSIX) [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) und des NuGet-Pakets (die zusammen die Projektvorlage und Buildunterstützung bereitstellen) findest du unter [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) (Visual Studio-Unterstützung für C++/WinRT, XAML, die VSIX-Erweiterung und das NuGet-Paket).
@@ -33,61 +33,58 @@ Die Windows-Runtime Komponente, die Sie in diesem Thema erstellen, enthält eine
 > [!IMPORTANT]
 > Wichtige Konzepte und Begriffe im Zusammenhang mit der Nutzung und Erstellung von Laufzeitklassen mit C++/WinRT findest du unter [Verwenden von APIs mit C++/WinRT](../cpp-and-winrt-apis/consume-apis.md) sowie unter [Erstellen von APIs mit C++/WinRT](../cpp-and-winrt-apis/author-apis.md).
 
-## <a name="create-a-windows-runtime-component-bankaccountwrc"></a>Erstellen einer Komponente für Windows-Runtime (BankAccountWRC)
+## <a name="create-a-windows-runtime-component-thermometerwrc"></a>Erstellen einer Windows-Runtime Komponente (thermometerwrc)
 
-Erstelle zunächst ein neues Projekt in Microsoft Visual Studio. Erstelle ein Projekt vom Typ **Leere App (C++/WinRT)** , und nenne es *BankAccountWRC* (Bankkonto-Komponente für Windows-Runtime). Stellen Sie sicher, dass **Platzieren Sie die Projektmappe und das Projekt im selben Verzeichnis** deaktiviert ist. Die neueste allgemein verfügbare Version von Windows SDK (d. h. keine Vorschauversion). Wenn du das Projekt *BankAccountWRC* benennst, erleichtert dies die Ausführung der restlichen Schritte in diesem Thema. 
+Erstelle zunächst ein neues Projekt in Microsoft Visual Studio. Erstellen Sie ein **Windows-Runtime Component-Projekt (C++/WinRT)** , und nennen Sie es *thermometerwrc* (für "Thermometer Windows-Runtime Component"). Stellen Sie sicher, dass **Platzieren Sie die Projektmappe und das Projekt im selben Verzeichnis** deaktiviert ist. Die neueste allgemein verfügbare Version von Windows SDK (d. h. keine Vorschauversion). Wenn Sie das Projekt *thermometerwrc* benennen, erhalten Sie die einfachste Möglichkeit, die restlichen Schritte in diesem Thema auszuführen. 
 
 Führen Sie noch keinen Buildvorgang für das Projekt aus.
 
-Das neu erstellte Projekt enthält eine Datei namens `Class.idl`. Ändern Sie im Projektmappen-Explorer den Namen der Datei `BankAccount.idl`. (Durch die Umbenennung der Datei vom Typ `.idl` werden automatisch auch die abhängigen Dateien `.h` und `.cpp` umbenannt.) Ersetze den Inhalt von `BankAccount.idl` durch das folgende Listing:
-
-> [!NOTE]
-> Natürlich wäre es nicht so, dass Sie auf diese Weise Finanzsoftware für die Produktion implementieren. Wir verwenden `Single` in diesem Beispiel nur zur einfacheren Verwendung.
+Das neu erstellte Projekt enthält eine Datei namens `Class.idl`. Ändern Sie im Projektmappen-Explorer den Namen der Datei `Thermometer.idl`. (Durch die Umbenennung der Datei vom Typ `.idl` werden automatisch auch die abhängigen Dateien `.h` und `.cpp` umbenannt.) Ersetze den Inhalt von `Thermometer.idl` durch das folgende Listing:
 
 ```idl
-// BankAccountWRC.idl
-namespace BankAccountWRC
+// Thermometer.idl
+namespace ThermometerWRC
 {
-    runtimeclass BankAccount
+    runtimeclass Thermometer
     {
-        BankAccount();
-        void AdjustBalance(Single value);
+        Thermometer();
+        void AdjustTemperature(Single deltaFahrenheit);
     };
 }
 ```
 
-Speichern Sie die Datei. Im aktuellen Zustand wird das Projekt zwar nicht vollständig erstellt, die Erstellung ist jedoch hilfreich, da dadurch die Quellcodedateien generiert werden, in denen die Laufzeitklasse **BankAccount** implementiert wird. Erstelle daher als Nächstes das Projekt. (Die in dieser Phase zu erwartenden Buildfehler sind darauf zurückzuführen, dass `Class.h` und `Class.g.h` nicht gefunden wurden.)
+Speichern Sie die Datei. Das Projekt wird im Moment nicht bis zum Abschluss erstellt, aber das Erstellen von jetzt ist eine sinnvolle Sache, da es die Quell Code Dateien generiert, in denen Sie die **thermometerlaufzeitklasse** implementieren. Erstelle daher als Nächstes das Projekt. (Die in dieser Phase zu erwartenden Buildfehler sind darauf zurückzuführen, dass `Class.h` und `Class.g.h` nicht gefunden wurden.)
 
-Während des Buildprozesses wird das Tool `midl.exe` ausgeführt, um die Windows-Runtime-Metadatendatei (`\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`) deiner Komponente zu erstellen. Danach wird das Tool `cppwinrt.exe` (mit der Option `-component`) ausgeführt, um Quellcodedateien zu generieren, die dich bei der Erstellung deiner Komponente unterstützen. Diese Dateien enthalten Stubs zur Implementierung der Laufzeitklasse **BankAccount**, die du in deiner IDL deklariert hast. Diese Stubs sind `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` und `BankAccount.cpp`.
+Während des Buildprozesses wird das Tool `midl.exe` ausgeführt, um die Windows-Runtime-Metadatendatei (`\ThermometerWRC\Debug\ThermometerWRC\ThermometerWRC.winmd`) deiner Komponente zu erstellen. Danach wird das Tool `cppwinrt.exe` (mit der Option `-component`) ausgeführt, um Quellcodedateien zu generieren, die dich bei der Erstellung deiner Komponente unterstützen. Diese Dateien enthalten stubvorgänge, um den Einstieg in die Implementierung der **Thermometer** -Lauf Zeit Klasse zu erleichtern, die Sie in ihrer IDL deklariert haben Diese Stubs sind `\ThermometerWRC\ThermometerWRC\Generated Files\sources\Thermometer.h` und `Thermometer.cpp`.
 
-Klicke mit der rechten Maustaste auf den Projektknoten, und klicke auf **Ordner in Datei-Explorer öffnen**. Dadurch wird der Projektordner im Datei-Explorer geöffnet. Kopiere dort die Stub-Dateien `BankAccount.h` und `BankAccount.cpp` aus dem Ordner `\BankAccountWRC\BankAccountWRC\Generated Files\sources\` in den Ordner mit deinen Projektdateien (`\BankAccountWRC\BankAccountWRC\`), und ersetze die Dateien am Ziel. Als Nächstes öffnen wir `BankAccount.h` und `BankAccount.cpp` und implementieren unsere Laufzeitklasse. `BankAccount.h`Fügen Sie in der-Implementierung (*nicht* der Factory-Implementierung) von **BankAccount**ein neues privates Mitglied hinzu.
+Klicke mit der rechten Maustaste auf den Projektknoten, und klicke auf **Ordner in Datei-Explorer öffnen**. Dadurch wird der Projektordner im Datei-Explorer geöffnet. Kopiere dort die Stub-Dateien `Thermometer.h` und `Thermometer.cpp` aus dem Ordner `\ThermometerWRC\ThermometerWRC\Generated Files\sources\` in den Ordner mit deinen Projektdateien (`\ThermometerWRC\ThermometerWRC\`), und ersetze die Dateien am Ziel. Als Nächstes öffnen wir `Thermometer.h` und `Thermometer.cpp` und implementieren unsere Laufzeitklasse. `Thermometer.h`Fügen Sie in der-Implementierung (*nicht* der Factory-Implementierung) des **Thermometers**einen neuen privaten Member hinzu.
 
 ```cppwinrt
-// BankAccount.h
+// Thermometer.h
 ...
-namespace winrt::BankAccountWRC::implementation
+namespace winrt::ThermometerWRC::implementation
 {
-    struct BankAccount : BankAccountT<BankAccount>
+    struct Thermometer : ThermometerT<Thermometer>
     {
         ...
 
     private:
-        float m_balance{ 0.f };
+        float m_temperatureFahrenheit { 0.f };
     };
 }
 ...
 ```
 
-Implementieren Sie in `BankAccount.cpp` die Methode " **accessbalance** ", wie in der folgenden Liste gezeigt.
+Implementieren Sie in `Thermometer.cpp` die Methode "- **Temperatur** ", wie in der folgenden Liste gezeigt.
 
 ```cppwinrt
-// BankAccount.cpp
+// Thermometer.cpp
 ...
-namespace winrt::BankAccountWRC::implementation
+namespace winrt::ThermometerWRC::implementation
 {
-    void BankAccount::AdjustBalance(float value)
+    void Thermometer::AdjustTemperature(float deltaFahrenheit)
     {
-        m_balance += value;
+        m_temperatureFahrenheit += deltaFahrenheit;
     }
 }
 ```
@@ -96,44 +93,44 @@ Sie müssen auch `static_assert` aus beiden Dateien löschen.
 
 Sollte die Erstellung aufgrund von Warnungen nicht möglich sein, behebe entweder die Ursachen, oder lege die Projekteigenschaft **C/C++**  > **Allgemein** > **Warnungen als Fehler behandeln** auf **Nein (/WX-)** fest, und erstelle das Projekt erneut.
 
-## <a name="create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component"></a>Erstellen einer Core-App (BankAccountCoreApp) zum Testen der Komponente für Windows-Runtime
+## <a name="create-a-core-app-thermometercoreapp-to-test-the-windows-runtime-component"></a>Erstellen Sie eine Core-app (thermometercoreapp), um die Windows-Runtime Komponente zu testen.
 
-Erstelle ein neues Projekt (entweder in der Projektmappe *BankAccountWRC* oder in einer neuen Projektmappe). Erstelle ein Projekt vom Typ **Core-App (C++/WinRT)** , und nenne es *BankAccountCoreApp*. Legen Sie *BankAccountCoreApp* als Startprojekt fest, wenn sich beide Projekte in derselben Projektmappe befinden.
+Erstellen Sie nun ein neues Projekt (entweder in Ihrer *thermometerwrc* -Projekt Mappe oder in einer neuen). Erstellen Sie ein Core-App-Projekt **(C++/WinRT)** , und nennen Sie es *thermometercoreapp*. Legen Sie *thermometercoreapp* als Startprojekt fest, wenn sich die beiden Projekte in derselben Projekt Mappe befinden.
 
 > [!NOTE]
-> Wie bereits erwähnt, wird die Metadatendatei der Windows-Runtime für die Komponente für Windows-Runtime (deren Projekt *BankAccountWRC* benannt wurde) im Ordner `\BankAccountWRC\Debug\BankAccountWRC\` erstellt. Das erste Segment dieses Pfads ist der Name des Ordners, der die Projektmappendatei enthält, das nächste Segment ist dessen Unterverzeichnis namens `Debug`, das letzte Segment ist das Unterverzeichnis, das nach der Komponente für Windows-Runtime benannt ist. Wenn das Projekt nicht *BankAccountWRC-* genannt wurde, befindet sich die Metadatendatei im Ordner `\<YourProjectName>\Debug\<YourProjectName>\`.
+> Wie bereits erwähnt, wird die Windows-Runtime Metadatendatei für die Windows-Runtime Komponente (deren Projekt Sie " *thermometerwrc*" genannt haben) im Ordner erstellt `\ThermometerWRC\Debug\ThermometerWRC\` . Das erste Segment dieses Pfads ist der Name des Ordners, der die Projektmappendatei enthält, das nächste Segment ist dessen Unterverzeichnis namens `Debug`, das letzte Segment ist das Unterverzeichnis, das nach der Komponente für Windows-Runtime benannt ist. Wenn Sie Ihr Projekt nicht mit dem Namen *thermometerwrc*benennen, befindet sich Ihre Metadatendatei im Ordner `\<YourProjectName>\Debug\<YourProjectName>\` .
 
-Füge jetzt in deinem Core App-Projekt (*BankAccountCoreApp*) einen Verweis hinzu, und navigiere zu `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd` (oder füge einen Verweis von Projekt zu Projekt hinzu, falls sich die beiden Projekte in der gleichen Projektmappe befinden). Klicke auf **Hinzufügen** und anschließend auf **OK**. Führe als Nächstes einen Buildvorgang für *BankAccountCoreApp* aus. Sollte ein Fehler mit dem Hinweis angezeigt werden, dass die Nutzlastdatei `readme.txt` nicht vorhanden ist, schließe diese Datei aus dem Projekt „Komponente für Windows-Runtime“ aus, erstelle es neu, und erstelle anschließend *BankAccountCoreApp* neu. (Dieser Fehler ist allerdings nicht sehr wahrscheinlich.)
+Fügen Sie nun in Ihrem Core-App-Projekt (*thermometercoreapp*) einen Verweis hinzu, und navigieren Sie zu `\ThermometerWRC\Debug\ThermometerWRC\ThermometerWRC.winmd` (oder fügen Sie einen Projekt-zu-Projekt-Verweis hinzu, wenn sich die beiden Projekte in derselben Projekt Mappe befinden). Klicke auf **Hinzufügen** und anschließend auf **OK**. Erstellen Sie nun *thermometercoreapp*. Im unwahrscheinlichen Fall, dass eine Fehlermeldung angezeigt wird, dass die Nutz Last Datei `readme.txt` nicht vorhanden ist, schließen Sie diese Datei aus dem Projekt Windows-Runtime Komponente aus, erstellen Sie Sie neu, und erstellen Sie dann *thermometercoreapp*neu
 
-Während des Buildprozesses wird das Tool `cppwinrt.exe` ausgeführt, um die referenzierte Datei vom Typ `.winmd` zu Quellcodedateien mit projizierten Typen zu verarbeiten, die dich bei der Nutzung deiner Komponente unterstützen. Der Header für die projizierten Typen für die Laufzeitklassen deiner Komponente (`BankAccountWRC.h`) wird im Ordner `\BankAccountCoreApp\BankAccountCoreApp\Generated Files\winrt\` generiert.
+Während des Buildprozesses wird das Tool `cppwinrt.exe` ausgeführt, um die referenzierte Datei vom Typ `.winmd` zu Quellcodedateien mit projizierten Typen zu verarbeiten, die dich bei der Nutzung deiner Komponente unterstützen. Der Header für die projizierten Typen für die Laufzeitklassen deiner Komponente (`ThermometerWRC.h`) wird im Ordner `\ThermometerCoreApp\ThermometerCoreApp\Generated Files\winrt\` generiert.
 
 Schließe diesen Header in `App.cpp` ein.
 
 ```cppwinrt
 // App.cpp
 ...
-#include <winrt/BankAccountWRC.h>
+#include <winrt/ThermometerWRC.h>
 ...
 ```
 
-`App.cpp`Fügen Sie außerdem in den folgenden Code hinzu, um ein **BankAccount** -Objekt (mithilfe des Standardkonstruktors des projizierten Typs) zu instanziieren und eine Methode für das Bankkonto "Bank Account" aufzurufen.
+`App.cpp`Fügen Sie außerdem in den folgenden Code hinzu, um ein **thermometerobjekt** (mithilfe des Standardkonstruktors des projizierten Typs) zu instanziieren und eine Methode für das thermometerobjekt aufzurufen.
 
 ```cppwinrt
 struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 {
-    BankAccountWRC::BankAccount m_bankAccount;
+    ThermometerWRC::Thermometer m_thermometer;
     ...
     
     void OnPointerPressed(IInspectable const &, PointerEventArgs const & args)
     {
-        m_bankAccount.AdjustBalance(1.f);
+        m_thermometer.AdjustTemperature(1.f);
         ...
     }
     ...
 };
 ```
 
-Jedes Mal, wenn Sie auf das Fenster klicken, erhöhen Sie den Saldo des Bank Konto Objekts. Sie können Haltepunkte festlegen, wenn Sie den Code schrittweise durchlaufen möchten, um zu bestätigen, dass die Anwendung tatsächlich die Windows-Runtime Komponente aufruft.
+Jedes Mal, wenn Sie auf das Fenster klicken, erhöhen Sie die Temperatur des thermometerobjekts. Sie können Haltepunkte festlegen, wenn Sie den Code schrittweise durchlaufen möchten, um zu bestätigen, dass die Anwendung tatsächlich die Windows-Runtime Komponente aufruft.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
@@ -145,4 +142,4 @@ Ein Beispiel für das Hinzufügen eines Ereignisses zur Windows-Runtime Komponen
 
 | Symptom | Problembehandlung |
 |---------|--------|
-|Wenn Sie in einer C++/WinRT-App eine [c#-Windows-Runtime Komponente](./creating-windows-runtime-components-in-csharp-and-visual-basic.md) verwenden, die XAML verwendet, erzeugt der Compiler einen Fehler in der Form "*" MyNamespace_XamlTypeInfo ": ist kein Member von" WinRT:: mynamespace "*, &mdash; wobei" *MyNamespace* "der Name des Namespace der Windows-Runtime Komponente ist. | `pch.h`Fügen Sie in in der C++-App/WinRT-APP das `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>` &mdash; Ersetzen von *MyNamespace* nach Bedarf hinzu. |
+|Wenn in einer C++/WinRT-App eine [C#-Komponente für Windows-Runtime](./creating-windows-runtime-components-in-csharp-and-visual-basic.md), die XAML verwendet, verarbeitet wird, erzeugt der Compiler einen Fehler der Form „ *'MyNamespace_XamlTypeInfo': is not a member of 'winrt::MyNamespace'* “, wobei *MyNamespace* der Name des Namespace der Windows Runtime-Komponente ist. | Fügen Sie in `pch.h` in der verarbeitenden C++/WinRT-App `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>` hinzu, und ersetzen Sie *MyNamespace* entsprechend. |
