@@ -3,21 +3,24 @@ ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: Aktivieren Ihres Geräts für die Entwicklung
 description: Erfahren Sie, wie Sie Ihr Windows 10-Gerät für Entwicklung und Debuggen aktivieren, indem Sie den Entwicklermodus in Visual Studio aktivieren.
 keywords: Erste Schritte Entwicklerlizenz Visual Studio, Entwicklerlizenz Gerät aktivieren
-ms.date: 05/22/2020
+ms.date: 09/28/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 702e3aa166501c3e9974398ae5b89e832cfa7391
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2a227494bb597b25c090d4ff57982e5d5c739184
+ms.sourcegitcommit: 9940ed6431aadbd8d4e54ca23d8ae44d3a2d048d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159054"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91403915"
 ---
 # <a name="enable-your-device-for-development"></a>Aktivieren Ihres Geräts für die Entwicklung
 
 ## <a name="activate-developer-mode-sideload-apps-and-access-other-developer-features"></a>Aktivieren des Entwicklermodus, Querladen von Apps und Zugreifen auf andere Entwicklerfeatures
 
 ![Aktivieren deiner Geräte für die Entwicklung](images/developer-poster.png)
+
+> [!IMPORTANT]
+> Wenn Sie keine eigenen Anwendungen auf Ihrem PC erstellen, brauchen Sie den Entwicklermodus nicht zu aktivieren. Wenn Sie versuchen, ein Problem mit Ihrem Computer zu beheben, ziehen Sie die [Windows-Hilfe](https://support.microsoft.com/hub/4338813/windows-help?os=windows-10) zurate. Wenn Sie zum ersten Mal entwickeln, sollten Sie die Umgebung [ einrichten](get-set-up.md), indem Sie die benötigten Tools herunterladen.
 
 Wenn du deinen Computer für alltägliche Aktivitäten wie Spiele, Surfen im Web, E-Mails oder Office-Apps verwendest, musst du den Entwicklermodus *nicht* aktivieren. (In diesem Fall raten wir sogar davon ab.) Die restlichen Informationen auf dieser Seite sind dann für dich nicht relevant, und du kannst einfach mit dem fortfahren, womit du dich gerade beschäftigt hast. Danke für deinen Besuch!
 

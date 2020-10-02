@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, projiziert, Projektion, Implementierung, Laufzeitklasse, Aktivierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 81c8edc65f78de14c1c42611ea1e8d97046128ae
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1b3d9e4be7c45d4d2b9b5063087a78556497dc9b
+ms.sourcegitcommit: bcf60b6d460dc4855f207ba21da2e42644651ef6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170364"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91376248"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Nutzen von APIs mit C++/WinRT
 
@@ -283,13 +283,26 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 Ausführlichere Informationen, Code und eine exemplarische Vorgehensweise für die Nutzung von APIs, die in eine Windows-Runtime-Komponente implementiert sind, finden Sie unter [Windows-Runtime-Komponenten mit C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) und [Erstellen von Ereignissen in C++/WinRT](./author-events.md).
 
 ## <a name="if-the-api-is-implemented-in-the-consuming-project"></a>Im verwendenden Projekt implementierte API
-Ein Typ, der über die XAML-UI genutzt wird, muss eine Laufzeitklasse sein (auch wenn er sich im gleichen Projekt wie der XAML-Code befindet).
+Das Codebeispiel in diesem Abschnitt stammt aus dem Thema [XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage). Dort finden Sie ausführlichere Informationen, Code und eine exemplarische Vorgehensweise für die Nutzung einer im verwendenden Projekt implementierten Laufzeitklasse.
 
-Für dieses Szenario wird auf der Grundlage der Windows-Runtime-Metadaten der Laufzeitklasse (`.winmd`) ein projizierter Typ generiert. Auch hier wird ein Header eingeschlossen. Diesmal wird der projizierte Typ allerdings über den zugehörigen Konstruktor vom Typ **std::nullptr_t** konstruiert. Dieser Konstruktor führt keine Initialisierung durch. Daher musst du der Instanz über die Hilfsfunktion [**winrt::make**](/uwp/cpp-ref-for-winrt/make) einen Wert zuweisen und alle notwendigen Konstruktorargumente übergeben. Eine Laufzeitklasse, die im gleichen Projekt implementiert wird wie der verwendende Code, muss weder registriert noch per Windows-Runtime/COM-Aktivierung instanziiert werden.
+Ein Typ, der über die XAML-UI genutzt wird, muss eine Laufzeitklasse sein (auch wenn er sich im gleichen Projekt wie der XAML-Code befindet). Für dieses Szenario wird auf der Grundlage der Windows-Runtime-Metadaten der Laufzeitklasse (`.winmd`) ein projizierter Typ generiert. Auch hier fügen Sie einen Header ein, aber dann haben Sie die Wahl zwischen Version 1.0 oder Version 2.0 von C++/WinRT zum Erstellen der Instanz der Laufzeitklasse. Die Methode mit Version 1.0 verwendet [**winrt::make**](/uwp/cpp-ref-for-winrt/make); die Methode mit Version 2.0 wird als *einheitliche Konstruktion* bezeichnet. Sehen wir uns beide nacheinander an.
 
-Für das folgende Codebeispiel wird ein Projekt vom Typ **Leere App (C++/WinRT)** benötigt:
+### <a name="constructing-by-using-winrtmake"></a>Erstellen mithilfe von **winrt::make**
+Beginnen wir mit der Standardmethode (C++/WinRT Version 1.0), da es sinnvoll ist, zumindest mit dem Muster vertraut zu sein. Der projizierte Typ wird über den zugehörigen Konstruktor vom Typ **std::nullptr_t** konstruiert. Dieser Konstruktor führt keine Initialisierung durch. Daher musst du der Instanz über die Hilfsfunktion [**winrt::make**](/uwp/cpp-ref-for-winrt/make) einen Wert zuweisen und alle notwendigen Konstruktorargumente übergeben. Eine Laufzeitklasse, die im gleichen Projekt implementiert wird wie der verwendende Code, muss weder registriert noch per Windows-Runtime/COM-Aktivierung instanziiert werden.
+
+Eine vollständige exemplarische Vorgehensweise finden Sie unter [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage). Dieser Abschnitt zeigt Auszüge aus dieser exemplarischen Vorgehensweise.
 
 ```cppwinrt
+// MainPage.idl
+import "BookstoreViewModel.idl";
+namespace Bookstore
+{
+    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    {
+        BookstoreViewModel MainViewModel{ get; };
+    }
+}
+
 // MainPage.h
 ...
 struct MainPage : MainPageT<MainPage>
@@ -297,10 +310,9 @@ struct MainPage : MainPageT<MainPage>
     ...
     private:
         Bookstore::BookstoreViewModel m_mainViewModel{ nullptr };
-        ...
-    };
-}
+};
 ...
+
 // MainPage.cpp
 ...
 #include "BookstoreViewModel.h"
@@ -312,7 +324,45 @@ MainPage::MainPage()
 }
 ```
 
-Ausführlichere Informationen, Code und eine exemplarische Vorgehensweise für die Nutzung einer im verwendenden Projekt implementierten Laufzeitklasse findest du unter [XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
+### <a name="uniform-construction"></a>Einheitliche Konstruktion
+Mit C++/WinRT Version 2.0 und höher steht Ihnen eine optimierte Form der Konstruktion zur Verfügung, die als *einheitliche Konstruktion* bezeichnet wird (siehe [Neuerungen und Änderungen in C++/WinRT 2.0](./news.md#news-and-changes-in-cwinrt-20)).
+
+Eine vollständige exemplarische Vorgehensweise finden Sie unter [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage). Dieser Abschnitt zeigt Auszüge aus dieser exemplarischen Vorgehensweise.
+
+Um die einheitliche Konstruktion anstelle von [**winrt::make**](/uwp/cpp-ref-for-winrt/make) zu verwenden, benötigen Sie eine Aktivierungsfactory. Eine gute Möglichkeit, diese zu generieren, besteht darin, einen Konstruktor zu Ihrer IDL hinzuzufügen.
+
+```idl
+// MainPage.idl
+import "BookstoreViewModel.idl";
+namespace Bookstore
+{
+    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    {
+        MainPage();
+        BookstoreViewModel MainViewModel{ get; };
+    }
+}
+```
+
+In `MainPage.h` deklarieren und initialisieren Sie dann *m_mainViewModel* in nur einem Schritt, wie unten gezeigt.
+
+```cppwinrt
+// MainPage.h
+...
+struct MainPage : MainPageT<MainPage>
+{
+    ...
+    private:
+        Bookstore::BookstoreViewModel m_mainViewModel;
+        ...
+    };
+}
+...
+```
+
+Im **MainPage**-Konstruktor in `MainPage.cpp` ist der Code `m_mainViewModel = winrt::make<Bookstore::implementation::BookstoreViewModel>();` dann nicht erforderlich.
+
+Weitere Informationen zur einheitlichen Konstruktion und Codebeispiele finden Sie unter [Aktivieren von einheitlicher Konstruktion und direktem Implementierungszugriff](./author-apis.md#opt-in-to-uniform-construction-and-direct-implementation-access).
 
 ## <a name="instantiating-and-returning-projected-types-and-interfaces"></a>Instanziieren und Zurückgeben projizierter Typen und Schnittstellen
 Das folgende Beispiel zeigt, wie projizierte Typen und Schnittstellen in deinem verwendenden Projekt aussehen können. Vergiss nicht, dass ein projizierter Typ (wie in diesem Beispiel) von einem Tool generiert und nicht von dir selbst erstellt wird.

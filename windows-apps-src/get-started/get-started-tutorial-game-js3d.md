@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ee8eb8ea34205f2e597bf41da61f5ab63714566
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e3f46e0d1837f391ffc7cc6ca361a2c92212565b
+ms.sourcegitcommit: 9940ed6431aadbd8d4e54ca23d8ae44d3a2d048d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162834"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91403925"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>Erstellen eines 3D-JavaScript-Spiels mit „three.js“
 
@@ -406,7 +406,7 @@ In der CodePen-Instanz kannst du problemlos mit einigen Dingen experimentieren u
 
 Nun ist es an der Zeit, sich in das Labyrinth zu begeben und sich ein wenig umzusehen. Dazu verwenden wir die Bibliothek **PointerLockControls.js** und unsere Kamera.
 
-Die Bibliothek **PoinerLockControls.js** verwendet die Maus, um die Kamera in die Richtung zu drehen, in der die Maus bewegt wird, sodass der Spieler sich umsehen kann. 
+Die Bibliothek **PointerLockControls.js** verwendet die Maus, um die Kamera in die Richtung zu drehen, in der die Maus bewegt wird, sodass der Spieler sich umsehen kann. 
 
 Als Erstes fügen wir der Datei **index.html** einige neue Elemente hinzu:
 
@@ -433,7 +433,7 @@ var blocker = document.getElementById('blocker');
 ```
 
 
-Nun können wir in der Funktion `init()` ein neues Objekt vom Typ `PoinerLockControls` erstellen, ihm unsere Kamera (`camera`) übergeben und die Kamera (`camera`) anschließend hinzufügen. (Der Zugriff erfolgt mithilfe von `controls.getObject()`.)
+Nun können wir in der Funktion `init()` ein neues Objekt vom Typ `PointerLockControls` erstellen, ihm unsere Kamera (`camera`) übergeben und die Kamera (`camera`) anschließend hinzufügen. (Der Zugriff erfolgt mithilfe von `controls.getObject()`.)
 
 ```javascript
 controls = new THREE.PointerLockControls(camera);

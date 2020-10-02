@@ -1,5 +1,5 @@
 ---
-Description: In diesem Artikel finden Sie eine Liste der in der Schriftart „Segoe MDL2 Assets“ enthaltenen Glyphen und Hinweise zu deren Verwendung.
+description: In diesem Artikel finden Sie eine Liste der in der Schriftart „Segoe MDL2 Assets“ enthaltenen Glyphen und Hinweise zu deren Verwendung.
 Search.Refinement.TopicID: 184
 title: Richtlinien für Segoe MDL2-Symbole
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
@@ -9,12 +9,13 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0663f9947249f54a888bf2d3f52f522ceb885604
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.custom: contperfq1
+ms.openlocfilehash: 5c2dc3237f2ff68ce2836fc80fa0936e13d84dd7
+ms.sourcegitcommit: f46edb85d523a4a1f5006787d357cdc9d090aefe
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175784"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91414860"
 ---
 # <a name="segoe-mdl2-icons"></a>Segoe MDL2-Symbole
 
@@ -67,8 +68,6 @@ Sie können auch mit der statischen Ressource `SymbolThemeFontFamily` auf **Sego
 
 ## <a name="icon-list"></a>Liste der Symbole
 Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symbole enthält, als hier gezeigt werden können. Viele der Symbole dienen speziellen Zwecken und werden für gewöhnlich nicht an anderer Stelle verwendet.
-
-
 
 <table style="background-color: white; color: black">
 
