@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ce19fdca0ff79c430fcae7353cda595702f260c0
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 580edca578a0d518d89b5d2fdb30c9304be35cef
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218433"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636620"
 ---
 # <a name="tiles-badges-and-notifications-for-windows-apps"></a>Kacheln, Signale und Benachrichtigungen für Windows-Apps
  
@@ -22,7 +22,7 @@ Erfahren Sie, wie Sie mithilfe von Kacheln, Signalen, Popups und Benachrichtigun
 
 > **Wichtige APIs:** [NuGet-Paket für UWP-Community-Toolkit-Benachrichtigungen](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" />
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" alt="Screenshot of a static tile and a live tile displaying a notification and a badge." />
 Eine Kachel ist die Darstellung einer App im Startmenü. Jede Windows-App verfügt über eine Kachel. Sie können verschiedene Kachelgrößen festlegen (klein, mittel, breit und groß).</p>
 
 <p>Sie können eine <em>Kachelbenachrichtigung</em> verwenden, um die Kachel zu aktualisieren und neue Informationen an den Benutzer zu übermitteln, z. B. neue Schlagzeilen oder den Betreff der letzten ungelesenen Nachricht.</p>
