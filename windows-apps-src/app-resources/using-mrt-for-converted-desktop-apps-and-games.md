@@ -1,20 +1,20 @@
 ---
 title: Verwendung von MRT für konvertierte Desktop-Apps und Spiele
-description: Indem Sie Ihre .net-oder Win32-APP oder Ihr Spiel als msix-oder AppX-Paket Verpacken, können Sie das Ressourcen Verwaltungs System zum Laden von App-Ressourcen nutzen, die auf den Lauf Zeit Kontext zugeschnitten sind. In diesem Thema werden die Techniken detailliert beschrieben.
+description: Indem Sie Ihre .NET- oder Win32-App oder Ihr Spiel als MSIX- oder AppX-Paket verpacken, können Sie das Ressourcenverwaltungssystem nutzen, um App-Ressourcen zu laden, die auf den Laufzeitkontext zugeschnitten sind. In diesem Thema werden die Techniken detailliert beschrieben.
 ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, MRT, PRI. Ressourcen, Spiele, Centennial, Desktop-App Converter, MUI, Satellitenassembly
 ms.localizationpriority: medium
-ms.openlocfilehash: dafce15fa259fdbc8a0afab90b6617dc6cc37cf4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b86cbcfcc5a6c6284b993dcad1325b108b1ab353
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157614"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636490"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>Verwenden des Ressourcenverwaltungssystems für Windows 10 in älteren Apps oder Spielen
 
-.Net-und Win32-apps und-Spiele werden häufig in verschiedenen Sprachen lokalisiert, um den gesamten adressierbaren Markt zu erweitern. Weitere Informationen zu einer Werterhöhung Ihrer App durch Lokalisierung finden Sie unter [Globalisierung und Lokalisierung](../design/globalizing/globalizing-portal.md). Indem Sie Ihre .net-oder Win32-APP oder Ihr Spiel als msix-oder AppX-Paket Verpacken, können Sie das Ressourcen Verwaltungs System zum Laden von App-Ressourcen nutzen, die auf den Lauf Zeit Kontext zugeschnitten sind. In diesem Thema werden die Techniken detailliert beschrieben.
+.Net-und Win32-apps und-Spiele werden häufig in verschiedenen Sprachen lokalisiert, um den gesamten adressierbaren Markt zu erweitern. Weitere Informationen zu einer Werterhöhung Ihrer App durch Lokalisierung finden Sie unter [Globalisierung und Lokalisierung](../design/globalizing/globalizing-portal.md). Indem Sie Ihre .NET- oder Win32-App oder Ihr Spiel als MSIX- oder AppX-Paket verpacken, können Sie das Ressourcenverwaltungssystem nutzen, um App-Ressourcen zu laden, die auf den Laufzeitkontext zugeschnitten sind. In diesem Thema werden die Techniken detailliert beschrieben.
 
 Es gibt zahlreiche Möglichkeiten, eine herkömmliche Win32-Anwendung zu lokalisieren, aber mit Windows 8 wurde ein [neues Ressourcen Verwaltungssystem](/previous-versions/windows/apps/jj552947(v=win.10)) eingeführt, das über Programmiersprachen hinweg über Anwendungs Typen hinweg funktioniert und Funktionen über die einfache Lokalisierung hinweg bereitstellt. Dieses System wird in diesem Thema als "MRT" bezeichnet. In der Vergangenheit war das "moderne Ressourcen Technologie", aber der Begriff "Modern" wurde eingestellt. Der Ressourcen-Manager wird möglicherweise auch als MRM (Modern Ressourcen-Manager) oder PRI (Paket Ressourcen Index) bezeichnet.
 
@@ -33,7 +33,7 @@ In vielen Situationen können Sie weiterhin vorhandene Lokalisierungs Formate un
 <tr>
 <td>Lokalisieren des Paket Manifests</td>
 <td>Erforderliche minimale Arbeitsschritte, die erforderlich sind, damit Ihre lokalisierten Inhalte in der Windows-Shell und in der Microsoft Store angezeigt werden</td>
-<td>Klein</td>
+<td>Small</td>
 </tr>
 <tr>
 <td>Verwenden von MRT zum Ermitteln und Auffinden von Ressourcen</td>
@@ -43,12 +43,12 @@ In vielen Situationen können Sie weiterhin vorhandene Lokalisierungs Formate un
 <tr>
 <td>Erstellen von Ressourcen Paketen</td>
 <td>Letzter Schritt zum Minimieren der Download-und Installationsgrößen</td>
-<td>Klein</td>
+<td>Small</td>
 </tr>
 <tr>
 <td>Migrieren zu MRT-Ressourcen Formaten und-APIs</td>
 <td>Erheblich kleinere Dateigrößen (abhängig von der vorhandenen Ressourcen Technologie)</td>
-<td>Groß</td>
+<td>Large</td>
 </tr>
 </table>
 
@@ -62,11 +62,11 @@ Der primäre Zweck einer Ressourcen Verwaltungs Technologie besteht daher darin,
 
 Im folgenden finden Sie ein einfaches Beispiel für eine Anwendung, die über Text Bezeichnungen auf zwei Schaltflächen ( `openButton` und `saveButton` ) und eine PNG-Datei für ein Logo ( `logoImage` ) verfügt. Die Text Bezeichnungen sind in Englisch und Deutsch lokalisiert, und das Logo ist für normale Desktop Anzeige (100% Skalierungsfaktor) und High-Resolution-Telefone (300% Skalierungsfaktor) optimiert. Beachten Sie, dass dieses Diagramm eine grundlegende konzeptionelle Ansicht des Modells darstellt. Er wird nicht exakt der Implementierung zugeordnet.
 
-<p><img src="images\conceptual-resource-model.png"/></p>
+:::image type="content" source="images\conceptual-resource-model.png" alt-text="Screenshot einer Quell Code Bezeichnung, einer Bezeichnung für eine Nachschlage Tabelle und einer Datei auf der Festplatte.&quot;:::
 
 In der Grafik verweist der Anwendungscode auf die drei logischen Ressourcennamen. Zur Laufzeit verwendet die `GetResource` Pseudo Funktion MRT, um die Ressourcennamen in der Ressourcen Tabelle (als PRI-Datei bezeichnet) anzuzeigen und den am besten geeigneten Kandidaten basierend auf den Umgebungsbedingungen (die Sprache des Benutzers und den Skalierungsfaktor der Anzeige) zu finden. Im Fall der Bezeichnungen werden die Zeichen folgen direkt verwendet. Im Fall des logobilds werden die Zeichen folgen als Dateinamen interpretiert, und die Dateien werden vom Datenträger gelesen. 
 
-Wenn der Benutzer eine andere Sprache als Englisch oder Deutsch oder einen anderen Display scale-Faktor als 100% oder 300% spricht, wählt das MRT den "nächstgelegenen" übereinstimmenden Kandidaten basierend auf einem Satz von Fall Back Regeln aus (Weitere Hintergrundinformationen finden Sie unter [Resource Management System](/previous-versions/windows/apps/jj552947(v=win.10)) ).
+Wenn der Benutzer eine andere Sprache als Englisch oder Deutsch oder einen anderen Display scale-Faktor als 100% oder 300% spricht, wählt das MRT den &quot;nächstgelegenen" übereinstimmenden Kandidaten basierend auf einem Satz von Fall Back Regeln aus (Weitere Hintergrundinformationen finden Sie unter [Resource Management System](/previous-versions/windows/apps/jj552947(v=win.10)) ).
 
 Beachten Sie, dass MRT Ressourcen unterstützt, die auf mehr als einen Qualifizierer zugeschnitten sind. wenn das Logobild z. b. eingebetteten Text enthielt, der auch lokalisiert werden musste, hätte das Logo vier Kandidaten: en/Scale-100, de/Scale-100, en/Scale-300 und de/Scale-300.
 
@@ -198,7 +198,11 @@ Wenn Sie den Designer in Visual Studio verwenden möchten, gehen Sie wie folgt v
 1. Erstellen Sie `Strings\en-us` im Projekt den Ordner (oder eine andere Sprache), und fügen Sie dem Stamm Ordner des Projekts mit dem Standardnamen ein **Neues Element** hinzu `resources.resw` . Achten Sie darauf, **Ressourcen Datei (. resw)** und kein **Ressourcen Wörterbuch** auszuwählen. ein Ressourcen Wörterbuch ist eine Datei, die von XAML-Anwendungen verwendet wird.
 2. Geben Sie mithilfe des Designers die folgenden Zeichen folgen ein (verwenden Sie dasselbe, `Names` aber ersetzen Sie `Values` mit dem entsprechenden Text für Ihre Anwendung):
 
-<img src="images\editing-resources-resw.png"/>
+:::image type="content" source="images\editing-resources-resw.png" alt-text="Screenshot einer Quell Code Bezeichnung, einer Bezeichnung für eine Nachschlage Tabelle und einer Datei auf der Festplatte.&quot;:::
+
+In der Grafik verweist der Anwendungscode auf die drei logischen Ressourcennamen. Zur Laufzeit verwendet die `GetResource` Pseudo Funktion MRT, um die Ressourcennamen in der Ressourcen Tabelle (als PRI-Datei bezeichnet) anzuzeigen und den am besten geeigneten Kandidaten basierend auf den Umgebungsbedingungen (die Sprache des Benutzers und den Skalierungsfaktor der Anzeige) zu finden. Im Fall der Bezeichnungen werden die Zeichen folgen direkt verwendet. Im Fall des logobilds werden die Zeichen folgen als Dateinamen interpretiert, und die Dateien werden vom Datenträger gelesen. 
+
+Wenn der Benutzer eine andere Sprache als Englisch oder Deutsch oder einen anderen Display scale-Faktor als 100% oder 300% spricht, wählt das MRT den &quot;nächstgelegenen" :::
 
 > [!NOTE]
 > Wenn Sie mit dem Visual Studio-Designer beginnen, können Sie den XML-Code jederzeit direkt bearbeiten, indem Sie drücken `F7` . Wenn Sie jedoch mit einer minimalen XML-Datei beginnen, *erkennt der Designer die Datei nicht* , da viele zusätzliche Metadaten fehlen. Sie können dieses Problem beheben, indem Sie die Textbausteine-XSD-Informationen aus einer vom Designer generierten Datei in Ihre Hand bearbeitete XML-Datei kopieren.
@@ -236,8 +240,17 @@ Wenn Sie XML direkt bearbeiten, öffnen Sie die `AppxManifest.xml` Datei, und ne
 
 Wenn Sie den Visual Studio-Manifest-Designer verwenden, öffnen Sie die. appxmanifest-Datei, und ändern Sie die Werte der <span style="background-color: lightgreen">markierten Werte</span> auf der Registerkarte **Anwendung* und der Registerkarte *Paket* Erstellung:
 
-<img src="images\editing-application-info.png"/>
-<img src="images\editing-packaging-info.png"/>
+:::image type="content" source="images\editing-application-info.png" alt-text="Screenshot einer Quell Code Bezeichnung, einer Bezeichnung für eine Nachschlage Tabelle und einer Datei auf der Festplatte.&quot;:::
+
+In der Grafik verweist der Anwendungscode auf die drei logischen Ressourcennamen. Zur Laufzeit verwendet die `GetResource` Pseudo Funktion MRT, um die Ressourcennamen in der Ressourcen Tabelle (als PRI-Datei bezeichnet) anzuzeigen und den am besten geeigneten Kandidaten basierend auf den Umgebungsbedingungen (die Sprache des Benutzers und den Skalierungsfaktor der Anzeige) zu finden. Im Fall der Bezeichnungen werden die Zeichen folgen direkt verwendet. Im Fall des logobilds werden die Zeichen folgen als Dateinamen interpretiert, und die Dateien werden vom Datenträger gelesen. 
+
+Wenn der Benutzer eine andere Sprache als Englisch oder Deutsch oder einen anderen Display scale-Faktor als 100% oder 300% spricht, wählt das MRT den &quot;nächstgelegenen" :::
+
+:::image type="content" source="images\editing-packaging-info.png" alt-text="Screenshot einer Quell Code Bezeichnung, einer Bezeichnung für eine Nachschlage Tabelle und einer Datei auf der Festplatte.&quot;:::
+
+In der Grafik verweist der Anwendungscode auf die drei logischen Ressourcennamen. Zur Laufzeit verwendet die `GetResource` Pseudo Funktion MRT, um die Ressourcennamen in der Ressourcen Tabelle (als PRI-Datei bezeichnet) anzuzeigen und den am besten geeigneten Kandidaten basierend auf den Umgebungsbedingungen (die Sprache des Benutzers und den Skalierungsfaktor der Anzeige) zu finden. Im Fall der Bezeichnungen werden die Zeichen folgen direkt verwendet. Im Fall des logobilds werden die Zeichen folgen als Dateinamen interpretiert, und die Dateien werden vom Datenträger gelesen. 
+
+Wenn der Benutzer eine andere Sprache als Englisch oder Deutsch oder einen anderen Display scale-Faktor als 100% oder 300% spricht, wählt das MRT den &quot;nächstgelegenen" :::
 
 ### <a name="step-12-build-pri-file-make-an-msix-package-and-verify-its-working"></a>Schritt 1,2: Erstellen von PRI-Dateien, Erstellen eines msix-Pakets und Überprüfen der Funktionsweise
 
@@ -462,7 +475,11 @@ Andere Abschnitte des Paket Manifests können lokalisiert werden. Wenn Ihre Anwe
 
 Sie können diese Informationen auch mit dem Visual Studio-Manifest-Designer hinzufügen, indem Sie `Declarations` auf der Registerkarte die <span style="background-color: lightgreen">markierten Werte</span>beachten:
 
-<p><img src="images\editing-declarations-info.png"/></p>
+:::image type="content" source="images\editing-declarations-info.png" alt-text="Screenshot einer Quell Code Bezeichnung, einer Bezeichnung für eine Nachschlage Tabelle und einer Datei auf der Festplatte.&quot;:::
+
+In der Grafik verweist der Anwendungscode auf die drei logischen Ressourcennamen. Zur Laufzeit verwendet die `GetResource` Pseudo Funktion MRT, um die Ressourcennamen in der Ressourcen Tabelle (als PRI-Datei bezeichnet) anzuzeigen und den am besten geeigneten Kandidaten basierend auf den Umgebungsbedingungen (die Sprache des Benutzers und den Skalierungsfaktor der Anzeige) zu finden. Im Fall der Bezeichnungen werden die Zeichen folgen direkt verwendet. Im Fall des logobilds werden die Zeichen folgen als Dateinamen interpretiert, und die Dateien werden vom Datenträger gelesen. 
+
+Wenn der Benutzer eine andere Sprache als Englisch oder Deutsch oder einen anderen Display scale-Faktor als 100% oder 300% spricht, wählt das MRT den &quot;nächstgelegenen" :::
 
 Fügen Sie nun den einzelnen Dateien die entsprechenden Ressourcennamen hinzu `.resw` , und ersetzen Sie dabei den <span style="background-color: yellow">markierten Text</span> durch den entsprechenden Text für Ihre APP (denken Sie daran, dies für *jede unterstützte Sprache*zu tun!):
 
@@ -478,7 +495,11 @@ Fügen Sie nun den einzelnen Dateien die entsprechenden Ressourcennamen hinzu `.
 
 Diese werden dann in Teilen der Windows-Shell angezeigt, z. b. im Datei-Explorer:
 
-<p><img src="images\file-type-tool-tip.png"/></p>
+:::image type="content" source="images\file-type-tool-tip.png" alt-text="Screenshot einer Quell Code Bezeichnung, einer Bezeichnung für eine Nachschlage Tabelle und einer Datei auf der Festplatte.&quot;:::
+
+In der Grafik verweist der Anwendungscode auf die drei logischen Ressourcennamen. Zur Laufzeit verwendet die `GetResource` Pseudo Funktion MRT, um die Ressourcennamen in der Ressourcen Tabelle (als PRI-Datei bezeichnet) anzuzeigen und den am besten geeigneten Kandidaten basierend auf den Umgebungsbedingungen (die Sprache des Benutzers und den Skalierungsfaktor der Anzeige) zu finden. Im Fall der Bezeichnungen werden die Zeichen folgen direkt verwendet. Im Fall des logobilds werden die Zeichen folgen als Dateinamen interpretiert, und die Dateien werden vom Datenträger gelesen. 
+
+Wenn der Benutzer eine andere Sprache als Englisch oder Deutsch oder einen anderen Display scale-Faktor als 100% oder 300% spricht, wählt das MRT den &quot;nächstgelegenen":::
 
 Erstellen und testen Sie das Paket wie zuvor, und üben Sie alle neuen Szenarien aus, in denen die neuen UI-Zeichen folgen angezeigt werden.
 

@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/dev-home.html
 ms.localizationpriority: medium
-ms.openlocfilehash: 40100adb1bd9337d933b8ebd155847bde71e341a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 291b25e962aa8ac37705fd0db544f138036949d2
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172814"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636610"
 ---
 # <a name="developer-home-on-the-console-dev-home"></a>Startseite für Entwickler in der Konsole (dev Home)
    
@@ -30,10 +30,10 @@ So starten Sie dev Home bei der Wiederherstellung von November 2015 oder höher:
    1. **Alle Einstellungen** auswählen  
    1. Wählen Sie auf der Standard **Entwickler** Seite **Developer Home** (Start Symbol) aus.   
 
- ![](images/dev_home_icons.png)   
+ ![Screenshot der Seite "Entwickler" in "Einstellungen".](images/dev_home_icons.png)   
   
 Wählen Sie unter frühere Wiederherstellungen auf der rechten Seite des Startbildschirms in den **angezeigten Inhalten** die Kachel dev-Home aus, oder zeigen Sie die Anwendungsliste in Xbox One-Manager an, und starten Sie **dev Home**.   
- ![](images/dev_home_1.png) 
+ ![Screenshot der Registerkarte "Anwendungen", die mit hervorgehobener Startoption angezeigt wird.](images/dev_home_1.png) 
 <a id="ID4EBC"></a>
 
    
@@ -53,7 +53,7 @@ Der Header der Benutzeroberfläche von dev Home enthält die folgenden wichtigen
   
 Der Rest der Benutzeroberfläche von dev Home ist in die folgenden Seiten unterteilt. Weitere Informationen zu den Tools auf diesen Seiten finden Sie in den jeweiligen Themen.   
  
-   *  [Home](devhome-home.md)  
+   *  [Startseite](devhome-home.md)  
    *  [Xbox Live](devhome-live.md)  
    *  [Einstellungen](devhome-settings.md)  
    *  [Medien Erfassung](devhome-capture.md)  
@@ -81,10 +81,10 @@ Mehrere vorhandene und anstehende Tools in dev Home (z. b. Netzwerk und multipla
    
   
 Um auf den Snap-Modus zuzugreifen, markieren Sie den Titel des entsprechenden Tools, klicken Sie auf dem Controller auf die Schaltfläche **Ansicht** , **und wählen Sie** im Kontextmenü die Option ausrichten aus:  
- ![](images/dev_home_4.png)   
+ ![Screenshot der Entwicklungs Startseite mit hervorgehobener Snap-Option.](images/dev_home_4.png)   
   
 Dev Home wird rechts angedockt. Sie können den Kontext umschalten, indem Sie wie gewohnt auf die Schaltfläche Nexus doppeltippen.  
- ![](images/dev_home_5.png)  
+ ![Screenshot der Entwicklungs Startseite, die anzeigt, dass Sie während des Tests auf die Tools zugreifen können.](images/dev_home_5.png)  
 <a id="ID4EKF"></a>
 
    
@@ -102,7 +102,7 @@ Dev Home kann angepasst und personalisiert werden. Sie können die APP so konfig
    
   
 Um die Größe oder Position eines Tools zu ändern, verwenden Sie die Kontextmenü Schaltfläche (Schaltfläche anzeigen auf dem Controller), während der Titel den Fokus besitzt. Wählen Sie im Kontextmenü **verschieben** oder **Größe ändern**aus.   
- ![](images/dev_home_6.png)  
+ ![Screenshot der Entwicklungs Startseite, die auf der rechten Seite mit hervorgehobener Verschiebungs Option angezeigt wird.](images/dev_home_6.png)  
 <a id="ID4EEG"></a>
 
    
@@ -111,7 +111,7 @@ Um die Größe oder Position eines Tools zu ändern, verwenden Sie die Kontextme
    
   
 Im Hauptmenü können Sie den **Arbeitsbereich** auswählen und dann Design **Farbe ändern**. Wählen Sie eine neue Farbe aus, und klicken Sie auf **Speichern** , um die Design Farbe zu aktualisieren   
- ![](images/dev_home_7.png)  
+ ![Screenshot der Entwicklungs Startseite, die den Arbeitsbereich anzeigt und Design Farboptionen ändern ausgewählt hat.](images/dev_home_7.png)  
 <a id="ID4EVG"></a>
 
    
@@ -120,7 +120,7 @@ Im Hauptmenü können Sie den **Arbeitsbereich** auswählen und dann Design **Fa
    
   
 Wenn ein Paket mehrere Anwendungen enthält, können Sie mit dev Home festlegen, dass die Standardanwendung gestartet wird. Markieren Sie das Paket im Start Programm, und **Klicken Sie auf die Schaltfläche** , um die Liste der verfügbaren Anwendungen zu öffnen. Markieren Sie den Wert, den Sie als Standard festlegen möchten, und klicken Sie auf die Schaltfläche **Ansicht** , und wählen Sie dann im Kontextmenü die Option **als Standard festlegen** aus.   
- ![](images/dev_home_setdefault.png)  
+ ![Screenshot der Entwicklungs Startseite mit hervorgehobener Option "als Standard festlegen".](images/dev_home_setdefault.png)  
 <a id="ID4EGH"></a>
 
    
@@ -129,13 +129,13 @@ Wenn ein Paket mehrere Anwendungen enthält, können Sie mit dev Home festlegen,
    
   
 Über das Start Programm können Sie am unteren Rand der Liste installierte apps und Spiele die Option **Spiel von einer Netzwerkfreigabe registrieren** auswählen, um eine lose Dateiversion eines Titels Remote auszuführen.   
- ![](images/dev_home_8.png)   
+ ![Screenshot der Entwicklungs Startseite mit hervorgehobener Option "Spiel von einer Netzwerkfreigabe registrieren".](images/dev_home_8.png)   
   
 Sie können dann den Netzwerkpfad zur appxmanifest.xml Datei für den Titel eingeben, den Sie registrieren möchten. Dev Home versucht, den Titel mithilfe vorhandener Anmelde Informationen für diese Freigabe zu registrieren. Falls erforderlich, werden neue Anmelde Informationen für das Netzwerk angezeigt. Wenn Sie auf zusätzliche Freigaben zugreifen müssen (z. b. um auf symbolisch verknüpfte Ressourcen auf einem separaten Server zuzugreifen), müssen Sie diese über die folgende Option hinzufügen.   
    
   
 Sie können diese gespeicherten Anmelde Informationen (und weitere hinzufügen) in der-Konsole über die Option **Netzwerk Anmelde Informationen verwalten** im Hauptmenü verwalten.   
- ![](images/dev_home_9.png)   
+ ![Screenshot der dev-Startseite mit hervorgehobener Option "Netzwerk Anmelde Informationen verwalten"](images/dev_home_9.png)   
   
 Sie können die Anmelde Informationen auf der Konsole anzeigen, Anmelde Informationen bearbeiten, indem Sie den Pfad der Anmelde Informationen auswählen und auf **eine** Schaltfläche klicken und eine der Anmelde Informationen entfernen, indem Sie den Link entfernen auswählen und auf **eine** Schaltfläche klicken.   
    

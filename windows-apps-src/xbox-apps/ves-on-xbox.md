@@ -4,12 +4,12 @@ description: Erfahren Sie, wie Sie Ihren universelle Windows-Plattform-Apps (UWP
 ms.date: 10/19/2017
 ms.topic: article
 keywords: Windows 10, UWP, Xbox, Speech, Voice-aktivierte Shell
-ms.openlocfilehash: 38afa2473dd74ab580cf38cc21d1f2b192f9b72a
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: b59b578a13145910be30c3f228305b874f9e9734
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304652"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636480"
 ---
 # <a name="using-speech-to-invoke-ui-elements"></a>Verwenden von Sprache zum Aufrufen von UI-Elementen
 
@@ -83,7 +83,7 @@ Die Sprachausgabe Anwendung ist auch ein Benutzeroberflächenautomatisierungs-Cl
 
 Um dieses Problem zu beheben, wurde mit Windows 10 Creators Update die Sprachausgabe aktualisiert, um auch die-Eigenschaft zu überprüfen `AutomationProperties.HelpText` .  Wenn diese Eigenschaft nicht leer ist, wird der Inhalt von der Sprachausgabe zusätzlich zu gesprochen `AutomationProperties.Name` .  Wenn `HelpText` leer ist, liest die Sprachausgabe nur den Inhalt des Namens.  Dies ermöglicht es, dass bei Bedarf längere beschreibende Zeichen folgen verwendet werden, behält aber einen kürzeren Ausdrucks Erkennungs Ausdruck in der- `Name` Eigenschaft bei.
 
-![](images/ves_narrator.jpg)
+![Ein Diagramm, das den Code hinter der Schaltfläche mit AutomationProperties.Name und AutomationProperties. HelpText anzeigt, die anzeigt, dass die Voice-aktivierte Shell auf den Namen "configure" lauscht.](images/ves_narrator.jpg)
 
 Weitere Informationen finden Sie [unter Automatisierungs Eigenschaften für die Barrierefreiheits Unterstützung in der Benutzeroberfläche](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff400332(v=vs.95) "Automatisierungs Eigenschaften für die Barrierefreiheits Unterstützung in der Benutzeroberfläche").
 
@@ -101,7 +101,7 @@ Die Eingabe von Alm hat die folgenden Auswirkungen:
 - Die Cortana-Überlagerung wird in der oberen rechten Ecke angezeigt, und der Benutzer wird darüber informiert, was Sie sehen.  Während der Benutzer spricht, werden auch Ausdrucks Fragmente, die von der Spracherkennung erkannt werden, an dieser Stelle angezeigt.
 - Ves analysiert die UIA-Struktur, sucht alle handlungsfähigen Steuerelemente, registriert Ihren Text in der sprach Erkennungs Grammatik und startet eine fortlaufende Überwachungs Sitzung.
 
-    ![](images/ves_overlay.png)
+    ![Screenshot mit der markierten Option "Bezeichnungen anzeigen" hervorgehoben.](images/ves_overlay.png)
 
 ### <a name="exiting-alm"></a>Alm wird beendet ###
 Das System bleibt in Alm, während der Benutzer mit der Benutzeroberfläche über die Stimme interagiert.  Es gibt zwei Möglichkeiten, Alm zu beenden:
@@ -129,24 +129,24 @@ Wenn die Bezeichnungen der Sprech Tip angezeigt werden, gibt es keinen Befehl, S
 ## <a name="location-of-voice-tip-labels"></a>Speicherort der Sprech Tip Bezeichnungen ##
 Sprach Tipp Bezeichnungen werden horizontal und vertikal innerhalb des boundingrechteck des Steuer Elements zentriert.  Wenn die Steuerelemente klein und eng gruppiert sind, können sich die Bezeichnungen von anderen überlappen bzw. durch andere verdeckt werden, und Ves versucht, diese Bezeichnungen zu trennen, um Sie zu trennen und sicherzustellen, dass Sie sichtbar sind  Es ist jedoch nicht garantiert, dass 100% der Fälle funktionieren.  Wenn eine stark überfüllte Benutzeroberfläche vorliegt, führt dies wahrscheinlich dazu, dass einige Bezeichnungen von anderen Personen verdeckt werden. Überprüfen Sie Ihre Benutzeroberfläche mit "Bezeichnungen anzeigen", um sicherzustellen, dass ausreichend Platz für die Sichtbarkeit von sprach Tipps vorliegt.
 
-![](images/ves_labels.png)
+![Screenshot der sprach Tipp Bezeichnungen, die horizontal und vertikal innerhalb des umgebenden Rechtecks des Steuer Elements zentriert sind.](images/ves_labels.png)
 
 ## <a name="combo-boxes"></a>Kombinations Felder ##
 Wenn ein Kombinations Feld erweitert wird, erhält jedes einzelne Element im Kombinations Feld eine eigene voicetip-Bezeichnung, und häufig werden diese auf der Grundlage vorhandener Steuerelemente hinter der Dropdown Liste angezeigt.  Um zu vermeiden, dass eine Übersichtlichkeit und eine verwirrende Muddle von Bezeichnungen angezeigt werden (wobei Kombinations Feld-Element Bezeichnungen mit den Bezeichnungen der Steuerelemente hinter dem Kombinations Feld gemischt werden), werden nur die Bezeichnungen für die untergeordneten Elemente angezeigt, wenn ein Kombinations Feld erweitert wird.  alle anderen sprach Tipp Bezeichnungen werden ausgeblendet.  Der Benutzer kann dann entweder eines der Dropdown Elemente auswählen oder das Kombinations Feld "Schließen".
 
 - Bezeichnungen auf reduzierten Kombinations Feldern:
 
-    ![](images/ves_combo_closed.png)
+    ![Screenshot des Anzeige-und Audiovideo-Ausgabe Fensters mit Bezeichnungen in reduzierten Kombinations Feldern.](images/ves_combo_closed.png)
 
 - Beschriftungen im erweiterten Kombinations Feld:
 
-    ![](images/ves_combo_open.png)
+    ![Screenshot des Fensters "Anzeige" und "Sound Video Ausgabe" mit Bezeichnungen in einem erweiterten Kombinations Feld.](images/ves_combo_open.png)
 
 
 ## <a name="scrollable-controls"></a>Scrollbare Steuerelemente ##
 Bei Bild lauffähigen Steuerelementen werden die sprach Tipps für die scrollbefehle auf die einzelnen Ränder des Steuer Elements zentriert.  Sprach Tipps werden nur für die ausführbaren Bild Laufrichtungen angezeigt, z. b. Wenn ein vertikaler Bildlauf nicht verfügbar ist, wird der Bildlauf nach oben und der Bildlauf nach unten nicht angezeigt.  Wenn mehrere Bild lauffähige Bereiche vorhanden sind, werden durch ordinale für die Unterscheidung zwischen Ihnen (z. b. "Scroll Right 1", "Scroll Right 2" usw.).
 
-![](images/ves_scroll.png) 
+![Screenshot: Bildlauf nach links und Bildlauf nach rechts in einem horizontalen Bildlauf in U I.](images/ves_scroll.png) 
 
 ## <a name="disambiguation"></a>Mehrdeutigkeitsvermeidung ##
 Wenn mehrere Benutzeroberflächen Elemente denselben Namen aufweisen oder die Spracherkennung mit mehreren Kandidaten übereinstimmt, wechselt Ves in den disambialisierungsmodus.  In diesem Modus werden voicetip-Bezeichnungen für die beteiligten Elemente angezeigt, sodass der Benutzer das richtige Element auswählen kann. Der Benutzer kann den disambitätsmodus abbrechen, indem er "Abbrechen" sagt.
@@ -155,15 +155,15 @@ Beispiel:
 
 - Im aktiven Empfangsmodus, vor der Eindeutigkeit; der Benutzer sagt: "ist ich mehrdeutig":
 
-    ![](images/ves_disambig1.png) 
+    ![Screenshot des aktiven Überwachungsmodus mit dem jetzt können Sie sagen, welche Option angezeigt wird und keine Bezeichnungen auf den Schaltflächen angezeigt werden.](images/ves_disambig1.png) 
 
 - Beide Schaltflächen stimmen überein. Eindeutigkeit gestartet:
 
-    ![](images/ves_disambig2.png) 
+    ![Screenshot des aktiven Empfangsmodus mit der angezeigten Option und Element 1 und Element 2 Bezeichnungen auf den Schaltflächen.](images/ves_disambig2.png) 
 
 - Die Click-Aktion wird angezeigt, wenn "Select 2" ausgewählt wurde:
 
-    ![](images/ves_disambig3.png) 
+    ![Screenshot des aktiven Überwachungsmodus mit dem jetzt können Sie sagen, welche Option angezeigt wird, und dass ich auf der ersten Schaltfläche eine mehrdeutige Bezeichnung habe.](images/ves_disambig3.png) 
  
 ## <a name="sample-ui"></a>Beispielbenutzeroberfläche ##
 Im folgenden finden Sie ein Beispiel für eine XAML-basierte Benutzeroberfläche, in der die AutomationProperties.Name auf verschiedene Weise festgelegt wird:
@@ -203,11 +203,11 @@ Das obige Beispiel zeigt, wie die Benutzeroberfläche mit und ohne sprach Tipp B
  
 - Im aktiven Empfangsmodus ohne angezeigte Bezeichnungen:
 
-    ![](images/ves_alm_nolabels.png) 
+    ![Screenshot des aktiven Überwachungsmodus mit dem Anzeigen von Bezeichnungen, z... Anzeigen von Bezeichnungen anzeigen und Anzeigen von Bezeichnungen.](images/ves_alm_nolabels.png) 
 
 - Im aktiven Lesemodus, nachdem der Benutzer "Bezeichnungen anzeigen" angezeigt hat:
 
-    ![](images/ves_alm_labels.png) 
+    ![Screenshot des aktiven Modus für die Überwachung mit dem, wenn Sie fertig sind, wird die Option "Überwachung Abbrechen" angezeigt](images/ves_alm_labels.png) 
 
 Im Fall von `button1` füllt XAML die `AutomationProperties.Name` Eigenschaft automatisch mit Text aus dem sichtbaren Text Inhalt des Steuer Elements auf.  Aus diesem Grund gibt es auch dann eine Sprech Tip Bezeichnung, wenn keine explizite `AutomationProperties.Name` Menge vorhanden ist.
 

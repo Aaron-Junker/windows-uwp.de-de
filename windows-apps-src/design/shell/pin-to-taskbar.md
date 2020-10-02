@@ -6,18 +6,18 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Taskleiste, Task leisten-Manager, an Taskleiste anheften, primäre Kachel
 ms.localizationpriority: medium
-ms.openlocfilehash: c2090d038bb3999112e8d2fa3824968916e5d7dc
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: e43dd7084c042b7480aa98c638f1fc5d216e64c7
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219333"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636630"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>Anheften einer App an die Taskleiste
 
 Sie können Ihre eigene APP Programm gesteuert an die Taskleiste anheften, genauso wie Sie [Ihre APP an das Startmenü anheften](tiles-and-notifications/primary-tile-apis.md)können. Und Sie können überprüfen, ob Ihre APP zurzeit fixiert ist, und ob die Taskleiste das Anheften zulässt. 
 
-![Taskleiste](images/taskbar/taskbar.png)
+![Screenshot einer Windows 10-Taskleiste, die die angeheftete App anzeigt.](images/taskbar/taskbar.png)
 
 > [!IMPORTANT]
 > **Erfordert das Fall Creators Update**: Sie müssen das SDK 16299 als Ziel verwenden und Build 16299 oder höher ausführen, um die Task leisten-APIs zu verwenden.
