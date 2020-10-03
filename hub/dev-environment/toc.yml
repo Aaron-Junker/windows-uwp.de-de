@@ -63,8 +63,8 @@
           href: /cpp/
         - name: Erste Schritte mit C#
           href: /dotnet/csharp/
-        - name: Erste Schritte Java in Azure
-          href: /azure/developer/java/
+        - name: Erste Schritte mit Docker
+          href: ../dev-environment/docker/overview.md
         - name: Erste Schritte mit PowerShell
           href: /powershell/
         - name: Erste Schritte mit Datenbanken in WSL
