@@ -19,23 +19,23 @@
                   href: desktop/modernize/desktop-to-uwp-enhance.md
                 - name: Verfügbare Windows-Runtime-APIs
                   href: desktop/modernize/desktop-to-uwp-supported-api.md
-            - name: Hosten von UWP-XAML-Steuerelementen (XAML-Inseln)
+            - name: Hosten von WinRT-XAML-Steuerelementen (XAML-Inseln)
               items:
                 - name: Übersicht
                   href: desktop/modernize/xaml-islands.md
                 - name: XAML Islands in WPF- und Windows Forms-Apps
                   items:
-                    - name: Hosten eines UWP-Standardsteuerelements
+                    - name: Hosten eines standardmäßigen WinRT-XAML-Steuerelements
                       href: desktop/modernize/host-standard-control-with-xaml-islands.md
-                    - name: Hosten eines benutzerdefinierten UWP-Steuerelements
+                    - name: Hosten eines benutzerdefinierten WinRT-XAML-Steuerelements
                       href: desktop/modernize/host-custom-control-with-xaml-islands.md
                 - name: XAML Islands in C++ Win32-Apps
                   items:
-                    - name: Verwenden der UWP-XAML-Hosting-API
+                    - name: Verwenden der WinRT-XAML-Hosting-API
                       href: desktop/modernize/using-the-xaml-hosting-api.md
-                    - name: Hosten eines UWP-Standardsteuerelements
+                    - name: Hosten eines standardmäßigen WinRT-XAML-Steuerelements
                       href: desktop/modernize/host-standard-control-with-xaml-islands-cpp.md
-                    - name: Hosten eines benutzerdefinierten UWP-Steuerelements
+                    - name: Hosten eines benutzerdefinierten WinRT-XAML-Steuerelements
                       href: desktop/modernize/host-custom-control-with-xaml-islands-cpp.md
                     - name: Erweiterte Szenarios
                       href: desktop/modernize/advanced-scenarios-xaml-islands-cpp.md

@@ -2,16 +2,16 @@
 Description: Fügen Sie moderne XAML-Benutzeroberflächen hinzu, erstellen Sie MSIX-Pakete, und binden Sie andere moderne Komponenten in Ihre Desktopanwendung ein.
 title: Modernisieren Ihrer Desktop-Apps für Windows
 ms.topic: article
-ms.date: 04/17/2019
+ms.date: 10/02/2020
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: d2ae73cc32fd4e3717fe40b8a6ec8c3397b40619
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5df07995c2e4175bc9a67010a78c353cbd9d8cfa
+ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161534"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91671499"
 ---
 # <a name="modernize-your-desktop-apps"></a>Modernisieren Ihrer Desktop-Apps
 
@@ -24,7 +24,7 @@ In diesem Artikel werden die Features von Windows 10 und der UWP beschrieben, d
 
 ## <a name="windows-ui-library"></a>Windows-UI-Bibliothek
 
-Die Windows-UI-Bibliothek umfasst eine Reihe von NuGet-Paketen, die Steuerelemente und andere Benutzeroberflächenelemente für Windows 10-Apps bereitstellen. WinUI begann als ein Toolkit, das neue und aktualisierte Versionen von UWP-Steuerelementen für UWP-Apps in älteren Versionen von Windows 10 bereitstellte. Der Umfang von WinUI hat zugenommen, sodass WinUI heute die Plattform für moderne native Benutzeroberflächen (UI) für mit UWP, .NET und Win32 entwickelte Windows 10-Apps ist.
+Die Windows-UI-Bibliothek umfasst eine Reihe von NuGet-Paketen, die Steuerelemente und andere Benutzeroberflächenelemente für Windows 10-Apps bereitstellen. WinUI begann als ein Toolkit, das neue und aktualisierte Versionen von WinRT-XAML-Steuerelementen für UWP-Apps in älteren Versionen von Windows 10 bereitstellte. Der Umfang von WinUI hat zugenommen, sodass WinUI heute die Plattform für moderne native Benutzeroberflächen (UI) für mit UWP, .NET und nativem Win32 entwickelte Windows 10-Apps ist.
 
 Sie können WinUI auf folgende Weise in Desktop-Apps einsetzen:
 
@@ -43,7 +43,7 @@ Weitere Informationen finden Sie unter [Verpacken von Desktopanwendungen](/windo
 
 ## <a name="net-core-3"></a>.NET Core 3
 
-.NET Core 3 ist die neueste Hauptversion von .NET Core. Das Highlight dieser Version ist der Support für Windows-Desktop-Apps, einschließlich Windows Forms- und WPF-Apps. Sie können neue und vorhandene Windows-Desktop-Apps unter .NET Core 3 ausführen und alle Vorteile von .NET Core genießen. UWP-Steuerelemente, die über [XAML-Inseln](xaml-islands.md) gehostet werden, können auch in Windows Forms- und WPF-Apps verwendet werden, die für .NET Core 3 bestimmt sind.
+.NET Core 3 ist die neueste Hauptversion von .NET Core. Das Highlight dieser Version ist der Support für Windows-Desktop-Apps, einschließlich Windows Forms- und WPF-Apps. Sie können neue und vorhandene Windows-Desktop-Apps unter .NET Core 3 ausführen und alle Vorteile von .NET Core genießen. WinRT-XAML-Steuerelemente, die über [XAML-Inseln](xaml-islands.md) gehostet werden, können auch in Windows Forms- und WPF-Apps verwendet werden, die für .NET Core 3 bestimmt sind.
 
 Weitere Informationen finden Sie unter [Neues in .NET Core 3.0](/dotnet/core/whats-new/dotnet-core-3-0).
 
@@ -53,15 +53,15 @@ Sie können viele Windows-Runtime-APIs direkt in Ihrer WPF-, Windows Forms- oder
 
 Weitere Informationen finden Sie unter [Verwenden von Windows-Runtime-APIs in Desktop-Apps](desktop-to-uwp-enhance.md).
 
-## <a name="host-uwp-controls-xaml-islands"></a>Hosten von UWP-Steuerelementen (XAML-Inseln)
+## <a name="host-winrt-xaml-controls-xaml-islands"></a>Hosten von WinRT-XAML-Steuerelementen (XAML-Inseln)
 
 Ab Version 1903 von Windows 10 können Sie [UWP-XAML-Steuerelemente](/windows/uwp/design/controls-and-patterns/controls-by-function) direkt allen Benutzeroberflächenelementen einer WPF-, Windows Forms- oder C++-Win32-App hinzufügen, die einem Fensterhandle (HWND) zugeordnet sind. Dies bedeutet Folgendes: Sie können die aktuellen UWP-Features, z. B. [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) und Steuerelemente, für die das [Fluent Design-System](/windows/uwp/design/fluent-design-system/index) unterstützt wird, vollständig in Fenster und andere Anzeigeflächen Ihrer Desktop-Apps integrieren. Dieses Entwicklerszenario wird auch als *XAML-Inseln* bezeichnet.
 
-Weitere Informationen finden Sie unter [UWP controls in desktop apps](xaml-islands.md) (Verwenden von Steuerelementen in Desktop-Apps).
+Weitere Informationen finden Sie unter [WinRT-XAML-Steuerelemente in Desktop-Apps](xaml-islands.md).
 
 ## <a name="use-the-visual-layer-in-desktop-apps"></a>Verwenden der visuellen Ebene in Desktop-Apps
 
-Sie können Windows-Runtime-APIs jetzt auch in anderen Desktop-Apps als UWP-Apps verwenden, um Aussehen, Handhabung und Funktionalität Ihrer WPF-, Windows Forms- und C++-Win32-Apps zu verbessern, und die aktuellen Features der Windows 10-Benutzeroberfläche nutzen, die nur per UWP verfügbar sind. Dies ist hilfreich, wenn Sie benutzerdefinierte Umgebungen über die integrierten UWP-Steuerelemente hinaus erstellen müssen, die Sie mit XAML-Inseln hosten können.
+Sie können Windows-Runtime-APIs jetzt auch in anderen Desktop-Apps als UWP-Apps verwenden, um Aussehen, Handhabung und Funktionalität Ihrer WPF-, Windows Forms- und C++-Win32-Apps zu verbessern, und die aktuellen Features der Windows 10-Benutzeroberfläche nutzen, die nur per UWP verfügbar sind. Dies ist hilfreich, wenn Sie benutzerdefinierte Umgebungen über die integrierten WinRT-XAML-Steuerelemente hinaus erstellen müssen, die Sie mit XAML-Inseln hosten können.
 
 Weitere Informationen finden Sie unter [Modernize your desktop app using the Visual layer](visual-layer-in-desktop-apps.md) (Modernisieren Ihrer Desktop-App über die visuelle Ebene).
 
@@ -76,9 +76,9 @@ Es gibt mehrere Möglichkeiten, einer Desktop-App Identität zuzuweisen:
 
 <a id="desktop-uwp-controls"></a>
 
-## <a name="uwp-controls-optimized-for-desktop-apps"></a>Für Desktop-Apps optimierte UWP-Steuerelemente
+## <a name="winrt-xaml-controls-optimized-for-desktop-apps"></a>Für Desktop-Apps optimierte WinRT-XAML-Steuerelemente
 
-Es spielt keine Rolle, ob Sie eine UWP-App erstellen, die ausschließlich auf die Familie der Desktopgeräte ausgerichtet ist, oder ob Sie UWP-Steuerelemente in einer WPF-, Windows Forms- oder C++-Win32-Desktop-App nutzen möchten: Die folgenden neuen und aktualisierten UWP-Steuerelemente sind für Desktop-optimierte Benutzeroberflächen basierend auf dem [Fluent Design-System](/windows/uwp/design/fluent-design-system/index) ausgelegt. Diese Steuerelemente wurden in Version 1809 von Windows 10 eingeführt (Update vom Oktober 2018 oder Version 10.0.17763).
+Es spielt keine Rolle, ob Sie eine UWP-App erstellen, die ausschließlich auf die Familie der Desktopgeräte ausgerichtet ist, oder ob Sie WinRT-XAML-Steuerelemente in einer WPF-, Windows Forms- oder C++-Win32-Desktop-App nutzen möchten: Die folgenden neuen und aktualisierten WinRT-XAML-Steuerelemente sind für Desktop-optimierte Benutzeroberflächen basierend auf dem [Fluent Design-System](/windows/uwp/design/fluent-design-system/index) ausgelegt. Diese Steuerelemente wurden in Version 1809 von Windows 10 eingeführt (Update vom Oktober 2018 oder Version 10.0.17763).
 
 | Control |  Beschreibung |
 |------ |--------------|
