@@ -6,12 +6,12 @@ ms.date: 08/02/2019
 ms.topic: article
 keywords: Windows 10, UWP, Auszahlungs Zusammenfassung, Statement, Payment, Gewinn, Auszahlungen, Zahlung, fortschreitet
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c68c82ab463f0c4f12038597b4746ab4e695405
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7eab86cc1856f5ad206aa8bbceb2f2e04f5410d2
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167434"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763110"
 ---
 # <a name="payout-reports"></a>Auszahlungsberichte
 
@@ -38,7 +38,7 @@ Auf dieser Seite werden alle Ihre individuellen Einnahmen angezeigt, einschließ
 
 Zum Anzeigen weiterer Details zu einer Einnahme klicken Sie rechts auf der Seite auf den Pfeil nach unten. Dadurch werden Hebel, Umsatzbetrag und Produkt angezeigt. Wenn eine dieser Daten aus irgendeinem Grund nicht verfügbar ist, Sie aber darauf zugreifen müssen, wenden Sie sich an den [Support](https://developer.microsoft.com/windows/support). Wenn das Ergebnis einer Anpassung und nicht einer Transaktion entspricht, werden die Produktfelder nicht angezeigt.
 
-Um Transaktionsdaten auf dieser Seite zu exportieren, verwenden Sie die Seite **Daten exportieren** .
+Wählen Sie zum Exportieren der Transaktionsdaten auf dieser Seite die Option Exportieren aus, und befolgen Sie dann die Anweisungen auf der Seite Daten exportieren. Dateien, die aus der Seite Transaktionsverlauf exportiert wurden, zeigen Daten in Transaktionswährung, Einnahmen in Transaktionswährung und US-Dollar sowie den bezahlten Wert in Zahlung in Währung an.
 
 ## <a name="payments-page"></a>Seite „Zahlungen“
 
@@ -53,14 +53,6 @@ Die Summen auf dieser Seite stehen für alle Programme, an denen Sie teilnehmen.
 | Payments               | Wählen Sie bezahlt oder ausstehend aus, und sortieren Sie Sie nach Ihren Wünschen. Zum Anzeigen weiterer Details einer bestimmten Zahlung wählen Sie Ansicht aus. Wenn Sie eine Kopie der Zahlungsanweisung herunterladen möchten, wählen Sie Herunterladen aus. Beachten Sie, dass es bis zu 24 Stunden dauern kann, bis die Daten für den Transaktionsverlauf angezeigt werden, sodass die zugehörigen Gewinne möglicherweise nicht sofort angezeigt werden. |
 
 Wählen Sie zum Exportieren der Daten auf dieser Seite exportieren aus, und befolgen Sie dann die Anweisungen auf der Seite Daten exportieren.
-
-## <a name="transaction-history-page"></a>Seite „Transaktionsverlauf“
-
-Auf dieser Seite werden alle Ihre individuellen Einnahmen angezeigt, einschließlich Datum, Typ und jeweiliger Einnahme. Sie können einen anzuzeigenden Zeitraum auswählen. Außerdem können Sie nach Registrierungs-ID, Programm, Zahlungs-ID, Einnahmetyp, Hebel und Status filtern. Es sind Daten für das aktuelle Geschäftsjahr (1. Juli bis 30. Juni) und die letzten beiden Geschäftsjahre verfügbar.
-
-Zum Anzeigen weiterer Details zu einer Einnahme klicken Sie rechts auf der Seite auf den Pfeil nach unten. Dadurch werden Hebel, Umsatzbetrag und Produkt angezeigt. Wenn eine dieser Daten aus irgendeinem Grund nicht verfügbar ist, Sie aber darauf zugreifen müssen, wenden Sie sich an den [Support](https://developer.microsoft.com/windows/support). Wenn das Ergebnis einer Anpassung und nicht einer Transaktion entspricht, werden die Produktfelder nicht angezeigt.
-
-Wählen Sie zum Exportieren der Transaktionsdaten auf dieser Seite die Option Exportieren aus, und befolgen Sie dann die Anweisungen auf der Seite Daten exportieren. Dateien, die aus der Seite Transaktionsverlauf exportiert wurden, zeigen Daten in Transaktionswährung, Einnahmen in Transaktionswährung und US-Dollar sowie den bezahlten Wert in Zahlung in Währung an.
 
 ## <a name="payment-status"></a>Zahlungsstatus
 

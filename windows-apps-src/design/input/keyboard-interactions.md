@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: ae3d4826c4468cabea318ed230da0cfbb4d5f24b
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 005ec4883eeb52a84e458ba917439d093ab0041f
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219113"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763082"
 ---
 # <a name="keyboard-interactions"></a>Tastaturinteraktionen
 
@@ -55,7 +55,7 @@ Bei Bedarf identifizieren wir wichtige Unterschiede, die Sie kennen sollten, und
 
 Hier finden Sie die Geräte und Tools, die in diesem Thema erläutert werden:
 
-| Gerät/Tool                       | BESCHREIBUNG     |
+| Gerät/Tool                       | Beschreibung     |
 |-----------------------------------|-----------------|
 |Tastatur (Hardware und Software)   |Neben der Standard Hardware Tastatur werden von Windows-Anwendungen zwei Software-Tastaturen unterstützt: die [touchtastatur (oder die Software Tastatur)](#software-keyboard) und die [Bildschirmtastatur](#on-screen-keyboard).|
 |Gamepad und Remotesteuerung         |Das Xbox Gamepad und die Remote Steuerung sind grundlegende Eingabegeräte in der [10-Fuß-](../devices/designing-for-tv.md)Darstellung. Spezifische Informationen zur Windows-Unterstützung für Gamepad und Remote Steuerung finden Sie unter [Gamepad-und Remote Steuerungs Interaktionen](gamepad-and-remote-interactions.md).|
@@ -405,8 +405,8 @@ Das folgende Beispiel zeigt einige Schlüssel Zuordnungen zwischen Tastatur, Gam
 | LeerZchn         | A-Taste                            | Schaltfläche auswählen       |
 | EINGABETASTE         | A-Taste                            | Schaltfläche auswählen       |
 | Escape        | B-Taste                            | Zurück-Schaltfläche         |
-| Start/Ende      | –                                 | –                 |
-| Seite nach oben/unten  | Schaltfläche "auslöst" für vertikalen Bildlauf, Schaltfläche "Stoß Leiste"   | –                 |
+| Start/Ende      | NICHT ZUTREFFEND                                 | NICHT ZUTREFFEND                 |
+| Seite nach oben/unten  | Schaltfläche "auslöst" für vertikalen Bildlauf, Schaltfläche "Stoß Leiste"   | NICHT ZUTREFFEND                 |
 
 Einige wichtige Unterschiede, die Sie beim Entwerfen der UWP-App für die Verwendung mit Gamepad und der Verwendung der Remote Steuerung berücksichtigen sollten, sind:
 -   Der Text Eintrag erfordert, dass der Benutzer ein-Steuerelement zum Aktivieren eines Text Steuer Elements drückt.
@@ -507,11 +507,13 @@ Es wird empfohlen, dass Sie diese Verhaltensweisen in Ihren benutzerdefinierten 
 Testen Sie Ihre APP mit allen unterstützten Eingabegeräten, um sicherzustellen, dass Benutzeroberflächen Elemente auf eine kohärente und intuitive Weise navigiert werden können und dass keine unerwarteten Elemente die gewünschte Aktivier Reihenfolge beeinträchtigen.
 
 ## <a name="related-articles"></a>Verwandte Artikel
+
 * [Tastaturereignisse](keyboard-events.md)
 * [Identifizieren von Eingabegeräten](identify-input-devices.md)
 * [Reagieren auf das Vorhandensein der Bildschirmtastatur](respond-to-the-presence-of-the-touch-keyboard.md)
 * [Beispiel für visuelle Fokuselemente](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
-* [Storyboarding-Besonderheiten für navigationview-Steuerelement](../controls-and-patterns/navigationview.md#hierarchical-navigation) 
+* [Storyboarding-Besonderheiten für navigationview-Steuerelement](../controls-and-patterns/navigationview.md#hierarchical-navigation)
+* [Barrierefreiheit der Tastaturnavigation](../accessibility/keyboard-accessibility.md)
 
 ## <a name="appendix"></a>Anhang
 
@@ -576,7 +578,3 @@ Die Bildschirmtastatur kann auf der Seite „Tastatur“ unter „Einstellungen 
 ***Bildschirmtastatur***
 
 Weitere Informationen zur Bildschirmtastatur finden Sie [auf der Bildschirmtastatur](https://support.microsoft.com/help/10762/windows-use-on-screen-keyboard) .
-
-## <a name="related-articles"></a>Verwandte Artikel
-
-- [Tastatureingabe](../accessibility/keyboard-accessibility.md)

@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: 29a054299b933e523f8594419c4e954c3a0bf1e4
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: fd21ca0a27979a5febbc5a3a76a02a1beb2138fd
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749966"
+ms.locfileid: "91763022"
 ---
 # <a name="surface-dial-interactions"></a>Surface Dial-Interaktionen
 
@@ -57,12 +57,12 @@ Das Surface Dial unterstützt außerdem eine *Drücken-und-Halten*-Aktion und ei
    :::column:::
       **Offscreen-Menü des Surface Dial**
 
-      ![Offscreen-Menü des Surface Dial](images/windows-wheel/surface-dial-menu-offscreen.png)
+      ![Screenshot des Menüs "Oberflächen Auswahl aus dem Bildschirm".](images/windows-wheel/surface-dial-menu-offscreen.png)
    :::column-end:::
    :::column:::
       **Onscreen-Menü des Surface Dial**
 
-      ![Onscreen-Menü des Surface Dial](images/windows-wheel/surface-dial-menu-onscreen.png)
+      ![Screenshot des Menüs "Oberflächen Auswahl auf dem Bildschirm".](images/windows-wheel/surface-dial-menu-onscreen.png)
    :::column-end:::
 :::row-end:::
 
@@ -132,17 +132,17 @@ Symbole können Benutzern Professionalität, Kompetenz und Vertrauenswürdigkeit
 
 :::row:::
    :::column:::
-      ![Symbol mit Alphahintergrund](images/windows-wheel/surface-dial-menu-icon1.png)
+      ![Screenshot eines Symbols mit Alpha Hintergrund.](images/windows-wheel/surface-dial-menu-icon1.png)
 
       *Symbol mit Alphahintergrund*
    :::column-end:::
    :::column:::
-      ![Bei Verwendung des Standarddesigns im Radmenü angezeigtes Symbol](images/windows-wheel/surface-dial-menu-icon2.png)
+      ![Screenshot eines Symbols, das auf dem radmenü mit dem Standarddesign angezeigt wird.](images/windows-wheel/surface-dial-menu-icon2.png)
 
       *Bei Verwendung des Standarddesigns im Radmenü angezeigtes Symbol*
    :::column-end:::
    :::column:::
-      ![Onscreen-Menü des Surface Dial](images/windows-wheel/surface-dial-menu-icon3.png)
+      ![Screenshot eines Symbols, das auf dem radmenü mit hoher Kontrast weißem Design angezeigt wird.](images/windows-wheel/surface-dial-menu-icon3.png)
 
       *Bei Verwendung des Designs „Hoher Kontrast (Weiß)“ im Radmenü angezeigtes Symbol*
    :::column-end:::
@@ -171,7 +171,7 @@ In diesem Beispiel wird ein einfaches benutzerdefiniertes Tool hinzugefügt, das
 
 1. Zunächst deklarieren wir unsere Benutzeroberfläche (lediglich ein Schieberegler und eine Umschaltfläche) in XAML.
 
-   ![Abbildung: Beispiel der App-UI](images/windows-wheel/surface-dial-snippet-customtool1.png)  
+   ![Screenshot des radialen Controller Beispiels, bei dem der horizontale Schieberegler auf der linken Seite festgelegt ist.](images/windows-wheel/surface-dial-snippet-customtool1.png)  
    *Beispiel der App-UI*
 
     ```Xaml
@@ -272,7 +272,7 @@ In diesem Beispiel wird ein einfaches benutzerdefiniertes Tool hinzugefügt, das
 
 Wenn wird die App ausführen, verwenden wir das Surface Dial, um mit ihr zu interagieren. Zuerst drücken und halten wird das Gerät, um das Menü zu öffnen und unser benutzerdefiniertes Tool auszuwählen. Sobald das benutzerdefinierte Tool aktiviert ist, kann das Schieberegler-Steuerelement durch Drehen des Surface Dial angepasst werden, und die Umschaltfläche kann durch Klicken mit dem Surface Dial umgeschaltet werden.
 
-![Abbildung: Beispiel der App-UI, aktiviert mit dem benutzerdefinierten Surface Dial-Tool](images/windows-wheel/surface-dial-snippet-customtool2.png)  
+![Screenshot des radialen Controller Beispiels, bei dem der horizontale Schieberegler auf den Mittelwert festgelegt ist.](images/windows-wheel/surface-dial-snippet-customtool2.png)  
 *Beispiel der App-UI, aktiviert mit dem benutzerdefinierten Surface Dial-Tool*
 
 **Angeben der integrierten Tools**
@@ -480,7 +480,7 @@ Im folgenden Beispiel haben wir eine grundlegende App mit vier verschiedenen Abs
 
 1. Zunächst deklarieren wir die Benutzeroberfläche (vier Abschnitte, die jeweils einen Schieberegler und eine Umschaltfläche enthalten) in XAML.
 
-   ![Abbildung: Beispiel der App-UI](images/windows-wheel/surface-dial-snippet-customtool3.png)  
+   ![Screenshot des radialen Controller Beispiels mit vier horizontalen Schiebereglern auf der linken Seite.](images/windows-wheel/surface-dial-snippet-customtool3.png)  
    *Beispiel der App-UI*
 
    ```xaml 
@@ -680,14 +680,12 @@ private void ActivateGridAtLocation(Point Location)
 
 Wenn wird die App ausführen, verwenden wir das Surface Dial, um mit ihr zu interagieren. Zunächst platzieren wir das Gerät auf dem Surface Studio-Bildschirm. Es wird von der App erkannt und dem unteren rechten Abschnitt zugeordnet (siehe Abbildung). Anschließend drücken und halten wir das Surface Dial, um das Menü zu öffnen und das benutzerdefinierte Tool auszuwählen. Sobald das benutzerdefinierte Tool aktiviert ist, kann das Schieberegler-Steuerelement durch Drehen des Surface Dial angepasst werden, und die Umschaltfläche kann durch Klicken mit dem Surface Dial umgeschaltet werden.
 
-![Abbildung: Beispiel der App-UI, aktiviert mit dem benutzerdefinierten Surface Dial-Tool](images/windows-wheel/surface-dial-snippet-customtool4.png)  
+![Screenshot des radialen Controller Beispiels mit vier horizontalen Schiebereglern auf der linken Seite und dem vierten Controller hervorgehoben.](images/windows-wheel/surface-dial-snippet-customtool4.png)  
 *Beispiel der App-UI, aktiviert mit dem benutzerdefinierten Surface Dial-Tool*
 
 ## <a name="summary"></a>Zusammenfassung
 
 Dieses Thema bietet eine Übersicht über das Eingabegerät Surface Dial, enthält Erläuterungen zur Benutzeroberfläche und für Entwickler und veranschaulicht die Anpassung der Benutzerumgebung sowohl für Offscreen-Szenarien als auch für Onscreen-Szenarien bei Verwendung mit dem Surface Studio.
-
-## <a name="feedback"></a>Feedback
 
 Senden Sie Fragen, Vorschläge und Feedback an [radialcontroller@microsoft.com](mailto:radialcontroller@microsoft.com) .
 
