@@ -8,12 +8,12 @@ keywords: Touch, Zeiger, Eingabe, Benutzerinteraktion
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 14be47fa701742c73048e70c0842cb421c52a7e5
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 302a1f39d85902b229642b60f483b40f51209a72
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220513"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750386"
 ---
 # <a name="touch-interactions"></a>Toucheingabe-Interaktionen
 
@@ -150,10 +150,8 @@ Darüber hinaus wird Folgendes dringend empfohlen:
 -   Die Interaktionen sollten zusammengesetzte Manipulationen unterstützen. Beispiel: Zoomen durch Zusammendrücken und gleichzeitiges Ziehen der Finger, um etwas zu verschieben.
 -   Die Interaktionen sollten nicht anhand der Zeit unterschieden werden. Eine Interaktion sollte unabhängig von der Ausführungsdauer immer zum gleichen Ergebnis führen. Zeitbasierte Aktivierungen führen zu obligatorischen Verzögerungen für Benutzer und beeinträchtigen die immersive Natur der direkten Manipulation und die Wahrnehmung der Reaktion des Systems.
 
-   > [!NOTE]
-   > Eine Ausnahme besteht darin, dass Sie bestimmte zeitgesteuerte Interaktionen verwenden, um das Erlernen und durchsuchen zu unterstützen (z. b. Drücken und halten).
-
-     
+    > [!NOTE]
+    > Eine Ausnahme besteht darin, dass Sie bestimmte zeitgesteuerte Interaktionen verwenden, um das Erlernen und durchsuchen zu unterstützen (z. b. Drücken und halten).
 
 -   Entsprechende Beschreibungen und visuelle Hinweise haben einen großen Einfluss auf die Verwendung erweiterter Interaktionen.
 
@@ -197,7 +195,7 @@ Hier sehen Sie den grundlegenden Satz von Touchgesten, die von der UWP unterstü
 | Tippen            | Statische Geste       | Der Bildschirm wird mit einem Finger berührt, und der Finger wird wieder angehoben.                                            |
 | Drücken und Halten | Statische Geste       | Ein Finger berührt den Bildschirm und bleibt auf dem Bildschirm.                                      |
 | Slide (Folie)          | Manipulationsgeste | Mindestens ein Finger berührt den Bildschirm und bewegt sich in die gleiche Richtung.                   |
-| Wischen          | Manipulationsgeste | Mindestens ein Finger berührt den Bildschirm und bewegt sich um eine kurze Distanz in die gleiche Richtung.  |
+| Swipe          | Manipulationsgeste | Mindestens ein Finger berührt den Bildschirm und bewegt sich um eine kurze Distanz in die gleiche Richtung.  |
 | Drehen           | Manipulationsgeste | Mindestens zwei Finger berühren den Bildschirm und führen eine Kreisbewegung im oder gegen den Uhrzeigersinn aus. |
 | Zusammendrücken          | Manipulationsgeste | Mindestens zwei Finger berühren den Bildschirm und bewegen sich dichter zusammen.                         |
 | Stretch        | Manipulationsgeste | Mindestens zwei Finger berühren den Bildschirm und bewegen sich weiter auseinander.                           |

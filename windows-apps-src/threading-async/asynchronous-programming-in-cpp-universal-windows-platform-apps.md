@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, UWP, Threads, Asynchronous, C++
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e3810b25ac35cbf5e16f49a86affb4792089d1e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e08a73c7617a5b24af49d5b3665303124e28d257
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161794"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750156"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>Asynchrone Programmierung in C++/CX
 > [!NOTE]
@@ -119,9 +119,8 @@ Bei Aufgabenfortsetzungen ist der Rückgabetyp der Lambda-Funktion von einem **t
 
 Beachten Sie im vorherigen Beispiel, dass der Task eine **Aufgabe <void> ** zurückgibt, auch wenn der Lambda-Ausdruck ein [**iasyncinfo**][IAsyncInfo] -Objekt zurückgegeben hat. Die folgende Tabelle gibt einen Überblick über die Typkonvertierungen zwischen Lambda-Funktionen und den einschließenden Aufgaben:
 
-| | |
-|--------------------------------------------------------|---------------------|
-| Lambda-Rückgabetyp                                     | `.then`-Rückgabetyp |
+| Lambda-Rückgabetyp | `.then`-Rückgabetyp |
+| ------------------ | ------------------- |
 | TResult                                                | Task<TResult> |
 | IAsyncOperation<TResult>^                        | Task<TResult> |
 | IAsyncOperationWithProgress<TResult, TProgress>^ | Task<TResult> |

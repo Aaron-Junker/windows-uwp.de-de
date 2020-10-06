@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d3b032b735b8985ae87ce78e100442085cce55e7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 603cdfe0c35d559ca3f2acacbce491ce3f54c35d
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163704"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749996"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -472,30 +472,30 @@ In früheren Versionen von PlayReady DRM konnten nicht persistente Lizenzen nur 
 ## <a name="query-for-protection-capabilities"></a>Abfrage von Schutzfunktionen
 Ab Windows 10, Version 1703, können Sie die HW-DRM-Funktionen Abfragen, wie z. b. das Decodieren von Codecs, die Auflösung und den Ausgabe Schutz (HDCP). Abfragen werden mit der [**istypesupportiert**](/uwp/api/windows.media.protection.protectioncapabilities.istypesupported) -Methode ausgeführt, die eine Zeichenfolge mit den Funktionen annimmt, für die die Unterstützung abgefragt wird, sowie eine Zeichenfolge, die das Schlüsselsystem angibt, auf das die Abfrage angewendet wird. Eine Liste der unterstützten Zeichen folgen Werte finden Sie auf der API-Referenzseite für [**istypesupportiert**](/uwp/api/windows.media.protection.protectioncapabilities.istypesupported). Das folgende Codebeispiel veranschaulicht die Verwendung dieser Methode.  
 
-    ```cs
-    using namespace Windows::Media::Protection;
+```cs
+using namespace Windows::Media::Protection;
 
-    ProtectionCapabilities^ sr = ref new ProtectionCapabilities();
+ProtectionCapabilities^ sr = ref new ProtectionCapabilities();
 
-    ProtectionCapabilityResult result = sr->IsTypeSupported(
-    L"video/mp4; codecs=\"avc1.640028\"; features=\"decode-bpp=10,decode-fps=29.97,decode-res-x=1920,decode-res-y=1080\"",
-    L"com.microsoft.playready");
+ProtectionCapabilityResult result = sr->IsTypeSupported(
+L"video/mp4; codecs=\"avc1.640028\"; features=\"decode-bpp=10,decode-fps=29.97,decode-res-x=1920,decode-res-y=1080\"",
+L"com.microsoft.playready");
 
-    switch (result)
-    {
-        case ProtectionCapabilityResult::Probably:
-        // Queue up UHD HW DRM video
-        break;
+switch (result)
+{
+    case ProtectionCapabilityResult::Probably:
+    // Queue up UHD HW DRM video
+    break;
 
-        case ProtectionCapabilityResult::Maybe:
-        // Check again after UI or poll for more info.
-        break;
+    case ProtectionCapabilityResult::Maybe:
+    // Check again after UI or poll for more info.
+    break;
 
-        case ProtectionCapabilityResult::NotSupported:
-        // Do not queue up UHD HW DRM video.
-        break;
-    }
-    ```
+    case ProtectionCapabilityResult::NotSupported:
+    // Do not queue up UHD HW DRM video.
+    break;
+}
+```
 ## <a name="add-secure-stop"></a>Hinzufügen des sicheren Beendens
 
 In diesem Abschnitt wird beschrieben, wie Sie Ihrer UWP-App die Funktion für sicheres Beenden hinzufügen.

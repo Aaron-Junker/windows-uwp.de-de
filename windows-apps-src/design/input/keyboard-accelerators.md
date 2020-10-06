@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 02fba8027c5bddec5e5c501783b32dbab5642db9
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 8ec5791c212e2fdfbafd40131d96ace6c88fb519
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219953"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749956"
 ---
 # <a name="keyboard-accelerators"></a>Tastaturkürzel
 
@@ -219,7 +219,7 @@ Wenn keine Entsprechung gefunden wird, ist die Zugriffstaste ungültig, und es w
 
 Das aufgerufene Ereignis des [keyboardaccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator) -Objekts wird ausgelöst, wenn die Zugriffstaste ausgeführt wird. Das [keyboardacceleratorinvokeabventargs](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs) -Ereignis Objekt enthält die folgenden Eigenschaften:
 
-- [**Behandelt**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (boolesch): Wenn diese Einstellung auf "true" festgelegt wird, wird verhindert, dass das Ereignis das-Steuerelement Muster auslöst, und das Die Standardeinstellung ist „false“.
+- [**Behandelt**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (boolesch): Wenn diese Einstellung auf "true" festgelegt wird, wird verhindert, dass das Ereignis das-Steuerelement Muster auslöst, und das Der Standardwert ist false.
 - - [**Element**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element) (DependencyObject): das der Zugriffstaste zugeordnete Objekt.
 - [**Keyboardaccelerator**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator): die Tastenkombination, mit der das aufgerufene Ereignis ausgelöst wird.
 
@@ -350,14 +350,10 @@ Dies ist möglicherweise aufgrund von Unterschieden in der Funktionalität von a
 | Fett | STRG+B |
 | Underline | STRG + U |
 | Kursiv | STRG+I |
-
 | **Navigation** | |
-| ------------- | ----------------------------------- |
 | Suchen von Inhalten in einem Steuerelement oder Fenster mit Fokus | STRG + F |
 | Zum nächsten Suchergebnis wechseln | F3 |
-
 | **Weitere Aktionen** | |
-| ------------- | ----------------------------------- |
 | Favoriten hinzufügen | STRG+D | 
 | Aktualisieren | F5 oder STRG + R | 
 | Vergrößern | STRG + + | 

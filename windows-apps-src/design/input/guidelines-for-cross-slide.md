@@ -6,12 +6,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e5f86da29900e0ef83fb0bf41d2c8d9fe59727f2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2b16c957991889cb5f39a775397de72ff56beffc
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172514"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749977"
 ---
 # <a name="guidelines-for-cross-slide"></a>Richtlinien für Querziehen
 
@@ -58,14 +58,18 @@ Verwenden Sie das Querziehen für Listen oder Auflistungen, bei denen ein Bildla
 
 **Hinweis**    In Fällen, in denen der Inhalts Bereich in zwei Richtungen (z. b. Webbrowser oder e-Reader) verschoben werden kann, sollte die zeitgesteuerte Interaktion mit Press und Hold zum Aufrufen des Kontextmenüs für Objekte wie Bilder und Hyperlinks verwendet werden.
 
- 
+:::row:::
+   :::column:::
+     ![Horizontal verschiebbare zweidimensionale Liste](images/groupedlistview1.png)
 
-|                                                                                         |                                                                                         |
-|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| ![Horizontal verschiebbare zweidimensionale Liste](images/groupedlistview1.png)                | ![Vertikal verschiebbare eindimensionale Liste](images/listviewlistlayout.png)                |
-| Hier sehen Sie eine horizontal verschiebbare zweidimensionale Liste. Ziehen Sie vertikal, um ein Element auszuwählen oder zu verschieben. | Hier sehen Sie eine vertikal verschiebbare eindimensionale Liste. Ziehen Sie horizontal, um ein Element auszuwählen oder zu verschieben. |
+     Hier sehen Sie eine horizontal verschiebbare zweidimensionale Liste. Ziehen Sie vertikal, um ein Element auszuwählen oder zu verschieben. 
+   :::column-end:::
+   :::column:::
+      ![Vertikal verschiebbare eindimensionale Liste](images/listviewlistlayout.png)
 
- 
+      Hier sehen Sie eine vertikal verschiebbare eindimensionale Liste. Ziehen Sie horizontal, um ein Element auszuwählen oder zu verschieben.
+   :::column-end:::
+:::row-end:::
 
 ### <span id="selection"></span><span id="SELECTION"></span>
 

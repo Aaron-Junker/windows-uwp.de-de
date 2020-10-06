@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: e9a619fc58b1b84755e33fd36ebacd99f98d6b7f
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 29a054299b933e523f8594419c4e954c3a0bf1e4
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220413"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749966"
 ---
 # <a name="surface-dial-interactions"></a>Surface Dial-Interaktionen
 
@@ -27,10 +27,18 @@ Windows-radgeräte, z. b. die Oberfläche, sind eine neue Kategorie von Eingabeg
 > [!IMPORTANT]
 > In diesem Thema werden die Interaktionen mit der Oberfläche unterscheidet, aber die Informationen gelten für alle Windows-radgeräte. 
 
-| Videos |   |
-| --- | --- |
-| <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> |
-| *App-Partner für Surface Dial* | *Surface Dial für Entwickler* |
+:::row:::
+   :::column:::
+      <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
+
+      *App-Partner für Surface Dial*
+   :::column-end:::
+   :::column:::
+      <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
+
+      *Surface Dial für Entwickler*
+   :::column-end:::
+:::row-end:::
 
 Der Formfaktor des Surface Dial entspricht einer *Dreh*-Aktion (oder -Geste). Das Surface Dial soll als sekundäres, multimodales Eingabegerät genutzt werden, das Eingaben über ein primäres Gerät ergänzt. In den meisten Fällen wird das Gerät von einem Benutzer mit der nicht dominanten Hand bedient, während er mit seiner dominanten Hand eine Aufgabe ausführt (z. B. Freihandzeichnen mit einem Stift). Es wurde nicht für präzise Zeigereingaben konzipiert (wie Touch-, Stift- oder Mauseingaben). 
 
@@ -45,9 +53,18 @@ Das Surface Dial unterstützt außerdem eine *Drücken-und-Halten*-Aktion und ei
 >
 >Das System erkennt sowohl die Auflageposition als auch die Begrenzungen des Surface Dial, kann anhand dieser Informationen auf die durch das Gerät verursachte Okklusion reagieren und eine größere Menüversion darstellen, die außen um die Drehsteuerung herum angezeigt wird. Auch die App kann diese Informationen nutzen, um die Benutzeroberfläche an das Vorhandensein des Geräts und dessen beabsichtigte Nutzung anzupassen, z. B. daran, wie der Benutzer seine Hand und seinen Arm platziert.
 
-| Offscreen-Menü des Surface Dial | | Onscreen-Menü des Surface Dial |
-| --- | --- | --- |
-| ![Offscreen-Menü des Surface Dial](images/windows-wheel/surface-dial-menu-offscreen.png) | | ![Onscreen-Menü des Surface Dial](images/windows-wheel/surface-dial-menu-onscreen.png) |
+:::row:::
+   :::column:::
+      **Offscreen-Menü des Surface Dial**
+
+      ![Offscreen-Menü des Surface Dial](images/windows-wheel/surface-dial-menu-offscreen.png)
+   :::column-end:::
+   :::column:::
+      **Onscreen-Menü des Surface Dial**
+
+      ![Onscreen-Menü des Surface Dial](images/windows-wheel/surface-dial-menu-onscreen.png)
+   :::column-end:::
+:::row-end:::
 
 ## <a name="system-integration"></a>Systemintegration
 
@@ -113,10 +130,23 @@ Symbole können Benutzern Professionalität, Kompetenz und Vertrauenswürdigkeit
 - Das Symbol sollte den größten Teil des Bilds ausfüllen.
 - Ein weißes Symbol sollte über eine schwarze Kontur verfügen, damit es im Modus mit hohem Kontrast sichtbar ist.
 
-|   |   |   |
-| --- | --- | --- |
-| ![Symbol mit Alphahintergrund](images/windows-wheel/surface-dial-menu-icon1.png) | ![Bei Verwendung des Standarddesigns im Radmenü angezeigtes Symbol](images/windows-wheel/surface-dial-menu-icon2.png) | ![Onscreen-Menü des Surface Dial](images/windows-wheel/surface-dial-menu-icon3.png) |
-| *Symbol mit Alphahintergrund* | *Bei Verwendung des Standarddesigns im Radmenü angezeigtes Symbol* | *Bei Verwendung des Designs „Hoher Kontrast (Weiß)“ im Radmenü angezeigtes Symbol* |
+:::row:::
+   :::column:::
+      ![Symbol mit Alphahintergrund](images/windows-wheel/surface-dial-menu-icon1.png)
+
+      *Symbol mit Alphahintergrund*
+   :::column-end:::
+   :::column:::
+      ![Bei Verwendung des Standarddesigns im Radmenü angezeigtes Symbol](images/windows-wheel/surface-dial-menu-icon2.png)
+
+      *Bei Verwendung des Standarddesigns im Radmenü angezeigtes Symbol*
+   :::column-end:::
+   :::column:::
+      ![Onscreen-Menü des Surface Dial](images/windows-wheel/surface-dial-menu-icon3.png)
+
+      *Bei Verwendung des Designs „Hoher Kontrast (Weiß)“ im Radmenü angezeigtes Symbol*
+   :::column-end:::
+:::row-end:::
 
 **Verwenden Sie präzise und beschreibende Namen.**  
 Der Name des Tools wird im Toolmenü zusammen mit dem Toolsymbol angezeigt und auch von Sprachausgaben verwendet. 
@@ -291,7 +321,7 @@ Das Menü wird standardmäßig mittig auf dem Bildschirms des Benutzers angezeig
 > [!NOTE]
 > Wenn das Surface Dial auf dem Bildschirm des Surface Studio platziert wird, wird das Menü an der Onscreen-Position des Surface Dial zentriert.
 
-### <a name="rotate"></a>Drehen
+### <a name="rotate"></a>Rotate
 
 Die vom Surface Dial unterstützten Drehungen eignen sich hauptsächlich für Interaktionen, mit denen analoge Werte oder Steuerungen stufenlos inkrementiert werden.
 
@@ -316,16 +346,31 @@ Erhöhen Sie die Kundenzufriedenheit, indem Sie Interaktionen an das jeweilige G
 
 Folgende Richtlinien für drehbasierte Aktionen gelten für die integrierten Tools und Befehle im Surface Dial-Menü:
 
-|   |   |   |
-| --- | --- | --- |
-| Left<br/>Nach oben<br/>aus | ![Abbildung: Surface Dial](images/windows-wheel/surface-dial-rotate.png) | Right<br/>Nach unten<br/>In |
-|   |   |   |
+:::row:::
+   :::column:::
+      Left
+
+      Nach oben
+
+      aus 
+   :::column-end:::
+   :::column span="2":::
+      ![Abbildung: Surface Dial](images/windows-wheel/surface-dial-rotate.png)
+   :::column-end:::
+   :::column:::
+      Right
+
+      Nach unten
+
+      Geben Sie in
+   :::column-end:::
+:::row-end:::
 
 | Konzeptionelle Richtung | Zuordnung des Surface Dial | Drehung im Uhrzeigersinn | Drehung gegen den Uhrzeigersinn |
 | --- | --- | --- | --- |
 | Horizontal | Links/Rechts-Zuordnung ausgehend von der Oberseite des Surface Dial | Right | Left |
 | Vertical | Oben/Unten-Zuordnung ausgehend von der linken Seite des Surface Dial | Nach unten | Nach oben |
-| Z-Achse | Hinein (oder näher) wird Oben/Rechts zugeordnet<br/>Heraus (oder weiter) wird Unten/Links zugeordnet | In | aus |
+| Z-Achse | Hinein (oder näher) wird Oben/Rechts zugeordnet<br/>Heraus (oder weiter) wird Unten/Links zugeordnet | Geben Sie in | aus |
 
 #### <a name="developer-guidance"></a>Anleitung für Entwickler
 
@@ -366,7 +411,7 @@ private void MyController_ButtonClicked(RadialController sender,
 }
 ```
 
-### <a name="click"></a>Klicken Sie auf
+### <a name="click"></a>Klicken Sie im Menüband auf
 
 Das Klicken mit dem Surface Dial ähnelt dem Klicken mit der linken Maustaste (der Drehzustand des Geräts hat keinen Einfluss auf diese Aktion).
 

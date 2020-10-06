@@ -5,12 +5,12 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bf5d6a2413ba6aeb2e3fd86122e865e34b8729fa
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9e89011086e6c6d318d589226400789b41f8fe64
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172204"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750346"
 ---
 # <a name="supported-point-of-service-peripherals"></a>Unterstützte Dienst Peripherie-Peripheriegeräte
 
@@ -23,7 +23,7 @@ ms.locfileid: "89172204"
 |
 
 
-| Hersteller  | Modell                          | Funktion | Verbindung    | Typ         | Mode                      |
+| Hersteller  | Modell                          | Funktion | Verbindung    | type         | Mode                      |
 |---------------|--------------------------------|------------|--------------|--------------|---------------------------|
 | Code          | Leser™ 950                    | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
 | Code          | Leser™ 1021                   | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
@@ -123,7 +123,7 @@ Windows bietet Unterstützung für die folgenden Magnetstreifenleser von MagTek 
 ## <a name="receipt-printer-posprinter"></a>Empfangsdrucker (posprinter)
 | Konnektivität | Support |
 | -------------|-------------|
-| Netzwerk und Bluetooth | <p>Windows unterstützt Netzwerk-und Bluetooth-Empfangsdrucker, die die Epson ESC/POS-druckersteuerungssprache verwenden.  Die nachstehend aufgeführten Drucker werden automatisch mithilfe von posprinter-APIs erkannt. Zusätzliche Empfangsdrucker, die eine ESC/POS-Emulation bereitstellen, können auch funktionieren, müssen jedoch mithilfe eines [out-of-Band](./point-of-service.md#out-of-band-pairing) -Kopplung-Prozesses verknüpft werden.</p><p>Hinweis: die-Station und die Journal Stationen werden von dieser Methode nicht unterstützt.</p> |
+| Netzwerk und Bluetooth | <p>Windows unterstützt Netzwerk-und Bluetooth-Empfangsdrucker, die die Epson ESC/POS-druckersteuerungssprache verwenden.  Die nachstehend aufgeführten Drucker werden automatisch mithilfe von posprinter-APIs erkannt. Zusätzliche Empfangsdrucker, die eine ESC/POS-Emulation bereitstellen, können auch funktionieren, müssen jedoch mithilfe eines [out-of-Band](./point-of-service.md) -Kopplung-Prozesses verknüpft werden.</p><p>Hinweis: die-Station und die Journal Stationen werden von dieser Methode nicht unterstützt.</p> |
 | OPOS    | <p> Unterstützt alle mit OPOS kompatiblen empfangsdruckern über OPOS-Dienst Objekte. Installieren Sie die OPOS-Treiber gemäß den Installationsanweisungen für Gerätehersteller. </p> |
 
 ### <a name="stationary-receipt-printers-networkbluetooth"></a>Drucker der stationären Bestätigung (Netzwerk/Bluetooth)

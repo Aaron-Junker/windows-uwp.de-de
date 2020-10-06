@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows-Freihandeingabe, DirectInk, InkPresenter, InkCanv
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 34e41ff4b6fa402e8a1857a2ea406c9e63e7c868
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: a877fabfd34bcbe16afb70c012d403d489e3a6e0
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216963"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749916"
 ---
 # <a name="pen-interactions-and-windows-ink-in-windows-apps"></a>Stiftinteraktionen und Windows Ink in Windows-Apps
 
@@ -27,10 +27,18 @@ Optimieren Sie Ihre Windows-App für Stift Eingaben, um sowohl Standard [**Zeige
 > [!NOTE]
 > Der Schwerpunkt dieses Themas liegt auf der Windows Ink-Plattform. Informationen zur allgemeinen Behandlung von Zeigereingaben (ähnlich Maus-, Touch- und Touchpadeingaben) finden Sie unter [Behandeln von Zeigereingaben](handle-pointer-input.md).
 
-| Videos |   |
-| --- | --- |
-| <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Ink-in-Your-UWP-App/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Events/Ignite/2016/BRK2060/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> |
-| *Verwenden von frei Hand Eingaben in Ihrer Windows-App* | *Verwenden von Windows Pen und Ink zum Erstellen von stärker interaktiven Unternehmens-Apps* |
+:::row:::
+   :::column:::
+      <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Ink-in-Your-UWP-App/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe>
+
+      *Verwenden von frei Hand Eingaben in Ihrer Windows-App*
+   :::column-end:::
+   :::column:::
+      <iframe src="https://channel9.msdn.com/Events/Ignite/2016/BRK2060/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe>
+
+      *Verwenden von Windows Pen und Ink zum Erstellen von stärker interaktiven Unternehmens-Apps*
+   :::column-end:::
+:::row-end:::
 
 In Verbindung mit einem Zeichengerät bietet die Windows Ink-Plattform eine natürliche Möglichkeit, digitale handschriftliche Notizen, Zeichnungen und Anmerkungen zu erstellen. Sie können auf der Plattform Freihanddaten aus einem Eingabedigitalisierungsgerät erfassen, Freihanddaten generieren, verwalten und als letzte Striche auf dem Ausgabegerät rendern sowie über die Schrifterkennung in Text umwandeln.
 

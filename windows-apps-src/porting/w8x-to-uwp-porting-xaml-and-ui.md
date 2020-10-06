@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a20463414f0b96ea51bdf9796c48759975bfc43e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 62085377da89d64c8ba0799dc6bab13c17675f90
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162214"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750676"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>Portieren von Windows-Runtime 8.x-XAML und -UI zu UWP
 
@@ -103,9 +103,9 @@ Unten sind einige speziellere Beispiele für Änderungen an Steuerelementen ange
 | [**DatePicker**](/uwp/api/Windows.UI.Xaml.Controls.DatePicker), [**TimePicker**](/uwp/api/Windows.UI.Xaml.Controls.TimePicker) | Überprüfen Sie, wie Ihre App mit den visuellen Änderungen für [**DatePicker**](/uwp/api/Windows.UI.Xaml.Controls.DatePicker) und [**TimePicker**](/uwp/api/Windows.UI.Xaml.Controls.TimePicker) aussieht. Bei einer auf einem mobilen Gerät ausgeführten Windows 10-App rufen diese Steuerelemente keine Auswahlseite mehr auf, sondern ein Popup, das einfach ausgeblendet werden kann. |
 | [**DatePicker**](/uwp/api/Windows.UI.Xaml.Controls.DatePicker), [**TimePicker**](/uwp/api/Windows.UI.Xaml.Controls.TimePicker) | In einer Windows 10-App können Sie [**DatePicker**](/uwp/api/Windows.UI.Xaml.Controls.DatePicker) oder [**timePicker**](/uwp/api/Windows.UI.Xaml.Controls.TimePicker) nicht in einen Ablaufbetrieb einfügen. Wenn Sie möchten, dass diese Steuerelemente in einem Popup-Steuerelement angezeigt werden, können Sie [**datepickerflyout**](/uwp/api/Windows.UI.Xaml.Controls.DatePickerFlyout) und [**timepickerflyout**](/uwp/api/Windows.UI.Xaml.Controls.TimePickerFlyout)verwenden. |
 | **GridView**, **ListView** | Informationen zu **GridView** / -**ListView**finden Sie unter [GridView-und ListView-Änderungen](#gridview-and-listview-changes). |
-| [**Hub**](/uwp/api/Windows.UI.Xaml.Controls.Hub) | In einer Windows Phone Store-App wird ein [**Hub**](/uwp/api/Windows.UI.Xaml.Controls.Hub)-Steuerelement vom letzten Abschnitt in den ersten Abschnitt umgebrochen. In einer Windows-Runtime 8. x-APP und in einer Windows 10-App werden die Hub-Abschnitte nicht umschlossen. |
-| [**Hub**](/uwp/api/Windows.UI.Xaml.Controls.Hub) | In einer Windows Phone Store-App wird das Hintergrundbild eines [**Hub**](/uwp/api/Windows.UI.Xaml.Controls.Hub)-Steuerelements im Parallaxmodus relativ zu den Hubabschnitten verschoben. In einer Windows-Runtime 8. x-APP und in einer Windows 10-APP wird "Parser" nicht verwendet. |
-| [**Hub**](/uwp/api/Windows.UI.Xaml.Controls.Hub)  | In einer universellen 8.1-App bewirkt die [**HubSection.IsHeaderInteractive**](/uwp/api/windows.ui.xaml.controls.hubsection.isheaderinteractive)-Eigenschaft, dass die Abschnittsüberschrift – und eine daneben gerenderte Chevronglyphe – interaktiv werden. In einer Windows 10-App wird neben der Überschrift das interaktive Angebot vom Typ „Mehr anzeigen“ verwendet, aber die eigentliche Überschrift ist nicht interaktiv. Mit **IsHeaderInteractive** wird weiterhin bestimmt, ob die Interaktion das [**Hub.SectionHeaderClick**](/uwp/api/windows.ui.xaml.controls.hub.sectionheaderclick)-Ereignis auslöst. |
+| [**SK**](/uwp/api/Windows.UI.Xaml.Controls.Hub) | In einer Windows Phone Store-App wird ein [**Hub**](/uwp/api/Windows.UI.Xaml.Controls.Hub)-Steuerelement vom letzten Abschnitt in den ersten Abschnitt umgebrochen. In einer Windows-Runtime 8. x-APP und in einer Windows 10-App werden die Hub-Abschnitte nicht umschlossen. |
+| [**SK**](/uwp/api/Windows.UI.Xaml.Controls.Hub) | In einer Windows Phone Store-App wird das Hintergrundbild eines [**Hub**](/uwp/api/Windows.UI.Xaml.Controls.Hub)-Steuerelements im Parallaxmodus relativ zu den Hubabschnitten verschoben. In einer Windows-Runtime 8. x-APP und in einer Windows 10-APP wird "Parser" nicht verwendet. |
+| [**SK**](/uwp/api/Windows.UI.Xaml.Controls.Hub)  | In einer universellen 8.1-App bewirkt die [**HubSection.IsHeaderInteractive**](/uwp/api/windows.ui.xaml.controls.hubsection.isheaderinteractive)-Eigenschaft, dass die Abschnittsüberschrift – und eine daneben gerenderte Chevronglyphe – interaktiv werden. In einer Windows 10-App wird neben der Überschrift das interaktive Angebot vom Typ „Mehr anzeigen“ verwendet, aber die eigentliche Überschrift ist nicht interaktiv. Mit **IsHeaderInteractive** wird weiterhin bestimmt, ob die Interaktion das [**Hub.SectionHeaderClick**](/uwp/api/windows.ui.xaml.controls.hub.sectionheaderclick)-Ereignis auslöst. |
 | **MessageDialog** | Wenn Sie **MessageDialog** verwenden, sollten Sie stattdessen ggf. das flexiblere [**ContentDialog**](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)-Element nutzen. Informationen hierzu erhalten Sie auch im Beispiel [XAML-UI-Grundlagen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics). |
 | **ListPickerFlyout**, **PickerFlyout**  | **ListPickerFlyout** und **PickerFlyout** sind für Windows 10-App veraltet. Verwenden Sie [**menuflyout**](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout), um eine einzelne Auswahl zu erhalten. Verwenden Sie für komplexere Erfahrungen [**Flyout**](/uwp/api/Windows.UI.Xaml.Controls.Flyout). |
 | [**PasswordBox**](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox) | Die [**PasswordBox.IsPasswordRevealButtonEnabled**](/uwp/api/windows.ui.xaml.controls.passwordbox.ispasswordrevealbuttonenabled)-Eigenschaft ist in einer Windows 10-App veraltet, und das Festlegen hat keinerlei Auswirkung. Verwenden Sie stattdessen [**PasswordBox. passwordrevealmode**](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode) , das standardmäßig **Peek** ist (in dem ein Eye-Symbol angezeigt wird, z. b. in einer Windows-Runtime 8. x-APP). Weitere Informationen finden Sie unter [Richtlinien für Kennwortfelder](../design/controls-and-patterns/password-box.md). |
@@ -187,7 +187,7 @@ ListViewItemPresenter-Element mit überlagertem Kontrollkästchen
 
 In der folgenden Tabelle werden die Änderungen an den visuellen Zuständen und Gruppen visueller Zustände in der [**ListViewItem**](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem)-Steuerelementvorlage und der [**GridViewItem**](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem)-Steuerelementvorlage beschrieben.
 
-| 8.1                 |                         | Windows 10        |                     |
+| 8.1                 | Funktionsstatus           | Windows 10        | Funktionsstatus       |
 |---------------------|-------------------------|-------------------|---------------------|
 | CommonStates        |                         | CommonStates      |                     |
 |                     | Normal                  |                   | Normal              |

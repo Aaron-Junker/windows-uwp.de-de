@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Hintergrundaufgabe
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b5daec3f4d0fa823341ff7590094463ef412b88
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e7d008a6956c3acd22dcb99e6bf4e1cda1442545
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156004"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750166"
 ---
 # <a name="debug-a-background-task"></a>Debuggen einer Hintergrundaufgabe
 
@@ -42,16 +42,16 @@ Hintergrundaufgaben können mit Microsoft Visual Studio manuell ausgelöst werde
 
 2.  Führen Sie Ihre Anwendung im Debugger aus, und lösen Sie dann die Hintergrundaufgabe über die Symbolleiste **Zyklusereignisse** aus. In diesem Dropdownmenü werden die Namen der Hintergrundaufgaben angezeigt, die von Visual Studio aktiviert werden können.
 
-> [!NOTE]
-> Die Symbolleisten Optionen für Lebenszyklus Ereignisse werden in Visual Studio standardmäßig nicht angezeigt. Um diese Optionen anzuzeigen, klicken Sie mit der rechten Maustaste auf die aktuelle Symbolleiste in Visual Studio, und stellen Sie sicher, dass **Debugspeicherort** aktiviert ist.
+    > [!NOTE]
+    > Die Symbolleisten Optionen für Lebenszyklus Ereignisse werden in Visual Studio standardmäßig nicht angezeigt. Um diese Optionen anzuzeigen, klicken Sie mit der rechten Maustaste auf die aktuelle Symbolleiste in Visual Studio, und stellen Sie sicher, dass **Debugspeicherort** aktiviert ist.
 
-    For this to work, the background task must already be registered and it must still be waiting for the trigger. For example, if a background task was registered with a one-shot TimeTrigger and that trigger has already fired, launching the task through Visual Studio will have no effect.
+    Dies funktioniert nur dann, wenn die Hintergrundaufgabe bereits registriert ist und noch auf den Auslöser wartet. Wenn eine Hintergrundaufgabe z. B. mit einem einmaligen TimeTrigger registriert wurde und der Trigger bereits ausgelöst wurde, hat ein Start der Aufgabe mit Visual Studio keine Wirkung.
 
-> [!Note]
-> Hintergrundaufgaben, die folgende Trigger verwenden, können nicht auf diese Weise aktiviert werden: [**Anwendungs-Trigger**](/uwp/api/windows.applicationmodel.background.applicationtrigger), [**MediaProcessing Trigger**](/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger), [**ControlChannelTrigger**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger), [**PushNotificationTrigger**](/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) und Hintergrundaufgaben, die einen [**SystemTrigger**](/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) mit dem Triggertyp [**SmsReceived**](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) verwenden.  
-> **Anwendungs-Trigger** und **MediaProcessingTrigger** können im Code mit `trigger.RequestAsync()` manuell signalisiert werden.
+    > [!Note]
+    > Hintergrundaufgaben, die folgende Trigger verwenden, können nicht auf diese Weise aktiviert werden: [**Anwendungs-Trigger**](/uwp/api/windows.applicationmodel.background.applicationtrigger), [**MediaProcessing Trigger**](/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger), [**ControlChannelTrigger**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger), [**PushNotificationTrigger**](/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) und Hintergrundaufgaben, die einen [**SystemTrigger**](/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) mit dem Triggertyp [**SmsReceived**](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) verwenden.  
+    > **Anwendungs-Trigger** und **MediaProcessingTrigger** können im Code mit `trigger.RequestAsync()` manuell signalisiert werden.
 
-![Debuggen von Hintergrundaufgaben](images/debugging-activation.png)
+    ![Debuggen von Hintergrundaufgaben](images/debugging-activation.png)
 
 3.  Wenn die Hintergrundaufgabe aktiviert wird, wird sie vom Debugger übernommen, der die Debuggerausgabe dann in VS anzeigt.
 

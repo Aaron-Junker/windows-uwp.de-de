@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a5e26d48ef74631e732fb043e909869945a6366
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 596a9f2f3f234ba90b799eae982523c3a9de9732
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217050"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749936"
 ---
 # <a name="guidelines-for-panning"></a>Anleitungen für das Verschieben
 
@@ -139,12 +139,23 @@ Andockpunkte für die Verschiebung sind nützlich für Anwendungen wie Webbrowse
 
 Die folgenden Diagramme zeigen, wie der Inhalt automatisch zu einem logischen Ort verschoben wird, wenn der Benutzer die Verschiebung bis zu einem bestimmten Punkt ausführt und dann loslässt.
 
-|                                                                |                                                                                         |                                                                                                                 |
-|----------------------------------------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| ![Abbildung eines verschiebbaren Bereichs](images/ux-panning-snap1.png) | ![Abbildung eines verschiebbaren Bereichs, der nach links verschoben wird](images/ux-panning-snap2.png) | ![Abbildung eines verschiebbaren Bereichs, in dem die Verschiebung an einem logischen Andockpunkt beendet wurde](images/ux-panning-snap3.png) |
-| Streifen zum Verschieben.                                                  | Aufheben des Berührungskontakts.                                                                     | Der verschiebbare Bereich stoppt am Andockpunkt, nicht an der Stelle, an der der Berührungskontakt aufgehoben wurde.                                |
+:::row:::
+   :::column:::
+      ![Abbildung eines verschiebbaren Bereichs](images/ux-panning-snap1.png)
 
- 
+      Streifen zum Verschieben.
+   :::column-end:::
+   :::column:::
+      ![Abbildung eines verschiebbaren Bereichs, der nach links verschoben wird](images/ux-panning-snap2.png)
+
+      Aufheben des Berührungskontakts.
+   :::column-end:::
+   :::column:::
+      ![Abbildung eines verschiebbaren Bereichs, in dem die Verschiebung an einem logischen Andockpunkt beendet wurde](images/ux-panning-snap3.png)
+
+      Der verschiebbare Bereich stoppt am Andockpunkt, nicht an der Stelle, an der der Berührungskontakt aufgehoben wurde.
+   :::column-end:::
+:::row-end:::
 
 **Führungsschienen** Inhalt kann breiter und höher als die Abmessungen und die Auflösung eines Anzeigegeräts sein. Aus diesem Grund ist oft eine zweidimensionale Verschiebung (horizontal und vertikal) erforderlich. Führungsschienen verbessern in diesen Fällen die Benutzerfreundlichkeit, da sie die Verschiebung entlang der Bewegungsachse (vertikal oder horizontal) hervorheben.
 
@@ -172,7 +183,7 @@ Dieser Leitfaden ist auch für Apps wie Fotoalben oder Karten-Apps hilfreich, di
 
 - [Benutzerdefinierte Benutzerinteraktionen](../layout/index.md)
 - [Optimieren von ListView und GridView](../../debug-test-perf/optimize-gridview-and-listview.md)
-- [Tastatureingabe](../accessibility/keyboard-accessibility.md)
+- [Barrierefreiheit der Tastaturnavigation](../accessibility/keyboard-accessibility.md)
 
 **Beispiele**
 - [Einfaches Eingabebeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)

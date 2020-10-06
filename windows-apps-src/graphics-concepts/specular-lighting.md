@@ -1,120 +1,110 @@
 ---
 title: Spiegelbeleuchtung
-description: Spiegelbeleuchtung bezeichnet die glänzenden spiegelnden hellsten Bildteile, die auftreten, wenn Licht auf eine Objektfläche trifft und in Richtung der Kamera reflektiert wird.
+description: Glanz Beleuchtung identifiziert die hellen Glanzlichter, die auftreten, wenn Light auf eine Objekt Oberfläche trifft und sich wieder auf die Kamera auswirkt.
 ms.assetid: 71F87137-B00F-48CE-8E6A-F98A139A742A
 keywords:
 - Spiegelbeleuchtung
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f28f1f46cfd34ee1aab614c57dc99019dbd6111
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f60bd4019f330058d4396a5b0d75d00f90ecff09
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597975"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750186"
 ---
 # <a name="specular-lighting"></a>Spiegelbeleuchtung
 
 
-*Spiegelnde Beleuchtung* bezeichnet die glänzenden spiegelnden hellsten Bildteile, die auftreten, wenn Licht auf eine Objektfläche trifft und in Richtung der Kamera reflektiert wird. Spiegelnde Beleuchtung ist intensiver als diffuses Licht und fällt über die Objektoberfläche schneller ab. Die Berechnung von spiegelnder Beleuchtung ist zeitaufwendiger als die für diffuse Beleuchtung; der Vorteil der Anwendung liegt jedoch darin, dass die Oberfläche erheblich detailreicher wird.
+Glanz *Beleuchtung* identifiziert die hellen Glanzlichter, die auftreten, wenn Light auf eine Objekt Oberfläche trifft und sich wieder auf die Kamera auswirkt. Die Glanz Beleuchtung ist intensiver als diffuses Licht und wird schneller auf der Objekt Oberfläche angezeigt. Die Berechnung der Glanz Beleuchtung dauert länger als bei der diffusen Beleuchtung, aber der Vorteil der Verwendung besteht darin, dass Sie einer Oberfläche deutliche Details hinzufügt.
 
-Für das Modellieren einer spiegelnden Reflektion muss dem System die Bewegungsrichtung des Lichts und der Blickwinkel des Betrachters bekannt sein. Das System verwendet eine vereinfachte Version des Phong-Beleuchtungsmodells, das mit einer Winkelhalbierenden die Intensität der spiegelnden Reflektion angleicht.
+Das Modellieren von Glanz Reflektion erfordert, dass das System weiß, in welcher Richtung das Licht unterwegs ist, und die Richtung des viewerauges. Das System verwendet eine vereinfachte Version des Phong-reflektionsmodells, das einen halben Vektor verwendet, um die Intensität der Glanz Reflektion zu annähern.
 
-Für den Standardzustand der Beleuchtung werden keine Glanzlichter berechnet.
+Der Standard Beleuchtungs Zustand berechnet keine Glanzlichter.
 
-## <a name="span-idspecularlightingequationspanspan-idspecularlightingequationspanspan-idspecularlightingequationspanspecular-lighting-equation"></a><span id="Specular_Lighting_Equation"></span><span id="specular_lighting_equation"></span><span id="SPECULAR_LIGHTING_EQUATION"></span>Glanzlicht Gleichung
+## <a name="span-idspecular_lighting_equationspanspan-idspecular_lighting_equationspanspan-idspecular_lighting_equationspanspecular-lighting-equation"></a><span id="Specular_Lighting_Equation"></span><span id="specular_lighting_equation"></span><span id="SPECULAR_LIGHTING_EQUATION"></span>Glanzlicht Gleichung
 
 
-Spiegelbeleuchtung wird durch die folgende Formel beschrieben:
+Die Glanz Beleuchtung wird durch die folgende Gleichung beschrieben.
 
-|                                                                             |
-|-----------------------------------------------------------------------------|
-| Glanzlicht = Cₛ \* Summe\[Lₛ \* (N – H)<sup>P</sup> \* Atten \* Stelle\] |
+> Glanz Beleuchtung = CS \* Sum \[ ls \* (N) H)<sup>P</sup> \* - \* Punkt-Punkt\]
 
- 
+Die Variablen, ihre Typen und ihre Bereiche lauten wie folgt:
 
-Variablen, Typen und Bereiche:
-
-| Parameter    | Standardwert | Typ                                                             | Beschreibung                                                                                            |
+| Parameter    | Standardwert | type                                                             | BESCHREIBUNG                                                                                            |
 |--------------|---------------|------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| Cₛ           | (0,0,0,0)     | Rot, Grün, Blau und Alpha-Transparenz (Gleitkommawerte) | Glanzfarbe                                                                                        |
-| Summe          | n. a.           | n. a.                                                              | Summe aller Glanzkomponenten des Lichts                                                          |
-| N            | n. a.           | 3D-Vektor (X-, Y- und Z-Gleitkommawerte)                    | Vertexnormale                                                                                         |
-| H            | n. a.           | 3D-Vektor (X-, Y- und Z-Gleitkommawerte)                    | Winkelhalbierende. Siehe den Abschnitt zur Winkelhalbierenden                                                |
-| <sup>P</sup> | 0.0           | Gleitkomma                                                   | Stärke der spiegelnden Reflektion. Von 0 bis plus unendlich                                                     |
-| Lₛ           | (0,0,0,0)     | Rot, Grün, Blau und Alpha-Transparenz (Gleitkommawerte) | Glanzfarbe des Lichts                                                                                  |
-| Dämpfung        | n. a.           | Gleitkomma                                                   | Lichtdämpfungswert. Siehe [Abschwächungs- und Spotlicht-Faktor](attenuation-and-spotlight-factor.md). |
-| Spotlight         | n. a.           | Gleitkomma                                                   | Spotlight-Faktor. Siehe [Abschwächungs- und Spotlicht-Faktor](attenuation-and-spotlight-factor.md).        |
+| CS           | (0, 0, 0, 0)     | Die Transparenz von rot, grün, blau und Alpha (Gleit Komma Werte) | Glanz Farbe.                                                                                        |
+| Sum          | –           | –                                                              | Sumpunktions Zeichen für die Glanz Komponente der einzelnen Leuchten.                                                          |
+| N            | –           | 3D-Vektor (x, y und z Gleit Komma Werte)                    | Vertex normal.                                                                                         |
+| H            | –           | 3D-Vektor (x, y und z Gleit Komma Werte)                    | Halber-Wege-Vektor. Weitere Informationen finden Sie im Abschnitt zum halben Vektor.                                                |
+| <sup>P</sup> | 0,0           | Gleitkomma                                                   | Glanz Fähigkeit der Reflektion. Der Bereich liegt zwischen 0 und + unendlich.                                                     |
+| Ls           | (0, 0, 0, 0)     | Die Transparenz von rot, grün, blau und Alpha (Gleit Komma Werte) | Helle Glanz Farbe.                                                                                  |
+| Ratte        | –           | Gleitkomma                                                   | Heller Dämpfungswert. Siehe [Dämpfung und Spotlight-Faktor](attenuation-and-spotlight-factor.md). |
+| Sofortige Zahlung         | –           | Gleitkomma                                                   | Spotlight-Faktor. Siehe [Dämpfung und Spotlight-Faktor](attenuation-and-spotlight-factor.md).        |
 
  
 
-Cₛ ist einer der folgenden Werte:
+Der Wert für CS lautet wie folgt:
 
--   Vertexfarbe 1, wenn die Glanzmaterialquelle die diffuse Vertexfarbe ist und die erste Vertexfarbe in der Vertexdeklaration angegeben ist
--   Vertexfarbe 2, wenn die Glanzmaterialquelle die Glanzvertexfarbe ist und die zweite Vertexfarbe in der Vertexdeklaration angegeben ist
--   Materialglanzfarbe
+-   Vertex Color 1, wenn es sich bei der Glanz materialquelle um die diffuse Scheitelpunkt Farbe handelt und die erste Scheitelpunkt Farbe in der Vertexdeklaration angegeben wird.
+-   Vertex Color 2, wenn eine Glanz materialquelle die Glanz Farbe des Vertex ist, und die zweite Scheitelpunkt Farbe in der Vertexdeklaration.
+-   Material Glanz Farbe
 
-**Beachten Sie**    Wenn entweder glänzendes Material Quelloption wird verwendet, und die Vertexfarbe wurde nicht angegeben, wird die Material glänzende Farbe verwendet.
-
- 
-
-Nachdem alle Lichter verarbeitet und getrennt interpoliert wurden, sollten Glanzkomponenten auf Werte zwischen 0 bis 255 festgelegt sein.
-
-## <a name="span-idthehalfwayvectorspanspan-idthehalfwayvectorspanspan-idthehalfwayvectorspanthe-halfway-vector"></a><span id="The_Halfway_Vector"></span><span id="the_halfway_vector"></span><span id="THE_HALFWAY_VECTOR"></span>Der in der Mitte Vektor
-
-
-Die Winkelhalbierende (H) befindet sich in der Mitte zwischen zwei Vektoren: dem Vektor von einem Objektvertex zur Lichtquelle und dem Vektor von einem Objektvertex zur Kameraposition. Direct3D bietet zwei Möglichkeiten zur Berechnung der Winkelhalbierenden. Wenn Glanzlichter relativ zur Kamera aktiviert sind (anstelle von orthogonalen Glanzlichtern), berechnet das System die Winkelhalbierende anhand der Position der Kamera und der Position des Vertex zusammen mit dem Richtungsvektor des Lichts. Die folgende Formel veranschaulicht dies:
-
-|                                           |
-|-------------------------------------------|
-| H = norm(norm(Cₚ - Vₚ) + L<sub>dir</sub>) |
+**Hinweis**    Wenn eine der beiden Optionen für die Quell Text Quelle verwendet wird und die Scheitelpunkt Farbe nicht angegeben wird, wird die Glanz Farbe für das Material verwendet.
 
  
 
-| Parameter       | Standardwert | Typ                                          | Beschreibung                                                  |
+Glanz Komponenten werden an einen Wert zwischen 0 und 255 gebunden, nachdem alle Lichter separat verarbeitet und interpoliert wurden.
+
+## <a name="span-idthe_halfway_vectorspanspan-idthe_halfway_vectorspanspan-idthe_halfway_vectorspanthe-halfway-vector"></a><span id="The_Halfway_Vector"></span><span id="the_halfway_vector"></span><span id="THE_HALFWAY_VECTOR"></span>Der halbe Vektor
+
+
+Der halbe Vektor (H) ist in der Mitte zwischen zwei Vektoren vorhanden: der Vektor von einem Objekt Scheitelpunkt zur hellen Quelle und der Vektor von einem Objekt Scheitelpunkt bis zur Kameraposition. Direct3D bietet zwei Möglichkeiten, den halbvektor zu berechnen. Wenn für die Kamera relative Glanzlichter aktiviert sind (anstelle von orthogonalen Glanzlichtern), berechnet das System den halben Vektor mithilfe der Position der Kamera und der Position des Scheitel Punkts, zusammen mit dem Richtungsvektor des Lichts. Dies wird in der folgenden Formel veranschaulicht.
+
+> H = Norm (Norm (CP-VP) + L-<sub>dir</sub>)
+
+ 
+
+| Parameter       | Standardwert | type                                          | BESCHREIBUNG                                                  |
 |-----------------|---------------|-----------------------------------------------|--------------------------------------------------------------|
-| Cₚ              | n. a.           | 3D-Vektor (X-, Y- und Z-Gleitkommawerte) | Kameraposition                                             |
-| Vₚ              | n. a.           | 3D-Vektor (X-, Y- und Z-Gleitkommawerte) | Vertexposition                                             |
-| L<sub>dir</sub> | n. a.           | 3D-Vektor (X-, Y- und Z-Gleitkommawerte) | Richtungsvektor von der Vertexposition zur Lichtposition |
+| Erfolgen              | –           | 3D-Vektor (x, y und z Gleit Komma Werte) | Kameraposition.                                             |
+| Füttern              | –           | 3D-Vektor (x, y und z Gleit Komma Werte) | Vertex-Position.                                             |
+| L-<sub>dir</sub> | –           | 3D-Vektor (x, y und z Gleit Komma Werte) | Richtung Vektor von Scheitelpunkt Position zur hellen Position. |
 
  
 
-Die Bestimmung der Winkelhalbierenden auf diese Weise kann rechenintensiv sein. Als Alternative wird bei der Verwendung orthogonaler Glanzlichter (anstelle von Glanzlichtern relativ zur Kamera) das System angewiesen, sich so zu verhalten, als ob sich der Blickpunkt unendlich entfernt auf der Z-Achse befinden würde. Die Formel für diese Berechnung sieht folgendermaßen aus:
+Die Bestimmung des halb möglichen Vektors auf diese Weise kann Rechen intensiv sein. Alternativ weist die Verwendung von orthogonalen Glanzlichtern (anstelle von Kamera-relativen Glanzlichtern) das System an, so zu agieren, als ob der Standpunkt auf der z-Achse unendlich weit entfernt ist. Dies wird in der folgenden Formel dargestellt.
 
-|                                     |
-|-------------------------------------|
-| H = norm((0,0,1) + L<sub>dir</sub>) |
+> H = Norm ((0,0) + L-<sub>dir</sub>)
 
- 
-
-Diese Einstellung ist weniger rechenintensiv, aber auch viel unpräziser, daher sollte sie am besten in Anwendungen mit orthogonalen Projektion verwendet werden.
+Diese Einstellung ist weniger Rechen intensiv, aber weitaus weniger genau. Sie wird daher am besten von Anwendungen verwendet, die eine orthogonale Projektion verwenden.
 
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Beispiel
 
 
-In diesem Beispiel wird ein Objekt mit der Glanzlichtfarbe der Szene und einer Materialglanzfarbe eingefärbt.
+In diesem Beispiel wird das-Objekt mithilfe der Glanzlicht Farbe der Szene und einer hellen Glanz Farbe gefärbt.
 
-Gemäß der Gleichung ist die resultierende Farbe für die Objektvertices eine Kombination aus der Materialfarbe und der Lichtfarbe.
+Gemäß der Gleichung ist die resultierende Farbe für die Objekt Vertices eine Kombination aus der Material Farbe und der hellen Farbe.
 
-Die beiden folgenden Abbildungen zeigen die Glanzmaterialfarbe grau und die Glanzlichtfarbe weiß.
+Die folgende Abbildung zeigt die Glanz Farbe, die grau ist, und die helle helle Farbe, die weiß ist.
 
 ![Abbildung einer grauen Kugel](images/amb1.jpg)![Abbildung einer weißen Kugel](images/lightwhite.jpg)
 
-Das resultierende Glanzlicht ist in der folgenden Abbildung gezeigt.
+Die sich ergebende Glanz Markierung wird in der folgenden Abbildung dargestellt.
 
-![Abbildung des Glanzlichts](images/lights.jpg)
+![Abbildung der Glanz Markierung](images/lights.jpg)
 
-Durch Kombination des Glanzlichts mit der Umgebungs- und diffusen Beleuchtung wird ein Ergebnis wie in der folgenden Abbildung erzeugt. Die Anwendung aller drei Beleuchtungsarten liefert ein sehr realistisches Objekt.
+Die Kombination der Glanz Markierung mit der Ambient-und diffuse Beleuchtung ergibt die folgende Abbildung. Wenn alle drei Arten von Beleuchtung angewendet werden, ähnelt dies deutlich einem realistischen Objekt.
 
-![Abbildung der Kombination des Glanzlichts, des Umgebungslichts und des diffusen Lichts](images/lightads.jpg)
+![Darstellung der Kombination der Glanz Markierung, der Umgebungsbeleuchtung und der diffusen Beleuchtung](images/lightads.jpg)
 
-Für die Spiegelbeleuchtung ist eine intensivere Berechnung als für die diffuse Beleuchtung erforderlich. Sie wird normalerweise verwendet, um visuelle Hinweise zu dem Oberflächenmaterial zu geben. Das Glanzlicht ändert sich in Größe und Farbe entsprechend dem Material der Oberfläche.
+Die Glanz Beleuchtung ist intensiver zu berechnen als diffuses Beleuchtung. Sie wird in der Regel verwendet, um visuelle Hinweise zum Oberflächenmaterial bereitzustellen. Die Glanz Markierung variiert in Größe und Farbe mit dem Material der-Oberfläche.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Mathematik der Beleuchtung](mathematics-of-lighting.md)
+[Beleuchtungsmathematik](mathematics-of-lighting.md)
 
  
 

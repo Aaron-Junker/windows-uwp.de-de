@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c60794a52c3d8a5f597d4ab2d09490405c98f85a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 5ec8832d4e0e8c72954bf4d0582aac8240da2efe
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218373"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750686"
 ---
 # <a name="create-adaptive-tiles"></a>Erstellen adaptiver Kacheln
 
@@ -284,7 +284,7 @@ Wenn Sie in der Benachrichtigungsnutzlast kein Branding angeben, wird das Brandi
 
  
 
-## <a name="display-name"></a>Angezeigter Name
+## <a name="display-name"></a>Anzeigename
 
 
 Sie können den Anzeigenamen einer Benachrichtigung überschreiben, indem Sie für das **displayName**-Attribut die gewünschte Textzeichenfolge eingeben. Wie beim Branding können Sie dies für das [tilevisual](../tiles-and-notifications/tile-schema.md#tilevisual) -Element angeben, das sich auf die gesamte Benachrichtigungs Nutzlast auswirkt, oder auf das [tilebinding](../tiles-and-notifications/tile-schema.md#tilebinding) -Element, das sich nur auf einzelne Kacheln auswirkt.
@@ -412,9 +412,8 @@ new AdaptiveText()
 
 **Allgemeine Textstile**
 
-|                                |                           |             |
-|--------------------------------|---------------------------|-------------|
 | &lt;Text Hint-Style = " \* "/&gt; | Zeichenhöhe               | Schriftbreite |
+|--------------------------------|---------------------------|-------------|
 | caption                        | 12 effektive Pixel (epx) | Regulär     |
 | body                           | 15 Epx                    | Regulär     |
 | base                           | 15 Epx                    | Halbfett    |
@@ -429,11 +428,11 @@ new AdaptiveText()
 
 Durch diese Variationen wird die Zeilenhöhe verringert, sodass der Abstand zu Inhalten über und unter der Zeile deutlich kleiner wird.
 
-|                  |
-|------------------|
-| titleNumeral     |
-| subheaderNumeral |
-| headerNumeral    |
+- titleNumeral
+
+- subheaderNumeral
+
+- headerNumeral
 
  
 
@@ -441,18 +440,25 @@ Durch diese Variationen wird die Zeilenhöhe verringert, sodass der Abstand zu I
 
 Jeder Stil weist eine leichte Variation auf, durch die der Text eine 60 %-ige Deckkraft erhält und normalerweise in einem hellgrauen Farbton angezeigt wird.
 
-|                        |
-|------------------------|
-| captionSubtle          |
-| bodySubtle             |
-| baseSubtle             |
-| subtitleSubtle         |
-| titleSubtle            |
-| titleNumeralSubtle     |
-| subheaderSubtle        |
-| subheaderNumeralSubtle |
-| headerSubtle           |
-| headerNumeralSubtle    |
+- captionSubtle
+
+- bodySubtle
+
+- baseSubtle
+
+- subtitleSubtle
+
+- titleSubtle
+
+- titleNumeralSubtle
+
+- subheaderSubtle
+
+- subheaderNumeralSubtle
+
+- headerSubtle
+
+- headerNumeralSubtle
 
  
 
@@ -592,19 +598,19 @@ Mit dem **hint-weight**-Attribut wird die Breite von Spalten gesteuert. Der **hi
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="left">25%</td>
+<td align="left">25 %</td>
 </tr>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">25%</td>
+<td align="left">25 %</td>
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="left">25%</td>
+<td align="left">25 %</td>
 </tr>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">25%</td>
+<td align="left">25 %</td>
 </tr>
 <tr class="even">
 <td align="left">Gesamtgewichtung: 4</td>

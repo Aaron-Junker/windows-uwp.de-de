@@ -4,12 +4,12 @@ description: Erfahren Sie, wie Sie die Versionskontrolle mit einem Unity-Spiel f
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 3e4d98892b9bd738eca788d166ef79f81ea1b047
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1c0eb9bfc6ee758b854754b0531299fb30b51d1c
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173744"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749856"
 ---
 # <a name="unity-version-control-your-uwp-project"></a>Unity: Versionskontrolle für Ihr UWP-Projekt
 
@@ -31,19 +31,21 @@ In diesem Verzeichnis interessiert uns nur der Ordner ***ScrapyardPhoenix*** (Na
 
 ***Sie sind nicht vertraut, was eine gitignore-Datei ist?  Weitere Informationen finden Sie unter [gitignore](https://git-scm.com/docs/gitignore).***
 
-    ##################################################################
-    # The original .gitignore file can be found at
-    # https://github.com/github/gitignore/blob/master/Unity.gitignore
-    ##################################################################
+```console
+##################################################################
+# The original .gitignore file can be found at
+# https://github.com/github/gitignore/blob/master/Unity.gitignore
+##################################################################
 
-    # standard ignores for a Unity Project
-    ...
+# standard ignores for a Unity Project
+...
 
-    # ignore the whole UWP directory
-    /UWP/**
+# ignore the whole UWP directory
+/UWP/**
 
-    # except we want to keep... (this line will be modified and removed further down)
-    !/UWP/ScrapyardPhoenix/
+# except we want to keep... (this line will be modified and removed further down)
+!/UWP/ScrapyardPhoenix/
+```
 
 Wir möchten einige unterschiedliche Dateien und Ordner aus dem Ordner **UWP/ScrapyardPhoenix** auswählen und unserer Versionskontrolle hinzufügen.  Sehen wir uns das Ganze erst einmal im Detail an:
 
@@ -67,25 +69,27 @@ Wir möchten einige unterschiedliche Dateien und Ordner aus dem Ordner **UWP/Scr
 
 ## <a name="resulting-gitignore"></a>Resultierende GITIGNORE-Datei
 
-    ##################################################################
-    # The original .gitignore file can be found at
-    # https://github.com/github/gitignore/blob/master/Unity.gitignore
-    ##################################################################
+```console
+##################################################################
+# The original .gitignore file can be found at
+# https://github.com/github/gitignore/blob/master/Unity.gitignore
+##################################################################
 
-    # standard ignores for a Unity Project
-    ...
+# standard ignores for a Unity Project
+...
 
-    # ignore the whole UWP directory
-    /UWP/**
+# ignore the whole UWP directory
+/UWP/**
 
-    # except we want to keep...
-    !/UWP/ScrapyardPhoenix/Assets/*
-    !/UWP/ScrapyardPhoenix/Dependencies/*
-    !/UWP/ScrapyardPhoenix/Properties/*
-    !/UWP/ScrapyardPhoenix/App.cs
-    !/UWP/ScrapyardPhoenix/Package.appxmanifest
-    !/UWP/ScrapyardPhoenix/project.json
-    !/UWP/ScrapyardPhoenix/ScrapyardPhoenix.csproj
+# except we want to keep...
+!/UWP/ScrapyardPhoenix/Assets/*
+!/UWP/ScrapyardPhoenix/Dependencies/*
+!/UWP/ScrapyardPhoenix/Properties/*
+!/UWP/ScrapyardPhoenix/App.cs
+!/UWP/ScrapyardPhoenix/Package.appxmanifest
+!/UWP/ScrapyardPhoenix/project.json
+!/UWP/ScrapyardPhoenix/ScrapyardPhoenix.csproj
+```
 
 Geschafft: Ihre Teammitglieder sind nun mit dem von Ihnen generierten UWP-Projekt synchronisiert. Nun können Sie Ihrem UWP-Projekt problemlos zusätzliche Ressourcen, Quellen und Abhängigkeiten hinzufügen.
 

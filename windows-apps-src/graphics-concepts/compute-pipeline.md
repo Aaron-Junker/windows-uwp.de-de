@@ -1,35 +1,37 @@
 ---
 title: Berechnen der Pipeline
-description: Die Direct3D-Berechnungs-Pipeline wurde entwickelt, um Berechnungen zu erledigen, die meist parallel mit der Grafik-Pipeline ausgeführt werden können.
+description: Die Direct3D-Compute-Pipeline wurde zur Verarbeitung von Berechnungen entwickelt, die meist parallel mit der Grafikpipeline ausgeführt werden können.
 ms.assetid: 355B66C6-C0DF-47BA-A9C9-7AFA50B5B614
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 911546f1c2973a79aea4b597a47352149a4e4210
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 36d1bd524d6e71b0a1aa9477d7a2b7a5f27544aa
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651115"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750046"
 ---
 # <a name="compute-pipeline"></a>Berechnen der Pipeline
 
 
-\[Einige Informationen beziehen sich auf einer Vorabversion eines Produkts die vor der markteinführung grundlegend geändert werden kann. Microsoft übernimmt keine Garantien, ausdrücklich oder konkludent, in Bezug auf die hier bereitgestellten Informationen.\]
+\[Einige Informationen beziehen sich auf Vorabversionen, die vor der kommerziellen Freigabe grundlegend geändert werden können. Microsoft übernimmt keine Garantie, weder ausdrücklich noch stillschweigend, für die hier bereitgestellten Informationen.\]
 
 
-Die Direct3D-Berechnungs-Pipeline wurde entwickelt, um Berechnungen zu erledigen, die meist parallel mit der Grafik-Pipeline ausgeführt werden können. Die Compute-Pipeline enthält nur wenige Schritte, bei der Daten zwischen Eingabe und Ausgabe über von Eingaben über die programmierbare Computeshaderphase fließen.
+Die Direct3D-Compute-Pipeline wurde zur Verarbeitung von Berechnungen entwickelt, die meist parallel mit der Grafikpipeline ausgeführt werden können. Es gibt nur wenige Schritte in der computepipeline, bei der Daten von der Eingabe in die Ausgabe über die programmierbare Compute-Shader-Stufe fließen.
 
-| | |
-|-|-|
-|Zweck|Wie andere programmierbare Shader wurde auch die [Computeshaderphase (CS)](compute-shader-stage--cs-.md) mit HLSL entwickelt und implementiert. Ein Computeshader bietet schnelle, allgemeine Berechnungen und nutzt die große Anzahl von parallelen Prozessoren auf dem Grafikprozessor (GPU). Der Computeshader bietet die Freigabe des Arbeitsspeichers und Threadsynchronisierung, um effektivere parallele Programmiermethoden zu ermöglichen.|
-|Input|Im Gegensatz zu anderen programmierbaren Shadern ist die Definition der Eingabe abstrakt. Die Eingabe kann ein-, zwei- oder dreidimensionaler Natur sein, um die Anzahl der auszufühRendern Aufrufe des Computeshaders festzulegen. Es ist möglich, gemeinsam genutzte Daten für einen Satz zu lesender Aufrufe zu definieren.|
-|Ausgabe|Ausgabedaten des Computeshaders können die stark variiert und mit der Grafikrenderingpipeline synchronisiert werden, wenn die berechneten Daten erforderlich sind.|
-| | |
+## <a name="purpose"></a>Zweck
 
+Wie andere programmierbare [Shader wird die Compute-Shader (CS)-Phase](compute-shader-stage--cs-.md) mit HLSL entworfen und implementiert. Ein Compute-Shader bietet eine hohe Geschwindigkeit für das allgemeine Computing und nutzt die große Anzahl paralleler Prozessoren auf der GPU (Graphics Processing Unit). Der COMPUTE-Shader bietet Funktionen für die Speicherfreigabe und die Thread Synchronisierung, um effektivere parallele Programmiermethoden zu ermöglichen.
 
+## <a name="input"></a>Eingabe
 
+Im Gegensatz zu anderen programmierbaren Shadern ist die Definition der Eingabe abstrakt. Die Eingabe kann ein, zwei oder dreidimensional sein und die Anzahl der Aufrufe des auszuführenden Compute-Shader bestimmen. Es ist möglich, freigegebene Daten für einen Satz von aufrufen zu definieren, der gelesen werden soll.
+
+## <a name="output"></a>Output
+
+Ausgabedaten aus dem Compute-Shader, die stark variieren können, können mit der Grafik Rendering-Pipeline synchronisiert werden, wenn die berechneten Daten benötigt werden.
 
 <!---
 <table>
@@ -57,7 +59,7 @@ Die Direct3D-Berechnungs-Pipeline wurde entwickelt, um Berechnungen zu erledigen
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Schulungsleitfaden für Direct3D-Grafiken](index.md)
+[Direct3D Grafik Lernhandbuch](index.md)
 
  
 

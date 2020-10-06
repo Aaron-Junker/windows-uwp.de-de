@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb35a262f02576f0425460c8e27ce0016a08d1a
-ms.sourcegitcommit: 651a6b9769fad1736ab16e2a4e423258889b248e
+ms.openlocfilehash: bcb43748baeeb7f68ec246cb0277fbef0944fc47
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91366896"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750355"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
@@ -411,8 +411,8 @@ Mission erfüllt! Sie haben das Internet gerade sicherer gemacht!
 
 ### <a name="62-terminology"></a>6.2 Terminologie
 
-| | |
-|-|-|
+| Begriff | Definition |
+| ---- | ---------- |
 | AIK | Ein Attestation Identity Key (AIK) liefert einen solchen kryptografischen Nachweis (TPM-Schlüsselnachweis), indem die Eigenschaften des nicht migrierbaren Schlüssel signiert und Eigenschaften und Signatur der vertrauenden Seite zur Überprüfung überlassen werden. Die resultierende Signatur wird als „Nachweisanweisung“ bezeichnet. Da die Signatur mithilfe des privaten AIK-Schlüssels erstellt wird – der nur in dem TPM verwendet werden kann, von dem er erstellt wurde – kann die vertrauende Seite sicher davon ausgehen, dass der nachgewiesene Schlüssel nicht migrierbar ist und außerhalb dieses TPMs nicht verwendet werden kann. |
 | AIK-Zertifikat | Ein AIK-Zertifikat wird verwendet, um das Vorhandensein eines AIKs in einem TPM nachzuweisen. Außerdem wird damit nachgewiesen, dass die anderen vom AIK zertifizierten Schlüssel ebenfalls von diesem TPM stammen. |
 | IDP | Ein IDP (Identity Provider) ist ein Identitätsanbieter. Ein Beispiel ist der von Microsoft für Microsoft-Konten erstellte IDP. Jedes Mal, wenn eine Anwendung sich mit einem Microsoft-Konto (MSA) authentifizieren muss, kann sie den MSA-IDP aufrufen. |

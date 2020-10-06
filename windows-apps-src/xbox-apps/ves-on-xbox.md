@@ -4,12 +4,12 @@ description: Erfahren Sie, wie Sie Ihren universelle Windows-Plattform-Apps (UWP
 ms.date: 10/19/2017
 ms.topic: article
 keywords: Windows 10, UWP, Xbox, Speech, Voice-aktivierte Shell
-ms.openlocfilehash: b59b578a13145910be30c3f228305b874f9e9734
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: fa0f56a6821fd8858cab317654cd0ead5d731693
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636480"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750266"
 ---
 # <a name="using-speech-to-invoke-ui-elements"></a>Verwenden von Sprache zum Aufrufen von UI-Elementen
 
@@ -20,31 +20,31 @@ Im folgenden finden Sie eine Übersicht über die Möglichkeiten eines Benutzers
 
 - Der Benutzer schaltet die Xbox-Konsole ein und möchte seine apps durchsuchen, um etwas Interessantes zu finden:
 
-        User: "Hey Cortana, open My Games and Apps"
+    > Benutzer: "Hallo Cortana, meine Spiele und apps öffnen"
 
 - Der Benutzer befindet sich im aktiven Lesemodus (ALM), was bedeutet, dass die Konsole jetzt den Benutzer abhört, ein Steuerelement aufzurufen, das auf dem Bildschirm sichtbar ist, ohne dass Sie jedes Mal "Hey Cortana" sagen müssen.  Der Benutzer kann jetzt zum Anzeigen von apps wechseln und in der APP-Liste einen Bildlauf durchführen
 
-        User: "applications"
+    > Benutzer: "Anwendungen"
 
 - Zum Scrollen der Ansicht kann der Benutzer einfach Folgendes sagen:
 
-        User: "scroll down"
+    > Benutzer: "Scrollen nach unten"
 
 - Der Benutzer sieht die Box-Art für die APP, an der er interessiert ist, aber den Namen vergessen hat.  Der Benutzer fordert die Anzeige von sprach Tipp Bezeichnungen an:
 
-        User: "show labels"
+    > Benutzer: "Bezeichnungen anzeigen"
 
 - Nun ist klar, was Sie sagen können: die APP kann gestartet werden:
 
-        User: "movies and TV"
+    > Benutzer: "Filme und TV"
 
 - Um den Modus für aktive Überwachung zu beenden, teilt der Benutzer der Xbox mit, das lauschen anzuhalten
 
-        User: "stop listening"
+    > Benutzer: "lauschen nicht mehr"
 
 - Später kann eine neue aktive Überwachungs Sitzung mit folgenden Aktionen gestartet werden:
 
-        User: "Hey Cortana, make a selection" or "Hey Cortana, select"
+    > Benutzer: "Hey Cortana, Make a selection" oder "Hey Cortana, Select"
 
 ## <a name="ui-automation-dependency"></a>UI-Automatisierungs Abhängigkeit ##
 VES ist ein Benutzeroberflächenautomatisierungs-Client und basiert auf Informationen, die von der APP über seine Benutzeroberflächenautomatisierungs-Anbieter verfügbar gemacht Dies ist die gleiche Infrastruktur, die bereits von der Funktion "Sprachausgabe" auf Windows-Plattformen verwendet wird.  Die Benutzeroberflächen Automatisierung ermöglicht den programmgesteuerten Zugriff auf Benutzeroberflächen Elemente, einschließlich des Namens des Steuer Elements, seines Typs und der von ihm implementierten Steuerelement Muster.  Wenn sich die Benutzeroberfläche in der app ändert, reagiert VES auf UIA-Aktualisierungs Ereignisse und analysiert die aktualisierte Benutzeroberflächenautomatisierungs-Struktur erneut, um alle umsetzbaren Elemente zu finden. diese Informationen werden verwendet, um eine sprach Erkennungs Grammatik zu erstellen. 
@@ -168,36 +168,37 @@ Beispiel:
 ## <a name="sample-ui"></a>Beispielbenutzeroberfläche ##
 Im folgenden finden Sie ein Beispiel für eine XAML-basierte Benutzeroberfläche, in der die AutomationProperties.Name auf verschiedene Weise festgelegt wird:
 
-    <Page
-        x:Class="VESSampleCSharp.MainPage"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="using:VESSampleCSharp"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d">
-        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <Button x:Name="button1" Content="Hello World" HorizontalAlignment="Left" Margin="44,56,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="button2" AutomationProperties.Name="Launch Game" Content="Launch" HorizontalAlignment="Left" Margin="44,106,0,0" VerticalAlignment="Top" Width="99"/>
-            <TextBlock AutomationProperties.Name="Day of Week" x:Name="label1" HorizontalAlignment="Left" Height="22" Margin="168,62,0,0" TextWrapping="Wrap" Text="Select Day of Week:" VerticalAlignment="Top" Width="137"/>
-            <ComboBox AutomationProperties.LabeledBy="{Binding ElementName=label1}" x:Name="comboBox" HorizontalAlignment="Left" Margin="310,57,0,0" VerticalAlignment="Top" Width="120">
-                <ComboBoxItem Content="Monday" IsSelected="True"/>
-                <ComboBoxItem Content="Tuesday"/>
-                <ComboBoxItem Content="Wednesday"/>
-                <ComboBoxItem Content="Thursday"/>
-                <ComboBoxItem Content="Friday"/>
-                <ComboBoxItem Content="Saturday"/>
-                <ComboBoxItem Content="Sunday"/>
-            </ComboBox>
-            <Button x:Name="button3" HorizontalAlignment="Left" Margin="44,156,0,0" VerticalAlignment="Top" Width="213">
-                <Grid>
-                    <TextBlock AutomationProperties.Name="Accept">Accept Offer</TextBlock>
-                    <TextBlock Margin="0,25,0,0" Foreground="#FF5A5A5A">Exclusive offer just for you</TextBlock>
-                </Grid>
-            </Button>
-        </Grid>
-    </Page>
-
+```xaml
+<Page
+    x:Class="VESSampleCSharp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VESSampleCSharp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="button1" Content="Hello World" HorizontalAlignment="Left" Margin="44,56,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button2" AutomationProperties.Name="Launch Game" Content="Launch" HorizontalAlignment="Left" Margin="44,106,0,0" VerticalAlignment="Top" Width="99"/>
+        <TextBlock AutomationProperties.Name="Day of Week" x:Name="label1" HorizontalAlignment="Left" Height="22" Margin="168,62,0,0" TextWrapping="Wrap" Text="Select Day of Week:" VerticalAlignment="Top" Width="137"/>
+        <ComboBox AutomationProperties.LabeledBy="{Binding ElementName=label1}" x:Name="comboBox" HorizontalAlignment="Left" Margin="310,57,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Monday" IsSelected="True"/>
+            <ComboBoxItem Content="Tuesday"/>
+            <ComboBoxItem Content="Wednesday"/>
+            <ComboBoxItem Content="Thursday"/>
+            <ComboBoxItem Content="Friday"/>
+            <ComboBoxItem Content="Saturday"/>
+            <ComboBoxItem Content="Sunday"/>
+        </ComboBox>
+        <Button x:Name="button3" HorizontalAlignment="Left" Margin="44,156,0,0" VerticalAlignment="Top" Width="213">
+            <Grid>
+                <TextBlock AutomationProperties.Name="Accept">Accept Offer</TextBlock>
+                <TextBlock Margin="0,25,0,0" Foreground="#FF5A5A5A">Exclusive offer just for you</TextBlock>
+            </Grid>
+        </Button>
+    </Grid>
+</Page>
+```
 
 Das obige Beispiel zeigt, wie die Benutzeroberfläche mit und ohne sprach Tipp Bezeichnungen aussieht.
  

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Benutzer Rollen, Benutzer Berechtigung, benutzerdefinierte Rollen, Benutzer Zugriff, Berechtigungen anpassen, Standardrollen
 ms.localizationpriority: medium
-ms.openlocfilehash: 6aa88bd5af2e878fa702c3faff2d2677a23f33f2
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f8454587e31751e3653d983dbb1d45e21a2808d9
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219753"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750176"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Festlegen von Rollen oder benutzerdefinierten Berechtigungen für Kontobenutzer
 
@@ -53,13 +53,13 @@ In der nachfolgenden Tabelle sind einige der spezifischen Features aufgeführt, 
 
 |                                                       |    Kontobesitzer                 |    Manager                       |    Entwickler                     |    Mitwirkender im Geschäftsbereich    |    Mitwirkender im Finanzbereich    |    Vermarkter                      |
 |-------------------------------------------------------|----------------------------------|----------------------------------|----------------------------------|----------------------------|---------------------------|----------------------------------|
-|    Kaufbericht (einschließlich Daten nahezu in Echtzeit) |    Kann anzeigen                      |    Kann anzeigen                      |    Kein Zugriff                     |    Kein Zugriff               |    Kann anzeigen               |    Kein Zugriff                     |
-|    Feedback – Berichte/Antworten                          |    Kann Feedback anzeigen und senden    |    Kann Feedback anzeigen und senden    |    Kann Feedback anzeigen und senden    |    Kein Zugriff               |    Kein Zugriff              |    Kann Feedback anzeigen und senden    |
-|    Integritäts Bericht (einschließlich Near Real Time Data)      |    Kann anzeigen                      |    Kann anzeigen                      |    Kann anzeigen                      |    Kann anzeigen                |    Kein Zugriff              |    Kein Zugriff                     |
-|    Nutzungsbericht                                       |    Kann anzeigen                      |    Kann anzeigen                      |    Kann anzeigen                      |    Kann anzeigen                |    Kein Zugriff              |    Kein Zugriff                     |
-|    Auszahlungskonto                                     |    Kann aktualisieren                    |    Kein Zugriff                     |    Kein Zugriff                     |    Kein Zugriff               |    Kann aktualisieren             |    Kein Zugriff                     |
-|    Steuerprofil                                        |    Kann aktualisieren                    |    Kein Zugriff                     |    Kein Zugriff                     |    Kein Zugriff               |    Kann aktualisieren             |    Kein Zugriff                     |
-|    Auszahlungszusammenfassung                                     |    Kann anzeigen                      |    Kein Zugriff                     |    Kein Zugriff                     |    Kein Zugriff               |    Kann anzeigen               |    Kein Zugriff                     |
+|    **Kaufbericht (einschließlich Daten nahezu in Echtzeit)** |    Kann anzeigen                      |    Kann anzeigen                      |    Kein Zugriff                     |    Kein Zugriff               |    Kann anzeigen               |    Kein Zugriff                     |
+|    **Feedback – Berichte/Antworten**                          |    Kann Feedback anzeigen und senden    |    Kann Feedback anzeigen und senden    |    Kann Feedback anzeigen und senden    |    Kein Zugriff               |    Kein Zugriff              |    Kann Feedback anzeigen und senden    |
+|    **Integritäts Bericht (einschließlich Near Real Time Data)**      |    Kann anzeigen                      |    Kann anzeigen                      |    Kann anzeigen                      |    Kann anzeigen                |    Kein Zugriff              |    Kein Zugriff                     |
+|    **Nutzungsbericht**                                       |    Kann anzeigen                      |    Kann anzeigen                      |    Kann anzeigen                      |    Kann anzeigen                |    Kein Zugriff              |    Kein Zugriff                     |
+|    **Auszahlungskonto**                                     |    Kann aktualisieren                    |    Kein Zugriff                     |    Kein Zugriff                     |    Kein Zugriff               |    Kann aktualisieren             |    Kein Zugriff                     |
+|    **Steuerprofil**                                        |    Kann aktualisieren                    |    Kein Zugriff                     |    Kein Zugriff                     |    Kein Zugriff               |    Kann aktualisieren             |    Kein Zugriff                     |
+|    **Auszahlungszusammenfassung**                                     |    Kann anzeigen                      |    Kein Zugriff                     |    Kein Zugriff                     |    Kein Zugriff               |    Kann anzeigen               |    Kein Zugriff                     |
 
 Wenn keine der Standardrollen geeignet ist oder Sie den Zugriff auf bestimmte apps und/oder Add-ons einschränken möchten, können Sie dem Benutzer benutzerdefinierte Berechtigungen erteilen, indem Sie wie unten beschrieben die Option **Berechtigungen anpassen**auswählen.
 
@@ -152,7 +152,7 @@ Jedes Add-On wird in einer separaten Zeile unterhalb des übergeordneten Produkt
 Beachten Sie, dass einige Berechtigungen nicht für Add-Ons festgelegt werden können. Dies liegt entweder daran, dass sie nicht für Add-Ons gelten (z. B. die Berechtigung **Kundenfeedback**), oder dass die auf der Ebene des übergeordneten Produkts erteilte Berechtigung für alle Add-Ons des Produkts gilt (z. B. **Werbecodes**). Beachten Sie jedoch, dass alle für Add-Ons verfügbaren Berechtigungen separat festgelegt werden müssen. Add-Ons erben nicht die für das übergeordnete Produkt getroffene Auswahl. Wenn Sie z. B. einem Benutzer gestatten möchten, Preis- und Verfügbarkeitsoptionen für ein Add-On vorzunehmen, müssen Sie die Berechtigung **Preise und Verfügbarkeit** für das Add-On (oder für **Alle Add-Ons**) unabhängig davon aktivieren, ob Sie die Berechtigung **Preise und Verfügbarkeit** für das übergeordnete Produkt erteilt haben. 
 
 
-### <a name="analytics"></a>Analyse
+### <a name="analytics"></a>Analytics
 
 <table>
     <thead>
