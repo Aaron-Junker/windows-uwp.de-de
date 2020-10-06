@@ -8,12 +8,12 @@ ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 08471b8a04d37c34378b549b8534979a4188d7b8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4da50161008645374fbe95de73882da9d9f9f826
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173954"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750656"
 ---
 # <a name="controls-for-windows-apps"></a>Steuerelemente für Windows-Apps
 
@@ -42,9 +42,17 @@ Das XAML-Framework bietet zahlreiche Anpassungsmöglichkeiten für die App-Darst
 
 ## <a name="get-the-windows-ui-library"></a>Abrufen der Windows-UI-Bibliothek
 
-|  |  |
-| - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Einige Steuerelemente sind nur in der Windows-UI-Bibliothek (WinUI) verfügbar. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures enthält. Informationen dazu, wie Sie diese abrufen, finden Sie im Artikel mit der [Übersicht über die Windows-UI-Bibliothek und Installationsanweisungen](/uwp/toolkits/winui/).<br/>Ab WinUI 2.2 wurde das Standardformat für viele Steuerelemente dahin gehend aktualisiert, dass abgerundete Ecken verwendet werden. Weitere Informationen finden Sie unter [Eckradius](../style/rounded-corner.md). |
+:::row:::
+   :::column:::
+      ![WinUI-Logo](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Einige Steuerelemente sind nur in der Windows-UI-Bibliothek (WinUI) verfügbar. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures enthält. Informationen dazu, wie Sie diese abrufen, finden Sie im Artikel mit der [Übersicht über die Windows-UI-Bibliothek und Installationsanweisungen](/uwp/toolkits/winui/).<br/>Ab WinUI 2.2 wurde das Standardformat für viele Steuerelemente dahin gehend aktualisiert, dass abgerundete Ecken verwendet werden. Weitere Informationen finden Sie unter [Eckradius](../style/rounded-corner.md).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 ## <a name="alphabetical-index"></a>Alphabetischer Index
 
