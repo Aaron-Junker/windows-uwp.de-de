@@ -8,12 +8,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cf6bc95eef416b481642d84eef8315451916604
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 411ecb63189084ba83f9971ded2bbe02d899aabd
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174104"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762872"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im App-Paketmanifest
 
@@ -40,7 +40,7 @@ Im Gegensatz zu Bild Ressourcen, bei denen nur eine Bildressource in einer Bild 
 
     `Strings/en-US/Resources.resw`
 
-    ![Ressource hinzufügen, Englisch](images/addresource-en-us.png)
+    ![Screenshot der Add-Ressourcen Tabelle der Zeichen folgen > E N U S > Resources. resw-Datei.](images/addresource-en-us.png)
 
     In diesem Beispiel ist "Gruß" ein Zeichen folgen Ressourcen Bezeichner, auf den Sie aus Ihrem Markup verweisen können, wie wir zeigen. Für den Bezeichner "Gruß" wird eine Zeichenfolge für eine Text Eigenschaft bereitgestellt, und für eine Width-Eigenschaft wird eine Zeichenfolge bereitgestellt. "Gruß. Text" ist ein Beispiel für einen Eigenschafts Bezeichner, da es einer Eigenschaft eines UI-Elements entspricht. Sie können z. b. "Gruß. Vordergrund" in der Spalte "Name" hinzufügen und den Wert auf "rot" festlegen. Der "Farewell"-Bezeichner ist ein einfacher Zeichen folgen Ressourcen Bezeichner. Sie verfügt über keine untergeordneten Eigenschaften und kann aus imperativem Code geladen werden, wie wir zeigen werden. Die comment-Spalte ist ein guter Ort, um den Konvertierungsprogramm spezielle Anweisungen bereitzustellen.
 
@@ -108,13 +108,13 @@ Im Zweifelsfall können Sie [MakePri.exe](makepri-exe-command-options.md) verwen
 
 1. Öffnen Sie die Quelldatei für das App-Paket Manifest (die `Package.appxmanifest` Datei), in der die App standardmäßig `Display name` als Zeichenfolgenliterale ausgedrückt wird.
 
-   ![Ressource hinzufügen, Englisch](images/display-name-before.png)
+   ![Screenshot der Datei "Package. appxmanifest", die die Registerkarte "Anwendung" mit dem anzeigen Amen "Adventure Works Cycles" anzeigt.](images/display-name-before.png)
 
 2. Um eine lokalisierbare Version dieser Zeichenfolge zu erstellen, öffnen `Resources.resw` Sie, und fügen Sie eine neue Zeichen folgen Ressource mit dem Namen "appdisplayname" und dem Wert "Adventure Works Cycles" hinzu.
 
 3. Ersetzen Sie die Zeichenfolge des Anzeige namens Zeichenfolgenliterals durch einen Verweis auf den soeben erstellten Zeichen folgen Ressourcen Bezeichner ("appdisplayname"). Hierfür verwenden Sie das `ms-resource` Schema URI (Uniform Resource Identifier).
 
-   ![Ressource hinzufügen, Englisch](images/display-name-after.png)
+   ![Screenshot der Datei "Package. appxmanifest", die die Registerkarte "Anwendung" mit dem anzeigen Amen "M S Resource App-Anzeige Name" anzeigt.](images/display-name-after.png)
 
 4. Wiederholen Sie diesen Vorgang für jede Zeichenfolge im Manifest, die Sie lokalisieren möchten. Beispielsweise der Kurzname Ihrer APP (die Sie so konfigurieren können, dass Sie auf der Kachel der APP beim Start angezeigt wird). Eine Liste aller Elemente im App-Paket Manifest, die lokalisiert werden können, finden Sie unter [lokalisierbare Manifest-Elemente](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live).
 
@@ -147,7 +147,7 @@ Testen Sie die App hinsichtlich der Standardanzeigesprache. Anschließend könne
 
 Sie können alle Zeichen folgen in einer einzelnen Ressourcen Datei (resw) aufbewahren, oder Sie können Sie über mehrere Ressourcen Dateien hinweg berücksichtigen. Beispielsweise können Sie die Fehlermeldungen in einer Ressourcen Datei, in Ihrem App-Paket Manifest-Zeichen folgen in einem anderen und in den Benutzeroberflächen Zeichenfolgen in einem dritten speichern. In diesem Fall sieht die Ordnerstruktur wie folgt aus.
 
-![Ressource hinzufügen, Englisch](images/manifest-resources.png)
+![Screenshot des Lösungs Panels mit dem Ordner "Adventure Works Cycles > Strings" mit den Ordnern "Deutsch", "Deutsch" und "Französisch" im Gebiets Schema.](images/manifest-resources.png)
 
 Zum Festlegen des Bereichs eines Verweis zeichenbezeichnerverweises auf eine bestimmte Datei fügen Sie einfach `/<resources-file-name>/` vor dem Bezeichner hinzu. Im folgenden Markup Beispiel wird davon ausgegangen, dass `ErrorMessages.resw` eine Ressource mit dem Namen "passwordumoweak. Text" enthält und deren Wert den Fehler beschreibt.
 
