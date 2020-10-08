@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie, wie Sie die Benutzerfreundlichkeit und den Zugriff auf Ihre Windows-App verbessern können, indem Sie Benutzern eine intuitive Möglichkeit bieten, schnell zu navigieren und mit der sichtbaren Benutzeroberfläche einer APP über eine Tastatur anstelle eines Zeiger Geräts (z. b. berühren oder Maus) zu interagieren.
+description: Erfahren Sie, wie Sie die Benutzerfreundlichkeit und den Zugriff auf Ihre Windows-App verbessern können, indem Sie Benutzern eine intuitive Möglichkeit bieten, schnell zu navigieren und mit der sichtbaren Benutzeroberfläche einer APP über eine Tastatur anstelle eines Zeiger Geräts (z. b. berühren oder Maus) zu interagieren.
 title: Zugriffstasten – Designrichtlinien
 label: Access keys design guidelines
 keywords: Tastatur, Zugriffstaste, KeyTip, schlüsseltipp, Barrierefreiheit, Navigation, Fokus, Text, Eingabe, Benutzerinteraktion
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 77986569ec224ba36471f60c0200dfb1825472a0
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 48f1d3bd69b10a8d500bb2d29b64c0eb91c9900b
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218413"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829540"
 ---
 # <a name="access-keys"></a>Zugriffsschlüssel
 
@@ -276,7 +276,7 @@ Verwenden Sie die **keytipplacementmode** -Eigenschaft, um die Platzierung des S
 
 Die Platzierungs Modi sind: oben, unten, rechts, Links, ausgeblendet, zentriert und automatisch.
 
-![Schlüsseltip-Platzierungs Modi](images/accesskeys/keytip-postion-modes.png)
+![Screenshot mit den relativen Positionen der schlüsseltip-Platzierungs Modi](images/accesskeys/keytip-postion-modes.png)
 
 _Schlüsseltip-Platzierungs Modi_
 
@@ -299,11 +299,11 @@ Verwenden Sie die keytiphorizontaloffset-Eigenschaft und die keytipverticaloffse
 > [!NOTE]
 > Offsets können nicht festgelegt werden, wenn keytipplacementmode auf Auto festgelegt ist.
 
-Die keytiphorizontaloffset-Eigenschaft gibt an, wie weit der schlüsseltip nach links oder rechts verschoben werden soll. Das Beispiel zeigt, wie Sie die Schlüssel Tipp Offsets für eine Schaltfläche festlegen.
+Die keytiphorizontaloffset-Eigenschaft gibt an, wie weit der schlüsseltip nach links oder rechts verschoben werden soll.
 
-![Schlüsseltip-Platzierungs Modi](images/accesskeys/keytip-offsets.png)
+![Screenshot der vertikalen und horizontalen KeyTip Offsets für eine Schaltfläche](images/accesskeys/keytip-offsets.png)
 
-_Festlegen von vertikalen und horizontalen Offsets für einen schlüsseltip_
+_Festlegen von vertikalen und horizontalen KeyTip Offsets für eine Schaltfläche_
 
 ``` xaml
 <Button
@@ -318,9 +318,9 @@ _Festlegen von vertikalen und horizontalen Offsets für einen schlüsseltip_
 
 Der Speicherort eines Schlüssel Tipps wird automatisch basierend auf dem Bildschirmrand angepasst, um sicherzustellen, dass der schlüsseltip vollständig sichtbar ist. In diesem Fall kann sich der Abstand zwischen dem Steuerelement und dem Tastatur Tipp-Ausrichtungs Punkt von den Werten unterscheiden, die für die horizontale und vertikale Offsets angegeben werden.
 
-![Schlüsseltip-Platzierungs Modi](images/accesskeys/keytips-screen-edge.png)
+![Screenshot der Bildschirmrand Ausrichtung des Schlüssel Tipps](images/accesskeys/keytips-screen-edge.png)
 
-_Der Bildschirmrand bewirkt, dass sich der schlüsseltip automatisch neu positioniert._
+_Schlüssel Tipps werden automatisch basierend auf dem Bildschirmrand positioniert_
 
 ## <a name="key-tip-style"></a>Schlüsseltip-Stil
 
@@ -328,7 +328,7 @@ Wir empfehlen die Verwendung der integrierten schlüsseltip Unterstützung für 
 
 Wenn Sie Ihre eigenen Schlüssel Tipp Stile angeben müssen, verwenden Sie Anwendungs Ressourcen wie keytipfontsize (Font Size), keytipfontfamily (Font Family), keytipbackground (Background), keytipvorder Grund (Vordergrund), keytippadditions (Padding), keytipborderbrush (Rahmenfarbe) und keytipbordertemedicke (Rahmen Stärke).
 
-![Schlüsseltip-Platzierungs Modi](images/accesskeys/keytip-customization.png)
+![Screenshot der Optionen für die Anpassung von Schlüssel Tipps, einschließlich Schriftart, Reihenfolge und Farbe](images/accesskeys/keytip-customization.png)
 
 _Optionen für die Anpassung von Schlüssel Tipps_
 
