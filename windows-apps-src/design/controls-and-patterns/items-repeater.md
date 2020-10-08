@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: efc50a15e4f7aa45d7df63d2e53748ce9aa22c6a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 52938a03e7e0287a200cedc5b8edb98169483425
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220623"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750666"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
@@ -24,9 +24,17 @@ Vom Konzept her können Sie sich [ItemsRepeater](/uwp/api/microsoft.ui.xaml.cont
 
 **Abrufen der Windows-UI-Bibliothek**
 
-|  |  |
-| - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **ItemsRepeater** ist in der Bibliothek „Windows UI“ enthalten, einem NuGet-Paket mit neuen Steuerelementen und Benutzeroberflächenfeatures für Windows-Apps. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+:::row:::
+   :::column:::
+      ![WinUI-Logo](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Das Steuerelement **ItemsRepeater** ist in der Bibliothek „Windows UI“ enthalten, einem NuGet-Paket mit neuen Steuerelementen und Benutzeroberflächenfeatures für Windows-Apps. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **APIs der Bibliothek „Windows UI“** [ItemsRepeater-Klasse](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 >

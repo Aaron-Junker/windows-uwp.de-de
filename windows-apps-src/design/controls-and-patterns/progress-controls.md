@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: afecb467931684601b949b392d35c9c84b7e2881
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 8ccdea35b8923c756489f6b671d394fc516a960c
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218453"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749746"
 ---
 # <a name="progress-controls"></a>Statussteuerelemente
 
@@ -25,9 +25,17 @@ Ein Statussteuerelement gibt dem Benutzer eine Rückmeldung, dass ein Vorgang mi
 
 **Abrufen der Windows-UI-Bibliothek**
 
-|  |  |
-| - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **ProgressBar** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+:::row:::
+   :::column:::
+      ![WinUI-Logo](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Das Steuerelement **ProgressBar** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **APIs der Bibliothek „Windows UI“** [ProgressBar-Klasse](/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar), [IsIndeterminate Eigenschaft](/uwp/api/Microsoft.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing-Klasse](/uwp/api/Microsoft.UI.Xaml.Controls.ProgressRing), [IsActive-Eigenschaft](/uwp/api/Microsoft.ui.xaml.controls.progressring.isactive)
 >

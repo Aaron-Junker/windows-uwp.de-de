@@ -3,12 +3,12 @@ title: WinUI 3 Vorschau 2 (Juli 2020)
 description: Übersicht über das Release von WinUI 3 Vorschau 2.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: c57132ec5219ef32f2b2b69168592e07f49d904b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 11c7ff587c7c237c19ad627587f082be84e68bf8
+ms.sourcegitcommit: 337f31b3fe3ff434dbc2c232fb84c3b22ebd4be8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168774"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804574"
 ---
 # <a name="windows-ui-library-3-preview-2-july-2020"></a>Windows-UI-Bibliothek 3 Vorschau 2 (Juli 2020)
 
@@ -49,12 +49,12 @@ WinUI 3 Vorschau 2 enthält Visual Studio-Projektvorlagen, die Ihnen beim Erst
 
 3. Wenn Sie Desktop-WinUI-Projekte für C#/.NET 5- und C++/Win32-Apps erstellen möchten, müssen Sie auch die x64- und x86-Versionen von .NET 5 Vorschau 5 installieren. **Beachten Sie, dass .NET 5 Preview 5 derzeit die einzige unterstützte .NET 5-Vorschauversion für WinUI 3 ist**:
 
-    - x64: [https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x64.exe](https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x64.exe)
-    - x86: [https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x86.exe](https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x86.exe)
+    - [x64-Installationsprogramm für .NET 5 Preview 5](https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-5.0.100-preview.5-windows-x64-installer)
+    - [x86-Installationsprogramm für .NET 5 Preview 5](https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-5.0.100-preview.5-windows-x86-installer)
 
 4. Laden Sie das [WinUI 3 Vorschau 2-VSIX-Paket](https://aka.ms/winui3/previewdownload) herunter und installieren Sie es. Das VSIX-Paket fügt Visual Studio 2019 die WinUI 3-Projektvorlagen und das NuGet-Paket mit den WinUI 3-Bibliotheken hinzu.
 
-    Anweisungen zum Hinzufügen des VSIX-Pakets zu Visual Studio finden Sie unter [Suchen nach und Verwenden von Visual Studio-Erweiterungen](/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2019#install-without-using-the-manage-extensions-dialog-box).
+    Anweisungen zum Hinzufügen des VSIX-Pakets zu Visual Studio finden Sie unter [Suchen nach und Verwenden von Visual Studio-Erweiterungen](/visualstudio/ide/finding-and-using-visual-studio-extensions#install-without-using-the-manage-extensions-dialog-box).
 
 
 ## <a name="create-winui-projects"></a>Erstellen von WinUI-Projekten
@@ -111,10 +111,10 @@ Dies ist eine umfassende Liste von Fehlerkorrekturen und anderen Updates für Pr
 > [!NOTE]
 > WinUI 3 Preview 2 verwendet Version 2.4.2 der WinUI 2-Bibliothek. 
 
-- [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged?view=net-5.0) und [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-5.0) funktionieren jetzt erwartungsgemäß in C#-Desktop-Apps.
+- [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged) und [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged) funktionieren jetzt erwartungsgemäß in C#-Desktop-Apps.
   - Dadurch wurden einige andere Probleme behoben, die sich auf Auflistungssteuerelemente bezogen, die zwar im Back-End, aber nicht in der Benutzeroberfläche aktualisiert wurden.
   - *Dank geht an @hshristov, der ein [ähnliches Problem](https://github.com/microsoft/microsoft-ui-xaml/issues/2490) auf GitHub gemeldet hat!*
-- Vorschau 2 ist jetzt mit [.NET 5 Vorschau 5](/dotnet/api/?view=net-5.0) für Desktop-Apps kompatibel.
+- Vorschau 2 ist jetzt mit [.NET 5 Vorschau 5](/dotnet/api/?view=net-5.0&preserve-view=true) für Desktop-Apps kompatibel.
 - WinUI 3 verfügt jetzt über Parität mit [WinUI 2.4](../winui2/release-notes/winui-2.4.md), das neue Steuerelemente und Features wie [hierarchische NavigationView](../winui2/release-notes/winui-2.4.md#hierarchical-navigation) und [ProgressRing](../winui2/release-notes/winui-2.4.md#progressring) umfasst.
 - Absturz behoben: Verwenden von [TabView](/windows/uwp/design/controls-and-patterns/tab-view) mit Toucheingabe
 - [NavigationView](/windows/uwp/design/controls-and-patterns/navigationview) im [XAML-Steuerelementekatalog-Beispiel](#xaml-controls-gallery-winui-3-preview-2-branch) verwendet jetzt den „Left“-Modus anstelle des „Left-compact“-Modus.

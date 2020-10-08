@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, Node.js, Windows 10, Microsoft, Erlernen von Node.js, Node unter Windows, Node im WSL, Node unter Linux unter Windows, Installieren von Node unter Windows, NodeJS mit VS Code, Entwickeln mit Node unter Windows, Entwickeln mit NodeJS unter Windows, Installieren von Node in WSL, NodeJS im Windows-Subsystem für Linux
 ms.localizationpriority: medium
 ms.date: 07/28/2020
-ms.openlocfilehash: 1b44cc51ecbb83e52a16ab7e5c577578c8765cb9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4fa1a53e3d0e5ba22cd3a261b3e2672012330bca
+ms.sourcegitcommit: 00349b7b7cad3d161485ec06fee4e4109452c36a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166555"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91814651"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>Einrichten einer Node.js-Entwicklungsumgebung mit WSL 2
 
@@ -63,7 +63,7 @@ Durch die Installation der neueren Version von nvm mithilfe von cURL wird die ä
     ![nvm-Liste ohne Node-Versionen](../images/nvm-no-node.png)
 
 6. Installiere das aktuelle Release von Node.js (zum Testen der neuesten Featureverbesserungen, das aber wahrscheinlich einige Fehler enthält): `nvm install node`
-7. Installiere das neueste stabile LTS-Release von Node.js (empfohlen): `nvm install --lts`
+7. Installiere das neueste stabile LTS-Release von Node.js (empfohlen): `nvm install node --lts`
 8. Liste die installierten Versionen von Node auf: `nvm ls`. Nun sollten die beiden Versionen, die du soeben installiert hast, aufgeführt werden.
 
     ![nvm-Liste mit LTS und aktuellen Node-Versionen](../images/nvm-node-installed.png)

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
-ms.openlocfilehash: c035a97b1750c8f285689f2b2f82f3766a6c06ad
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d301a2dfcc478f6d90b8aa562bfbd34cf79493c1
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173794"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750136"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>Anwendungsentwicklung für Windows as a Service
 
@@ -54,9 +54,9 @@ Aufgrund dieser Änderung empfiehlt Microsoft ISV-Partnern, die App-Freigabe und
 
 Dadurch entfällt auch die Notwendigkeit, den App-Freigabezeitplan auf den der Windows-Releases abzustimmen. ISV-Partner sollten die Möglichkeit haben, Features oder Updates in ihrer eigenen Geschwindigkeit freizugeben. Wir sind überzeugt, dass unsere Partner ihre Kunden unabhängig von den Windows-Releases mit neuesten App-Updates auf dem Laufenden halten können. Außerdem ist es nicht erforderlich, dass unsere Kunden bei jeder Freigabe eines Windows-Builds eine explizite Supportzusage einholen. Im folgenden Beispiel für eine Supportzusage wird beschrieben, wie eine App unter verschiedenen Betriebssystemversionen unterstützt werden kann:
 
-| Beispiel für eine Supportzusage zum Anwendungslebenszyklus | |
-| --- | --- |
-| Das Unternehmen Contoso ist Softwareentwickler und Herausgeber der beliebten Mojave-App, die im Bereich Unternehmens-Apps einen beachtlichen Marktanteil hat. Contoso veröffentlicht mit Mojave 14.0 die nächste Hauptversion und erklärt, dass der grundlegende Produktsupport für einen Zeitraum von drei Jahren ab dem Tag der Markteinführung gilt. Während des grundlegenden Supports sind alle Updates und Supportleistungen für das lizenzierte Produkt kostenlos erhältlich. Contoso bietet außerdem einen zweijährigen erweiterten Support. Während dieser Nachfrist können Kunden Updates und Supportleistungen gegen eine Gebühr in Anspruch nehmen. Mit dem Enddatum des erweiterten Supports wird diese Produktversion nicht mehr unterstützt. Während des grundlegenden Supports unterstützt Contoso Mojave 14.0 in allen veröffentlichten Windows-Builds. Darüber hinaus veröffentlicht Contoso nach Bedarf und unabhängig von Windows-Produktversionen Updates für Mojave. | |
+> **Beispiel für eine Supportzusage zum Anwendungslebenszyklus**
+>
+> Das Unternehmen Contoso ist Softwareentwickler und Herausgeber der beliebten Mojave-App, die im Bereich Unternehmens-Apps einen beachtlichen Marktanteil hat. Contoso veröffentlicht mit Mojave 14.0 die nächste Hauptversion und erklärt, dass der grundlegende Produktsupport für einen Zeitraum von drei Jahren ab dem Tag der Markteinführung gilt. Während des grundlegenden Supports sind alle Updates und Supportleistungen für das lizenzierte Produkt kostenlos erhältlich. Contoso bietet außerdem einen zweijährigen erweiterten Support. Während dieser Nachfrist können Kunden Updates und Supportleistungen gegen eine Gebühr in Anspruch nehmen. Mit dem Enddatum des erweiterten Supports wird diese Produktversion nicht mehr unterstützt. Während des grundlegenden Supports unterstützt Contoso Mojave 14.0 in allen veröffentlichten Windows-Builds. Darüber hinaus veröffentlicht Contoso nach Bedarf und unabhängig von Windows-Produktversionen Updates für Mojave.
 
 In den folgenden Abschnitten finden Sie weitere Informationen dazu, wie Microsoft die Kompatibilität des zugrunde liegenden Betriebssystems sicherstellt. Außerdem wird ausführlich erläutert, wie Sie die Kompatibilität des kombinierten Ökosystems aus Betriebssystem und App gewährleisten können. In einem Abschnitt wird beschrieben, wie Sie mit Test-Flighting-Builds von Windows beeinträchtigte App-Funktionalität erkennen, bevor ein Windows-Build freigegeben wird. Zuletzt erfahren Sie, welche Instrumente und telemetrischen Daten uns helfen, die Qualität von Windows-Builds zu verbessern. ISVs wird empfohlen, einen vergleichbaren Ansatz bei ihrem App-Portfolio zu verfolgen.
 

@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, projiziert, Projizierung, behandeln, Ereignis, Delegat
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d2470b1aa52f8aa4be7e07bf1dfe5213054b005
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fefc7f72fb91a61ae924ac082dcac6d3cf9c044b
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166244"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750126"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Behandeln von Ereignissen mithilfe von Delegaten in C++/WinRT
 
@@ -112,12 +112,12 @@ Die Syntax des Funktionsaufrufoperators ist ebenfalls hilfreich. Sie gibt Aufsch
 > ```
 >
 > Hier kannst du sehen, dass das Ereignis **UIElement.KeyDown** (das aufgerufene Thema) den Delegattyp **KeyEventHandler** besitzt, da dieser Typ beim Registrieren eines Delegaten mit diesem Ereignistyp übergeben wird. Klicke in dem Thema auf den Link zu diesem Delegattyp ([KeyEventHandler](/uwp/api/windows.ui.xaml.input.keyeventhandler)). Der dort bereitgestellte Syntaxblock enthält einen Funktionsaufrufoperator. Und dieser gibt wie bereits erwähnt Aufschluss über die benötigten Delegatparameter.
-> 
-> ```cppwinrt
-> void operator()(
-    winrt::Windows::Foundation::IInspectable const& sender,
-    winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
-> ```
+>
+>```cppwinrt
+>void operator()(
+>   winrt::Windows::Foundation::IInspectable const& sender,
+>   winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
+>```
 >
 >  Wie du siehst, muss der Delegat deklariert werden, um ein Element vom Typ **IInspectable** als Absender und eine Instanz der [Klasse „KeyRoutedEventArgs“](/uwp/api/windows.ui.xaml.input.keyroutedeventargs) als Argumente zu akzeptieren.
 >

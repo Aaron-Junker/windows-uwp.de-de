@@ -5,12 +5,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e3915fca3b459d259e83c9c9ce5ef19aa413e2e
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 3fd8d57db92b8a59f32935586edfc247ec3c281f
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218673"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750456"
 ---
 # <a name="layout-panels"></a>Layoutpanels
 
@@ -186,8 +186,8 @@ Die proportionale Größenanpassung, die auch als *Größenanpassung mit Sternva
 
 In diesem Beispiel wird die feste, automatische und proportionale Größenanpassung in einem [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) mit 4 Spalten kombiniert.
 
-&nbsp;|&nbsp;|&nbsp;
-------|------|------
+| Column | Festlegen der Größe | BESCHREIBUNG |
+| ------ | ------ | ----------- |
 Column_1 | **Auto** | Die Breite der Spalte wird entsprechend ihres Inhalts angepasst.
 Column_2 | * | Nach dem Berechnen der Spalten mit automatischer Breite erhält diese Spalte einen Teil der verbleibenden Breite. Column_2 ist nur halb so breit wie Column_4.
 Column_3 | **44** | Die Spalte ist 44 Pixel breit.

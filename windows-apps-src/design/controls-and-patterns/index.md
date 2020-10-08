@@ -8,12 +8,12 @@ ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 4da50161008645374fbe95de73882da9d9f9f826
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: f7a06c75b37b62436c4ef0ebcb8ccae2a6153b85
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750656"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829425"
 ---
 # <a name="controls-for-windows-apps"></a>Steuerelemente für Windows-Apps
 
@@ -61,23 +61,23 @@ Detaillierte Informationen zu bestimmten Steuerelementen und Mustern. (Eine nach
 :::row:::
     :::column:::
 
-- Animierter visueller Player (siehe [Lottie](/windows/communitytoolkit/animations/lottie)) ![WinUI-Logo](images/winui-logo-16x16.png)
+- Animierter visueller Player (siehe [Lottie](/windows/communitytoolkit/animations/lottie)) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Feld mit automatischen Vorschlägen](auto-suggest-box.md)
 - [Schaltfläche](buttons.md)
 - [Kalenderdatumsauswahl](calendar-date-picker.md)
 - [Kalenderansicht](calendar-view.md)
 - [Kontrollkästchen](checkbox.md)
-- [Farbauswahl](color-picker.md) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Farbauswahl](color-picker.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Kombinationsfeld](combo-box.md)
 - [Befehlsleiste](app-bars.md)
-- [Befehlsleistenflyout](command-bar-flyout.md) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Befehlsleisten-Flyout](command-bar-flyout.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Visitenkarte](contact-card.md)
 - [Inhaltsdialogfeld](dialogs-and-flyouts/dialogs.md)
 - [Inhaltslink](content-links.md)
 - [Kontextmenü](menus.md)
 - [Datumsauswahl](date-picker.md)
 - [Dialogfelder und Flyouts](dialogs-and-flyouts/index.md)
-- [Dropdownschaltfläche](buttons.md#create-a-drop-down-button) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Dropdown-Schaltfläche](buttons.md#create-a-drop-down-button) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Flip-Ansicht](flipview.md)
 - [Flyout](dialogs-and-flyouts/flyouts.md)
 - [Formular](forms.md) (Muster)
@@ -90,22 +90,22 @@ Detaillierte Informationen zu bestimmten Steuerelementen und Mustern. (Eine nach
 - [Kartensteuerelement](../../maps-and-location/display-maps.md)
 - [Master/Details](master-details.md) (Muster)
 - [Medienwiedergabe](media-playback.md)
-- [Menüleiste](menus.md#create-a-menu-bar) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Menüleiste](menus.md#create-a-menu-bar) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Menüflyout](menus.md)
-- [Navigationsansicht](navigationview.md) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Navigationsansicht](navigationview.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 
     :::column-end:::
     :::column:::
 
-- [Nummernfeld](number-box.md) ![WinUI-Logo](images/winui-logo-16x16.png)
-- [Parallaxansicht](..\motion\parallax.md) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Zahlenfeld](number-box.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Parallax-Ansicht](..\motion\parallax.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Kennwortfeld](password-box.md)
-- [Person](person-picture.md) ![WinUI-Logo](images/winui-logo-16x16.png)
-- [Pivot](pivot.md)
-- [Statusanzeige](progress-controls.md) ![WinUI-Logo](images/winui-logo-16x16.png)
-- [Statusring](progress-controls.md) ![WinUI-Logo](images/winui-logo-16x16.png)
-- [Optionsfeld](radio-button.md) ![WinUI-Logo](images/winui-logo-16x16.png)
-- [Bewertungssteuerelement](rating.md) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Bild einer Person](person-picture.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Pivotieren](pivot.md)
+- [Statusleiste](progress-controls.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Statusring](progress-controls.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Optionsfeld](radio-button.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Bewertungssteuerelement](rating.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Wiederholungsschaltfläche](buttons.md#create-a-repeat-button)
 - [Rich-Edit-Feld](rich-edit-box.md)
 - [Rich-Text-Block](rich-text-block.md)
@@ -114,11 +114,11 @@ Detaillierte Informationen zu bestimmten Steuerelementen und Mustern. (Eine nach
 - [Semantischer Zoom](semantic-zoom.md)
 - [Formen](shapes.md)
 - [Schieberegler](slider.md)
-- [Unterteilte Schaltfläche](buttons.md#create-a-split-button) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Unterteilte Schaltfläche](buttons.md#create-a-split-button) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Geteilte Ansicht](split-view.md)
-- [Wischen-Steuerelement](swipe.md) ![WinUI-Logo](images/winui-logo-16x16.png)
-- [Registerkartenansicht](tab-view.md) ![WinUI-Logo](images/winui-logo-16x16.png)
-- [Unterrichtstipp](dialogs-and-flyouts/teaching-tip.md) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Wischen-Steuerelement](swipe.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Registerkartenansicht](tab-view.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Unterrichtstipp](dialogs-and-flyouts/teaching-tip.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Textblock](text-block.md)
 - [Textfeld](text-box.md)
 - [Uhrzeitauswahl](time-picker.md)
@@ -126,8 +126,8 @@ Detaillierte Informationen zu bestimmten Steuerelementen und Mustern. (Eine nach
 - [Umschalter](buttons.md)
 - [Unterteilte Umschaltfläche](buttons.md#create-a-toggle-split-button)
 - [QuickInfos](tooltips.md)
-- [Strukturansicht](tree-view.md) ![WinUI-Logo](images/winui-logo-16x16.png)
-- [Ansicht mit zwei Bereichen](two-pane-view.md) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Strukturansicht](tree-view.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [Ansicht mit zwei Bereichen](two-pane-view.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Webansicht](web-view.md)
 
     :::column-end:::

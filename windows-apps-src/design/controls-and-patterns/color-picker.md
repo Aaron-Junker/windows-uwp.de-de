@@ -11,12 +11,12 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e9007d73a347fbd2575d198ed6af858f629e6cf6
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 886236000c31dbeda12ae95e4c920be0a2cb03f3
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217523"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750556"
 ---
 # <a name="color-picker"></a>Farbauswahl
 
@@ -26,9 +26,17 @@ Mithilfe eines Farbwählers können Benutzer Farben suchen und auswählen. Stand
 
 **Abrufen der Windows-UI-Bibliothek**
 
-|  |  |
-| - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **ColorPicker** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+:::row:::
+   :::column:::
+      ![WinUI-Logo](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Das Steuerelement **ColorPicker** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **Windows-UI-Bibliotheks-APIs:** [ColorPicker-Klasse](/uwp/api/microsoft.ui.xaml.controls.colorpicker), [Color-Eigenschaft](/uwp/api/microsoft.ui.xaml.controls.colorpicker.Color), [ColorChanged-Ereignis](/uwp/api/microsoft.ui.xaml.controls.colorpicker.ColorChanged)
 >

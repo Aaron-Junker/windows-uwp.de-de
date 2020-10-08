@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 94ffa80700cea640d63f63344991144a2ac00ab6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0e25f9cdb091f96b648ddc00d5f5cc96bf18d1d1
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157314"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750596"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Umstellen von C++/CX auf C++/WinRT
 
@@ -39,7 +39,7 @@ Mit Ausnahme von Windows-Runtime-Komponentenprojekten, wie im vorigen Abschnitt 
 
 Um ein Projekt für einen schrittweisen Portierungsprozess vorzubereiten, besteht eine Möglichkeit darin, C++/WinRT-Unterstützung zu Ihrem C++/CX-Projekt hinzuzufügen. Die Schritte, die Sie dazu ausführen müssen, sind in [Erweitern eines bestehenden C++/CX-Projekts um C++/WinRT-Unterstützung](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support) beschrieben. Von dort aus können Sie dann schrittweise portieren.
 
-Eine weitere Möglichkeit besteht darin, ein neues Projekt in Visual Studio unter Verwendung einer der C++/WinRT-Projektvorlagen zu erstellen (siehe [Visual Studio-Unterstützung für C++/WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)), und dann C++/CX-Unterstützung zu diesem Projekt hinzuzufügen. Die Schritte, die Sie dazu ausführen müssen, sind in [Erweitern eines bestehenden C++/WinRT-Projekts um C++/CX-Unterstützung](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-cx-support) beschrieben. Sie können dann damit beginnen, Ihren Quellcode dorthin zu verschieben und dabei *einen Teil* des C++/CX-Quellcodes nach C++/WinRT zu portieren.
+Eine weitere Möglichkeit besteht darin, ein neues Projekt in Visual Studio unter Verwendung einer der C++/WinRT-Projektvorlagen zu erstellen (siehe [Visual Studio-Unterstützung für C++/WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)), und dann C++/CX-Unterstützung zu diesem Projekt hinzuzufügen. Die Schritte, die Sie dazu ausführen müssen, sind in [Erweitern eines bestehenden C++/WinRT-Projekts um C++/CX-Unterstützung](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-ccx-support) beschrieben. Sie können dann damit beginnen, Ihren Quellcode dorthin zu verschieben und dabei *einen Teil* des C++/CX-Quellcodes nach C++/WinRT zu portieren.
 
 In jedem Fall ist die Interoperabilität (in beiden Richtungen) zwischen Ihrem C++/WinRT-Code und dem restlichen C++/CX-Code, der noch nicht portiert wurde, gewährleistet.
 
@@ -64,7 +64,7 @@ Alternativ können Sie eine Windows-Runtime-Komponente (WRC) verwenden, um beim 
 Unabhängig von Ihrer Portierungsstrategie (Portierung in einem Durchgang oder schrittweise Portierung) besteht Ihr erster Schritt darin, Ihr Projekt auf die Portierung vorzubereiten. Hier finden Sie eine Zusammenfassung dessen, was wir in [Strategien für die Portierung](#strategies-for-porting) beschrieben haben, in Bezug auf die Art des Projekts, mit dem Sie beginnen, und dessen Einrichtung.
 
 - **Portieren in einem Durchgang**. Erstellen Sie ein neues Projekt in Visual Studio unter Verwendung einer der C++/WinRT-Projektvorlagen. Verschieben Sie die Dateien aus Ihrem C++/CX-Projekt in dieses neue Projekt, und portieren Sie den C++/CX-Quellcode.
-- **Schrittweise Portierung eines Projekts (kein XAML-Projekt)** . Sie können C++/WinRT-Unterstützung zu Ihrem C++/CX-Projekt hinzufügen (siehe [Erweitern eines bestehenden C++/CX-Projekts um C++/WinRT-Unterstützung](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support)) und schrittweise portieren. Oder Sie können ein neues C++/WinRT-Projekt erstellen und C++/CX-Unterstützung hinzufügen (siehe [Erweitern eines bestehenden C++/WinRT-Projekts um C++/CX-Unterstützung](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-cx-support)), Dateien in dieses verschieben, und schrittweise portieren.
+- **Schrittweise Portierung eines Projekts (kein XAML-Projekt)** . Sie können C++/WinRT-Unterstützung zu Ihrem C++/CX-Projekt hinzufügen (siehe [Erweitern eines bestehenden C++/CX-Projekts um C++/WinRT-Unterstützung](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support)) und schrittweise portieren. Oder Sie können ein neues C++/WinRT-Projekt erstellen und C++/CX-Unterstützung hinzufügen (siehe [Erweitern eines bestehenden C++/WinRT-Projekts um C++/CX-Unterstützung](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-ccx-support)), Dateien in dieses verschieben, und schrittweise portieren.
 - **Schrittweise Portierung eines XAML-Projekts**. Erstellen Sie ein neues C++/WinRT-Projekt, verschieben Sie Dateien und portieren Sie nach und nach. Ihre XAML-Seitentypen müssen zu jedem beliebigen Zeitpunkt *entweder* alle in C++/WinRT *oder* alle in C++/CX vorliegen.
 
 Der Rest dieses Themas gilt unabhängig davon, welche Portierungsstrategie Sie auswählen. Es enthält einen Katalog mit technischen Details, die bei der Portierung von Quellcode von C++/CX nach C++/WinRT wichtig sind. Wenn Sie eine schrittweise Portierung durchführen, sollten Sie auch [Interoperabilität zwischen C++/WinRT und C++/CX](./interop-winrt-cx.md) und [Asynchronität und Interoperabilität zwischen C++/WinRT und C++/CX](./interop-winrt-cx-async.md) lesen.

@@ -5,12 +5,12 @@ ms.date: 07/15/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, portieren, migrieren, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: e3c6b4213ee5edf8f9a5878b4f9a1a7095220bcd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 353ca9922bc633efa5f53b2c3a3f4d7a4cad5986
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157324"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750616"
 ---
 # <a name="move-to-cwinrt-from-c"></a>Umstellen von C# auf C++/WinRT
 
@@ -33,8 +33,8 @@ Der Rest dieses Themas ist nach dieser Taxonomie gegliedert.
 
 ## <a name="changes-that-involve-the-language-projection"></a>Änderungen, die die Sprachprojektion betreffen
 
-||C#|C++/WinRT|Siehe auch|
-|-|-|-|-|
+| Category | C# | C++/WinRT | Siehe auch |
+| -------- | -- | --------- | -------- |
 |Nicht typisiertes Objekt|`object` oder [**System.Object**](/dotnet/api/system.object)|[**Windows::Foundation::IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)|[Portieren der **EnableClipboardContentChangedNotifications**-Methode](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)|
 |Projektionsnamespaces|`using System;`|`using namespace Windows::Foundation;`||
 ||`using System.Collections.Generic;`|`using namespace Windows::Foundation::Collections;`||
@@ -107,8 +107,8 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 
 ## <a name="changes-that-involve-the-language-syntax"></a>Änderungen, die die Sprachsyntax betreffen
 
-||C#|C++/WinRT|Siehe auch|
-|-|-|-|-|
+| Category | C# | C++/WinRT | Siehe auch |
+| -------- | -- | --------- | -------- |
 |Zugriffsmodifizierer|`public \<member\>`|`public:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`\<member\>`|[Portieren der **Button_Click**-Methode](./clipboard-to-winrt-from-csharp.md#button_click)|
 |Auf ein Datenmember zugreifen|`this.variable`|`this->variable`||
 |Asynchrone Aktion|`async Task ...`|`IAsyncAction ...`||
@@ -128,10 +128,10 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 |Zeichenfolgenliteral|`"a string literal"`|`L"a string literal"`|[Portieren des Konstruktors, **Current** und **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)|
 |Hergeleiteter (oder abgeleiteter) Typ|`var`|`auto`|[Portieren der **BuildClipboardFormatsOutputString**-Methode](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)|
 |Using-directive|`using A.B.C;`|`using namespace A::B::C;`|[Portieren des Konstruktors, **Current** und **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)|
-|Ausführliche Zeichenfolgeliterale/Rohzeichenfolgenliterale|`@"verbatim string literal"`|`LR"(raw string literal)"`|[Portieren der **DisplayToast**-Methode](./clipboard-to-winrt-from-csharp.md##displaytoast)|
+|Ausführliche Zeichenfolgeliterale/Rohzeichenfolgenliterale|`@"verbatim string literal"`|`LR"(raw string literal)"`|[Portieren der **DisplayToast**-Methode](./clipboard-to-winrt-from-csharp.md#displaytoast)|
 
 > [!NOTE]
-> Wenn eine Header Datei keine `using namespace`-Direktive für einen bestimmten Namespace enthält, müssen Sie alle Typnamen für diesen Namespace vollständig qualifizieren oder zumindest ausreichend qualifizieren, damit der Compiler Sie finden kann. Ein Beispiel finden Sie unter [Portieren der **DisplayToast**-Methode](./clipboard-to-winrt-from-csharp.md##displaytoast).
+> Wenn eine Header Datei keine `using namespace`-Direktive für einen bestimmten Namespace enthält, müssen Sie alle Typnamen für diesen Namespace vollständig qualifizieren oder zumindest ausreichend qualifizieren, damit der Compiler Sie finden kann. Ein Beispiel finden Sie unter [Portieren der **DisplayToast**-Methode](./clipboard-to-winrt-from-csharp.md#displaytoast).
 
 ### <a name="porting-classes-and-members"></a>Portieren von Klassen und Membern
 
@@ -151,8 +151,8 @@ Im Falle von [Portieren des Beispiels „Zwischenablage“ (Clipboard) von C# zu
 
 ## <a name="changes-that-involve-procedures-within-the-language"></a>Änderungen, die Prozeduren in der Sprache betreffen
 
-||C#|C++/WinRT|Siehe auch|
-|-|-|-|-|
+| Category | C# | C++/WinRT | Siehe auch |
+| -------- | -- | --------- | -------- |
 |Verwaltung der Lebensdauer in einer asynchronen Methode|NICHT ZUTREFFEND|`auto lifetime{ get_strong() };` oder<br>`auto lifetime = get_strong();`|[Portieren der **CopyButton_Click**-Methode](./clipboard-to-winrt-from-csharp.md#copybutton_click)|
 |Verwerfen|`using (var t = v)`|`auto t{ v };`<br>`t.Close(); // or let wrapper destructor do the work`|[Portieren der **CopyImage**-Methode](./clipboard-to-winrt-from-csharp.md#copyimage)|
 |Objekt erstellen|`new MyType(args)`|`MyType{ args }` oder<br>`MyType(args)`|[Portieren der **Scenarios**-Eigenschaft](./clipboard-to-winrt-from-csharp.md#scenarios)|
@@ -266,8 +266,8 @@ Siehe auch [Portieren der **Footer_Click**-Methode](./clipboard-to-winrt-from-cs
 
 Für die Erstellung von string-Elementen verfügt C# über einen integrierten [**StringBuilder**](/dotnet/api/system.text.stringbuilder)-Typ.
 
-| | C# | C++/WinRT |
-|-|-|-|
+| Category | C# | C++/WinRT |
+| -------- | -- | --------- |
 | Erstellung von string-Elementen | `StringBuilder builder;`<br>`builder.Append(...);` | `std::wostringstream builder;`<br>`builder << ...;` |
 | Anfügen einer Windows-Runtime-Zeichenfolge unter Beibehalten von NULL-Werten | `builder.Append(s);` | `builder << std::wstring_view{ s };` |
 | Neue Zeile hinzufügen |`builder.Append(Environment.NewLine);` | `builder << std::endl;` |

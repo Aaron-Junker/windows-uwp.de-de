@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 36b264b203627761d2872b0f9b8dade81099b149
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: b519a2c9ea5f415ec15c368091475434c46092fb
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216713"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829673"
 ---
 # <a name="design-toolkits-and-samples-for-windows-apps"></a>Design-Toolkits und Beispiele für Windows-Apps
 
@@ -26,20 +26,20 @@ Diese Toolkits enthalten Steuerelemente und Layoutvorlagen für das Entwerfen vo
 
 :::row:::
     :::column:::
-![Herobild](images/figma.png)
-<b>Figma-Toolkit</b><br>
+:::image type="icon" source="images/figma.png":::
+<b>Figma Toolkit</b><br>
 WinUI 2.4, Mai 2020<br>
 <a href="https://aka.ms/figmatoolkit">Herunterladen</a>
     :::column-end:::
     :::column:::
-![Hero-Bild](images/sketch.png)
-<b>Sketch-Toolkit</b><br>
+:::image type="icon" source="images/sketch.png":::
+<b>Sketch Toolkit</b><br>
 v1810, Oktober 2018<br>
 <a href="https://aka.ms/sketchtoolkit">Herunterladen</a>
     :::column-end:::    
     :::column:::
-![Hero-Bild](images/adobe-xd.png)
-<b>Adobe XD-Toolkit</b><br>
+:::image type="icon" source="images/adobe-xd.png":::
+<b>Adobe XD Toolkit</b><br>
 v1901, Januar 2019<br>
 <a href="https://aka.ms/adobexdtoolkit">Herunterladen</a>
     :::column-end:::
