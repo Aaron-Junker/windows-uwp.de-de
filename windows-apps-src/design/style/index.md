@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 98479932313c8c78177870b4c20521980526fc32
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 2537a4bcaea4ce3809fe8c6f2d1b6cbffb5b7b60
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80218610"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860067"
 ---
 # <a name="style-for-windows-apps"></a>Formate für Windows-Apps
 
@@ -22,12 +22,12 @@ Durch einen besonderen Stil fällt Ihre App auf. Mithilfe der Gestaltungsrichtli
 
 :::row:::
     :::column:::
-![Herobild](images/header-color.svg)
+![Screenshot eines Bilds mit einem Farbverlauf.](images/header-color.svg)
 ### <a name="color"></a>[Farbe](color.md)
 Farben tragen dazu bei, dass sich Benutzer intuitiv in den verschiedenen Informationsebenen einer App zurechtfinden, und spielen eine wichtige Rolle für das Interaktionsmodell.
     :::column-end:::
     :::column:::
-![Herobild](images/header-typography.svg)
+![Screenshot eines Bilds mit Typografie.](images/header-typography.svg)
 ### <a name="typography"></a>[Typografie](typography.md)
 Typografie muss übersichtlich sein, da sie zur visuellen Darstellung von Sprache dient. Ihr Stil darf diesem Ziel nie im Wege stehen. Die folgenden Richtlinien konzentrieren sich darauf, wie Sie Typografie nutzen können, damit Benutzer Inhalte leichter verstehen. 
     :::column-end:::
@@ -35,12 +35,12 @@ Typografie muss übersichtlich sein, da sie zur visuellen Darstellung von Sprach
 
 :::row:::
     :::column:::
-![Herobild](images/header-icons.svg)
+![Screenshot eines Bilds mit Symbolen.](images/header-icons.svg)
 ### <a name="icons"></a>[Symbole](icons.md)
 Gute Symbole harmonieren mit der Typografie und der übrigen Gestaltungssprache. Sie verwenden keine Metaphern und geben einfach und schnell nur die erforderlichen Informationen weiter.
     :::column-end:::
     :::column:::
-![Herobild](images/header-acrylic.svg)
+![Screenshot eines Bilds mit Acryl.](images/header-acrylic.svg)
 ### <a name="acrylic"></a>[Acrylic](acrylic.md)
 Erzeuge Tiefenwirkung mit Acryl, einem Pinsel, der für atemberaubende, durchscheinende Oberflächen sorgt.
     :::column-end:::
@@ -48,12 +48,12 @@ Erzeuge Tiefenwirkung mit Acryl, einem Pinsel, der für atemberaubende, durchsch
 
 :::row:::
     :::column:::
-![Herobild](images/header-reveal-highlight.svg)
+![Screenshot eines Bilds mit Reveal Highlight.](images/header-reveal-highlight.svg)
 ### <a name="reveal-highlight"></a>[Reveal Highlight](reveal.md)
 Hebe wichtige Elemente mithilfe von Lichtakzenten hervor.
     :::column-end:::
     :::column:::
-![Herobild](images/header-reveal-focus.svg)
+![Screenshot eines Bilds mit Reveal Focus.](images/header-reveal-focus.svg)
 ### <a name="reveal-focus"></a>[Reveal Focus](reveal-focus.md)
 Reveal Focus ist ein Lichteffekt für Benutzeroberflächen auf großen Bildschirmen (10 Foot UI), für z.B. Xbox One und Fernsehbildschirme, und animiert den Rahmen von Elementen, die den Fokus erhalten können.
     :::column-end:::
@@ -61,12 +61,12 @@ Reveal Focus ist ein Lichteffekt für Benutzeroberflächen auf großen Bildschir
 
 :::row:::
     :::column:::
-![Herobild](images/header-sound.svg)
+![Screenshot eines Bilds mit Sound.](images/header-sound.svg)
 ### <a name="sound"></a>[Sound](sound.md)
 Sound vervollständigt die Benutzerumgebung einer Anwendung und trägt zur Vermittlung des Windows-Feelings auf allen Plattformen bei.
     :::column-end:::
     :::column:::
-![Herobild](images/header-writing-style.gif)
+![Kurzes Video mit einem blinkenden Cursor, während das Wort „Schreibstil“ eingetippt wird.](images/header-writing-style.gif)
 ### <a name="writing-style"></a>[Schreibstil](writing-style.md)
 Der Schreibstil kann eine schlechte oder eine gute Benutzererfahrung bewirken.
     :::column-end:::
