@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Store Services, Microsoft Store Analytics-API, Werbekampagnen
 ms.localizationpriority: medium
-ms.openlocfilehash: fd933f103bf8964997102731b653e125fae89e12
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c40ab5d6aea67477e0900441cfb02b858dbef9b2
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162444"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878453"
 ---
 # <a name="get-ad-campaign-performance-data"></a>Abrufen der Leistungsdaten einer Anzeigenkampagne
 
 
 Verwenden Sie diese Methode in der Microsoft Store Analytics-API, um eine aggregierte Zusammenfassung der Leistungsdaten der Werbekampagne für Ihre Anwendungen in einem bestimmten Datumsbereich und anderen optionalen Filtern zu erhalten. Diese Methode gibt die Daten im JSON-Format zurück.
 
-Diese Methode gibt die gleichen Daten zurück, die vom [AD-Kampagnenbericht](/windows/uwp/publish/ad-campaign-report) im Partner Center bereitgestellt werden. Weitere Informationen zu Anzeigenkampagnen finden Sie unter [Erstellen einer Anzeigenkampagne für Ihre App](../publish/create-an-ad-campaign-for-your-app.md).
+Diese Methode gibt die gleichen Daten zurück, die vom [AD-Kampagnenbericht](/windows/uwp/publish/ad-campaign-report) im Partner Center bereitgestellt werden. Weitere Informationen zu Anzeigenkampagnen finden Sie unter [Erstellen einer Anzeigenkampagne für Ihre App](./index.md).
 
 Zum Erstellen, aktualisieren oder Abrufen von Details für Ad-Kampagnen können Sie die Methoden zum [Verwalten von Ad-Kampagnen](manage-ad-campaigns.md) in der [Microsoft Store Promotions-API](run-ad-campaigns-using-windows-store-services.md)verwenden.
 
@@ -50,7 +50,7 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 Um die Leistungsdaten einer Anzeigenkampagne für eine bestimmte App abzurufen, verwenden Sie den Parameter *applicationId*. Um Anzeigenleistungsdaten für alle Apps abzurufen, die Ihrem Entwicklerkonto zugeordnet sind, lassen Sie den Paramater *applicationId* aus.
 
-| Parameter     | Typ   | BESCHREIBUNG     | Erforderlich |
+| Parameter     | type   | BESCHREIBUNG     | Erforderlich |
 |---------------|--------|-----------------|----------|
 | applicationId   | Zeichenfolge    | Die [Speicher-ID](in-app-purchases-and-trials.md#store-ids) der APP, für die Sie Leistungsdaten der Werbekampagne abrufen möchten. |    Nein      |
 |  startDate  |  date   |  Das Startdatum im Datumsbereich der abzurufenden Leistungsdaten einer Anzeigenkampagne im Format JJJJ/MM/TT. Der Standardwert ist das aktuelle Datum minus 30 Tage.   |   Nein    |
@@ -80,7 +80,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>Antworttext
 
-| Wert      | Typ   | BESCHREIBUNG  |
+| Wert      | type   | BESCHREIBUNG  |
 |------------|--------|---------------|
 | Wert      | array  | Ein Array von Objekten mit den aggregierten Leistungsdaten einer Anzeigenkampagne. Weitere Informationen zu den Daten in den einzelnen Objekten finden Sie unten im Abschnitt [Kampagnenleistungsobjekt](#campaign-performance-object).          |
 | @nextLink  | Zeichenfolge | Wenn weitere Seiten mit Daten vorhanden sind, enthält diese Zeichenfolge einen URI, mit dem Sie die nächste Seite mit Daten anfordern können. Beispielsweise wird dieser Wert zurückgegeben, wenn der Parameter **top** der Anforderung auf 5 festgelegt ist, es jedoch mehr als fünf Datenelemente für die Abfrage gibt. |
@@ -94,7 +94,7 @@ Authorization: Bearer <your access token>
 
 Elemente im Array *Value* enthalten die folgenden Werte.
 
-| Wert               | Typ   | BESCHREIBUNG            |
+| Wert               | type   | BESCHREIBUNG            |
 |---------------------|--------|------------------------|
 | date                | Zeichenfolge | Das erste Datum im Datumsbereich für die Leistungsdaten einer Anzeigenkampagne. Wenn die Anforderung einen einzelnen Tag angibt, ist dieses Datum dieser Wert. Wenn die Anforderung eine Woche, einen Monat oder einen anderen Datumsbereich angibt, ist dieser Wert das erste Datum in diesem Datumsbereich. |
 | applicationId       | Zeichenfolge | Die Store-ID der App, für die Sie die Leistungsdaten einer Anzeigenkampagne abrufen.                     |
@@ -109,7 +109,7 @@ Elemente im Array *Value* enthalten die folgenden Werte.
 | activeusers            | long | Die Anzahl der Benutzer, die auf eine Werbung geklickt haben, die Teil der Kampagne ist und an die APP zurückgegeben wurde.      |
 
 
-### <a name="response-example"></a>Antwortbeispiel
+### <a name="response-example"></a>Beispielantwort
 
 Das folgende Beispiel zeigt ein Beispiel für einen JSON-Antworttext für diese Anforderung.
 
@@ -150,6 +150,6 @@ Das folgende Beispiel zeigt ein Beispiel für einen JSON-Antworttext für diese 
 
 ## <a name="related-topics"></a>Zugehörige Themen
 
-* [Erstellen einer Anzeigenkampagne für Ihre App](../publish/create-an-ad-campaign-for-your-app.md)
+* [Erstellen einer Anzeigenkampagne für Ihre App](./index.md)
 * [Ausführen von Ad-Kampagnen mithilfe von Microsoft Store Services](run-ad-campaigns-using-windows-store-services.md)
 * [Zugreifen auf Analytics-Daten mithilfe von Microsoft Store Services](access-analytics-data-using-windows-store-services.md)

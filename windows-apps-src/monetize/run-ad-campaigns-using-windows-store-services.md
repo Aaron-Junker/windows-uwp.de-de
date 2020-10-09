@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store promotionapi, Werbekampagnen
 ms.localizationpriority: medium
-ms.openlocfilehash: 74afbda1cc93aa0602618d6d94efe6baadf59ecb
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 2be721137e6c09913eafd2c58bab07f1ae6f2728
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363703"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878513"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>Ausführen von Ad-Kampagnen mithilfe von Store Services
 
@@ -23,7 +23,7 @@ Dazu müssen folgende Schritte ausgeführt werden:
 2.  Bevor Sie eine Methode in der Microsoft Store promotionapi aufrufen, [erhalten Sie ein Azure AD Zugriffs Token](#obtain-an-azure-ad-access-token). Nachdem Sie ein Token erhalten haben, haben Sie 60 Minuten Zeit, dieses Token in Aufrufen der Microsoft Store promotionapi zu verwenden, bevor das Token abläuft. Nach dem Ablauf des Tokens können Sie ein neues Token generieren.
 3.  [Nennen Sie die Microsoft Store promotionapi](#call-the-windows-store-promotions-api).
 
-Alternativ können Sie Ad-Kampagnen mithilfe von Partner Center erstellen und verwalten, und alle Werbekampagnen, die Sie Programm gesteuert über die Microsoft Store promotionapi erstellen, können auch im Partner Center aufgerufen werden. Weitere Informationen zum Verwalten von Ad-Kampagnen in Partner Center finden [Sie unter Erstellen einer AD-Kampagne für Ihre APP](../publish/create-an-ad-campaign-for-your-app.md).
+Alternativ können Sie Ad-Kampagnen mithilfe von Partner Center erstellen und verwalten, und alle Werbekampagnen, die Sie Programm gesteuert über die Microsoft Store promotionapi erstellen, können auch im Partner Center aufgerufen werden. Weitere Informationen zum Verwalten von Ad-Kampagnen in Partner Center finden [Sie unter Erstellen einer AD-Kampagne für Ihre APP](./index.md).
 
 > [!NOTE]
 > Alle Entwickler mit einem Partner Center-Konto können die Microsoft Store promotionapi verwenden, um Werbekampagnen für Ihre apps zu verwalten. Medien Behörden können auch Zugriff auf diese API anfordern, um Werbekampagnen im Namen Ihrer Werbespots auszuführen. Wenn Sie eine Medienbehörde sind, die mehr über diese API erfahren oder Zugriff darauf anfordern möchte, senden Sie Ihre Anforderung an storepromotionsapi@microsoft.com .
@@ -34,7 +34,7 @@ Alternativ können Sie Ad-Kampagnen mithilfe von Partner Center erstellen und ve
 
 Vergewissern Sie sich, dass die folgenden Voraussetzungen erfüllt sind, bevor Sie mit dem Schreiben von Code beginnen, um die Microsoft Store promotionapi aufzurufen.
 
-* Bevor Sie mit dieser API eine AD-Kampagne erstellen und starten können, müssen Sie zunächst auf [der Seite mit den **Werbekampagnen** im Partner Center eine bezahlte Werbekampagne erstellen](../publish/create-an-ad-campaign-for-your-app.md), und Sie müssen mindestens ein Zahlungsinstrument auf dieser Seite hinzufügen. Nachdem Sie dies getan haben, können Sie mithilfe dieser API abrechenbare Übermittlungs Zeilen für Ad-Kampagnen erstellen. Mit Übermittlungs Zeilen für Ad-Kampagnen, die Sie mit dieser API erstellen, wird automatisch das standardmäßige Zahlungsinstrument abgerechnet, das auf der Seite mit den **Werbekampagnen** im Partner Center
+* Bevor Sie mit dieser API eine AD-Kampagne erstellen und starten können, müssen Sie zunächst auf [der Seite mit den **Werbekampagnen** im Partner Center eine bezahlte Werbekampagne erstellen](./index.md), und Sie müssen mindestens ein Zahlungsinstrument auf dieser Seite hinzufügen. Nachdem Sie dies getan haben, können Sie mithilfe dieser API abrechenbare Übermittlungs Zeilen für Ad-Kampagnen erstellen. Mit Übermittlungs Zeilen für Ad-Kampagnen, die Sie mit dieser API erstellen, wird automatisch das standardmäßige Zahlungsinstrument abgerechnet, das auf der Seite mit den **Werbekampagnen** im Partner Center
 
 * Sie (oder Ihre Organisation) müssen über ein Azure AD-Verzeichnis verfügen, und Ihnen müssen die Berechtigungen [globaler Administrator](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) für das Verzeichnis gewährt worden sein. Wenn Sie Microsoft 365 oder andere Unternehmensdienste von Microsoft verwenden, verfügen Sie bereits über ein Azure AD-Verzeichnis. Andernfalls können Sie [eine neue Azure AD im Partner Center erstellen](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) , ohne dass zusätzliche Kosten anfallen.
 
@@ -104,7 +104,7 @@ Im folgenden Codebeispiel wird veranschaulicht, wie Sie ein Azure AD Zugriffs To
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Promotions/cs/Program.cs" id="PromotionsApiExample":::
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Verwalten von Anzeigenkampagnen](manage-ad-campaigns.md)
 * [Verwalten von Übermittlungs Zeilen für Werbekampagnen](manage-delivery-lines-for-ad-campaigns.md)

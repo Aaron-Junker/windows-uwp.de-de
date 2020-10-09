@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Benutzer Rollen, Benutzer Berechtigung, benutzerdefinierte Rollen, Benutzer Zugriff, Berechtigungen anpassen, Standardrollen
 ms.localizationpriority: medium
-ms.openlocfilehash: f8454587e31751e3653d983dbb1d45e21a2808d9
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 3cdd1904dad82e0145305fe2709360be01518a7f
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750176"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878483"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Festlegen von Rollen oder benutzerdefinierten Berechtigungen für Kontobenutzer
 
@@ -104,7 +104,7 @@ Die Berechtigungen in diesem Abschnitt können nicht auf bestimmte Produkte bes
 <tr><td align="left">    <b>Kontoeinstellungen</b>                    </td><td align="left">  Kann alle Seiten im Abschnitt <b>Kontoeinstellungen</b> anzeigen, einschließlich der <a href="/windows/uwp/publish/manage-account-settings-and-profile">Kontaktinformationen</a>.       </td><td align="left">  Kann alle Seiten im Abschnitt <b>Kontoeinstellungen</b> anzeigen. Kann Änderungen an <a href="/windows/uwp/publish/manage-account-settings-and-profile">Kontaktinformationen</a> und anderen Seiten, nicht jedoch am Auszahlungskonto oder Steuerprofil vornehmen (es sei denn, diese Berechtigung wird separat erteilt).            </td></tr>
 <tr><td align="left">    <b>Kontobenutzer</b>                       </td><td align="left">  Kann Benutzer anzeigen, die dem Konto im Abschnitt " <b>Benutzer</b> " hinzugefügt wurden.          </td><td align="left">  Können Benutzer zum Konto hinzufügen und vorhandene Benutzer im Abschnitt " <b>Benutzer</b> " ändern.             </td></tr>
 <tr><td align="left">    <b>AD-Leistungsbericht auf Kontoebene</b> </td><td align="left">  Kann den <a href="advertising-performance-report.md">Bericht zur Anzeigenleistung auf Kontoebene</a> anzeigen.      </td><td align="left">  –   </td></tr>
-<tr><td align="left">    <b>Werbekampagnen</b>                        </td><td align="left">  Kann im Konto erstellte <a href="create-an-ad-campaign-for-your-app.md">Anzeigenkampagnen</a> anzeigen.      </td><td align="left">  Kann im Konto erstellte <a href="create-an-ad-campaign-for-your-app.md">Anzeigenkampagnen</a> erstellen, verwalten und anzeigen.          </td></tr>
+<tr><td align="left">    <b>Werbekampagnen</b>                        </td><td align="left">  Kann im Konto erstellte <a href="/windows/uwp/monetize/">Anzeigenkampagnen</a> anzeigen.      </td><td align="left">  Kann im Konto erstellte <a href="/windows/uwp/monetize/">Anzeigenkampagnen</a> erstellen, verwalten und anzeigen.          </td></tr>
 <tr><td align="left">    <b>AD-Vermittlung</b>                        </td><td align="left">  Kann Anzeigenvermittlungskonfigurationen für alle Produkte des Kontos anzeigen.    </td><td align="left">  Kann Anzeigenvermittlungskonfigurationen für alle Produkte des Kontos anzeigen und ändern.        </td></tr>
 <tr><td align="left">    <b>AD-Vermittlungs Berichte</b>                </td><td align="left">  Kann den <a href="/windows/uwp/publish/advertising-performance-report">Bericht zur Anzeigenvermittlung</a> für alle Produkte des Kontos anzeigen.    </td><td align="left">  –    </td></tr>
 <tr><td align="left">    <b>AD-Leistungsberichte</b>              </td><td align="left">  Kann <a href="advertising-performance-report.md">Berichte zur Anzeigenleistung</a> für alle Produkte des Kontos anzeigen.       </td><td align="left">  –         </td></tr>
@@ -112,7 +112,7 @@ Die Berechtigungen in diesem Abschnitt können nicht auf bestimmte Produkte bes
 <tr><td align="left">    <b>Partner Werbung</b>                       </td><td align="left">  Kann die Nutzung von <a href="/windows/uwp/publish/in-app-ads">Partneranzeigen</a> für alle Produkte des Kontos anzeigen.    </td><td align="left">  Kann die Nutzung von <a href="/windows/uwp/publish/in-app-ads">Partneranzeigen</a> für alle Produkte des Kontos verwalten und anzeigen.                </td></tr>
 <tr><td align="left">    <b>Leistungsberichte zu Unternehmen</b>      </td><td align="left">  Kann den <a href="/windows/uwp/publish/advertising-performance-report">Bericht zur Partneranzeigenleistung</a> für alle Produkte des Kontos anzeigen.   </td><td align="left">  –   </td></tr>
 <tr><td align="left">    <b>App-Installations Anzeige Berichte</b>             </td><td align="left">  Kann den <a href="/windows/uwp/publish/ad-campaign-report">Bericht der Werbekampagne</a>anzeigen.           </td><td align="left">  –   </td></tr>
-<tr><td align="left">    <b>Communitywerbung</b>                       </td><td align="left">  Kann die Nutzung kostenloser <a href="about-community-ads.md">Community-Anzeigen</a> für alle Produkte des Kontos anzeigen.          </td><td align="left">  Kann die Nutzung kostenloser <a href="about-community-ads.md">Community-Anzeigen</a> für alle Produkte des Kontos erstellen, verwalten und anzeigen.               </td></tr>
+<tr><td align="left">    <b>Communitywerbung</b>                       </td><td align="left">  Kann die Nutzung kostenloser <a href="/windows/uwp/monetize/">Community-Anzeigen</a> für alle Produkte des Kontos anzeigen.          </td><td align="left">  Kann die Nutzung kostenloser <a href="/windows/uwp/monetize/">Community-Anzeigen</a> für alle Produkte des Kontos erstellen, verwalten und anzeigen.               </td></tr>
 <tr><td align="left">    <b>Kontaktinformationen</b>                        </td><td align="left">  Kann <a href="/windows/uwp/publish/manage-account-settings-and-profile">Kontaktinformationen</a> im Abschnitt mit den Kontoeinstellungen anzeigen.        </td><td align="left">  Kann <a href="/windows/uwp/publish/manage-account-settings-and-profile">Kontaktinformationen</a> im Abschnitt mit den Kontoeinstellungen anzeigen und bearbeiten.            </td></tr>
 <tr><td align="left">    <b>Coppa-Konformität</b>                    </td><td align="left">  Kann für alle Produkte des Kontos die Einstellungen für die <a href="in-app-ads.md#coppa-compliance">COPPA-Compliance</a> anzeigen (die angeben, ob sich Produkte an Kinder unter 13 Jahren richten).                                            </td><td align="left">  Kann für alle Produkte des Kontos die Einstellungen für die <a href="in-app-ads.md#coppa-compliance">COPPA-Compliance</a> anzeigen und bearbeiten (die angeben, ob sich Produkte an Kinder unter 13 Jahren richten).         </td></tr>
 <tr><td align="left">    <b>Kundengruppen</b>                     </td><td align="left">  Kann <a href="create-customer-groups.md">Kundengruppen</a> (Segmente und bekannte Benutzergruppen) anzeigen.      </td><td align="left">  Können <a href="create-customer-groups.md">Kundengruppen</a> (Segmente und bekannte Benutzergruppen) erstellen, bearbeiten und anzeigen.       </td></tr>
@@ -152,7 +152,7 @@ Jedes Add-On wird in einer separaten Zeile unterhalb des übergeordneten Produkt
 Beachten Sie, dass einige Berechtigungen nicht für Add-Ons festgelegt werden können. Dies liegt entweder daran, dass sie nicht für Add-Ons gelten (z. B. die Berechtigung **Kundenfeedback**), oder dass die auf der Ebene des übergeordneten Produkts erteilte Berechtigung für alle Add-Ons des Produkts gilt (z. B. **Werbecodes**). Beachten Sie jedoch, dass alle für Add-Ons verfügbaren Berechtigungen separat festgelegt werden müssen. Add-Ons erben nicht die für das übergeordnete Produkt getroffene Auswahl. Wenn Sie z. B. einem Benutzer gestatten möchten, Preis- und Verfügbarkeitsoptionen für ein Add-On vorzunehmen, müssen Sie die Berechtigung **Preise und Verfügbarkeit** für das Add-On (oder für **Alle Add-Ons**) unabhängig davon aktivieren, ob Sie die Berechtigung **Preise und Verfügbarkeit** für das übergeordnete Produkt erteilt haben. 
 
 
-### <a name="analytics"></a>Analytics
+### <a name="analytics"></a>Analyse
 
 <table>
     <thead>

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Monetarisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f2d5ceef5ef15ac81e43447e24e2eaf61e4a22a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c827c257947ea0f365bafe497e627841b501d40d
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159364"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878583"
 ---
 #  <a name="monetization-for-games"></a>Monetarisierung für Spiele
 
@@ -213,15 +213,15 @@ Informationen zum Integrieren des AdDuplex SDK in Windows 10-UWP-Spiele, die mi
 
 ## <a name="maximize-your-games-potential-through-ad-campaigns"></a>Maximieren des Potenzials Ihres Spiels über Anzeigenkampagnen
 
-Gehen Sie noch einen Schritt weiter, und bewerben Sie Ihr Spiel mithilfe von Anzeigen. Wenn Sie für Ihr Spiel eine [Anzeigenkampagne erstellen](../publish/create-an-ad-campaign-for-your-app.md), zeigen anderen Apps und Spiele Werbung für Ihr Spiel an.
+Gehen Sie noch einen Schritt weiter, und bewerben Sie Ihr Spiel mithilfe von Anzeigen. Wenn Sie für Ihr Spiel eine [Anzeigenkampagne erstellen](../monetize/index.md), zeigen anderen Apps und Spiele Werbung für Ihr Spiel an.
 
 Wählen Sie zwischen verschiedenen Kampagnenarten, mit denen Sie die Zahl von Spielern erhöhen können.
 
 |Kampagnentyp             | Anzeigen für Ihr Spiel werden in folgenden Apps angezeigt:                                                                                                                                                                   |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |Bezahlt                      |Apps, die dem Gerät oder der Kategorie Ihres Spiels entsprechen                                                                                                                                                   |
-|Kostenlose Community-Anzeigen            |Apps, die von anderen Entwicklern veröffentlicht werden, die ebenfalls Community-Anzeigenkampagnen nutzen. Weitere Informationen finden Sie unter [Informationen zu Community-Anzeigen](../publish/about-community-ads.md).|
-|Kostenlose Eigenwerbung                |Nur in Apps, die Sie veröffentlicht haben. Weitere Informationen finden Sie unter [Über Eigenwerbung](../publish/about-house-ads.md).                                                            |
+|Kostenlose Community-Anzeigen            |Apps, die von anderen Entwicklern veröffentlicht werden, die ebenfalls Community-Anzeigenkampagnen nutzen. Weitere Informationen finden Sie unter [Informationen zu Community-Anzeigen](../monetize/index.md).|
+|Kostenlose Eigenwerbung                |Nur in Apps, die Sie veröffentlicht haben. Weitere Informationen finden Sie unter [Über Eigenwerbung](../monetize/index.md).                                                            |
 
 ## <a name="related-links"></a>Verwandte Links
 

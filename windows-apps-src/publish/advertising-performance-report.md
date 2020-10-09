@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bb9c6a43b9411b2297cc4cbf35dfdb2177e5dab7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ea0fe6f29059a2b9ef8e5ce728d883d5349d0468
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155374"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878423"
 ---
 # <a name="advertising-performance-report"></a>Bericht zur Anzeigenleistung
 
@@ -26,7 +26,7 @@ Beachten Sie beim Anzeigen der Leistungsberichte der Werbung, dass sich die Beri
 
 Im oberen Bereich der Seite können Sie den Zeitraum auswählen, in dem Sie Daten anzeigen möchten. Die Standardauswahl beträgt 30D (30 Tage), Sie können jedoch auswählen, dass Daten für 3, 6 oder 12 Monate oder für einen von Ihnen angegebenen benutzerdefinierten Datenbereich angezeigt werden.
 
-Sie können auch **Filter** erweitern, um alle Daten auf dieser Seite nach Ad-Einheit, APP, AD-Anbieter und Gerätetyp zu filtern. Sie können zwischen folgenden Optionen wählen:
+Sie können auch **Filter** erweitern, um alle Daten auf dieser Seite nach Ad-Einheit, APP, AD-Anbieter und Gerätetyp zu filtern. Sie können eine der folgenden Optionen auswählen:
 
 * **Aggregation**: Wählen Sie aus, wie die Berichtsdaten aggregiert werden, und wie Sie möglicherweise weiter gefiltert werden. Standardmäßig ist dieser Filter auf **Alle Ad-Einheiten**festgelegt. Optional können Sie diesen Filter in **alle apps** oder **alle AD-Anbieter**ändern, oder Sie können auswählen, ob Sie mit einer bestimmten app aggregieren möchten, in der Sie ADS verwenden.
 * **AD-Anbieter**: Filtern Sie den Bericht nach Leistungsdaten für bestimmte [AD-Anbieter](in-app-ads.md#paid-networks). Standardmäßig zeigt der Bericht Daten von allen AD-Anbietern an. Diese Option wird deaktiviert, wenn Sie **alle AD-Anbieter** in der **Aggregations** -Dropdown-Option ausgewählt haben.
@@ -59,8 +59,8 @@ Der **Leistungs** Bericht "Werbung" enthält Daten für die folgenden Leistungsm
 | Clicks  |  Gibt an, wie oft jemand in der APP auf eine Werbeanzeige geklickt hat. |
 | CTR  |  Die Click-through-Rate, d. h. die Häufigkeit, mit der auf eine Werbung geklickt wurde, dividiert durch die Anzahl von Eindrücken. |
 | Sichtbarkeit | Der Prozentsatz der werbeeindrücke, die in ihrer App angezeigt werden können. Weitere Informationen zur Berechnung dieses Werts finden [Sie unter Optimieren der viewability ihrer Ad-Einheiten](../monetize/optimize-ad-unit-viewability.md). |
-| Guthaben verdient  | Wenn Sie eine Community- [Werbe](./about-community-ads.md) Kampagne ausführen, gibt dies die Anzahl der Gutschriften an, die Sie für Werbe Speicher Angebote erworben haben, indem Sie communitywerbung in ihrer App anzeigen.  |
-| Guthaben aufgewendet  | Wenn Sie eine Community- [Werbe](./about-community-ads.md) Kampagne ausführen, gibt dies die Anzahl der Gutschriften an, die Sie für Werbung für Ihre APP aufgewendet haben.  |
+| Guthaben verdient  | Wenn Sie eine Community- [Werbe](../monetize/index.md) Kampagne ausführen, gibt dies die Anzahl der Gutschriften an, die Sie für Werbe Speicher Angebote erworben haben, indem Sie communitywerbung in ihrer App anzeigen.  |
+| Guthaben aufgewendet  | Wenn Sie eine Community- [Werbe](../monetize/index.md) Kampagne ausführen, gibt dies die Anzahl der Gutschriften an, die Sie für Werbung für Ihre APP aufgewendet haben.  |
 
 ## <a name="related-topics"></a>Zugehörige Themen
 

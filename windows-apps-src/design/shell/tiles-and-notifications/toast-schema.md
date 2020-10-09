@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: eab81d7a2898b76ed241a985c953849ed581d804
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c095e48e24a06caf9e31066b21f9e2b023ed51cf
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156674"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878473"
 ---
 # <a name="toast-content-schema"></a>Popupinhaltsschema
 
@@ -21,7 +21,7 @@ ms.locfileid: "89156674"
 
 Im folgenden werden alle Eigenschaften und Elemente innerhalb des Popup Inhalts beschrieben.
 
-Wenn Sie anstelle der [Benachrichtigungs Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)unformatierte XML-Daten verwenden möchten, lesen Sie [das XML-Schema](toast-xml-schema.md).
+Wenn Sie anstelle der [Benachrichtigungs Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)unformatierte XML-Daten verwenden möchten, lesen Sie [das XML-Schema]().
 
 [Inhalts Inhalt](#toastcontent)
 * [-Visualisierung](#toastvisual)
@@ -38,9 +38,9 @@ Wenn Sie anstelle der [Benachrichtigungs Bibliothek](https://www.nuget.org/packa
 ## <a name="toastcontent"></a>Inhalts Inhalt
 "Inhalts Inhalt" ist das Objekt der obersten Ebene, das den Inhalt einer Benachrichtigung beschreibt, einschließlich visueller Elemente, Aktionen und Audiodaten.
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
-| **Gestartet**| Zeichenfolge | false | Eine Zeichenfolge, die an die Anwendung übermittelt wird, wenn Sie durch den Toast aktiviert wird. Das Format und der Inhalt dieser Zeichenfolge werden von der App für eigene Zwecke definiert. Wenn der Benutzer auf den Toast tippt oder klickt, um die zugehörige APP zu starten, stellt die Start Zeichenfolge den Kontext für die APP bereit, der es dem Benutzer ermöglicht, dem Benutzer eine Ansicht anzuzeigen, die für den Popup Inhalt relevant ist, anstatt ihn auf seine Standard Art zu starten |
+| **Starten**| Zeichenfolge | false | Eine Zeichenfolge, die an die Anwendung übermittelt wird, wenn Sie durch den Toast aktiviert wird. Das Format und der Inhalt dieser Zeichenfolge werden von der App für eigene Zwecke definiert. Wenn der Benutzer auf den Toast tippt oder klickt, um die zugehörige APP zu starten, stellt die Start Zeichenfolge den Kontext für die APP bereit, der es dem Benutzer ermöglicht, dem Benutzer eine Ansicht anzuzeigen, die für den Popup Inhalt relevant ist, anstatt ihn auf seine Standard Art zu starten |
 | **Grafisches Element** | [-Visualisierung](#toastvisual) | true | Beschreibt den visuellen Teil der Popup Benachrichtigung. |
 | **Aktionen** | [Ideastactions](#itoastactions) | false | Erstellen Sie optional benutzerdefinierte Aktionen mit Schaltflächen und Eingaben. |
 | **Audio** | [Ein-und ausgeschaltet](#toastaudio) | false | Beschreibt den Audioteil der Popup Benachrichtigung. |
@@ -48,7 +48,7 @@ Wenn Sie anstelle der [Benachrichtigungs Bibliothek](https://www.nuget.org/packa
 | **Activationoptions** | ["Deastactivationoptions"](#toastactivationoptions) | false | Neu in Creators Update: zusätzliche Optionen im Zusammenhang mit der Aktivierung der Popup Benachrichtigung. |
 | **Szenario** | [Ein-/ausgeschaltet](#toastscenario) | false | Deklariert das Szenario, für das der Toast verwendet wird, wie z. b. ein Alarm oder eine Erinnerung. |
 | **Display Timestamp** | DateTimeOffset? | false | Neu in Creators Update: Überschreiben Sie den Standardzeit Stempel mit einem benutzerdefinierten Zeitstempel, der angibt, wann Ihr Benachrichtigungs Inhalt tatsächlich übermittelt wurde, und nicht die Zeit, zu der die Benachrichtigung von der Windows-Plattform empfangen wurde. |
-| **Kopfzeile** | [Verzeichnis Leser](#toastheader) | false | Neu in Creators Update: Fügen Sie Ihrer Benachrichtigung einen benutzerdefinierten Header hinzu, um mehrere Benachrichtigungen innerhalb des Aktions Centers zu gruppieren. |
+| **Header** | [Verzeichnis Leser](#toastheader) | false | Neu in Creators Update: Fügen Sie Ihrer Benachrichtigung einen benutzerdefinierten Header hinzu, um mehrere Benachrichtigungen innerhalb des Aktions Centers zu gruppieren. |
 
 
 ### <a name="toastscenario"></a>Ein-/ausgeschaltet
@@ -57,7 +57,7 @@ Gibt an, welches Szenario der Toast darstellt.
 | Wert | Bedeutung |
 |---|---|
 | **Standard** | Das normale Popup Verhalten. |
-| **Erinnerung** | Eine Erinnerungs Benachrichtigung. Diese wird vorab erweitert angezeigt und bleibt auf dem Bildschirm des Benutzers, bis Sie verworfen wird. |
+| **Reminder** | Eine Erinnerungs Benachrichtigung. Diese wird vorab erweitert angezeigt und bleibt auf dem Bildschirm des Benutzers, bis Sie verworfen wird. |
 | **Alarm** | Eine Warn Benachrichtigung. Diese wird vorab erweitert angezeigt und bleibt auf dem Bildschirm des Benutzers, bis Sie verworfen wird. Audiodaten werden standardmäßig Schleifen und verwenden die Alarm Audiodatei. |
 | **IncomingCall** | Eine eingehende Benachrichtigung. Dies wird in einem speziellen Callcenter als vorerweitert angezeigt und bleibt auf dem Bildschirm des Benutzers, bis er verworfen wird. Audiodaten werden standardmäßig Schleifen und verwenden Rington-Audiodaten. |
 
@@ -65,7 +65,7 @@ Gibt an, welches Szenario der Toast darstellt.
 ## <a name="toastvisual"></a>-Visualisierung
 Der visuelle Teil von Popups enthält die Bindungen, die Text, Bilder, adaptiver Inhalt und mehr enthalten.
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
 | **Bindinggeneric** | ["Deastbindinggeneric"](#toastbindinggeneric) | true | Die generische Popup Bindung, die auf allen Geräten gerendert werden kann. Diese Bindung ist erforderlich und darf nicht NULL sein. |
 | **BaseUri** | Uri | false | Eine Standard-Basis-URL, die mit relativen URLs in Image Quellen Attributen kombiniert wird. |
@@ -76,7 +76,7 @@ Der visuelle Teil von Popups enthält die Bindungen, die Text, Bilder, adaptiver
 ## <a name="toastbindinggeneric"></a>"Deastbindinggeneric"
 Die generische Bindung ist die Standard Bindung für Toasts und ist der Ort, an dem Sie den Text, die Bilder, den adaptiven Inhalt usw. angeben.
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
 | **Children** | IList<[ideastbindinggenericchild](#itoastbindinggenericchild)> | false | Der Inhalt des Popup Texts, der Text, Bilder und Gruppen enthalten kann (in Anniversary Update hinzugefügt). Text Elemente müssen vor allen anderen Elementen stehen, und es werden nur drei Textelemente unterstützt. Wenn ein Textelement nach einem anderen Element platziert wird, wird es entweder nach oben oder nach dem Löschvorgang abgelegt. Und schließlich werden bestimmte Texteigenschaften wie hintstyle nicht für die Textelemente der Stamm-untergeordneten Elemente unterstützt und können nur in einer adaptivesubgroup verwendet werden. Wenn Sie adaptivegroup auf Geräten ohne das Anniversary Update verwenden, wird der Gruppen Inhalt einfach gelöscht. |
 | **Applogooverride** | ["Ein"-Logo](#toastgenericapplogo) | false | Ein optionales Logo, um das App-Logo zu überschreiben. |
@@ -101,7 +101,7 @@ Markerschnittstelle für untergeordnete Popup Elemente, die Text, Bilder, Gruppe
 ## <a name="adaptivetext"></a>Adaptivetext
 Ein adaptives Textelement. Wenn Sie auf der obersten Ebene "" "" "" "" "" "" "" "" "" "". Wenn dies jedoch als untergeordnetes Element einer Gruppe/Untergruppe platziert wird, wird die voll Textformatierung unterstützt.
 
-| Eigenschaft | Typ | Erforderlich |BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich |BESCHREIBUNG |
 |---|---|---|---|
 | **Text** | String oder [bindablestring](#bindablestring) | false | Der anzuzeigende Text. Die Unterstützung der Datenbindung wurde in Creators Update hinzugefügt, funktioniert aber nur für Textelemente der obersten Ebene. |
 | **Hintstyle** | [Adaptivetextstyle](#adaptivetextstyle) | false | Der Stil steuert die Schriftgröße, die Gewichtung und die Deckkraft des Texts. Funktioniert nur für Textelemente innerhalb einer Gruppe/Untergruppe. |
@@ -115,7 +115,7 @@ Ein adaptives Textelement. Wenn Sie auf der obersten Ebene "" "" "" "" "" "" "" 
 ### <a name="bindablestring"></a>Bindablestring
 Ein Bindungs Wert für Zeichen folgen.
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
 | **BindingName** | Zeichenfolge | true | Ruft den Namen ab, der dem Bindungs Datenwert zugeordnet ist, oder legt diesen fest. |
 
@@ -140,7 +140,7 @@ Textstil steuert die Schriftgröße, die Gewichtung und die Deckkraft. Die feine
 | **Subheader** | H2-Schrift Grad. |
 | **Subheaderfein** | Identisch mit der unter Kopfzeile, aber mit einer subtilen Deckkraft. |
 | **Subheadernumeral** | Identisch mit der unter Kopfzeile, aber mit dem oberen/unteren Abstand entfernt. |
-| **Kopfzeile** | H1 Schrift Grad. |
+| **Header** | H1 Schrift Grad. |
 | **Headerfein** | Identisch mit Header, aber mit feiner Deckkraft. |
 | **Headernumeral** | Identisch mit dem Header, aber mit dem oberen/unteren Abstand entfernt. |
 
@@ -160,7 +160,7 @@ Steuert die horizontalen alignmen von Text.
 ## <a name="adaptiveimage"></a>Adaptiveimage
 Ein Inline Bild.
 
-| Eigenschaft | Typ | Erforderlich |BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich |BESCHREIBUNG |
 |---|---|---|---|
 | **Quelle** | Zeichenfolge | true | Die URL des Bilds. MS-AppX, MS-APPDATA und http werden unterstützt. Im Fall von Creators Update können webimages bei normalen Verbindungen bis zu 3 MB und bei getakteten Verbindungen 1 MB betragen. Auf Geräten, auf denen das Fall Creators Update noch nicht ausgeführt wird, dürfen webimages nicht größer als 200 KB sein. |
 | **Hintcrop** | [Adaptiveimagecrop](#adaptiveimagecrop) | false | Neu in Anniversary Update: Steuern Sie das gewünschte Zuschneiden des Bilds. |
@@ -195,7 +195,7 @@ Gibt die horizontale Ausrichtung eines Bilds an.
 ## <a name="adaptivegroup"></a>Adaptivegroup
 Neu in Anniversary Update: Gruppen semantisch identifizieren, dass der Inhalt in der Gruppe als Ganzes angezeigt werden muss, oder nicht angezeigt werden, wenn er nicht passt. Gruppen ermöglichen auch das Erstellen mehrerer Spalten.
 
-| Eigenschaft | Typ | Erforderlich |BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich |BESCHREIBUNG |
 |---|---|---|---|
 | **Children** | IList<[adaptivesubgroup](#adaptivesubgroup)> | false | Untergruppen werden als vertikale Spalten angezeigt. Sie müssen Untergruppen verwenden, um Inhalte innerhalb einer adaptivegroup bereitzustellen. |
 
@@ -203,7 +203,7 @@ Neu in Anniversary Update: Gruppen semantisch identifizieren, dass der Inhalt in
 ## <a name="adaptivesubgroup"></a>Adaptivesubgroup
 Neu in Anniversary Update: Untergruppen sind vertikale Spalten, die Text und Bilder enthalten können.
 
-| Eigenschaft | Typ | Erforderlich |BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich |BESCHREIBUNG |
 |---|---|---|---|
 | **Children** | IList<[iadaptivesubgroupchild](#iadaptivesubgroupchild)> | false | [Adaptivetext](#adaptivetext) und [adaptiveimage](#adaptiveimage) sind gültige untergeordnete Elemente von Untergruppen. |
 | **Hintweight** | int? | false | Steuern Sie die Breite dieser Untergruppen Spalte, indem Sie die Gewichtung angeben, relativ zu den anderen Untergruppen. |
@@ -227,13 +227,13 @@ Textstacking gibt die vertikale Ausrichtung des Inhalts an.
 | **Standard** | Standardwert. Der Renderer wählt automatisch die vertikale Standardausrichtung aus. |
 | **Top** | Vertikale Ausrichtung am oberen Rand. |
 | **Tagesstätte** | Vertikal ausgerichtet an der Mitte. |
-| **Unten** | Vertikal ausgerichtet am unteren Rand. |
+| **bottom** | Vertikal ausgerichtet am unteren Rand. |
 
 
 ## <a name="adaptiveprogressbar"></a>Adaptiveprogressbar
 Neu in Creators Update: eine Statusanzeige. Wird nur für-Auffassungen auf dem Desktop, Build 15063 oder neuer unterstützt.
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
 | **Titel** | String oder [bindablestring](#bindablestring) | false | Ruft eine optionale Zeichenfolge ab oder legt Sie fest. Unterstützt die Datenbindung. |
 | **Wert** | Double oder [adaptiveprogressbarvalue](#adaptiveprogressbarvalue) oder [bindableprogressbarvalue](#bindableprogressbarvalue) | false | Ruft den Wert der Statusanzeige ab oder legt ihn fest. Unterstützt die Datenbindung. Der Standardwert ist 0. |
@@ -244,7 +244,7 @@ Neu in Creators Update: eine Statusanzeige. Wird nur für-Auffassungen auf dem D
 ### <a name="adaptiveprogressbarvalue"></a>Adaptiveprogressbarvalue
 Eine-Klasse, die den Wert der Statusanzeige darstellt.
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
 | **Wert** | double | false | Ruft den Wert (0,0-1,0) ab, der den Prozentsatz darstellt, oder legt diesen fest. |
 | **IsIndeterminate** | bool | false | Ruft einen Wert ab, der angibt, ob die Statusanzeige unbestimmt ist, oder legt diesen fest Wenn dieser Wert true ist, wird der **Wert** ignoriert. |
@@ -253,7 +253,7 @@ Eine-Klasse, die den Wert der Statusanzeige darstellt.
 ### <a name="bindableprogressbarvalue"></a>Bindableprogressbarvalue
 Ein bindbarer Status leisten Wert.
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
 | **BindingName** | Zeichenfolge | true | Ruft den Namen ab, der dem Bindungs Datenwert zugeordnet ist, oder legt diesen fest. |
 
@@ -261,7 +261,7 @@ Ein bindbarer Status leisten Wert.
 ## <a name="toastgenericapplogo"></a>"Ein"-Logo
 Ein Logo, das anstelle des App-Logos angezeigt werden soll.
 
-| Eigenschaft | Typ | Erforderlich |BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich |BESCHREIBUNG |
 |---|---|---|---|
 | **Quelle** | Zeichenfolge | true | Die URL des Bilds. MS-AppX, MS-APPDATA und http werden unterstützt. Http-Bilder müssen mindestens 200 KB groß sein. |
 | **Hintcrop** | ["Anastgenericapplogocrop"](#toastgenericapplogocrop) | false | Geben Sie an, wie das Bild abgeschnitten werden soll. |
@@ -282,7 +282,7 @@ Steuert das Zuschneiden des App-Logo Bilds.
 ## <a name="toastgenericheroimage"></a>Verzeichnis Image
 Ein vorschauetes "Hero"-Bild, das im Toast und innerhalb des Aktions Centers angezeigt wird.
 
-| Eigenschaft | Typ | Erforderlich |BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich |BESCHREIBUNG |
 |---|---|---|---|
 | **Quelle** | Zeichenfolge | true | Die URL des Bilds. MS-AppX, MS-APPDATA und http werden unterstützt. Http-Bilder müssen mindestens 200 KB groß sein. |
 | **AlternateText** | Zeichenfolge | false | Alternativer Text, der das Bild beschreibt, das zu Barrierefreiheits Zwecken verwendet wird. |
@@ -292,7 +292,7 @@ Ein vorschauetes "Hero"-Bild, das im Toast und innerhalb des Aktions Centers ang
 ## <a name="toastgenericattributiontext"></a>"" "" "" "".
 Der im unteren Teil der Popup Benachrichtigung angezeigte Zuweisungs Text.
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
 | **Text** | Zeichenfolge | true | Der anzuzeigende Text. |
 | **Sprache** | Zeichenfolge | false | Das Ziel Gebiets Schema der visuellen Nutzlast, wenn lokalisierte Ressourcen verwendet werden, die als bcp-47-sprach Tags, z. b. "en-US" oder "fr-FR", angegeben werden. Wenn keine Angabe erfolgt, wird stattdessen das Gebiets Schema des Systems verwendet. |
@@ -312,7 +312,7 @@ Markerschnittstelle für Popup Aktionen/Eingaben.
 
 Erstellen Sie eigene benutzerdefinierte Aktionen und Eingaben mithilfe von Steuerelementen wie Schaltflächen, Textfeldern und Auswahl Eingaben.
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
 | **Eingaben** | IList<[ium-Eingabe](#itoastinput)> | false | Eingaben wie Textfelder und Auswahl Eingaben. Es sind nur bis zu 5 Eingaben zulässig. |
 | **Schaltflächen** | IList<[ionastbutton](#itoastbutton)> | false | Schaltflächen werden nach allen Eingaben angezeigt (oder neben einer Eingabe, wenn die Schaltfläche als Quick Reply-Schaltfläche verwendet wird). Nur bis zu 5 Schaltflächen sind zulässig (oder weniger, wenn Sie auch über Kontextmenü Elemente verfügen). |
@@ -333,7 +333,7 @@ Markerschnittstelle für Popup Eingaben.
 
 Ein Textfeld-Steuerelement, in das der Benutzer Text eingeben kann.
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
 | **Id** | Zeichenfolge | true | Die ID ist erforderlich und wird verwendet, um den vom Benutzer eingegebenen Text einem Schlüssel-Wert-Paar von ID/Wert zuzuordnen, das Ihre APP später verwendet. |
 | **Titel** | Zeichenfolge | false | Der Titeltext, der über dem Textfeld angezeigt werden soll. |
@@ -346,7 +346,7 @@ Ein Textfeld-Steuerelement, in das der Benutzer Text eingeben kann.
 
 Ein Auswahlfeld-Steuerelement, mit dem Benutzer aus einer Dropdown Liste von Optionen auswählen können.
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
 | **Id** | Zeichenfolge | true | Die ID ist erforderlich. Wenn der Benutzer dieses Element ausgewählt hat, wird diese ID an den Code der APP zurückgegeben und repräsentiert, welche Auswahl Sie ausgewählt haben. |
 | **Inhalt** | Zeichenfolge | true | Der Inhalt ist erforderlich, und ist eine Zeichenfolge, die auf dem Auswahl Element angezeigt wird. |
@@ -355,7 +355,7 @@ Ein Auswahlfeld-Steuerelement, mit dem Benutzer aus einer Dropdown Liste von Opt
 ### <a name="toastselectionboxitem"></a>"Element"
 Ein Auswahlfeld Element (ein Element, das der Benutzer aus der Dropdown Liste auswählen kann).
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
 | **Id** | Zeichenfolge | true | Die ID ist erforderlich und wird verwendet, um den vom Benutzer eingegebenen Text einem Schlüssel-Wert-Paar von ID/Wert zuzuordnen, das Ihre APP später verwendet. |
 | **Titel** | Zeichenfolge | false | Der Titeltext, der über dem Auswahlfeld angezeigt werden soll. |
@@ -378,7 +378,7 @@ Markerschnittstelle für Popup Schaltflächen.
 
 Eine Schaltfläche, auf die der Benutzer klicken kann.
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
 | **Inhalt** | Zeichenfolge | true | Erforderlich. Der Text, der auf der Schaltfläche angezeigt werden soll. |
 | **Argumente** | Zeichenfolge | true | Erforderlich. App-definierte Argument Zeichenfolge, die von der APP später empfangen wird, wenn der Benutzer auf diese Schaltfläche klickt. |
@@ -399,7 +399,7 @@ Bestimmt den Aktivierungstyp, der verwendet wird, wenn der Benutzer mit einer be
 ### <a name="toastactivationoptions"></a>"Deastactivationoptions"
 Neu in Creators Update: zusätzliche Optionen in Bezug auf die Aktivierung.
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
 | **Afteractivationbehavior** | ["Deastafteractivationbehavior"](#toastafteractivationbehavior) | false | Neu bei Fall Creators Update: Ruft das Verhalten ab, das der Toast verwenden soll, wenn der Benutzer diese Aktion aufruft, oder legt dieses fest. Dies funktioniert nur auf dem Desktop, [für "](#toastbutton) ", "", "", " [" und "](#toastcontextmenuitem)" "". |
 | **Protocolactivationtargetapplicationpfn** | Zeichenfolge | false | Wenn Sie *toastactivationtype. Protocol*verwenden, können Sie optional den Ziel-PFN angeben, sodass unabhängig davon, ob mehrere Apps für die Behandlung desselben Protokoll-URI registriert sind, die gewünschte App immer gestartet wird. |
@@ -419,7 +419,7 @@ Gibt das Verhalten an, das der Toast verwenden soll, wenn der Benutzeraktionen f
 
 Eine vom System behandelte Schaltfläche zum Zurücksetzen der Benachrichtigung, die automatisch das Zurücksetzen der Benachrichtigung behandelt.
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
 | **Customcontent** | Zeichenfolge | false | Optionaler benutzerdefinierter Text, der auf der Schaltfläche angezeigt wird, der den standardmäßig lokalisierten Text "zurückstellen" überschreibt |
 
@@ -429,7 +429,7 @@ Eine vom System behandelte Schaltfläche zum Zurücksetzen der Benachrichtigung,
 
 Eine vom System behandelte Schaltfläche zum verwerfen, die die Benachrichtigung beim Klicken schließt.
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
 | **Customcontent** | Zeichenfolge | false | Optionaler benutzerdefinierter Text, der auf der Schaltfläche angezeigt wird und den standardmäßigen "verwerfen"-Text überschreibt. |
 
@@ -439,7 +439,7 @@ Eine vom System behandelte Schaltfläche zum verwerfen, die die Benachrichtigung
 
 Erstellt automatisch ein Auswahlfeld für Intervalle von wiederholtem Intervall und zum Zurückstellen/Verwerfen von Schaltflächen, die alle automatisch lokalisiert werden, und das Zurücksetzen der Logik wird automatisch vom System behandelt.
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
 | **Contextmenuitems** | IList<"$ [astcontextmenuitem](#toastcontextmenuitem) "> | false | Neu in Anniversary Update: benutzerdefinierte Kontextmenü Elemente, die zusätzliche Aktionen angeben, wenn der Benutzer mit der rechten Maustaste auf die Benachrichtigung klickt. Es können nur bis zu 5 Elemente vorhanden sein. |
 
@@ -447,7 +447,7 @@ Erstellt automatisch ein Auswahlfeld für Intervalle von wiederholtem Intervall 
 ## <a name="toastcontextmenuitem"></a>"Objekt"
 Ein Kontextmenü Element Eintrag.
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
 | **Inhalt** | Zeichenfolge | true | Erforderlich. Der anzuzeigende Text. |
 | **Argumente** | Zeichenfolge | true | Erforderlich. Eine APP-definierte Argument Zeichenfolge, die die APP später abrufen kann, sobald Sie aktiviert wird, wenn der Benutzer auf das Menü Element klickt. |
@@ -458,7 +458,7 @@ Ein Kontextmenü Element Eintrag.
 ## <a name="toastaudio"></a>Ein-und ausgeschaltet
 Geben Sie das Audioformat an, das beim Empfang der Popup Benachrichtigung abgespielt werden soll.
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
 | **Src** | uri | false | Die Mediendatei, die anstelle des Standard Sounds abgespielt werden soll. Nur MS-AppX und MS-APPDATA werden unterstützt. |
 | **ESE** | boolean | false | Auf "true" festgelegt, wenn der Sound wiederholt werden soll, solange der Popup angezeigt wird. false, um nur einmal zu spielen (Standard). |
@@ -468,7 +468,7 @@ Geben Sie das Audioformat an, das beim Empfang der Popup Benachrichtigung abgesp
 ## <a name="toastheader"></a>Verzeichnis Leser
 Neu in Creators Update: eine benutzerdefinierte Kopfzeile, die mehrere Benachrichtigungen innerhalb des Aktions Centers gruppiert.
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
 | **Id** | Zeichenfolge | true | Ein vom Entwickler erstellter Bezeichner, der diesen Header eindeutig identifiziert. Wenn zwei Benachrichtigungen dieselbe Header-ID aufweisen, werden Sie im Aktions Center unterhalb desselben Headers angezeigt. |
 | **Titel** | Zeichenfolge | true | Ein Titel für den Header. |

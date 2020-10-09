@@ -6,16 +6,16 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Custom, APP, Promotion, Kampagne
 ms.localizationpriority: medium
-ms.openlocfilehash: 4015ee5372c2068d7a9ead389fe7eb07aa50a466
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c04a9705797e69543e9aec8f4e6205c815f76800
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171124"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878433"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>Erstellen einer Werbekampagne für benutzerdefinierte Apps
 
-Zusätzlich zum Erstellen einer [Werbekampagne für Ihre APP](create-an-ad-campaign-for-your-app.md) , die in Windows-apps ausgeführt wird, können Sie Ihre APP auch mit anderen Kanälen herauf Stufen. Beispielsweise können Sie Ihre App mit einem Drittanbieter für App-Marketing bewerben oder Links zu Ihrer App in sozialen Netzwerken bereitstellen. Diese Aktivitäten werden als *benutzerdefinierte Kampagnen* bezeichnet.
+Zusätzlich zum Erstellen einer [Werbekampagne für Ihre APP](../monetize/index.md) , die in Windows-apps ausgeführt wird, können Sie Ihre APP auch mit anderen Kanälen herauf Stufen. Beispielsweise können Sie Ihre App mit einem Drittanbieter für App-Marketing bewerben oder Links zu Ihrer App in sozialen Netzwerken bereitstellen. Diese Aktivitäten werden als *benutzerdefinierte Kampagnen* bezeichnet.
 
 Wenn Sie benutzerdefinierte Kampagnen für Ihre APP ausführen, können Sie die relative Leistung der einzelnen Kampagnen verfolgen, indem Sie für jede benutzerdefinierte Kampagne eine andere URL erstellen, wobei jede URL eine andere *Kampagnen-ID*enthält. Wenn ein Kunde mit Windows 10 auf eine URL klickt, die eine Kampagnen-ID enthält, ordnet Microsoft den Klick der entsprechenden benutzerdefinierten Kampagne zu und stellt Ihnen diese Daten im [Partner Center](https://partner.microsoft.com/dashboard)zur Verfügung.
 

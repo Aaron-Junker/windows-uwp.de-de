@@ -6,12 +6,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c8d01042fec7435652c819f29e3a791a5623a947
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 724a9b6bc34d38a5addfd0e0123f26e1d98c9caf
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220263"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878593"
 ---
 # <a name="in-app-ads"></a>In-App-Anzeigen
 
@@ -48,7 +48,7 @@ So erstellen Sie eine Ad-Einheit für eine [Banner Anzeige](../monetize/banner-a
 6. Konfigurieren Sie die folgenden zusätzlichen Einstellungen wie gewünscht:
 
     * Wenn Sie die UWP-Gerätefamilie **(Windows 10)** für die Ad-Einheit auswählen, können Sie optional die [Vermittlungs Einstellungen](#mediation) für die Ad-Einheit konfigurieren.
-    * Wenn Sie die Gerätefamilie **PC/Tablet (Windows 8.1)** oder **Mobile (Windows Phone 8. x)** für eine Banner-Ad-Einheit auswählen, können Sie optional die Option **Community-anzeigen in ihrer App anzeigen** auswählen, um communitywerbung zu abonnieren. [community ads](about-community-ads.md)
+    * Wenn Sie die Gerätefamilie **PC/Tablet (Windows 8.1)** oder **Mobile (Windows Phone 8. x)** für eine Banner-Ad-Einheit auswählen, können Sie optional die Option **Community-anzeigen in ihrer App anzeigen** auswählen, um communitywerbung zu abonnieren. [community ads](../monetize/index.md)
 
 7.  Wenn Sie die Coppa-Konformität für die ausgewählte APP noch nicht festgelegt haben, wählen Sie im Abschnitt [Coppa-Konformität](#coppa) eine Option aus.
 8.  Klicken Sie auf **Anzeigeneinheit erstellen**.
@@ -115,7 +115,7 @@ In der folgenden Tabelle werden die kostenpflichtigen Netzwerke aufgelistet, die
 |--------------|---------------|---------------------|
 | Oath und appnexus |  Dies ist ein von Microsoft verwaltetes Ad-Netzwerk, das Werbeeinblendungen über unsere Partnernetzwerke, Oath und appnexus, bietet.<p/>**Hinweis**: Oath und appnexus werden immer zuerst in der Liste der **kostenpflichtigen Ad-Netzwerke** für Banner-Werbe Einheiten sortiert und können für diese Art von Werbung nicht in eine niedrigere Rangfolge geändert werden. | Banner, Video Interstitial |
 | Appnexus (Direct) | Wählen Sie diese Option aus, um Werbung von [appnexus](https://www.appnexus.com)zu verarbeiten. | Video Interstitial, Native  |
-| Microsoft-App-Installations anzeigen | Wählen Sie diese Option aus, um App-Installations anzeigen oder App-reengagement-Werbeeinblendungen bereitzustellen [, die von](create-an-ad-campaign-for-your-app.md)anderen Entwicklern im Windows-Ökosystem erstellt wurden  |  Banner, Banner Interstitial, Native  |
+| Microsoft-App-Installations anzeigen | Wählen Sie diese Option aus, um App-Installations anzeigen oder App-reengagement-Werbeeinblendungen bereitzustellen [, die von](../monetize/index.md)anderen Entwicklern im Windows-Ökosystem erstellt wurden  |  Banner, Banner Interstitial, Native  |
 | MSN Content-Empfehlungen |  Wählen Sie diese Option aus, um Anzeigen von MSN Content-Empfehlungen zu verarbeiten. |  Banner, Banner Interstitial  |
 | Outbrain |  Wählen Sie diese Option aus, um Werbung von [outbrain](https://www.outbrain.com/)zu verarbeiten. |  Banner, Banner Interstitial  |
 | Revcontent |  Wählen Sie diese Option aus, um Werbung von [revcontent](https://www.revcontent.com/)zu versorgen. |  Banner, System eigen  |
@@ -135,8 +135,8 @@ In der folgenden Tabelle sind die anderen Netzwerke aufgelistet, die zurzeit fü
 
 |  Anzeigennetzwerk  |  BESCHREIBUNG  |  Unterstützte Ad-Typen  |
 |--------------|---------------|---------------------|
-| Microsoft Community ADS |  Wenn Sie [eine Werbe-Werbekampagne für eine Ihrer Apps erstellen](create-an-ad-campaign-for-your-app.md) und diese Kampagne als Community- [Werbekampagne](about-community-ads.md)konfigurieren, wählen Sie diese Optionen aus, um Werbeeinblendungen anzuzeigen. | Banner, Banner Interstitial |
-| Microsoft-Haus Werbung | Wenn Sie [eine Werbe-Werbekampagne für eine Ihrer Apps erstellen](create-an-ad-campaign-for-your-app.md) und diese Kampagne als Haus- [Werbekampagne](about-house-ads.md)konfigurieren, wählen Sie diese Optionen aus, um Werbeeinblendungen anzuzeigen. | Banner, Banner Interstitial  |
+| Microsoft Community ADS |  Wenn Sie [eine Werbe-Werbekampagne für eine Ihrer Apps erstellen](../monetize/index.md) und diese Kampagne als Community- [Werbekampagne](../monetize/index.md)konfigurieren, wählen Sie diese Optionen aus, um Werbeeinblendungen anzuzeigen. | Banner, Banner Interstitial |
+| Microsoft-Haus Werbung | Wenn Sie [eine Werbe-Werbekampagne für eine Ihrer Apps erstellen](../monetize/index.md) und diese Kampagne als Haus- [Werbekampagne](../monetize/index.md)konfigurieren, wählen Sie diese Optionen aus, um Werbeeinblendungen anzuzeigen. | Banner, Banner Interstitial  |
 
 
 <span id="network-markets" />

@@ -8,12 +8,12 @@ ms.topic: article
 ms.custom: contperfq1
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e2fc69f49308164307bc3c6c23479aae991d0ff7
-ms.sourcegitcommit: f46edb85d523a4a1f5006787d357cdc9d090aefe
+ms.openlocfilehash: b63e88f6d83e84bbe07fc4c5cbe7befba6dc3c8a
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91414850"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878503"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Übersicht über Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS) 
 
@@ -34,7 +34,7 @@ Das folgende Diagramm gibt Aufschluss über den vollständigen Datenfluss beim S
 
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>Registrieren Ihrer App und Empfangen der Anmeldeinformationen für Ihren Clouddienst
 
-Bevor Sie Benachrichtigungen mithilfe von WNS senden können, muss Ihre APP im Store-Dashboard registriert werden, wie [hier](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification)beschrieben.
+Bevor Sie Benachrichtigungen mithilfe von WNS senden können, muss Ihre APP im Store-Dashboard registriert werden, wie [hier](/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification)beschrieben.
 
 ## <a name="requesting-a-notification-channel"></a>Anfordern eines Benachrichtigungskanals
 

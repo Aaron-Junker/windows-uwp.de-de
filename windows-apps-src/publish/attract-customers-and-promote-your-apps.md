@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b6ffbbb13646fe085fa81c99f4ecf45e328a01f7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3b768fa4a2506004527ba38256a7ff1849570ca1
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164264"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878493"
 ---
 # <a name="attract-customers-and-promote-your-apps"></a>Kunden gewinnen und ihre apps bewerben
 
@@ -27,7 +27,7 @@ Wenn sich Ihre APP im Microsoft Store befindet, ist es an der Zeit, Sie so viele
 
 Diese Kampagnen werden in jeder anderen App angezeigt, die dem Zielgerät und der Zielkategorie der App entspricht. Sie können ebenfalls eine „universelle” Kampagne wählen, bei der Ihre Anzeigen auch in MSN.com, Outlook.com, Skype und anderen Microsoft-Premium-Eigenschaften angezeigt werden.
 
-[Weitere >](create-an-ad-campaign-for-your-app.md)
+[Weitere >](../monetize/index.md)
     :::column-end:::
 :::row-end:::
 
@@ -40,7 +40,7 @@ Diese Kampagnen werden in jeder anderen App angezeigt, die dem Zielgerät und de
 
 Diese Kampagnen werden nur in Ihren anderen Apps kostenlos angezeigt.
 
-[Weitere >](about-house-ads.md)
+[Weitere >](../monetize/index.md)
     :::column-end:::
 :::row-end:::
 
@@ -54,7 +54,7 @@ Diese Kampagnen werden nur in Ihren anderen Apps kostenlos angezeigt.
 
 Diese Kampagnen führen kostenlos Anzeigen in Apps aus, die von anderen Teilnehmern der Community-Anzeigenkampagnen veröffentlicht werden.
 
-[Weitere >](create-an-ad-campaign-for-your-app.md)
+[Weitere >](../monetize/index.md)
     :::column-end:::
 :::row-end:::
 
@@ -103,7 +103,7 @@ Durch native Anzeigen können Sie jede einzelne Komponente Ihrer Anzeige für di
 
 ![Erfahren Sie mehr über Werbekampagnen für Apps](images/app-promotion-campaigns.png)
 
-[Erstellen einer Anzeigenkampagne im Dashboard](create-an-ad-campaign-for-your-app.md)
+[Erstellen einer Anzeigenkampagne im Dashboard](../monetize/index.md)
 
 [Erstellen einer Anzeigenkampagne mithilfe unserer REST-API](../monetize/run-ad-campaigns-using-windows-store-services.md)
 
@@ -119,7 +119,7 @@ Durch native Anzeigen können Sie jede einzelne Komponente Ihrer Anzeige für di
 
 [Bericht „Käufe“](acquisitions-report.md)
 
-[Analysedaten mithilfe unserer Rest-API](../monetize/access-analytics-data-using-windows-store-services.md)
+[Abrufen von Analysedaten unter Verwendung unserer REST-API](../monetize/access-analytics-data-using-windows-store-services.md)
 
 ## <a name="other-ways-to-promote-your-app"></a>Weitere Möglichkeiten zum Bewerben Ihrer App
 
