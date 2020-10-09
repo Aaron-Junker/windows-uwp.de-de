@@ -7,16 +7,16 @@ dev_langs:
 - csharp
 keywords: Windows 10, UWP, Bildschirmaufnahme, Video
 ms.localizationpriority: medium
-ms.openlocfilehash: d8f70748d025d50d19dbf2cb184ae841cced7f8a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 9f95e310fb93292db7dc348493487fada9c6d66e
+ms.sourcegitcommit: 83eb36047380501fd1e4d023d593904ad783365b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218633"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91852377"
 ---
 # <a name="screen-capture-to-video"></a>Bildschirmaufnahme in Video
 
-In diesem Artikel wird beschrieben, wie Sie Frames, die auf dem Bildschirm aufgezeichnet wurden, mit den Windows. Graphics. Capture-APIs in eine Videodatei codieren. Weitere Informationen zum Aufzeichnen von Bildschirmen finden Sie unter [screeen Capture](./screen-capture.md).
+In diesem Artikel wird beschrieben, wie Sie Frames, die auf dem Bildschirm aufgezeichnet wurden, mit den Windows. Graphics. Capture-APIs in eine Videodatei codieren. Weitere Informationen zum Aufzeichnen von Bildschirmen finden Sie unter [screeen Capture](./screen-capture.md). Eine einfache End-to-End-Beispiel-APP, die die in diesem Artikel gezeigten Konzepte und Techniken verwendet, finden Sie unter [simplerecorder](https://github.com/MicrosoftDocs/SimpleRecorder/).
 
 ## <a name="overview-of-the-video-capture-process"></a>Übersicht über den Video Erfassungsprozess
 Dieser Artikel enthält eine exemplarische Vorgehensweise für eine Beispiel-APP, die den Inhalt eines Fensters in einer Videodatei aufzeichnet. Obwohl es möglicherweise so aussieht, als ob ein Großteil des Codes erforderlich ist, um dieses Szenario zu implementieren, ist die Struktur auf hoher Ebene einer screenrecorder-APP ziemlich einfach. Der Bildschirm Aufzeichnungsprozess verwendet drei primäre UWP-Features:
