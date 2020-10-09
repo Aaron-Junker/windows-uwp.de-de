@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie, wie Tastenkombinationen die Benutzerfreundlichkeit und Barrierefreiheit von Windows-apps verbessern können.
+description: Erfahren Sie, wie Tastenkombinationen die Benutzerfreundlichkeit und Barrierefreiheit von Windows-apps verbessern können.
 title: Tastaturkürzel
 label: Keyboard accelerators
 template: detail.hbs
@@ -10,16 +10,16 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ec5791c212e2fdfbafd40131d96ace6c88fb519
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: e9cb4a52e56862f9be27c72ef46afced895633c3
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749956"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860098"
 ---
 # <a name="keyboard-accelerators"></a>Tastaturkürzel
 
-![Oberfläche Tastatur](images/accelerators/accelerators_hero2.png)
+![Herobild der Oberflächen Tastatur](images/accelerators/accelerators_hero2.png)
 
 Zugriffstasten (oder Tastaturbeschleuniger) sind Tastenkombinationen, die die Benutzerfreundlichkeit und Barrierefreiheit Ihrer Windows-Anwendungen verbessern, indem Sie Benutzern eine intuitive Möglichkeit bieten, gängige Aktionen oder Befehle aufzurufen, ohne in der App-Benutzeroberfläche zu navigieren.
 
@@ -37,7 +37,7 @@ Zugriffstasten enthalten in der Regel die Funktionstasten F1 bis F12 oder eine K
 
 Tastaturbeschleuniger sind nicht für jede Aktion verfügbar, aber häufig mit Befehlen verknüpft, die in Menüs verfügbar gemacht werden (und mit dem Menü Element Inhalt angegeben werden sollten).Accelerators können auch Aktionen zugeordnet werden, die keine entsprechenden Menü Elemente aufweisen. Da sich die Benutzer jedoch auf die Menüs einer Anwendung verlassen, um den verfügbaren Befehlssatz zu ermitteln und zu erlernen, sollten Sie versuchen, die Ermittlung von Accelerators so einfach wie möglich zu machen (mit Bezeichnungen oder eingerichteten Mustern können Sie dies unterstützen).
 
-![In einer Menü Element Bezeichnung beschriebene Tastaturbeschleuniger](images/accelerators/accelerators_menuitemlabel.png)  
+![Screenshot der Tastaturbeschleuniger in einer Menü Element Bezeichnung.](images/accelerators/accelerators_menuitemlabel.png)  
 *In einer Menü Element Bezeichnung beschriebene Tastaturbeschleuniger*
 
 ## <a name="when-to-use-keyboard-accelerators"></a>Verwendung von Tastatur Accelerators
@@ -126,7 +126,7 @@ Es wird empfohlen, dass Sie für die gängigsten Aktionen in der APP Tastaturbes
 </CommandBar>
 ```
 
-![In einer QuickInfo beschriebene Tastatur Beschleunigung](images/accelerators/accelerators_tooltip.png)  
+![Screenshot einer Tastatur Beschleunigung in einer QuickInfo.](images/accelerators/accelerators_tooltip.png)  
 ***In einer QuickInfo beschriebene Tastatur Beschleunigung***
 
 Das [UIElement](/uwp/api/windows.ui.xaml.uielement) -Objekt verfügt über eine [keyboardaccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator) -Auflistung ( [keyboardaccelerators](/uwp/api/windows.ui.xaml.uielement.KeyboardAccelerators)), in der Sie die benutzerdefinierten keyboardaccelerator-Objekte angeben und die Tastatureingaben für die Zugriffstaste definieren:
@@ -378,7 +378,7 @@ Beim Deklarieren von Tastatur Accelerators werden standardmäßig alle Steuerele
 > [!NOTE] 
 > Wenn für ein Steuerelement mehr als eine Zugriffstaste definiert ist, wird nur die erste angezeigt.
 
-![QuickInfo für Zugriffstaste](images/accelerators/accelerators_tooltip_savebutton_small.png)
+![Screenshot der Schaltfläche "Speichern" mit einer obigen QuickInfo, die die Unterstützung für die STRG + S-Zugriffstaste anzeigt.](images/accelerators/accelerators_tooltip_savebutton_small.png)
 
 *Kombinations Feld Tastenkombination in QuickInfo*
 
@@ -414,7 +414,7 @@ Für [Schalt](/uwp/api/windows.ui.xaml.controls.button)Flächen-, [appbarbutton]
 </StackPanel>
 ```
 
-![QuickInfo für Zugriffstaste](images/accelerators/accelerators-button-small.png)
+![Screenshot mit drei Schaltflächen mit der Bezeichnung Button1, button2 und button3 mit einer QuickInfo über button2, die die Unterstützung für die Windows + B-Zugriffstaste angibt.](images/accelerators/accelerators-button-small.png)
 
 *Tastenkombination-Kombinations Feld zur Standard QuickInfo der Schaltfläche angehängt*
 
@@ -426,7 +426,7 @@ Für [Schalt](/uwp/api/windows.ui.xaml.controls.button)Flächen-, [appbarbutton]
 </AppBarButton>
 ```
 
-![QuickInfo für Zugriffstaste](images/accelerators/accelerators-appbarbutton-small.png)
+![Screenshot einer Schaltfläche mit einem Datenträger Symbol und einer QuickInfo, die den Standardtext für das Speichern mit dem STRG + S-Accelerator in Klammern enthält.](images/accelerators/accelerators-appbarbutton-small.png)
 
 *Tastenkombination-Kombinations Feld an die Standard-QuickInfo von appbarbutton angehängt*
 
@@ -452,7 +452,7 @@ Für [Schalt](/uwp/api/windows.ui.xaml.controls.button)Flächen-, [appbarbutton]
 </AppBarButton>
 ```
 
-![QuickInfo für Zugriffstaste](images/accelerators/accelerators-appbar-menuflyoutitem-small.png)
+![Screenshot eines Menüs mit menuflyoutitems, die Zugriffstasten-Combos enthalten.](images/accelerators/accelerators-appbar-menuflyoutitem-small.png)
 
 *Kombinations Feld "Tastenkombination" an menuflyoutitem-Text angehängt*
 
@@ -489,7 +489,7 @@ In einigen Fällen empfiehlt es sich, die Bezeichnung eines Steuer Elements zu v
 
 Einige Platt Form Steuerelemente führen dies standardmäßig aus, insbesondere das [menuflyoutitem](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) [-Objekt und](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) das-Objekt für das Objekt ""-Objekt, während [appbarbutton](/uwp/api/windows.ui.xaml.controls.appbarbutton) und [appbartogglebutton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton) dies tun, wenn Sie im Überlauf Menü der [Befehlsleiste](/uwp/api/windows.ui.xaml.controls.commandbar)angezeigt werden.
 
-![In einer Menü Element Bezeichnung beschriebene Tastaturbeschleuniger](images/accelerators/accelerators_menuitemlabel.png)  
+![In einer Menü Element Bezeichnung beschriebene Tastaturbeschleuniger.](images/accelerators/accelerators_menuitemlabel.png)  
 *In einer Menü Element Bezeichnung beschriebene Tastaturbeschleuniger*
 
 Sie können den standardacceleratortext für die Bezeichnung über die [keyboardacceleratortexdeverride](/uwp/api/windows.ui.xaml.controls.appbarbutton.KeyboardAcceleratorTextOverride) -Eigenschaft der Steuerelemente [menuflyoutitem](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem), [degglemenuflyoutitem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem), [appbarbutton](/uwp/api/windows.ui.xaml.controls.appbarbutton)und [appbartogglebutton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton) überschreiben (verwenden Sie ein einzelnes Leerzeichen für keinen Text). 
@@ -526,8 +526,8 @@ Da das Ereignis " [Merkmal empfangen](/uwp/api/windows.ui.core.corewindow.Charac
 Die Vorschau Eingabeereignisse werden vor allen anderen Ereignissen ausgelöst. Wenn Sie diese Ereignisse nicht behandeln, wird die Zugriffstaste für das Element, das den Fokus besitzt, ausgelöst, gefolgt vom KeyDown-Ereignis. Beide Ereignisse Blasen bis zur Behandlung.
 
 
-![Key Event Sequence ](images/accelerators/accelerators_keyevents.png)
- ***Key-Ereignis Sequenz***
+![Diagramm mit der Ereignis Sequenz für Key Event Sequence ](images/accelerators/accelerators_keyevents.png)
+ ***Key***
 
 Reihenfolge der Ereignisse:
 
@@ -572,8 +572,8 @@ protected override void OnProcessKeyboardAccelerators(
 
 Es wird empfohlen, alle Tastaturbeschleuniger zu lokalisieren. Dies ist mit der standardmäßigen UWP-Ressourcen Datei (. resw) und dem x:UID-Attribut in den XAML-Deklarationen möglich. In diesem Beispiel lädt der Windows-Runtime die Ressourcen automatisch.
 
-![Lokalisierung der Tastatur Beschleunigung mit UWP-Ressourcen Datei ](images/accelerators/accelerators_localization.png)
- ***Tastaturbeschleuniger Lokalisierung mit UWP-Ressourcen Datei***
+![Diagramm zur Lokalisierung der Tastatur Beschleunigung mit UWP-Ressourcen Datei ](images/accelerators/accelerators_localization.png)
+ ***Tastatur Zugriffs Lokalisierung mit UWP-Ressourcen Datei***
 
 ``` xaml
 <Button x:Uid="myButton" Click="OnSave">

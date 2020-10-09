@@ -1,5 +1,5 @@
 ---
-Description: Erstellen Sie Windows-apps, die benutzerdefinierte Interaktionen von Stift-und Tablettstiftgeräten unterstützen, einschließlich digitaler Hand Eingaben für das natürliche schreiben und zeichnen.
+description: Erstellen Sie Windows-apps, die benutzerdefinierte Interaktionen von Stift-und Tablettstiftgeräten unterstützen, einschließlich digitaler Hand Eingaben für das natürliche schreiben und zeichnen.
 title: Stiftinteraktionen und Windows Ink in Windows-Apps
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in Windows apps
@@ -8,16 +8,16 @@ keywords: Windows Ink, Windows-Freihandeingabe, DirectInk, InkPresenter, InkCanv
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a877fabfd34bcbe16afb70c012d403d489e3a6e0
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 7a29a7ed497fdcd463df0855b4aad3b65ce6408a
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749916"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860172"
 ---
 # <a name="pen-interactions-and-windows-ink-in-windows-apps"></a>Stiftinteraktionen und Windows Ink in Windows-Apps
 
-![Surface-Stift](images/ink/hero-small.png)  
+![Das herabbild des Oberflächen Stifts.](images/ink/hero-small.png)  
 *Surface-Stift* (zum Kauf im [Microsoft Store](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b) verfügbar).
 
 ## <a name="overview"></a>Übersicht
@@ -95,7 +95,7 @@ In diesem Beispiel überlagert ein [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Cont
 
 Diese Serie von Bildern zeigt, wie die Stifteingabe von diesem [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Steuerelement gerendert wird.
 
-| ![Der leere „InkCanvas“ mit einem Hintergrundbild](images/ink_basic_1_small.png) | ![Der „InkCanvas“ mit letzten Strichen](images/ink_basic_2_small.png) | ![Der „InkCanvas“ mit einem ausradierten Strich](images/ink_basic_3_small.png) |
+| ![Screenshot des leeren InkCanvas mit einem Hintergrundbild.](images/ink_basic_1_small.png) | ![Screenshot des InkCanvas mit Ink-Strichen.](images/ink_basic_2_small.png) | ![Screenshot des InkCanvas mit einem gelöschten Strich.](images/ink_basic_3_small.png) |
 | --- | --- | ---|
 | Der leere [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) mit einem Hintergrundbild. | Der [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) mit Freihand Strichen. | Der [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) mit einem ausradierten Strich (beachten Sie, dass jeweils der gesamte Strich und nicht nur auf einen Teil davon ausradiert wird). |
 
@@ -206,7 +206,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 Diese Bilder zeigen, wie die Stifteingabe vom [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter)-Objekt verarbeitet und angepasst wird.
 
-| ![InkCanvas mit standardmäßigen schwarzen letzten Strichen](images/ink-basic-custom-1-small.png) | ![InkCanvas mit vom Benutzer ausgewählten roten letzten Strichen](images/ink-basic-custom-2-small.png) |
+| ![Screenshot, der den InkCanvas mit standardmäßigen schwarzen Hand Strichen anzeigt.](images/ink-basic-custom-1-small.png) | ![Screenshot des InkCanvas mit vom Benutzer ausgewählten roten Hand Strichen.](images/ink-basic-custom-2-small.png) |
 | --- | --- |
 | Der [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) mit standardmäßigen schwarzen Hand Strichen. | Der [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) , bei dem vom Benutzer ausgewählte Rote Hand Striche angezeigt werden. | 
 
@@ -230,7 +230,7 @@ Das folgende Codebeispiel (sämtlicher Code finden Sie in den Dateien "MainPage.
 
     Hier fügen wir einen Zeichenbereich (unterhalb des [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Steuerelements) zum Zeichnen der Strichauswahl hinzu. Durch die Verwendung einer eigenen Ebene zum Zeichnen der Strichauswahl bleiben das **InkCanvas**-Steuerelement und dessen Inhalt unverändert.
 
-    ![Das leere InkCanvas-Steuerelement mit einem darunterliegenden Auswahlzeichenbereich](images/ink-unprocessed-1-small.png)
+    ![Screenshot des leeren InkCanvas mit einem zugrunde liegenden Auswahl Zeichenbereich.](images/ink-unprocessed-1-small.png)
 
       ```xaml
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -271,7 +271,7 @@ Das folgende Codebeispiel (sämtlicher Code finden Sie in den Dateien "MainPage.
 
     Schließlich weisen wir Listener für die Ereignisse [**StrokeStarted**](/uwp/api/windows.ui.input.inking.inkstrokeinput.strokestarted) und [**StrokesErased**](/uwp/api/windows.ui.input.inking.inkpresenter.strokeserased) des [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter)-Objekts zu. Wir verwenden die Handler für diese Ereignisse, um die Auswahl-UI zu bereinigen, wenn ein neuer Strich begonnen oder ein vorhandener Strich ausradiert wird.
 
-    ![InkCanvas mit standardmäßigen schwarzen letzten Strichen](images/ink-unprocessed-2-small.png)
+    ![Screenshot der Beispiel-App mit der Fortschritt Enden frei Hand Eingabe, die den InkCanvas mit standardmäßigen schwarzen Hand Strichen anzeigt](images/ink-unprocessed-2-small.png)
 
       ```csharp
         public MainPage()
@@ -320,7 +320,7 @@ Das folgende Codebeispiel (sämtlicher Code finden Sie in den Dateien "MainPage.
 
     Sämtliche Auswahlfunktionalität, einschließlich des Lassostrichs und des umgebenden Rechtecks, wird in diesen Handlern implementiert.
 
-    ![Auswahllasso](images/ink-unprocessed-3-small.png)
+    ![Screenshot der Auswahl-Lasso.](images/ink-unprocessed-3-small.png)
 
       ```csharp
         // Handle unprocessed pointer events from modified input.
@@ -368,7 +368,7 @@ Das folgende Codebeispiel (sämtlicher Code finden Sie in den Dateien "MainPage.
 
 5.  Um den PointerReleased-Ereignishandler abzuschließen, löschen wir sämtlichen Inhalt (den Lassostrich) aus der Auswahlebene und zeichnen dann ein einzelnes umgebendes Rechteck um die letzten Striche, die sich im Lassobereich befinden.
 
-    ![Das umgebende Auswahlrechteck](images/ink-unprocessed-4-small.png)
+    ![Screenshot der Begrenzungs-Rect-Auswahl.](images/ink-unprocessed-4-small.png)
 
       ```csharp
         // Draw a bounding rectangle, on the selection canvas, encompassing

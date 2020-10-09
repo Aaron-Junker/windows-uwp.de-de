@@ -6,16 +6,16 @@ ms.topic: article
 keywords: Windows 10, UWP, ACPI, GPIO, I2C, SPI, UEFI
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: a5841a8a53c18969e8ca9171bb7b3e1af0273170
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 76ef3c6b75a5d1a4bd8daebba3a392062c845215
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216794"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860185"
 ---
 # <a name="enable-user-mode-access-to-gpio-i2c-and-spi"></a>Aktivieren des Benutzermoduszugriffs auf GPIO, I2C und SPI
 
-Windows 10 enthält neue APIs für den direkten Zugriff aus dem Benutzermodus der allgemeinen Eingabe-/Ausgabe-/Ausgabe-(GPIO), der interintegrierten Verbindung (I2C), der SPI (Serial Peripherie Interface) und der universellen asynchronen Empfänger Übertragung (UART). Entwicklungs Boards, wie z. b. Raspberry Pi 2, machen eine Teilmenge dieser Verbindungen verfügbar, mit der Sie ein basiscomputemodul mit benutzerdefiniertem elektrischen Schaltungen erweitern können, um eine bestimmte Anwendung zu adressieren. Diese Low-Level Busse werden in der Regel mit nur einer Teilmenge der GPIO-Pins und -Busse in den Headern für andere wichtige integrierte Funktionen freigegeben. Um die Systemstabilität aufrechtzuerhalten, müssen Sie angeben, welche Pins und Busse für die Änderung durch Benutzermodusanwendungen sicher sind.
+Windows 10 enthält neue APIs für den direkten Zugriff aus dem Benutzermodus der allgemeinen Eingabe/Ausgabe (GPIO), Inter-Integrated Circuit (I2C), der SPI (Serial Peripherie Interface) und der universellen asynchronen Empfänger Übertragung (UART). Entwicklungs Boards, wie z. b. Raspberry Pi 2, machen eine Teilmenge dieser Verbindungen verfügbar, mit der Sie ein basiscomputemodul mit benutzerdefiniertem elektrischen Schaltungen erweitern können, um eine bestimmte Anwendung zu adressieren. Diese Low-Level Busse werden in der Regel mit nur einer Teilmenge der GPIO-Pins und -Busse in den Headern für andere wichtige integrierte Funktionen freigegeben. Um die Systemstabilität aufrechtzuerhalten, müssen Sie angeben, welche Pins und Busse für die Änderung durch Benutzermodusanwendungen sicher sind.
 
 In diesem Dokument wird beschrieben, wie Sie diese Konfiguration in Advanced Configuration and Power Interface (ACPI) angeben und Tools bereitstellen, um zu überprüfen, ob die Konfiguration ordnungsgemäß angegeben wurde.
 
@@ -823,11 +823,11 @@ Bei der Auswahl des rhproxy-Geräteknotens im HLK-Manager werden die entsprechen
 
 Wählen Sie im HLK-Manager „Ressourcen-Hub-Proxygerät“:
 
-![HLK-Manager-Screenshot](images/usermode-hlk-1.png)
+![Screenshot des Windows-Hardware Labor Kits, das die Registerkarte Auswahl mit ausgewählter ressourcenhub-Proxy Geräte Option anzeigt](images/usermode-hlk-1.png)
 
 Klicken Sie dann auf der Registerkarte „Tests“ und wählen Sie I2C WinRT-, Gpio WinRT- und Spi WinRT-Tests.
 
-![HLK-Manager-Screenshot](images/usermode-hlk-2.png)
+![Screenshot des Windows-Hardware Labor Kits, das die Registerkarte "Tests" mit aktivierter G P I O Win R T-Funktion und Belastungs Tests anzeigt.](images/usermode-hlk-2.png)
 
 Klicken Sie auf „Ausgewählte ausführen“. Weitere Dokumentation zu jedem Test steht zur Verfügung, wenn Sie mit der rechten Maustaste auf den Test klicken und anschließend auf „Testbeschreibung“ klicken.
 

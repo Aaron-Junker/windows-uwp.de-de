@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 649fb9e2833a425ccad78f5f0bcb69ccb4091bca
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 87047e20d4513c9120c79bb329c008dad104a352
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217803"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860089"
 ---
 # <a name="directionality-and-gravity"></a>Direktionalität und Schwerkraft
 
@@ -47,7 +47,7 @@ Die Richtung der Bewegung entspricht der physischen Bewegung. Ebenso wie in der 
 Vermeiden Sie unnatürliche Kollisionen, wenn Sie Objekte verschieben. Beachten Sie, dass Objekte von abgeleitet werden und dass Sie immer Konstrukte höherer Ebene unterstützen, die in der Szene verwendet werden können, z. b. Scrollrichtung oder layouthierarchie.
     :::column-end:::
     :::column:::
-        ![Richtung rückwärts in](images/Direction.gif)
+        ![Kurzes Video mit einem Kreis und dem Hinzufügen einer X-Achse, einer Y-Achse und einer Z-Achse.](images/Direction.gif)
     :::column-end:::
 :::row-end:::
 
@@ -94,7 +94,7 @@ Es gibt vier diskrete Navigations Richtungen, die berücksichtigt werden müssen
 **Rückwärts** Identisch mit vorwärts, aber umgekehrt.
     :::column-end:::
     :::column:::
-        ![Richtung rückwärts in](images/backwardIN.gif)
+        ![Kurzes Video, das einen Kreis anzeigt, der von der rechten Seite des Frames in die Mitte des Frames wechselt.](images/backwardIN.gif)
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -114,7 +114,7 @@ Die Schwerkraft ist in der Regel eine Manifeste, wenn ein Objekt von einer Szene
 
 Hier ist ein Element in der obersten Zeile des Rasters von der Schwerkraft betroffen, was bewirkt, dass es leicht absinkt, wenn es seine Position verlässt und in den Vordergrund bewegt wird.
 
-![Richtung rückwärts in](images/continuity-photos.gif)
+![Kurzes Video, das ein Rechteck Element anzeigt, das die obere Zeile eines Rasters verlässt, den Datenbereich leicht löscht und dann an die Vorderseite des Fensters vergrößert.](images/continuity-photos.gif)
 
 ## <a name="related-articles"></a>Verwandte Artikel
 

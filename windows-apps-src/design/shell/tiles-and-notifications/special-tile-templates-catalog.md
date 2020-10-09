@@ -1,5 +1,5 @@
 ---
-Description: Spezielle Kachelvorlagen sind individuelle Vorlagen, die animiert sind oder mit denen Sie Vorgänge durchführen können, die mit adaptiven Kacheln nicht möglich sind.
+description: Spezielle Kachelvorlagen sind individuelle Vorlagen, die animiert sind oder mit denen Sie Vorgänge durchführen können, die mit adaptiven Kacheln nicht möglich sind.
 title: Spezielle Kachelvorlagen
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4368c3d504b01a48b05fcaffdb01a71b916d9d43
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1aac8997492eba2d591d0f80f89dbc9a8f5830ba
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169304"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860203"
 ---
 # <a name="special-tile-templates"></a>Spezielle Kachelvorlagen
  
@@ -50,9 +50,9 @@ Für quadratische Ressourcen erfolgt eine automatische Zentrierung innerhalb des
 
 Bei nicht quadratischen Ressourcen erfolgt eine automatische horizontale/vertikale Zentrierung und ein Andocken an die Breite bzw. Höhe des Containers:
 
-![Größe einer nicht quadratischen Ressource, mit und ohne Signal](images/assetguidance26a.png)
+![Screenshot, der eine automatisch zentrierte horizontale, nicht quadratische Medienobjekt Größe mit und ohne Badge anzeigt.](images/assetguidance26a.png)
 
-![Größe einer nicht quadratischen Ressource, mit und ohne Signal](images/assetguidance26b.png)
+![Screenshot, der eine automatisch zentrierte vertikale, nicht quadratische Medienobjekt Größe mit und ohne Badge anzeigt.](images/assetguidance26b.png)
 
 **Schritt 2: Erstellen der Basiskachel**
 

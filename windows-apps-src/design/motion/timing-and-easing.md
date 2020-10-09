@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fe776361276341e368db1fbdf8e332a1e5dc70b5
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 336b49c999d135908fb54490b7b33057d4527079
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220193"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860158"
 ---
 # <a name="timing-and-easing"></a>Timing und Beschleunigung
 
@@ -49,7 +49,7 @@ Die zeitliche Steuerung ist ein wichtiges Element, um Bewegungs Charakter für O
 
 Der Zeitpunkt der Bewegung bei der Bewegung verwendet 500 ms (oder eine halbe Sekunde) als Baseline, da dies die maximale Zeitspanne ist, die ein Benutzer als sofort wahrnimmt.
 
-![Herobild](images/time.gif)
+![Kurzes Video, das drei Kreise zeigt, vertikal gestapelt, nach links und rechts mit unterschiedlicher Geschwindigkeit bewegt: 150 Millisekunden, 300 Millisekunden und 500 Millisekunden.](images/time.gif)
 
 ### <a name="150ms-exit"></a>**150 ms** (Beenden)
 
@@ -90,7 +90,7 @@ Verwenden Sie für Objekte, die über eine einzelne Szene oder mehrere Szenen ü
 
 Die Beschleunigung ist eine Möglichkeit, die Geschwindigkeit eines Objekts bei der Übertragung zu verändern. Es ist der Kleber, der alle fließenden Bewegungsmöglichkeiten verbindet. Im Extremfall hilft die im System verwendete Beschleunigung dabei, das physische Gefühl von Objekten zu vereinheitlichen, die im gesamten System verschoben werden. Dies ist eine Möglichkeit, die reale Welt nachzuahmen und die Objekte in Bewegung zu machen, die Sie in Ihrer Umgebung angehören.
 
-![Herobild](images/easing.gif)
+![Ein kurzes Video, das einen Kreis anzeigt, wird in der unteren rechten Ecke des Frames angezeigt und in der Nähe der oberen linken Ecke des Rahmens angehalten.](images/easing.gif)
 
 ## <a name="apply-easing-to-motion"></a>Beschleunigung auf Bewegung anwenden
 

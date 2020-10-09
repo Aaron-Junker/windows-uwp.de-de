@@ -1,5 +1,5 @@
 ---
-Description: Erstellen von Windows-apps und benutzerdefinierten/Vorlagen basierten Steuerelementen, die Platt Form Text Skalierung unterstützen
+description: Erstellen von Windows-apps und benutzerdefinierten/Vorlagen basierten Steuerelementen, die Platt Form Text Skalierung unterstützen
 title: Textskalierung
 label: Text scaling
 template: detail.hbs
@@ -8,16 +8,16 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d8f7536da045514471c1af1c2f0cfac74af91a7a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 0d47523ca69f8088d5e13ab944c5dd2be2d1d8ba
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219943"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860169"
 ---
 # <a name="text-scaling"></a>Textskalierung
 
-![Beispiel für Text Skalierung von 100% bis 225%](images/coretext/text-scaling-news-hero-small.png)  
+![Hero Image zeigt ein Beispiel für die Text Skalierung zwischen 100% und 225% an.](images/coretext/text-scaling-news-hero-small.png)  
 *Beispiel für die Text Skalierung in Windows 10 (100% bis 225%)*
 
 ## <a name="overview"></a>Übersicht
@@ -40,7 +40,7 @@ DirectWrite, GDI und XAML-Austausch Vorgänge unterstützen die Text Skalierung 
 
 Benutzer können die textskala mit dem Schieberegler größeren Text vergrößern auf der Seite Einstellungen > Easy of Access-> Vision/Anzeige Bildschirm anpassen.
 
-![Beispiel für Text Skalierung von 100% bis 225%](images/coretext/text-scaling-settings-100-small.png)  
+![Screenshot der Seite mit dem Bildschirm für die Benutzerfreundlichkeit/Anzeigeeinstellungen mit dem Schieberegler größeren Text erstellen](images/coretext/text-scaling-settings-100-small.png)  
 *Textskalierungs Einstellung von Einstellungen-> Easy of Access-> Vision/Anzeige Bildschirm*
 
 ## <a name="ux-guidance"></a>Erläuterungen zur Benutzeroberfläche
@@ -93,7 +93,7 @@ Im folgenden finden Sie einen Ausschnitt aus einer grundlegenden UWP-APP, die ei
 </Grid>
 ```
 
-![Animierte Text Skalierung 100% bis 225%](images/coretext/text-scaling.gif)  
+![Animation von Text Skalierung 100% bis 225%.](images/coretext/text-scaling.gif)  
 *Animierte Text Skalierung*
 
 ### <a name="use-auto-sizing"></a>Verwenden der automatischen Größenanpassung
@@ -123,7 +123,7 @@ Hier verwenden wir die `AcceptsReturn` `TextWrapping` Text Feldeigenschaften und
           AcceptsReturn="True" TextWrapping="Wrap" />
 ```
 
-![Animierte Text Skalierung von 100% auf 225% mit Text Wrapping](images/coretext/text-scaling-textwrap.gif)  
+![Animation von Text Skalierung von 100% bis 225% mit Text Umbrüchen.](images/coretext/text-scaling-textwrap.gif)  
 *Animierte Text Skalierung mit Text Wrapping*
 
 ### <a name="specify-text-trimming-behavior"></a>Textkürzungs Verhalten angeben
@@ -141,7 +141,7 @@ In diesem Beispiel zeigen wir, wie Sie Text in einem TextBlock mithilfe der [tex
 </TextBlock>
 ```
 
-![Text Skalierung 100% bis 225% mit Text Clipping](images/coretext/text-scaling-clipping-small.png)  
+![Screenshot von Text Skalierung von 100% bis 225% mit Text Clipping.](images/coretext/text-scaling-clipping-small.png)  
 *Text Skalierung mit Text Clipping*
 
 ### <a name="use-a-tooltip"></a>Verwenden einer QuickInfo

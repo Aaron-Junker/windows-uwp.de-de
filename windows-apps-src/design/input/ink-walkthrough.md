@@ -6,16 +6,16 @@ keywords: frei Hand Eingaben, Tutorial
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a0660312746a88a61ccb7b2ca9c01d720ebb2be3
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f726f4ab4a422cc94f00493261620ddff8b6122b
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219693"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860198"
 ---
 # <a name="tutorial-support-ink-in-your-windows-app"></a>Tutorial: unterstützen von Freihand in Ihrer Windows-App
 
-![Surface-Stift](images/ink/ink-hero-small.png)  
+![Ein Surface-Stift-Hero-Bild](images/ink/ink-hero-small.png)  
 *Surface-Stift* (zum Kauf im [Microsoft Store](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b) verfügbar).
 
 In diesem Tutorial wird erläutert, wie Sie eine einfache Windows-app erstellen, die das Schreiben und zeichnen mit Windows Ink unterstützt. Wir verwenden Ausschnitte aus einer Beispiel-APP, die Sie von GitHub herunterladen können (siehe [Beispielcode](#sample-code)), um die verschiedenen Features und zugehörigen Windows Ink-APIs (siehe [Komponenten der Windows Ink-Plattform](#components-of-the-windows-ink-platform)), die in jedem Schritt erläutert werden, zu veranschaulichen.
@@ -53,7 +53,7 @@ In diesem Tutorial verwenden wir eine Beispiel-Ink-APP, um die beschriebenen Kon
 Laden Sie dieses Visual Studio-Beispiel und den Quellcode von [GitHub](https://github.com/) unter [Windows-appsample-Get-Started-Ink Sample](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)herunter:
 
 1. Grüne Klon- **oder Download** Schaltfläche auswählen  
-![Klonen des Repositorys](images/ink/ink-clone.png)
+![Das Repository wird geklont.](images/ink/ink-clone.png)
 2. Wenn Sie über ein GitHub-Konto verfügen, können Sie das Repository auf Ihrem lokalen Computer Klonen, indem Sie **in Visual Studio öffnen** auswählen. 
 3. Wenn Sie nicht über ein GitHub-Konto verfügen oder nur eine lokale Kopie des Projekts benötigen, wählen Sie **ZIP herunterladen** aus (Sie müssen regelmäßig zurückkehren, um die neuesten Updates herunterzuladen).
 
@@ -80,11 +80,11 @@ Nachdem Sie die radialcontroller-Beispiel-App heruntergeladen haben, vergewisser
 
    > [!NOTE]
    > Alternativ können Sie **Debug**  >  das Menü Element**Debuggen Debuggen starten** auswählen oder die hier angezeigte Schaltfläche **lokaler Computer** ausführen auswählen.
-   > ![Schaltfläche "Visual Studio Build Project"](images/ink/ink-vsrun-small.png)
+   > ![Schaltfläche zum Erstellen eines Projekts in Visual Studio.](images/ink/ink-vsrun-small.png)
 
 Das App-Fenster wird geöffnet, und nachdem ein Begrüßungsbildschirm für einige Sekunden angezeigt wird, sehen Sie diesen ersten Bildschirm.
 
-![Leere App](images/ink/ink-app-step1-empty-small.png)
+![Screenshot der leeren app.](images/ink/ink-app-step1-empty-small.png)
 
 Wir verfügen jetzt über die grundlegende Windows-APP, die wir im weiteren Verlauf dieses Tutorials verwenden werden. In den folgenden Schritten fügen wir unsere Ink-Funktionalität hinzu.
 
@@ -123,7 +123,7 @@ Das ist alles!
 
 Führen Sie die App nun erneut aus. Machen Sie sich mit Scribble, schreiben Sie Ihren Namen, oder zeichnen Sie Ihr selbst Format (wenn Sie einen Spiegel haben oder einen sehr guten Speicher haben).
 
-![Grundlegende Erfassung](images/ink/ink-app-step1-name-small.png)
+![Screenshot der grundlegenden Ink-Beispiel-APP, die in diesem Thema hervorgehoben ist.](images/ink/ink-app-step1-name-small.png)
 
 ## <a name="step-3-support-inking-with-touch-and-mouse"></a>Schritt 3: Unterstützung der Einbindung mit Fingereingabe und Maus
 
@@ -181,21 +181,21 @@ Wenn Sie einer Freihand-App eine Standard- [**inktoolbar**](/uwp/api/windows.ui.
 
 Führen Sie die App nun erneut aus, um die [**inktoolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) anzuzeigen, und probieren Sie einige der Tools aus.
 
-![Inktoolbar aus dem Schrägung des Ink-Arbeitsbereichs](images/ink/ink-inktoolbar-default-small.png)
+![Screenshot der grundlegenden Ink-Beispiel-APP, die in diesem Thema mit der standardmäßigen inktoolbar hervorgehoben ist.](images/ink/ink-inktoolbar-default-small.png)
 
 ### <a name="challenge-add-a-custom-button"></a>Challenge: benutzerdefinierte Schaltfläche Hinzufügen
 <table class="wdg-noborder">
 <tr>
 <td>
 
-![Inktoolbar von der "schrägungspad" im Arbeitsbereich "Ink"](images/challenge-icon.png)
+:::image type="icon" source="images/challenge-icon.png":::
 
 </td>
 <td>
 
 Im folgenden finden Sie ein Beispiel für eine benutzerdefinierte **[inktoolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar)** (von "schrägungspad" im Windows Ink-Arbeitsbereich).
 
-![Inktoolbar von der "schrägungspad" im Arbeitsbereich "Ink"](images/ink/ink-inktoolbar-sketchpad-small.png)
+![Screenshot der frei Handsymbol Leiste von "schrägpad" im Arbeitsbereich "Ink"](images/ink/ink-inktoolbar-sketchpad-small.png)
 
 Weitere Informationen zum Anpassen von [inktoolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar)finden [Sie unter Hinzufügen einer inktoolbar zu einer Windows-App-App zum Freihand](ink-toolbar.md).
 
@@ -213,9 +213,9 @@ In diesem Schritt verwenden wir die Handschrifterkennungsfunktionen von Windows 
 > Die Handschrifterkennung kann über den **Stift & Windows-Ink** -Einstellungen verbessert werden:
 > 1. Öffnen Sie das Startmenü, und wählen Sie **Einstellungen**aus.
 > 2. Wählen Sie im Bildschirm "Einstellungen" die Option **Geräte**  >  **Stift & Windows**frei.
-> ![Inktoolbar von der "schrägungspad" im Arbeitsbereich "Ink"](images/ink/ink-settings-small.png)
+> ![Screenshot der Seite "Stift & Windows-Ink-Einstellungen".](images/ink/ink-settings-small.png)
 > 3. Wählen Sie **Get to Know Your Hand Hand** , um das Dialogfeld für die **Handschrift Personalisierung** zu öffnen
-> ![Inktoolbar von der "schrägungspad" im Arbeitsbereich "Ink"](images/ink/ink-settings-handwritingpersonalization-small.png)
+> ![Screenshot des Dialog Felds "Handschrift Erkennungs Personalisierung".](images/ink/ink-settings-handwritingpersonalization-small.png)
 
 ### <a name="in-the-sample"></a>Im Beispiel:
 1. Öffnen Sie die Datei "MainPage. XAML".
@@ -286,7 +286,7 @@ In diesem Schritt verwenden wir die Handschrifterkennungsfunktionen von Windows 
 <tr>
 <td>
 
-![Inktoolbar von der "schrägungspad" im Arbeitsbereich "Ink"](images/challenge-icon.png)
+:::image type="icon" source="images/challenge-icon.png":::
 
 </td>
 <td>
@@ -306,7 +306,7 @@ Weitere Informationen zur internationalen Handschrifterkennung finden Sie unter 
 <tr>
 <td>
 
-![Inktoolbar von der "schrägungspad" im Arbeitsbereich "Ink"](images/challenge-icon.png)
+:::image type="icon" source="images/challenge-icon.png":::
 
 </td>
 <td>
@@ -385,11 +385,11 @@ In diesem Beispiel versuchen wir nicht, frei Hand Striche neu zu zeichnen (obwoh
 
 Im folgenden finden Sie ein Beispiel für ein rudimentäres Flussdiagramm aus einer digitalen napkin.
 
-![Ursprüngliches Flussdiagramm](images/ink/ink-app-step6-shapereco1-small.png)
+![Screenshot eines rudimentären Fluss Diagramms aus einer digitalen napkin.](images/ink/ink-app-step6-shapereco1-small.png)
 
 Im folgenden finden Sie das gleiche Flussdiagramm nach der Formen Erkennung.
 
-![Ursprüngliches Flussdiagramm](images/ink/ink-app-step6-shapereco2-small.png)
+![Screenshot des Fluss Diagramms, nachdem der Benutzer die Form "erkennen" ausgewählt hat.](images/ink/ink-app-step6-shapereco2-small.png)
 
 
 ## <a name="step-7-save-and-load-ink"></a>Schritt 7: Speichern und Laden von frei Hand Eingaben
@@ -444,7 +444,7 @@ In diesem Schritt verbinden wir die Schaltflächen " **Speichern** " und " **Lad
 <tr>
 <td>
 
-![Inktoolbar von der "schrägungspad" im Arbeitsbereich "Ink"](images/challenge-icon.png)
+:::image type="icon" source="images/challenge-icon.png":::
 
 </td>
 
