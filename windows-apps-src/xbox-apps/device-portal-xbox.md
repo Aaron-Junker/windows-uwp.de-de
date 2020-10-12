@@ -6,12 +6,12 @@ ms.date: 04/09/2019
 ms.topic: article
 keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
-ms.openlocfilehash: ed490b0474b919d4439e5b74b676d5974a3c6a30
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a7df29b6c1446d65c8e5224eede3030a25888364
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174784"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933171"
 ---
 # <a name="device-portal-for-xbox"></a>Geräteportal für Xbox
 
@@ -43,13 +43,13 @@ Die folgenden Schritte zeigen, wie Sie das Xbox-Geräte Portal aktivieren, mit d
 
 Das Xbox-Geräte Portal bietet eine Reihe von Standardseiten, die mit den verfügbaren Optionen im Windows-Geräte Portal vergleichbar sind, sowie mehrere eindeutige Seiten. Ausführliche Beschreibungen der ersten finden Sie unter [Übersicht über das Windows-Geräte Portal](../debug-test-perf/device-portal.md). In den folgenden Abschnitten werden die Seiten beschrieben, die für das Xbox-Geräte Portal eindeutig sind.
 
-### <a name="home"></a>Startseite
+### <a name="home"></a>-Startseite
 
 Ähnlich wie bei der **App-Manager** -Seite des Windows-Geräte Portals wird auf der **Start** Seite des Xbox-Geräte Portals eine Liste der installierten Spiele und apps unter **Meine Spiele & apps**angezeigt. Sie können auf den Namen eines Spiels oder einer APP klicken, um weitere Details anzuzeigen (z. b. den **Paket Familiennamen**). In der **Dropdown** -Dropdown-Datei können Sie Aktionen für das Spiel oder die APP durchführen, z. b. **starten** .
 
 Unter **Xbox Live-Testkonten**können Sie die Konten verwalten, die mit Ihrer Xbox verknüpft sind. Sie können Benutzer und Gastkonten hinzufügen, neue Benutzer erstellen, Benutzer ein-und abmelden und Konten entfernen.
 
-![Startseite](images/device-portal-xbox-16.png)
+![-Startseite](images/device-portal-xbox-16.png)
 
 ### <a name="xbox-live-game-saves"></a>Xbox Live (Spiel speichert)
 
@@ -89,9 +89,9 @@ Auf der Seite **Einstellungen** können Sie mehrere Einstellungen für die Xbox 
 
 Es gibt mehrere Abschnitte mit unterschiedlichen Einstellungen zum Anzeigen und/oder bearbeiten, die unten erläutert werden.
 
-![Einstellungen](images/device-portal-xbox-20.png)
+![Screenshot der Seite "Einstellungen", auf der die Abschnitte Geräteinformationen und Anzeigeeinstellungen angezeigt werden.](images/device-portal-xbox-20.png)
 
-![Einstellungen](images/device-portal-xbox-21.png)
+![Screenshot der Seite "Einstellungen" mit den Abschnitten "Lokalisierungs Einstellungen", "Energie Einstellungen" und "Benutzereinstellungen". ](images/device-portal-xbox-21.png)
 
 #### <a name="device-information"></a>Geräteinformationen
 

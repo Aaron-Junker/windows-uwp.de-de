@@ -1,17 +1,17 @@
 ---
-Description: Sie können Ihre Kunden dazu ermutigen, Feedback zu geben, indem Sie den Feedback-Hub über Ihre App starten.
+description: Sie können Ihre Kunden dazu ermutigen, Feedback zu geben, indem Sie den Feedback-Hub über Ihre App starten.
 title: Starten des Feedback-Hubs über Ihre App
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Feedback-Hub, starten
 ms.localizationpriority: medium
-ms.openlocfilehash: 71ecb104f1864eefcf1e38f793a4af53a977f693
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 511612911d180459bd7c732803d3a98e3d4580c8
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363103"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933131"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>Starten des Feedback-Hubs über Ihre App
 
@@ -60,20 +60,20 @@ So starten Sie den Feedback-Hub über Ihre App
 
 Um den Feedback-Hub zu starten, empfehlen wir, in Ihrer App ein Benutzeroberflächenelement (z. B. eine Schaltfläche) hinzuzufügen, in dem das folgende standardmäßige Feedbacksymbol mit der Schriftart „Segoe MDL2 Assets“ und dem Zeichencode E939 angezeigt wird.
 
-![Feedbacksymbol](images/feedback_icon.PNG)
+:::image type="icon" source="images/feedback_icon.PNG":::
 
 Außerdem wird empfohlen, mindestens eine der folgenden Platzierungsoptionen für die Verknüpfung mit dem Feedback-Hub in Ihrer App zu verwenden.
 * **Direkt in der App-Leiste** Je nach Implementierung möchten Sie möglicherweise nur das Symbol verwenden oder Text hinzufügen (siehe unten).
 
-  ![Feedbacksymbol](images/feedback_appbar_placement.png)
+  ![Screenshot einer Anwendung mit dem Feedback-Symbol in der oberen rechten Ecke mit der Bezeichnung "Feedback" daneben.](images/feedback_appbar_placement.png)
 
 * **In den Einstellungen Ihrer App**. Dies ist eine subtilere Art, um Benutzern Zugriff auf den Feedback-Hub zu gewähren. Im folgenden Beispiel wird der Feedbacklink als einer der Links unter der App angezeigt.
 
-  ![Feedbacksymbol](images/feedback_settings_placement.png)
+  ![Screenshot einer Einstellungsseite, auf der der Link Feedback unter APP angezeigt wird.](images/feedback_settings_placement.png)
 
 * **In einem ereignisgesteuerten Flyout**. Dies ist hilfreich, wenn Sie vor dem Start des Windows-Feedback-Hubs die Meinung Ihrer Kunden zu einer bestimmten Frage erfahren möchten. Beispiel: Nachdem Ihre App eine bestimmte Funktion verwendet, könnten Sie den Kunden mit einer gezielten Frage zu seiner Zufriedenheit mit diesem Feature dazu auffordern, Ihnen seine Meinung mitzuteilen. Wenn der Kunde auf die Frage reagieren möchte, wird über Ihre App der Feedback-Hub gestartet.
 
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Feedbackbericht](../publish/feedback-report.md)

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: d9d9041b5e90ce8ffc16fe0158dda597f99b41bc
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 96aea61073cf0c62f0c9636519018e1f19d0c8b3
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157944"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933091"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Entsperren von Windows mit Windows Hello-Begleitgeräten (IoT)
 
@@ -102,7 +102,7 @@ Hinweise:
 
 Das folgende Diagramm zeigt, wie das Windows Hello-Begleitgerät bei der Registrierung mit dem Begleitauthentifizierungsdienst interagiert.  
 
-![Registrierungsfluss](images/companion-device-2.png)
+![Diagramm des Registrierungs Flusses.](images/companion-device-2.png)
 
 In unserem Protokoll werden zwei Schlüssel verwendet:
 
@@ -145,7 +145,7 @@ Nachdem die mit einer Windows Hello-Begleitgeräte-App verknüpfte Hintergrundau
 
 Der zweite berechnete Wert wird vom Dienst nicht nur zur Authentifizierung des Geräts, sondern auch zur Verhinderung von Replay-Angriffen im Transportkanal verwendet.
 
-![Registrierungsfluss](images/companion-device-3.png)
+![Diagramm des aktualisierten Registrierungs Flusses.](images/companion-device-3.png)
 
 ## <a name="lifecycle-management"></a>Lebenszyklusverwaltung
 

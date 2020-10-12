@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 69e60d8ef919a05493f47f086ee992afe8bfeb4c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0a67c88eb7eb70308e6dcbbd096289c0617793b1
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172834"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933071"
 ---
 # <a name="web-account-manager"></a>Web Account Manager
 
@@ -71,7 +71,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 
 Wenn Sie Ihre App ausführen und auf die Anmeldeschaltfläche klicken, sollte ein leeres Fenster angezeigt werden. 
 
-![Bereich mit Kontoeinstellungen](images/tb-1.png)
+![Screenshot des Fensters "Konto auswählen", in dem keine Konten aufgeführt sind.](images/tb-1.png)
 
 Der Bereich ist leer, weil das System nur eine UI-Shell bereitstellt. Der Entwickler kann den Bereich programmgesteuert mit Identitätsanbietern auffüllen. 
 
@@ -156,7 +156,7 @@ Die getmsatoken-Methode, die wir an unseren neuen **webaccountprovidercommand** 
 
 Führen Sie den vorangehenden Code aus. Der Bereich sollte jetzt wie folgt aussehen: 
 
-![Bereich mit Kontoeinstellungen](images/tb-2.png)
+![Screenshot des Fensters "Konto auswählen" mit aufgeführten Konten](images/tb-2.png)
 
 ### <a name="request-a-token"></a>Anfordern eines Tokens
 
@@ -390,7 +390,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 }
 ```
 
-![Bereich mit Kontoeinstellungen](images/tb-3.png)
+![Screenshot des Fensters "Konto auswählen" ohne aufgeführten Konten und eine Meldung, die besagt, dass meine tolle App am besten funktioniert, wenn Sie angemeldet sind.](images/tb-3.png)
 
 Halten Sie Headertext kurz und einfach, und vermeiden Sie überflüssige Informationen. Wenn der Anmeldevorgang komplex ist und weitere Informationen angezeigt werden müssen, verknüpfen Sie den Benutzer über einen benutzerdefinierten Link mit einer separaten Seite. 
 
@@ -398,7 +398,7 @@ Halten Sie Headertext kurz und einfach, und vermeiden Sie überflüssige Informa
 
 Sie können dem AccountsSettingsPane benutzerdefinierte Befehle hinzufügen, die als Links unter den unterstützten WebAccountProviders angezeigt werden. Benutzerdefinierte Befehle eignen sich hervorragend für einfache Aufgaben in Verbindung mit Benutzerkonten, z. B. das Anzeigen einer Datenschutzrichtlinie oder das Öffnen einer Supportseite, wenn auf Benutzerseite ein Problem auftritt. 
 
-Ein Beispiel: 
+Hier sehen Sie ein Beispiel: 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCommandsRequestedEventArgs e)
@@ -416,11 +416,11 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 }
 ```
 
-![Bereich mit Kontoeinstellungen](images/tb-4.png)
+![Screenshot des Fensters "Konto auswählen" ohne die aufgeführten Konten und einen Link zu einer Datenschutzrichtlinie.](images/tb-4.png)
 
 Einstellungsbefehle lassen sich grundsätzlich überall verwenden. Es wird jedoch empfohlen, diese Art Befehle auf die oben beschriebenen intuitiven Kontoszenarien zu beschränken. 
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Windows.Security.Authentication.Web.Core-Namespace](/uwp/api/windows.security.authentication.web.core)
 

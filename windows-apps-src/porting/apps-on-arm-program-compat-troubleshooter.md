@@ -1,60 +1,60 @@
 ---
 title: Problembehandlung für die Programmkompatibilität auf ARM
-description: Anleitung zum Anpassen der Kompatibilitätseinstellungen, wenn Ihre App auf ARM nicht korrekt funktioniert
+description: Leitfaden zum Anpassen von Kompatibilitäts Einstellungen, wenn Ihre APP auf Arm nicht ordnungsgemäß funktioniert
 ms.date: 02/15/2018
 ms.topic: article
-keywords: windows 10 s, always connected, problembehandlung für die programmkompatibilität, windows auf ARM
+keywords: Windows 10 s, immer verbunden, Kompatibilitätsproblem Behandlung, Windows auf Arm
 ms.localizationpriority: medium
-ms.openlocfilehash: 6573bedb97a7081681e5ecc600bb473f6d0b83bf
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 24ae6e7c12fde1dfbb9e5395b3fa3aa4901adb3d
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683953"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933021"
 ---
 # <a name="program-compatibility-troubleshooter-on-arm"></a>Problembehandlung für die Programmkompatibilität auf ARM
-Emulation zur Unterstützung von x86-Anwendungen ist ein neues Feature, das für Windows 10 auf ARM64 erstellt wurde. Manchmal führt die Emulation Optimierungen durch, die nicht zu den besten Ergebnissen führen. Sie können die Problembehandlung für die Programmkompatibilität verwenden, um die Emulationseinstellungen für Ihre x86-App umzuschalten, wodurch die Standardoptimierungen reduziert und die Kompatibilität möglicherweise erhöht wird.
+Die Emulation zur Unterstützung von x86-Apps ist ein neues Feature, das für Windows 10 auf ARM64 erstellt wurde. Manchmal führt die Emulation Optimierungen aus, die nicht zu den besten Ergebnissen führen. Mit der Programm Kompatibilitätsproblem Behandlung können Sie die Emulations Einstellungen für Ihre x86-App umschalten, die Standard Optimierungen verringern und die Kompatibilität möglicherweise erhöhen.
 
-## <a name="start-the-program-compatibility-troubleshooter"></a>Starten der Problembehandlung für die Programmkompatibilität
-Die [Problembehandlung für die Programmkompatibilität](https://support.microsoft.com/help/15078/windows-make-older-programs-compatible) wird manuell auf allen Windows 10 PCs auf die gleiche Weise gestartet: Klicken Sie mit der rechten Maustaste auf eine ausführbare Datei (.exe) und wählen Sie **Behebung von Kompatibilitätsproblemen** aus. Der folgende Bildschirm wird angezeigt.
+## <a name="start-the-program-compatibility-troubleshooter"></a>Starten der Programm Kompatibilitätsproblem Behandlung
+Sie starten die [Programm Kompatibilitäts](https://support.microsoft.com/help/15078/windows-make-older-programs-compatible) Problembehandlung manuell auf allen Windows 10-PCs: Klicken Sie mit der rechten Maustaste auf eine ausführbare Datei (exe-Datei), und wählen Sie **Kompatibilitätsprobleme beheben**. Dieser Bildschirm wird angezeigt.
 
-![Screenshot der Option „Behebung von Kompatibilitätsproblemen”](images/arm/Capture4.png)
+![Screenshot der Kompatibilitäts Optionen für die Problembehandlung.](images/arm/Capture4.png)
 
-Wenn Sie auf **Programm zur Problembehandlung** klicken, werden die folgenden Optionen angezeigt.
+Wenn Sie auf **Programm** zur Problembehandlung klicken, werden Ihnen die folgenden Optionen angezeigt.
 
-![Screenshot der Option „Behebung von Kompatibilitätsproblemen”](images/arm/Capture5.png)
+![Screenshot der möglichen Probleme:](images/arm/Capture5.png)
 
-Alle Optionen aktivieren die Einstellungen, die für alle Windows 10-Desktop-PCs gelten und angewendet werden. Darüber hinaus verwendet die erste, zweite und vierte Option die Emulationseinstellungen [Deaktivieren der Anwendungscache](#disable-app-cache) und [Deaktivieren des Hybrid-Ausführungsmodus](#disable-hybrid-exec-mode).
+Alle Optionen aktivieren die Einstellungen, die auf allen Windows 10-Desktop-PCs anwendbar sind und angewendet werden. Darüber hinaus wenden die ersten, zweiten und vierten Optionen die Emulations Einstellungen [Anwendungscache deaktivieren](#disable-app-cache) und [Hybrid Ausführungs Modus deaktivieren](#disable-hybrid-exec-mode) an.
 
-## <a name="toggling-emulation-settings"></a>Umschalten der Emulationseinstellungen
+## <a name="toggling-emulation-settings"></a>Umschalten von Emulations Einstellungen
 > [!WARNING]
-> Das Ändern der Emulationseinstellungen führt möglicherweise dazu, dass Ihre Anwendung unerwartet abstürzt oder überhaupt nicht gestartet wird.
+> Das Ändern von Emulations Einstellungen kann dazu führen, dass Ihre Anwendung unerwartet abstürzt oder überhaupt nicht gestartet wird.
 
-Sie können die Emulationseinstellungen umschalten, indem Sie mit der rechten Maustaste auf die ausführbare Datei klicken und **Eigenschaften** auswählen.
+Sie können Emulations Einstellungen umschalten, indem Sie mit der rechten Maustaste auf die ausführbare Datei klicken und **Eigenschaften**auswählen.
 
-Auf ARM-Geräten steht auf der Registerkarte **Kompatibilität** ein Abschnitt mit dem Titel **Windows 10 auf ARM** zur Verfügung. Klicken Sie auf **Ändern von Emulationseinstellungen**, um wie hier gezeigt, ein zweites Fenster zu öffnen.
+Auf Arm ist ein Abschnitt mit dem Namen **Windows 10 auf Arm** auf der Registerkarte **Kompatibilität** verfügbar. Klicken Sie auf **Emulations Einstellungen ändern** , um wie hier ein zweites Fenster zu starten.
 
-![Screenshot von „Ändern der Emulationseinstellungen”](images/arm/Capture.png)
+![Screenshot: Ändern von Emulations Einstellungen](images/arm/Capture.png)
 
-Dieses Fenster bietet zwei Möglichkeiten zum Ändern der Emulationseinstellungen. Sie können eine vordefinierte Gruppe von Emulationseinstellungen auswählen, oder Sie können auf die Option **Erweiterte Einstellungen verwenden** klicken, um die einzelnen Einstellungen auszuwählen.
+Dieses Fenster bietet zwei Möglichkeiten zum Ändern der Emulations Einstellungen. Sie können eine vordefinierte Gruppe von Emulations Einstellungen auswählen, oder Sie können auf die Option **Erweiterte Einstellungen verwenden** klicken, um die Auswahl einzelner Einstellungen zu aktivieren.
 
-Die gruppierten Emulationseinstellungen reduzieren Leistungsoptimierungen zugunsten der Qualität. Im Folgenden sind einige gruppierten Einstellungen aufgelistet, die Sie auswählen können.
+Die gruppierten Emulations Einstellungen reduzieren Leistungsoptimierungen zugunsten der Qualität. Unten sind einige gruppierte Einstellungen aufgeführt, die Sie auswählen können.
 
-![Screenshot 2 von „Ändern der Emulationseinstellungen”](images/arm/Capture2.png)
+![Ändern der Emulations Einstellungen screenshot2](images/arm/Capture2.png)
 
-Wählen Sie **Erweiterte Einstellungen verwenden** aus, um individuelle Einstellungen auszuwählen, wie in dieser Tabelle beschrieben.
+Wählen Sie **Erweiterte Einstellungen verwenden** aus, um einzelne Einstellungen auszuwählen, wie in dieser Tabelle beschrieben.
 
-| Emulationseinstellung | Ergebnis |
+| Emulations Einstellung | Ergebnis |
 | ----------------- | ----------- |
-| <p id="disable-app-cache">Deaktivieren der Anwendungscache</p> | Vom Betriebssystem werden kompilierte Codeblöcke zwischengespeichert, um den Emulationsaufwand bei nachfolgenden Ausführungen zu reduzieren. Diese Einstellung erfordert, dass der Emulator den gesamten App-Code zur Laufzeit neu kompiliert. |
-| <p id="disable-hybrid-exec-mode">Deaktivieren des Hybrid-Ausführungsmodus</p> | Kompilierte hybride portierbare ausführbare (CHPE) Binärdateien sind x86-kompatible Binärdateien, die nativen ARM64-Code enthalten, um die Leistung zu verbessern, aber mit einigen Apps möglicherweise nicht kompatibel sind. Diese Einstellung erzwingt die Verwendung von nur-x86-Binärdateien. |
-| Strenge selbstmodifizierende Codeunterstützung | Aktivieren Sie diese Option, um sicherzustellen, dass jeder selbstsmodifizierende Code bei der Emulation korrekt unterstützt wird. Die häufigsten selbstmodifizierenden Codeszenarien werden vom Standardverhalten des Emulators abgedeckt. Durch das Aktivieren dieser Option wird die Leistung des selbstmodifizierenden Codes während der Ausführung erheblich reduziert. |
-| Deaktivieren der RWX-Seitenleistungsoptimierung | Diese Optimierung verbessert die Leistung des Codes auf lesbaren, schreibbaren und ausführbaren (RWX)-Seiten, ist jedoch mit einigen Apps möglicherweise nicht kompatibel. |
+| <p id="disable-app-cache">Anwendungscache deaktivieren</p> | Das Betriebssystem speichert kompilierte Code Blöcke zwischen, um den Emulations Aufwand bei nachfolgenden Ausführungen zu verringern. Diese Einstellung erfordert, dass der Emulator den gesamten app-Code zur Laufzeit neu kompiliert. |
+| <p id="disable-hybrid-exec-mode">Hybrid Ausführungs Modus deaktivieren</p> | Kompilierte hybride portable ausführbare Dateien (CHPE), Binärdateien sind x86-kompatible Binärdateien, die systemeigenen ARM64-Code enthalten, um die Leistung zu verbessern, die jedoch möglicherweise nicht mit einigen Apps kompatibel sind Diese Einstellung erzwingt die Verwendung von reinen x86-Binärdateien. |
+| Strikte selbst ändernde Code Unterstützung | Aktivieren Sie diese Option, um sicherzustellen, dass der selbst ändernde Code in der Emulation korrekt unterstützt wird. Die gängigsten selbst ändernden Code Szenarien werden durch das Standardverhalten des Emulators abgedeckt. Wenn Sie diese Option aktivieren, wird die Leistung des selbst veränderlichen Codes bei der Ausführung erheblich reduziert. |
+| Deaktivieren der rwx-Seiten Leistungsoptimierung | Diese Optimierung verbessert die Leistung von Code auf lesbaren, beschreibbaren und ausführbaren Seiten (rwx), kann jedoch mit einigen apps nicht kompatibel sein. |
 
-Sie können auch Multi-Core-Einstellungen auswählen, wie hier gezeigt.
+Sie können auch multikerneinstellungen auswählen, wie hier gezeigt.
 
-![Screenshot von „Multi-Core-Einstellungen”](images/arm/Capture3.png)
+![Screenshot mit Multi-Core-Einstellungen](images/arm/Capture3.png)
 
-Diese Einstellungen ändern die Anzahl der Speicherbarrieren, die zum Synchronisieren der Speicherzugriffe zwischen Kernen in Apps während der Emulation verwendet werden. Der Standardmodus ist **schnell**, jedoch steigern die Optionen **streng** und **sehr streng** die Anzahl der Barrieren. Dies verlangsamt die App, reduziert aber das Risiko von App-Fehlern. Die Option **single-core** beseitigt alle Barrieren, erzwingt jedoch die Ausführung aller App-Threads auf einem einzigen Kern.
+Mit diesen Einstellungen wird die Anzahl der Speicherbarrieren geändert, die zum Synchronisieren von Speicherzugriffen zwischen Kernen in apps während der Emulation verwendet werden. **Fast** ist der Standardmodus, aber mit den **strengen** und **sehr strengen** Optionen wird die Anzahl der Barrieren erhöht. Dadurch wird die APP verlangsamt, das Risiko von App-Fehlern wird jedoch verringert. Die **Single Core-** Option entfernt alle Barrieren, aber zwingt, dass alle App-Threads auf einem einzelnen Kern ausgeführt werden.
 
-Wenn das Ändern einer bestimmten Einstellung Ihr Problem behebt, senden Sie eine E-Mail mit Details an *woafeedback@microsoft.com* , damit wir Ihr Feedback einbinden können.
+Wenn das Problem durch Ändern einer bestimmten Einstellung behoben wird, senden Sie eine e-Mail *woafeedback@microsoft.com* mit Details, damit wir Ihr Feedback einbeziehen können.

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 98c74ac688707c6c80b9f3098760328fea0f852a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ff8e095fc46d2c08771f3e2e002fe2d8b602ab71
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174854"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933061"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Windows Runtime 8.x zu UWP – Fallstudie, Bookstore1
 
@@ -68,11 +68,11 @@ Bearbeiten Sie den Quell Code und die soeben kopierten Markup Dateien, und ände
 
 Jetzt können Sie mit der Erstellung und Ausführung beginnen. Hier ist eine Darstellung der neuen UWP-App, die nahezu ohne Arbeit und Mühe zu Windows 10 portiert wurde.
 
-![Die Windows 10-App mit Änderungen am ursprünglichen Quellcode](images/w8x-to-uwp-case-studies/c01-03-desk10-initial-source-code-changes.png)
+![Screenshot der Windows 10-App ohne explizite Änderungen.](images/w8x-to-uwp-case-studies/c01-03-desk10-initial-source-code-changes.png)
 
 Die Windows 10-App mit Änderungen am ursprünglichen Quellcode auf einem Desktopgerät
 
-![Die Windows 10-App mit Änderungen am ursprünglichen Quellcode](images/w8x-to-uwp-case-studies/c01-04-mob10-initial-source-code-changes.png)
+![Screenshot der Windows 10-App mit anfänglichen Quell Codeänderungen.](images/w8x-to-uwp-case-studies/c01-04-mob10-initial-source-code-changes.png)
 
 Die Windows 10-App mit Änderungen am ursprünglichen Quellcode auf einem mobilen Gerät
 
@@ -91,11 +91,11 @@ Die Bookstore1 \_ 81-App verwendet zwei verschiedene Ressourcen Wörterbücher (
 
 Nach den letzten Formatierungsvorgängen sieht die App folgendermaßen aus.
 
-![Die fast portierte Windows 10-App](images/w8x-to-uwp-case-studies/c01-05-desk10-almost-ported.png)
+![Screenshot der APP mit der letzten Sequenz von Formatierungs Vorgängen.](images/w8x-to-uwp-case-studies/c01-05-desk10-almost-ported.png)
 
 Die fast portierte Windows 10-App auf einem Desktopgerät
 
-![Die fast portierte Windows 10-App](images/w8x-to-uwp-case-studies/c01-06-mob10-almost-ported.png)
+![Screenshot der fast portierten Windows 10-app.](images/w8x-to-uwp-case-studies/c01-06-mob10-almost-ported.png)
 
 Die fast portierte Windows 10-App auf einem mobilen Gerät
 

@@ -5,12 +5,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ed23f77936378f2348abf868a67041be84978123
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: 62f1c6462e56b14396e3fdaed16221698c0333fd
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304682"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933161"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>Wechseln von einer Desktop Anwendung zu einer UWP
 
@@ -56,7 +56,7 @@ Diese Einstellung finden Sie auf den Eigenschaften Seiten des Klassen Bibliothek
 
 Fügen Sie in Ihrem Desktop Anwendungsprojekt einen Verweis auf das Klassen Bibliotheksprojekt hinzu.
 
-![Klassen Bibliotheks Referenz](images/desktop-to-uwp/class-library-reference.png)
+![Screenshot des Projektmappen-Explorer Bereichs, der die Klassen Bibliotheks Referenz für das dotnet-Projekt aufruft.](images/desktop-to-uwp/class-library-reference.png)
 
 Verwenden Sie als nächstes die Tools, um zu bestimmen, wie viel Code dem Standard entspricht. Auf diese Weise können Sie vor dem Verschieben von Code in die Bibliothek entscheiden, welche Teile Sie wieder verwenden können, welche Teile minimal geändert werden müssen und welche Teile anwendungsspezifisch bleiben.
 
@@ -186,7 +186,7 @@ Fügen Sie der Projekt Mappe zunächst ein UWP-Projekt hinzu.
 
 Fügen Sie dann im UWP-Projekt einen Verweis auf das .NET Standard 2,0-Bibliotheksprojekt hinzu.
 
-![Klassen Bibliotheks Referenz](images/desktop-to-uwp/class-library-reference2.png)
+![Screenshot des Bereichs der UWP-Projektmappen-Explorer, der den Verweis auf die Klassen Bibliotheks Referenz für das dotnet-Projekt aufruft.](images/desktop-to-uwp/class-library-reference2.png)
 
 #### <a name="build-your-pages"></a>Erstellen Ihrer Seiten
 
@@ -222,7 +222,7 @@ Informationen zu den ersten Schritten mit UWP finden Sie unter [Was ist eine UWP
 
 Sie können Android-und IOS-Geräte erreichen, indem Sie xamarin-Projekte hinzufügen.  
 
-![Xamarin-Apps](images/desktop-to-uwp/xamarin-apps.png)
+![Ein Bild, das ein Android-Gerät und ein e/a-Gerät mit xamarin-apps anzeigt.](images/desktop-to-uwp/xamarin-apps.png)
 
 Mit diesen Projekten können Sie c# verwenden, um Android-und IOS-apps mit Vollzugriff auf plattformspezifische und gerätespezifische APIs zu erstellen. Diese Apps nutzen die plattformspezifische Hardwarebeschleunigung und werden für die native Leistung kompiliert.
 
@@ -236,14 +236,14 @@ Fügen Sie Ihrer Projekt Mappe zunächst ein **Android**-, **IOS**-oder Platt **
 
 Diese Vorlagen finden Sie im Dialogfeld **Neues Projekt hinzufügen** unter der Gruppe **Visual c#** .
 
-![Xamarin-Apps](images/desktop-to-uwp/xamarin-projects.png)
+![Screenshot des Dialog Felds neues Projekt hinzufügen, das installiert > Visual C-Sharp ausgewählt und Android-, plattformübergreifende und i O S-Optionen anzeigt.](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
 >Plattformübergreifende Projekte eignen sich hervorragend für apps mit wenig plattformspezifischer Funktionalität. Sie können Sie verwenden, um eine native XAML-basierte Benutzeroberfläche zu erstellen, die unter IOS, Android und Windows ausgeführt wird. [Hier](/xamarin/xamarin-forms/)erhalten Sie weitere Informationen.
 
 Fügen Sie dann in Ihrem Android-, IOS-oder plattformübergreifenden Projekt einen Verweis auf das Klassen Bibliotheksprojekt hinzu.
 
-![Klassen Bibliotheks Referenz](images/desktop-to-uwp/class-library-reference3.png)
+![Screenshot des Projektmappen-Explorer Bereichs, der den Verweis auf die Klassen Bibliotheks Referenz für das Android-, i O S-oder plattformübergreifende Projekt aufruft.](images/desktop-to-uwp/class-library-reference3.png)
 
 #### <a name="build-your-pages"></a>Erstellen Ihrer Seiten
 

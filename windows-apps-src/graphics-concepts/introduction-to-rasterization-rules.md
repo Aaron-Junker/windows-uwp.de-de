@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 38522be28280c0a08f6cb065e5dfb5c2f26642a8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 75cb520f97f68c06f8861b90ce1068fb136bd374
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162794"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933151"
 ---
 # <a name="introduction-to-rasterization-rules"></a>Einführung in die Regeln für die Rasterung
 
@@ -42,11 +42,11 @@ Die obere linke Füllungs Konvention bestimmt die Aktion, die von Direct3D ausge
 
 Wenn Sie ein Rechteck mit der linken oberen Ecke bei (0,5, 0,5) und der unteren rechten Ecke um (2,5, 4,5) definieren, befindet sich der Mittelpunkt dieses Rechtecks bei (1,5, 2,5). Wenn das Direct3D Raster-Element dieses Rechteck durchläuft, ist die Mitte der einzelnen Pixel eindeutig innerhalb der vier Dreiecke, und die obere linke Füllungs Konvention ist nicht erforderlich. Dies wird in der folgenden Abbildung veranschaulicht. Die Pixel im Rechteck sind entsprechend dem Dreieck gekennzeichnet, in dem Direct3D Sie enthält.
 
-![ein nummeriertes Quadrat, das ein Rechteck enthält, das in vier Dreiecke aufgeteilt ist.](images/noambig.png)
+![Screenshot eines nummerierten Quadrats, das ein Rechteck enthält, das in vier Dreiecke aufgeteilt ist.](images/noambig.png)
 
 Wenn Sie das Rechteck in der obigen Abbildung verschieben, sodass sich die obere linke Ecke bei (1,0, 1,0), der unteren rechten Ecke bei (3,0, 5,0) und dem zugehörigen Mittelpunkt bei (2,0, 3,0) befindet, wendet Direct3D die obere Füllungs Konvention an. Die meisten Pixel dieses Rechtecks verspannen den Rahmen zwischen zwei oder mehr Dreiecken, wie in der folgenden Abbildung dargestellt.
 
-![ein nummeriertes Quadrat, das ein Rechteck enthält, das in vier Dreiecke aufgeteilt ist.](images/fillrule.png)
+![Screenshot des nummerierten Quadrats, bei dem das Rechteck nach unten und nach rechts verschoben wurde.](images/fillrule.png)
 
 Bei beiden Rechtecke sind die gleichen Pixel betroffen, wie in der folgenden Abbildung dargestellt.
 

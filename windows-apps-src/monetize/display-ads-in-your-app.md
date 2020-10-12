@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, ADS, Werbung, Banner, Ad Control, Interstitial
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e9a67bb26d47d0bd9cc26c56df90efac5e2daa5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c12d79b97010826b05bf42a9de46780dd2f93756
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164834"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933121"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Anzeigen von Werbung mithilfe des Microsoft Advertising-SDK in der App
 
@@ -71,7 +71,7 @@ Dabei handelt es sich um statische Anzeige anzeigen, die einen rechteckigen Teil
 
 Anweisungen und Codebeispiele finden Sie in [diesem Artikel](adcontrol-in-xaml-and--net.md).
 
-![addreferences](images/banner-ad.png)
+![Ein Bild, das eine Banner Ankündigung auf einem Tablet darstellt.](images/banner-ad.png)
 
 ### <a name="interstitial-video-and-interstitial-banner-ads"></a>Video-und Interstitial-Banner Anzeigen mit Interstitial
 
@@ -79,7 +79,7 @@ Dabei handelt es sich um Vollbild-Werbeanzeigen, bei denen der Benutzer in der R
 
 Anweisungen und Codebeispiele finden Sie in [diesem Artikel](interstitial-ads.md).
 
-![addreferences](images/interstitial-ad.png)
+![Ein Bild, das eine Interstitial-Ankündigung in einem Spiel darstellt, das auf einem Tablet abgespielt wird.](images/interstitial-ad.png)
 
 ### <a name="native-ads"></a>Native Anzeigen
 
@@ -87,7 +87,7 @@ Dabei handelt es sich um komponentenbasierte Werbung. Die einzelnen Teile der kr
 
 Anweisungen und Codebeispiele finden Sie in [diesem Artikel](native-ads.md).
 
-![addreferences](images/native-ad.png)
+![Ein Bild, das eine systemeigene Ankündigung darstellt, die auf verschiedenen Geräten angezeigt werden kann.](images/native-ad.png)
 
 <span id="ad-mediation"/>
 
