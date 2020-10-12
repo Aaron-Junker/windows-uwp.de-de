@@ -10,12 +10,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6fa0f8997db9a383097c7e0fece3d8a17d5875ab
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: e144d369dccac6a14a32168bd073bb501275097f
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220093"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763071"
 ---
 # <a name="navigation-design-basics-for-windows-apps"></a>Grundlagen des Navigationsdesigns für Windows-Apps
 
@@ -67,7 +67,7 @@ Weniger Navigationselemente vereinfachen den Entscheidungsprozess von Benutzern.
 
 :::row:::
     :::column:::
-        ![Positives Beispiel](images/nav/do.svg)
+        ![Erster Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/nav/do.svg)
 
         ![Navigationsansicht gut](images/nav/navview-good.svg)
 
@@ -86,7 +86,7 @@ Darstellung von Navigationselementen in einem vertrauten Navigationsmenü
 
 Klare Pfade ermöglichen eine logische Benutzernavigation. Offensichtliche Navigationsoptionen sowie die Verdeutlichung von Zusammenhängen zwischen Seiten sorgen dafür, dass Benutzer nicht die Orientierung verlieren.
 
-![Positives Beispiel](images/nav/clarity-image.svg)
+![Screenshot einer Modellnachbildung einer Anwendung, in der klare Navigationspfade für einen Benutzer angezeigt werden.](images/nav/clarity-image.svg)
 
 > Ziele sind klar gekennzeichnet, damit die Benutzer wissen, wo sie sich befinden.
 

@@ -1,5 +1,5 @@
 ---
-Description: Passen Sie die integrierte Handschriftansicht für Freihandeingaben an Texteingaben an, die von Windows-Textsteuerelementen wie TextBox, RichEditBox (sowie Steuerelementen wie AutoSuggestBox, die eine ähnliche Texteingabeerfahrung bieten) unterstützt werden.
+description: Passen Sie die integrierte Handschriftansicht für Freihandeingaben an Texteingaben an, die von Windows-Textsteuerelementen wie TextBox, RichEditBox (sowie Steuerelementen wie AutoSuggestBox, die eine ähnliche Texteingabeerfahrung bieten) unterstützt werden.
 title: Texteingabe mit der Handschriftansicht
 label: Text input with the handwriting view
 template: detail.hbs
@@ -11,12 +11,12 @@ design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 64963128679f3bb50afe1ba4c939ec6367ad9561
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: ca87dcebcb792bea7c79d32600111ebc51600cab
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218803"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829503"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>Texteingabe mit der Handschriftansicht
 
@@ -194,11 +194,11 @@ Gelegentlich müssen Sie sicherstellen, dass die [HandwritingView](/uwp/api/wind
 
 Hier erstellen wir eine TextBox, welche eine Diktatfunktion unterstützt (dies wird implementiert, indem eine TextBox und eine Diktat-Schaltfläche in einem StackPanel platziert werden).
 
-![TextBox mit Diktatfunktion](images/handwritingview/textbox-with-dictation.png)
+![Screenshot eines Textfelds, das Diktat unterstützt.](images/handwritingview/textbox-with-dictation.png)
 
 Da der StackPanel nun größer als die TextBox ist, wird das zusammengesetzte Steuerelement von der [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) möglicherweise nicht komplett verdeckt.
 
-![TextBox mit Diktatfunktion](images/handwritingview/textbox-with-dictation-handwritingview.png)
+![Screenshot eines „HandwritingView“-Steuerelements, das ein Textfeld teilweise verdeckt, und eins, das so umpositioniert wurde, dass es das Textfeld vollständig verdeckt.](images/handwritingview/textbox-with-dictation-handwritingview.png)
 
 Um dieses Problem zu beheben, legen Sie die PlacementTarget-Eigenschaft der [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) auf das UI-Element fest, an dem sie ausgerichtet werden soll.
 
@@ -231,11 +231,11 @@ Sie können auch die Größe der [HandwritingView](/uwp/api/windows.ui.xaml.cont
 
 Wie im vorherigen Beispiel erstellen wir eine TextBox, die die Diktatfunktion unterstützt (dies wird implementiert, indem eine TextBox und eine Diktat-Schaltfläche in einem StackPanel platziert werden).
 
-![TextBox mit Diktatfunktion](images/handwritingview/textbox-with-dictation.png)
+![Screenshot eines Textfelds, das Diktat unterstützt.](images/handwritingview/textbox-with-dictation.png)
 
-In diesem Fall möchten wir sicherstellen, dass die Diktat-Schaltfläche immer sichtbar ist.
+In diesem Fall passen wir die Größe der HandwritingView so an, dass sichergestellt ist, dass die Schaltfläche „Diktat“ sichtbar ist.
 
-![TextBox mit Diktatfunktion](images/handwritingview/textbox-with-dictation-handwritingview-resize.png)
+![Screenshot eines „HandwritingView“-Steuerelements, das die Schaltfläche „Diktat“ verdeckt, und eins, dessen Größe so geändert wurde, dass sichergestellt ist, dass die Schaltfläche „Diktat“ sichtbar ist.](images/handwritingview/textbox-with-dictation-handwritingview-resize.png)
 
 Dazu binden wir die MaxWidth-Eigenschaft der [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) an die Breite des UI-Elements, das sie verdecken soll.
 

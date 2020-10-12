@@ -3,12 +3,12 @@ title: WinUI 2.4 – Anmerkungen zu dieser Version
 description: Versionshinweise zu WinUI 2.4 einschließlich neuer Features und Bugfixe.
 ms.date: 07/15/2020
 ms.topic: reference
-ms.openlocfilehash: 22fd028ba2059a092ee2f2be47a114fb2d618ce1
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 5e2ff23b3b0ea63002ad54a367e82e81ee1cd542
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492825"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762919"
 ---
 # <a name="windows-ui-library-24"></a>Windows-UI-Bibliothek 2.4
 
@@ -28,7 +28,7 @@ Download des NuGet-Pakets: [Microsoft.UI.Xaml](https://www.nuget.org/packages/Mi
 
 Ein RadialGradientBrush wird innerhalb einer Ellipse gezeichnet, die durch die Eigenschaften Center, RadiusX und RadiusY definiert wird. Farben für den Farbverlauf beginnen in der Mitte der Ellipse und enden am Radius.
 
-![Radialer Farbverlaufspinsel](../images/radialgradientbrush.gif)<br>
+![Kurzes Video, das das Verhalten des Steuerelements „RadialGradientBrush“ zeigt.](../images/radialgradientbrush.gif)<br>
 *Radialer Farbverlaufspinsel*
 
 [Nutzungsrichtlinien](/windows/uwp/design/style/brushes#radial-gradient-brushes)
@@ -39,7 +39,7 @@ Ein RadialGradientBrush wird innerhalb einer Ellipse gezeichnet, die durch die E
 
 Das ProgressRing-Steuerelement ist für modale Interaktionen vorgesehen, in denen die Aktivitäten des Benutzers blockiert werden, bis das ProgressRing-Element nicht mehr angezeigt wird. Verwenden Sie dieses Steuerelement, wenn es für einen Vorgang erforderlich ist, dass die meisten Interaktionen mit der App angehalten werden, bis der Vorgang beendet ist.
 
-![ProgressRing-Steuerelement](../images/progressring.gif)<br>
+![Kurzes Video, das das Verhalten des Steuerelements „ProgressRing“ zeigt.](../images/progressring.gif)<br>
 *ProgressRing-Steuerelement*
 
 [Nutzungsrichtlinien](/windows/uwp/design/controls-and-patterns/progress-controls)
@@ -70,8 +70,8 @@ Wenn das dunkle Design aktiviert ist, bleibt die Hintergrundfarbe in der Familie
 
 | Vor | Nach |
 | - | - |
-| ![Updates des dunklen Designs für TextBox (vorher)](..\images\textbox-darkthemeupdates-before1.gif)<br>*Updates des dunklen Designs für TextBox (vorher)* | ![Updates des dunklen Designs für TextBox (nachher)](..\images\textbox-darkthemeupdates-after1.gif)<br>*Updates des dunklen Designs für TextBox (nachher)* |
-| ![Updates des dunklen Designs für TextBox (vorher)](..\images\textbox-darkthemeupdates-before2.gif)<br>*Updates des dunklen Designs für TextBox (vorher)* | ![Updates des dunklen Designs für TextBox (nachher)](..\images\textbox-darkthemeupdates-after2.gif)<br>*Updates des dunklen Designs für TextBox (nachher)* |
+| ![Kurzes Video, das das Verhalten des dunklen Designs des Steuerelements „TextBox“ vor den Updates zeigt.](..\images\textbox-darkthemeupdates-before1.gif)<br>*Updates des dunklen Designs für TextBox (vorher)* | ![Kurzes Video, das das Verhalten des dunklen Designs des Steuerelements „TextBox“ nach den Updates zeigt.](..\images\textbox-darkthemeupdates-after1.gif)<br>*Updates des dunklen Designs für TextBox (nachher)* |
+| ![Ein weiteres kurzes Video, das das Verhalten des dunklen Designs des Steuerelements „TextBox“ vor den Updates zeigt.](..\images\textbox-darkthemeupdates-before2.gif)<br>*Updates des dunklen Designs für TextBox (vorher)* | ![Ein weiteres kurzes Video, das das Verhalten des dunklen Designs des Steuerelements „TextBox“ nach den Updates zeigt.](..\images\textbox-darkthemeupdates-after2.gif)<br>*Updates des dunklen Designs für TextBox (nachher)* |
 
 Nachfolgend sind einige der Steuerelemente aus der TextBox-Steuerelementfamilie aufgeführt:
 

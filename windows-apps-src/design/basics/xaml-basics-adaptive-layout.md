@@ -5,12 +5,12 @@ keywords: XAML, UWP, Erste Schritte
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aabad7a731bd0654468d7b9849d3b9a5bf6bead6
-ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
+ms.openlocfilehash: 1f71eb48264570df384fce672b1ca895d98e1109
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353730"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636590"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>Tutorial: Erstellen von adaptiven Layouts
 
@@ -18,11 +18,11 @@ Dieses Tutorial behandelt die Grundlagen der Verwendung der adaptiven Layoutfunk
 
 Das Bildbearbeitungsprogramm umfasst zwei Seiten. Die _Hauptseite_ zeigt eine Ansicht der Foto-Galerie zusammen mit einigen Informationen über jede Bilddatei an.
 
-![MainPage](../basics/images/xaml-basics/mainpage.png)
+![Screenshot der Photo Lab-Hauptseite.](../basics/images/xaml-basics/mainpage.png)
 
 Die *Detailseite* zeigt ein einzelnes Foto an, nachdem es ausgewählt wurde. Über ein Flyout-Menü kann das Foto bearbeitet, umbenannt und gespeichert werden.
 
-![DetailPage](../basics/images/xaml-basics/detailpage.png)
+![Screenshot der Photo Lab-Detailseite.](../basics/images/xaml-basics/detailpage.png)
 
 ## <a name="prerequisites"></a>Voraussetzungen
 

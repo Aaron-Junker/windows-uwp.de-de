@@ -3,12 +3,12 @@ title: WinUI 2.3 – Anmerkungen zu dieser Version
 description: Versionshinweise zu WinUI 2.3 einschließlich neuer Features und Bugfixe.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 63091f927f63a708c5a5e4d41e9d81fd9f528cb1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1043ae488342fc8396902c73c2f00eb5b19f584d
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154784"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636510"
 ---
 # <a name="windows-ui-library-23"></a>Windows-UI-Bibliothek 2.3
 
@@ -56,7 +56,7 @@ Eine **NumberBox** stellt ein Steuerelement dar, das zum Anzeigen und Bearbeiten
 
 **RadioButtons** ist ein neues Containersteuerelement, das es Ihnen ermöglicht, problemlos Gruppen von verwandten RadioButton-Elementen zu erstellen, während zugleich die Funktionen „Keyboardunterstützung“ und „Sprachausgabe“ ordnungsgemäß unterstützt werden
 
-![RadioButtons](../images/RadioButtons.png)
+![Screenshot der drei Optionsfelder, wobei das dritte ausgewählt ist.](../images/RadioButtons.png)
 
 [Dokumentations- und Beispiellink](https://github.com/microsoft/microsoft-ui-xaml-specs/blob/c8d3d3668af546091656dfc37436b13cd062f52d/active/radiobuttons/RadioButtons_Spec.md)
 
@@ -67,8 +67,7 @@ Die Beispiel-App des XAML-Steuerelementkatalogs enthält interaktive Demos und B
 * XAML-Steuerelementkatalog-App aus dem [Microsoft Store](
 https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt) installieren
 
-* Der XAML-Steuerelementkatalog ist auch ein [Open-Source-Projekt auf GitHub](
-https://github.com/Microsoft/Xaml-Controls-Gallery)
+* Der XAML-Steuerelementkatalog ist auch ein [Open-Source-Projekt auf GitHub](https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 ## <a name="documentation"></a>Dokumentation
 

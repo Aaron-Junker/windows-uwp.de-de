@@ -5,12 +5,12 @@ keywords: XAML, UWP, Erste Schritte
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 10615c3bb9a137655f32ca4b5cc174ddba1ee5ef
-ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
+ms.openlocfilehash: 3435718794cb22745e1438ef634db29076ed33c1
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353770"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636660"
 ---
 # <a name="tutorial-create-data-bindings"></a>Tutorial: Erstellen von Datenbindungen
 
@@ -22,11 +22,11 @@ Du beginnst mit einer vereinfachten Version des PhotoLab-Beispiels. Dieses Start
 
 Die Beispiel-App für PhotoLab verfügt über zwei Seiten. Die _Hauptseite_ zeigt eine Ansicht der Foto-Galerie zusammen mit einigen Informationen über jede Bilddatei an.
 
-![MainPage](../design/basics/images/xaml-basics/mainpage.png)
+![Screenshot der Photo Lab-Hauptseite.](../design/basics/images/xaml-basics/mainpage.png)
 
 Die *Detailseite* zeigt ein einzelnes Foto an, nachdem es ausgewählt wurde. Über ein Flyout-Menü kann das Foto bearbeitet, umbenannt und gespeichert werden.
 
-![DetailPage](../design/basics/images/xaml-basics/detailpage.png)
+![Screenshot der Photo Lab-Detailseite.](../design/basics/images/xaml-basics/detailpage.png)
 
 ## <a name="prerequisites"></a>Voraussetzungen
 

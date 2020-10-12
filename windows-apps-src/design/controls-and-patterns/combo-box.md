@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: b8a6854eb361388fc1597816d31daf08bb5fe782
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: bb903be202724927d60ee5bcd1edb9e16bc4c982
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217453"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829487"
 ---
 # <a name="combo-box-and-list-box"></a>Kombinationsfeld und Listenfeld
 
@@ -23,15 +23,23 @@ Verwenden Sie ein Kombinationsfeld (auch als Dropdownliste bezeichnet), um eine 
 
 Wenn das Kombinationsfeld geschlossen ist, wird entweder die aktuelle Auswahl angezeigt oder das Feld ist leer, wenn kein Element ausgewählt ist. Wenn der Benutzer das Kombinationsfeld erweitert, wird die Liste der auswählbaren Elemente angezeigt.
 
-![Beispiel für eine Dropdownliste im kompakten Zustand](images/combo-box-expand.gif)
+![Kurzes Video, das eine Dropdownliste in ihrem kompakten sowie im erweiterten Zustand zeigt.](images/combo-box-expand.gif)
 
 > _Kombinationsfeld im kompakten Zustand mit einer Überschrift._
 
 **Abrufen der Windows-UI-Bibliothek**
 
-|  |  |
-| - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](../style/rounded-corner.md). „WinUI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+:::row:::
+   :::column:::
+      ![WinUI-Logo](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](../style/rounded-corner.md). „WinUI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **Plattform-APIs:** [ComboBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [IsEditable-Eigenschaft](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [Text-Eigenschaft](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [TextSubmitted-Ereignis](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
@@ -60,7 +68,7 @@ Wenn das Kombinationsfeld geschlossen ist, wird entweder die aktuelle Auswahl an
 
 Ein Kombinationsfeld im kompakten Zustand kann eine Kopfzeile anzeigen.
 
-![Beispiel für eine Dropdownliste im kompakten Zustand](images/combo_box_collapsed.png)
+![Screenshot, der eine Dropdownliste in ihrem kompakten Zustand zeigt.](images/combo_box_collapsed.png)
 
 Obwohl Kombinationsfelder erweitert werden, um längere Zeichenfolgen zu unterstützen, sollten Sie extrem lange Zeichenfolgen vermeiden, die nur schwer lesbar sind.
 

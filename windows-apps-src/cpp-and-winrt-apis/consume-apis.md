@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, projiziert, Projektion, Implementierung, Laufzeitklasse, Aktivierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b3d9e4be7c45d4d2b9b5063087a78556497dc9b
-ms.sourcegitcommit: bcf60b6d460dc4855f207ba21da2e42644651ef6
+ms.openlocfilehash: eb667c27b937b252f0fe3c883730646938bf19d9
+ms.sourcegitcommit: a93a309a11cdc0931e2f3bf155c5fa54c23db7c3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91376248"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646273"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Nutzen von APIs mit C++/WinRT
 
@@ -271,11 +271,11 @@ Verweise in deinem Anwendungsprojekt auf die Windows-Runtime-Metadatendatei (`.w
 Anschließend wird genau wie bei einem Windows-Namespacetyp ein Header eingeschlossen und der projizierte Typ über einen seiner Konstruktoren konstruiert. Der Startcode deines Anwendungsprojekts registriert die Laufzeitklasse, und der Konstruktor des projizierten Typs ruft [**RoActivateInstance**](/windows/desktop/api/roapi/nf-roapi-roactivateinstance) auf, um die Laufzeitklasse der referenzierten Komponente zu aktivieren.
 
 ```cppwinrt
-#include <winrt/BankAccountWRC.h>
+#include <winrt/ThermometerWRC.h>
 
 struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 {
-    BankAccountWRC::BankAccount bankAccount;
+    ThermometerWRC::Thermometer thermometer;
     ...
 };
 ```
@@ -420,14 +420,14 @@ CurrencyFormatter currency = factory.CreateCurrencyFormatterCode(L"USD");
 using namespace winrt::Windows::Foundation;
 ...
 auto factory = winrt::get_activation_factory<Uri, IUriRuntimeClassFactory>();
-Uri account = factory.CreateUri(L"http://www.contoso.com");
+Uri uri = factory.CreateUri(L"http://www.contoso.com");
 ```
 
-Bei den Klassen in den beiden obigen Beispielen handelt es sich um Typen aus einem Windows-Namespace. Im nächsten Beispiel ist **BankAccountWRC::BankAccount** ein benutzerdefinierter Typ, der in einer Komponente für Windows-Runtime implementiert ist:
+Bei den Klassen in den beiden obigen Beispielen handelt es sich um Typen aus einem Windows-Namespace. Im nächsten Beispiel ist **ThermometerWRC::Thermometer** ein benutzerdefinierter Typ, der in einer Komponente für Windows-Runtime implementiert ist.
 
 ```cppwinrt
-auto factory = winrt::get_activation_factory<BankAccountWRC::BankAccount>();
-BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::BankAccount>();
+auto factory = winrt::get_activation_factory<ThermometerWRC::Thermometer>();
+ThermometerWRC::Thermometer thermometer = factory.ActivateInstance<ThermometerWRC::Thermometer>();
 ```
 
 ## <a name="membertype-ambiguities"></a>Mehrdeutigkeiten bei Membern/Typen

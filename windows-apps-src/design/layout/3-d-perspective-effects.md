@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 324512b4bd99ee651539c270219a6adc988ae77b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: caeb8fff9eccccc57219b84b0162db68b622bd97
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165764"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763003"
 ---
 # <a name="3-d-perspective-effects-for-xaml-ui"></a>3D-Perspektiveneffekte für XAML-UI
 
@@ -172,6 +172,6 @@ Im nächsten Beispiel wird [**GlobalOffsetX**](/uwp/api/windows.ui.xaml.media.pl
 
 Sie stellen fest, dass in diesem Beispiel die Richtung des Objekts während seiner Drehung nicht geändert wird. Dies liegt daran, dass das Objekt ungeachtet seiner Drehung entlang der X-Achse des Bildschirms gedreht wird.
 
-## <a name="positioning-an-object"></a>Positionieren eines Objekts
+## <a name="more-complex-semi-3d-scenarios"></a>Weitere komplexe Semi-3D-Szenarien
 
 Sie können den [**Matrix3DProjection**](/uwp/api/Windows.UI.Xaml.Media.Matrix3DProjection)-Typ und den [**Matrix3D**](/uwp/api/Windows.UI.Xaml.Media.Media3D.Matrix3D)-Typ für Semi-3D-Szenarien nutzen, die komplexer als die von [**PlaneProjection**](/uwp/api/Windows.UI.Xaml.Media.PlaneProjection) unterstützten sind. **Matrix3DProjection** bietet Ihnen eine komplette 3D-Transformationsmatrix, die auf ein beliebiges [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) angewendet werden kann. Somit können Sie Transformationsmatrizen und Perspektivmatrizen beliebiger Modelle auf Elemente anwenden. Beachten Sie, dass diese APIs nur im Minimalzustand vorliegen. Wenn Sie sie also nutzen möchten, müssen Sie den Code schreiben, mit dem die 3D-Transformationsmatrizen ordnungsgemäß erstellt werden. Daher ist es einfacher, für einfache 3D-Szenarien **PlaneProjection** zu verwenden.

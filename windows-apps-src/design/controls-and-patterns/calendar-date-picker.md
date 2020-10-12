@@ -1,5 +1,5 @@
 ---
-Description: Die Kalenderdatumsauswahl ist ein Dropdownsteuerelement, das für die Auswahl eines einzelnen Datums in einer Kalenderansicht optimiert ist, in der kontextbezogene Informationen wie der Wochentag oder die Belegung des Kalenders von Bedeutung sind.
+description: Die Kalenderdatumsauswahl ist ein Dropdownsteuerelement, das für die Auswahl eines einzelnen Datums in einer Kalenderansicht optimiert ist, in der kontextbezogene Informationen wie der Wochentag oder die Belegung des Kalenders von Bedeutung sind.
 title: Kalenderdatumsauswahl
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a12ae302f5e904db29655eacb075a9eba5f8f3e5
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: c7061de6098c77214136f3441b43abbf35a10686
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217543"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829619"
 ---
 # <a name="calendar-date-picker"></a>Kalenderdatumsauswahl
 
@@ -25,9 +25,17 @@ Die Kalenderdatumsauswahl ist ein Dropdownsteuerelement, das für die Auswahl ei
 
 **Abrufen der Windows-UI-Bibliothek**
 
-|  |  |
-| - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](../style/rounded-corner.md). WinUI ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+:::row:::
+   :::column:::
+      ![WinUI-Logo](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](../style/rounded-corner.md). WinUI ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **Plattform-APIs:** [CalendarDatePicker-Klasse](/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker), [Date-Eigenschaft](/uwp/api/windows.ui.xaml.controls.calendardatepicker.date), [DateChanged-Ereignis](/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged)
 
@@ -57,7 +65,7 @@ Weitere Informationen zur Auswahl des passenden Steuerelements finden Sie im Art
 
 Der Einstiegspunkt zeigt Platzhaltertext an, falls kein Datum festgelegt wurde. Andernfalls wird das ausgewählte Datum angezeigt. Wenn Benutzer den Einstiegspunkt auswählen, wird eine Kalenderansicht eingeblendet, damit sie ein Datum auswählen können. Die Kalenderansicht überlagert andere Elemente der Benutzeroberfläche. Die anderen Elemente der Benutzeroberfläche werden dadurch jedoch nicht „beiseitegeschoben“.
 
-![Beispiel für eine Kalenderdatumsauswahl](images/calendar-date-picker-2-views.png)
+![Screenshot einer Kalenderdatumsauswahl mit einem leeren Textfeld zum Auswählen eines Datums, gefolgt von einem, das aufgefüllt ist, mit darunter liegendem Kalender.](images/calendar-date-picker-2-views.png)
 
 ## <a name="create-a-date-picker"></a>Erstellen einer Datumsauswahl
 
@@ -72,7 +80,7 @@ arrivalCalendarDatePicker.Header = "Arrival date";
 
 Die fertige Kalenderdatumsauswahl sieht wie folgt aus:
 
-![Beispiel für eine Kalenderdatumsauswahl](images/calendar-date-picker-closed.png)
+![Screenshot einer aufgefüllten Kalenderdatumsauswahl mit der Bezeichnung „Ankunftsdatum“.](images/calendar-date-picker-closed.png)
 
 Die Kalenderdatumsauswahl verfügt über eine interne [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView)-Klasse, um ein Datum auszuwählen. In CalendarDatePicker ist eine Teilmenge von CalendarView-Eigenschaften wie [IsTodayHighlighted](/uwp/api/windows.ui.xaml.controls.calendardatepicker.istodayhighlighted) und [FirstDayOfWeek](/uwp/api/windows.ui.xaml.controls.calendardatepicker.firstdayofweek) vorhanden. Diese werden an die interne CalendarView-Klasse weitergeleitet, damit Sie sie ändern können. 
 

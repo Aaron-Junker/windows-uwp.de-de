@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: Windows 10, UWP, Debuggen, Testen, Leistung
 ms.localizationpriority: medium
-ms.openlocfilehash: c18cb3c5b8a979e7c7c6485e6989736d818613ba
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: c21586bceef11b1a2c19900160796bf702578ffb
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220353"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763061"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>Bereitstellen und Debuggen von UWP-Apps
 
@@ -109,11 +109,11 @@ Für C#- und VB-UWP-Projekte wird das Feld **Befehlszeilenargumente** unter **St
 
 Für C++- und JS-UWP-Projekte wird das Feld **Befehlszeilenargumente** in den **Debugeigenschaften** angezeigt.
 
-![Befehlszeilenargumente für C++ und JS](images/command-line-arguments-cpp.png)
+![Screenshot der Eigenschaftenseiten der App 4 mit ausgewählter Option „Konfigurationseigenschaften > Debuggen“ und in der Tabelle aufgelisteter Eigenschaft „Befehlszeilenargumente“.](images/command-line-arguments-cpp.png)
 
 Nach dem Festlegen der Befehlszeilenargumente kannst du auf den Wert des Arguments in der **OnLaunched**-Methode der App zugreifen. Die *Args* des [**LaunchActivatedEventArgs**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs)-Objekts enthalten die **Arguments**-Eigenschaft, deren Wert auf den Text im Feld **Befehlszeilenargumente** festgelegt ist.
 
-![Befehlszeilenargumente für C++ und JS](images/command-line-arguments-debugging.png)
+![Screenshot der Befehlszeilenargumenten für C++ und JS.](images/command-line-arguments-debugging.png)
 
 ## <a name="authentication-modes"></a>Authentifizierungsmodi
 

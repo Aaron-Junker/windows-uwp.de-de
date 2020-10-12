@@ -1,5 +1,5 @@
 ---
-Description: Verwenden des ListView- und GridView-Steuerelements, um Sätze von Daten anzuzeigen und zu bearbeiten, z. B. eine Bildergalerie oder eine Reihe von E-Mail-Nachrichten
+description: Verwenden des ListView- und GridView-Steuerelements, um Sätze von Daten anzuzeigen und zu bearbeiten, z. B. eine Bildergalerie oder eine Reihe von E-Mail-Nachrichten
 title: Listenansicht und Rasteransicht
 label: List view and grid view
 template: detail.hbs
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 988400ae16d19525acc1dc811c91fc5af9fd97d0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 26f7e36d09857d37da4a0b4533cc8f65d2789e20
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172624"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829649"
 ---
 # <a name="list-view-and-grid-view"></a>Listenansicht und Rasteransicht
 
@@ -53,7 +53,7 @@ ListView und GridView sind Steuerelemente, die sofort einsatzfähig sind und dan
 -   ItemsRepeater sollte verwendet werden, wenn Sie eine in hohem Maß benutzerdefinierte Benutzeroberfläche verwenden, die sich mithilfe von ListView oder GridView nicht herstellen lässt, oder wenn Sie eine Datenquelle verwenden, die für jedes Element ein stark unterschiedliches Verhalten erfordert.
 
 
-Weitere Informationen zu ItemsRepeater finden Sie in seinen [Richtlinien](./items-repeater.md) und den Seiten der [API-Dokumentation](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2).
+Weitere Informationen zu ItemsRepeater finden Sie in seinen [Richtlinien](./items-repeater.md) und den Seiten der [API-Dokumentation](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater).
 
 ## <a name="examples"></a>Beispiele
 
@@ -121,7 +121,7 @@ FruitsPanel.Children.Add(Fruits);
 ```
 Beide oben aufgeführten Optionen führen zu der gleichen ListView, die unten dargestellt ist:
 
-![Eine einfache Listenansicht](images/listview-basic-code-example2.png)
+![Screenshot einer einfachen Listenansicht mit einer Liste von Obstsorten.](images/listview-basic-code-example2.png)
 <br/>
 <u>Methode 2: Hinzufügen von Elementen durch Festlegen der ItemsSource</u>
 
@@ -290,7 +290,7 @@ Weitere Informationen und Beispiele zur Verwendung von Datenvorlagen und Element
 Wenn Sie Elemente zu einer ListView oder GridView hinzufügen, bricht das Steuerelement automatisch alle Elemente in einem Elementcontainer um und ordnet anschließend alle Elementcontainer an. Die Anordnung dieser Elementcontainer ist von [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) des Steuerelements abhängig.  
 - Standardmäßig verwendet **ListView** ein [ItemsStackPanel](/uwp/api/windows.ui.xaml.controls.itemsstackpanel), das eine vertikale Liste wie diese erzeugt.
 
-![Eine einfache Listenansicht](images/listview-simple.png)
+![Screenshot einer einfachen Listenansicht mit einer Liste mit Elementen.](images/listview-simple.png)
 
 - **GridView** verwendet ein [ItemsWrapGrid](/uwp/api/windows.ui.xaml.controls.itemswrapgrid), das Elemente horizontal hinzufügt, diese anschließend umbricht und einen vertikalen Bildlauf ausführt, wie hier gezeigt.
 

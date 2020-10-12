@@ -10,12 +10,12 @@ label: XAML styles
 template: detail.hbs
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dfb9c73eb6db0bb948714e1ce5e99a185b8dd3d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6e4e69b87ba78134982032f9ceca826758c1a5ba
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173864"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829652"
 ---
 # <a name="xaml-styles"></a>XAML-Formatvorlagen
 
@@ -29,7 +29,7 @@ Das XAML-Framework bietet zahlreiche Anpassungsmöglichkeiten für die App-Darst
 
 Verwenden Sie Stile, um visuelle Eigenschaften in wiederverwendbare Ressourcen auszulagern. Dieses Beispiel zeigt drei Schaltflächen mit einem Stil, der die Eigenschaften [BorderBrush](/uwp/api/windows.ui.xaml.controls.control.borderbrush), [BorderThickness](/uwp/api/windows.ui.xaml.controls.control.borderthickness) und [Foreground](/uwp/api/windows.ui.xaml.controls.control.foreground) festlegt. Durch Anwenden eines Stils können Sie eine einheitliche Darstellung der Steuerelemente erreichen, ohne diese Eigenschaften separat für jedes Steuerelement festlegen zu müssen.
 
-![Formatierte Schaltflächen](images/styles-rainbow-buttons.png)
+![Screenshot der drei formatierten, nebeneinander angeordneten Schaltflächen.](images/styles-rainbow-buttons.png)
 
 Sie können einen Stil inline im XAML-Code für ein Steuerelement oder als wiederverwendbare Ressource definieren. Sie können Ressourcen in der XAML-Datei einer bestimmten Seite, in der Datei App.xaml oder in einer separaten XAML-Datei mit Ressourcenverzeichnis definieren. Eine XAML-Datei mit einem Ressourcenverzeichnis kann App-übergreifend genutzt werden. Außerdem können in einer einzelnen App mehrere Ressourcenverzeichnisse zusammengeführt werden. Der Ort, an dem die Ressource definiert wird, bestimmt den Bereich, in dem sie verwendet werden kann. Ressourcen auf Seitenebene sind nur auf der Seite verfügbar, für die sie definiert sind. Sind Ressourcen mit demselben Schlüssel sowohl in „App.xaml“ als auch auf einer Seite definiert, haben die Ressourcen auf der Seite Vorrang vor den Ressourcen in App.xaml. Wenn eine Ressource in einer separaten Ressourcenwörterbuchdatei definiert ist, wird Ihr Bereich dadurch bestimmt, von wo auf das Ressourcenwörterbuch verwiesen wird.
 
@@ -149,7 +149,7 @@ Wenn Sie schnell einen Stil auf Ihr Steuerelement anwenden möchten, klicken Sie
 
 Das Überschreiben der Systempinsel geschieht gewöhnlich auf App- oder Seitenebene, und in keinem Fall wirkt sich die Farbüberschreibung auf alle Steuerelemente aus, die auf diesen Pinsel verweisen – und in XAML können zahlreiche Steuerelemente auf denselben Pinsel verweisen.
 
-![Formatierte Schaltflächen](images/LightweightStyling_ButtonStatesExample.png)
+![Screenshot von zwei Schaltflächen: eine im Ruhezustand und eine mit angewendeter einfacher Formatierung.](images/LightweightStyling_ButtonStatesExample.png)
 
 ```XAML
 <Page.Resources>
@@ -173,7 +173,7 @@ Die Verwendung dieser Pinselüberschreibungen auf der **App.Resources**-Ebene ve
 
 In anderen Fällen ist es möglicherweise erwünscht, nur ein einzelnes Steuerelement auf einer Seite in einer bestimmten Weise zu gestalten, ohne dass dies andere Versionen dieses Steuerelements betrifft:
 
-![Formatierte Schaltflächen](images/LightweightStyling_CheckboxExample.png)
+![Screenshot von drei formatierten, übereinander gestapelt angeordneten Schaltflächen.](images/LightweightStyling_CheckboxExample.png)
 
 ```XAML
 <CheckBox Content="Normal CheckBox" Margin="5"/>

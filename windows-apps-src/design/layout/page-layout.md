@@ -5,12 +5,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 localizationpriority: medium
-ms.openlocfilehash: 5473542019a4f8afa3e916b914127e41a4fe05d4
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: e4875e7d34f36104cb5ed64bb56ea289de2db92e
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218623"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636570"
 ---
 # <a name="page-layout"></a>Seitenlayout
 
@@ -86,7 +86,7 @@ Angebotsseiten werden auch Hero-Screens genannt und werden häufig auf der obers
 Das [Master/Detail](../controls-and-patterns/master-details.md)-Modell besteht aus einer Listenansicht (Master) und einer Inhaltsansicht (Detail). Beide Bereiche sind festgelegt und bieten vertikales Scrollen. Wenn ein Element in der Listenansicht ausgewählt ist, wird die Inhaltsansicht entsprechend aktualisiert. 
 
 ## <a name="forms"></a>Formulare
-![Formular](images/form.svg)
+![Screenshot eines Formulars, das ein leeres Textfeld und eine Schaltfläche anzeigt.](images/form.svg)
 
 Ein [Formular](../controls-and-patterns/forms.md) ist eine Gruppe von Steuerelementen, die Daten von Benutzern sammeln und übermitteln. Die meisten, wenn nicht alle Apps, verwenden eine Art Formular für Einstellungsseiten, Anmeldeportale, Feedback-Hubs, Kontoerstellung oder andere Zwecke. 
 

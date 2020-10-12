@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f507a325a89220e229b277a1ae08727054cc2a75
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 2a84dcc209fa0fcd897668293cb136a5448e7254
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219103"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829512"
 ---
 # <a name="command-bar"></a>Befehlsleiste
 
@@ -59,15 +59,15 @@ Eine erweiterte Befehlsleiste.
 
 Standardmäßig werden auf der Befehlsleiste eine Reihe von Symbolschaltflächen und eine optionale, durch drei Punkte (\[•••\]) dargestellte Schaltfläche für weitere Optionen angezeigt. Dies ist die Befehlsleiste, die mit dem weiter unten gezeigten Beispielcode erstellt wird. Hier ist der geschlossene, kompakte Zustand zu sehen.
 
-![Geschlossene Befehlsleiste](images/command-bar-compact.png)
+![Screenshot, der eine geschlossene Befehlsleiste zeigt.](images/command-bar-compact.png)
 
 Die Befehlsleiste kann auch im geschlossenen, minimierten Zustand angezeigt werden, die wie folgt aussieht. Weitere Informationen finden Sie im Abschnitt [Geöffneter und geschlossener Zustand](#open-and-closed-states).
 
-![Geschlossene Befehlsleiste](images/command-bar-minimal.png)
+![Screenshot, der eine Befehlsleiste in einem geschlossenen minimierten Zustand zeigt.](images/command-bar-minimal.png)
 
 Dies ist die gleiche Befehlsleiste im geöffneten Zustand. Die Beschriftungen zeigen die wichtigsten Elemente des Steuerelements.
 
-![Geschlossene Befehlsleiste](images/commandbar_anatomy_open.png)
+![Screenshot, der eine Befehlsleiste im geöffneten Zustand zeigt.](images/commandbar_anatomy_open.png)
 
 Die Befehlsleiste ist in 4 Hauptbereiche unterteilt:
 - Der Inhaltsbereich wird an der linken Seite der Leiste ausgerichtet. Er wird angezeigt, wenn die [Content](/uwp/api/windows.ui.xaml.controls.contentcontrol.content)-Eigenschaft gefüllt wird.

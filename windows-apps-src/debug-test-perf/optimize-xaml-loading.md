@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 86c6f9398a61865b014400bbf4a96c8a7ce8a231
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ce7344b810c3b6683050876dce38264be6f5c8b7
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154354"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762837"
 ---
 # <a name="optimize-your-xaml-markup"></a>Optimieren Ihres XAML-Markups
 
@@ -81,11 +81,11 @@ Hier wird das ListView-Steuerelement geladen, aber nicht angezeigt, da seine Bre
 
 Visuelle Livestruktur mit geladenem ListView-Steuerelement. Die Seite enthält insgesamt 89 Elemente.
 
-![Visuelle Struktur mit Listenansicht](images/visual-tree-1.png)
+![Screenshot der visuellen Struktur mit Listenansicht.](images/visual-tree-1.png)
 
 Das ListView-Steuerelement und seine untergeordneten Elemente werden in den Speicher geladen.
 
-![Visuelle Struktur mit Listenansicht](images/memory-use-1.png)
+![Screenshot der Test-App 1 für verwalteten Arbeitsspeicher Punkt E X E-Tabelle mit verwaltetem Arbeitsspeicher, der zeigt, dass das ListView-Steuerelement und seine untergeordneten Elemente in den Speicher geladen sind.](images/memory-use-1.png)
 
 #### <a name="option-2---better"></a>Option 2: Besser
 
@@ -97,11 +97,11 @@ Hier wird die Sichtbarkeit des ListView-Steuerelements auf „Collapsed” festg
 
 Visuelle Livestruktur mit reduziertem ListView-Steuerelement. Die Seite enthält insgesamt 46 Elemente.
 
-![Visuelle Struktur mit reduzierter Listenansicht](images/visual-tree-2.png)
+![Screenshot der visuellen Struktur mit reduzierter Listenansicht.](images/visual-tree-2.png)
 
 Das ListView-Steuerelement und seine untergeordneten Elemente werden in den Speicher geladen.
 
-![Visuelle Struktur mit Listenansicht](images/memory-use-1.png)
+![Aktualisierter Screenshot der Test-App 1 für verwalteten Arbeitsspeicher Punkt E X E-Tabelle mit verwaltetem Arbeitsspeicher, der zeigt, dass das ListView-Steuerelement und seine untergeordneten Elemente in den Speicher geladen sind.](images/memory-use-1.png)
 
 #### <a name="option-3---most-efficient"></a>Option 3: Am effizientesten
 

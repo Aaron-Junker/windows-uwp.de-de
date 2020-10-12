@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 75d8dfe44c9296fbaf1d8caf5127db0244fc1d8d
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: d3179a553e0d30bd009765ec55640989720628c2
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216513"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763086"
 ---
 # <a name="introduction-to-windows-app-design"></a>Einführung in das Design von Windows-Apps
 
@@ -67,7 +67,7 @@ Da UWP-Apps automatisch für alle Geräte skaliert werden, wird beim Entwerfen e
 Wenn eine UWP-App auf einem Windows 10-Gerät gestartet wird, startet sie in einem [Window](/uwp/api/windows.ui.xaml.window) mit einem [Frame](/uwp/api/windows.ui.xaml.controls.frame), der zwischen [Page](/uwp/api/windows.ui.xaml.controls.page)-Instanzen navigieren kann.
     :::column-end:::
     :::column:::
-![Frame](images/frame.svg)
+![Screenshot des Fensters mit einem Rahmen.](images/frame.svg)
     :::column-end:::
 :::row-end:::
 
@@ -78,7 +78,7 @@ Sie können sich die UI Ihrer App als eine Sammlung von Seiten vorstellen. Es li
 Informationen dazu, wie Sie Ihre Seiten organisieren können, finden Sie unter [Navigationsgrundlagen](navigation-basics.md).
     :::column-end:::
     :::column:::
-![Frame](images/collection-pages.svg)
+![Screenshot der Seite „Sammlung“.](images/collection-pages.svg)
     :::column-end:::
 :::row-end:::
 
@@ -94,7 +94,7 @@ Wie sollten diese Seiten aussehen? Aus Konsistenzgründen haben die meisten Seit
 
 Weitere Informationen zur Implementierung allgemeiner UWP-App-Muster findest du im [Artikel zum Seitenlayout](../layout/page-layout.md).
 
-Du kannst auch [Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master) in Visual Studio verwenden, um mit einem Layout für deine App zu beginnen.
+Du kannst auch [Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio) in Visual Studio verwenden, um mit einem Layout für deine App zu beginnen.
 
 ## <a name="controls"></a>Steuerelemente
 
@@ -134,7 +134,7 @@ UWP-Apps haben vier Kachelgrößen (klein, mittel, breit und groß), die mit dem
 UWP-Apps basieren auf intelligenten Interaktionen. Sie können sie ausgehend von einer Klick-Interaktion konzipieren, ohne zu wissen oder zu definieren, ob der Klick von einer Maus, einem Stift oder einem Fingertipp stammt. Sie können Ihre Apps aber auch für [bestimmte Eingabemodi](../input/input-primer.md) gestalten.
     :::column-end:::
     :::column:::
-![Eingaben](images/inputs.svg)
+![Screenshot von Symbolen, die verschiedene Eingabemodi kennzeichnen.](images/inputs.svg)
     :::column-end:::
 :::row-end:::
 
@@ -146,7 +146,7 @@ UWP skaliert deine App zwar automatisch für verschiedene Geräte, du kannst abe
 
 ## <a name="usability"></a>Benutzerfreundlichkeit
 
-<img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REYaAb?ver=727c">
+:::image type="content" source="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REYaAb" alt-text="Ein kurzes Video mit Strichmännchen-Cartoons, die Personen mit unterschiedlichen Fähigkeiten darstellen.":::
 
 Bei der Benutzerfreundlichkeit geht es darum, die App für alle Benutzer zugänglich zu machen. Eine wirklich inklusive Benutzerumgebung kommt letztendlich allen zugute. Unter [Benutzerfreundlichkeit in UWP-Apps](../usability/index.md) erfährst du, wie du eine rundum benutzerfreundliche App gestaltest.
 

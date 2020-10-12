@@ -11,12 +11,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bb3eb985ab10bd4c28ca38f87aefe3d1fc7fd61e
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 66f9d166d0e20f82f495f98b26deceff8e136cc5
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216473"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636640"
 ---
 # <a name="icons-for-windows-apps"></a>Symbole für Windows-Apps
 
@@ -47,7 +47,8 @@ Symbole können Platz sparen, aber wann ist eine Verwendung sinnvoll?
 
 :::row:::
     :::column:::
-        ![Empfohlen](images/do.svg) ![Standardbild für Symbole](images/icons/icons-standard.svg)<br>
+        ![Screenshot, der die Symbole für Ausschneiden, Kopieren, Einfügen und Speichern zeigt.](images/do.svg)
+        ![Standardbild für Symbole](images/icons/icons-standard.svg)<br>
 
 Verwende ein Symbol für Aktionen wie Ausschneiden, Kopieren, Einfügen und Speichern oder für Navigationselemente in einem Navigationsmenü.
     :::column-end:::
@@ -60,12 +61,14 @@ Verwende ein Symbol, wenn für das gewünschte Konzept bereits eines vorhanden i
 
 :::row:::
     :::column:::
-        ![Empfohlen](images/do.svg) ![Symbol für Einkaufswagen](images/icons/icon-shopping-cart.svg)<br>
+        ![Screenshot eines einfachen und vertrauten Warenkorbsymbols.](images/do.svg)
+        ![Symbol für Warenkorb](images/icons/icon-shopping-cart.svg)<br>
 
 Verwende ein Symbol, wenn dessen Bedeutung für den Benutzer leicht nachvollziehbar und es auch bei geringer Größe gut erkennbar ist.
     :::column-end:::
     :::column:::
-        ![Nicht empfohlen](images/dont.svg) ![Konzeptbild für Symbole](images/icons/icon-bad-example.png)<br>
+        ![Screenshot eine komplexen und nicht vertrauten Warenkorbsymbols.](images/dont.svg)
+        ![Konzeptbild für Symbole](images/icons/icon-bad-example.png)<br>
 
 Verwende kein Symbol, wenn dessen Bedeutung nicht eindeutig oder zur Verdeutlichung eine komplexe Form erforderlich ist.
     :::column-end:::

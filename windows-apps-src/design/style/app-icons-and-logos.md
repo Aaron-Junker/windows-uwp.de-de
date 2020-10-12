@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ee12ed108f552b8aa95549f1e9c2f3ac09a889ae
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 1e313fe0e51ed77d416f782e40aee9dee81796ae
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220133"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636650"
 ---
 # <a name="app-icons-and-logos"></a>App-Symbole und Logos 
 
@@ -64,7 +64,7 @@ Der Skalierungsfaktor bestimmt die Größe von UI-Elementen wie Text. Skalierung
       (Benutzer können den Standardwert außer Kraft setzen, indem sie zur Seite **Einstellungen &gt; Anzeige &gt; Skalierung und Anordnung** navigieren.)
    :::column-end:::
    :::column:::
-      ![](images/icons/display-settings-screen.png)
+      ![Screenshot der Seite „Anzeige“ in den Einstellungen.](images/icons/display-settings-screen.png)
    :::column-end:::
 :::row-end:::  
 

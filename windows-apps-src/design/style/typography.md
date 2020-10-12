@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3e9e9e501f1c4277121e7694e8213ccea51c5297
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: bb0a6b48e9a9a01881955ae0ccb65e93b9cf2b6e
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218133"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636540"
 ---
 # <a name="typography-in-windows-apps"></a>Typografie in Windows-Apps
 
@@ -29,7 +29,8 @@ Weitere Informationen zum Anzeigen anderer Sprachen als Englisch oder um eine an
 
 :::row:::
     :::column:::
-![Richtig](images/do.svg) Wählen Sie eine Schriftart für Ihre Benutzeroberfläche aus.
+![Erster Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/do.svg)
+Wählen Sie eine Schriftart für Ihre Benutzeroberfläche aus.
     :::column-end:::
     :::column:::
 ![Falsch](images/dont.svg) Mischen Sie nicht mehrere Schriftarten.
@@ -46,7 +47,8 @@ Aufgrund der Funktionsweise der Skalierung, entwerfen Sie in effektiven Pixeln, 
 
 :::row:::
     :::column:::
-![Richtig](images/do.svg) Folgen Sie der Größenanpassung der Windows-[Typhierarchie](#type-ramp).
+![Zweiter Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/do.svg)
+Folgen Sie der Größenanpassung der Windows-[Typhierarchie](#type-ramp).
     :::column-end:::
     :::column:::
 ![Falsch](images/dont.svg) Verwenden Sie einen Schriftgrad kleiner als 12 Pixel.
@@ -93,7 +95,8 @@ Sie können auf Ebenen der Typhierarchie als [statische Ressourcen](../controls-
 
 :::row:::
     :::column:::
-![Richtig](images/do.svg) Verwenden Sie für die meisten Texte „Body“.
+![Dritter Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/do.svg)
+Verwenden Sie „Body“ für die meisten Texte.
 
 Verwenden Sie „Base“ für Titel mit begrenztem Platz.
     :::column-end:::
@@ -118,7 +121,8 @@ Standardmäßig ist das [TextAlignment](/uwp/api/windows.ui.xaml.textalignment) 
 
 :::row:::
     :::column:::
-![Richtig](images/do.svg) Halten Sie sich zur besseren Lesbarkeit an 50 bis 60 Wörter pro Zeile.
+![[Vierter Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/do.svg)
+Halten Sie sich zur besseren Lesbarkeit an 50 bis 60 Buchstaben pro Zeile.
     :::column-end:::
     :::column:::
 ![Falsch](images/dont.svg) Weniger als 20 oder mehr als 60 Zeichen pro Zeile sind schwer lesbar.
@@ -137,7 +141,8 @@ Wenn die Textmenge den verfügbaren Speicherplatz überschreitet, wird empfohlen
 
 :::row:::
     :::column:::
-![Richtig](images/do.svg) Schneiden Sie Text zu, oder brechen Sie ihn um, wenn mehrere Zeilen aktiviert sind.
+![[Fünfter Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/do.svg)
+Schneiden Sie Text zu, und umbrechen Sie ihn, wenn mehrere Zeilen aktiviert sind.
     :::column-end:::
     :::column:::
 ![Falsch](images/dont.svg) Verwenden Sie für mehr Übersichtlichkeit Ellipsen.

@@ -10,12 +10,12 @@ ms.custom: RS5
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: bb0f38c250d20780b301a925b24e3d1c36bda7e3
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f7035017b1b1bfe878e4bd390fcefbe2bf3a6be5
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216603"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636560"
 ---
 # <a name="color"></a>Farbe
 
@@ -216,7 +216,7 @@ Wenn Sie farbigen Text auf einem farbigem Hintergrund verwenden, stellen Sie sic
 
 Das folgende Diagramm zeigt ein Beispiel für die verschiedenen Hell/Dunkel-Töne der Akzentfarbe und gibt an, wie der Farbtyp auf einer farbigen Oberfläche angewendet werden kann.
 
-![Farbe auf Farbe](images/color/color-on-color.png)
+![Screenshot des Diagramms „Farbe auf Farbe“, das einen Farbverlauf von Hellblau am oberen Rand zu Dunkelblau am unteren Rand zeigt.](images/color/color-on-color.png)
 
 Weitere Informationen zum Formatieren von Steuerelementen finden Sie unter [XAML-Stile](../controls-and-patterns/xaml-styles.md).
 

@@ -5,12 +5,12 @@ keywords: XAML, UWP, Erste Schritte
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e4c2c8d52069bf074897ec09fa44f550066b28b5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 942b2ff4af0fa093a0b343c37074185970f8209d
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160754"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829543"
 ---
 # <a name="tutorial-create-a-user-interface"></a>Tutorial: Erstellen einer Benutzeroberfläche
 
@@ -367,7 +367,7 @@ So fügst du eine Datenvorlage einer Rasteransicht hinzu:
 
 Führe jetzt die App aus, um das `GridView`-Steuerelement mit der soeben erstellten Elementvorlage anzuzeigen. Im nächsten Schritt ändern Sie die Hintergrundfarbe und fügen zwischen den Rasterelementen etwas Platz ein.
 
-![App-UI-Prüfpunkt 3](images/xaml-basics/layout-1.png)
+![Screenshot der ausgeführten Sammlung-App mit der Elementvorlage.](images/xaml-basics/layout-1.png)
 
 ## <a name="part-4-modify-the-item-container-style"></a>Teil 4: Ändern des Elementcontainerstils
 
@@ -455,7 +455,7 @@ So änderst du den Elementcontainer:
 
 Führen Sie die App aus, um herauszufinden, wie sie nun aussieht. Ändern Sie die Größe des App-Fensters. Das `GridView`-Steuerelement kümmert sich um das Neuanordnen der Bilder; bei einigen Breiten ist jedoch noch viel Platz auf der rechten Seite des App-Fensters vorhanden. Es würde besser aussehen, wenn die Bilder zentriert werden. Damit werden Sie sich als Nächstes befassen.
 
-![App-UI-Prüfpunkt 3](images/xaml-basics/layout-2.png)
+![Screenshot der ausgeführten Sammlung-App mit der Elementvorlage mit zusätzlichem Platz rechts vom App-Fenster.](images/xaml-basics/layout-2.png)
 
 > [!Note]
 > Wenn du experimentieren möchtest, versuche, für die `Background`- und `Margin`-Eigenschaft unterschiedliche Werten festzulegen, und stelle fest, welche Auswirkung dies hat.

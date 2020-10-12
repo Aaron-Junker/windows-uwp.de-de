@@ -4,12 +4,12 @@ description: Erfahren Sie mehr zu den Grundsätzen abgerundeter Ecken, Entwurfsa
 ms.date: 10/08/2019
 ms.topic: article
 keywords: Windows 10, UWP, Eckradius, gerundet
-ms.openlocfilehash: 134a49ac57678eea0da718e93a14e3d0cf8896d5
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 044ae628ffe397005113f658191398e06fd245f5
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81001477"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636530"
 ---
 # <a name="corner-radius"></a>Eckradius
 
@@ -115,11 +115,11 @@ Es gibt Fälle, in denen die Ecken eines Steuerelements nicht gerundet werden so
 
 - Wenn sich ein Steuerelement innerhalb eines anderen Containers befindet, wie die Leiste und die Schaltflächen eines ScrollBar-Elements, die Teil des ScrollBar-Containers sind, der seinerseits Bestandteil von ScrollViewer ist.
 
-![ScrollBar](images/rounded-corner/scrollbar.png)
+![Screenshot einer vertikalen Scrollleiste ohne abgerundete Ecken.](images/rounded-corner/scrollbar.png)
 
 - Wenn ein Flyout-Benutzeroberflächenelement mit einer Benutzeroberfläche verbunden ist, die das Flyout auf einer Seite aufruft.
 
-![AutoSuggest](images/rounded-corner/autosuggest.png)
+![Screenshot eines Flyouts „AutoSuggest“ (automatisches Vorschlagen), bei dem einige Ecken nicht abgerundet sind.](images/rounded-corner/autosuggest.png)
 
 ### <a name="keyboard-focus-rectangle-and-shadow"></a>Rechteck und Schatten für den Tastaturfokus
 

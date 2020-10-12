@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
-ms.openlocfilehash: ff94c34c61dee4de8450ed0f4f89a1dfc6537f83
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1f0a91dd0370b8eda8763b63034d7c3ffaa1acd5
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173594"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763000"
 ---
 # <a name="device-portal-for-mobile"></a>Geräteportal für Mobilgeräte
 
@@ -19,7 +19,7 @@ Ab Windows 10, Version 1511, sind weitere Entwicklerfeatures für Mobilgeräte v
 
 Informationen zum Aktivieren des Entwicklermodus finden Sie unter [Aktivieren Ihres Geräts für die Entwicklung](../get-started/enable-your-device-for-development.md).
 
-![Device Portal-Einstellungen](images/device-portal/mob-dev-mode-options.png)
+![Screenshot der Einstellungen für die Geräteermittlung und das Geräteportal.](images/device-portal/mob-dev-mode-options.png)
 
 ## <a name="set-up-device-portal-on-windows-phone"></a>Einrichten eines Device Portal auf Windows Phone
 
@@ -59,7 +59,7 @@ Sie haben 3 Möglichkeiten zum Herstellen einer Verbindung mit dem Geräteportal
 
 Dies ist der Geräteportalabschnitt auf der Seite mit den Entwicklerseiten in Windows Phone.
 
-![Device Portal-Einstellungen](images/device-portal/mob-dev-mode-portal.png)
+![Screenshot der Einstellungenseite für das Geräteportal auf einem Windows Phone.](images/device-portal/mob-dev-mode-portal.png)
 
 Sie können die Authentifizierung deaktivieren, wenn Sie Device Portal in einer geschützten Umgebung verwenden, z. B. in einem Testlabor, in dem Sie allen im lokalen Netzwerk vertrauen, keine persönlichen Informationen auf dem Gerät gespeichert haben und in dem spezielle Anforderungen bestehen. Dies ermöglicht eine unverschlüsselte Kommunikation, und jeder, der die IP-Adresse Ihres Smartphones kennt, kann es steuern.
 

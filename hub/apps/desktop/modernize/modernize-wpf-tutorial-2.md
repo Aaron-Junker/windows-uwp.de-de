@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 0b5250f1e01aece4f73d83dc7327f193a58f53cf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 24fb2507dd8f5a83b5581ff08d44210b0f5146c3
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161494"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636450"
 ---
 # <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>Teil 2: Hinzufügen eines UWP-InkCanvas-Steuerelements mithilfe von XAML Islands
 
@@ -147,7 +147,7 @@ Nachdem du dein Projekt zur Verwendung von UWP XAML Islands konfiguriert hast, k
 
 13. Versuche jetzt, etwas im Unterschriftsbereich mit der Maus zu zeichnen. Dieses Mal wird die Freihandschrift auf dem Bildschirm angezeigt.
 
-    ![Signatur](images/wpf-modernize-tutorial/Signature.png)
+    ![Screenshot von „Expense Detail“ mit Anzeige des Unterschriftsbereichs.](images/wpf-modernize-tutorial/Signature.png)
 
 ## <a name="next-steps"></a>Nächste Schritte
 

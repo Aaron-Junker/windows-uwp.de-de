@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 433f24ea6c4e2fd03faa652a041f3a1c1578652e
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 319bf762d54ed341672a99d15d9e760c91d93cff
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217933"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829460"
 ---
 # <a name="nested-ui-in-list-items"></a>Geschachtelte UI bei Listenelementen
 
@@ -35,7 +35,7 @@ In diesem Artikel verwenden wir die Begriffe *Liste*, *Listenelement* und *gesch
 - *Listenelement* bezeichnet ein einzelnes Element in einer Liste, für das der Benutzer bestimmte Aktionen ausführen kann.
 - *Geschachtelte UI* bezeichnet UI-Elemente in einem Listenelement, für die der Benutzer bestimmte Aktionen ausführen kann, die sich nicht auf das Listenelement selbst auswirken.
 
-![Komponenten von geschachtelten UIs](images/nested-ui-example-1.png)
+![Screenshot, der die Teile einer geschachtelten Benutzeroberfläche zeigt.](images/nested-ui-example-1.png)
 
 > HINWEIS&nbsp;&nbsp; ListView und GridView sind beide von der Klasse [ListViewBase](/uwp/api/windows.ui.xaml.controls.listviewbase) abgeleitet, sodass sie dieselbe Funktionalität haben, sie zeigen die Daten jedoch unterschiedlich an. In diesem Artikel beziehen sich Aussagen zu Listen sowohl auf die ListView- als auch die GridView-Steuerelemente, wenn nicht anders angegeben.
 
@@ -107,7 +107,7 @@ Wenn mehr als eine Aktion im Listenelement geschachtelt ist, empfehlen wir diese
 
 Wenn Ihre Listen-UI mit geschachtelten Elementen Aktionen unterstützt wie Aufrufen, Auswählen (Einzel- oder Mehrfachauswahl) oder Ziehen und Ablegen, empfehlen wir die folgenden pfeilorientierten Verfahren zum Navigieren in geschachtelten UI-Elementen.
 
-![Komponenten von geschachtelten UIs](images/nested-ui-navigation.png)
+![Screenshot, der Elemente einer geschachtelten Benutzeroberfläche zeigt, die mit den Buchstaben A, B, C und D bezeichnet sind.](images/nested-ui-navigation.png)
 
 **Gamepad**
 
@@ -147,7 +147,7 @@ Sie können eine Listenansicht auch verwenden, weil sie die Inhalte visuell opti
 
 Diese Art von UI ist sehr viel komplizierter als die vorherigen Beispiele, es sind zahlreiche geschachtelte Elemente vorhanden, über die der Benutzer Aktionen ausführen kann.
 
-![Komponenten von geschachtelten UIs](images/nested-ui-grouping.png)
+![Screenshot einer komplexen geschachtelten Benutzeroberfläche mit vielen geschachtelten Elementen, mit denen der Benutzer interagieren kann.](images/nested-ui-grouping.png)
 
 
 Um diese UI so zur Verfügung zu stellen, legen Sie die folgenden Eigenschaften in der Liste fest:

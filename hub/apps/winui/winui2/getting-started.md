@@ -4,12 +4,12 @@ description: Installieren und Verwenden der Windows-UI-Bibliothek.
 ms.topic: reference
 ms.date: 07/15/2020
 keywords: windows 10, uwp, toolkit-sdk
-ms.openlocfilehash: 94c23ab9573df576af89d9211ced70938fd5105f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7b7b248ce166368d315dce42f27075d3933c0781
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174134"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762844"
 ---
 # <a name="getting-started-with-the-windows-ui-2x-library"></a>Erste Schritte mit der Windows-UI 2.x-Bibliothek
 
@@ -33,9 +33,9 @@ Die Bibliothek ist als NuGet-Paket verfügbar, die zu jedem neuen oder vorhanden
 Das **Microsoft.UI.Xaml**-Paket enthält Fluent-Steuerelemente und Features, die für alle Apps geeignet sind.  
 Optional kannst du „Vorabversion einbeziehen“ markieren, um die neuesten Vorabversionen anzuzeigen, die experimentelle neue Features enthalten.
 
-    ![NuGet-Pakete](images/ManageNugetPackages.png "Bild „NuGet-Pakete verwalten“")
+    ![Screenshot des Projektmappen-Explorer-Bereichs mit dem Projekt, auf das mit der rechten Maustaste geklickt wurde, und der hervorgehobenen Option „NuGet-Pakete verwalten“.](images/ManageNugetPackages.png "Bild „NuGet-Pakete verwalten“")
 
-    ![NuGet-Pakete](images/NugetPackages.png)
+    ![Screenshot des Dialogfelds „NuGet-Paket-Manager“ mit angezeigter Registerkarte „Durchsuchen“ und „winui“ im Suchfeld.](images/NugetPackages.png)
 
 4. Füge die Ressourcen des Windows UI-Designs (WinUI) deinen App.xaml-Ressourcen hinzu. Dafür gibt es zwei Möglichkeiten, abhängig davon, ob du zusätzliche Anwendungsressourcen verwendest.
 

@@ -5,12 +5,12 @@ keywords: XAML, UWP, Erste Schritte
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ff5df0d56d5be6b2cbb93814d01fed48a626797
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 04357cc43ed227b109d4aab20c509077261360ee
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219093"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636600"
 ---
 # <a name="tutorial-create-custom-styles"></a>Tutorial: Erstellen benutzerdefinierter Stile
 
@@ -18,11 +18,11 @@ In diesem Tutorial wird die Anpassung der Benutzeroberfläche (User Interface, U
 
 Die Beispiel-App für PhotoLab verfügt über zwei Seiten. Die _Hauptseite_ zeigt eine Ansicht der Foto-Galerie zusammen mit einigen Informationen über jede Bilddatei an.
 
-![MainPage](../basics/images/xaml-basics/mainpage.png)
+![Screenshot der Photo Lab-Hauptseite.](../basics/images/xaml-basics/mainpage.png)
 
 Die *Detailseite* zeigt ein einzelnes Foto an, nachdem es ausgewählt wurde. Über ein Flyout-Menü kann das Foto bearbeitet, umbenannt und gespeichert werden.
 
-![DetailPage](../basics/images/xaml-basics/detailpage.png)
+![Screenshot der Photo Lab-Detailseite.](../basics/images/xaml-basics/detailpage.png)
 
 ## <a name="prerequisites"></a>Voraussetzungen
 

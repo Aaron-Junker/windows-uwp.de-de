@@ -1,5 +1,5 @@
 ---
-Description: Mit Datums- und Uhrzeitsteuerelementen können Sie das Datum und die Uhrzeit anzeigen und festlegen. Dieser Artikel enthält Entwurfsrichtlinien und hilft Ihnen beim Auswählen des richtigen Steuerelements.
+description: Mit Datums- und Uhrzeitsteuerelementen können Sie das Datum und die Uhrzeit anzeigen und festlegen. Dieser Artikel enthält Entwurfsrichtlinien und hilft Ihnen beim Auswählen des richtigen Steuerelements.
 title: Richtlinien für Datums- und Uhrzeitsteuerelemente
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 45f69c2216cdfd5809a978e9199d05d0d79740ee
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a7afab6e226a86b7aa8979d5d849376cf83739c4
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160424"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829576"
 ---
 # <a name="calendar-date-and-time-controls"></a>Kalender-, Datums- und Uhrzeitsteuerelemente
 
@@ -45,12 +45,12 @@ Datums- und Uhrzeitsteuerelemente bieten Ihnen standardmäßige lokalisierte Met
 
 Es stehen vier Datums- und Uhrzeitsteuerelemente zur Auswahl. Welches Steuerelement Sie verwenden, hängt vom jeweiligen Szenario ab. Die Informationen in diesem Abschnitt sollen Ihnen dabei helfen, das richtige Steuerelement für Ihre App auszuwählen.
 
-&nbsp;|&nbsp;|&nbsp;                                                                                                                      
---------------------|-------|-------------------------------------------------------------------------------------------------------------------------------
-Kalenderansicht       |![Beispiel für eine Kalenderansicht](images/controls_calendar_monthview_small.png)|Verwenden Sie diese Ansicht, um ein einzelnes Datum oder einen Datumsbereich aus einem immer sichtbaren Kalender auszuwählen.                   
-Kalenderdatumsauswahl|![Beispiel für eine Kalenderdatumsauswahl](images/calendar-date-picker-closed.png)|Verwenden Sie diese Ansicht, um ein einzelnes Datum aus einem kontextbezogenen Kalender auszuwählen. 
-Datumsauswahl         |![Beispiel für eine Datumsauswahl](images/date-picker-closed.png)|Verwenden Sie diese Ansicht, um ein einzelnes bekanntes Datum auszuwählen, wenn kontextbezogene Informationen nicht wichtig sind.
-Zeitauswahl         |![Beispiel für Zeitauswahl](images/time-picker-closed.png)|Verwenden Sie diese Ansicht zum Auswählen eines einzelnen Uhrzeitwertes.                                        
+| Control | Beispiel | BESCHREIBUNG |
+| ------- | :-----: | ----------- |
+| Kalenderansicht | ![Beispiel für eine Kalenderansicht](images/controls_calendar_monthview_small.png) | Verwenden Sie diese Ansicht, um ein einzelnes Datum oder einen Datumsbereich aus einem immer sichtbaren Kalender auszuwählen. |
+| Kalenderdatumsauswahl | ![Screenshot einer Kalenderdatumsauswahl.](images/calendar-date-picker-closed.png) | Verwenden Sie diese Ansicht, um ein einzelnes Datum aus einem kontextbezogenen Kalender auszuwählen. |
+| Datumsauswahl | ![Beispiel für eine Datumsauswahl](images/date-picker-closed.png) | Verwenden Sie diese Ansicht, um ein einzelnes bekanntes Datum auszuwählen, wenn kontextbezogene Informationen nicht wichtig sind. |
+| Zeitauswahl | ![Beispiel für Zeitauswahl](images/time-picker-closed.png) | Verwenden Sie diese Ansicht zum Auswählen eines einzelnen Uhrzeitwertes. |
 
 <!-- This table seems redundant, not sure it's needed.-->
 
@@ -60,7 +60,7 @@ Mit **CalendarView** können Benutzer einen Kalender anzeigen und mit diesem int
 
 Die Kalenderansicht besteht aus drei Ansichten: Monat, Jahr und Jahrzehnt. Standardmäßig ist in der Kalenderansicht zunächst die Monatsansicht geöffnet, Sie können jedoch jede Ansicht als Startansicht angeben.
 
-![Beispiel für eine Kalenderdatumsauswahl](images/calendar-view-3-views.png)
+![Screenshot von drei Kalenderansichten mit einer Monatsansicht, einer Jahresansicht und einer Dekadenansicht.](images/calendar-view-3-views.png)
 
 - Wenn es wichtig ist, das Benutzer gleichzeitig mehrere Tage auswählen können, müssen Sie eine **CalendarView** verwenden.
 - Wenn der Benutzern jeweils nur ein Datum auswählen soll und der Kalender nicht permanent sichtbar sein muss, kann möglicherweise ein Steuerelement **CalendarDatePicker** bzw. **DatePicker** verwendet werden.
@@ -71,7 +71,7 @@ Die Kalenderansicht besteht aus drei Ansichten: Monat, Jahr und Jahrzehnt. Stand
 
 Der Einstiegspunkt zeigt Platzhaltertext an, falls kein Datum festgelegt wurde. Andernfalls wird das ausgewählte Datum angezeigt. Wenn Benutzer den Einstiegspunkt auswählen, wird eine Kalenderansicht eingeblendet, damit sie ein Datum auswählen können. Die Kalenderansicht überlagert andere Elemente der Benutzeroberfläche. Die anderen Elemente der Benutzeroberfläche werden dadurch jedoch nicht „beiseitegeschoben“.
 
-![Beispiel für eine Kalenderdatumsauswahl](images/calendar-date-picker-2-views.png)
+![Screenshot einer Kalenderdatumsauswahl mit einem leeren Textfeld zum Auswählen eines Datums, gefolgt von einem, das aufgefüllt ist, mit darunter liegendem Kalender.](images/calendar-date-picker-2-views.png)
 
 - Verwenden Sie eine Kalenderdatumsauswahl, um beispielsweise einen Termin oder ein Abreisedatum auszuwählen. 
 
@@ -108,7 +108,7 @@ Informationen und Beispiele zu den einzelnen Datums- und Textsteuerelementen fin
 
 Die XAML-Datumssteuerelemente unterstützen jedes der von Windows unterstützten Kalendersysteme. Diese Kalender werden in der [Windows.Globalization.CalendarIdentifiers](/uwp/api/Windows.Globalization.CalendarIdentifiers)-Klasse angegeben. Jedes Steuerelement verwendet den richtigen Kalender für die standardmäßige Sprache Ihrer App. Alternativ können Sie die **CalendarIdentifier**-Eigenschaft festlegen, um ein bestimmtes Kalendersystem zu verwenden.
 
-Das Zeitauswahl-Steuerelement unterstützt jedes der Uhrsysteme, die in der [Windows.Globalization.ClockIdentifiers](/uwp/api/Windows.Globalization.ClockIdentifiers)-Klasse angegeben sind. Sie können für die [ClockIdentifier](/uwp/api/windows.ui.xaml.controls.timepicker.clockidentifier)-Eigenschaft festlegen, dass das 12-Stunden- oder 24-Stunden-Uhrzeitformat verwendet werden soll. Die Art der Eigenschaft ist „String“ (Zeichenfolge), Sie müssen jedoch Werte verwenden, die den statischen Zeichenfolgeneigenschaften der ClockIdentifiers-Klasse entsprechen. Diese sind: TwelveHour (Zeichenfolge „12HourClock“) und TwentyFourHour (Zeichenfolge „24HourClock“). Der Standardwert lautet „12HourClock“
+Das Zeitauswahl-Steuerelement unterstützt jedes der Uhrsysteme, die in der [Windows.Globalization.ClockIdentifiers](/uwp/api/Windows.Globalization.ClockIdentifiers)-Klasse angegeben sind. Sie können für die [ClockIdentifier](/uwp/api/windows.ui.xaml.controls.timepicker.clockidentifier)-Eigenschaft festlegen, dass das 12-Stunden- oder 24-Stunden-Uhrzeitformat verwendet werden soll. Die Art der Eigenschaft ist „String“ (Zeichenfolge), Sie müssen jedoch Werte verwenden, die den statischen Zeichenfolgeneigenschaften der ClockIdentifiers-Klasse entsprechen. Dies lauten: TwelveHour (Zeichenfolge „12HourClock“) und TwentyFourHour (Zeichenfolge „24HourClock“). Der Standardwert lautet „12HourClock“
 
 ### <a name="datetime-and-calendar-values"></a>Werte für Datum/Uhrzeit und Kalender
 

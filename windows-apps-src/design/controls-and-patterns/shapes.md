@@ -6,12 +6,12 @@ ms.date: 11/16/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b02677cb6f38bc86d5123e835f658bedd83543de
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a33670f69d86a913288608ff07efb72edab8fd17
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173934"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829666"
 ---
 # <a name="draw-shapes"></a>Zeichnen von Formen
 
@@ -231,7 +231,7 @@ Das zweite Segment beginnt mit dem Befehl „H“ für eine absolute horizontale
 
 Hier ist der gerenderte [**Pfad**](/uwp/api/Windows.UI.Xaml.Shapes.Path).
 
-![Ein gerenderter Pfad](images/shapes-path.jpg)
+![Screenshot eines einfachen gerenderten Pfads.](images/shapes-path.jpg)
 
 Das nächste Beispiel zeigt die Verwendung der anderen vorgestellten Technik: [**GeometryGroup**](/uwp/api/windows.ui.xaml.media.geometrygroup) mit [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry). Dieses Beispiel stellt einige der beteiligten Geometrietypen vor, die als Teil einer **PathGeometry** verwendet werden können: [**PathFigure**](/uwp/api/Windows.UI.Xaml.Media.PathFigure) und die verschiedenen Elemente, die als Segment in [**PathFigure.Segments**](/uwp/api/windows.ui.xaml.media.pathfigure.segments) dienen können.
 
@@ -316,6 +316,6 @@ layoutRoot.Children.Add(path1);
 
 Hier ist der gerenderte [**Pfad**](/uwp/api/Windows.UI.Xaml.Shapes.Path).
 
-![Ein gerenderter Pfad](images/shapes-path-2.png)
+![Screenshot eines komplexen gerenderten Pfads.](images/shapes-path-2.png)
 
 Durch die Verwendung von [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry) wird das Ergebnis lesbarer als durch das Ausfüllen einer [**Path.Data**](/uwp/api/windows.ui.xaml.shapes.path.data)-Zeichenfolge. Andererseits verwendet [**Path.Data**](/uwp/api/windows.ui.xaml.shapes.path.data) eine Syntax, die mit Imagepfaddefinitionen für skalierbare Vektorgrafiken (SVG) kompatibel ist. Daher kann es nützlich sein, Grafiken aus SVG oder als Ausgabe von einem Tool wie etwa Blend zu portieren.

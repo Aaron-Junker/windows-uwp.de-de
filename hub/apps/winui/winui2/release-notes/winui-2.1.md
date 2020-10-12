@@ -3,12 +3,12 @@ title: WinUI 2.1 – Anmerkungen zu dieser Version
 description: Versionshinweise zu WinUI 2.1 einschließlich neuer Features und Bugfixe.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 02e870209486a271e0455d61070cf5403333e1df
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f5087e9f5059a568e92f972c04b25d8c618015f2
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154884"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762875"
 ---
 # <a name="windows-ui-library-21"></a>Windows-UI-Bibliothek 2.1
 
@@ -29,7 +29,7 @@ WinUI ist ein Open-Source-Projekt, das auf GitHub gehostet wird. Wir freuen uns 
 Verwende ein ItemsRepeater-Steuerelement, um benutzerdefinierte Sammlungsoberflächen mit einem flexiblen Layoutsystem, benutzerdefinierten Ansichten und Virtualisierung zu erstellen.
 Im Gegensatz zu ListView stellt ItemsRepeater keine umfassende Benutzeroberfläche bereit– ItemsRepeater hat keine Standardbenutzeroberfläche und stellt keine Richtlinien hinsichtlich Fokus, Auswahl, oder Benutzerinteraktion bereit. Stattdessen ist das Steuerelement ein Baustein, den du dazu verwenden kannst, deine eigenen einzigartigen sammlungsbasierten Oberflächen und benutzerdefinierten Steuerelemente zu erstellen. Es unterstützt die Schaffung umfassender und leistungsfähigerer Benutzererfahrungen.
 
-![Beispiel](../images/ItemsRepeater%20-%20MSN%20News.gif)
+![Kurzes Video, das das Verhalten des Steuerelements „ItemsRepeater“ zeigt.](../images/ItemsRepeater%20-%20MSN%20News.gif)
 
 [Dokumentation](/windows/uwp/design/controls-and-patterns/items-repeater)
 
@@ -37,7 +37,7 @@ Im Gegensatz zu ListView stellt ItemsRepeater keine umfassende Benutzeroberfläc
 
 Der AnimatedVisualPlayer hostet und steuert die Wiedergabe von animierten visuellen Elementen, mit denen du deine App um sehr leistungsfähige benutzerdefinierte Bewegungsgrafiken bereichern kannst. Beispielsweise wird AnimatedVisualPlayer verwendet, um Lottie-Animationen anzuzeigen und zu steuern.
 
-![Beispiel](../images/AnimatedVisualPlayerUpdated.gif)
+![Kurzes Video, das das Verhalten des Steuerelements „AnimatedVisualPlayer“ zeigt.](../images/AnimatedVisualPlayerUpdated.gif)
 
 [Dokumentation](/windows/communitytoolkit/animations/lottie)
 
@@ -45,7 +45,7 @@ Der AnimatedVisualPlayer hostet und steuert die Wiedergabe von animierten visuel
 
 TeachingTip bietet ein fesselndes, mit dem Fluent-Design kompatibles Verfahren, Benutzer mit inhaltsreichen Tipps anzuleiten und zu informieren, die sich nicht aufdrängen. TeachingTip kann die Aufmerksamkeit auf neue oder wichtige Funktionen lenken, Benutzern die Erledigung von Aufgaben erklären und den Workflow verbessern, indem im Kontext relevante Informationen für die aktuelle Aufgabe angezeigt werden.
 
-![Beispiel](../images/TeachingTipUpdated.gif)
+![Kurzes Video, das das Verhalten des Steuerelements „TeachingTip“ zeigt.](../images/TeachingTipUpdated.gif)
 
 [Dokumentation](/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/teaching-tip)
 
@@ -53,7 +53,7 @@ TeachingTip bietet ein fesselndes, mit dem Fluent-Design kompatibles Verfahren, 
 
 Bietet die Möglichkeit, Optionen im Format von Optionsfeldern in einer Menüleiste zu verwenden. Dies macht es möglich, Optionen mit Aufzählungspunkten zu Gruppen zusammenzufassen, die wie die Stationstasten eines Autoradios aneinander gekoppelt sind. Die Logik wird dem Entwickler abgenommen.
 
-![Beispiel](../images/RadioMenuFlyoutItem1.png)
+![Screenshot, der das Verhalten des Steuerelements „RadioMenuFlyoutItem“ zeigt.](../images/RadioMenuFlyoutItem1.png)
 
 [Dokumentation](/windows/uwp/design/controls-and-patterns/menus#create-a-menu-flyout-or-a-context-menu)
 
@@ -61,7 +61,7 @@ Bietet die Möglichkeit, Optionen im Format von Optionsfeldern in einer Menülei
 
 Der Kompaktmodus ermöglicht es Entwicklern, komfortable Benutzererfahrungen für eine beliebige Anzahl von Szenarien zu erstellen. Durch einfaches Hinzufügen eines Ressourcenwörterbuchs zu deiner Anwendung kannst du durchschnittlich ~33 % mehr Benutzeroberfläche unterbringen.
 
-![Compact Density-Beispiel](../images/CompactDensityUpdated.png)
+![Screenshot, der das Verhalten des Steuerelements „CompactDensity“ zeigt.](../images/CompactDensityUpdated.png)
 
 [Dokumentation](/windows/uwp/design/style/spacing)
 

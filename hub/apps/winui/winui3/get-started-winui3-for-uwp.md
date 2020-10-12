@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, WinUI
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 88b17500527b5f52d7e020e1c37a72e932ec225b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 96d3854f58e8e60c4324c6602bb8ba0755620350
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157734"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762910"
 ---
 # <a name="get-started-with-winui-3-for-uwp-apps"></a>Erste Schritte mit WinUI 3 für UWP-Apps
 
@@ -30,57 +30,57 @@ Um die in diesem Artikel beschriebene WinUI 3 für Desktop-Projektvorlagen zu v
 
    - Starten Sie andernfalls Visual Studio, und wählen Sie **Neues Projekt erstellen** aus.
 
-   :::image type="content" source="images/WinUI-and-UWP/vs2019-splash-new-project.png" alt-text="Visual Studio 2019 – Neues Projekt erstellen":::
+   :::image type="content" source="images/WinUI-and-UWP/vs2019-splash-new-project.png" alt-text="Visual Studio 2019 – Menü „Datei -> Neu -> Projekt“":::
 
 2. Wählen Sie im Dialogfeld **Neues Projekt erstellen** **C#** , **Windows** und **WinUI** in den Dropdownfiltern des Projekts aus.
 
 3. Wählen Sie den Projekttyp **Leere App (WinUI in UWP)** aus, und klicken Sie auf **Weiter**.
 
-:::image type="content" source="images/WinUI-and-UWP/vs2019-create-new-project-dialog.png" alt-text="Visual Studio 2019 – Dialogfeld „Neues Projekt erstellen“":::
+:::image type="content" source="images/WinUI-and-UWP/vs2019-create-new-project-dialog.png" alt-text="Visual Studio 2019 – Menü „Datei -> Neu -> Projekt“":::
 
 4. Gib einen Projektnamen ein, wähle alle anderen Optionen wie gewünscht aus, und klicke auf **Erstellen**.
 
-:::image type="content" source="images/WinUI-and-UWP/vs2019-configure-new-project-dialog.png" alt-text="Visual Studio 2019 – Dialogfeld „Neues Projekt erstellen“":::
+:::image type="content" source="images/WinUI-and-UWP/vs2019-configure-new-project-dialog.png" alt-text="Visual Studio 2019 – Menü „Datei -> Neu -> Projekt“":::
 
 5. Lege im folgenden Dialogfeld die **Zielversion** auf Windows 10, Version 1903 (Build 18362) und **Mindestversion** auf Windows 10, Version 1803 (Build 17134) fest, und klicke auf **OK**.
 
-:::image type="content" source="images/WinUI-min-target-version.png" alt-text="Dialogfeld „Ziel- und Mindestversion“":::
+:::image type="content" source="images/WinUI-min-target-version.png" alt-text="Visual Studio 2019 – Menü „Datei -> Neu -> Projekt“":::
 
 6. Visual Studio generiert das Projekt **WinUI in UWP** mit den folgenden Objekten:
 
     - ***Projektname* (Universelles Windows)** : Enthält Ihren Anwendungscode. Dies ist das Standardstartprojekt für Ihre Projektmappe.
 
-    :::image type="content" source="images/WinUI-and-UWP/vs2019-project.png" alt-text="Visual Studio 2019 – Dialogfeld „Neues Projekt erstellen“":::
+    :::image type="content" source="images/WinUI-and-UWP/vs2019-project.png" alt-text="Visual Studio 2019 – Menü „Datei -> Neu -> Projekt“":::
 
     - **Package.appxmanifest**: Enthält Informationen, die das System benötigt, um Ihre App bereitzustellen, anzuzeigen oder zu aktualisieren. Weitere Informationen finden Sie unter [App-Paketmanifest](/uwp/schemas/appxpackage/appx-package-manifest).
 
-    :::image type="content" source="images/WinUI-and-UWP/vs2019-file-package-manifest.png" alt-text="Visual Studio 2019 – App-Paketmanifest":::
+    :::image type="content" source="images/WinUI-and-UWP/vs2019-file-package-manifest.png" alt-text="Visual Studio 2019 – Menü „Datei -> Neu -> Projekt“":::
 
     - **App.xaml/App.xaml.cs**: Codedateien, die die `Application`-Klasse definieren, die ihre App-Instanz darstellt.
 
-    :::image type="content" source="images/WinUI-and-UWP/vs2019-file-app-xaml.png" alt-text="Visual Studio 2019 – Datei „App.xaml“":::
+    :::image type="content" source="images/WinUI-and-UWP/vs2019-file-app-xaml.png" alt-text="Visual Studio 2019 – Menü „Datei -> Neu -> Projekt“":::
 
-    :::image type="content" source="images/WinUI-and-UWP/vs2019-file-app-xaml-cs.png" alt-text="Visual Studio 2019 – Datei „App.xaml.cs“":::
+    :::image type="content" source="images/WinUI-and-UWP/vs2019-file-app-xaml-cs.png" alt-text="Visual Studio 2019 – Menü „Datei -> Neu -> Projekt“":::
 
     - **MainPage.xaml/MainPage.xaml.cs**: Codedateien, die die von Ihrer App angezeigten Hauptfenster darstellen. Diese Klassen leiten sich von Typen im Namespace **Microsoft.UI.Xaml** ab, der von WinUI bereitgestellt wird.
 
-    :::image type="content" source="images/WinUI-and-UWP/vs2019-file-mainpage-xaml.png" alt-text="Visual Studio 2019 – Datei „MainPage.xaml“":::
+    :::image type="content" source="images/WinUI-and-UWP/vs2019-file-mainpage-xaml.png" alt-text="Visual Studio 2019 – Menü „Datei -> Neu -> Projekt“":::
 
-    :::image type="content" source="images/WinUI-and-UWP/vs2019-file-mainpage-xaml-cs.png" alt-text="Visual Studio 2019 – Datei „MainPage.xaml.cs“":::
+    :::image type="content" source="images/WinUI-and-UWP/vs2019-file-mainpage-xaml-cs.png" alt-text="Visual Studio 2019 – Menü „Datei -> Neu -> Projekt“":::
 
 7. Um Ihrem App-Projekt ein neues Element hinzuzufügen, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektknoten ***Projektname* (Universelles Windows)** , und wählen Sie **Hinzufügen** -> **Neues Element** aus. Wähle im Dialogfeld **Neues Element hinzufügen** die Registerkarte **WinUI** aus. Wähle das Element, das du hinzufügen möchtest, und klicke dann auf **Hinzufügen**. Weitere Informationen zu den verfügbaren Elementen finden Sie unter [Elementvorlagen für WinUI 3](index.md#item-templates-for-winui-3).
 
-    :::image type="content" source="images/WinUI-and-UWP/vs2019-add-new-item-dialog.png" alt-text="Visual Studio 2019 – Dialogfeld „Neues Element hinzufügen“":::
+    :::image type="content" source="images/WinUI-and-UWP/vs2019-add-new-item-dialog.png" alt-text="Visual Studio 2019 – Menü „Datei -> Neu -> Projekt“":::
 
 8. Um festzustellen, wie Ihre App aussieht, erstellen Sie sie, stellen Sie sie bereit, und starten Sie sie.
 
     1. Sie können Ihre App auf dem lokalen Computer, in einem Simulator oder Emulator oder auf einem Remotegerät debuggen. Wählen Sie Ihr Zielgerät aus der Dropdownliste aus.
 
-        :::image type="content" source="images/WinUI-and-UWP/vs2019-menu-target-device.png" alt-text="Visual Studio 2019 – Menü mit Zielgeräten":::
+        :::image type="content" source="images/WinUI-and-UWP/vs2019-menu-target-device.png" alt-text="Visual Studio 2019 – Menü „Datei -> Neu -> Projekt“":::
 
     1. Drücken Sie F5, klicken Sie auf die Schaltfläche **Erstellen**, oder wählen Sie **Debuggen -> Debuggen starten** aus, um Ihre Projektmappe zu erstellen und auszuführen und zu bestätigen, dass die App fehlerfrei funktioniert.
 
-        :::image type="content" source="images/WinUI-and-UWP/vs2019-project-running.png" alt-text="Visual Studio 2019 – Menü mit Zielgeräten":::
+        :::image type="content" source="images/WinUI-and-UWP/vs2019-project-running.png" alt-text="Visual Studio 2019 – Menü „Datei -> Neu -> Projekt“":::
 
 ## <a name="known-issues-and-limitations"></a>Bekannte Probleme und Einschränkungen
 

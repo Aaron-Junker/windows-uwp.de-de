@@ -11,26 +11,34 @@ design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c4967a63a4417f284c0735153a1b7a543e82e54c
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: ee8d78b38c05483f127571b15e1f4ebfb267c331
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217863"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829435"
 ---
 # <a name="person-picture-control"></a>Personenbild-Steuerelement
 
 Das Personenbild-Steuerelement zeigt das Avatar-Bild für eine Person an, sofern ein solches Bild verfügbar ist. Andernfalls werden die Initialen der Person oder eine allgemeine Glyphe angezeigt. Sie können das Steuerelement zum Anzeigen eines [Contact-Objekts](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (eines Objekts, das die Kontaktinformationen einer Person verwaltet) verwenden, oder Sie können manuell Kontaktinformationen wie einen Anzeigenamen und ein Profilbild angeben.
 
-![Das Personenbild-Steuerelement](images/person-picture/person-picture_hero.png)
+![Screenshot des Personenbild-Steuerelements.](images/person-picture/person-picture_hero.png)
 
  > Zwei Personenbild-Steuerelemente zusammen mit zwei [TextBlock](text-block.md)-Elementen, die die Namen der Benutzer anzeigen.
 
 **Abrufen der Windows-UI-Bibliothek**
 
-|  |  |
-| - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **PersonPicture** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+:::row:::
+   :::column:::
+      ![WinUI-Logo](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Das Steuerelement **PersonPicture** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **Plattform-APIs:** [PersonPicture-Klasse](/uwp/api/windows.ui.xaml.controls.personpicture), [Contact-Klasse](/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager-Klasse](/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
@@ -43,7 +51,7 @@ Verwenden Sie das Personenbild, wenn Sie eine Person und deren Kontaktinformatio
 * Zur Anzeige des Absenders einer Nachricht
 * Zur Anzeige eines Social-Media-Kontakts
 
-Die Abbildung zeigt das Personenbild-Steuerelement in einer Kontaktliste: ![Das Personenbild-Steuerelement](images/person-picture/person-picture-control.png)
+Die Abbildung zeigt das Personenbild-Steuerelement in einer Kontaktliste: ![Screenshot, der das Personenbild-Steuerelement in einer Liste von Kontakten zeigt.](images/person-picture/person-picture-control.png)
 
 ## <a name="examples"></a>Beispiele
 

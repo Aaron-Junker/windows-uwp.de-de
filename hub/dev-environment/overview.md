@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Fenster einrichten, Entwicklungsumgebung, Entwicklertools, Entwicklungspfade, Microsoft, Windows, Developer, Tipps, Leistung, WSL, Terminal, nodejs, python
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: b1b13635da3b5b06b43d1e6b009399da5a916094
-ms.sourcegitcommit: ef3cdca5e9b8f032f46174da4574cb5593d32d56
+ms.openlocfilehash: 0b3df6b081504b98933ae5b261c6e7aaf5464953
+ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90593464"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91671635"
 ---
 # <a name="set-up-your-development-environment-on-windows-10"></a>Einrichten der Entwicklungsumgebung unter Windows 10
 
@@ -57,9 +57,9 @@ Dieser Leitfaden erleichtert Ihnen den Einstieg bei der Installation der Sprache
         Beginnen Sie mit dem Entwickeln von Apps mit C# und .NET Core.
     :::column-end:::
     :::column:::
-       [![Azure für Java-Symbol](../images/java-logo.png)](/azure/developer/java/)<br>
-        **[Erste Schritte mit Java in Azure](/azure/developer/java/)**<br>
-        Diese Tutorials und Tools für Java-Entwickler erleichtern Ihnen den Einstieg in die Erstellung von Apps für die Cloud.
+       [![Symbol für Docker-Desktop für Windows](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
+        **[Erste Schritte mit Docker Desktop für Windows](../dev-environment/docker/overview.md)**<br>
+        Erstellen Sie Remoteentwicklungscontainer mit Unterstützung von Visual Studio, VS Code, .NET, Windows-Subsystem für Linux oder einer Vielzahl von Azure-Diensten.
     :::column-end:::
     :::column:::
        [![PowerShell-Symbol](../images/powershell.png)](/powershell/)<br>

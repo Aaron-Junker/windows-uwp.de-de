@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bdfc212c435469746faf1fdf94898c0dc7beb221
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 38f62483d09b3ec75e9a670ddcd0c27b710d6a38
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219083"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829622"
 ---
 # <a name="buttons"></a>Schaltflächen
 
@@ -33,16 +33,24 @@ Control | Beschreibung
 [Schaltfläche](/uwp/api/windows.ui.xaml.controls.button) | Eine Schaltfläche, die eine sofortige Aktion auslöst. Kann mit einem [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignis oder einer [Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command)-Bindung verwendet werden.
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | Eine Schaltfläche, die im gedrückten Zustand fortlaufend ein [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignis auslöst.
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | Eine Schaltfläche, die wie ein Link formatiert ist und für die Navigation verwendet wird. Weitere Informationen zu Hyperlinks finden unter [Hyperlinks](hyperlinks.md).
-[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | ![WinUI-Logo](images/winui-logo-16x16.png) Eine Schaltfläche mit einem Chevron zum Öffnen eines angefügten Flyouts.
-[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | ![WinUI-Logo](images/winui-logo-16x16.png) Schaltfläche mit zwei Seiten. Eine Seite initiiert eine Aktion, während die andere Seite ein Menü öffnet.
-[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | ![WinUI-Logo](images/winui-logo-16x16.png) Umschaltfläche mit zwei Seiten. Mit einer Seite wird aktiviert/deaktiviert, über die andere Seite wird ein Menü geöffnet.
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | :::image type="icon" source="images/winui-logo-16x16.png"::: Eine Schaltfläche mit einem Chevron zum Öffnen eines angefügten Flyouts.
+[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | :::image type="icon" source="images/winui-logo-16x16.png"::: Eine Schaltfläche mit zwei Seiten. Eine Seite initiiert eine Aktion, während die andere Seite ein Menü öffnet.
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | :::image type="icon" source="images/winui-logo-16x16.png"::: Eine Umschaltfläche mit zwei Seiten. Mit einer Seite wird aktiviert/deaktiviert, über die andere Seite wird ein Menü geöffnet.
 [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) | Eine Schaltfläche, die ein-oder ausgeschaltet werden kann.
 
 **Abrufen der Windows-UI-Bibliothek**
 
-|  |  |
-| - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | **DropDownButton**, **SplitButton** und **ToggleSplitButton** sind in der Windows-UI-Bibliothek enthalten, einem NuGet-Paket mit neuen Steuerelementen und Benutzeroberflächenfeatures für Windows-Apps. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+:::row:::
+   :::column:::
+      :::image type="icon" source="images/winui-logo-64x64.png":::
+   :::column-end:::
+   :::column span="3":::
+      **DropDownButton**, **SplitButton** und **ToggleSplitButton** sind in der Windows-UI-Bibliothek enthalten, einem NuGet-Paket mit neuen Steuerelementen und Benutzeroberflächenfeatures für Windows-Apps. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek).
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **Windows-UI-Bibliotheks-APIs:** [DropDownButton-Klasse](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton), [SplitButton-Klasse](/uwp/api/microsoft.ui.xaml.controls.splitbutton), [ToggleSplitButton-Klasse](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton)
 >
@@ -153,15 +161,15 @@ Der Inhalt einer Schaltfläche ist für gewöhnlich Text. Wenn Sie diesen Text e
 <table>
 <tr>
 <td> <b>Folgendes muss geändert werden:</b><br> Schaltflächen mit überlaufendem Text. </td>
-<td> <img src="images/button-wraptext.png"/> </td>
+<td> <img src="images/button-wraptext.png" alt="Screenshot of two buttons, side by side, with labels that both say: Button with thxt that woul"/> </td>
 </tr>
 <tr>
 <td> <b>Option 1:</b><br> Vergrößern Sie die Breite der Schaltflächen, stapeln Sie Schaltflächen und brechen Sie Text um, wenn er mehr als 26 Zeichen umfasst. </td>
-<td> <img src="images/button-wraptext1.png"> </td>
+<td> <img src="images/button-wraptext1.png" alt="Screenshot of two buttons with increased width, one over the other, with labels that both say: Button with thxt that would wrap."> </td>
 </tr>
 <tr>
 <td> <b>Option 2:</b><br> Erhöhen Sie die Schaltflächenhöhe, und brechen Sie Text um. </td>
-<td> <img src="images/button-wraptext2.png"> </td>
+<td> <img src="images/button-wraptext2.png" alt="Screenshot of two buttons with increased height, side by side, with labels that both say: Button with thxt that would wrap."> </td>
 </tr>
 </table>
 

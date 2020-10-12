@@ -6,12 +6,12 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 324aae957d53c7ec63817c8f0e80909d25dc1c0a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 6665eaced6092242d1f5000de6e248044fda1ee0
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216623"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636440"
 ---
 # <a name="writing-style"></a>Schreibstil
 
@@ -41,7 +41,8 @@ Benutzer müssen in der Lage sein, den Text auf einen Blick zu lesen und zu vers
 
 :::row:::
     :::column:::
-![Richtig](images/do.svg) Wählen Sie **Filter aus**, um Ihrem Bild Effekte hinzuzufügen.
+![Erster Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/do.svg)
+Wählen Sie **Filter** aus, um Ihrem Bild Effekte hinzuzufügen.
     :::column-end:::
     :::column:::
 ![Falsch](images/dont.svg) Wenn Sie Ihrem Bild visuelle Effekte oder Änderungen hinzufügen möchten, wählen Sie **Filter** aus.
@@ -54,7 +55,8 @@ Apps werden durch Aktionen definiert. Benutzer führen Aktionen aus, wenn sie di
 
 :::row:::
     :::column:::
-![Richtig](images/do.svg) Starten Sie die App neu, um die Änderungen anzuzeigen.
+![Zweiter Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/do.svg)
+Starten Sie die App neu, um Ihre Änderungen anzuzeigen.
     :::column-end:::
     :::column:::
 ![Falsch](images/dont.svg) Die Änderungen werden übernommen, wenn die App neu gestartet wird.
@@ -67,7 +69,8 @@ Benutzer überfliegen den Text und überspringen häufig mehrere Wörter. Machen
 
 :::row:::
     :::column:::
-![Richtig](images/do.svg) Wir konnten das Bild nicht hochladen. Wenn dieses Problem erneut auftritt, starten Sie die App neu. Aber keine Sorge – Ihr Bild wartet auf Sie, wenn Sie zurückkehren.
+![Dritter Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/do.svg)
+Wir konnten das Bild nicht hochladen. Wenn dieses Problem erneut auftritt, starten Sie die App neu. Aber keine Sorge – Ihr Bild wartet auf Sie, wenn Sie zurückkehren.
     :::column-end:::
     :::column:::
 ![Falsch](images/dont.svg) Es ist ein Fehler aufgetreten, sodass das Bild nicht hochgeladen werden konnte. Versuchen Sie es noch einmal. Wenn dieses Problem wieder auftritt, müssen Sie die App neu starten. Aber keine Sorge – wir haben Ihre Arbeit lokal gespeichert, und sie wird auch dann noch da sein, wenn Sie zurückkehren.
@@ -87,7 +90,8 @@ Wenden Sie sich direkt an den Benutzer.
 
 :::row:::
     :::column:::
-![Richtig](images/do.svg) Wir konnten die Datei nicht an diesem Speicherort speichern.
+![Vierter Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/do.svg)
+Wir konnten Ihre Datei an diesem Speicherort nicht speichern.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -103,7 +107,8 @@ Wenden Sie sich direkt an den Benutzer.
 
 :::row:::
     :::column:::
-![Richtig](images/do.svg) Der Designleitfaden für die Windows-App ist eine Ressource, die Sie beim Entwerfen und Erstellen ansprechender und optimierter Apps unterstützen kann. Mit den Entwurfsfeatures in jeder Windows-App können Sie Benutzeroberflächen (UI) erstellen, die für eine Vielzahl von Geräten geeignet sind.
+![Fünfter Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/do.svg)
+Der Designleitfaden für Windows-Apps ist eine Ressource, die Sie beim Entwerfen und Erstellen ansprechender und optimierter Apps unterstützen kann. Mit den Entwurfsfeatures in jeder Windows-App können Sie Benutzeroberflächen (UI) erstellen, die für eine Vielzahl von Geräten geeignet sind.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -117,7 +122,8 @@ Benutzer verwenden Kontraktionen und erwarten, diese zu sehen. Ein Vermeiden lä
 
 :::row:::
     :::column:::
-![Richtig](images/do.svg) Wenn Sie mit Ihrem Bild zufrieden sind, wählen Sie **Speichern** aus, um es der Galerie hinzuzufügen. Von dort aus können Sie es mit Freunden teilen.
+![Sechster Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/do.svg)
+Wenn Sie mit Ihrem Bild zufrieden sind, wählen Sie **Speichern** aus, um es Ihrer Galerie hinzuzufügen. Von dort aus können Sie es mit Freunden teilen.
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -131,7 +137,7 @@ Benutzer verwenden Kontraktionen und erwarten, diese zu sehen. Ein Vermeiden lä
 
 :::row:::
     :::column:::
-![Richtig](images/do.svg)
+![Siebter Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/do.svg)
 <b>Sie sind nicht verbunden.</b>
 * Überprüfen Sie, ob die Netzwerkkabel angeschlossen sind.
 * Stellen Sie sicher, dass Sie nicht im Flugmodus sind.
@@ -150,7 +156,7 @@ Auch wenn Großbuchstaben wichtig sind, werden diese oft übermäßig verwendet.
 
 :::row:::
     :::column:::
-![Richtig](images/do.svg)
+![Achter Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/do.svg)
 <b>Welcher Teil ist problematisch?</b>
 * Ich habe das Kennwort vergessen.
 * Mein Kennwort wird nicht akzeptiert.
@@ -174,7 +180,7 @@ Es ist vor allem wichtig, dass die Fehlermeldung den Benutzer nicht dafür veran
 
 :::row:::
     :::column:::
-![Richtig](images/do.svg)
+![Neunter Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/do.svg)
 <b>Sie sind nicht verbunden.</b>
 * Überprüfen Sie, ob die Netzwerkkabel angeschlossen sind.
 * Stellen Sie sicher, dass Sie nicht im Flugmodus sind.
@@ -194,7 +200,7 @@ Viele Ratschläge zum Schreiben von Fehlermeldungen gelten auch für das Verfass
 Besonders wichtig ist das „Aufrufen und Reagieren“ zwischen dem Titel eines Dialogs und seiner Schaltflächen. Stellen Sie sicher, dass Ihre Schaltflächen klare Antworten auf die Fragen im Titel enthalten und deren Format in der gesamten App einheitlich ist.
     :::column-end:::
     :::column:::
-![Richtig](images/do.svg)
+![Zehnter Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/do.svg)
 <b>Welcher Teil ist problematisch?</b>
 1. Ich habe mein Kennwort vergessen
 2. Mein Kennwort wird nicht akzeptiert
@@ -210,7 +216,7 @@ Text auf Schaltflächen muss so kompakt sein, dass Benutzer ihn auf einen Blick 
 Wenn Sie den Text für Schaltflächen schreiben, denken Sie daran, dass jede Schaltfläche eine Aktion darstellt. Verwenden Sie im Schaltflächentext *das Aktiv* in Worten, die Aktionen statt Reaktionen beschreiben.
     :::column-end:::
     :::column:::
-![Empfohlen](images/do.svg)
+![Elfter Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/do.svg)
 * Jetzt installieren
 * Freigabe
     :::column-end:::
