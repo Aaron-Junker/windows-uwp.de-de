@@ -1,32 +1,32 @@
 ---
 description: Diese Anleitung hilft Ihnen, Fluent-basierte UWP-UIs direkt in einer WPF- oder Windows Forms-Anwendung zu erstellen.
-title: UWP-Steuerelemente in Desktopanwendungen
-ms.date: 03/23/2020
+title: Hosten von WinRT-XAML-Steuerelementen in Desktop-Apps
+ms.date: 10/20/2020
 ms.topic: article
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 019121441daa5c40157471d48be19cd29f2b3a77
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 752b02f4bbf6faaca1fd04007c85cfe41f6c28f9
+ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174174"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91671549"
 ---
-# <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Hosten von UWP XAML-Steuerelementen in Desktop-Apps (XAML Islands)
+# <a name="host-winrt-xaml-controls-in-desktop-apps-xaml-islands"></a>Hosten von WinRT-XAML-Steuerelementen in Desktop-Apps (XAML Islands)
 
-Ab Windows 10, Version 1903, können Sie mithilfe eines Features namens *XAML Islands* UWP-Steuerelemente auch in anderen als UWP-Desktop-Anwendungen hosten. Mit diesem Feature können Sie Aussehen, Handhabung und Funktionalität Ihrer vorhandenen WPF-, Windows Forms- und C++-Win32-Anwendungen mit den aktuellen Features der Windows 10-Benutzeroberfläche verbessern, die nur in Form von UWP-Steuerelementen verfügbar sind. Dies bedeutet, dass Sie UWP-Features, wie etwa [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions), und Steuerelemente, die das [Fluent Design-System](/windows/uwp/design/fluent-design-system/index) unterstützen, in Ihren vorhandenen WPF-, Windows Forms- und C++-Win32-Anwendungen nutzen können.
+Ab Windows 10, Version 1903, können Sie mithilfe eines Features namens *XAML Islands* WinRT-XAML-Steuerelemente auch in anderen als UWP-Desktop-Anwendungen hosten. Mit diesem Feature können Sie Aussehen, Handhabung und Funktionalität Ihrer vorhandenen WPF-, Windows Forms- und C++-Win32-Anwendungen mit den aktuellen Features der Windows 10-Benutzeroberfläche verbessern, die nur in Form von WinRT-XAML-Steuerelementen verfügbar sind. Dies bedeutet, dass Sie UWP-Features, wie etwa [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions), und Steuerelemente, die das [Fluent Design-System](/windows/uwp/design/fluent-design-system/index) unterstützen, in Ihren vorhandenen WPF-, Windows Forms- und C++-Win32-Anwendungen nutzen können.
 
-Sie können beliebige UWP-Steuerelemente hosten, die von [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement) abgeleitet sind, darunter:
+Sie können beliebige WinRT-XAML-Steuerelemente hosten, die von [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement) abgeleitet sind, darunter:
 
-* Alle vom Originalhersteller stammenden UWP-Steuerelemente, die im Windows SDK bereitstehen
-* Alle benutzerdefinierten UWP-Steuerelemente (beispielsweise ein Benutzersteuerelement, das aus mehreren UWP-Steuerelementen besteht, die zusammenarbeiten). Sie müssen über den Quellcode für das benutzerdefinierte Steuerelement verfügen, damit Sie es mit Ihrer Anwendung kompilieren können.
+* Alle vom Originalhersteller stammenden WinRT-XAML-Steuerelemente, die im Windows SDK oder der WinUI 2.x-Bibliothek bereitstehen.
+* Alle benutzerdefinierten WinRT-XAML-Steuerelemente (beispielsweise ein Benutzersteuerelement, das aus mehreren WinRT-XAML-Steuerelementen besteht, die zusammenarbeiten). Sie müssen über den Quellcode für das benutzerdefinierte Steuerelement verfügen, damit Sie es mit Ihrer Anwendung kompilieren können.
 
 Grundsätzlich werden XAML Islands mithilfe der *UWP XAML-Hosting-API* erstellt. Diese API besteht aus mehreren Windows-Runtime Klassen und COM-Schnittstellen, die im SDK für Windows 10, Version 1903, eingeführt wurden. Wir stellen darüber hinaus eine Reihe von XAML Island-.NET-Steuerelementen im [Windows Community Toolkit](/windows/uwpcommunitytoolkit/) zur Verfügung, die die UWP XAML-Hosting-API intern verwenden und für WPF- und Windows Forms-Apps ein komfortableres Entwicklungserlebnis bieten.
 
-Die Art, wie Sie XAML Islands verwenden, hängt von Ihrem Anwendungstyp und den Typen der UWP-Steuerelemente ab, die Sie hosten möchten.
+Die Art, wie Sie XAML Islands verwenden, hängt von Ihrem Anwendungstyp und den Typen der WinRT-XAML-Steuerelemente ab, die Sie hosten möchten.
 
 > [!NOTE]
 > Wenn Sie Feedback zu XAML Islands haben, erstellen Sie ein neues Thema im [Microsoft.Toolkit.Win32-Repository](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues), und geben Sie dort Ihre Kommentare ab. Wenn Sie Ihr Feedback lieber privat geben möchten, können Sie es an XamlIslandsFeedback@microsoft.com senden. Ihre Erkenntnisse und Szenarien sind äußerst wichtig für uns.
@@ -40,15 +40,18 @@ XAML Islands hat folgende Runtimeanforderungen:
 
 ## <a name="wpf-and-windows-forms-applications"></a>WPF- und Windows Forms-Anwendungen
 
-Wir empfehlen, für WPF- und Windows Forms-Anwendungen die XAML Island-.NET-Steuerelemente zu verwenden, die im Windows Community Toolkit verfügbar sind. Diese Steuerelemente bieten ein Objektmodell, das die Eigenschaften, Methoden und Ereignisse der entsprechenden UWP-Steuerelemente nachahmt (oder Zugriff auf sie bietet). Darüber hinaus verarbeiten sie Verhalten wie Tastaturnavigation und Layoutänderungen.
+Wir empfehlen, für WPF- und Windows Forms-Anwendungen die XAML Island-.NET-Steuerelemente zu verwenden, die im Windows Community Toolkit verfügbar sind. Diese Steuerelemente bieten ein Objektmodell, das die Eigenschaften, Methoden und Ereignisse der entsprechenden WinRT-XAML-Steuerelemente nachahmt (oder Zugriff auf sie bietet). Darüber hinaus verarbeiten sie Verhalten wie Tastaturnavigation und Layoutänderungen.
 
 Es gibt zwei Sätze von XAML Island-Steuerelementen für WPF- und Windows Forms-Anwendungen: *umschließende Steuerelemente* und *Hoststeuerelemente*. 
 
+> [!NOTE]
+> Die Verwendung von XAML Islands zum Hosten von WinRT-XAML-Steuerelemente wird nur in WPF- und Windows Forms-Apps für die Zielplattform .NET Core 3.x unterstützt. XAML Islands wird in Apps für die Zielplattform .NET Framework nicht unterstützt.
+
 ### <a name="wrapped-controls"></a>Umschließende Steuerelemente
 
-WPF- und Windows Forms-Anwendungen können eine Reihe von XAML Island-Steuerelementen verwenden, die die Schnittstelle und die Funktionalität eines bestimmten UWP-Steuerelements umschließen. Sie können diese Steuerelemente direkt der Entwurfsoberfläche Ihres WPF- oder Windows Forms-Projekts hinzufügen und sie dann wie jedes andere WPF- oder Windows Forms-Steuerelement im Designer verwenden.
+WPF- und Windows Forms-Anwendungen können eine Reihe von XAML Island-Steuerelementen verwenden, die die Schnittstelle und die Funktionalität eines bestimmten WinRT-XAML-Steuerelements umschließen. Sie können diese Steuerelemente direkt der Entwurfsoberfläche Ihres WPF- oder Windows Forms-Projekts hinzufügen und sie dann wie jedes andere WPF- oder Windows Forms-Steuerelement im Designer verwenden.
 
-Aktuell stehen die folgenden umschließenden UWP-Steuerelemente im Windows Community Toolkit zur Verfügung. 
+Aktuell stehen die folgenden umschließenden WinRT-XAML-Steuerelemente im Windows Community Toolkit zur Verfügung. 
 
 | Control | Unterstützte Mindestversion des Betriebssystems | Beschreibung |
 |-----------------|-------------------------------|-------------|
@@ -56,7 +59,7 @@ Aktuell stehen die folgenden umschließenden UWP-Steuerelemente im Windows Commu
 | [MediaPlayerElement](/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10, Version 1903 | Bettet eine Ansicht ein, die Medieninhalte wie etwa Videoclips in Ihrer Windows Forms- oder WPF-Desktop-Anwendung streamt und rendert. |
 | [MapControl](/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10, Version 1903 | Ermöglicht Ihnen das Anzeigen einer symbolischen oder fotorealistischen Karte in Ihrer Windows Forms- oder WPF-Desktop-Anwendung. |
 
-Eine exemplarische Vorgehensweise, die die Verwendung der umschließenden UWP-Steuerelemente veranschaulicht, finden Sie unter [Hosten eines UWP-Standardsteuerelements in einer WPF-App](host-standard-control-with-xaml-islands.md).
+Eine exemplarische Vorgehensweise, die die Verwendung der umschließenden WinRT-XAML-Steuerelemente veranschaulicht, finden Sie unter [Hosten eines WinRT-XAML-Standardsteuerelements in einer WPF-App](host-standard-control-with-xaml-islands.md).
 
 ### <a name="host-controls"></a>Hoststeuerelemente
 
@@ -64,12 +67,9 @@ Für benutzerdefinierte Steuerelemente und andere Szenarien, die über die mit d
 
 | Control | Unterstützte Mindestversion des Betriebssystems | Beschreibung |
 |-----------------|-------------------------------|-------------|
-| [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) | Windows 10, Version 1903 | Kann ein beliebiges UWP-Steuerelement hosten, das von [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement) abgeleitet ist, einschließlich der vom Windows SDK bereitgestellten UWP-Originalsteuerelemente sowie benutzerdefinierter Steuerelemente. |
+| [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) | Windows 10, Version 1903 | Kann ein beliebiges WinRT-XAML-Steuerelement hosten, das von [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement) abgeleitet ist, einschließlich der vom Windows SDK bereitgestellten WinRT-XAML-Originalsteuerelemente sowie benutzerdefinierter Steuerelemente. |
 
-Exemplarische Vorgehensweisen, in denen die Verwendung des **WindowsXamlHost**-Steuerelements veranschaulicht wird, finden Sie unter [Hosten eines UWP-Standardsteuerelements in einer WPF-App](host-standard-control-with-xaml-islands.md) und [Hosten eines benutzerdefinierten UWP-Steuerelements in einer WPF-App mithilfe von XAML Islands](host-custom-control-with-xaml-islands.md).
-
-> [!NOTE]
-> Die Verwendung des **WindowsXamlHost**-Steuerelements zum Hosten benutzerdefinierter UWP-Steuerelemente wird nur in WPF- und Windows Forms-Apps für die Zielplattform .NET Core 3 unterstützt. Das Hosten von UWP-Originalsteuerelementen aus dem Windows SDK wird in Apps für die Zielplattformen .NET Framework und .NET Core 3 unterstützt.
+Exemplarische Vorgehensweisen, in denen die Verwendung des **WindowsXamlHost**-Steuerelements veranschaulicht wird, finden Sie unter [Hosten eines WinRT-XAML-Standardsteuerelements in einer WPF-App](host-standard-control-with-xaml-islands.md) und [Hosten eines benutzerdefinierten WinRT-XAML-Steuerelements in einer WPF-App mithilfe von XAML Islands](host-custom-control-with-xaml-islands.md).
 
 <span id="requirements" />
 
@@ -79,14 +79,14 @@ Für die XAML Island-.NET-Steuerelemente ist Windows 10, Version 1903, oder eine
 
 | Steuerelementtyp | NuGet-Paket  | Verwandte Artikel |
 |-----------------|----------------|---------------------|
-| [Umschließende Steuerelemente](#wrapped-controls) | Version 6.0.0 oder höher dieser Pakete: <ul><li>WPF: [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)</li><li>Windows Forms: [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)</li></ul>  | [Hosten eines UWP-Standardsteuerelements in einer WPF-App](host-standard-control-with-xaml-islands.md)  |
-| [Hoststeuerelement](#host-controls) | Version 6.0.0 oder höher dieser Pakete: <ul><li>WPF: [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost)</li><li>Windows Forms: [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost)</li></ul>  | [Hosten eines UWP-Standardsteuerelements in einer WPF-App](host-standard-control-with-xaml-islands.md)<br/>[Hosten eines benutzerdefinierten UWP-Steuerelements in einer WPF-App](host-custom-control-with-xaml-islands.md)  |
+| [Umschließende Steuerelemente](#wrapped-controls) | Version 6.0.0 oder höher dieser Pakete: <ul><li>WPF: [Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)</li><li>Windows Forms: [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)</li></ul>  | [Hosten eines WinRT-XAML-Standardsteuerelements in einer WPF-App](host-standard-control-with-xaml-islands.md)  |
+| [Hoststeuerelement](#host-controls) | Version 6.0.0 oder höher dieser Pakete: <ul><li>WPF: [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost)</li><li>Windows Forms: [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost)</li></ul>  | [Hosten eines WinRT-XAML-Standardsteuerelements in einer WPF-App](host-standard-control-with-xaml-islands.md)<br/>[Hosten eines benutzerdefinierten WinRT-XAML-Steuerelements in einer WPF-App](host-custom-control-with-xaml-islands.md)  |
 
 Bitte beachten Sie die folgenden Details:
 
 * Die Pakete mit den umschließenden Steuerelementen enthalten außerdem die Pakete mit den Hoststeuerelementen. Sie können die Pakete mit den umschließenden Steuerelementen installieren, wenn Sie beide Steuerelementsätze verwenden möchten.
 
-* Wenn Sie ein benutzerdefiniertes UWP-Steuerelement hosten, muss Ihr WPF- oder Windows Forms-Projekt für .NET Core 3 ausgelegt sein. Das Hosten von benutzerdefinierten UWP-Steuerelementen wird in Apps für die Zielplattform .NET Framework nicht unterstützt. Außerdem müssen Sie einige weitere Schritte ausführen, um auf das benutzerdefinierte Steuerelement zu verweisen. Weitere Informationen finden Sie unter [Hosten eines benutzerdefinierten UWP-Steuerelements in einer WPF-App mithilfe von XAML Islands](host-custom-control-with-xaml-islands.md).
+* Wenn Sie ein benutzerdefiniertes WinRT-XAML-Steuerelement hosten, müssen Sie außerdem einige weitere Schritte ausführen, um auf das benutzerdefinierte Steuerelement zu verweisen. Weitere Informationen finden Sie unter [Hosten eines benutzerdefinierten WinRT-XAML-Steuerelements in einer WPF-App mithilfe von XAML Islands](host-custom-control-with-xaml-islands.md).
 
 ### <a name="web-view-controls"></a>Webansicht-Steuerelemente
 
@@ -106,11 +106,11 @@ Installieren Sie eins dieser NuGet-Pakete, um diese Steuerelemente zu verwenden:
 
 Die XAML Island-.NET-Steuerelemente werden in C++ Win32-Anwendungen nicht unterstützt. Diese Anwendungen müssen stattdessen die *UWP XAML-Hosting-API* verwenden, die vom Windows 10 SDK bereitgestellt wird (Version 1903 und höher).
 
-Die UWP XAML-Hosting-API besteht aus verschiedenen Windows Runtime-Klassen und COM-Schnittstellen, die von Ihrer C++ Win32-Anwendung zum Hosten beliebiger UWP-Steuerelemente verwendet werden können, die von [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement) abgeleitet sind. UWP-Steuerelemente lassen sich in jedem beliebigen Element der Benutzeroberfläche hosten, dem ein Fensterhandle (HWND) zugeordnet ist. Weitere Informationen zu dieser API findest du in den folgenden Artikeln.
+Die UWP XAML-Hosting-API besteht aus verschiedenen Windows Runtime-Klassen und COM-Schnittstellen, die von Ihrer C++ Win32-Anwendung zum Hosten beliebiger WinRT-XAML-Steuerelemente verwendet werden können, die von [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement) abgeleitet sind. WinRT-XAML-Steuerelemente lassen sich in jedem beliebigen Element der Benutzeroberfläche hosten, dem ein Fensterhandle (HWND) zugeordnet ist. Weitere Informationen zu dieser API findest du in den folgenden Artikeln.
 
 * [Verwenden der UWP-XAML-Hosting-API in einer C++-Win32-App](using-the-xaml-hosting-api.md)
-* [Hosten eines UWP-Standardsteuerelements in einer C++-Win32-App](host-standard-control-with-xaml-islands-cpp.md)
-* [Hosten eines benutzerdefinierten UWP-Steuerelements in einer C++-Win32-App](host-custom-control-with-xaml-islands-cpp.md)
+* [Hosten eines WinRT-XAML-Standardsteuerelements in einer C++-Win32-App](host-standard-control-with-xaml-islands-cpp.md)
+* [Hosten eines benutzerdefinierten WinRT-XAML-Steuerelements in einer C++-Win32-App](host-custom-control-with-xaml-islands-cpp.md)
 
 > [!NOTE]
 > Die umschließenden Steuerelemente und Hoststeuerelemente im Windows Community Toolkit verwenden intern die UWP-XAML-Hosting-API und implementieren das gesamte Verhalten, einschließlich Tastaturnavigation und Layoutänderungen, um das Sie sich andernfalls, bei direkter Verwendung der UWP XAML-Hosting-API, selbst kümmern müssten. Für WPF- und Windows Forms-Anwendungen empfehlen wir dringend, diese Steuerelemente zu nutzen, statt die UWP XAML-Hosting-API direkt zu verwenden, da sie Ihnen durch Abstraktion viele der Implementierungsdetails ersparen, die mit der Verwendung der API einhergehen.
@@ -139,7 +139,7 @@ In den folgenden Abschnitten werden Einschränkungen und Problemumgehungen für 
 
 ### <a name="not-supported"></a>Nicht unterstützt
 
-:no_entry_sign: Das Steuerelement [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) kann zum Hosten C#-basierter UWP-Steuerelemente von Drittanbietern in WPF- und Windows Forms-Apps für die Zielplattform .NET Framework verwendet werden. Dieses Szenario wird jedoch nur in Apps unterstützt, die auf .NET Core 3 abzielen.
+:no_entry_sign: Verwenden von XAML Islands in WPF- und Windows Forms-Apps mit .NET Framework als Ziel. XAML Islands wird nur in Apps unterstützt, die auf .NET Core 3.x abzielen.
 
 :no_entry_sign: UWP-XAML-Inhalt in XAML Islands reagiert nicht auf Windows-Designänderungen von dunkel zu hell oder umgekehrt zur Laufzeit. Der Inhalt reagiert jedoch zur Laufzeit auf Änderungen zu hohem Kontrast.
 
@@ -159,7 +159,7 @@ In den folgenden Abschnitten werden Einschränkungen und Problemumgehungen für 
 
 Wenn Sie XAML Islands in einer Desktop-App hosten, können Sie mehrere Strukturen mit XAML-Inhalten gleichzeitig im selben Thread ausführen. Um auf das Stammelement eine Struktur von XAML-Inhalten in einer XAML Island zuzugreifen und verwandte Informationen über den Kontext abzurufen, in dem dieser gehostet wird, verwenden Sie die Klasse [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot). Die Klassen [CoreWindow](/uwp/api/windows.ui.core.corewindow), [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) und [Window](/uwp/api/windows.ui.xaml.window) liefern nicht die richtigen Informationen für XAML Islands. [CoreWindow](/uwp/api/windows.ui.core.corewindow)- und [Window](/uwp/api/windows.ui.xaml.window)-Objekte existieren zwar im Thread und sind für Ihre App zugänglich, aber sie geben keine sinnvollen Begrenzungen oder Sichtbarkeiten zurück (sie sind immer unsichtbar und haben eine Größe von 1x1). Weitere Informationen finden Sie unter [Fensterhosts](/windows/uwp/design/layout/show-multiple-views#windowing-hosts).
 
-Um beispielsweise das Begrenzungsrechteck des Fensters abzurufen, das ein UWP-Steuerelement enthält, das in einer XAML Island gehostet wird, verwenden Sie die Eigenschaft [XamlRoot.Size](/uwp/api/windows.ui.xaml.xamlroot.size) des Steuerelements. Da jedes UWP-Steuerelement, das in einer XAML Island gehostet werden kann, von [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement) abgeleitet wird, können Sie die [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot)-Eigenschaft des Steuerelements verwenden, um auf das **XamlRoot**-Objekt zuzugreifen.
+Um beispielsweise das Begrenzungsrechteck des Fensters abzurufen, das ein WinRT-XAML-Steuerelement enthält, das in einer XAML Island gehostet wird, verwenden Sie die Eigenschaft [XamlRoot.Size](/uwp/api/windows.ui.xaml.xamlroot.size) des Steuerelements. Da jedes WinRT-XAML-Steuerelement, das in einer XAML Island gehostet werden kann, von [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement) abgeleitet wird, können Sie die [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot)-Eigenschaft des Steuerelements verwenden, um auf das **XamlRoot**-Objekt zuzugreifen.
 
 ```csharp
 Size windowSize = myUWPControl.XamlRoot.Size;
@@ -168,7 +168,7 @@ Size windowSize = myUWPControl.XamlRoot.Size;
 Verwenden Sie nicht die Eigenschaft [CoreWindows.Bounds](/uwp/api/windows.ui.core.corewindow.bounds), um das Begrenzungsrechteck abzurufen.
 
 ```csharp
-// This will return incorrect information for a UWP control that is hosted in a XAML Island.
+// This will return incorrect information for a WinRT XAML control that is hosted in a XAML Island.
 Rect windowSize = CoreWindow.GetForCurrentThread().Bounds;
 ```
 
@@ -176,18 +176,10 @@ Eine Tabelle mit allgemeinen fensterbezogenen APIs, die Sie im Kontext von XAML 
 
 Ein Beispiel, das veranschaulicht, wie diese Schnittstelle in einer WPF-App verwendet wird, findest du im [ShareSource](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource)-Beispiel.
 
-## <a name="feature-roadmap"></a>Featureroadmap
-
-Hier findest du den aktuellen Status von Features im Zusammenhang mit XAML Islands:
-
-* **C++-Win32-Apps:** Die UWP XAML-Hosting-API gilt auf dem Stand von Windows 10, Version 1903, als Version 1.0.
-* **Verwaltete Apps für die Zielplattform .NET Framework 4.6.2 und höher:** Die XAML Island-Steuerelemente, die in den [NuGet-Paketen der Version 6.0.0](#configure-your-project-to-use-the-xaml-island-net-controls) verfügbar sind, werden für Apps mit der Zielplattform .NET Framework 4.6.2 und höher als Version 1.0 angesehen.
-* **Verwaltete Apps für die Zielplattform .NET Core 3.0 und höher:** Die in den [NuGet-Paketen der Version 6.0.0](#configure-your-project-to-use-the-xaml-island-net-controls) verfügbaren Steuerelemente befinden sich für Apps für die Zielplattform .NET Core 3.0 und höher noch in der Developer Preview. Die Version 1.0 dieser Steuerelemente für .NET Core 3.0 und höher ist für eine spätere Version geplant.
-
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 Weitere Hintergrundinformationen und Tutorials zur Verwendung von XAML Islands finden Sie in den folgenden Artikeln und Ressourcen:
 
-* [Tutorial Modernisieren einer WPF-App](modernize-wpf-tutorial.md): Dieses Tutorial enthält schrittweise Anleitungen zum Verwenden der umschließenden Steuerelemente und Hoststeuerelemente im Windows Community Toolkit zum Hinzufügen von UWP-Steuerelementen zu einer vorhandenen WPF-Branchenanwendung. Dieses Tutorial enthält den vollständigen Code für die WPF-Anwendung sowie ausführliche Anweisungen zu den einzelnen Schritten in diesem Prozess.
+* [Tutorial Modernisieren einer WPF-App](modernize-wpf-tutorial.md): Dieses Tutorial enthält schrittweise Anleitungen zum Verwenden der umschließenden Steuerelemente und Hoststeuerelemente im Windows Community Toolkit zum Hinzufügen von WinRT-XAML-Steuerelementen zu einer vorhandenen WPF-Branchenanwendung. Dieses Tutorial enthält den vollständigen Code für die WPF-Anwendung sowie ausführliche Anweisungen zu den einzelnen Schritten in diesem Prozess.
 * [Codebeispiele für XAML-Inseln](https://github.com/microsoft/Xaml-Islands-Samples): Dieses Repository enthält Windows Forms-, WPF- und C++/Win32-Beispiele, die die Verwendung von XAML-Inseln demonstrieren.
 * [XAML Islands v1 – Updates and Roadmap](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap): In diesem Blogbeitrag werden viele häufig gestellte Fragen zu XAML Islands erläutert und eine ausführliche Entwicklungsroadmap zur Verfügung gestellt.
