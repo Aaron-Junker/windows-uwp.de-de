@@ -5,12 +5,12 @@ ms.date: 10/12/2020
 ms.topic: article
 keywords: Windows 10, c#, WinRT, cswinrt, Projektion
 ms.localizationpriority: medium
-ms.openlocfilehash: 2558c37660559bb49263a5708d95ddf9086bf833
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: bc5c8e39b808fd1a8bc557fd29ba828d33d8dde4
+ms.sourcegitcommit: df4d99f9950655be725afa83f1ee7c3b73dff923
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/13/2020
-ms.locfileid: "91989153"
+ms.locfileid: "92001388"
 ---
 # <a name="walkthrough-generate-a-net-5-projection-from-a-cwinrt-component-and-distribute-the-nuget"></a>Exemplarische Vorgehensweise: Generieren einer .net 5-Projektion aus einer C++/WinRT-Komponente und Verteilen von nuget
 
@@ -118,7 +118,6 @@ Bevor Sie **cswinrt.exe** aufrufen und die projektionsassembly generieren könne
 
     ```xml
     <PropertyGroup>
-      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
       <CsWinRTIncludes>SimpleMathComponent</CsWinRTIncludes>
       <CsWinRTGeneratedFilesDir>$(OutDir)</CsWinRTGeneratedFilesDir>
     </PropertyGroup>
@@ -126,7 +125,6 @@ Bevor Sie **cswinrt.exe** aufrufen und die projektionsassembly generieren könne
 
     Im folgenden finden Sie einige Details zu den Einstellungen in diesem Beispiel:
 
-    - Das- `AllowUnsafeBlocks` Element gibt an, ob Interop-Code verwendet werden soll. 
     - Die- `CsWinRTIncludes` Eigenschaft gibt an, welche Namespaces zu projizieren sind.
     - Die- `CsWinRTGeneratedFilesDir` Eigenschaft legt das Ausgabeverzeichnis fest, in dem Dateien aus der Projektion generiert werden. Diese werden im folgenden Abschnitt zum Aufbauen der Quelle festgelegt.
 
