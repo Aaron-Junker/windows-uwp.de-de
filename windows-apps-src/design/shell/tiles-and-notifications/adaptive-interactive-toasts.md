@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Popup Benachrichtigungen, interaktive Toasts, Adaptive Toasts, Popup Inhalt, Toast Nutzlast
 ms.localizationpriority: medium
-ms.openlocfilehash: b08b34a88533d06ac7fc2f967bfc4e50e9fd8f0f
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: ed801d07991c4faa186bc0164dbf0d1323537a20
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219444"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984606"
 ---
 # <a name="toast-content"></a>Popupinhalt
 
@@ -49,21 +49,17 @@ Die Kernkomponenten von Popup Inhalten sind...
 
 Der Popup Inhalt ist in unformatiertem XML definiert, aber Sie können unsere [nuget-Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) verwenden, um ein c#-Objektmodell (oder ein C++-Objekt) zum Erstellen des Popup Inhalts zu erhalten. In diesem Artikel wird alles dokumentiert, was innerhalb des Popup Inhalts liegt.
 
+#### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
+
 ```csharp
-ToastContent content = new ToastContent()
-{
-    Launch = "app-defined-string",
- 
-    Visual = new ToastVisual()
-    {
-        BindingGeneric = new ToastBindingGeneric() { ... }
-    },
- 
-    Actions = new ToastActionsCustom() { ... },
- 
-    Audio = new ToastAudio() { ... }
-};
+new ToastContentBuilder()
+    .AddToastActivationInfo("app-defined-string", ToastActivationType.Foreground)
+    .AddText("Some text")
+    .AddButton("Archive", ToastActivationType.Background, "archive")
+    .AddAudio(new Uri("ms-appx:///Sound.mp3"));
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <toast launch="app-defined-string">
@@ -82,6 +78,8 @@ ToastContent content = new ToastContent()
 
 </toast>
 ```
+
+---
 
 Hier sehen Sie eine visuelle Darstellung des Popup Inhalts:
 
@@ -109,29 +107,16 @@ Jeder Toast muss mindestens ein Textelement enthalten und kann zwei zusätzliche
 
 Seit dem Windows 10 Anniversary Update können Sie steuern, wie viele Textzeilen angezeigt werden, indem Sie die **hintmaxlines** -Eigenschaft für den Text verwenden. Der Standardwert (und der Höchstwert) beträgt bis zu zwei Textzeilen für den Titel und bis zu 4 Zeilen (kombiniert) für die beiden zusätzlichen Beschreibungs Elemente (der zweite und dritte **adaptivetext**).
 
+#### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
+
 ```csharp
-new ToastBindingGeneric()
-{
-    Children =
-    {
-        new AdaptiveText()
-        {
-            Text = "Adaptive Tiles Meeting",
-            HintMaxLines = 1
-        },
-
-        new AdaptiveText()
-        {
-            Text = "Conf Room 2001 / Building 135"
-        },
-
-        new AdaptiveText()
-        {
-            Text = "10:00 AM - 10:30 AM"
-        }
-    }
-}
+new ToastContentBuilder()
+    .AddText("Adaptive Tiles Meeting", hintMaxLines: 1)
+    .AddText("Conf Room 2001 / Building 135")
+    .AddText("10:00 AM - 10:30 AM");
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <binding template="ToastGeneric">
@@ -140,6 +125,8 @@ new ToastBindingGeneric()
     <text>10:00 AM - 10:30 AM</text>
 </binding>
 ```
+
+---
 
 
 ## <a name="app-logo-override"></a>App-Logo Überschreibung
@@ -150,18 +137,16 @@ Standardmäßig wird Ihr App-Logo im Toast angezeigt. Allerdings können Sie die
 
 Sie können die **hintcrop** -Eigenschaft verwenden, um das Abschneiden des Bilds zu ändern. " **Circle** " führt beispielsweise zu einem Zirkel gebundenen Bild. Andernfalls ist das Bild quadratisch. Bild Dimensionen sind 48 x 48 Pixel bei einer Skalierung von 100%.
 
-```csharp
-new ToastBindingGeneric()
-{
-    ...
+#### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
 
-    AppLogoOverride = new ToastGenericAppLogo()
-    {
-        Source = "https://picsum.photos/48?image=883",
-        HintCrop = ToastGenericAppLogoCrop.Circle
-    }
-}
+```csharp
+new ToastContentBuilder()
+    ...
+    
+    .AddAppLogoOverride(new Uri("https://picsum.photos/48?image=883"), NotificationAppLogoCrop.Circle);
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <binding template="ToastGeneric">
@@ -170,6 +155,9 @@ new ToastBindingGeneric()
 </binding>
 ```
 
+---
+
+
 
 ## <a name="hero-image"></a>Herabbild
 
@@ -177,17 +165,16 @@ new ToastBindingGeneric()
 
 <img alt="Toast with hero image" src="images/toast-heroimage.jpg" width="364"/>
 
-```csharp
-new ToastBindingGeneric()
-{
-    ...
+#### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
 
-    HeroImage = new ToastGenericHeroImage()
-    {
-        Source = "https://picsum.photos/364/180?image=1043"
-    }
-}
+```csharp
+new ToastContentBuilder()
+    ...
+    
+    .AddHeroImage(new Uri("https://picsum.photos/364/180?image=1043"));
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <binding template="ToastGeneric">
@@ -196,6 +183,8 @@ new ToastBindingGeneric()
 </binding>
 ```
 
+---
+
 
 ## <a name="inline-image"></a>Inline Bild
 
@@ -203,20 +192,16 @@ Sie können ein Inline Bild mit voller Breite bereitstellen, das angezeigt wird,
 
 <img alt="Toast with additional image" src="images/toast-additionalimage.jpg" width="364"/>
 
-```csharp
-new ToastBindingGeneric()
-{
-    Children =
-    {
-        ...
+#### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
 
-        new AdaptiveImage()
-        {
-            Source = "https://picsum.photos/360/202?image=1043"
-        }
-    }
-}
+```csharp
+new ToastContentBuilder()
+    ...
+    
+    .AddInlineImage(new Uri("https://picsum.photos/360/202?image=1043"));
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <binding template="ToastGeneric">
@@ -224,6 +209,8 @@ new ToastBindingGeneric()
     <image src="https://picsum.photos/360/202?image=1043" />
 </binding>
 ```
+
+---
 
 
 ## <a name="image-size-restrictions"></a>Einschränkungen bei der Image Größe
@@ -251,17 +238,16 @@ In älteren Versionen von Windows, die keinen Zuweisungs Text unterstützen, wir
 
 <img alt="Toast with attribution text" src="images/toast-attributiontext.jpg" width="364"/>
 
-```csharp
-new ToastBindingGeneric()
-{
-    ...
+#### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
 
-    Attribution = new ToastGenericAttributionText()
-    {
-        Text = "Via SMS"
-    }
-}
+```csharp
+new ToastContentBuilder()
+    ...
+    
+    .AddAttributionText("Via SMS");
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <binding template="ToastGeneric">
@@ -269,6 +255,8 @@ new ToastBindingGeneric()
     <text placement="attribution">Via SMS</text>
 </binding>
 ```
+
+---
 
 
 ## <a name="custom-timestamp"></a>Benutzerdefinierter Zeitstempel
@@ -279,19 +267,24 @@ new ToastBindingGeneric()
 
 Weitere Informationen zum Verwenden eines benutzerdefinierten Zeitstempels finden Sie unter [benutzerdefinierte Zeitstempel in den-Umfassungen](custom-timestamps-on-toasts.md).
 
+#### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
+
 ```csharp
-ToastContent toastContent = new ToastContent()
-{
-    DisplayTimestamp = new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc),
-    ...
-};
+new ToastContentBuilder()
+    ...
+    
+    .AddCustomTimeStamp(new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc));
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <toast displayTimestamp="2017-04-15T19:45:00Z">
   ...
 </toast>
 ```
+
+---
 
 
 ## <a name="progress-bar"></a>Statusleiste
@@ -327,56 +320,55 @@ Im folgenden finden Sie ein Beispiel, in dem Spalten und einige erweiterte Adapt
 
 <img alt="Toast with additional text" src="images/toast-additionaltext.jpg" width="364"/>
 
-```csharp
-new ToastBindingGeneric()
-{
-    Children =
-    {
-        ...
+#### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
 
-        new AdaptiveGroup()
+```csharp
+new ToastContentBuilder()
+    ...
+    
+    .AddVisualChild(new AdaptiveGroup()
+    {
+        Children =
         {
-            Children =
+            new AdaptiveSubgroup()
             {
-                new AdaptiveSubgroup()
+                Children =
                 {
-                    Children =
+                    new AdaptiveText()
                     {
-                        new AdaptiveText()
-                        {
-                            Text = "52 attendees",
-                            HintStyle = AdaptiveTextStyle.Base
-                        },
-                        new AdaptiveText()
-                        {
-                            Text = "23 minute drive",
-                            HintStyle = AdaptiveTextStyle.CaptionSubtle
-                        }
+                        Text = "52 attendees",
+                        HintStyle = AdaptiveTextStyle.Base
+                    },
+                    new AdaptiveText()
+                    {
+                        Text = "23 minute drive",
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     }
-                },
-                new AdaptiveSubgroup()
+                }
+            },
+            new AdaptiveSubgroup()
+            {
+                Children =
                 {
-                    Children =
+                    new AdaptiveText()
                     {
-                        new AdaptiveText()
-                        {
-                            Text = "1 Microsoft Way",
-                            HintStyle = AdaptiveTextStyle.CaptionSubtle,
-                            HintAlign = AdaptiveTextAlign.Right
-                        },
-                        new AdaptiveText()
-                        {
-                            Text = "Bellevue, WA 98008",
-                            HintStyle = AdaptiveTextStyle.CaptionSubtle,
-                            HintAlign = AdaptiveTextAlign.Right
-                        }
+                        Text = "1 Microsoft Way",
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle,
+                        HintAlign = AdaptiveTextAlign.Right
+                    },
+                    new AdaptiveText()
+                    {
+                        Text = "Bellevue, WA 98008",
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle,
+                        HintAlign = AdaptiveTextAlign.Right
                     }
                 }
             }
         }
-    }
-}
+    });
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <binding template="ToastGeneric">
@@ -393,6 +385,8 @@ new ToastBindingGeneric()
     </group>
 </binding>
 ```
+
+---
 
 
 ## <a name="buttons"></a>Schaltflächen
@@ -413,28 +407,17 @@ Schaltflächen können die folgenden unterschiedlichen Aktionen ausführen...
 
 <img alt="notification with actions, example 1" src="images/adaptivetoasts-xmlsample02.jpg" width="364"/>
 
-```csharp
-ToastContent content = new ToastContent()
-{
-    ...
- 
-    Actions = new ToastActionsCustom()
-    {
-        Buttons =
-        {
-            new ToastButton("See more details", "action=viewdetails&contentId=351")
-            {
-                ActivationType = ToastActivationType.Foreground
-            },
+#### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
 
-            new ToastButton("Remind me later", "action=remindlater&contentId=351")
-            {
-                ActivationType = ToastActivationType.Background
-            }
-        }
-    }
-};
+```csharp
+new ToastContentBuilder()
+    ...
+    
+    .AddButton("See more details", ToastActivationType.Foreground, "action=viewdetails&contentId=351")
+    .AddButton("Remind me later", ToastActivationType.Background, "action=remindlater&contentId=351");
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <toast launch="app-defined-string">
@@ -458,6 +441,8 @@ ToastContent content = new ToastContent()
 </toast>
 ```
 
+---
+
 
 ### <a name="buttons-with-icons"></a>Schaltflächen mit Symbolen
 
@@ -468,22 +453,29 @@ Sie können den Schaltflächen Symbole hinzufügen. Diese Symbole sind weiß tra
 
 <img src="images\adaptivetoasts-buttonswithicons.png" width="364" alt="Toast that has buttons with icons"/>
 
+#### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
+
 ```csharp
-new ToastButton("Dismiss", "dismiss")
-{
-    ActivationType = ToastActivationType.Background,
-    ImageUri = "Assets/ToastButtonIcons/Dismiss.png"
-}
+new ToastContentBuilder()
+    ...
+    
+    .AddButton(
+        "Dismiss",
+        ToastActivationType.Foreground,
+        "dismiss", new Uri("Assets/NotificationButtonIcons/Dismiss.png", UriKind.Relative));
 ```
 
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <action
     content="Dismiss"
-    imageUri="Assets/ToastButtonIcons/Dismiss.png"
+    imageUri="Assets/NotificationButtonIcons/Dismiss.png"
     arguments="dismiss"
     activationType="background"/>
 ```
+
+---
 
 
 ### <a name="buttons-with-pending-update-activation"></a>Schaltflächen mit ausstehender Update Aktivierung
@@ -506,6 +498,10 @@ Die zusätzlichen Kontextmenü Aktionen, die Sie hinzufügen (z. b. "Änderungs 
 
 <img alt="Toast with context menu" src="images/toast-contextmenu.png" width="444"/>
 
+#### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
+
+Die Generator-Syntax unterstützt keine Kontextmenü Aktionen. Daher empfiehlt es sich, die initialisierersyntax zu verwenden.
+
 ```csharp
 ToastContent content = new ToastContent()
 {
@@ -520,6 +516,8 @@ ToastContent content = new ToastContent()
     }
 };
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <toast>
@@ -538,6 +536,8 @@ ToastContent content = new ToastContent()
 </toast>
 ```
 
+---
+
 > [!NOTE]
 > Zusätzliche Kontextmenü Elemente tragen zum Gesamtlimit von 5 Schaltflächen in einem Toast bei.
 
@@ -555,36 +555,23 @@ Wenn Sie ein Textfeld für die schnelle Antwort (z. b. in einer Messaging-APP) a
 
 <img alt="notification with text input and actions" src="images/adaptivetoasts-xmlsample05.jpg" width="364"/>
 
+#### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
+
 ```csharp
-ToastContent content = new ToastContent()
-{
+new ToastContentBuilder()
     ...
- 
-    Actions = new ToastActionsCustom()
-    {
-        Inputs =
-        {
-            new ToastTextBox("tbReply")
-            {
-                PlaceholderContent = "Type a reply"
-            }
-        },
+    
+    .AddInputTextBox("tbReply", "Type a reply")
 
-        Buttons =
-        {
-            new ToastButton("Reply", "action=reply&convId=9318")
-            {
-                ActivationType = ToastActivationType.Background,
-
-                // To place the button next to the text box,
-                // reference the text box's Id and provide an image
-                TextBoxId = "tbReply",
-                ImageUri = "Assets/Reply.png"
-            }
-        }
-    }
-};
+    .AddButton(
+        textBoxId: "tbReply", // To place button next to text box, reference text box's id
+        content: "Reply",
+        activationType: ToastActivationType.Background,
+        arguments: "action=reply&convId=9318",
+        imageUri: new Uri("Assets/Reply.png", UriKind.Relative));
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <toast launch="app-defined-string">
@@ -607,6 +594,9 @@ ToastContent content = new ToastContent()
 </toast>
 ```
 
+---
+
+
 
 ### <a name="inputs-with-buttons-bar"></a>Eingaben mit Schaltflächen Leiste
 
@@ -614,36 +604,19 @@ Sie können auch über eine (oder viele) Eingabe mit normalen Schaltflächen ver
 
 <img alt="notification with text and input actions" src="images/adaptivetoasts-xmlsample04.jpg" width="364"/>
 
+#### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
+
 ```csharp
-ToastContent content = new ToastContent()
-{
+new ToastContentBuilder()
     ...
- 
-    Actions = new ToastActionsCustom()
-    {
-        Inputs =
-        {
-            new ToastTextBox("tbReply")
-            {
-                PlaceholderContent = "Type a reply"
-            }
-        },
+    
+    .AddInputTextBox("tbReply", "Type a reply")
 
-        Buttons =
-        {
-            new ToastButton("Reply", "action=reply&threadId=9218")
-            {
-                ActivationType = ToastActivationType.Background
-            },
-
-            new ToastButton("Video call", "action=videocall&threadId=9218")
-            {
-                ActivationType = ToastActivationType.Foreground
-            }
-        }
-    }
-};
+    .AddButton("Reply", ToastActivationType.Background, "action=reply&threadId=9218")
+    .AddButton("Video call", ToastActivationType.Foreground, "action=videocall&threadId=9218");
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <toast launch="app-defined-string">
@@ -669,6 +642,8 @@ ToastContent content = new ToastContent()
 </toast>
 ```
 
+---
+
 
 ### <a name="selection-input"></a>Auswahl Eingabe
 
@@ -676,30 +651,28 @@ Zusätzlich zu Textfeldern können Sie auch ein Auswahlmenü verwenden.
 
 <img alt="notification with selection input and actions" src="images/adaptivetoasts-xmlsample06.jpg" width="364"/>
 
-```csharp
-ToastContent content = new ToastContent()
-{
-    ...
- 
-    Actions = new ToastActionsCustom()
-    {
-        Inputs =
-        {
-            new ToastSelectionBox("time")
-            {
-                DefaultSelectionBoxItemId = "lunch",
-                Items =
-                {
-                    new ToastSelectionBoxItem("breakfast", "Breakfast"),
-                    new ToastSelectionBoxItem("lunch", "Lunch"),
-                    new ToastSelectionBoxItem("dinner", "Dinner")
-                }
-            }
-        },
+#### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
 
-        Buttons = { ... }
-};
+```csharp
+new ToastContentBuilder()
+    ...
+    
+    .AddToastInput(new ToastSelectionBox("time")
+    {
+        DefaultSelectionBoxItemId = "lunch",
+        Items =
+        {
+            new ToastSelectionBoxItem("breakfast", "Breakfast"),
+            new ToastSelectionBoxItem("lunch", "Lunch"),
+            new ToastSelectionBoxItem("dinner", "Dinner")
+        }
+    })
+
+    .AddButton(...)
+    .AddButton(...);
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <toast launch="app-defined-string">
@@ -721,6 +694,9 @@ ToastContent content = new ToastContent()
 </toast>
 ```
 
+---
+
+
 
 ### <a name="snoozedismiss"></a>Zurückstellen/verwerfen
 
@@ -730,43 +706,32 @@ Mit einem Auswahlmenü und zwei Schaltflächen können wir eine Erinnerungs Bena
 
 Wir verknüpfen die Schaltfläche "Zurücksetzen" mit der Auswahlmenü Eingabe mithilfe der **selectionboxid** -Eigenschaft auf der Popup Schaltfläche.
 
+#### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
+
 ```csharp
-ToastContent content = new ToastContent()
-{
-    Scenario = ToastScenario.Reminder,
-
+new ToastContentBuilder()
+    .SetToastScenario(ToastScenario.Reminder)
+    
     ...
- 
-    Actions = new ToastActionsCustom()
+    
+    .AddToastInput(new ToastSelectionBox("snoozeTime")
     {
-        Inputs =
+        DefaultSelectionBoxItemId = "15",
+        Items =
         {
-            new ToastSelectionBox("snoozeTime")
-            {
-                DefaultSelectionBoxItemId = "15",
-                Items =
-                {
-                    new ToastSelectionBoxItem("5", "5 minutes"),
-                    new ToastSelectionBoxItem("15", "15 minutes"),
-                    new ToastSelectionBoxItem("60", "1 hour"),
-                    new ToastSelectionBoxItem("240", "4 hours"),
-                    new ToastSelectionBoxItem("1440", "1 day")
-                }
-            }
-        },
+            new ToastSelectionBoxItem("5", "5 minutes"),
+            new ToastSelectionBoxItem("15", "15 minutes"),
+            new ToastSelectionBoxItem("60", "1 hour"),
+            new ToastSelectionBoxItem("240", "4 hours"),
+            new ToastSelectionBoxItem("1440", "1 day")
+        }
+    })
 
-        Buttons =
-        {
-            new ToastButtonSnooze()
-            {
-                SelectionBoxId = "snoozeTime"
-            },
- 
-            new ToastButtonDismiss()
-        }
-    }
-};
+    .AddButton(new ToastButtonSnooze() { SelectionBoxId = "snoozeTime" })
+    .AddButton(new ToastButtonDismiss());
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <toast scenario="reminder" launch="action=viewEvent&amp;eventId=1983">
@@ -792,6 +757,8 @@ ToastContent content = new ToastContent()
 </toast>
 ```
 
+---
+
 So verwenden Sie die System Aktion zum Zurücksetzen und Verwerfen von Aktionen:
 
 -   Geben Sie ein " **onastbuttonsnooze** " oder " **onastbuttonverwerfen** " an
@@ -815,17 +782,16 @@ Benutzerdefiniertes Audiogerät wurde von mobilen Geräten immer unterstützt un
 
 Alternativ können Sie aus der [Liste der MS-winsoundebug](/uwp/schemas/tiles/toastschema/element-audio#attributes-and-elements)-Ereignisse auswählen, die immer auf beiden Plattformen unterstützt werden.
 
-```csharp
-ToastContent content = new ToastContent()
-{
-    ...
+#### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
 
-    Audio = new ToastAudio()
-    {
-        Src = new Uri("ms-appx:///Assets/NewMessage.mp3")
-    }
-}
+```csharp
+new ToastContentBuilder()
+    ...
+    
+    .AddAudio(new Uri("ms-appx:///Assets/NewMessage.mp3"));
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <toast launch="app-defined-string">
@@ -836,6 +802,9 @@ ToastContent content = new ToastContent()
 
 </toast>
 ```
+
+---
+
 
 Informationen zu Audiobenachrichtigungen in Popup Benachrichtigungen finden Sie auf der [Seite Audioschema](/uwp/schemas/tiles/toastschema/element-audio) . Informationen zum Senden eines Popups mithilfe von benutzerdefiniertem Audioinhalt finden Sie unter [benutzerdefinierte Audioinformationen in Popups](custom-audio-on-toasts.md).
 
@@ -851,14 +820,15 @@ Um Alarme, Erinnerungen und eingehende Benachrichtigungen zu erstellen, verwende
 * **Alarm**: Zusätzlich zu den Erinnerungs Verhaltensweisen werden Alarme zusätzlich zu einem standardmäßigen Alarm Soundschleifen.
 * **IncomingCall:** eingehende Benachrichtigungen werden auf Windows Mobile-Geräten als Vollbild angezeigt. Andernfalls haben Sie das gleiche Verhalten wie Alarme, außer Sie verwenden Rington-Audiodaten und ihre Schaltflächen werden anders formatiert.
 
-```csharp
-ToastContent content = new ToastContent()
-{
-    Scenario = ToastScenario.Reminder,
+#### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
 
+```csharp
+new ToastContentBuilder()
+    .SetToastScenario(ToastScenario.Reminder)
     ...
-}
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <toast scenario="reminder" launch="app-defined-string">
@@ -867,6 +837,8 @@ ToastContent content = new ToastContent()
 
 </toast>
 ```
+
+---
 
 
 ## <a name="localization-and-accessibility"></a>Lokalisierung und Barrierefreiheit

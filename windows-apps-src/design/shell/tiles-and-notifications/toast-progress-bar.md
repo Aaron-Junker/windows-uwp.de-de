@@ -7,12 +7,12 @@ ms.date: 12/07/2017
 ms.topic: article
 keywords: Windows 10, UWP, Toast, Statusanzeige, Popup Statusanzeige, Benachrichtigung, Popup Datenbindung
 ms.localizationpriority: medium
-ms.openlocfilehash: 4219154a3fe3241b9c1871c07a1fbbb2b63f2348
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8df76af7dd26792d8d1af0fa8641d76e007ef8e3
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174604"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984526"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>Statusanzeige für Popup und Datenbindung
 
@@ -32,7 +32,7 @@ Die folgende Abbildung zeigt eine bestimmte-Statusanzeige mit allen zugehörigen
 
 <img alt="Toast with progress bar properties labeled" src="images/toast-progressbar-annotated.png" width="626"/>
 
-| Eigenschaft | Typ | Erforderlich | BESCHREIBUNG |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
 | **Titel** | String oder [bindablestring](toast-schema.md#bindablestring) | false | Ruft eine optionale Zeichenfolge ab oder legt Sie fest. Unterstützt die Datenbindung. |
 | **Wert** | Double oder [adaptiveprogressbarvalue](toast-schema.md#adaptiveprogressbarvalue) oder [bindableprogressbarvalue](toast-schema.md#bindableprogressbarvalue) | false | Ruft den Wert der Statusanzeige ab oder legt ihn fest. Unterstützt die Datenbindung. Der Standardwert ist 0. Kann entweder ein Double zwischen 0,0 und 1,0, `AdaptiveProgressBarValue.Indeterminate` oder sein `new BindableProgressBarValue("myProgressValue")` . |
@@ -42,32 +42,21 @@ Die folgende Abbildung zeigt eine bestimmte-Statusanzeige mit allen zugehörigen
 
 Hier sehen Sie, wie Sie die oben gezeigte Benachrichtigung generieren...
 
+#### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
+
 ```csharp
-ToastContent content = new ToastContent()
-{
-    Visual = new ToastVisual()
+new ToastContentBuilder()
+    .AddText("Downloading your weekly playlist...")
+    .AddVisualChild(new AdaptiveProgressBar()
     {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Downloading your weekly playlist..."
-                },
- 
-                new AdaptiveProgressBar()
-                {
-                    Title = "Weekly playlist",
-                    Value = 0.6,
-                    ValueStringOverride = "15/26 songs",
-                    Status = "Downloading..."
-                }
-            }
-        }
-    }
-};
+        Title = "Weekly playlist",
+        Value = 0.6,
+        ValueStringOverride = "15/26 songs",
+        Status = "Downloading..."
+    });
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
 <toast>
@@ -83,6 +72,8 @@ ToastContent content = new ToastContent()
     </visual>
 </toast>
 ```
+
+---
 
 Allerdings müssen Sie die Werte der Statusanzeige dynamisch aktualisieren, damit Sie tatsächlich "Live" ist. Dies kann mithilfe der Datenbindung zum Aktualisieren des Popups erreicht werden.
 
@@ -110,30 +101,16 @@ public void SendUpdatableToastWithProgress()
     string group = "downloads";
  
     // Construct the toast content with data bound fields
-    var content = new ToastContent()
-    {
-        Visual = new ToastVisual()
+    var content = new ToastContentBuilder()
+        .AddText("Downloading your weekly playlist...")
+        .AddVisualChild(new AdaptiveProgressBar()
         {
-            BindingGeneric = new ToastBindingGeneric()
-            {
-                Children =
-                {
-                    new AdaptiveText()
-                    {
-                        Text = "Downloading your weekly playlist..."
-                    },
-    
-                    new AdaptiveProgressBar()
-                    {
-                        Title = "Weekly playlist",
-                        Value = new BindableProgressBarValue("progressValue"),
-                        ValueStringOverride = new BindableString("progressValueString"),
-                        Status = new BindableString("progressStatus")
-                    }
-                }
-            }
-        }
-    };
+            Title = "Weekly playlist",
+            Value = new BindableProgressBarValue("progressValue"),
+            ValueStringOverride = new BindableString("progressValueString"),
+            Status = new BindableString("progressStatus")
+        })
+        .GetToastContent();
  
     // Generate the toast notification
     var toast = new ToastNotification(content.GetXml());

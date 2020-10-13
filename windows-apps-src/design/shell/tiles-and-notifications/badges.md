@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: dea3eebc253f46f5de888a0a37fea9d3ad1ac3df
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: a49d771b7efdbb7e787db0cbadea45c255a1120e
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860118"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984596"
 ---
 # <a name="badge-notifications-for-windows-apps"></a>Signalbenachrichtigungen für Windows-Apps
 
@@ -32,99 +32,29 @@ Benachrichtigungssignale werden unabhängig davon, ob die App gerade ausgeführt
 
 ## <a name="numeric-badges"></a>Numerische Signale
 
-<table>
-    <tr>
-        <th>Wert</th>
-        <th>Badge</th>
-        <th>XML</th>
-    </tr>
-    <tr>
-        <td>Eine Zahl zwischen 1 und 99 Ein Nullwert entspricht dem Glyphenwert "none" und führt dazu, dass das Signal gelöscht wird.</td>
-        <td><img src="images/badges/badge-numeric.png" alt="A numeric badge less than 100." /></td>
-        <td>`<badge value="1"/>`</td>
-    </tr>
-    <tr>
-        <td>Eine beliebige Zahl über 99</td>
-        <td><img src="images/badges/badge-numeric-greater.png" alt="A numeric badge greater than 99." /></td></td>
-        <td>`<badge value="100"/>`</td>
-    </tr>    
-</table>
+Wert | Badge | XML
+--|--|--
+Eine Zahl zwischen 1 und 99 Ein Nullwert entspricht dem Glyphenwert "none" und führt dazu, dass das Signal gelöscht wird. | <img src="images/badges/badge-numeric.png" alt="A numeric badge less than 100." /> | `<badge value="1"/>`
+Eine beliebige Zahl über 99 | <img src="images/badges/badge-numeric-greater.png" alt="A numeric badge greater than 99." /></td> | `<badge value="100"/>`
 
 ## <a name="glyph-badges"></a>Glyphensignale
 Anstelle einer Zahl kann in einem Signal eine der nicht erweiterbaren Statusglyphen angezeigt werden. 
 
-<table>
-<tr>
-    <th>Status</th>
-    <th>Glyphe</th>
-    <th>XML</th>
-</tr>
-<tr>
-    <td>Keine</td>
-    <td>(Es wird kein Signal angezeigt.)</td>
-    <td>`<badge value="none"/>`</td>
-</tr>
-<tr>
-    <td>activity</td>
-    <td><img src="images/badges/badge-activity.png" alt="Screenshot of the activity glyph." /></td>
-    <td>`<badge value="activity"/>`</td>
-</tr>
-<tr>
-    <td>Alarm</td>
-    <td><img src="images/badges/badge-alarm.png" alt="Screenshot of the alarm glyph." /></td>
-    <td>`<badge value="alarm"/>`</td>
-</tr>
-<tr>
-    <td>Warnung</td>
-    <td><img src="images/badges/badge-alert.png" alt="Screenshot of the alert glyph." /></td>
-    <td>`<badge value="alert"/>`</td>
-</tr>
-<tr>
-    <td>Achtung</td>
-    <td><img src="images/badges/badge-attention.png" alt="Screenshot of the attention glyph." /></td>
-    <td>`<badge value="attention"/>`</td>
-</tr>
-<tr>
-    <td>verfügbar</td>
-    <td><img src="images/badges/badge-available.png" alt="Screenshot of the available glyph." /></td>
-    <td>`<badge value="available"/>`</td>
-</tr>
-<tr>
-    <td>abwesend</td>
-    <td><img src="images/badges/badge-away.png" alt="Screenshot of the away glyph." /></td>
-    <td>`<badge value="away"/>`</td>
-</tr>
-<tr>
-    <td>beschäftigt</td>
-    <td><img src="images/badges/badge-busy.png" alt="Screenshot of the busy glyph." /></td>
-    <td>`<badge value="busy"/>`</td>
-</tr>
-<tr>
-    <td>error</td>
-    <td><img src="images/badges/badge-error.png" alt="Screenshot of the error glyph." /></td>
-    <td>`<badge value="error"/>`</td>
-</tr>
-<tr>
-    <td>newMessage</td>
-    <td><img src="images/badges/badge-newMessage.png" alt="Screenshot of the new message glyph." /></td>
-    <td>`<badge value="newMessage"/>`</td>
-</tr>
-<tr>
-    <td>angehalten</td>
-    <td><img src="images/badges/badge-paused.png" alt="Screenshot of the paused glyph." /></td>
-    <td>`<badge value="paused"/>`</td>
-</tr>
-<tr>
-    <td>Wiedergabe</td>
-    <td><img src="images/badges/badge-playing.png" alt="Screenshot of the playing glyph." /></td>
-    <td>`<badge value="playing"/>`</td>
-</tr>
-<tr>
-    <td>nicht verfügbar</td>
-    <td><img src="images/badges/badge-unavailable.png" alt="Screenshot of the unavailable glyph" /></td>
-    <td>`<badge value="unavailable"/>`</td>
-</tr>
-</table>
+Status | Glyphe | XML
+--|--|--
+Keine | (Es wird kein Signal angezeigt.) | `<badge value="none"/>`
+activity | <img src="images/badges/badge-activity.png" alt="Glyph" /> | `<badge value="activity"/>`
+Alarm | <img src="images/badges/badge-alarm.png" alt="Glyph" /> | `<badge value="alarm"/>`
+Warnung | <img src="images/badges/badge-alert.png" alt="Glyph" /> | `<badge value="alert"/>`
+Achtung | <img src="images/badges/badge-attention.png" alt="Glyph" /> | `<badge value="attention"/>`
+verfügbar | <img src="images/badges/badge-available.png" alt="Glyph" /> | `<badge value="available"/>`
+abwesend | <img src="images/badges/badge-away.png" alt="Glyph" /> | `<badge value="away"/>`
+beschäftigt | <img src="images/badges/badge-busy.png" alt="Glyph" /> | `<badge value="busy"/>`
+error | <img src="images/badges/badge-error.png" alt="Glyph" /> | `<badge value="error"/>`
+newMessage | <img src="images/badges/badge-newMessage.png" alt="Glyph" /> | `<badge value="newMessage"/>`
+angehalten | <img src="images/badges/badge-paused.png" alt="Glyph" /> | `<badge value="paused"/>`
+Wiedergabe | <img src="images/badges/badge-playing.png" alt="Glyph" /> | `<badge value="playing"/>`
+nicht verfügbar | <img src="images/badges/badge-unavailable.png" alt="Glyph" /> | `<badge value="unavailable"/>`</td>
 
 ## <a name="create-a-badge"></a>Erstellen eines Signals
 

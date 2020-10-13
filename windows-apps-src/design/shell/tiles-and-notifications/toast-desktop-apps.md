@@ -1,22 +1,22 @@
 ---
 Description: Entdecken Sie die verschiedenen Optionen für Desktop-Win32-Apps zum Senden von Popup Benachrichtigungen.
-title: Popup Benachrichtigungen aus Desktop-Apps
-label: Toast notifications from desktop apps
+title: Popup Benachrichtigungen von Win32-apps
+label: Toast notifications from Win32 apps
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, Popup Benachrichtigungen, Desktop Bridge, msix, sparsesloadpaket, Optionen für das Senden von Toasts, com-Server, com-Activator, com, gefälschtes com, Nein com, ohne com, Send Toast
 ms.localizationpriority: medium
-ms.openlocfilehash: 478c478fa6892e4b61ac1a7d6e22089720e96ca7
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 6f02bc7c615643ba0d2ca0ed1b43ecf13641c1c5
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220072"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984546"
 ---
-# <a name="toast-notifications-from-desktop-apps"></a>Popup Benachrichtigungen aus Desktop-Apps
+# <a name="toast-notifications-from-win32-apps"></a>Popup Benachrichtigungen von Win32-apps
 
-Desktop-Apps (einschließlich gepackter [msix](/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Win32-Apps) können interaktive Popup Benachrichtigungen wie Windows-apps senden. Aufgrund der verschiedenen Aktivierungs Schemas gibt es jedoch einige unterschiedliche Optionen für Desktop-Apps.
+Win32-Apps (einschließlich gepackter [msix](/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Win32-Apps) können interaktive Popup Benachrichtigungen wie Windows-apps senden. Aufgrund der verschiedenen Aktivierungs Schemas gibt es jedoch einige unterschiedliche Optionen für Win32-apps.
 
 In diesem Artikel werden die Optionen aufgelistet, die Sie zum Senden einer Popup Benachrichtigung unter Windows 10 haben. Jede Option unterstützt vollständig...
 
@@ -26,7 +26,7 @@ In diesem Artikel werden die Optionen aufgelistet, die Sie zum Senden einer Popu
 
 ## <a name="all-options"></a>Alle Optionen
 
-In der folgenden Tabelle werden die Optionen für die Unterstützung von Popups innerhalb Ihrer Desktop-App und die entsprechenden unterstützten Funktionen veranschaulicht. Sie können die Tabelle verwenden, um die beste Option für Ihr Szenario auszuwählen.<br/><br/>
+In der folgenden Tabelle werden die Optionen für die Unterstützung von Popups in der Win32-APP und die entsprechenden unterstützten Funktionen veranschaulicht. Sie können die Tabelle verwenden, um die beste Option für Ihr Szenario auszuwählen.<br/><br/>
 
 | Option | Visuals | Aktionen | Eingaben | Prozess interne Aktivierung |
 | -- | -- | -- | -- | -- |
@@ -36,7 +36,7 @@ In der folgenden Tabelle werden die Optionen für die Unterstützung von Popups 
 
 ## <a name="preferred-option---com-activator"></a>Bevorzugte Option: com-Activator
 
-Dies ist die bevorzugte Option für Desktop-Apps und unterstützt alle Benachrichtigungs Features. Machen Sie sich keine Angst vor "com Activator". Wir verfügen über eine Bibliothek [für c#](send-local-toast-desktop.md) -und [C++-apps](send-local-toast-desktop-cpp-wrl.md) , die dies sehr einfach macht, auch wenn Sie noch nie einen com-Server geschrieben haben.<br/><br/>
+Dies ist die bevorzugte Option, die für Win32-apps funktioniert und alle Benachrichtigungs Features unterstützt. Machen Sie sich keine Angst vor "com Activator". Wir verfügen über eine Bibliothek [für c#](send-local-toast-desktop.md) -und [C++-apps](send-local-toast-desktop-cpp-wrl.md) , die dies sehr einfach macht, auch wenn Sie noch nie einen com-Server geschrieben haben.<br/><br/>
 
 | Visuals | Aktionen | Eingaben | Prozess interne Aktivierung |
 | -- | -- | -- | -- |
@@ -54,7 +54,7 @@ Mit der com Activator-Option können Sie die folgenden Benachrichtigungs Vorlage
 > [!NOTE]
 > Wenn Sie den com-Aktivator zu Ihrer vorhandenen msix/Sparse-Paket-app hinzufügen, aktivieren Vordergrund-/Hintergrund-und Legacy Benachrichtigungs Aktivierungen nun Ihren com-Aktivierer anstelle der Befehlszeile.
 
-Informationen zur Verwendung dieser Option finden Sie unter [Senden einer lokalen Popup Benachrichtigung von Desktop-c#-apps](send-local-toast-desktop.md) oder [Senden einer lokalen Popup Benachrichtigung von Desktop C++ WRL-apps](send-local-toast-desktop-cpp-wrl.md).
+Informationen zur Verwendung dieser Option finden Sie unter [Senden einer lokalen Popup Benachrichtigung von Win32 c#-apps](send-local-toast-desktop.md) oder [Senden einer lokalen Popup Benachrichtigung von Win32 C++ WRL-apps](send-local-toast-desktop-cpp-wrl.md).
 
 
 ## <a name="alternative-option---no-com--stub-clsid"></a>Alternative Option-keine com/Stub-CLSID
@@ -81,6 +81,6 @@ Richten Sie für klassische Win32-Apps die aumid so ein, dass Sie die Umfassunge
 
 ## <a name="resources"></a>Ressourcen
 
-* [Senden von Popupbenachrichtigungen von C#-Desktop-Apps](send-local-toast-desktop.md)
-* [Senden von Popupbenachrichtigungen über C++ WRL-Apps](send-local-toast-desktop-cpp-wrl.md)
+* [Senden einer lokalen Popup Benachrichtigung von Win32 c#-apps](send-local-toast-desktop.md)
+* [Senden einer lokalen Popup Benachrichtigung von Win32 C++ WRL-apps](send-local-toast-desktop-cpp-wrl.md)
 * [Dokumentation zu Popup Inhalten](adaptive-interactive-toasts.md)

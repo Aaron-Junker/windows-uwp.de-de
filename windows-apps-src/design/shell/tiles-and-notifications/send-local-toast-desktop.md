@@ -1,33 +1,33 @@
 ---
 Description: Erfahren Sie, wie Win32-c#-apps lokale Popup Benachrichtigungen senden können und den Benutzer durch Klicken auf den Toast behandeln können.
-title: Senden von Popupbenachrichtigungen von C#-Desktop-Apps
+title: Senden einer lokalen Popup Benachrichtigung von Win32 c#-apps
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
-label: Send a local toast notification from desktop C# apps
+label: Send a local toast notification from Win32 C# apps
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: 'Windows 10, UWP, Win32, Desktop, Popup Benachrichtigungen, Senden eines Popup, Senden eines lokalen Popup, Desktop Bridge, msix, sparsesloadbenachrichtigungen, c#, C-Sharp, Popup Benachrichtigung, WPF, Senden von Popup Benachrichtigungen WPF, Popup Benachrichtigung, e/a, Popup Benachrichtigung C #'
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f4f78d689352f0278f814a2e89db6f92df52b99
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: b13927bbd12a5cb306018ca02cd8730f580182cd
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220123"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984646"
 ---
-# <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Senden von Popupbenachrichtigungen von C#-Desktop-Apps
+# <a name="send-a-local-toast-notification-from-win32-c-apps"></a>Senden einer lokalen Popup Benachrichtigung von Win32 c#-apps
 
-Desktop-Apps (einschließlich gepackter [msix](/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Win32-Apps) können interaktive Popup Benachrichtigungen wie Windows-apps senden. Allerdings gibt es einige spezielle Schritte für Desktop-Apps aufgrund der verschiedenen Aktivierungs Schemas und des potenziellen Mangels an Paket Identität, wenn Sie keine msix-oder Sparse-Pakete verwenden.
+Win32-Apps (einschließlich gepackter [msix](/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Win32-Apps) können interaktive Popup Benachrichtigungen wie Windows-apps senden. Allerdings gibt es einige spezielle Schritte für Win32-apps aufgrund der verschiedenen Aktivierungs Schemas und des potenziellen Mangels an Paket Identität, wenn Sie keine msix-oder Sparse-Pakete verwenden.
 
 > [!IMPORTANT]
-> Wenn Sie eine UWP-app schreiben, finden Sie weitere Informationen in der [UWP-Dokumentation](send-local-toast.md). Weitere Desktop Sprachen finden Sie unter [Desktop C++ WRL](send-local-toast-desktop-cpp-wrl.md).
+> Wenn Sie eine UWP-app schreiben, finden Sie weitere Informationen in der [UWP-Dokumentation](send-local-toast.md). Weitere Desktop Sprachen finden Sie unter [Win32 C++ WRL](send-local-toast-desktop-cpp-wrl.md).
 
 
 ## <a name="step-1-install-the-notifications-library"></a>Schritt 1: Installieren der Benachrichtigungs Bibliothek
 
 Installieren Sie das `Microsoft.Toolkit.Uwp.Notifications` [nuget-Paket](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) in Ihrem Projekt.
 
-Diese [Benachrichtigungs Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) fügt den Kompatibilitäts-Bibliotheks Code zum Arbeiten mit Popup Benachrichtigungen von Desktop-Apps hinzu. Außerdem verweist Sie auf die UWP-sdche und ermöglicht das Erstellen von Benachrichtigungen mit c# anstelle von unformatierten XML-Daten. Der Rest dieses Schnellstarts hängt von der Benachrichtigungs Bibliothek ab.
+Diese [Benachrichtigungs Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) fügt den Kompatibilitäts-Bibliotheks Code zum Arbeiten mit Popup Benachrichtigungen von Win32-apps hinzu. Außerdem verweist Sie auf die UWP-sdche und ermöglicht das Erstellen von Benachrichtigungen mit c# anstelle von unformatierten XML-Daten. Der Rest dieses Schnellstarts hängt von der Benachrichtigungs Bibliothek ab.
 
 
 ## <a name="step-2-implement-the-activator"></a>Schritt 2: Implementieren Sie den Aktivator.
@@ -320,7 +320,7 @@ Wenn Ihre APP nicht ausgeführt wird:
 
 
 ### <a name="foreground-vs-background-activation"></a>Vordergrund-vs-Hintergrund Aktivierung
-Bei Desktop-Apps wird die Vordergrund-und Hintergrund Aktivierung identisch behandelt. der com-Activator wird aufgerufen. Es liegt an Ihrem app-Code, zu entscheiden, ob ein Fenster angezeigt werden soll, oder einfach nur einige Aufgaben auszuführen und zu beenden. Wenn Sie also einen **ActivationType** von **Background** in Ihrem Popup Inhalt angeben, ändert sich das Verhalten nicht.
+Bei Win32-apps wird die Vordergrund-und Hintergrund Aktivierung identisch behandelt. der com-Activator wird aufgerufen. Es liegt an Ihrem app-Code, zu entscheiden, ob ein Fenster angezeigt werden soll, oder einfach nur einige Aufgaben auszuführen und zu beenden. Wenn Sie also einen **ActivationType** von **Background** in Ihrem Popup Inhalt angeben, ändert sich das Verhalten nicht.
 
 
 ## <a name="step-7-remove-and-manage-notifications"></a>Schritt 7: entfernen und Verwalten von Benachrichtigungen
@@ -357,5 +357,5 @@ Wenn Sie sowohl das msix/Sparse-Paket als auch die klassische Win32-App installi
 ## <a name="resources"></a>Ressourcen
 
 * [Vollständiges Codebeispiel auf GitHub](https://github.com/WindowsNotifications/desktop-toasts)
-* [Popup Benachrichtigungen aus Desktop-Apps](toast-desktop-apps.md)
+* [Popup Benachrichtigungen von Win32-apps](toast-desktop-apps.md)
 * [Dokumentation zu Popup Inhalten](adaptive-interactive-toasts.md)

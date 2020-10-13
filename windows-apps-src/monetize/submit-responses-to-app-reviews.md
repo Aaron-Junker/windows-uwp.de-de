@@ -1,37 +1,37 @@
 ---
 ms.assetid: 038903d6-efab-4da6-96b5-046c7431e6e7
-description: Verwenden Sie diese Methode in der Microsoft Store-Rezensions-API zum Senden von Antworten auf Rezensionen Ihrer App.
+description: Verwenden Sie diese Methode in der Microsoft Store Reviews-API, um Antworten auf Überprüfungen Ihrer APP zu senden.
 title: Übermitteln von Antworten auf Rezensionen
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Store-Dienste, Microsoft Store-Rezensions-API, Add-On-Käufe
+keywords: Windows 10, UWP, Store Services, Microsoft Store Reviews API, Add-on-Akquisitionen
 ms.localizationpriority: medium
-ms.openlocfilehash: c08dcda52940f0218b6fdb5be147f058eca7479a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 9cf62f5f619eba0431f1398a391eef03b47bb13d
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623835"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984636"
 ---
 # <a name="submit-responses-to-reviews"></a>Übermitteln von Antworten auf Rezensionen
 
 
-Verwenden Sie diese Methode in der Microsoft Store-Rezensions-API, um Antworten auf Rezensionen Ihrer App zu senden. Wenn Sie diese Methode aufrufen, müssen Sie die IDs der Rezensionen angeben, auf die Sie antworten möchten. Rezensions-IDs finden Sie in den Antwortdaten der Methode [Abrufen von App-Rezensionen](get-app-reviews.md) der Microsoft Store-Analyse-API und unter [Offlinedownload](../publish/download-analytic-reports.md) im Bericht [Rezensionen](../publish/reviews-report.md).
+Verwenden Sie diese Methode in der Microsoft Store Reviews-API, um Programm gesteuert auf Überprüfungen Ihrer APP zu reagieren. Wenn Sie diese Methode aufgerufen haben, müssen Sie die IDs der Reviews angeben, auf die Sie reagieren möchten. Überprüfungs-IDs sind in den Antwortdaten der Methode [Get App Reviews](get-app-reviews.md) in der Microsoft Store Analytics-API und im [Offline Download](../publish/download-analytic-reports.md) des [Berichts Reviews](../publish/reviews-report.md)verfügbar.
 
-Beim Übermitteln von Rezensionen können Kunden festlegen, dass sie keine Antworten auf ihre Rezension erhalten möchten. Wenn Sie versuchen, auf eine Rezension zu antworten, für die der Kunde ausgewählt hat, keine Antworten zu erhalten, wird im Antworttext dieser Methode angegeben, dass der Antwortversuch fehlgeschlagen ist. Vor dem Aufrufen dieser Methode können Sie mit der Methode [Antwortinformationen für App-Rezensionen abrufen](get-response-info-for-app-reviews.md) ermitteln, ob Sie auf eine bestimmte Rezension antworten dürfen.
+Wenn ein Kunde einen Review sendet, kann er auswählen, dass er keine Antworten auf seine Überprüfung erhält. Wenn Sie versuchen, auf eine Überprüfung zu reagieren, für die der Kunde keinen Empfang von Antworten gewählt hat, gibt der Antworttext dieser Methode an, dass der Antwort Versuch nicht erfolgreich war. Bevor Sie diese Methode aufrufen, können Sie optional ermitteln, ob Sie auf eine bestimmte Überprüfung Antworten können, indem Sie die Methode [Get Response Info for App Reviews](get-response-info-for-app-reviews.md) verwenden.
 
 > [!NOTE]
-> Zusätzlich zur Verwendung dieser Methode um programmgesteuert auf Überprüfungen zu reagieren, Sie können alternativ reagieren auf Überprüfungen [über Partner Center](../publish/respond-to-customer-reviews.md).
+> Mit dieser Methode können Sie nicht nur Programm gesteuert auf Überprüfungen reagieren, sondern auch [mithilfe von Partner Center](../publish/respond-to-customer-reviews.md)auf Überprüfungen reagieren.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
-* Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](respond-to-reviews-using-windows-store-services.md#prerequisites) für die Microsoft Store-Rezensions-API.
-* [Rufen Sie ein Azure AD-Zugriffstoken ab](respond-to-reviews-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
-* Rufen Sie die IDs der Rezensionen ab, auf die Sie antworten möchten. Rezensions-IDs finden Sie in den Antwortdaten der Methode [Abrufen von App-Rezensionen](get-app-reviews.md) der Microsoft Store-Analyse-API und unter [Offlinedownload](../publish/download-analytic-reports.md) im Bericht [Rezensionen](../publish/reviews-report.md).
+* Wenn Sie dies nicht bereits getan haben, müssen Sie alle [Voraussetzungen](respond-to-reviews-using-windows-store-services.md#prerequisites) für die Microsoft Store Reviews-API erfüllen.
+* [Rufen Sie ein Azure AD-Zugriffstoken ab](respond-to-reviews-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nachdem Sie ein Zugriffstoken erhalten haben, haben Sie 60 Minuten Zeit, es zu verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
+* Holen Sie sich die IDs der Reviews, auf die Sie reagieren möchten. Überprüfungs-IDs sind in den Antwortdaten der Methode [Get App Reviews](get-app-reviews.md) in der Microsoft Store Analytics-API und im [Offline Download](../publish/download-analytic-reports.md) des [Berichts Reviews](../publish/reviews-report.md)verfügbar.
 
-## <a name="request"></a>Anfordern
+## <a name="request"></a>Anforderung
 
 ### <a name="request-syntax"></a>Anforderungssyntax
 
@@ -42,39 +42,39 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 ### <a name="request-header"></a>Anforderungsheader
 
-| Header        | Typ   | Beschreibung                                                                 |
+| Header        | type   | BESCHREIBUNG                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | string | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
+| Authorization | Zeichenfolge | Erforderlich. Das Azure AD-Zugriffstoken im Format **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
-Diese Methode hat keine Anforderungsparameter.
+Diese Methode hat keine Anforderungs Parameter.
 
 
 ### <a name="request-body"></a>Anforderungstext
 
-Der Anforderungstext hat folgende Werte:
+Der Anforderungs Text weist die folgenden Werte auf.
 
-| Wert        | Typ   | Beschreibung                                                                 |
+| Wert        | type   | BESCHREIBUNG                                                                 |
 |---------------|--------|-----------------------------------------|
-| Responses | array | Ein Array von Objekten, die die Antwortdaten enthalten, die Sie senden möchten. Weitere Informationen zu den Daten in den einzelnen Objekten finden Sie in der folgenden Tabelle. |
+| Antworten | array | Ein Array von-Objekten, die die Antwortdaten enthalten, die Sie übermitteln möchten. Weitere Informationen zu den Daten in den einzelnen Objekten finden Sie in der folgenden Tabelle. |
 
 
-Jedes Objekt im *Responses*-Array enthält die folgenden Werte:
+Jedes Objekt im Array " *Antworten* " enthält die folgenden Werte:
 
-| Wert        | Typ   | Beschreibung           |  Erforderlich  |
+| Wert        | type   | BESCHREIBUNG           |  Erforderlich  |
 |---------------|--------|-----------------------------|-----|
-| ApplicationId | string |  Die Store-ID der App, auf deren Rezension Sie antworten möchten. Die Store-ID ist verfügbar, auf die [Seite "App-Identität"](../publish/view-app-identity-details.md) von Partner Center. Beispiel für eine Store-ID: 9WZDNCRFJ3Q8.   |  Ja  |
-| ReviewId | string |  Die ID der Rezension, auf die Sie antworten möchten (dies ist eine GUID). Rezensions-IDs finden Sie in den Antwortdaten der Methode [Abrufen von App-Rezensionen](get-app-reviews.md) der Microsoft Store-Analyse-API und unter [Offlinedownload](../publish/download-analytic-reports.md) im Bericht [Rezensionen](../publish/reviews-report.md).   |  Ja  |
-| ResponseText | string | Die Antwort, die Sie senden möchten. Ihre Antwort muss [diesen Richtlinien](../publish/respond-to-customer-reviews.md#guidelines-for-responses) entsprechen.   |  Ja  |
-| SupportEmail | string | Die Support-E-Mail-Adresse Ihrer App, über die der Kunde Sie direkt kontaktieren kann. Dies muss eine gültige E-Mail-Adresse sein.     |  Ja  |
-| IsPublic | Boolesch |  Bei Angabe von **"true"**, Ihre Antwort wird in Ihrer app-Store auflisten, direkt unterhalb des Kunden überprüfen, angezeigt und für alle Kunden sichtbar. Bei Angabe von **"false"** und der Benutzer noch nicht Out-of-e-Mail-Antworten empfangen hat, Ihre Antwort wird an den Kunden per e-Mail gesendet werden und wird nicht für andere Kunden in Ihrer app-Store-Liste angezeigt werden. Bei Angabe von **"false"** und der Benutzer hat entschieden, Empfang von e-Mail-Antworten, wird ein Fehler zurückgegeben.   |  Ja  |
+| ApplicationId | Zeichenfolge |  Die Speicher-ID der APP mit der Überprüfung, auf die Sie reagieren möchten. Die Store-ID ist auf der [Seite App-Identität](../publish/view-app-identity-details.md) von Partner Center verfügbar. Beispiel für eine Store-ID: 9WZDNCRFJ3Q8.   |  Ja  |
+| Reviewid | Zeichenfolge |  Die ID der Überprüfung, auf die Sie reagieren möchten (Dies ist eine GUID). Überprüfungs-IDs sind in den Antwortdaten der Methode [Get App Reviews](get-app-reviews.md) in der Microsoft Store Analytics-API und im [Offline Download](../publish/download-analytic-reports.md) des [Berichts Reviews](../publish/reviews-report.md)verfügbar.   |  Ja  |
+| Response Text | Zeichenfolge | Die Antwort, die Sie übermitteln möchten. Ihre Antwort muss [den folgenden Richtlinien](../publish/respond-to-customer-reviews.md#guidelines-for-responses)entsprechen.   |  Ja  |
+| Supportemail | Zeichenfolge | Die Support-e-Mail-Adresse Ihrer APP, die der Kunde verwenden kann, um Sie direkt zu kontaktieren. Dies muss eine gültige e-Mail-Adresse sein.     |  Ja  |
+| IsPublic | Boolean |  Wenn Sie " **true**" angeben, wird die Antwort in der Store-Liste Ihrer APP direkt unterhalb der Kunden Überprüfung angezeigt und ist für alle Kunden sichtbar. Wenn Sie " **false** " angeben und der Benutzer keine e-Mail-Antworten erhalten hat, wird die Antwort per e-Mail an den Kunden gesendet und ist nicht für andere Kunden in der Store-Liste Ihrer APP sichtbar. Wenn Sie **false** angeben und der Benutzer keine e-Mail-Antworten erhalten hat, wird ein Fehler zurückgegeben.   |  Ja  |
 
 
 ### <a name="request-example"></a>Anforderungsbeispiel
 
-Im folgenden Beispiel wird gezeigt, wie diese Methode verwendet wird, um Antworten auf mehrere Rezensionen zu senden.
+Im folgenden Beispiel wird veranschaulicht, wie diese Methode verwendet wird, um Antworten an verschiedene Überprüfungen zu senden.
 
 ```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/reviews/responses HTTP/1.1
@@ -87,14 +87,14 @@ Content-Type: application/json
       "ReviewId": "6be543ff-1c9c-4534-aced-af8b4fbe0316",
       "ResponseText": "Thank you for pointing out this bug. I fixed it and published an update, you should have the fix soon",
       "SupportEmail": "support@contoso.com",
-      "IsPublic": "true"
+      "IsPublic": true
     },
     {
       "ApplicationId": "9NBLGGH1RP08",
       "ReviewId": "80c9671a-96c2-4278-bcbc-be0ce5a32a7c",
       "ResponseText": "Thank you for submitting your review. Can you tell more about what you were doing in the app when it froze? Thanks very much for your help.",
       "SupportEmail": "support@contoso.com",
-      "IsPublic": "false"
+      "IsPublic": false
     }
   ]
 }
@@ -104,22 +104,22 @@ Content-Type: application/json
 
 ### <a name="response-body"></a>Antworttext
 
-| Wert        | Typ   | Beschreibung            |
+| Wert        | type   | BESCHREIBUNG            |
 |---------------|--------|---------------------|
-| Ergebnis | array | Ein Array von Objekten, die Daten über jede Antwort enthalten, die Sie gesendet haben. Weitere Informationen zu den Daten in den einzelnen Objekten finden Sie in der folgenden Tabelle.  |
+| Ergebnis | array | Ein Array von-Objekten, die Daten zu jeder von Ihnen übermittelten Antwort enthalten. Weitere Informationen zu den Daten in den einzelnen Objekten finden Sie in der folgenden Tabelle.  |
 
 
-Jedes Objekt im *Result*-Array enthält die folgenden Werte:
+Jedes-Objekt im *Ergebnis* Array enthält die folgenden Werte.
 
-| Wert        | Typ   | Beschreibung                                                                 |
+| Wert        | type   | BESCHREIBUNG                                                                 |
 |---------------|--------|-----------------------------------------------|
-| ApplicationId | string |  Die Store-ID der App, auf deren Rezension Sie geantwortet haben. Beispiel für eine Store-ID: 9WZDNCRFJ3Q8.   |
-| ReviewId | string |  Die ID der Rezension, auf die Sie geantwortet haben. Dies ist eine GUID.   |
-| Erfolgreich | string | Der Wert **true** gibt an, dass Ihre Antwort erfolgreich gesendet wurde. Der Wert **false** gibt an, dass Ihre Antwort nicht erfolgreich war.    |
-| FailureReason | string | Wenn **Successful** **false** ist, dann enthält dieser Wert einen Grund für den Fehler. Wenn **Successful** **true** ist, dann ist dieser Wert leer.      |
+| ApplicationId | Zeichenfolge |  Die Speicher-ID der APP mit der Überprüfung, auf die Sie geantwortet haben. Beispiel für eine Store-ID: 9WZDNCRFJ3Q8.   |
+| Reviewid | Zeichenfolge |  Die ID der Überprüfung, auf die Sie geantwortet haben. Dies ist eine GUID.   |
+| Erfolgreich | Zeichenfolge | Der Wert **true** gibt an, dass die Antwort erfolgreich gesendet wurde. Der Wert **false** gibt an, dass die Antwort nicht erfolgreich war.    |
+| FailureReason | Zeichenfolge | Wenn **erfolgreich** **false**ist, enthält dieser Wert einen Grund für den Fehler. Wenn **erfolgreich** **true**ist, ist dieser Wert leer.      |
 
 
-### <a name="response-example"></a>Antwortbeispiel
+### <a name="response-example"></a>Beispielantwort
 
 Das folgende Beispiel zeigt ein Beispiel für einen JSON-Antworttext für diese Anforderung.
 
@@ -142,9 +142,9 @@ Das folgende Beispiel zeigt ein Beispiel für einen JSON-Antworttext für diese 
 }
 ```
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Reagieren Sie auf Überprüfungen durch den Kunden über Partner Center](../publish/respond-to-customer-reviews.md)
-* [Reagieren Sie auf Überprüfungen mithilfe von Microsoft Store services](respond-to-reviews-using-windows-store-services.md)
-* [Abrufen von Antwort-Informationen für Bewertungen zu Apps](get-response-info-for-app-reviews.md)
-* [Abrufen von app-Bewertungen](get-app-reviews.md)
+* [Reagieren auf Kunden Reviews mithilfe von Partner Center](../publish/respond-to-customer-reviews.md)
+* [Antworten auf Überprüfungen mithilfe von Microsoft Store Services](respond-to-reviews-using-windows-store-services.md)
+* [Antwortinformationen für App-Reviews erhalten](get-response-info-for-app-reviews.md)
+* [Abrufen von App-Rezensionen](get-app-reviews.md)

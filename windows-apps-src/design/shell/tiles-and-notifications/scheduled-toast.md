@@ -7,12 +7,12 @@ ms.date: 04/09/2020
 ms.topic: article
 keywords: Windows 10, UWP, geplante Popup Benachrichtigung, scheduledtoastnotification, Vorgehensweise, Schnellstart, erste Schritte, Codebeispiel, Exemplarische Vorgehensweise
 ms.localizationpriority: medium
-ms.openlocfilehash: bc80cf04c1e1461612401ef4ced898058e2dd4ac
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 04bbf3da388bf065b2b96684cf3f27cd7534ff51
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172354"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984736"
 ---
 # <a name="schedule-a-toast-notification"></a>Planen einer Popup Benachrichtigung
 
@@ -21,7 +21,7 @@ Mit geplanten Popup Benachrichtigungen können Sie eine Benachrichtigung so plan
 Beachten Sie, dass geplante Popup Benachrichtigungen über ein Übermittlungs Fenster von 5 Minuten verfügen. Wenn der Computer während der geplanten Übermittlung ausgeschaltet ist und länger als 5 Minuten deaktiviert bleibt, wird die Benachrichtigung als nicht mehr relevant für den Benutzer angezeigt. Wenn Sie eine garantierte Übermittlung von Benachrichtigungen unabhängig davon benötigen, wie lange der Computer ausgeschaltet war, empfiehlt es sich, wie in [diesem Codebeispiel](https://github.com/WindowsNotifications/quickstart-snoozable-toasts-even-if-computer-is-off)dargestellt eine Hintergrundaufgabe mit einem Zeit-und Zeit Auslösers zu verwenden.
 
 > [!IMPORTANT]
-> Für Desktop Anwendungen (msix/Sparse-Pakete und klassisches Win32) gibt es etwas andere Schritte zum Senden von Benachrichtigungen und zur Handhabung der Aktivierung. Befolgen Sie die nachfolgenden Anweisungen, aber ersetzen Sie durch `ToastNotificationManager` die `DesktopNotificationManagerCompat` -Klasse aus der [Desktop-Apps-](toast-desktop-apps.md) Dokumentation.
+> Win32-Anwendungen (sowohl msix-als auch Sparse-Pakete und klassisches Win32) haben etwas andere Schritte zum Senden von Benachrichtigungen und zur Handhabung der Aktivierung. Befolgen Sie die nachfolgenden Anweisungen, aber ersetzen Sie durch `ToastNotificationManager` die- `DesktopNotificationManagerCompat` Klasse aus der [Win32-apps](toast-desktop-apps.md) -Dokumentation.
 
 > **Wichtige APIs**: [scheduleddeastnotification-Klasse](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
 
@@ -35,77 +35,40 @@ Um dieses Thema vollständig zu verstehen, ist Folgendes hilfreich...
 * Ein Windows 10-UWP-App-Projekt
 
 
-## <a name="install-nuget-packages"></a>Installieren von NuGet-Paketen
+## <a name="step-1-install-nuget-package"></a>Schritt 1: Installieren des nuget-Pakets
 
-Es wird empfohlen, die beiden folgenden nuget-Pakete in Ihrem Projekt zu installieren. In unserem Codebeispiel werden diese Pakete verwendet.
-
-* [Microsoft. Toolkit. UWP. Benachrichtigungen](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/): Generieren Sie Popup Nutzlasten über Objekte anstelle von unformatiertem XML.
-* [QueryString.net](https://www.nuget.org/packages/QueryString.NET/): generieren und Analysieren von Abfrage Zeichenfolgen mit C #
+Installieren Sie das [nuget-Paket Microsoft. Toolkit. UWP. Benachrichtigungen](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/). In unserem Codebeispiel wird dieses Paket verwendet. Am Ende des Artikels werden die "einfachen" Code Ausschnitte bereitgestellt, die keine nuget-Pakete verwenden. Mithilfe dieses Pakets können Sie Popup Benachrichtigungen erstellen, ohne XML zu verwenden.
 
 
-## <a name="add-namespace-declarations"></a>Hinzufügen von Namespace-Deklarationen
+## <a name="step-2-add-namespace-declarations"></a>Schritt 2: Hinzufügen von Namespace Deklarationen
 
 `Windows.UI.Notifications` enthält die Toast-APIs.
 
 ```csharp
 using Windows.UI.Notifications;
 using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
-using Microsoft.QueryStringDotNET; // QueryString.NET
 ```
 
 
-## <a name="construct-the-toast-content"></a>Erstellen des Popup Inhalts
+## <a name="step-3-schedule-the-notification"></a>Schritt 3: Planen der Benachrichtigung
 
-In Windows 10 wird der Inhalt der Popup Benachrichtigung mit einer adaptiven Sprache beschrieben, die eine hohe Flexibilität bei der Anzeige Ihrer Benachrichtigung ermöglicht. Weitere Informationen finden Sie in der Dokumentation zum Popup [Inhalt](adaptive-interactive-toasts.md) .
-
-Dank der Benachrichtigungs Bibliothek ist das Erstellen des XML-Inhalts einfach. Wenn Sie die Benachrichtigungs Bibliothek nicht von nuget installieren, müssen Sie die XML-Datei manuell erstellen, wodurch Platz für Fehler bleibt.
-
-Sie sollten immer die **Launch** -Eigenschaft festlegen, sodass Ihre APP weiß, welche Inhalte angezeigt werden sollen, wenn der Benutzer auf den Hauptteil des Toast tippt und die APP gestartet wird.
+Wir werden eine einfache textbasierte Benachrichtigung verwenden, die einen Schüler/Student zu den heute noch fälligen Hausaufgaben erinnert. Erstellen Sie die Benachrichtigung, und planen Sie Sie!
 
 ```csharp
-// In a real app, these would be initialized with actual data
-string title = "ASTR 170B1";
-string content = "You have 3 items due today!";
+// Construct the content
+var content = new ToastContentBuilder()
+    .AddToastActivationInfo("itemsDueToday", ToastActivationType.Foreground)
+    .AddText("ASTR 170B1")
+    .AddText("You have 3 items due today!");
+    .GetToastContent();
 
-// Now we can construct the final toast content
-ToastContent toastContent = new ToastContent()
-{
-    Visual = new ToastVisual()
-    {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = title
-                },
-     
-                new AdaptiveText()
-                {
-                    Text = content
-                }
-            }
-        }
-    },
- 
-    // Arguments when the user taps body of toast
-    Launch = new QueryString()
-    {
-        { "action", "viewClass" },
-        { "classId", "3910938180" }
- 
-    }.ToString()
-};
-```
-
-## <a name="create-the-scheduled-toast"></a>Erstellen des geplanten Popup
-
-Nachdem Sie den Popup Inhalt initialisiert haben, erstellen Sie eine neue [scheduledtoastnotification](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification) , und übergeben Sie die XML-Datei des Inhalts und die Uhrzeit, zu der die Benachrichtigung gesendet werden soll.
-
-```csharp
+    
 // Create the scheduled notification
-var toast = new ScheduledToastNotification(toastContent.GetXml(), DateTime.Now.AddSeconds(5));
+var toast = new ScheduledToastNotification(content.GetXml(), DateTime.Now.AddSeconds(5));
+
+
+// Add your scheduled toast to the schedule
+ToastNotificationManager.CreateToastNotifier().AddToSchedule(toast);
 ```
 
 
@@ -120,16 +83,6 @@ Die Kombination aus Tag und Gruppe fungiert als zusammengesetzter Primärschlüs
 ```csharp
 toast.Tag = "18365";
 toast.Group = "ASTR 170B1";
-```
-
-
-## <a name="schedule-the-notification"></a>Planen der Benachrichtigung
-
-Erstellen Sie abschließend einen [toastnotifier](/uwp/api/windows.ui.notifications.toastnotifier) , und rufen Sie addtoschedule () auf, und übergeben Sie die geplante Popup Benachrichtigung.
-
-```csharp
-// And your scheduled toast to the schedule
-ToastNotificationManager.CreateToastNotifier().AddToSchedule(toast);
 ```
 
 

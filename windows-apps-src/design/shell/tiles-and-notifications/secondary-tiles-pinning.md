@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, sekundäre Kacheln, PIN, anheften, Schnellstart, Codebeispiel, Beispiel, "secondarytile"
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fc83fca642ae75404180edf5fad177b92153e35
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: dc65768eb90ca51a86db51dd0add00d9542df24e
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220383"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984676"
 ---
 # <a name="pin-secondary-tiles-to-start"></a>Anheften von sekundären Kacheln an „Start“
 
@@ -110,7 +110,7 @@ Sie können Ihre sekundäre Kachel für Windows Mixed Reality verbessern, indem 
 Zum Schluss eine Anforderung zum Anheften der Kachel. Beachten Sie, dass dies von einem UI-Thread aufgerufen werden muss. Auf dem Desktop wird ein Dialogfeld angezeigt, in dem der Benutzer gefragt wird, ob er die Kachel anheften möchte.
 
 > [!IMPORTANT]
-> Wenn Sie eine Windows-Desktop Anwendung mit der Desktop Bridge sind, müssen Sie zunächst einen zusätzlichen Schritt ausführen, wie unter [Pin aus Desktop Anwendung](secondary-tiles-desktop-pinning.md) beschrieben.
+> Wenn Sie eine Win32-Anwendung mit der Desktop Bridge sind, müssen Sie zunächst einen zusätzlichen Schritt ausführen, wie in [Pin aus Win32-apps](secondary-tiles-desktop-pinning.md) beschrieben.
 
 ```csharp
 // Pin the tile

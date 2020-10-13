@@ -7,12 +7,12 @@ ms.date: 12/15/2017
 ms.topic: article
 keywords: Windows 10, UWP, Toast, benutzerdefiniertes Audio, Benachrichtigung, Audio, Sound
 ms.localizationpriority: medium
-ms.openlocfilehash: 81bec439f17cadb7db0576dafcf4299f0978b192
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: d2d32b9545cccfb25790d394aec028fd29904ca5
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054460"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984406"
 ---
 # <a name="custom-audio-on-toasts"></a>Benutzerdefiniertes Audiogerät
 
@@ -22,7 +22,7 @@ Popup Benachrichtigungen können benutzerdefinierte Audiodaten verwenden, mit de
 
 Um Benachrichtigungen per Code zu erstellen, wird dringend empfohlen, die UWP Community Toolkit-Benachrichtigungs Bibliothek zu verwenden, die ein Objektmodell für den Inhalt der Benachrichtigungs-XML bereitstellt. Sie könnten die Benachrichtigungs-XML manuell erstellen, aber das ist fehleranfällig und messy. Die Benachrichtigungs Bibliothek im UWP Community Toolkit wird von dem Team erstellt und verwaltet, das über Benachrichtigungen bei Microsoft verfügt.
 
-Installieren Sie [Microsoft. Toolkit. UWP. Benachrichtigungen](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) von nuget (in dieser Dokumentation werden Version 1.0.0 verwendet).
+Installieren Sie [Microsoft. Toolkit. UWP. Benachrichtigungen](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) von nuget.
 
 
 ## <a name="add-namespace-declarations"></a>Hinzufügen von Namespace-Deklarationen
@@ -35,21 +35,6 @@ using Windows.UI.Notifications;
 ```
 
 
-## <a name="construct-the-notification"></a>Erstellen der Benachrichtigung
-
-Der Inhalt der Popup Benachrichtigung umfasst Text und Bilder sowie Schaltflächen und Eingaben. Weitere Informationen finden Sie unter [Send local Toast](send-local-toast.md) , um einen vollständigen Code Ausschnitt anzuzeigen.
-
-```csharp
-ToastContent toastContent = new ToastContent()
-{
-    Visual = new ToastVisual()
-    {
-        ... (omitted)
-    }
-};
-```
-
-
 ## <a name="add-the-custom-audio"></a>Hinzufügen der benutzerdefinierten Audiodatei
 
 Windows Mobile hat benutzerdefinierte Audiodaten in Popup Benachrichtigungen immer unterstützt. Der Desktop hat jedoch nur Unterstützung für benutzerdefinierte Audiodaten in Version 1511 (Build 10586) hinzugefügt. Wenn Sie vor Version 1511 einen Toast, der benutzerdefinierte Audiodaten enthält, an ein Desktop Gerät senden, wird der Toast automatisch angezeigt. Daher sollten Sie für Desktop-Pre-Version 1511 die benutzerdefinierte Audiodatei nicht in ihre Popup Benachrichtigung einschließen, damit die Benachrichtigung zumindest das standardmäßige Benachrichtigungs Sound verwendet.
@@ -57,7 +42,10 @@ Windows Mobile hat benutzerdefinierte Audiodaten in Popup Benachrichtigungen imm
 **Bekanntes Problem**: Wenn Sie die Desktop Version 1511 verwenden, funktioniert die benutzerdefinierte Popup-Audiodatei nur, wenn Ihre APP über den Store installiert wird. Dies bedeutet, dass Sie Ihre benutzerdefinierte Audiodatei nicht lokal auf dem Desktop testen können, bevor Sie Sie an den Speicher senden. das Audiogerät funktioniert jedoch nach der Installation aus dem Store problemlos. Wir haben dies im Anniversary Update korrigiert, sodass die benutzerdefinierte Audiodatei aus Ihrer lokal bereitgestellten App ordnungsgemäß funktioniert.
 
 ```csharp
-?
+var contentBuilder = new ToastContentBuilder()
+    .AddText("New message");
+
+    
 bool supportsCustomAudio = true;
  
 // If we're running on Desktop before Version 1511, do NOT include custom audio
@@ -70,11 +58,10 @@ if (AnalyticsInfo.VersionInfo.DeviceFamily.Equals("Windows.Desktop")
  
 if (supportsCustomAudio)
 {
-    toastContent.Audio = new ToastAudio()
-    {
-        Src = new Uri("ms-appx:///Assets/Audio/CustomToastAudio.m4a")
-    };
+    contentBuilder.AddAudio(new Uri("ms-appx:///Assets/Audio/CustomToastAudio.m4a"));
 }
+
+// TODO: Send the toast
 ```
 
 Zu den unterstützten Audiodateitypen zählen...
@@ -89,18 +76,10 @@ Zu den unterstützten Audiodateitypen zählen...
 
 ## <a name="send-the-notification"></a>Senden der Benachrichtigung
 
-Nachdem der Popup Inhalt nun fertiggestellt ist, ist das Senden der Benachrichtigung recht einfach.
-
-```csharp
-// Create the toast notification from the previous toast content
-ToastNotification notification = new ToastNotification(toastContent.GetXml());
-             
-// And then send the toast
-ToastNotificationManager.CreateToastNotifier().Show(notification);
-```
+Das Senden einer Benachrichtigung mit Audiodaten entspricht dem Senden einer regulären Benachrichtigung. Weitere Informationen finden Sie unter [Send local Toast](send-local-toast.md) .
 
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 - [Vollständiges Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-toast-with-custom-audio)
 - [Lokalen Toast senden](send-local-toast.md)

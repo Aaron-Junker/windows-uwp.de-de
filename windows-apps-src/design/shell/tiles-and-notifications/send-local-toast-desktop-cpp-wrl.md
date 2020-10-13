@@ -1,25 +1,25 @@
 ---
 Description: Erfahren Sie, wie Win32-C++ WRL-apps lokale Popup Benachrichtigungen senden können und den Benutzer durch Klicken auf den Toast behandeln können.
-title: Senden von Popupbenachrichtigungen über C++ WRL-Apps
-label: Send a local toast notification from desktop C++ WRL apps
+title: Senden einer lokalen Popup Benachrichtigung von Win32 C++ WRL-apps
+label: Send a local toast notification from Win32 C++ WRL apps
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, Popup Benachrichtigungen, Toast senden, lokalen Toast senden, Desktop Bridge, msix, Sparse-Paket, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: f90733cb4b549b7b8f088d6ecfa652941b0769b1
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: a227ccbc52aa3c1dd8c0cd9c61cdecf140375fe2
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220143"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984656"
 ---
-# <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Senden von Popupbenachrichtigungen über C++ WRL-Apps
+# <a name="send-a-local-toast-notification-from-win32-c-wrl-apps"></a>Senden einer lokalen Popup Benachrichtigung von Win32 C++ WRL-apps
 
-Desktop-Apps (einschließlich gepackter [msix](/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Win32-Apps) können interaktive Popup Benachrichtigungen wie Windows-apps senden. Allerdings gibt es einige spezielle Schritte für Desktop-Apps aufgrund der verschiedenen Aktivierungs Schemas und des potenziellen Mangels an Paket Identität, wenn Sie nicht msix oder ein sparsepaket verwenden.
+Win32-Apps (einschließlich gepackter [msix](/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Win32-Apps) können interaktive Popup Benachrichtigungen wie Windows-apps senden. Allerdings gibt es einige spezielle Schritte für Win32-apps aufgrund der verschiedenen Aktivierungs Schemas und des potenziellen Mangels an Paket Identität, wenn Sie nicht msix oder ein sparsepaket verwenden.
 
 > [!IMPORTANT]
-> Wenn Sie eine UWP-app schreiben, finden Sie weitere Informationen in der [UWP-Dokumentation](send-local-toast.md). Weitere Desktop Sprachen finden Sie unter [Desktop c#](send-local-toast-desktop.md).
+> Wenn Sie eine UWP-app schreiben, finden Sie weitere Informationen in der [UWP-Dokumentation](send-local-toast.md). Weitere Win32-Sprachen finden Sie unter [Win32 c#](send-local-toast-desktop.md).
 
 
 ## <a name="step-1-enable-the-windows-10-sdk"></a>Schritt 1: Aktivieren des Windows 10 SDK
@@ -372,7 +372,7 @@ Wenn Ihre APP nicht ausgeführt wird:
 
 
 ### <a name="foreground-vs-background-activation"></a>Vordergrund-vs-Hintergrund Aktivierung
-Bei Desktop-Apps wird die Vordergrund-und Hintergrund Aktivierung identisch behandelt. der com-Activator wird aufgerufen. Es liegt an Ihrem app-Code, zu entscheiden, ob ein Fenster angezeigt werden soll, oder einfach nur einige Aufgaben auszuführen und zu beenden. Wenn Sie also einen **ActivationType** von **Background** in Ihrem Popup Inhalt angeben, ändert sich das Verhalten nicht.
+Bei Win32-apps wird die Vordergrund-und Hintergrund Aktivierung identisch behandelt. der com-Activator wird aufgerufen. Es liegt an Ihrem app-Code, zu entscheiden, ob ein Fenster angezeigt werden soll, oder einfach nur einige Aufgaben auszuführen und zu beenden. Wenn Sie also einen **ActivationType** von **Background** in Ihrem Popup Inhalt angeben, ändert sich das Verhalten nicht.
 
 
 ## <a name="step-9-remove-and-manage-notifications"></a>Schritt 9: entfernen und Verwalten von Benachrichtigungen
@@ -444,5 +444,5 @@ if (IsWindows10OrGreater())
 ## <a name="resources"></a>Ressourcen
 
 * [Vollständiges Codebeispiel auf GitHub](https://github.com/WindowsNotifications/desktop-toasts)
-* [Popup Benachrichtigungen aus Desktop-Apps](toast-desktop-apps.md)
+* [Popup Benachrichtigungen von Win32-apps](toast-desktop-apps.md)
 * [Dokumentation zu Popup Inhalten](adaptive-interactive-toasts.md)

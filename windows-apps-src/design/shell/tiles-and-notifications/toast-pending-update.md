@@ -7,12 +7,12 @@ ms.date: 12/14/2017
 ms.topic: article
 keywords: Windows 10, UWP, Toast, ausstehendes Update, pdingupdate, Interaktivität mit mehreren Schritten, Interaktionen mit mehreren Schritten
 ms.localizationpriority: medium
-ms.openlocfilehash: 00551414fbefe5591813731337653964bd2524f3
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: bc77e41ad144c76af4452b2a9a87c183ae84422c
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054540"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984576"
 ---
 # <a name="toast-with-pending-update-activation"></a>Toast mit ausstehender Update Aktivierung
 
@@ -49,25 +49,47 @@ So implementieren Sie einen Toast, der das ausstehende Update als nach dem Aktiv
 
 Legen Sie in den Schaltflächen für die Hintergrund Aktivierung für " **afteractivationbehavior** " den Wert " **pdingupdate**" fest Beachten Sie, dass dies nur für Schaltflächen funktioniert, die über den **ActivationType** " **Background**" verfügen.
 
-```csharp
-new ToastButton("Yes", "action=orderLunch")
-{
-    ActivationType = ToastActivationType.Background,
+#### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
 
-    ActivationOptions = new ToastActivationOptions()
+```csharp
+new ToastContentBuilder()
+
+    .AddText("Would you like to order lunch today?")
+
+    .AddButton(new ToastButton("Yes", "action=orderLunch")
     {
-        AfterActivationBehavior = ToastAfterActivationBehavior.PendingUpdate
-    }
-}
+        ActivationType = ToastActivationType.Background,
+
+        ActivationOptions = new ToastActivationOptions()
+        {
+            AfterActivationBehavior = ToastAfterActivationBehavior.PendingUpdate
+        }
+    });
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
-<action
-    content='Yes'
-    arguments='action=orderLunch'
-    activationType='background'
-    afterActivationBehavior='pendingUpdate' />
+<toast>
+  
+  <visual>
+    <binding template="ToastGeneric">
+      <text>Would you like to order lunch today?</text>
+    </binding>
+  </visual>
+
+  <actions>
+    <action
+      content="Yes"
+      arguments="action=orderLunch"
+      activationType="background"
+      afterActivationBehavior="pendingUpdate"/>
+  </actions>
+  
+</toast>
 ```
+
+---
 
 
 ## <a name="use-a-tag-on-the-notification"></a>Verwenden eines Tags für die Benachrichtigung
@@ -114,7 +136,7 @@ ToastNotificationManager.CreateToastNotifier().Show(notif);
 ```
 
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 - [Vollständiges Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-toast-pending-update)
 - [Senden eines lokalen Popups und behandeln der Aktivierung](send-local-toast.md)

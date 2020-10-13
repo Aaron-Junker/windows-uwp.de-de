@@ -7,12 +7,12 @@ ms.date: 05/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Benachrichtigung, Sammlungen, Sammlung, Gruppen Benachrichtigungen, Gruppierungs Benachrichtigungen, Gruppe, organisieren, Aktions Center, Toast
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cd99519f7213f85c50a14db0597daa4e10f8360
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7ceeec7c84e67074e17d3885167f4be02741c1ff
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156754"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984617"
 ---
 # <a name="grouping-toast-notifications-with-collections"></a>Gruppieren von Popup Benachrichtigungen mit Sammlungen
 Verwenden Sie Sammlungen zum Organisieren der APP-Auflistungen im Aktions Center. Mithilfe von Sammlungen können Benutzerinformationen im Aktions Center leichter finden und Entwicklern eine bessere Verwaltung Ihrer Benachrichtigungen ermöglichen.  Mit den unten aufgeführten APIs können Sie Benachrichtigungs Sammlungen entfernen, erstellen und aktualisieren.
@@ -29,8 +29,6 @@ Wenn Sie jede Sammlung erstellen, müssen Sie einen anzeigen Amen und ein Symbol
 ### <a name="create-a-collection"></a>Erstellen einer Sammlung
 
 ``` csharp 
-public const string toastCollectionId = "ToastCollection";
-
 // Create a toast collection
 public async void CreateToastCollection()
 {
@@ -39,7 +37,8 @@ public async void CreateToastCollection()
     Uri icon = new Windows.Foundation.Uri("ms-appx:///Assets/workEmail.png");
 
     // Constructor
-    ToastCollection workEmailToastCollection = new ToastCollection(MainPage.toastCollectionId, 
+    ToastCollection workEmailToastCollection = new ToastCollection(
+        "MyToastCollection", 
         displayName,
         launchArg, 
         icon);
@@ -52,34 +51,23 @@ public async void CreateToastCollection()
 ## <a name="sending-notifications-to-a-collection"></a>Senden von Benachrichtigungen an eine Sammlung
 Wir werden das Senden von Benachrichtigungen aus drei verschiedenen Popup Pipelines abdecken: local, scheduled und Push.  Für jedes dieser Beispiele wird ein Beispiel für den Toast erstellt, der mit dem Code direkt unterhalb von gesendet werden soll. anschließend konzentrieren wir uns auf das Hinzufügen des Popups zu einer Sammlung über jede Pipeline.
 
-Erstellen Sie die Benachrichtigungs Nutzlast:
+Erstellen Sie den Popup Inhalt:
 
 ``` csharp
-public const string toastCollectionId = "MyToastCollection";
-
-public async void SendToastToToastCollection()
-{
-    // Construct the notification Content
-    string toastXmlString = 
-        $@"<toast launch=’’>
-            <visual>
-                <binding template=’ToastGeneric’>
-                    <text>Hello,</text>
-                    <text>it’s me</text>
-                </binding>
-            </visual>
-        </toast>";
-    // Convert to XML
-    XmlDocument toastXml = new XmlDocment();
-    toastXml.LoadXml(toastXmlString);
-    ToastNotification toast = new ToastNotification(toastXml);
+// Construct the content
+var content = new ToastContentBuilder()
+    .AddText("Adam sent a message to the group")
+    .GetToastContent();
 ```
 
 ### <a name="send-a-toast-to-a-collection"></a>Einen Toast an eine Sammlung senden
 
 ```csharp
+// Create the toast
+ToastNotification toast = new ToastNotification(content.GetXml());
+
 // Get the collection notifier
-var notifier = await ToastNotificationManager.GetDefault().GetToastNotifierForToastCollectionIdAsync(MainPage.toastCollectionId);
+var notifier = await ToastNotificationManager.GetDefault().GetToastNotifierForToastCollectionIdAsync("MyToastCollection");
 
 // And show the toast
 notifier.Show(toast);
@@ -89,10 +77,10 @@ notifier.Show(toast);
 
 ``` csharp
 // Create scheduled toast from XML above
-ScheduledToastNotification scheduledToast = new ScheduledToastNotification(toastXml, DateTimeOffset.Now.AddSeconds(10));
+ScheduledToastNotification scheduledToast = new ScheduledToastNotification(content.GetXml(), DateTimeOffset.Now.AddSeconds(10));
 
 // Get notifier
-var notifier = await ToastNotificationManager.GetDefault().GetToastNotifierForToastCollectionIdAsync(MainPage.toastCollectionId);
+var notifier = await ToastNotificationManager.GetDefault().GetToastNotifierForToastCollectionIdAsync("MyToastCollection");
     
 // Add to schedule
 notifier.AddToSchedule(scheduledToast);
@@ -128,7 +116,7 @@ int toastCollectionCount = (await collectionManager.FindAllToastCollectionsAsync
 #### <a name="remove-a-collection"></a>Entfernen einer Sammlung
 
 ``` csharp
-await collectionManager.RemoveToastCollectionAsync(MainPage.toastCollectionId);
+await collectionManager.RemoveToastCollectionAsync("MyToastCollection");
 ```
 
 #### <a name="update-a-collection"></a>Aktualisieren einer Sammlung
@@ -139,10 +127,11 @@ string launchArg = "UpdatedLaunchArgs";
 Uri icon = new Windows.Foundation.Uri("ms-appx:///Assets/updatedPicture.png");
 
 // Construct a new toast collection with the same collection id
-ToastCollection updatedToastCollection = new ToastCollection(MainPage.toastCollectionId, 
-            displayName,
-            launchArg, 
-            icon);
+ToastCollection updatedToastCollection = new ToastCollection(
+    "MyToastCollection", 
+    displayName,
+    launchArg, 
+    icon);
 
 // Calls the platform to update the collection by saving the new instance
 await collectionManager.SaveToastCollectionAsync(updatedToastCollection);                               
@@ -155,7 +144,7 @@ Die Gruppen-und Tageigenschaften identifizieren eine Benachrichtigung innerhalb 
 Sie können einzelne-Auflistungen mithilfe der Tag-und Gruppen-IDs entfernen oder alle-Auflistungen in einer Sammlung löschen.
 ``` csharp
 // Get the history
-var collectionHistory = await ToastNotificationManager.GetDefault().GetHistoryForToastCollectionAsync(MainPage.toastCollectionId);
+var collectionHistory = await ToastNotificationManager.GetDefault().GetHistoryForToastCollectionAsync("MyToastCollection");
 
 // Remove toast
 collectionHistory.Remove(tag, group); 
@@ -164,7 +153,7 @@ collectionHistory.Remove(tag, group);
 #### <a name="clear-all-toasts-within-a-collection"></a>Alle Auflistungen innerhalb einer Sammlung löschen
 ``` csharp
 // Get the history
-var collectionHistory = await ToastNotificationManager.GetDefault().GetHistoryForToastCollectionAsync(MainPage.toastCollectionId);
+var collectionHistory = await ToastNotificationManager.GetDefault().GetHistoryForToastCollectionAsync("MyToastCollection");
 
 // Remove toast
 collectionHistory.Clear();

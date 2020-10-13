@@ -8,12 +8,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: Windows 10, UWP, verwertbare Kacheln, Live-Kacheln, Benachrichtigungen zu beschreibbaren Kacheln
 ms.localizationpriority: medium
-ms.openlocfilehash: a10e68f2926761338a95d5d2c649c84468efada8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 770c3f13d701de622c4f6ea8075dfef5f6b1afc8
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173814"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984456"
 ---
 # <a name="chaseable-tile-notifications"></a>Verfolgbare Kachelbenachrichtigungen
 
@@ -140,14 +140,14 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 ```
 
 
-### <a name="accessing-onlaunched-from-desktop-applications"></a>Zugreifen auf ongestartete über Desktop Anwendungen
+### <a name="accessing-onlaunched-from-win32-applications"></a>Zugreifen auf ongestartete von Win32-Anwendungen
 
-Desktop-Apps (z. b. Win32, WPF usw.) können mithilfe der [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop)auch beschreibbare Kacheln verwenden. Der einzige Unterschied besteht darin, auf die ongestartete Argumente zuzugreifen. Beachten Sie, dass Sie [Ihre APP zunächst mit der Desktop Bridge Verpacken](/windows/msix/desktop/source-code-overview)müssen.
+Win32-Apps (z. b. WPF usw.), die die [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop)verwenden, können auch beschreibbare Kacheln verwenden. Der einzige Unterschied besteht darin, auf die ongestartete Argumente zuzugreifen. Beachten Sie, dass Sie [Ihre APP zunächst mit der Desktop Bridge Verpacken](/windows/msix/desktop/source-code-overview)müssen.
 
 > [!IMPORTANT]
 > **Erfordert das Update vom Oktober 2018**: um die API zu verwenden `AppInstance.GetActivatedEventArgs()` , müssen Sie das SDK 17763 als Ziel verwenden und Build 17763 oder höher ausführen.
 
-Führen Sie für Desktop Anwendungen die folgenden Schritte aus, um auf die Start Argumente zuzugreifen...
+Führen Sie für Win32-Anwendungen die folgenden Schritte aus, um auf die Start Argumente zuzugreifen...
 
 ```csharp
 
