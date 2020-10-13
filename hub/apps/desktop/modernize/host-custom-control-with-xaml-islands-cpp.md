@@ -1,21 +1,21 @@
 ---
-description: Dieser Artikel veranschaulicht, wie ein benutzerdefiniertes UWP-Steuerelement mithilfe der XAML-Hosting-API in einer C++-Win32-App gehostet wird.
-title: Hosten eines benutzerdefinierten UWP-Steuerelements in einer C++-Win32-App unter Verwendung der XAML-Hosting-API
-ms.date: 04/07/2020
+description: Dieser Artikel veranschaulicht, wie ein benutzerdefiniertes WinRT-XAML-Steuerelement mithilfe der XAML-Hosting-API in einer C++-Win32-App gehostet wird.
+title: Hosten eines benutzerdefinierten WinRT-XAML-Steuerelements in einer C++-Win32-App unter Verwendung der XAML-Hosting-API
+ms.date: 10/02/2020
 ms.topic: article
 keywords: Windows 10, UWP, C++, Win32, XAML Islands, benutzerdefinierte Steuerelemente, Benutzersteuerelemente, Hosten von Steuerelementen
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: c74e6fbb8907a25af6fe6e4ad6439dbaca425b84
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 6cdeee0730a2fe68f671a41ea77b000ab13bc0cb
+ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216773"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91671559"
 ---
-# <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>Hosten eines benutzerdefinierten UWP-Steuerelements in einer C++-Win32-App
+# <a name="host-a-custom-winrt-xaml-control-in-a-c-win32-app"></a>Hosten eines benutzerdefinierten WinRT-XAML-Steuerelements in einer C++-Win32-App
 
 Dieser Artikel veranschaulicht die Verwendung der [XAML-Hosting-API](using-the-xaml-hosting-api.md) zum Hosten eines benutzerdefinierten UWP-XAML-Steuerelements in einer neuen C++-Win32-App. Wenn du über ein vorhandenes C++-Win32-Projekt verfügst, kannst du diese Schritte und Codebeispiele für dein Projekt anpassen.
 
@@ -44,8 +44,8 @@ Um ein benutzerdefiniertes UWP-XAML-Steuerelement zu hosten, erstellst du im Rah
 
 4. Installiere im Fenster **NuGet-Pakete verwalten** die folgenden zusätzlichen NuGet-Pakete:
 
-    * [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (Version v6.0.0 oder höher). Dieses Paket stellt verschiedene Ressourcen für Kompilier- und Laufzeit bereit, um XAML Islands in deiner App zu aktivieren.
-    * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (Version v6.0.0 oder höher). Mit diesem Paket wird die [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse definiert, die du später in dieser exemplarischen Vorgehensweise verwendest.
+    * [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (neueste stabile Version). Dieses Paket stellt verschiedene Ressourcen für Kompilier- und Laufzeit bereit, um XAML Islands in deiner App zu aktivieren.
+    * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (neueste stabile Version). Mit diesem Paket wird die [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse definiert, die du später in dieser exemplarischen Vorgehensweise verwendest.
     * [Microsoft.VCRTForwarders.140](https://www.nuget.org/packages/Microsoft.VCRTForwarders.140).
 
 5. Kompiliere die Projektmappe und stelle sicher, dass der Vorgang erfolgreich war.
@@ -61,7 +61,7 @@ Als Nächstes fügst du deiner Projektmappe ein **UWP (C++/WinRT)** -App-Projekt
 3. Installiere im **MyUWPApp**-Projekt das NuGet-Paket [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication). Mit diesem Paket wird die [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse definiert, die du später in dieser exemplarischen Vorgehensweise verwendest.
 
     1. Klicke mit der rechten Maustaste auf das **MyUWPApp**-Projekt, und wähle **NuGet-Pakete verwalten** aus.
-    2. Wähle die Registerkarte **Durchsuchen** aus, suche nach dem Paket [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication), und installiere Version v6.0.0 dieses Pakets oder eine höhere Version.
+    2. Wählen Sie die Registerkarte **Durchsuchen** aus, suchen Sie nach dem Paket [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication), und installieren Sie die neueste stabile Version dieses Pakets.
 
 4. Klicke mit der rechten Maustaste auf den **MyUWPApp**-Knoten, und wähle **Eigenschaften** aus. Legen Sie auf der Seite **Allgemeine Eigenschaften** -> **C++/WinRT** die Eigenschaft **Verbosity** auf **normal** fest, und klicken Sie dann auf **Anwenden**. Anschließend sollte die Eigenschaftenseite wie folgt aussehen.
 
@@ -373,15 +373,13 @@ Als Nächstes aktualisierst du dein Projekt **MyDesktopWin32App**, um ein Makro 
       <!-- End Section-->
     ```
 
-4. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf **MyDesktopWin32App (Entladen)** , und wähle **Projekt erneut laden** aus.
+4. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **MyDesktopWin32App (Entladen)** , und wählen Sie **Projekt erneut laden** aus.
 
-5. Klicke mit der rechten Maustaste auf **MyDesktopWin32App**, wähle **Eigenschaften** aus, und klicke im linken Bereich auf den Knoten **C/C++** . Vergewissere dich, dass das Makro **Additional Include Directories** über die im vorherigen Schritt durchgeführten Projektdateiänderungen definiert wurde.
-
-    ![Einstellungen für C/C++-Projekt](images/xaml-islands/xaml-island-cpp-7.png)
-
-6. Erweitere im Dialogfeld **Eigenschaftenseiten** die Einträge **Manifesttool** -> **Eingabe und Ausgabe**. Lege die Eigenschaft **DPI** auf **Hohe DPI-Werte pro Monitor** fest. Wenn du diese Eigenschaft nicht festlegst, kommt es in bestimmten Szenarien mit hohem DPI-Wert möglicherweise zu einem Manifestkonfigurationsfehler.
+5. Klicken Sie mit der rechten Maustaste auf das Projekt **MyDesktopWin32App**, wählen Sie **Eigenschaften** aus, erweitern Sie **Manifesttool** -> **Eingabe und Ausgabe** im linken Bereich. Lege die Eigenschaft **DPI** auf **Hohe DPI-Werte pro Monitor** fest. Wenn du diese Eigenschaft nicht festlegst, kommt es in bestimmten Szenarien mit hohem DPI-Wert möglicherweise zu einem Manifestkonfigurationsfehler.
 
     ![Einstellungen für C/C++-Projekt](images/xaml-islands/xaml-island-cpp-8.png)
+
+6. Klicken Sie auf **OK**, um das Dialogfeld **Eigenschaftenseiten** zu schließen.
 
 ## <a name="host-the-custom-uwp-xaml-control-in-the-desktop-project"></a>Hosten des benutzerdefinierten UWP-XAML-Steuerelements im Desktopprojekt
 
@@ -512,16 +510,19 @@ Schließlich kannst du den Code zum Projekt **MyDesktopWin32App** hinzufügen, u
 9. Speichern Sie die Datei.
 10. Kompiliere die Projektmappe und stelle sicher, dass der Vorgang erfolgreich war.
 
-## <a name="add-a-control-from-the-winui-library-to-the-custom-control"></a>Hinzufügen eines Steuerelements aus der WinUI-Bibliothek zum benutzerdefinierten Steuerelement
+## <a name="add-a-control-from-the-winui-2x-library-to-the-custom-control"></a>Hinzufügen eines Steuerelements aus der WinUI 2.x-Bibliothek zum benutzerdefinierten Steuerelement
 
-Traditionell wurden UWP-Steuerelemente als Teil des Windows 10-Betriebssystems veröffentlicht und Entwicklern über das Windows SDK zur Verfügung gestellt. Die [WinUI-Bibliothek](/uwp/toolkits/winui/) ist ein alternativer Ansatz, bei dem aktualisierte Versionen von UWP-Steuerelementen aus dem Windows SDK in einem NuGet-Paket verteilt werden, das nicht an Windows SDK-Releases gebunden ist. Diese Bibliothek enthält darüber hinaus neue Steuerelemente, die nicht Teil des Windows SDK und der UWP-Standardplattform sind. Weitere Informationen finden Sie in der [Roadmap für die WinUI-Bibliothek](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md).
+Traditionell wurden WinRT-XAML-Steuerelemente als Teil des Windows 10-Betriebssystems veröffentlicht und Entwicklern über das Windows SDK zur Verfügung gestellt. Die [WinUI-Bibliothek](/uwp/toolkits/winui/) ist ein alternativer Ansatz, bei dem aktualisierte Versionen von WinRT-XAML-Steuerelementen aus dem Windows SDK in einem NuGet-Paket verteilt werden, das nicht an Windows SDK-Releases gebunden ist. Diese Bibliothek enthält darüber hinaus neue Steuerelemente, die nicht Teil des Windows SDK und der UWP-Standardplattform sind. Weitere Informationen finden Sie in der [Roadmap für die WinUI-Bibliothek](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md).
 
-In diesem Abschnitt wird veranschaulicht, wie Sie dem Benutzersteuerelement ein UWP-Steuerelement aus der WinUI-Bibliothek hinzufügen, sodass Sie dieses Steuerelement in Ihrer WPF-App hosten können.
+In diesem Abschnitt wird veranschaulicht, wie Sie dem Benutzersteuerelement ein WinRT-XAML-Steuerelement aus der WinUI 2.x-Bibliothek hinzufügen, sodass Sie dieses Steuerelement in Ihrer WPF-App hosten können.
+
+> [!NOTE]
+> Derzeit unterstützen XAML Islands nur das Hosting von Steuerelementen aus der WinUI 2.x-Bibliothek. Unterstützung für das Hosten von Steuerelementen aus der WinUI 3-Bibliothek wird in einem späteren Release bereitgestellt.
 
 1. Installieren Sie im **MyUWPApp**-Projekt die neueste Vorabversion oder Releaseversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NuGet-Pakets.
 
-    > [!NOTE]
-    > Wenn Ihre Desktop-App in einem [MSIX-Paket](/windows/msix) gepackt ist, können Sie entweder eine Vorabversion oder eine Releaseversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NugGet-Pakets verwenden. Wenn Ihre Desktop-App nicht unter Verwendung von MSIX gepackt ist, müssen Sie eine Vorabversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NuGet-Pakets installieren.
+    * Wenn Sie sich zuvor in dieser exemplarischen Vorgehensweise dafür entschieden hatten, [das MyDesktopWin32App-Projekt mithilfe von MSIX zu packen](#option-1-package-the-app-using-msix), können Sie entweder die Vorabversion oder die Releaseversion des NuGet-Pakets [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) installieren. Gepackte Desktop-Apps können entweder die Vorabversion oder die Releaseversion dieses Pakets verwenden.
+    * Wenn Sie sich zuvor in dieser exemplarischen Vorgehensweise nicht dafür entschieden hatten, das **MyDesktopWin32App**-Projekt zu packen, müssen Sie die Vorabversion des NuGet-Pakets [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) installieren. Nicht gepackte Desktop-Apps müssen die Vorabversion dieses Pakets verwenden.
 
 2. Fügen Sie der pch.h-Datei in diesem Projekt die folgenden `#include`-Anweisungen hinzu, und speichern Sie Ihre Änderungen. Diese Anweisungen holen einen erforderlichen Satz von Projektionsheadern aus der WinUI-Bibliothek in Ihr Projekt. Dieser Schritt ist für alle C++/WinRT-Projekte erforderlich, die die WinUI-Bibliothek verwenden. Weitere Informationen finden Sie in [diesem Artikel](/uwp/toolkits/winui/getting-started#additional-steps-for-a-cwinrt-project).
 
@@ -594,6 +595,6 @@ Weitere Informationen zum Handhaben dieser Szenarien und Verweise auf entspreche
 
 * [Hosten von UWP-XAML-Steuerelementen in Desktop-Apps (XAML Islands)](xaml-islands.md)
 * [Verwenden der UWP-XAML-Hosting-API in einer C++-Win32-App](using-the-xaml-hosting-api.md)
-* [Hosten eines UWP-Standardsteuerelements in einer C++-Win32-App](host-standard-control-with-xaml-islands-cpp.md)
+* [Hosten eines WinRT-XAML-Standardsteuerelements in einer C++-Win32-App](host-standard-control-with-xaml-islands-cpp.md)
 * [Erweiterte Szenarien für XAML Islands in C++-Win32-Apps](advanced-scenarios-xaml-islands-cpp.md)
 * [XAML Islands-Codebeispiele](https://github.com/microsoft/Xaml-Islands-Samples)

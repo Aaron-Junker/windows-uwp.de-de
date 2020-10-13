@@ -1,26 +1,26 @@
 ---
-description: Dieser Artikel veranschaulicht, wie ein UWP-Standardsteuerelement mithilfe der XAML-Hosting-API in einer C++-Win32-App gehostet wird.
-title: Hosten eines UWP-Standardsteuerelements in einer C++-Win32-App unter Verwendung von XAML Islands
-ms.date: 03/23/2020
+description: Dieser Artikel veranschaulicht, wie ein WinRT-XAML-Standardsteuerelement mithilfe der XAML-Hosting-API in einer C++-Win32-App gehostet wird.
+title: Hosten eines WinRT-XAML-Standardsteuerelements in einer C++-Win32-App unter Verwendung von XAML Islands
+ms.date: 10/02/2020
 ms.topic: article
 keywords: Windows 10, UWP, CPP, Win32, XAML Islands, umschlossene Steuerelemente, Standardsteuerelemente
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 0842046419402bbfacc24331d0521efa9510153a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 60cbf422b5417dc62ff261cf2e7ba02f25840032
+ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174194"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91671519"
 ---
-# <a name="host-a-standard-uwp-control-in-a-c-win32-app"></a>Hosten eines UWP-Standardsteuerelements in einer C++-Win32-App
+# <a name="host-a-standard-winrt-xaml-control-in-a-c-win32-app"></a>Hosten eines WinRT-XAML-Standardsteuerelements in einer C++-Win32-App
 
-Dieser Artikel veranschaulicht, wie mithilfe der [XAML-Hosting-API](using-the-xaml-hosting-api.md) ein UWP-Standardsteuerelement (d. h., ein vom Windows SDK bereitgestelltes Steuerelement) in einer neuen C++-Win32-App verwendet wird. Der Code basiert auf dem [einfachen XAML Islands-Beispiel](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App), und in diesem Abschnitt werden einige der wichtigen Teile des Codes besprochen. Wenn du über ein vorhandenes C++-Win32-Projekt verfügst, kannst du diese Schritte und Codebeispiele für dein Projekt anpassen.
+Dieser Artikel veranschaulicht, wie mithilfe der [UWP XAML-Hosting-API](using-the-xaml-hosting-api.md) ein WinRT-XAML-Standardsteuerelement (d. h., ein vom Windows SDK bereitgestelltes Steuerelement) in einer neuen C++-Win32-App verwendet wird. Der Code basiert auf dem [einfachen XAML Islands-Beispiel](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App), und in diesem Abschnitt werden einige der wichtigen Teile des Codes besprochen. Wenn du über ein vorhandenes C++-Win32-Projekt verfügst, kannst du diese Schritte und Codebeispiele für dein Projekt anpassen.
 
 > [!NOTE]
-> Das in diesem Artikel veranschaulichte Szenario bietet keine direkte Unterstützung für die Bearbeitung von XAML-Markup für UWP-Steuerelemente, die in deiner App gehostet werden. In diesem Szenario bist du darauf beschränkt, das Aussehen und Verhalten der gehosteten UWP-Steuerelemente über den Code zu ändern. Informationen dazu, wie XAML-Markup beim Hosten von UWP-Steuerelementen direkt bearbeitet werden kann, findest du unter [Hosten eines benutzerdefinierten UWP-Steuerelements in einer C++ Win32-App](host-custom-control-with-xaml-islands-cpp.md).
+> Das in diesem Artikel veranschaulichte Szenario bietet keine direkte Unterstützung für die Bearbeitung von XAML-Markup für WinRT-XAML-Steuerelemente, die in deiner App gehostet werden. In diesem Szenario bist du darauf beschränkt, das Aussehen und Verhalten der gehosteten Steuerelemente über den Code zu ändern. Informationen dazu, wie XAML-Markup beim Hosten von WinRT-XAML-Steuerelementen direkt bearbeitet werden kann, findest du unter [Hosten eines benutzerdefinierten WinRT-XAML-Steuerelements in einer C++ Win32-App](host-custom-control-with-xaml-islands-cpp.md).
 
 ## <a name="create-a-desktop-application-project"></a>Erstellen eines Desktopanwendungsprojekts
 
@@ -39,12 +39,12 @@ Dieser Artikel veranschaulicht, wie mithilfe der [XAML-Hosting-API](using-the-xa
 4. Installiere das NuGet-Paket [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK):
 
     1. Stelle sicher, dass im Fenster **NuGet-Paket-Manager** die Einstellung **Vorabversion einbeziehen** ausgewählt ist.
-    2. Wähle die Registerkarte **Durchsuchen** aus, suche nach dem Paket **Microsoft.Toolkit.Win32.UI.SDK**, und installiere Version v6.0.0 dieses Pakets (oder eine höhere Version). Dieses Paket stellt verschiedene Ressourcen für Kompilier- und Laufzeit bereit, um XAML Islands in deiner App zu aktivieren.
+    2. Wähle die Registerkarte **Durchsuchen** aus, suche nach dem Paket **Microsoft.Toolkit.Win32.UI.SDK**, und installiere die neueste stabile Version dieses Pakets. Dieses Paket stellt verschiedene Ressourcen für Kompilier- und Laufzeit bereit, um XAML Islands in deiner App zu aktivieren.
 
 5. Lege den `maxVersionTested`-Wert in deinem [Anwendungsmanifest](/windows/desktop/SbsCs/application-manifests) fest, um anzugeben, dass deine Anwendung mit Windows 10, Version 1903 oder höher kompatibel ist.
 
     1. Falls noch kein Anwendungsmanifest in deinem Projekt enthalten ist, füge deinem Projekt eine neue XML-Datei hinzu, und gibt ihr den Namen **app.manifest**.
-    2. Füge das **compatibility**-Element und die untergeordneten Elemente wie im folgenden Beispiel gezeigt in dein Anwendungsmanifest ein. Ersetze das **Id**-Attribut des **maxVersionTested**-Elements durch die Versionsnummer von Windows 10, die du als Zielplattform verwenden möchtest (hierbei muss es sich um Windows 10, Version 1903 oder um eine höhere Version handeln).
+    2. Füge das **compatibility**-Element und die untergeordneten Elemente wie im folgenden Beispiel gezeigt in dein Anwendungsmanifest ein. Ersetze das **Id**-Attribut des **maxVersionTested**-Elements durch die Versionsnummer von Windows 10, die du als Zielplattform verwenden möchtest (hierbei muss es sich um Windows 10.0.18362 oder eine höhere Version handeln).
 
         ```xml
         <?xml version="1.0" encoding="UTF-8"?>
@@ -59,9 +59,9 @@ Dieser Artikel veranschaulicht, wie mithilfe der [XAML-Hosting-API](using-the-xa
         </assembly>
         ```
 
-## <a name="use-the-xaml-hosting-api-to-host-a-uwp-control"></a>Verwenden der XAML-Hosting-API zum Hosten eines UWP-Steuerelements
+## <a name="use-the-xaml-hosting-api-to-host-a-winrt-xaml-control"></a>Verwenden der XAML-Hosting-API zum Hosten eines WinRT-XAML-Steuerelements
 
-Das grundlegende Verfahren bei Verwendung der XAML-Hosting-API zum Hosten eines UWP-Steuerelements umfasst diese allgemeinen Schritte:
+Das grundlegende Verfahren bei Verwendung der XAML-Hosting-API zum Hosten eines WinRT-XAML-Steuerelements umfasst diese allgemeinen Schritte:
 
 1. Initialisieren des UWP-XAML-Frameworks für den aktuellen Thread, bevor deine App eines der [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement)-Objekte erstellt, die gehostet werden sollen. Je nachdem, wann du das [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource)-Objekt zum Hosten der Steuerelemente erstellst, gibt es hierfür mehrere Möglichkeiten.
 
@@ -82,7 +82,7 @@ Das grundlegende Verfahren bei Verwendung der XAML-Hosting-API zum Hosten eines 
 
     2. Rufe die **AttachToWindow**-Methode der Schnittstelle **IDesktopWindowXamlSourceNative** oder **IDesktopWindowXamlSourceNative2** auf, und übergebe das Fensterhandle des übergeordneten Benutzeroberflächenelements in deiner Anwendung.
 
-    3. Lege die anfängliche Größe des internen untergeordneten Fensters fest, das in **DesktopWindowXamlSource** enthalten ist. Standardmäßig ist dieses interne untergeordnete Fenster auf eine Breite und Höhe von 0 festgelegt. Wenn du die Größe des Fensters nicht festlegst, ist keines der UWP-Steuerelemente sichtbar, die du **DesktopWindowXamlSource** hinzufügst. Um in **DesktopWindowXamlSource** auf das interne untergeordnete Fenster zuzugreifen, verwendest du die **WindowHandle**-Eigenschaft der Schnittstelle **IDesktopWindowXamlSourceNative** oder **IDesktopWindowXamlSourceNative2**.
+    3. Lege die anfängliche Größe des internen untergeordneten Fensters fest, das in **DesktopWindowXamlSource** enthalten ist. Standardmäßig ist dieses interne untergeordnete Fenster auf eine Breite und Höhe von 0 festgelegt. Wenn du die Größe des Fensters nicht festlegst, ist keines der WinRT-XAML-Steuerelemente sichtbar, die du **DesktopWindowXamlSource** hinzufügst. Um in **DesktopWindowXamlSource** auf das interne untergeordnete Fenster zuzugreifen, verwendest du die **WindowHandle**-Eigenschaft der Schnittstelle **IDesktopWindowXamlSourceNative** oder **IDesktopWindowXamlSourceNative2**.
 
 3. Schließlich weist du das zu hostende **Windows.UI.Xaml.UIElement** der [Content](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content)-Eigenschaft deines **DesktopWindowXamlSource**-Objekts zu.
 
@@ -166,7 +166,7 @@ Die folgenden Schritte und Codebeispiele veranschaulichen, wie der oben genannte
         WindowsXamlManager winxamlmanager = WindowsXamlManager::InitializeForCurrentThread();
 
         // This DesktopWindowXamlSource is the object that enables a non-UWP desktop application 
-        // to host UWP controls in any UI element that is associated with a window handle (HWND).
+        // to host WinRT XAML controls in any UI element that is associated with a window handle (HWND).
         DesktopWindowXamlSource desktopSource;
 
         // Get handle to the core window.
@@ -270,7 +270,7 @@ Die folgenden Schritte und Codebeispiele veranschaulichen, wie der oben genannte
     > [!NOTE]
     > Möglicherweise werden verschiedene Kompilierungswarnungen angezeigt, z. B. `warning C4002:  too many arguments for function-like macro invocation 'GetCurrentTime'` und `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. Diese Warnungen sind bekannte Probleme mit den aktuellen Tools und NuGet-Paketen und können ignoriert werden.
 
-Vollständige Beispiele zum Veranschaulichen dieser Aufgaben findest du in den folgenden Codedateien:
+Vollständige Beispiele, die die Verwendung der XAML-Hosting-API zum Hosten eines standardmäßigen WinRT-XAML-Steuerelements demonstrieren, finden Sie in den folgenden Codedateien:
 
 * **C++ Win32:**
   * Siehe Datei [HelloWindowsDesktop.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Basic_Win32App/Win32DesktopApp/HelloWindowsDesktop.cpp).
@@ -291,17 +291,17 @@ Die folgenden Anweisungen veranschaulichen, wie du alle Komponenten in der Proje
 
 2. Klicke im Paketprojekt mit der rechten Maustaste auf den Knoten **Anwendungen**, und wähle **Verweis hinzufügen** aus. Wähle in der Liste der Projekte das C++/Win32-Desktopanwendungsprojekt in deiner Projektmappe aus, und klicke auf **OK**.
 
-3. Kompiliere das Paketerstellungsprojekt, und führe es aus. Vergewissere dich, dass die App ausgeführt und die UWP-Steuerelemente wie erwartet anzeigt.
+3. Kompiliere das Paketerstellungsprojekt, und führe es aus. Vergewissere dich, dass die App ausgeführt und die WinRT-XAML-Steuerelemente wie erwartet anzeigt.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-In den Codebeispielen in diesem Artikel wurde ein Basisszenario zum Hosten eines UWP-Standardsteuerelements in einer C++-Win32-Anwendung vorgestellt. In den folgenden Abschnitten werden weitere Szenarien vorgestellt, die deine Anwendung möglicherweise unterstützen muss.
+In den Codebeispielen in diesem Artikel wurde ein Basisszenario zum Hosten eines WinRT-XAML-Standardsteuerelements in einer C++-Win32-Anwendung vorgestellt. In den folgenden Abschnitten werden weitere Szenarien vorgestellt, die deine Anwendung möglicherweise unterstützen muss.
 
-### <a name="host-a-custom-uwp-control"></a>Hosten eines benutzerdefinierten UWP-Steuerelements
+### <a name="host-a-custom-winrt-xaml-control"></a>Hosten eines benutzerdefinierten WinRT-XAML-Steuerelements
 
-Für viele Szenarien musst du möglicherweise ein benutzerdefiniertes UWP-XAML-Steuerelement hosten, das mehrere einzelne Steuerelemente enthält, die zusammenarbeiten. Das Verfahren zum Hosten eines benutzerdefinierten UWP-Steuerelements (entweder ein selbst definiertes Steuerelement oder ein von einem Drittanbieter bereitgestelltes Steuerelement) in einer C++ Win32-App ist komplexer als das Hosten eines Standardsteuerelements und erfordert zusätzlichen Code.
+Für viele Szenarien musst du möglicherweise ein benutzerdefiniertes UWP-XAML-Steuerelement hosten, das mehrere einzelne Steuerelemente enthält, die zusammenarbeiten. Das Verfahren zum Hosten eines benutzerdefinierten Steuerelements (entweder ein selbst definiertes Steuerelement oder ein von einem Drittanbieter bereitgestelltes Steuerelement) in einer C++ Win32-App ist komplexer als das Hosten eines Standardsteuerelements und erfordert zusätzlichen Code.
 
-Eine vollständige exemplarische Vorgehensweise findest du unter [Hosten eines benutzerdefinierten UWP-Steuerelements in einer C++-Win32-App unter Verwendung der XAML-Hosting-API](host-custom-control-with-xaml-islands-cpp.md).
+Eine vollständige exemplarische Vorgehensweise findest du unter [Hosten eines benutzerdefinierten WinRT-XAML-Steuerelements in einer C++-Win32-App unter Verwendung der XAML-Hosting-API](host-custom-control-with-xaml-islands-cpp.md).
 
 ### <a name="advanced-scenarios"></a>Erweiterte Szenarios
 
@@ -313,6 +313,6 @@ Weitere Informationen zum Handhaben dieser Szenarien und Verweise auf entspreche
 
 * [Hosten von UWP-XAML-Steuerelementen in Desktop-Apps (XAML Islands)](xaml-islands.md)
 * [Verwenden der UWP-XAML-Hosting-API in einer C++-Win32-App](using-the-xaml-hosting-api.md)
-* [Hosten eines benutzerdefinierten UWP-Steuerelements in einer C++-Win32-App](host-custom-control-with-xaml-islands-cpp.md)
+* [Hosten eines benutzerdefinierten WinRT-XAML-Steuerelements in einer C++-Win32-App](host-custom-control-with-xaml-islands-cpp.md)
 * [Erweiterte Szenarien für XAML Islands in C++-Win32-Apps](advanced-scenarios-xaml-islands-cpp.md)
 * [XAML Islands-Codebeispiele](https://github.com/microsoft/Xaml-Islands-Samples)

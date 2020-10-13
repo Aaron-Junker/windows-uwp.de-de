@@ -310,7 +310,71 @@
           href: motion/key-frame-and-easing-function-animations.md
 - name: Shell
   items:
-    - name: Tiles
+    - name: Popupbenachrichtigungen
+      items:
+        - name: Erläuterungen zur Benutzeroberfläche
+          href: shell/tiles-and-notifications/toast-ux-guidance.md
+        - name: Senden lokaler Popups
+          items:
+            - name: UWP-Apps
+              href: shell/tiles-and-notifications/send-local-toast.md
+            - name: Win32-Apps
+              items:
+                - name: Übersicht
+                  href: shell/tiles-and-notifications/toast-desktop-apps.md
+                - name: C#-Apps
+                  href: shell/tiles-and-notifications/send-local-toast-desktop.md
+                - name: C++ WRL-Apps
+                  href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+        - name: Popupinhalt
+          items:
+            - name: Inhalt
+              href: shell/tiles-and-notifications/adaptive-interactive-toasts.md
+            - name: Schema
+              href: shell/tiles-and-notifications/toast-schema.md
+        - name: Popups planen
+          href: shell/tiles-and-notifications/scheduled-toast.md
+        - name: Zusätzliche Features
+          items:
+            - name: Benutzerdefiniertes Audio
+              href: shell/tiles-and-notifications/custom-audio-on-toasts.md
+            - name: Statusleiste
+              href: shell/tiles-and-notifications/toast-progress-bar.md
+            - name: Ausstehendes Update
+              href: shell/tiles-and-notifications/toast-pending-update.md
+            - name: Benutzerdefinierter Zeitstempel
+              href: shell/tiles-and-notifications/custom-timestamps-on-toasts.md
+            - name: Sammlungen
+              href: shell/tiles-and-notifications/toast-collections.md
+            - name: Header
+              href: shell/tiles-and-notifications/toast-headers.md
+            - name: Benachrichtigungs-Listener
+              href: shell/tiles-and-notifications/notification-listener.md
+            - name: Veraltet
+              items:
+                - name: Benachrichtigungsspiegelung
+                  href: shell/tiles-and-notifications/notification-mirroring.md
+                - name: Universelles Schließen
+                  href: shell/tiles-and-notifications/universal-dismiss.md
+    - name: Signalbenachrichtigungen
+      href: shell/tiles-and-notifications/badges.md
+    - name: Pushbenachrichtigungen
+      items:
+        - name: Übersicht
+          href: shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md
+        - name: WNS-Prioritäten
+          href: shell/tiles-and-notifications/wns-notification-priorities.md
+        - name: Zulassen des Auflistens von WNS-Datenverkehr
+          href: shell/tiles-and-notifications/firewall-allowlist-config.md
+        - name: Vom Assistenten für Pushbenachrichtigungen generierter Code
+          href: shell/tiles-and-notifications/the-code-generated-by-the-push-notification-wizard.md
+    - name: Taskleiste
+      items:
+        - name: Anheften einer App an die Taskleiste
+          href: shell/pin-to-taskbar.md
+    - name: Titelleiste
+      href: shell/title-bar.md
+    - name: Live-Kacheln
       href: shell/tiles-and-notifications/creating-tiles.md
       items:
         - name: Sekundäre Kacheln
@@ -338,54 +402,8 @@
           href: shell/tiles-and-notifications/primary-tile-apis.md
         - name: 'Kachel, Popupbenachrichtigungsunterstützung für Sprache, Skalierung und Kontrast'
           href: shell/tiles-and-notifications/tile-toast-language-scale-contrast.md
-    - name: Anheften einer App an die Taskleiste
-      href: shell/pin-to-taskbar.md
-    - name: Anpassen der Titelleiste
-      href: shell/title-bar.md
-    - name: Benachrichtigungen
+    - name: Sonstiges
       items:
-        - name: Popupbenachrichtigungen
-          items:
-            - name: Erläuterungen zur Benutzeroberfläche
-              href: shell/tiles-and-notifications/toast-ux-guidance.md
-            - name: Popupinhalt
-              href: shell/tiles-and-notifications/adaptive-interactive-toasts.md
-            - name: Popupinhaltsschema
-              href: shell/tiles-and-notifications/toast-schema.md
-            - name: Senden lokaler Popups
-              items:
-                - name: Windows-Apps
-                  href: shell/tiles-and-notifications/send-local-toast.md
-                - name: Desktop-Apps
-                  items:
-                    - name: Übersicht
-                      href: shell/tiles-and-notifications/toast-desktop-apps.md
-                    - name: C#-Apps
-                      href: shell/tiles-and-notifications/send-local-toast-desktop.md
-                    - name: C++ WRL-Apps
-                      href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
-            - name: Popups planen
-              href: shell/tiles-and-notifications/scheduled-toast.md
-            - name: Benutzerdefiniertes Audio
-              href: shell/tiles-and-notifications/custom-audio-on-toasts.md
-            - name: Statusleiste
-              href: shell/tiles-and-notifications/toast-progress-bar.md
-            - name: Ausstehendes Update
-              href: shell/tiles-and-notifications/toast-pending-update.md
-            - name: Benutzerdefinierter Zeitstempel
-              href: shell/tiles-and-notifications/custom-timestamps-on-toasts.md
-            - name: Sammlungen
-              href: shell/tiles-and-notifications/toast-collections.md
-            - name: Header
-              href: shell/tiles-and-notifications/toast-headers.md
-            - name: Benachrichtigungs-Listener
-              href: shell/tiles-and-notifications/notification-listener.md
-            - name: Benachrichtigungsspiegelung
-              href: shell/tiles-and-notifications/notification-mirroring.md
-            - name: Universelles Schließen
-              href: shell/tiles-and-notifications/universal-dismiss.md
-        - name: Signalbenachrichtigungen
-          href: shell/tiles-and-notifications/badges.md
         - name: Notifications Visualizer
           href: shell/tiles-and-notifications/notifications-visualizer.md
         - name: Methoden für die Benachrichtigungsübermittlung
@@ -397,17 +415,6 @@
               href: shell/tiles-and-notifications/alternate-channel-vapid-webpush.md
             - name: Periodische Benachrichtigungen
               href: shell/tiles-and-notifications/periodic-notification-overview.md
-        - name: 'Windows-Pushbenachrichtigungsdienst (Windows Push Notification Services, WNS)'
-          href: shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md
-          items:
-            - name: WNS-Prioritäten
-              href: shell/tiles-and-notifications/wns-notification-priorities.md
-            - name: Zulassen des Auflistens von WNS-Datenverkehr
-              href: shell/tiles-and-notifications/firewall-allowlist-config.md
-            - name: Vom Assistenten für Pushbenachrichtigungen generierter Code
-              href: shell/tiles-and-notifications/the-code-generated-by-the-push-notification-wizard.md
-        - name: Unformatierte Benachrichtigungen
-          href: shell/tiles-and-notifications/raw-notification-overview.md
 - name: Eingabe und Interaktionen
   items:
     - name: Übersicht
