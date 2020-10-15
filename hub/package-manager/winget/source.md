@@ -4,12 +4,12 @@ description: Verwaltet die von Windows-Paket-Manager verwendeten Repositorys.
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d383dfc4e66c75c993210d382b674508ad3cef4
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: 08af76389627bb8c21bf7a4ddb856d09119dc917
+ms.sourcegitcommit: 837ef4b2c2375d023ee85204f72a029f9ec8f4ee
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334488"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079275"
 ---
 # <a name="source-command-winget"></a>Befehl „source“ (winget)
 
@@ -128,7 +128,7 @@ Mit dem Unterbefehl **update** in Kombination mit der Option **--name** kann ein
 
 Mit dem Unterbefehl **remove** wird eine Quelle entfernt. Für diesen Unterbefehl ist die Option **--name** und das Argument **name** erforderlich, um die Quelle anzugeben.
 
-Syntax: `winget source add [-n, --name] \<name>`
+Syntax: `winget source remove [-n, --name] \<name>`
 
 Beispiel: `winget source remove --name Contoso`
 

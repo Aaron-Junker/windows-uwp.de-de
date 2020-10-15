@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: df0d2364762d75793f3f00856b06e8ae506cb327
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3bf624373a4b9a3c99a8c4c0a8a44e2410788487
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165596"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860141"
 ---
 # <a name="thumbnail-images"></a>Miniaturbilder
 
@@ -151,11 +151,11 @@ Andernfalls wird kein Miniaturbild abgerufen.</td>
 <tr>
 <td>Dateigruppe</td>
 <td>Wenn der Ordner eine Bilddatei enthält, wird das Miniaturbild des Bilds verwendet.<br />
-<img src="images/thumbnail-grp-picvid-modes.png" alt="File group thumbnail in picture or video mode"/> <br /> Andernfalls wird kein Miniaturbild abgerufen. </td>
+<img src="images/thumbnail-grp-picvid-modes.png" alt="File group thumbnail in picture or video mode."/> <br /> Andernfalls wird kein Miniaturbild abgerufen. </td>
 <td>Wenn die Dateigruppe eine Datei mit einem Albumbild enthält, ist das Miniaturbild das Albumbild. <br />
 <img src="images/thumbnail-grp-doclistmusic-modes.png" alt="File group thumbnail in documents, music or list mode"/> <br />Andernfalls wird kein Miniaturbild abgerufen. </td>
 <td>Wenn die Dateigruppe eine Datei mit einem Albumbild enthält, entspricht das Miniaturbild dem Albumbild, und das ursprüngliche Seitenverhältnis der Datei wird verwendet. <br />
-<img src="images/thumbnail-grp1-single-mode.png" alt="File group thumbnail in picture or video mode"/> <br />Andernfalls handelt es sich beim Miniaturbild um ein Symbol, das für eine Gruppe von Dateien steht. <br />
+<img src="images/thumbnail-grp1-single-mode.png" alt="File group thumbnail in documents, music or list mode using the original aspect ratio of the file."/> <br />Andernfalls handelt es sich beim Miniaturbild um ein Symbol, das für eine Gruppe von Dateien steht. <br />
 <img src="images/thumbnail-grp2-single-mode.png" alt="File group icon in single mode"/> 
 </td>
 </tr>

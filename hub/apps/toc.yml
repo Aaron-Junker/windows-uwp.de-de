@@ -7,6 +7,15 @@
           href: desktop/index.md
         - name: Auswählen Ihrer App-Plattform
           href: desktop/choose-your-platform.md
+        - name: Vorbereiten
+          href: get-started/get-set-up.md
+          items:
+            - name: Aktivieren Ihres Geräts für die Entwicklung
+              href: get-started/enable-your-device-for-development.md
+            - name: Features und Debugging im Entwicklermodus
+              href: get-started/developer-mode-features-and-debugging.md
+            - name: Erstellen eines Entwicklerkontos
+              href: get-started/sign-up.md
         - name: Visual Studio-Vorlagen für Windows-Apps
           href: desktop/visual-studio-templates.md
         - name: Modernisieren Ihrer Desktop-Apps
@@ -89,8 +98,10 @@
               href: winui/winui3/get-started-winui3-for-desktop.md
             - name: "Erste Schritte mit WinUI\_3 für UWP-Apps"
               href: winui/winui3/get-started-winui3-for-uwp.md
-            - name: "XAML-Steuerelemente in Vorlagen für UWP- und WinUI\_3-Apps mit C++/WinRT"
-              href: winui/winui3/xaml-templated-controls-cppwinrt-winui3.md
+            - name: "XAML-Steuerelemente in Vorlagen für WinUI\_3-Apps mit C++/WinRT"
+              href: winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md
+            - name: "XAML-Steuerelemente in Vorlagen für WinUI\_3-Apps mit C#"
+              href: winui/winui3/xaml-templated-controls-csharp-winui-3.md
         - name: "Windows-UI\_2.x-Bibliothek"
           items:
             - name: Übersicht

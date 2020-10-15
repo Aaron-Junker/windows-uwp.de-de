@@ -5,12 +5,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, erste Schritte
 ms.localizationpriority: medium
-ms.openlocfilehash: 83a6774180e2f2f0a65dc9a71ebfac5c273a4424
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a9230df47c9929ee902fc8e0b93f7de7a5ef70df
+ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168184"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92011366"
 ---
 # <a name="start-coding"></a>Beginnen mit der Codierung
 
@@ -18,7 +18,7 @@ ms.locfileid: "89168184"
 
 Willkommen bei der [UWP-Plattform](universal-application-platform-guide.md)! Auf dieser Seite zeigen wir Ihnen, was Sie benötigen, um Windows 10-Apps zu programmieren.
 
-Bevor Sie mit der Entwicklung beginnen, sollten Sie sicherstellen, dass [alles vorbereitet](get-set-up.md) ist.
+Bevor Sie mit der Entwicklung beginnen, sollten Sie sicherstellen, dass [alles vorbereitet](/windows/apps/get-started/get-set-up.md) ist.
 
 ## <a name="learning-tracks"></a>Lernpfade
 
@@ -57,7 +57,7 @@ Wenn Sie unsere Lernpfade bereits erkundet haben oder an einem Thema interessier
 
 | Bereich | Beschreibung |
 | --- | --- |
-| **Neuigkeiten** | Mit jedem wichtigen Update von Windows 10 wird unsere Dokumentation um neue Anleitungen erweitert. Diese Dokumentation enthält Informationen zu Features und Anleitungen für Entwickler, die wir für jede Version hinzugefügt haben, sowie Listen mit neuen APIs: </br>   [Neuigkeiten für Entwickler in der aktuellen Windows 10-Version](../whats-new/windows-10-build-19041.md) </br> Wir aktualisieren unsere Dokumentation aber nicht nur mit den Hauptversionen. Es werden laufend neue Informationen hinzugefügt, die Sie erkunden können, und wir halten Sie zu Folgenden auf dem Laufenden: </br>   [Neuigkeiten in der Dokumentation](../whats-new/windows-docs-january-2019.md) |
+| **Neuigkeiten** | Mit jedem wichtigen Update von Windows 10 wird unsere Dokumentation um neue Anleitungen erweitert. Diese Dokumentation enthält Informationen zu Features und Anleitungen für Entwickler, die wir für jede Version hinzugefügt haben, sowie Listen mit neuen APIs: </br>   [Neuigkeiten für Entwickler in der aktuellen Windows 10-Version](../whats-new/windows-10-version-latest.md) |
 | **Design und Benutzeroberfläche** | Alle Informationen zur visuellen Darstellung und Benutzeroberfläche Ihrer App sind in diesem Bereich der Dokumentation enthalten. Wenn Sie an den Besonderheiten der XAML-Markupsprache interessiert sind oder Ihrer Dokumentation lediglich ein einheitliches Erscheinungsbild verleihen möchten, sollten Sie hier beginnen: </br>   [Designgrundlagen für UWP-Apps](../design/basics/index.md) |
 | **Entwickeln von Apps** | Wenn Sie detaillierte Informationen zu einem bestimmten Windows 10-Feature wünschen oder einfach nur daran interessiert sind, was in der UWP-Entwicklung möglich ist, lesen Sie diesen Bereich unserer Dokumentation: </br>   [UWP-App-Features](../develop/index.md) </br> Die API-Referenz für Windows 10-Apps ist in einer verwandten Dokumentation enthalten, die Sie hier finden: </br>   [Namespaces der universellen Windows-Plattform](/uwp/api/) </br>   [Datei- und XML-Schemas](/uwp/schemas/) |
 | **Entwickeln von Spielen** | Diese Dokumentation enthält Informationen zum Entwickeln von Spielen für Windows oder Xbox. Dazu gehören Setupanweisungen, Entwicklerprogramme und Anweisungen zum Programmieren mit DirectX- oder Xbox-Features. </br>   [Erste Schritte mit der Spieleentwicklung](../gaming/getting-started.md) |
