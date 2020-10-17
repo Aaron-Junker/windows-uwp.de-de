@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6cdeee0730a2fe68f671a41ea77b000ab13bc0cb
-ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
+ms.openlocfilehash: 3f12c3d16cabcbe834ca9bb55a437e3f932bbf78
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671559"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933051"
 ---
 # <a name="host-a-custom-winrt-xaml-control-in-a-c-win32-app"></a>Hosten eines benutzerdefinierten WinRT-XAML-Steuerelements in einer C++-Win32-App
 
@@ -377,7 +377,7 @@ Als Nächstes aktualisierst du dein Projekt **MyDesktopWin32App**, um ein Makro 
 
 5. Klicken Sie mit der rechten Maustaste auf das Projekt **MyDesktopWin32App**, wählen Sie **Eigenschaften** aus, erweitern Sie **Manifesttool** -> **Eingabe und Ausgabe** im linken Bereich. Lege die Eigenschaft **DPI** auf **Hohe DPI-Werte pro Monitor** fest. Wenn du diese Eigenschaft nicht festlegst, kommt es in bestimmten Szenarien mit hohem DPI-Wert möglicherweise zu einem Manifestkonfigurationsfehler.
 
-    ![Einstellungen für C/C++-Projekt](images/xaml-islands/xaml-island-cpp-8.png)
+    ![Screenshot der C/C++-Projekteinstellungen.](images/xaml-islands/xaml-island-cpp-8.png)
 
 6. Klicken Sie auf **OK**, um das Dialogfeld **Eigenschaftenseiten** zu schließen.
 

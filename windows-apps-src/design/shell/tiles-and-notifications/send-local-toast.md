@@ -1,27 +1,27 @@
 ---
-Description: Erfahren Sie, wie Sie eine lokale Popup Benachrichtigung senden und den Benutzer bearbeiten, indem Sie auf den Toast klicken.
-title: Senden einer lokalen Popupbenachrichtigung
+Description: Erfahren Sie, wie Sie eine lokale Popup Benachrichtigung von UWP-apps senden und den Benutzer bearbeiten, indem Sie auf den Toast klicken.
+title: Lokale Popup Benachrichtigung von UWP-apps senden
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
-label: Send a local toast notification
+label: Send a local toast notification from UWP apps
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP, Senden von Popup Benachrichtigungen, Benachrichtigungen, Senden von Benachrichtigungen, Popup Benachrichtigungen, Vorgehensweise, Schnellstart, erste Schritte, Codebeispiel, Exemplarische Vorgehensweise
 ms.localizationpriority: medium
-ms.openlocfilehash: 566a1093fc576751bdd2428c2349428a5d2ef626
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 7b669ad3c846fec0b60ae01134b80a6d87586c62
+ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984701"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100288"
 ---
-# <a name="send-a-local-toast-notification"></a>Senden einer lokalen Popupbenachrichtigung
+# <a name="send-a-local-toast-notification-from-uwp-apps"></a>Lokale Popup Benachrichtigung von UWP-apps senden
 
 
 Eine Popup Benachrichtigung ist eine Meldung, die eine APP erstellen und an den Benutzer übermitteln kann, wenn Sie sich derzeit nicht in der APP befinden. Dieser Schnellstart führt Sie durch die Schritte zum Erstellen, bereitzustellen und Anzeigen einer Windows 10-Popup Benachrichtigung mit den neuen adaptiven Vorlagen und interaktiven Aktionen. Diese Aktionen werden durch eine lokale Benachrichtigung veranschaulicht. Dies ist die einfachste zu implementierende Benachrichtigung.
 
 > [!IMPORTANT]
-> Win32-Anwendungen (einschließlich gepackter [msix](/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Win32-Apps) weisen verschiedene Schritte zum Senden von Benachrichtigungen und zur Handhabung der Aktivierung In der [Win32-apps](toast-desktop-apps.md) -Dokumentation finden Sie Informationen zum Implementieren von-Umfassungen.
+> Desktop Anwendungen (einschließlich gepackter [msix](/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Desktop-Apps) haben unterschiedliche Schritte zum Senden von Benachrichtigungen und zur Handhabung der Aktivierung Weitere Informationen zum Implementieren von-Umfassungen finden Sie in der Dokumentation zu [Desktop-Apps](toast-desktop-apps.md) .
 
 > **Wichtige APIs**: die Klasse "- [Benachrichtigungs Klasse](/uwp/api/Windows.UI.Notifications.ToastNotification)", die Klasse "" der [Klasse](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs) ""
 
@@ -192,7 +192,7 @@ Sie können Benachrichtigungen zu Benachrichtigungen hinzufügen. Wir fügen ein
 > Images können aus dem App-Paket, dem lokalen Speicher der APP oder aus dem Web verwendet werden. Im Fall von Creators Update können webimages bei normalen Verbindungen bis zu 3 MB und bei getakteten Verbindungen 1 MB betragen. Auf Geräten, auf denen das Fall Creators Update noch nicht ausgeführt wird, dürfen webimages nicht größer als 200 KB sein.
 
 > [!IMPORTANT]
-> Http-Images werden nur in UWP/msix/Sparse-Apps unterstützt, die über die Internetfunktion in ihrem Manifest verfügen. Win32-nicht-msix/Sparse-apps unterstützen keine http-Bilder. Sie müssen das Image in Ihre lokalen app-Daten herunterladen und lokal darauf verweisen.
+> Http-Images werden nur in UWP/msix/Sparse-Apps unterstützt, die über die Internetfunktion in ihrem Manifest verfügen. Desktop-nicht-msix/Sparse-apps unterstützen keine http-Bilder. Sie müssen das Image in Ihre lokalen app-Daten herunterladen und lokal darauf verweisen.
 
 <img alt="Toast with images" src="images/send-toast-02.png" width="364"/>
 

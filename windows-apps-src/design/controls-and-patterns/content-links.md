@@ -10,16 +10,19 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a35e065a44eb55b84f6b70f5833c8652188a8c9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 867ece1f3517b2b34836dc87ab4e6545ba3d3bbc
+ms.sourcegitcommit: 837ef4b2c2375d023ee85204f72a029f9ec8f4ee
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174644"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079285"
 ---
 # <a name="content-links-in-text-controls"></a>Links zu Inhalten in Textsteuerelementen
 
 Links zu Inhalten bieten eine Möglichkeit, umfangreiche Daten in Textsteuerelemente einzubetten, wodurch Benutzer weitere Informationen zu einer Person oder einem Ort finden und verwenden können, ohne den Kontext Ihrer App verlassen zu müssen.
+
+> [!IMPORTANT]
+> Die Windows-Features, die Inhaltsverknüpfungen ermöglichen, sind in Windows-Versionen nach Windows 10, Version 1903, nicht mehr verfügbar. Inhaltsverknüpfungen für XAML-Textsteuerelemente funktionieren in Windows-Versionen nach Version 1903 nicht mehr.
 
 Wenn der Benutzer einem Eintrag in einer RichEditBox das kaufmännisches Und-Zeichen (@) als Präfix hinzufügt, wird eine Liste der Personen und/oder Ortsvorschläge angezeigt, die mit dem Eintrag übereinstimmen. Wenn der Benutzer dann beispielsweise einen Ort auswählt, wird ein ContentLink für diesen Ort in den Text eingefügt. Wenn der Benutzer den Link zu dem Inhalt aus der RichEditBox aufruft, werden ein Flyout mit einer Karte und zusätzliche Informationen zu dem Ort angezeigt.
 

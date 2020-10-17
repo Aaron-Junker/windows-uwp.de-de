@@ -7,12 +7,12 @@ keywords: Windows 10, UWP
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
-ms.openlocfilehash: 33a5f0bc31a8fe1421f7ab0de5f229d2feb77915
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 8fc9b3ea0f085a12be769e9733b3f92b2700dc16
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730138"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91932941"
 ---
 # <a name="using-the-visual-layer-in-desktop-apps"></a>Verwenden der visuellen Ebene in Desktop-Apps
 
@@ -22,7 +22,7 @@ In vielen Szenarien kannst du [XAML Islands](xaml-islands.md) verwenden, um dein
 
 Die visuelle Ebene bietet eine leistungsstarke Speichermodus-API für Grafiken, Effekte und Animationen. Sie bildet die Grundlage für die Benutzeroberfläche auf Windows 10-Geräten. UWP-XAML-Steuerelemente basieren auf der visuellen Ebene und ermöglichen zahlreiche Aspekte des [Fluent Design-Systems](/windows/uwp/design/fluent-design-system/index), z. B. Licht, Tiefe, Bewegung, Material und Skalierung.
 
-![Mit der visuellen Ebene erstellte Benutzeroberfläche](images/visual-layer-interop/pull-to-animate.gif)
+![Kurzes Video einer mit der visuellen Ebene erstellten Benutzeroberfläche.](images/visual-layer-interop/pull-to-animate.gif)
 
 > _Mit der visuellen Ebene erstellte Benutzeroberfläche_
 
@@ -54,7 +54,7 @@ Zu den [Kompositionseffekten](/windows/uwp/composition/composition-effects) zäh
 
 [Kompositionsanimationen](/windows/uwp/composition/composition-animation) werden unabhängig vom Benutzeroberflächenthread direkt im Compositor-Prozess ausgeführt. Dadurch werden Ruckelfreiheit und Skalierung sichergestellt, sodass du eine große Anzahl gleichzeitiger, aufwendiger Animationen ausführen kannst. Zusätzlich zu den vertrauten KeyFrame-Animationen zum Steuern von Eigenschaftsänderungen über einen Zeitraum kannst du Ausdrücke verwenden, um mathematische Beziehungen zwischen verschiedenen Eigenschaften (einschließlich Benutzereingaben) einzurichten. Mit eingabegesteuerten Animationen kannst du eine Benutzeroberfläche erstellen, die dynamisch und fließend auf Benutzereingaben reagiert und damit die Benutzerbindung steigern kann.
 
-![Mit der visuellen Ebene erstellte Benutzeroberfläche](images/visual-layer-interop/swipe-scroller.gif)
+![Kurzes Video einer weiteren, mit der visuellen Ebene erstellten Benutzeroberfläche.](images/visual-layer-interop/swipe-scroller.gif)
 
 > _Bewegung – demonstriert im [Beispielkatalog zur Windows-Benutzeroberflächenerstellung](https://github.com/Microsoft/WindowsCompositionSamples/tree/master/SampleGallery)._
 

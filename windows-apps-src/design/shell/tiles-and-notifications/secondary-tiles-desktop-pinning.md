@@ -1,30 +1,30 @@
 ---
-Description: Win32-Anwendungen können dank der Desktop Bridge sekundäre Kacheln anheften.
-title: Heften Sie sekundäre Kacheln aus Win32-apps
-label: Pin secondary tiles from Win32 apps
+Description: Dank der Desktop Bridge können Desktop Anwendungen sekundäre Kacheln anheften.
+title: Heften Sie sekundäre Kacheln aus Desktop-Apps
+label: Pin secondary tiles from desktop apps
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
 keywords: Windows 10, Desktop Bridge, sekundäre Kacheln, PIN, Pinning, Schnellstart, Codebeispiel, Beispiel, secondarytile, Desktop Anwendung, Win32, WinForms, WPF
 ms.localizationpriority: medium
-ms.openlocfilehash: e45fedbb981c26945d3127d7f1c01bfc08d221f0
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: f0b1e167b0ce2e91b00b7facbdd53709efdc4887
+ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984726"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100268"
 ---
-# <a name="pin-secondary-tiles-from-win32-apps"></a>Heften Sie sekundäre Kacheln aus Win32-apps
+# <a name="pin-secondary-tiles-from-desktop-apps"></a>Heften Sie sekundäre Kacheln aus Desktop-Apps
 
 
-Dank der [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop)können Win32-Anwendungen (wie Windows Forms und WPF) sekundäre Kacheln anheften.
+Dank der [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop)können Desktop Anwendungen (wie Windows Forms und WPF) sekundäre Kacheln anheften.
 
 ![Screenshot der sekundären Kacheln](images/secondarytiles.png)
 
 > [!IMPORTANT]
 > **Erfordert das Fall Creators Update**: Sie müssen das SDK 16299 als Ziel festlegen und Build 16299 oder höher ausführen, um sekundäre Kacheln aus Desktop Bridge-apps anzuheften.
 
-Das Hinzufügen einer sekundären Kachel aus Ihrer WPF-oder WinForms-Anwendung ähnelt einer reinen UWP-app. Der einzige Unterschied besteht darin, dass Sie das Hauptfenster handle (HWND) angeben müssen. Dies liegt daran, dass Windows beim anheften einer Kachel ein modales Dialogfeld anzeigt, das den Benutzer auffordert, zu bestätigen, ob die Kachel angeheftet werden soll. Wenn die Win32-Anwendung das secondarytile-Objekt nicht mit dem Besitzer Fenster konfiguriert, weiß Windows nicht, wo das Dialogfeld gezeichnet werden soll, und der Vorgang schlägt fehl.
+Das Hinzufügen einer sekundären Kachel aus Ihrer WPF-oder WinForms-Anwendung ähnelt einer reinen UWP-app. Der einzige Unterschied besteht darin, dass Sie das Hauptfenster handle (HWND) angeben müssen. Dies liegt daran, dass Windows beim anheften einer Kachel ein modales Dialogfeld anzeigt, das den Benutzer auffordert, zu bestätigen, ob die Kachel angeheftet werden soll. Wenn die Desktop Anwendung das secondarytile-Objekt nicht mit dem Besitzer Fenster konfiguriert, weiß Windows nicht, wo das Dialogfeld gezeichnet werden soll, und der Vorgang schlägt fehl.
 
 
 ## <a name="package-your-app-with-desktop-bridge"></a>Verpacken Ihrer APP mit Desktop Bridge
@@ -66,7 +66,7 @@ SecondaryTile tile = new SecondaryTile(
 
 ## <a name="assign-the-window-handle"></a>Fenster Handle zuweisen
 
-Dies ist der Schlüssel Schritt für Win32-Anwendungen. Wandeln Sie das Objekt in ein [iinitializewithwindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) -Objekt um. Nennen Sie dann die [IInitializeWithWindow.Initialize](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) -Methode, und übergeben Sie das Handle des Fensters, das als Besitzer des modalen Dialog Felds fungieren soll. Im folgenden c#-Beispiel wird gezeigt, wie das Handle des Hauptfensters Ihrer APP an die-Methode übergeben wird.
+Dies ist der wichtigste Schritt für Desktop Anwendungen. Wandeln Sie das Objekt in ein [iinitializewithwindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) -Objekt um. Nennen Sie dann die [IInitializeWithWindow.Initialize](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) -Methode, und übergeben Sie das Handle des Fensters, das als Besitzer des modalen Dialog Felds fungieren soll. Im folgenden c#-Beispiel wird gezeigt, wie das Handle des Hauptfensters Ihrer APP an die-Methode übergeben wird.
 
 ```csharp
 // Assign the window handle

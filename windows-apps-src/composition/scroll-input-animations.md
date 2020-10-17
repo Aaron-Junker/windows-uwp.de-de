@@ -1,76 +1,76 @@
 ---
-title: Erweitern vorhandener ScrollViewer-Erfahrungen
-description: Lernen Sie, wie Sie mit einem XAML-ScrollViewer und ExpressionAnimations dynamische, eingabegesteuerte Bewegungserlebnisse erzeugen können.
+title: Verbessern vorhandener ScrollViewer-Erfahrungen
+description: Erfahren Sie, wie Sie mit XAML ScrollViewer und expressionanimationen dynamische Eingabe gesteuerte Bewegungsmöglichkeiten erstellen.
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows 10, Uwp, animation
+keywords: Windows 10, UWP, Animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 25b0732b7c29653d18f0e018698ab4b6398d402a
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 438f108a07349da6515443e64bd4494529b8e6a0
+ms.sourcegitcommit: fe21402578a1f434769866dd3c78aac63dbea5ea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318072"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92152403"
 ---
-# <a name="enhance-existing-scrollviewer-experiences"></a>Erweitern vorhandener ScrollViewer-Erfahrungen
+# <a name="enhance-existing-scrollviewer-experiences"></a>Verbessern vorhandener ScrollViewer-Erfahrungen
 
-Dieser Artikel erklärt, wie Sie mit einem XAML-ScrollViewer und ExpressionAnimations dynamische, eingabegesteuerte Bewegungserlebnisse erzeugen können.
+In diesem Artikel wird erläutert, wie Sie XAML ScrollViewer und expressionanimationen verwenden, um dynamische Eingabe gesteuerte Bewegungs Umgebungen zu erstellen.
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
-Wir gehen hier davon aus, dass Sie mit den in diesen Artikeln behandelten Konzepten vertraut sind:
+Wir gehen davon aus, dass Sie mit den Konzepten vertraut sind, die in den folgenden Artikeln erläutert werden:
 
-- [Eingabe-driven Animationen](input-driven-animations.md)
-- [Beziehung basierend Animationen](relation-animations.md)
+- [Eingabegesteuerte Animationen](input-driven-animations.md)
+- [Beziehungs basierte Animationen](relation-animations.md)
 
 ## <a name="why-build-on-top-of-scrollviewer"></a>Warum auf ScrollViewer aufbauen?
 
-Normalerweise verwenden Sie den vorhandenen XAML ScrollViewer, um eine scrollbare und zoombare Oberfläche für Ihre App-Inhalte zu erstellen. Mit der Einführung der Fluent Design-Sprache sollten Sie sich nun auch darauf konzentrieren, wie Sie den Akt des Scrollens oder Zooms einer Oberfläche nutzen können, um andere Bewegungserlebnisse zu steuern. Zum Beispiel, mit Scrolling eine unscharfe Animation eines Hintergrunds zu nutzen oder die Position eines „Sticky-Headers“ zu steuern.
+In der Regel verwenden Sie den vorhandenen XAML ScrollViewer, um eine Bild Lauf Bare und Zoombare Oberfläche für Ihren app-Inhalt zu erstellen. Mit der Einführung der fließenden Entwurfs Sprache sollten Sie sich nun auch darauf konzentrieren, wie Sie den Bildlauf oder das Zoomen einer Oberfläche verwenden, um andere Bewegungsmöglichkeiten zu fördern. Beispielsweise können Sie mit einem Bildlauf eine unscharfe Animation eines Hintergrunds verwenden oder die Position eines "Kurznotiz Headers" steuern.
 
-In diesen Szenarien nutzen Sie das Verhalten oder Manipulations-Erlebnisse wie Scrolling und Zoomen, um andere Teile Ihrer Anwendung dynamischer zu gestalten. Diese ermöglichen es der App, sich in sich geschlossener anzufühlen und die Erlebnisse in den Augen der Endbenutzer noch einprägsamer zu gestalten. Durch die Verbesserung der Benutzeroberfläche der App werden Endbenutzer häufiger und länger mit der App in Kontakt treten.
+In diesen Szenarien nutzen Sie das Verhalten oder die Manipulation von Benutzeroberflächen, wie z. b. durch Scrollen und Zoomen, um andere Teile der APP dynamischer zu gestalten. Diese wiederum ermöglichen es der APP, mehr zusammenhängend zu gestalten, sodass die Erlebnisse in den Augen von Endbenutzern noch wichtiger werden. Wenn Sie die Benutzeroberfläche der APP einprägsamer gestalten, werden Endbenutzer häufiger und für längere Zeiträume mit der app in Kontakt treten.
 
 ## <a name="what-can-you-build-on-top-of-scrollviewer"></a>Was können Sie auf ScrollViewer aufbauen?
 
-Sie können die Position eines ScrollViewer nutzen, um eine Reihe dynamischer Erlebnisse zu erstellen:
+Sie können die Position eines ScrollViewer nutzen, um eine Reihe dynamischer Umgebungen zu erstellen:
 
-- Parallax – Nutzen Sie die Position eines ScrollViewer, um den Hintergrund- oder Vordergrundinhalte relativ schnell auf die Scrollposition zu verschieben.
-- StickyHeaders – Verwenden Sie die Position eines ScrollViewer, um einen Header zu animieren und an eine Position zu „kleben“.
-- Input-Driven Effects – Verwenden Sie die Position eines Scrollviewer, um einen Kompositionseffekt wie z. B. Blur zu animieren.
+- Parser – verwenden Sie die Position eines ScrollViewer-Steuerelement, um Hintergrund-oder Vordergrund Inhalt in relativer Geschwindigkeit an die Scrollposition zu verschieben.
+- "Stickyheaders" – Verwenden der Position eines ScrollViewer zum animieren und "anheften" eines Headers an eine Position
+- Input-Driven Effekte – verwenden Sie die Position eines ScrollViewer, um einen Kompositions Effekt wie z. b. weich zu animieren.
 
-Im Allgemeinen ist es möglich, durch Referenzieren der Position eines ScrollViewer mit einer ExpressionAnimation eine Animation zu erstellen, die sich dynamisch relativ zum Scroll-Betrag ändert.
+Im Allgemeinen können Sie durch das verweisen auf die Position eines ScrollViewer-Ausdrucks mit einer expressionanimation eine Animation erstellen, die die relative Bild Lauf Menge dynamisch ändert.
 
-![Listenansicht mit Parallax](images/animation/parallax.gif)
+![Listenansicht mit "initiallax"](images/animation/parallax.gif)
 
-![Ein Shy-Header](images/animation/shy-header.gif)
+![Ein Scheuer Header](images/animation/shy-header.gif)
 
-## <a name="using-scrollmanipulationpropertyset"></a>Verwenden von ScrollManipulationPropertySet
+## <a name="using-scrollviewermanipulationpropertyset"></a>Verwenden von scrollviewermanipulationpropertyset
 
-Um diese dynamischen Erlebnisse mit einem XAML ScrollViewer zu erzeugen, müssen Sie die Scroll-Position in einer Animation referenzieren können. Dies geschieht durch den Zugriff auf ein CompositionPropertySet aus dem XAML ScrollViewer, das ScrollManipulationPropertySet.
-Das ScrollManipulationPropertySet enthält eine einzige Vector3-Eigenschaft namens Translation, die Zugriff auf die Scroll-Position des ScrollViewer ermöglicht. Sie können diese dann wie jedes andere CompositionPropertySet in Ihrer ExpressionAnimation referenzieren.
+Um diese dynamischen Umgebungen mit einem XAML ScrollViewer zu erstellen, müssen Sie in der Lage sein, auf die Scrollposition in einer Animation zu verweisen. Dies erfolgt durch den Zugriff auf ein compositionpropertyset aus dem XAML ScrollViewer, der als scrollviewermanipulationpropertyset bezeichnet wird.
+Scrollviewermanipulationpropertyset enthält eine einzelne Vector3-Eigenschaft mit dem Namen Translation, die den Zugriff auf die Scrollposition von ScrollViewer ermöglicht. Sie können dann wie jedes andere compositionpropertyset in der expressionanimation referenzieren.
 
-Allgemeine Schritte zum Einstieg:
+Allgemeine Schritte für den Einstieg:
 
-1. Greifen Sie über ElementCompositionPreview auf ScrollManipulationPropertySet zu.
-    - `ElementCompositionPreview.GetScrollManipulationPropertySet(ScrollViewer scroller)`
-1. Erstellen Sie eine ExpressionAnimation, die auf die Eigenschaft Translation des PropertySet verweist.
-    - Vergessen Sie nicht, den Referenzparameter festzulegen!
-1. Mit der ExpressionAnimation können Sie die Eigenschaft eines CompositionObjects gezielt ansteuern.
+1. Greifen Sie über elementcompositionpreview auf das scrollviewermanipulationpropertyset zu.
+    - `ElementCompositionPreview.GetScrollViewerManipulationPropertySet(ScrollViewer scroller)`
+1. Erstellen Sie eine expressionanimation, die auf die Translation-Eigenschaft aus dem PropertySet verweist.
+    - Vergessen Sie nicht, den Verweis Parameter festzulegen.
+1. Richten Sie die-Eigenschaft eines compositionobject mit der expressionanimation ein.
 
 > [!NOTE]
-> Es wird empfohlen, das PropertySet, das von der Methode GetScrollManipulationPropertySet zurückgegeben wird, einer Klassenvariablen zuzuordnen. Dies stellt sicher, dass das Property-Set nicht durch die Garbage-Collection bereinigt wird und hat somit keinen Einfluss auf die ExpressionAnimation, in der es referenziert wird. ExpressionAnimations hat keine starke Referenz auf die in der Gleichung verwendeten Objekte.
+> Es wird empfohlen, das von der getscrollviewermanipulationpropertyset-Methode zurückgegebene PropertySet einer Klassen Variablen zuzuweisen. Dadurch wird sichergestellt, dass der Eigenschaften Satz nicht von der Garbage Collection bereinigt wird und somit keine Auswirkung auf die expressionanimation hat, in der auf Sie verwiesen wird. Expressionanimationen behalten keinen starken Verweis auf eines der in der Gleichung verwendeten-Objekte bei.
 
 ## <a name="example"></a>Beispiel
 
-Schauen wir uns an, wie das oben gezeigte Parallax-Beispiel zusammengesetzt ist. Als Referenz finden Sie den gesamten Quellcode der App im [Window UI Dev Labs-Repo auf GitHub](https://github.com/microsoft/WindowsCompositionSamples).
+Sehen wir uns nun an, wie das oben gezeigte Beispiel oben dargestellt wird. Als Referenz finden Sie den gesamten Quellcode für die APP im Repository " [Windows UI dev Labs" auf GitHub](https://github.com/microsoft/WindowsCompositionSamples).
 
-Das Erste ist, eine Referenz auf das ScrollManipulationPropertySet zu erhalten.
+Der erste Schritt besteht darin, einen Verweis auf das scrollviewermanipulationpropertyset zu erhalten.
 
 ```csharp
 _scrollProperties =
     ElementCompositionPreview.GetScrollViewerManipulationPropertySet(myScrollViewer);
 ```
 
-Der nächste Schritt ist die ExpressionAnimation, die eine Gleichung definiert, die die Scroll-Position des ScrollViewer verwendet.
+Der nächste Schritt ist das Erstellen der expressionanimation, die eine Gleichung definiert, die die Bild Lauf Position von ScrollViewer verwendet.
 
 ```csharp
 _parallaxExpression = compositor.CreateExpressionAnimation();
@@ -82,7 +82,7 @@ _parallaxExpression.Expression = "(ScrollManipulation.Translation.Y + StartOffse
 ```
 
 > [!NOTE]
-> Sie können auch die ExpressionBuilder-Helper-Klassen verwenden, um denselben Ausdruck ohne Zeichenfolgen zu konstruieren:
+> Sie können auch ExpressionBuilder-Hilfsklassen verwenden, um denselben Ausdruck zu erstellen, ohne dass Zeichen folgen erforderlich sind:
 
 > ```csharp
 > var scrollPropSet = _scrollProperties.GetSpecializedReference<ManipulationPropertySetReferenceNode>();
@@ -91,7 +91,7 @@ _parallaxExpression.Expression = "(ScrollManipulation.Translation.Y + StartOffse
 > _parallaxExpression = parallax * parallaxValue - parallax;
 > ```
 
-Schließlich nehmen Sie diese ExpressionAnimation und zielen auf das Visual, dass Sie per Parallax animieren wollen. In diesem Fall ist es das Bild für jeden Eintrag in der Liste.
+Schließlich nehmen Sie diese expressionanimation an und Zielen auf das visuelle Element ab, das Sie verwenden möchten. In diesem Fall ist es das Bild für jedes der Elemente in der Liste.
 
 ```csharp
 Visual visual = ElementCompositionPreview.GetElementVisual(image);

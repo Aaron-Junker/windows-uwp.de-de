@@ -1,17 +1,17 @@
 ---
-description: Code, der in das Gerät selbst integriert und auf dessen Sensoren abgestimmt ist, umfasst auch Eingaben vom und Ausgaben an den Benutzer.
+description: Erfahren Sie, wie Sie Windows-Runtime 8. x auf die UWP für ein e/a-, Geräte-und App-Modell portieren.
 title: Portieren von Windows-Runtime 8.x zu UWP für E/A, Gerät und App-Modell
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b6d319b901791a7c6b4b6b2fd93e8c217a3caef2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fe0d78f40fc7e4ca28e5ef766ff713b3aaf9f189
+ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167534"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92133073"
 ---
 # <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a>Portieren von Windows-Runtime 8.x zu UWP für E/A, Gerät und App-Modell
 
@@ -66,7 +66,7 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 
 Siehe auch [Bedingte Kompilierung und adaptiver Code](w8x-to-uwp-porting-to-a-uwp-project.md).
 
-## <a name="location"></a>Ort
+## <a name="location"></a>Standort
 
 
 Wenn eine App, für die im App-Paketmanifest die Positionsfunktion deklariert wird, unter Windows 10 ausgeführt wird, fordert das System die Zustimmung des Endbenutzers an. Dies gilt unabhängig davon, ob es sich um eine Windows Phone Store-App oder eine Windows 10-App handelt. Falls in Ihrer App eine eigene benutzerdefinierte Aufforderung zur Zustimmung oder eine Schaltfläche zum Aktivieren/Deaktivieren angezeigt wird, sollten Sie sie entfernen, damit Endbenutzer nur eine Aufforderung erhalten.

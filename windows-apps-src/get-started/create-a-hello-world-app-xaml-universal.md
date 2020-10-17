@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, UWP, erste App, Hello world
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b39efb7aa90499f6d238306ad079f1969907f46
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: dda1c0f9a7b61c13965ff2f71c8100a8e771bd7d
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175254"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860080"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Erstellen einer „Hello, World“- App (XAML)
 
@@ -61,11 +61,11 @@ Hier erfahren Sie Folgendes:
 
 5.  Das Dialogfeld für die Zielversion/mindestens erforderliche Version wird angezeigt. Da die Standardeinstellungen für dieses Tutorial geeignet sind, wähle **OK** aus, um das Projekt zu erstellen.
 
-    ![Das Fenster „Projektmappen-Explorer“](images/win10-cs-02.png)
+    ![Screenshot des Dialogfelds „Neues universelles Windows-Projekt“.](images/win10-cs-02.png)
 
 6.  Wenn das neue Projekt geöffnet wird, werden die Dateien im Bereich **Projektmappen-Explorer** auf der rechten Seite angezeigt. Möglicherweise müssen Sie die Registerkarte **Projektmappen-Explorer** anstelle der Registerkarte **Eigenschaften** auswählen, um die Dateien anzuzeigen.
 
-    ![Das Fenster „Projektmappen-Explorer“](images/win10-cs-03.png)
+    ![Screenshot des Projektmappen-Explorer-Bereichs, in dem „Hallo Welt“ (Universelles Windows) hervorgehoben ist.](images/win10-cs-03.png)
 
 **Leere App (universelle Windows-App)** ist zwar nur eine Minimalvorlage, umfasst aber trotzdem eine Reihe von Dateien. Diese Dateien werden für alle UWP-Apps mit C# benötigt. Sie sind Teil jedes Projekts, das Sie mit Visual Studio erstellen.
 
@@ -110,15 +110,15 @@ Fügen wir nun der Seite eine Schaltfläche hinzu. In diesem Tutorial verwendest
 
     Sie werden feststellen, dass eine grafische Ansicht im oberen Teil des Bildschirms und die XAML-Codeansicht darunter vorhanden ist. Sie können jeweils Änderungen vornehmen, wir verwenden jetzt jedoch die grafische Ansicht.
 
-    ![Das Fenster „Projektmappen-Explorer“](images/win10-cs-04.png)
+    ![Screenshot von Visual Studio mit der „Main Page X A M L“-Designansicht.](images/win10-cs-04.png)
 
 2.  Klicken Sie auf die vertikale Registerkarte **Toolbox** auf der linken Seite, um die Liste der UI-Steuerelemente zu öffnen. (Sie können auf das Reißzweckensymbol in der Titelleiste klicken, damit sie sichtbar bleibt.)
 
-    ![Das Fenster „Projektmappen-Explorer“](images/win10-cs-05.png)
+    ![Screenshot des Toolboxbereichs mit einem roten Pfeil, der auf das Symbol „Anheften“ zeigt.](images/win10-cs-05.png)
 
 3.  Erweitern Sie **Häufig verwendete XAML-Steuerelemente**, und ziehen Sie die **Schaltfläche** in die Mitte der Design-Canvas.
 
-    ![Das Fenster „Projektmappen-Explorer“](images/win10-cs-06.png)
+    ![Screenshot des Toolboxbereichs und der „Main Page X A M L“-Designansicht mit der hervorgehobenen Schaltflächenoption im Toolboxbereich und einer Schaltfläche in der Designansicht.](images/win10-cs-06.png)
 
     Wenn Sie das Fenster mit dem XAML-Code betrachten, sehen Sie, dass die Schaltfläche auch dort hinzugefügt wurde:
 
@@ -136,7 +136,7 @@ Fügen wir nun der Seite eine Schaltfläche hinzu. In diesem Tutorial verwendest
 
 Beachten Sie, wie die in der Design-Canvas angezeigte Schaltfläche aktualisiert wird, um den neuen Text anzuzeigen.
 
-![Das Fenster „Projektmappen-Explorer“](images/win10-cs-07.png)
+![Screenshot der „Hallo Welt“-Schaltfläche in einem roten Kästchen und dem Code hinter der Schaltfläche.](images/win10-cs-07.png)
 
 ## <a name="step-3-start-the-app"></a>Schritt 3: Starten der App
 

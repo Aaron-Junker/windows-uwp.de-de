@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, sekundäre Kacheln
 ms.localizationpriority: medium
-ms.openlocfilehash: a4cd65093e9969531c3de683064973aab58b1680
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: ecafd52be36b34c83d9b11757ccd733e796fd727
+ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984666"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100338"
 ---
 # <a name="secondary-tiles"></a>Sekundäre Kacheln
 
@@ -33,7 +33,7 @@ Durch das Hinzufügen sekundärer Kacheln zu Ihrer APP helfen Sie dem Benutzer, 
 | --- | --- |
 | [Leitfaden zu sekundären Kacheln](secondary-tiles-guidance.md) | Erfahren Sie, wann und wo Sie sekundäre Kacheln verwenden sollten. |
 | [Heften von sekundären](secondary-tiles-pinning.md) | Erfahren Sie, wie Sie eine sekundäre Kachel anheften. |
-| [Pin aus Win32-apps](secondary-tiles-desktop-pinning.md) | Win32-Apps können dank der Desktop Bridge sekundäre Kacheln anheften. |
+| [Pin aus Desktop-Apps](secondary-tiles-desktop-pinning.md) | Dank der Desktop Bridge können Desktop-Apps sekundäre Kacheln anheften. |
 
 
 ## <a name="secondary-tiles-in-relation-to-primary-tiles"></a>Sekundäre Kacheln in Bezug auf primäre Kacheln
@@ -79,5 +79,5 @@ Informationen dazu, wann und wo Sie sekundäre Kacheln verwenden sollten, sowie 
 Weitere Informationen zum Anheften sekundärer Kacheln finden Sie unter anheften [sekundärer](secondary-tiles-pinning.md)
 
 
-## <a name="win32-applications-and-secondary-tiles"></a>Win32-Anwendungen und sekundäre Kacheln
-Weitere Informationen zur Verwendung sekundärer Kacheln aus der Win32-Anwendung über die Desktop Bridge finden Sie unter anheften [von sekundären Kacheln aus Win32-apps](secondary-tiles-desktop-pinning.md).
+## <a name="desktop-applications-and-secondary-tiles"></a>Desktop Anwendungen und sekundäre Kacheln
+Weitere Informationen zur Verwendung sekundärer Kacheln aus Ihrer Desktop Anwendung über die Desktop Bridge finden Sie unter anheften [von sekundären Kacheln aus Desktop-Apps](secondary-tiles-desktop-pinning.md).

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bb0a6b48e9a9a01881955ae0ccb65e93b9cf2b6e
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 5f06d5e804d41b1751c72af4d07224fa346323b2
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636540"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860110"
 ---
 # <a name="typography-in-windows-apps"></a>Typografie in Windows-Apps
 
@@ -23,7 +23,7 @@ Typografie muss übersichtlich sein, da sie zur visuellen Darstellung von Sprach
 
 Verwenden Sie eine Schriftart in der gesamten Benutzeroberfläche Ihrer App. Es wird empfohlen, wenn möglich, die Standardschriftart für Windows-Apps **Segoe UI** zu verwenden. Sie wurde entwickelt, um eine optimale Lesbarkeit für Größe und Pixeldichte zu wahren, und bietet eine klare, ansprechende und offene Ästhetik, die den Inhalt des Systems ergänzt.
 
-![Beispieltext für die Schriftart „Segoe UI“](images/type/segoe-sample.svg)
+![Beispieltext für die Schriftart „Segoe UI“.](images/type/segoe-sample.svg)
 
 Weitere Informationen zum Anzeigen anderer Sprachen als Englisch oder um eine andere Schriftart für Ihre App auszuwählen finden Sie unter [Sprachen](#languages) und [Schriftarten](#fonts) für unsere empfohlenen Schriftarten für Windows-Apps.
 
@@ -41,7 +41,7 @@ Wählen Sie eine Schriftart für Ihre Benutzeroberfläche aus.
 
 Schriftgrade in UWP-Apps werden automatisch auf allen Geräten skaliert. Mit dem Skalierungsalgorithmus wird sichergestellt, dass der Schriftgrad 24 Pixel auf einem 3 Meter entfernten Surface Hub genauso lesbar ist wie der Schriftgrad 24 Pixel auf einem 5-Zoll-Smartphone, das nur einige Zentimeter entfernt ist.
 
-![Sichtabstände für verschiedene Geräte](images/type/scaling-chart.svg)
+![Sichtabstände für verschiedene Geräte.](images/type/scaling-chart.svg)
 
 Aufgrund der Funktionsweise der Skalierung, entwerfen Sie in effektiven Pixeln, nicht in den tatsächlichen physischen Pixeln, und Sie müssen den Schriftgrad für unterschiedliche Bildschirmgrößen und Auflösungen nicht ändern.
 
@@ -62,7 +62,7 @@ Folgen Sie der Größenanpassung der Windows-[Typhierarchie](#type-ramp).
 Benutzer folgen beim Sichten einer Seite der visuellen Hierarchie: Überschriften fassen Inhalte zusammen, Textkörper enthalten weitere Details. Um eine klare visuelle Hierarchie in Ihrer App zu erstellen, folgen Sie der Windows-Typhierarchie.
     :::column-end:::
     :::column:::
-![Textblock-Stile](images/type/type-hierarchy.svg)
+![Screenshot von drei Textzeilen, bei denen die Schriftgröße von einer Zeile zur nächsten kleiner wird.](images/type/type-hierarchy.svg)
     :::column-end:::
 :::row-end:::
 
@@ -70,18 +70,13 @@ Benutzer folgen beim Sichten einer Seite der visuellen Hierarchie: Überschrifte
 
 Die Windows-Typhierarchie stellt wichtige Beziehungen zwischen den Schriftschnitten auf einer Seite her, damit der Benutzer den Inhalt einfach lesen kann. Alle Größen werden in effektiven Pixeln angegeben und sind für UWP-Apps optimiert, die auf allen Geräten ausgeführt werden.
 
-![Typhierarchie](images/type/type-ramp.png)
+![Der Typenverlauf von Windows.](images/type/type-ramp.png)
 
 ### <a name="using-the-type-ramp"></a>Verwenden der Typhierarchie
 
 :::row:::
     :::column:::
-Sie können auf Ebenen der Typhierarchie als [statische Ressourcen](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp) für XAML zugreifen. Die Stile folgen der Benennungskonvention `*TextBlockStyle`.
-    :::column-end:::
-    :::column:::
-![Textblock-Stile](images/type/text-block-type-ramp.svg)
-    :::column-end:::
-:::row-end:::
+Sie können auf Ebenen der Typhierarchie als [statische Ressourcen](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp) für XAML zugreifen. Die Stile folgen der hier dargestellten `*TextBlockStyle`-Benennungskonvention.
 
 ```XAML
 <TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
@@ -92,6 +87,13 @@ Sie können auf Ebenen der Typhierarchie als [statische Ressourcen](../controls-
 <TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
 <TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
 ```
+    :::column-end:::
+    :::column:::
+![Screenshot der Textstile „Header“, „Subheader“, „Title“, „Subtitle“, „Base“, „Body“ und „Caption“.](images/type/text-block-type-ramp.svg)
+    :::column-end:::
+:::row-end:::
+
+
 
 :::row:::
     :::column:::
@@ -133,7 +135,7 @@ Halten Sie sich zur besseren Lesbarkeit an 50 bis 60 Buchstaben pro Zeile.
 
 Wenn die Textmenge den verfügbaren Speicherplatz überschreitet, wird empfohlen, den Text zuzuschneiden, was dem Standardverhalten der meisten [UWP-Textsteuerelemente](../controls-and-patterns/text-controls.md) entspricht.
 
-![Gerät mit abgeschnittenem Text](images/type/clipping.svg)
+![Gerät mit abgeschnittenem Text.](images/type/clipping.svg)
 
 ```xaml
 <TextBlock TextWrapping="WrapWholeWords" TextTrimming="Clip"/>

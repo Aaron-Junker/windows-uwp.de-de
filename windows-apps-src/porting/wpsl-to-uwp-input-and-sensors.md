@@ -1,17 +1,17 @@
 ---
-description: Code, der in das Gerät selbst integriert und auf dessen Sensoren abgestimmt ist, umfasst auch Eingaben vom und Ausgaben an den Benutzer.
+description: Erfahren Sie, wie Sie Windows Phone Silverlight für ein e/a-, Geräte-und App-Modell auf UWP portieren.
 title: Portieren von Windows Phone Silverlight auf UWP für e/a-, Geräte-und App-Modell
 ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 09b192f38a5bedaad491ade322df252d4b9e5971
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 85f0bfaa42c6357a468f2c3babbd4a89925d2e4c
+ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162184"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92133013"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-io-device-and-app-model"></a>Portieren von Windows Phone Silverlight zu UWP - E/A, Gerät und App-Modell
 
@@ -84,11 +84,11 @@ Eine Windows Phone Silverlight-App kann die **Microsoft.Phone.Info.DeviceStatus*
 | **PowerSource**-Eigenschaft                                                                | Keine Entsprechung                                                                                                                                                                                                                                                                                                                      |
 | **PowerSourceChanged**-Ereignis                                                            | Behandeln Sie das [**RemainingChargePercentChanged**](/uwp/api/windows.phone.devices.power.battery.remainingchargepercentchanged)-Ereignis (nur Familie der Mobilgeräte). Das Ereignis wird ausgelöst, wenn der Wert der [**RemainingChargePercent**](/uwp/api/windows.phone.devices.power.battery.remainingchargepercent)-Eigenschaft (nur Familie der Mobilgeräte) um 1 % verkleinert wird. |
 
-## <a name="location"></a>Ort
+## <a name="location"></a>Standort
 
 Wenn eine App, für die im App-Paketmanifest die Positionsfunktion deklariert wird, unter Windows 10 ausgeführt wird, fordert das System die Zustimmung des Endbenutzers an. Falls in Ihrer App eine eigene benutzerdefinierte Aufforderung zur Zustimmung oder eine Schaltfläche zum Aktivieren/Deaktivieren angezeigt wird, sollten Sie sie entfernen, damit Endbenutzer nur eine Aufforderung erhalten.
 
-## <a name="orientation"></a>Ausrichtung
+## <a name="orientation"></a>Orientation
 
 Die Entsprechung der UWP-App für die Eigenschaften **PhoneApplicationPage.SupportedOrientations** und **Orientation** ist das [**uap:InitialRotationPreference**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-splashscreen)-Element im App-Paketmanifest. Wählen Sie die Registerkarte **Anwendung** aus, falls sie nicht bereits ausgewählt wurde, und aktivieren Sie unter **Unterstützte Drehungen** ein oder mehrere Kontrollkästchen, um Ihre Präferenzen anzugeben.
 

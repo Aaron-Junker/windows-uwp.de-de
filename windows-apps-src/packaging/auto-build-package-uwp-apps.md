@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 32054a30e56102b9c0642392d78ac75b78fb99e9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7f0e1d460ca52c659401bbb291deafa5746b7bb6
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158224"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933111"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Einrichten automatisierter Builds für UWP-Apps
 
@@ -73,12 +73,12 @@ So lädst du ein Zertifikat für deinen automatisierten Build hoch
 1. Erweitere in Azure Pipelines die Option **Pipelines** im Navigationsbereich und klicke auf **Bibliothek**.
 2. Klicke auf die Registerkarte **Sichere Dateien** und dann auf **+ Sichere Datei**.
 
-    ![Hochladen einer sicheren Datei](images/secure-file1.png)
+    ![Screenshot von Azure mit hervorgehobener Option „Bibliothek“ und der Seite „Sichere Dateien“.](images/secure-file1.png)
 
 3. Navigiere zu der Zertifikatsdatei und klicke auf **OK**.
 4. Nachdem du das Zertifikat hochgeladen hast, wähle es aus, um seine Eigenschaften anzuzeigen. Aktiviere unter **Pipelineberechtigungen** den Schalter **Zur Verwendung in allen Pipelines autorisieren**.
 
-    ![Hochladen einer sicheren Datei](images/secure-file2.png)
+    ![Screenshot des Abschnitts mit den Pipelineberechtigungen und der aktivierten Option „Zur Verwendung in allen Pipelines autorisieren“.](images/secure-file2.png)
 
 5. Wenn der private Schlüssel im Zertifikat ein Kennwort aufweist, wird empfohlen, das Kennwort in [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) zu speichern und das Kennwort dann mit einer [Variablengruppe](/azure/devops/pipelines/library/variable-groups) zu verknüpfen. Mithilfe der Variablen kannst du auf das Kennwort von der Pipeline zugreifen. Hierbei ist zu beachten, dass ein Kennwort nur für den privaten Schlüssel unterstützt wird. Die Verwendung einer Zertifikatsdatei, die selbst kennwortgeschützt ist, wird derzeit nicht unterstützt.
 

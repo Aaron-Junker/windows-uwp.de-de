@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: 8a05a0a9aeb3a31e76c0510eef70b5ee3036d2f7
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f5d1829d9fca4f5805a52ed34a1218723897c13d
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216833"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91932991"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Fluent Design-System für Ersteller von Windows-Apps
 
@@ -69,7 +69,7 @@ Wie gestaltet man eine App auf einer Vielzahl von Geräten natürlich? Indem sie
 
 :::row:::
     :::column:::
-        ![FPO-Bild](images/fluent/thumbnail-size-classes.jpg)
+        ![Abbildung des Designs der richtigen Breakpoints.](images/fluent/thumbnail-size-classes.jpg)
     :::column-end:::
     :::column span="2":::
 **Design der richtigen Breakpoints**
@@ -82,7 +82,7 @@ Anstatt das Design für jede einzelne Bildschirmgröße anzupassen, kann die Kon
 
 :::row:::
     :::column:::
-        ![FPO-Bild](images/fluent/rspd-resize.gif)
+        ![Kurzes Video über ein dynamisches Layout.](images/fluent/rspd-resize.gif)
     :::column-end:::
     :::column span="2":::
 **Erstellen eines dynamischen Layouts**
@@ -95,7 +95,7 @@ Damit eine App natürlich wirkt, sollte sich das Layout verschiedenen Bildschirm
 
 :::row:::
     :::column:::
-        ![FPO-Bild](images/fluent/devices.jpg)
+        ![Abbildung des Designs für ein Gerätespektrum.](images/fluent/devices.jpg)
     :::column-end:::
     :::column span="2":::
 **Design für ein Gerätespektrum**
@@ -107,7 +107,7 @@ UWP-Apps können auf einer Vielzahl von Windows-basierten Geräten ausgeführt w
 
 :::row:::
     :::column:::
-        ![FPO-Bild](images/fluent/keyboard-shortcuts.jpg)
+        ![Abbildung, die darstellt, wie Sie die Optimierung für die passende Ausgabe vornehmen.](images/fluent/keyboard-shortcuts.jpg)
     :::column-end:::
     :::column span="2":::
 **Optimierung für die passende Eingabe**
@@ -127,7 +127,7 @@ Für Fluent-Benutzeroberflächen werden Steuerelemente und Muster konsistent ein
 
 :::row:::
     :::column:::
-        ![FPO-Bild](images/fluent/thumbnail-navview.png)
+        ![Abbildung, die darstellt, wie Sie die richtige Navigation bereitstellen.](images/fluent/thumbnail-navview.png)
     :::column-end:::
     :::column span="2":::
 **Bereitstellen der richtigen Navigation**
@@ -139,7 +139,7 @@ Sorgen Sie mit der richtigen App-Struktur und den entsprechenden Navigationskomp
 
 :::row:::
     :::column:::
-        ![FPO-Bild](images/fluent/thumbnail-commanding.png)
+        ![Abbildung, die darstellt, wie Sie interaktiv sind.](images/fluent/thumbnail-commanding.png)
     :::column-end:::
     :::column span="2":::
 **Interaktiv sein**
@@ -151,7 +151,7 @@ Mithilfe von Schaltflächen, Befehlsleisten, Tastenkombinationen und Kontextmen�
 
 :::row:::
     :::column:::
-        ![FPO-Bild](images/fluent/thumbnail-controls-2.jpg)
+        ![Abbildung, die darstellt, wie Sie das passende Steuerelement für eine Aufgabe verwenden.](images/fluent/thumbnail-controls-2.jpg)
     :::column-end:::
     :::column span="2":::
 **Das passende Steuerelement für eine Aufgabe**
@@ -183,7 +183,7 @@ Bringen Sie Licht in Ihre UWP-App:
 
 :::row:::
     :::column:::
-        ![FPO-Bild](images/fluent/Nav_Reveal_Animation.gif)
+        ![Kurzes Video über Reveal Highlight.](images/fluent/Nav_Reveal_Animation.gif)
     :::column-end:::
     :::column span="2":::
 **Reveal Highlight**
@@ -193,7 +193,7 @@ Bringen Sie Licht in Ihre UWP-App:
 
 :::row:::
     :::column:::
-        ![FPO-Bild](images/fluent/traveling-focus-fullscreen-light-rf.gif)
+        ![Kurze Video über Reveal Focus.](images/fluent/traveling-focus-fullscreen-light-rf.gif)
     :::column-end:::
     :::column span="2":::
 **Reveal Focus**
@@ -209,7 +209,7 @@ Bringen Sie Tiefe in Ihre UWP-App:
 
 :::row:::
     :::column:::
-        ![FPO-Bild](images/fluent/_parallax_v2.gif)
+        ![Kurzes Video über Parallax-Scrolling.](images/fluent/_parallax_v2.gif)
     :::column-end:::
     :::column span="2":::
 **Parallax**
@@ -241,7 +241,7 @@ Bringen Sie Material in Ihre UWP-App:
 
 :::row:::
     :::column:::
-        ![FPO-Bild](images/fluent/acrylic_lighttheme_base.png)
+        ![Abbildung einer Acrylic-Ebene.](images/fluent/acrylic_lighttheme_base.png)
     :::column-end:::
     :::column span="2":::
 **Acrylic**
@@ -255,7 +255,7 @@ Sie möchten Ihre eigenen Apps mit Fluent Design erstellen? Unsere Toolkits für
 
 :::row:::
     :::column:::
-        ![FPO-Bild](images/fluent/thumbnail-toolkits.jpg)
+        ![Screenshot der Seite mit den Design-Toolkits und Beispielen.](images/fluent/thumbnail-toolkits.jpg)
     :::column-end:::
     :::column span="2":::
 **Seite zu Design-Toolkits und Beispielen**

@@ -1,16 +1,16 @@
 ---
 title: Beziehungs basierte Animationen
 description: Erfahren Sie, wie Sie expressionanimationen verwenden, um Beziehungs basierte Animationen zu erstellen, wenn Bewegung von einer Eigenschaft eines anderen Objekts abhängig ist.
-ms.date: 10/10/2017
+ms.date: 10/16/2020
 ms.topic: article
 keywords: Windows 10, UWP, Animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 57d2f3729430faefc7db31cad6a0ac91ddaa2e02
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 75adcd2f762fd4314d7b852811760d523ef522aa
+ms.sourcegitcommit: fe21402578a1f434769866dd3c78aac63dbea5ea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166364"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92152412"
 ---
 # <a name="relation-based-animations"></a>Beziehungs basierte Animationen
 
@@ -54,8 +54,8 @@ Ausdrücke unterstützen auch eine Reihe von Schlüsselwörtern – spezielle Au
 
 Es gibt zwei Optionen zum Entwickeln von Ausdrücken in der UWP-App:
 
-1. Das Entwickeln der Gleichung als Zeichenfolge über die offizielle öffentliche API.
-1. Erstellung der Gleichung in einem typsicheren Objektmodell über das Open Source-Tool "ExpressionBuilder". Siehe [GitHub-Quelle und-Dokumentation](https://github.com/microsoft/WindowsCompositionSamples/tree/master/ExpressionBuilder).
+1. Erstellen Sie die Gleichung als Zeichenfolge über die offizielle öffentliche API.
+1. Erstellen Sie die Gleichung in einem typsicheren Objektmodell über das Tool ExpressionBuilder, das im [Windows Community Toolkit](/windows/communitytoolkit/animations/expressions)enthalten ist.
 
 Für dieses Dokument definieren wir unsere Ausdrücke mithilfe von ExpressionBuilder.
 
@@ -112,7 +112,9 @@ var orbitRotation = EF.Vector3(
 ```
 
 > [!NOTE]
-> `EF` ist eine Kurznotiz "using"-Notation zum Definieren von ExpressionBuilder. expressionfunctions.
+> `EF` ist eine Kurzschreibweise "using"-Notation zum Definieren von expressionfunctions.
+>
+> `using EF = Microsoft.Toolkit.Uwp.UI.Animations.Expressions.ExpressionFunctions;`
 
 Kombinieren Sie schließlich diese Komponenten zusammen, und verweisen Sie auf die Position der roten Kugel, um die mathematische Beziehung zu definieren.
 

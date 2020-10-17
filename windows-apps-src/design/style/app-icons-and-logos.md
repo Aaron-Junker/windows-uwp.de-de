@@ -1,5 +1,5 @@
 ---
-Description: Erstellen von App-Symbolen/-Logos, die Ihre App im Startmenü, auf App-Kacheln, in der Taskleiste, im Microsoft Store und an anderen Orten darstellen.
+description: Erstellen von App-Symbolen/-Logos, die Ihre App im Startmenü, auf App-Kacheln, in der Taskleiste, im Microsoft Store und an anderen Orten darstellen.
 title: App-Symbole und Logos
 template: detail.hbs
 ms.date: 09/24/2020
@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1e313fe0e51ed77d416f782e40aee9dee81796ae
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 4e908cbad1fb0b70fe96af50917e8b895fdda90d
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636650"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860122"
 ---
 # <a name="app-icons-and-logos"></a>App-Symbole und Logos 
 
@@ -141,7 +141,7 @@ So starten Sie den Manifest-Designer
             In Visual Studio wird der Manifest-Designer angezeigt.
     :::column-end:::
     :::column:::
-            ![Die Registerkarte „Visuelle Assets“](images/icons/vs-manfiest-designer.png)
+            ![Screenshot des Manifestdesigners mit der Registerkarte „Anwendung“.](images/icons/vs-manfiest-designer.png)
     :::column-end:::
 :::row-end:::    
 :::row:::
@@ -149,7 +149,7 @@ So starten Sie den Manifest-Designer
         3. Klicken Sie auf die Registerkarte **Visuelle Assets**.
     :::column-end:::
     :::column:::
-        ![Die Registerkarte „Visuelle Assets“](images/icons/vs-manfiest-designer-visual-assets.png)
+        ![Screenshot des Manifestdesigners mit der Registerkarte „Visuelle Assets“.](images/icons/vs-manfiest-designer-visual-assets.png)
     :::column-end:::
 :::row-end:::        
 

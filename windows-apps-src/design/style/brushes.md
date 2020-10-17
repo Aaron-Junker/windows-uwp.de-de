@@ -6,12 +6,12 @@ ms.date: 04/28/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e70c76f3ed659a46dd9834442049849dd3b7761
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1bf42e75ed8bb6d22fe8d4829aa6df32fa130230
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175524"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860043"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>Verwenden von Pinseln zum Zeichnen von Vor- und Hintergründen sowie Rändern
 
@@ -106,7 +106,7 @@ Dieses Beispiel erstellt einen linearen Farbverlauf mit vier Farben, der zum Zei
 
 Die Farbe der einzelnen Punkte zwischen den Farbverlaufsstopps wird linear als eine Kombination der von den beiden umgebenden Farbverlaufsstopps angegebenen Farben interpoliert. In der folgenden Abbildung sind die Farbverlaufsstopps aus dem vorherigen Beispiel hervorgehoben. Die Kreise kennzeichnen die Position der Farbverlaufsstopps, und die gestrichelte Linie zeigt die Farbverlaufsachse.
 
-![Farbverlaufsstopps](images/linear-gradients-stops.png)
+![Diagramm mit den Farbverlaufsstopps 1 bis 4, die in der oberen linken Ecke des Diagramms beginnen und nach unten und rechts abfallen, bis sie die untere rechte Ecke des Diagramms erreichen.](images/linear-gradients-stops.png)
 
 *Kombination der von den beiden umgebenden Farbverlaufsstopps angegebenen Farben*
 
@@ -160,7 +160,7 @@ Dieses Beispiel erstellt einen linearen Farbverlauf mit vier Farben, der zum Zei
 
 Die Farbe der einzelnen Punkte zwischen den Farbverlaufsstopps wird radial als eine Kombination der von den beiden umgebenden Farbverlaufsstopps angegebenen Farben interpoliert. In der folgenden Abbildung sind die Farbverlaufsstopps aus dem vorherigen Beispiel hervorgehoben. 
 
-![Farbverlaufsstopps](images/radial-gradient.png)
+![Screenshot eines radialen Farbverlaufs.](images/radial-gradient.png)
 
 *Farbverlaufsstopps*
 
