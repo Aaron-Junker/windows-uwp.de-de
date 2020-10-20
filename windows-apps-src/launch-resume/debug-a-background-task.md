@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Hintergrundaufgabe
 ms.localizationpriority: medium
-ms.openlocfilehash: e7d008a6956c3acd22dcb99e6bf4e1cda1442545
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 5696d3c5ffb28ee8dc6ebd51e678894ee78ae420
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750166"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92192980"
 ---
 # <a name="debug-a-background-task"></a>Debuggen einer Hintergrundaufgabe
 
@@ -91,12 +91,12 @@ Die Aktivierung von Hintergrundaufgaben hängt von drei Faktoren ab:
 
 ## <a name="background-tasks-and-visual-studio-package-deployment"></a>Hintergrundaufgaben und Bereitstellung des Visual Studio-Pakets
 
-Wenn eine App mit Hintergrundaufgaben mit Visual Studio bereitgestellt wird und die im Manifest-Designer angegebene Haupt- oder Nebenversion aktualisiert wird, kann ein erneutes Bereitstellen der App mit Visual Studio dazu führen, dass die Hintergrundaufgabe der App hängt. Dieses Problem kann wie folgt behoben werden:
+Wenn eine APP, die Hintergrundaufgaben verwendet, mithilfe von Visual Studio bereitgestellt wird und die im Manifest-Designer angegebene Version (Haupt-und/oder neben Version) dann aktualisiert wird, kann das erneute Bereitstellen der APP mit Visual Studio dazu führen, dass die Hintergrundaufgaben der APP nicht mehr ausgeführt werden. Dieses Problem kann wie folgt behoben werden:
 
 -   Stellen Sie die aktualisierte App mit Windows PowerShell (anstelle von Visual Studio) bereit, indem Sie das für das Paket erstellte Skript ausführen.
--   Wenn Sie die App bereits mit Visual Studio bereitgestellt haben und die Hintergrundaufgaben der App nun hängen, sollten Sie den Computer neu starten oder sich ab- und wieder anmelden, damit die Hintergrundaufgaben der App wieder funktionieren.
+-   Wenn Sie die APP bereits mithilfe von Visual Studio bereitgestellt haben und ihre Hintergrundaufgaben jetzt angehalten wurden, starten Sie neu, oder melden Sie sich ab, und melden Sie sich an, um die Hintergrundaufgaben der APP erneut auszuführen
 -   Sie können dies in C#-Projekten vermeiden, indem Sie die Debugoption "Paket immer neu installieren" auswählen.
--   Erhöhen Sie die Paketversion erst dann, wenn die App endgültig bereitgestellt werden kann (ändern Sie sie nicht während des Debuggens).
+-   Warten Sie, bis die APP bereit für die endgültige Bereitstellung ist, um die Paketversion zu erhöhen (ändern Sie Sie beim Debuggen nicht).
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -104,16 +104,16 @@ Wenn eine App mit Hintergrundaufgaben mit Visual Studio bereitgestellt wird und 
 -   Wenn für die Hintergrundaufgabe der Zugriff auf den Sperrbildschirm erforderlich ist, müssen Sie dafür sorgen, dass die App auf dem Sperrbildschirm platziert wird, bevor Sie versuchen, die Hintergrundaufgabe zu debuggen. Weitere Informationen zum Angeben von Manifestoptionen für sperrbildschirmfähige Apps finden Sie unter [Deklarieren von Hintergrundaufgaben im Anwendungsmanifest](declare-background-tasks-in-the-application-manifest.md).
 -   Parameter für die Registrierung von Hintergrundaufgaben werden zum Zeitpunkt der Registrierung überprüft. Bei ungültigen Registrierungsparametern wird ein Fehler zurückgegeben. Stellen Sie sicher, dass Ihre App problemlos mit Szenarien ohne erfolgreiche Registrierung von Hintergrundaufgaben zurechtkommt. Andernfalls stürzt die App unter Umständen ab, wenn sie so konzipiert ist, dass nach dem Versuch, eine Aufgabe zu registrieren, ein gültiges Registrierungsobjekt vorhanden sein muss.
 
-Weitere Informationen zum Verwenden von vs zum Debuggen einer Hintergrundaufgabe finden Sie unter Vorgehens [Weise beim Ausführen von Suspend-, Resume-und Background-Ereignissen in UWP-apps](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015).
+Weitere Informationen zum Verwenden von vs zum Debuggen einer Hintergrundaufgabe finden Sie unter Vorgehens [Weise beim Ausführen von Suspend-, Resume-und Background-Ereignissen in UWP-apps](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio).
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](create-and-register-a-background-task.md)
 * [Erstellen und Registrieren einer Hintergrundaufgabe innerhalb von Prozessen](create-and-register-an-inproc-background-task.md)
 * [Registrieren einer Hintergrundaufgabe](register-a-background-task.md)
 * [Deklarieren von Hintergrundaufgaben im Anwendungsmanifest](declare-background-tasks-in-the-application-manifest.md)
 * [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md)
-* [So können Sie Ereignisse in Windows UWP-Apps auslösen, anhalten, fortsetzen und im Hintergrund ausführen](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)
+* [So können Sie Ereignisse in Windows UWP-Apps auslösen, anhalten, fortsetzen und im Hintergrund ausführen](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
 * [Analysieren der Codequalität von UWP-apps mit der Code Analyse von Visual Studio](/visualstudio/test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis?view=vs-2015)
 
  

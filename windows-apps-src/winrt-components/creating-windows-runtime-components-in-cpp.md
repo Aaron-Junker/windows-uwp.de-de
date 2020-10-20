@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2965eb3196f2a19f7d5351ee422013c6c22ba88a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 288795b2dc189dae7b350a30446410b40044d08f
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174304"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92192950"
 ---
 # <a name="windows-runtime-components-with-ccx"></a>Komponenten für Windows-Runtime mit C++/CX
 
@@ -24,7 +24,7 @@ Es gibt mehrere Gründe, eine Windows-Runtime Komponente in C++ zu entwickeln.
 - Um die Leistungsvorteile von C++ für komplexe oder rechenintensive Vorgänge zu übernehmen.
 - Um Code wiederzuverwenden, der bereits geschrieben und getestet wurde.
 
-Wenn Sie eine Projektmappe erstellen, die ein JavaScript- oder .NET-Projekt und ein Komponentenprojekt für Windows-Runtime enthält, werden die JavaScript-Projektdateien und die kompilierte DLL in ein Paket zusammengeführt, das Sie lokal im Simulator oder remote auf einem verbundenen Gerät debuggen können. Sie können auch nur das Komponentenprojekt als Erweiterungs-SDK verteilen. Weitere Informationen finden Sie unter [Erstellen eines Software Development Kits](/visualstudio/extensibility/creating-a-software-development-kit?view=vs-2015).
+Wenn Sie eine Projektmappe erstellen, die ein JavaScript- oder .NET-Projekt und ein Komponentenprojekt für Windows-Runtime enthält, werden die JavaScript-Projektdateien und die kompilierte DLL in ein Paket zusammengeführt, das Sie lokal im Simulator oder remote auf einem verbundenen Gerät debuggen können. Sie können auch nur das Komponentenprojekt als Erweiterungs-SDK verteilen. Weitere Informationen finden Sie unter [Erstellen eines Software Development Kits](/visualstudio/extensibility/creating-a-software-development-kit).
 
 Wenn Sie die C++/CX-Komponente codieren, verwenden Sie im Allgemeinen die reguläre C++-Bibliothek und integrierte Typen, außer an der Grenze der abstrakten binären Schnittstelle (ABI), in der Sie Daten an den Code in einem anderen winmd-Paket übergeben. Verwenden Sie dort Windows-Runtime Typen und die spezielle Syntax, die C++/CX zum Erstellen und Bearbeiten dieser Typen unterstützt. Verwenden Sie außerdem im C++/CX-Code Typen wie Delegat und Ereignis, um Ereignisse zu implementieren, die von der Komponente ausgelöst und in JavaScript, Visual Basic, C++ oder c# verarbeitet werden können. Weitere Informationen zur C++/CX-Syntax finden Sie unter [Visual C++-Sprachreferenz (C++/CX)](/cpp/cppcx/visual-c-language-reference-c-cx).
 
@@ -185,7 +185,7 @@ public:
 };
 ```
 
-Aber den Unterschied zwischen diesen nicht:
+Es ist jedoch nicht möglich, den Unterschied zwischen diesen zu erkennen:
 
 ```cpp
 int GetNumber(int i);
@@ -557,5 +557,5 @@ Wenn der JavaScript-Code die öffentlichen Eigenschaften oder Methoden in der Ko
 
 Wenn Sie ein C++ Windows-Runtime/CX-Komponenten Projekt aus einer Projekt Mappe entfernen, müssen Sie auch den Projekt Verweis manuell aus dem JavaScript-Projekt entfernen. Andernfalls werden nachfolgende Debug- oder Buildvorgänge verhindert. Bei Bedarf können Sie dann einen Assemblyverweis zur DLL-Datei hinzufügen.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 * [Exemplarische Vorgehensweise zum Erstellen einer Komponente für Windows-Runtime in C++/CX und Aufrufen der Komponente über JavaScript oder C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)

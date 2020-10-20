@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 792712256e36b40cd376f0e378bb110ab33bc0fb
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c4e61cb04aaefdc0aeef05ce0c61ca549019791b
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173734"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92192960"
 ---
 # <a name="xaml-overview"></a>Übersicht über XAML
 
@@ -66,7 +66,7 @@ Ein spezieller XAML-Namespace, der in fast jeder Windows-Runtime-XAML-Datei dekl
 
 Der XAML-Sprachnamespace mit dem Präfix „x“ enthält mehrere Programmierkonstrukte, die in XAML häufig verwendet werden. Die häufigsten lauten:
 
-| Begriff | BESCHREIBUNG |
+| Begriff | Beschreibung |
 |------|-------------|
 | [x:Key](x-key-attribute.md) | Legt einen eindeutigen benutzerdefinierten Schlüssel für jede Ressource in einem XAML fest <xref:Windows.UI.Xaml.ResourceDictionary> . Die Schlüsseltoken-Zeichenfolge ist das Argument für die **StaticResource**-Markuperweiterung. Sie verwenden diesen Schlüssel später zum Abrufen der XAML-Ressourcen aus einer anderen XAML-Verwendung in der XAML Ihrer App. |
 | [x:Class](x-class-attribute.md) | Gibt den Code-Namespace und Codeklassennamen für die Klasse an, mit der CodeBehind-Daten für eine XAML-Seite bereitgestellt werden. Damit wird die Klasse benannt, die beim Erstellen Ihrer App erstellt oder zugeordnet wird. Diese Buildvorgänge unterstützen die XAML-Markupkompilierung und kombinieren das Markup und CodeBehind, wenn die App kompiliert wird. Eine solche Klasse ist für die Unterstützung von CodeBehind für eine XAML-Seite erforderlich. <xref:Windows.UI.Xaml.Window.Content%2A?displayProperty=nameWithType> im Standard-Windows-Runtime Aktivierungs Modell. |
@@ -137,7 +137,7 @@ Markuperweiterungen können geschachtelt werden. Die innerste Markuperweiterung 
 
 Aufgrund der Markuperweiterungen benötigen Sie für einen Literalwert „{“ in einem Attribut eine spezielle Syntax. Weitere Informationen finden Sie unter [XAML-Syntax Handbuch](xaml-syntax-guide.md).
 
-## <a name="events"></a>Events
+## <a name="events"></a>Ereignisse
 
 XAML ist eine deklarative Programmiersprache für Objekte und ihre Eigenschaften, sie enthält jedoch auch eine Syntax zum Anfügen von Ereignishandlern an Objekte im Markup. Die XAML-Ereignissyntax kann dann die XAML-deklarierten Ereignisse über das Windows-Runtime-Programmiermodell integrieren. Sie geben den Namen des Ereignisses als Attributnamen in dem Objekt an, in dem das Ereignis behandelt wird. Für den Attributwert geben Sie den Namen einer Ereignishandler-Funktion an, die Sie im Code definieren. Der XAML-Prozessor verwendet diesen Namen zum Erstellen einer Delegatdarstellung in der geladenen Objektstruktur und fügt den angegebenen Handler einer internen Handlerliste hinzu. Fast alle Windows-Runtime-Apps werden sowohl durch Markup- als auch durch CodeBehind-Quellen definiert.
 
@@ -256,4 +256,4 @@ Wird die App ausgeführt und wurden XAML-Analysefehler zur Entwurfszeit nicht er
 > [!NOTE]
 > Apps, die C++/CX für Code verwenden, erhalten die spezifische [**xamlparameseexception**](/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0)nicht. Die Meldung in der Ausnahme stellt die Fehlerursache als XAML-bezogen dar und enthält Kontextinfos, z. B. Zeilennummern in einer XAML-Datei, so wie **XamlParseException**.
 
-Weitere Informationen zum Debuggen einer Windows-Runtime-App finden Sie unter [Starten einer Debugsitzung](/visualstudio/debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml?view=vs-2015).
+Weitere Informationen zum Debuggen einer Windows-Runtime-App finden Sie unter [Starten einer Debugsitzung](/visualstudio/debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml).
