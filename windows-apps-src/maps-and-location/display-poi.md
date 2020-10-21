@@ -2,18 +2,21 @@
 title: Anzeigen von interessanten Orten (POI) auf einer Karte
 description: Mit Ortsmarken, Bildern, Formen und XAML-UI-Elementen können Sie interessante Orte (Points of Interest, POI) auf einer Karte hinzufügen.
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
-ms.date: 08/11/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: Windows 10, UWP, map, Location, Pushpins
 ms.localizationpriority: medium
-ms.openlocfilehash: c27132c0728c85238b80e710c62d2e733ee1dd5d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: feaf5edc4a25ebbc6dd3e3b7eb484ff63f8b1a23
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155804"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297776"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>Relevante Punkte in einer Karte anzeigen
+
+> [!NOTE]
+> [**Mapcontrol**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) -und Map-Dienste erfordern einen Zuordnungs Authentifizierungsschlüssel, der als [**mapservicetoken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken)bezeichnet wird. Weitere Informationen zum Abrufen und Festlegen eines Kartenauthentifizierungsschlüssels finden Sie unter [Anfordern eines Kartenauthentifizierungsschlüssels](authentication-key.md).
 
 Mit Ortsmarken, Bildern, Formen und XAML-UI-Elementen können Sie interessante Orte (Points of Interest, POI) auf einer Karte hinzufügen. Ein POI ist ein Punkt auf der Karte, der Orte angibt, die von Interesse sind. Beispiele sind die Position eines Geschäfts, eines Orts oder eines Freundes.
 
@@ -165,7 +168,7 @@ public void AddLandmarkPhoto()
 
 Es gibt drei Teile dieses Codes, die etwas näher untersucht werden müssen: das Image, die Referenz Kamera und die [**normalizedanchorpoint**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) -Eigenschaft.
 
-### <a name="image"></a>Bild
+### <a name="image"></a>Image
 
 Dieses Beispiel zeigt ein benutzerdefiniertes Image, das im Ordner " **Assets** " des Projekts gespeichert ist. Die [**Image**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Image) -Eigenschaft von [**mapbillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) erwartet einen Wert vom Typ [**randomaccessstreamreference**](/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference). Dieser Typ erfordert die Anweisung **using** für den Namespace [**Windows.Storage.Streams**](/uwp/api/Windows.Storage.Streams).
 

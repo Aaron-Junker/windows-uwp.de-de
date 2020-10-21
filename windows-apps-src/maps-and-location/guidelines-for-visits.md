@@ -1,19 +1,22 @@
 ---
-Description: Hier erfahren Sie, wie Sie die leistungsstarke Funktion für die Nachverfolgung besuchter Standorte (Visits Tracking) für eine praktischere Standortnachverfolgung verwenden können.
+description: Hier erfahren Sie, wie Sie die leistungsstarke Funktion für die Nachverfolgung besuchter Standorte (Visits Tracking) für eine praktischere Standortnachverfolgung verwenden können.
 title: Richtlinien für die Verwendung von Visits Tracking
 ms.assetid: 0c101684-48a9-4592-9ed5-6c20f3b830f2
-ms.date: 05/18/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: Windows 10, UWP, map, Location, geovisit, geovisits
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b1766d0f883fa42b005908dcc63102e97ff0d4f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bdca33832b4dfadb52dca45c7a060de4f05c500c
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162514"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297729"
 ---
 # <a name="guidelines-for-using-visits-tracking"></a>Richtlinien für die Verwendung von Visits Tracking
+
+> [!NOTE]
+> [**Mapcontrol**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) -und Map-Dienste erfordern einen Zuordnungs Authentifizierungsschlüssel, der als [**mapservicetoken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken)bezeichnet wird. Weitere Informationen zum Abrufen und Festlegen eines Kartenauthentifizierungsschlüssels finden Sie unter [Anfordern eines Kartenauthentifizierungsschlüssels](authentication-key.md).
 
 Die Funktion "Besuche" optimiert den Prozess der Standortüberwachung, um Sie für die praktischen Zwecke vieler apps effizienter zu gestalten. Ein Besuch wird als signifikanter geografischer Bereich definiert, den der Benutzer eingibt und verlässt. Besuche ähneln den [geozäunen](guidelines-for-geofencing.md) insofern, als Sie zulassen, dass die app nur benachrichtigt wird, wenn der Benutzer bestimmte relevante Bereiche eingibt oder verlässt. Dadurch entfällt die Notwendigkeit einer kontinuierlichen Positions Nachverfolgung, die die Akku Lebensdauer ausgleichen kann. Im Unterschied zu geozäunen werden die Bereiche jedoch dynamisch auf Platt Form Ebene identifiziert, und Sie müssen nicht explizit von einzelnen apps definiert werden. Außerdem wird die Auswahl, welche Besuche eine APP verfolgt, von einer einzelnen granularitätseinstellung behandelt, anstatt einzelne Orte zu abonnieren.
 

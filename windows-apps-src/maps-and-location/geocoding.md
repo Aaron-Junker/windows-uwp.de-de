@@ -2,18 +2,21 @@
 title: Durchführen der Geocodierung und umgekehrten Geocodierung
 description: In dieser Anleitung erfahren Sie, wie Sie die-Methoden der maplocationfinder-Klasse im Windows. Services. Maps-Namespace durch Aufrufen der Methoden der maplocationfinder-Klasse in geografische Standorte (Geocodierung) konvertieren und geografische Orte in Straßenadressen (Reverse-Geocodierung) konvertieren.
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
-ms.date: 07/02/2018
+ms.date: 10/20/2020
 ms.topic: article
 keywords: Windows 10, UWP, Geocodierung, map, Location
 ms.localizationpriority: medium
-ms.openlocfilehash: 011a901e2baa9ff4b8f4a5bd8018b9b7790b1852
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 992a9902081f0655885383ef90ea02ed1e79f13a
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162564"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297709"
 ---
 # <a name="perform-geocoding-and-reverse-geocoding"></a>Durchführen der Geocodierung und umgekehrten Geocodierung
+
+> [!NOTE]
+> [**Mapcontrol**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) -und Map-Dienste erfordern einen Zuordnungs Authentifizierungsschlüssel, der als [**mapservicetoken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken)bezeichnet wird. Weitere Informationen zum Abrufen und Festlegen eines Kartenauthentifizierungsschlüssels finden Sie unter [Anfordern eines Kartenauthentifizierungsschlüssels](authentication-key.md).
 
 In dieser Anleitung erfahren Sie, wie Sie die-Methoden der maplocationfinder-Klasse im [**Windows. Services. Maps**](/uwp/api/Windows.Services.Maps) -Namespace durch Aufrufen der Methoden der [**maplocationfinder**](/uwp/api/Windows.Services.Maps.MapLocationFinder) -Klasse in geografische Standorte (Geocodierung) konvertieren und geografische Orte in Straßenadressen (Reverse-Geocodierung) konvertieren.
 
