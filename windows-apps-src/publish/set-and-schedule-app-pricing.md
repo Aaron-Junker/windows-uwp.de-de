@@ -1,88 +1,88 @@
 ---
-Description: Wählen Sie den Grundpreis für eine App, und planen Sie Preisänderungen. Sie können diese Optionen auch für bestimmte Märkte anpassen.
+Description: Wählen Sie den Basispreis für eine APP aus, und planen Sie Preisänderungen. Sie können diese Optionen auch für bestimmte Märkte anpassen.
 title: Festlegen und Planen von App-Preisen
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, UWP, Preise, App-Preise, App-Preis, Apps verkaufen, Preis ändern, benutzerdefinierter Preis, Preis, Preise, Kosten, Grundpreise überschreiben, formfreier Preis, formfrei
+keywords: Windows 10, UWP, Preise, App-Preise, App-Preis, verkaufte apps, Preisänderung, benutzerdefinierter Preis, Preis, Preise, Kosten, Basispreis außer Kraft setzen, Freiform Preis, frei Hand Form
 ms.localizationpriority: medium
 ms.openlocfilehash: 451a22ffef2d8062de7bf7d29d921db7197987b5
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210496"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92253810"
 ---
 # <a name="set-and-schedule-app-pricing"></a>Festlegen und Planen von App-Preisen
 
-Im Abschnitt **Preise** der Seite [Preise und Verfügbarkeit](set-app-pricing-and-availability.md) können Sie den Grundpreis für eine App auswählen. Sie können auch [Preisänderungen planen](#schedule-price-changes), um Datum und Uhrzeit anzugeben, an dem bzw. zu der sich der Preis der App ändern soll. Darüber hinaus haben Sie die Option, den [Grundpreis für den angegebenen Markt zu überschreiben](#override-base-price-for-specific-markets), indem Sie ein neues Preisniveau oder einen formfreien Preis in der lokalen Währung des Markts auswählen.
+Im Abschnitt **Preise** der Seite [Preise und Verfügbarkeit](set-app-pricing-and-availability.md) können Sie den Basispreis für eine App auswählen. Sie können auch [Preisänderungen planen](#schedule-price-changes) , um das Datum und die Uhrzeit anzugeben, zu denen sich der Preis Ihrer APP ändern sollte. Außerdem haben Sie die Möglichkeit, [den Basispreis für bestimmte Märkte außer Kraft zu setzen](#override-base-price-for-specific-markets), indem Sie entweder einen neuen Tarif auswählen oder einen kostenlosen Preis in der lokalen Währung des Marktes eingeben.
 
 > [!NOTE]
-> Obwohl dieses Thema auf Apps verweist, verwendet die Preisauswahl für die Add-On-Übermittlungen das gleiche Verfahren. Beachten Sie, dass für [Abonnement-Add-ons](../monetize/enable-subscription-add-ons-for-your-app.md)der von Ihnen gewählte Basispreis nicht jemals gesteigert werden kann (ob durch Ändern des Basispreises oder durch Planen einer Preisänderung), obwohl er möglicherweise gesenkt wird.
+> Obwohl sich dieses Thema auf apps bezieht, verwendet die Preis Auswahl für Add-on-Übermittlungen denselben Prozess. Beachten Sie, dass für [Abonnement-Add-ons](../monetize/enable-subscription-add-ons-for-your-app.md)der von Ihnen gewählte Basispreis nicht jemals gesteigert werden kann (ob durch Ändern des Basispreises oder durch Planen einer Preisänderung), obwohl er möglicherweise gesenkt wird.
 
 ## <a name="base-price"></a>Grundpreis
 
-Wenn Sie den **Grundpreis** für Ihre App auswählen, wird dieser Preis in sämtlichen Märkten verwendet, in denen Ihre App verkauft wird, es sei denn, Sie überschreiben den Grundpreis für jeden Markt.
+Wenn Sie den **Basispreis**ihrer App auswählen, wird dieser Preis in jedem Markt verwendet, an dem Ihre APP verkauft wird, es sei denn, Sie überschreiben den Basispreis in einem beliebigen Markt.
 
-Sie können den **Grundpreis** auf **Kostenlos** festlegen oder ein verfügbares Preisniveau festlegen. Dadurch wird der Preis in allen Ländern festgelegt, in denen Sie Ihre App verteilen möchten. Das Preisniveau beginnt bei 0,99 USD und steigt schrittweise an (1,10 US-Dollar, 1,29 USD usw.). Die Schritte werden mit steigender Preishöhe größer. 
+Sie können den **Basispreis** auf **Free**festlegen oder einen verfügbaren Tarif auswählen, der den Preis in allen Ländern festlegt, in denen Sie Ihre APP verteilen möchten. Die Preisstufen beginnen bei 0,99 USD, wobei zusätzliche Ebenen in zunehmenden Inkrementen verfügbar sind (1,09 USD, 1,19 USD usw.). Die Inkremente steigen im Allgemeinen, wenn der Preis höher ist. 
 
 > [!NOTE]
-> Diese Preisniveaus gelten auch für Add-Ons. 
+> Diese Preisstufen gelten auch für Add-ons. 
 
-Jedes Preisniveau hat einen entsprechenden Wert in jeder der über 60 vom Store angebotenen Währungen. Diese Werte sollten Ihnen helfen, Ihre Apps weltweit zu vergleichbaren Preisen zu verkaufen. Sie können den Grundpreis in einer beliebigen Währung auswählen, für verschiedene Märkte wird automatisch der entsprechende Wert verwendet. Beachten Sie, dass wir gelegentlich den entsprechenden Wert für einen bestimmten Markt aufgrund der Änderungen der Umrechnungskurse der Währung anpassen.
+Jede Preisstufe verfügt über einen entsprechenden Wert in jeder der mehr als 60 Währungen, die vom Geschäft angeboten werden. Diese Werte sollten Ihnen helfen, Ihre Apps weltweit zu vergleichbaren Preisen zu verkaufen. Sie können Ihren Basispreis in beliebiger Währung auswählen, und wir verwenden automatisch den entsprechenden Wert für verschiedene Märkte. Beachten Sie, dass wir den entsprechenden Wert in einem bestimmten Markt manchmal anpassen können, um Änderungen an den Währungs Umrechnungs Sätzen zu berücksichtigen.
 
-Klicken Sie im Abschnitt **Preise** auf **Umrechnungstabelle anzeigen**, um die entsprechenden Preise in allen Währungen anzuzeigen. Hier wird für jedes Preisniveau auch eine ID-Nummer angezeigt, die Sie bei Verwendung der [Microsoft Store-Übermittlungs-API](../monetize/manage-app-submissions.md#price-tiers) benötigen. Sie können auf **Herunterladen** klicken, um eine Kopie der Tabelle mit den Preisniveaus als CSV-Datei herunterzuladen.
+Klicken Sie im Abschnitt **Preise** auf **Konvertierungstabelle anzeigen** , um die entsprechenden Preise in allen Währungen anzuzeigen. Dadurch wird auch eine ID-Nummer angezeigt, die mit den einzelnen Tarifen verknüpft ist, die Sie benötigen, wenn Sie die Microsoft Store Übermittlungs- [API](../monetize/manage-app-submissions.md#price-tiers) verwenden, um Preise einzugeben. Sie können auf **herunterladen** klicken, um eine Kopie der Price Tier-Tabelle als CSV-Datei herunterzuladen.
 
-Beachten Sie, dass das von Ihnen ausgewählte Preisniveau u. U. eine Verkaufs- oder Mehrwertsteuer enthält, die Kunden bezahlen müssen. Weitere Informationen über Ihre steuerlichen Verpflichtungen in ausgewählten Märkten finden Sie in den [Steuerinformationen zu kostenpflichtigen Apps](tax-details-for-paid-apps.md). Lesen Sie außerdem die [Überlegungen zu Preisen für die einzelnen Märkte](define-market-selection.md#price-considerations-for-specific-markets).
+Beachten Sie, dass das von Ihnen ausgewählte Preisniveau u. U. eine Verkaufs- oder Mehrwertsteuer enthält, die Kunden bezahlen müssen. Weitere Informationen über Ihre steuerlichen Verpflichtungen in ausgewählten Märkten finden Sie in den [Steuerinformationen zu kostenpflichtigen Apps](tax-details-for-paid-apps.md). Sie sollten auch die [Preis Überlegungen für bestimmte Märkte](define-market-selection.md#price-considerations-for-specific-markets)überprüfen.
 
 > [!NOTE]
 > Wenn Sie im Bereich " [Sichtbarkeit](choose-visibility-options.md#discoverability) " unter **dieses Produkt verfügbar machen, aber nicht auffähieren** auswählen, können Sie keine Preise für ihre Übermittlung festlegen (da **niemand die APP** abrufen kann, es sei denn, Sie verwenden einen Aktions Code, um die App kostenlos abzurufen).
 
-## <a name="schedule-price-changes"></a>Planen von Preisänderungen
+## <a name="schedule-price-changes"></a>Preisänderungen planen
 
-Sie können optional eine oder mehrere Preisänderungen planen, wenn sich der Grundpreis Ihrer App an einem bestimmten Datum und zu einer bestimmten Uhrzeit ändern soll. 
+Sie können optional eine oder mehrere Preisänderungen planen, wenn der Basispreis Ihrer APP zu einem bestimmten Termin (Datum und Uhrzeit) geändert werden soll. 
 
 > [!IMPORTANT]
-> Preisänderungen werden nur für Kunden mit Windows 10-Geräten, (einschließlich Xbox One), angezeigt. Wenn Ihre zuvor veröffentlichte App frühere Betriebssystemversionen unterstützt, gelten die Preisänderungen nicht für diese Kunden. Für Kunden unter Windows 8 wird die App immer zum **Grundpreis** (und nicht zum marktspezifischen Preis) angeboten, auch wenn Sie zusätzliche Preisänderungen planen. Für Kunden, die sich auf Windows 8.1 und Windows Phone 8,1 und früher befinden, wird die APP immer mit der ersten Preisstufe für den Markt des Kunden angeboten.
+> Preisänderungen werden nur Kunden auf Windows 10-Geräten (einschließlich Xbox) angezeigt. Wenn Ihre zuvor veröffentlichte App frühere Betriebssystemversionen unterstützt, gelten die Preisänderungen nicht für diese Kunden. Für Kunden unter Windows 8 wird die APP immer zu Ihrem **Basispreis** (und keinem marktspezifischen Preis) angeboten, auch wenn Sie zusätzliche Preisänderungen planen. Für Kunden, die sich auf Windows 8.1 und Windows Phone 8,1 und früher befinden, wird die APP immer mit der ersten Preisstufe für den Markt des Kunden angeboten.
 
-Klicken Sie auf **Schedule a price change**, um die Optionen für Preisänderungen anzuzeigen. Wählen Sie das Preisniveau aus, das Sie verwenden möchten (oder geben einen formfreien Preis für die Außerkraftsetzungen des Grundpreises für Einzelmärkte an), und wählen Sie anschließend das Datum, die Uhrzeit und die Zeitzone aus.
+Klicken Sie auf **Preisänderung planen** , um die Optionen für die Preisänderung anzuzeigen. Wählen Sie den Tarif aus, den Sie verwenden möchten (oder geben Sie einen frei Format Preis für die außer Kraft setzungen von Preis Überschreibungen für Einzelmärkte ein), und wählen Sie dann Datum, Uhrzeit und Zeitzone aus.
 
 Sie können erneut auf **Preisänderung planen** klicken, um so viele nachfolgende Änderungen wie gewünscht zu planen.
 
 > [!NOTE]
-> Geplante Preisänderungen funktionieren anders als [Sonderpreise](put-apps-and-add-ons-on-sale.md). Wenn Sie eine App als Sonderangebot bereitstellen, wird der Preis durchgestrichen im Store angezeigt, und Kunden sind in der Lage, die App zum Verkaufspreis während des Zeitraums zu kaufen, den Sie ausgewählt haben. Nachdem das Sonderangebot abgelaufen ist, gilt der Verkaufspreises nicht mehr und die App ist erneut zum Grundpreis erhältlich (oder einem anderen Preis, den Sie für diese Markt angegeben haben, falls zutreffend).
+> Geplante Preisänderungen funktionieren anders als die [Verkaufspreise](put-apps-and-add-ons-on-sale.md). Wenn Sie eine APP auf den Markt bringen, wird der Preis mit einem durchgestrichen im Store angezeigt, und Kunden können die APP beim Verkaufspreis während des gewählten Zeitraums erwerben. Nachdem der Verkaufs Zeitraum abgelaufen ist, gilt der Verkaufspreis nicht mehr, und die APP wird zum Basispreis (falls zutreffend) verfügbar gemacht (bzw. einen anderen Preis, den Sie für diesen Markt festgelegt haben).
 >
-> Mit einer geplanten Preisänderung können Sie den Preis nach oben oder unten anpassen. Die Änderung erfolgt am angegebenen Datum, wird jedoch nicht als Angebot im Store oder in einem bestimmten Format angezeigt. Die App hat nur einen neuen Grundpreis. 
+> Bei einer geplanten Preisänderung können Sie den Preis an einen höheren oder niedrigeren Preis anpassen. Die Änderung erfolgt an dem von Ihnen angegebenen Datum, wird aber nicht als Verkauf im Store angezeigt, oder es wird eine spezielle Formatierung angewendet. die APP hat nur einen neuen Preis. 
 
 
-## <a name="override-base-price-for-specific-markets"></a>Außerkraftsetzung für Grundpreise für die einzelnen Märkte
+## <a name="override-base-price-for-specific-markets"></a>Überschreiben des Basispreises für bestimmte Märkte
 
-Die oben ausgewählten Optionen gelten standardmäßig für alle Märkte, in denen Ihre App angeboten wird. Sie können optional den Preis für einen oder mehrere Märkte ändern, entweder durch die Auswahl eines anderen Preisniveaus oder die Angabe eines formfreien Preises in der lokalen Währung des Markts.
+Standardmäßig gelten die oben ausgewählten Optionen für alle Märkte, in denen Ihre APP angeboten wird. Optional können Sie den Preis für einen oder mehrere Märkte ändern, indem Sie entweder eine andere Preisstufe auswählen oder einen kostenlosen Preis in der lokalen Währung des Marktes eingeben.
 
 > [!IMPORTANT]
 > Wenn Ihre zuvor veröffentlichte APP Windows 8 unterstützt, sehen diese Kunden immer die APP zu Ihrem **Basispreis**, auch wenn Sie einen anderen Preis für Ihren Markt auswählen.
 
-Um den Preis für die einzelnen Märkte zu ändern, klicken Sie auf **Select markets for base price override**. Das Popupfenster **Market selection** wird mit allen Märkten angezeigt, in denen Sie Ihre App verfügbar machen möchten. (Wenn Sie Märkte im Abschnitt **Märkte** ausgeschlossen haben, sind diese Märkte nicht verfügbar.) 
+Um den Preis für bestimmte Märkte zu ändern, klicken Sie auf **Märkte für Basispreis außer Kraft setzen**. Das Popup Fenster für die **Markt Auswahl** wird angezeigt, in dem alle Märkte aufgelistet werden, in denen Sie Ihre APP zur Verfügung stellen. (Wenn Sie Märkte im Abschnitt " **Märkte** " ausgeschlossen haben, sind diese Märkte nicht verfügbar.) 
 
-Sie können den Grundpreis für einen Markt zu einem bestimmten Zeitpunkt oder für eine Gruppe von Märkten zusammen überschreiben. Danach können Sie den Grundpreis für einen zusätzlichen Markt (oder eine Gruppe zusätzlicher Märkte) überschreiben, indem Sie **Select markets for base price override** erneut auswählen und die unten beschriebene Schritte wiederholen. Um den neuen Preis für einen ausgewählten Markt (oder eine Marktgruppe) zu entfernen, klicken Sie auf **Entfernen**.
+Sie können den Basispreis für einen Markt gleichzeitig oder für eine Gruppe von Märkten überschreiben. Nachdem Sie dies getan haben, können Sie den Basispreis für einen zusätzlichen Markt (oder eine zusätzliche Marktgruppe) überschreiben, indem Sie die Option **zum Überschreiben von Märkten für den Basispreis auswählen** und den unten beschriebenen Prozess wiederholen. Um die Außerkraftsetzungs Preise zu entfernen, die Sie für einen Markt (oder eine Marktgruppe) angegeben haben, klicken Sie auf **Entfernen**.
 
 
-### <a name="override-the-base-price-for-a-single-market"></a>Überschreiben des Grundpreises für einen einzelnen Markt
+### <a name="override-the-base-price-for-a-single-market"></a>Den Basispreis für einen einzelnen Markt außer Kraft setzen
 
-Um den Preis für einen einzigen Markt zu ändern, wählen Sie diesen aus und klicken Sie auf **Erstellen**. Sie sehen dann die gleichen Optionen für **Grundpreis** und **Schedule a price change** wie oben beschrieben, aber die getroffene Auswahl gilt spezifisch für diesen Markt. Da Sie den Grundpreise nur für einen Markt überschrieben, werden die Preisniveaus in der lokalen Währung des Markts angezeigt. Klicken Sie im Abschnitt Preise auf **Umrechnungstabelle anzeigen**, um die entsprechenden Preise in allen Währungen anzuzeigen. 
+Um den Preis nur für einen Markt zu ändern, wählen Sie ihn aus, und klicken Sie auf **Erstellen**. Dann sehen Sie denselben **Basispreis** und **planen eine Preis Änderungs** Option, wie oben beschrieben, aber die von Ihnen vorgestellte Auswahl ist spezifisch für diesen Markt. Da Sie den Basispreis nur für einen Markt überschreiben, werden die Preisstufen in der lokalen Währung dieses Markts angezeigt. Sie können auf **Konvertierungstabelle anzeigen** klicken, um die entsprechenden Preise in allen Währungen anzuzeigen. 
 
-Das Überschreiben des Grundpreises für einen einzelnen Markt gibt Ihnen außerdem die Möglichkeit, einen formfreien Preis Ihrer Wahl in der lokalen Währung des Markts einzugeben. Auch wenn es nicht den standardmäßigen Preisniveaus entspricht, können Sie jeden gewünschten Preis angeben (in einem minimalen und maximalen Bereich). Dieser Preis wird nur für Kunden unter Windows 10 (einschließlich Xbox) auf dem ausgewählten Markt verwendet. 
+Wenn Sie den Basispreis für einen einzelnen Markt außer Kraft setzen, haben Sie auch die Möglichkeit, einen kostenlosen Preis Ihrer Wahl in der lokalen Währung des Landes einzugeben. Sie können einen beliebigen Preis eingeben (innerhalb eines minimalen und maximalen Bereichs), auch wenn er keinem der Standardpreis Stufen entspricht. Dieser Preis wird nur für Kunden auf Windows 10 (einschließlich Xbox) auf dem ausgewählten Markt verwendet. 
 
 > [!IMPORTANT]
-> Durch einen formfreien Preis wird der Preis nur angepasst (auch wenn sich der Umrechnungskurs ändert), wenn Sie ein Update mit einem neuen Preis übermitteln. 
+> Wenn Sie einen kostenlosen Preis eingeben, wird dieser Preis nicht angepasst (auch wenn sich die Konvertierungsraten ändern), es sei denn, Sie übermitteln ein Update mit einem neuen Preis. 
 
-### <a name="override-the-base-price-for-a-market-group"></a>Überschreiben des Grundpreises für eine Marktgruppe
+### <a name="override-the-base-price-for-a-market-group"></a>Überschreiben des Basispreises für eine Marktgruppe
 
-Um den Grundpreise für mehrere Märkte zu überschreiben, erstellen Sie eine *Marktgruppe*. Dazu wählen Sie die Märkte aus, die Sie aufnehmen möchten, und geben Sie optional einen Namen für die Gruppe ein. (Dieser Name dient nur zu Referenzzwecken und ist nicht für alle Kunden sichtbar.) Wenn Sie fertig sind, klicken Sie auf **Erstellen**. Sie sehen dann die gleichen Optionen für **Grundpreis** und **Schedule a price change** wie oben beschrieben, aber die getroffene Auswahl gilt spezifisch für diese Marktgruppe. Beachten Sie, dass formfreie Preise nicht mit Marktgruppen verwendet werden können. Sie müssen ein verfügbares Preisniveau auswählen.
+Um den Basispreis für mehrere Märkte zu überschreiben, erstellen Sie eine *Marktgruppe*. Wählen Sie hierzu die Märkte aus, die Sie einschließen möchten, und geben Sie dann optional einen Namen für die Gruppe ein. (Dieser Name dient nur zu Ihrer Referenz und ist für keine Kunden sichtbar.) Wenn Sie fertig sind, klicken Sie auf **Erstellen**. Dann sehen Sie denselben **Basispreis** und **planen eine Preis Änderungs** Option, wie oben beschrieben, aber die von Ihnen festgelegten Entscheidungen sind für diese Marktgruppe spezifisch. Beachten Sie, dass Freiform Preise nicht mit Markt Gruppen verwendet werden können. Sie müssen einen verfügbaren Tarif auswählen.
 
-Um die Märkte, die in einer Marktgruppe enthalten sind zu ändern, klicken Sie auf den Namen der Marktgruppe und fügen Sie alle Märkte hinzu oder entfernen Sie diese und klicken Sie auf **OK**, um Ihre Änderungen zu speichern. 
+Um die in einer Marktgruppe enthaltenen Märkte zu ändern, klicken Sie auf den Namen der Marktgruppe, fügen Sie alle gewünschten Märkte hinzu, oder entfernen Sie Sie, und klicken Sie dann auf **OK** , um die Änderungen zu speichern. 
 
 > [!NOTE]
-> Ein Markt kann nicht Mitglied mehrerer Marktgruppen innerhalb des Abschnitts **Preise** sein.
+> Ein Markt kann nicht mehreren Markt Gruppen im **Preis** Abschnitt angehören.
 
 
 

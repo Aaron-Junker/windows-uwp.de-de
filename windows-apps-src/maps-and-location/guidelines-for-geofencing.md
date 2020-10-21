@@ -2,21 +2,21 @@
 description: Weitere Informationen finden Sie unter Richtlinien und bewährte Methoden für die Verwendung von Geofencing, um geografisch kontextbezogene Umgebungen in Ihrer APP
 title: Richtlinien für Geofencing-Apps
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
-ms.date: 02/08/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: Windows 10, UWP, map, Location, Geofencing
 ms.localizationpriority: medium
-ms.openlocfilehash: 76cbedaef76ff1403e1d6718c96303da6ad2ee67
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e4d033673acbb4a8b7fd558d9e6c4f8329d79bf5
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162534"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297700"
 ---
 # <a name="guidelines-for-geofencing-apps"></a>Richtlinien für Geofencing-Apps
 
-
-
+> [!NOTE]
+> [**Mapcontrol**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) -und Map-Dienste erfordern einen Zuordnungs Authentifizierungsschlüssel, der als [**mapservicetoken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken)bezeichnet wird. Weitere Informationen zum Abrufen und Festlegen eines Kartenauthentifizierungsschlüssels finden Sie unter [Anfordern eines Kartenauthentifizierungsschlüssels](authentication-key.md).
 
 **Wichtige APIs**
 

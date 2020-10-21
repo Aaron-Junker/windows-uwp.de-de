@@ -2,21 +2,21 @@
 title: Einrichten eines Geofence
 description: Richten Sie einen Geofence-Bereich in Ihrer App ein, und erfahren Sie, wie Sie Benachrichtigungen im Vordergrund und Hintergrund behandeln.
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
-ms.date: 02/08/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: Windows 10, UWP, map, Location, Geofence, Benachrichtigungen
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b991930ba37cfaec333146bf7a95b4c9a9c8b98
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ca6dad1a96f37e3a308ad10c84293a8d49fb0329
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171704"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297588"
 ---
 # <a name="set-up-a-geofence"></a>Einrichten eines Geofence
 
-
-
+> [!NOTE]
+> [**Mapcontrol**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) -und Map-Dienste erfordern einen Zuordnungs Authentifizierungsschlüssel, der als [**mapservicetoken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken)bezeichnet wird. Weitere Informationen zum Abrufen und Festlegen eines Kartenauthentifizierungsschlüssels finden Sie unter [Anfordern eines Kartenauthentifizierungsschlüssels](authentication-key.md).
 
 Richten Sie einen [**Geofence**](/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence) in der APP ein, und erfahren Sie, wie Sie Benachrichtigungen im Vordergrund und im Hintergrund behandeln.
 
@@ -313,7 +313,7 @@ So lauschen Sie auf ein Geofence-Ereignis im Hintergrund
 
 ### <a name="step-1-register-for-geofence-state-change-events"></a>Schritt 1: Durchführen der Registrierung für Ereignisse zur Änderung des Geofence-Zustands
 
-Fügen Sie im App-Manifest auf der Registerkarte **Deklarationen** eine Deklaration für eine Hintergrundaufgabe zur Position hinzu. Gehen Sie dazu wie folgt vor:
+Fügen Sie im App-Manifest auf der Registerkarte **Deklarationen** eine Deklaration für eine Hintergrundaufgabe zur Position hinzu. Gehen Sie dazu folgendermaßen vor:
 
 -   Fügen Sie eine Deklaration des Typs **Hintergrundaufgaben**hinzu.
 -   Legen Sie einen Eigenschaftentyp von **Location**fest.
