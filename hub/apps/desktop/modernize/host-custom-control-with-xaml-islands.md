@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e516d887f0bfc668551c0a43b135e98765f3300f
-ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
+ms.openlocfilehash: cdfdf9b7396943e3ee5345249f38a35d48beb128
+ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671539"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92253627"
 ---
 # <a name="host-a-custom-winrt-xaml-control-in-a-wpf-app-using-xaml-islands"></a>Hosten eines benutzerdefinierten WinRT-XAML-Steuerelements in einer WPF-App unter Verwendung von XAML Islands
 
@@ -52,13 +52,11 @@ Befolgen Sie vor dem Einstieg diese Anweisungen, um ein WPF-Projekt zu erstellen
 
 4. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf Ihr WPF-Projekt, und wählen Sie **NuGet-Pakete verwalten** aus.
 
-5. Stellen Sie sicher, dass im Fenster **NuGet-Paket-Manager** die Einstellung **Vorabversion einbeziehen** ausgewählt ist.
-
-6. Wählen Sie die Registerkarte **Durchsuchen** aus, suchen Sie nach dem Paket [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost), und installieren Sie die neueste stabile Version. Dieses Paket enthält alles, was Sie benötigen, um das **WindowsXamlHost**-Steuerelement zum Hosten eines WinRT-XAML-Steuerelements zu verwenden, einschließlich weiterer zugehöriger NuGet-Pakete.
+5. Wählen Sie die Registerkarte **Durchsuchen** aus, suchen Sie nach dem Paket [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost), und installieren Sie die neueste stabile Version. Dieses Paket enthält alles, was Sie benötigen, um das **WindowsXamlHost**-Steuerelement zum Hosten eines WinRT-XAML-Steuerelements zu verwenden, einschließlich weiterer zugehöriger NuGet-Pakete.
     > [!NOTE]
     > Windows Forms-Apps müssen das Paket [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost) verwenden.
 
-7. Konfigurieren Sie Ihre Projektmappe für eine Zielplattform, beispielsweise x86 oder x64. Benutzerdefinierte WinRT-XAML-Steuerelemente werden nicht in Projekten unterstützt, für die als Ziel **Beliebige CPU** festgelegt ist.
+6. Konfigurieren Sie Ihre Projektmappe für eine Zielplattform, beispielsweise x86 oder x64. Benutzerdefinierte WinRT-XAML-Steuerelemente werden nicht in Projekten unterstützt, für die als Ziel **Beliebige CPU** festgelegt ist.
 
     1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappenknoten, und wählen Sie **Eigenschaften** -> **Konfigurationseigenschaften** -> **Konfigurations-Manager** aus.
     2. Klicken Sie unter **Aktive Projektmappenplattform** auf **Neu**. 

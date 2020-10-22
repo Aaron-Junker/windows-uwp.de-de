@@ -10,12 +10,12 @@ ms.custom: RS5
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: f7035017b1b1bfe878e4bd390fcefbe2bf3a6be5
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: c2f2053a02f6ddb2f955597f1a25cc58d220e115
+ms.sourcegitcommit: cbdfac0e2d8bead6c225e815e7d6dffe1f5ef864
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636560"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92344972"
 ---
 # <a name="color"></a>Farbe
 
@@ -414,7 +414,7 @@ Jetzt können alle Ressourcen, Designs und benutzerdefinierten Farben in einem e
 
 :::row:::
     :::column:::
-![Abbildung eines Kontrasts](images/color/illo-contrast.svg)
+![Veranschaulichung von Kontrast](images/color/illo-contrast.svg)
     :::column-end:::
     :::column span="2":::
 **Kontraste**
@@ -427,7 +427,7 @@ Wenn Sie sich über die Farben in Ihrer Anwendung Gedanken machen, sollte Barrie
 
 :::row:::
     :::column:::
-![Veranschaulichung von Kontrast](images/color/illo-lighting.svg)
+![Veranschaulichung von Beleuchtung](images/color/illo-lighting.svg)
     :::column-end:::
     :::column span="2":::
 **Beleuchtung**
@@ -438,7 +438,7 @@ Beachten Sie, dass eine Veränderung der Umgebungsbeleuchtung sich auf die Benut
 
 :::row:::
     :::column:::
-![Veranschaulichung von Kontrast](images/color/illo-colorblindness.svg)
+![Veranschaulichung von Farbenblindheit](images/color/illo-colorblindness.svg)
     :::column-end:::
     :::column span="2":::
 **Farbenblindheit**

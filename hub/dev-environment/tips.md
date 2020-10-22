@@ -9,16 +9,24 @@ ms.technology: windows-nodejs
 keywords: Microsoft, Windows, Developer, Tipps, Leistung, WSL
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: 1135be4797893a74e398e69fcbc1c43d60e9fdb9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7d02e3b46d6938532bbc7024e8840b976b2715a6
+ms.sourcegitcommit: 861c381a31e4a5fd75f94ca19952b2baaa2b72df
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172664"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92171150"
 ---
 # <a name="tips-for-improving-performance-and-development-workflows"></a>Tipps zum Verbessern von Leistungs und Entwicklungsworkflows
 
 Wir haben einige Tipps gesammelt, von denen wir hoffen, dass Sie Ihnen dabei helfen, Ihren Workflow effizienter und angenehmer zu gestalten. Haben Sie zusätzliche Tipps, die Sie teilen möchten? Reichen Sie oben über die Schaltfläche „Bearbeiten“ oder unten über die Schaltfläche „Feedback“ ein Pull Request ein, und wir fügen es eventuell zur Liste hinzu.
+
+> [!NOTE]
+> Ob Leistungsprobleme im Zusammenhang mit der Entwicklung unter Windows 10 auftreten, wie z. B:
+> - Entwicklungstools (z. B. Compiler, Linker usw.), die unter Windows langsamer laufen als erwartet.
+> - Laufzeitplattformen (z. B. Node, .NET, Python), die unter Windows langsamer laufen als auf anderen Plattformen.
+> - Ihre Apps haben Leistungsprobleme im Zusammenhang mit Datei-E/A, Netzwerken, Prozesserstellung. 
+> 
+> Informieren Sie uns, indem Sie im [Windows Developer (WinDev) Issues-Repository](https://github.com/microsoft/WinDev) ein Problem melden.
 
 ## <a name="use-shortcuts-to-open-a-project-in-vs-code-or-windows-file-explorer"></a>Verwenden von Verknüpfungen, um ein Projekt in VS Code oder im Windows-Datei-Explorer zu öffnen
 

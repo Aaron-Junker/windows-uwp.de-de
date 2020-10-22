@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, häufig, gestellte, fragen, faq
 ms.localizationpriority: medium
-ms.openlocfilehash: d9b402a1f140126314bc10f69880a9f01af2b2a4
-ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
+ms.openlocfilehash: b1a05dbb666b33739a083c517395359a64fee9df
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89643801"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297652"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Häufig gestellte Fragen zu C++/WinRT
 Hier finden Sie Antworten auf Fragen zur Erstellung und Nutzung von Windows-Runtime-APIs mit [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
@@ -186,7 +186,7 @@ Am Ende des [Codebeispiels für die Navigationsansicht](../design/controls-and-p
 
 In der Headerdatei `winrt/Windows.UI.Xaml.Media.Animation.h` wird eine Methode mit dem Namen **GetCurrentTime** deklariert, und `windows.h` (über `winbase.h`) definiert ein Makro mit dem Namen **GetCurrentTime**. Bei einem Konflikt zwischen den beiden erzeugt der C++-Compiler „*Fehler C4002: Zu viele Argumente für den Aufruf des funktionsähnlichen Makros "GetCurrentTime*“.
 
-Entsprechend wird in `winrt/Windows.Globalization.h` eine Methode mit dem Namen **TRY** deklariert, und in `afx.h` wird ein Makro mit dem Namen **GetCurrentTime** definiert. Bei einem Konflikt zwischen den beiden erzeugt der C++-Compiler „*Fehler C2334: Unerwartete(s) Token vor "{"; sichtbarer Funktionstext wird übersprungen*“.
+Entsprechend wird in `winrt/Windows.Globalization.h` eine Methode mit dem Namen **TRY** deklariert, und in `afx.h` wird ein Makro mit dem Namen **TRY** definiert. Bei einem Konflikt zwischen den beiden erzeugt der C++-Compiler „*Fehler C2334: Unerwartete(s) Token vor "{"; sichtbarer Funktionstext wird übersprungen*“.
 
 Um eines oder beide Probleme zu beheben, können Sie wie folgt vorgehen.
 

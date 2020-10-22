@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, projiziert, Projizierung, behandeln, Ereignis, Delegat
 ms.localizationpriority: medium
-ms.openlocfilehash: fefc7f72fb91a61ae924ac082dcac6d3cf9c044b
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 884f61e877b1d7ff9f5c4567dfc329d59610b773
+ms.sourcegitcommit: 14e79119aacc75382de9940fb5abaf7a618ad843
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750126"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92210604"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Behandeln von Ereignissen mithilfe von Delegaten in C++/WinRT
 
@@ -34,7 +34,7 @@ Ein einfaches Beispiel ist die Behandlung des Klickereignisses einer Schaltfläc
 
 ```xaml
 // MainPage.xaml
-<Button x:Name="Button" Click="ClickHandler">Click Me</Button>
+<Button x:Name="myButton" Click="ClickHandler">Click Me</Button>
 ```
 
 ```cppwinrt
@@ -48,9 +48,14 @@ void MainPage::ClickHandler(
     IInspectable const& /* sender */,
     RoutedEventArgs const& /* args */)
 {
-    Button().Content(box_value(L"Clicked"));
+    myButton().Content(box_value(L"Clicked"));
 }
 ```
+
+Der obige Code stammt aus dem **Blank App (C++/WinRT)** -Projekt in Visual Studio. Der Code `myButton()` ruft eine generierte Accessorfunktion [XQuery] auf, die das **Button**-Element zurückgibt, das wir *myButton* genannt haben. Wenn Sie das `x:Name`-Objekt dieses **Button**-Elements ändern, ändert sich auch der Name der generierten Accessorfunktion.
+
+> [!NOTE]
+> In diesem Fall ist die Ereignisquelle (das Objekt, das das Ereignis auslöst) das **Button**-Element namens *myButton*. Und der Ereignisempfänger (das Objekt, das das Ereignis behandelt) ist eine Instanz von **MainPage**. Weitere Informationen zur Verwaltung der Lebensdauer von Ereignisquellen und Ereignisempfängern finden Sie weiter unten in diesem Thema.
 
 Alternativ kannst du auch imperativ eine Memberfunktion für die Behandlung eines Ereignisses registrieren, anstatt eine Deklaration im Markup zu verwenden. Es ist vielleicht nicht auf den ersten Blick ersichtlich, aber das Argument für den Aufruf [**ButtonBase::Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) im folgenden Code ist eine Instanz des Delegaten [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler). In diesem Fall verwenden wir die Konstruktorüberladung **RoutedEventHandler**, die ein Objekt und eine Pointer-to-Member-Funktion akzeptiert.
 
@@ -60,7 +65,7 @@ MainPage::MainPage()
 {
     InitializeComponent();
 
-    Button().Click({ this, &MainPage::ClickHandler });
+    myButton().Click({ this, &MainPage::ClickHandler });
 }
 ```
 
@@ -80,7 +85,7 @@ MainPage::MainPage()
 {
     InitializeComponent();
 
-    Button().Click( MainPage::ClickHandler );
+    myButton().Click( MainPage::ClickHandler );
 }
 void MainPage::ClickHandler(
     IInspectable const& /* sender */,
@@ -130,9 +135,9 @@ MainPage::MainPage()
 {
     InitializeComponent();
 
-    Button().Click([this](IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+    myButton().Click([this](IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
     {
-        Button().Content(box_value(L"Clicked"));
+        myButton().Content(box_value(L"Clicked"));
     });
 }
 ```
@@ -148,7 +153,7 @@ MainPage::MainPage()
     {
         sender.as<winrt::Windows::UI::Xaml::Controls::Button>().Content(box_value(L"Clicked"));
     };
-    Button().Click(click_handler);
+    myButton().Click(click_handler);
     AnotherButton().Click(click_handler);
 }
 ```

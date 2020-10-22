@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 51786f907da5ddf0b4a52b8c9bea61a8756c78d9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ba9d84ee10990e7d187e2faa01b458e02893b95e
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163504"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92193000"
 ---
 # <a name="planning-for-performance"></a>Planen der Leistung
 
@@ -177,7 +177,7 @@ Weitere Informationen finden Sie unter diesen Ressourcen und Tools zur Profilers
 
 -   [Windows Performance Analyzer](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))
 -   [Windows Performance Toolkit](/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10))
--   [Analysieren der Leistung mithilfe von Visual Studio-Diagnosetools](/visualstudio/profiling/profiling-tools?view=vs-2015)
+-   [Analysieren der Leistung mithilfe von Visual Studio-Diagnosetools](/visualstudio/profiling/profiling-feature-tour)
 -   Die „//build/“-Sitzung [XAML-Leistung](https://channel9.msdn.com/Events/Build/2015/3-698)
 -   Die „//build/“-Sitzung [Neue XAML-Tools in Visual Studio 2015](https://channel9.msdn.com/Events/Build/2015/2-697)
 

@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Parallelität, async, asynchron, Asynchronität
 ms.localizationpriority: medium
-ms.openlocfilehash: a10962740d3f723a855914595ea02d0688ff9707
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8dc98176e61ea6e03b1d822e05f8e0656a34e4b3
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170374"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297756"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>Parallelität und asynchrone Vorgänge mit C++/WinRT
 
@@ -158,7 +158,7 @@ int main()
 
 Im obigen Beispiel gibt **RetrieveBlogFeedAsync** einen **IAsyncOperationWithProgress** zurück, der sowohl einen Status- als auch einen Rückgabewert enthält. Wir können andere Aufgaben durchführen, während **RetrieveBlogFeedAsync** den Feed abruft. Anschließend rufen wir zum Blockieren **get** für dieses asynchrone Vorgangsobjekt auf, warten auf seinen Abschluss und rufen dann die Ergebnisse des Vorgangs ab.
 
-Wenn Sie einen Windows-Runtime-Typ asynchron zurückgeben, sollten Sie einen [**IAsyncOperation&lt;TResult&gt;**](/uwp/api/windows.foundation.iasyncoperation-1) oder [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](/uwp/api/windows.foundation.iasyncoperationwithprogress-2) zurückgeben. Qualifiziert sind alle Erst- oder Drittanbieter-Runtime-Klassen oder Typen, die an oder von eine(r) Windows-Runtime-Funktion übergeben werden können (z. B. `int` oder **winrt::hstring**). Der Compiler gibt einen Fehler vom Typ *WinRT-Typ erforderlich* aus, wenn Sie versuchen, einen dieser asynchronen Vorgangstypen mit einem Nicht-Windows-Runtime-Typ zu verwenden.
+Wenn Sie einen Windows-Runtime-Typ asynchron zurückgeben, sollten Sie einen [**IAsyncOperation&lt;TResult&gt;**](/uwp/api/windows.foundation.iasyncoperation-1) oder [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](/uwp/api/windows.foundation.iasyncoperationwithprogress-2) zurückgeben. Qualifiziert sind alle Erst- oder Drittanbieter-Runtime-Klassen oder Typen, die an oder von eine(r) Windows-Runtime-Funktion übergeben werden können (z. B. `int` oder **winrt::hstring**). Der Compiler weist Sie mit einer Fehlermeldung darauf hin, dass *T ein WinRT-Typ sein muss* aus, wenn Sie versuchen, einen dieser asynchronen Vorgangstypen mit einem Nicht-Windows-Runtime-Typ zu verwenden.
 
 Wenn eine Coroutine nicht mindestens eine `co_await`-Anweisung enthält, muss sie mindestens eine `co_return`- oder `co_yield`-Anweisung enthalten, um sich als Coroutine zu qualifizieren. Es gibt Fälle, in denen Ihre Coroutine einen Wert zurückgeben kann, ohne Asynchronität zu verursachen, d. h. ohne den Kontext zu blockieren oder zu wechseln. Hier sehen Sie ein Beispiel, bei dem zu diesem Zweck (beim zweiten oder bei einem nachfolgenden Aufruf) ein Wert zwischengespeichert wird.
 

@@ -1,5 +1,5 @@
 ---
-Description: Gute Symbole harmonieren mit der Typografie und der übrigen Gestaltungssprache. Sie verwenden keine Metaphern und geben einfach und schnell nur die erforderlichen Informationen weiter.
+description: Gute Symbole harmonieren mit der Typografie und der übrigen Gestaltungssprache. Sie verwenden keine Metaphern und geben einfach und schnell nur die erforderlichen Informationen weiter.
 title: Symbole
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
@@ -11,12 +11,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 66f9d166d0e20f82f495f98b26deceff8e136cc5
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 75de051bd569981d7dca6b33e8e7389c3186a09d
+ms.sourcegitcommit: cbdfac0e2d8bead6c225e815e7d6dffe1f5ef864
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636640"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92344987"
 ---
 # <a name="icons-for-windows-apps"></a>Symbole für Windows-Apps
 
@@ -47,13 +47,12 @@ Symbole können Platz sparen, aber wann ist eine Verwendung sinnvoll?
 
 :::row:::
     :::column:::
-        ![Screenshot, der die Symbole für Ausschneiden, Kopieren, Einfügen und Speichern zeigt.](images/do.svg)
-        ![Standardbild für Symbole](images/icons/icons-standard.svg)<br>
+        ![Erste Abbildung eines grünen Balkens mit einem grünen Häkchen und dem Wort „Do“](images/do.svg) ![Screenshot der Symbole „Ausschneiden“, „Kopieren“, „Einfügen“ und „Speichern“](images/icons/icons-standard.svg)<br>
 
 Verwende ein Symbol für Aktionen wie Ausschneiden, Kopieren, Einfügen und Speichern oder für Navigationselemente in einem Navigationsmenü.
     :::column-end:::
     :::column:::
-        ![Nicht empfohlen](images/dont.svg) ![Konzeptbild für Symbole](images/icons/icons-concept.svg)<br>
+        ![Erste Abbildung eines roten Balkens mit einem roten Kreuz und dem Wort „Don't“](images/dont.svg) ![Screenshot der Symbole „Bildung“, „Touch“ und „Kalender“](images/icons/icons-concept.svg)<br>
 
 Verwende ein Symbol, wenn für das gewünschte Konzept bereits eines vorhanden ist. (Ob bereits ein Symbol vorhanden ist, erfährst du in der Segoe-Symbolliste.)
     :::column-end:::
@@ -61,14 +60,12 @@ Verwende ein Symbol, wenn für das gewünschte Konzept bereits eines vorhanden i
 
 :::row:::
     :::column:::
-        ![Screenshot eines einfachen und vertrauten Warenkorbsymbols.](images/do.svg)
-        ![Symbol für Warenkorb](images/icons/icon-shopping-cart.svg)<br>
+        ![Zweite Abbildung eines grünen Balkens mit einem grünen Häkchen und dem Wort „Do“](images/do.svg) ![Screenshot eines einfachen und vertrauten Einkaufswagen-Symbols](images/icons/icon-shopping-cart.svg)<br>
 
 Verwende ein Symbol, wenn dessen Bedeutung für den Benutzer leicht nachvollziehbar und es auch bei geringer Größe gut erkennbar ist.
     :::column-end:::
     :::column:::
-        ![Screenshot eine komplexen und nicht vertrauten Warenkorbsymbols.](images/dont.svg)
-        ![Konzeptbild für Symbole](images/icons/icon-bad-example.png)<br>
+        ![Zweite Abbildung eines roten Balkens mit einem roten Kreuz und dem Wort „Don't“](images/dont.svg) ![Screenshot eines komplexen und eher unbekannten Einkaufswagen-Symbols](images/icons/icon-bad-example.png)<br>
 
 Verwende kein Symbol, wenn dessen Bedeutung nicht eindeutig oder zur Verdeutlichung eine komplexe Form erforderlich ist.
     :::column-end:::

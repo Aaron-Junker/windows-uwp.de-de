@@ -1,5 +1,4 @@
 ---
-author: knicholasa
 description: Z-Tiefe oder relative Tiefe und Schatten sind zwei Möglichkeiten, Tiefeninformationen in Ihre App einzubeziehen, um den Benutzern ein natürliches und effizientes Fokussieren zu ermöglichen.
 title: Z-Tiefe und Schatten für Windows-Apps
 template: detail.hbs
@@ -9,12 +8,12 @@ ms.custom: 19H1
 keywords: Windows 10, UWP
 pm-contact: chigy
 ms.localizationpriority: medium
-ms.openlocfilehash: ffabb494d10f802668e57ebb9cfd122ac5304d46
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 72cffc86d71b34de2c4c9292221889ee4f0bc1d5
+ms.sourcegitcommit: 5684340ad29a81939c6a93017b5a39ccbe1f6040
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219383"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92184218"
 ---
 # <a name="z-depth-and-shadow"></a>Z-Tiefe und Schatten
 

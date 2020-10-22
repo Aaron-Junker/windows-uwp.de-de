@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, erstellen, Ereignis
 ms.localizationpriority: medium
-ms.openlocfilehash: c70ad8efcb8bb84272a044824d8058813ed30def
-ms.sourcegitcommit: a93a309a11cdc0931e2f3bf155c5fa54c23db7c3
+ms.openlocfilehash: 66691b1cd75a27e683261c12b7a3056c53160079
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646233"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297624"
 ---
 # <a name="author-events-in-cwinrt"></a>Erstellen von Ereignissen in C++/WinRT
 
@@ -146,7 +146,7 @@ Beachten Sie die Änderung an der **OnPointerPressed**-Methode. Jetzt wird bei j
 
 Wenn dein Ereignis innerhalb einer binären Anwendungsschnittstelle (Application Binary Interface, ABI) zugänglich sein muss (etwa zwischen einer Komponente und der zugehörigen verwendenden Anwendung), muss dein Ereignis einen Windows-Runtime-Delegattyp verwenden. Im obigen Beispiel wird der Windows-Runtime-Delegattyp [**Windows::Foundation::EventHandler\<T\>** ](/uwp/api/windows.foundation.eventhandler) verwendet. [**TypedEventHandler\<TSender, TResult\>** ](/uwp/api/windows.foundation.eventhandler) ist ein weiteres Beispiel für einen Windows-Runtime-Delegattyp.
 
-Da die Typparameter für diese beiden Delegattypen die ABI durchlaufen müssen, müssen die Typparameter ebenfalls Windows-Runtime-Typen sein. Dies schließt Laufzeitklassen von Windows und Drittanbietern sowie primitive Typen wie Zahlen und Zeichenfolgen mit ein. Solltest du diese Einschränkung vergessen, tritt ein Compilerfehler mit dem Hinweis auf, dass ein*WinRT-Typ erforderlich ist* .
+Da die Typparameter für diese beiden Delegattypen die ABI durchlaufen müssen, müssen die Typparameter ebenfalls Windows-Runtime-Typen sein. Dies schließt Laufzeitklassen von Windows und Drittanbietern sowie primitive Typen wie Zahlen und Zeichenfolgen mit ein. Sollten Sie diese Einschränkung vergessen, tritt ein Compilerfehler mit dem Hinweis auf, dass *T ein WinRT-Typ sein muss*.
 
 Im Folgenden finden Sie ein Beispiel in Form von Codeauflistungen. Beginnen Sie mit den Projekten **ThermometerWRC** und **ThermometerCoreApp**, die Sie zuvor in diesem Thema erstellt haben, und bearbeiten Sie den Code in diesen Projekten so, dass er dem Code in diesen Auflistungen entspricht.
 

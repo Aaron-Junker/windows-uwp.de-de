@@ -1,5 +1,5 @@
 ---
-description: In diesem Tutorial wird veranschaulicht, wie Sie UWP XAML-Benutzeroberflächen hinzufügen, MSIX-Pakete erstellen und weitere moderne Komponenten in Ihre WPF-App integrieren.
+description: In diesem Tutorial wird veranschaulicht, wie Sie die Auswahl des Datums für einen Ausgabenbericht auf einem touchfähigen Gerät vereinfachen.
 title: Hinzufügen eines UWP-CalendarView-Steuerelements mithilfe von XAML Islands
 ms.topic: article
 ms.date: 06/27/2019
@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: e7e09069e11fc14d0a47086bc2594edc975c11d9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 53a87f5803a6e4707b2dc6b86b32b7db003e59ef
+ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161454"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92133043"
 ---
 # <a name="part-3-add-a-uwp-calendarview-control-using-xaml-islands"></a>Teil 3: Hinzufügen eines UWP-CalendarView-Steuerelements mithilfe von XAML Islands
 
