@@ -1,15 +1,15 @@
 ---
 title: Installieren und Verwalten von Anwendungen mit dem Tool „winget“
 description: Mit dem Befehlszeilentool „winget“ können Entwickler Anwendungen auf Windows 10-Computern suchen, installieren, aktualisieren, entfernen und konfigurieren.
-ms.date: 04/28/2020
+ms.date: 10/22/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c918dccb2873f47a16669c195c47180e2129476
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0dbd2aa76fa6a9b787e73c0bbd5ce7e56b5e6a4a
+ms.sourcegitcommit: c105eb358bf693d34dfdd7a44255af69c1d5a3cd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168744"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92434462"
 ---
 # <a name="use-the-winget-tool-to-install-and-manage-applications"></a>Installieren und Verwalten von Anwendungen mit dem Tool „winget“
 
@@ -106,6 +106,10 @@ if %ERRORLEVEL% EQU 0 Echo Terminal installed successfully.   %ERRORLEVEL%
 ## <a name="missing-tools"></a>Fehlende Tools
 
 Wenn das [Community-Repository](../package/repository.md) Ihr Tool oder Ihre Anwendung nicht enthält, übermitteln Sie ein Paket an das [Repository](https://github.com/microsoft/winget-pkgs). Wenn Sie das gesuchte Tool hinzufügen, steht es in Zukunft Ihnen und allen anderen Benutzern zur Verfügung.
+
+## <a name="customize-winget-settings"></a>Anpassen der winget-Einstellungen
+
+Sie können die **winget**-Befehlszeilenumgebung konfigurieren, indem Sie die Datei **settings.json** ändern. Weitere Informationen finden Sie unter [https://aka.ms/winget-settings](https://aka.ms/winget-settings). Beachten Sie, dass sich die Einstellungen noch in einem experimentellen Zustand befinden und noch nicht für die Vorschauversion des Tools fertig gestellt sind.
 
 ## <a name="open-source-details"></a>Informationen zu Open Source
 
