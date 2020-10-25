@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7633ff363a00c90a576ad5799ef0d2b048cd5cdd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 769d786078edd68af2e1e57bdb869e7aa4099405
+ms.sourcegitcommit: 88f3992462c88a0c5c6e85b942705bae5e4a1aac
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166854"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499605"
 ---
 # <a name="dependency-properties-overview"></a>Übersicht über Abhängigkeitseigenschaften
 
@@ -30,7 +30,7 @@ Der Zweck von Abhängigkeitseigenschaften besteht darin, es zu ermöglichen, den
 - Vorlagen zur mehrfachen Verwendung, z. B. Ressourcen und Stile
 - Werte, die aufgrund von Beziehungen mit anderen Elementen in der Elementstruktur bekannt sind (übergeordnete und untergeordnete Elemente).
 
-Eine Abhängigkeitseigenschaft repräsentiert oder unterstützt ein spezifisches Feature des Programmiermodells zum Definieren einer Windows-Runtime-App mit XAML für die UI und C#, Microsoft Visual Basic oder Visual C++-Komponentenerweiterungen (C++/CX) für den Code. Zu den Features zählen:
+Eine Abhängigkeitseigenschaft repräsentiert oder unterstützt ein spezifisches Feature des Programmiermodells zum Definieren einer Windows-Runtime-App mit XAML für die UI und C#, Microsoft Visual Basic oder Visual C++-Komponentenerweiterungen (C++/CX) für den Code. Diese Features umfassen:
 
 - Datenbindung
 - Stile
@@ -198,16 +198,16 @@ Alle [**DependencyObject**](/uwp/api/Windows.UI.Xaml.DependencyObject)-Instanzen
 
 Die Threadingmerkmale von [**DependencyObject**](/uwp/api/Windows.UI.Xaml.DependencyObject) sind relevant, da dies in der Regel bedeutet, dass nur im Benutzeroberflächenthread ausgeführter Code den Wert einer Abhängigkeitseigenschaft ändern oder auch nur lesen kann. Threadingprobleme können in typischem Benutzeroberflächencode in der Regel vermieden werden, wenn **async**-Muster und Hintergrundworkerthreads richtig verwendet werden. Threadingprobleme im Zusammenhang mit **DependencyObject** entstehen in der Regel nur, wenn Sie eigene **DependencyObject**-Typen definieren und versuchen, diese als Datenquellen oder für andere Szenarien zu verwenden, für die ein **DependencyObject** nicht notwendigerweise geeignet ist.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 ### <a name="conceptual-material"></a>Konzeptionelles Material
 
 - [Benutzerdefinierte Abhängigkeitseigenschaften](custom-dependency-properties.md)
 - [Übersicht über angefügte Eigenschaften](attached-properties-overview.md)
 - [Datenbindung im Detail](../data-binding/data-binding-in-depth.md)
-- [Storyboardanimationen](../design/motion/storyboarded-animations.md)
+- [Storyboarding-Animationen](../design/motion/storyboarded-animations.md)
 - [Erstellen von Windows-Runtime-Komponenten](/previous-versions/windows/apps/hh441572(v=vs.140))
-- [XAML-Beispiel für Benutzer und benutzerdefinierte Steuerelemente](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e)
+- [XAML-Beispiel für Benutzer und benutzerdefinierte Steuerelemente](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20user%20and%20custom%20controls%20sample)
 
 ## <a name="apis-related-to-dependency-properties"></a>APIs für Abhängigkeitseigenschaften
 
