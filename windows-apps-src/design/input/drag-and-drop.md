@@ -6,18 +6,18 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ab8d696ddb1a4ef9e3dc3549754cbf51fc91374
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 9a0005ecf7d51cc6b08bc5cc61350489839d568f
+ms.sourcegitcommit: 047004e2bf100e319d134c18518062bf7f3efb5d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220543"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92763104"
 ---
 # <a name="drag-and-drop"></a>Drag &amp; Drop
 
 Drag & Drop ist eine intuitive Methode zum Übertragen von Daten in einer Anwendung oder zwischen Anwendungen auf dem Windows-Desktop. Mithilfe von Drag & Drop kann der Benutzerdaten zwischen Anwendungen oder innerhalb einer Anwendung mithilfe einer Standard Bewegung übertragen (drücken Sie-Hold-und-Pan mit dem Finger oder drücken und Schwenken mit einer Maus oder einem Tablettstift).
 
-> **Wichtige APIs**: [Kerzen Eigenschaft](/uwp/api/windows.ui.xaml.uielement.candrag), [AllowDrop (Eigenschaft](/uwp/api/windows.ui.xaml.uielement.allowdrop) ) 
+> **Wichtige APIs** : [Kerzen Eigenschaft](/uwp/api/windows.ui.xaml.uielement.candrag), [AllowDrop (Eigenschaft](/uwp/api/windows.ui.xaml.uielement.allowdrop) ) 
 
 Die Zieh Quelle, bei der es sich um die Anwendung oder den Bereich handelt, in der die Zieh Bewegung ausgelöst wird, stellt die zu übertragenden Daten bereit, indem ein Datenpaket Objekt gefüllt wird, das Standarddaten Formate enthalten kann, einschließlich Text, RTF, HTML, Bitmaps, Speicherelementen oder benutzerdefinierten Datenformaten. Die Quelle gibt auch die Art der unterstützten Vorgänge an: kopieren, verschieben oder verknüpfen. Wenn der Zeiger freigegeben wird, tritt Drop auf. Das Ablage Ziel, bei dem es sich um die Anwendung oder den Bereich unterhalb des Zeigers handelt, verarbeitet das Datenpaket und gibt den Typ des ausgeführten Vorgangs zurück.
 
@@ -37,7 +37,7 @@ Im folgenden finden Sie eine Übersicht darüber, was Sie tun müssen, um Drag &
 
 ## <a name="enable-dragging"></a>Ziehen aktivieren
 
-Legen Sie die Eigenschaft " [**Kerzen**](/uwp/api/windows.ui.xaml.uielement.candrag) " auf " **true**" fest, um das ziehen für ein Element zu aktivieren. Dadurch wird das-Element und die darin enthaltenen Elemente im Fall von Auflistungen wie ListView-Draggable angezeigt.
+Legen Sie die Eigenschaft " [**Kerzen**](/uwp/api/windows.ui.xaml.uielement.candrag) " auf " **true** " fest, um das ziehen für ein Element zu aktivieren. Dadurch wird das Element – und die darin enthaltenen Elemente im Fall von Auflistungen wie ListView – Draggable.
 
 Stellen Sie sich vor, was es dragfähig ist. Benutzer möchten nicht alles in Ihre APP ziehen, sondern nur bestimmte Elemente, wie z. b. Bilder oder Text. 
 
@@ -92,9 +92,15 @@ Bei der Toucheingabe erfordern das Ziehen eines [**UI-Elements**](/uwp/api/Windo
 
 ## <a name="designate-an-item-in-a-listview-or-gridview-as-a-folder"></a>Festlegen eines Elements in einer ListView oder GridView als Ordner
 
-Sie können ein [**ListViewItem**](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem) oder [**GridViewItem**](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem) als Ordner festlegen. Dies ist besonders hilfreich für TreeView- und Datei-Explorer-Szenarien. Setzen Sie hierzu für das Element die [**AllowDrop**](/uwp/api/windows.ui.xaml.uielement.allowdrop)-Eigenschaft auf **True**. 
+Sie können ein [**ListViewItem**](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem) oder [**GridViewItem**](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem) als Ordner festlegen. Dies ist besonders hilfreich für TreeView- und Datei-Explorer-Szenarien. Setzen Sie hierzu für das Element die [**AllowDrop**](/uwp/api/windows.ui.xaml.uielement.allowdrop)-Eigenschaft auf **True** . 
 
 Das System zeigt automatisch die entsprechenden Animationen zum Ablegen in einen Ordner anstelle eines Nicht-Ordner-Elements an. Der App-Code muss für das Ordnerelement (sowie das Nicht-Ordner-Element) auch weiterhin das Ereignis [**Drop**](/uwp/api/windows.ui.xaml.uielement.drop) beinhalten, damit die Datenquelle aktualisiert und das abgelegte Element im Zielordner hinzugefügt wird.
+
+## <a name="enable-drag-and-drop-reordering-within-listviews"></a>Neuanordnen von Drag & Drop innerhalb von ListViews aktivieren
+
+[**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView)s unterstützt die Drag-basierte Neuanordnung standardmäßig mit einer API, die der in diesem Artikel beschriebenen **canDrop** -API sehr ähnelt. Sie fügen mindestens die Eigenschaften **AllowDrop** und **canreorderitems** hinzu.
+
+Weitere Informationen finden Sie unter [**listviewbase. canreorderitems**](/uwp/api/windows.ui.xaml.controls.listviewbase.canreorderitems) .
 
 ## <a name="implementing-custom-drag-and-drop"></a>Implementieren von benutzerdefiniertem Drag & Drop
 
