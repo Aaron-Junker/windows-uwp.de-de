@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 09db3caefccfce3ff110cb034efa27ff53c4154a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 3d4bb343f2a8535fae60e19cd417099a99ae852d
+ms.sourcegitcommit: 6c1d2dd99221242d5d09f17e99f87302143c6180
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218223"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644322"
 ---
 # <a name="guidelines-for-app-settings"></a>Richtlinien für App-Einstellungen
 
@@ -82,7 +82,7 @@ Wenn Ihre App Benutzern die Auswahl des Farbmodus ermöglicht, machen Sie diese 
 - Dunkel
 - Standard (Windows)
 
-Wir empfehlen außerdem, einen Hyperlink zur Seite „Farben” der Windows-Einstellungen-App hinzuzufügen. Dort können Benutzer auf den aktuellen App-Standardmodus zugreifen und ihn ändern. Verwenden Sie die Zeichenfolge „Windows-Farbeinstellungen“ als Text für den Link.
+Wir empfehlen außerdem, einen Hyperlink zur Seite „Farben” der Windows-Einstellungen-App hinzuzufügen. Dort können Benutzer auf den aktuellen App-Standardmodus zugreifen und ihn ändern. Verwenden Sie die Zeichenfolge „Windows-Farbeinstellungen“ als Text für den Link und `ms-settings:colors` für den URI.
 
 ![Abschnitt für die Modusauswahl](images/appsettings_mode.png)
 
