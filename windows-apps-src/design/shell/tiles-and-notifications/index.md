@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie, wie Sie mithilfe von Kacheln, Signalen, Popups und Benachrichtigungen Einstiegspunkte in Ihre App bereitstellen und Benutzer auf dem neuesten Stand halten können.
+description: Erfahren Sie, wie Sie mithilfe von Kacheln, Signalen, Popups und Benachrichtigungen Einstiegspunkte in Ihre App bereitstellen und Benutzer auf dem neuesten Stand halten können.
 title: Kacheln, Signale und Benachrichtigungen
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 580edca578a0d518d89b5d2fdb30c9304be35cef
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: dbcc4138c0f09d3ad620e4d1c192dd63bb522052
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636620"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033683"
 ---
 # <a name="tiles-badges-and-notifications-for-windows-apps"></a>Kacheln, Signale und Benachrichtigungen für Windows-Apps
  
@@ -32,7 +32,7 @@ Eine Kachel ist die Darstellung einer App im Startmenü. Jede Windows-App verfü
 <p>Eine <em>Popupbenachrichtigung</em> ist eine Benachrichtigung, die Ihre App über ein Popup-UI-Element namens <em>Popup</em> (oder <em>Banner</em>) an den Benutzer sendet. Die Benachrichtigung kann unabhängig davon gelesen werden, ob sich der Benutzer in Ihrer App befindet oder nicht.</p>
 <p>Eine <em>Pushbenachrichtigung</em> oder <em>unformatierte Benachrichtigung</em> ist eine Benachrichtigung, die über den Windows-Pushbenachrichtigungsdienst (Windows Push Notification Services, WNS) oder eine Hintergrundaufgabe an Ihre App gesendet wird. Ihre App kann auf diese Benachrichtigungen entweder durch Benachrichtigen des Benutzers reagieren, das etwas von Interesse geschehen ist (über Signal-, Kachel- oder Popupaktualisierungen), oder sie können die gewünschte Reaktion selbst festlegen.</p>
 
- 
+ 
 ## <a name="tiles"></a>Tiles
 | Artikel | Beschreibung |
 | --- | --- |

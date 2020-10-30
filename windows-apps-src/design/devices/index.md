@@ -1,5 +1,5 @@
 ---
-Description: Wenn Sie sich mit den Geräten vertraut machen, die Windows-Apps unterstützen, können Sie für jeden Formfaktor eine optimale Benutzerumgebung bereitstellen.
+description: Wenn Sie sich mit den Geräten vertraut machen, die Windows-Apps unterstützen, können Sie für jeden Formfaktor eine optimale Benutzerumgebung bereitstellen.
 title: Überlegungen zur Benutzeroberfläche für Windows-Geräte
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
@@ -8,12 +8,12 @@ keywords: Gerät, Eingabe, Interaktion
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d32fd2ba2ee35c19aeaa66d2c6b2c1f81be2a59
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 2267a0a704d0f637b60e38cdaa50b1afa2ec3f9a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217833"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030543"
 ---
 #  <a name="ui-considerations-for-windows-devices"></a>Überlegungen zur Benutzeroberfläche für Windows-Geräte
 
@@ -131,7 +131,7 @@ Typische Gerätefunktionen
 
 Smartphones sind mittlerweile die am häufigsten genutzten Geräte und bieten auch bei begrenzter Bildschirmfläche und eingeschränkten Eingabeverfahren viele Möglichkeiten. Smartphones sind in zahlreichen verschiedenen Größen verfügbar. Größere Handys werden als Phablets bezeichnet. App-Benutzeroberflächen auf Phablets ähneln den Benutzeroberflächen auf Smartphones, aber die größere Bildschirmfläche von Phablets ermöglicht einige wichtige Änderungen bei der Nutzung von Inhalten.
 
-Mit Continuum für Smartphones, einem neuen Angebot für kompatible mobile Windows 10-Geräte, können Benutzer ihre Smartphones an einen Bildschirm anschließen und sogar mit Maus und Tastatur auf Ihren Smartphones wie auf einem Laptop arbeiten. (Weitere Informationen finden Sie im [Artikel zu Continuum für Smartphones](/windows-hardware/design/device-experiences/continuum-phone).)
+Mit Continuum für Smartphones, einem neuen Angebot für kompatible mobile Windows 10-Geräte, können Benutzer ihre Smartphones an einen Bildschirm anschließen und sogar mit Maus und Tastatur auf Ihren Smartphones wie auf einem Laptop arbeiten. (Weitere Informationen finden Sie im [Artikel zu Continuum für Smartphones](/windows-hardware/design/device-experiences/continuum-phone).)
 
 Bildschirmgrößen
 -   4 bis 5 Zoll bei Smartphones
@@ -164,7 +164,7 @@ Typische Gerätefunktionen
 -   Bewegungssensoren
 -   Positionssensoren
 
- 
+ 
 
 ## <a name="surface-hub-devices"></a>Surface Hub-Geräte
 
@@ -197,7 +197,7 @@ Typische Gerätefunktionen
 -   Kamera
 -   Mikrofon
 
- 
+ 
 
 ## <a name="windows-iot-devices"></a>Windows IoT-Geräte
 

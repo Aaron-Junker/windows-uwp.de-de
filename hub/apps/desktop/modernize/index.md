@@ -1,17 +1,17 @@
 ---
-Description: Fügen Sie moderne XAML-Benutzeroberflächen hinzu, erstellen Sie MSIX-Pakete, und binden Sie andere moderne Komponenten in Ihre Desktopanwendung ein.
+description: Fügen Sie moderne XAML-Benutzeroberflächen hinzu, erstellen Sie MSIX-Pakete, und binden Sie andere moderne Komponenten in Ihre Desktopanwendung ein.
 title: Modernisieren Ihrer Desktop-Apps für Windows
 ms.topic: article
 ms.date: 10/02/2020
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b7c640e89f36dfcea6e0080cbbe3887e0231ddfc
-ms.sourcegitcommit: 27552ed7d3d889f50d8e01776a24b8d486a8d97c
+ms.openlocfilehash: 99bb68ff7d990b0b633df0c4efa2d8eafad759cd
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91958723"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031063"
 ---
 # <a name="modernize-your-desktop-apps"></a>Modernisieren Ihrer Desktop-Apps
 
