@@ -1,5 +1,5 @@
 ---
-Description: Verwenden Sie Cortana-Sprachbefehle, Spracherkennung und Sprachsynthese zum Integrieren von Sprache in Ihre Apps.
+description: Verwenden Sie Cortana-Sprachbefehle, Spracherkennung und Sprachsynthese zum Integrieren von Sprache in Ihre Apps.
 title: Spracherkennungsinteraktionen
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
 label: Speech interactions
@@ -8,12 +8,12 @@ keywords: Sprache, Stimme, Spracherkennung, natürliche Sprache, diktieren, Eing
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 94a93f9b1506d2b4dfcdad260bf86bf39c15d875
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d42802f4efb131f413b192f4e5f851f630ce4e57
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173344"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029863"
 ---
 # <a name="speech-interactions"></a>Spracherkennungsinteraktionen
 
@@ -24,7 +24,7 @@ Integrieren Sie Spracherkennung und Text-zu-Sprache (auch als Text-to-Speech, TT
 **TTS** TTS verwendet eine Sprachsynthese-Engine (Voice), um eine Text Zeichenfolge in gesprochene Wörter zu konvertieren. Bei der Eingabezeichenfolge kann es sich um einfachen, schlichten Text oder komplexere Speech Synthesis Markup Language (SSML) handeln. SSML stellt eine Standardmethode zum Steuern der Eigenschaften der Sprachausgabe bereit, z. B. Aussprache, Lautstärke, Stimmlage, Rate bzw. Geschwindigkeit und Betonung.
 
 **Weitere sprachbezogene Komponenten:** 
- **Cortana** in Windows-Anwendungen verwendet angepasste Sprachbefehle (gesprochen oder typisiert), um Ihre APP im Vordergrund zu starten (die APP hat den Fokus, als ob Sie über das Startmenü gestartet wurde) oder als Hintergrunddienst zu aktivieren (**Cortana** behält den Fokus, liefert jedoch Ergebnisse aus der APP). Weitere Informationen finden Sie in den [Cortana Voice Command-Richtlinien (VCD)](/cortana/voice-commands/vcd) , wenn Sie die APP-Funktionalität in der **Cortana** -Benutzeroberfläche
+ **Cortana** in Windows-Anwendungen verwendet angepasste Sprachbefehle (gesprochen oder typisiert), um Ihre APP im Vordergrund zu starten (die APP hat den Fokus, als ob Sie über das Startmenü gestartet wurde) oder als Hintergrunddienst zu aktivieren ( **Cortana** behält den Fokus, liefert jedoch Ergebnisse aus der APP). Weitere Informationen finden Sie in den [Cortana Voice Command-Richtlinien (VCD)](/cortana/voice-commands/vcd) , wenn Sie die APP-Funktionalität in der **Cortana** -Benutzeroberfläche
 
 ## <a name="speech-interaction-design"></a>Integrieren der Spracherkennung
 
@@ -94,7 +94,7 @@ Auf dem Bildschirm **Spracherkennung** können Sie:
 -   Den Text der Überschrift anpassen.
 -   Beispieltext für Benutzerbefehle bereitstellen.
 -   Geben Sie an, ob der Bildschirm **Gehört** angezeigt wird.
--   Lesen Sie die erkannte Zeichenfolge auf dem Bildschirm **Gehört**.
+-   Lesen Sie die erkannte Zeichenfolge auf dem Bildschirm **Gehört** .
 
 Hier sehen Sie ein Beispiel für den Ablauf der integrierten Erkennungsfunktion für eine Spracherkennung mit einer SRGS-definierten Einschränkung. In diesem Beispiel ist die Spracherkennung erfolgreich.
 
@@ -163,7 +163,7 @@ Eine benutzerdefinierte Grammatik ist eine von Ihnen entworfene und erstellte Gr
 
     -   Halten Sie jede Grammatik klein. Grammatiken, die weniger zu vergleichende Ausdrücke enthalten, bieten eine bessere Erkennungsgenauigkeit als größere Grammatiken mit vielen Ausdrücken. Es empfiehlt sich, anstelle einer einzigen Grammatik für die gesamte App mehrere kleinere Grammatiken für bestimmte Szenarien zu verwenden.
     -   Informieren Sie den Benutzer darüber, was er im jeweiligen App-Kontext sagen kann, und aktivieren bzw. deaktivieren Sie Grammatiken nach Bedarf.
-    -   Entwerfen Sie jede Grammatik so, dass der Benutzer einen Befehl auf verschiedene Arten sprechen kann. Sie können z. B. die **GARBAGE**-Regel verwenden, um Spracheingaben abzugleichen, die in Ihrer Grammatik nicht definiert sind. So kann der Benutzer zusätzliche Wörter verwenden, die für Ihre App keine Bedeutung haben, beispielsweise "gib mir", "und", "äähm", "vielleicht" usw.
+    -   Entwerfen Sie jede Grammatik so, dass der Benutzer einen Befehl auf verschiedene Arten sprechen kann. Sie können z. B. die **GARBAGE** -Regel verwenden, um Spracheingaben abzugleichen, die in Ihrer Grammatik nicht definiert sind. So kann der Benutzer zusätzliche Wörter verwenden, die für Ihre App keine Bedeutung haben, beispielsweise "gib mir", "und", "äähm", "vielleicht" usw.
     -   Verwenden Sie das [sapi:subset](/previous-versions/office/developer/speech-technologies/jj572474(v=office.14))-Element, um den Vergleich von Spracheingaben zu erleichtern. Dies ist eine Microsoft-Erweiterung der SRGS-Spezifikation, die den Abgleich von Teilausdrücken ermöglicht.
     -   Definieren Sie in Ihrer Grammatik nach Möglichkeit keine einsilbigen Ausdrücke. Die Erkennung funktioniert bei Ausdrücken mit zwei oder mehr Silben meist genauer.
     -   Vermeiden Sie Ausdrücke, die ähnlich klingen. Ausdrücke wie „Geld“, „Held“ und „fällt“ können das Erkennungsmodul z. B. verwirren und zu einer schlechten Erkennungsgenauigkeit führen.
@@ -179,7 +179,7 @@ Für eine kleine Liste von Wörtern und Ausdrücken oder eine Liste selten verwe
 
 Für größere Listen von Wörtern und Ausdrücken oder häufig verwendete Wörter und Ausdrücke können Sie separate Dokumente mit Aussprachewörterbüchern erstellen. Weitere Informationen dazu finden Sie unter [Info zu Lexika und phonetischen Alphabeten](/previous-versions/office/developer/speech-technologies/hh361646(v=office.14)).
 
-## <a name="testing"></a>Testen
+## <a name="testing"></a>Test
 
 Testen Sie die Genauigkeit der Spracherkennung und jede UI, die die Spracherkennung unterstützt, mit der Zielgruppe Ihrer App. So können Sie am besten herausfinden, wie effektiv die Sprachinteraktionsfunktion in Ihrer App ist. Erhalten Benutzer z. B. schlechte Erkennungsergebnisse, weil Ihre App nicht auf einen gängigen Ausdruck lauscht?
 
@@ -209,8 +209,8 @@ Beide Probleme können mithilfe von SSML anstelle von nur-Text als Eingabe für 
 | [Spracherkennung](speech-recognition.md) | Nutzen Sie die Spracherkennung als Eingabemöglichkeit oder zum Ausführen einer Aktion, eines Befehls oder einer Aufgabe. |
 | [Festlegen der Sprache für die Spracherkennung](specify-the-speech-recognizer-language.md) | Hier erfahren Sie, wie Sie eine installierte Sprache für die Spracherkennung auswählen. |
 | [Festlegen von benutzerdefinierten Erkennungseinschränkungen](define-custom-recognition-constraints.md) | Erfahren Sie, wie Sie benutzerdefinierte Einschränkungen für die Spracherkennung festlegen und verwenden können. |
-| [Ermöglichen kontinuierlicher Diktate](enable-continuous-dictation.md) |Hier erfahren Sie, wie Sie die Erfassung und Erkennung langer Spracheingaben für kontinuierliches Diktieren ermöglichen. |
-| [Verwalten von Problemen bei der Audioeingabe](manage-issues-with-audio-input.md) | Erfahren Sie, wie Sie Probleme mit der Genauigkeit der Spracherkennung behandeln, die auf die Qualität der Audioeingabe zurückzuführen sind. |
+| [Fortlaufende Diktat aktivieren](enable-continuous-dictation.md) |Hier erfahren Sie, wie Sie die Erfassung und Erkennung langer Spracheingaben für kontinuierliches Diktieren ermöglichen. |
+| [Verwalten von Problemen mit Audioeingaben](manage-issues-with-audio-input.md) | Erfahren Sie, wie Sie Probleme mit der Genauigkeit der Spracherkennung behandeln, die auf die Qualität der Audioeingabe zurückzuführen sind. |
 | [Festlegen von Timeouts für die Spracherkennung](set-speech-recognition-timeouts.md) | Legen Sie fest, wie lange eine Spracherkennung Stille oder nicht erkennbare Geräusche (Störgeräusche) ignoriert und weiterhin auf Spracheingabe wartet. |
 
 ## <a name="related-articles"></a>Verwandte Artikel
@@ -218,9 +218,9 @@ Beide Probleme können mithilfe von SSML anstelle von nur-Text als Eingabe für 
 * [Sprachinteraktionen]()
 * [Cortana-Interaktionen](./cortana-interactions.md)
 
- **Beispiele**
+ **Beispiele**
 
 * [Beispiel zu Spracherkennung und Sprachsynthese](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
- 
+ 
 
- 
+ 

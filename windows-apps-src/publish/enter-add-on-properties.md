@@ -1,17 +1,17 @@
 ---
-Description: Beim Übermitteln eines Add-Ons sind die Optionen auf der Seite „Eigenschaften“ hilfreich, um das Verhalten Ihres Add-Ons festzulegen, wenn es Kunden angeboten wird.
+description: Beim Übermitteln eines Add-Ons sind die Optionen auf der Seite „Eigenschaften“ hilfreich, um das Verhalten Ihres Add-Ons festzulegen, wenn es Kunden angeboten wird.
 title: Eingeben von Add-On-Eigenschaften
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Add-on, Eigenschaften, Abonnementzeitraum, Produktlebensdauer, Inhaltstyp, IAP, in-App-Käufe, in-App-Produkt
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d092f443ab643b74cdd0221c96540fed0c7d474
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d9e43529d9a54cc014e1a9596e766de9ebe89d00
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157994"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030503"
 ---
 # <a name="enter-add-on-properties"></a>Eingeben von Add-On-Eigenschaften
 
@@ -29,17 +29,17 @@ Die Felder, die auf dieser Seite angezeigt werden, variieren je nach Produkttyp 
 
 ## <a name="product-lifetime"></a>Produktlebensdauer
 
-Wenn Sie **Durable** für Ihren Produkttyp ausgewählt haben, wird hier die **Produktlebensdauer** angezeigt. Die standardmäßige **Produktlebenszeit** dauerhafter Add-Ons ist **Unbegrenzt**. Das Add-On läuft also niemals ab. Wenn Sie möchten, können Sie die **Produktlebensdauer** so ändern, dass das Add-on nach einer festgelegten Dauer (mit Optionen von 1-365 Tagen) abläuft.
+Wenn Sie **Durable** für Ihren Produkttyp ausgewählt haben, wird hier die **Produktlebensdauer** angezeigt. Die standardmäßige **Produktlebenszeit** dauerhafter Add-Ons ist **Unbegrenzt** . Das Add-On läuft also niemals ab. Wenn Sie möchten, können Sie die **Produktlebensdauer** so ändern, dass das Add-on nach einer festgelegten Dauer (mit Optionen von 1-365 Tagen) abläuft.
 
 
-## <a name="quantity"></a>Quantity (Menge)
+## <a name="quantity"></a>Menge
 
 Wenn Sie für Ihren Produkttyp **Store-verwaltete verwendbar** ausgewählt haben, wird hier die **Menge** angezeigt. Sie müssen eine Zahl zwischen 1 und 1000000 eingeben. Diese Menge wird Kunden gewährt, wenn sie Ihr Add-On erwerben, und vom Store wird der Betrag nachverfolgt, wenn die App die Nutzung des Add-Ons durch Kunden meldet.
 
 
 ## <a name="subscription-period"></a>Abonnementzeitraum
 
-Wenn Sie ein **Abonnement** für Ihren Produkttyp ausgewählt haben, wird hier der **Abonnementzeitraum** angezeigt. Wählen Sie eine Option aus, um anzugeben, wie häufig ein Kunde für das Abonnement in Rechnung gestellt wird. Die Standardoption ist **monatlich**, Sie können jedoch auch **drei Monate**, **6 Monate**, **jährlich**oder **24 Monate**auswählen.
+Wenn Sie ein **Abonnement** für Ihren Produkttyp ausgewählt haben, wird hier der **Abonnementzeitraum** angezeigt. Wählen Sie eine Option aus, um anzugeben, wie häufig ein Kunde für das Abonnement in Rechnung gestellt wird. Die Standardoption ist **monatlich** , Sie können jedoch auch **drei Monate** , **6 Monate** , **jährlich** oder **24 Monate** auswählen.
 
 > [!IMPORTANT]
 > Nachdem das Add-on veröffentlicht wurde, können Sie die Auswahl Ihres **Abonnementzeitraums** nicht mehr ändern.
@@ -47,7 +47,7 @@ Wenn Sie ein **Abonnement** für Ihren Produkttyp ausgewählt haben, wird hier d
 
 ## <a name="free-trial"></a>Kostenlose Testversion
 
-Wenn Sie ein **Abonnement** für Ihren Produkttyp ausgewählt haben, wird auch eine **Kostenlose Testversion** angezeigt. Die Standardoption ist **keine kostenlose Testversion.** Wenn Sie dies bevorzugen, können Sie es Kunden ermöglichen, das Add-on für einen festgelegten Zeitraum (entweder eine **Woche** oder **einen Monat**) kostenlos zu verwenden. 
+Wenn Sie ein **Abonnement** für Ihren Produkttyp ausgewählt haben, wird auch eine **Kostenlose Testversion** angezeigt. Die Standardoption ist **keine kostenlose Testversion.** Wenn Sie dies bevorzugen, können Sie es Kunden ermöglichen, das Add-on für einen festgelegten Zeitraum (entweder eine **Woche** oder **einen Monat** ) kostenlos zu verwenden. 
 
 > [!IMPORTANT]
 > Nachdem das Add-on veröffentlicht wurde, können Sie die Auswahl der **kostenlosen Testversion** nicht mehr ändern.
@@ -90,7 +90,7 @@ Um dieses Feld abzufragen, verwenden Sie die [storeproduct. Keywords](/uwp/api/w
 
 ### <a name="custom-developer-data"></a>Benutzerdefinierte Entwicklerdaten
 
-Sie können bis zu 3000 Zeichen in das **benutzerdefinierte Datenfeld für Entwickler** (früher als **Tag**bezeichnet) eingeben, um zusätzlichen Kontext für Ihr in-App-Produkt bereitzustellen. In den meisten Fällen ist dies in Form einer XML-Zeichenfolge, Sie können aber auch beliebige Elemente in diesem Feld eingeben. Ihre APP kann dann dieses Feld Abfragen, um ihren Inhalt zu lesen (obwohl die APP die Daten nicht bearbeiten kann und die Änderungen nicht zurückgegeben werden kann).
+Sie können bis zu 3000 Zeichen in das **benutzerdefinierte Datenfeld für Entwickler** (früher als **Tag** bezeichnet) eingeben, um zusätzlichen Kontext für Ihr in-App-Produkt bereitzustellen. In den meisten Fällen ist dies in Form einer XML-Zeichenfolge, Sie können aber auch beliebige Elemente in diesem Feld eingeben. Ihre APP kann dann dieses Feld Abfragen, um ihren Inhalt zu lesen (obwohl die APP die Daten nicht bearbeiten kann und die Änderungen nicht zurückgegeben werden kann).
 
 Angenommen, Sie haben ein Spiel, und Sie verkaufen ein Add-on, das dem Kunden den Zugriff auf zusätzliche Ebenen ermöglicht. Mit dem **benutzerdefinierten Entwickler Datenfeld** kann die APP Abfragen, welche Ebenen verfügbar sind, wenn ein Kunde dieses Add-on besitzt. Sie können den Wert jederzeit anpassen (in diesem Fall die Ebenen, die eingeschlossen werden), ohne Codeänderungen in der APP vornehmen oder die APP erneut einreichen zu müssen, indem Sie die Informationen im **benutzerdefinierten Entwickler Datenfeld** des Add-ons aktualisieren und anschließend eine aktualisierte Übermittlung für das Add-on veröffentlichen.
 
@@ -99,8 +99,8 @@ Um dieses Feld abzufragen, verwenden Sie die [storesku. customdeveloperdata](/uw
 > [!NOTE]
 > Das **benutzerdefinierte Entwickler Datenfeld** ist nicht für die Verwendung in Paketen verfügbar, die auf Windows 8 und Windows 8.1 abzielen.
 
- 
+ 
 
- 
+ 
 
- 
+ 

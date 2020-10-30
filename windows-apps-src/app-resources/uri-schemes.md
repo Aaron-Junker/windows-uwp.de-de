@@ -1,17 +1,17 @@
 ---
-Description: Es gibt mehrere URI (Uniform Resource Identifier)-Schemen, die Sie verwenden können, um auf Dateien aus Ihrem App Paket, dem App-Ordner oder der Cloud zu verweisen. Sie können auch ein URI-Schema verwenden, um auf Zeichenfolgen zu verweisen, die von den App-Ressourcendateien (.resw) geladen wurden.
+description: Es gibt mehrere URI (Uniform Resource Identifier)-Schemen, die Sie verwenden können, um auf Dateien aus Ihrem App Paket, dem App-Ordner oder der Cloud zu verweisen. Sie können auch ein URI-Schema verwenden, um auf Zeichenfolgen zu verweisen, die von den App-Ressourcendateien (.resw) geladen wurden.
 title: URI-Schemas
 template: detail.hbs
 ms.date: 10/16/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f5bf063c12362fe26e3810e6153b857b7c1a2e4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8806992ebb7f4335ca0a748c1b2bce4a6de39fae
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170524"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031544"
 ---
 # <a name="uri-schemes"></a>URI-Schemas
 
@@ -31,7 +31,7 @@ hier-part   = "//" authority path-abempty
             / path-empty
 ```
 
-Dies bedeutet, dass im Wesentlichen drei Komponenten für einen URI vorhanden sind. Unmittelbar nach den beiden Schrägstrichen des URI- *Schemas* ist eine Komponente (die leer sein kann) als *Autorität*bezeichnet. Und unmittelbar darauf folgt der *Pfad*. Wenn Sie den URI als Beispiel nehmen, lautet das Schema "" `http://www.contoso.com/welcome.png` `http://` , die Autorität ist " `www.contoso.com` ", und der Pfad ist " `/welcome.png` ". Ein weiteres Beispiel ist der URI `ms-appx:///logo.png` , bei dem die Autoritäts Komponenten leer sind und einen Standardwert annimmt.
+Dies bedeutet, dass im Wesentlichen drei Komponenten für einen URI vorhanden sind. Unmittelbar nach den beiden Schrägstrichen des URI- *Schemas* ist eine Komponente (die leer sein kann) als *Autorität* bezeichnet. Und unmittelbar darauf folgt der *Pfad* . Wenn Sie den URI als Beispiel nehmen, lautet das Schema "" `http://www.contoso.com/welcome.png` `http://` , die Autorität ist " `www.contoso.com` ", und der Pfad ist " `/welcome.png` ". Ein weiteres Beispiel ist der URI `ms-appx:///logo.png` , bei dem die Autoritäts Komponenten leer sind und einen Standardwert annimmt.
 
 Die fragmentkomponente wird von der Schema spezifischen Verarbeitung der in diesem Thema erwähnten URIs ignoriert. Beim Abrufen und Vergleichen von Ressourcen hat die fragmentkomponente keine Auswirkungen. Allerdings können Ebenen oberhalb der spezifischen Implementierung das Fragment interpretieren, um eine sekundäre Ressource abzurufen.
 
@@ -41,7 +41,7 @@ Der Vergleich erfolgt in Byte nach der Normalisierung aller IRI-Komponenten.
 
 Alle in diesem Thema beschriebenen URI-Schemas befolgen typische URI-Regeln (RFC 3986) für die Normalisierung und den Ressourcen Abruf für Schemas. Die normalisierte Form dieser URIs verwaltet die Groß-/Kleinschreibung und die prozentuale Decodieren von nicht reservierten Zeichen in RFC 3986.
 
-Für alle in diesem Thema beschriebenen URI- *Schemas*werden von Schema, *Autorität*und *Pfad* weder die Groß-/Kleinschreibung als auch die Groß-/Kleinschreibung beachtet. **Hinweis** Die einzige Ausnahme von dieser Regel ist die *Autorität* von `ms-resource` , bei der die Groß-/Kleinschreibung beachtet wird.
+Für alle in diesem Thema beschriebenen URI- *Schemas* werden von Schema, *Autorität* und *Pfad* weder die Groß-/Kleinschreibung als auch die Groß-/Kleinschreibung beachtet. **Hinweis** Die einzige Ausnahme von dieser Regel ist die *Autorität* von `ms-resource` , bei der die Groß-/Kleinschreibung beachtet wird.
 
 ## <a name="ms-appx-and-ms-appx-web"></a>MS-AppX und MS-AppX-Web
 
@@ -267,7 +267,7 @@ Abfrage Parameter werden beim Abrufen von Ressourcen ignoriert. Die normalisiert
 
 Entwickler bestimmter Komponenten, die oberhalb dieser URI-Verarbeitung angeordnet sind, können die Abfrage Parameter so verwenden, wie Sie sichtbar sind.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Uniform Resource Identifier (URI): generische Syntax](https://www.ietf.org/rfc/rfc3986.txt)
 * [Verpacken von Apps](../packaging/index.md)

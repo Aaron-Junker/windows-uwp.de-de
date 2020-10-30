@@ -1,17 +1,17 @@
 ---
-Description: Das Zuweisen der richtigen Kategorie und Unterkategorie trägt dazu bei, dass Kunden Ihre App leichter finden und mehr Informationen dazu erhalten.
+description: Das Zuweisen der richtigen Kategorie und Unterkategorie trägt dazu bei, dass Kunden Ihre App leichter finden und mehr Informationen dazu erhalten.
 title: Kategorie- und Unterkategorietabelle
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.date: 03/21/2019
 ms.topic: article
 keywords: Windows 10, UWP, Kategorie, Unterkategorie, Genre, Kategorien, Genres
 ms.localizationpriority: medium
-ms.openlocfilehash: 49b22ceaf0f1cdefcc7f29f0a8ca79658aa15803
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b1d14f0b14ea97d9825dbdd44c78f62ac8ea2bd5
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167424"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030393"
 ---
 # <a name="category-and-subcategory-table"></a>Kategorie- und Unterkategorietabelle
 
@@ -50,12 +50,12 @@ Der Microsoft Store organisiert apps in den folgenden Kategorien und Unterkatego
     <td>Buchhaltung + Finanzen <br> Zusammenarbeit <br> CRM <br> Daten + Analysen <br> Dateiverwaltung <br> Lager + Logistik <br> Recht + Personalverwaltung <br> Projektverwaltung <br> Remotedesktop <br> Vertrieb und Marketing <br> Zeit- + Kostenplanung</td>
   </tr>
   <tr>
-    <td>Entwicklungstools</td>
-    <td>Datenbank <br> Designtools <br> Entwicklungskits <br> Netzwerk <br> Referenzen + Training <br> Server <br> Versorgungsunternehmen <br> Webhosting</td>
+    <td>Entwicklertools</td>
+    <td>Datenbank <br> Designtools <br> Entwicklungskits <br> Netzwerk <br> Referenzen + Training <br> Server <br> Hilfsprogramme <br> Webhosting</td>
   </tr>
   <tr>
     <td>Education</td>
-    <td>Bücher + Lexika <br> Lernen im Vorschulalter <br> Lehrermaterial <br> Language <br> Prüfungsvorbereitung</td>
+    <td>Bücher + Lexika <br> Lernen im Vorschulalter <br> Lehrermaterial <br> Sprache <br> Prüfungsvorbereitung</td>
   </tr>
   <tr>
     <td>Entertainment</td>
@@ -103,7 +103,7 @@ Der Microsoft Store organisiert apps in den folgenden Kategorien und Unterkatego
   </tr>
   <tr>
     <td>News + Wetter</td>
-    <td>Neuigkeiten <br> Weather</td>
+    <td>News <br> Weather</td>
   </tr>
   <tr>
     <td>Meine Finanzen</td>
@@ -111,7 +111,7 @@ Der Microsoft Store organisiert apps in den folgenden Kategorien und Unterkatego
   </tr>
   <tr>
     <td>Personalisierung</td>
-    <td>Klingeltöne und Sounds <br> Teilziele <br> Hintergrund und Sperrbildschirm</td>
+    <td>Klingeltöne und Sounds <br> Designs <br> Hintergrund und Sperrbildschirm</td>
   </tr>
   <tr>
     <td>Fotos + Videos</td>

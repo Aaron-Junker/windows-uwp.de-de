@@ -1,17 +1,17 @@
 ---
-Description: In diesem Szenario erstellen wir eine neue APP, die das benutzerdefinierte Buildsystem repräsentiert. Wir erstellen einen ressourcenindexer und fügen ihm Zeichen folgen und andere Arten von Ressourcen hinzu. Dann generieren und sichern wir eine PRI-Datei.
+description: In diesem Szenario erstellen wir eine neue APP, die das benutzerdefinierte Buildsystem repräsentiert. Wir erstellen einen ressourcenindexer und fügen ihm Zeichen folgen und andere Arten von Ressourcen hinzu. Dann generieren und sichern wir eine PRI-Datei.
 title: Szenario 1 Generieren einer PRI-Datei aus Zeichen folgen Ressourcen und assetdateien
 template: detail.hbs
 ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: 81ad50f5a23bbb660ba44709e0ba828cff2ae5ee
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 44f4b8297cc1a34a378af137f75babca64e4edf2
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174064"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031673"
 ---
 # <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>Szenario 1: Generieren einer PRI-Datei aus Zeichen folgen Ressourcen und assetdateien
 In diesem Szenario verwenden wir die API für die [Paket Ressourcen Indizierung (PRI)](/windows/desktop/menurc/pri-indexing-reference) , um eine neue APP zu erstellen, die das benutzerdefinierte Buildsystem repräsentiert. Der Zweck dieses benutzerdefinierten Buildsystems besteht darin, pri-Dateien für eine UWP-Ziel-APP zu erstellen. Im Rahmen dieser exemplarischen Vorgehensweise erstellen wir einige Beispiel Ressourcen Dateien (mit Zeichen folgen und anderen Arten von Ressourcen), um die Ressourcen der Ziel-UWP-App darzustellen.
@@ -30,7 +30,7 @@ Die PRI-APIs werden in der "mrmresourceindexer. h"-Header Datei (die in installi
 #include <MrmResourceIndexer.h>
 ```
 
-Die APIs werden in MrmSupport.dll implementiert, auf die Sie zugreifen, indem Sie eine Verknüpfung mit der statischen Bibliothek "mrmsupport. lib" herstellen. Öffnen Sie die **Eigenschaften**des Projekts, klicken Sie auf **Linker**  >  **Eingabe**, bearbeiten Sie **additionalabhängigkeiten** , und fügen Sie hinzu `MrmSupport.lib` .
+Die APIs werden in MrmSupport.dll implementiert, auf die Sie zugreifen, indem Sie eine Verknüpfung mit der statischen Bibliothek "mrmsupport. lib" herstellen. Öffnen Sie die **Eigenschaften** des Projekts, klicken Sie auf **Linker**  >  **Eingabe** , bearbeiten Sie **additionalabhängigkeiten** , und fügen Sie hinzu `MrmSupport.lib` .
 
 Erstellen Sie die Projekt Mappe, und kopieren Sie Sie `MrmSupport.dll` aus in den Buildausgabeordner `C:\Program Files (x86)\Windows Kits\10\bin\<WindowsTargetPlatformVersion>\x64\` (wahrscheinlich `C:\Users\%USERNAME%\source\repos\CBSConsoleApp\x64\Debug\` ).
 
@@ -131,7 +131,7 @@ MrmResourceIndexerHandle indexer;
     &indexer));
 ```
 
-Im folgenden finden Sie eine Erläuterung der Argumente, die an **mrmkreateresourceingedexer**übergeben werden.
+Im folgenden finden Sie eine Erläuterung der Argumente, die an **mrmkreateresourceingedexer** übergeben werden.
 
 - Der Paket Familienname der Ziel-UWP-APP, die als Ressourcen Zuordnungs Name verwendet wird, wenn wir später eine PRI-Datei von diesem ressourcenindexer generieren.
 - Der Projektstamm der UWP-Ziel-app. Anders ausgedrückt: der Pfad zu den Ressourcen Dateien. Wir geben diese Angabe an, damit wir in nachfolgenden API-aufrufen desselben ressourcenindexers Pfade relativ zu diesem Stamm angeben können.
@@ -148,7 +148,7 @@ Der nächste Schritt besteht darin, die Ressourcen dem soeben erstellten ressour
 ::ThrowIfFailed(::MrmIndexFile(indexer, L"ms-resource:///Files/sample-image.png", L"sample-image.png", L""));
 ```
 
-Im-Befehl von **mrmindexfile**ist der Wert L "MS-Resource:///Files/sample-image.png" der Ressourcen-URI. Das erste Pfad Segment ist "Files", und das wird als Name der Unterstruktur der Ressourcen Zuordnung verwendet, wenn wir später eine PRI-Datei von diesem ressourcenindexer generieren.
+Im-Befehl von **mrmindexfile** ist der Wert L "MS-Resource:///Files/sample-image.png" der Ressourcen-URI. Das erste Pfad Segment ist "Files", und das wird als Name der Unterstruktur der Ressourcen Zuordnung verwendet, wenn wir später eine PRI-Datei von diesem ressourcenindexer generieren.
 
 Wenn Sie den ressourcenindexer über unsere Ressourcen Dateien informiert haben, ist es an der Zeit, eine PRI-Datei auf dem Datenträger zu generieren, indem Sie die [**mrmcreateresourcefile**](/windows/desktop/menurc/mrmcreateresourcefile) -Funktion aufrufen.
 
@@ -168,7 +168,7 @@ Da eine PRI-Datei binär ist, wird es einfacher, das soeben generierte zu sehen,
 ::ThrowIfFailed(::MrmDumpPriFile(filePathPRI.c_str(), nullptr, MrmDumpType::MrmDumpType_Basic, filePathPRIDumpBasic.c_str()));
 ```
 
-Im folgenden finden Sie eine Erläuterung der Argumente, die an **mrmdumpprifile**übermittelt werden.
+Im folgenden finden Sie eine Erläuterung der Argumente, die an **mrmdumpprifile** übermittelt werden.
 
 - Der Pfad zur PRI-Datei, die gesichert werden soll. Wir verwenden den ressourcenindexer in diesem Aufruf nicht (wir haben ihn soeben zerstört), daher müssen wir einen vollständigen Dateipfad angeben.
 - Keine Schema Datei. In diesem Thema wird erläutert, worum es sich bei einem Schema handelt.
@@ -225,7 +225,7 @@ Hier enthält die PRI-Datei, die hier in XML gekippt ist,.
 
 Die Informationen beginnen mit einer Ressourcen Zuordnung, die mit dem Paket Familiennamen der Ziel-UWP-App benannt wird. In der Ressourcen Zuordnung sind zwei Ressourcen Zuordnungs Substrukturen enthalten: eine für die von uns indizierten Datei Ressourcen und eine für die Zeichen folgen Ressourcen. Beachten Sie, dass der Paket Familienname in alle Ressourcen-URIs eingefügt wurde.
 
-Die erste Zeichen folgen Ressource ist *enonlystring* aus `en-US\resources.resw` , und Sie weist nur einen Kandidaten auf (der mit dem Qualifizierer *language-en-US* übereinstimmt). Der nächste Schritt ist *LocalizedString1* von `resources.resw` und `en-US\resources.resw` . Folglich gibt es zwei Kandidaten: eine passende *Sprache (en-US*) und einen Fall Back neutralen Kandidaten, der mit jedem Kontext übereinstimmt. Ebenso hat *LocalizedString2* zwei Kandidaten: " *language-de-de*" und "neutral". Und schließlich ist *neutralonlystring* nur in neutraler Form vorhanden. Ich habe diesen Namen gegeben, um klar zu machen, dass er nicht lokalisiert werden soll.
+Die erste Zeichen folgen Ressource ist *enonlystring* aus `en-US\resources.resw` , und Sie weist nur einen Kandidaten auf (der mit dem Qualifizierer *language-en-US* übereinstimmt). Der nächste Schritt ist *LocalizedString1* von `resources.resw` und `en-US\resources.resw` . Folglich gibt es zwei Kandidaten: eine passende *Sprache (en-US* ) und einen Fall Back neutralen Kandidaten, der mit jedem Kontext übereinstimmt. Ebenso hat *LocalizedString2* zwei Kandidaten: " *language-de-de* " und "neutral". Und schließlich ist *neutralonlystring* nur in neutraler Form vorhanden. Ich habe diesen Namen gegeben, um klar zu machen, dass er nicht lokalisiert werden soll.
 
 ## <a name="summary"></a>Zusammenfassung
 In diesem Szenario haben wir gezeigt, wie Sie die API für die [Paket Ressourcen Indizierung (PRI)](/windows/desktop/menurc/pri-indexing-reference) zum Erstellen eines ressourcenindexers verwenden. Wir haben dem ressourcenindexer Zeichen folgen Ressourcen und assetdateien hinzugefügt. Anschließend haben wir den ressourcenindexer verwendet, um eine binäre PRI-Datei zu generieren. Und schließlich haben wir die binäre PRI-Datei in Form von XML gekippt, damit wir bestätigen konnten, dass Sie die erwarteten Informationen enthält.
@@ -233,5 +233,5 @@ In diesem Szenario haben wir gezeigt, wie Sie die API für die [Paket Ressourcen
 ## <a name="important-apis"></a>Wichtige APIs
 * [Referenz zur Paket Ressourcen Indizierung (PRI)](/windows/desktop/menurc/pri-indexing-reference)
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 * [APIs für die Paketressourcenindizierung (PRI) und benutzerdefinierte Buildsysteme](pri-apis-custom-build-systems.md)

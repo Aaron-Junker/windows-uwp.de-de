@@ -1,5 +1,5 @@
 ---
-Description: Ein Eingabemethoden-Editor (Input Method Editor, IME) ist eine Softwarekomponente, die es Benutzern ermöglicht, Text in einer Sprache einzugeben, die auf einer Standardtastatur der QWERTY nicht leicht dargestellt werden kann.
+description: Ein Eingabemethoden-Editor (Input Method Editor, IME) ist eine Softwarekomponente, die es Benutzern ermöglicht, Text in einer Sprache einzugeben, die auf einer Standardtastatur der QWERTY nicht leicht dargestellt werden kann.
 title: Eingabemethoden-Editoren (IME)
 label: Input Method Editors (IME)
 template: detail.hbs
@@ -7,12 +7,12 @@ keywords: IME, Eingabemethoden-Editor, Eingabe, Interaktion
 ms.date: 07/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e7782dea8cd634fd9fe3bac4a3e4c870cd680e9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1f70f08e61df1b609a0ab505e35ef314a90a91fd
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159944"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030083"
 ---
 # <a name="input-method-editors-ime"></a>Eingabemethoden-Editoren (IME)
 
@@ -58,7 +58,7 @@ Weitere Informationen zu bewährten Methoden und Entwurfs Richtlinien für IMEs 
 - Vermeiden Sie modale Erfahrungen, und zeigen Sie bei Bedarf nur das IME-Fenster
 - Symbole nur schwarz und weiß einschließen
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 - [Anforderungen an den Eingabemethoden-Editor (IME)](input-method-editor-requirements.md)
 - [Itffngetpreferredtouchkeyboardlayout](/windows/win32/api/ctffunc/nn-ctffunc-itffngetpreferredtouchkeyboardlayout)

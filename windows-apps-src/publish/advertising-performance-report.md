@@ -1,24 +1,24 @@
 ---
-Description: Zum Anzeigen von Leistungsdaten für die Ad-Einheiten in ihren Apps verwenden Sie den Leistungsbericht "Werbung" im Partner Center.
+description: Zum Anzeigen von Leistungsdaten für die Ad-Einheiten in ihren Apps verwenden Sie den Leistungsbericht "Werbung" im Partner Center.
 title: Bericht zur Anzeigenleistung
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ea0fe6f29059a2b9ef8e5ce728d883d5349d0468
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: 2366b6828a1de379d0442f3b72366c091908ba22
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878423"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032003"
 ---
 # <a name="advertising-performance-report"></a>Bericht zur Anzeigenleistung
 
 
 Der **Leistungsbericht "Werbung** " im [Partner Center](https://partner.microsoft.com/dashboard) zeigt, wie Ihre [Ad-Einheiten](in-app-ads.md) , einschließlich der communitywerbung, funktioniert. Dieser Bericht enthält Daten von mehreren Ad-Anbietern in UWP-apps, die [AD-Vermittlung](in-app-ads.md#mediation)verwenden.
 
-Um diesen Bericht anzuzeigen, erweitern Sie im linken Navigationsmenü die Option **analysieren** , und wählen Sie dann **Ad Performance**aus. Sie können diese Daten im Partner Center anzeigen oder die Berichtsdaten herunterladen, um Sie offline anzuzeigen, indem Sie auf die Pfeilsymbole auf der Seite klicken. Alternativ können Sie diese Daten Programm gesteuert abrufen, indem Sie die Methode zum Abrufen der [Leistungsdaten](../monetize/get-ad-performance-data.md) in unserer [Analytics-Rest-API](../monetize/access-analytics-data-using-windows-store-services.md)verwenden.
+Um diesen Bericht anzuzeigen, erweitern Sie im linken Navigationsmenü die Option **analysieren** , und wählen Sie dann **Ad Performance** aus. Sie können diese Daten im Partner Center anzeigen oder die Berichtsdaten herunterladen, um Sie offline anzuzeigen, indem Sie auf die Pfeilsymbole auf der Seite klicken. Alternativ können Sie diese Daten Programm gesteuert abrufen, indem Sie die Methode zum Abrufen der [Leistungsdaten](../monetize/get-ad-performance-data.md) in unserer [Analytics-Rest-API](../monetize/access-analytics-data-using-windows-store-services.md)verwenden.
 
 Beachten Sie beim Anzeigen der Leistungsberichte der Werbung, dass sich die Berichtsdaten der letzten drei Tage ändern können, wenn wir neue Daten aus verschiedenen Quellen empfangen und verarbeiten. Darüber hinaus können Daten Umrechnungen bis zu 90 Tage in der Vergangenheit vorkommen.
 
@@ -28,9 +28,9 @@ Im oberen Bereich der Seite können Sie den Zeitraum auswählen, in dem Sie Date
 
 Sie können auch **Filter** erweitern, um alle Daten auf dieser Seite nach Ad-Einheit, APP, AD-Anbieter und Gerätetyp zu filtern. Sie können eine der folgenden Optionen auswählen:
 
-* **Aggregation**: Wählen Sie aus, wie die Berichtsdaten aggregiert werden, und wie Sie möglicherweise weiter gefiltert werden. Standardmäßig ist dieser Filter auf **Alle Ad-Einheiten**festgelegt. Optional können Sie diesen Filter in **alle apps** oder **alle AD-Anbieter**ändern, oder Sie können auswählen, ob Sie mit einer bestimmten app aggregieren möchten, in der Sie ADS verwenden.
-* **AD-Anbieter**: Filtern Sie den Bericht nach Leistungsdaten für bestimmte [AD-Anbieter](in-app-ads.md#paid-networks). Standardmäßig zeigt der Bericht Daten von allen AD-Anbietern an. Diese Option wird deaktiviert, wenn Sie **alle AD-Anbieter** in der **Aggregations** -Dropdown-Option ausgewählt haben.
-* **Gerät**: Filtern Sie den Bericht nach Leistungsdaten für bestimmte Gerätetypen. Standardmäßig zeigt der Bericht Daten für alle Gerätetypen an.
+* **Aggregation** : Wählen Sie aus, wie die Berichtsdaten aggregiert werden, und wie Sie möglicherweise weiter gefiltert werden. Standardmäßig ist dieser Filter auf **Alle Ad-Einheiten** festgelegt. Optional können Sie diesen Filter in **alle apps** oder **alle AD-Anbieter** ändern, oder Sie können auswählen, ob Sie mit einer bestimmten app aggregieren möchten, in der Sie ADS verwenden.
+* **AD-Anbieter** : Filtern Sie den Bericht nach Leistungsdaten für bestimmte [AD-Anbieter](in-app-ads.md#paid-networks). Standardmäßig zeigt der Bericht Daten von allen AD-Anbietern an. Diese Option wird deaktiviert, wenn Sie **alle AD-Anbieter** in der **Aggregations** -Dropdown-Option ausgewählt haben.
+* **Gerät** : Filtern Sie den Bericht nach Leistungsdaten für bestimmte Gerätetypen. Standardmäßig zeigt der Bericht Daten für alle Gerätetypen an.
 
 ## <a name="overall-performance"></a>Gesamtleistung
 
@@ -62,11 +62,11 @@ Der **Leistungs** Bericht "Werbung" enthält Daten für die folgenden Leistungsm
 | Guthaben verdient  | Wenn Sie eine Community- [Werbe](../monetize/index.md) Kampagne ausführen, gibt dies die Anzahl der Gutschriften an, die Sie für Werbe Speicher Angebote erworben haben, indem Sie communitywerbung in ihrer App anzeigen.  |
 | Guthaben aufgewendet  | Wenn Sie eine Community- [Werbe](../monetize/index.md) Kampagne ausführen, gibt dies die Anzahl der Gutschriften an, die Sie für Werbung für Ihre APP aufgewendet haben.  |
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [In-App-Anzeigen](in-app-ads.md)
 * [Anzeigen von Werbung mithilfe des Microsoft Advertising-SDK in der App](../monetize/display-ads-in-your-app.md)
 * [Optimieren der Sichtbarkeit von Anzeigeneinheiten](../monetize/optimize-ad-unit-viewability.md)
 
 
- 
+ 

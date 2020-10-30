@@ -1,5 +1,5 @@
 ---
-Description: Wenn Sie möchten, dass Ihre App verschiedene Anzeigesprachen unterstützt und Ihr Code oder XAML-Markup- oder App-Paketmanifest Zeichenfolgenliterale enthält, verschieben Sie diese Zeichenfolgen in eine Ressourcendatei (.resw). Sie können dann eine übersetzte Kopie dieser Ressourcendatei für jede Sprache erstellen, die Ihre App unterstützt.
+description: Wenn Sie möchten, dass Ihre App verschiedene Anzeigesprachen unterstützt und Ihr Code oder XAML-Markup- oder App-Paketmanifest Zeichenfolgenliterale enthält, verschieben Sie diese Zeichenfolgen in eine Ressourcendatei (.resw). Sie können dann eine übersetzte Kopie dieser Ressourcendatei für jede Sprache erstellen, die Ihre App unterstützt.
 title: Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im App-Paketmanifest
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Localize strings in your UI and app package manifest
@@ -8,12 +8,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: 411ecb63189084ba83f9971ded2bbe02d899aabd
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 63e88322c7a85bba1ca1a4ff8ff5f2186c4da9f8
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762872"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031833"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im App-Paketmanifest
 
@@ -21,7 +21,7 @@ Weitere Informationen zu einer Werterhöhung Ihrer App durch Lokalisierung finde
 
 Wenn Sie möchten, dass Ihre App verschiedene Anzeigesprachen unterstützt und Ihr Code oder XAML-Markup- oder App-Paketmanifest Zeichenfolgenliterale enthält, verschieben Sie diese Zeichenfolgen in eine Ressourcendatei (.resw). Sie können dann eine übersetzte Kopie dieser Ressourcendatei für jede Sprache erstellen, die Ihre App unterstützt.
 
-Hart codierte Zeichen folgen Literale können in imperativem Code oder in XAML-Markup vorkommen, z. b. als **Text** -Eigenschaft eines **TextBlock**. Sie können auch in der Quelldatei des App-Pakets (der `Package.appxmanifest` Datei) angezeigt werden, z. b. als Wert für Anzeige Name auf der Registerkarte Anwendung des Manifest-Designers von Visual Studio. Verschieben Sie diese Zeichen folgen in eine Ressourcen Datei (. resw), und ersetzen Sie die hart codierten Zeichen folgen Literale in der APP und im Manifest durch Verweise auf Ressourcen Bezeichner.
+Hart codierte Zeichen folgen Literale können in imperativem Code oder in XAML-Markup vorkommen, z. b. als **Text** -Eigenschaft eines **TextBlock** . Sie können auch in der Quelldatei des App-Pakets (der `Package.appxmanifest` Datei) angezeigt werden, z. b. als Wert für Anzeige Name auf der Registerkarte Anwendung des Manifest-Designers von Visual Studio. Verschieben Sie diese Zeichen folgen in eine Ressourcen Datei (. resw), und ersetzen Sie die hart codierten Zeichen folgen Literale in der APP und im Manifest durch Verweise auf Ressourcen Bezeichner.
 
 Im Gegensatz zu Bild Ressourcen, bei denen nur eine Bildressource in einer Bild Ressourcen Datei enthalten ist, sind *mehrere* Zeichen folgen Ressourcen in einer Zeichen folgen Ressourcen Datei enthalten. Eine Zeichen folgen Ressourcen Datei ist eine Ressourcen Datei (. resw), und Sie erstellen diese Art von Ressourcen Datei in der Regel in einem Ordner "\strings" in Ihrem Projekt. Hintergrundinformationen zur Verwendung von Qualifizierern in den Namen Ihrer Ressourcen Dateien (. resw) finden [Sie unter Anpassen von Ressourcen für Sprache, Skalierung und andere Qualifizierer](tailor-resources-lang-scale-contrast.md).
 
@@ -30,12 +30,12 @@ Im Gegensatz zu Bild Ressourcen, bei denen nur eine Bildressource in einer Bild 
 1. Legen Sie die Standardsprache Ihrer APP fest.
     1. Öffnen Sie die Projekt Mappe in Visual Studio, und öffnen Sie `Package.appxmanifest` .
     2. Vergewissern Sie sich auf der Registerkarte Anwendung, dass die Standardsprache entsprechend festgelegt ist (z. b. "en" oder "en-US"). Bei den restlichen Schritten wird davon ausgegangen, dass Sie die Standardsprache auf "en-US" festgelegt haben.
-    <br>**Hinweis**   Sie müssen mindestens Zeichen folgen Ressourcen bereitstellen, die für diese Standardsprache lokalisiert werden. Dabei handelt es sich um die Ressourcen, die geladen werden, wenn für die bevorzugte Sprache des Benutzers oder für die Anzeige Sprache keine bessere Übereinstimmung gefunden werden kann.
+    <br>**Hinweis** Sie müssen mindestens Zeichen folgen Ressourcen bereitstellen, die für diese Standardsprache lokalisiert werden. Dabei handelt es sich um die Ressourcen, die geladen werden, wenn für die bevorzugte Sprache des Benutzers oder für die Anzeige Sprache keine bessere Übereinstimmung gefunden werden kann.
 2. Erstellen Sie eine Ressourcen Datei (. resw) für die Standardsprache.
     1. Erstellen Sie unter dem Projekt Knoten einen neuen Ordner, und nennen Sie ihn "Strings".
     2. `Strings`Erstellen Sie unter einen neuen Unterordner, und nennen Sie ihn "en-US".
     3. `en-US`Erstellen Sie unter eine neue Ressourcen Datei (. resw), und vergewissern Sie sich, dass Sie den Namen "Resources. resw" hat.
-    <br>**Hinweis**   Wenn Sie über .NET-Ressourcen Dateien (RESX-Dateien) verfügen, die Sie portieren möchten, finden Sie weitere Informationen unter [Portieren von XAML und UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization).
+    <br>**Hinweis** Wenn Sie über .NET-Ressourcen Dateien (RESX-Dateien) verfügen, die Sie portieren möchten, finden Sie weitere Informationen unter [Portieren von XAML und UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization).
 3. Öffnen `Resources.resw` Sie, und fügen Sie diese Zeichen folgen Ressourcen hinzu.
 
     `Strings/en-US/Resources.resw`
@@ -56,13 +56,13 @@ Sie verwenden eine [x:UID-Direktive](../xaml-platform/x-uid-directive.md) , um e
 <TextBlock x:Uid="Greeting"/>
 ```
 
-Zur Laufzeit `\Strings\en-US\Resources.resw` wird geladen (da momentan die einzige Ressourcen Datei im Projekt ist). Die **x:UID-Direktive** im **TextBlock** bewirkt, dass eine Suche durchgeführt wird, um Eigenschafts Bezeichner in zu suchen, die `Resources.resw` den Zeichen folgen Ressourcen Bezeichner "Gruß" enthalten. Die Eigenschaften Bezeichner "Gruß. Text" und "Gruß. Width" werden gefunden, und ihre Werte werden auf den **TextBlock**angewendet, wobei alle Werte überschrieben werden, die lokal im Markup festgelegt sind. Der Wert "Gruß. Vordergrund" würde auch angewendet werden, wenn Sie diesen hinzugefügt haben. Aber nur Eigenschaften Bezeichner werden verwendet, um Eigenschaften für XAML-Markup Elemente festzulegen, sodass das Festlegen von **x:UID** auf "Farewell" für diesen TextBlock keine Auswirkung hat. `Resources.resw`*enthält den* Zeichen folgen Ressourcen Bezeichner "Farewell", enthält aber keine Eigenschaften Bezeichner.
+Zur Laufzeit `\Strings\en-US\Resources.resw` wird geladen (da momentan die einzige Ressourcen Datei im Projekt ist). Die **x:UID-Direktive** im **TextBlock** bewirkt, dass eine Suche durchgeführt wird, um Eigenschafts Bezeichner in zu suchen, die `Resources.resw` den Zeichen folgen Ressourcen Bezeichner "Gruß" enthalten. Die Eigenschaften Bezeichner "Gruß. Text" und "Gruß. Width" werden gefunden, und ihre Werte werden auf den **TextBlock** angewendet, wobei alle Werte überschrieben werden, die lokal im Markup festgelegt sind. Der Wert "Gruß. Vordergrund" würde auch angewendet werden, wenn Sie diesen hinzugefügt haben. Aber nur Eigenschaften Bezeichner werden verwendet, um Eigenschaften für XAML-Markup Elemente festzulegen, sodass das Festlegen von **x:UID** auf "Farewell" für diesen TextBlock keine Auswirkung hat. `Resources.resw`*enthält den* Zeichen folgen Ressourcen Bezeichner "Farewell", enthält aber keine Eigenschaften Bezeichner.
 
-Wenn Sie einem XAML-Element einen Zeichen folgen Ressourcen Bezeichner zuweisen, stellen Sie sicher, dass *alle* Eigenschaften Bezeichner für diesen Bezeichner für das XAML-Element geeignet sind. Wenn Sie z. b. für `x:Uid="Greeting"` einen **TextBlock** festlegen, wird "Gruß. Text" aufgelöst, da der **TextBlock** -Typ eine Text-Eigenschaft aufweist. Wenn Sie jedoch `x:Uid="Greeting"` für eine **Schaltfläche** festlegen, führt "Gruß. Text" zu einem Laufzeitfehler, da der **Schalt** Flächentyp nicht über eine Text-Eigenschaft verfügt. Eine Lösung für diesen Fall besteht darin, einen Eigenschafts Bezeichner mit dem Namen "buttongruß. Content" zu erstellen und `x:Uid="ButtonGreeting"` auf der **Schaltfläche**festzulegen.
+Wenn Sie einem XAML-Element einen Zeichen folgen Ressourcen Bezeichner zuweisen, stellen Sie sicher, dass *alle* Eigenschaften Bezeichner für diesen Bezeichner für das XAML-Element geeignet sind. Wenn Sie z. b. für `x:Uid="Greeting"` einen **TextBlock** festlegen, wird "Gruß. Text" aufgelöst, da der **TextBlock** -Typ eine Text-Eigenschaft aufweist. Wenn Sie jedoch `x:Uid="Greeting"` für eine **Schaltfläche** festlegen, führt "Gruß. Text" zu einem Laufzeitfehler, da der **Schalt** Flächentyp nicht über eine Text-Eigenschaft verfügt. Eine Lösung für diesen Fall besteht darin, einen Eigenschafts Bezeichner mit dem Namen "buttongruß. Content" zu erstellen und `x:Uid="ButtonGreeting"` auf der **Schaltfläche** festzulegen.
 
 Anstatt die **Breite** aus einer Ressourcen Datei festzulegen, sollten Sie den Steuerelementen die dynamische Größe von Inhalten erlauben.
 
-**Hinweis**   Für [angefügte Eigenschaften](../xaml-platform/attached-properties-overview.md)benötigen Sie eine spezielle Syntax in der Spalte "Name" einer resw-Datei. Wenn Sie z. b. einen Wert für die angefügte Eigenschaft " [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) " für den Bezeichner "Gruß" festlegen möchten, geben Sie diesen Wert in die Spalte "Name" ein.
+**Hinweis** Für [angefügte Eigenschaften](../xaml-platform/attached-properties-overview.md)benötigen Sie eine spezielle Syntax in der Spalte "Name" einer resw-Datei. Wenn Sie z. b. einen Wert für die angefügte Eigenschaft " [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) " für den Bezeichner "Gruß" festlegen möchten, geben Sie diesen Wert in die Spalte "Name" ein.
 
 ```xml
 Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
@@ -73,7 +73,7 @@ Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
 Sie können eine Zeichen folgen Ressource explizit auf Grundlage eines einfachen Zeichen folgen Ressourcen Bezeichners laden.
 
 > [!NOTE]
-> Wenn Sie einen Rückruf für eine **getforcurrentview** -Methode durchgeführt haben, die *möglicherweise* für einen Hintergrund-/Workerthread ausgeführt wird, sollten Sie diesen Befehl mit einem `if (Windows.UI.Core.CoreWindow.GetForCurrentThread() != null)` Test schützen. Der Aufruf von **getforcurrentview** von einem Hintergrund-/Arbeit-Thread führt zu der Ausnahme "* &lt; tygtame &gt; kann nicht für Threads erstellt werden, die kein corewindow-Fenster aufweisen".*
+> Wenn Sie einen Rückruf für eine **getforcurrentview** -Methode durchgeführt haben, die *möglicherweise* für einen Hintergrund-/Workerthread ausgeführt wird, sollten Sie diesen Befehl mit einem `if (Windows.UI.Core.CoreWindow.GetForCurrentThread() != null)` Test schützen. Der Aufruf von **getforcurrentview** von einem Hintergrund-/Arbeit-Thread führt zu der Ausnahme " *&lt; tygtame &gt; kann nicht für Threads erstellt werden, die kein corewindow-Fenster aufweisen".*
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
@@ -122,7 +122,7 @@ Im Zweifelsfall können Sie [MakePri.exe](makepri-exe-command-options.md) verwen
 
 1. Erstellen Sie eine Kopie Ihrer Ressourcen Datei (. resw) für eine andere Sprache.
     1. Erstellen Sie unter "Zeichen folgen" einen neuen Unterordner, und nennen Sie ihn "de-de" für Deutsch (Deutschland).
-   <br>**Hinweis**   Für den Ordnernamen können Sie ein beliebiges [bcp-47-sprach Kennzeichen](https://tools.ietf.org/html/bcp47)verwenden. Ausführliche Informationen zum sprach Qualifizierer und eine Liste der allgemeinen Sprachen Tags finden [Sie unter Anpassen von Ressourcen für Sprache, Skalierung und andere Qualifizierer](tailor-resources-lang-scale-contrast.md) .
+   <br>**Hinweis** Für den Ordnernamen können Sie ein beliebiges [bcp-47-sprach Kennzeichen](https://tools.ietf.org/html/bcp47)verwenden. Ausführliche Informationen zum sprach Qualifizierer und eine Liste der allgemeinen Sprachen Tags finden [Sie unter Anpassen von Ressourcen für Sprache, Skalierung und andere Qualifizierer](tailor-resources-lang-scale-contrast.md) .
    2. Erstellen Sie eine Kopie von `Strings/en-US/Resources.resw` im `Strings/de-DE` Ordner.
 2. Übersetzt die Zeichen folgen.
     1. Öffnen `Strings/de-DE/Resources.resw` und übersetzen Sie die Werte in der Spalte Wert. Sie müssen die Kommentare nicht übersetzen.
@@ -160,7 +160,7 @@ Sie müssen nur `/<resources-file-name>/` vor dem Zeichen folgen Ressourcen Beze
 Im folgenden Codebeispiel wird davon ausgegangen, dass `ErrorMessages.resw` eine Ressource enthält, deren Name "mismatchedworts" lautet und deren Wert den Fehler beschreibt.
 
 > [!NOTE]
-> Wenn Sie einen Rückruf für eine **getforcurrentview** -Methode durchgeführt haben, die *möglicherweise* für einen Hintergrund-/Workerthread ausgeführt wird, sollten Sie diesen Befehl mit einem `if (Windows.UI.Core.CoreWindow.GetForCurrentThread() != null)` Test schützen. Der Aufruf von **getforcurrentview** von einem Hintergrund-/Arbeit-Thread führt zu der Ausnahme "* &lt; tygtame &gt; kann nicht für Threads erstellt werden, die kein corewindow-Fenster aufweisen".*
+> Wenn Sie einen Rückruf für eine **getforcurrentview** -Methode durchgeführt haben, die *möglicherweise* für einen Hintergrund-/Workerthread ausgeführt wird, sollten Sie diesen Befehl mit einem `if (Windows.UI.Core.CoreWindow.GetForCurrentThread() != null)` Test schützen. Der Aufruf von **getforcurrentview** von einem Hintergrund-/Arbeit-Thread führt zu der Ausnahme " *&lt; tygtame &gt; kann nicht für Threads erstellt werden, die kein corewindow-Fenster aufweisen".*
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ErrorMessages");
@@ -212,7 +212,7 @@ Die Verwendung von **qualifiervalues** wie im obigen Codebeispiel funktioniert f
 resourceContext.Languages = new string[] { "de-DE" };
 ```
 
-Um denselben Effekt auf globaler Ebene zu erzielen, *können* Sie die Qualifiziererwerte in der Standardeinstellung **resourcecontext**überschreiben. Stattdessen wird jedoch empfohlen, [**resourcecontext. setglobalqualifiervalue**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)aufzurufen. Sie legen die Werte einmal mit einem Aufruf von **setglobalqualifiervalue** fest. diese Werte sind dann bei jeder Verwendung für Suchvorgänge für den standardmäßigen **resourcecontext** wirksam.
+Um denselben Effekt auf globaler Ebene zu erzielen, *können* Sie die Qualifiziererwerte in der Standardeinstellung **resourcecontext** überschreiben. Stattdessen wird jedoch empfohlen, [**resourcecontext. setglobalqualifiervalue**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)aufzurufen. Sie legen die Werte einmal mit einem Aufruf von **setglobalqualifiervalue** fest. diese Werte sind dann bei jeder Verwendung für Suchvorgänge für den standardmäßigen **resourcecontext** wirksam.
 
 ```csharp
 Windows.ApplicationModel.Resources.Core.ResourceContext.SetGlobalQualifierValue("Language", "de-DE");
@@ -228,9 +228,9 @@ Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "de-DE";
 
 ## <a name="updating-strings-in-response-to-qualifier-value-change-events"></a>Aktualisieren von Zeichen folgen als Reaktion auf Änderungs Ereignisse für qualifiziererwert
 
-Ihre laufende App kann auf Änderungen in Systemeinstellungen reagieren, die sich auf die Qualifiziererwerte in der Standardeinstellung **resourcecontext**auswirken. Jede dieser Systemeinstellungen Ruft das [**mapchanged**](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live) -Ereignis auf [**resourcecontext. qualifiervalues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)auf.
+Ihre laufende App kann auf Änderungen in Systemeinstellungen reagieren, die sich auf die Qualifiziererwerte in der Standardeinstellung **resourcecontext** auswirken. Jede dieser Systemeinstellungen Ruft das [**mapchanged**](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live) -Ereignis auf [**resourcecontext. qualifiervalues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)auf.
 
-Als Reaktion auf dieses Ereignis können Sie die Zeichen folgen aus dem standardmäßigen **resourcecontext erneut**laden.
+Als Reaktion auf dieses Ereignis können Sie die Zeichen folgen aus dem standardmäßigen **resourcecontext erneut** laden.
 
 ```csharp
 public MainPage()
@@ -266,7 +266,7 @@ private void RefreshUIText()
 
 ## <a name="load-strings-from-a-class-library-or-a-windows-runtime-library"></a>Laden von Zeichen folgen aus einer Klassenbibliothek oder einer Windows-Runtime Bibliothek
 
-Die Zeichen folgen Ressourcen einer Klassenbibliothek (Universal Windows), auf die verwiesen wird, oder [Windows-Runtime Bibliothek (Universal Windows)](../winrt-components/index.md) werden in der Regel in einem Unterordner des Pakets hinzugefügt, in dem Sie während des Buildprozesses enthalten sind. Der Ressourcen Bezeichner einer solchen Zeichenfolge hat normalerweise die Form *Libraryname/resourcesfilename/resourceidentifier*.
+Die Zeichen folgen Ressourcen einer Klassenbibliothek (Universal Windows), auf die verwiesen wird, oder [Windows-Runtime Bibliothek (Universal Windows)](../winrt-components/index.md) werden in der Regel in einem Unterordner des Pakets hinzugefügt, in dem Sie während des Buildprozesses enthalten sind. Der Ressourcen Bezeichner einer solchen Zeichenfolge hat normalerweise die Form *Libraryname/resourcesfilename/resourceidentifier* .
 
 Eine Bibliothek kann einen resourceloader für Ihre eigenen Ressourcen erhalten. Der folgende Code veranschaulicht z. b., wie eine Bibliothek oder eine APP, die darauf verweist, einen resourceloader für die Zeichen folgen Ressourcen der Bibliothek erhalten kann.
 
@@ -289,7 +289,7 @@ Dies ist für eine Klassenbibliothek (universelle Windows-Plattform) nicht erfor
 
 ## <a name="loading-strings-from-other-packages"></a>Laden von Zeichen folgen aus anderen Paketen
 
-Die Ressourcen für ein App-Paket werden verwaltet, und der Zugriff erfolgt über die eigene [**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) des Pakets, auf die vom aktuellen [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)-Server aus zugegriffen werden kann. Innerhalb jedes Pakets können verschiedene Komponenten über eigene ResourceMap-Unterstrukturen verfügen, auf die Sie über [**ResourceMap. getsubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live)zugreifen können.
+Die Ressourcen für ein App-Paket werden verwaltet, und der Zugriff erfolgt über die eigene [**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) des Pakets, auf die vom aktuellen [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)-Server aus zugegriffen werden kann. Innerhalb jedes Pakets können verschiedene Komponenten über eigene ResourceMap-Unterstrukturen verfügen, auf die Sie über [**ResourceMap. getsubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live)zugreifen können.
 
 Ein frameworkpaket kann mit einem absoluten ressourcenbezeichneruri auf seine eigenen Ressourcen zugreifen. Siehe auch [URI-Schemas](uri-schemes.md).
 
@@ -308,7 +308,7 @@ Um Ressourcen in nicht verpackten Anwendungen zu verwenden, sollten Sie einige D
     - Die &lt; priconfig &gt; muss alle relevanten Indexer enthalten, die erforderlich sind, um alle Ressourcen in Ihrem Projekt in einer einzelnen "Resources. pri"-Datei zusammenzuführen. Die standardmäßige [MakePri.exe Konfigurationsdatei](./makepri-exe-configuration.md) , die von " [kreateconfig](./makepri-exe-command-options.md#createconfig-command) " erstellt wurde, enthält alle Indexer.
     - Wenn Sie die Standardkonfiguration nicht verwenden, stellen Sie sicher, dass der PRI-Indexer aktiviert ist (überprüfen Sie die Standardkonfiguration für die Vorgehensweise), um Pris zusammenzuführen, die über UWP-Projekt Verweise, nuget-Verweise usw. gefunden werden, die sich innerhalb des Projekt Stamms befinden.
         > [!NOTE]
-        > Wenn `/IndexName` Sie nicht über ein App-Manifest verfügen und das Projekt nicht über ein App-Manifest verfügt, wird der Indexname/Stamm Namespace der PRI-Datei automatisch auf die *Anwendung*festgelegt, die die Laufzeit für nicht gepackte apps versteht (Dadurch wird die vorherige harte Abhängigkeit von der Paket-ID entfernt). Bei der Angabe von Ressourcen-URIs werden MS-Resource:///Verweise, die die Stamm Namespace-ableiten- *Anwendung* als Stamm Namespace für nicht gepackte apps weglassen (oder Sie können die *Anwendung* explizit wie in MS-Resource://Application/angeben).
+        > Wenn `/IndexName` Sie nicht über ein App-Manifest verfügen und das Projekt nicht über ein App-Manifest verfügt, wird der Indexname/Stamm Namespace der PRI-Datei automatisch auf die *Anwendung* festgelegt, die die Laufzeit für nicht gepackte apps versteht (Dadurch wird die vorherige harte Abhängigkeit von der Paket-ID entfernt). Bei der Angabe von Ressourcen-URIs werden MS-Resource:///Verweise, die die Stamm Namespace-ableiten- *Anwendung* als Stamm Namespace für nicht gepackte apps weglassen (oder Sie können die *Anwendung* explizit wie in MS-Resource://Application/angeben).
 1. Kopieren Sie die PRI-Datei in das Buildausgabeverzeichnis der exe-Datei.
 1. Ausführen der exe- 
     > [!NOTE]
@@ -322,7 +322,7 @@ Um Ressourcen in nicht verpackten Anwendungen zu verwenden, sollten Sie einige D
 * [Resourcecontext. setglobalqualifiervalue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
 * [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 * [Portieren von XAML und UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
 * [x:Uid-Direktive](../xaml-platform/x-uid-directive.md)
 * [angefügte Eigenschaften](../xaml-platform/attached-properties-overview.md)

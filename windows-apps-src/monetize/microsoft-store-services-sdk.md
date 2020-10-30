@@ -1,17 +1,17 @@
 ---
-Description: Der Microsoft Store Services SDK bietet Bibliotheken und Tools zum Hinzufügen von Features zu Ihren Apps, mit denen Sie mehr Geld verdienen und Kunden gewinnen können.
+description: Der Microsoft Store Services SDK bietet Bibliotheken und Tools zum Hinzufügen von Features zu Ihren Apps, mit denen Sie mehr Geld verdienen und Kunden gewinnen können.
 title: Kundengewinnung mit Microsoft Store Services SDK
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
 ms.date: 08/21/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b8544f6d4f60b2f4ca91af35ff922fcfe089380
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8356367b47242f7bda01da753cc8599aff9edd79
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155464"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030533"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>Kundengewinnung mit Microsoft Store Services SDK
 
@@ -72,7 +72,7 @@ So installieren Sie das Microsoft Store-Services-SDK über das MSI-Installations
 
 4.  Starten Sie Visual Studio neu.
 
-5.  Wenn Sie über ein vorhandenes Projekt verfügen, das auf Bibliotheken aus einer früheren Version des Microsoft Store Services SDK verweist, Microsoft Advertising SDK, Universal AD Client SDK oder Microsoft Store Engagement-und monetarisierungssdk wird empfohlen, das Projekt in Visual Studio zu öffnen und das Projekt zu bereinigen und neu zu erstellen (Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Projekt Knoten, und wählen Sie dann **Bereinigen**aus, und **Klicken Sie dann**erneut mit der rechten Maustaste auf den Projekt Knoten.
+5.  Wenn Sie über ein vorhandenes Projekt verfügen, das auf Bibliotheken aus einer früheren Version des Microsoft Store Services SDK verweist, Microsoft Advertising SDK, Universal AD Client SDK oder Microsoft Store Engagement-und monetarisierungssdk wird empfohlen, das Projekt in Visual Studio zu öffnen und das Projekt zu bereinigen und neu zu erstellen (Klicken Sie in **Projektmappen-Explorer** mit der rechten Maustaste auf den Projekt Knoten, und wählen Sie dann **Bereinigen** aus, und **Klicken Sie dann** erneut mit der rechten Maustaste auf den Projekt Knoten.
 
   Wenn Sie das SDK zum ersten Mal in Ihrem Projekt verwenden, können Sie nun [den Assemblyverweis zu Ihrem Projekt hinzufügen](#references).
 
@@ -95,7 +95,7 @@ So installieren Sie die Microsoft Store Services SDK-Bibliotheken über nuget:
     > [!NOTE]
     > Wenn das Projekt bereits Bibliotheks Verweise aus einer früheren MSI-Installation des SDK enthält, entfernen Sie diese Verweise aus dem Projekt. Diese Verweise sind mit Warnsymbolen versehen, da die Bibliotheken, auf die sie verweisen, in den vorherigen Schritten entfernt wurden.
 
-4. Klicken Sie in Visual Studio auf **Projekt** und **NuGet-Pakete verwalten**.
+4. Klicken Sie in Visual Studio auf **Projekt** und **NuGet-Pakete verwalten** .
 
 5. Geben Sie im Suchfeld " **Microsoft. Services. Store. Engagement** " ein, und installieren Sie das Paket "Microsoft. Services. Store. Engagement". Wenn die Installation des Pakets abgeschlossen ist, speichern Sie die Projekt Mappe.
     > [!NOTE]
@@ -103,7 +103,7 @@ So installieren Sie die Microsoft Store Services SDK-Bibliotheken über nuget:
 
 6. Schließen Sie die Visual Studio-Projekt Mappe, die das Projekt enthält, und öffnen Sie die Projekt Mappe erneut.
 
-7.  Wenn Ihr Projekt bereits auf Bibliotheken aus einer früheren Version des Microsoft Store Services SDKs verweist, die über NuGet installiert wurde, und Sie Ihr Projekt auf eine neuere Version des SDKs aktualisiert haben, empfehlen wir, das Projekt zu bereinigen und neu zu erstellen (klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektknoten, wählen Sie **Bereinigen** aus, klicken Sie dann mit der rechten Maustaste erneut auf den Projektknoten, und wählen Sie **Neu erstellen**).
+7.  Wenn Ihr Projekt bereits auf Bibliotheken aus einer früheren Version des Microsoft Store Services SDKs verweist, die über NuGet installiert wurde, und Sie Ihr Projekt auf eine neuere Version des SDKs aktualisiert haben, empfehlen wir, das Projekt zu bereinigen und neu zu erstellen (klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektknoten, wählen Sie **Bereinigen** aus, klicken Sie dann mit der rechten Maustaste erneut auf den Projektknoten, und wählen Sie **Neu erstellen** ).
 
   Wenn Sie das SDK zum ersten Mal in Ihrem Projekt verwenden, können Sie nun [den Assemblyverweis zu Ihrem Projekt hinzufügen](#references).
 
@@ -115,13 +115,13 @@ Nachdem Sie das Microsoft Store Services SDK über das MSI-Installationsprogramm
 
 1. Öffnen Sie Ihr Projekt in Visual Studio.
     > [!NOTE]
-    > Wenn Ihr Projekt eine JavaScript-APP ist, die auf eine **beliebige CPU**ausgerichtet ist, aktualisieren Sie das Projekt so, dass eine architekturspezifische Buildausgabe (z. b. **x86**) verwendet wird.
+    > Wenn Ihr Projekt eine JavaScript-APP ist, die auf eine **beliebige CPU** ausgerichtet ist, aktualisieren Sie das Projekt so, dass eine architekturspezifische Buildausgabe (z. b. **x86** ) verwendet wird.
 
-2. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Verweise**, und wählen Sie **Verweis hinzufügen...** aus.
+2. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Verweise** , und wählen Sie **Verweis hinzufügen...** aus.
 
-3. Erweitern Sie im **Verweis-Manager**den Knoten **universelle Fenster**, klicken Sie auf **Erweiterungen**, und aktivieren Sie dann das Kontrollkästchen neben **Microsoft Engagement Framework**. Dies ermöglicht es Ihnen, die APIs im [Microsoft. Services. Store. Engagement](/uwp/api/microsoft.services.store.engagement) -Namespace zu verwenden.
+3. Erweitern Sie im **Verweis-Manager** den Knoten **universelle Fenster** , klicken Sie auf **Erweiterungen** , und aktivieren Sie dann das Kontrollkästchen neben **Microsoft Engagement Framework** . Dies ermöglicht es Ihnen, die APIs im [Microsoft. Services. Store. Engagement](/uwp/api/microsoft.services.store.engagement) -Namespace zu verwenden.
 
-3. Klicken Sie auf **OK**.
+3. Klicken Sie auf **OK** .
 
 > [!NOTE]
 > Wenn Sie die SDK-Bibliotheken über nuget installiert haben, enthält das Projekt eine **Microsoft. Services. Store. Engagement** -Referenz. Die **Microsoft. Services. Store. Engagement** -Referenz stellt das nuget-Paket dar (und nicht die darin dargestellten Bibliotheken), und Sie können es ignorieren.
@@ -130,13 +130,13 @@ Nachdem Sie das Microsoft Store Services SDK über das MSI-Installationsprogramm
 
 ## <a name="understanding-framework-packages-in-the-sdk"></a>Die Frameworkpakete in dem SDK
 
-Die Microsoft.Services.Store.Engagement.dll-Bibliothek im Microsoft Store Services SDK ist als *frameworkpaket*konfiguriert. Diese Bibliothek enthält die APIs im [Microsoft.Services.Store.Engagement](/uwp/api/microsoft.services.store.engagement)-Namespace.
+Die Microsoft.Services.Store.Engagement.dll-Bibliothek im Microsoft Store Services SDK ist als *frameworkpaket* konfiguriert. Diese Bibliothek enthält die APIs im [Microsoft.Services.Store.Engagement](/uwp/api/microsoft.services.store.engagement)-Namespace.
 
 Da diese Bibliothek ein frameworkpaket ist, bedeutet dies, dass diese Bibliothek nach dem Installieren einer Version der APP, die diese Bibliothek verwendet, automatisch über Windows Update aktualisiert wird, wenn wir eine neue Version der Bibliothek mit Korrekturen und Leistungsverbesserungen veröffentlichen. Dadurch wird sichergestellt, dass Ihre Kunden immer die neueste verfügbare Version der Bibliothek auf Ihren Geräten installiert haben.
 
 Wenn wir eine neue Version des SDK veröffentlichen, mit der neue APIs oder Features in diese Bibliothek eingeführt werden, müssen Sie die neueste Version des SDK installieren, um diese Features zu verwenden. In diesem Szenario müssen Sie auch die aktualisierte App im Store veröffentlichen.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Microsoft Store Services SDK-API-Referenz](/uwp/api/overview/engagement)
 * [Ausführen von Experimenten mit A/B-Tests](run-app-experiments-with-a-b-testing.md)

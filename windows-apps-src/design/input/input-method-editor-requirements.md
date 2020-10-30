@@ -1,5 +1,5 @@
 ---
-Description: Entwickeln Sie einen benutzerdefinierten Eingabemethoden-Editor (IME), um einem Benutzer die Eingabe von Text in einer Sprache zu erleichtern, die auf einer Standardtastatur der QWERTY nicht leicht dargestellt werden kann.
+description: Entwickeln Sie einen benutzerdefinierten Eingabemethoden-Editor (IME), um einem Benutzer die Eingabe von Text in einer Sprache zu erleichtern, die auf einer Standardtastatur der QWERTY nicht leicht dargestellt werden kann.
 title: Anforderungen an den Eingabemethoden-Editor (IME)
 label: Input Method Editor (IME) requirements
 template: detail.hbs
@@ -7,12 +7,12 @@ keywords: IME, Eingabemethoden-Editor, Eingabe, Interaktion
 ms.date: 07/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a34c15826bff757b7c4277b87cc5fed53a6f109
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 74c223aefa525bb6109521c8b91a9a849e2f5586
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160004"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030133"
 ---
 # <a name="custom-input-method-editor-ime-requirements"></a>Anforderungen an den benutzerdefinierten Eingabemethoden-Editor (IME)
 
@@ -22,13 +22,13 @@ Eine Übersicht über die IMEs finden Sie unter [Eingabemethoden-Editor (IME)](i
 
 ## <a name="default-ime"></a>Standard-IME
 
-Benutzer können eine ihrer aktiven IMEs (**Settings-> Time & Language-> Language-> bevorzugte Sprachen-> Language Pack-Optionen**) als Standard-IME für Ihre bevorzugte Sprache auswählen.
+Benutzer können eine ihrer aktiven IMEs ( **Settings-> Time & Language-> Language-> bevorzugte Sprachen-> Language Pack-Optionen** ) als Standard-IME für Ihre bevorzugte Sprache auswählen.
 
 :::image type="content" source="images/IMEs/ime-preferred-languages.png" alt-text="Bevorzugte Spracheinstellung":::
 
 Wählen Sie auf dem Bildschirm Sprachoptionen Einstellungen die Standardtastatur für die bevorzugte Sprache aus.
 
-:::image type="content" source="images/IMEs/ime-preferred-languages-keyboard.png" alt-text="Tastatur für bevorzugte Sprache":::
+:::image type="content" source="images/IMEs/ime-preferred-languages-keyboard.png" alt-text="Bevorzugte Spracheinstellung":::
 
 > [!Important]
 > Es wird nicht empfohlen, direkt in die Registrierung zu schreiben, um die Standardtastatur für Ihren benutzerdefinierten IME festzulegen.
@@ -147,31 +147,7 @@ if (ToUnicode(VK_PACKET, 0, abKbdState, &wch, 1, 0) == 1)
 
 Stellen Sie Benutzern Suchfunktionen über den Such Vertrag und die Integration in den Suchbereich bereit.
 
-:::image type="content" source="images/IMEs/ime-search-pane.png" alt-text="Suchbereich und IME-Vorschläge":::<br/>
-*Suchbereich und IME-Vorschläge*
-
-Der Suchbereich ist ein zentraler Ort, an dem Benutzer Suchvorgänge für alle Ihre apps durchführen können. Für IME-Benutzer bietet Windows eine einzigartige Suchfunktion, mit der kompatible IMEs in Windows integriert werden kann, um eine höhere Effizienz und Benutzerfreundlichkeit zu erzielen.
-
-Benutzer, die mit einem IME eingeben, der mit der Suche kompatibel ist, erhalten zwei wichtige Vorteile:
-
-- Nahtlose Interaktion zwischen dem IME und der Suchfunktion. IME-Kandidaten werden Inline im Suchfeld angezeigt, ohne Suchvorschläge zu verwerfen. Der Benutzer kann die Tastatur verwenden, um zwischen dem Suchfeld, den IME-Konvertierungs Kandidaten und den Such Vorschlägen nahtlos zu navigieren.
-- Schneller Zugriff auf relevante Ergebnisse und Vorschläge, die von Anwendungen bereitgestellt werden. Die APP verfügt über Zugriff auf alle aktuellen Konvertierungs Kandidaten, um relevantere Vorschläge bereitzustellen. Um Suchvorschläge besser priorisieren zu können, werden die-Konvertierungen in der Reihenfolge ihrer Relevanz an Apps übergeben. Benutzer suchen und wählen das gewünschte Ergebnis, ohne Sie zu überschreiben, indem Sie einfach phonetisch eingeben.
-
-Ein IME ist mit der integrierten Suchfunktion kompatibel, wenn die folgenden Kriterien erfüllt sind:
-
-- Kompatibel mit der Windows-stilshell.
-- Implementieren Sie die TSF-uiless-Modus-APIs. Weitere Informationen finden Sie unter [Übersicht über den uiless-Modus](/windows/win32/tsf/uiless-mode-overview).
-- Implementieren Sie die TSF Search Integration-APIs, [itffnsearchcandidateprovider](/windows/win32/api/ctffunc/nn-ctffunc-itffnsearchcandidateprovider) und [itfintegratablecandidatelistuielement](/windows/win32/api/ctffunc/nn-ctffunc-itfintegratablecandidatelistuielement).
-
-Wenn Sie im Suchbereich aktiviert ist, wird ein kompatibles IME im uiless-Modus abgelegt und kann die Benutzeroberfläche nicht anzeigen. Stattdessen sendet Sie Konvertierungs Kandidaten an Windows, das Sie im Inline Kandidatenlisten-Steuerelement anzeigt, wie im vorherigen Screenshot dargestellt.
-
-Außerdem sendet der IME Kandidaten, die zum Ausführen der aktuellen Suche verwendet werden sollen. Diese Kandidaten können mit den Konvertierungs Kandidaten identisch sein, oder Sie können auf die Suche zugeschnitten werden.
-
-Gute Such Kandidaten erfüllen die folgenden Kriterien:
-
-- Kein Präfix überlappend. Beispielsweise sind 北京大学 and北京 redundant, da eins ein Präfix der anderen ist.
-- Keine redundanten Kandidaten. Jeder redundante Kandidat ist für die Suche nicht nützlich, da er nicht zum Filtern von Ergebnissen beiträgt. Beispielsweise entspricht jedes Ergebnis, das 北京大学 entspricht, auch 北京.
-- Kein Vorhersage Kandidat, nur Konvertierung. Wenn der Benutzer z. b. "be" eingibt, kann der IME 北 als Kandidat, aber nicht als 北京大学 zurückgeben. In der Regel sind Vorhersage Kandidaten zu restriktiv.
+:::image type="content" source="images/IMEs/ime-search-pane.png" alt-text="Bevorzugte Spracheinstellung" eingibt, kann der IME 北 als Kandidat, aber nicht als 北京大学 zurückgeben. In der Regel sind Vorhersage Kandidaten zu restriktiv.
 
 IMEs, die die Kriterien nicht erfüllen, sind nicht auf die gleiche Weise wie andere Steuerelemente mit der Suchanzeige kompatibel und können die Benutzeroberflächen Integration und Such Kandidaten nicht nutzen. Apps empfangen nur Abfragen, nachdem die Erstellung des Benutzers abgeschlossen ist.
 
@@ -208,9 +184,9 @@ Die Symbole des IME-Modus werden durch ein weißes typografisches Symbol in eine
 
 | Symbol | BESCHREIBUNG |
 | --- | --- |
-| :::image type="content" source="images/IMEs/ime-brand-icon-traditional-chinese.png" alt-text="Beispiel für das IME-Marken Symbol für traditionelles Chinesisch (changejie)."::: | Beispiel für das IME-Marken Symbol für traditionelles Chinesisch (changejie). |
-| :::image type="content" source="images/IMEs/ime-brand-icon-traditional-chinese-new.png" alt-text="Beispiel für ein IME-Marken Symbol für traditionelles Chinesisch (New changejie)."::: | Beispiel für das IME-Marken Symbol für traditionelles Chinesisch (changejie). |
-| :::image type="content" source="images/IMEs/ime-mode-icon-chinese.png" alt-text="Symbol für den chinesischen Modus"::: | Beispiel Symbol für den IME-Modus. |
+| :::image type="content" source="images/IMEs/ime-brand-icon-traditional-chinese.png" alt-text="Bevorzugte Spracheinstellung"::: | Beispiel für das IME-Marken Symbol für traditionelles Chinesisch (changejie). |
+| :::image type="content" source="images/IMEs/ime-brand-icon-traditional-chinese-new.png" alt-text="Bevorzugte Spracheinstellung"::: | Beispiel für das IME-Marken Symbol für traditionelles Chinesisch (changejie). |
+| :::image type="content" source="images/IMEs/ime-mode-icon-chinese.png" alt-text="Bevorzugte Spracheinstellung"::: | Beispiel Symbol für den IME-Modus. |
 
 ### <a name="owned-window"></a>Eigenes Fenster
 
@@ -257,22 +233,22 @@ Die folgenden Schritte zeigen, wie Sie InstallShield verwenden, um ein Setup-Pro
 
 - Installieren von Visual Studio.
 - Starten Sie Visual Studio.
-- Zeigen Sie im Menü **Datei** auf **neu** , und wählen Sie **Projekt**aus. Das Dialogfeld " **Neues Projekt** " wird geöffnet.
-- Navigieren Sie im linken Bereich zu **Vorlagen > anderen Projekttypen > Setup und Bereitstellung**, klicken Sie auf **InstallShield Limited Edition aktivieren**, und klicken Sie auf **OK**. Befolgen Sie die Installationsanweisungen.
+- Zeigen Sie im Menü **Datei** auf **neu** , und wählen Sie **Projekt** aus. Das Dialogfeld **Neues Projekt** wird geöffnet.
+- Navigieren Sie im linken Bereich zu **Vorlagen > anderen Projekttypen > Setup und Bereitstellung** , klicken Sie auf **InstallShield Limited Edition aktivieren** , und klicken Sie auf **OK** . Befolgen Sie die Installationsanweisungen.
 - Starten Sie Visual Studio neu.
 - Öffnen Sie die IME-Projektmappendatei (. sln).
-- Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf die Projekt Mappe, zeigen Sie auf **Hinzufügen**, und wählen Sie **Neues Projekt**. Das Dialogfeld **Neues Projekt hinzufügen** wird geöffnet.
-- Navigieren Sie im linken Strukturansicht-Steuerelement zu **Vorlagen > anderen Projekttypen > InstallShield Limited Edition**.
-- Klicken Sie im mittleren Fenster auf **InstallShield Limited Edition-Projekt**.
-- Geben Sie im Textfeld **Name den Namen** "setupime" ein, und klicken Sie auf **OK**.
-- Klicken Sie im Dialogfeld **Projekt-Assistent** auf **Anwendungsinformationen**.
+- Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf die Projekt Mappe, zeigen Sie auf **Hinzufügen** , und wählen Sie **Neues Projekt** . Das Dialogfeld **Neues Projekt hinzufügen** wird geöffnet.
+- Navigieren Sie im linken Strukturansicht-Steuerelement zu **Vorlagen > anderen Projekttypen > InstallShield Limited Edition** .
+- Klicken Sie im mittleren Fenster auf **InstallShield Limited Edition-Projekt** .
+- Geben Sie im Textfeld **Name den Namen** "setupime" ein, und klicken Sie auf **OK** .
+- Klicken Sie im Dialogfeld **Projekt-Assistent** auf **Anwendungsinformationen** .
 - Geben Sie den Namen Ihres Unternehmens und die anderen Felder ein.
-- Klicken Sie auf **Anwendungs Dateien**.
-- Klicken Sie im linken Bereich mit der rechten Maustaste auf den Ordner **[INSTALLDIR]** , und wählen Sie **neuer Ordner**aus. Benennen Sie den Ordner "Plug-ins".
-- Klicken Sie auf **Dateien hinzufügen**. Navigieren Sie zu ihrer IME-DLL, und fügen Sie Sie **dem Ordner Plug** -in hinzu. Wiederholen Sie diesen Schritt für das IME-Wörterbuch.
+- Klicken Sie auf **Anwendungs Dateien** .
+- Klicken Sie im linken Bereich mit der rechten Maustaste auf den Ordner **[INSTALLDIR]** , und wählen Sie **neuer Ordner** aus. Benennen Sie den Ordner "Plug-ins".
+- Klicken Sie auf **Dateien hinzufügen** . Navigieren Sie zu ihrer IME-DLL, und fügen Sie Sie **dem Ordner Plug** -in hinzu. Wiederholen Sie diesen Schritt für das IME-Wörterbuch.
 - Klicken Sie mit der rechten Maustaste auf die IME-DLL und wählen Sie **Eigenschaften** Das Dialogfeld **Eigenschaften** wird geöffnet.
 - Klicken Sie im Dialogfeld **Eigenschaften** auf die Registerkarte **com & .NET-Einstellungen** .
-- Wählen Sie unter **Registrierungstyp**die Option **Selbstregistrierung** aus, und klicken Sie auf **OK**.
+- Wählen Sie unter **Registrierungstyp** die Option **Selbstregistrierung** aus, und klicken Sie auf **OK** .
 - Erstellen Sie die Projektmappe. Die IME-DLL wird erstellt, und InstallShield erstellt eine setup.exe-Datei, die es Benutzern ermöglicht, Ihr IME unter Windows zu installieren.
 
 Um eine eigene Installationsumgebung zu erstellen, rufen Sie die [itfinputprocessorprofilemgr:: registerprofile](/windows/win32/api/msctf/nf-msctf-itfinputprocessorprofilemgr-registerprofile) -Methode auf, um den IME während der Installation zu registrieren. Schreiben Sie Registrierungseinträge nicht direkt.
@@ -286,11 +262,11 @@ Wenn der IME unmittelbar nach der Installation verwendet werden muss, müssen Si
 Implementieren Sie die folgende Konvention, damit Ihre IMEs den Barrierefreiheits Anforderungen entsprechen und mit der Sprachausgabe arbeiten können. Damit Kandidatenlisten zugänglich gemacht werden können, müssen die IMEs dieser Konvention folgen.
 
 - Die Kandidatenliste muss eine **UIA_AutomationIdPropertyId** gleich "IME_Candidate_Window" für Listen von Konvertierungs Kandidaten oder "IME_Prediction_Window" für Listen von Vorhersage Kandidaten haben.
-- Wenn die Kandidatenliste angezeigt und ausgeblendet wird, werden Ereignisse vom Typ " **UIA_MenuOpenedEventId** " und " **UIA_MenuClosedEventId**" ausgelöst.
-- Wenn sich der aktuelle ausgewählte Kandidat ändert, löst die Kandidatenliste eine **UIA_SelectionItem_ElementSelectedEventId**aus. Für das ausgewählte Element sollte eine Eigenschaft **UIA_SelectionItemIsSelectedPropertyId** gleich **true**sein.
-- Die **UIA_NamePropertyId** für jedes Element in der Kandidatenliste muss der Name des Kandidaten sein. Optional können Sie zusätzliche Informationen bereitstellen, um Kandidaten über **UIA_HelpTextPropertyId**zu unterscheiden.
+- Wenn die Kandidatenliste angezeigt und ausgeblendet wird, werden Ereignisse vom Typ " **UIA_MenuOpenedEventId** " und " **UIA_MenuClosedEventId** " ausgelöst.
+- Wenn sich der aktuelle ausgewählte Kandidat ändert, löst die Kandidatenliste eine **UIA_SelectionItem_ElementSelectedEventId** aus. Für das ausgewählte Element sollte eine Eigenschaft **UIA_SelectionItemIsSelectedPropertyId** gleich **true** sein.
+- Die **UIA_NamePropertyId** für jedes Element in der Kandidatenliste muss der Name des Kandidaten sein. Optional können Sie zusätzliche Informationen bereitstellen, um Kandidaten über **UIA_HelpTextPropertyId** zu unterscheiden.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 - [Eingabemethoden-Editor (IME)](input-method-editors.md)
 - [Itffngetpreferredtouchkeyboardlayout](/windows/win32/api/ctffunc/nn-ctffunc-itffngetpreferredtouchkeyboardlayout)

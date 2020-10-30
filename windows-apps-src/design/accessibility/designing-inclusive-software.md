@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie mehr über die Entwicklung eines inklusiven Entwurfs mit Windows-Apps für Windows 10.  Entwerfen und erstellen Sie inklusive Software unter Berücksichtigung der Barrierefreiheit.
+description: Erfahren Sie mehr über die Entwicklung eines inklusiven Entwurfs mit Windows-Apps für Windows 10.  Entwerfen und erstellen Sie inklusive Software unter Berücksichtigung der Barrierefreiheit.
 ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: Entwerfen inklusiver Software unter Windows 10
 label: Designing inclusive software
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 795344a7a03344c5f8aeea26252e1e0610d9d8c3
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 20a168fa9073aaf09055481be836799b4a3f00e7
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219863"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029883"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>Entwerfen inklusiver Software für Windows 10  
 
@@ -30,13 +30,13 @@ Mithilfe des inklusiven Designs werden bessere Produkte für alle erstellt. Es g
 ## <a name="inclusive-design-principles"></a>Grundlagen des inklusiven Designs  
 Die folgenden 4 Grundsätze gelten für den Wechsel von Microsoft zum inklusiven Design:
 
-**Think Universal (Universalität)**: Wir konzentrieren uns auf das, was Menschen verbindet – menschliche Motivationen, Beziehungen und Fähigkeiten. Dies spornt uns an, an die breiteren sozialen Auswirkungen unserer Arbeit zu denken. Das Ergebnis ist eine Umgebung, die zahlreiche Möglichkeiten bietet, damit alle Menschen teilnehmen können.
+**Think Universal (Universalität)** : Wir konzentrieren uns auf das, was Menschen verbindet – menschliche Motivationen, Beziehungen und Fähigkeiten. Dies spornt uns an, an die breiteren sozialen Auswirkungen unserer Arbeit zu denken. Das Ergebnis ist eine Umgebung, die zahlreiche Möglichkeiten bietet, damit alle Menschen teilnehmen können.
 
-**Make it personal (Personalisierung)**: Als Nächstes stellen wir uns der Herausforderung, emotionale Verbindungen herzustellen. Zwischenmenschliche Interaktionen können bessere Interaktionen zwischen Menschen und Technologien inspirieren. Die einzigartigen Umstände eines Menschen können ein Design für alle Menschen verbessern. Das Ergebnis ist eine Umgebung, die wirkt, als wäre sie nur für eine einzige Person entwickelt worden.
+**Make it personal (Personalisierung)** : Als Nächstes stellen wir uns der Herausforderung, emotionale Verbindungen herzustellen. Zwischenmenschliche Interaktionen können bessere Interaktionen zwischen Menschen und Technologien inspirieren. Die einzigartigen Umstände eines Menschen können ein Design für alle Menschen verbessern. Das Ergebnis ist eine Umgebung, die wirkt, als wäre sie nur für eine einzige Person entwickelt worden.
 
-**Keep it simple (Einfachheit)**: Einfachheit ist das alles verbindende Element. Wenn wir die Umgebung übersichtlicher gestalten, wissen Menschen, was sie als Nächstes tun müssen. Sie sind inspiriert, sich Bereiche zu erschließen, die aufgeräumt, hell und offen sind. Das Ergebnis ist eine ehrliche und zeitlose Umgebung.
+**Keep it simple (Einfachheit)** : Einfachheit ist das alles verbindende Element. Wenn wir die Umgebung übersichtlicher gestalten, wissen Menschen, was sie als Nächstes tun müssen. Sie sind inspiriert, sich Bereiche zu erschließen, die aufgeräumt, hell und offen sind. Das Ergebnis ist eine ehrliche und zeitlose Umgebung.
 
-**Create delight (Begeisterung)**: Begeisternde Umgebungen rufen Staunen und Entdeckertum hervor. Manchmal ist es Magie. Manchmal ist es ein Detail, das einfach nur richtig ist. Wir entwerfen diese Momente, damit sie sich wie willkommene Änderungen des Tempos anfühlen. Das Ergebnis ist eine Umgebung, die Dynamik und Fluss besitzt.
+**Create delight (Begeisterung)** : Begeisternde Umgebungen rufen Staunen und Entdeckertum hervor. Manchmal ist es Magie. Manchmal ist es ein Detail, das einfach nur richtig ist. Wir entwerfen diese Momente, damit sie sich wie willkommene Änderungen des Tempos anfühlen. Das Ergebnis ist eine Umgebung, die Dynamik und Fluss besitzt.
 
 ## <a name="inclusive-design-users"></a>Benutzer des inklusiven Designs  
 Es gibt im Wesentlichen zwei Arten von Benutzern von Hilfstechnologien (Assistive Technologies, AT):
@@ -103,7 +103,7 @@ Befolgen Sie diese sieben Schritte, um sicherzustellen, dass Ihre Software inklu
 6.  Testen Sie Ihr Produkt mit Benutzern mit speziellen Bedürfnissen, um sicherzustellen, dass diese das von Ihnen implementierte inklusive Design nutzen können.  
 7.  Stellen Sie das fertige Produkt bereit, und dokumentieren Sie Ihre Implementierung für Personen, die möglicherweise nach Ihnen am Projekt arbeiten.  
 
-## <a name="related-topics"></a>Zugehörige Themen  
+## <a name="related-topics"></a>Verwandte Themen  
 * [Inklusives Design](https://www.microsoft.com/design/inclusive/)
 * [Entwickeln von barrierefreier Software](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Entwickler-Hub für Barrierefreiheit in Microsoft](https://developer.microsoft.com/windows/accessible-apps)

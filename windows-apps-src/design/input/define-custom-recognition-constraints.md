@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie, wie Sie benutzerdefinierte Einschränkungen für die Spracherkennung festlegen und verwenden können.
+description: Erfahren Sie, wie Sie benutzerdefinierte Einschränkungen für die Spracherkennung festlegen und verwenden können.
 title: Festlegen von benutzerdefinierten Erkennungseinschränkungen
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
@@ -8,18 +8,18 @@ keywords: Sprache, Stimme, Spracherkennung, natürliche Sprache, diktieren, Eing
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b48564469fd77f3c670739a7095124ed7399a1fe
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5cef63bab911f46e34d337957011556a0c420763
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160074"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032163"
 ---
 # <a name="define-custom-recognition-constraints"></a>Festlegen von benutzerdefinierten Erkennungseinschränkungen
 
 Erfahren Sie, wie Sie benutzerdefinierte Einschränkungen für die Spracherkennung festlegen und verwenden können.
 
-> **Wichtige APIs**: [**SpeechRecognitionTopicConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint), [**Redner erkentionlisteinschränkungs Einschränkung**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint), [**sprach Erkennungs-grammatimarfileeinschränkung**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)
+> **Wichtige APIs** : [**SpeechRecognitionTopicConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint), [**Redner erkentionlisteinschränkungs Einschränkung**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint), [**sprach Erkennungs-grammatimarfileeinschränkung**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)
 
 Die Spracherkennung benötigt mindestens eine Einschränkung, um erkennbares Vokabular zu definieren. Wenn Sie keine Einschränkung angeben, wird die vordefinierte Diktiergrammatik der universellen Windows-Apps verwendet. Siehe [Spracherkennung](speech-recognition.md).
 
@@ -171,7 +171,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Diese SRGS-Datei (srgs.grxml) enthält Tags für die semantische Interpretation. Diese Tags liefern einen Mechanismus, mit dem übereinstimmende Grammatikdaten an Ihre App zurückgegeben werden. Grammatiken müssen der Spezifikation der World Wide Web Consortium (W3C) [Semantic Interpretation for Speech Recognition (SISR) 1,0](https://www.w3.org/TR/semantic-interpretation/) entsprechen.
+Diese SRGS-Datei (srgs.grxml) enthält Tags für die semantische Interpretation. Diese Tags liefern einen Mechanismus, mit dem übereinstimmende Grammatikdaten an Ihre App zurückgegeben werden. Die Grammatik muss der [Semantic Interpretation for Speech Recognition (SISR) 1.0](https://www.w3.org/TR/semantic-interpretation/)-Spezifikation des World Wide Web Consortium (W3C) entsprechen.
 
 Hier horchen wir auf Varianten von „Ja“ und „Nein“.
 
@@ -212,7 +212,7 @@ Hier horchen wir auf Varianten von „Ja“ und „Nein“.
 
 ## <a name="manage-constraints"></a>Verwalten von Einschränkungen
 
-Nachdem eine Einschränkungssammlung für die Erkennung geladen wurde, kann Ihre App verwalten, welche Einschränkungen für Erkennungsvorgänge aktiviert sind. Dazu wird für die [**IsEnabled**](/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled)-Eigenschaft einer Einschränkung **true** oder **false** festgelegt. Die Standardeinstellung ist **true**.
+Nachdem eine Einschränkungssammlung für die Erkennung geladen wurde, kann Ihre App verwalten, welche Einschränkungen für Erkennungsvorgänge aktiviert sind. Dazu wird für die [**IsEnabled**](/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled)-Eigenschaft einer Einschränkung **true** oder **false** festgelegt. Die Standardeinstellung ist **true** .
 
 Meist ist es effizienter, Einschränkungen einmal zu laden und dann bei Bedarf zu aktivieren bzw. zu deaktivieren, als Einschränkungen für jeden Erkennungsvorgang zu laden, zu entladen und zu kompilieren. Verwenden Sie die [**IsEnabled**](/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled)-Eigenschaft nach Bedarf.
 
@@ -226,6 +226,6 @@ Mit den Eigenschaften [**SpeechRecognizerUIOptions.AudiblePrompt**](/uwp/api/win
 
 - [Sprachinteraktionen](speech-interactions.md)
 
-### <a name="samples"></a>Proben
+### <a name="samples"></a>Beispiele
 
 - [Beispiel zu Spracherkennung und Sprachsynthese](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)

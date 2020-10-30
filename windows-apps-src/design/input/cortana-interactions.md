@@ -1,5 +1,5 @@
 ---
-Description: Erweitern Sie die Grundfunktionen von Cortana durch Sprachbefehle, die eine Windows-App aktivieren und eine einzelne Aktion ausführen.
+description: Erweitern Sie die Grundfunktionen von Cortana durch Sprachbefehle, die eine Windows-App aktivieren und eine einzelne Aktion ausführen.
 title: Cortana-Interaktionen
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
 label: Cortana
@@ -8,12 +8,12 @@ keywords: Cortana, Cortana-Canvas, Cortana-Design, Benutzeroberfläche, Sprachbe
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d79f62a98e30ef67743abd6a6dd00ce24d3fa13
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 270c3e4838c6edc3ac0aedc7092a545028ceff86
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220593"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032193"
 ---
 # <a name="cortana-interactions-in-windows-apps"></a>Cortana-Interaktionen in Windows-apps
 
@@ -37,6 +37,6 @@ Weitere Informationen zum Erweitern von Cortana mit Funktionalität aus einer Wi
 
 **Beispiele**
 * [Cortana-Sprachbefehlbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CortanaVoiceCommand)
- 
+ 
 
- 
+ 

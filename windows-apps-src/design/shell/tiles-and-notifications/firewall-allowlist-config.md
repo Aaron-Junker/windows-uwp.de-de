@@ -1,5 +1,5 @@
 ---
-Description: Viele Unternehmen verwenden Firewalls zum Blockieren von unerwünschtem Datenverkehr. In diesem Dokument wird beschrieben, wie Sie den WNS-Datenverkehr durch Firewalls passieren können.
+description: Viele Unternehmen verwenden Firewalls zum Blockieren von unerwünschtem Datenverkehr. In diesem Dokument wird beschrieben, wie Sie den WNS-Datenverkehr durch Firewalls passieren können.
 title: Hinzufügen von WNS-Datenverkehr zur Firewall-Zulassungsliste
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: Windows 10, UWP, WNS, Windows-Benachrichtigungsdienst, Benachrichtigung, Windows, Firewall, Problembehandlung, IP, Datenverkehr, Unternehmen, Netzwerk, IPv4, VIP, FQDN, öffentliche IP-Adresse
 ms.localizationpriority: medium
-ms.openlocfilehash: 4277b46728464630bf478b1f78008e92b4e3fe99
-ms.sourcegitcommit: 41dbee78d827107c224a9136c26f90be4dfe12ad
+ms.openlocfilehash: 6212111770ff61179eabf0f77e109d1a6d2235b3
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90845529"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032043"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>Unternehmens Firewall-und Proxy Konfigurationen zur Unterstützung von WNS-Datenverkehr
 
@@ -38,7 +38,7 @@ Im folgenden finden Sie eine Liste, die die FQDNs, VIPs und IP-Adressbereiche en
 
 
 ### <a name="fqdns-vips-ips-and-ports"></a>Voll qualifizierte DNS, VIPs, IPS und Ports
-Unabhängig von der Methode, die Sie unten auswählen, müssen Sie Netzwerk Datenverkehr an die aufgelisteten Ziele über **Port 443**zulassen. Jedes der Elemente im folgenden XML-Dokument wird in der folgenden Tabelle erläutert (in [Begriffen und Notizen](#terms-and-notations)). Die IP-Adressbereiche wurden absichtlich nicht in diesem Dokument ausgelassen, damit Sie nur die FQDNs verwenden können, da die FQDNs konstant bleiben. Allerdings können Sie die XML-Datei mit der kompletten Liste aus dem Download Center herunterladen: [Windows Notification Service (WNS) VIP und IP-Bereiche](https://www.microsoft.com/download/details.aspx?id=44238). Neue VIPs oder IP-Adressbereiche werden **eine Woche nach dem Hochladen wirksam**.
+Unabhängig von der Methode, die Sie unten auswählen, müssen Sie Netzwerk Datenverkehr an die aufgelisteten Ziele über **Port 443** zulassen. Jedes der Elemente im folgenden XML-Dokument wird in der folgenden Tabelle erläutert (in [Begriffen und Notizen](#terms-and-notations)). Die IP-Adressbereiche wurden absichtlich nicht in diesem Dokument ausgelassen, damit Sie nur die FQDNs verwenden können, da die FQDNs konstant bleiben. Allerdings können Sie die XML-Datei mit der kompletten Liste aus dem Download Center herunterladen: [Windows Notification Service (WNS) VIP und IP-Bereiche](https://www.microsoft.com/download/details.aspx?id=44238). Neue VIPs oder IP-Adressbereiche werden **eine Woche nach dem Hochladen wirksam** .
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -70,12 +70,12 @@ Unabhängig von der Methode, die Sie unten auswählen, müssen Sie Netzwerk Date
 ### <a name="terms-and-notations"></a>Nutzungsbedingungen
 Im folgenden finden Sie Erläuterungen zu den im obigen XML-Code Ausschnitt verwendeten Notations-und Element Elementen.
 
-| Begriff | Erläuterung |
+| Begriff | Erklärung |
 |---|---|
 | **Punkt-Dezimal Schreibweise (d. h. 64.4.28.0/26)** | Mit der Punkt-Dezimal Schreibweise kann der Bereich der IP-Adressen beschrieben werden. 64.4.28.0/26 bedeutet beispielsweise, dass die ersten 26 Bits von 64.4.28.0 konstant sind, während die letzten 6 Bits variabel sind.  In diesem Fall ist der IPv4-Bereich 64.4.28.0-64.4.28.63. |
-| **Clientdns** | Dies sind die voll qualifizierten Domänen Namen (FQDN)-Filter für die Client Geräte (Windows-PCs, Desktops), die Benachrichtigungen von WNS empfangen. Diese müssen über die Firewall zugelassen werden, damit WNS-Clients die WNS-Funktionalität verwenden können.  Es wird empfohlen,-List durch die FQDNs anstelle der IP-/VIP-Bereiche zuzulassen, da diese nie geändert werden. |
+| **Clientdns** | Dabei handelt es sich um die Fully-Qualified Domänen Namen (sqdn)-Filter für die Client Geräte (Windows-PCs, Desktops), die Benachrichtigungen von WNS empfangen. Diese müssen über die Firewall zugelassen werden, damit WNS-Clients die WNS-Funktionalität verwenden können.  Es wird empfohlen,-List durch die FQDNs anstelle der IP-/VIP-Bereiche zuzulassen, da diese nie geändert werden. |
 | **ClientIPsIPv4** | Dies sind die IPv4-Adressen der Server, auf die von Client Geräten (Windows-PCs, Desktops) zugegriffen wird, die Benachrichtigungen von WNS empfangen. |
-| **Cloudservicedns** | Dies sind die voll qualifizierten Domänen Namen (Fully Qualified Domain Name, FQDN) der WNS-Server, mit denen Ihr Cloud-Dienst benachrichtigt wird, um notificatios an WNS zu senden. Diese müssen über die Firewall zugelassen werden, damit Dienste WNS-Benachrichtigungen senden können.  Es wird empfohlen,-List durch die FQDNs anstelle der IP-/VIP-Bereiche zuzulassen, da diese nie geändert werden.|
+| **Cloudservicedns** | Dabei handelt es sich um die Fully-Qualified Domänen Namen (FQDN)-Filter für die WNS-Server, mit denen Ihr Cloud-Dienst eine notificatios an WNS sendet. Diese müssen über die Firewall zugelassen werden, damit Dienste WNS-Benachrichtigungen senden können.  Es wird empfohlen,-List durch die FQDNs anstelle der IP-/VIP-Bereiche zuzulassen, da diese nie geändert werden.|
 | **Cloudserviceips** | Cloudserviceips sind die IPv4-Adressen der Server, die für Clouddienste zum Senden von Benachrichtigungen an WNS verwendet werden.  |
 
 
@@ -83,7 +83,7 @@ Im folgenden finden Sie Erläuterungen zu den im obigen XML-Code Ausschnitt verw
 Wenn Sie den Legacy-Benachrichtigungsdienst (mpns) verwenden, sind die IP-Adressbereiche, die Sie der Zulassungsliste hinzufügen müssen, im Download Center verfügbar: [öffentliche IP-Adressbereiche des Microsoft-pushbenachrichtigungsdiensts (mpns)](https://www.microsoft.com/download/details.aspx?id=44535).
 
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Schnellstart: Senden einer Pushbenachrichtigung](/previous-versions/windows/apps/hh868252(v=win.10))
 * [So wird's gemacht: Anfordern, Erstellen und Speichern eines Benachrichtigungskanals](/previous-versions/windows/apps/hh465412(v=win.10))
@@ -91,4 +91,4 @@ Wenn Sie den Legacy-Benachrichtigungsdienst (mpns) verwenden, sind die IP-Adress
 * [So wird's gemacht: Authentifizieren mit dem Windows-Pushbenachrichtigungsdienst (Windows Push Notification Service, WNS)](/previous-versions/windows/apps/hh465407(v=win.10))
 * [Anforderungs- und Antwortheader des Pushbenachrichtigungsdiensts](/previous-versions/windows/apps/hh465435(v=win.10))
 * [Richtlinien und Prüfliste für Pushbenachrichtigungen](./windows-push-notification-services--wns--overview.md)
- 
+ 

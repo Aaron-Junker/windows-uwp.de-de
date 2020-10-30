@@ -1,17 +1,17 @@
 ---
-Description: MakePri.exe verfügt über die Befehle "kreateconfig", "Dump", "New", "resourcepack" und "versioniert". In diesem Thema wird deren Verwendung ausführlich erläutert.
+description: MakePri.exe verfügt über die Befehle "kreateconfig", "Dump", "New", "resourcepack" und "versioniert". In diesem Thema wird deren Verwendung ausführlich erläutert.
 title: Befehlszeilenoptionen für „MakePri.exe“
 template: detail.hbs
 ms.date: 04/10/2018
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: 638de4d2795b3b248edfdcc35dc72fa21d31fc3b
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: 7443efbb227bf3f9ea64db58902ebeb67b02f676
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253781"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031733"
 ---
 # <a name="makepriexe-command-line-options"></a>Befehlszeilenoptionen für „MakePri.exe“
 
@@ -115,7 +115,7 @@ Help:
 Der `dump` Befehl gibt eine abgegebene XML-Datei aus, die eine Liste aller Ressourcen in einer angegebenen PRI-Datei enthält. Führen `MakePri.exe dump /?` Sie aus, um ausführliche Hilfe zu diesem Befehl anzuzeigen.
 
 > [!NOTE]
-> Ein Schema freies Ressourcenpaket, das mit dem Schalter *omitschemafromresourcepacks* in der PRI-Konfigurationsdatei erstellt wurde. Verwenden Sie zum Sichern eines Ressourcen Pakets mit Schema freiem Schema den-Schalter `/es <main_package_PRI_file>` . Wenn Sie die Hauptdatei nicht angeben, wird die Fehlermeldung "*die Ressourcen. pri im Paket ist beschädigt, sodass die Verschlüsselung fehlgeschlagen ist (Fehler PRI222:0xdef0000f-nicht angegebener Fehler aufgetreten)*" angezeigt.
+> Ein Schema freies Ressourcenpaket, das mit dem Schalter *omitschemafromresourcepacks* in der PRI-Konfigurationsdatei erstellt wurde. Verwenden Sie zum Sichern eines Ressourcen Pakets mit Schema freiem Schema den-Schalter `/es <main_package_PRI_file>` . Wenn Sie die Hauptdatei nicht angeben, wird die Fehlermeldung " *die Ressourcen. pri im Paket ist beschädigt, sodass die Verschlüsselung fehlgeschlagen ist (Fehler PRI222:0xdef0000f-nicht angegebener Fehler aufgetreten)* " angezeigt.
 
 ```console
 C:\>makepri dump /?
@@ -458,7 +458,7 @@ Dies ist ein Beispiel Inhalt einer Resource Pack-Mapping-Datei.
 
 ## <a name="output-summary"></a>Ausgabe Zusammenfassung
 
-Wenn Ressourcen Pakete erstellt werden, ist die Ausgabe Zusammenfassung aus MakePRI.exe ausführlichere Form. Hier ist ein Beispiel.
+Wenn Ressourcen Pakete erstellt werden, ist die Ausgabe Zusammenfassung aus MakePRI.exe ausführlichere Form. Hier sehen Sie ein Beispiel.
 
 ```console
 Index Pass Completed: ResourcePackTests\TestApp_ResourcePack
@@ -549,6 +549,6 @@ Die Option für die Hauptversion (/VMA) (für den- `new` Befehl) ist veraltet, u
 
 Um die Hauptversionsnummer anzugeben, verwenden Sie das- [resources@majorVersion](makepri-exe-configuration.md) Attribut in der Konfigurationsdatei.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [MakePri.exe](compile-resources-manually-with-makepri.md)

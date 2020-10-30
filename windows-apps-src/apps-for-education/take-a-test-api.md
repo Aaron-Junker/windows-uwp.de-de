@@ -1,17 +1,17 @@
 ---
-Description: Mit der JavaScript-API für die App „Prüfung“ von Microsoft können Sie zuverlässige Bewertungen durchführen. „Prüfung“ stellt einen sicheren Browser bereit, der die Lernenden daran hindert, während eines Tests andere Computer- oder Internet-Ressourcen zu verwenden.
+description: Mit der JavaScript-API für die App „Prüfung“ von Microsoft können Sie zuverlässige Bewertungen durchführen. „Prüfung“ stellt einen sicheren Browser bereit, der die Lernenden daran hindert, während eines Tests andere Computer- oder Internet-Ressourcen zu verwenden.
 title: JavaScript-API für Prüfung.
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Bildung
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eeb190fc95e46a95813affd432948d38c0328a4
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 29a5d2749531e12ef7ce9b44cd6598c38cd089db
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218393"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031523"
 ---
 # <a name="take-a-test-javascript-api"></a>JavaScript-API für Prüfung
 
@@ -132,7 +132,7 @@ Windows 10, Version 1709
 
 <span id="close"/>
 
-### <a name="close"></a>schließen
+### <a name="close"></a>close
 Schließt den Browser und entsperrt das Gerät. Die Testanwendung sollte diese aufrufen, wenn der Benutzer zum Beenden des Browsers entscheidet.
 
 **Syntax**  
@@ -277,7 +277,7 @@ Wenn die Zielfunktion dem Browser unbekannt ist, übergibt diese Funktion den We
 `Boolean SecureBrowser.security.isRemoteSession();`
 
 **Rückgabewert**  
-**true** , wenn die aktuelle Sitzung Remote ist, andernfalls **false**.
+**true** , wenn die aktuelle Sitzung Remote ist, andernfalls **false** .
 
 **Anforderungen**  
 Windows 10, Version 1709
@@ -293,7 +293,7 @@ Windows 10, Version 1709
 `Boolean SecureBrowser.security.isVMSession();`
 
 **Rückgabewert**  
-**true** , wenn die aktuelle Sitzung auf einem virtuellen Computer ausgeführt wird, andernfalls **false**.
+**true** , wenn die aktuelle Sitzung auf einem virtuellen Computer ausgeführt wird, andernfalls **false** .
 
 **Anmerkungen**  
 Mit dieser API-Überprüfung können nur VM-Sitzungen erkannt werden, die in bestimmten Hypervisoren ausgeführt werden, die die entsprechenden APIs implementieren.

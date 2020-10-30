@@ -1,36 +1,36 @@
 ---
-Description: In diesem Thema werden die formatspezifischen Indexer beschrieben, die das Tool MakePri.exe verwendet, um seinen Ressourcenindex zu generieren.
+description: In diesem Thema werden die Format spezifischen Indexer beschrieben, die vom MakePri.exe Tool verwendet werden, um den Index von Ressourcen zu generieren.
 title: Formatspezifische Indexer für „MakePri.exe“
 template: detail.hbs
 ms.date: 10/18/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d30a0321de872dac11070c52dd0598b2276bcab
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 3794d369ae9d47cfc7aad1b24ca2768b04024581
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79200958"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031693"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>Formatspezifische Indexer für „MakePri.exe“
 
-In diesem Thema werden die formatspezifischen Indexer beschrieben, die das Tool [MakePri.exe](compile-resources-manually-with-makepri.md) verwendet, um seinen Ressourcenindex zu generieren.
+In diesem Thema werden die Format spezifischen Indexer beschrieben, die vom [MakePri.exe](compile-resources-manually-with-makepri.md) Tool verwendet werden, um den Index von Ressourcen zu generieren.
 
 > [!NOTE]
-> Makepri. exe wird installiert, wenn Sie bei der Installation des Windows Software Development Kit die Option **Windows SDK für UWP verwaltete apps** aktivieren. Sie wird auf dem Pfad `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` installiert (sowie in Ordnern, die für die anderen Architekturen benannt sind). Beispiel: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri.exe wird installiert, wenn Sie bei der Installation des Windows Software Development Kit die Option **Windows SDK für verwaltete UWP-apps** aktivieren. Es wird im Pfad installiert `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (sowie in Ordnern, die für die anderen Architekturen benannt sind). Beispiel: `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
-MakePri.exe wird in der Regel mit den Befehlen `new`, `versioned` oder `resourcepack` verwendet. Siehe [Befehlszeilenoptionen für MakePri.exe](makepri-exe-command-options.md). In diesen Fällen indiziert das Tool Quelldateien und generiert einen Ressourcenindex. MakePri.exe verwendet eine Reihe individueller Indexer, um die verschiedenen Quellressourcendateien oder Ressourcencontainer zu lesen. Der einfachste Indexer ist der Ordnerindexer. Er indiziert den Inhalt eines Ordners, beispielsweise `.jpg`- oder `.png`-Bilder.
+MakePri.exe wird in der Regel mit `new` den `versioned` Befehlen, oder verwendet `resourcepack` . Weitere Informationen finden Sie unter [MakePri.exe Befehlszeilenoptionen](makepri-exe-command-options.md). In diesen Fällen werden Quelldateien indiziert, um einen Index von Ressourcen zu generieren. MakePri.exe verwendet verschiedene einzelne Indexer, um unterschiedliche Quell Ressourcen Dateien oder Container für Ressourcen zu lesen. Der einfachste Indexer ist der ordnerindexer, der den Inhalt eines Ordners (z `.jpg` . b `.png` . oder Bilder) indiziert.
 
-Formatspezifische Indexer werden durch Angabe von `<indexer-config>`-Elementen in einem `<index>`-Element der [MakePri.exe-Konfigurationsdatei](makepri-exe-configuration.md) identifiziert. Das Attribut `type` identifiziert den verwendeten formatspezifischen Indexer.
+Sie identifizieren Format spezifische Indexer, indem Sie `<indexer-config>` Elemente in einem `<index>` Element der [MakePri.exe Konfigurationsdatei](makepri-exe-configuration.md)angeben. Das `type` -Attribut identifiziert den Format spezifischen Indexer, der verwendet wird.
 
-Bei Ressourcencontainern, die während der Indizierung vorgefunden werden, wird der Inhalt indiziert. Die Container selbst werden dem Index nicht hinzugefügt. Beispielsweise werden vom Ordnerindexer gefundene `.resjson`-Dateien von einem `.resjson`-Indexer im Detail indiziert. Die `.resjson`-Datei ist in diesem Fall nicht im Index enthalten. **Hinweis:** Dazu muss ein `<indexer-config>`-Element für den Indexer, der diesem Container zugeordnet ist, in der Konfigurationsdatei enthalten sein.
+Ressourcen Container, die während der Indizierung gefunden werden, erhalten in der Regel ihren Inhalt indiziert, anstatt dem Index selbst hinzugefügt zu werden Beispielsweise `.resjson` können Dateien, die der Ordner Indexer findet, von einem Indexer weiter indiziert werden `.resjson` . in diesem Fall wird die `.resjson` Datei selbst nicht im Index angezeigt. **Beachten Sie** , dass ein- `<indexer-config>` Element für den Indexer, der diesem Container zugeordnet ist, in die Konfigurationsdatei eingeschlossen werden muss.
 
-Die für eine Containerentität wie einen Ordner oder eine &mdash;-Datei gefundenen Qualifizierer werden normalerweise auf alle enthaltenen Ressourcen angewendet, also beispielsweise auf die Dateien im Ordner oder die Zeichenfolgen in der `.resw`-Datei.
+In der Regel werden Qualifizierer für eine enthaltende Entität, z. b. &mdash; ein Ordner oder eine `.resw` Datei, auf alle darin enthaltenen &mdash; Ressourcen, z. b. die Dateien innerhalb des Ordners, oder die Zeichen folgen in der `.resw` Datei angewendet.
 
-## <a name="folder"></a>Folder
+## <a name="folder"></a>Ordner
 
-Der Ordnerindexer wird mit dem `type`-Attribut FOLDER angegeben. Er indiziert den Inhalt eines Ordners und bestimmt Ressourcenbezeichner anhand der Ordner- und Dateinamen. Das zugehörige Konfigurationselement entspricht dem folgenden Schema.
+Der ordnerindexer wird durch ein- `type` Attribut des-Ordners identifiziert. Er indiziert den Inhalt eines Ordners und bestimmt Ressourcen Qualifizierer aus dem Ordner und den Dateinamen. Das zugehörige Konfigurationselement entspricht dem folgenden Schema.
 
 ```xml
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -67,13 +67,13 @@ Der Ordnerindexer wird mit dem `type`-Attribut FOLDER angegeben. Er indiziert de
 </xs:schema>
 ```
 
-Das Attribut `qualifierDelimiter` bestimmt das Zeichen, nach dem Qualifizierer in einem Dateinamen angegeben werden (die Dateinamenerweiterung wird ignoriert). Der Standardwert ist ".".
+Das- `qualifierDelimiter` Attribut gibt das Zeichen an, nach dem Qualifizierer in einem Dateinamen angegeben werden und die Erweiterung ignoriert wird. Der Standard ist ".".
 
 ## <a name="pri"></a>PRI
 
-Der PRI-Indexer wird mit dem `type`-Attribut PRI angegeben. Er indiziert die Inhalte von PRI-Dateien. Normalerweise werden damit Ressourcen in anderen Assemblys, DLLs, SDKs oder in Klassenbibliotheken in der PRI-Datei der App indiziert.
+Der PRI-Indexer wird durch ein- `type` Attribut von PRI identifiziert. Der Inhalt einer PRI-Datei wird indiziert. Sie verwenden Sie in der Regel, wenn Sie die Ressource, die in einer anderen Assembly, dll, SDK oder Klassenbibliothek enthalten ist, in den PRI der APP indizieren.
 
-Alle Ressourcennamen, Qualifizierer und Werte in der PRI-Datei werden direkt in der neuen PRI-Datei beibehalten. Die Ressourcenzuordnung der obersten Ebene wird jedoch nicht in der abschließenden PRI-Datei beibehalten. Ressourcenzuordnungen werden zusammengeführt.
+Alle Ressourcennamen, Qualifizierer und Werte, die in der PRI-Datei enthalten sind, werden direkt in der neuen PRI-Datei verwaltet. Die Ressourcen Zuordnung auf oberster Ebene wird jedoch im endgültigen PRI nicht beibehalten. Ressourcen Zuordnungen werden zusammengeführt.
 
 ```xml
 <xs:schema id="prifile" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
@@ -90,9 +90,9 @@ Alle Ressourcennamen, Qualifizierer und Werte in der PRI-Datei werden direkt in 
 </xs:schema>
 ```
 
-## <a name="priinfo"></a>PriInfo
+## <a name="priinfo"></a>Priinfo
 
-Der PriInfo-Indexer wird mit dem `type`-Attribut PRIINFO angegeben. Er indiziert den Inhalt einer ausführlichen Dumpdatei. Durch den Aufruf von `makepri dump` mit der Option `/dt detailed` wird eine detaillierte Dumpdatei erstellt. Der Konfigurationselement für den Indexer entspricht dem folgenden Schema.
+Der priinfo-Indexer wird durch ein- `type` Attribut von priinfo identifiziert. Der Inhalt einer detaillierten Dumpdatei wird indiziert. Sie führen eine ausführliche Dumpdatei aus, indem Sie `makepri dump` mit der- `/dt detailed` Option ausführen. Das Configuration-Element für den Indexer entspricht dem folgenden Schema.
 
 ```xml
 <xs:schema id="priinfo" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
@@ -111,15 +111,15 @@ Der PriInfo-Indexer wird mit dem `type`-Attribut PRIINFO angegeben. Er indiziert
 </xs:schema>
 ```
 
-Dieses Konfigurationselement ermöglicht die Verwendung optionaler Attribute, um das Verhalten des PriInfo-Indexers zu konfigurieren. Der Standardwert für `emitStrings` und `emitPaths` ist `true`. Wenn `emitStrings` den Wert `true` besitzt, werden Ressourcenkandidaten mit dem `type`-Attribut „String” in den Index aufgenommen. Andernfalls werden sie ausgeschlossen. Wenn „emitPaths” den Wert `true` besitzt, werden Ressourcenkandidaten mit dem `type`-Attribut „Path” in den Index aufgenommen. Andernfalls werden sie ausgeschlossen.
+Dieses Konfigurationselement ermöglicht optionale Attribute, um das Verhalten des priinfo-Indexers zu konfigurieren. Der Standardwert von `emitStrings` und `emitPaths` ist `true` . Wenn `emitStrings` ist `true` , werden Ressourcen Kandidaten, bei denen das- `type` Attribut auf "String" festgelegt ist, im Index eingeschlossen. andernfalls werden Sie ausgeschlossen. Wenn ' emitpath ' ist `true` , werden Ressourcen Kandidaten, bei denen das- `type` Attribut auf ' Path ' festgelegt ist, im Index eingeschlossen. andernfalls werden Sie ausgeschlossen.
 
-Im folgenden Konfigurationsbeispiel werden String-Ressourcentypen aufgenommen und Path-Ressourcentypen übersprungen.
+Im folgenden finden Sie eine Beispielkonfiguration, die Zeichen folgen-Ressourcentypen umfasst, aber Pfad Ressourcentypen überspringt.
 
 ```xml
 <indexer-config type="priinfo" emitStrings="true" emitPaths="false" />
 ```
 
-Voraussetzung für die Indizierung einer Dumpdatei ist, dass sie über die Erweiterung `.pri.xml` verfügt und dem folgenden Schema entspricht.
+Um indiziert zu werden, muss eine Dumpdatei mit der-Erweiterung enden `.pri.xml` und muss dem folgenden Schema entsprechen.
 
 ```xml
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" >
@@ -213,11 +213,11 @@ Voraussetzung für die Indizierung einer Dumpdatei ist, dass sie über die Erwei
 </xs:schema>
 ```
 
-MakePri unterstützt die Dumptypen „Basic”, „Detailed”, „Schema” und „Summary”. Damit MakePri.exe einen Dumptyp ausgibt, den der PriInfo-Indexer lesen kann, müssen Sie die Zeichenfolge „/DumpType Detailed” in den `dump`-Befehl aufnehmen.
+MakePri.exe unterstützt die dumptypen "Basic", "detailliert", "Schema" und "Zusammenfassung". Wenn Sie MakePri.exe konfigurieren möchten, um den dumptyp auszugeben, den der priinfo-Indexer lesen kann, schließen Sie "/DumpType ausführlich" ein, wenn Sie den `dump` Befehl verwenden.
 
-Mehrere Elemente der `.pri.xml`-Datei werden von MakePri.exe übersprungen. Diese Elemente werden entweder bei der Indizierung erstellt oder sind in der MakePri.exe-Konfigurationsdatei angegeben. Ressourcennamen, Qualifizierer und Werte in der Dumpdatei werden direkt in der neuen PRI-Datei beibehalten. Die Ressourcenzuordnung der obersten Ebene wird jedoch nicht in der abschließenden PRI-Datei verwaltet. Ressourcenzuordnungen werden bei der Indizierung zusammengeführt.
+Mehrere Elemente der `.pri.xml` Datei werden von MakePri.exe übersprungen. Diese Elemente werden entweder während der Indizierung berechnet oder in der MakePri.exe Konfigurationsdatei angegeben. Ressourcennamen, Qualifizierer und Werte, die in der Dumpdatei enthalten sind, werden direkt in der neuen PRI-Datei verwaltet. Die Ressourcen Zuordnung der obersten Ebene wird jedoch im endgültigen PRI nicht beibehalten. Ressourcen Zuordnungen werden als Teil der Indizierung zusammengeführt.
 
-Hier ein Beispiel für eine gültige Ressource vom Typ „String” aus einer Dumpdatei:
+Dies ist ein Beispiel für eine gültige Zeichen folgen-typressource aus einer Dumpdatei.
 
 ```xml
 <NamedResource name="SampleString " index="96" uri="ms-resource://SampleApp/resources/SampleString ">
@@ -235,7 +235,7 @@ Hier ein Beispiel für eine gültige Ressource vom Typ „String” aus einer Du
 </NamedResource>
 ```
 
-Hier ein Beispiel für eine gültige Ressource vom Typ „Path” aus einer Dumpdatei:
+Dies ist ein Beispiel für eine gültige path type-Ressource mit zwei Kandidaten aus einer Dumpdatei.
 
 ```xml
 <NamedResource name="Sample.png" index="77" uri="ms-resource://SampleApp/Files/Images/Sample.png">
@@ -262,9 +262,9 @@ Hier ein Beispiel für eine gültige Ressource vom Typ „Path” aus einer Dump
 </NamedResource>
 ```
 
-## <a name="resfiles"></a>ResFiles
+## <a name="resfiles"></a>Resfiles
 
-Der ResFiles-Indexer wird mit dem `type`-Attribut RESFILES angegeben. Er indiziert die Inhalte einer `.resfiles`-Datei. Das zugehörige Konfigurationselement entspricht dem folgenden Schema.
+Der resfiles-Indexer wird durch ein- `type` Attribut von resfiles identifiziert. Der Inhalt einer Datei wird indiziert `.resfiles` . Das zugehörige Konfigurationselement entspricht dem folgenden Schema.
 
 ```xml
 <xs:schema id="resx" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
@@ -282,7 +282,7 @@ Der ResFiles-Indexer wird mit dem `type`-Attribut RESFILES angegeben. Er indizie
 </xs:schema>
 ```
 
-Die `.resfiles`-Datei ist eine Textdatei mit einer flachen Liste von Dateipfaden. Eine `.resfiles`-Datei kann Kommentare mit Schrägstrichen ("//") enthalten. Hier sehen Sie ein Beispiel.
+Eine `.resfiles` Datei ist eine Textdatei, die eine flache Liste mit Dateipfaden enthält. Eine `.resfiles` Datei kann "//"-Kommentare enthalten. Hier sehen Sie ein Beispiel.
 
 <blockquote>
 <pre>
@@ -295,7 +295,7 @@ Images\logo.scale-180.png
 
 ## <a name="resjson"></a>ResJSON
 
-Der ResJSON-Indexer wird mit dem `type`-Attribut RESJSON angegeben. Er indiziert die Inhalte einer `.resjson`-Datei, bei der es sich um eine Zeichenfolgen-Ressourcendatei handelt. Das zugehörige Konfigurationselement entspricht dem folgenden Schema.
+Der resjson-Indexer wird durch das- `type` Attribut resjson identifiziert. Der Inhalt einer `.resjson` Datei, die eine Zeichen folgen-Ressourcen Datei ist, wird indiziert. Das zugehörige Konfigurationselement entspricht dem folgenden Schema.
 
 ```xml
 <xs:schema id="resjson" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
@@ -313,17 +313,17 @@ Der ResJSON-Indexer wird mit dem `type`-Attribut RESJSON angegeben. Er indiziert
 </xs:schema>
 ```
 
-Eine `.resjson`-Datei enthält JSON-Text (siehe [Anwendungs-/JSON-Medientyp für JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)). Die Datei muss ein einzelnes JSON-Objekt mit hierarchischen Eigenschaften enthalten. Jede Eigenschaft muss ein anderes JSON-Objekt oder ein Zeichenfolgenwert sein.
+Eine `.resjson` Datei enthält JSON-Text (siehe [den Medientyp "application/json" für JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)). Die Datei muss ein einzelnes JSON-Objekt mit hierarchischen Eigenschaften enthalten. Jede Eigenschaft muss entweder ein anderes JSON-Objekt oder ein Zeichen folgen Wert sein.
 
-JSON-Eigenschaften, deren Name mit einem Unterstrich (_) beginnt, werden nicht in die abschließende PRI-Datei kompiliert, sondern in der Protokolldatei beibehalten.
+JSON-Eigenschaften, deren Namen mit einem Unterstrich ("_") beginnen, werden nicht in die endgültige PRI-Datei kompiliert, sondern in der Protokolldatei beibehalten.
 
-Die Datei kann auch „// ”-Kommentare enthalten. Diese werden bei der Analyse ignoriert.
+Die Datei kann auch "//"-Kommentare enthalten, die während der Verarbeitung ignoriert werden.
 
-Das `initialPath`-Attribut platziert alle Ressourcen unter diesem Anfangspfad. Zu diesem Zweck wird das Attribut dem Namen der Ressource vorangestellt. Diese Vorgehensweise findet normalerweise bei der Indizierung der Ressourcen von Klassenbibliotheken Anwendung. Die Standardeinstellung ist leer.
+Das `initialPath` Attribut fügt alle Ressourcen unter diesem anfänglichen Pfad an, indem es dem Namen der Ressource vorangestellt wird. Dies wird normalerweise verwendet, wenn Klassen Bibliotheksressourcen indiziert werden. Der Standardwert lautet „blank“.
 
 ## <a name="resw"></a>ResW
 
-Der ResW-Indexer wird mit dem `type`-Aattribut RESW angegeben. Er indiziert die Inhalte einer `.resw`-Datei, bei der es sich um eine Zeichenfolgen-Ressourcendatei handelt. Das zugehörige Konfigurationselement entspricht dem folgenden Schema.
+Der resw-Indexer wird durch ein `type` resw-Attribut identifiziert. Der Inhalt einer `.resw` Datei, die eine Zeichen folgen-Ressourcen Datei ist, wird indiziert. Das zugehörige Konfigurationselement entspricht dem folgenden Schema.
 
 ```xml
 <xs:schema id="resw" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
@@ -342,7 +342,7 @@ Der ResW-Indexer wird mit dem `type`-Aattribut RESW angegeben. Er indiziert die 
 </xs:schema>
 ```
 
-Eine `.resw`-Datei ist eine XML-Datei, die dem folgendem Schema entspricht.
+Eine `.resw` Datei ist eine XML-Datei, die dem folgenden Schema entspricht.
 
 ```xml
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
@@ -393,13 +393,13 @@ Eine `.resw`-Datei ist eine XML-Datei, die dem folgendem Schema entspricht.
   </xsd:schema>
 ```
 
-Das Attribut `convertDotsToSlashes` bewirkt, dass alle Punkte (.) in Ressourcennamen (Namensattribute von Datenelementen) in einen Schrägstrich (/) konvertiert werden. Dies gilt jedoch nicht für Punkte zwischen eckigen Klammern ([ und ]).
+Das `convertDotsToSlashes` Attribut konvertiert alle Punktzeichen ("."), die in Ressourcennamen (Attribute für Datenelement Namen) gefunden werden, in einen Schrägstrich "/", außer wenn die Punktzeichen zwischen "[" und "]" liegen.
 
-Das `initialPath`-Attribut platziert alle Ressourcen unter diesem Anfangspfad. Zu diesem Zweck wird das Attribut dem Namen der Ressource vorangestellt. Diese Vorgehensweise findet normalerweise bei der Indizierung der Ressourcen von Klassenbibliotheken Anwendung. Die Standardeinstellung ist leer.
+Das `initialPath` Attribut fügt alle Ressourcen unter diesem anfänglichen Pfad an, indem es dem Namen der Ressource vorangestellt wird. Dies wird in der Regel verwendet, wenn Klassen Bibliotheksressourcen indiziert werden. Der Standardwert lautet „blank“.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Manuelles Kompilieren von Ressourcen mit „MakePri.exe“](compile-resources-manually-with-makepri.md)
-* [Makepri. exe-Befehlszeilenoptionen](makepri-exe-command-options.md)
-* [Makepri. exe-Konfigurationsdatei](makepri-exe-configuration.md)
+* [Befehlszeilenoptionen für „MakePri.exe“](makepri-exe-command-options.md)
+* [Konfigurationsdatei für „MakePri.exe“](makepri-exe-configuration.md)
 * [Der Anwendungs-/JSON-Medientyp für JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)

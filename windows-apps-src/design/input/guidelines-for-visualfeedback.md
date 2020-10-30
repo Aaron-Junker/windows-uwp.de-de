@@ -1,5 +1,5 @@
 ---
-Description: Verwenden Sie visuelles Feedback, um Benutzer anzuzeigen, wenn ihre Interaktionen mit einer Windows-App erkannt, interpretiert und behandelt werden.
+description: Verwenden Sie visuelles Feedback, um Benutzer anzuzeigen, wenn ihre Interaktionen mit einer Windows-App erkannt, interpretiert und behandelt werden.
 title: Visuelles Feedback
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
@@ -8,18 +8,18 @@ keywords: Visuelles Feedback, Fokus-Feedback, Touch-Feedback, Kontaktvisualisier
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1afc1c884a7a01ef1021f37476d1e29430c62e3c
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: b82ff29de09766aa348a548c5bd484b7c46db31f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219833"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030513"
 ---
 # <a name="guidelines-for-visual-feedback"></a>Richtlinien für visuelles Feedback
 
 Zeigen Sie Benutzern durch visuelles Feedback, wenn ihre Interaktionen ermittelt, interpretiert und behandelt werden. Visuelles Feedback ist hilfreich für Benutzer und kann sie zur Interaktion ermutigen. Es weist auf erfolgreiche Interaktionen hin, was für den Benutzer das Gefühl der Kontrolle verstärkt. Darüber hinaus informiert es über den Systemstatus und verringert die Fehlerzahl.
 
-> **Wichtige APIs**:  [**Windows. Devices. Input**](/uwp/api/Windows.Devices.Input), [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Windows. UI. Core**](/uwp/api/Windows.UI.Core)
+> **Wichtige APIs** :  [**Windows. Devices. Input**](/uwp/api/Windows.Devices.Input), [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Windows. UI. Core**](/uwp/api/Windows.UI.Core)
 
 ## <a name="recommendations"></a>Empfehlungen
 
@@ -58,7 +58,7 @@ Im Folgenden finden Sie einige Beispiele für integrierte Kontaktvisualisierunge
 
 Alle Windows-Apps zeigen ein stärker definiertes visuelles Fokuselement um interaktive Steuerelemente innerhalb der Anwendung herum. Diese neuen visuellen Fokuselemente können vollständig angepasst und auch gelöscht werden, wenn nötig.
 
-Für die **10-Fuß-** Darstellung, die typisch für die Verwendung von Xbox und TV ist, unterstützt Windows den **Fokus**, einen Beleuchtungs Effekt, der den Rahmen von Fokus baren Elementen animiert, wie z. b. eine Schaltfläche, wenn Sie den Fokus über Gamepad oder Tastatureingaben erhalten.
+Für die **10-Fuß-** Darstellung, die typisch für die Verwendung von Xbox und TV ist, unterstützt Windows den **Fokus** , einen Beleuchtungs Effekt, der den Rahmen von Fokus baren Elementen animiert, wie z. b. eine Schaltfläche, wenn Sie den Fokus über Gamepad oder Tastatureingaben erhalten.
 
 ## <a name="color-branding--customizing"></a>Farbbranding und -anpassung
 
@@ -67,7 +67,7 @@ Für die **10-Fuß-** Darstellung, die typisch für die Verwendung von Xbox und 
 Es gibt zwei Elemente bei den visuellen Fokuselementen mit hoher Sichtbarkeit: der primäre und der sekundäre Rahmen. Der primäre Rahmen ist **2 Pixel** breit und verläuft an der *Außenseite* des sekundären Rahmens. Der sekundäre Rahmen ist **1 Pixel** breit und verläuft an der *Innenseite* des primären Rahmens.
 ![Redlines visueller Fokuselemente mit hoher Sichtbarkeit](images/FocusRectRedlines.png)
 
-Um die Breite der beiden Rahmentypen (primär oder sekundär) zu ändern, verwenden Sie **FocusVisualPrimaryThickness** bzw. **FocusVisualSecondaryThickness**:
+Um die Breite der beiden Rahmentypen (primär oder sekundär) zu ändern, verwenden Sie **FocusVisualPrimaryThickness** bzw. **FocusVisualSecondaryThickness** :
 ```XAML
 <Slider Width="200" FocusVisualPrimaryThickness="5" FocusVisualSecondaryThickness="2"/>
 ```
@@ -75,7 +75,7 @@ Um die Breite der beiden Rahmentypen (primär oder sekundär) zu ändern, verwen
 
 Der Rand ist eine Eigenschaft des Typs [**Thickness**](/dotnet/api/system.windows.thickness) und kann daher so angepasst werden, dass er nur an bestimmten Seiten des Steuerelements angezeigt wird. Siehe unten: ![ hohe Sichtbarkeit Fokus visuelle Rand Stärke nur unten](images/FocusThicknessSide.png)
 
-Der Rand ist das Leerzeichen zwischen den visuellen Begrenzungen des Steuer Elements und dem Anfang des *sekundären*Rahmens der Fokus Visuals. Der Standard Rand ist **1 px** von den Steuerelement Grenzen entfernt. Sie können diesen Rand auf der Basis der einzelnen Steuerelemente bearbeiten, indem Sie die **focevisualmargin** -Eigenschaft ändern:
+Der Rand ist das Leerzeichen zwischen den visuellen Begrenzungen des Steuer Elements und dem Anfang des *sekundären* Rahmens der Fokus Visuals. Der Standard Rand ist **1 px** von den Steuerelement Grenzen entfernt. Sie können diesen Rand auf der Basis der einzelnen Steuerelemente bearbeiten, indem Sie die **focevisualmargin** -Eigenschaft ändern:
 ```XAML
 <Slider Width="200" FocusVisualMargin="-5"/>
 ```
@@ -83,7 +83,7 @@ Der Rand ist das Leerzeichen zwischen den visuellen Begrenzungen des Steuer Elem
 
 *Ein negativer Rand verschiebt den Rahmen weiter weg von der Mitte des Steuerelements. Ein positiver Rand verschiebt den Rahmen näher zur Mitte des Steuerelements.*
 
-Um die visuellen Fokuselemente für ein Steuerelement vollständig zu deaktivieren, deaktivieren Sie einfach **UseSystemFocusVisuals**:
+Um die visuellen Fokuselemente für ein Steuerelement vollständig zu deaktivieren, deaktivieren Sie einfach **UseSystemFocusVisuals** :
 ```XAML
 <Slider Width="200" UseSystemFocusVisuals="False"/>
 ```
@@ -133,6 +133,6 @@ Um die Farben pro Steuerelement zu ändern, bearbeiten Sie einfach die Eigenscha
 - [Eingabe: Beispiel für Windows 8-Bewegungen](/samples/browse/?redirectedfrom=MSDN-samples)
 - [Eingabe: Manipulationen und Gesten (Beispiel)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [Beispiel für die DirectX-Fingereingabe](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))
- 
+ 
 
- 
+ 

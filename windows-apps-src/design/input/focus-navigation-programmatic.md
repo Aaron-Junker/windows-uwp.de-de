@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie, wie Sie die Fokus Navigation mit Tastatur-, Gamepad-und Barrierefreiheits Tools in einer Windows-app Programm gesteuert verwalten.
+description: Erfahren Sie, wie Sie die Fokus Navigation mit Tastatur-, Gamepad-und Barrierefreiheits Tools in einer Windows-app Programm gesteuert verwalten.
 title: Programmgesteuerte Fokusnavigation mit Tastatur, Gamepad und Bedienungshilfen
 label: Programmatic focus navigation
 keywords: Tastatur, Spiele Controller, Remote Steuerung, Navigation, Navigations Strategie, Eingabe, Benutzerinteraktion, Barrierefreiheit, Nutzbarkeit
@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ef2e62404766d822343537cea2aca8e512482093
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: b64eeafda6abe146d05e29d491850da3b36a1999
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220533"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032173"
 ---
 # <a name="programmatic-focus-navigation"></a>Programmgesteuerte Fokusnavigation
 
@@ -329,4 +329,4 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 
 - [Fokus Navigation für Tools der Tastatur, Gamepad, Remote Steuerung und Barrierefreiheit](focus-navigation.md)
 - [Tastaturinteraktionen](keyboard-interactions.md)
-- [Tastatureingabe](../accessibility/keyboard-accessibility.md)
+- [Barrierefreiheit der Tastaturnavigation](../accessibility/keyboard-accessibility.md)

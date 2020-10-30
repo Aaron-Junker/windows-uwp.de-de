@@ -1,17 +1,17 @@
 ---
-Description: Nachdem Sie Ihre App durch die Reservierung eines Namens erstellt haben, können Sie mit der Veröffentlichung beginnen. Der erste Schritt besteht darin, eine Übermittlung zu erstellen.
+description: Nachdem Sie Ihre App durch die Reservierung eines Namens erstellt haben, können Sie mit der Veröffentlichung beginnen. Der erste Schritt besteht darin, eine Übermittlung zu erstellen.
 title: App-Übermittlungen
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: Prüfliste, Windows, UWP, Übermittlung, Übermittlung, Spiel, APP, Übermittlung
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 99b4d7412727e5f195c32d3f3c21fe82b284e658
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: d38cf2b8e134983ae73c909f7036603eadcd6289
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219973"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031293"
 ---
 # <a name="app-submissions"></a>App-Übermittlungen
 

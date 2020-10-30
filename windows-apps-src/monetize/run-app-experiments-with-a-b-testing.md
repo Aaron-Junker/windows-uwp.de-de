@@ -1,45 +1,45 @@
 ---
-Description: Sie können die Partner Center verwenden, zum Ausführen von Experimenten für Ihre apps der universellen Windows-Plattform (UWP) mit A / B-Tests.
+description: Sie können Partner Center verwenden, um Experimente für ihre universelle Windows-Plattform-Apps (UWP) mit A/B-Tests auszuführen.
 title: Ausführen von Experimenten mit A/B-Tests
 ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK, A/B-Tests, Experimente
 ms.localizationpriority: medium
-ms.openlocfilehash: d4f5271d70cefea99a9caff04e7203e05043440c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c38eee9e3be7d6ea85b56fd5ad3aa3d62ae751b9
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599775"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029768"
 ---
 # <a name="run-app-experiments-with-ab-testing"></a>Ausführen von Experimenten mit A/B-Tests
 
-Sie können die Partner Center verwenden, um remote-Variablen zu definieren, die Sie aus den apps der universellen Windows-Plattform (UWP) zur Laufzeit abrufen können, und Sie können Variationen dieser Werte testen, mit Ihren Benutzern, die am effektivsten, Werte für die gewünschten Benutzer Fahrverhalten zu identifizieren. Ihre App kann Remotevariablen verwenden, um App-Funktionen zu konfigurieren, z. B. In-App-Käufe, Anmeldungsfluss, Überschriften und Platzierung von Werbung.
+Sie können Partner Center zum Definieren von Remote Variablen verwenden, die Sie zur Laufzeit von ihren universelle Windows-Plattform-Apps (UWP) abrufen können, und Sie können Variationen dieser Werte mit ihren Benutzern testen, um die effektivsten Werte für das Ausführen des gewünschten Benutzer Verhaltens zu ermitteln. Ihre App kann Remotevariablen verwenden, um App-Funktionen zu konfigurieren, z. B. In-App-Käufe, Anmeldungsfluss, Überschriften und Platzierung von Werbung.
 
-Ziel des A/B-Tests sollte sein, eine Variante Ihrer Remotevariablenwerte zu identifizieren, die Ihnen wahrscheinlich bessere Konversionsraten einbringt (z. B. mehr In-App-Käufe), da eine interessantere App-Erfahrung bereitgestellt wird. Nachdem Sie eine erfolgreiche Variante identifiziert haben, können Sie sofort das Experiment zu beenden und aktivieren diese Variation für Ihre gesamte Benutzerkreis über Partner Center, ohne Ihre app erneut veröffentlichen.
+Ziel des A/B-Tests sollte sein, eine Variante Ihrer Remotevariablenwerte zu identifizieren, die Ihnen wahrscheinlich bessere Konversionsraten einbringt (z. B. mehr In-App-Käufe), da eine interessantere App-Erfahrung bereitgestellt wird. Nachdem Sie eine erfolgreiche Variation ermittelt haben, können Sie das Experiment sofort beenden und diese Variation für Ihre gesamte Benutzergruppe aus Partner Center aktivieren, ohne die APP erneut veröffentlichen zu müssen.
 
 ## <a name="create-and-run-an-ab-test"></a>Erstellen und Ausführen eines A/B-Tests
 
 Führen Sie zum Erstellen und Ausführen eines A/B-Tests die folgenden Schritte aus:
 
-1. [Erstellen Sie ein Projekt, und definieren Sie die remote-Variablen im Partner Center](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md). Dieses Projekt enthält die Variablen und Standardvariablenwerte für Ihre Experimente.  
-2. [Codieren Sie Ihre App für das Experiment](code-your-experiment-in-your-app.md). Verwenden Sie eine API in der Microsoft Store Services SDK, um remote Werte zu erhalten, aus dem Projekt ein, die, das Sie im Partner Center erstellt haben, verwenden Sie diese Daten, um das Verhalten der Funktion zu ändern, die Sie testen und Senden zum Partner Center sichtereignis und Konvertierung-Ereignisse.
-3. [Definieren Sie das Experiment im Partner Center ](define-your-experiment-in-the-dev-center-dashboard.md). Erstellen Sie ein Experiment in Ihrem Projekt, das die eindeutigen Ziele und Varianten für Ihren A/B-Test definiert.
-4. [Ausführen und verwalten Sie Ihr Experiment in Partner Center ashboardseite](manage-your-experiment.md). Aktivieren Sie Ihres Experiments und überprüfen die Ergebnisse des Experiments, und schließen Sie das Experiment mit Partner Center.
+1. [Erstellen Sie ein Projekt, und definieren Sie Remote Variablen im Partner Center](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md). Dieses Projekt enthält die Variablen und Standardvariablenwerte für Ihre Experimente.  
+2. [Programmieren Sie Ihre APP für Experimente](code-your-experiment-in-your-app.md). Verwenden Sie eine API im Microsoft Store Services SDK zum erhalten von Remote Variablen Werten aus dem Projekt, das Sie in Partner Center erstellt haben, verwenden Sie diese Daten, um das Verhalten des zu testenden Features zu ändern, und senden Sie Ansichts Ereignis-und Konvertierungs Ereignisse an Partner Center.
+3. [Definieren Sie Ihr Experiment im Partner Center ](define-your-experiment-in-the-dev-center-dashboard.md). Erstellen Sie ein Experiment in Ihrem Projekt, das die eindeutigen Ziele und Varianten für Ihren A/B-Test definiert.
+4. [Führen Sie das Experiment in Partner Center ashboard aus, und verwalten Sie es](manage-your-experiment.md). Aktivieren Sie Ihr Experiment, und verwenden Sie Partner Center, um die Ergebnisse des Experiments zu überprüfen und das Experiment abzuschließen.
 
 Eine exemplarische Vorgehensweise, in der der Prozess vollständig dargestellt wird, finden Sie unter [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md) (Erstellen und Ausführen eines ersten Experiments mit A/B-Tests).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-A / B-Tests im Partner Center wird nur für UWP-apps unterstützt.
+A/B-Tests in Partner Center werden nur für UWP-Apps unterstützt.
 
 Damit Sie Experimente mit A/B-Tests ausführen können, müssen Sie den Entwicklungscomputer einrichten:
 
 * Führen Sie [diese Anweisungen](../get-started/get-set-up.md) aus, um den Entwicklungscomputer für die UWP-Entwicklung einzurichten.
 * [Installieren Sie das Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk). Zusätzlich zur API für Experimente bietet dieses SDK auch APIs für weitere Features wie z. B. das Anzeigen von Werbung und das Weiterleiten von Kunden zum Feedback-Hub, um Feedback zur App zu erfassen.
 
-## <a name="best-practices"></a>Empfohlene Methoden
+## <a name="best-practices"></a>Bewährte Methoden
 
 Um möglichst aussagekräftige Ergebnisse zu erzielen, sollten Sie beim Durchführen von Experimenten mit A/B-Tests diese Empfehlungen berücksichtigen:
 
@@ -52,18 +52,18 @@ Um möglichst aussagekräftige Ergebnisse zu erzielen, sollten Sie beim Durchfü
 
 |  Begriff  |  Definition  |
 |--------|--------------|
-| Projekt    |   Eine Auflistung von Remotevariablen mit Standardwerten, auf die Ihre App mithilfe des Microsoft Store Services SDK zugreifen kann. Ein Projekt kann optional auch ein oder mehrere Experimente enthalten, die die gleichen Remotevariablen nutzen.  |
-| Experiment    |   Ein Satz von Parametern, die einen A/B-Test definieren, den Ihre Benutzer erhalten. Experimente sind im Umfang eines Projekts definiert. Jedes Experiment besteht aus folgenden Elementen: <p></p><ul><li>Ein *Anzeigeereignis*, das angibt, wann der Benutzer mit dem Anzeigen einer Variante beginnt, die Teil des Experiments ist.</li><li>Eines oder mehrere Ziele mit *Umwandlungsereignissen*, um anzugeben, wann ein Ziel erreicht wurde.</li><li>Eine oder mehrere *Varianten*, die die im Experiment verwendeten Variablendaten definieren. Die *Steuerelement*-Variante verwendet die Standardvariablenwerte, die im Projekt für das Experiment definiert sind. Zusätzlich zu der Steuerungsvariation verfügen Experimente in der Regel über mindestens eine zusätzliche Variante mit Variablenwerten, die speziell für das Experiment gelten. </li></ul>          |
-| Projekt-ID    |   Eine eindeutige ID, die Ihre app mit einem Projekt in Ihrem Partner Center-Konto zuordnen. Sie müssen diese ID verwenden, für die Verbindung mit dem A / B-Tests Dienst im app-Code Variation-Daten empfangen, und Melden von Ansicht und Konvertierung Ereignisse zum Partner Center. Weitere Informationen finden Sie unter [Programmieren Ihrer App für Experimente](code-your-experiment-in-your-app.md).<p></p><p>Jedes Projekt und alle Experimente im Projekt sind genau einer Projekt-ID zugeordnet. Sie können Projekt-IDs verwenden, um zwischen verschiedenen Gruppen von Experimenten zu unterscheiden. Beispielsweise haben Sie möglicherweise einen Satz von Experimenten, den Sie für Tester in Ihrer Organisation freigeben, und einen anderen Satz von Experimenten, den Sie nur für externe Benutzer Ihrer App freigeben.  Eine App kann auf mehrere Projekt-IDs verweisen, wenn sie mehrere Experimente implementiert.</p>         |
+| Project    |   Eine Auflistung von Remotevariablen mit Standardwerten, auf die Ihre App mithilfe des Microsoft Store Services SDK zugreifen kann. Ein Projekt kann optional auch ein oder mehrere Experimente enthalten, die die gleichen Remotevariablen nutzen.  |
+| Experiment    |   Ein Satz von Parametern, die einen A/B-Test definieren, den Ihre Benutzer erhalten. Experimente sind im Umfang eines Projekts definiert. Jedes Experiment besteht aus folgenden Elementen: <p></p><ul><li>Ein *Anzeigeereignis* , das angibt, wann der Benutzer mit dem Anzeigen einer Variante beginnt, die Teil des Experiments ist.</li><li>Eines oder mehrere Ziele mit *Umwandlungsereignissen* , um anzugeben, wann ein Ziel erreicht wurde.</li><li>Eine oder mehrere *Varianten* , die die im Experiment verwendeten Variablendaten definieren. Die *Steuerelement* -Variante verwendet die Standardvariablenwerte, die im Projekt für das Experiment definiert sind. Zusätzlich zu der Steuerungsvariation verfügen Experimente in der Regel über mindestens eine zusätzliche Variante mit Variablenwerten, die speziell für das Experiment gelten. </li></ul>          |
+| Projekt-ID    |   Eine eindeutige ID, die Ihre APP einem Projekt in Ihrem Partner Center-Konto zuordnet. Sie müssen diese ID verwenden, um eine Verbindung mit dem A/B-Test Dienst in Ihrem app-Code herzustellen, um Variations Daten und Berichtsansicht-und Konvertierungs Ereignisse an Partner Center zu empfangen. Weitere Informationen finden Sie unter [Programmieren Ihrer App für Experimente](code-your-experiment-in-your-app.md).<p></p><p>Jedes Projekt und alle Experimente im Projekt sind genau einer Projekt-ID zugeordnet. Sie können Projekt-IDs verwenden, um zwischen verschiedenen Gruppen von Experimenten zu unterscheiden. Beispielsweise haben Sie möglicherweise einen Satz von Experimenten, den Sie für Tester in Ihrer Organisation freigeben, und einen anderen Satz von Experimenten, den Sie nur für externe Benutzer Ihrer App freigeben.  Eine App kann auf mehrere Projekt-IDs verweisen, wenn sie mehrere Experimente implementiert.</p>         |
 | Variation    |   Eine Sammlung von einer oder mehreren Variablen, die Sie in Ihrem Experiment testen. Jedes Experiment muss mindestens eine Variable und zwei Varianten umfassen (einschließlich des Steuerelements). Ein Experiment kann bis zu fünf Varianten aufweisen.           |
 | Variable    |  Ein Wert, den Ihre App verwendet, um eine Eigenschaft oder einen anderen Wert in Ihrer App zu initialisieren. Während eines Experiments ändert sich der Wert der Variable von Variante zu Variante. Nachdem Sie das Experiment beendet haben, wird die Variable dem Wert der Variante zugewiesen, die Sie für die Freigabe für alle Benutzer Ihrer App auswählen. Variablen können die folgenden Typen aufweisen: eine Zeichenfolge, Boolean, Double und ganze Zahl.
-| Anzeigeereignis    |  Eine beliebige Zeichenfolge, die eine Aktivität darstellt, wenn der Benutzer beginnt, eine Variante anzuzeigen, die Teil Ihres Experiments ist. In der Regel ist dies der Name eines Ereignisses in Ihrem Code. Ihren app-Code sendet diese Ansicht Ereigniszeichenfolge zum Partner Center, wenn der Benutzer startet eine Variante anzeigen. Weitere Informationen finden Sie unter [Programmieren Ihrer App für Experimente](code-your-experiment-in-your-app.md).
-| Umwandlungsereignis    |  Eine beliebige Zeichenfolge, die eine Zielsetzung für das Ziel eines Experiments darstellt. In der Regel ist dies der Name eines Ereignisses in Ihrem Code. App-Code sendet diese Konvertierung Ereigniszeichenfolge zum Partner Center, wenn der Benutzer ein bestimmtes Ziel erreicht. Weitere Informationen finden Sie unter [Programmieren Ihrer App für Experimente](code-your-experiment-in-your-app.md).  
+| Anzeigeereignis    |  Eine beliebige Zeichenfolge, die eine Aktivität darstellt, wenn der Benutzer beginnt, eine Variante anzuzeigen, die Teil Ihres Experiments ist. In der Regel ist dies der Name eines Ereignisses in Ihrem Code. Ihr app-Code sendet diese Ansichts Ereignis Zeichenfolge an Partner Center, wenn der Benutzer mit der Anzeige einer Variation beginnt. Weitere Informationen finden Sie unter [Programmieren Ihrer App für Experimente](code-your-experiment-in-your-app.md).
+| Umwandlungsereignis    |  Eine beliebige Zeichenfolge, die eine Zielsetzung für das Ziel eines Experiments darstellt. In der Regel ist dies der Name eines Ereignisses in Ihrem Code. Ihr app-Code sendet diese Konvertierungs Ereignis Zeichenfolge an Partner Center, wenn der Benutzer ein Ziel erreicht. Weitere Informationen finden Sie unter [Programmieren Ihrer App für Experimente](code-your-experiment-in-your-app.md).  
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Erstellen Sie ein Projekt, und definieren Sie die remote-Variablen im Partner Center](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
-* [Codieren Sie Ihre app für Experimente](code-your-experiment-in-your-app.md)
-* [Definieren Sie das Experiment im Partner Center](define-your-experiment-in-the-dev-center-dashboard.md)
-* [Verwalten Sie Ihr Experiment in Partner Center](manage-your-experiment.md)
-* [Erstellen und Ausführen Ihres ersten Experiments mit A / B-Tests](create-and-run-your-first-experiment-with-a-b-testing.md)
+* [Erstellen eines Projekts und Definieren von Remote Variablen im Partner Center](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [Programmieren Ihrer App für Experimente](code-your-experiment-in-your-app.md)
+* [Definieren eines Experiments im Partner Center](define-your-experiment-in-the-dev-center-dashboard.md)
+* [Verwalten eines Experiments im Partner Center](manage-your-experiment.md)
+* [Erstellen und Ausführen Ihres ersten Experiments mit A/B-Tests](create-and-run-your-first-experiment-with-a-b-testing.md)

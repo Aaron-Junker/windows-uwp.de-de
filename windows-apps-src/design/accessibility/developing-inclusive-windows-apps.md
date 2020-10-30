@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie, wie Sie barrierefreie Windows-apps entwickeln, die Tastaturnavigation, Farb-und Kontrasteinstellungen sowie Unterstützung für Hilfstechnologien enthalten.
+description: Erfahren Sie, wie Sie barrierefreie Windows-apps entwickeln, die Tastaturnavigation, Farb-und Kontrasteinstellungen sowie Unterstützung für Hilfstechnologien enthalten.
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 title: Entwickeln von barrierefreien Windows 10-Apps
 label: Developing inclusive Windows 10 apps
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 856ed1222cd393ec2730226f9c4faadf7e9ad0d7
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: ff42cc2ac8ffb965b5f58db081cd86106f4145ef
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219813"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029873"
 ---
 # <a name="developing-inclusive-windows-apps"></a>Entwickeln von barrierefreien Windows-Apps  
 
@@ -80,7 +80,7 @@ Es folgt nun eine gekürzte Version der Prüfliste für die Barrierefreiheit:
 
 Weitere Details finden Sie im vollständigen Thema [Prüfliste für die Barrierefreiheit](accessibility-checklist.md).
 
-## <a name="related-topics"></a>Zugehörige Themen  
+## <a name="related-topics"></a>Verwandte Themen  
 * [Entwerfen von barrierefreier Software](designing-inclusive-software.md)  
 * [Inklusives Design](https://www.microsoft.com/design/inclusive/)
 * [Nicht empfehlenswerte Praktiken für die Barrierefreiheit](practices-to-avoid.md)

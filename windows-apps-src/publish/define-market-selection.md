@@ -1,17 +1,17 @@
 ---
-Description: Der Microsoft Store erreicht Kunden in über 200 Ländern und Regionen weltweit.
+description: Der Microsoft Store erreicht Kunden in über 200 Ländern und Regionen weltweit.
 title: Festlegen der Marktauswahl
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Märkte, Länder, Regionen
 ms.localizationpriority: medium
-ms.openlocfilehash: 63650ad15f4a3083b4f500bc16591bb6bd8d8185
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 075a9303d694bfe6bcb4f602bb0bad1e6105dd99
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162024"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029769"
 ---
 # <a name="define-market-selection"></a>Festlegen der Marktauswahl
 
@@ -42,7 +42,7 @@ Bestimmte Apps werden u. U. aufgrund von örtlich geltenden Gesetzen und Beschr
 > Für zuvor veröffentlichte apps mit Paketen, die auf Windows 8 oder Windows 8.1 abzielen, werden einige einzelne Märkte als ein einzelner "Rest der Welt"-Markt behandelt. Weitere Informationen finden Sie unter [Märkte "Restliche Welt" für Windows 8.x](#rest-of-world-markets-for-windows-8x).
 
 Außerdem wird ein Kontrollkästchen angezeigt, in dem Sie angeben können, ob Ihre APP auf einem Markt angeboten werden soll, den der Store in Zukunft hinzufügen kann. Wenn Sie dieses Kontrollkästchen aktiviert haben und später neue Märkte hinzufügen, werden der Basispreis und das Datum der allgemeinen Verfügbarkeit für ihre Übermittlung in diesen Märkten für Ihre APP verwendet. Wenn Sie dies nicht möchten, können Sie dieses Kontrollkästchen deaktivieren. in diesem Fall wird Ihre APP in zukünftigen Märkten nicht aufgelistet (Sie können Sie jedoch später immer hinzufügen).
- 
+ 
 
 ## <a name="microsoft-store-consumer-markets"></a>Microsoft Store Verbrauchermärkte
 
@@ -472,7 +472,7 @@ Die Regulierung zur Markterweiterung wird ab dem Datum des Inkrafttretens auf al
 | Vereinigtes Königreich       | Geschenkkarte       | 2,24%                         | März 2016     |
 | USA        | Geschenkkarte       | 2,24%                         | März 2016     |
 
- 
+ 
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>Märkte "Restliche Welt" für Windows 8.x
 
@@ -738,4 +738,4 @@ Folgende Märkte sind in "Restliche Welt" für Windows 8.x enthalten:
 </table>
 
 > [!NOTE]
-> Eine Liste der Länder und Regionen, in denen Sie sich für ein Entwicklerkonto registrieren können, finden Sie unter [Konto Typen, Standorte und Gebühren](account-types-locations-and-fees.md).
+> Eine Liste der Länder und Regionen, in denen Sie sich für ein Entwicklerkonto registrieren können, finden Sie unter [Konto Typen, Standorte und Gebühren](account-types-locations-and-fees.md).

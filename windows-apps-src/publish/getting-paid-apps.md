@@ -1,17 +1,17 @@
 ---
-Description: Erfahren Sie mehr über das Empfangen von Zahlungen für Ihre apps, Add-ons (in-App-Produkte) und Werbeeinnahmen.
+description: Erfahren Sie mehr über das Empfangen von Zahlungen für Ihre apps, Add-ons (in-App-Produkte) und Werbeeinnahmen.
 title: Erhalten der Bezahlung
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 ms.date: 05/29/2020
 ms.topic: article
 keywords: Windows 10, UWP, Zahlungen, App-Verkäufe, App-Verkäufe, Auszahlung, geschäftsgebühr, Auszahlungs Aufbewahrung, Prozentsatz
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e2b67984c43d799f0f4e3a1c6662b57bdc6ae9d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7138a30abb3e2de46c94de96614cc0e404ede675
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167394"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029743"
 ---
 # <a name="getting-paid"></a>Erhalten der Bezahlung
 Hier sind einige wichtige Informationen zum Empfangen von Zahlungen für Ihre apps, Add-ons und Werbeeinnahmen.
@@ -59,9 +59,9 @@ Die Zahlungen erfolgen monatlich (sofern der entsprechende Zahlungsschwellenwert
 
 ##  <a name="payout-hold-status"></a>Aufbewahrungsstatus für Auszahlungen
 
-Standardmäßig senden wir Zahlungen monatlich (wie oben beschrieben). Allerdings haben Sie die Möglichkeit, Ihre Auszahlungen für ein Programm zurückzuhalten, sodass keine Zahlungen an Ihr Konto gesendet werden. Wenn Sie sich dafür entscheiden, Ihre Zahlungen anzuhalten, zeichnen wir weiterhin alle Einnahmen auf, die Sie verdienen, und geben die Details in Ihrer **Auszahlungs Zusammenfassung**an. Allerdings werden wir keine Zahlungen an Ihr Konto senden, bis Sie die Haltesperre aufheben.
+Standardmäßig senden wir Zahlungen monatlich (wie oben beschrieben). Allerdings haben Sie die Möglichkeit, Ihre Auszahlungen für ein Programm zurückzuhalten, sodass keine Zahlungen an Ihr Konto gesendet werden. Wenn Sie sich dafür entscheiden, Ihre Zahlungen anzuhalten, zeichnen wir weiterhin alle Einnahmen auf, die Sie verdienen, und geben die Details in Ihrer **Auszahlungs Zusammenfassung** an. Allerdings werden wir keine Zahlungen an Ihr Konto senden, bis Sie die Haltesperre aufheben.
 
-Um Ihre Zahlungen zurückzuhalten, wechseln Sie zu **Entwicklereinstellungen**. Suchen Sie unter **Auszahlung und Steuern** im Abschnitt **Auszahlung und Steuerprofilzuweisung** das Programm, für das Zahlungen zurückgehalten werden sollen. Aktivieren Sie das Kontrollkästchen **Meine Zahlung zurückhalten**, um die Zahlungen für dieses Programm zurückzuhalten. Sie können den Aufbewahrungsstatus für Auszahlungen jederzeit ändern, aber beachten Sie, dass sich Ihre Entscheidung auf die nächste monatliche Auszahlung auswirkt. Wenn Sie z. b. die Auszahlung von April halten möchten, stellen Sie sicher, dass der Status der Auszahlungs **Aufbewahrung vor Ende März auf ein** festgelegt ist.
+Um Ihre Zahlungen zurückzuhalten, wechseln Sie zu **Entwicklereinstellungen** . Suchen Sie unter **Auszahlung und Steuern** im Abschnitt **Auszahlung und Steuerprofilzuweisung** das Programm, für das Zahlungen zurückgehalten werden sollen. Aktivieren Sie das Kontrollkästchen **Meine Zahlung zurückhalten** , um die Zahlungen für dieses Programm zurückzuhalten. Sie können den Aufbewahrungsstatus für Auszahlungen jederzeit ändern, aber beachten Sie, dass sich Ihre Entscheidung auf die nächste monatliche Auszahlung auswirkt. Wenn Sie z. b. die Auszahlung von April halten möchten, stellen Sie sicher, dass der Status der Auszahlungs **Aufbewahrung vor Ende März auf ein** festgelegt ist.
 
 Sobald Sie den Aufbewahrungsstatus für Zahlungen auf **Ein** festgelegt haben, werden alle Auszahlungen für dieses Programm zurückgehalten, bis Sie den Schieberegler wieder auf **Aus** stellen. In diesem Fall sind Sie im nächsten monatlichen Auszahlungszyklus eingeschlossen (vorausgesetzt, alle geltenden Zahlungsschwellenwerte sind erfüllt). Wenn Sie z. b. Ihre Zahlungen angenommen haben, aber im Juni eine Auszahlung generieren möchten, müssen Sie sicherstellen, dass der Status der Auszahlungs Aufbewahrung vor dem Ende des Mai auf **Off** festzulegen.
 
@@ -69,6 +69,6 @@ Sobald Sie den Aufbewahrungsstatus für Zahlungen auf **Ein** festgelegt haben, 
 > Der **Aufbewahrungsstatus für Zahlungen** gilt individuell für einzelne Programme (Microsoft Store, Werbung, Azure Marketplace usw.). Wenn Sie die Zahlungen für alle Ihre Programme zurückhalten möchten, müssen Sie den Aufbewahrungsstatus für jedes einzelne Programm aktivieren.
 
 
- 
+ 
 
- 
+ 

@@ -1,5 +1,5 @@
 ---
-Description: Simulieren und automatisieren Sie Eingaben von Geräten wie Tastatur, Maus, Toucheingabe, Stift und Gamepad in Ihren Windows-apps.
+description: Simulieren und automatisieren Sie Eingaben von Geräten wie Tastatur, Maus, Toucheingabe, Stift und Gamepad in Ihren Windows-apps.
 title: Simulieren der Benutzereingabe über die Eingabeeinfügung
 label: Input injection
 template: detail.hbs
@@ -7,18 +7,18 @@ keywords: Gerät, Digitalisierer, Eingabe, Interaktion, Injektion
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e4e1497ea30400c550cb0cbb2309801ff8145fd6
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 0cd1a56ca46c3e9ea401794ff5b9964545ce0c5d
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219683"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030123"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>Simulieren der Benutzereingabe über die Eingabeeinfügung
 
 Simulieren und automatisieren Sie Benutzereingaben von Geräten wie Tastatur, Maus, Toucheingabe, Stift und Gamepad in Ihren Windows-Anwendungen.
 
-> **Wichtige APIs**: [ **Windows. UI. Input. Preview. Injection**](/uwp/api/windows.ui.input.preview.injection)
+> **Wichtige APIs** : [ **Windows. UI. Input. Preview. Injection**](/uwp/api/windows.ui.input.preview.injection)
 
 ## <a name="overview"></a>Übersicht
 

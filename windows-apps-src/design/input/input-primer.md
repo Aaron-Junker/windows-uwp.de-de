@@ -1,5 +1,5 @@
 ---
-Description: Bei Benutzerinteraktionen in der Windows-App handelt es sich um eine Kombination aus Eingabe-und Ausgabe Quellen (z. b. Maus, Tastatur, Stift, Touch, Touchpad, Speech, Cortana, Controller, Bewegung, Blick usw.), zusammen mit verschiedenen Modi oder Modifizierern, die erweiterte Oberflächen (z. b
+description: Bei Benutzerinteraktionen in der Windows-App handelt es sich um eine Kombination aus Eingabe-und Ausgabe Quellen (z. b. Maus, Tastatur, Stift, Touch, Touchpad, Speech, Cortana, Controller, Bewegung, Blick usw.), zusammen mit verschiedenen Modi oder Modifizierern, die erweiterte Oberflächen (z. b
 title: Einführung in die Interaktion
 ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
@@ -8,18 +8,18 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: dde0e5479533aed225dbadc68b325afede050dbb
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: aeb10951061d7d029b2825d7210b9f00d8731873
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219673"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030183"
 ---
 # <a name="interaction-primer"></a>Einführung in die Interaktion
 
 ![Windows-Eingabetypen](images/input-interactions/icons-inputdevices03.png)
 
-Bei Benutzerinteraktionen in der Windows-App handelt es sich um eine Kombination aus Eingabe-und Ausgabe Quellen (z. b. Maus, Tastatur, Stift, Touch, Touchpad, Speech, **Cortana**, Controller, Bewegung, Blick usw.), zusammen mit verschiedenen Modi oder Modifizierern, die erweiterte Oberflächen (z. b
+Bei Benutzerinteraktionen in der Windows-App handelt es sich um eine Kombination aus Eingabe-und Ausgabe Quellen (z. b. Maus, Tastatur, Stift, Touch, Touchpad, Speech, **Cortana** , Controller, Bewegung, Blick usw.), zusammen mit verschiedenen Modi oder Modifizierern, die erweiterte Oberflächen (z. b
 
 UWP verwendet ein "intelligentes" kontextbezogenes Interaktionssystem, das in den meisten Fällen die Notwendigkeit entfällt, die eindeutigen Typen von Eingaben, die von Ihrer APP empfangen werden, einzeln zu verarbeiten. Dazu zählt das Behandeln von Toucheingabe, Touchpad, Maus und Stifteingabe als generischer Zeigertyp, um statische Gesten wie Tippen oder Gedrückthalten und Manipulationsgesten wie Ziehen zum Verschieben oder zum Rendern von Freihandeingabe zu unterstützen.
 
@@ -27,7 +27,7 @@ Machen Sie sich mit den verschiedenen Arten von Eingabegeräten sowie ihren Verh
 
 ## <a name="gaze"></a>Anvisieren
 
-Für das **Windows 10-Update vom April 2018**haben wir die Unterstützung für die Blick Eingabe mithilfe der Eingabegeräte für die Augen-und Kopf Überwachung 
+Für das **Windows 10-Update vom April 2018** haben wir die Unterstützung für die Blick Eingabe mithilfe der Eingabegeräte für die Augen-und Kopf Überwachung 
 
 > [!NOTE]
 > Die Unterstützung für die Eye Tracking-Hardware wurde in **Windows 10 Fall Creators Update** zusammen mit der [Eye Control](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control)eingeführt, einem integrierten Feature, mit dem Sie Ihre Augen zum Steuern des Bildschirm Zeigers, zum Eingeben mit der Bildschirmtastatur und zum kommunizieren mit Personen mithilfe von Text-zu-Sprache verwenden können.
@@ -47,7 +47,7 @@ Verfolge den Blick, die Aufmerksamkeit und die Präsenz eines Benutzers anhand d
 
 ## <a name="surface-dial"></a>Surface Dial
 
-Für **Windows 10 Anniversary Update**haben wir die Windows-Radkategorie des Eingabe Geräts eingeführt. Surface Dial ist das erste Angebot dieser Art.
+Für **Windows 10 Anniversary Update** haben wir die Windows-Radkategorie des Eingabe Geräts eingeführt. Surface Dial ist das erste Angebot dieser Art.
 
 ### <a name="device-support"></a>Geräteunterstützung
 
@@ -87,7 +87,7 @@ Ein Sprachbefehl ist eine einzelne, in einer Sprachbefehldefinitions-Datei (VCD-
 ### <a name="more-info"></a>Weitere Informationen
 
 [Cortana-Entwurfs Richtlinien](/cortana/skills/cortana-design-guidelines)
- 
+ 
 
 ## <a name="speech"></a>Spracheingabe/-ausgabe
 
@@ -136,13 +136,13 @@ Das Diktieren wird in der Regel verwendet, wenn eine App die Bedeutung oder die 
 ### <a name="more-info"></a>Weitere Informationen
 
 [Richtlinien für den Sprachentwurf](./speech-interactions.md)
- 
+ 
 
 ## <a name="pen"></a>Stift
 
 Ein (Eingabe-)Stift kann ähnlich wie eine Maus als pixelgenaues Zeigegerät verwendet werden, und er eignet sich optimal für die Freihandeingabe.
 
-**Hinweis**    Es gibt zwei Arten von Stift Geräten: aktiv und passiv.
+**Hinweis**  Es gibt zwei Arten von Stiften: aktive und passive.
   -   Passive Stifte enthalten keine Elektronik, und sie emulieren effektiv die Toucheingabe über einen Finger. Sie benötigen eine Basisgerätanzeige, welche die Eingabe basierend auf dem Berührungsdruck erkennt. Da Benutzer beim Schreiben auf der Eingabeoberfläche häufig die Hand ablegen, können Eingabedaten wegen des nicht erfolgreichen Ablehnens der Handfläche verzerrt werden.
   -   Aktive Stifte enthalten Elektronik und können mit komplexen Gerätedisplays zusammenwirken und viel umfassendere Eingabedaten (u. a. Daten bei Daraufzeigen oder Näherung) für das System und die App liefern. Die Handflächenablehnung ist sehr viel robuster.
 
@@ -169,9 +169,9 @@ Sie müssen stiftspezifische Benutzeroberflächenbefehle (oder Angebote) zur Unt
 ### <a name="more-info"></a>Weitere Informationen
 
 [Designrichtlinien für die Zeichenstifteingabe](./pen-and-stylus-interactions.md)
- 
+ 
 
-## <a name="touch"></a>Toucheingabe
+## <a name="touch"></a>Touch
 
 Bei der Toucheingabe können mit einem oder mehreren Fingern ausgeführte Gesten verwendet werden, um die direkte Manipulation von UI-Elementen (wie etwa Verschieben, Drehen, Ändern der Größe oder Bewegen) zu emulieren. Außerdem können die Gesten auch als alternative Eingabemethode (ähnlich einer Maus- oder Stifteingabe) oder als ergänzende Eingabemethode (zum Modifizieren anderer Eingaben; also beispielsweise zum Verwischen eines mit einem Stift gezeichneten Freihandstrichs) verwendet werden. Diese berührungsbasierte Bedienung wird von Benutzern unter Umständen als natürlicher wahrgenommen als die symbolbasierte Interaktion auf einem Bildschirm.
 
@@ -204,7 +204,7 @@ Im Allgemeinen weist die Toucheingabe folgende Merkmale auf:
 ### <a name="more-info"></a>Weitere Informationen
 
 [Richtlinien zum Berührungs Entwurf](./touch-interactions.md)
- 
+ 
 
 ## <a name="touchpad"></a>Touchpad
 
@@ -228,7 +228,7 @@ Sie müssen mausspezifische Benutzeroberflächenbefehle (oder Angebote) zur Unte
 ### <a name="more-info"></a>Weitere Informationen
 
 [Touchpad-Designrichtlinien](./touch-interactions.md)
- 
+ 
 
 ## <a name="keyboard"></a>Tastatur
 
@@ -256,7 +256,7 @@ Bei der Bildschirmtastatur handelt es sich um eine visuelle Softwaretastatur, di
 
 Bei der Touch-Bildschirmtastatur handelt es sich um eine visuelle Softwaretastatur für die Texteingabe per Touchscreen. Die Touchtastatur ist kein Ersatz für die Bildschirmtastatur. Sie wird nur für die Texteingabe (ohne Emulierung der Hardwaretastatur) verwendet und nur angezeigt, wenn der Fokus auf einem Textfeld oder einem anderen bearbeitbaren Textsteuerelement liegt. Die Bildschirmtastatur unterstützt keine App- oder Systembefehle.
 
-**Hinweis**    Der OSK hat Vorrang vor der Touchscreen-Tastatur, die nicht angezeigt wird, wenn der OSK vorhanden ist.
+**Hinweis**  Die Bildschirmtastatur hat Vorrang vor der Touchtastatur. Ist die Bildschirmtastatur vorhanden, wird die Touchtastatur nicht angezeigt.
 
 Im Allgemeinen weist eine Tastatur folgende Merkmale auf:
 
@@ -268,7 +268,7 @@ Im Allgemeinen weist eine Tastatur folgende Merkmale auf:
 ### <a name="more-info"></a>Weitere Informationen
 
 [Tastaturentwurfsrichtlinien](./keyboard-interactions.md)
- 
+ 
 
 ## <a name="mouse"></a>Maus
 
@@ -295,7 +295,7 @@ Sie müssen mausspezifische Benutzeroberflächenbefehle (oder Angebote) zur Unte
 ### <a name="more-info"></a>Weitere Informationen
 
 [Richtlinien für die Mausinteraktion](./mouse-interactions.md)
- 
+ 
 
 ## <a name="gesture"></a>Geste
 
@@ -366,6 +366,6 @@ Ebenso wie Menschen untereinander mit einer Mischung aus Sprache und Gesten komm
 
 
 
- 
+ 
 
- 
+ 

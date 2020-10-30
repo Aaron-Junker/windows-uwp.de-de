@@ -1,5 +1,5 @@
 ---
-Description: Empfangen, verarbeiten und Verwalten von Eingabedaten von Zeige Geräten wie Touch, Mouse, Pen/Stift und Touchpad in Ihren Windows-Anwendungen.
+description: Empfangen, verarbeiten und Verwalten von Eingabedaten von Zeige Geräten wie Touch, Mouse, Pen/Stift und Touchpad in Ihren Windows-Anwendungen.
 title: Behandeln von Zeigereingaben
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
@@ -8,12 +8,12 @@ keywords: Stift, Maus, Touchpad, Toucheingabe, Zeiger, Eingabe, Benutzerinterakt
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 11402ae9f2ea99c583d82d1998ad238eac44576c
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: bae166c1671421c13302df0d2f85e505985d3f2e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219853"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030743"
 ---
 # <a name="handle-pointer-input"></a>Behandeln von Zeigereingaben
 
@@ -72,10 +72,10 @@ Windows-Apps können auf die folgenden Zeiger Ereignisse lauschen:
 <td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>Tritt auf, wenn ein anderes Benutzeroberflächenelement den Zeiger erfasst, der Zeiger freigegeben wurde oder ein anderer Zeiger programmgesteuert erfasst wurde.</p>
 <div class="alert">
-<strong>Hinweis</strong>    Es ist kein entsprechendes Zeiger Aufzeichnungs Ereignis vorhanden.
+<strong>Hinweis</strong>  Es ist kein entsprechendes Zeiger Aufzeichnungs Ereignis vorhanden.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -120,7 +120,7 @@ Windows-Apps können auf die folgenden Zeiger Ereignisse lauschen:
 <p>Die Mauseingabe wird einem einzelnen Zeiger zugeordnet, der bei der ersten Ermittlung einer Mauseingabe zugewiesen wird. Wenn Sie auf eine Maustaste klicken (Links, Rad oder rechts), wird eine sekundäre Zuordnung zwischen dem-Zeiger und dieser Schaltfläche durch das <a href="/uwp/api/windows.ui.xaml.uielement.pointermoved">pointermove</a> -Ereignis erstellt.</p></td>
 </tr>
 </tbody>
-</table> 
+</table> 
 
 ## <a name="pointer-event-example"></a>Beispiel für Zeiger Ereignis
 
@@ -240,7 +240,8 @@ Im nächsten Schritt wird UI-Feedback verwendet, um die Verwendung einfacher Zei
 -   Dieser Handler verwaltet das [**pointerpressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) -Ereignis. Das Ereignis wird dem Ereignisprotokoll hinzugefügt, der Zeiger wird dem aktiven Zeiger Wörterbuch hinzugefügt, und die Zeiger Details werden angezeigt.
 
     > [!NOTE]
-    > [**Pointerpressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) -und [**pointerreleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) -Ereignisse treten nicht immer paarweise auf. Ihre APP sollte auf jedes Ereignis lauschen und dieses behandeln, das möglicherweise einen Zeiger abschließt (z. b. " [**pointerexited**](/uwp/api/windows.ui.xaml.uielement.pointerexited)", " [**pointerabgeb Rochen**](/uwp/api/windows.ui.xaml.uielement.pointercanceled)" und " [**pointercapturelost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost)").      
+    > [**Pointerpressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) -und [**pointerreleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) -Ereignisse treten nicht immer paarweise auf. Ihre APP sollte auf jedes Ereignis lauschen und dieses behandeln, das möglicherweise einen Zeiger abschließt (z. b. " [**pointerexited**](/uwp/api/windows.ui.xaml.uielement.pointerexited)", " [**pointerabgeb Rochen**](/uwp/api/windows.ui.xaml.uielement.pointercanceled)" und " [**pointercapturelost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost)").
+         
 
 ```csharp
 /// <summary>
@@ -322,7 +323,7 @@ private void Target_PointerEntered(object sender, PointerRoutedEventArgs e)
 -   Dieser Handler verwaltet das [**pointerverschoderte**](/uwp/api/windows.ui.xaml.uielement.pointermoved) Ereignis. Das Ereignis wird zum Ereignisprotokoll hinzugefügt, und die Zeigerdetails werden aktualisiert.
 
     > [!Important]
-    > Die Mauseingabe wird einem einzelnen Zeiger zugeordnet, der bei der ersten Ermittlung einer Mauseingabe zugewiesen wird. Durch das Klicken auf eine Maustaste (links, Mausrad oder rechts) wird über das [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed)-Ereignis eine zweite Zuordnung zwischen dem Zeiger und dieser Taste erstellt. Das [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased)-Ereignis wird nur ausgelöst, wenn dieselbe Maustaste losgelassen wird (dem Zeiger kann erst eine andere Taste zugeordnet werden, wenn dieses Ereignis abgeschlossen ist). Aufgrund dieser exklusiven Zuordnung werden Klicks auf andere Maustasten über das [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved)-Ereignis geleitet.     
+    > Die Mauseingabe wird einem einzelnen Zeiger zugeordnet, der bei der ersten Ermittlung einer Mauseingabe zugewiesen wird. Durch das Klicken auf eine Maustaste (links, Mausrad oder rechts) wird über das [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed)-Ereignis eine zweite Zuordnung zwischen dem Zeiger und dieser Taste erstellt. Das [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased)-Ereignis wird nur ausgelöst, wenn dieselbe Maustaste losgelassen wird (dem Zeiger kann erst eine andere Taste zugeordnet werden, wenn dieses Ereignis abgeschlossen ist). Aufgrund dieser exklusiven Zuordnung werden Klicks auf andere Maustasten über das [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved)-Ereignis geleitet.     
 
 ```csharp
 /// <summary>
@@ -528,7 +529,7 @@ private void Target_PointerCanceled(object sender, PointerRoutedEventArgs e)
 -   Dieser Handler verwaltet das [**pointercapturelost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost) -Ereignis. Das Ereignis wird zum Ereignisprotokoll hinzugefügt, der Zeiger wird aus dem Zeigerarray entfernt, und die Zeigerdetails werden aktualisiert.
 
     > [!NOTE]
-    > [**Pointercapturelost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost) kann anstelle von [**pointerreleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased)auftreten. Die Zeiger Erfassung kann aus verschiedenen Gründen verloren gehen, einschließlich der Benutzerinteraktion, der programmgesteuerten Erfassung eines anderen Zeigers, dem Aufrufen von [**pointerreleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased).     
+    > [**Pointercapturelost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost) kann anstelle von [**pointerreleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased)auftreten. Die Zeiger Erfassung kann aus verschiedenen Gründen verloren gehen, einschließlich der Benutzerinteraktion, der programmgesteuerten Erfassung eines anderen Zeigers, dem Aufrufen von [**pointerreleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased).     
 
 ```csharp
 /// <summary>

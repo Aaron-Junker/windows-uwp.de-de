@@ -1,5 +1,5 @@
 ---
-Description: Windows-apps, die Windows Ink unterstützen, können Freihand Striche in eine ISF-Datei (Ink Serialized Format) serialisieren und deserialisieren. Die ISF-Datei ist eine GIF-Bild mit zusätzlichen Metadaten für alle Eigenschaften und Verhaltensweisen von Freihandstrichen. Apps ohne Unterstützung der Freihandeingabe können das statische GIF-Bild, einschließlich Alphakanal-Hintergrundtransparenz, anzeigen.
+description: Windows-apps, die Windows Ink unterstützen, können Freihand Striche in eine ISF-Datei (Ink Serialized Format) serialisieren und deserialisieren. Die ISF-Datei ist eine GIF-Bild mit zusätzlichen Metadaten für alle Eigenschaften und Verhaltensweisen von Freihandstrichen. Apps ohne Unterstützung der Freihandeingabe können das statische GIF-Bild, einschließlich Alphakanal-Hintergrundtransparenz, anzeigen.
 title: Speichern und Abrufen der Daten zu Windows Ink-Strichen
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows Inking, directink, InkPresenter, InkCanvas, ISF, 
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 66ac039774abc2322ab8b5e9a6a264af25156406
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 36318ce0049f5ec76df0b11e57d0541df780b7ed
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216763"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031363"
 ---
 # <a name="store-and-retrieve-windows-ink-stroke-data"></a>Speichern und Abrufen der Daten zu Windows Ink-Strichen
 
@@ -23,7 +23,7 @@ Windows-apps, die Windows Ink unterstützen, können Freihand Striche in eine IS
 > [!NOTE]
 > Bei ISF handelt es sich um die kompakteste permanente Freihanddarstellung. Sie kann in ein binäres Dokumentformat, z. B. in eine GIF-Datei, eingebettet oder direkt in der Zwischenablage platziert werden.
 
-> **Wichtige APIs**: [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), [**Windows. UI. Input. Inking**](/uwp/api/Windows.UI.Input.Inking)
+> **Wichtige APIs** : [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), [**Windows. UI. Input. Inking**](/uwp/api/Windows.UI.Input.Inking)
 
 ## <a name="save-ink-strokes-to-a-file"></a>Speichern von Freihandstrichen in einer Datei
 
@@ -63,7 +63,7 @@ Hier wird veranschaulicht, wie Sie in einem [**InkCanvas**](/uwp/api/Windows.UI.
 
 2.  Dann werden einige grundlegende Verhalten für Freihandeingaben festgelegt.
 
-    Der [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) ist so konfiguriert, dass die Eingabedaten von Stift und Maus als Freihandstriche ([**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)) interpretiert werden, und es werden Listener für die Klickereignisse der Schaltflächen deklariert.
+    Der [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) ist so konfiguriert, dass die Eingabedaten von Stift und Maus als Freihandstriche ( [**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)) interpretiert werden, und es werden Listener für die Klickereignisse der Schaltflächen deklariert.
 ```csharp
 public MainPage()
     {
@@ -195,7 +195,7 @@ Hier wird veranschaulicht, wie Freihandstriche aus einer Datei geladen und in ei
 
 2.  Dann werden einige grundlegende Verhalten für Freihandeingaben festgelegt.
 
-    Der [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) ist so konfiguriert, dass die Eingabedaten von Stift und Maus als Freihandstriche ([**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)) interpretiert werden, und es werden Listener für die Klickereignisse der Schaltflächen deklariert.
+    Der [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) ist so konfiguriert, dass die Eingabedaten von Stift und Maus als Freihandstriche ( [**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)) interpretiert werden, und es werden Listener für die Klickereignisse der Schaltflächen deklariert.
 ```csharp
 public MainPage()
     {
@@ -317,7 +317,7 @@ In diesem Beispiel wird die Strichauswahl aktiviert, wenn die Eingabe mit einer 
 
 2.  Dann werden einige grundlegende Verhalten für Freihandeingaben festgelegt.
 
-    Die [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter)-Eigenschaft wird für die Interpretation von Eingabedaten von Stift oder Maus als Freihandstriche ([**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)) konfiguriert. Hier werden außerdem Listener für die Click-Ereignisse der Schaltflächen sowie Zeiger- und Strichereignisse für die Auswahlfunktion deklariert.
+    Die [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter)-Eigenschaft wird für die Interpretation von Eingabedaten von Stift oder Maus als Freihandstriche ( [**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)) konfiguriert. Hier werden außerdem Listener für die Click-Ereignisse der Schaltflächen sowie Zeiger- und Strichereignisse für die Auswahlfunktion deklariert.
 
     Ein umfassendes Beispiel für das Implementieren der Strichauswahl finden Sie in [Zeichen- und Eingabestiftinteraktionen](pen-and-stylus-interactions.md) unter Durchlaufende Eingabe für die erweiterte Verarbeitung.
 ```csharp
@@ -365,7 +365,7 @@ public MainPage()
     }
 ```
 
-3.  Nachdem die Unterstützung für die Strichauswahl hinzugefügt wurde, wird schließlich die Zwischenablagefunktion in den Click-Ereignishandlern der Schaltflächen **Ausschneiden**, **Kopieren** und **Einfügen** implementiert.
+3.  Nachdem die Unterstützung für die Strichauswahl hinzugefügt wurde, wird schließlich die Zwischenablagefunktion in den Click-Ereignishandlern der Schaltflächen **Ausschneiden** , **Kopieren** und **Einfügen** implementiert.
 
     Für die Schaltfläche „Ausschneiden“ wird zunächst [**CopySelectedToClipboard**](/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) für den [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) des [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) aufgerufen.
 

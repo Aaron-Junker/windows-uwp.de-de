@@ -1,43 +1,43 @@
 ---
-Description: Wenn eine Ressource angefordert wird, kann es mehrere Kandidaten geben, für die sich in einem gewissen Maße eine Übereinstimmung mit dem aktuellen Ressourcenkontext ergibt. Das Ressourcenverwaltungssystem analysiert alle Kandidaten und ermittelt den besten Kandidaten für die Rückgabe. In diesem Thema wird dieser Prozess ausführlich und anhand von Beispielen beschrieben.
+description: Wenn eine Ressource angefordert wird, kann es mehrere Kandidaten geben, für die sich in einem gewissen Maße eine Übereinstimmung mit dem aktuellen Ressourcenkontext ergibt. Das Ressourcenverwaltungssystem analysiert alle Kandidaten und ermittelt den besten Kandidaten für die Rückgabe. In diesem Thema wird dieser Prozess ausführlich und anhand von Beispielen beschrieben.
 title: Wie das Ressourcenverwaltungssystem Ressourcen zuordnet und auswählt
 template: detail.hbs
 ms.date: 10/23/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: de34411d9c7d226857214472e691dd6b41f10a18
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d430aae696b0f021e2412a73f137ea6db826937b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593885"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031853"
 ---
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>Wie das Ressourcenverwaltungssystem Ressourcen zuordnet und auswählt
-Wenn eine Ressource angefordert wird, kann es mehrere Kandidaten geben, für die sich in einem gewissen Maße eine Übereinstimmung mit dem aktuellen Ressourcenkontext ergibt. Vom Ressourcenverwaltungssystem werden alle Kandidaten analysiert, und der beste Kandidat für die Rückgabe wird ermittelt. Dazu werden alle Qualifizierer einbezogen, um eine Einstufung aller Kandidaten zu erhalten.
+Wenn eine Ressource angefordert wird, kann es mehrere Kandidaten geben, für die sich in einem gewissen Maße eine Übereinstimmung mit dem aktuellen Ressourcenkontext ergibt. Das Ressourcenverwaltungssystem analysiert alle Kandidaten und ermittelt den besten Kandidaten für die Rückgabe. Dies geschieht, indem alle Qualifizierer in Erwägung gezogen werden, alle Kandidaten zu ordnen.
 
-Bei diesem Einstufungsvorgang werden den unterschiedlichen Qualifizierern unterschiedliche Prioritäten zugewiesen: Die Sprache hat die größte Auswirkung auf die Gesamteinstufung, gefolgt von Kontrast, Skalierung usw. Für jeden Qualifizierer werden Kandidatenqualifizierer mit dem Kontextqualifiziererwert verglichen, um eine Übereinstimmungsqualität zu ermitteln. Die Durchführung des Vergleichs hängt dabei vom Qualifizierer ab.
+In dieser Rangfolge werden den verschiedenen Qualifizierern unterschiedliche Prioritäten zugewiesen: die Sprache hat die größten Auswirkungen auf die Gesamt Rangfolge, gefolgt von Kontrast, Skalierung usw. Für jeden Qualifizierer werden Kandidaten Qualifizierer mit dem Kontext qualifiziererwert verglichen, um die Qualität der Übereinstimmung zu ermitteln Wie der Vergleich erfolgt, hängt vom Qualifizierer ab.
 
-Bestimmte Informationen zur Funktionsweise des Vergleichs von Sprachtags finden Sie unter [Wie das Ressourcenverwaltungssystem Sprachtags zuordnet](how-rms-matches-lang-tags.md).
+Ausführliche Informationen zur Vorgehensweise beim Abgleichen von sprach Tags finden Sie unter [Funktionsweise des Ressourcen Verwaltungssystems mit sprach Tags](how-rms-matches-lang-tags.md).
 
-Für einige Qualifizierer, wie Skalierung und Kontrast, ergibt sich immer ein Mindestgrad an Übereinstimmung. Beispielsweise ein Kandidat für "Skalierung: 100" Kontext "Scale-400" auf einem kleinen gewissen Grad entspricht qualifiziert, wenn auch nicht als auch ein Kandidat für "Scale-200" oder (für eine perfekte) "Scale-400" gekennzeichnet.
+Bei manchen Qualifizierern, wie z. b. Skalierung und Kontrast, gibt es immer ein Minimum an Übereinstimmungen. Beispielsweise entspricht ein Kandidat, der für "Scale-100" qualifiziert ist, einem Kontext von "Scale-400" zu einem kleinen Grad, aber nicht als auch als Kandidat, der für "Scale-200" oder (für eine perfekte Übereinstimmung) "Scale-400" qualifiziert ist.
 
-Für andere Qualifizierer, wie die Sprache oder den Wohnort, ist ein Vergleich ohne Übereinstimmung möglich (und auch mit Übereinstimmungsgrad). Beispielsweise ergibt sich für einen Kandidaten, der für die Sprache als „en-US” qualifiziert wurde, zumindest bis zu einem gewissen Grad eine Übereinstimmung mit dem Kontext „en-GB”, während sich für einen als „fr” qualifizierten Kandidaten keinerlei Übereinstimmung ergibt. Ebenso weist ein Kandidat, der für den Wohnort über die Qualifizierung „155” (Westeuropa) verfügt, eine recht gute Übereinstimmung mit einem Kontext für einen Benutzer mit der Wohnorteinstellung „FR” auf, während sich für einen Kandidaten mit der Qualifizierung „US” keinerlei Übereinstimmung ergibt.
+Für andere Qualifizierer, wie z. b. Sprache oder Heim Region, ist es jedoch möglich, dass ein Vergleich nicht übereinstimmender Vergleiche (und Grad an Übereinstimmungen) erfolgt. Beispielsweise ist ein Kandidat, der für die Sprache "en-US" qualifiziert ist, eine Teil Übereinstimmung für den Kontext "en-GB", aber ein Kandidat, der als "fr" qualifiziert ist, ist keine Entsprechung. Entsprechend stimmt ein Kandidat, der für die Heimatregion als "155" (Westeuropa) qualifiziert ist, mit einem Kontext für einen Benutzer mit einer Heim Regions Einstellung von "fr" gut überein, aber ein Kandidat, der als "US" qualifiziert ist, stimmt nicht überein.
 
-Wenn beim Auswerten eines Kandidaten für einen Qualifizierer ein Vergleich ohne Übereinstimmung vorhanden ist, erhält der Kandidat eine Gesamteinstufung ohne Übereinstimmung und wird nicht ausgewählt. Auf diese Weise können die Qualifizierer mit höheren Prioritäten beim Auswählen der besten Übereinstimmung die höchste Gewichtung erhalten, aber auch ein Qualifizierer mit einer niedrigen Priorität kann einen Kandidaten aufgrund einer fehlenden Übereinstimmung eliminieren.
+Wenn ein Kandidat ausgewertet wird und für einen Qualifizierer kein vergleichsvergleich vorhanden ist, erhält dieser Kandidat eine Gesamt Rangfolge, die keine Entsprechung ergibt und nicht ausgewählt wird. Auf diese Weise können die Qualifizierer mit höherer Priorität bei der Auswahl der besten Übereinstimmung das größte Gewicht haben, aber auch ein Qualifizierer mit niedriger Priorität kann einen Kandidaten aufgrund einer nicht Übereinstimmung ausschließen.
 
-Ein Kandidat gilt in Bezug auf einen Qualifizierer als neutral, wenn er für den jeweiligen Qualifizierer keine Markierung erhält. Für alle Qualifizierer ergibt ein neutraler Kandidat immer eine Übereinstimmung für den Kontextqualifiziererwert. Dies ist jedoch immer eine niedrigere Übereinstimmungsqualität als für Kandidaten, die für diesen Qualifizierer bewertet wurden und einen bestimmten Übereinstimmungsgrad aufweisen (genau oder partiell). Falls beispielsweise Kandidaten für „en-US”, „en” und „fr” qualifiziert wurden und außerdem ein sprachneutraler Kandidat vorhanden ist, werden die Kandidaten für einen Kontext mit dem Sprachqualifiziererwert „en-GB” in der folgenden Reihenfolge eingestuft: „en”, „en-US”, neutral und „fr”. Mit „fr” besteht in diesem Fall keinerlei Übereinstimmung, während die anderen Kandidaten teilweise übereinstimmen.
+Ein Kandidat ist in Bezug auf einen Qualifizierer neutral, wenn er nicht für diesen Qualifizierer gekennzeichnet ist. Bei einem beliebigen Qualifizierer ist ein neutraler Kandidat immer eine Übereinstimmung für den Kontext qualifiziererwert, jedoch nur mit einer niedrigeren Qualität der Übereinstimmung als alle Kandidaten, die für diesen Qualifizierer markiert wurden und einen gewissen Grad an Übereinstimmung (genau oder teilweise) aufweist. Wenn wir z. b. Kandidaten für "en-US", "en", "fr" und auch einen sprach neutralen Kandidaten haben, wird für einen Kontext mit dem sprach Qualifizierungswert "en-GB" der Kandidaten in der folgenden Reihenfolge sortiert: "en", "en-US", neutral und "fr". In diesem Fall stimmt "fr" nicht überein, während die anderen Kandidaten mit einem gewissen Grad übereinstimmen.
 
-Danach beginnt der Vorgang für die Gesamteinstufung, indem Kandidaten in Bezug auf den Qualifizierer mit der höchsten Priorität (Sprache) ausgewertet werden. Kandidaten ohne Übereinstimmung werden eliminiert. Die verbleibenden Kandidaten werden nach ihrer Übereinstimmungsqualität für die Sprache eingestuft. Falls es zu Gleichständen kommt, wird der Qualifizierer mit der nächsthöheren Priorität (Kontrast) herangezogen, um anhand der Übereinstimmungsqualität für den Kontrast zwischen Kandidaten mit der gleichen Einstufung zu entscheiden. Nach dem Kontrast werden die verbleibenden Gleichstände mithilfe des Skalierungsqualifizierers und danach unter Verwendung so vieler Qualifizierer entschieden, wie für die Erreichung einer gut sortierten Einstufung erforderlich sind.
+Der allgemeine Rang folgen Prozess beginnt mit dem Auswerten von Kandidaten in Bezug auf den Qualifizierer mit der höchsten Priorität (Sprache). Nicht-Übereinstimmungen werden entfernt. Die verbleibenden Kandidaten werden hinsichtlich ihrer Qualität der Übereinstimmung für die Sprache sortiert. Wenn Verknüpfungen vorhanden sind, wird der Qualifizierer mit der höchsten Priorität mit der höchsten Priorität berücksichtigt, wobei die Qualität der Übereinstimmung verwendet wird, um zwischen den verknüpften Kandidaten zu unterscheiden. Im Gegensatz dazu wird der Skalierungs Qualifizierer verwendet, um die verbleibenden Verknüpfungen zu unterscheiden, usw. bis zu den zahlreichen Qualifizierern, die für eine ordnungsgemäß geordnete Rangfolge erforderlich sind
 
-Wird aufgrund nicht mit dem Kontext übereinstimmender Qualifizierer keine der infrage kommenden Ressourcen in Betracht gezogen, sucht das Ressourcenladeprogramm in einem zweiten Durchlauf nach einer infrage kommenden Standardressource für die Anzeige. Standardkandidaten werden während der Erstellung der PRI-Datei ermittelt. Mit ihrer Hilfe wird sichergestellt, dass für alle Laufzeitkontexte immer ein Kandidat ausgewählt werden kann. Stimmen Qualifizierer einer infrage kommenden Ressource nicht überein und sind auch nicht als Standard festgelegt, wird die betreffende Ressource gar nicht mehr in Betracht gezogen.
+Wenn alle Kandidaten aufgrund von Qualifizierern, die nicht dem Kontext entsprechen, nicht mehr berücksichtigt werden, durchläuft das Ressourcen Lade Modul einen zweiten Durchlauf, der nach einem Standard Kandidaten für die Anzeige sucht. Standard Kandidaten werden während der Erstellung der PRI-Datei festgelegt und sind erforderlich, um sicherzustellen, dass immer ein Kandidat für einen beliebigen Lauf Zeit Kontext ausgewählt wird. Wenn ein Kandidat über Qualifizierer verfügt, die nicht mit dem Standardwert identisch sind, wird dieser Ressourcen Kandidat endgültig außer bedacht.
 
-Alle weiterhin infrage kommenden Ressourcen werden vom Ressourcenladeprogramm anhand des Werts für den Kontextqualifizierer mit der höchsten Priorität ermittelt. Ausgewählt wird die Ressource mit der größten Übereinstimmung oder dem besten Standardwert. Jede tatsächliche Übereinstimmung wird höher als ein Standardwert bewertet.
+Für alle bereits in Erwägung kommenden Ressourcen Kandidaten prüft der Ressourcen Lader den Kontext qualifiziererwert mit der höchsten Priorität und wählt den Wert aus, der die beste oder beste Standardbewertung aufweist. Jede tatsächliche Übereinstimmung ist besser als eine Standardbewertung.
 
-Bei gleichrangigen Ressourcen wird der Wert für den Kontextqualifizierer mit der nächsthöchsten Priorität inspiziert. Dieser Vorgang wird solange fortgesetzt, bis die größtmögliche Übereinstimmung ermittelt ist.
+Wenn eine Verknüpfung vorliegt, wird der Kontext qualifiziererwert mit der höchsten Priorität überprüft, und der Prozess wird fortgesetzt, bis eine am besten geeignete Entsprechung gefunden wird.
 
-## <a name="example-of-choosing-a-resource-candidate"></a>Beispiel für das Auswählen eines Ressourcenkandidaten
-Berücksichtigen Sie diese Dateien.
+## <a name="example-of-choosing-a-resource-candidate"></a>Beispiel für die Auswahl eines Ressourcen Kandidaten
+Beachten Sie diese Dateien.
 
 ```console
 en/images/logo.scale-400.jpg
@@ -49,7 +49,7 @@ fr/images/contrast-high/logo.scale-100.jpg
 de/images/logo.jpg
 ```
 
-Und gehen Sie davon aus, das dies die Einstellungen im aktuellen Kontext sind.
+Und nehmen Sie an, dass es sich hierbei um die Einstellungen im aktuellen Kontext handelt.
 
 ```console
 Application language: en-US; fr-FR;
@@ -57,7 +57,7 @@ Scale: 400
 Contrast: Standard
 ```
 
-Drei Dateien werden vom Ressourcenverwaltungssystem aussortiert. Der Grund hierfür ist, dass der hohe Kontrast und die Sprache Deutsch nicht mit dem in den Einstellungen festgelegten Kontext übereinstimmen. Diese Kandidaten verbleiben.
+Das Ressourcen Verwaltungs System entfernt drei Dateien, da der hohe Kontrast und die deutschsprachige Sprache nicht mit dem durch die Einstellungen definierten Kontext identisch sind. Die diese Kandidaten verlassen.
 
 ```console
 en/images/logo.scale-400.jpg
@@ -66,7 +66,7 @@ en/images/logo.scale-100.jpg
 fr/images/logo.scale-100.jpg
 ```
 
-Für die verbleibenden Kandidaten verwendet das Ressourcenverwaltungssystem den Kontextqualifizierer mit der höchsten Priorität: Sprache. Die englischen Ressourcen stimmen besser überein als die französischen, da Englisch in den Einstellungen vor Französisch aufgeführt ist.
+Für diese verbleibenden Kandidaten verwendet das Ressourcen Verwaltungs System den Kontext Qualifizierer mit der höchsten Priorität, bei dem es sich um eine Sprache handelt. Die englischen Ressourcen sind einander näher als die französischen Ressourcen, weil Englisch in den Einstellungen vor Französisch aufgeführt ist.
 
 ```console
 en/images/logo.scale-400.jpg
@@ -74,13 +74,13 @@ en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
 ```
 
-Als Nächstes wird vom Ressourcenverwaltungssystem der Kontextqualifizierer mit der zweithöchsten Priorität verwendet: Skalierung. Das ist diese also die zurückgegebene Ressource.
+Im nächsten Schritt verwendet das Ressourcen Verwaltungs System den Kontext Qualifizierer mit der höchsten Priorität, Skalierung. Das ist also die zurückgegebene Ressource.
 
 ```console
 en/images/logo.scale-400.jpg
 ```
 
-Mit der erweiterten Methode [**NamedResource.ResolveAll**](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live) können Sie alle Kandidaten in der Reihenfolge abrufen, in der sie mit den Kontexteinstellungen übereinstimmen. Für das Beispiel, das wir gerade erläutert haben, gibt **ResolveAll** Kandidaten in dieser Reihenfolge zurück.
+Sie können die Advanced [**namedresource. ResolveAll**](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live) -Methode verwenden, um alle Kandidaten in der Reihenfolge abzurufen, in der Sie den Kontext Einstellungen entsprechen. Im soeben durch gelaufene Beispiel gibt **ResolveAll** Kandidaten in dieser Reihenfolge zurück.
 
 ```console
 en/images/logo.scale-400.jpg
@@ -89,8 +89,8 @@ en/images/logo.scale-100.jpg
 fr/images/logo.scale-100.jpg
 ```
 
-## <a name="example-of-producing-a-fallback-choice"></a>Beispiel für das Erzeugen einer Fallbackauswahl
-Berücksichtigen Sie diese Dateien.
+## <a name="example-of-producing-a-fallback-choice"></a>Beispiel für das Erstellen einer Fall Back Option
+Beachten Sie diese Dateien.
 
 ```console
 en/images/logo.scale-400.jpg
@@ -101,7 +101,7 @@ fr/images/contrast-standard/logo.scale-100.jpg
 de/images/contrast-standard/logo.jpg
 ```
 
-Und gehen Sie davon aus, das dies die Einstellungen im aktuellen Kontext sind.
+Und nehmen Sie an, dass es sich hierbei um die Einstellungen im aktuellen Kontext handelt.
 
 ```console
 User language: de-DE;
@@ -109,7 +109,7 @@ Scale: 400
 Contrast: High
 ```
 
-Alle Dateien werden gelöscht, da sie nicht mit dem Kontext übereinstimmen. Nun wird ein Standarddurchlauf durchgeführt. Beim Erstellen der PRI-Datei wurde folgende Standardeinstellung (siehe [Manuelles Kompilieren von Ressourcen mit MakePRI.exe](compile-resources-manually-with-makepri.md)) verwendet:
+Alle Dateien werden gelöscht, da Sie nicht mit dem Kontext verglichen werden. Daher wird ein Standard Durchlauf eingegeben, bei dem der Standardwert (siehe [Kompilierung von Ressourcen manuell mit MakePri.exe](compile-resources-manually-with-makepri.md)) während der Erstellung der PRI-Datei war.
 
 ```console
 Language: fr-FR;
@@ -117,7 +117,7 @@ Scale: 400
 Contrast: Standard
 ```
 
-Übrig bleiben alle Ressourcen, die entweder mit dem aktuellen Benutzer oder mit der Standardeinstellung übereinstimmen.
+Dadurch bleiben alle Ressourcen, die entweder dem aktuellen Benutzer oder dem Standard entsprechen.
 
 ```console
 fr/images/contrast-standard/logo.scale-400.jpg
@@ -125,14 +125,14 @@ fr/images/contrast-standard/logo.scale-100.jpg
 de/images/contrast-standard/logo.jpg
 ```
 
-Das Ressourcenverwaltungssystem verwendet den Kontextqualifizierer mit der höchsten Priorität (Sprache), um die benannte Ressource mit dem höchsten Wert zurückzugeben.
+Das Ressourcen Verwaltungs System verwendet den Kontext Qualifizierer mit höchster Priorität, die Sprache, um die benannte Ressource mit der höchsten Bewertung zurückzugeben.
 
 ```console
 de/images/contrast-standard/logo.jpg
 ```
 
 ## <a name="important-apis"></a>Wichtige APIs
-* [NamedResource.ResolveAll](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live)
+* [Namedresource. ResolveAll](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live)
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Manuelles Kompilieren von Ressourcen mit „MakePri.exe“](compile-resources-manually-with-makepri.md)

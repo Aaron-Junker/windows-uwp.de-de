@@ -1,5 +1,5 @@
 ---
-Description: Mithilfe von Inhaltsübergangsanimationen können Sie den Inhalt eines Bildschirmbereichs ändern und gleichzeitig den Container oder Hintergrund unverändert lassen. Neuer Inhalt wird eingeblendet. Muss vorhandener Inhalt ersetzt werden, wird dieser Inhalt ausgeblendet.
+description: Mithilfe von Inhaltsübergangsanimationen können Sie den Inhalt eines Bildschirmbereichs ändern und gleichzeitig den Container oder Hintergrund unverändert lassen. Neuer Inhalt wird eingeblendet. Muss vorhandener Inhalt ersetzt werden, wird dieser Inhalt ausgeblendet.
 title: Richtlinien für Inhaltsübergangsanimationen
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
 template: detail.hbs
@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d498c3214effd64895c6a894802a9ccc82ff357
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ed70a100b4aec7a2c1490cfc48e4d2f6ceac950e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169264"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029781"
 ---
 # <a name="content-transition-animations"></a>Inhaltsübergangsanimationen
 
@@ -23,7 +23,7 @@ ms.locfileid: "89169264"
 
 Mithilfe von Inhaltsübergangsanimationen können Sie den Inhalt eines Bildschirmbereichs ändern und gleichzeitig den Container oder Hintergrund unverändert lassen. Neuer Inhalt wird eingeblendet. Muss vorhandener Inhalt ersetzt werden, wird dieser Inhalt ausgeblendet.
 
-> **Wichtige APIs**: [ **Content-metransition-Klasse (XAML)**](/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
+> **Wichtige APIs** : [ **Content-metransition-Klasse (XAML)**](/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
 
@@ -46,6 +46,6 @@ Mithilfe von Inhaltsübergangsanimationen können Sie den Inhalt eines Bildschir
 * [Schnellstart: Animieren der Benutzeroberfläche mithilfe von Bibliotheksanimationen](/previous-versions/windows/apps/hh452703(v=win.10))
 * [**ContentThemeTransition-Klasse**](/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
 
- 
+ 
 
- 
+ 

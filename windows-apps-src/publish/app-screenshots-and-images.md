@@ -1,17 +1,17 @@
 ---
-Description: Sie können die Screenshots, Logos und anderen Kunst Ressourcen (z. b. "Nachspann" und "Werbebilder") auswählen, die in die Store-Auflistung Ihrer APP eingeschlossen werden sollen.
+description: Sie können die Screenshots, Logos und anderen Kunst Ressourcen (z. b. "Nachspann" und "Werbebilder") auswählen, die in die Store-Auflistung Ihrer APP eingeschlossen werden sollen.
 title: App-Screenshots, -Bilder und -Trailer
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Nachspann, Video, Screenshot, Bild, Symbol, Store-Auflistung, Listen Bilder speichern
 ms.localizationpriority: medium
-ms.openlocfilehash: be46e33ccc97545b86321e2e520b79c5a74f7a2e
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: b9af3ab765b218d933a4382f7b241704c81af2f1
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219763"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031303"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>App-Screenshots, -Bilder und -Trailer
 
@@ -81,13 +81,13 @@ Dieses Bild wird möglicherweise auf verschiedenen Store-Seiten für Windows 10 
 
 Dieses Bild ist für die ordnungsgemäße Anzeige auf Windows Phone 8,1 und früher erforderlich. Wenn Ihre zuvor veröffentlichte APP Windows Phone 8,1 oder früher unterstützt, und Sie dieses Image nicht bereitstellen, wird für diese Kunden ein leeres Symbol mit der Liste Ihrer Apps angezeigt. (Dies gilt auch für Kunden unter Windows 10, wenn Ihre APP nur Pakete für Windows Phone 8,1 oder früher verwendet.)
 
-Wenn Ihre Übermittlung *nur* UWP-Pakete umfasst, müssen Sie dieses Image nicht bereitstellen (es sei denn, Sie aktivieren das Kontrollkästchen  **für Kunden unter Windows 10 und Xbox, zeigen Sie hochgeladene Logo Bilder anstelle der Bilder aus den Paketen**an, wie im nächsten Abschnitt beschrieben).
+Wenn Ihre Übermittlung *nur* UWP-Pakete umfasst, müssen Sie dieses Image nicht bereitstellen (es sei denn, Sie aktivieren das Kontrollkästchen  **für Kunden unter Windows 10 und Xbox, zeigen Sie hochgeladene Logo Bilder anstelle der Bilder aus den Paketen** an, wie im nächsten Abschnitt beschrieben).
 
 ### <a name="display-only-uploaded-logo-images-in-the-store"></a>Nur hochgeladene Logo Bilder im Store anzeigen
 
 Sie können verhindern, dass der Speicher die Logo Bilder in den Paketen Ihrer APP verwendet, wenn Sie Ihre Liste für Kunden unter Windows 10 (einschließlich Xbox) anzeigen, und Sie müssen stattdessen nur Images verwenden, die Sie hochladen. Dadurch erhalten Sie mehr Kontrolle über das Erscheinungsbild Ihrer APP in verschiedenen anzeigen im gesamten Store für Kunden unter Windows 10 (einschließlich Xbox). (Wenn Ihre zuvor veröffentlichte App frühere Betriebssystemversionen unterstützt, sehen diese Kunden möglicherweise weiterhin Bilder aus ihren Paketen.)
 
-Damit der Speicher nur die von Ihnen hochgeladenen Images nutzt (für Kunden unter Windows 10, einschließlich Xbox) und keine Images aus ihren Paketen verwenden, aktivieren Sie das Kontrollkästchen **für Kunden unter Windows 10 und Xbox, und zeigen Sie hochgeladene Logo Bilder anstelle der Bilder aus meinen Paketen**an.
+Damit der Speicher nur die von Ihnen hochgeladenen Images nutzt (für Kunden unter Windows 10, einschließlich Xbox) und keine Images aus ihren Paketen verwenden, aktivieren Sie das Kontrollkästchen **für Kunden unter Windows 10 und Xbox, und zeigen Sie hochgeladene Logo Bilder anstelle der Bilder aus meinen Paketen** an.
 
 Durch Aktivieren dieses Kontrollkästchens wird ein neuer Abschnitt namens **Bilder für die Store-Anzeige** angezeigt. Hier können Sie drei Bilder hochladen, einschließlich der **1:1-App-Kachel Symbol (300 x 300 Pixel)** . (wenn Sie das Kontrollkästchen aktivieren, wird das Feld, das das Bild enthält, in diesen Abschnitt verschoben). Es wird empfohlen, alle drei Bildgrößen bereitzustellen, wenn Sie diese Option verwenden: 300 x 300, 150 x 150 und 71 x 71 Pixel. Es ist jedoch nur die 300 x 300-Größe erforderlich.
 
@@ -152,7 +152,7 @@ Beachten Sie bei der Bereitstellung Ihrer Nachspann die folgenden Anforderungen:
 - Nehmen Sie keine Alters Bewertungen in ihren Nachspann vor.
 
 > [!WARNING]
-> Eine Ausnahme von der Anforderung, Alters Bewertungen in ihren Nachspann einzuschließen, gilt **nur** für die **auf der Produktseite**angezeigten **Microsoft Store** . Alle Nachrichten außerhalb von Partner Center, die nicht ausschließlich für die Anzeige auf der Produktseite des Microsoft Store vorgesehen sind, **müssen** bei Bedarf eingebettete Bewertungsinformationen entsprechend den entsprechenden Richtlinien der Bewertungsbehörde anzeigen.  
+> Eine Ausnahme von der Anforderung, Alters Bewertungen in ihren Nachspann einzuschließen, gilt **nur** für die **auf der Produktseite** angezeigten **Microsoft Store** . Alle Nachrichten außerhalb von Partner Center, die nicht ausschließlich für die Anzeige auf der Produktseite des Microsoft Store vorgesehen sind, **müssen** bei Bedarf eingebettete Bewertungsinformationen entsprechend den entsprechenden Richtlinien der Bewertungsbehörde anzeigen.  
 
 Wie die anderen Felder auf der Seite "Store-Auflistung" müssen die Zertifikate bestanden werden, bevor Sie Sie in der Microsoft Store veröffentlichen können. Stellen Sie sicher, dass ihre Anhänger den [Microsoft Store Richtlinien](store-policies.md)entsprechen.
 
@@ -206,9 +206,9 @@ Wenn Sie dieses Image bereitstellen, können Sie Ihre APP für die bereitgestell
 Diese Images sind für die ordnungsgemäße Anzeige erforderlich, wenn Sie die APP auf der Xbox veröffentlichen. 
 
 Es gibt drei verschiedene Größen, die Sie hochladen können:
-- **Marken Schlüsselart, 584 x 800 Pixel**: muss den Titel des Produkts enthalten. Für dieses Bild ist eine Branding-Leiste erforderlich. Behalten Sie den Titel und alle Schlüsselbilder in den ersten drei Quartalen des Bilds, da im unteren Quartal ein Overlay angezeigt werden kann.
-- **Mit dem Titel Hero Art, 1920 x 1080 Pixel**: muss den Titel des Produkts enthalten. Behalten Sie den Titel und alle Schlüsselbilder in den ersten drei Quartalen des Bilds, da im unteren Quartal ein Overlay angezeigt werden kann.
-- **Vorgestellte Werbe Quadrat Kunst, 1080 x 1080 Pixel**: der Titel des Produkts darf *nicht* enthalten sein.
+- **Marken Schlüsselart, 584 x 800 Pixel** : muss den Titel des Produkts enthalten. Für dieses Bild ist eine Branding-Leiste erforderlich. Behalten Sie den Titel und alle Schlüsselbilder in den ersten drei Quartalen des Bilds, da im unteren Quartal ein Overlay angezeigt werden kann.
+- **Mit dem Titel Hero Art, 1920 x 1080 Pixel** : muss den Titel des Produkts enthalten. Behalten Sie den Titel und alle Schlüsselbilder in den ersten drei Quartalen des Bilds, da im unteren Quartal ein Overlay angezeigt werden kann.
+- **Vorgestellte Werbe Quadrat Kunst, 1080 x 1080 Pixel** : der Titel des Produkts darf *nicht* enthalten sein.
 
 > [!NOTE]
 > Zur optimalen Anzeige auf Xbox müssen Sie im Abschnitt [Store-Logos](#store-logos) auch ein 9:16-Image **(720 x 1080 oder 1440 x 2160 Pixel)** bereitstellen.
@@ -223,11 +223,11 @@ Das **2:1-Image (2400 x 1200)** wird nur verwendet, wenn Ihre APP die Holographi
 
 ### <a name="images-only-for-windows-8x-andor-windows-phone-8x"></a>Bilder nur für Windows 8. x und/oder Windows Phone 8. x 
 
-Wenn Ihre zuvor übermittelte App frühere Betriebssystemversionen unterstützt (Windows 8. x und/oder Windows Phone 8. x), müssen diese Images bereitgestellt werden, damit wir Ihre APP in Werbe Layouts in Erwägung gezogen haben (obwohl Sie nicht garantieren, dass Ihre APP angezeigt wird). Wenn Ihre APP diese früheren Betriebssystemversionen nicht unterstützt, überspringen Sie diesen Abschnitt. (Dieser Abschnitt wurde früher als **optionale Werbebilder**bezeichnet.)
+Wenn Ihre zuvor übermittelte App frühere Betriebssystemversionen unterstützt (Windows 8. x und/oder Windows Phone 8. x), müssen diese Images bereitgestellt werden, damit wir Ihre APP in Werbe Layouts in Erwägung gezogen haben (obwohl Sie nicht garantieren, dass Ihre APP angezeigt wird). Wenn Ihre APP diese früheren Betriebssystemversionen nicht unterstützt, überspringen Sie diesen Abschnitt. (Dieser Abschnitt wurde früher als **optionale Werbebilder** bezeichnet.)
 
-**Für Windows Phone 8,1 und frühere**Versionen können zwei Bildgrößen in Aktions Layouts verwendet werden: **1000 x 800 Pixel (5:4)** und **358 x 358 Pixel (1:1)**. Wenn Ihre APP unter Windows Phone 8,1 oder einer früheren Version ausgeführt wird, empfiehlt es sich, in beiden Größen Images bereitzustellen.  
+**Für Windows Phone 8,1 und frühere** Versionen können zwei Bildgrößen in Aktions Layouts verwendet werden: **1000 x 800 Pixel (5:4)** und **358 x 358 Pixel (1:1)** . Wenn Ihre APP unter Windows Phone 8,1 oder einer früheren Version ausgeführt wird, empfiehlt es sich, in beiden Größen Images bereitzustellen.  
 
 > [!TIP]
 > Stellen Sie sicher, dass Sie ein Symbol für die APP-Kachel "300 x 300 app" im Abschnitt " [Store-Logos](#store-logos) " bereitstellen, um die Übermittlung Windows Phone 8,1 oder früher Dadurch wird sichergestellt, dass Ihre APP nicht im Store mit einem leeren Symbol angezeigt wird.  
 
-**Bei Windows 8.1 und früheren**Versionen können einige Werbe Layouts ein Image in der **414 x 180** Pixelgröße verwenden. Wenn Ihre APP unter Windows 8.1 oder früher ausgeführt wird, empfiehlt es sich, ein Image in dieser Größe bereitzustellen.
+**Bei Windows 8.1 und früheren** Versionen können einige Werbe Layouts ein Image in der **414 x 180** Pixelgröße verwenden. Wenn Ihre APP unter Windows 8.1 oder früher ausgeführt wird, empfiehlt es sich, ein Image in dieser Größe bereitzustellen.

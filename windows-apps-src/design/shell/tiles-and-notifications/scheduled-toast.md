@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie, wie Sie eine lokale Popup Benachrichtigung so planen, dass Sie zu einem späteren Zeitpunkt angezeigt wird.
+description: Erfahren Sie, wie Sie eine lokale Popup Benachrichtigung so planen, dass Sie zu einem späteren Zeitpunkt angezeigt wird.
 title: Planen einer Popup Benachrichtigung
 label: Schedule a toast notification
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 04/09/2020
 ms.topic: article
 keywords: Windows 10, UWP, geplante Popup Benachrichtigung, scheduledtoastnotification, Vorgehensweise, Schnellstart, erste Schritte, Codebeispiel, Exemplarische Vorgehensweise
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ef849490df82d7677e19d1f1619d98111611be3
-ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
+ms.openlocfilehash: 2a138458634f0246d7e6bed9d6d65c2479dac3c9
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100308"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030693"
 ---
 # <a name="schedule-a-toast-notification"></a>Planen einer Popup Benachrichtigung
 
@@ -23,14 +23,14 @@ Beachten Sie, dass geplante Popup Benachrichtigungen über ein Übermittlungs Fe
 > [!IMPORTANT]
 > Für Desktop Anwendungen (msix/Sparse-Pakete und klassischer Desktop) gibt es etwas andere Schritte zum Senden von Benachrichtigungen und zur Handhabung der Aktivierung. Befolgen Sie die nachfolgenden Anweisungen, aber ersetzen Sie durch `ToastNotificationManager` die `DesktopNotificationManagerCompat` -Klasse aus der [Desktop-Apps-](toast-desktop-apps.md) Dokumentation.
 
-> **Wichtige APIs**: [scheduleddeastnotification-Klasse](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
+> **Wichtige APIs** : [scheduleddeastnotification-Klasse](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
 
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
 Um dieses Thema vollständig zu verstehen, ist Folgendes hilfreich...
 
-* Ein funktionierendes wissen zu den Begriffen und Konzepten von Popup Benachrichtigungen. Weitere Informationen finden Sie unter [Übersicht über das Popup-und Aktions Center](/archive/blogs/tiles_and_toasts/toast-notification-and-action-center-overview-for-windows-10).
+* Ein funktionierendes wissen zu den Begriffen und Konzepten von Popup Benachrichtigungen. Weitere Informationen finden Sie unter [Übersicht über das Popup-und Aktions Center](/archive/blogs/tiles_and_toasts/toast-notification-and-action-center-overview-for-windows-10).
 * Eine Vertrautheit mit Windows 10-Popup Benachrichtigungs Inhalt. Weitere Informationen finden Sie in der Dokumentation zum Popup [Inhalt](adaptive-interactive-toasts.md).
 * Ein Windows 10-UWP-App-Projekt
 

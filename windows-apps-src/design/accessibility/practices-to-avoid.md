@@ -1,5 +1,5 @@
 ---
-Description: Listet die Vorgehensweisen auf, um zu vermeiden, dass Sie eine barrierefreie Windows-app erstellen möchten.
+description: Listet die Vorgehensweisen auf, um zu vermeiden, dass Sie eine barrierefreie Windows-app erstellen möchten.
 ms.assetid: 024A9B70-9821-45BB-93F1-61C0B2ECF53E
 title: Nicht empfehlenswerte Praktiken für die Barrierefreiheit
 label: Accessibility practices to avoid
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b69cea6badf835fac72ebd3c2dd8977c39d2cfce
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: eeca337cb68205cafa936f45bb4d546fd901571a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220033"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032373"
 ---
 # <a name="accessibility-practices-to-avoid"></a>Nicht empfehlenswerte Praktiken für die Barrierefreiheit
 
@@ -35,7 +35,7 @@ Wenn Sie eine barrierefreie Windows-app erstellen möchten, sehen Sie sich diese
 
 <span id="related_topics"/>
 
-## <a name="related-topics"></a>Zugehörige Themen  
+## <a name="related-topics"></a>Verwandte Themen  
 * [Bedienungshilfen](accessibility.md)
 * [Barrierefreiheit im Store](accessibility-in-the-store.md)
 * [Prüfliste für die Barrierefreiheit](accessibility-checklist.md)

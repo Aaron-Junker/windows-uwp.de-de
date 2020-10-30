@@ -1,5 +1,5 @@
 ---
-Description: Sie können die primäre Kachel ihrer eigenen App Programm gesteuert anheften, so wie Sie sekundäre Kacheln anheften können. Und Sie können überprüfen, ob es zurzeit fixiert ist.
+description: Sie können die primäre Kachel ihrer eigenen App Programm gesteuert anheften, so wie Sie sekundäre Kacheln anheften können. Und Sie können überprüfen, ob es zurzeit fixiert ist.
 title: Primäre Kachel-APIs
 label: Primary tile API's
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP, startscreenmanager, primär Kachel anheften, primäre Kachel-APIs, überprüfen, ob Kachel fixiert, Live-Kachel
 ms.localizationpriority: medium
-ms.openlocfilehash: 569ef5de9298a0fb9da58e4aaa88689c35b98c72
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 83cf11d80ffcd03148cbe5e784aaad5836357796
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172344"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029693"
 ---
 # <a name="primary-tile-apis"></a>Primäre Kachel-APIs
  
@@ -20,9 +20,9 @@ ms.locfileid: "89172344"
 Mit primären Kachel-APIs können Sie überprüfen, ob Ihre APP aktuell an den Start angeheftet ist, und die primäre Kachel Ihrer APP anheften.
 
 > [!IMPORTANT]
-> **Erfordert Creators Update**: Sie müssen das SDK 15063 als Ziel verwenden und Build 15063 oder höher ausführen, um die primären Kachel-APIs zu verwenden.
+> **Erfordert Creators Update** : Sie müssen das SDK 15063 als Ziel verwenden und Build 15063 oder höher ausführen, um die primären Kachel-APIs zu verwenden.
 
-> **Wichtige APIs**: [**startscreenmanager-Klasse**](/uwp/api/windows.ui.startscreen.startscreenmanager), " [kontainsapplistentryasync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)", " [requestaddapplistentryasync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) "
+> **Wichtige APIs** : [**startscreenmanager-Klasse**](/uwp/api/windows.ui.startscreen.startscreenmanager), " [kontainsapplistentryasync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)", " [requestaddapplistentryasync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) "
 
 
 ## <a name="when-to-use-primary-tile-apis"></a>Verwendungszwecke von primären Kachel-APIs

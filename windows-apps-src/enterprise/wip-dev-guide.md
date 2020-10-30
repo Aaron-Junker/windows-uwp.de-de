@@ -1,21 +1,21 @@
 ---
-Description: Dieses Handbuch hilft Ihnen, Ihre App zur Handhabung der Unternehmensdaten, die von der Windows Information Protection (WIP)-Richtlinie verwaltet werden, sowie von persönlichen Daten zu optimieren.
+description: Dieses Handbuch hilft Ihnen, Ihre App zur Handhabung der Unternehmensdaten, die von der Windows Information Protection (WIP)-Richtlinie verwaltet werden, sowie von persönlichen Daten zu optimieren.
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: Entwicklerhandbuch zu Windows Information Protection (WIP)
+title: 'Entwicklerhandbuch für Windows Information Protection (WIP) '
 ms.date: 06/21/2017
 ms.topic: article
 keywords: Windows 10, UWP, WIP, Windows Information Protection, Unternehmensdaten, Unternehmens Datenschutz, EDP, aktivierte apps
 ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
 ms.localizationpriority: medium
-ms.openlocfilehash: d6454fdf63fb757c703ec31dba46a86e2a46aec6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a1afea58fd7fc7c7868103fc9c7a8510f9f81908
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163254"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032063"
 ---
-# <a name="windows-information-protection-wip-developer-guide"></a>Entwicklerhandbuch zu Windows Information Protection (WIP)
+# <a name="windows-information-protection-wip-developer-guide"></a>Entwicklerhandbuch für Windows Information Protection (WIP) 
 
 Eine *optimierte* App unterscheidet zwischen Firmen- oder persönlichen Daten und weiß, welche sie schützen soll, basierend auf Windows Information Protection (WIP)-Richtlinien, die vom Administrator definiert werden.
 
@@ -82,7 +82,7 @@ Allgemeine Informationen zur Verwendung dieses Tools finden Sie im Abschnitt „
     ```xml
        <rescap:Capability Name="enterpriseDataPolicy"/>
     ```
-   >*Optionale Info*: Das Präfix „Rescap“ bedeutet *eingeschränkte Funktion*. Siehe [Spezielle und eingeschränkte Funktionen](../packaging/app-capability-declarations.md).
+   >*Optionale Info* : Das Präfix „Rescap“ bedeutet *eingeschränkte Funktion* . Siehe [Spezielle und eingeschränkte Funktionen](../packaging/app-capability-declarations.md).
 
 4. Fügen Sie diesen Namespace der Paketmanifestdatei hinzu:
 
@@ -445,7 +445,7 @@ private bool IsClipboardAllowedAsync()
 
 **Verhindern Sie, dass Benutzer mit einem Dialogfeld zur Zustimmung aufgefordert werden**
 
-Ein neues Dokument ist nicht *persönlich* oder *Unternehmen*. Es ist einfach neu. Wenn ein Benutzer Unternehmensdaten in die Datei einsetzt, setzt Windows Richtlinien durch und der Benutzer wird aufgefordert, einem Dialogfeld zuzustimmen. Dieser Code verhindert, dass dies geschieht. Es geht bei dieser Aufgabe nicht darum, Daten zu schützen. Es geht mehr darum, Benutzer davon abzuhalten, Dialogfelder zur Zustimmung zu sehen – in Fällen, in denen Ihre App ein völlig neues Element erstellt hat.
+Ein neues Dokument ist nicht *persönlich* oder *Unternehmen* . Es ist einfach neu. Wenn ein Benutzer Unternehmensdaten in die Datei einsetzt, setzt Windows Richtlinien durch und der Benutzer wird aufgefordert, einem Dialogfeld zuzustimmen. Dieser Code verhindert, dass dies geschieht. Es geht bei dieser Aufgabe nicht darum, Daten zu schützen. Es geht mehr darum, Benutzer davon abzuhalten, Dialogfelder zur Zustimmung zu sehen – in Fällen, in denen Ihre App ein völlig neues Element erstellt hat.
 
 ```csharp
 private async void PasteText(bool isNewEmptyDocument)
@@ -489,7 +489,7 @@ private async void PasteText(bool isNewEmptyDocument)
 
 Wenn Mitarbeiter zur Freigabe ihrer Informationen Ihre App auswählen, öffnet Ihre App ein neues Element, das diese Inhalte enthält.
 
-Wie bereits erwähnt, wird ein neues Element nicht *persönlich* oder *Unternehmen*. Es ist einfach neu. Wenn Ihr Code Unternehmensinhalt zu dem Element hinzufügt, setzt Windows Richtlinien durch und der Benutzer wird mit einem Zustimmungsdialogfeld aufgefordert. Dieser Code verhindert, dass dies geschieht.
+Wie bereits erwähnt, wird ein neues Element nicht *persönlich* oder *Unternehmen* . Es ist einfach neu. Wenn Ihr Code Unternehmensinhalt zu dem Element hinzufügt, setzt Windows Richtlinien durch und der Benutzer wird mit einem Zustimmungsdialogfeld aufgefordert. Dieser Code verhindert, dass dies geschieht.
 
 ```csharp
 protected override async void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
@@ -1161,6 +1161,6 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 > **APIs** <br>
 [ProtectionPolicyManager_ProtectedContentRevoked](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.protectedcontentrevoked)<br>
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 [Windows Information Protection (WIP)-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)

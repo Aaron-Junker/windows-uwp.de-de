@@ -1,34 +1,34 @@
 ---
-Description: Die Insights-Bericht im Partner Center hebt hervor, wichtige Änderungen zu Ihren apps.
-title: Bericht über Geschäftsverlauf
+description: Der Insights-Bericht in Partner Center zeigt bedeutende Änderungen an Ihren apps.
+title: Datenbericht
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, Uwp, Einblicke, Trend, Anomalien, anomalieerkennung, datenänderungen
+keywords: Windows 10, UWP, Insight, Trend, Anomalien, anomalieänderungen, Datenänderungen
 ms.localizationpriority: medium
-ms.openlocfilehash: ddd2238d8b3df51d5227e8027adac2a97fdbd52c
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 6f554adff312393e8e7e2fa62da2c9f1fd7400b1
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63807394"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030353"
 ---
-# <a name="insights-report"></a>Bericht über Geschäftsverlauf
+# <a name="insights-report"></a>Datenbericht
 
 
-Die **Insights** Bericht im [Partner Center](https://partner.microsoft.com/dashboard) bedeutende Änderungen (Rückgänge oder Anstiege in einer bestimmten Metrik), die wir in den letzten 30 Tagen in Ihrer Übernahmen, die Integrität und/oder die Auslastung erkannt werden Daten. Dadurch können Sie einen kurzen Blick auf potenziell wichtige Änderungen abrufen, ohne alle Diagramme in jedem dieser Berichte anzeigen.
+Der **Insights** -Bericht in [Partner Center](https://partner.microsoft.com/dashboard) zeigt bedeutende Änderungen (erhöht oder verringert in einer bestimmten Metrik) an, die in den letzten 30 Tagen in ihren Käufen-, Integritäts-und/oder Nutzungsdaten festgestellt wurden. Auf diese Weise können Sie sich schnell mit potenziell wichtigen Änderungen beschäftigen, ohne alle Diagramme in den einzelnen Berichten anzeigen zu müssen.
 
 > [!NOTE]
-> Dieser Bericht enthält die letzten 30 Tagen. Sie können nicht auf einen anderen Zeitraum für diesen Bericht auswählen.
+> Die Daten in diesem Bericht betreffen die letzten 30 Tage. Für diesen Bericht können Sie keinen anderen Zeitraum auswählen.
 
-Der Bericht sortiert die Daten in drei Registerkarten: **Akquisitionen**, **Integrität**, und **Nutzung**. Um Insights für einen dieser Bereiche anzuzeigen, wählen Sie die Registerkarte.
+Der Bericht sortiert Daten in drei Registerkarten **Acquisitions** : Akquisitionen **, Integrität** und **Verwendung** . Um Einblicke für einen dieser Bereiche anzuzeigen, wählen Sie die zugehörige Registerkarte aus.
 
-Einblicke werden angezeigt, wenn eine wesentliche Änderung in Ihren Daten erkannt. Für jede Insight zeigen wir Folgendes:
-- **Insight-Typ**: Der Bereich, in dem die Einblick erkannt wurde.
-- **Wert**: Die spezifische Metrik die erheblich geändert (oder **alle** trifft die Änderung auf die gesamte **Insight Typ**).
-- **Datum**: Das Datum, an dem die Änderung erkannt wurden. Dieses Datum stellt dar, das Ende der Woche, die in der wir eine beträchtliche Zunahme oder verringern, die im Vergleich zu die Woche vor, die erkannt werden.
-- **Insgesamt auswirken**: Der Prozentsatz, den der Wert erhöht oder verringert wird, über Ihre gesamte Kundenbasis. Dadurch können Sie verstehen, wie weit verbreitet die Auswirkungen der eine bestimmte Änderung möglicherweise insbesondere, wenn es mit Prozentsatz Informationen siehe verglichen, **Top Contributors.**
-- **Top-Mitwirkende**: Falls zutreffend, das spezifische Segment, Paket oder andere identifizierende Faktor, um zu erfahren, welche Kunden die Änderung bezieht sich auf. Beispielsweise kann eine Änderung in erster Linie für Kunden, die auf einen bestimmten Markt oder auf einen bestimmten Gerätetyp erkannt werden. Für **Integrität** Daten enthalten bestimmte Fehler Hashes oder Paket-Versionen. Falls zutreffend, zeigen wir, dass der Wert erhöht oder verringert wird, dass der Faktor für die auch dem Prozentsatz.
-- **Aktion**:
-   - Wählen Sie **anzeigen 14-Tage-Trend** an ein Diagramm mit, wie die Metrik während der gesamten 14 Tage vor dem Insight-Datum geändert.
-   - Wählen Sie **Teilen Sie uns, wenn dies genau ist** senden Sie uns Ihr Feedback, und lassen Sie uns wissen, wenn die gewonnenen Erkenntnisse wir haben genau erscheinen. Dieses Feedback hilft uns, um den Vorgang fortzusetzen, um die Daten zu verbessern, die wir hier bereitstellen. 
+Es werden Einblicke angezeigt, wenn eine bedeutende Änderung der Daten erkannt wird. Für jeden Einblick werden folgende Punkte angezeigt:
+- **Insight Type** : der Bereich, in dem der Einblick erkannt wurde.
+- **Value** : die spezifische Metrik, die sich erheblich geändert hat (oder **alle** , wenn die Änderung für den gesamten **Insight-Typ** gilt).
+- **Date** : das Datum, an dem die Änderung festgelegt wurde. Dieses Datum steht für das Ende der Woche, an dem im Vergleich zur Woche vor dieser Woche eine beträchtliche Zunahme oder Abnahme festgestellt wurde.
+- **Allgemeine Auswirkung** : der Prozentsatz, um den der Wert für die gesamte Kundenbasis angehoben oder verringert wurde. Dies hilft Ihnen zu verstehen, wie stark die Auswirkungen einer bestimmten Änderung auftreten können. Dies gilt insbesondere, wenn Sie mit prozentualen Informationen verglichen werden, die in den **Top-Mitwirkenden**
+- Wichtige **mitwirk** Ende: Wenn zutreffend, das spezifische Segment, Paket oder ein anderer Identifizierungs Faktor, um zu verstehen, auf welche Kunden sich die Änderung bezieht. Beispielsweise kann eine Änderung in erster Linie mit Kunden von einem bestimmten Markt oder einem bestimmten Gerätetyp erkannt werden. Für **Health** Integritäts Daten kann dies bestimmte fehlerhashes oder Paketversionen enthalten. Falls zutreffend, wird auch der Prozentsatz angezeigt, in dem der Wert für diesen Faktor angehoben oder gesenkt wurde.
+- **Aktion:**
+   - Wählen Sie **14-Tage-Trend anzeigen** aus, um ein Diagramm anzuzeigen, das zeigt, wie sich die Metrik in den gesamten 14 Tagen geändert hat und bis zum Insight-Datum
+   - Wählen Sie **uns mitteilen, ob dies genau ist** , um uns Ihr Feedback zu geben, und lassen Sie uns wissen, ob die von uns bereitgestellten Einblicke korrekt sind. Dieses Feedback hilft uns, die von uns bereitgestellten Daten weiter zu verbessern. 
 

@@ -1,5 +1,5 @@
 ---
-Description: Fügen Sie eine Standard-inktoolbar zu einer Windows-App zum Einbinden der APP hinzu, fügen Sie der inktoolbar eine benutzerdefinierte Stift Schaltfläche hinzu, und binden Sie die benutzerdefinierte Stift Schaltfläche an eine benutzerdefinierte
+description: Fügen Sie eine Standard-inktoolbar zu einer Windows-App zum Einbinden der APP hinzu, fügen Sie der inktoolbar eine benutzerdefinierte Stift Schaltfläche hinzu, und binden Sie die benutzerdefinierte Stift Schaltfläche an eine benutzerdefinierte
 title: Hinzufügen eines InkToolbar-Elements zu einer Windows-App
 label: Add an InkToolbar to a Windows app
 template: detail.hbs
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
-ms.openlocfilehash: 20446af1f0d62f0c6b18a0ff675818fe41db1740
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 78585f9734131531db5cfa429770ed8351459d8f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219743"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030203"
 ---
 # <a name="add-an-inktoolbar-to-a-windows-app"></a>Hinzufügen eines InkToolbar-Elements zu einer Windows-App
 
@@ -35,7 +35,7 @@ Als vollständig transparente Überlagerung bietet InkCanvas keine integrierte B
 
   InkToolbar wird in diesem Thema erläutert.
 
-> **Wichtige APIs**: [**InkCanvas-Klasse**](/uwp/api/windows.ui.xaml.controls.inkcanvas), [**inktoolbar-Klasse**](/uwp/api/windows.ui.xaml.controls.inktoolbar), [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkpresenter)-Klasse, [**Windows. UI. Input. Inking**](/uwp/api/Windows.UI.Input.Inking)
+> **Wichtige APIs** : [**InkCanvas-Klasse**](/uwp/api/windows.ui.xaml.controls.inkcanvas), [**inktoolbar-Klasse**](/uwp/api/windows.ui.xaml.controls.inktoolbar), [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkpresenter)-Klasse, [**Windows. UI. Input. Inking**](/uwp/api/Windows.UI.Input.Inking)
 
 ## <a name="default-inktoolbar"></a>Standard-InkToolbar
 
@@ -103,7 +103,7 @@ Hier ist der Code zum expliziten Festlegen des Speicher Orts und der Ausrichtung
 
 **Initialisieren basierend auf den Benutzereinstellungen oder dem Gerätestatus**
 
-In einigen Fällen möchten Sie möglicherweise den Speicherort und die Ausrichtung der frei Handsymbol Leiste basierend auf Benutzer-oder Gerätestatus festlegen. Im folgenden Beispiel wird veranschaulicht, wie Sie den Speicherort und die Ausrichtung der frei Handsymbol Leiste basierend auf der linken oder rechten Schreibweise festlegen, die über **Einstellungen > Geräte > Stift & Windows Ink > Pen festgelegt wurde > wählen Sie aus, mit welcher Hand Sie schreiben**.
+In einigen Fällen möchten Sie möglicherweise den Speicherort und die Ausrichtung der frei Handsymbol Leiste basierend auf Benutzer-oder Gerätestatus festlegen. Im folgenden Beispiel wird veranschaulicht, wie Sie den Speicherort und die Ausrichtung der frei Handsymbol Leiste basierend auf der linken oder rechten Schreibweise festlegen, die über **Einstellungen > Geräte > Stift & Windows Ink > Pen festgelegt wurde > wählen Sie aus, mit welcher Hand Sie schreiben** .
 
 ![Bestimmende Handeinstellung](./images/ink/location-handedness-setting.png)  
 *Bestimmende Handeinstellung*
@@ -134,13 +134,13 @@ Sie können auch die Bindung verwenden, um nach Aktualisierungen der Benutzerobe
 **Dieses Beispiel von frei Hand [Symbolleiste Speicherort und-Ausrichtung herunterladen (dynamisch)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)**
 
 1. Fügen wir zuerst das ViewModel hinzu.
-    1. Fügen Sie dem Projekt einen neuen Ordner hinzu, und nennen Sie ihn " **ViewModels**".
-    1. Fügen Sie dem Ordner "ViewModels" eine neue Klasse hinzu (in diesem Beispiel wird Sie als " **InkToolbarSnippetHostViewModel.cs**" bezeichnet).
+    1. Fügen Sie dem Projekt einen neuen Ordner hinzu, und nennen Sie ihn " **ViewModels** ".
+    1. Fügen Sie dem Ordner "ViewModels" eine neue Klasse hinzu (in diesem Beispiel wird Sie als " **InkToolbarSnippetHostViewModel.cs** " bezeichnet).
         > [!NOTE] 
         > Wir haben das [Singleton-Muster](/previous-versions/msp-n-p/ff650849(v=pandp.10)) verwendet, da wir nur ein Objekt dieses Typs für die Lebensdauer der Anwendung benötigen.
 
     1. Fügen Sie `using System.ComponentModel` der Datei einen Namespace hinzu.
-    1. Fügen Sie eine statische Member-Variable namens **instance**und eine statische, schreibgeschützte Eigenschaft mit dem Namen **instance**hinzu. Machen Sie den Konstruktor privat, um sicherzustellen, dass auf diese Klasse nur über die Instance-Eigenschaft zugegriffen werden kann.   
+    1. Fügen Sie eine statische Member-Variable namens **instance** und eine statische, schreibgeschützte Eigenschaft mit dem Namen **instance** hinzu. Machen Sie den Konstruktor privat, um sicherzustellen, dass auf diese Klasse nur über die Instance-Eigenschaft zugegriffen werden kann.   
         > [!NOTE] 
         > Diese Klasse erbt von der [INotifyPropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged) -Schnittstelle, die verwendet wird, um Clients zu benachrichtigen, die in der Regel Clients binden, dass sich ein Eigenschafts Wert geändert hat. Wir verwenden diese Option, um Änderungen an der Geräte Ausrichtung zu verarbeiten (dieser Code wird erweitert und in einem späteren Schritt ausführlicher erläutert).  
 
@@ -210,8 +210,8 @@ Sie können auch die Bindung verwenden, um nach Aktualisierungen der Benutzerobe
         ```
 
 1. Nun fügen wir dem Projekt eine Reihe von Konverterklassen hinzu. Jede Klasse enthält ein Convert-Objekt, das einen Ausrichtungs Wert ( [HorizontalAlignment](/uwp/api/windows.ui.xaml.horizontalalignment) oder [VerticalAlignment](/uwp/api/windows.ui.xaml.verticalalignment)) zurückgibt.
-    1. Fügen Sie dem Projekt einen neuen Ordner hinzu, und nennen Sie ihn **Konverter**.
-    1. Fügen Sie zwei neue Klassen zum Ordner Konverter hinzu (in diesem Beispiel nennen wir Sie **HorizontalAlignmentFromHandednessConverter.cs** und **VerticalAlignmentFromAppViewConverter.cs**).
+    1. Fügen Sie dem Projekt einen neuen Ordner hinzu, und nennen Sie ihn **Konverter** .
+    1. Fügen Sie zwei neue Klassen zum Ordner Konverter hinzu (in diesem Beispiel nennen wir Sie **HorizontalAlignmentFromHandednessConverter.cs** und **VerticalAlignmentFromAppViewConverter.cs** ).
     1. Fügen Sie `using Windows.UI.Xaml` den-und- `using Windows.UI.Xaml.Data` Namespaces für jede Datei hinzu.
     1. Ändern Sie jede Klasse in, `public` und geben Sie an, dass die [IValueConverter](/uwp/api/windows.ui.xaml.data.ivalueconverter) -Schnittstelle implementiert wird.
     1. Fügen Sie die Methoden [Convert](/uwp/api/windows.ui.xaml.data.ivalueconverter.convert) und [ConvertBack](/uwp/api/windows.ui.xaml.data.ivalueconverter.convertback) jeder Datei hinzu, wie hier gezeigt (die ConvertBack-Methode wird nicht implementiert).

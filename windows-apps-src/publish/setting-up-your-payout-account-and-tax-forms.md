@@ -1,17 +1,17 @@
 ---
-Description: Um Geld von App-Verkäufen in der Microsoft Store zu erhalten, müssen Sie Ihr Auszahlungs Konto einrichten und die erforderlichen Steuerformulare ausfüllen.
+description: Um Geld von App-Verkäufen in der Microsoft Store zu erhalten, müssen Sie Ihr Auszahlungs Konto einrichten und die erforderlichen Steuerformulare ausfüllen.
 title: Einrichten von Auszahlungskonten und Steuerformularen
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 ms.date: 1/17/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b7f7209d77e05453126f885e37a251e8b6511e95
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 563e8e5df010d869183fb0a3c734eaae521a759e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172874"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030273"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>Einrichten von Auszahlungskonten und Steuerformularen
 
@@ -47,7 +47,7 @@ Sie können Ihre Steuerformulare elektronisch in Partner Center ausfüllen und �
 > [!IMPORTANT]
 > In verschiedenen Ländern und Regionen gelten unterschiedliche Steueranforderungen. Die genaue Höhe der zu zahlenden Steuern hängt von den Ländern und Regionen ab, in denen Sie Ihre Apps verkaufen. In der [Vereinbarung für App-Entwickler](/legal/windows/agreements/app-developer-agreement) sehen Sie, in welchen Ländern Microsoft für Sie Verkaufs- und Nutzungssteuern überweist. In anderen Ländern müssen Sie u. U. je nachdem, wo Sie registriert sind, Verkaufs- und Nutzungssteuern direkt an die örtliche Steuerbehörde überweisen. Darüber hinaus können Ihre erhaltenen App-Verkaufserlöse unter Umständen als Einkommen steuerbar sein. Wir empfehlen Ihnen dringend, die relevante Autorität für Ihr Land oder Ihre Region zu kontaktieren, die Ihnen am besten helfen kann, die richtigen Steuerinformationen für Ihre Microsoft Store-Entwickler Aktivitäten zu ermitteln.
 
-1. Wählen Sie in [Partner Center](https://partner.microsoft.com/dashboard)das Symbol " **Kontoeinstellungen** " in der oberen rechten Ecke aus, und wählen Sie dann " **Entwicklereinstellungen**" aus.
+1. Wählen Sie in [Partner Center](https://partner.microsoft.com/dashboard)das Symbol " **Kontoeinstellungen** " in der oberen rechten Ecke aus, und wählen Sie dann " **Entwicklereinstellungen** " aus.
 2. Wählen Sie im Navigationsmenü auf der linken Seite die Option **Auszahlung und Steuer** und dann **Auszahlungs- und Steuerprofilzuweisung** aus.
 
     ![Zuweisung von Auszahlungs-und Steuer Profilen](images/payout-tax-profile-assignment.png)
@@ -57,7 +57,7 @@ Sie können Ihre Steuerformulare elektronisch in Partner Center ausfüllen und �
     ![Auszahlung wählen Sie Verkäufer-ID.](images/payout-select-seller-id.png)
 
 4. Falls Sie ein vorhandenes Steuerprofil verwenden möchten, können Sie es in der Dropdownliste auswählen. Wählen Sie andernfalls die Option **Neues Profil erstellen** und dann **Senden** aus. Sie gelangen auf die Steuerprofilseite.
-5. Klicken Sie auf die Schaltfläche **Bearbeiten**, um Ihre Steuerinformationen zu bearbeiten.
+5. Klicken Sie auf die Schaltfläche **Bearbeiten** , um Ihre Steuerinformationen zu bearbeiten.
 6. Aktivieren Sie das entsprechende Optionsfeld, und wählen Sie Ihr Land aus, wenn Sie dazu aufgefordert werden. Mit diesem Schritt wird die Microsoft-Geschäftseinheit festgelegt, die verwendet wird, um die Auszahlungen für Ihr Konto vorzunehmen.
 
     ![Auszahlung wählen Sie steuerland aus.](images/payout-select-tax-country.png)
@@ -87,7 +87,7 @@ Ein Auszahlungskonto ist das Bankkonto, auf das wir Ihnen Ihre Verkaufserlöse �
 
 ### <a name="create-a-payment-profile"></a>Erstellen eines Zahlungsprofils
 
-1. Wählen Sie in [Partner Center](https://partner.microsoft.com/dashboard)in der oberen rechten Ecke das Zahnrad Symbol " **Einstellungen** " und dann " **Entwicklereinstellungen**" aus.
+1. Wählen Sie in [Partner Center](https://partner.microsoft.com/dashboard)in der oberen rechten Ecke das Zahnrad Symbol " **Einstellungen** " und dann " **Entwicklereinstellungen** " aus.
 2. Wählen Sie unterhalb der Überschrift *Auszahlung und Steuer* die Option **Auszahlungs- und Steuerprofilzuweisung** aus.
 
     > [!NOTE]
@@ -97,7 +97,7 @@ Ein Auszahlungskonto ist das Bankkonto, auf das wir Ihnen Ihre Verkaufserlöse �
 
     ![Auswahl für Auszahlungs Kontotyp](images/payout-account-type-selection.png)
 
-4. Wählen Sie ein vorhandenes Zahlungsprofil aus, oder klicken Sie auf **Neues Zahlungsprofil erstellen**, um für die ausgewählte Zahlungsmethode ein neues Profil zu erstellen.
+4. Wählen Sie ein vorhandenes Zahlungsprofil aus, oder klicken Sie auf **Neues Zahlungsprofil erstellen** , um für die ausgewählte Zahlungsmethode ein neues Profil zu erstellen.
 
 > [!NOTE]
 > Wenn Ihr Konto aus irgendeinem Grund nicht für den Empfang von Microsoft-Geldern bereit ist, können Sie das Kontrollkästchen **meine Zahlung aufbewahren** aktivieren. Sie erhalten weiterhin einen fort Betrag von ihren Verkäufen, aber Zahlungen werden erst verteilt, wenn Sie **meine Zahlung speichern deaktivieren.**
@@ -131,7 +131,7 @@ Falls Sie für den Empfang von Auszahlungen ein Bankkonto angegeben haben, müss
 
 Berücksichtigen Sie auch folgende Punkte, um sicherzustellen, dass Ihre Auszahlung erfolgreich ist:
 
-- Der **Name des Kontoinhabers**, den Sie in Partner Center für Ihr Auszahlungskonto eingegeben haben, muss mit dem Namen identisch sein, der Ihrem Bankkonto zugeordnet ist. Falls der Name für Ihr Bankkonto beispielsweise einen zweiten Vornamen enthält, müssen Sie unter **Name des Kontoinhabers** ebenfalls einen zweiten Vornamen hinzufügen.
+- Der **Name des Kontoinhabers** , den Sie in Partner Center für Ihr Auszahlungskonto eingegeben haben, muss mit dem Namen identisch sein, der Ihrem Bankkonto zugeordnet ist. Falls der Name für Ihr Bankkonto beispielsweise einen zweiten Vornamen enthält, müssen Sie unter **Name des Kontoinhabers** ebenfalls einen zweiten Vornamen hinzufügen.
 - Auszahlungen werden von Microsoft in US-Dollar direkt auf Ihr Bankkonto überwiesen.
 - Bankdaten, die in Partner Center in lateinischen Buchstaben eingegeben werden, werden in kyrillische Buchstaben übersetzt.
 
@@ -139,9 +139,9 @@ Berücksichtigen Sie auch folgende Punkte, um sicherzustellen, dass Ihre Auszahl
 
 Sie können vorhandene Zahlungsprofile bearbeiten, falls Sie Änderungen vornehmen oder fehlerhafte Informationen korrigieren müssen.
 
-1. Wählen Sie in [Partner Center](https://partner.microsoft.com/dashboard)in der oberen rechten Ecke das Zahnrad Symbol " **Einstellungen** " und dann " **Entwicklereinstellungen**" aus.
+1. Wählen Sie in [Partner Center](https://partner.microsoft.com/dashboard)in der oberen rechten Ecke das Zahnrad Symbol " **Einstellungen** " und dann " **Entwicklereinstellungen** " aus.
 2. Wählen Sie unterhalb der Überschrift *Auszahlung und Steuer* die Option **Auszahlungs- und Steuerprofile** aus.
-3. Ihre Zahlungsprofile werden zusammen mit dem jeweiligen Status aufgeführt. Suchen Sie nach dem Profil, das Sie bearbeiten möchten, und klicken Sie ganz rechts auf **Bearbeiten**.
+3. Ihre Zahlungsprofile werden zusammen mit dem jeweiligen Status aufgeführt. Suchen Sie nach dem Profil, das Sie bearbeiten möchten, und klicken Sie ganz rechts auf **Bearbeiten** .
 
 > [!IMPORTANT]
 > Wenn Sie Ihr Zahlungskonto ändern, kann dies dazu führen, dass sich Ihre Zahlungen um maximal einen Zahlungszyklus verzögern. Diese Verzögerung tritt auf, weil wir die Kontoänderung überprüfen müssen. Dies ist der gleiche Vorgang wie bei der ersten Einrichtung des Zahlungskontos. Nachdem das Konto bestätigt wurde, erhalten Sie trotzdem den vollen Betrag. Zahlungen, die für den aktuellen Zahlungszyklus fällig sind, werden im nächsten Zyklus hinzugefügt. Weitere Informationen finden Sie unter [Erhalten der Bezahlung](getting-paid-apps.md).
@@ -182,7 +182,7 @@ Wenn Sie Entwickler sind und in Russland leben, müssen Sie möglicherweise Ihre
 
 Berücksichtigen Sie auch folgende Punkte, um sicherzustellen, dass Ihre Auszahlung erfolgreich ist:
 
-- Der **Name des Kontoinhabers**, den Sie in Partner Center für Ihr Auszahlungskonto eingegeben haben, muss mit dem Namen identisch sein, der Ihrem Bankkonto zugeordnet ist. Falls der Name für Ihr Bankkonto beispielsweise einen zweiten Vornamen enthält, müssen Sie unter **Name des Kontoinhabers** ebenfalls einen zweiten Vornamen hinzufügen.
+- Der **Name des Kontoinhabers** , den Sie in Partner Center für Ihr Auszahlungskonto eingegeben haben, muss mit dem Namen identisch sein, der Ihrem Bankkonto zugeordnet ist. Falls der Name für Ihr Bankkonto beispielsweise einen zweiten Vornamen enthält, müssen Sie unter **Name des Kontoinhabers** ebenfalls einen zweiten Vornamen hinzufügen.
 - Auszahlungen werden von Microsoft in Rubel (RUB) direkt auf Ihr Bankkonto überwiesen.
 - Bankdaten, die in Partner Center in lateinischen Buchstaben eingegeben werden, werden in kyrillische Buchstaben übersetzt.
 - Auszahlungen müssen auf ein Bankkonto überwiesen werden, nicht auf eine Bankkarte.

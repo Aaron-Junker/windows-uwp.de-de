@@ -1,17 +1,17 @@
 ---
-Description: Mit dem Bericht "Reviews" in Partner Center können Sie die Überprüfungen (Kommentare) anzeigen, die Kunden bei der Bewertung Ihrer APP im Store eingegeben haben.
+description: Mit dem Bericht "Reviews" in Partner Center können Sie die Überprüfungen (Kommentare) anzeigen, die Kunden bei der Bewertung Ihrer APP im Store eingegeben haben.
 title: Bericht „Rezensionen“
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
 ms.date: 08/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Review, comment, Reviewer
 ms.localizationpriority: medium
-ms.openlocfilehash: feec3577dde9144892ea1ff9f9755074d2af9429
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9ab086e3e54832703116ca8717660b382f3c1ffe
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167334"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030303"
 ---
 # <a name="reviews-report"></a>Bericht „Rezensionen“
 
@@ -28,19 +28,19 @@ Sie können auch [direkt auf dieser Seite](respond-to-customer-reviews.md) oder 
 
 ## <a name="apply-filters"></a>Anwenden von Filtern
 
-Am oberen Rand der Seite können Sie den Zeitraum auswählen, in dem Sie die Überprüfungen anzeigen möchten. Die Standardauswahl ist die Gültigkeits **Dauer**, aber Sie können die Überprüfungen für 30 Tage, 3 Monate, 6 Monate oder 12 Monate oder für einen von Ihnen angegebenen benutzerdefinierten Datenbereich anzeigen.
+Am oberen Rand der Seite können Sie den Zeitraum auswählen, in dem Sie die Überprüfungen anzeigen möchten. Die Standardauswahl ist die Gültigkeits **Dauer** , aber Sie können die Überprüfungen für 30 Tage, 3 Monate, 6 Monate oder 12 Monate oder für einen von Ihnen angegebenen benutzerdefinierten Datenbereich anzeigen.
 
 Sie können **Filter** erweitern, um die auf dieser Seite angezeigten Überprüfungen anhand der folgenden Optionen zu filtern. Diese Filter gelten nicht für die **Bewertungs Aufschlüsselung** und die **durchschnittliche Bewertung im Zeit** Diagramm.
 
--   **Bewertung**: Standardmäßig werden Reviews mit allen Stern Bewertungen überprüft, Sie können jedoch bestimmte Bewertungen überprüfen und deaktivieren (von 1 bis 5 Sternen), wenn Sie nur Überprüfungen sehen möchten, die mit bestimmten Stern Bewertungen verknüpft sind.
-- **Inhalt überprüfen**: die Standardeinstellung ist " **Bewertungen mit Inhalt überprüfen**", was bedeutet, dass nur Bewertungen mit Review-Inhalt angezeigt werden. Sie können **alle** auswählen, um alle Bewertungen anzuzeigen, auch solche, die keinen geschriebenen Überprüfungs Text enthalten. Beachten Sie, dass das Diagramm mit den **Bewertungs Aufteilungen** immer alle Reviews anzeigt, unabhängig von Ihrer Auswahl.
--   **Betriebssystemversion**: die Standardeinstellung ist " **alle**". Sie können eine bestimmte Betriebssystemversion auswählen, wenn Sie möchten, dass auf dieser Seite nur die von Kunden in dieser Betriebssystemversion verbleibenden Reviews angezeigt werden.
--   **Paketversion**: Die Standardeinstellung ist **Alle**. Wenn Ihre APP mehr als ein Paket umfasst, können Sie hier ein bestimmtes Paket auswählen, um nur die von Kunden, die dieses Paket bei der Überprüfung der APP hatten, Links anzuzeigen.
--   **Antworten**: Die Standardeinstellung ist **Alle**. Sie können die Rezensionen so filtern, dass nur die Kundenrezensionen angezeigt werden, auf die Sie [geantwortet](respond-to-customer-reviews.md) haben, oder nur die, auf die Sie noch nicht geantwortet haben.
--   **Updates**: Die Standardeinstellung lautet **Alle**. Sie können die Überprüfungen so filtern, dass nur die vom Kunden aktualisierten Überprüfungen angezeigt werden, da Sie [auf eine Überprüfung geantwortet](respond-to-customer-reviews.md)haben, oder nur auf diejenigen, die noch nicht vom Kunden aktualisiert wurden.
--   **Markt**: Die Standardeinstellung ist **Alle Märkte**. Sie können einen bestimmten Markt auswählen, wenn auf dieser Seite nur Rezensionen der in diesem Markt ansässigen Kunden angezeigt werden sollen.
--   **Gerätetyp**: Der Standardfilter ist **Alle Geräte**. Sie können einen bestimmten Gerätetyp auswählen, wenn auf dieser Seite nur Rezensionen von Kunden angezeigt werden sollen, die ein Gerät dieses Typs verwenden.
--   **Kategoriename**: der Standardfilter ist **all**. Sie können eine bestimmte [Kategorie von Review Insights](#review-insight-categories) auswählen, damit nur die Überprüfungen angezeigt werden, die dieser Kategorie zugeordnet sind. 
+-   **Bewertung** : Standardmäßig werden Reviews mit allen Stern Bewertungen überprüft, Sie können jedoch bestimmte Bewertungen überprüfen und deaktivieren (von 1 bis 5 Sternen), wenn Sie nur Überprüfungen sehen möchten, die mit bestimmten Stern Bewertungen verknüpft sind.
+- **Inhalt überprüfen** : die Standardeinstellung ist " **Bewertungen mit Inhalt überprüfen** ", was bedeutet, dass nur Bewertungen mit Review-Inhalt angezeigt werden. Sie können **alle** auswählen, um alle Bewertungen anzuzeigen, auch solche, die keinen geschriebenen Überprüfungs Text enthalten. Beachten Sie, dass das Diagramm mit den **Bewertungs Aufteilungen** immer alle Reviews anzeigt, unabhängig von Ihrer Auswahl.
+-   **Betriebssystemversion** : die Standardeinstellung ist " **alle** ". Sie können eine bestimmte Betriebssystemversion auswählen, wenn Sie möchten, dass auf dieser Seite nur die von Kunden in dieser Betriebssystemversion verbleibenden Reviews angezeigt werden.
+-   **Paketversion** : Die Standardeinstellung ist **Alle** . Wenn Ihre APP mehr als ein Paket umfasst, können Sie hier ein bestimmtes Paket auswählen, um nur die von Kunden, die dieses Paket bei der Überprüfung der APP hatten, Links anzuzeigen.
+-   **Antworten** : Die Standardeinstellung ist **Alle** . Sie können die Rezensionen so filtern, dass nur die Kundenrezensionen angezeigt werden, auf die Sie [geantwortet](respond-to-customer-reviews.md) haben, oder nur die, auf die Sie noch nicht geantwortet haben.
+-   **Updates** : Die Standardeinstellung lautet **Alle** . Sie können die Überprüfungen so filtern, dass nur die vom Kunden aktualisierten Überprüfungen angezeigt werden, da Sie [auf eine Überprüfung geantwortet](respond-to-customer-reviews.md)haben, oder nur auf diejenigen, die noch nicht vom Kunden aktualisiert wurden.
+-   **Markt** : Die Standardeinstellung ist **Alle Märkte** . Sie können einen bestimmten Markt auswählen, wenn auf dieser Seite nur Rezensionen der in diesem Markt ansässigen Kunden angezeigt werden sollen.
+-   **Gerätetyp** : Der Standardfilter ist **Alle Geräte** . Sie können einen bestimmten Gerätetyp auswählen, wenn auf dieser Seite nur Rezensionen von Kunden angezeigt werden sollen, die ein Gerät dieses Typs verwenden.
+-   **Kategoriename** : der Standardfilter ist **all** . Sie können eine bestimmte [Kategorie von Review Insights](#review-insight-categories) auswählen, damit nur die Überprüfungen angezeigt werden, die dieser Kategorie zugeordnet sind. 
 
 > [!TIP]
 > Wenn auf der Seite keine Reviews angezeigt werden, stellen Sie sicher, dass Ihre Filter nicht alle Ihre Überprüfungen ausgeschlossen haben. Wenn Sie z. B. nach einem Zielbetriebssystem filtern, das von Ihrer App nicht unterstützt wird, werden keine Rezensionen angezeigt.
@@ -75,7 +75,7 @@ Das Diagramm mit den **Insight-Kategorien** gruppiert Ihre Überprüfungen gemä
 
 Am oberen Rand der Seite werden farbige Blöcke angezeigt, die die Überprüfungen nach Kategorie darstellen. Wählen Sie eine dieser Kategorien aus, um nur Überprüfungen anzuzeigen, die dieser Kategorie zugeordnet sind. Sie können auch die [Seiten Filter](#apply-filters) verwenden, um nach Kategorie zu filtern.
 
-Wählen Sie **Details anzeigen**aus, um eine Aufschlüsselung der Anzahl von Überprüfungen pro Kategorie anzuzeigen. 
+Wählen Sie **Details anzeigen** aus, um eine Aufschlüsselung der Anzahl von Überprüfungen pro Kategorie anzuzeigen. 
 
 
 ## <a name="reviews"></a>Überprüfungen
@@ -93,7 +93,7 @@ Jede Kundenrezension enthält Folgendes:
 
 Beachten Sie, dass Kunden eine Bewertung für Ihre App abgeben können, ohne einen Kommentar zu schreiben. Daher sehen Sie normalerweise weniger Rezensionen als Bewertungen.
 
-Sie können die Rezensionen auf der Seite nach Datum und/oder Bewertung in aufsteigender oder absteigender Reihenfolge sortieren. Klicken Sie auf den Link **Sortieren** nach, um die Optionen für das Sortieren nach **Datum** und/oder **Bewertung**anzuzeigen.
+Sie können die Rezensionen auf der Seite nach Datum und/oder Bewertung in aufsteigender oder absteigender Reihenfolge sortieren. Klicken Sie auf den Link **Sortieren** nach, um die Optionen für das Sortieren nach **Datum** und/oder **Bewertung** anzuzeigen.
 
 Sie können auch das Suchfeld verwenden, um in den Überprüfungen Ihrer APP nach bestimmten Wörtern oder Ausdrücken zu suchen. Beachten Sie, dass nur der ursprüngliche, vom Kunden geschriebene Überprüfungs Text durchsucht wird, auch wenn die Überprüfung in einer anderen Sprache geschrieben wurde. Der übersetzte Überprüfungs Text wird nicht durchsucht.
 
@@ -120,8 +120,8 @@ Im Folgenden finden Sie einige zusätzliche Aktionen, die Sie basierend auf den 
 -   Wenn die durchschnittliche Bewertung zwar hoch ist, die Anzahl der Downloads jedoch gering ausfällt, sollten Sie nach weiteren Methoden suchen, den [Bekanntheitsgrad Ihrer App zu steigern](attract-customers-and-promote-your-apps.md), da sie bei Benutzern, die sie getestet haben, gut angekommen ist.
 
 
- 
+ 
 
- 
+ 
 
- 
+ 

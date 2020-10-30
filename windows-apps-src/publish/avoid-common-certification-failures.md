@@ -1,17 +1,17 @@
 ---
-Description: Lesen Sie diese Liste, und vermeiden Sie dadurch Probleme, die häufig die Zertifizierung von Apps verhindern oder nach der Veröffentlichung der App bei einer Stichprobenkontrolle auftreten können.
+description: Lesen Sie diese Liste, und vermeiden Sie dadurch Probleme, die häufig die Zertifizierung von Apps verhindern oder nach der Veröffentlichung der App bei einer Stichprobenkontrolle auftreten können.
 title: Vermeiden allgemeiner Zertifizierungsfehler
 ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 07c814fc48e47b2bdc8980ac72732783d7ea9139
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 672da214582fb6b206d7e16e1e776be40caeec90
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158024"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031223"
 ---
 # <a name="avoid-common-certification-failures"></a>Vermeiden allgemeiner Zertifizierungsfehler
 
@@ -42,6 +42,6 @@ Lesen Sie diese Liste, und vermeiden Sie dadurch Probleme, die häufig die Zerti
 -   Wenn die App die E-Commerce-APIs für den Windows Store aus dem [**Windows.ApplicationModel.Store**](/uwp/api/Windows.ApplicationModel.Store)-Namespace verwendet, müssen Sie die App testen und sich vergewissern, dass sie typische Ausnahmen behandelt. Stellen Sie außerdem sicher, dass Ihre APP die [**currentapp**](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) -Klasse und nicht die [**currentappsimulator**](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) -Klasse verwendet, die nur zu Testzwecken verwendet wird. (Beachten Sie Folgendes: Wenn Ihre APP auf Windows 10, Version 1607 oder höher, ausgerichtet ist, wird empfohlen, dass Sie Member des [Windows. Services. Store](/uwp/api/windows.services.store) -Namespace anstelle des Windows. applicationmodel. Store-Namespace verwenden.)
 
 
- 
+ 
 
- 
+ 

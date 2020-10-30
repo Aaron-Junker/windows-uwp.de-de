@@ -1,20 +1,20 @@
 ---
-Description: Ihre App kann Bildressourcendateien mit Bildern laden, die speziell auf den Skalierungsfaktor für die Anzeige, das Design, den hohen Kontrast und andere Laufzeitkontexte angepasst wurden.
+description: Ihre App kann Bildressourcendateien mit Bildern laden, die speziell auf den Skalierungsfaktor für die Anzeige, das Design, den hohen Kontrast und andere Laufzeitkontexte angepasst wurden.
 title: Laden von Bildern und Ressourcen mit Anpassung an Skalierung, Design, hohen Kontrast usw.
 template: detail.hbs
 ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a1d6639a901385c3a33fb0ed670b9b7e4cf683e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9b0cb92c15b39a0bee10e7fe70bc8c4e1581af3c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157604"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031823"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>Laden von Bildern und Ressourcen mit Anpassung an Skalierung, Design, hohen Kontrast usw.
-Ihre APP kann Bild Ressourcen Dateien (oder andere Medienobjekt Dateien) laden, die für den [Bildschirm Skalierungsfaktor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), das Design, den hohen Kontrast und andere Lauf Zeit Kontexte zugeschnitten sind. Auf diese Images kann aus imperativem Code oder XAML-Markup verwiesen werden, z. b. als **Quell** Eigenschaft eines **Bilds**. Sie können auch in der Quelldatei des App-Pakets (der `Package.appxmanifest` Datei) angezeigt &mdash; werden, z. b. als Wert für das App-Symbol auf der Registerkarte visuelle Objekte im Visual Studio &mdash; -Manifest-Designer oder auf ihren Kacheln und Toasts. Wenn Sie Qualifizierer in den Dateinamen Ihrer Bilder verwenden und diese optional mithilfe von [**resourcecontext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)laden, können Sie bewirken, dass die am besten geeignete Bilddatei geladen wird, die am besten mit den Lauf Zeit Einstellungen des Benutzers für Anzeige Skala, Design, hohem Kontrast, Sprache und anderen Kontexten übereinstimmt.
+Ihre APP kann Bild Ressourcen Dateien (oder andere Medienobjekt Dateien) laden, die für den [Bildschirm Skalierungsfaktor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), das Design, den hohen Kontrast und andere Lauf Zeit Kontexte zugeschnitten sind. Auf diese Images kann aus imperativem Code oder XAML-Markup verwiesen werden, z. b. als **Quell** Eigenschaft eines **Bilds** . Sie können auch in der Quelldatei des App-Pakets (der `Package.appxmanifest` Datei) angezeigt &mdash; werden, z. b. als Wert für das App-Symbol auf der Registerkarte visuelle Objekte im Visual Studio &mdash; -Manifest-Designer oder auf ihren Kacheln und Toasts. Wenn Sie Qualifizierer in den Dateinamen Ihrer Bilder verwenden und diese optional mithilfe von [**resourcecontext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)laden, können Sie bewirken, dass die am besten geeignete Bilddatei geladen wird, die am besten mit den Lauf Zeit Einstellungen des Benutzers für Anzeige Skala, Design, hohem Kontrast, Sprache und anderen Kontexten übereinstimmt.
 
 Eine Bildressource ist in einer Bild Ressourcen Datei enthalten. Sie können sich das Image auch als Medienobjekt vorstellen und die Datei, in der es enthalten ist, als Medienobjekt Datei. Diese Arten von Ressourcen Dateien finden Sie im Ordner "\assets" Ihres Projekts. Hintergrundinformationen zur Verwendung von Qualifizierern in den Namen der Bild Ressourcen Dateien finden [Sie unter Anpassen von Ressourcen für Sprache, Skalierung und andere Qualifizierer](tailor-resources-lang-scale-contrast.md).
 
@@ -158,7 +158,7 @@ bitmapImage.SetSourceAsync(imageFileStream);
 this.myXAMLImageElement.Source = bitmapImage;
 ```
 
-Um denselben Effekt auf globaler Ebene zu erzielen, *können* Sie die Qualifiziererwerte in der Standardeinstellung **resourcecontext**überschreiben. Stattdessen wird jedoch empfohlen, [**resourcecontext. setglobalqualifiervalue**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)aufzurufen. Sie legen die Werte einmal mit einem Aufruf von **setglobalqualifiervalue** fest. diese Werte sind dann bei jeder Verwendung für Suchvorgänge für den standardmäßigen **resourcecontext** wirksam. Standardmäßig verwendet die [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) -Klasse den Standardwert **resourcecontext**.
+Um denselben Effekt auf globaler Ebene zu erzielen, *können* Sie die Qualifiziererwerte in der Standardeinstellung **resourcecontext** überschreiben. Stattdessen wird jedoch empfohlen, [**resourcecontext. setglobalqualifiervalue**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)aufzurufen. Sie legen die Werte einmal mit einem Aufruf von **setglobalqualifiervalue** fest. diese Werte sind dann bei jeder Verwendung für Suchvorgänge für den standardmäßigen **resourcecontext** wirksam. Standardmäßig verwendet die [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) -Klasse den Standardwert **resourcecontext** .
 
 ```csharp
 Windows.ApplicationModel.Resources.Core.ResourceContext.SetGlobalQualifierValue("Contrast", "high");
@@ -169,7 +169,7 @@ this.myXAMLImageElement.Source = new Windows.UI.Xaml.Media.Imaging.BitmapImage(n
 ## <a name="updating-images-in-response-to-qualifier-value-change-events"></a>Aktualisieren von Bildern als Reaktion auf Änderungs Ereignisse für qualifiziererwert
 Ihre laufende App kann auf Änderungen in Systemeinstellungen reagieren, die die Qualifiziererwerte im Standard Ressourcen Kontext beeinflussen. Jede dieser Systemeinstellungen Ruft das [**mapchanged**](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live) -Ereignis auf [**resourcecontext. qualifiervalues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)auf.
 
-Als Reaktion auf dieses Ereignis können Sie die Images mithilfe der standardmäßigen **resourcecontext**-Methode, die standardmäßig von [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) verwendet wird, erneut laden.
+Als Reaktion auf dieses Ereignis können Sie die Images mithilfe der standardmäßigen **resourcecontext** -Methode, die standardmäßig von [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) verwendet wird, erneut laden.
 
 ```csharp
 public MainPage()
@@ -208,7 +208,7 @@ private void RefreshUIImages()
 * [Resourcecontext. setglobalqualifiervalue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
 * [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 * [Passen Sie Ihre Ressourcen für Sprache, Skalierung und andere Qualifizierer an.](tailor-resources-lang-scale-contrast.md)
 * [Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im App-Paketmanifest](localize-strings-ui-manifest.md)
 * [Speichern und Abrufen von Einstellungen und anderen App-Daten](../design/app-settings/store-and-retrieve-app-data.md)
