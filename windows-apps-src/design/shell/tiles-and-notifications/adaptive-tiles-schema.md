@@ -1,19 +1,19 @@
 ---
-Description: Im Folgenden werden Elemente und Attribute aufgeführt, mit denen Sie adaptive Kacheln erstellen können.
+description: Im Folgenden werden Elemente und Attribute aufgeführt, mit denen Sie adaptive Kacheln erstellen können.
 title: Adaptive Kacheln – Schema und Vorlagen
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ed9124b0b66239c10b277f070ac2c9594c336fdd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c0bf281006d63f65ad6af557700eb2e4186bcf51
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611015"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034093"
 ---
 # <a name="adaptive-tile-templates-schema-and-guidance"></a>Vorlagen für adaptive Kacheln: Schema und Richtlinien
 
@@ -52,7 +52,7 @@ Im Folgenden werden Elemente und Attribute aufgeführt, mit denen Sie adaptive K
 </visual>
 ```
 
-## <a name="binding-element"></a>Bindungselement
+## <a name="binding-element"></a>Bindungselement (binding element)
 
 
 ``` xml
@@ -142,9 +142,9 @@ textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle
 
 
 * [Erstellen adaptiver Kacheln](create-adaptive-tiles.md)
- 
+ 
 
- 
+ 
 
 
 

@@ -1,37 +1,37 @@
 ---
-Description: Der erste Schritt beim Erstellen einer neuen app in Partner Center ist das Reservieren eines App-namens. In diesem Thema wird erläutert, wie Sie App-Namen reservieren. Es enthält einige Vorschläge zur Wahl aussagekräftiger App-Namen.
+description: Der erste Schritt beim Erstellen einer neuen app in Partner Center ist das Reservieren eines App-namens. In diesem Thema wird erläutert, wie Sie App-Namen reservieren. Es enthält einige Vorschläge zur Wahl aussagekräftiger App-Namen.
 title: Erstellen einer App durch Reservieren eines Namens
 keywords: Windows 10, UWP, namens Reservierung, App-Name, APP-Namen, Namen, Produktname, Benennung, reservierter Name, Titel, Namen, Titel
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e2b95e30faa64ce6507de5a57b350ec59ca683e1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d6f9a91bf15f665dec604aacc32c12026756d9c4
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164174"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032833"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>Erstellen einer App durch Reservieren eines Namens
 
-Der erste Schritt beim Erstellen einer neuen app in [Partner Center](https://partner.microsoft.com/dashboard) ist das Reservieren eines App-namens. Jeder reservierte Name (manchmal auch als *Titel*Ihrer APP bezeichnet) muss im gesamten Microsoft Store eindeutig sein.
+Der erste Schritt beim Erstellen einer neuen app in [Partner Center](https://partner.microsoft.com/dashboard) ist das Reservieren eines App-namens. Jeder reservierte Name (manchmal auch als *Titel* Ihrer APP bezeichnet) muss im gesamten Microsoft Store eindeutig sein.
 
 Sie können einen Namen für Ihre APP reservieren, auch wenn Sie noch nicht damit begonnen haben, Ihre APP zu erstellen. Es wird empfohlen, so bald wie möglich zu verwenden, damit niemand andere den Namen verwenden kann. Beachten Sie, dass Sie die APP innerhalb von drei Monaten übermitteln müssen, um den Namen für ihre Verwendung reserviert zu halten.
 
 Wenn Sie die [Pakete der APP hochladen](upload-app-packages.md), muss der Wert für " [**Package/Properties/Display Name**](/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) " mit dem Namen, den Sie für Ihre APP reserviert haben, identisch sein. Wenn Sie das App-Paket mit Microsoft Visual Studio erstellen, wird dieses Attribut für Sie ausgefüllt.
 
 > [!IMPORTANT]
-> Sie können zusätzliche Namen für eine APP reservieren, und Sie können entscheiden, ob Sie eine der apps in der veröffentlichten Version Ihrer APP verwenden möchten, anstatt Sie zu verwenden, wenn Sie Ihre APP zum ersten Mal im Partner Center erstellen. Beachten Sie jedoch, dass der erste Name, den Sie hier eingeben, in einigen der [Identitäts Details](view-app-identity-details.md)Ihrer APP verwendet wird, wie z. b. der **Paket Familienname (PFN)**. Diese Werte sind möglicherweise für einige Benutzer sichtbar und können nicht geändert werden. Stellen Sie daher sicher, dass der von Ihnen reservierte Name für diese Verwendung geeignet ist.
+> Sie können zusätzliche Namen für eine APP reservieren, und Sie können entscheiden, ob Sie eine der apps in der veröffentlichten Version Ihrer APP verwenden möchten, anstatt Sie zu verwenden, wenn Sie Ihre APP zum ersten Mal im Partner Center erstellen. Beachten Sie jedoch, dass der erste Name, den Sie hier eingeben, in einigen der [Identitäts Details](view-app-identity-details.md)Ihrer APP verwendet wird, wie z. b. der **Paket Familienname (PFN)** . Diese Werte sind möglicherweise für einige Benutzer sichtbar und können nicht geändert werden. Stellen Sie daher sicher, dass der von Ihnen reservierte Name für diese Verwendung geeignet ist.
 
 
 ## <a name="create-your-app-by-reserving-a-new-name"></a>App-Erstellung durch Reservierung eines neuen Namens
 
 Das Reservieren eines Namens ist der erste Schritt beim Erstellen einer APP im Partner Center. 
 
-1.  Klicken Sie auf der Seite **Übersicht** auf **neue APP erstellen**.
-2.  Geben Sie im Textfeld den Namen ein, den Sie verwenden möchten, und wählen Sie dann **Verfügbarkeit überprüfen**. Wenn der Name verfügbar ist, wird ein grünes Häkchen angezeigt. (Ist der von Ihnen eingegebene Name bereits reserviert oder wird von einem anderen Entwickler verwendet, wird eine Fehlermeldung angezeigt, dass der Name nicht verfügbar ist.)
-3.  Klicken Sie auf **Produktnamen reservieren**.
+1.  Klicken Sie auf der Seite **Übersicht** auf **neue APP erstellen** .
+2.  Geben Sie im Textfeld den Namen ein, den Sie verwenden möchten, und wählen Sie dann **Verfügbarkeit überprüfen** . Wenn der Name verfügbar ist, wird ein grünes Häkchen angezeigt. (Ist der von Ihnen eingegebene Name bereits reserviert oder wird von einem anderen Entwickler verwendet, wird eine Fehlermeldung angezeigt, dass der Name nicht verfügbar ist.)
+3.  Klicken Sie auf **Produktnamen reservieren** .
 
 Der Name ist nun für Sie reserviert, und Sie können mit der Arbeit an Ihrer [Übermittlung](app-submissions.md) beginnen, sobald Sie bereit sind. 
 
@@ -64,6 +64,6 @@ Auf dieser Seite können Sie auch reservierte Namen, die Sie nicht mehr verwende
 
 Weitere Informationen finden Sie unter [Verwalten von App-Namen](manage-app-names.md).
 
- 
+ 
 
- 
+ 

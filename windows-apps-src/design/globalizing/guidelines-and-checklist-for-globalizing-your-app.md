@@ -1,5 +1,5 @@
 ---
-Description: Entwerfen und entwickeln Sie Ihre APP so, dass Sie auf Systemen mit unterschiedlichen sprach-und Kultur Konfigurationen ordnungsgemäß funktioniert.
+description: Entwerfen und entwickeln Sie Ihre APP so, dass Sie auf Systemen mit unterschiedlichen sprach-und Kultur Konfigurationen ordnungsgemäß funktioniert.
 Search.Refinement.TopicID: 180
 title: Richtlinien für Globalisierung
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
@@ -8,12 +8,12 @@ ms.date: 11/02/2017
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisier barkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: d71cf2289654860b47aef18c117ac9d6d36fab0a
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: f97408596750c2f9a8d2ad61ad2754627e23426f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493245"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033713"
 ---
 # <a name="guidelines-for-globalization"></a>Richtlinien für Globalisierung
 
@@ -35,7 +35,7 @@ Entwerfen und entwickeln Sie Ihre APP so, dass Sie auf Systemen mit unterschiedl
 | Zeigen Sie Text und Schriftarten richtig an. | Die ideale Schriftart, Schriftgrad und Textrichtung hängt vom jeweiligen Markt ab. Weitere Informationen finden Sie [**unter Anpassen von Layout und Schriftarten und unterstützen von RTL**](adjust-layout-and-fonts--and-support-rtl.md) und [internationalen Schriftarten](loc-international-fonts.md). |
 
 ## <a name="important-apis"></a>Wichtige APIs
- 
+ 
 * [Globalisierung](/uwp/api/Windows.Globalization?branch=live)
 * [Geografische Region. Currency cregion](/uwp/api/windows.globalization.geographicregion.CurrenciesInUse)
 * [Language. currentinputmethodlanguagetag](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag)

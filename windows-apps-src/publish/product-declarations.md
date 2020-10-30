@@ -1,17 +1,17 @@
 ---
-Description: Mithilfe von Produkt Deklarationen können Sie sicherstellen, dass Ihre APP ordnungsgemäß in der Microsoft Store angezeigt wird und für den richtigen Kunden Satz angeboten wird.
+description: Mithilfe von Produkt Deklarationen können Sie sicherstellen, dass Ihre APP ordnungsgemäß in der Microsoft Store angezeigt wird und für den richtigen Kunden Satz angeboten wird.
 title: Produktdeklarationen
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c4e8677a27128e6a33a844f5a887e921ca9ced3
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3469992a73a4e90e25ce34883319343ad6986d75
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167364"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034613"
 ---
 # <a name="product-declarations"></a>Produktdeklarationen
 
@@ -40,7 +40,7 @@ Wenn Sie Ihre App als barrierefrei ausweisen, erklären Sie ausdrücklich, dass 
 Weitere Informationen finden Sie unter [Barrierefreiheit](../design/accessibility/accessibility.md), [Barrierefreiheits Tests](../design/accessibility/accessibility-testing.md)und [Barrierefreiheit im Store](../design/accessibility/accessibility-in-the-store.md).
 
 > [!IMPORTANT]
-> Listen Sie Ihre APP nicht als verfügbar auf, es sei denn, Sie haben Sie speziell für diesen Zweck entwickelt und getestet. Falls Ihre App als barrierefrei ausgewiesen ist, jedoch eigentlich keine Barrierefreiheit unterstützt, werden Sie wahrscheinlich negatives Feedback von der Community erhalten.
+> Listen Sie Ihre APP nicht als verfügbar auf, es sei denn, Sie haben Sie speziell für diesen Zweck entwickelt und getestet. Falls Ihre App als barrierefrei ausgewiesen ist, jedoch eigentlich keine Barrierefreiheit unterstützt, werden Sie wahrscheinlich negatives Feedback von der Community erhalten.
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>Kunden können diese App auf alternativen Laufwerken oder Wechselmedien installieren.
 
@@ -62,8 +62,8 @@ Wenn Ihre APP kinect-Daten verwendet und an einen externen Dienst sendet, müsse
 
 
 
- 
+ 
 
- 
+ 
 
- 
+ 

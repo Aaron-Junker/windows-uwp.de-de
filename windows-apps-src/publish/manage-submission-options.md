@@ -1,16 +1,16 @@
 ---
-Description: Verwalten Sie Übermittlungs Optionen, wie z. b. das Veröffentlichen von Optionen, Hinweise zur Zertifizierung und mehr.
+description: Verwalten Sie Übermittlungs Optionen, wie z. b. das Veröffentlichen von Optionen, Hinweise zur Zertifizierung und mehr.
 title: Verwalten der Übermittlungsoptionen
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Veröffentlichungs Aufbewahrung, Veröffentlichungsdatum, Senden der Übermittlung an veröffentlichen, eingeschränkte Genehmigung von Funktionen
 ms.localizationpriority: medium
-ms.openlocfilehash: c2548ddd35fc50f62727d986d2d934d2346eb7b5
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: 0044ac362cb67d356707c7eaaf12a10c5a31ed1b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253794"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034743"
 ---
 # <a name="manage-submission-options"></a>Verwalten der Übermittlungsoptionen
 
@@ -26,12 +26,12 @@ Standardmäßig veröffentlichen wir ihre Übermittlung, sobald Sie die Zertifiz
 
 **Veröffentlichen Sie diese Übermittlung, sobald Sie die Zertifizierung übergibt (oder die im Abschnitt "Zeitplan" ausgewählten Datumsangaben)** die Standardauswahl ist. Dies bedeutet, dass die Übermittlung mit dem Veröffentlichungsprozess beginnt, sobald Sie die Zertifizierung übergibt, es sei denn, Sie haben die Datumsangaben im Zeit [Plan](configure-precise-release-scheduling.md) Abschnitt der Seite " **Preise und Verfügbarkeit** " konfiguriert.   
 
-Bei den meisten Einsendungen empfiehlt es sich, den Abschnitt Optionen für die **Veröffentlichungs Aufbewahrung** auf diese Option festzulegen. Wenn Sie bestimmte Datumsangaben für die Übermittlung der Übermittlung angeben möchten, verwenden Sie die Option **Diese Übermittlung veröffentlichen, sobald Sie die Zertifizierung übergibt (oder die Daten, die Sie im Abschnitt Zeitplan ausgewählt haben)**. Wenn Sie diesen Abschnitt auf die Standardoption festlegen, wird die Übermittlung nicht vor den von Ihnen im Zeit **Plan** Abschnitt festgelegten (n) Datum (n) veröffentlicht. Die Daten, die Sie im Abschnitt **Zeitplan** ausgewählt haben, werden verwendet, um zu bestimmen, wann das Produkt für Kunden im Store verfügbar wird.
+Bei den meisten Einsendungen empfiehlt es sich, den Abschnitt Optionen für die **Veröffentlichungs Aufbewahrung** auf diese Option festzulegen. Wenn Sie bestimmte Datumsangaben für die Übermittlung der Übermittlung angeben möchten, verwenden Sie die Option **Diese Übermittlung veröffentlichen, sobald Sie die Zertifizierung übergibt (oder die Daten, die Sie im Abschnitt Zeitplan ausgewählt haben)** . Wenn Sie diesen Abschnitt auf die Standardoption festlegen, wird die Übermittlung nicht vor den von Ihnen im Zeit **Plan** Abschnitt festgelegten (n) Datum (n) veröffentlicht. Die Daten, die Sie im Abschnitt **Zeitplan** ausgewählt haben, werden verwendet, um zu bestimmen, wann das Produkt für Kunden im Store verfügbar wird.
 
 
 ### <a name="publish-your-submission-manually"></a>Manuelles Veröffentlichen der Übermittlung
 
-Wenn Sie noch kein Veröffentlichungsdatum festlegen möchten, und Sie möchten, dass ihre Übermittlung nicht veröffentlicht bleibt, bis Sie den Veröffentlichungsprozess manuell starten, können Sie **Diese Übermittlung erst veröffentlichen, wenn ich jetzt veröffentlichen**auswähle. Wenn Sie diese Option auswählen, wird die Übermittlung erst veröffentlicht, wenn Sie angeben, dass dies der Fall sein soll. Nachdem die Übermittlung der Zertifizierung übermittelt wurde, können Sie Sie veröffentlichen, indem Sie auf der Seite "Zertifizierungsstatus" auf " **Jetzt veröffentlichen** " klicken, oder indem Sie ein bestimmtes Datum auf die gleiche Weise wie unten beschrieben auswählen.
+Wenn Sie noch kein Veröffentlichungsdatum festlegen möchten, und Sie möchten, dass ihre Übermittlung nicht veröffentlicht bleibt, bis Sie den Veröffentlichungsprozess manuell starten, können Sie **Diese Übermittlung erst veröffentlichen, wenn ich jetzt veröffentlichen** auswähle. Wenn Sie diese Option auswählen, wird die Übermittlung erst veröffentlicht, wenn Sie angeben, dass dies der Fall sein soll. Nachdem die Übermittlung der Zertifizierung übermittelt wurde, können Sie Sie veröffentlichen, indem Sie auf der Seite "Zertifizierungsstatus" auf " **Jetzt veröffentlichen** " klicken, oder indem Sie ein bestimmtes Datum auf die gleiche Weise wie unten beschrieben auswählen.
 
 
 ### <a name="start-publishing-your-submission-on-a-certain-date"></a>Veröffentlichen der Übermittlung an einem bestimmten Datum beginnen

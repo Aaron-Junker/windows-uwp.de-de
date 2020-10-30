@@ -1,5 +1,5 @@
 ---
-Description: Mithilfe eines Assistenten in Visual Studio können Sie Pushbenachrichtigungen über einen mobilen Dienst generieren, der unter Verwendung von Azure Mobile Services erstellt wurde.
+description: Mithilfe eines Assistenten in Visual Studio können Sie Pushbenachrichtigungen über einen mobilen Dienst generieren, der unter Verwendung von Azure Mobile Services erstellt wurde.
 title: Vom Assistenten für Pushbenachrichtigungen generierter Code
 ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bc6c52859b74d7cd40dd39c0ae588ad690c0138b
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f9af0301dcf8944127ab814155466335940642f0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220113"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034443"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>Vom Assistenten für Pushbenachrichtigungen generierter Code
  
@@ -29,7 +29,7 @@ Das Projekt wird vom Assistenten für Pushbenachrichtigungen wie folgt modifizie
 -   Auf dem Datenbankserver für den mobilen Dienst wird eine Datenkanaltabelle erstellt. Die Tabelle enthält Informationen, die zum Senden von Pushbenachrichtigungen an App-Instanzen erforderlich sind.
 -   Es werden Skripts für vier Funktionen erstellt: Löschen, Einfügen, Lesen und Aktualisieren.
 -   Erstellt ein Skript mit der benutzerdefinierten API "notifyallusers.js", das eine Pushbenachrichtigung an alle Clients sendet.
--   Der Datei "App.xaml.cs", "App.xaml.vb" oder "App.xaml.cpp" wird eine Deklaration hinzugefügt. Für JavaScript-Projekte wird der neuen Datei "service.js" eine Deklaration hinzugefügt. Mithilfe der Deklaration wird ein MobileServiceClient-Objekt deklariert, das die Informationen enthält, die zum Herstellen der Verbindung mit dem mobilen Dienst erforderlich sind. Sie können auf dieses MobileServiceClient-Objekt, das den Namen „*MyServiceName*Client” trägt, von jeder Seite der App aus zugreifen, indem Sie den Namen „App.*MyServiceName*Client” verwenden.
+-   Der Datei "App.xaml.cs", "App.xaml.vb" oder "App.xaml.cpp" wird eine Deklaration hinzugefügt. Für JavaScript-Projekte wird der neuen Datei "service.js" eine Deklaration hinzugefügt. Mithilfe der Deklaration wird ein MobileServiceClient-Objekt deklariert, das die Informationen enthält, die zum Herstellen der Verbindung mit dem mobilen Dienst erforderlich sind. Sie können auf dieses MobileServiceClient-Objekt, das den Namen „ *MyServiceName* Client” trägt, von jeder Seite der App aus zugreifen, indem Sie den Namen „App. *MyServiceName* Client” verwenden.
 
 Die Datei „services.js” enthält den folgenden Code:
 
@@ -207,9 +207,9 @@ function sendNotifications(request) {
 
 Von der sendNotifications-Funktion wird eine einzelne Benachrichtigung als Popupbenachrichtigung gesendet. Sie können auch andere Arten von Pushbenachrichtigungen verwenden.
 
-**Tipp**    Informationen dazu, wie Sie beim Bearbeiten von Skripts Hilfe erhalten, finden Sie unter [Aktivieren von IntelliSense für serverseitiges JavaScript](https://blogs.msdn.com/b/visualstudio/archive/2013/07/26/enabling-intellisense-for-mobile-services-javascript-in-visual-studio.aspx).
+**Tipp**  Informationen zu verfügbarer Hilfe beim Bearbeiten von Skripts finden Sie unter [Aktivieren von IntelliSense für serverseitigen JavaScript-Code](https://blogs.msdn.com/b/visualstudio/archive/2013/07/26/enabling-intellisense-for-mobile-services-javascript-in-visual-studio.aspx).
 
- 
+ 
 
 ## <a name="push-notification-types"></a>Arten von Pushbenachrichtigungen
 
@@ -233,11 +233,11 @@ Sie können den Windows-Pushbenachrichtigungsdienst (WNS) auch direkt aufrufen, 
 
 Sie können Pushbenachrichtigungen auch senden, indem Sie in Ihrem mobilen Dienst eine geplante Aufgabe ausführen. Weitere Informationen finden Sie unter [Planen von wiederkehrenden Aufträgen in Mobile Services](/azure/).
 
-**Warnung**    Wenn Sie den Assistenten für Pushbenachrichtigungen einmal ausgeführt haben, führen Sie den Assistenten nicht ein zweites Mal aus, um den Registrierungscode für einen anderen mobilen Dienst hinzuzufügen. Wenn Sie den Assistenten mehr als einmal pro Projekt ausführen, wird Code generiert, der überlappende Aufrufe in der [**CreatePushNotificationChannelForApplicationAsync**](/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync)-Methode zur Folge hat. Dies führt zu einer Laufzeitausnahme. Wenn Sie sich für Pushbenachrichtigungen für mehr als einen mobilen Dienst registrieren möchten, führen Sie den Assistenten einmal aus. Schreiben Sie dann den Registrierungscode neu, um sicherzustellen, dass Aufrufe für **CreatePushNotificationChannelForApplicationAsync** nicht zur gleichen Zeit ausgeführt werden. Beispielsweise können Sie dies erreichen, indem Sie den vom Assistenten generierten Code in Push. Register verschieben. \* (einschließlich des Aufrufes " **foratepushnotificationchannelforapplicationasync**") außerhalb des OnCreated-Ereignisses, aber die Besonderheiten dieser Informationen hängen von der Architektur ihrer App ab.
+**Warnung**  Wenn Sie den Assistenten für Pushbenachrichtigungen einmal ausgeführt haben, führen Sie ihn nicht ein zweites Mal aus, um Registrierungscode für andere mobile Dienste hinzuzufügen. Wenn Sie den Assistenten mehr als einmal pro Projekt ausführen, wird Code generiert, der überlappende Aufrufe in der [**CreatePushNotificationChannelForApplicationAsync**](/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync)-Methode zur Folge hat. Dies führt zu einer Laufzeitausnahme. Wenn Sie sich für Pushbenachrichtigungen für mehr als einen mobilen Dienst registrieren möchten, führen Sie den Assistenten einmal aus. Schreiben Sie dann den Registrierungscode neu, um sicherzustellen, dass Aufrufe für **CreatePushNotificationChannelForApplicationAsync** nicht zur gleichen Zeit ausgeführt werden. Beispielsweise können Sie dies erreichen, indem Sie den vom Assistenten generierten Code in Push. Register verschieben. \* (einschließlich des Aufrufes " **foratepushnotificationchannelforapplicationasync** ") außerhalb des OnCreated-Ereignisses, aber die Besonderheiten dieser Informationen hängen von der Architektur ihrer App ab.
 
- 
+ 
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 
 * [Übersicht über die Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS)](windows-push-notification-services--wns--overview.md)
@@ -245,6 +245,6 @@ Sie können Pushbenachrichtigungen auch senden, indem Sie in Ihrem mobilen Diens
 * [Herstellen einer Verbindung mit Microsoft Azure-Mobile Dienste (JavaScript)](/previous-versions/windows/apps/dn263160(v=win.10))
 * [Herstellen einer Verbindung mit Microsoft Azure-Mobile Dienste (C#/C++/VB)](/previous-versions/windows/apps/dn263175(v=win.10))
 * [Schnellstart: Hinzufügen von Pushbenachrichtigungen für einen mobilen Dienst (JavaScript)](/previous-versions/windows/apps/dn263163(v=win.10))
- 
+ 
 
- 
+ 

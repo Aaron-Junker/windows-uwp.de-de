@@ -1,17 +1,17 @@
 ---
-Description: Verwenden Sie Zeigeranimationen, um Benutzern visuelles Feedback zu liefern, wenn diese auf ein Element tippen.
+description: Verwenden Sie Zeigeranimationen, um Benutzern visuelles Feedback zu liefern, wenn diese auf ein Element tippen.
 title: Animationen für Zeigerklicks
 ms.assetid: EEB10A2C-629A-4705-8468-4D019D74DDFF
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d429f55b6c8004ea0b5e16f842f5c7ee492d754d
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 1f2d6367ebd8e87cbb32f7a12a829dba7fa38ace
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218847"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034183"
 ---
 # <a name="pointer-click-animations"></a>Animationen für Zeigerklicks
 
@@ -20,7 +20,7 @@ ms.locfileid: "91218847"
 Verwenden Sie Zeigeranimationen, um Benutzern visuelles Feedback zu liefern, wenn diese auf ein Element tippen. Bei der Animation für „Zeiger nach unten“ wird das gedrückte Element leicht verkleinert und geneigt. Sie wird wiedergegeben, wenn erstmalig auf ein Element getippt wird. Die Animation für „Zeiger nach oben“, mit der der ursprüngliche Zustand des Elements wiederhergestellt wird, wird beim Loslassen des Zeigers wiedergegeben.
 
 
-> **Wichtige APIs**: [**pointeruppoinmeanimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation), [**pointerdownpoinmeanimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation)
+> **Wichtige APIs** : [**pointeruppoinmeanimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation), [**pointerdownpoinmeanimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation)
 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
@@ -35,6 +35,6 @@ Verwenden Sie Zeigeranimationen, um Benutzern visuelles Feedback zu liefern, wen
 * [**PointerUpThemeAnimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation)
 * [**PointerDownThemeAnimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation)
 
- 
+ 
 
- 
+ 

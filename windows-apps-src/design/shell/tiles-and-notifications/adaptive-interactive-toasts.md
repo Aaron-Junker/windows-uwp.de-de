@@ -1,5 +1,5 @@
 ---
-Description: Mit adaptiven und interaktiven Popupbenachrichtigungen können Sie flexible Popupbenachrichtigungen mit mehr Inhalt, optionalen Inlinebildern und optionaler Benutzerinteraktion erstellen.
+description: Mit adaptiven und interaktiven Popupbenachrichtigungen können Sie flexible Popupbenachrichtigungen mit mehr Inhalt, optionalen Inlinebildern und optionaler Benutzerinteraktion erstellen.
 title: Popupinhalt
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Toast content
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Popup Benachrichtigungen, interaktive Toasts, Adaptive Toasts, Popup Inhalt, Toast Nutzlast
 ms.localizationpriority: medium
-ms.openlocfilehash: ed801d07991c4faa186bc0164dbf0d1323537a20
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: f148938f8c8e3bb5ac305a82d1863545005fd802
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984606"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034293"
 ---
 # <a name="toast-content"></a>Popupinhalt
 
@@ -39,13 +39,13 @@ Informationen zum Senden von Benachrichtigungen finden Sie unter [Send local Toa
 
 ## <a name="toast-notification-structure"></a>Struktur der Popupbenachrichtigung
 
-Popup Benachrichtigungen sind eine Kombination aus einigen Daten Eigenschaften wie Tag/Gruppe (mit denen die Benachrichtigung identifiziert werden können) und dem Popup *Inhalt*.
+Popup Benachrichtigungen sind eine Kombination aus einigen Daten Eigenschaften wie Tag/Gruppe (mit denen die Benachrichtigung identifiziert werden können) und dem Popup *Inhalt* .
 
 Die Kernkomponenten von Popup Inhalten sind...
-* **Launch**: definiert, welche Argumente an die APP zurückgegeben werden, wenn der Benutzer auf den Popup klickt, sodass Sie tief in den richtigen Inhalt, den der Popup anzeigt, verweisen können. Weitere Informationen finden Sie unter [Send local Toast](send-local-toast.md).
-* **Visual**: der visuelle Teil des Popups, einschließlich der generischen Bindung, die Text und Bilder enthält.
-* **Aktionen**: der interaktive Teil des Toast, einschließlich Eingaben und Aktionen.
-* **Audiodatei**: steuert die Audiowiedergabe, wenn dem Benutzer der Popup angezeigt wird.
+* **Launch** : definiert, welche Argumente an die APP zurückgegeben werden, wenn der Benutzer auf den Popup klickt, sodass Sie tief in den richtigen Inhalt, den der Popup anzeigt, verweisen können. Weitere Informationen finden Sie unter [Send local Toast](send-local-toast.md).
+* **Visual** : der visuelle Teil des Popups, einschließlich der generischen Bindung, die Text und Bilder enthält.
+* **Aktionen** : der interaktive Teil des Toast, einschließlich Eingaben und Aktionen.
+* **Audiodatei** : steuert die Audiowiedergabe, wenn dem Benutzer der Popup angezeigt wird.
 
 Der Popup Inhalt ist in unformatiertem XML definiert, aber Sie können unsere [nuget-Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) verwenden, um ein c#-Objektmodell (oder ein C++-Objekt) zum Erstellen des Popup Inhalts zu erhalten. In diesem Artikel wird alles dokumentiert, was innerhalb des Popup Inhalts liegt.
 
@@ -64,17 +64,17 @@ new ToastContentBuilder()
 ```xml
 <toast launch="app-defined-string">
 
-  <visual>
-    <binding template="ToastGeneric">
-      ...
-    </binding>
-  </visual>
+  <visual>
+    <binding template="ToastGeneric">
+      ...
+    </binding>
+  </visual>
 
-  <actions>
-    ...
-  </actions>
+  <actions>
+    ...
+  </actions>
 
-  <audio src="ms-winsoundevent:Notification.Reminder"/>
+  <audio src="ms-winsoundevent:Notification.Reminder"/>
 
 </toast>
 ```
@@ -86,7 +86,7 @@ Hier sehen Sie eine visuelle Darstellung des Popup Inhalts:
 ![Struktur der Popupbenachrichtigung](images/adaptivetoasts-structure.jpg)
 
 
-## <a name="visual"></a>Grafisches Element
+## <a name="visual"></a>Visuelles Element
 
 Jeder Toast muss ein visuelles Element angeben, in dem Sie eine generische Popup Bindung bereitstellen müssen, die Text, Bilder und mehr enthalten kann. Diese Elemente werden auf verschiedenen Windows-Geräten, einschließlich Desktop, Smartphones, Tablets und Xbox, gerendert.
 
@@ -105,7 +105,7 @@ Jeder Toast muss mindestens ein Textelement enthalten und kann zwei zusätzliche
 
 <img alt="Toast with title and description" src="images/toast-title-and-description.jpg" width="364"/>
 
-Seit dem Windows 10 Anniversary Update können Sie steuern, wie viele Textzeilen angezeigt werden, indem Sie die **hintmaxlines** -Eigenschaft für den Text verwenden. Der Standardwert (und der Höchstwert) beträgt bis zu zwei Textzeilen für den Titel und bis zu 4 Zeilen (kombiniert) für die beiden zusätzlichen Beschreibungs Elemente (der zweite und dritte **adaptivetext**).
+Seit dem Windows 10 Anniversary Update können Sie steuern, wie viele Textzeilen angezeigt werden, indem Sie die **hintmaxlines** -Eigenschaft für den Text verwenden. Der Standardwert (und der Höchstwert) beträgt bis zu zwei Textzeilen für den Titel und bis zu 4 Zeilen (kombiniert) für die beiden zusätzlichen Beschreibungs Elemente (der zweite und dritte **adaptivetext** ).
 
 #### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
 
@@ -161,7 +161,7 @@ new ToastContentBuilder()
 
 ## <a name="hero-image"></a>Herabbild
 
-**Neu in Anniversary Update**: die Toasts können ein Herausgeber Bild anzeigen. Hierbei handelt es sich um ein geenderetes [**toastgenericheroimage**](toast-schema.md#toastgenericheroimage) , das hervorgehoben im Popup Banner und im Aktions Center angezeigt wird. Bild Dimensionen sind 364x 180 Pixel bei der Skalierung von 100%.
+**Neu in Anniversary Update** : die Toasts können ein Herausgeber Bild anzeigen. Hierbei handelt es sich um ein geenderetes [**toastgenericheroimage**](toast-schema.md#toastgenericheroimage) , das hervorgehoben im Popup Banner und im Aktions Center angezeigt wird. Bild Dimensionen sind 364x 180 Pixel bei der Skalierung von 100%.
 
 <img alt="Toast with hero image" src="images/toast-heroimage.jpg" width="364"/>
 
@@ -232,7 +232,7 @@ Wenn ein Bild die Dateigröße überschreitet oder nicht heruntergeladen werden 
 
 ## <a name="attribution-text"></a>Zuweisungs Text
 
-**Neu in Anniversary Update**: Wenn Sie auf die Quelle ihres Inhalts verweisen müssen, können Sie den Zuweisungs Text verwenden. Dieser Text wird immer am Ende der Benachrichtigung zusammen mit der Identität ihrer APP oder dem Zeitstempel der Benachrichtigung angezeigt.
+**Neu in Anniversary Update** : Wenn Sie auf die Quelle ihres Inhalts verweisen müssen, können Sie den Zuweisungs Text verwenden. Dieser Text wird immer am Ende der Benachrichtigung zusammen mit der Identität ihrer APP oder dem Zeitstempel der Benachrichtigung angezeigt.
 
 In älteren Versionen von Windows, die keinen Zuweisungs Text unterstützen, wird der Text einfach als anderes Textelement angezeigt (vorausgesetzt, Sie haben nicht bereits die maximal drei Textelemente).
 
@@ -261,7 +261,7 @@ new ToastContentBuilder()
 
 ## <a name="custom-timestamp"></a>Benutzerdefinierter Zeitstempel
 
-**Neues in Creators Update**: Sie können nun den vom System bereitgestellten Zeitstempel mit Ihrem eigenen Zeitstempel überschreiben, der genau angibt, wann die Nachricht/Informationen/der Inhalt generiert wurde. Dieser Zeitstempel ist innerhalb des Aktions Centers sichtbar.
+**Neues in Creators Update** : Sie können nun den vom System bereitgestellten Zeitstempel mit Ihrem eigenen Zeitstempel überschreiben, der genau angibt, wann die Nachricht/Informationen/der Inhalt generiert wurde. Dieser Zeitstempel ist innerhalb des Aktions Centers sichtbar.
 
 <img alt="Toast with custom timestamp" src="images/toast-customtimestamp.jpg" width="396"/>
 
@@ -280,16 +280,16 @@ new ToastContentBuilder()
 
 ```xml
 <toast displayTimestamp="2017-04-15T19:45:00Z">
-  ...
+  ...
 </toast>
 ```
 
 ---
 
 
-## <a name="progress-bar"></a>Statusleiste
+## <a name="progress-bar"></a>Statusanzeige
 
-**Neues in Creators Update**: Sie können eine Statusanzeige für ihre Popup Benachrichtigung bereitstellen, um den Benutzer über den Fortschritt von Vorgängen, z. b. Downloads, zu informieren.
+**Neues in Creators Update** : Sie können eine Statusanzeige für ihre Popup Benachrichtigung bereitstellen, um den Benutzer über den Fortschritt von Vorgängen, z. b. Downloads, zu informieren.
 
 <img alt="Toast with progress bar" src="images/toast-progressbar.png" width="364"/>
 
@@ -298,7 +298,7 @@ Weitere Informationen zum Verwenden einer Statusanzeige finden Sie unter Popup- 
 
 ## <a name="headers"></a>Header
 
-**Neues in Creators Update**: Sie können Benachrichtigungen im Aktions Center unter Header gruppieren. Beispielsweise können Sie Nachrichten aus einem Gruppenchat unter einem Header gruppieren oder Benachrichtigungen eines allgemeinen Designs unter einem Header gruppieren.
+**Neues in Creators Update** : Sie können Benachrichtigungen im Aktions Center unter Header gruppieren. Beispielsweise können Sie Nachrichten aus einem Gruppenchat unter einem Header gruppieren oder Benachrichtigungen eines allgemeinen Designs unter einem Header gruppieren.
 
 <img alt="Toasts with header" src="images/toast-headers-action-center.png" width="396"/>
 
@@ -307,7 +307,7 @@ Weitere Informationen zum Verwenden von Headern finden Sie unter Popup [Header](
 
 ## <a name="adaptive-content"></a>Adaptive Inhalte
 
-**Neu in Anniversary Update**: Zusätzlich zu den oben angegebenen Inhalten können auch zusätzliche Adaptive Inhalte angezeigt werden, die sichtbar sind, wenn der Toast erweitert wird.
+**Neu in Anniversary Update** : Zusätzlich zu den oben angegebenen Inhalten können auch zusätzliche Adaptive Inhalte angezeigt werden, die sichtbar sind, wenn der Toast erweitert wird.
 
 Dieser zusätzliche Inhalt wird mithilfe von adaptiver angegeben. Weitere Informationen hierzu finden Sie in der [Dokumentation zu adaptiven Kacheln](create-adaptive-tiles.md).
 
@@ -316,7 +316,7 @@ Beachten Sie, dass alle adaptiven Inhalte in einer [**adaptivegroup**](./toast-s
 
 ### <a name="columns-and-text-elements"></a>Spalten und Textelemente
 
-Im folgenden finden Sie ein Beispiel, in dem Spalten und einige erweiterte Adaptive Textelemente verwendet werden. Da sich die Textelemente innerhalb einer **adaptivegroup**befinden, unterstützen Sie alle umfangreichen adaptiven Formatierungs Eigenschaften.
+Im folgenden finden Sie ein Beispiel, in dem Spalten und einige erweiterte Adaptive Textelemente verwendet werden. Da sich die Textelemente innerhalb einer **adaptivegroup** befinden, unterstützen Sie alle umfangreichen adaptiven Formatierungs Eigenschaften.
 
 <img alt="Toast with additional text" src="images/toast-additionaltext.jpg" width="364"/>
 
@@ -480,7 +480,7 @@ new ToastContentBuilder()
 
 ### <a name="buttons-with-pending-update-activation"></a>Schaltflächen mit ausstehender Update Aktivierung
 
-**Neu bei Fall Creators Update**: auf den Hintergrund Aktivierungs Schaltflächen können Sie ein nach dem Aktivierungs Verhalten von " **tabdingupdate** " verwenden, um mehrstufige Interaktionen in ihren Popup Benachrichtigungen zu erstellen. Wenn der Benutzer auf die Schaltfläche klickt, wird die Hintergrundaufgabe aktiviert, und der Toast wird in den Zustand "ausstehende Aktualisierung" versetzt, wo er auf dem Bildschirm bleibt, bis die Hintergrundaufgabe den Toast durch einen neuen Toast ersetzt.
+**Neu bei Fall Creators Update** : auf den Hintergrund Aktivierungs Schaltflächen können Sie ein nach dem Aktivierungs Verhalten von " **tabdingupdate** " verwenden, um mehrstufige Interaktionen in ihren Popup Benachrichtigungen zu erstellen. Wenn der Benutzer auf die Schaltfläche klickt, wird die Hintergrundaufgabe aktiviert, und der Toast wird in den Zustand "ausstehende Aktualisierung" versetzt, wo er auf dem Bildschirm bleibt, bis die Hintergrundaufgabe den Toast durch einen neuen Toast ersetzt.
 
 Informationen dazu, wie Sie diese Implementierung implementieren, finden Sie unter Popup [Pending Update](toast-pending-update.md).
 
@@ -489,7 +489,7 @@ Informationen dazu, wie Sie diese Implementierung implementieren, finden Sie unt
 
 ### <a name="context-menu-actions"></a>Aktionen im Kontextmenü
 
-**Neu in Anniversary Update**: Sie können dem vorhandenen Kontextmenü zusätzliche Kontextmenü Aktionen hinzufügen, die angezeigt werden, wenn der Benutzer im Aktions Center mit der rechten Maustaste auf den Toast klickt. Beachten Sie, dass dieses Menü nur angezeigt wird, wenn Sie mit der rechten Maustaste im Aktions Center Wird nicht angezeigt, wenn Sie mit der rechten Maustaste auf ein Popup-Popup Banner klicken.
+**Neu in Anniversary Update** : Sie können dem vorhandenen Kontextmenü zusätzliche Kontextmenü Aktionen hinzufügen, die angezeigt werden, wenn der Benutzer im Aktions Center mit der rechten Maustaste auf den Toast klickt. Beachten Sie, dass dieses Menü nur angezeigt wird, wenn Sie mit der rechten Maustaste im Aktions Center Wird nicht angezeigt, wenn Sie mit der rechten Maustaste auf ein Popup-Popup Banner klicken.
 
 > [!NOTE]
 > Auf älteren Geräten werden diese zusätzlichen Kontextmenü Aktionen einfach als normale Schaltflächen auf dem Toast angezeigt.
@@ -735,25 +735,25 @@ new ToastContentBuilder()
 
 ```xml
 <toast scenario="reminder" launch="action=viewEvent&amp;eventId=1983">
-   
-  ...
- 
-  <actions>
-     
-    <input id="snoozeTime" type="selection" defaultInput="15">
-      <selection id="1" content="1 minute"/>
-      <selection id="15" content="15 minutes"/>
-      <selection id="60" content="1 hour"/>
-      <selection id="240" content="4 hours"/>
-      <selection id="1440" content="1 day"/>
-    </input>
- 
-    <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
- 
-    <action activationType="system" arguments="dismiss" content=""/>
-     
-  </actions>
-   
+   
+  ...
+ 
+  <actions>
+     
+    <input id="snoozeTime" type="selection" defaultInput="15">
+      <selection id="1" content="1 minute"/>
+      <selection id="15" content="15 minutes"/>
+      <selection id="60" content="1 hour"/>
+      <selection id="240" content="4 hours"/>
+      <selection id="1440" content="1 day"/>
+    </input>
+ 
+    <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
+ 
+    <action activationType="system" arguments="dismiss" content=""/>
+     
+  </actions>
+   
 </toast>
 ```
 
@@ -764,12 +764,12 @@ So verwenden Sie die System Aktion zum Zurücksetzen und Verwerfen von Aktionen:
 -   Geben Sie ein " **onastbuttonsnooze** " oder " **onastbuttonverwerfen** " an
 -   Geben Sie optional eine benutzerdefinierte Inhalts Zeichenfolge an:
     -   Wenn Sie keine Zeichenfolge angeben, werden automatisch lokalisierte Zeichen folgen für "zurückstellen" und "verwerfen" verwendet.
--   Geben Sie optional **selectionboxid**an:
+-   Geben Sie optional **selectionboxid** an:
     -   Wenn Sie nicht möchten, dass der Benutzer ein Intervall für das erneute Erinnern auswählen kann, sondern das erneute Erinnern an die Benachrichtigung nur einmal in einem vom System definierten (in allen Betriebssystemen einheitlichen) Zeitintervall erfolgt, legen Sie keinen Wert für &lt;input&gt; fest.
     -   Wenn Sie mögliche Intervalle für das erneute Erinnern bereitstellen möchten:
         -   Angeben von **selectionboxid** in der Aktion zum Zurücksetzen
         -   Vergleichen Sie die ID der Eingabe mit der **selectionboxid** der Aktion zum Zurücksetzen.
-        -   Legen Sie den Wert von " **alastselectionboxitem**" als nonnegativeinzelteger fest, der das Intervall für die Wartezeit in Minuten darstellt.
+        -   Legen Sie den Wert von " **alastselectionboxitem** " als nonnegativeinzelteger fest, der das Intervall für die Wartezeit in Minuten darstellt.
 
 
 
@@ -816,8 +816,8 @@ Um Alarme, Erinnerungen und eingehende Benachrichtigungen zu erstellen, verwende
 > [!IMPORTANT]
 > Bei der Verwendung der Erinnerung oder des Alarms müssen Sie mindestens eine Schaltfläche in der Popup Benachrichtigung angeben. Andernfalls wird der Toast als normaler Toast behandelt.
 
-* **Erinnerung**: die Benachrichtigung bleibt auf dem Bildschirm, bis der Benutzer Sie schließt oder Maßnahmen ergreift. Unter Windows Mobile wird der Toast auch vorab erweitert angezeigt. Ein Erinnerungs Sound wird wiedergegeben.
-* **Alarm**: Zusätzlich zu den Erinnerungs Verhaltensweisen werden Alarme zusätzlich zu einem standardmäßigen Alarm Soundschleifen.
+* **Erinnerung** : die Benachrichtigung bleibt auf dem Bildschirm, bis der Benutzer Sie schließt oder Maßnahmen ergreift. Unter Windows Mobile wird der Toast auch vorab erweitert angezeigt. Ein Erinnerungs Sound wird wiedergegeben.
+* **Alarm** : Zusätzlich zu den Erinnerungs Verhaltensweisen werden Alarme zusätzlich zu einem standardmäßigen Alarm Soundschleifen.
 * **IncomingCall:** eingehende Benachrichtigungen werden auf Windows Mobile-Geräten als Vollbild angezeigt. Andernfalls haben Sie das gleiche Verhalten wie Alarme, außer Sie verwenden Rington-Audiodaten und ihre Schaltflächen werden anders formatiert.
 
 #### <a name="builder-syntax"></a>[Builder-Syntax](#tab/builder-syntax)
@@ -848,8 +848,8 @@ Mit ihren Kacheln und-aufbildern können Zeichen folgen und Bilder geladen werde
 
 ## <a name="handling-activation"></a>Aktivierungs Aktivierung
 Informationen zum Behandeln von Popup Aktivierungen (der Benutzer, der auf den Toast oder die Schaltflächen des Popups klickt) finden Sie unter [Send local Toast](send-local-toast.md).
- 
-## <a name="related-topics"></a>Zugehörige Themen
+ 
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Senden eines lokalen Popups und behandeln der Aktivierung](send-local-toast.md)
 * [Benachrichtigungs Bibliothek auf GitHub (Teil des UWP Community Toolkit)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

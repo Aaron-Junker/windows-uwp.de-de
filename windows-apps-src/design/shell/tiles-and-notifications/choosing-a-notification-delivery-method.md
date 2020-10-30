@@ -1,5 +1,5 @@
 ---
-Description: In diesem Artikel werden die vier Benachrichtigungs Optionen&\# 8212, local, scheduled, periodisch und Push&8212 beschrieben, die \# Kachel-und Badge-Updates und Popup Benachrichtigungs Inhalte bereitzustellen.
+description: In diesem Artikel werden die vier Benachrichtigungs Optionen&\# 8212, local, scheduled, periodisch und Push&8212 beschrieben, die \# Kachel-und Badge-Updates und Popup Benachrichtigungs Inhalte bereitzustellen.
 title: Auswählen einer Methode für die Übermittlung von Benachrichtigungen
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a7a929cb88e20cc47562ab4920fd0fc94304fae2
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f85918eb0c8f936cc5be393217cd47d66a8b7ff5
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219153"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034003"
 ---
 # <a name="choose-a-notification-delivery-method"></a>Auswählen einer Methode für die Übermittlung von Benachrichtigungen
 
@@ -61,7 +61,7 @@ In dieser Tabelle sind die Benachrichtigungsübermittlungstypen zusammengefasst.
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">Geplant</td>
+<td align="left">Scheduled</td>
 <td align="left">Kachel, Popup</td>
 <td align="left">Eine Reihe von API-Aufrufen, die eine Benachrichtigung im Voraus so planen, dass zum von Ihnen angegebenen Zeitpunkt eine Aktualisierung vorgenommen wird.</td>
 <td align="left"><ul>
@@ -92,7 +92,7 @@ In dieser Tabelle sind die Benachrichtigungsübermittlungstypen zusammengefasst.
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="local-notifications"></a>Lokale Benachrichtigungen
 
@@ -158,7 +158,7 @@ Weitere Informationen finden Sie unter
 -   [Codebeispiele für Windows-App-Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 
 * [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md)
@@ -168,6 +168,6 @@ Weitere Informationen finden Sie unter
 * [Übersicht über regelmäßige Benachrichtigungen](periodic-notification-overview.md)
 * [Übersicht über die Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS)](windows-push-notification-services--wns--overview.md)
 * [Codebeispiele für Windows-App-Benachrichtigungen auf GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
- 
+ 
 
- 
+ 

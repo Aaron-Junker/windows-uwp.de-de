@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie, wie Sie Ihre Windows-apps entwerfen und optimieren, sodass Sie die bestmögliche Benutzerfreundlichkeit für Benutzer von Tastatur und Anwendungen mit Behinderungen und anderen Barrierefreiheits Anforderungen bereitstellen.
+description: Erfahren Sie, wie Sie Ihre Windows-apps entwerfen und optimieren, sodass Sie die bestmögliche Benutzerfreundlichkeit für Benutzer von Tastatur und Anwendungen mit Behinderungen und anderen Barrierefreiheits Anforderungen bereitstellen.
 title: Tastaturinteraktionen
 ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: 005ec4883eeb52a84e458ba917439d093ab0041f
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 6fba6654913f481faba98c598e4c683d62b09adf
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763082"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034803"
 ---
 # <a name="keyboard-interactions"></a>Tastaturinteraktionen
 
@@ -28,13 +28,13 @@ Geräte übergreifende Tastatureingaben sind ein wichtiger Bestandteil der gesam
 
 ![Bild Tastatur und Gamepad](images/keyboard/keyboard-gamepad.jpg)
 
-***Allgemeine Interaktionsmuster werden von Tastatur und Gamepad gemeinsam genutzt.***
+***Allgemeine Interaktionsmuster werden von Tastatur und Gamepad _ gemeinsam genutzt** .
 
 In diesem Thema konzentrieren wir uns speziell auf das Windows-App-Design für Tastatureingaben auf PCs. Eine gut entworfene Tastatur ist jedoch wichtig für die Unterstützung von Tools für die Barrierefreiheit, wie z. b. die Windows-Sprachausgabe, für die Verwendung von [Software-Tastaturen](#software-keyboard) wie der touchtastatur und der Bildschirmtastatur (OSK) sowie für die Handhabung anderer Eingabegeräte Typen, wie z. b. Xbox Gamepad und Remote Steuerung.
 
 Viele der hier erläuterten Richtlinien und Empfehlungen, einschließlich [Fokus Visuals](#focus-visuals), [Zugriffstasten](#access-keys)und [UI-Navigation](#navigation), sind auch für diese anderen Szenarien anwendbar.
 
-**Hinweis**  Obwohl sowohl Hardware-als auch Software-Tastaturen für Texteingaben verwendet werden, liegt der Schwerpunkt dieses Themas auf Navigation und Interaktion.
+_ *Hinweis* * obwohl sowohl Hardware-als auch Software-Tastaturen für Texteingaben verwendet werden, liegt der Schwerpunkt dieses Themas auf Navigation und Interaktion.
 
 ## <a name="built-in-support"></a>Integrierte Unterstützung
 
@@ -44,7 +44,7 @@ Alle UWP-Steuerelemente bieten integrierte Unterstützung für umfangreiche Tast
 
 ![Tastatur mit Telefon Bild](images/keyboard/keyboard-phone.jpg)
 
-***UWP unterstützt Tastatur mit jedem Gerät.***
+**_UWP unterstützt Tastatur mit jedem Gerät_* _
 
 ## <a name="basic-experiences"></a>Grundlegende Erfahrungen
 ![Fokus basierte Geräte](images/keyboard/focus-based-devices.jpg)
@@ -55,7 +55,7 @@ Bei Bedarf identifizieren wir wichtige Unterschiede, die Sie kennen sollten, und
 
 Hier finden Sie die Geräte und Tools, die in diesem Thema erläutert werden:
 
-| Gerät/Tool                       | Beschreibung     |
+| Gerät/Tool                       | BESCHREIBUNG     |
 |-----------------------------------|-----------------|
 |Tastatur (Hardware und Software)   |Neben der Standard Hardware Tastatur werden von Windows-Anwendungen zwei Software-Tastaturen unterstützt: die [touchtastatur (oder die Software Tastatur)](#software-keyboard) und die [Bildschirmtastatur](#on-screen-keyboard).|
 |Gamepad und Remotesteuerung         |Das Xbox Gamepad und die Remote Steuerung sind grundlegende Eingabegeräte in der [10-Fuß-](../devices/designing-for-tv.md)Darstellung. Spezifische Informationen zur Windows-Unterstützung für Gamepad und Remote Steuerung finden Sie unter [Gamepad-und Remote Steuerungs Interaktionen](gamepad-and-remote-interactions.md).|
@@ -83,15 +83,15 @@ Eine visuelle Fokus Visualisierung:
 - Ermöglicht Benutzern die Navigation in einer App-Benutzeroberfläche, ohne zu verlieren.
 - Kann für Ihre APP angepasst werden (siehe [visuelle Fokus Visuals mit hoher Sichtbarkeit](guidelines-for-visualfeedback.md#high-visibility-focus-visuals))
 
-**Hinweis** Die UWP-Fokus Visualisierung ist nicht mit dem Fokus Rechteck für die Sprachausgabe identisch.
+_ *Hinweis* * die UWP-Fokus Visualisierung ist nicht mit dem Fokus Rechteck für die Sprachausgabe identisch.
 
 ### <a name="tab-stops"></a>Tabstopps
 
 Damit ein Steuerelement (einschließlich der Navigationselemente) über die Tastatur verwendet werden kann, muss auf dem Steuerelement der Fokus liegen. Eine Möglichkeit für ein Steuerelement, den Tastaturfokus zu erhalten, besteht darin, ihn über die Registerkarten Navigation zugänglich zu machen, indem er als Tabstopp in der Aktivier Reihenfolge der Anwendung identifiziert
 
-Damit ein Steuerelement in der Aktivier Reihenfolge enthalten ist, muss die [isaktivierte](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) Eigenschaft auf **true** festgelegt werden, und die [istabstopp](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) -Eigenschaft muss auf **true**festgelegt werden.
+Damit ein Steuerelement in der Aktivier Reihenfolge enthalten ist, muss die [isaktivierte](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) Eigenschaft auf **true** festgelegt werden, und die [istabstopp](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) -Eigenschaft muss auf **true** festgelegt werden.
 
-Wenn Sie ein Steuerelement explizit aus der Aktivier Reihenfolge ausschließen möchten, legen Sie die Eigenschaft [istabstopp](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) auf **false**fest.
+Wenn Sie ein Steuerelement explizit aus der Aktivier Reihenfolge ausschließen möchten, legen Sie die Eigenschaft [istabstopp](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) auf **false** fest.
 
 Standardmäßig gibt die Aktivier Reihenfolge die Reihenfolge an, in der Benutzeroberflächen Elemente erstellt werden. Wenn z. b. ein `StackPanel` `Button` -, ein `Checkbox` -und ein-Wert enthält, ist die Aktivier `TextBox` Reihenfolge `Button` , `Checkbox` und `TextBox` .
 
@@ -123,7 +123,7 @@ Für UWP-apps wird der anfängliche Fokus auf das-Element mit dem höchsten [Tab
 
 #### <a name="set-initial-focus-on-the-most-logical-element"></a>Legen Sie den anfänglichen Fokus auf das logischste Element fest.
 
-Legen Sie den anfänglichen Fokus auf das UI-Element für die erste oder primäre Aktion fest, die Benutzer am wahrscheinlichsten beim Starten der APP oder beim Navigieren zu einer Seite ausführen. Beispiele:
+Legen Sie den anfänglichen Fokus auf das UI-Element für die erste oder primäre Aktion fest, die Benutzer am wahrscheinlichsten beim Starten der APP oder beim Navigieren zu einer Seite ausführen. Beispiele hierfür sind:
 -   Eine Foto-APP, bei der der Fokus auf das erste Element in einem Katalog festgelegt ist
 -   Eine Musik-app, bei der Fokus auf die Wiedergabe Schaltfläche gesetzt ist
 
@@ -142,7 +142,7 @@ Die Tastaturnavigation wird in der Regel über die Tab-Taste und die Pfeiltasten
 Standardmäßig folgen UWP-Steuerelemente diesen grundlegenden Tastatur Verhalten:
 -   **Tab-Taste** Navigieren zwischen handlungsfähigen/aktiven Steuerelementen in der Aktivier Reihenfolge.
 -   **UMSCHALT + TAB** Navigation Steuerelemente in umgekehrter Aktivier Reihenfolge. Wenn der Benutzer im Steuerelement mithilfe der Pfeiltaste navigiert hat, wird der Fokus auf den letzten bekannten Wert im Steuerelement festgelegt.
--   **Pfeiltasten** machen eine Steuerelement spezifische "innere Navigation" verfügbar, wenn der Benutzer in "innere Navigation" wechselt, und die Pfeiltasten werden nicht aus einem Steuerelement navigiert. Beispiele:
+-   **Pfeiltasten** machen eine Steuerelement spezifische "innere Navigation" verfügbar, wenn der Benutzer in "innere Navigation" wechselt, und die Pfeiltasten werden nicht aus einem Steuerelement navigiert. Beispiele hierfür sind:
     -   Nach-oben/nach-unten-Taste Verschiebt den Fokus in `ListView` und `MenuFlyout`
     -   Aktuell ausgewählte Werte für `Slider` und ändern `RatingsControl`
     -   Einfügemarke in verschieben `TextBox`
@@ -158,7 +158,7 @@ Beispielsweise bietet das `ContentDialog` hier gezeigte Steuerelement standardm�
 
 ![Dialog Beispiel](images/keyboard/dialog.png)
 
-***Die Interaktion mit einer Auflistung verwandter Schaltflächen wird durch die Pfeiltasten Navigation vereinfacht.***
+*Die *_Interaktion mit einer Auflistung verwandter Schaltflächen wird durch die Pfeiltasten Navigation vereinfacht_* .
 
 Wenn Elemente in einer einzelnen Spalte angezeigt werden, navigiert die nach-oben-oder nach-unten-Taste Elemente. Wenn Elemente in einer einzelnen Zeile angezeigt werden, navigiert die nach-links-Taste für die Elemente. Wenn es sich bei den Elementen um mehrere Spalten handelt, navigieren alle vier Pfeiltasten.
 
@@ -174,7 +174,7 @@ Die folgenden Bilder zeigen z. b. zwei gestapelte Steuer `ListView` Elemente. Da
   <td><img src="images/keyboard/arrow-only.png" alt="arrow only" /></td>
 </table>
 
-***Interaktionen mit zwei gestapelten ListView-Steuerelementen können einfacher und effizienter gemacht werden, indem die Tab-Taste und die Navigation mit nur Pfeiltasten vermieden werden.***
+_*_Interaktionen mit zwei gestapelten ListView-Steuerelementen können einfacher und effizienter gemacht werden, indem die Tab-Taste und die Navigation mit nur Pfeiltasten vermieden werden._*_
 
 Im Abschnitt [Steuerungsgruppe](#control-group) finden Sie Informationen zum Anwenden der Optimierungs Beispiele auf die Benutzeroberfläche Ihrer Anwendung.
 
@@ -184,7 +184,7 @@ Wenn ein Steuerelement den Fokus besitzt, kann ein Benutzer damit interagieren u
 
 #### <a name="text-entry"></a>Texteintrag
 
-Für Steuerelemente, die speziell für Texteingaben wie `TextBox` und entworfen wurden `RichEditBox` , werden alle Tastatureingaben für die Eingabe oder Navigation von Text verwendet, der Vorrang vor anderen Tastaturbefehlen hat. Beispielsweise erkennt das Dropdown Menü für ein `AutoSuggestBox` Steuerelement die **Leerzeichen** Taste nicht als Auswahl Befehl.
+Für Steuerelemente, die speziell für Texteingaben wie `TextBox` und entworfen wurden `RichEditBox` , werden alle Tastatureingaben für die Eingabe oder Navigation von Text verwendet, der Vorrang vor anderen Tastaturbefehlen hat. Beispielsweise erkennt das Dropdown Menü für ein `AutoSuggestBox` Steuerelement den Schlüssel _ *Space* * nicht als Auswahl Befehl.
 
 ![Text Eintrag](images/keyboard/text-entry.png)
 
@@ -280,7 +280,7 @@ In der folgenden Tabelle finden Sie eine kleine Stichprobe häufig verwendeter T
 
 | Aktion                               | Tastaturbefehl                                      |
 |--------------------------------------|--------------------------------------------------|
-| Alle auswählen                           | STRG+A                                           |
+| Alles auswählen                           | STRG+A                                           |
 | Fortlaufend auswählen                  | UMSCHALT+Pfeiltaste                                  |
 | Speichern                                 | STRG+S                                           |
 | Suchen                                 | STRG+F                                           |
@@ -320,7 +320,7 @@ Fügen Sie Unterstützung für die Pfeiltasten Navigation in Erwägung, wenn Sie
       <p><img src="images/keyboard/dialog.png" alt="Dialog buttons"/></p>
       <p><sup>Dialog Felder</sup></p>
       <p><img src="images/keyboard/radiobutton.png" alt="Radio buttons"/></p>
-      <p><sup>RadioButtons</sup></p>     
+      <p><sup>Optionsschaltflächen</sup></p>     
     </td>
     <td>
       <p><img src="images/keyboard/appbar.png" alt="AppBar buttons"/></p>
@@ -377,7 +377,7 @@ Die Such Schaltfläche für `AutoSuggestBox` ist nicht für die Standardtastatur
 
 ![Tastaturfokus automatisch vorschlagen](images/keyboard/auto-suggest-keyboard.png)
 
-*Mit Tastatur drücken Benutzer die* ***Eingabe*** *Taste, um eine Suchabfrage zu übermitteln* .
+*Mit Tastatur drücken Benutzer das*  * Zum übermitteln der Suchabfrage _ _Key **eingeben** *
 
 <table>
   <tr>
@@ -405,8 +405,8 @@ Das folgende Beispiel zeigt einige Schlüssel Zuordnungen zwischen Tastatur, Gam
 | LeerZchn         | A-Taste                            | Schaltfläche auswählen       |
 | EINGABETASTE         | A-Taste                            | Schaltfläche auswählen       |
 | Escape        | B-Taste                            | Zurück-Schaltfläche         |
-| Start/Ende      | NICHT ZUTREFFEND                                 | NICHT ZUTREFFEND                 |
-| Seite nach oben/unten  | Schaltfläche "auslöst" für vertikalen Bildlauf, Schaltfläche "Stoß Leiste"   | NICHT ZUTREFFEND                 |
+| Start/Ende      | –                                 | –                 |
+| Seite nach oben/unten  | Schaltfläche "auslöst" für vertikalen Bildlauf, Schaltfläche "Stoß Leiste"   | –                 |
 
 Einige wichtige Unterschiede, die Sie beim Entwerfen der UWP-App für die Verwendung mit Gamepad und der Verwendung der Remote Steuerung berücksichtigen sollten, sind:
 -   Der Text Eintrag erfordert, dass der Benutzer ein-Steuerelement zum Aktivieren eines Text Steuer Elements drückt.
@@ -446,21 +446,21 @@ Das folgende Beispiel zeigt eine Gruppe von Listenelementen, Raster Elementen un
 
 ![Navigation in einer einzelnen Spalten Pfeiltaste](images/keyboard/single-column-arrow.png)
 
-***Navigation in einer einzelnen Spalten Pfeiltaste***
+**_Navigation in einer einzelnen Spalten Pfeiltaste_* _
 
 ![Navigation in einer einzelnen Zeilen Pfeiltaste](images/keyboard/single-row-arrow.png)
 
-***Navigation in einer einzelnen Zeilen Pfeiltaste***
+_*_Navigation in einer einzelnen Zeilen Pfeiltaste_*_
 
 ![Navigation durch mehrere Spalten-und Zeilen Pfeiltasten](images/keyboard/multiple-column-and-row-navigation.png)
 
-***Mehrere Spalten/Zeilen-Pfeiltasten Navigation***
+_*_Mehrere Spalten/Zeilen-Pfeiltasten Navigation_*_
 
 #### <a name="wrapping-homogeneous-list-and-grid-view-items"></a>Umwickeln von homogenen Listen-und Raster Ansichts Elementen
 
 Die direktionale Navigation ist nicht immer die effizienteste Methode, um durch mehrere Zeilen und Spalten von List-und GridView-Elementen zu navigieren.
 
-**Hinweis** Menü Elemente sind in der Regel einzelne Spalten Listen, aber in einigen Fällen können spezielle Fokus Regeln zutreffen (siehe [Popup-UI](#popup-ui)).
+_ *Hinweis* * Menü Elemente sind in der Regel einzelne Spalten Listen, aber in einigen Fällen können spezielle Fokus Regeln zutreffen (siehe [Popup-UI](#popup-ui)).
 
 Listen-und Raster Objekte können mit mehreren Zeilen und Spalten erstellt werden. Diese sind in der Regel in Zeilen-Major (wobei Elemente vollständige Zeilen zuerst vor dem Ausfüllen der nächsten Zeile ausfüllen) oder Spalte-Major (wobei Elemente zuerst die gesamte Spalte ausfüllen, bevor Sie die nächste Spalte ausfüllen). Die Reihenfolge der Zeilen oder Spalten hängt von der Scrollrichtung ab, und Sie sollten sicherstellen, dass die Reihenfolge der Elemente nicht in Konflikt mit dieser Richtung
 
@@ -523,13 +523,13 @@ Software Tastatur ist eine Tastatur, die auf dem Bildschirm angezeigt wird, den 
 
 ![Windows 10-Fingereingabe Tastatur](images/keyboard/default.png)
 
-***Windows 10-Fingereingabe Tastatur***
+***Windows 10 Touchscreen Tastatur** _
 
 ![Xbox One-Bildschirmtastatur](images/keyboard/xbox-onscreen-keyboard.png)
 
-***Xbox One-Bildschirmtastatur***
+_*_Xbox One-Bildschirmtastatur_*_
 
-Abhängig vom Gerät wird die Software Tastatur angezeigt, wenn ein Textfeld oder ein anderes bearbeitbares Text Steuerelement den Fokus erhält oder wenn der Benutzer es manuell über das **Benachrichtigungs Center**aktiviert:
+Abhängig vom Gerät wird die Tastatur der Software angezeigt, wenn ein Textfeld oder ein anderes bearbeitbares Text Steuerelement den Fokus erhält oder wenn der Benutzer es manuell über das _ * Notification Center * * aktiviert:
 
 ![Symbol der Touch-Bildschirmtastatur im Benachrichtigungs-Center](images/keyboard/touch-keyboard-notificationcenter.png)
 
@@ -556,15 +556,15 @@ Hier finden Sie einige Beispiele für verschiedene Modi der Touch-Bildschirmtast
 
 ![Touch-Bildschirmtastatur mit Standardlayout](images/keyboard/default.png)
 
-***Die Touchscreen-Tastatur im standardlayoutmodus***
+**_Die Touchscreen-Tastatur im standardlayoutmodus_* _
 
 ![Touch-Bildschirmtastatur mit erweitertem Layout](images/keyboard/extendedview.png)
 
-***Die Touchscreen-Tastatur im erweiterten Layoutmodus***
+_*_Die Touchscreen-Tastatur im erweiterten Layoutmodus_*_
 
 Erfolgreiche Tastaturinteraktionen ermöglichen es Benutzern, einfache App-Szenarien nur über die Tastatur auszuführen; Benutzer können demnach über die Tastatur alle interaktiven Elemente erreichen und Standardfunktionen aktivieren. Eine Reihe von Faktoren kann den Erfolg beeinflussen, z. B. Tastaturnavigation, Tastenkombinationen für die Barrierefreiheit sowie Tastenkombinationen für erfahrene Benutzer.
 
-**Hinweis**    Die Fingereingabe Tastatur unterstützt die UMSCHALTTASTE und die meisten Systembefehle nicht.
+_ *Hinweis* * die Fingereingabe Tastatur unterstützt die UMSCHALTTASTE und die meisten Systembefehle nicht.
 
 #### <a name="on-screen-keyboard"></a>Bildschirmtastatur
 Wie bei der Software Tastatur ist die Bildschirmtastatur eine visuelle Software Tastatur, die Sie anstelle der physischen Tastatur verwenden können, um Daten mithilfe von Toucheingabe, Maus, Stift/Tablettstift oder einem anderen Zeigegerät einzugeben und einzugeben (ein Touchscreen ist nicht erforderlich). Die Bildschirmtastatur ist für Systeme ohne physische Tastatur oder für Benutzer vorgesehen, deren Mobilitätseinschränkungen die Verwendung herkömmlicher physischer Eingabegeräte verhindern. Die Bildschirmtastatur emuliert nahezu alle Funktionen der Hardwaretastatur.
@@ -575,6 +575,6 @@ Die Bildschirmtastatur kann auf der Seite „Tastatur“ unter „Einstellungen 
 
 ![Bildschirmtastatur](images/keyboard/osk.png)
 
-***Bildschirmtastatur***
+**_Bildschirmtastatur_**
 
 Weitere Informationen zur Bildschirmtastatur finden Sie [auf der Bildschirmtastatur](https://support.microsoft.com/help/10762/windows-use-on-screen-keyboard) .

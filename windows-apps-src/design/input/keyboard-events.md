@@ -1,5 +1,5 @@
 ---
-Description: Reagieren Sie in Ihren Apps auf Tastaturaktionen von Hardware- oder Softwaretastaturen, indem Sie sowohl Tastatur- als auch Klassen-Ereignishandler verwenden.
+description: Reagieren Sie in Ihren Apps auf Tastaturaktionen von Hardware- oder Softwaretastaturen, indem Sie sowohl Tastatur- als auch Klassen-Ereignishandler verwenden.
 title: Tastaturereignisse
 ms.assetid: ac500772-d6ed-4a3a-825b-210a9c3c8f59
 label: Keyboard events
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 151abd02b34263cdd92b917127f306c25ebc5e0d
-ms.sourcegitcommit: deb2867924ce16efcabfa011892157b7aa4fa2d2
+ms.openlocfilehash: efd8a2bb205974efdcf13d614cb6fa7848f96dc7
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187837"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033693"
 ---
 # <a name="keyboard-events"></a>Tastaturereignisse
 
@@ -37,7 +37,7 @@ Die folgenden Tastaturereignisse können sowohl für Hardware- als auch für Tou
 
 Die Steuerelemente der UI generieren nur dann Tastaturereignisse, wenn sie den Eingabefokus aufweisen. Ein einzelnes Steuerelement steht im Fokus, wenn Benutzer im Layout auf das Steuerelement klicken oder tippen oder mit der TAB-Taste im Inhaltsbereich eine Aktivierreihenfolge durchlaufen.
 
-Sie können auch die [**Focus**](/uwp/api/windows.ui.xaml.controls.control.focus)-Methode eines Steuerelements aufrufen, um den Fokus zu erzwingen. Dies ist notwendig, wenn Sie Tastenkombinationen implementieren, da der Tastaturfokus beim Laden der UI nicht standardmäßig festgelegt wird. Weitere Informationen finden Sie weiter unten in diesem Thema unter **Beispiel für Tastenkombinationen**.
+Sie können auch die [**Focus**](/uwp/api/windows.ui.xaml.controls.control.focus)-Methode eines Steuerelements aufrufen, um den Fokus zu erzwingen. Dies ist notwendig, wenn Sie Tastenkombinationen implementieren, da der Tastaturfokus beim Laden der UI nicht standardmäßig festgelegt wird. Weitere Informationen finden Sie weiter unten in diesem Thema unter **Beispiel für Tastenkombinationen** .
 
 Damit ein Steuerelement den Eingabefokus erhält, muss es aktiviert und sichtbar sein. Außerdem müssen die Eigenschaften [**IsTabStop**](/uwp/api/windows.ui.xaml.controls.control.istabstop) und [**HitTestVisible**](/uwp/api/windows.ui.xaml.uielement.ishittestvisible) den Wert **true** haben. Dies ist der Standardzustand der meisten Steuerelemente. Wenn ein Steuerelement den Eingabefokus aufweist, kann es Tastatureingabeereignisse auslösen und auf diese reagieren. Dies wird weiter unten in diesem Thema beschrieben. Mit den Ereignissen [**GotFocus**](/uwp/api/windows.ui.xaml.uielement.gotfocus) und [**LostFocus**](/uwp/api/windows.ui.xaml.uielement.lostfocus) können Sie außerdem reagieren, wenn ein Steuerelement den Fokus erhält oder verliert.
 
@@ -94,14 +94,14 @@ void MyProject::MainPage::Grid_KeyUp(
 
 Alle Tastaturereignisse verwenden [**KeyRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs) für Ereignisdaten. **KeyRoutedEventArgs** enthält die folgenden Eigenschaften:
 
--   [**Wichtigen**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
+-   [**Schlüssel**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
 -   [**KeyStatus**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus)
 -   [**Verarbeitete**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
 -   [**OriginalSource**](/uwp/api/windows.ui.xaml.routedeventargs.originalsource) (geerbt von [**routedebug args**](/uwp/api/Windows.UI.Xaml.RoutedEventArgs))
 
-### <a name="key"></a>Key
+### <a name="key"></a>Schlüssel
 
-Das [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown)-Ereignis wird ausgelöst, wenn eine Taste gedrückt wird. Entsprechend wird das [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup)-Ereignis ausgelöst, wenn eine Taste losgelassen wird. In der Regel lauschen Sie auf Ereignisse, um einen bestimmten Tastenwert zu verarbeiten. Überprüfen Sie den Wert [**Key**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key) in den Ereignisdaten, um die gedrückte oder losgelassene Taste zu ermitteln. **Key** gibt einen [**VirtualKey**](/uwp/api/Windows.System.VirtualKey)-Wert zurück. Die **VirtualKey**-Enumeration umfasst alle unterstützten Tasten.
+Das [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown)-Ereignis wird ausgelöst, wenn eine Taste gedrückt wird. Entsprechend wird das [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup)-Ereignis ausgelöst, wenn eine Taste losgelassen wird. In der Regel lauschen Sie auf Ereignisse, um einen bestimmten Tastenwert zu verarbeiten. Überprüfen Sie den Wert [**Key**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key) in den Ereignisdaten, um die gedrückte oder losgelassene Taste zu ermitteln. **Key** gibt einen [**VirtualKey**](/uwp/api/Windows.System.VirtualKey)-Wert zurück. Die **VirtualKey** -Enumeration umfasst alle unterstützten Tasten.
 
 ### <a name="modifier-keys"></a>Zusatztasten
 
@@ -282,14 +282,14 @@ End Sub
 >
 > Mit dem Festlegen der Eigenschaft **AutomationProperties.AcceleratorKey** oder **AutomationProperties.AccessKey** ist keine eigene Aktion verknüpft. Sie müssen weiterhin Handler für [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown)- oder [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup)-Ereignisse anhängen, um das Verhalten der Tastenkombination tatsächlich in die App zu implementieren. Außerdem wird der Unterstrichzusatz für eine Zugriffstaste nicht automatisch bereitgestellt. Sie müssen den Text für die jeweilige Taste in Ihrem mnemonischen Zeichen explizit als [**Underline**](/uwp/api/Windows.UI.Xaml.Documents.Underline)-Formatierung unterstreichen, wenn in der UI unterstrichener Text angezeigt werden soll.
 
- 
+ 
 
 ## <a name="keyboard-routed-events"></a>Routingereignisse der Tastatur
 
 
 Bestimmte Ereignisse gelten als Routingereignisse, wie z. B. [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown) und [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup). Routingereignisse verwenden die Bubbling-Routingstrategie. Bei der Bubbling-Routingstrategie geht ein Ereignis von einem untergeordneten Objekt aus und wird jeweils an die übergeordneten Objekte in der Struktur weitergeleitet. Dadurch ergibt sich eine weitere Möglichkeit, dasselbe Ereignis zu behandeln und mit denselben Ereignisdaten zu interagieren.
 
-Im folgenden XAML-Beispiel werden [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup)-Ereignisse für ein [**Canvas**](/uwp/api/Windows.UI.Xaml.Controls.Canvas)-Objekt und zwei [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button)-Objekte definiert. Wenn Sie in diesem Fall eine Taste loslassen, während der Fokus auf einem der **Button**-Objekte liegt, wird das **KeyUp**-Ereignis ausgelöst. Das Ereignis wird dann auf den **übergeordneten Zeichen**Bereich hochskaliert.
+Im folgenden XAML-Beispiel werden [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup)-Ereignisse für ein [**Canvas**](/uwp/api/Windows.UI.Xaml.Controls.Canvas)-Objekt und zwei [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button)-Objekte definiert. Wenn Sie in diesem Fall eine Taste loslassen, während der Fokus auf einem der **Button** -Objekte liegt, wird das **KeyUp** -Ereignis ausgelöst. Das Ereignis wird dann auf den **übergeordneten Zeichen** Bereich hochskaliert.
 
 ```xaml
 <StackPanel KeyUp="StackPanel_KeyUp">
@@ -322,7 +322,7 @@ Der Zweck der Eigenschaft [**Handled**](/uwp/api/windows.ui.xaml.input.keyrouted
 
 Sie können eine spezielle Technik verwenden, um Handler anzufügen, die auf bereits als verarbeitet markierte Ereignisse reagieren können. Bei dieser Methode wird die [**AddHandler**](/uwp/api/windows.ui.xaml.uielement.addhandler) -Methode verwendet, um einen Handler zu registrieren, anstatt XAML-Attribute oder sprachspezifische Syntax zum Hinzufügen von Handlern, wie z. b. + = in C, zu verwenden \# .
 
-Eine generelle Einschränkung dieser Technik besteht darin, dass die API **AddHandler** einen Parameter vom Typ [**RoutedEvent**](/uwp/api/Windows.UI.Xaml.RoutedEvent) verwendet, der das fragliche Routingereignis identifiziert. Nicht alle Routingereignisse bieten einen **RoutedEvent**-Bezeichner. Dieser Umstand wirkt sich somit darauf aus, welche Routingereignisse im Fall [**Handled**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled) noch verarbeitet werden können. Die Ereignisse [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown) und [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup) haben Routingereignisbezeichner ([**KeyDownEvent**](/uwp/api/windows.ui.xaml.uielement.keydownevent) und [**KeyUpEvent**](/uwp/api/windows.ui.xaml.uielement.keyupevent)) in [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement). Andere Texteingabe-Ereignisse, wie [**TextBox.TextChanged**](/uwp/api/windows.ui.xaml.controls.textbox.textchanged), besitzen jedoch keine Routingereignisbezeichner und können deshalb für die Technik **AddHandler** nicht verwendet werden.
+Eine generelle Einschränkung dieser Technik besteht darin, dass die API **AddHandler** einen Parameter vom Typ [**RoutedEvent**](/uwp/api/Windows.UI.Xaml.RoutedEvent) verwendet, der das fragliche Routingereignis identifiziert. Nicht alle Routingereignisse bieten einen **RoutedEvent** -Bezeichner. Dieser Umstand wirkt sich somit darauf aus, welche Routingereignisse im Fall [**Handled**](/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled) noch verarbeitet werden können. Die Ereignisse [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown) und [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup) haben Routingereignisbezeichner ( [**KeyDownEvent**](/uwp/api/windows.ui.xaml.uielement.keydownevent) und [**KeyUpEvent**](/uwp/api/windows.ui.xaml.uielement.keyupevent)) in [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement). Andere Texteingabe-Ereignisse, wie [**TextBox.TextChanged**](/uwp/api/windows.ui.xaml.controls.textbox.textchanged), besitzen jedoch keine Routingereignisbezeichner und können deshalb für die Technik **AddHandler** nicht verwendet werden.
 
 ### <a name="overriding-keyboard-events-and-behavior"></a>Überschreiben von Tastaturereignissen und Verhalten
 
@@ -356,7 +356,7 @@ Eine geringe Anzahl von UI-Elementen verfügt über integrierte Unterstützung f
 
 Wenn die Steuerung für ein UI-Element verfügbar ist, sollten Sie dessen Steuerungs-APIs anstelle einzelner Eingabeereignisse verwenden. Weitere Informationen finden Sie unter [**ButtonBase.Command**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command).
 
-Sie können auch [**ICommand**](/uwp/api/Windows.UI.Xaml.Input.ICommand) implementieren, um die Befehlsfunktionalität zu kapseln, die Sie über normale Ereignishandler aufrufen. Auf diese Weise können Sie die Steuerung auch verwenden, wenn keine **Command**-Eigenschaft verfügbar ist.
+Sie können auch [**ICommand**](/uwp/api/Windows.UI.Xaml.Input.ICommand) implementieren, um die Befehlsfunktionalität zu kapseln, die Sie über normale Ereignishandler aufrufen. Auf diese Weise können Sie die Steuerung auch verwenden, wenn keine **Command** -Eigenschaft verfügbar ist.
 
 ## <a name="text-input-and-controls"></a>Texteingabe und Steuerelemente
 
@@ -368,7 +368,7 @@ Beispielsweise verarbeitet [**ButtonBase**](/uwp/api/Windows.UI.Xaml.Controls.Pr
 
 [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) ist ein weiteres Beispiel. Einige Schlüssel, wie z. b. die Pfeiltasten, werden nicht als Text von **TextBox** angesehen und werden stattdessen als spezifisch für das Verhalten der Benutzeroberfläche des Steuer Elements betrachtet. **TextBox** markiert diese Ereignisse als verarbeitet.
 
-Benutzerdefinierte Steuerelemente können Ihr eigenes Überschreibungs Verhalten für Schlüsselereignisse implementieren, indem [**Sie OnKeyDown**](/uwp/api/windows.ui.xaml.controls.control.onkeydown)  /  [**onkeyup**](/uwp/api/windows.ui.xaml.controls.control.onkeyup)überschreiben. Wenn Ihr benutzerdefiniertes Steuerelement bestimmte Zugriffstasten verarbeitet oder ein Steuerelement- oder Fokusverhalten besitzt, das mit dem für [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) geschilderten Szenario vergleichbar ist, sollten Sie diese Logik in Ihre eigenen **OnKeyDown** / **OnKeyUp**-Überschreibungen aufnehmen.
+Benutzerdefinierte Steuerelemente können Ihr eigenes Überschreibungs Verhalten für Schlüsselereignisse implementieren, indem [**Sie OnKeyDown**](/uwp/api/windows.ui.xaml.controls.control.onkeydown)  /  [**onkeyup**](/uwp/api/windows.ui.xaml.controls.control.onkeyup)überschreiben. Wenn Ihr benutzerdefiniertes Steuerelement bestimmte Zugriffstasten verarbeitet oder ein Steuerelement- oder Fokusverhalten besitzt, das mit dem für [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) geschilderten Szenario vergleichbar ist, sollten Sie diese Logik in Ihre eigenen **OnKeyDown** / **OnKeyUp** -Überschreibungen aufnehmen.
 
 ## <a name="the-touch-keyboard"></a>Die Touch-Bildschirmtastatur
 

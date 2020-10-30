@@ -1,17 +1,17 @@
 ---
-Description: Sie können unabhängig davon, ob Ihre App kostenlos oder kostenpflichtig ist, Inhalte, andere Apps oder neue App-Funktionen (wie das Freischalten des nächsten Levels eines Spiels) direkt in der App verkaufen. Hier zeigen wir Ihnen, wie Sie diese Produkte in Ihrer App aktivieren können.
+description: Sie können unabhängig davon, ob Ihre App kostenlos oder kostenpflichtig ist, Inhalte, andere Apps oder neue App-Funktionen (wie das Freischalten des nächsten Levels eines Spiels) direkt in der App verkaufen. Hier zeigen wir Ihnen, wie Sie diese Produkte in Ihrer App aktivieren können.
 title: Unterstützen des Kaufs von In-App-Produkten
 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
 keywords: UWP, Add-ons, in-App-Käufe, IAPS, Windows. applicationmodel. Store
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ac6fc8a6ac39c106e3d5d593a36595097c4bde45
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: b24a48034585411af5edfb0950fc4f96b189519f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364113"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033473"
 ---
 # <a name="enable-in-app-product-purchases"></a>Unterstützen des Kaufs von In-App-Produkten
 
@@ -58,7 +58,7 @@ Erstellen Sie für jedes Feature, das über ein In-App-Produkt zur Verfügung st
 
     Sie müssen den Code für jedes Feature, das mit einem In-App-Produkt verknüpft ist, in einen Bedingungsblock aufnehmen. Dieser Bedingungsblock überprüft, ob ein Kunde eine Lizenz für die Verwendung dieses Features besitzt.
 
-    Im folgenden Beispiel wird gezeigt, wie Sie Code für das Produkt-Feature **featureName** in einem lizenzspezifischen Bedingungsblock kodieren. Die Zeichenfolge **FeatureName**ist das Token, das dieses Produkt innerhalb der APP eindeutig identifiziert und auch zur Identifizierung im Speicher verwendet wird.
+    Im folgenden Beispiel wird gezeigt, wie Sie Code für das Produkt-Feature **featureName** in einem lizenzspezifischen Bedingungsblock kodieren. Die Zeichenfolge **FeatureName** ist das Token, das dieses Produkt innerhalb der APP eindeutig identifiziert und auch zur Identifizierung im Speicher verwendet wird.
 
     > [!div class="tabbedCodeSnippets"]
     :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs" id="CodeFeature":::
@@ -92,7 +92,7 @@ Wenn Sie anhand von Belegen überprüfen möchten, ob ein Kunde einen In-App-Ein
 ## <a name="related-topics"></a>Verwandte Themen
 
 
-* [Käufe von konsumierbaren In-App-Produkten aktivieren](enable-consumable-in-app-product-purchases.md)
+* [Nutzbare in-App-Produktkäufe aktivieren](enable-consumable-in-app-product-purchases.md)
 * [Verwalten eines großen Katalogs von In-App-Produkten](manage-a-large-catalog-of-in-app-products.md)
 * [Überprüfen von Produktkäufen anhand von Belegen](use-receipts-to-verify-product-purchases.md)
 * [Store-Beispiel (zeigt Testversionen und In-App-Käufe)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)

@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie, wie Desktop-c#-apps lokale Popup Benachrichtigungen senden und den Benutzer durch Klicken auf den Popup behandeln können.
+description: Erfahren Sie, wie Desktop-c#-apps lokale Popup Benachrichtigungen senden und den Benutzer durch Klicken auf den Popup behandeln können.
 title: Senden von Popupbenachrichtigungen von C#-Desktop-Apps
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification from desktop C# apps
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: 'Windows 10, Win32, Desktop, Popup Benachrichtigungen, Toast senden, lokalen Popup senden, Desktop Bridge, msix, sparsesloadbenachrichtigungen, c#, C Sharp, Popup Benachrichtigung, WPF, Benachrichtigung zum Senden von Popup, Popup Benachrichtigung WPF, Popup Benachrichtigung, Popup Benachrichtigung, e #'
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fa6b23e775beee993051b23b828c59316ac1382
-ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
+ms.openlocfilehash: cb91a76db38623b533a925ea1df4728bc0fead78
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100298"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034473"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Senden von Popupbenachrichtigungen von C#-Desktop-Apps
 
@@ -60,7 +60,7 @@ Anschließend müssen Sie sich bei der Benachrichtigungs Plattform registrieren.
 
 #### <a name="msixsparse-packages"></a>[Msix/Pakete mit geringer Dichte](#tab/msix-sparse)
 
-Fügen Sie in der Datei " **Package. appxmanifest**" Folgendes hinzu, wenn Sie ein [msix](/windows/msix/desktop/source-code-overview) -Paket oder ein [Sparse-Paket](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) verwenden (oder beide unterstützen):
+Fügen Sie in der Datei " **Package. appxmanifest** " Folgendes hinzu, wenn Sie ein [msix](/windows/msix/desktop/source-code-overview) -Paket oder ein [Sparse-Paket](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) verwenden (oder beide unterstützen):
 
 1. Deklaration für **xmlns: com**
 2. Deklaration für **xmlns: Desktop**
@@ -162,7 +162,7 @@ DesktopNotificationManagerCompat.RegisterActivator<MyNotificationActivator>();
 
 ## <a name="step-5-send-a-notification"></a>Schritt 5: Senden einer Benachrichtigung
 
-Das Senden einer Benachrichtigung ist mit UWP-apps identisch, mit dem Unterschied, dass Sie die **desktopnotificationmanagercompat** -Klasse verwenden, um einen Objekt **-Benachrichtigungs**Dienst zu erstellen. Die Kompatibilitäts-Bibliothek behandelt automatisch den Unterschied zwischen dem msix/Sparse-Paket und dem klassischen Desktop, sodass Sie den Code nicht verzweigen müssen. Bei klassischem Desktop speichert die Kompatibilitäts-Bibliothek die von Ihnen beim Aufrufen von **registeraumidandcomserver** bereitgestellte aumid, sodass Sie sich keine Gedanken darüber machen müssen, wann die aumid bereitgestellt oder nicht.
+Das Senden einer Benachrichtigung ist mit UWP-apps identisch, mit dem Unterschied, dass Sie die **desktopnotificationmanagercompat** -Klasse verwenden, um einen Objekt **-Benachrichtigungs** Dienst zu erstellen. Die Kompatibilitäts-Bibliothek behandelt automatisch den Unterschied zwischen dem msix/Sparse-Paket und dem klassischen Desktop, sodass Sie den Code nicht verzweigen müssen. Bei klassischem Desktop speichert die Kompatibilitäts-Bibliothek die von Ihnen beim Aufrufen von **registeraumidandcomserver** bereitgestellte aumid, sodass Sie sich keine Gedanken darüber machen müssen, wann die aumid bereitgestellt oder nicht.
 
 > [!NOTE]
 > Installieren Sie die [Benachrichtigungs Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) , damit Sie mithilfe von c#, wie unten gezeigt, Benachrichtigungen erstellen können, anstatt unformatierten XML-Code zu verwenden.
@@ -351,7 +351,7 @@ Wenn Sie sowohl das msix-Paket als auch das sparsepaket und die klassische Deskt
 
 ## <a name="known-issues"></a>Bekannte Probleme
 
-**Korrigiert: die APP wird nach dem Klicken auf "Toast" nicht fokussiert**: in Builds 15063 und früher wurden keine Vordergrund Rechte an Ihre Anwendung übertragen, als der com-Server aktiviert wurde. Daher würde Ihre APP einfach blinken, wenn Sie versucht haben, Sie in den Vordergrund zu verschieben. Für dieses Problem gibt es keine Problem Umgehung. Wir haben dies in Build 16299 und höher korrigiert.
+**Korrigiert: die APP wird nach dem Klicken auf "Toast" nicht fokussiert** : in Builds 15063 und früher wurden keine Vordergrund Rechte an Ihre Anwendung übertragen, als der com-Server aktiviert wurde. Daher würde Ihre APP einfach blinken, wenn Sie versucht haben, Sie in den Vordergrund zu verschieben. Für dieses Problem gibt es keine Problem Umgehung. Wir haben dies in Build 16299 und höher korrigiert.
 
 
 ## <a name="resources"></a>Ressourcen

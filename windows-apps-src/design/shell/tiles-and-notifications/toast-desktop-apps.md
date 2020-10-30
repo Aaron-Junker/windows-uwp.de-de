@@ -1,5 +1,5 @@
 ---
-Description: Entdecken Sie die verschiedenen Optionen für Desktop-Apps zum Senden von Popup Benachrichtigungen.
+description: Entdecken Sie die verschiedenen Optionen für Desktop-Apps zum Senden von Popup Benachrichtigungen.
 title: Popup Benachrichtigungen aus Desktop-Apps
 label: Toast notifications from desktop apps
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, Popup Benachrichtigungen, Desktop Bridge, msix, sparsesloadpaket, Optionen für das Senden von Toasts, com-Server, com-Activator, com, gefälschtes com, Nein com, ohne com, Send Toast
 ms.localizationpriority: medium
-ms.openlocfilehash: 139ab767e0cc5eb11d0116563e8e1b7e00ae5dc2
-ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
+ms.openlocfilehash: 9cdd8e57311400c8603f4eb99e9bfd1a2230f2ce
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100328"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033093"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>Popup Benachrichtigungen aus Desktop-Apps
 

@@ -1,57 +1,57 @@
 ---
-Description: Der Integritäts Bericht in Partner Center ermöglicht Ihnen das Abfangen von Daten in Bezug auf die Leistung und Qualität Ihrer APP, einschließlich abstürzen und nicht reagierender Ereignisse.
+description: Der Integritäts Bericht in Partner Center ermöglicht Ihnen das Abfangen von Daten in Bezug auf die Leistung und Qualität Ihrer APP, einschließlich abstürzen und nicht reagierender Ereignisse.
 title: Integritätsbericht
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, UWP, Integrität, Abstürze, reagiert nicht, App-Integrität, Integritätsdaten, Stapelüberwachung, CAB-Datei, Fehler, Fehler, Pdb, Symbole
+keywords: Windows 10, UWP, Health, Abstürze, nicht reagierende Ereignisse, App-Integrität, Integritäts Daten, Stapel Überwachung, CAB-Datei, Fehler, Fehler, PDB, Symbole
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b6795673959510d0e4f5452a68ffced6c43ced1
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: a345ad9fb6f2ed5c540c6e52ef0b95e43d1adc6d
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682504"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032823"
 ---
 # <a name="health-report"></a>Integritätsbericht
 
-Der **Integritäts Bericht in** [Partner Center](https://partner.microsoft.com/dashboard) ermöglicht Ihnen das Abfangen von Daten in Bezug auf die Leistung und Qualität Ihrer APP, einschließlich abstürzen und nicht reagierender Ereignisse. Sie können diese Daten im Partner Center anzeigen oder [den Bericht herunterladen, um den Bericht](download-analytic-reports.md) offline anzuzeigen. Bei Bedarf können Sie Stapelüberwachungen und/oder CAB-Dateien für weitere Debugzwecke anzeigen.
+Der **Integritäts Bericht in** [Partner Center](https://partner.microsoft.com/dashboard) ermöglicht Ihnen das Abfangen von Daten in Bezug auf die Leistung und Qualität Ihrer APP, einschließlich abstürzen und nicht reagierender Ereignisse. Sie können diese Daten im Partner Center anzeigen oder [den Bericht herunterladen, um den Bericht](download-analytic-reports.md) offline anzuzeigen. Gegebenenfalls können Sie Stapel Überwachungen und/oder CAB-Dateien zum weiteren Debuggen anzeigen.
 
-Sie können die Daten in diesem Bericht aber auch programmgesteuert mit der [Microsoft Store-REST-API für Analysen](../monetize/access-analytics-data-using-windows-store-services.md) abrufen.
+Alternativ dazu können Sie die Daten in diesem Bericht mithilfe der [Microsoft Store Analytics-Rest-API](../monetize/access-analytics-data-using-windows-store-services.md)Programm gesteuert abrufen.
 
 
 ## <a name="apply-filters"></a>Anwenden von Filtern
 
-Im oberen Bereich der Seite können Sie den Zeitraum auswählen, für den die Daten angezeigt werden sollen. Die Standardeinstellung ist **72 H** (72 Stunden), Sie können stattdessen aber auch **30D** auswählen, um die Daten der letzten 30 Tage anzuzeigen. Beachten Sie, dass die Daten in der lokalen Zeitzone für die **72H** -Ansicht und in UTC für die **30D-** Ansicht angezeigt werden.
+Im oberen Bereich der Seite können Sie den Zeitraum auswählen, in dem Sie Daten anzeigen möchten. Die Standardauswahl ist **72H** (72 Stunden), aber Sie können stattdessen " **30D** " auswählen, um die Daten in den letzten 30 Tagen anzuzeigen. Beachten Sie, dass die Daten in der lokalen Zeitzone für die **72H** -Ansicht und in UTC für die **30D-** Ansicht angezeigt werden.
 
-Sie können ebenfalls **Filter** erweitern, um alle Daten auf dieser Seite nach Paketversion, Markt und/oder Gerätetyp zu filtern.
+Sie können auch **Filter** erweitern, um alle Daten auf dieser Seite nach Paketversion, Markt und/oder Gerätetyp zu filtern.
 
--   **Paketversion**: Die Standardeinstellung ist **alle**. Wenn Ihre App mehr als ein Paket enthält, können Sie hier ein bestimmtes Paket auswählen.
--   **Markt**: Der Standardfilter ist **Alle Märkte**, aber Sie können die Daten auf einen oder mehrere Märkte beschränken.
--   **Gerätetyp**: Die Standardeinstellung ist " **alle**", aber Sie können auswählen, dass nur Daten für einen bestimmten Gerätetyp angezeigt werden. Beachten Sie, dass die Kategorie **Andere** Geräte enthält, für die der Hersteller/ das Modell erkannt wird, wir diese allerdings nicht in eine der vordefinierten Kategorien einbeziehen, die in diesem Filter angezeigt werden. Für diese Geräte kann das Modells im Abschnitt **Fehlerprotokoll** des Berichts **Fehlerdetails** angezeigt werden.  
--   **Betriebssystemversion**: Der Standardwert ist **Alle Betriebssystemversionen**, Sie können jedoch eine bestimmte Betriebssystemversion auswählen.
--   **Betriebssystem-Releaseversion**: Der Standardwert ist **Alle Betriebssystemversionen**, Sie können jedoch eine bestimmte Releaseversion der ausgewählten **Betriebssystemversion**auswählen.
--   **Sandbox**: Der Standardwert ist " **Retail**", aber bei Produkten, die mehrere Entwicklungs Sandboxes verwenden (z. b. Spiele, die in Xbox Live integriert sind), können Sie hier eine bestimmte auswählen. (Wenn Ihr Produkt keine Sandboxes verwendet, zeigt dieser Filter nur **Einzelhandel** an und ist nicht anwendbar.)
--   **Architektur**: Der Standardwert ist **alle Architekturen**, Sie können jedoch einen bestimmten Systemtyp auswählen. Dieser Filter ist nur verfügbar, wenn **30D** ausgewählt ist.
--   " **PRAID**": Die Standardeinstellung ist **all**, aber wenn Sie beim Erstellen des App-Pakets mehrere Paket relative App-IDs (app-IDs) definiert haben, können Sie auswählen, dass nur Daten angezeigt werden sollen, die mit einer einzelnen App verknüpft sind. Dieser Filter wird nicht angezeigt, wenn Sie nicht mehrere PRAIDs definiert haben.
+-   **Paketversion** : Die Standardeinstellung ist **Alle** . Wenn Ihre App mehr als ein Paket enthält, können Sie hier ein bestimmtes Paket auswählen.
+-   **Market** : der Standardfilter ist **Alle Märkte** , aber Sie können die Daten auf einen oder mehrere Märkte beschränken.
+-   **Gerätetyp** : Die Standardeinstellung ist **Alle** , Sie können jedoch festlegen, dass nur Daten für einen bestimmten Gerätetyp angezeigt werden. Beachten Sie, dass die **andere** Kategorie Geräte enthält, bei denen das Make/Model erkannt wird, jedoch nicht in eine der vordefinierten Kategorien eingeschlossen werden kann, die in diesem Filter angezeigt werden. Für diese Geräte kann das Gerätemodell im Abschnitt **Fehlerprotokoll** des Berichts **Fehlerdetails** angezeigt werden.  
+-   **Betriebssystemversion** : Die Standardeinstellung lautet **Alle BS-Versionen** , Sie können jedoch eine bestimmte Version des Betriebssystems auswählen.
+-   **Betriebssystem-Releaseversion** : die Standardeinstellung ist **alle Betriebssystem-Releaseversionen** , Sie können jedoch eine bestimmte Releaseversion der ausgewählten **Betriebssystemversion** auswählen.
+-   **Sandbox** : der Standardwert ist " **Retail** ", aber bei Produkten, die mehrere Entwicklungs Sandboxes verwenden (z. b. Spiele, die in Xbox Live integriert sind), können Sie hier eine bestimmte auswählen. (Wenn Ihr Produkt keine Sandkästen verwendet, zeigt dieser Filter nur den **Einzelhandel** an und ist nicht anwendbar.)
+-   **Architektur** : die Standardeinstellung ist **alle Architekturen** , Sie können jedoch einen bestimmten Systemtyp auswählen. Dieser Filter ist nur verfügbar, wenn **30D** ausgewählt ist.
+-   " **Praid** ": die Standardeinstellung ist " **all** ", aber wenn Sie beim Erstellen des App-Pakets mehrere Paket relative App-IDs (app-IDs) definiert haben, können Sie auswählen, dass nur Daten angezeigt werden, die mit einer einzelnen App verknüpft sind. Dieser Filter wird nicht angezeigt, wenn Sie nicht mehrere "praids" definiert haben.
 
-Die Informationen in allen unten angezeigten Diagrammen beziehen sich auf den ausgewählten Zeitraum und alle von Ihnen ausgewählten Filter. In einigen Abschnitten können Sie zusätzliche Filter anwenden.
+Die Informationen in allen unten aufgeführten Diagrammen spiegeln den Datumsbereich und alle Filter wider, die Sie ausgewählt haben. In einigen Abschnitten können Sie auch zusätzliche Filter anwenden.
 
 
-## <a name="failure-hits"></a>Fehlertreffer
+## <a name="failure-hits"></a>Fehler Treffer
 
-Das Diagramm **Fehlertreffer** zeigt die Anzahl von täglichen Abstürzen und Ereignissen, die Kunden bei der Nutzung Ihrer App im ausgewählten Zeitraum festgestellt haben. Jeder Ereignistyp, der in der App aufgetreten ist, wird separat überwacht: Abstürze, Blockaden, JavaScript-Ausnahmen und Speicherfehler.
+Das Diagramm " **Fehler Treffer** " zeigt die Anzahl der täglichen Abstürze und Ereignisse an, die Kunden bei der Verwendung Ihrer APP während des ausgewählten Zeitraums fest haben. Jeder Ereignistyp, der in Ihrer APP aufgetreten ist, wird separat nachverfolgt: Abstürze, Abstürze, JavaScript-Ausnahmen und Speicherfehler.
 
 Wenn der Zeitraum von **30D** ausgewählt ist, werden möglicherweise Kreis Markierungen angezeigt. Diese stellen eine beträchtliche Zunahme oder Abnahme in einem bestimmten Wert dar, über den wir denken, dass Sie wissen möchten. Das Datum, an dem der Kreis angezeigt wird, steht für das Ende der Woche, an dem im Vergleich zur Woche vor der Woche eine beträchtliche Zunahme oder Abnahme festgestellt wurde. Zeigen Sie auf den Kreis, um weitere Details zu den Änderungen anzuzeigen.  
 
 > [!TIP]
 > Sie können in den letzten 30 Tagen im [Insights-Bericht](insights-report.md)weitere Einblicke in Bezug auf bedeutende Änderungen anzeigen.
 
-## <a name="failure-hits-by-market"></a>Fehlertreffer nach Markt
+## <a name="failure-hits-by-market"></a>Fehler Treffer nach Markt
 
-Das Diagramm **Fehlertreffer nach Markt** zeigt die Gesamtanzahl von Abstürzen und Ereignissen im ausgewählten Zeitraum nach Markt an.
+Im Diagramm **Fehler Treffer nach Markt** wird die Gesamtzahl der Abstürze und Ereignisse im ausgewählten Zeitraum nach Markt angezeigt.
 
-Sie können diese Daten in einer visuellen **Karte** anzeigen, oder die Einstellung auf eine Anzeige in Form einer **Tabelle** festlegen. Die Tabellenform zeigt jeweils fünf Märkten an, die alphabetisch oder nach der höchsten/niedrigst möglichen Anzahl von Anwendersitzungen sortiert sind. Sie können auch die Daten zum Anzeigen von Informationen für alle Märkte zusammen herunterladen.
+Sie können diese Daten in einem visuellen **Karten** Formular anzeigen oder die Einstellung umschalten, um Sie in **Tabellen** Form anzuzeigen. Das Tabellen Formular zeigt fünf Märkte gleichzeitig an, entweder alphabetisch oder mit der höchsten/niedrigsten Anzahl von Benutzersitzungen. Sie können die Daten auch herunterladen, um Informationen für alle Märkte anzuzeigen.
 
 
 ## <a name="package-version"></a>Paketversion
@@ -60,19 +60,19 @@ Das Diagramm **Paketversion** zeigt die Gesamtanzahl von Abstürzen und Ereignis
 
 ## <a name="failures"></a>Fehler
 
-Das Diagramm **Fehler** zeigt die Gesamtanzahl von Abstürzen und Ereignissen im ausgewählten Zeitraum nach Fehlername an. Jeder Fehlername besteht aus vier Teilen: eine oder mehrere Problemklassen, Ausnahme/Fehlerprüfcode, der Name des Image/Treibers, in dem der Fehler aufgetreten ist, und der zugehörige Funktionsname. In der Standardeinstellung wird der Fehler mit den meisten Treffern an oberster Stelle vor den Fehlern mit weniger Treffern angezeigt. Sie können die Reihenfolge umkehren, indem Sie auf den Pfeil in der Spalte **Treffer** des Diagramms klicken. Außerdem wird für die einzelnen Fehler der Prozentsatz der Gesamtanzahl von Fehlern angezeigt.
+Das Diagramm **Fehler** zeigt die Gesamtanzahl von Abstürzen und Ereignissen im ausgewählten Zeitraum nach Fehlername an. Jeder Fehler Name besteht aus vier Teilen: einer oder mehreren Problemklassen, einem Ausnahme-/Fehlerprüfcode, dem Namen des Images/Treibers, in dem der Fehler aufgetreten ist, und dem zugeordneten Funktionsnamen. In der Standardeinstellung wird der Fehler mit den meisten Treffern an oberster Stelle vor den Fehlern mit weniger Treffern angezeigt. Sie können die Reihenfolge umkehren, indem Sie auf den Pfeil in der Spalte **Treffer** des Diagramms klicken. Außerdem wird für die einzelnen Fehler der Prozentsatz der Gesamtanzahl von Fehlern angezeigt.
 
 > [!TIP]
-> Von Zeit zu Zeit sehen Sie in diesem Abschnitt einen Eintrag **Unbekannt**. Dies passiert, wenn wir trotz aller Bemühungen, keine vollständigen Detailinformationen für einen oder mehrere Fehler erfassen können. Diese werden alle zusammen unter **Unbekannt** gruppiert. In den meisten Fällen tritt dies aufgrund von Speichereinschränkungen auf. Dies kann jedoch auch aufgrund von Datenschutzeinstellungen des Geräts, Netzwerkverbindungsproblemen, teilweise/beschädigten Absturzabbildern und anderen Faktoren auftreten.
+> Es kann vorkommen, dass in diesem Abschnitt ein Eintrag für " **Unknown** " angezeigt wird. Dies tritt auf, wenn wir trotz unserer bestmöglichen Anstrengungen keine vollständigen Details für einen oder mehrere Fehler erfassen können, die alle unter " **Unknown** " gruppiert werden. Dies tritt meistens aufgrund von Speicher Einschränkungen auf, kann aber auch auf die Datenschutzeinstellungen eines Geräts, Netzwerk Verbindungsprobleme, partielle/schlechte Absturz Abbilder und andere Faktoren zurückzuführen sein.
 >
-> Wenn **!unbekannt** im Rahmen seines Fehlernamens angezeigt wird, bedeutet dies, dass keine Symbole vorhanden waren und wir den Fehlernamen daher nicht identifizieren konnten. Stellen Sie sicher, dass Ihr Paket Symbole zum Abrufen des genauen Fehlers bei der Analyse enthält. Weitere Informationen finden Sie unter [Konfigurieren eines App-Pakets](/windows/msix/package/packaging-uwp-apps#configure-an-app-package). Im Gegensatz dazu bedeuten Fehlernamen, die **!unknown_error_in_** und **!unknown_function** enthalten, dass das Sammeln der Informationen aus verschiedenen anderen Gründen nicht durchgeführt werden konnte.
+> Wenn Sie im Rahmen eines Fehler namens **! Unknown** sehen, bedeutet dies, dass keine Symbole vorhanden waren, sodass der Fehler Name nicht identifiziert werden konnte. Stellen Sie sicher, dass Sie Symbole in das Paket einschließen, um eine genaue Fehleranalyse zu erhalten. Siehe [Konfigurieren eines App-Pakets](/windows/msix/package/packaging-uwp-apps#configure-an-app-package). Im Gegensatz dazu bedeuten Fehler Namen, die **! unknown_error_in_** und **! unknown_function** enthalten, dass wir keine kompletten Details aus verschiedenen anderen Gründen erfassen konnten.
 
-Wählen Sie zum Anzeigen der **Fehlerdetails** für einen bestimmten Fehler den Fehlernamen aus. Wenn Sie Symboldateien eingefügt haben, beinhaltet der Bericht **Fehlerdetails** die Anzahl der Fehlertreffer im letzten Monat sowie ein Fehlerprotokoll, in dem die entsprechenden Details (Datum, Paketversion, Gerätetyp, Gerätemodell, Betriebssystembuild) sowie ein Link zu der Ablaufverfolgung und/oder einer CAB-Datei, wenn verfügbar, aufgeführt werden.
+Wählen Sie zum Anzeigen der **Fehlerdetails** für einen bestimmten Fehler den Fehlernamen aus. Wenn Sie Symbol Dateien eingeschlossen haben, enthält der Bericht " **Fehlerdetails** " die Anzahl der Fehler Treffer im Verlauf des letzten Monats sowie ein Fehlerprotokoll, in dem Details zu vorkommen (Datum, Paketversion, Gerätetyp, Gerätemodell, OS-Build) und ein Link zur Stapel Überwachung und/oder CAB-Datei (falls verfügbar) aufgelistet sind.
 
 > [!TIP]
-> CAB-Dateien sind nur verfügbar, wenn Fehler auf einem Computer mit einer Windows-Insider-Build auftreten, daher haben nicht alle Fehler die Option zum Herunterladen einer CAB-Datei. Wenn nur Fehler mit CAB-Dateien angezeigt werden sollen, wählen Sie im Abschnitt Filter die Option **Fehler mit Downloads** aus. Sie können auch auf die **Verknüpfungs** Kopfzeile im **Fehlerprotokoll** klicken, um die Ergebnisse zu sortieren, damit Fehler, die CAB-Dateien enthalten, oben in der Liste angezeigt werden.
+> CAB-Dateien sind nur verfügbar, wenn der Fehler auf einem Computer mithilfe eines Windows Insider-Builds aufgetreten ist, sodass nicht alle Fehler die CAB-Download Option enthalten. Wenn nur Fehler mit CAB-Dateien angezeigt werden sollen, wählen Sie im Abschnitt Filter die Option **Fehler mit Downloads** aus. Sie können auch auf die **Verknüpfungs** Kopfzeile im **Fehlerprotokoll** klicken, um die Ergebnisse zu sortieren, damit Fehler, die CAB-Dateien enthalten, oben in der Liste angezeigt werden.
 
-Auf der Seite **Fehlerdetails** wird auch das Diagramm für die **Stapel Verbreitung** angezeigt, in dem die obersten Stapel angezeigt werden, die zu dem Fehler beigetragen haben, geordnet nach Prozentsatz, und das Diagramm für die **Gerätekonfiguration (30D)** , das Details über die Konfiguration von Geräten, bei denen der Fehler aufgetreten ist. 
+Auf der Seite **Fehlerdetails** wird auch das Diagramm für die **Stapel Verbreitung** angezeigt, in dem die oberen Stapel angezeigt werden, die zu dem Fehler beigetragen haben, geordnet nach Prozentsatz, und das Diagramm der **Gerätekonfiguration (30D)** , das Details zur Konfiguration von Geräten enthält, bei denen der Fehler aufgetreten ist. 
 
 
 ## <a name="crash-free-sessions-and-devices-30d"></a>Absturz freie Sitzungen und Geräte (30D)
@@ -80,10 +80,10 @@ Auf der Seite **Fehlerdetails** wird auch das Diagramm für die **Stapel Verbrei
 Das Diagramm " **Absturz freie Sitzungen und Geräte** " zeigt den Prozentsatz der Geräte oder Benutzersitzungen an, bei denen in den letzten 30 Tagen kein Absturz aufgetreten ist. Diese Informationen helfen Ihnen, zu verstehen, wie weitgehend die Abstürze Auswirkungen auf Ihre Benutzer haben. Beispielsweise kann eine APP 10.000 Abstürze in einem Tag aufweisen. Wenn 90% der Geräte betroffen sind, würden Sie diese wahrscheinlich als kritisch klassifizieren und reagieren, um das Problem sofort zu beheben. Wenn dies jedoch nur 5% der Geräte darstellt, die Ihre APP verwenden, kann die Priorität niedriger sein.
 
 Dieses Diagramm verfügt über zwei Registerkarten:
-- **Absturz freie Geräte**: Zeigt den Prozentsatz der eindeutigen Geräte an, für die an jedem Tag (während der letzten 30 Tage) kein Fehler aufgetreten ist.
-- **Absturz freie Sitzungen**: Zeigt den Prozentsatz eindeutiger Benutzersitzungen an, für die an jedem Tag (während der letzten 30 Tage) kein Fehler aufgetreten ist.
+- **Absturz freie Geräte** : zeigt den Prozentsatz der eindeutigen Geräte an, für die an jedem Tag (während der letzten 30 Tage) kein Fehler aufgetreten ist.
+- **Absturz freie Sitzungen** : zeigt den Prozentsatz eindeutiger Benutzersitzungen an, für die an jedem Tag (während der letzten 30 Tage) kein Fehler aufgetreten ist.
 
 
- 
+ 
 
- 
+ 

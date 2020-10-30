@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie, wie Win32-C++ WRL-apps lokale Popup Benachrichtigungen senden können und den Benutzer durch Klicken auf den Toast behandeln können.
+description: Erfahren Sie, wie Win32-C++ WRL-apps lokale Popup Benachrichtigungen senden können und den Benutzer durch Klicken auf den Toast behandeln können.
 title: Senden einer lokalen Popup Benachrichtigung von Win32 C++ WRL-apps
 label: Send a local toast notification from Win32 C++ WRL apps
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, Popup Benachrichtigungen, Toast senden, lokalen Toast senden, Desktop Bridge, msix, Sparse-Paket, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: e1e8aedd867dfdcabd382ebde1dd4c96a94d1001
-ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
+ms.openlocfilehash: 1913eef17ac768b8d7e1f047ac318da9aa1b2925
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100318"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034493"
 ---
 # <a name="send-a-local-toast-notification-from-win32-c-wrl-apps"></a>Senden einer lokalen Popup Benachrichtigung von Win32 C++ WRL-apps
 
@@ -33,9 +33,9 @@ Klicken Sie mit der rechten Maustaste, und wählen Sie **Eigenschaften**
 
 Wählen Sie im **Configuration** Menü der obersten Konfiguration **alle Konfigurationen** aus, sodass die folgende Änderung auf Debug und Release angewendet wird.
 
-Fügen Sie unter **Linker-> Eingabe** `runtimeobject.lib` den **zusätzlichen Abhängigkeiten**hinzu.
+Fügen Sie unter **Linker-> Eingabe** `runtimeobject.lib` den **zusätzlichen Abhängigkeiten** hinzu.
 
-Stellen Sie dann unter **Allgemein**sicher, dass die **Windows SDK-Version** auf 10,0 oder höher festgelegt ist (nicht auf Windows 8.1).
+Stellen Sie dann unter **Allgemein** sicher, dass die **Windows SDK-Version** auf 10,0 oder höher festgelegt ist (nicht auf Windows 8.1).
 
 
 ## <a name="step-2-copy-compat-library-code"></a>Schritt 2: Kopieren des Kompatibilitäts-Bibliothekscodes
@@ -94,7 +94,7 @@ Anschließend müssen Sie sich bei der Benachrichtigungs Plattform registrieren.
 
 ### <a name="msixsparse-package"></a>Msix/sparsespaket
 
-Fügen Sie in der [MSIX](/windows/msix/desktop/source-code-overview) Datei "Package. [sparse package](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) appxmanifest" in der Datei " **Package. appxmanifest**" Folgendes hinzu:
+Fügen Sie in der [MSIX](/windows/msix/desktop/source-code-overview) Datei "Package. [sparse package](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) appxmanifest" in der Datei " **Package. appxmanifest** " Folgendes hinzu:
 
 1. Deklaration für **xmlns: com**
 2. Deklaration für **xmlns: Desktop**
@@ -193,7 +193,7 @@ hr = DesktopNotificationManagerCompat::RegisterActivator();
 
 ## <a name="step-7-send-a-notification"></a>Schritt 7: Senden einer Benachrichtigung
 
-Das Senden einer Benachrichtigung ist mit UWP-apps identisch, mit dem Unterschied, dass Sie " **desktopnotificationmanagercompat** " verwenden, um einen " **deastnotifier**" zu erstellen. Die Kompatibilitäts-Bibliothek behandelt automatisch den Unterschied zwischen dem msix/Sparse-Paket und dem klassischen Win32, sodass Sie den Code nicht verzweigen müssen. Bei klassischem Win32 speichert die Kompatibilitäts-Bibliothek die von Ihnen beim Aufrufen von **registeraumidandcomserver** bereitgestellte aumid zwischen, sodass Sie sich keine Gedanken machen müssen, wann die aumid bereitgestellt oder nicht.
+Das Senden einer Benachrichtigung ist mit UWP-apps identisch, mit dem Unterschied, dass Sie " **desktopnotificationmanagercompat** " verwenden, um einen " **deastnotifier** " zu erstellen. Die Kompatibilitäts-Bibliothek behandelt automatisch den Unterschied zwischen dem msix/Sparse-Paket und dem klassischen Win32, sodass Sie den Code nicht verzweigen müssen. Bei klassischem Win32 speichert die Kompatibilitäts-Bibliothek die von Ihnen beim Aufrufen von **registeraumidandcomserver** bereitgestellte aumid zwischen, sodass Sie sich keine Gedanken machen müssen, wann die aumid bereitgestellt oder nicht.
 
 Stellen Sie sicher, dass Sie die **toastgeneric** -Bindung wie unten gezeigt verwenden, da die Legacy-Windows 8.1 Popup Benachrichtigungs Vorlagen Ihren in Schritt #4 erstellten com-Benachrichtigungs Aktivator nicht aktivieren.
 
@@ -438,7 +438,7 @@ if (IsWindows10OrGreater())
 
 ## <a name="known-issues"></a>Bekannte Probleme
 
-**Korrigiert: die APP wird nach dem Klicken auf "Toast" nicht fokussiert**: in Builds 15063 und früher wurden keine Vordergrund Rechte an Ihre Anwendung übertragen, als der com-Server aktiviert wurde. Daher würde Ihre APP einfach blinken, wenn Sie versucht haben, Sie in den Vordergrund zu verschieben. Für dieses Problem gibt es keine Problem Umgehung. Wir haben dies in Build 16299 und höher korrigiert.
+**Korrigiert: die APP wird nach dem Klicken auf "Toast" nicht fokussiert** : in Builds 15063 und früher wurden keine Vordergrund Rechte an Ihre Anwendung übertragen, als der com-Server aktiviert wurde. Daher würde Ihre APP einfach blinken, wenn Sie versucht haben, Sie in den Vordergrund zu verschieben. Für dieses Problem gibt es keine Problem Umgehung. Wir haben dies in Build 16299 und höher korrigiert.
 
 
 ## <a name="resources"></a>Ressourcen

@@ -1,19 +1,19 @@
 ---
-Description: Diese Richtlinien unterstützen Sie beim Gestalten von effektiven Hilfeinhalten für Ihre App.
+description: Diese Richtlinien unterstützen Sie beim Gestalten von effektiven Hilfeinhalten für Ihre App.
 title: Anleitungen für die App-Hilfe
 label: Guidelines for app help
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: c3e73f9b-4839-4804-b379-c95b0ca4fbe8
 ms.localizationpriority: medium
-ms.openlocfilehash: eeedb8352c712757b5fa188bd50b32d03d2b9484
-ms.sourcegitcommit: 0a5d9a14238c603460c42310ca9c3fc06d538406
+ms.openlocfilehash: 332c5af53471026bcef4b2eb69650ee24200e7f5
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70108873"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034553"
 ---
 # <a name="guidelines-for-app-help"></a>Anleitungen für die App-Hilfe
 
@@ -27,21 +27,21 @@ Hilfeinhalte können zwar nützlich sein, doch in Ihrer App darf dies nicht das 
 
 Ein intuitives und benutzerfreundliches Design ist der erste Schritt beim Erstellen einer nützlichen Hilfe. Dadurch bleibt nicht nur das Interesse des Benutzers lang genug erhalten, dass dieser anspruchsvollere Features nutzt, sondern es werden ihm außerdem Kenntnisse über die Kernfunktionen der App vermittelt, auf denen der Benutzer bei der weiteren Nutzung der App aufbauen und dazulernen kann.
 
-## <a name="general-instructions"></a>Allgemeine Hinweise
+## <a name="general-instructions"></a>Allgemeine Anleitungen
 
 Ein Benutzer wird erst dann nach Hilfeinhalten suchen, wenn bereits ein Problem aufgetreten ist. Daher muss die Hilfe eine schnelle und effektive Lösung für das jeweilige Problem liefern. Wenn Hilfe nicht auf Anhieb sinnvoll oder sie zu kompliziert ist, neigen Benutzer dazu, sie zu ignorieren.
 
 Jede Hilfe sollte unabhängig von ihrer Art folgenden Prinzipien entsprechen:
 
--   **Leicht verständlich:** Die Hilfe, die den Benutzer verwirrt, ist schlechter als gar keine Hilfe.
+-   **Leicht verständlich:** Hilfe, die den Benutzer verwirrt, ist schlimmer als gar keine Hilfe.
 
--   **Direkte** Benutzer, die Hilfe benötigen, benötigen klare Antworten, die Ihnen direkt angezeigt werden.
+-   **Einfach:** Benutzer, die Hilfe benötigen, möchten klare Antworten, die ihnen unmittelbar angezeigt werden.
 
--   **Dienliche** Benutzer möchten nicht nach Ihrem speziellen Problem suchen. Sie möchten, dass ihnen möglichst relevante Hilfe unmittelbar angezeigt wird (man spricht von „kontextbezogener Hilfe“), oder sie möchten eine leicht zu bedienende Oberfläche.
+-   **Relevant:** Benutzer möchten nicht nach ihrem jeweiligen Problem suchen müssen. Sie möchten, dass ihnen möglichst relevante Hilfe unmittelbar angezeigt wird (man spricht von „kontextbezogener Hilfe“), oder sie möchten eine leicht zu bedienende Oberfläche.
 
--   **Unmittelbaren** Wenn ein Benutzer nach Hilfe sucht, möchte er die Hilfe anzeigen. Enthält die App Seiten zum Melden von Fehlern, für Feedback, zum Anzeigen der Nutzungsbedingungen oder ähnliche Funktionen, ist es in Ordnung, wenn diese Seiten über die Hilfe aufgerufen werden können. Aber sie sollten eine untergeordnete Position auf der Haupthilfeseite und nicht den gleichen oder einen höheren Stellenwert haben.
+-   **Direkt:** Wenn ein Benutzer nach Hilfe sucht, möchte er auch Hilfe bekommen. Enthält die App Seiten zum Melden von Fehlern, für Feedback, zum Anzeigen der Nutzungsbedingungen oder ähnliche Funktionen, ist es in Ordnung, wenn diese Seiten über die Hilfe aufgerufen werden können. Aber sie sollten eine untergeordnete Position auf der Haupthilfeseite und nicht den gleichen oder einen höheren Stellenwert haben.
 
--   **Sten** Unabhängig vom Typ ist die Hilfe weiterhin Teil Ihrer APP und sollte als beliebiger anderer Teil der Benutzeroberfläche behandelt werden. Für die von Ihnen angebotene Hilfe sollten die gleichen Gestaltungsprinzipien gelten wie für die eigentliche App, nämlich Benutzerfreundlichkeit, Barrierefreiheit und Stil.
+-   **Konsistent:** Die Hilfe ist unabhängig von ihrer Art ein Teil der App und sollte wie jeder andere Teil der Benutzeroberfläche behandelt werden. Für die von Ihnen angebotene Hilfe sollten die gleichen Gestaltungsprinzipien gelten wie für die eigentliche App, nämlich Benutzerfreundlichkeit, Barrierefreiheit und Stil.
 
 ## <a name="types-of-help"></a>Arten von Hilfe
 
@@ -51,18 +51,18 @@ Es gibt drei grundlegende Kategorien von Hilfeinhalten, die jeweils mit untersch
 
 In der Regel sollten Benutzer die Kernfunktionen der App ohne Anweisungen verwenden können. Aber manchmal ist bei der App eine bestimmte Geste erforderlich, oder möglicherweise gibt es sekundäre Features, die nicht sofort offensichtlich sind. In diesem Fall sollte die Benutzeroberfläche Anweisungen enthalten, die Benutzern erklären, wie bestimmte Aufgaben ausgeführt werden.
 
-[Siehe Richtlinien für die Benutzeroberfläche](instructional-ui.md)
+[Siehe „Richtlinien für Anweisungen auf Benutzeroberflächen“](instructional-ui.md)
 
 #### <a name="in-app-help"></a>In-App-Hilfe
 
 Die Standardmethode zur Darstellung von Hilfe ist das Anzeigen der Hilfe innerhalb der Anwendung auf Anforderung des Benutzers. Es gibt verschiedene Möglichkeiten, dies umzusetzen, z. B. durch Hilfeseiten oder informative Beschreibungen. Diese Methode ist ideal für allgemeine Hilfe, die Fragen eines Benutzers unkompliziert und unmittelbar beantwortet.
 
-[Informationen finden Sie unter Richtlinien für in-App-Hilfe](in-app-help.md)
+[Siehe „Richtlinien für In-App-Hilfe“](in-app-help.md)
 
 #### <a name="external-help"></a>Externe Hilfe
 
 Für ausführliche Lernprogramme, erweiterte Funktionen oder Bibliotheken mit Hilfethemen, die zu groß für die Anwendung sind, sind Links zu externen Webseiten ideal. Diese Links sollten nach Möglichkeit sparsam verwendet werden, da sie die Anwendungsnutzung durch den Benutzer unterbrechen.
 
-[Siehe Richtlinien für die externe Hilfe](external-help.md)
+[Siehe „Richtlinien für externe Hilfe“](external-help.md)
 
 

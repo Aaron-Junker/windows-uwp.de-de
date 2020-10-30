@@ -1,55 +1,55 @@
 ---
-Description: Wenn Ihrem Entwicklerkonto die entsprechenden Berechtigungen gewährt wurden, können Sie Vorinstallationspakete generieren und herunterladen, damit das OEM Ihre App in ein OS-Image einschließen kann.
+description: Wenn Ihrem Entwicklerkonto die entsprechenden Berechtigungen gewährt wurden, können Sie Vorinstallations Pakete generieren und herunterladen, damit ein OEM Ihre APP in das Betriebssystem Image aufnehmen kann.
 title: Generieren von Vorinstallationspaketen für OEMs
 ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ab17adc80a643c04ac7793945486c3ff975fde5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e6b2aa9688b141318a9e96a26e5d0dc643306459
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57643135"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034783"
 ---
 # <a name="generate-preinstall-packages-for-oems"></a>Generieren von Vorinstallationspaketen für OEMs
 
-Wenn Ihrem Entwicklerkonto die entsprechenden Berechtigungen gewährt wurden, können Sie Vorinstallationspakete generieren und herunterladen, damit das OEM Ihre App in ein OS-Image einschließen kann. Vorinstallationsberechtigungen werden nur für Entwicklerkonten aktiviert, die von OEMs unterstützt werden.
+Wenn Ihrem Entwicklerkonto die entsprechenden Berechtigungen gewährt wurden, können Sie Vorinstallations Pakete generieren und herunterladen, damit ein OEM Ihre APP in das Betriebssystem Image aufnehmen kann. Vorinstallationsberechtigungen werden nur für Entwicklerkonten aktiviert, die von OEMs unterstützt werden.
 
 
 ## <a name="important-preinstall-policy--limitations"></a>Wichtige Vorinstallationsrichtlinien und -beschränkungen
 
-Zur Installation von apps über zertifiziert [Partner Center](https://partner.microsoft.com/dashboard) zu, damit sie können eine Verbindung mit dem Store, und erhalten die app-Updates sind über die neuesten Store-Lizenz verfügen.
+Vorinstallierte apps müssen über das [Partner Center](https://partner.microsoft.com/dashboard) zertifiziert sein, damit Sie über die aktuelle Store-Lizenz verfügen, damit Sie eine Verbindung mit dem Store herstellen und APP-Updates empfangen können.
 
-Jede vorinstallierte App muss zum aktuellen Zeitpunkt und in Zukunft auf allen Märkten kostenlos angeboten werden.
+Jede APP, die vorinstalliert ist, muss in allen Märkten verfügbar sein und kostenlos bleiben.
 
 
 ## <a name="generating-preinstall-packages"></a>Generieren von Vorinstallationspaketen
 
 Nachdem ein Konto mit Vorinstallationsberechtigungen aktiviert wurde, führen Sie die folgenden Schritte aus:
 
-1.  Navigieren Sie im Partner Center zu der app, die vorinstalliert werden.
-2.  Erweitern Sie im linken Navigationsmenü **App-Verwaltung**, und wählen Sie **Aktuelle Pakete** aus.
-3.  Wählen Sie im Abschnitt **Pakete für die Vorinstallation des Betriebssystems anfordern****Downloadbare Pakete ermöglichen** aus.
-4.  Wählen Sie im Bestätigungsdialogfeld **Aktivieren** aus.
-5.  Suchen Sie das Paket, das Sie herunterladen möchten, und wählen Sie den entsprechenden Link **Paket generieren**.
+1.  Navigieren Sie in Partner Center zu der APP, die vorinstalliert werden soll.
+2.  Erweitern Sie im linken Navigationsmenü die Option **App-Verwaltung** , und klicken Sie auf **aktuelle Pakete** .
+3.  Wählen Sie im Abschnitt **Anforderungs Pakete für Betriebssystem-Vorinstallation** die Option **herunterladbare Pakete aktivieren** aus.
+4.  Wählen Sie im Bestätigungs Dialogfeld die Option **aktivieren** aus.
+5.  Suchen Sie das Paket, das Sie herunterladen möchten, und wählen Sie den entsprechenden Link **Paket generieren** aus.
 
     > [!NOTE]
-    > Die Dauer zum Generieren von Vorinstallationspaketen hängt von der Größe des ausgewählten Pakets ab. Sie können diese Seite verlassen und später darauf zurückkehren, oder Sie können die Seite geöffnet lassen, während das Paket generiert wird.
+    > Die Generierungs Zeit für Vorinstallations Pakete variiert abhängig von der Größe des Pakets, das Sie ausgewählt haben. Sie können diese Seite verlassen und später zurückkehren, oder Sie können die Seite geöffnet lassen, während das Paket generiert wird.
 
-6.  Nachdem das Paket generiert wurde, wird ein Link zu **Paket herunterladen** angezeigt. Wählen Sie das Link aus, um die ZIP-Datei herunterzuladen.
+6.  Nachdem das Paket generiert wurde, wird ein Link zum **herunterladen des Pakets** angezeigt. Wählen Sie diesen Link aus, um die ZIP-Datei herunterzuladen.
 
-Die ZIP-Datei kann dem OEM zur Verfügung gestellt werden, damit er sie in sein Betriebssystemimage einschließt.
+Anschließend können Sie die ZIP-Datei für den OEM bereitstellen, um Sie in das Betriebssystem Image einzubeziehen.
 
 
 ## <a name="support"></a>Support
 
-Wenn Sie weitere Fragen zur Installation der Pakete generiert haben, senden Sie eine e-Mail <partnerops@microsoft.com>.
+Wenn Sie weitere Fragen zum Generieren von Vorinstallationspaketen haben, senden Sie eine E-Mail an <partnerops@microsoft.com>.
 
- 
+ 
 
- 
+ 
 
 
 

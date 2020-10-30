@@ -1,5 +1,5 @@
 ---
-Description: Entwerfen Sie Ihre APP so, dass Sie Global bereit ist, indem Sie Datumsangaben, Uhrzeiten, Zahlen, Telefonnummern und Währungen entsprechend formatieren. Anschließend können Sie Ihre APP später für weitere Kulturen, Regionen und Sprachen auf dem globalen Markt anpassen.
+description: Entwerfen Sie Ihre APP so, dass Sie Global bereit ist, indem Sie Datumsangaben, Uhrzeiten, Zahlen, Telefonnummern und Währungen entsprechend formatieren. Anschließend können Sie Ihre APP später für weitere Kulturen, Regionen und Sprachen auf dem globalen Markt anpassen.
 title: Globalisieren von Datums-, Uhrzeit- und Zahlenformaten
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisier barkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 798199269a4fd02eebef7dcd46cd5781ba561250
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 8c3bacbfbbe944cddfe014fcd34038ca9a56c36e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493425"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034343"
 ---
 # <a name="globalize-your-datetimenumber-formats"></a>Globalisieren von Datums-, Uhrzeit- und Zahlenformaten
 
@@ -24,7 +24,7 @@ Wenn Sie bei der Erstellung Ihrer APP in großem Umfang als eine Sprache und ein
 
 Für unterschiedliche Regionen und Kulturen werden verschiedene Datums-und Uhrzeit Formate verwendet. Hierzu gehören Konventionen für die Reihenfolge von Tag und Monat im Datum, für die Trennung von Stunden und Minuten in der Zeit und sogar für das, was als Trennzeichen verwendet wird. Außerdem können Datumsangaben in verschiedenen langen Formaten ("Mittwoch, am 28. März 2012") oder in kurzen Formaten ("3/28/12") angezeigt werden, die sich zwischen Kulturen unterscheiden. Und natürlich unterscheiden sich die Namen und Abkürzungen für die Wochentage und Monate des Jahres zwischen den Sprachen.
 
-Sie können eine Vorschau der Formate verwenden, die für verschiedene Sprachen verwendet werden. Wechseln Sie zu **Einstellungen**  >  **Zeit & sprach**  >  **Region & Sprache**, und klicken Sie auf **zusätzliche Datums-, Uhrzeit-und & regionale Einstellungen**  >  **Ändern von Datums-, Uhrzeit-oder Zahlenformaten**. Wählen Sie auf der Registerkarte **Formate** eine Sprache aus der Dropdown-Dropdown- **Datei** aus, und zeigen Sie die Formate in den **Beispielen**an
+Sie können eine Vorschau der Formate verwenden, die für verschiedene Sprachen verwendet werden. Wechseln Sie zu **Einstellungen**  >  **Zeit & sprach**  >  **Region & Sprache** , und klicken Sie auf **zusätzliche Datums-, Uhrzeit-und & regionale Einstellungen**  >  **Ändern von Datums-, Uhrzeit-oder Zahlenformaten** . Wählen Sie auf der Registerkarte **Formate** eine Sprache aus der Dropdown-Dropdown- **Datei** aus, und zeigen Sie die Formate in den **Beispielen** an
 
 In diesem Thema werden die Begriffe "Benutzerprofil-Sprachliste", "App-Manifest-Sprachliste" und "App-Lauf Zeit Sprachliste" verwendet. Ausführliche Informationen dazu, was diese Begriffe bedeuten und wie Sie auf ihre Werte zugreifen, finden Sie Untergrund Legendes zu [Benutzerprofil Sprachen und App-Manifest-Sprachen](manage-language-and-region.md).
 
@@ -52,7 +52,7 @@ Wenn Sie Datumsangaben oder Uhrzeiten Selbstanzeigen müssen, können Sie die [*
 Sie können den obigen Code auf Ihrem eigenen PC wie folgt testen.
 
 - Stellen Sie sicher, dass Sie Ressourcen Dateien in Ihrem Projekt für "en-US" und "de-de" qualifiziert haben (Weitere Informationen finden Sie unter [Anpassen von Ressourcen für Sprache, Skalierung, hoher Kontrast und andere Qualifizierer](../../app-resources/tailor-resources-lang-scale-contrast.md)).
-- Ändern Sie die Liste der Benutzerprofil Sprachen in **Einstellungen**  >  **Zeit & sprach**  >  **Region &** Sprachen  >  **Sprachen**. Fügen Sie Deutsch (Deutschland) hinzu, machen Sie die Standardeinstellung, und führen Sie den Code erneut aus.
+- Ändern Sie die Liste der Benutzerprofil Sprachen in **Einstellungen**  >  **Zeit & sprach**  >  **Region &** Sprachen  >  **Sprachen** . Fügen Sie Deutsch (Deutschland) hinzu, machen Sie die Standardeinstellung, und führen Sie den Code erneut aus.
 
 ## <a name="format-dates-and-times-for-the-user-profile-language-list"></a>Formatieren von Datums-und Uhrzeitwerten für die Benutzerprofil Sprache
 
@@ -104,7 +104,7 @@ Dieses Beispiel zeigt, wie Währungen sowohl für das Benutzerprofil als auch f�
                     "Formatted Euro (fr-FR defaults): " + currencyValueEuroFR;
 ```
 
-Sie können den obigen Code auf Ihrem eigenen PC testen, indem Sie das Land oder die Region in der **Einstellungs**  >  **Zeit & sprach**  >  **Region & Sprachen**  >  **Land oder der Region**ändern. Wählen Sie ein Land oder eine Region (vielleicht Island) aus, und führen Sie den Code erneut aus.
+Sie können den obigen Code auf Ihrem eigenen PC testen, indem Sie das Land oder die Region in der **Einstellungs**  >  **Zeit & sprach**  >  **Region & Sprachen**  >  **Land oder der Region** ändern. Wählen Sie ein Land oder eine Region (vielleicht Island) aus, und führen Sie den Code erneut aus.
 
 ## <a name="use-a-culturally-appropriate-calendar"></a>Verwenden Sie einen kulturspezifischen Kalender
 
@@ -151,11 +151,11 @@ Das folgende Beispiel zeigt, wie Sie **phonenumberformatter** verwenden, um eine
     }
 ```    
 
-Sie können den obigen Code auf Ihrem eigenen PC testen, indem Sie das Land oder die Region in der **Einstellungs**  >  **Zeit & sprach**  >  **Region & Sprachen**  >  **Land oder der Region**ändern. Wählen Sie ein Land oder eine Region (vielleicht Neuseeland, um zu bestätigen, dass die Formate entsprechen), und führen Sie den Code erneut aus. Für Testdaten können Sie eine Websuche nach der Telefonnummer eines Unternehmens in Neuseeland durchführen.
+Sie können den obigen Code auf Ihrem eigenen PC testen, indem Sie das Land oder die Region in der **Einstellungs**  >  **Zeit & sprach**  >  **Region & Sprachen**  >  **Land oder der Region** ändern. Wählen Sie ein Land oder eine Region (vielleicht Neuseeland, um zu bestätigen, dass die Formate entsprechen), und führen Sie den Code erneut aus. Für Testdaten können Sie eine Websuche nach der Telefonnummer eines Unternehmens in Neuseeland durchführen.
 
 ## <a name="the-users-language-and-cultural-preferences"></a>Benutzersprache und Kultur Einstellungen
 
-Für Szenarien, in denen Sie unterschiedliche Funktionen bereitstellen möchten, die ausschließlich auf der Sprache, der Region oder den kulturellen Einstellungen des Benutzers basieren, bietet Windows Ihnen eine Möglichkeit, überWindows.System auf diese Einstellungen zuzugreifen [**. User Profile. globalizationpreferences**](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live). Verwenden Sie bei Bedarf die **GlobalizationPreferences**-Klasse, um den Wert der aktuellen Region des Benutzers sowie die bevorzugten Sprachen, Währungen usw. zu ermitteln. Beachten Sie jedoch Folgendes: Wenn die Zeichen folgen/Images Ihrer APP nicht für die bevorzugte Sprache des Benutzers lokalisiert sind, entsprechen Datums-und Uhrzeitangaben und andere Daten, die für diese bevorzugte Sprache formatiert sind, nicht den angezeigten Zeichen folgen.
+Für Szenarien, in denen Sie unterschiedliche Funktionen bereitstellen möchten, die ausschließlich auf der Sprache, der Region oder den kulturellen Einstellungen des Benutzers basieren, bietet Windows Ihnen eine Möglichkeit, überWindows.System auf diese Einstellungen zuzugreifen [**. User Profile. globalizationpreferences**](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live). Verwenden Sie bei Bedarf die **GlobalizationPreferences** -Klasse, um den Wert der aktuellen Region des Benutzers sowie die bevorzugten Sprachen, Währungen usw. zu ermitteln. Beachten Sie jedoch Folgendes: Wenn die Zeichen folgen/Images Ihrer APP nicht für die bevorzugte Sprache des Benutzers lokalisiert sind, entsprechen Datums-und Uhrzeitangaben und andere Daten, die für diese bevorzugte Sprache formatiert sind, nicht den angezeigten Zeichen folgen.
 
 ## <a name="important-apis"></a>Wichtige APIs
 

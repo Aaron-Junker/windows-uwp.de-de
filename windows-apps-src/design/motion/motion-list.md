@@ -1,5 +1,5 @@
 ---
-Description: Mit Listenanimationen können Sie einzelne oder mehrere Elemente in einer Sammlung wie z. B. einem Fotoalbum oder einer Liste mit Suchergebnissen einfügen oder entfernen.
+description: Mit Listenanimationen können Sie einzelne oder mehrere Elemente in einer Sammlung wie z. B. einem Fotoalbum oder einer Liste mit Suchergebnissen einfügen oder entfernen.
 title: Hinzufügen und Löschen von Animationen
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 105b2fe5f7f267d8a5a82473332747584b02316c
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: cb01cbf3dab1ae8f1cdb055ad3fc04b94b1ff510
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220373"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034203"
 ---
 # <a name="add-and-delete-animations"></a>Hinzufügen und Löschen von Animationen
 
@@ -21,7 +21,7 @@ ms.locfileid: "91220373"
 
 Mit Listenanimationen können Sie einzelne oder mehrere Elemente in einer Sammlung wie z. B. einem Fotoalbum oder einer Liste mit Suchergebnissen einfügen oder entfernen.
 
-> **Wichtige APIs**: [ **adddeletedermetransition-Klasse**](/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
+> **Wichtige APIs** : [ **adddeletedermetransition-Klasse**](/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
@@ -43,6 +43,6 @@ Mit Listenanimationen können Sie einzelne oder mehrere Elemente in einer Sammlu
 * [Schnellstart: Animieren der Benutzeroberfläche mithilfe von Bibliotheksanimationen](/previous-versions/windows/apps/hh452703(v=win.10))
 * [**AddDeleteThemeTransition-Klasse**](/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
- 
+ 
 
- 
+ 

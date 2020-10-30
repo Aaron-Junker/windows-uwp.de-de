@@ -1,5 +1,5 @@
 ---
-Description: Enthält eine Liste der Steuerelementmuster für die Microsoft-Benutzeroberflächenautomatisierung zusammen mit den Klassen, die Clients für den Zugriff verwenden, und den Schnittstellen, die Anbieter zur Implementierung verwenden.
+description: Enthält eine Liste der Steuerelementmuster für die Microsoft-Benutzeroberflächenautomatisierung zusammen mit den Klassen, die Clients für den Zugriff verwenden, und den Schnittstellen, die Anbieter zur Implementierung verwenden.
 ms.assetid: 2091883C-5D0C-44ED-936A-709022926A42
 title: Steuerelementmuster und Schnittstellen
 label: Control patterns and interfaces
@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: adbe1556f48e2f9b362faa303be52586714c73d5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 92f2337848f3689aa8f2f6f73dd92dbbe1313257
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157024"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032533"
 ---
 # <a name="control-patterns-and-interfaces"></a>Steuerelementmuster und Schnittstellen  
 
@@ -34,9 +34,9 @@ Beim Implementieren eines Steuerelementmusters sollten Sie auch die Dokumentatio
 | **Ziehen** | [**IDragProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IDragProvider) | Wird zum Unterstützen von ziehbaren Steuerelementen bzw. Steuerelementen mit ziehbaren Elementen verwendet. |
 | **DropTarget** | [**IDropTargetProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IDropTargetProvider) | Wird zum Unterstützen von Steuerelementen verwendet, die Ziel eines Drag & Drop-Vorgangs sein können. |
 | **ExpandCollapse** | [**IExpandCollapseProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider) | Wird zum Unterstützen von Steuerelementen verwendet, die visuell erweitert oder reduziert werden, um mehr bzw. weniger Inhalt anzuzeigen. |
-| **Raster** | [**IGridProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IGridProvider) | Wird für Steuerelemente verwendet, die Rasterfunktionen wie z. B. Größenanpassung und Verschieben in eine bestimmte Zelle unterstützen. Beachten Sie, dass dieses Muster nicht vom Raster selbst implementiert wird. Dies liegt daran, dass das Raster zwar ein Layout bereitstellt, aber kein Steuerelement ist. |
+| **Grid** | [**IGridProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IGridProvider) | Wird für Steuerelemente verwendet, die Rasterfunktionen wie z. B. Größenanpassung und Verschieben in eine bestimmte Zelle unterstützen. Beachten Sie, dass dieses Muster nicht vom Raster selbst implementiert wird. Dies liegt daran, dass das Raster zwar ein Layout bereitstellt, aber kein Steuerelement ist. |
 | **GridItem** | [**IGridItemProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IGridItemProvider) | Wird für Steuerelemente verwendet, die Zellen innerhalb von Rastern haben. |
-| **Invoke** | [**IInvokeProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IInvokeProvider) | Wird für Steuerelemente verwendet, die aufgerufen werden können, z. b. eine  [**Schaltfläche**](/uwp/api/Windows.UI.Xaml.Controls.Button). |
+| **Blaze** | [**IInvokeProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IInvokeProvider) | Wird für Steuerelemente verwendet, die aufgerufen werden können, z. b. eine  [**Schaltfläche**](/uwp/api/Windows.UI.Xaml.Controls.Button). |
 | **ItemContainer** | [**IItemContainerProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IItemContainerProvider) | Ermöglicht es Anwendungen, Elemente in einem Container (z. B. in einer virtualisierten Liste) zu finden. |
 | **MultipleView** | [**IMultipleViewProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IMultipleViewProvider) | Wird für Steuerelemente verwendet, die zwischen mehreren Darstellungen derselben Informationen, Daten oder untergeordneten Elemente wechseln können. |
 | **ObjectModel** | [**IObjectModelProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IObjectModelProvider) | Wird verwendet, um für das zugrunde liegende Objektmodell eines Dokuments einen Zeiger verfügbar zu machen. |
@@ -49,10 +49,10 @@ Beim Implementieren eines Steuerelementmusters sollten Sie auch die Dokumentatio
 | **SpreadsheetItem** | [**ISpreadsheetItemProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.ISpreadsheetItemProvider) | Wird verwendet, um die Eigenschaften einer Zelle in einer Tabellenkalkulation oder einem anderen rasterbasierten Dokument verfügbar zu machen. |
 | **Stile** | [**IStylesProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IStylesProvider) | Wird verwendet, um ein UI-Element zu beschreiben, das in Bezug auf Stil, Füllfarbe, Füllmuster oder Form über bestimmte Einstellungen verfügt. |
 | **SynchronizedInput** | [**ISynchronizedInputProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.ISynchronizedInputProvider) | Ermöglicht Benutzeroberflächenautomatisierungs-Client-Apps das Lenken der Maus- oder Tastatureingabe auf ein bestimmtes UI-Element. |
-| **Table** | [**ITableProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.ITableProvider) | Wird für Steuerelemente verwendet, die sowohl ein Raster als auch Überschrifteninformationen haben. Beispiel: ein Steuerelement für einen tabellarischen Kalender. |
+| **Tabelle** | [**ITableProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.ITableProvider) | Wird für Steuerelemente verwendet, die sowohl ein Raster als auch Überschrifteninformationen haben. Beispiel: ein Steuerelement für einen tabellarischen Kalender. |
 | **TableItem** | [**ITableItemProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.ITableItemProvider) | Wird für Elemente in einer Tabelle verwendet. |
 | **Text** | [**ITextProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.ITextProvider) | Wird für Bearbeitungssteuerelemente und Dokumente verwendet, die Textinformationen verfügbar machen. Siehe auch [**ITextRangeProvider**](/uwp/api/windows.ui.xaml.automation.provider.itextrangeprovider) und [**ITextProvider2**](/uwp/api/windows.ui.xaml.automation.provider.itextprovider2). |
-| **TextChild** | [**ITextChildProvider**](/uwp/api/windows.ui.xaml.automation.provider.itextchildprovider) | Wird für den Zugriff auf den nächstgelegenen Vorgänger eines Elements verwendet, der das **Text**-Steuerelementmuster unterstützt. |
+| **TextChild** | [**ITextChildProvider**](/uwp/api/windows.ui.xaml.automation.provider.itextchildprovider) | Wird für den Zugriff auf den nächstgelegenen Vorgänger eines Elements verwendet, der das **Text** -Steuerelementmuster unterstützt. |
 | **TextEdit** | Keine verwaltete Klasse verfügbar | Gewährt Zugriff auf ein Steuerelement, mit dem Text geändert wird. Dies kann beispielsweise ein Steuerelement sein, mit dem die Autokorrektur durchgeführt oder mithilfe eines Input Method Editors (IME) die Komposition der Eingabe ermöglicht wird. |
 | **TextRange** | [**ITextRangeProvider**](/uwp/api/windows.ui.xaml.automation.provider.itextrangeprovider) | Bietet Zugriff auf einen Bereich mit fortlaufendem Text in einem Textcontainer, von dem [**ITextProvider**](/uwp/api/windows.ui.xaml.automation.provider.itextprovider) implementiert wird. Siehe auch [**ITextRangeProvider2**](/uwp/api/windows.ui.xaml.automation.provider.itextrangeprovider2). |
 | **Ein-/Ausschalten** | [**IToggleProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IToggleProvider) | Wird für Steuerelemente verwendet, deren Zustand umgeschaltet werden kann. Beispiel: aktivierbare [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox)-Steuerelemente und Menüelemente. |
@@ -65,10 +65,10 @@ Beim Implementieren eines Steuerelementmusters sollten Sie auch die Dokumentatio
 > Implementierungen all dieser Muster sind in vorhandenen XAML-Steuerelementen nicht immer enthalten. Einige Muster verfügen nur über Schnittstellen, um die Parität mit der allgemeinen Benutzeroberflächenautomatierungs-Frameworkdefinition für Muster sowie Automatisierungspeerszenarien zu unterstützen, die für die Unterstützung dieses Musters eine rein benutzerdefinierte Implementierung benötigen.
 
 > [!NOTE]
-> Windows Phone Store-Apps unterstützen nicht alle hier aufgeführten Steuerelementmuster der Benutzeroberflächenautomatisierung. Zu den nicht unterstützten Mustern zählen beispielsweise **Annotation**, **Dock**, **Drag**, **DropTarget** und **ObjectModel**.
+> Windows Phone Store-Apps unterstützen nicht alle hier aufgeführten Steuerelementmuster der Benutzeroberflächenautomatisierung. Zu den nicht unterstützten Mustern zählen beispielsweise **Annotation** , **Dock** , **Drag** , **DropTarget** und **ObjectModel** .
 
 <span id="related_topics"/>
 
-## <a name="related-topics"></a>Zugehörige Themen  
+## <a name="related-topics"></a>Verwandte Themen  
 * [Benutzerdefinierte Automatisierungspeers](custom-automation-peers.md)
 * [Bedienungshilfen](accessibility.md)

@@ -1,17 +1,17 @@
 ---
-Description: Verwenden Sie die UTF-8-Zeichencodierung für eine optimale Kompatibilität zwischen Web-Apps und anderen \* nix-basierten Plattformen (UNIX, Linux und Varianten), minimieren Sie Lokalisierungsfehler, und reduzieren Sie den Testaufwand.
+description: Verwenden Sie die UTF-8-Zeichencodierung für eine optimale Kompatibilität zwischen Web-Apps und anderen \* nix-basierten Plattformen (UNIX, Linux und Varianten), minimieren Sie Lokalisierungsfehler, und reduzieren Sie den Testaufwand.
 title: Verwenden der Windows UTF-8-Codepage
 template: detail.hbs
 ms.date: 06/12/2019
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisier barkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 72e422ee3e1a911658b2fe4957967aeba116c353
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8aefe7bc45bc7c41347fe8fc4b8192347c3e4354
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173464"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034303"
 ---
 # <a name="use-the-utf-8-code-page"></a>UTF-8-Codepage verwenden
 
@@ -86,7 +86,7 @@ Wenn Sie diese Funktionen verwenden `CodePage` , wobei auf festgelegt `CP_UTF8` 
 > [!NOTE]
 > `CP_ACP` entspricht `CP_UTF8` nur, wenn unter Windows, Version 1903 (Mai 2019 Update) oder höher ausgeführt wird und die oben beschriebene activecodepage-Eigenschaft auf UTF-8 festgelegt ist. Andernfalls wird die ältere System Codepage berücksichtigt. Es wird empfohlen, explizit zu verwenden `CP_UTF8` .
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 - [Codepages](/windows/desktop/Intl/code-pages)
 - [Code Page Bezeichner](/windows/desktop/Intl/code-page-identifiers)

@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie mehr über die Vorteile der Globalisierung und Lokalisierung Ihrer APP und genau, was diese Begriffe bedeuten.
+description: Erfahren Sie mehr über die Vorteile der Globalisierung und Lokalisierung Ihrer APP und genau, was diese Begriffe bedeuten.
 Search.SourceType: Video
 title: Globalisierung und Lokalisierung
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
@@ -9,16 +9,16 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisier barkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b288a4d0ceaa97a4f6357d99f9937e21305bf3f
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 3ed8c015947b073fce258cd46ff63a8c005d1916
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218333"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033743"
 ---
 # <a name="globalization-and-localization"></a>Globalisierung und Lokalisierung
 
-Windows wird auf der ganzen Welt von Anwendern unterschiedlicher Sprachen, Kulturen und Herkunft verwendet. Ihre Benutzer sprechen eine Vielzahl verschiedener Sprachen in vielen verschiedenen Ländern und Regionen. Einige Benutzer sprechen mehrere Sprachen. Daher wird Ihre APP in Konfigurationen ausgeführt, die viele Permutationen von Systemeinstellungen für Sprache, Region und Kultur umfassen. Sie können den potenziellen Markt für Ihre APP erhöhen, indem Sie Sie so entwerfen, dass Sie mithilfe von *Globalisierung* und *Lokalisierung*problemlos angepasst werden kann.
+Windows wird auf der ganzen Welt von Anwendern unterschiedlicher Sprachen, Kulturen und Herkunft verwendet. Ihre Benutzer sprechen eine Vielzahl verschiedener Sprachen in vielen verschiedenen Ländern und Regionen. Einige Benutzer sprechen mehrere Sprachen. Daher wird Ihre APP in Konfigurationen ausgeführt, die viele Permutationen von Systemeinstellungen für Sprache, Region und Kultur umfassen. Sie können den potenziellen Markt für Ihre APP erhöhen, indem Sie Sie so entwerfen, dass Sie mithilfe von *Globalisierung* und *Lokalisierung* problemlos angepasst werden kann.
 
 Dieses Video enthält eine kurze Einführung in die Vorbereitung Ihrer APP für die Welt: [Einführung in die Globalisierung und Lokalisierung](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization).
 
@@ -69,4 +69,4 @@ Die meisten Lokalisierungsteams verwenden spezielle Tools, um den Prozess zu unt
 | [Verwenden des Multilingual App Toolkit 4.0](use-mat.md) | Das mehrsprachige App Toolkit (Mat) 4,0 ist in Microsoft Visual Studio 2017 und höher integriert, um Windows-apps Übersetzungsunterstützung, Übersetzungsdatei Verwaltung und Editor-Tools bereitzustellen. |
 | [Mehrsprachige App-Toolkit 4,0 FAQ & Problembehandlung](mat-faq-troubleshooting.md) | Dieses Thema enthält Antworten auf häufig gestellte Fragen und Probleme im Zusammenhang mit dem mehrsprachigen App Toolkit (Mat) 4,0. |
 | [UTF-8-Codepage verwenden](use-utf8-code-page.md) | UTF-8 ist die universelle Codepage für die Internationalisierung. |
-| [Vorbereiten Ihrer Anwendung auf den Wechsel der japanischen Ära](japanese-era-change.md) | Hier erhalten Sie Informationen zum im Mai 2019 anstehenden Wechsel der japanischen Ära, und wie Sie Ihre Anwendung darauf entsprechend vorbereiten können. |
+| [Vorbereiten der Anwendung auf die japanische Zeitänderung](japanese-era-change.md) | Hier erhalten Sie Informationen zum im Mai 2019 anstehenden Wechsel der japanischen Ära, und wie Sie Ihre Anwendung darauf entsprechend vorbereiten können. |

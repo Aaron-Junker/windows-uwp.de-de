@@ -1,5 +1,5 @@
 ---
-Description: Reagieren Sie in Ihren Apps auf Mauseingaben, indem Sie die gleichen einfachen Zeigerereignisse behandeln, die Sie für Touch- und Stifteingaben verwenden.
+description: Reagieren Sie in Ihren Apps auf Mauseingaben, indem Sie die gleichen einfachen Zeigerereignisse behandeln, die Sie für Touch- und Stifteingaben verwenden.
 title: Mausinteraktionen
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
@@ -8,16 +8,16 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 84390e7b929412e4058c1a7e6507ff171344bd53
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: dfefda0e09159c398334ae77bc29dcd8fc3f628a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218933"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034723"
 ---
 # <a name="mouse-interactions"></a>Mausinteraktionen
 
-Optimieren Sie Ihren Windows-App-Entwurf für die Fingereingabe, und erhalten Sie standardmäßig grundlegende Mausunterstützung. 
+Optimieren Sie Ihren Windows-App-Entwurf für die Fingereingabe, und erhalten Sie standardmäßig grundlegende Mausunterstützung. 
 
 ![Maus](images/input-patterns/input-mouse.jpg)
 
@@ -59,10 +59,10 @@ Ein kompakter Satz von Mausinteraktionen wird durchgängig im ganzen System verw
 <td align="left"><p>Rechtsklick, um Auswahl zu treffen und Befehl auszuwählen</p></td>
 <td align="left"><p>Klicken Sie mit der rechten Maustaste, um die Navigationsleiste (sofern verfügbar) und die App-Leiste mit globalen Befehlen anzuzeigen. Klicken Sie mit der rechten Maustaste auf ein Element, um es auszuwählen und die App-Leiste mit Kontextbefehlen für das ausgewählte Element anzuzeigen.</p>
 <div class="alert">
-<strong>Hinweis</strong>    Klicken Sie mit der rechten Maustaste, um ein Kontextmenü anzuzeigen, wenn Auswahl-oder App-leisten-Befehle keine passenden UI-Verhalten darstellen Wir empfehlen jedoch ausdrücklich, die App-Leiste für alle Befehlsverhalten zu verwenden.
+<strong>Hinweis</strong>  Klicken Sie mit der rechten Maustaste, um ein Kontextmenü anzuzeigen, wenn Auswahl-oder App-leisten-Befehle keine passenden UI-Verhalten darstellen Wir empfehlen jedoch ausdrücklich, die App-Leiste für alle Befehlsverhalten zu verwenden.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">

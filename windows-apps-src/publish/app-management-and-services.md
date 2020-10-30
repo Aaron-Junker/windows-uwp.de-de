@@ -1,23 +1,23 @@
 ---
-Description: Verwalten und Anzeigen von Details im Zusammenhang mit den einzelnen apps in Partner Center und Konfigurieren von Diensten wie A/B-Tests und-Zuordnungen.
+description: Verwalten und Anzeigen von Details im Zusammenhang mit den einzelnen apps in Partner Center und Konfigurieren von Diensten wie A/B-Tests und-Zuordnungen.
 title: App-Verwaltung und -Dienste
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 ms.date: 03/21/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e34a4d87ae3df23f8641a09d1558b8c8606667fa
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e973e9b3a8f3c9ba63a091f4e542e36a84c26128
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164284"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032753"
 ---
 # <a name="app-management-and-services"></a>App-Verwaltung und -Dienste
 
 Sie können Details im Zusammenhang mit den einzelnen apps in [Partner Center](https://partner.microsoft.com/dashboard)verwalten und anzeigen und Dienste wie Benachrichtigungen, A/B-Tests und Zuordnungen konfigurieren.
 
-Wenn Sie mit einer APP in Partner Center arbeiten, sehen Sie die Abschnitte im linken Navigationsmenü für die **Dienste** und die **App-Verwaltung**. Sie können diese Abschnitte erweitern, um auf die unten beschriebenen Funktionen zuzugreifen.
+Wenn Sie mit einer APP in Partner Center arbeiten, sehen Sie die Abschnitte im linken Navigationsmenü für die **Dienste** und die **App-Verwaltung** . Sie können diese Abschnitte erweitern, um auf die unten beschriebenen Funktionen zuzugreifen.
 
 ## <a name="services"></a>Dienste
 
@@ -35,11 +35,11 @@ Auf der Seite **Experimentation** können Sie Experimente mit A/B-Tests für Ihr
 
 Weitere Informationen finden Sie unter [Ausführen von App-Experimenten mit A/B-Tests](../monetize/run-app-experiments-with-a-b-testing.md).
 
-## <a name="maps"></a>Karten
+## <a name="maps"></a>Maps
 
 Um Kartendienste in apps zu verwenden, die auf Windows 10 oder Windows 8. x abzielen, besuchen Sie das Windows 10-Entwickler [Center](https://www.bingmapsportal.com/). Informationen dazu, wie Sie einen Zuordnungs-Authentifizierungsschlüssel aus dem Entwickler Center für den Kartendienst von Maps anfordern und zu Ihrer APP hinzufügen, finden Sie unter [Anfordern eines Zuordnungs Authentifizierungs Schlüssels](../maps-and-location/authentication-key.md) . 
 
-Verwenden Sie die Seite **Maps** nur für zuvor veröffentlichte Apps für Windows Phone 8,1 und früher. Um Kartendienste in diesen apps zu verwenden, müssen Sie eine Zuordnungs Dienst-Anwendungs-ID und ein Token anfordern, die in den Code Ihrer APP eingeschlossen werden sollen. Wenn Sie auf **Token erhalten**klicken, generieren wir eine Zuordnungs Dienst-Anwendungs-ID (**ApplicationId**) und ein Kartendienst-Authentifizierungs Token (**authenticationtoken**) für Ihre APP. Stellen Sie sicher, dass Sie diese Werte dem Code hinzufügen, bevor Sie Ihre APP packen und übermitteln. Weitere Informationen finden Sie unter [Hinzufügen eines Kartensteuerelements zu einer Seite (Windows Phone 8.1)](/previous-versions/windows/apps/jj207033(v=vs.105)).
+Verwenden Sie die Seite **Maps** nur für zuvor veröffentlichte Apps für Windows Phone 8,1 und früher. Um Kartendienste in diesen apps zu verwenden, müssen Sie eine Zuordnungs Dienst-Anwendungs-ID und ein Token anfordern, die in den Code Ihrer APP eingeschlossen werden sollen. Wenn Sie auf **Token erhalten** klicken, generieren wir eine Zuordnungs Dienst-Anwendungs-ID ( **ApplicationId** ) und ein Kartendienst-Authentifizierungs Token ( **authenticationtoken** ) für Ihre APP. Stellen Sie sicher, dass Sie diese Werte dem Code hinzufügen, bevor Sie Ihre APP packen und übermitteln. Weitere Informationen finden Sie unter [Hinzufügen eines Kartensteuerelements zu einer Seite (Windows Phone 8.1)](/previous-versions/windows/apps/jj207033(v=vs.105)).
 
 ## <a name="product-collections-and-purchases"></a>Produktsammlungen und Einkäufe
 
@@ -76,7 +76,7 @@ Auf dieser Seite können Sie Details zu allen veröffentlichten Paketen anzeigen
 > [!NOTE]
 > Hier werden keine Informationen angezeigt, bis Ihre App veröffentlicht wurde.
 
-Der Name, die Version und die Architektur der einzelnen Pakete werden angezeigt. Klicken Sie auf **Details**, um zusätzliche Informationen wie z. B. unterstützte Sprache, App-Funktionen und Dateigrößen anzuzeigen. Welche Informationen jeweils für ein Paket angezeigt werden, variiert abhängig vom Zielbetriebssystem und anderen Faktoren. 
+Der Name, die Version und die Architektur der einzelnen Pakete werden angezeigt. Klicken Sie auf **Details** , um zusätzliche Informationen wie z. B. unterstützte Sprache, App-Funktionen und Dateigrößen anzuzeigen. Welche Informationen jeweils für ein Paket angezeigt werden, variiert abhängig vom Zielbetriebssystem und anderen Faktoren. 
 
 Entwickler mit OEM-Berechtigungen können auf der Seite **Aktuelle Pakete** außerdem [Vorinstallationspakete generieren](generate-preinstall-packages-for-oems.md).
 
@@ -94,6 +94,6 @@ Abhängig vom Pakettyp Ihrer APP und den jeweiligen Anforderungen können Sie au
 -   **Microsoft Azure Mobile Apps** ermöglichen das Senden von Pushbenachrichtigungen, die Authentifizierung und Verwaltung von App-Benutzern und das Speichern von App-Daten in der Cloud. Weitere Informationen finden Sie in der [Mobile Apps-Dokumentation](/azure/app-service-mobile/).
 
 -   Der **Microsoft-pushbenachrichtigungsdienst (mpns)** kann mit zuvor veröffentlichten XAP-Paketen für Windows Phone verwendet werden. Sie können eine begrenzte Anzahl nicht authentifizierter Benachrichtigungen senden, ohne hier eine Konfiguration vorzunehmen. Zur Vermeidung von Drosselungslimits wird jedoch empfohlen, authentifizierte Benachrichtigungen zu verwenden. Wenn Sie mpns verwenden, müssen Sie ein Zertifikat in das auf der Seite **WNS/mpns** angegebene Feld hochladen. Weitere Informationen finden Sie unter [Einrichten eines authentifizierten Webdiensts zum Senden von Pushbenachrichtigungen für Windows Phone 8](/previous-versions/windows/apps/ff941099(v=vs.105)).
- 
+ 
 
- 
+ 

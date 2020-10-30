@@ -1,5 +1,5 @@
 ---
-Description: Verwenden Sie Popupanimationen, um Popup-UI-Elemente für Flyouts oder benutzerdefinierte Popup-UI-Elemente anzuzeigen und auszublenden. Popupelemente sind Container, die über dem Inhalt der App angezeigt werden und ausgeblendet werden, wenn Benutzer außerhalb des Popupelements tippen oder klicken.
+description: Verwenden Sie Popupanimationen, um Popup-UI-Elemente für Flyouts oder benutzerdefinierte Popup-UI-Elemente anzuzeigen und auszublenden. Popupelemente sind Container, die über dem Inhalt der App angezeigt werden und ausgeblendet werden, wenn Benutzer außerhalb des Popupelements tippen oder klicken.
 title: Animationen für Popupbenutzeroberflächen
 ms.assetid: 4E9025CE-FC90-4d4c-9DE6-EC6B6F2AD9DF
 label: Motion--Pop-up animations
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d605378e802f28015734da4c35a22f41adfc185
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 5d09363d6ecd2eb5909c98da316c7c1395ebec03
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217734"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034123"
 ---
 # <a name="pop-up-ui-animations"></a>Animationen für Popupbenutzeroberflächen
 
@@ -21,7 +21,7 @@ ms.locfileid: "91217734"
 
 Verwenden Sie Popupanimationen, um Popup-UI-Elemente für Flyouts oder benutzerdefinierte Popup-UI-Elemente anzuzeigen und auszublenden. Popupelemente sind Container, die über dem Inhalt der App angezeigt werden und ausgeblendet werden, wenn Benutzer außerhalb des Popupelements tippen oder klicken.
 
-> **Wichtige APIs**: [**popinpoinmeanimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation), [**popuppoinmetransition-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition)
+> **Wichtige APIs** : [**popinpoinmeanimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation), [**popuppoinmetransition-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition)
 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
@@ -40,6 +40,6 @@ Verwenden Sie Popupanimationen, um Popup-UI-Elemente für Flyouts oder benutzerd
 * [**PopOutThemeAnimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopOutThemeAnimation)
 * [**PopupThemeTransition-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition)
 
- 
+ 
 
- 
+ 

@@ -1,17 +1,17 @@
 ---
-Description: Sie können die sendrequestasync-Methode verwenden, um Anforderungen an die Microsoft Store für Vorgänge zu senden, für die noch keine API in der Windows SDK verfügbar ist.
+description: Sie können die sendrequestasync-Methode verwenden, um Anforderungen an die Microsoft Store für Vorgänge zu senden, für die noch keine API in der Windows SDK verfügbar ist.
 title: Senden von Anforderungen an den Microsoft Store
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP, storerequesthelper, sendrequestasync
 ms.localizationpriority: medium
-ms.openlocfilehash: a02be93a56d6066ebd4d9547c8cc9ea1a96c9e09
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 53b525617ac72aec67349645430bc5995253460f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164494"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034663"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>Senden von Anforderungen an den Microsoft Store
 
@@ -34,7 +34,7 @@ public async Task<bool> AddUserToFlightGroup()
 {
     StoreSendRequestResult result = await StoreRequestHelper.SendRequestAsync(
         StoreContext.GetDefault(), 8,
-        "{ \"type\": \"AddToFlightGroup\", \"parameters\": { \"flightGroupId\": \"your group ID\" } }");
+        "{ \"type\": \"AddToFlightGroup\", \"parameters\": { \"flightGroupId\": \"your group ID\" } }");
 
     if (result.ExtendedError == null)
     {
@@ -77,12 +77,12 @@ Mit dieser Anforderung werden die Remote Variablen für die Fluggruppe mit der h
 |  *requestkind*                   |  Geben Sie 7 an, um die Fluggruppe mit der höchsten Rangfolge für das Gerät zurückzugeben, oder geben Sie 8 an, um die mit der höchsten Rangfolge für den aktuellen Benutzer und das Gerät zurückzugeben. Es wird empfohlen, den Wert 8 für den *requestkind* -Parameter zu verwenden, da dieser Wert für den aktuellen Benutzer und das Gerät die Gruppe mit der höchsten Rangfolge über die Mitgliedschaft zurückgibt.  |
 |  *parametersasjson*                   |  Übergeben Sie eine JSON-formatierte Zeichenfolge, die die im folgenden Beispiel gezeigten Daten enthält.  |
 
-Das folgende Beispiel zeigt das Format der JSON-Daten, die an *parametersasjson*übergeben werden. Das *typanfeld* muss der Zeichenfolge *getremotevariables*zugewiesen werden. Weisen Sie das Feld *ProjectId* der ID des Projekts zu, in dem Sie die Remote Variablen im Partner Center definiert haben.
+Das folgende Beispiel zeigt das Format der JSON-Daten, die an *parametersasjson* übergeben werden. Das *typanfeld* muss der Zeichenfolge *getremotevariables* zugewiesen werden. Weisen Sie das Feld *ProjectId* der ID des Projekts zu, in dem Sie die Remote Variablen im Partner Center definiert haben.
 
 ```json
-{ 
-    "type": "GetRemoteVariables", 
-    "parameters": "{ \"projectId\": \"your project ID\" }" 
+{ 
+    "type": "GetRemoteVariables", 
+    "parameters": "{ \"projectId\": \"your project ID\" }" 
 }
 ```
 
@@ -97,8 +97,8 @@ Nachdem Sie diese Anforderung gesendet haben, enthält die [Response](/uwp/api/w
 Im folgenden Beispiel wird ein Rückgabewert für diese Anforderung veranschaulicht.
 
 ```json
-{ 
-  "anonymous": false, 
+{ 
+  "anonymous": false, 
   "name": "Insider Slow",
   "settings":
   {
@@ -120,12 +120,12 @@ Um diese Anforderung zu senden, übergeben Sie die folgenden Informationen an di
 |  *requestkind*                   |  Geben Sie 7 an, um das Gerät einer Fluggruppe hinzuzufügen, oder geben Sie 8 an, um den Benutzer, der zurzeit beim Store angemeldet ist, einer Fluggruppe hinzuzufügen.  |
 |  *parametersasjson*                   |  Übergeben Sie eine JSON-formatierte Zeichenfolge, die die im folgenden Beispiel gezeigten Daten enthält.  |
 
-Das folgende Beispiel zeigt das Format der JSON-Daten, die an *parametersasjson*übergeben werden. Das *typanfeld* muss der Zeichenfolge *adddeflightgroup*zugewiesen werden. Weisen Sie das Feld *flightgroupid* der ID der Fluggruppe zu, der Sie das Gerät oder den Benutzer hinzufügen möchten.
+Das folgende Beispiel zeigt das Format der JSON-Daten, die an *parametersasjson* übergeben werden. Das *typanfeld* muss der Zeichenfolge *adddeflightgroup* zugewiesen werden. Weisen Sie das Feld *flightgroupid* der ID der Fluggruppe zu, der Sie das Gerät oder den Benutzer hinzufügen möchten.
 
 ```json
-{ 
-    "type": "AddToFlightGroup", 
-    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
+{ 
+    "type": "AddToFlightGroup", 
+    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
 }
 ```
 
@@ -143,18 +143,18 @@ Um diese Anforderung zu senden, übergeben Sie die folgenden Informationen an di
 |  *requestkind*                   |  Geben Sie 7 an, um das Gerät aus einer Fluggruppe zu entfernen, oder geben Sie 8 an, um den Benutzer zu entfernen, der derzeit bei dem Store aus einer Fluggruppe angemeldet ist.  |
 |  *parametersasjson*                   |  Übergeben Sie eine JSON-formatierte Zeichenfolge, die die im folgenden Beispiel gezeigten Daten enthält.  |
 
-Das folgende Beispiel zeigt das Format der JSON-Daten, die an *parametersasjson*übergeben werden. Das *typanfeld* muss der Zeichenfolge *removefromflightgroup*zugewiesen werden. Weisen Sie das Feld *flightgroupid* der ID der Fluggruppe zu, aus der Sie das Gerät oder den Benutzer entfernen möchten.
+Das folgende Beispiel zeigt das Format der JSON-Daten, die an *parametersasjson* übergeben werden. Das *typanfeld* muss der Zeichenfolge *removefromflightgroup* zugewiesen werden. Weisen Sie das Feld *flightgroupid* der ID der Fluggruppe zu, aus der Sie das Gerät oder den Benutzer entfernen möchten.
 
 ```json
-{ 
-    "type": "RemoveFromFlightGroup", 
-    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
+{ 
+    "type": "RemoveFromFlightGroup", 
+    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
 }
 ```
 
 Wenn bei der Anforderung ein Fehler auftritt, enthält die [httpstatencode](/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) -Eigenschaft des Rückgabewerts [storesendrequestresult](/uwp/api/windows.services.store.storesendrequestresult) den Antwort Code.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Anzeigen des Dialog Felds "Bewertung und Überprüfung" in Ihrer APP](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
 * [Sendrequestasync](/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)

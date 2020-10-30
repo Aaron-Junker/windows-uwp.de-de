@@ -1,5 +1,5 @@
 ---
-Description: In diesem Thema werden die bewährten Methoden für barrierefreien Text in Apps beschrieben. Damit stellen Sie sicher, dass der Kontrast zwischen Farben und Hintergründen ausreichend hoch ist.
+description: In diesem Thema werden die bewährten Methoden für barrierefreien Text in Apps beschrieben. Damit stellen Sie sicher, dass der Kontrast zwischen Farben und Hintergründen ausreichend hoch ist.
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: Anforderungen für barrierefreien Text
 label: Accessible text requirements
@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3294daa57cc7d1eb585e41910f72f574d9ffb600
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: aefc53f6d28d2c30566680ac985a4712040ea8e0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163384"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032612"
 ---
 # <a name="accessible-text-requirements"></a>Anforderungen für barrierefreien Text  
 
@@ -48,7 +48,7 @@ In einer UWP-App können die folgenden Standardelemente (meist als *Textelemente
 
 * [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock): Rolle ist [**Text**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
 * [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox): Rolle ist [**Edit**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
-* [**RichTextBlock**](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) (und Überlaufklasse[**RichTextBlockOverflow**](/uwp/api/windows.ui.xaml.controls.richtextblockoverflow)): Rolle ist [**Text**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
+* [**RichTextBlock**](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) (und Überlaufklasse [**RichTextBlockOverflow**](/uwp/api/windows.ui.xaml.controls.richtextblockoverflow)): Rolle ist [**Text**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
 * [**RichEditBox**](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox): Rolle ist [**Edit**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
 
 Wenn ein Steuerelement meldet, dass ihm die Rolle [**Edit**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) zugewiesen ist, gehen Hilfstechnologien davon aus, dass Benutzer die Werte ändern können. Falls Sie also statischen Text in einem [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) platzieren, wird die Rolle falsch gemeldet, wodurch auch die Struktur der App falsch für einen Benutzer gemeldet wird, der Barrierefreiheitsfeatures verwendet.
@@ -83,7 +83,7 @@ Für den Zugriff auf diese Funktion müssen das Eingabefeld und die Liste in der
 „Automatischer Vorschlag“ kann im Allgemeinen auf zwei Weisen genutzt werden.
 
 **Standardauswahl**  
-Wenn in der Liste eine Standardauswahl getroffen wird, sucht die Sprachausgabe ein [**UIA_SelectionItem_ElementSelectedEventId**](/windows/desktop/WinAuto/uiauto-event-ids)-Ereignis in einer Desktop-App oder das [**AutomationEvents.SelectionItemPatternOnElementSelected**](/uwp/api/windows.ui.xaml.automation.peers.automationevents)-Ereignis, um es in einer UWP-App auszulösen. Jedes Mal, wenn sich die Auswahl ändert, wenn der Benutzer einen weiteren Buchstaben eingibt und die Vorschläge aktualisiert wurden oder wenn ein Benutzer durch die Liste navigiert, sollte das **ElementSelected**-Ereignis ausgelöst werden.
+Wenn in der Liste eine Standardauswahl getroffen wird, sucht die Sprachausgabe ein [**UIA_SelectionItem_ElementSelectedEventId**](/windows/desktop/WinAuto/uiauto-event-ids)-Ereignis in einer Desktop-App oder das [**AutomationEvents.SelectionItemPatternOnElementSelected**](/uwp/api/windows.ui.xaml.automation.peers.automationevents)-Ereignis, um es in einer UWP-App auszulösen. Jedes Mal, wenn sich die Auswahl ändert, wenn der Benutzer einen weiteren Buchstaben eingibt und die Vorschläge aktualisiert wurden oder wenn ein Benutzer durch die Liste navigiert, sollte das **ElementSelected** -Ereignis ausgelöst werden.
 
 ![Liste mit Standardauswahl](images/autosuggest-default-selection.png)<br/>
 _Beispiel mit Standardauswahl_
@@ -95,7 +95,7 @@ Wenn keine Standardauswahl vorhanden ist, beispielsweise im Standortfeld der Wet
 _Beispiel ohne Standardauswahl_
 
 ### <a name="xaml-implementation"></a>XAML-Implementierung  
-Wenn Sie die standardmäßige [**AutosuggestBox**](/uwp/api/windows.ui.xaml.controls.autosuggestbox)-Klasse in XAML verwenden, ist diese Funktionalität bereits integriert. Wenn Sie mithilfe von [**TextBox**](/uwp/api/windows.ui.xaml.controls.textbox) und einer Liste eine eigene Funktion für automatische Vorschläge erstellen, müssen Sie die Liste für **TextBox** auf [**AutomationProperties.ControlledPeers**](/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) festlegen. Sie müssen das **AutomationPropertyChanged**-Ereignis jedes Mal für die [**ControlledPeers**](/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers)-Eigenschaft auslösen, wenn Sie diese Eigenschaft hinzufügen oder entfernen, und abhängig vom verwendeten Szenario auch Ihre eigenen [**SelectionItemPatternOnElementSelected**](/uwp/api/windows.ui.xaml.automation.peers.automationevents)-Ereignisse oder [**LayoutInvalidated**](/uwp/api/windows.ui.xaml.automation.peers.automationevents)-Ereignisse auslösen, wie zuvor in diesem Artikel erläutert.
+Wenn Sie die standardmäßige [**AutosuggestBox**](/uwp/api/windows.ui.xaml.controls.autosuggestbox)-Klasse in XAML verwenden, ist diese Funktionalität bereits integriert. Wenn Sie mithilfe von [**TextBox**](/uwp/api/windows.ui.xaml.controls.textbox) und einer Liste eine eigene Funktion für automatische Vorschläge erstellen, müssen Sie die Liste für **TextBox** auf [**AutomationProperties.ControlledPeers**](/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) festlegen. Sie müssen das **AutomationPropertyChanged** -Ereignis jedes Mal für die [**ControlledPeers**](/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers)-Eigenschaft auslösen, wenn Sie diese Eigenschaft hinzufügen oder entfernen, und abhängig vom verwendeten Szenario auch Ihre eigenen [**SelectionItemPatternOnElementSelected**](/uwp/api/windows.ui.xaml.automation.peers.automationevents)-Ereignisse oder [**LayoutInvalidated**](/uwp/api/windows.ui.xaml.automation.peers.automationevents)-Ereignisse auslösen, wie zuvor in diesem Artikel erläutert.
 
 ### <a name="html-implementation"></a>HTML-Implementierung  
 Wenn Sie die systemeigenen Steuerelemente in HTML verwenden, wurde die UIA-Implementierung bereits für Sie zugeordnet. Im Folgenden ein Beispiel für eine Implementierung, die bereits für Sie integriert wurde:
@@ -126,19 +126,19 @@ Verwenden Sie nach Möglichkeit keinen Text in Grafiken. Text, den Sie der in de
 
 Benutzer können Schwierigkeiten beim Lesen von Text in einer APP haben, wenn die Schriftarten einfach zu klein sind. Stellen Sie daher sicher, dass jeder Text in Ihrer Anwendung eine sinnvolle Größe ist.
 
-Nachdem Sie den offensichtlichen Vorgang durchgeführt haben, enthält Windows verschiedene Tools und Einstellungen für die Barrierefreiheit, die Benutzer nutzen und ihren eigenen Anforderungen und Vorlieben zum Lesen von Text anpassen können. Dazu zählen unter anderem folgende Einstellungen:
+Nachdem Sie den offensichtlichen Vorgang durchgeführt haben, enthält Windows verschiedene Tools und Einstellungen für die Barrierefreiheit, die Benutzer nutzen und ihren eigenen Anforderungen und Vorlieben zum Lesen von Text anpassen können. Dazu gehören:
 
 * Das Bildschirm Vergrößerungs Tool, das einen ausgewählten Bereich der Benutzeroberfläche vergrößert. Sie sollten sicherstellen, dass das Layout des Texts in der APP die Verwendung der Bildschirmlupe nicht erschwert.
-* Globale Skalierungs-und Auflösungseinstellungen in **Einstellungen->System >Anzeige >Skalierung und Layout**. Welche Größen Anpassungsoptionen verfügbar sind, kann variieren, je nachdem, welche Möglichkeiten das Anzeigegerät hat.
-* Einstellungen für die Textgröße in den **Einstellungen->einfache Zugriffs >Anzeige**. Passen Sie die Einstellung **Text vergrößern** an, um nur die Textgröße in unterstützenden Steuerelementen für alle Anwendungen und Bildschirme anzugeben (alle UWP-Text Steuerelemente unterstützen die Text Skalierung ohne Anpassung oder Vorlagen). 
+* Globale Skalierungs-und Auflösungseinstellungen in **Einstellungen->System >Anzeige >Skalierung und Layout** . Welche Größen Anpassungsoptionen verfügbar sind, kann variieren, je nachdem, welche Möglichkeiten das Anzeigegerät hat.
+* Einstellungen für die Textgröße in den **Einstellungen->einfache Zugriffs >Anzeige** . Passen Sie die Einstellung **Text vergrößern** an, um nur die Textgröße in unterstützenden Steuerelementen für alle Anwendungen und Bildschirme anzugeben (alle UWP-Text Steuerelemente unterstützen die Text Skalierung ohne Anpassung oder Vorlagen). 
 > [!NOTE]
 > Mit der Einstellung **alles erstellen** kann ein Benutzer seine bevorzugte Größe für Text und apps im Allgemeinen nur auf dem primären Bildschirm angeben.
 
-Verschiedene Textelemente und Steuerelemente verfügen über eine [**IsTextScaleFactorEnabled**](/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled)-Eigenschaft. Diese Eigenschaft weist standardmäßig den Wert **true** auf. Wenn **true**, kann die Textgröße in diesem Element skaliert werden. Die Skalierung wirkt sich auf Text aus, der einen kleinen **FontSize** -Wert aufweist, als er sich auf Text auswirkt, der über eine große **FontSize**verfügt. Sie können die automatische Größe ändern, indem Sie die Eigenschaft **istextscalefactoriable** eines Elements auf **false**festlegen. 
+Verschiedene Textelemente und Steuerelemente verfügen über eine [**IsTextScaleFactorEnabled**](/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled)-Eigenschaft. Diese Eigenschaft weist standardmäßig den Wert **true** auf. Wenn **true** , kann die Textgröße in diesem Element skaliert werden. Die Skalierung wirkt sich auf Text aus, der einen kleinen **FontSize** -Wert aufweist, als er sich auf Text auswirkt, der über eine große **FontSize** verfügt. Sie können die automatische Größe ändern, indem Sie die Eigenschaft **istextscalefactoriable** eines Elements auf **false** festlegen. 
 
 Weitere Informationen finden Sie unter [Text Skalierung](../input/text-scaling.md) .
 
-Fügen Sie der APP das folgende Markup hinzu, und führen Sie es aus. Passen Sie die Einstellung für die **Textgröße** an, und sehen Sie, was mit den einzelnen **TextBlock**geschieht.
+Fügen Sie der APP das folgende Markup hinzu, und führen Sie es aus. Passen Sie die Einstellung für die **Textgröße** an, und sehen Sie, was mit den einzelnen **TextBlock** geschieht.
 
 XAML
 ```xml
@@ -171,7 +171,7 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 
 Der Wert von **textscalefactor** ist ein Double im Bereich von \[ 1, 2,25 \] . Der kleinste Text wird um diesen Wert vergrößert. Unter Umständen können Sie den Wert verwenden, um beispielsweise Grafiken passend zum Text zu skalieren. Denken Sie jedoch daran, dass nicht der gesamte Text um denselben Faktor skaliert wird. Allgemein gilt: Je größer der Text, desto geringer sind die Auswirkungen der Skalierung.
 
-Diese Typen verfügen über eine **IsTextScaleFactorEnabled**-Eigenschaft:  
+Diese Typen verfügen über eine **IsTextScaleFactorEnabled** -Eigenschaft:  
 * [**ContentPresenter**](/uwp/api/Windows.UI.Xaml.Controls.ContentPresenter)
 * [**Control**](/uwp/api/Windows.UI.Xaml.Controls.Control) und abgeleitete Klassen
 * [**FontIcon**](/uwp/api/Windows.UI.Xaml.Controls.FontIcon)
@@ -181,7 +181,7 @@ Diese Typen verfügen über eine **IsTextScaleFactorEnabled**-Eigenschaft:
 
 <span id="related_topics"/>
 
-## <a name="related-topics"></a>Zugehörige Themen  
+## <a name="related-topics"></a>Verwandte Themen  
 
 * [Textskalierung](../input/text-scaling.md)
 * [Bedienungshilfen](accessibility.md)

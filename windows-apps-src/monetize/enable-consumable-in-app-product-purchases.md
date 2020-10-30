@@ -1,17 +1,17 @@
 ---
-Description: Bieten Sie nutzbare in-App-Produkte&\# 8212; Artikel, die erworben, verwendet und erneut erworben werden können,&\# 8212; über die Store Commerce-Plattform, um Ihren Kunden eine zuverlässige und zuverlässige Kauf Funktion bereitzustellen.
+description: Bieten Sie nutzbare in-App-Produkte&\# 8212; Artikel, die erworben, verwendet und erneut erworben werden können,&\# 8212; über die Store Commerce-Plattform, um Ihren Kunden eine zuverlässige und zuverlässige Kauf Funktion bereitzustellen.
 title: Käufe von konsumierbaren In-App-Produkten aktivieren
 ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
 keywords: UWP, consudbar, Add-ons, in-App-Käufe, IAPS, Windows. applicationmodel. Store
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fb4119296b11e805fa72ff027383d13e6fb43818
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: fdd09fdb0d80f7811014dc910772175e152505d0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363693"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033542"
 ---
 # <a name="enable-consumable-in-app-product-purchases"></a>Käufe von konsumierbaren In-App-Produkten aktivieren
 
@@ -37,7 +37,7 @@ Im nächsten Beispiel wird eine In-App-Kaufanforderung für ein Consumable gezei
 
 ## <a name="step-2-tracking-local-fulfillment-of-the-consumable"></a>Schritt 2: Verfolgen der lokalen Kauferfüllung des Verbrauchsartikels
 
-Wenn Sie dem Kunden Zugriff auf das konsumierbare In-App-Produkt gewähren, müssen Sie dokumentieren, für welches Produkt der Kauf erfüllt wird (*productId*) und mit welcher Transaktion diese Erfüllung verbunden ist (*transactionId*).
+Wenn Sie dem Kunden Zugriff auf das konsumierbare In-App-Produkt gewähren, müssen Sie dokumentieren, für welches Produkt der Kauf erfüllt wird ( *productId* ) und mit welcher Transaktion diese Erfüllung verbunden ist ( *transactionId* ).
 
 > [!IMPORTANT]
 > Ihre APP ist dafür verantwortlich, dass die Erfüllung genau an den Store gemeldet wird. Dieser Schritt ist die Grundlage dafür, dass der Kauf von den Kunden als fair und zuverlässig wahrgenommen wird.
@@ -79,6 +79,6 @@ Im folgenden Beispiel wird gezeigt, auf welche Weise [GetUnfulfilledConsumablesA
 * [Unterstützen des Kaufs von In-App-Produkten](enable-in-app-product-purchases.md)
 * [Store-Beispiel (zeigt Testversionen und In-App-Käufe)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 * [Windows.ApplicationModel.Store](/uwp/api/Windows.ApplicationModel.Store)
- 
+ 
 
- 
+ 

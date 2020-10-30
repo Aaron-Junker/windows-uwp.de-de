@@ -1,5 +1,5 @@
 ---
-Description: Verwenden Sie Cortana-Sprachbefehle, Spracherkennung und Sprachsynthese zum Integrieren von Sprache in Ihre Apps.
+description: Verwenden Sie Cortana-Sprachbefehle, Spracherkennung und Sprachsynthese zum Integrieren von Sprache in Ihre Apps.
 title: Surface Dial-Interaktionen
 label: Surface Dial interactions
 template: detail.hbs
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: fd21ca0a27979a5febbc5a3a76a02a1beb2138fd
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 641ea8a7c17e87086fe2d441b67c16e41fcaf6eb
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763022"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033463"
 ---
 # <a name="surface-dial-interactions"></a>Surface Dial-Interaktionen
 
@@ -40,9 +40,9 @@ Windows-radgeräte, z. b. die Oberfläche, sind eine neue Kategorie von Eingabeg
    :::column-end:::
 :::row-end:::
 
-Der Formfaktor des Surface Dial entspricht einer *Dreh*-Aktion (oder -Geste). Das Surface Dial soll als sekundäres, multimodales Eingabegerät genutzt werden, das Eingaben über ein primäres Gerät ergänzt. In den meisten Fällen wird das Gerät von einem Benutzer mit der nicht dominanten Hand bedient, während er mit seiner dominanten Hand eine Aufgabe ausführt (z. B. Freihandzeichnen mit einem Stift). Es wurde nicht für präzise Zeigereingaben konzipiert (wie Touch-, Stift- oder Mauseingaben). 
+Der Formfaktor des Surface Dial entspricht einer *Dreh* -Aktion (oder -Geste). Das Surface Dial soll als sekundäres, multimodales Eingabegerät genutzt werden, das Eingaben über ein primäres Gerät ergänzt. In den meisten Fällen wird das Gerät von einem Benutzer mit der nicht dominanten Hand bedient, während er mit seiner dominanten Hand eine Aufgabe ausführt (z. B. Freihandzeichnen mit einem Stift). Es wurde nicht für präzise Zeigereingaben konzipiert (wie Touch-, Stift- oder Mauseingaben). 
 
-Das Surface Dial unterstützt außerdem eine *Drücken-und-Halten*-Aktion und eine *Klick*-Aktion. „Drücken und Halten“ hat nur eine Funktion: die Anzeige eines Befehlsmenüs. Wenn das Menü aktiv ist, wird die Dreh- und Klickeingabe vom Menü verarbeitet. Andernfalls wird die Eingabe zur Verarbeitung an Ihre App übergeben. 
+Das Surface Dial unterstützt außerdem eine *Drücken-und-Halten* -Aktion und eine *Klick* -Aktion. „Drücken und Halten“ hat nur eine Funktion: die Anzeige eines Befehlsmenüs. Wenn das Menü aktiv ist, wird die Dreh- und Klickeingabe vom Menü verarbeitet. Andernfalls wird die Eingabe zur Verarbeitung an Ihre App übergeben. 
 
 **Wie bei allen Windows-Eingabegeräten können die Interaktionen mit dem Surface Dial beliebig an die Funktionalität Ihrer Apps angepasst werden.**
 
@@ -74,7 +74,7 @@ Diese integrierten Tools passen sich an den aktuellen Systemkontext an und umfas
 - Ein Tool für die Systemhelligkeit, wenn der Benutzer mit dem Windows-Desktop arbeitet
 - Ein Tool für den vorherigen/nächsten Titel bei der Medienwiedergabe
 
-Das Surface Dial bietet nicht nur allgemeine Plattformunterstützung, sondern ist auch nahtlos in die Windows Ink-Plattformsteuerelemente ([**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) und [**InkToolbar**](/uwp/api/Windows.UI.Xaml.Controls.InkToolbar)) integriert.
+Das Surface Dial bietet nicht nur allgemeine Plattformunterstützung, sondern ist auch nahtlos in die Windows Ink-Plattformsteuerelemente ( [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) und [**InkToolbar**](/uwp/api/Windows.UI.Xaml.Controls.InkToolbar)) integriert.
 
 ![Surface Dial mit Surface-Stift](images/windows-wheel/dial-and-pen-400px.png)  
 *Surface Dial mit Surface-Stift*
@@ -212,7 +212,7 @@ In diesem Beispiel wird ein einfaches benutzerdefiniertes Tool hinzugefügt, das
 
    Als Nächstes fügen wir das Element an die Sammlung der Menüelemente an.
 
-   Wir deklarieren die Eingabeereignishandler ([**ButtonClicked**](/uwp/api/windows.ui.input.radialcontroller.buttonclicked) und [**RotationChanged**](/uwp/api/windows.ui.input.radialcontroller.rotationchanged)) für das [**RadialController**](/uwp/api/Windows.UI.Input.RadialController)-Objekt.
+   Wir deklarieren die Eingabeereignishandler ( [**ButtonClicked**](/uwp/api/windows.ui.input.radialcontroller.buttonclicked) und [**RotationChanged**](/uwp/api/windows.ui.input.radialcontroller.rotationchanged)) für das [**RadialController**](/uwp/api/Windows.UI.Input.RadialController)-Objekt.
 
    Zuletzt definieren wir die Ereignishandler.
 
@@ -362,7 +362,7 @@ Folgende Richtlinien für drehbasierte Aktionen gelten für die integrierten Too
 
       Nach unten
 
-      Geben Sie in
+      In
    :::column-end:::
 :::row-end:::
 
@@ -370,11 +370,11 @@ Folgende Richtlinien für drehbasierte Aktionen gelten für die integrierten Too
 | --- | --- | --- | --- |
 | Horizontal | Links/Rechts-Zuordnung ausgehend von der Oberseite des Surface Dial | Right | Left |
 | Vertical | Oben/Unten-Zuordnung ausgehend von der linken Seite des Surface Dial | Nach unten | Nach oben |
-| Z-Achse | Hinein (oder näher) wird Oben/Rechts zugeordnet<br/>Heraus (oder weiter) wird Unten/Links zugeordnet | Geben Sie in | aus |
+| Z-Achse | Hinein (oder näher) wird Oben/Rechts zugeordnet<br/>Heraus (oder weiter) wird Unten/Links zugeordnet | In | aus |
 
 #### <a name="developer-guidance"></a>Anleitung für Entwickler
 
-Während der Benutzer das Gerät dreht, werden [**RadialController.RotationChanged**](/uwp/api/windows.ui.input.radialcontroller.rotationchanged)-Ereignisse auf Grundlage eines Deltas([**RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees**](/uwp/api/windows.ui.input.radialcontrollerrotationchangedeventargs.rotationdeltaindegrees)) relativ zur Drehrichtung ausgelöst. Die Empfindlichkeit (oder Auflösung) der Daten kann mit der [**RadialController.RotationResolutionInDegrees**](/uwp/api/windows.ui.input.radialcontroller.rotationresolutionindegrees)-Eigenschaft festgelegt werden.
+Während der Benutzer das Gerät dreht, werden [**RadialController.RotationChanged**](/uwp/api/windows.ui.input.radialcontroller.rotationchanged)-Ereignisse auf Grundlage eines Deltas( [**RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees**](/uwp/api/windows.ui.input.radialcontrollerrotationchangedeventargs.rotationdeltaindegrees)) relativ zur Drehrichtung ausgelöst. Die Empfindlichkeit (oder Auflösung) der Daten kann mit der [**RadialController.RotationResolutionInDegrees**](/uwp/api/windows.ui.input.radialcontroller.rotationresolutionindegrees)-Eigenschaft festgelegt werden.
 
 > [!NOTE]
 > Ein Eingabeereignis für Drehungen wird standardmäßig nur an ein [**RadialController**](/uwp/api/Windows.UI.Input.RadialController)-Objekt übergeben, wenn das Gerät mindestens um 10 Grad gedreht wird. Das Gerät vibriert bei jedem Eingabeereignis.
@@ -411,7 +411,7 @@ private void MyController_ButtonClicked(RadialController sender,
 }
 ```
 
-### <a name="click"></a>Klicken Sie im Menüband auf
+### <a name="click"></a>Klicken Sie auf
 
 Das Klicken mit dem Surface Dial ähnelt dem Klicken mit der linken Maustaste (der Drehzustand des Geräts hat keinen Einfluss auf diese Aktion).
 
@@ -458,7 +458,7 @@ Je nachdem, wo das Gerät platziert wird, können wichtige UI-Elemente durch das
 
 Bei Verwendung des Geräts können Teile des Bildschirms nicht nur durch die Hardware, sondern auch durch die Hand und den Arm des Benutzers verdeckt werden.
 
-Welcher Bereich verdeckt wird, hängt davon ab, mit welcher Hand das Gerät bedient wird. Da das Gerät hauptsächlich mit der nicht dominanten Hand bedient werden soll, müssen Surface Dial-bezogene UI-Elemente für die vom Benutzer angegebene entgegengesetzte Hand angepasst werden (Einstellung unter **Windows-Einstellungen > Geräte > Stift & Windows Ink > Schreibhand auswählen**).
+Welcher Bereich verdeckt wird, hängt davon ab, mit welcher Hand das Gerät bedient wird. Da das Gerät hauptsächlich mit der nicht dominanten Hand bedient werden soll, müssen Surface Dial-bezogene UI-Elemente für die vom Benutzer angegebene entgegengesetzte Hand angepasst werden (Einstellung unter **Windows-Einstellungen > Geräte > Stift & Windows Ink > Schreibhand auswählen** ).
 
 **Interaktionen sollten auf die Position und nicht auf das Verschieben des Surface Dial reagieren.**
 
@@ -470,11 +470,11 @@ Wenn Sie das aktive Tool in Abhängigkeit vom UI-Kontext festlegen, z. B. von d
 
 #### <a name="developer-guidance"></a>Anleitung für Entwickler
 
-Wenn das Surface Dial auf der Digitalisiereroberfläche des Surface Studio platziert wird, wird ein [**RadialController.ScreenContactStarted**](/uwp/api/windows.ui.input.radialcontroller.screencontactstarted)-Ereignis ausgelöst, und die Informationen zum Bildschirmkontakt([**RadialControllerScreenContactStartedEventArgs.Contact**](/uwp/api/windows.ui.input.radialcontrollerscreencontactstartedeventargs.contact)) werden an die App übermittelt.
+Wenn das Surface Dial auf der Digitalisiereroberfläche des Surface Studio platziert wird, wird ein [**RadialController.ScreenContactStarted**](/uwp/api/windows.ui.input.radialcontroller.screencontactstarted)-Ereignis ausgelöst, und die Informationen zum Bildschirmkontakt( [**RadialControllerScreenContactStartedEventArgs.Contact**](/uwp/api/windows.ui.input.radialcontrollerscreencontactstartedeventargs.contact)) werden an die App übermittelt.
 
-Auch, wenn mit dem Surface Dial geklickt wird, während es sich auf der Digitalisiereroberfläche des Surface Studio befindet, wird ein [**RadialController.ButtonClicked**](/uwp/api/windows.ui.input.radialcontroller.buttonclicked)-Ereignis ausgelöst, und die Informationen zum Bildschirmkontakt ([**RadialControllerButtonClickedEventArgs.Contact**](/uwp/api/windows.ui.input.radialcontrollerbuttonclickedeventargs.contact)) werden an die App übermittelt. 
+Auch, wenn mit dem Surface Dial geklickt wird, während es sich auf der Digitalisiereroberfläche des Surface Studio befindet, wird ein [**RadialController.ButtonClicked**](/uwp/api/windows.ui.input.radialcontroller.buttonclicked)-Ereignis ausgelöst, und die Informationen zum Bildschirmkontakt ( [**RadialControllerButtonClickedEventArgs.Contact**](/uwp/api/windows.ui.input.radialcontrollerbuttonclickedeventargs.contact)) werden an die App übermittelt. 
 
-Die Informationen zum Bildschirmkontakt ([**RadialControllerScreenContact**](/uwp/api/Windows.UI.Input.RadialControllerScreenContact)) enthalten die X/Y-Koordinate für die Mitte des Surface Dial im Koordinatenbereich der App ([**RadialControllerScreenContact.Position**](/uwp/api/windows.ui.input.radialcontrollerscreencontact.position)) und das umgebende Rechteck ([**RadialControllerScreenContact.Bounds**](/uwp/api/windows.ui.input.radialcontrollerscreencontact.bounds)) in geräteunabhängigen Pixeln (DIPs). Diese Informationen sind sehr hilfreich, wenn es darum geht, Kontext für das aktive Tool bereitzustellen und dem Benutzer gerätebezogenes visuelles Feedback zu geben.
+Die Informationen zum Bildschirmkontakt ( [**RadialControllerScreenContact**](/uwp/api/Windows.UI.Input.RadialControllerScreenContact)) enthalten die X/Y-Koordinate für die Mitte des Surface Dial im Koordinatenbereich der App ( [**RadialControllerScreenContact.Position**](/uwp/api/windows.ui.input.radialcontrollerscreencontact.position)) und das umgebende Rechteck ( [**RadialControllerScreenContact.Bounds**](/uwp/api/windows.ui.input.radialcontrollerscreencontact.bounds)) in geräteunabhängigen Pixeln (DIPs). Diese Informationen sind sehr hilfreich, wenn es darum geht, Kontext für das aktive Tool bereitzustellen und dem Benutzer gerätebezogenes visuelles Feedback zu geben.
 
 Im folgenden Beispiel haben wir eine grundlegende App mit vier verschiedenen Abschnitten erstellt. Jeder Abschnitt enthält einen Schieberegler und eine Umschaltfläche. Anschließend bestimmen wir ausgehend von der Bildschirmposition des Surface Dial, welche Gruppe von Schieberegler und Umschaltfläche durch das Surface Dial gesteuert wird.
 

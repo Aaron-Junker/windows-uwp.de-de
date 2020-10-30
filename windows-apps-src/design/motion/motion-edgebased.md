@@ -1,5 +1,5 @@
 ---
-Description: Randbasierte Animationen blenden UI-Elemente ein oder aus, die vom Bildschirmrand ausgehen.
+description: Randbasierte Animationen blenden UI-Elemente ein oder aus, die vom Bildschirmrand ausgehen.
 title: Animationen für randbasierte Benutzeroberflächenelemente
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b36f609308d559f5f0cbb56c90420f2381fb8e53
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: a49277a82a3bfffffb478496ab01d353c169463f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220173"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034233"
 ---
 # <a name="edge-based-ui-animations"></a>Animationen für randbasierte Benutzeroberflächenelemente
 
@@ -23,7 +23,7 @@ ms.locfileid: "91220173"
 
 Randbasierte Animationen blenden UI-Elemente ein oder aus, die vom Bildschirmrand ausgehen. Die Aktionen zum Anzeigen und Ausblenden können von Benutzern oder von der App initiiert werden. Die UI-Elemente können die Anwendung überlagern oder Teil der Hauptoberfläche der App sein. Wenn das UI-Element Teil der App-Oberfläche ist, müssen Sie möglicherweise die Größe der restlichen App entsprechend anpassen.
 
-> **Wichtige APIs**: [ **edgeuidermetransition-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
+> **Wichtige APIs** : [ **edgeuidermetransition-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
@@ -53,6 +53,6 @@ Randbasierte Animationen blenden UI-Elemente ein oder aus, die vom Bildschirmran
 * [Animieren von Ein- und Ausblendungen](/previous-versions/windows/apps/jj649429(v=win.10))
 * [Animieren von Änderungen der Position](/previous-versions/windows/apps/jj649434(v=win.10))
 
- 
+ 
 
- 
+ 

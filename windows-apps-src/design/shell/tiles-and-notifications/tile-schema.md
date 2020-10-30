@@ -1,27 +1,27 @@
 ---
-Description: Im folgenden Artikel werden alle Eigenschaften und Elemente für die Kachelinhalte beschrieben.
+description: Im folgenden Artikel werden alle Eigenschaften und Elemente innerhalb des Kachel Inhalts beschrieben.
 title: Kachelinhaltsschema
 ms.assetid: 7CBC3BD5-D9C3-4781-8BD0-1F28039E1FA8
 label: Tile content schema
 template: detail.hbs
 ms.date: 07/28/2017
 ms.topic: article
-keywords: Windows 10, Uwp, Kachel, Kachelbenachrichtigung, Kachelinhalt, Schema, Kachelnutzlast
+keywords: Windows 10, UWP, Kachel, Kachel Benachrichtigung, Kachel Inhalt, Schema, Kachel Nutzlast
 ms.localizationpriority: medium
-ms.openlocfilehash: eaf4583be8fdc5f0a70dddb7261b9b2d6d6afc09
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 4d1953e6d745a41c3bdd85d5f4dd3c6c9df8b900
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684194"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034413"
 ---
 # <a name="tile-content-schema"></a>Kachelinhaltsschema
 
  
 
-Im Folgenden werden alle Eigenschaften und Elemente für die Kachelinhalte beschrieben.
+Im folgenden werden alle Eigenschaften und Elemente innerhalb des Kachel Inhalts beschrieben.
 
-Wenn Sie anstelle der [Benachrichtigungsbibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) lieber unformatiertes XML verwenden, finden Sie im [XML-Schema](../tiles-and-notifications/adaptive-tiles-schema.md) weitere Informationen.
+Wenn Sie anstelle der [Benachrichtigungs Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)unformatierte XML-Daten verwenden möchten, lesen Sie [das XML-Schema](../tiles-and-notifications/adaptive-tiles-schema.md).
 
 [Tilecontent](#tilecontent)
 * [Tilevisual](#tilevisual)
@@ -33,50 +33,50 @@ Wenn Sie anstelle der [Benachrichtigungsbibliothek](https://www.nuget.org/packag
     * [Tilebindingcontentphotos](#tilebindingcontentphotos)
 
 
-## <a name="tilecontent"></a>TileContent
-TileContent ist das Objekt der obersten Ebene, das die Inhalte einer Kachelbenachrichtigung beschreibt, einschließlich der visuellen Elemente.
+## <a name="tilecontent"></a>Tilecontent
+Tilecontent ist das Objekt der obersten Ebene, das den Inhalt einer Kachel Benachrichtigung beschreibt, einschließlich visueller Elemente.
 
-| Eigenschaft | Geben Sie in das Suchfeld auf der Taskleiste | Erforderlich | Beschreibung |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
-| **Grafisches Element** | [-Visualisierung](#tilevisual) | wahr | Beschreibt den visuellen Teil der Kachelbenachrichtigung. |
+| **Visuelles Element** | [-Visualisierung](#tilevisual) | true | Beschreibt den visuellen Teil der Kachel Benachrichtigung. |
 
 
-## <a name="tilevisual"></a>TileVisual
-Der Visual-Teil der Kacheln enthält die visuellen Spezifikationen für alle Kachelgrößen und weitere Eigenschaften zur Visualisierung.
+## <a name="tilevisual"></a>Tilevisual
+Der visuelle Teil der Kacheln enthält die visuellen Spezifikationen für alle Kachel Größen und weitere visuelle Eigenschaften.
 
-| Eigenschaft | Geben Sie in das Suchfeld auf der Taskleiste | Erforderlich | Beschreibung |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
-| **Tilesmall** | [Tilebinding](#tilebinding) | Falsch | Geben Sie eine optionale Small-Bindung an, um die Inhalte für die Small-Kachelgröße anzugeben. |
-| **Tilemedium** | [Tilebinding](#tilebinding) | Falsch | Geben Sie eine optionale Medium-Bindung an, um die Inhalte für die Medium-Kachelgröße anzugeben. |
-| **Tilewide** | [Tilebinding](#tilebinding) | Falsch | Geben Sie eine optionale Wide-Bindung an, um die Inhalte für die Wide-Kachelgröße anzugeben. |
-| **Tilelarge** | [Tilebinding](#tilebinding) | Falsch | Geben Sie eine optionale Large-Bindung an, um die Inhalte für die Large-Kachelgröße anzugeben. |
-| **Branding** | TileBranding | Falsch | Die Form, die von der Kachel zum Anzeigen des Brands der App verwendet werden sollte. Erbt standardmäßig das Branding der Standardkachel. |
-| **DisplayName** | String | Falsch | Eine optionale Zeichenfolge zum Überschreiben des Anzeigenamens der Kachel beim Anzeigen dieser Benachrichtigung. |
-| **Argumente** | String | Falsch | Neues im Anniversary Update: Von der App definierte Daten, die über die Eigenschaft TileActivatedInfo von LaunchActivatedEventArgs an die App zurückgegeben werden wenn der Benutzer die App über die Live-Kachel startet. Dadurch wissen Sie, welche Kachelbenachrichtigung der Benutzer beim Tippen auf die Live-Kachel gesehen hat. Bei Geräten ohne Anniversary Update wird dies einfach ignoriert. |
-| **LockDetailedStatus1** | String | Falsch | Wenn Sie dies angeben, müssen Sie auch eine TileWide-Bindung bereitstellen. Dies ist die erste Zeile des Texts, der auf dem Sperrbildschirm angezeigt wird, wenn der Benutzer die Kachel der App als detaillierte Status-App ausgewählt hat. |
-| **LockDetailedStatus2** | String | Falsch | Wenn Sie dies angeben, müssen Sie auch eine TileWide-Bindung bereitstellen. Dies ist die zweite Zeile des Texts, der auf dem Sperrbildschirm angezeigt wird, wenn der Benutzer die Kachel der App als detaillierten Status-App ausgewählt hat. |
-| **LockDetailedStatus3** | String | Falsch | Wenn Sie dies angeben, müssen Sie auch eine TileWide-Bindung bereitstellen. Dies ist die dritte Zeile des Texts, der auf dem Sperrbildschirm angezeigt wird, wenn der Benutzer die Kachel der App als detaillierten Status-App ausgewählt hat. |
-| **BaseUri** | Uri | Falsch | Eine grundlegende Standard-URL, die mit relativen URLs in Bildquellattributen kombiniert wird. |
-| **Addimagequery** | bool? | Falsch | Legen Sie den Wert auf „Wahr“ fest, um an die in der Popupbenachrichtigung angegebene Bild-URL eine Abfragezeichenfolge anzufügen. Verwenden Sie dieses Attribut, wenn Ihr Server Bilder hostet und Abfragezeichenfolgen verarbeiten kann, indem er entweder basierend auf den Abfragezeichenfolgen eine Bildvariante abruft oder die Abfragezeichenfolge ignoriert und das Bild wie angegeben ohne die Abfragezeichenfolge zurückgibt. Diese Abfragezeichenfolge gibt Skalierung, Kontrasteinstellung und Sprache an. So wird beispielsweise ein in der Benachrichtigung angegebener Wert „www.website.com/images/hello.png“ zu „www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us“ |
-| **Sprache**| String | Falsch | Das Zielgebietsschema der visuellen Nutzlast bei Verwendung lokalisierter Ressourcen, angegeben als BCP-47-Sprachtags wie z. B. „en-US“ oder „fr-FR“. Dieses Gebietsschema wird von jedem in der Bindung oder dem Text angegebenen Gebietsschema überschrieben. Falls nicht angegeben, wird stattdessen das Gebietsschema des Systems verwendet. |
+| **TileSmall** | [Tilebinding](#tilebinding) | false | Geben Sie eine optionale kleine Bindung an, um Inhalte für die kleine Kachel Größe anzugeben. |
+| **TileMedium** | [Tilebinding](#tilebinding) | false | Geben Sie eine optionale mittlere Bindung an, um den Inhalt für die mittlere Kachel Größe anzugeben. |
+| **TileWide** | [Tilebinding](#tilebinding) | false | Stellen Sie eine optionale Breite Bindung bereit, um den Inhalt für die Breite Kachel Größe anzugeben. |
+| **Tilelarge** | [Tilebinding](#tilebinding) | false | Stellen Sie eine optionale, große Bindung bereit, um Inhalte für die große Kachel Größe anzugeben. |
+| **Branding** | Tilebranding | false | Das Formular, das die Kachel zum Anzeigen der Marke der App verwenden soll. Standardmäßig erbt Branding von der Standard Kachel. |
+| **DisplayName** | Zeichenfolge | false | Eine optionale Zeichenfolge, die den anzeigen amen der Kachel beim Anzeigen dieser Benachrichtigung außer Kraft setzt. |
+| **Argumente** | Zeichenfolge | false | Neu in Anniversary Update: App-definierte Daten, die über die tileactivatedinfo-Eigenschaft von launchactivatedeventargs an die APP zurückgegeben werden, wenn der Benutzer Ihre APP über die Live-Kachel startet. Auf diese Weise können Sie wissen, welche Kachel Benachrichtigungen der Benutzer beim Tippen auf Ihre Live-Kachel gesehen hat. Auf Geräten ohne das Anniversary Update wird dies einfach ignoriert. |
+| **LockDetailedStatus1** | Zeichenfolge | false | Wenn Sie diese Angabe angeben, müssen Sie auch eine tilewide-Bindung bereitstellen. Dies ist die erste Textzeile, die auf dem Sperrbildschirm angezeigt wird, wenn der Benutzer ihre Kachel als detaillierte Status-App ausgewählt hat. |
+| **LockDetailedStatus2** | Zeichenfolge | false | Wenn Sie diese Angabe angeben, müssen Sie auch eine tilewide-Bindung bereitstellen. Dies ist die zweite Textzeile, die auf dem Sperrbildschirm angezeigt wird, wenn der Benutzer ihre Kachel als detaillierte Status-App ausgewählt hat. |
+| **LockDetailedStatus3** | Zeichenfolge | false | Wenn Sie diese Angabe angeben, müssen Sie auch eine tilewide-Bindung bereitstellen. Dies ist die dritte Textzeile, die auf dem Sperrbildschirm angezeigt wird, wenn der Benutzer ihre Kachel als detaillierte Status-App ausgewählt hat. |
+| **BaseUri** | Uri | false | Eine Standard-Basis-URL, die mit relativen URLs in Image Quellen Attributen kombiniert wird. |
+| **Addimagequery** | bool? | false | Legen Sie diese Einstellung auf "true" fest, damit Windows eine Abfrage Zeichenfolge an die in der Popup Benachrichtigung angegebene Bild-URL anfügen kann. Verwenden Sie dieses Attribut, wenn der Server Bilder hostet und Abfrage Zeichenfolgen verarbeiten kann. dazu wird entweder eine Bild Variante basierend auf den Abfrage Zeichenfolgen abgerufen oder die Abfrage Zeichenfolge ignoriert und das Image zurückgegeben, wie es ohne die Abfrage Zeichenfolge angegeben ist Diese Abfrage Zeichenfolge gibt Skalierung, Kontrasteinstellung und Sprache an. Beispielsweise wird der Wert "www.Website.com/images/hello.png", der in der Benachrichtigung angegeben ist, zu "www.Website.com/images/hello.png? MS-Scale = 100&MS-Contrast = Standard&ms-lang = en-US". |
+| **Sprache**| Zeichenfolge | false | Das Ziel Gebiets Schema der visuellen Nutzlast, wenn lokalisierte Ressourcen verwendet werden, die als bcp-47-sprach Tags, z. b. "en-US" oder "fr-FR", angegeben werden. Dieses Gebiets Schema wird von einem beliebigen Gebiets Schema überschrieben, das in Bindung oder Text angegeben ist. Wenn keine Angabe erfolgt, wird stattdessen das Gebiets Schema des Systems verwendet. |
 
 
-## <a name="tilebinding"></a>TileBinding
-Das Binding-Objekt enthält die visuellen Inhalte für eine bestimmte Kachelgröße.
+## <a name="tilebinding"></a>Tilebinding
+Das Bindungs Objekt enthält den visuellen Inhalt für eine bestimmte Kachel Größe.
 
-| Eigenschaft | Geben Sie in das Suchfeld auf der Taskleiste | Erforderlich | Beschreibung |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
-| **Inhalt** | [Itilebindingcontent](#itilebindingcontent) | Falsch | Die visuellen Inhalte, die auf der Kachel angezeigt werden. [TileBindingContentAdaptive](#tilebindingcontentadaptive), [TileBindingContentIconic](#tilebindingcontenticonic), [TileBindingContentContact](#tilebindingcontentcontact), [TileBindingContentPeople](#tilebindingcontentpeople) oder [TileBindingContentPhotos](#tilebindingcontentphotos). |
-| **Branding** | TileBranding | Falsch | Die Form, die von der Kachel zum Anzeigen des Brands der App verwendet werden sollte. Erbt standardmäßig das Branding der Standardkachel. |
-| **DisplayName** | String | Falsch | Eine optionale Zeichenfolge zum Überschreiben des Anzeigenamens der Kachel für diese Kachelgröße. |
-| **Argumente** | String | Falsch | Neues im Anniversary Update: Von der App definierte Daten, die über die Eigenschaft TileActivatedInfo von LaunchActivatedEventArgs an die App zurückgegeben werden wenn der Benutzer die App über die Live-Kachel startet. Dadurch wissen Sie, welche Kachelbenachrichtigung der Benutzer beim Tippen auf die Live-Kachel gesehen hat. Bei Geräten ohne Anniversary Update wird dies einfach ignoriert. |
-| **BaseUri** | Uri | Falsch | Eine grundlegende Standard-URL, die mit relativen URLs in Bildquellattributen kombiniert wird. |
-| **Addimagequery** | bool? | Falsch | Legen Sie den Wert auf „Wahr“ fest, um an die in der Popupbenachrichtigung angegebene Bild-URL eine Abfragezeichenfolge anzufügen. Verwenden Sie dieses Attribut, wenn Ihr Server Bilder hostet und Abfragezeichenfolgen verarbeiten kann, indem er entweder basierend auf den Abfragezeichenfolgen eine Bildvariante abruft oder die Abfragezeichenfolge ignoriert und das Bild wie angegeben ohne die Abfragezeichenfolge zurückgibt. Diese Abfragezeichenfolge gibt Skalierung, Kontrasteinstellung und Sprache an. So wird beispielsweise ein in der Benachrichtigung angegebener Wert „www.website.com/images/hello.png“ zu „www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us“ |
-| **Sprache**| String | Falsch | Das Zielgebietsschema der visuellen Nutzlast bei Verwendung lokalisierter Ressourcen, angegeben als BCP-47-Sprachtags wie z. B. „en-US“ oder „fr-FR“. Dieses Gebietsschema wird von jedem in der Bindung oder dem Text angegebenen Gebietsschema überschrieben. Falls nicht angegeben, wird stattdessen das Gebietsschema des Systems verwendet. |
+| **Inhalt** | [Itilebindingcontent](#itilebindingcontent) | false | Der visuelle Inhalt, der auf der Kachel angezeigt werden soll. Eine von [tilebindingcontentadaptive](#tilebindingcontentadaptive), [tilebindingcontenticonic](#tilebindingcontenticonic), [tilebindingcontentcontact](#tilebindingcontentcontact), [tilebindingcontentpeople](#tilebindingcontentpeople)oder [tilebindingcontentphotos](#tilebindingcontentphotos). |
+| **Branding** | Tilebranding | false | Das Formular, das die Kachel zum Anzeigen der Marke der App verwenden soll. Standardmäßig erbt Branding von der Standard Kachel. |
+| **DisplayName** | Zeichenfolge | false | Eine optionale Zeichenfolge, um den anzeigen amen der Kachel für diese Kachel Größe zu überschreiben. |
+| **Argumente** | Zeichenfolge | false | Neu in Anniversary Update: App-definierte Daten, die über die tileactivatedinfo-Eigenschaft von launchactivatedeventargs an die APP zurückgegeben werden, wenn der Benutzer Ihre APP über die Live-Kachel startet. Auf diese Weise können Sie wissen, welche Kachel Benachrichtigungen der Benutzer beim Tippen auf Ihre Live-Kachel gesehen hat. Auf Geräten ohne das Anniversary Update wird dies einfach ignoriert. |
+| **BaseUri** | Uri | false | Eine Standard-Basis-URL, die mit relativen URLs in Image Quellen Attributen kombiniert wird. |
+| **Addimagequery** | bool? | false | Legen Sie diese Einstellung auf "true" fest, damit Windows eine Abfrage Zeichenfolge an die in der Popup Benachrichtigung angegebene Bild-URL anfügen kann. Verwenden Sie dieses Attribut, wenn der Server Bilder hostet und Abfrage Zeichenfolgen verarbeiten kann. dazu wird entweder eine Bild Variante basierend auf den Abfrage Zeichenfolgen abgerufen oder die Abfrage Zeichenfolge ignoriert und das Image zurückgegeben, wie es ohne die Abfrage Zeichenfolge angegeben ist Diese Abfrage Zeichenfolge gibt Skalierung, Kontrasteinstellung und Sprache an. Beispielsweise wird der Wert "www.Website.com/images/hello.png", der in der Benachrichtigung angegeben ist, zu "www.Website.com/images/hello.png? MS-Scale = 100&MS-Contrast = Standard&ms-lang = en-US". |
+| **Sprache**| Zeichenfolge | false | Das Ziel Gebiets Schema der visuellen Nutzlast, wenn lokalisierte Ressourcen verwendet werden, die als bcp-47-sprach Tags, z. b. "en-US" oder "fr-FR", angegeben werden. Dieses Gebiets Schema wird von einem beliebigen Gebiets Schema überschrieben, das in Bindung oder Text angegeben ist. Wenn keine Angabe erfolgt, wird stattdessen das Gebiets Schema des Systems verwendet. |
 
 
-## <a name="itilebindingcontent"></a>ITileBindingContent
-Markierungsschnittstelle für die Kachel-Bindungsinhalte. Dient zum Festlegen der visuellen Objekte der Kachel in adaptiven Vorlagen oder einer der speziellen Vorlagen.
+## <a name="itilebindingcontent"></a>Itilebindingcontent
+Markerschnittstelle für den Bindungs Inhalt der Kachel. Mit diesen Optionen können Sie auswählen, wie Sie Ihre Kachel Visualisierungen in adaptiver Form angeben möchten, oder eine der speziellen Vorlagen.
 
 | Implementierungen |
 | --- |
@@ -87,123 +87,123 @@ Markierungsschnittstelle für die Kachel-Bindungsinhalte. Dient zum Festlegen de
 | [Tilebindingcontentphotos](#tilebindingcontentphotos) |
 
 
-## <a name="tilebindingcontentadaptive"></a>TileBindingContentAdaptive
-Für alle Größe unterstützt. Dies ist die empfohlene Methode zum Festlegen der Kachelinhalte. Vorlagen für adaptive Kacheln sind in Windows 10 neu. Sie können eine Vielzahl von benutzerdefinierten Kacheln über Vorlagen für adaptive Kacheln erstellen.
+## <a name="tilebindingcontentadaptive"></a>Tilebindingcontentadaptive
+Unterstützt für alle Größen. Dies ist die empfohlene Methode, um den Kachel Inhalt anzugeben. Adaptive Kachel Vorlagen neu in Windows 10, und Sie können eine Vielzahl von benutzerdefinierten Kacheln durch adaptive erstellen.
 
-| Eigenschaft | Geben Sie in das Suchfeld auf der Taskleiste | Erforderlich | Beschreibung |
+| Eigenschaft | type | Erforderlich | BESCHREIBUNG |
 |---|---|---|---|
-| **Children** | IList-<ITileBindingContentAdaptiveChild> | Falsch | Die visuellen Inline-Elemente. Es können [AdaptiveText](#adaptivetext)-, [AdaptiveImage](#adaptiveimage)- und [AdaptiveGroup](#adaptivegroup)-Objekte hinzugefügt werden. Die untergeordneten Elemente werden als vertikales StackPanel angezeigt. |
-| **Background Image** | [Tilebackgroundimage](#tilebackgroundimage) | Falsch | Ein optionales Hintergrundbild, das randlos hinter den Kachelinhalten angezeigt wird. |
-| **Peer Image** | [Tilepeer Image](#tilepeekimage) | Falsch | Ein optionales Vorschaubild, das von oben in die Kachel hineingleitet. |
-| **Textstapel** | [Tiletextstacking](#tiletextstacking) | Falsch | Steuert den gestapelten Text (vertikale Ausrichtung) der untergeordneten Inhalte als Ganzes. |
+| **Children** | IList<ITileBindingContentAdaptiveChild> | false | Die visuellen Inline Elemente. [Adaptivetext](#adaptivetext)-, [adaptiveimage](#adaptiveimage)-und [adaptivegroup](#adaptivegroup) -Objekte können hinzugefügt werden. Die untergeordneten Elemente werden in einem vertikalen StackPanel-Stil angezeigt. |
+| **Background Image** | [Tilebackgroundimage](#tilebackgroundimage) | false | Ein optionales Hintergrundbild, das hinter dem gesamten Kachel Inhalt angezeigt wird, vollständig bluten. |
+| **Peer Image** | [Tilepeer Image](#tilepeekimage) | false | Ein optionales Peek-Bild, das vom oberen Rand der Kachel aus animiert. |
+| **Textstapel** | [Tiletextstacking](#tiletextstacking) | false | Steuert den Text Stapel (vertikale Ausrichtung) des untergeordneten Inhalts als Ganzes. |
 
 
-## <a name="adaptivetext"></a>AdaptiveText
+## <a name="adaptivetext"></a>Adaptivetext
 Ein adaptives Textelement.
 
-| Eigenschaft | Geben Sie in das Suchfeld auf der Taskleiste | Erforderlich |Beschreibung |
+| Eigenschaft | type | Erforderlich |BESCHREIBUNG |
 |---|---|---|---|
-| **Text** | String | Falsch | Der Text, der angezeigt werden soll. |
-| **Hintstyle** | [Adaptivetextstyle](#adaptivetextstyle) | Falsch | Der Stil steuert den Schriftgrad, die Schriftbreite und die Deckkraft des Texts. |
-| **Hintwrap** | bool? | Falsch | Legen Sie diese Option auf „Wahr“ fest, um Textumbruch zu aktivieren. Der Standardwert ist „Falsch“. |
-| **Hintmaxlines** | int? | Falsch | Die maximale Anzahl der Zeilen, die das Textelement anzeigen darf. |
-| **Hintminlines** | int? | Falsch | Die Mindestanzahl der Zeilen, die das Textelement anzeigen muss. |
-| **Hintalign** | [Adaptivetextalign](#adaptivetextalign) | Falsch | Die horizontale Ausrichtung des Texts. |
-| **Sprache** | String | Falsch | Das Zielgebietsschema der XML-Nutzlast, angegeben als BCP-47-Sprachtags wie z. B. „ en-US“ oder „fr-FR“. Das hier angegebene Gebietsschema überschreibt jedes andere – etwa in der Bindung oder im visuellen Element – angegebene Gebietsschema. Wenn dieser Wert eine Literalzeichenfolge ist, wird für dieses Attribut standardmäßig die Sprache der Benutzeroberfläche des Benutzers verwendet. Wenn dieser Wert ein Zeichenfolgenverweis ist, wird für dieses Attribut standardmäßig das Gebietsschema verwendet, das beim Auflösen der Zeichenfolge von Windows-Runtime ausgewählt wurde. |
+| **Text** | Zeichenfolge | false | Der anzuzeigende Text. |
+| **Hintstyle** | [Adaptivetextstyle](#adaptivetextstyle) | false | Der Stil steuert die Schriftgröße, die Gewichtung und die Deckkraft des Texts. |
+| **Hintwrap** | bool? | false | Legen Sie diese Einstellung auf "true" fest, um die Text um Der Standardwert ist false. |
+| **Hintmaxlines** | int? | false | Die maximale Anzahl von Zeilen, die das Textelement anzeigen darf. |
+| **Hintminlines** | int? | false | Die Mindestanzahl von Zeilen, die das Textelement anzeigen muss. |
+| **Hintalign** | [Adaptivetextalign](#adaptivetextalign) | false | Die horizontale Ausrichtung des Texts. |
+| **Sprache** | Zeichenfolge | false | Das Ziel Gebiets Schema der XML-Nutzlast, das als bcp-47-sprach Tags, z. b. "en-US" oder "fr-FR", angegeben ist. Das hier angegebene Gebiets Schema überschreibt ein anderes angegebenes Gebiets Schema, z. b. das in der Bindung oder in Visual. Wenn dieser Wert eine Literalzeichenfolge ist, wird dieses Attribut standardmäßig auf die Benutzeroberflächen Sprache des Benutzers eingestellt. Wenn dieser Wert ein Zeichen folgen Verweis ist, wird dieses Attribut standardmäßig auf das von Windows-Runtime beim Auflösen der Zeichenfolge gewählte Gebiets Schema eingestellt. |
 
 
-### <a name="adaptivetextstyle"></a>AdaptiveTextStyle
-Textstil steuert Schriftgrad, Schriftbreite und Deckkraft. Dezente Deckkraft ist 60 % undurchsichtig.
+### <a name="adaptivetextstyle"></a>Adaptivetextstyle
+Textstil steuert die Schriftgröße, die Gewichtung und die Deckkraft. Die feine Deckkraft ist 60% nicht transparent.
 
-| Value | Bedeutung |
+| Wert | Bedeutung |
 |---|---|
-| **Default** | Standardwert. Stil wird durch den Renderer bestimmt. |
-| **Beschriftung** | Kleiner als Schriftgrad des Absatzes. |
-| **Captionfeine** | Identisch mit „Untertitel für Hörgeschädigte“, aber mit dezenter Deckkraft. |
-| **Textkörper** | Schriftgrad des Absatzes. |
-| **Bodyfein** | Identisch mit „Textkörper“, aber mit dezenter Deckkraft. |
-| **Sock** | Schriftgrad des Absatzes, fette Schriftbreite. Im Wesentlichen die fettgedruckte Version des Textkörpers. |
-| **Basesubtle** | Identisch mit „Basis“, aber mit dezenter Deckkraft. |
-| **Titel** | H4-Schriftgrad. |
-| **Subtitlefeine** | Identisch mit „Untertitel“, aber mit dezenter Deckkraft. |
-| **Title** | H3-Schriftgrad. |
-| **Titlefeine** | Identisch mit „Titel“, aber mit dezenter Deckkraft. |
-| **Titleneneral** | Identisch mit „Titel“, aber ohne Abstand nach oben/unten. |
-| **Subheader** | H2-Schriftgrad. |
-| **Subheaderfein** | Identisch mit „Unterüberschrift“, aber mit dezenter Deckkraft. |
-| **Subheadernumeral** | Identisch mit „Unterüberschrift“, aber ohne Abstand nach oben/unten. |
-| **Header** | H1-Schriftgrad. |
-| **Headerfein** | Identisch mit „Kopfzeile“, aber mit dezenter Deckkraft. |
-| **Headernumeral** | Identisch mit „Kopfzeile“, aber ohne Abstand nach oben/unten. |
+| **Standard** | Standardwert. Der Stil wird vom Renderer bestimmt. |
+| **Caption** | Kleiner als Absatz Schriftgrad. |
+| **Captionfeine** | Identisch mit Beschriftung, aber mit feiner Deckkraft. |
+| **Text** | Schriftart Größe des Absatzes. |
+| **Bodyfein** | Identisch mit Body, aber mit feiner Deckkraft. |
+| **Sock** | Schriftart Größe des Absatzes, fett formatiert. Im Wesentlichen die Fett formatierte Version von Body. |
+| **Basesubtle** | Identisch mit Basis, aber mit feiner Deckkraft. |
+| **Untertitel** | H4-Schrift Grad. |
+| **Subtitlefeine** | Identisch mit Untertiteln, aber mit feiner Deckkraft. |
+| **Titel** | H3 Schrift Grad. |
+| **Titlefeine** | Identisch mit Title, aber mit feiner Deckkraft. |
+| **Titleneneral** | Identisch mit Title, aber mit dem oberen/unteren Abstand entfernt. |
+| **Subheader** | H2-Schrift Grad. |
+| **Subheaderfein** | Identisch mit der unter Kopfzeile, aber mit einer subtilen Deckkraft. |
+| **Subheadernumeral** | Identisch mit der unter Kopfzeile, aber mit dem oberen/unteren Abstand entfernt. |
+| **Kopfzeile** | H1 Schrift Grad. |
+| **Headerfein** | Identisch mit Header, aber mit feiner Deckkraft. |
+| **Headernumeral** | Identisch mit dem Header, aber mit dem oberen/unteren Abstand entfernt. |
 
 
-### <a name="adaptivetextalign"></a>AdaptiveTextAlign
-Steuert die horizontale Ausrichtung des Texts.
+### <a name="adaptivetextalign"></a>Adaptivetextalign
+Steuert die horizontalen alignmen von Text.
 
-| Value | Bedeutung |
+| Wert | Bedeutung |
 |---|---|
-| **Default** | Standardwert. Ausrichtung wird automatisch vom Renderer bestimmt. |
-| **Auto** | Ausrichtung durch die aktuelle Sprache und Kultur bestimmt. |
-| **Links** | Den Text horizontal linksbündig ausrichten. |
-| **Tagesstätte** | Den Text horizontal zentrieren. |
-| **Rechts** | Den Text horizontal rechtsbündig ausrichten. |
+| **Standard** | Standardwert. Die Ausrichtung wird automatisch vom Renderer bestimmt. |
+| **Automatisch** | Die Ausrichtung, die von der aktuellen Sprache und Kultur bestimmt wird. |
+| **Left** | Richten Sie den Text horizontal linksbündig aus. |
+| **Tagesstätte** | Richten Sie den Text in der Mitte horizontal aus. |
+| **Right** | Richten Sie den Text horizontal nach rechts aus. |
 
 
-## <a name="adaptiveimage"></a>AdaptiveImage
-Ein Inlinebild.
+## <a name="adaptiveimage"></a>Adaptiveimage
+Ein Inline Bild.
 
-| Eigenschaft | Geben Sie in das Suchfeld auf der Taskleiste | Erforderlich |Beschreibung |
+| Eigenschaft | type | Erforderlich |BESCHREIBUNG |
 |---|---|---|---|
-| **Quelle** | String | wahr | Die URL zum Bild. ms-appx, ms-appdata und http werden unterstützt. Im Fall Creators Update kann die Größe der Webbilder 3 MB für normale Verbindungen und 1 MB für getaktete Verbindungen betragen. Auf Geräten, die noch nicht das Fall Creators Update haben, dürfen Webbilder nicht größer als 200 KB sein. |
-| **Hintcrop** | [Adaptiveimagecrop](#adaptiveimagecrop) | Falsch | Steuert den gewünschten Zuschnitt des Bilds. |
-| **Hintremovemargin** | bool? | Falsch | Bilder in Gruppen/Untergruppen verfügen standardmäßig über einen Rand von 8 Pixel. Sie können diesen Rand entfernen, indem Sie diese Eigenschaft auf „Wahr“ festlegen. |
-| **Hintalign** | [Adaptiveimagealign](#adaptiveimagealign) | Falsch | Die horizontale Ausrichtung des Bilds. |
-| **AlternateText** | String | Falsch | Alternativtext, der das Bild beschreibt; wird für Bedienungshilfen verwendet. |
-| **Addimagequery** | bool? | Falsch | Legen Sie den Wert auf „Wahr“ fest, um an die in der Kachelbenachrichtigung angegebene Bild-URL eine Abfragezeichenfolge anzufügen. Verwenden Sie dieses Attribut, wenn Ihr Server Bilder hostet und Abfragezeichenfolgen verarbeiten kann, indem er entweder basierend auf den Abfragezeichenfolgen eine Bildvariante abruft oder die Abfragezeichenfolge ignoriert und das Bild wie angegeben ohne die Abfragezeichenfolge zurückgibt. Diese Abfragezeichenfolge gibt Skalierung, Kontrasteinstellung und Sprache an. So wird beispielsweise ein in der Benachrichtigung angegebener Wert „www.website.com/images/hello.png“ zu „www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us“ |
+| **Quelle** | Zeichenfolge | true | Die URL des Bilds. MS-AppX, MS-APPDATA und http werden unterstützt. Im Fall von Creators Update können webimages bei normalen Verbindungen bis zu 3 MB und bei getakteten Verbindungen 1 MB betragen. Auf Geräten, auf denen das Fall Creators Update noch nicht ausgeführt wird, dürfen webimages nicht größer als 200 KB sein. |
+| **Hintcrop** | [Adaptiveimagecrop](#adaptiveimagecrop) | false | Steuern Sie das gewünschte Zuschneiden des Bilds. |
+| **Hintremovemargin** | bool? | false | Standardmäßig haben Bilder innerhalb von Gruppen/Untergruppen einen 8px-Rand um diese. Sie können diesen Rand entfernen, indem Sie diese Eigenschaft auf "true" festlegen. |
+| **Hintalign** | [Adaptiveimagealign](#adaptiveimagealign) | false | Die horizontale Ausrichtung des Bilds. |
+| **AlternateText** | Zeichenfolge | false | Alternativer Text, der das Bild beschreibt, das zu Barrierefreiheits Zwecken verwendet wird. |
+| **Addimagequery** | bool? | false | Legen Sie diese Einstellung auf "true" fest, damit Windows eine Abfrage Zeichenfolge an die in der Kachel Benachrichtigung angegebene Bild-URL anfügen kann. Verwenden Sie dieses Attribut, wenn der Server Bilder hostet und Abfrage Zeichenfolgen verarbeiten kann. dazu wird entweder eine Bild Variante basierend auf den Abfrage Zeichenfolgen abgerufen oder die Abfrage Zeichenfolge ignoriert und das Image zurückgegeben, wie es ohne die Abfrage Zeichenfolge angegeben ist Diese Abfrage Zeichenfolge gibt Skalierung, Kontrasteinstellung und Sprache an. Beispielsweise wird der Wert "www.Website.com/images/hello.png", der in der Benachrichtigung angegeben ist, zu "www.Website.com/images/hello.png? MS-Scale = 100&MS-Contrast = Standard&ms-lang = en-US". |
 
 
-### <a name="adaptiveimagecrop"></a>AdaptiveImageCrop
-Gibt den gewünschten Zuschnitt des Bilds an.
+### <a name="adaptiveimagecrop"></a>Adaptiveimagecrop
+Gibt das gewünschte Zuschneiden des Bilds an.
 
-| Value | Bedeutung |
+| Wert | Bedeutung |
 |---|---|
-| **Default** | Standardwert. Zuschneideverhalten wird vom Renderer bestimmt. |
-| **Keine** | Bild wird nicht zugeschnitten. |
-| **Kreisen** | Bild wird kreisförmig zugeschnitten. |
+| **Standard** | Standardwert. Das durch Renderer festgelegte zuschneideverhalten. |
+| **None** | Das Bild wird nicht abgeschnitten. |
+| **Circle** | Das Bild wird auf eine Kreisform zugeschnitten. |
 
 
-### <a name="adaptiveimagealign"></a>AdaptiveImageAlign
-Gibt die horizontale Ausrichtung für ein Bild an.
+### <a name="adaptiveimagealign"></a>Adaptiveimagealign
+Gibt die horizontale Ausrichtung eines Bilds an.
 
-| Value | Bedeutung |
+| Wert | Bedeutung |
 |---|---|
-| **Default** | Standardwert. Ausrichtungsverhalten vom Renderer bestimmt. |
-| **Tre** | Bild wird gestreckt, um die verfügbare Breite (und möglicherweise auch die verfügbare Höhe, je nachdem, wo das Bild platziert wird) auszufüllen. |
-| **Links** | Das Bild links ausrichten, wobei das Bild mit der systemeigenen Auflösung angezeigt wird. |
-| **Tagesstätte** | Das Bild zentrieren, wobei das Bild mit der systemeigenen Auflösung angezeigt wird. |
-| **Rechts** | Das Bild rechts ausrichten, wobei das Bild mit der systemeigenen Auflösung angezeigt wird. |
+| **Standard** | Standardwert. Ausrichtungs Verhalten, das vom Renderer bestimmt wird. |
+| **Stretch** | Bild reicht aus, um die verfügbare Breite (und potenziell verfügbare Höhe) auszufüllen, je nachdem, wo das Bild platziert wird. |
+| **Left** | Richten Sie das Bild linksbündig aus, und zeigen Sie das Bild bei seiner systemeigenen Auflösung an. |
+| **Tagesstätte** | Richten Sie das Bild horizontal in der Mitte aus, und betrachten Sie das Bild bei seiner nativen Auflösung. |
+| **Right** | Richten Sie das Bild rechtsbündig aus, und zeigen Sie das Bild bei seiner systemeigenen Auflösung an. |
 
 
-## <a name="adaptivegroup"></a>AdaptiveGroup
-Gruppen geben semantisch an, dass der Inhalt in der Gruppe entweder als Ganzes oder nicht angezeigt werden soll, wenn nicht genügend Platz vorhanden ist. Gruppen können auch mehrere Spalten erstellen.
+## <a name="adaptivegroup"></a>Adaptivegroup
+Gruppen stellen semantisch fest, dass der Inhalt in der Gruppe als Ganzes angezeigt oder nicht angezeigt werden muss, wenn er nicht passt. Gruppen ermöglichen auch das Erstellen mehrerer Spalten.
 
-| Eigenschaft | Geben Sie in das Suchfeld auf der Taskleiste | Erforderlich |Beschreibung |
+| Eigenschaft | type | Erforderlich |BESCHREIBUNG |
 |---|---|---|---|
-| **Children** | IList<[AdaptiveSubgroup](#adaptivesubgroup)> | Falsch | Untergruppen werden als vertikale Spalten angezeigt. Sie müssen Untergruppen verwenden, um Inhalt innerhalb einer AdaptiveGroup bereitzustellen. |
+| **Children** | IList<[adaptivesubgroup](#adaptivesubgroup)> | false | Untergruppen werden als vertikale Spalten angezeigt. Sie müssen Untergruppen verwenden, um Inhalte innerhalb einer adaptivegroup bereitzustellen. |
 
 
-## <a name="adaptivesubgroup"></a>AdaptiveSubgroup
+## <a name="adaptivesubgroup"></a>Adaptivesubgroup
 Untergruppen sind vertikale Spalten, die Text und Bilder enthalten können.
 
-| Eigenschaft | Geben Sie in das Suchfeld auf der Taskleiste | Erforderlich |Beschreibung |
+| Eigenschaft | type | Erforderlich |BESCHREIBUNG |
 |---|---|---|---|
-| **Children** | IList<[IAdaptiveSubgroupChild](#iadaptivesubgroupchild)> | Falsch | [AdaptiveText](#adaptivetext) und [AdaptiveImage](#adaptiveimage) gültige untergeordnete Elemente von Untergruppen. |
-| **Hintweight** | int? | Falsch | Steuern Sie die Breite dieser Untergruppenspalte, indem Sie die Breite im Verhältnis zu den anderen Untergruppen angeben. |
-| **Hinttextstapel** | [Adaptivesubgrouptextstacking](#adaptivesubgrouptextstacking) | Falsch | Steuern Sie die vertikale Ausrichtung des Inhalts dieser Untergruppe. |
+| **Children** | IList<[iadaptivesubgroupchild](#iadaptivesubgroupchild)> | false | [Adaptivetext](#adaptivetext) und [adaptiveimage](#adaptiveimage) sind gültige untergeordnete Elemente von Untergruppen. |
+| **Hintweight** | int? | false | Steuern Sie die Breite dieser Untergruppen Spalte, indem Sie die Gewichtung angeben, relativ zu den anderen Untergruppen. |
+| **Hinttextstapel** | [Adaptivesubgrouptextstacking](#adaptivesubgrouptextstacking) | false | Steuert die vertikale Ausrichtung des Inhalts der Untergruppe. |
 
 
-### <a name="iadaptivesubgroupchild"></a>IAdaptiveSubgroupChild
-Markierungsschnittstelle für untergeordnete Untergruppenelemente.
+### <a name="iadaptivesubgroupchild"></a>Iadaptivesubgroupchild
+Markerschnittstelle für untergeordnete Untergruppen.
 
 | Implementierungen |
 | --- |
@@ -211,125 +211,125 @@ Markierungsschnittstelle für untergeordnete Untergruppenelemente.
 | [Adaptiveimage](#adaptiveimage) |
 
 
-### <a name="adaptivesubgrouptextstacking"></a>AdaptiveSubgroupTextStacking
-TextStacking gibt die vertikale Ausrichtung des Inhalts an.
+### <a name="adaptivesubgrouptextstacking"></a>Adaptivesubgrouptextstacking
+Textstacking gibt die vertikale Ausrichtung des Inhalts an.
 
-| Value | Bedeutung |
+| Wert | Bedeutung |
 |---|---|
-| **Default** | Standardwert. Renderer wählt automatisch die standardmäßige vertikale Ausrichtung aus. |
-| **Top** (Oben) | Vertikal oben ausrichten. |
-| **Tagesstätte** | Vertikal zentrieren. |
-| **Bottom** (Unten) | Vertikal unten ausrichten. |
+| **Standard** | Standardwert. Der Renderer wählt automatisch die vertikale Standardausrichtung aus. |
+| **Top** | Vertikale Ausrichtung am oberen Rand. |
+| **Tagesstätte** | Vertikal ausgerichtet an der Mitte. |
+| **bottom** | Vertikal ausgerichtet am unteren Rand. |
 
 
-## <a name="tilebackgroundimage"></a>TileBackgroundImage
-Ein Hintergrundbild, das randlos auf der Kachel angezeigt wird.
+## <a name="tilebackgroundimage"></a>Tilebackgroundimage
+Ein Hintergrundbild, das vollständig auf der Kachel angezeigt wird.
 
-| Eigenschaft | Geben Sie in das Suchfeld auf der Taskleiste | Erforderlich |Beschreibung |
+| Eigenschaft | type | Erforderlich |BESCHREIBUNG |
 |---|---|---|---|
-| **Quelle** | String | wahr | Die URL zum Bild. ms-appx, ms-appdata und http(s) werden unterstützt. HTTP-Bilder müssen kleiner als 200 KB sein. |
-| **Hinum** | int? | Falsch | Ein schwarzes Overlay auf dem Hintergrundbild. Dieser Wert steuert die Deckkraft des schwarzen Overlays, wobei 0 kein Overlay und 100 vollständig schwarz ist. Die Standardeinstellung ist 20. |
-| **Hintcrop** | [Tilebackgroundimagecrop](#tilebackgroundimagecrop) | Falsch | Neu in 1511: Geben Sie an, wie das Bild zugeschnitten werden soll. In Versionen vor 1511 wird dies ignoriert und das Hintergrundbild ohne Zuschneiden angezeigt. |
-| **AlternateText** | String | Falsch | Alternativtext, der das Bild beschreibt; wird für Bedienungshilfen verwendet. |
-| **Addimagequery** | bool? | Falsch | Legen Sie den Wert auf „Wahr“ fest, um an die in der Kachelbenachrichtigung angegebene Bild-URL eine Abfragezeichenfolge anzufügen. Verwenden Sie dieses Attribut, wenn Ihr Server Bilder hostet und Abfragezeichenfolgen verarbeiten kann, indem er entweder basierend auf den Abfragezeichenfolgen eine Bildvariante abruft oder die Abfragezeichenfolge ignoriert und das Bild wie angegeben ohne die Abfragezeichenfolge zurückgibt. Diese Abfragezeichenfolge gibt Skalierung, Kontrasteinstellung und Sprache an. So wird beispielsweise ein in der Benachrichtigung angegebener Wert „www.website.com/images/hello.png“ zu „www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us“ |
+| **Quelle** | Zeichenfolge | true | Die URL des Bilds. MS-AppX, MS-APPDATA und http (s) werden unterstützt. Http-Bilder müssen mindestens 200 KB groß sein. |
+| **Hinum** | int? | false | Eine schwarze Überlagerung für das Hintergrundbild. Dieser Wert steuert die Deckkraft des schwarzen Overlay, wobei 0 kein Overlay und 100 vollständig schwarz ist. Der Standardwert ist 20. |
+| **Hintcrop** | [Tilebackgroundimagecrop](#tilebackgroundimagecrop) | false | Neu in 1511: Geben Sie an, wie das Bild abgeschnitten werden soll. In Versionen vor 1511 wird dies ignoriert, und das Hintergrundbild wird ohne Zuschneiden angezeigt. |
+| **AlternateText** | Zeichenfolge | false | Alternativer Text, der das Bild beschreibt, das zu Barrierefreiheits Zwecken verwendet wird. |
+| **Addimagequery** | bool? | false | Legen Sie diese Einstellung auf "true" fest, damit Windows eine Abfrage Zeichenfolge an die in der Kachel Benachrichtigung angegebene Bild-URL anfügen kann. Verwenden Sie dieses Attribut, wenn der Server Bilder hostet und Abfrage Zeichenfolgen verarbeiten kann. dazu wird entweder eine Bild Variante basierend auf den Abfrage Zeichenfolgen abgerufen oder die Abfrage Zeichenfolge ignoriert und das Image zurückgegeben, wie es ohne die Abfrage Zeichenfolge angegeben ist Diese Abfrage Zeichenfolge gibt Skalierung, Kontrasteinstellung und Sprache an. Beispielsweise wird der Wert "www.Website.com/images/hello.png", der in der Benachrichtigung angegeben ist, zu "www.Website.com/images/hello.png? MS-Scale = 100&MS-Contrast = Standard&ms-lang = en-US". |
 
 
-### <a name="tilebackgroundimagecrop"></a>TileBackgroundImageCrop
-Steuert das Zuschneiden des Hintergrundbilds.
+### <a name="tilebackgroundimagecrop"></a>Tilebackgroundimagecrop
+Steuert das Abschneiden des Hintergrund Bilds.
 
-| Value | Bedeutung |
+| Wert | Bedeutung |
 |---|---|
-| **Default** | Beim Zuschneiden wird das Standardverhalten des Renderers verwendet. |
-| **Keine** | Bild wird nicht zugeschnitten, wird quadratisch angezeigt. |
-| **Kreisen** | Bild wird kreisförmig zugeschnitten. |
+| **Standard** | Beim Zuschneiden wird das Standardverhalten des Renderers verwendet. |
+| **None** | Das Bild wird nicht abgeschnitten, das Quadrat wird angezeigt. |
+| **Circle** | Das Bild wird auf einen Kreis zugeschnitten. |
 
 
-## <a name="tilepeekimage"></a>TilePeekImage
-Ein Vorschaubild, das von oben in die Kachel hineingleitet.
+## <a name="tilepeekimage"></a>Tilepeer Image
+Ein Peek-Bild, das vom oberen Rand der Kachel aus animiert.
 
-| Eigenschaft | Geben Sie in das Suchfeld auf der Taskleiste | Erforderlich |Beschreibung |
+| Eigenschaft | type | Erforderlich |BESCHREIBUNG |
 |---|---|---|---|
-| **Quelle** | String | wahr | Die URL zum Bild. ms-appx, ms-appdata und http(s) werden unterstützt. HTTP-Bilder müssen kleiner als 200 KB sein. |
-| **Hinum** | int? | Falsch | Neu ab 1511: Ein schwarzes Overlay auf dem Vorschaubild. Dieser Wert steuert die Deckkraft des schwarzen Overlays, wobei 0 kein Overlay und 100 vollständig schwarz ist. Die Standardeinstellung ist 20. In früheren Versionen wird dieser Wert ignoriert und das Peek-Bild wird mit 0 Overlay angezeigt. |
-| **Hintcrop** | [Tileetekimagecrop](#tilepeekimagecrop) | Falsch | Neu in 1511: Geben Sie an, wie das Bild zugeschnitten werden soll. In Versionen vor 1511 wird dies ignoriert und das Vorschaubild ohne Zuschneiden angezeigt. |
-| **AlternateText** | String | Falsch | Alternativtext, der das Bild beschreibt; wird für Bedienungshilfen verwendet. |
-| **Addimagequery** | bool? | Falsch | Legen Sie den Wert auf „Wahr“ fest, um an die in der Kachelbenachrichtigung angegebene Bild-URL eine Abfragezeichenfolge anzufügen. Verwenden Sie dieses Attribut, wenn Ihr Server Bilder hostet und Abfragezeichenfolgen verarbeiten kann, indem er entweder basierend auf den Abfragezeichenfolgen eine Bildvariante abruft oder die Abfragezeichenfolge ignoriert und das Bild wie angegeben ohne die Abfragezeichenfolge zurückgibt. Diese Abfragezeichenfolge gibt Skalierung, Kontrasteinstellung und Sprache an. So wird beispielsweise ein in der Benachrichtigung angegebener Wert „www.website.com/images/hello.png“ zu „www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us“ |
+| **Quelle** | Zeichenfolge | true | Die URL des Bilds. MS-AppX, MS-APPDATA und http (s) werden unterstützt. Http-Bilder müssen mindestens 200 KB groß sein. |
+| **Hinum** | int? | false | Neu in 1511: ein schwarzes Overlay für das Peek-Bild. Dieser Wert steuert die Deckkraft des schwarzen Overlay, wobei 0 kein Overlay und 100 vollständig schwarz ist. Der Standardwert ist 20. In früheren Versionen wird dieser Wert ignoriert, und das Peek-Bild wird mit 0 Overlay angezeigt. |
+| **Hintcrop** | [Tileetekimagecrop](#tilepeekimagecrop) | false | Neu in 1511: Geben Sie an, wie das Bild abgeschnitten werden soll. In Versionen vor 1511 wird dies ignoriert, und das Peek-Bild wird ohne Zuschneiden angezeigt. |
+| **AlternateText** | Zeichenfolge | false | Alternativer Text, der das Bild beschreibt, das zu Barrierefreiheits Zwecken verwendet wird. |
+| **Addimagequery** | bool? | false | Legen Sie diese Einstellung auf "true" fest, damit Windows eine Abfrage Zeichenfolge an die in der Kachel Benachrichtigung angegebene Bild-URL anfügen kann. Verwenden Sie dieses Attribut, wenn der Server Bilder hostet und Abfrage Zeichenfolgen verarbeiten kann. dazu wird entweder eine Bild Variante basierend auf den Abfrage Zeichenfolgen abgerufen oder die Abfrage Zeichenfolge ignoriert und das Image zurückgegeben, wie es ohne die Abfrage Zeichenfolge angegeben ist Diese Abfrage Zeichenfolge gibt Skalierung, Kontrasteinstellung und Sprache an. Beispielsweise wird der Wert "www.Website.com/images/hello.png", der in der Benachrichtigung angegeben ist, zu "www.Website.com/images/hello.png? MS-Scale = 100&MS-Contrast = Standard&ms-lang = en-US". |
 
 
-### <a name="tilepeekimagecrop"></a>TilePeekImageCrop
-Steuert das Zuschneiden des Vorschaubilds.
+### <a name="tilepeekimagecrop"></a>Tileetekimagecrop
+Steuert das Zuschneiden des Peek-Bilds.
 
-| Value | Bedeutung |
+| Wert | Bedeutung |
 |---|---|
-| **Default** | Beim Zuschneiden wird das Standardverhalten des Renderers verwendet. |
-| **Keine** | Bild wird nicht zugeschnitten, wird quadratisch angezeigt. |
-| **Kreisen** | Bild wird kreisförmig zugeschnitten. |
+| **Standard** | Beim Zuschneiden wird das Standardverhalten des Renderers verwendet. |
+| **None** | Das Bild wird nicht abgeschnitten, das Quadrat wird angezeigt. |
+| **Circle** | Das Bild wird auf einen Kreis zugeschnitten. |
 
 
-### <a name="tiletextstacking"></a>TileTextStacking
-Das Text-Stacking gibt die vertikale Ausrichtung des Inhalts an.
+### <a name="tiletextstacking"></a>Tiletextstacking
+Text Stapel gibt die vertikale Ausrichtung des Inhalts an.
 
-| Value | Bedeutung |
+| Wert | Bedeutung |
 |---|---|
-| **Default** | Standardwert. Renderer wählt automatisch die standardmäßige vertikale Ausrichtung aus. |
-| **Top** (Oben) | Vertikal oben ausrichten. |
-| **Tagesstätte** | Vertikal zentrieren. |
-| **Bottom** (Unten) | Vertikal unten ausrichten. |
+| **Standard** | Standardwert. Der Renderer wählt automatisch die vertikale Standardausrichtung aus. |
+| **Top** | Vertikale Ausrichtung am oberen Rand. |
+| **Tagesstätte** | Vertikal ausgerichtet an der Mitte. |
+| **bottom** | Vertikal ausgerichtet am unteren Rand. |
 
 
-## <a name="tilebindingcontenticonic"></a>TileBindingContentIconic
-Für Small und Medium unterstützt. Ermöglicht eine Symbol-Kachelvorlage, bei der Sie ein Symbol und Badge nebeneinander auf der Kachel anzeigen lassen können, im klassischen Stil von Windows Phone. Die Zahl neben dem Symbol wird durch eine separate Badge-Benachrichtigung erreicht.
+## <a name="tilebindingcontenticonic"></a>Tilebindingcontenticonic
+Unterstützt auf Small und Medium. Aktiviert eine Icon-Kachel Vorlage, in der Sie ein Symbol und eine Badge-Anzeige neben einander auf der Kachel mit dem klassischen Windows Phone Stil anzeigen können. Die Zahl neben dem Symbol wird durch eine separate Badge-Benachrichtigung erreicht.
 
-| Eigenschaft | Geben Sie in das Suchfeld auf der Taskleiste | Erforderlich |Beschreibung |
+| Eigenschaft | type | Erforderlich |BESCHREIBUNG |
 |---|---|---|---|
-| **Icon** | [Tilebasicimage](#tilebasicimage) | wahr | Um sowohl Desktop- als auch Mobile-Small und -Medium-Kacheln zu unterstützen, stellen Sie mindestens ein Bild mit quadratischem Seitenverhältnis und einer Auflösung von 200x200 im PNG-Format mit Transparenz und keiner anderen Farbe als Weiß zur bereit. Weitere Informationen finden Sie unter [Spezielle Kachelvorlagen](../tiles-and-notifications/special-tile-templates-catalog.md). |
+| **Symbol:** | [Tilebasicimage](#tilebasicimage) | true | Um sowohl Desktop-als auch Mobile, kleine und mittlere Kacheln zu unterstützen, sollten Sie ein Quadrat-Seitenverhältnis Bild mit einer Auflösung von 200X200, PNG-Format und Transparenz und ohne Farbe als weiß bereitstellen. Weitere Informationen finden Sie unter: [besondere Kachel Vorlagen](../tiles-and-notifications/special-tile-templates-catalog.md). |
 
 
-## <a name="tilebindingcontentcontact"></a>TileBindingContentContact
-Nur Mobile. Für Small, Medium und Wide unterstützt.
+## <a name="tilebindingcontentcontact"></a>Tilebindingcontentcontact
+Nur Mobilgerät. Unterstützt auf klein, Mittel und breit.
 
-| Eigenschaft | Geben Sie in das Suchfeld auf der Taskleiste | Erforderlich |Beschreibung |
+| Eigenschaft | type | Erforderlich |BESCHREIBUNG |
 |---|---|---|---|
-| **Image** | [Tilebasicimage](#tilebasicimage) | wahr | Das anzuzeigende Bild. |
-| **Text** | [Tilebasictext](#tilebasictext) | Falsch | Eine Textzeile, die angezeigt wird. Nicht auf kleiner Kachel angezeigt. |
+| **Image** | [Tilebasicimage](#tilebasicimage) | true | Das anzuzeigende Bild. |
+| **Text** | [Tilebasictext](#tilebasictext) | false | Eine Textzeile, die angezeigt wird. Wird auf kleiner Kachel nicht angezeigt. |
 
 
-## <a name="tilebindingcontentpeople"></a>TileBindingContentPeople
-In 1511 neu: Unterstützt von Medium, Wide und Large (Desktop und Mobile). Zuvor war dies nur für Mobile und nur Medium und Wide gültig.
+## <a name="tilebindingcontentpeople"></a>Tilebindingcontentpeople
+Neu in 1511: wird unterstützt (Desktop und mobil). Zuvor war dies nur Mobilgeräte und nur Mittel und breit.
 
-| Eigenschaft | Geben Sie in das Suchfeld auf der Taskleiste | Erforderlich |Beschreibung |
+| Eigenschaft | type | Erforderlich |BESCHREIBUNG |
 |---|---|---|---|
-| **Bilder** | IList<[TileBasicImage](#tilebasicimage)> | wahr | Bilder, die sich im Kreis drehen. |
+| **Images** | IList<[tilebasicimage](#tilebasicimage)> | true | Bilder, die als Kreise umbrochen werden. |
 
 
-## <a name="tilebindingcontentphotos"></a>TileBindingContentPhotos
-Animiert durch eine Diashow mit Fotos. Für alle Größe unterstützt.
+## <a name="tilebindingcontentphotos"></a>Tilebindingcontentphotos
+Führt eine Animation mit Fotos aus. Unterstützt für alle Größen.
 
-| Eigenschaft | Geben Sie in das Suchfeld auf der Taskleiste | Erforderlich |Beschreibung |
+| Eigenschaft | type | Erforderlich |BESCHREIBUNG |
 |---|---|---|---|
-| **Bilder** | IList<[TileBasicImage](#tilebasicimage)> | wahr | Es können bis zu 12 Bilder zur Verfügung gestellt werden (Mobile zeigt nur bis zu 9 Bilder an), die für die Diashow verwendet werden. Das Hinzufügen von mehr als 12 löst eine Ausnahme aus. |
+| **Images** | IList<[tilebasicimage](#tilebasicimage)> | true | Es können bis zu 12 Abbilder bereitgestellt werden (Mobile wird nur bis zu 9 angezeigt), die für die Bildschirmpräsentation verwendet werden. Durch das Hinzufügen von mehr als 12 wird eine Ausnahme ausgelöst. |
 
 
-### <a name="tilebasicimage"></a>TileBasicImage
-Ein Bild, das für verschiedenen spezielle Vorlagen verwendet wird.
+### <a name="tilebasicimage"></a>Tilebasicimage
+Ein Bild, das für verschiedene spezielle Vorlagen verwendet wird.
 
-| Eigenschaft | Geben Sie in das Suchfeld auf der Taskleiste | Erforderlich |Beschreibung |
+| Eigenschaft | type | Erforderlich |BESCHREIBUNG |
 |---|---|---|---|
-| **Quelle** | String | wahr | Die URL zum Bild. ms-appx, ms-appdata und http(s) werden unterstützt. HTTP-Bilder müssen kleiner als 200 KB sein. |
-| **AlternateText** | String | Falsch | Alternativtext, der das Bild beschreibt; wird für Bedienungshilfen verwendet. |
-| **Addimagequery** | bool? | Falsch | Legen Sie den Wert auf „Wahr“ fest, um an die in der Kachelbenachrichtigung angegebene Bild-URL eine Abfragezeichenfolge anzufügen. Verwenden Sie dieses Attribut, wenn Ihr Server Bilder hostet und Abfragezeichenfolgen verarbeiten kann, indem er entweder basierend auf den Abfragezeichenfolgen eine Bildvariante abruft oder die Abfragezeichenfolge ignoriert und das Bild wie angegeben ohne die Abfragezeichenfolge zurückgibt. Diese Abfragezeichenfolge gibt Skalierung, Kontrasteinstellung und Sprache an. So wird beispielsweise ein in der Benachrichtigung angegebener Wert „www.website.com/images/hello.png“ zu „www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us“ |
+| **Quelle** | Zeichenfolge | true | Die URL des Bilds. MS-AppX, MS-APPDATA und http (s) werden unterstützt. Http-Bilder müssen mindestens 200 KB groß sein. |
+| **AlternateText** | Zeichenfolge | false | Alternativer Text, der das Bild beschreibt, das zu Barrierefreiheits Zwecken verwendet wird. |
+| **Addimagequery** | bool? | false | Legen Sie diese Einstellung auf "true" fest, damit Windows eine Abfrage Zeichenfolge an die in der Kachel Benachrichtigung angegebene Bild-URL anfügen kann. Verwenden Sie dieses Attribut, wenn der Server Bilder hostet und Abfrage Zeichenfolgen verarbeiten kann. dazu wird entweder eine Bild Variante basierend auf den Abfrage Zeichenfolgen abgerufen oder die Abfrage Zeichenfolge ignoriert und das Image zurückgegeben, wie es ohne die Abfrage Zeichenfolge angegeben ist Diese Abfrage Zeichenfolge gibt Skalierung, Kontrasteinstellung und Sprache an. Beispielsweise wird der Wert "www.Website.com/images/hello.png", der in der Benachrichtigung angegeben ist, zu "www.Website.com/images/hello.png? MS-Scale = 100&MS-Contrast = Standard&ms-lang = en-US". |
 
 
-### <a name="tilebasictext"></a>TileBasicText
-Ein einfaches Text-Element, das für verschiedene spezielle Vorlagen verwendet wird.
+### <a name="tilebasictext"></a>Tilebasictext
+Ein grundlegendes Textelement, das für verschiedene spezielle Vorlagen verwendet wird.
 
-| Eigenschaft | Geben Sie in das Suchfeld auf der Taskleiste | Erforderlich |Beschreibung |
+| Eigenschaft | type | Erforderlich |BESCHREIBUNG |
 |---|---|---|---|
-| **Text** | String | Falsch | Der Text, der angezeigt werden soll. |
-| **Sprache** | String | Falsch | Das Zielgebietsschema der XML-Nutzlast, angegeben als BCP-47-Sprachtags wie z. B. „ en-US“ oder „fr-FR“. Das hier angegebene Gebietsschema überschreibt jedes andere – etwa in der Bindung oder im visuellen Element – angegebene Gebietsschema. Wenn dieser Wert eine Literalzeichenfolge ist, wird für dieses Attribut standardmäßig die Sprache der Benutzeroberfläche des Benutzers verwendet. Wenn dieser Wert ein Zeichenfolgenverweis ist, wird für dieses Attribut standardmäßig das Gebietsschema verwendet, das beim Auflösen der Zeichenfolge von Windows-Runtime ausgewählt wurde. |
+| **Text** | Zeichenfolge | false | Der anzuzeigende Text. |
+| **Sprache** | Zeichenfolge | false | Das Ziel Gebiets Schema der XML-Nutzlast, das als bcp-47-sprach Tags, z. b. "en-US" oder "fr-FR", angegeben ist. Das hier angegebene Gebiets Schema überschreibt ein anderes angegebenes Gebiets Schema, z. b. das in der Bindung oder in Visual. Wenn dieser Wert eine Literalzeichenfolge ist, wird dieses Attribut standardmäßig auf die Benutzeroberflächen Sprache des Benutzers eingestellt. Wenn dieser Wert ein Zeichen folgen Verweis ist, wird dieses Attribut standardmäßig auf das von Windows-Runtime beim Auflösen der Zeichenfolge gewählte Gebiets Schema eingestellt. |
 
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
-* [Schnellstart: Senden einer Benachrichtigung über eine lokale Kachel](../tiles-and-notifications/sending-a-local-tile-notification.md)
-* [Benachrichtigungs Bibliothek auf GitHub](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/dev/Notifications)
+* [Schnellstart: Senden einer lokalen Kachelbenachrichtigung](../tiles-and-notifications/sending-a-local-tile-notification.md)
+* [Benachrichtigungsbibliothek auf GitHub](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/dev/Notifications)

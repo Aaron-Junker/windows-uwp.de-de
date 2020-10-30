@@ -1,17 +1,17 @@
 ---
-Description: Erfahren Sie, wie Sie Ihre UWP-App registrieren, um Pushbenachrichtigungen zu erhalten, die Sie aus Partner Center senden.
+description: Erfahren Sie, wie Sie Ihre UWP-App registrieren, um Pushbenachrichtigungen zu erhalten, die Sie aus Partner Center senden.
 title: Konfigurieren der App für benutzerorientierte Pushbenachrichtigungen
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK, gezielte Pushbenachrichtigungen, Partner Center
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ms.localizationpriority: medium
-ms.openlocfilehash: abb901c1b067dcf3609cbfb5c4cf3f81c9dc465c
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 2296ae29ddcfd868e31c294f8859d4f4b925fca8
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364133"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033533"
 ---
 # <a name="configure-your-app-for-targeted-push-notifications"></a>Konfigurieren der App für benutzerorientierte Pushbenachrichtigungen
 
@@ -26,8 +26,8 @@ Gehen Sie vor dem Schreiben von Code wie folgt vor, um in Ihrem Projekt einen Ve
 1. Falls noch nicht geschehen, [installieren Sie das Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk) auf Ihrem Entwicklungscomputer. 
 2. Öffnen Sie Ihr Projekt in Visual Studio.
 3. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Knoten **Verweise** für Ihr Projekt, und wählen Sie anschließend **Verweis hinzufügen** aus.
-4. Erweitern Sie im **Verweis-Manager** die Option **Universelle Windows-App**, und klicken Sie auf **Erweiterungen**.
-5. Klicken Sie in der Liste der SDKs auf das Kontrollkästchen neben **Microsoft Engagement Framework** und anschließend auf **OK**.
+4. Erweitern Sie im **Verweis-Manager** die Option **Universelle Windows-App** , und klicken Sie auf **Erweiterungen** .
+5. Klicken Sie in der Liste der SDKs auf das Kontrollkästchen neben **Microsoft Engagement Framework** und anschließend auf **OK** .
 
 ## <a name="register-for-push-notifications"></a>Registrieren für Pushbenachrichtigungen
 
@@ -57,7 +57,7 @@ So registrieren Sie Ihre APP für den Empfang gezielter Pushbenachrichtigungen v
 
 ### <a name="how-targeted-push-notifications-are-routed-to-customers"></a>Weiterleiten gezielter Pushbenachrichtigungen an Kunden
 
-Wenn Ihre APP **registernotificationchannelasync**aufruft, sammelt diese Methode den Microsoft-Konto des Kunden, der zurzeit am Gerät angemeldet ist. Wenn Sie später eine gezielte Pushbenachrichtigung an ein Segment senden, das diesen Kunden enthält, sendet Partner Center die Benachrichtigung an Geräte, die mit dem Microsoft-Konto dieses Kunden verknüpft sind.
+Wenn Ihre APP **registernotificationchannelasync** aufruft, sammelt diese Methode den Microsoft-Konto des Kunden, der zurzeit am Gerät angemeldet ist. Wenn Sie später eine gezielte Pushbenachrichtigung an ein Segment senden, das diesen Kunden enthält, sendet Partner Center die Benachrichtigung an Geräte, die mit dem Microsoft-Konto dieses Kunden verknüpft sind.
 
 Wenn der Kunde, der Ihre APP gestartet hat, das Gerät an eine andere Person weitergeben soll, während Sie mit Ihrem Microsoft-Konto weiterhin beim Gerät angemeldet sind, sollten Sie beachten, dass die andere Person die Benachrichtigung erhält, die auf den ursprünglichen Kunden gerichtet war. Dies kann unbeabsichtigte Folgen haben, insbesondere für apps, die Dienste anbieten, die Kunden für die Verwendung von anmelden können. Um zu verhindern, dass andere Benutzer ihre Ziel Benachrichtigungen in diesem Szenario anzeigen, müssen Sie die [unregisternotificationchannelasync](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync) -Methode aufrufen, wenn sich Kunden von Ihrer APP abmelden. Weitere Informationen finden Sie weiter unten in diesem Artikel unter Aufheben der [Registrierung für Pushbenachrichtigungen](#unregister) .
 
@@ -65,7 +65,7 @@ Wenn der Kunde, der Ihre APP gestartet hat, das Gerät an eine andere Person wei
 
 Nachdem die APP für den Empfang von Benachrichtigungen registriert wurde und Sie [eine Pushbenachrichtigung an die Kunden der APP über Partner Center gesendet](../publish/send-push-notifications-to-your-apps-customers.md)haben, wird einer der folgenden Einstiegspunkte in ihrer app aufgerufen, wenn der Benutzer die APP als Reaktion auf Ihre Pushbenachrichtigung startet. Wenn Sie Code haben, der ausgeführt werden soll, wenn der Benutzer die App startet, können Sie ihn einem dieser Einstiegspunkte in Ihrer App hinzufügen.
 
-  * Hat die Pushbenachrichtigung einen Vordergrund-Aktivierungstyp, übergehen Sie die [OnActivated](/uwp/api/windows.ui.xaml.application.onactivated)-Methode der **App**-Klasse in Ihrem Projekt, und fügen Sie Ihren Code dieser Methode hinzu.
+  * Hat die Pushbenachrichtigung einen Vordergrund-Aktivierungstyp, übergehen Sie die [OnActivated](/uwp/api/windows.ui.xaml.application.onactivated)-Methode der **App** -Klasse in Ihrem Projekt, und fügen Sie Ihren Code dieser Methode hinzu.
 
   * Hat die Pushbenachrichtigung einen Hintergrund-Aktivierungstyp, fügen Sie Ihren Code der [Run](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)-Methode für Ihre [Hintergrundaufgabe](../launch-resume/support-your-app-with-background-tasks.md) hinzu.
 
@@ -79,11 +79,11 @@ Diese Methode gibt auch die ursprünglichen Startargumente für Ihre App zurück
 
 Die Art und Weise, wie diese Methode aufgerufen wird, hängt vom Aktivierungs Typ der Pushbenachrichtigung ab:
 
-* Hat die Pushbenachrichtigung einen Vordergrund-Aktivierungstyp, rufen Sie diese Methode aus der [OnActivated](/uwp/api/windows.ui.xaml.application.onactivated)-Methodenüberschreibung in Ihrer App auf, und übergeben Sie die Argumente, die im [ToastNotificationActivatedEventArgs](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)-Objekt verfügbar sind, an das Objekt, das an diese Methode übergeben wird. Im folgenden Codebeispiel wird davon ausgegangen, dass Ihre Codedatei **using**-Anweisungen für die Namespaces **Microsoft.Services.Store.Engagement** und **Windows.ApplicationModel.Activation** enthält.
+* Hat die Pushbenachrichtigung einen Vordergrund-Aktivierungstyp, rufen Sie diese Methode aus der [OnActivated](/uwp/api/windows.ui.xaml.application.onactivated)-Methodenüberschreibung in Ihrer App auf, und übergeben Sie die Argumente, die im [ToastNotificationActivatedEventArgs](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)-Objekt verfügbar sind, an das Objekt, das an diese Methode übergeben wird. Im folgenden Codebeispiel wird davon ausgegangen, dass Ihre Codedatei **using** -Anweisungen für die Namespaces **Microsoft.Services.Store.Engagement** und **Windows.ApplicationModel.Activation** enthält.
 
   :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/App.xaml.cs" id="OnActivated":::
 
-* Wenn die Pushbenachrichtigung einen Hintergrundaktivierungstyp hat, rufen Sie diese Methode aus der [Run](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)-Methode für Ihre [Hintergrundaufgabe](../launch-resume/support-your-app-with-background-tasks.md) auf, und übergeben Sie die Argumente, die im [ToastNotificationActionTriggerDetail](/uwp/api/Windows.UI.Notifications.ToastNotificationActionTriggerDetail)-Objekt verfügbar sind, das an diese Methode übergeben wird. Im folgenden Codebeispiel wird davon ausgegangen, dass Ihre Codedatei **using**-Anweisungen für die Namespaces **Microsoft.Services.Store.Engagement**, **Windows.ApplicationModel.Background** und **Windows.UI.Notifications** enthält.
+* Wenn die Pushbenachrichtigung einen Hintergrundaktivierungstyp hat, rufen Sie diese Methode aus der [Run](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)-Methode für Ihre [Hintergrundaufgabe](../launch-resume/support-your-app-with-background-tasks.md) auf, und übergeben Sie die Argumente, die im [ToastNotificationActionTriggerDetail](/uwp/api/Windows.UI.Notifications.ToastNotificationActionTriggerDetail)-Objekt verfügbar sind, das an diese Methode übergeben wird. Im folgenden Codebeispiel wird davon ausgegangen, dass Ihre Codedatei **using** -Anweisungen für die Namespaces **Microsoft.Services.Store.Engagement** , **Windows.ApplicationModel.Background** und **Windows.UI.Notifications** enthält.
 
   :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="Run":::
 

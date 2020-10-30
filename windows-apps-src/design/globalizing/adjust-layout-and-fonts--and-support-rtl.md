@@ -1,41 +1,41 @@
 ---
-Description: Entwerfen Sie Ihre App so, dass die Layouts und Schriften mehrerer Sprachen unterstützen – beispielsweise auch den Textfluss von rechts nach links (right-to-left, RTL).
+description: Entwerfen Sie Ihre APP, um die Layouts und Schriftarten mehrerer Sprachen zu unterstützen, einschließlich der Fluss Richtung von rechts nach links.
 title: Anpassen von Layout und Schriftarten und Unterstützen von „Von rechts nach links“
 ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
 template: detail.hbs
 ms.date: 05/11/2018
 ms.topic: article
-keywords: Windows 10, UWP, Lokalisierbarkeit, Lokalisierung, rtl, ltr
+keywords: Windows 10, UWP, Lokalisier barkeit, Lokalisierung, RTL, Ltr
 ms.localizationpriority: medium
-ms.openlocfilehash: e428dd068337ecd79992e8e27cd193bed112d9c2
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 0e4725f6d26cf1abf42effddd813c31e87926e89
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209836"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033793"
 ---
 # <a name="adjust-layout-and-fonts-and-support-rtl"></a>Anpassen von Layout und Schriftarten und Unterstützen von „Von rechts nach links“
-Entwerfen Sie Ihre App so, dass die Layouts und Schriften mehrerer Sprachen unterstützen – beispielsweise auch den Textfluss von rechts nach links (right-to-left, RTL). Die Textflussrichtung ist die Richtung, in der ein Text geschrieben und angezeigt wird, und die UI-Elemente auf der Seite werden entsprechend gelesen.
+Entwerfen Sie Ihre APP, um die Layouts und Schriftarten mehrerer Sprachen zu unterstützen, einschließlich der Fluss Richtung von rechts nach links. Die Fluss Richtung ist die Richtung, in der das Skript geschrieben und angezeigt wird, und die Benutzeroberflächen Elemente auf der Seite werden mit dem Auge gescannt.
 
 ## <a name="layout-guidelines"></a>Layoutrichtlinien
-Sprachen wie Deutsch und Finnisch benötigen in der Regel mehr Zeichen als Englisch. Fernöstliche Schriften benötigen normalerweise mehr Höhe. Und bei Sprachen wie Arabisch und Hebräisch muss die Leserichtung in Textfeldern und des App-Elementen von rechts nach links (RTL) verlaufen.
+Sprachen wie Deutsch und Finnisch verwenden in der Regel mehr Zeichen als in englischer Sprache. In der Regel sind die Schriftarten in der Regel höher. Sprachen wie Arabisch und Hebräisch erfordern, dass Layoutpanels und Textelemente in der Lesefolge von rechts nach links (RTL) angeordnet werden.
 
-Wegen dieser Unterschiede in den Metriken des übersetzten Textes empfehlen wir, dass Sie keine absolute Positionierung, feste Breiten oder feste Höhen in Ihrer Benutzeroberfläche (UI) verwenden. Nutzen Sie stattdessen die dynamischen Layoutmechanismen, die in den Windows-UI-Elementen integriert sind. Beispielsweise werden Inhaltssteuerelemente (z. B. Schaltflächen), Elementsteuerelemente (z. B. Grid- und Listenansichten) sowie Layoutfelder (z. B. Grids und Stackpanels) automatisch an ihre Inhalte angepasst. Durch die Pseudolokalisierung für die App werden problematische Fälle aufgedeckt, in denen UI-Elemente nicht richtig an den Inhalt angepasst sind.
+Aufgrund dieser Variationen der Metriken von übersetztem Text empfiehlt es sich, die absolute Positionierung, die Breite oder die Höhe in der Benutzeroberfläche (UI) nicht zu reparieren. Nutzen Sie stattdessen die dynamischen Layoutmechanismen, die in die Windows-Benutzeroberflächen Elemente integriert sind. So werden z. b. Inhalts Steuerelemente (z. b. Schaltflächen), Element Steuerelemente (z. b. Raster Sichten und Listenansichten) und Layoutpanels (z. b. Raster und StackPanels) automatisch angepasst und standardmäßig an ihren Inhalt angepasst. Pseudo Lokalisierung Ihrer APP, um problematische Rand Fälle zu erkennen, in denen Ihre Benutzeroberflächen Elemente nicht ordnungsgemäß für den Inhalt korrekt sind.
 
-Die empfohlene Methode ist ein dynamisches Layout, das in den meisten Fällen anwendbar ist. Weniger empfehlenswert, aber immer noch besser als das Festlegen von Größen im Markup für die Benutzeroberfläche, ist das Festlegen von Layoutwerten als Funktion der Sprache. Es folgt ein Beispiel für die Bereitstellung einer Width-Eigenschaft in Ihrer App als Ressource, die von Lokalisierern der jeweiligen Sprache entsprechend festgelegt werden kann. Fügen Sie zunächst in der Ressourcendatei Ihrer App (.resw) eine Eigenschaftskennung mit dem Namen „TitleText.Width” hinzu (anstelle von „TitleText” können Sie einen beliebigen Namen verwenden). Verwenden Sie dann **x:Uid**, um UI-Elemente mit dieser Eigenschaftskennung zu verknüpfen.
+Dynamisches Layout ist das empfohlene Verfahren, das Sie in den meisten Fällen verwenden können. Weniger vorzuziehen, aber immer noch besser als das Backen von Größen in das UI-Markup, besteht darin, layoutwerte als Funktion der Sprache festzulegen. Im folgenden finden Sie ein Beispiel dafür, wie Sie eine Width-Eigenschaft in ihrer App als Ressource verfügbar machen können, die von Lokalisierern entsprechend pro Sprache festgelegt werden kann. Fügen Sie zunächst in der Ressourcen Datei Ihrer APP (. resw) einen Eigenschafts Bezeichner mit dem Namen "TitleText. Width" (anstelle von "TitleText") hinzu. Verwenden Sie dann eine **x:UID** , um dem Eigenschaften Bezeichner ein oder mehrere Benutzeroberflächen Elemente zuzuordnen.
 
 ```xaml
 <TextBlock x:Uid="TitleText">
 ```
 
-Weitere Informationen zu Zeichenfolgenressourcen-Bezeichner und Ressourcendateien (.resw) finden Sie unter Lokalisieren der Zeichenfolge im Paketmanifest der Benutzeroberfläche und der App.Weitere Informationen zu Ressourcendateien (.resw), Eigenschaften-IDs und **x:Uid** finden Sie unter [Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im App-Paketmanifest](../../app-resources/localize-strings-ui-manifest.md).
+Weitere Informationen zu Ressourcen Dateien (. resw), Eigenschafts Bezeichners und **x:UID** finden Sie unter Lokalisieren von Zeichen folgen [in der Benutzeroberfläche und im App-Paket Manifest](../../app-resources/localize-strings-ui-manifest.md).
 
-## <a name="fonts"></a>Schriftarten
-Verwenden Sie die [**LanguageFont**](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live)-Schriftzuordnungsklasse für den programmgesteuerten Zugriff auf die empfohlene Familie und Breite und den empfohlenen Grad und Schnitt der Schriftart für eine spezielle Sprache. Die **LanguageFont**-Klasse ermöglicht den Zugriff auf die richtigen Schriftartinformationen für verschiedene Inhaltskategorien: UI-Kopfzeilen, Benachrichtigungen, Textkörper und Schriften für den Textkörper, die vom Benutzer bearbeitet werden können.
+## <a name="fonts"></a>Fonts
+Verwenden Sie die Klasse [**languagefont**](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live) Font-Mapping für den programmgesteuerten Zugriff auf die empfohlene Schriftfamilie, Größe, Gewichtung und Stil für eine bestimmte Sprache. Die **languagefont** -Klasse ermöglicht den Zugriff auf die richtigen Schriftart Informationen für verschiedene Inhalts Kategorien, z. b. Benutzeroberflächen Header, Benachrichtigungen, Textkörper Text und vom Benutzer bearbeitbare Dokument Text Schriftarten.
 
 ## <a name="mirroring-images"></a>Spiegeln von Bildern
-Wenn Ihre App Bilder enthält, die für die Leserichtung rechts nach links (RTL) gespiegelt werden müssen (Umkehrung des Bilds), können Sie die **FlowDirection**-Eigenschaft verwenden.
+Wenn Ihre APP Bilder enthält, die gespiegelt werden müssen (das heißt, das gleiche Bild kann gekippt werden), können Sie **FlowDirection** verwenden.
 
 ```xaml
 <!-- en-US\localized.xaml -->
@@ -45,17 +45,17 @@ Wenn Ihre App Bilder enthält, die für die Leserichtung rechts nach links (RTL)
 <Image ... FlowDirection="RightToLeft" />
 ```
 
-Wenn die App ein anderes Bild benötigt, damit dieses richtig umgedreht werden kann, können Sie das Ressourcenverwaltungssystem mit dem `LayoutDirection`-Qualifizierer verwenden (s. LayoutDirection-Abschnitt in [Ressourcen an Sprache, Skalierung und andere Qualifikationsmerkmale anpassen](../../app-resources/tailor-resources-lang-scale-contrast.md#layoutdirection)). Das System wählt ein Bild mit dem Namen `file.layoutdir-rtl.png` aus, wenn die App-Laufzeitsprache (s. [Benutzerprofilsprachen und App-Manifest-Sprachen verstehen](manage-language-and-region.md))auf eine RTL-Sprache festgelegt wird. Diese Vorgehensweise ist möglicherweise nötig, wenn nicht alle Teile des Bilds umgedreht werden.
+Wenn Ihre APP ein anderes Image zum ordnungsgemäßen Kippen des Images benötigt, können Sie das Resource Management-System mit dem `LayoutDirection` Qualifizierer verwenden (Weitere Informationen finden Sie im Abschnitt LayoutDirection unter [Anpassen Ihrer Ressourcen für Sprache, Skalierung und andere Qualifizierer](../../app-resources/tailor-resources-lang-scale-contrast.md#layoutdirection)). Das System wählt ein Image aus `file.layoutdir-rtl.png` , wenn die APP-Lauf Zeit Sprache (Siehe Grundlegendes zu [Benutzerprofil Sprachen und App-Manifest-Sprachen](manage-language-and-region.md)) auf eine RTL-Sprache festgelegt ist. Diese Vorgehensweise ist möglicherweise nötig, wenn nicht alle Teile des Bilds umgedreht werden.
 
-## <a name="handling-right-to-left-rtl-languages"></a>Behandeln von rechts-nach-links-Sprachen (RTL-Sprachen)
-Wenn Ihre App für Rechts-Links-Sprachen (RTL) lokalisiert wird, verwenden Sie die Eigenschaft [**FrameworkElement.FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection), und legen Sie symmetrische Abstände und Ränder fest. Layoutpanels wie [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid?branch=live) skalieren und spiegeln sich automatisch gemäß dem von Ihnen festgelegten Wert für **FlowDirection**.
+## <a name="handling-right-to-left-rtl-languages"></a>Behandeln von rechts-nach-links (RTL)-Sprachen
+Wenn Ihre APP für die Sprachen von rechts nach links (RTL) lokalisiert ist, verwenden Sie die [**FrameworkElement. FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) -Eigenschaft, und legen Sie symmetrische Abstände und Ränder fest. Layoutpanels wie [**Raster**](/uwp/api/Windows.UI.Xaml.Controls.Grid?branch=live) Skalierung und kippen automatisch mit dem Wert der **FlowDirection** , den Sie festlegen.
 
-Legen Sie **FlowDirection** im Stammlayoutpanel (oder Frame) der Seite oder auf der Seite selbst fest. Dadurch erben alle enthaltenen Steuerelemente dieses Eigenschaft.
+Legen Sie **FlowDirection** im Stammlayoutpanel (oder Frame) Ihrer Seite oder auf der Seite selbst fest. Dies bewirkt, dass alle in enthaltenen Steuerelemente diese Eigenschaft erben.
 
 > [!IMPORTANT]
-> Allerdings wird **FlowDirection***nicht* automatisch basierend auf der vom Benutzer in den Windows-Einstellungen ausgewählten Anzeigesprache festgelegt, und die Eigenschaft ändert sich auch nicht dynamisch, wenn der Benutzer die Anzeigesprache wechselt. Stellt der Benutzer beispielsweise die Windows-Einstellungen von Englisch auf Arabisch um, ändert sich die **FlowDirection**-Eigenschaft *nicht* automatisch von links nach rechts zu rechts nach links. Als App-Entwickler müssen Sie **FlowDirection** für die Sprache festlegen, die gerade angezeigt wird.
+> Die **Fluss Richtung** wird jedoch *nicht* automatisch basierend auf der ausgewählten Anzeige Sprache des Benutzers in den Windows-Einstellungen festgelegt. und ändert sich nicht dynamisch als Reaktion auf die Anzeige Sprache des Benutzer Wechsels. Wenn der Benutzer z. b. die Windows-Einstellungen von Englisch auf Arabisch wechselt *, wird die* **FlowDirection** -Eigenschaft von links nach rechts von links nach rechts von rechts nach links geändert. Als App-Entwickler müssen Sie **FlowDirection** entsprechend der Sprache festlegen, die Sie zurzeit anzeigen.
 
-Die programmatische Technik besteht darin, die Eigenschaft `LayoutDirection` der bevorzugten Benutzeranzeigesprache zu verwenden, um die Eigenschaft [**FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) festzulegen (siehe Codebeispiel unten). Die meisten Steuerelemente in Windows verwenden **FlowDirection** bereits. Wenn Sie ein benutzerdefiniertes Steuerelement implementieren, sollte es **FlowDirection** verwenden, um entsprechende Layoutänderungen für RTL- und LTR-Sprachen vorzunehmen.
+Die programmgesteuerte Technik ist die Verwendung der- `LayoutDirection` Eigenschaft der bevorzugten Benutzer Anzeige Sprache zum Festlegen der [**FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) -Eigenschaft (siehe das Codebeispiel unten). Die meisten in Windows enthaltenen Steuerelemente verwenden bereits **FlowDirection** . Wenn Sie ein benutzerdefiniertes Steuerelement implementieren, sollte es **FlowDirection** verwenden, um geeignete Layoutänderungen für RTL-und LTR-Sprachen vorzunehmen.
 
 ```csharp    
 this.languageTag = Windows.Globalization.ApplicationLanguages.Languages[0];
@@ -109,21 +109,21 @@ else
 }
 ```
 
-Die beschriebene Technik macht **FlowDirection** zu einer Funktion der `LayoutDirection`-Eigenschaft der bevorzugten Anzeigesprache. Wenn Sie diese Logik aus irgendeinem Grund nicht verwenden möchten, können Sie in Ihrer App eine FlowDirection-Eigenschaft als Ressource bereitstellen, die Lokalisierer für jede Sprache, in die sie übersetzen, entsprechend festlegen können.
+Das obige Verfahren macht **FlowDirection** zu einer Funktion der- `LayoutDirection` Eigenschaft der bevorzugten Benutzer Anzeige Sprache. Wenn Sie diese Logik aus irgendeinem Grund nicht benötigen, können Sie eine FlowDirection-Eigenschaft in ihrer App als Ressource verfügbar machen, die Lokalisierer für jede Sprache festlegen können, in die Sie übersetzt werden.
 
-Fügen Sie zunächst in der Ressourcendatei Ihrer App (.resw) eine Eigenschaften-ID mit dem Namen „MainPage.FlowDirection” hinzu (anstelle von „MainPage” können Sie einen beliebigen Namen verwenden). Verwenden Sie dann **x:Uid**, um Ihr hauptsächliches **Page**-Element (oder dessen Root-Layoutpanel bzw. -Frame) mit dieser Eigenschaftskennung zu verknüpfen.
+Fügen Sie zunächst in der Ressourcen Datei Ihrer APP (. resw) einen Eigenschafts Bezeichner mit dem Namen "MainPage. FlowDirection" (anstelle von "MainPage") hinzu, um einen beliebigen Namen zu verwenden. Verwenden Sie dann eine **x:UID** , um das Haupt **Seiten** Element (oder dessen Stammlayoutpanel oder Frame) mit diesem Eigenschaften Bezeichner zuzuordnen.
 
 ```xaml
 <Page x:Uid="MainPage">
 ```
 
-Statt von einer einzelnen Codezeile für alle Sprachen sind Sie nun davon abhängig, dass der Übersetzer diese Eigenschaftsressource für jede übersetzte Sprache korrekt „übersetzt”. Seien Sie sich daher bewusst, dass diese Technik eine zusätzliche Quelle für menschliche Fehler sein kann.
+Anstatt eine einzelne Codezeile für alle Sprachen zu verwenden, hängt dies davon ab, dass diese Eigenschafts Ressource für jede übersetzte Sprache ordnungsgemäß übersetzt wird. Beachten Sie, dass es bei der Verwendung dieses Verfahrens zusätzliche Möglichkeiten für menschliche Fehler gibt.
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [FrameworkElement. FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection)
 * [Languagefont](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Lokalisieren von Zeichenfolgen auf der Benutzeroberfläche und im App-Paketmanifest](../../app-resources/localize-strings-ui-manifest.md)
+* [Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im App-Paketmanifest](../../app-resources/localize-strings-ui-manifest.md)
 * [Passen Sie Ihre Ressourcen für Sprache, Skalierung und andere Qualifizierer an.](../../app-resources/tailor-resources-lang-scale-contrast.md)
-* [Grundlegendes zu Benutzerprofil Sprachen und App-Manifest-Sprachen](manage-language-and-region.md)
+* [Benutzerprofilsprachen und App-Manifest-Sprachen verstehen](manage-language-and-region.md)

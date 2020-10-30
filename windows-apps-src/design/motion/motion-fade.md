@@ -1,5 +1,5 @@
 ---
-Description: Verwenden Sie Ein- und Ausblendungsanimationen, um Elemente anzuzeigen oder nicht anzuzeigen. Die beiden üblichen Animationen dieser Art sind das Einblenden und das Ausblenden.
+description: Verwenden Sie Ein- und Ausblendungsanimationen, um Elemente anzuzeigen oder nicht anzuzeigen. Die beiden üblichen Animationen dieser Art sind das Einblenden und das Ausblenden.
 title: Ein- und Ausblendungsanimationen
 ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
 label: Motion--fades
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ae8afb291a2ba6012c55c2f22290f51b7eb76f0
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 81e632a25398003daa1e73d82c23343f57fd3cd0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220153"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034223"
 ---
 # <a name="fade-animations"></a>Ein- und Ausblendungsanimationen
 
@@ -21,7 +21,7 @@ ms.locfileid: "91220153"
 
 Verwenden Sie Ein- und Ausblendungsanimationen, um Elemente anzuzeigen oder nicht anzuzeigen. Die beiden üblichen Animationen dieser Art sind das Einblenden und das Ausblenden.
 
-> **Wichtige APIs**: [**faderpoinmeanimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation), [**fadeoutpoinmeanimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
+> **Wichtige APIs** : [**faderpoinmeanimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation), [**fadeoutpoinmeanimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
@@ -40,6 +40,6 @@ Verwenden Sie Ein- und Ausblendungsanimationen, um Elemente anzuzeigen oder nich
 * [**FadeInThemeAnimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation)
 * [**FadeOutThemeAnimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
 
- 
+ 
 
- 
+ 

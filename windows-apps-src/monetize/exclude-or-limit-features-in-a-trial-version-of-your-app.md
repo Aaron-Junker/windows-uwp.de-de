@@ -1,17 +1,17 @@
 ---
-Description: Durch einen kostenlose, zeitlich begrenzte Testversion Ihrer App mit eingeschränkten Features können Sie Ihre Kunden motivieren, auf die Vollversion Ihrer App zu aktualisieren.
+description: Durch einen kostenlose, zeitlich begrenzte Testversion Ihrer App mit eingeschränkten Features können Sie Ihre Kunden motivieren, auf die Vollversion Ihrer App zu aktualisieren.
 title: Ausschließen oder Einschränken von Features in einer Testversion
 ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
 keywords: Windows 10, UWP, Testversion, in-App-Käufe, IAP, Windows. applicationmodel. Store
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a0ecc6a6d219262513508114cee226d72d91e386
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 701769386f9637574cfb7f38f7458a1434796730
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362743"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033973"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>Ausschließen oder Einschränken von Features in einer Testversion
 
@@ -63,7 +63,7 @@ Falls Sie die Lizenzänderung ermitteln und eine Aktion in der App ausführen m�
 
 Rufen Sie beim Initialisieren der App das [LicenseInformation](/uwp/api/Windows.ApplicationModel.Store.LicenseInformation)-Objekt für die App ab wie im folgenden Beispiel beschrieben. Es wird angenommen, dass **licenseInformation** eine globale Variable oder ein Feld vom Typ **LicenseInformation** ist.
 
-Zu diesem Zeitpunkt erhalten Sie simulierte Lizenzinformationen mithilfe von [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) anstelle von [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp). Bevor Sie die endgültige Version Ihrer App an den **Store** übermitteln, müssen Sie alle **CurrentAppSimulator**-Verweise in Ihrem Code durch **CurrentApp** ersetzen.
+Zu diesem Zeitpunkt erhalten Sie simulierte Lizenzinformationen mithilfe von [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) anstelle von [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp). Bevor Sie die endgültige Version Ihrer App an den **Store** übermitteln, müssen Sie alle **CurrentAppSimulator** -Verweise in Ihrem Code durch **CurrentApp** ersetzen.
 
 > [!div class="tabbedCodeSnippets"]
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="InitializeLicenseTest":::
@@ -99,7 +99,7 @@ Wenn dieser Pfad und diese Datei nicht vorhanden sind, müssen Sie diese währen
 
 ## <a name="step-6-replace-the-simulated-license-api-methods-with-the-actual-api"></a>Schritt 6: Ersetzen Sie die simulierten Lizenz-API-Methoden durch die tatsächliche API.
 
-Nachdem Sie die App mit dem simulierten Lizenzserver getestet haben, ersetzen Sie **CurrentAppSimulator** durch **CurrentApp**, bevor Sie die App zur Zertifizierung an einen Store übermitteln (siehe nächstes Codebeispiel).
+Nachdem Sie die App mit dem simulierten Lizenzserver getestet haben, ersetzen Sie **CurrentAppSimulator** durch **CurrentApp** , bevor Sie die App zur Zertifizierung an einen Store übermitteln (siehe nächstes Codebeispiel).
 
 > [!IMPORTANT]
 > Ihre APP muss das **currentapp** -Objekt verwenden, wenn Sie Ihre APP an einen Store übermitteln, oder die Zertifizierung schlägt fehl.
@@ -119,6 +119,6 @@ Weitere Informationen zum Beschreiben Ihrer App finden Sie unter [Erstellen von 
 * [Festlegen der Preise und Verfügbarkeit von Apps](../publish/set-app-pricing-and-availability.md)
 * [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp)
 * [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator)
- 
+ 
 
- 
+ 

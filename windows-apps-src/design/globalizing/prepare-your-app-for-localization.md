@@ -1,5 +1,5 @@
 ---
-Description: Eine lokalisierte APP ist eine, die auf anderen Märkten, Sprachen oder Regionen lokalisiert werden kann, ohne funktionale Mängel in der APP zu decken. Die wichtigste Eigenschaft einer lokalisierbaren App besteht darin, dass der ausführbare Code ordnungsgemäß von den lokalisierbaren Ressourcen getrennt wurde.
+description: Eine lokalisierte APP ist eine, die auf anderen Märkten, Sprachen oder Regionen lokalisiert werden kann, ohne funktionale Mängel in der APP zu decken. Die wichtigste Eigenschaft einer lokalisierbaren App besteht darin, dass der ausführbare Code ordnungsgemäß von den lokalisierbaren Ressourcen getrennt wurde.
 title: App lokalisierbar machen
 ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisier barkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b914c0a2bcfae630b8b491ed702b237ce0eaaee
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8dfae2f80706edcc4462960e396f228c2829600b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172534"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034363"
 ---
 # <a name="make-your-app-localizable"></a>App lokalisierbar machen
 
@@ -72,7 +72,7 @@ Lokalisieren Sie den gesamten Satz, statt nur ein einzelnes Wort, um das Problem
 
 Vermeiden Sie in den Zeichen folgen, die Sie in Ihrer Standardsprache erstellen, Umgangs-und-Metaphern. Die Sprache für eine demografische Gruppe, z. b. Kultur und Alter, kann schwer zu verstehen oder zu übersetzen sein, da nur Personen in dieser demografischen Gruppe diese Sprache verwenden. Ebenso ergeben Metaphern nicht für alle Personen Sinn. Beispielsweise hat &quot;Bache&quot; (weibliches Wildschwein) für Jäger eine besondere, für andere Personen jedoch keine Bedeutung.
 
-Verwenden Sie keinen technischen Jargon, Abkürzungen oder Akronyme. Fachsprache wird von Fachfremden kaum verstanden und ist schwer zu übersetzen. Im alltäglichen Sprachgebrauch ist diese Terminologie unüblich. Die technische Sprache wird häufig in Fehlermeldungen angezeigt, um Hardware-und Software Probleme zu identifizieren. Sie sollten jedoch nur dann technische Zeichen folgen haben, *Wenn der Benutzer diese Informationsebene benötigt und entweder eine Aktion durchgeführt oder eine beliebige Person finden kann*.
+Verwenden Sie keinen technischen Jargon, Abkürzungen oder Akronyme. Fachsprache wird von Fachfremden kaum verstanden und ist schwer zu übersetzen. Im alltäglichen Sprachgebrauch ist diese Terminologie unüblich. Die technische Sprache wird häufig in Fehlermeldungen angezeigt, um Hardware-und Software Probleme zu identifizieren. Sie sollten jedoch nur dann technische Zeichen folgen haben, *Wenn der Benutzer diese Informationsebene benötigt und entweder eine Aktion durchgeführt oder eine beliebige Person finden kann* .
 
 Die Verwendung einer informellen Stimme oder eines Klangs in ihren Zeichen folgen ist eine gültige Wahl. Sie können Kommentare in der Standard Ressourcen Datei (. resw) verwenden, um diese Absicht anzugeben.
 
@@ -95,9 +95,9 @@ Deaktivieren Sie die automatische Generierung der appxbundle-Datei, indem Sie da
 
 1. Klicken Sie in Visual Studio mit der rechten Maustaste auf den Projektnamen.
 2. Wählen Sie **Store**  ->  **App-Pakete erstellen... aus.**
-3. Wählen Sie im Dialogfeld **Pakete erstellen** die Option **Ich möchte Pakete zum Hochladen in die Microsoft Store mit einem neuen APP-Namen erstellen** aus, und klicken Sie dann auf **weiter**.
+3. Wählen Sie im Dialogfeld **Pakete erstellen** die Option **Ich möchte Pakete zum Hochladen in die Microsoft Store mit einem neuen APP-Namen erstellen** aus, und klicken Sie dann auf **weiter** .
 4. Wählen Sie im Dialogfeld **APP-Namen auswählen** /erstellen einen APP-Namen für das Paket aus.
-5. Legen Sie im Dialogfeld **Pakete auswählen und konfigurieren** die Option **App Bundle generieren** auf **nie**fest.
+5. Legen Sie im Dialogfeld **Pakete auswählen und konfigurieren** die Option **App Bundle generieren** auf **nie** fest.
 
 ## <a name="geopolitical-awareness"></a>Geopolitisches Bewusstsein
 
@@ -171,7 +171,7 @@ Japanische Kanji-Zeichen verfügen über mehrere Lesevorgänge (Aussprache), je 
 
 Der Benutzer kann mithilfe des Furigana-Werts "のあ" (Noa) und des phonetischen Werts (mithilfe der **GetPhonetic** -Funktion aus dem Eingabemethoden-Editor (IME)) "まれあお" (Stute-AO) nach dem APP-Namen "希蒼" suchen.
 
-Die Sortierung folgt dem **regionalen Format der Systemsteuerung**:
+Die Sortierung folgt dem **regionalen Format der Systemsteuerung** :
 
 - Unter einem japanischen Benutzer Gebiets Schema
   - Wenn Furigana aktiviert ist, wird "希蒼" unter "の" sortiert.
@@ -180,7 +180,7 @@ Die Sortierung folgt dem **regionalen Format der Systemsteuerung**:
   - Wenn Furigana aktiviert ist, wird "希蒼" unter "の" sortiert.
   - Wenn Furigana fehlt, wird "希蒼" unter "漢字" sortiert.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 - [Richtlinien für Globalisierung](guidelines-and-checklist-for-globalizing-your-app.md)
 - [Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im App-Paketmanifest](../../app-resources/localize-strings-ui-manifest.md)

@@ -1,17 +1,17 @@
 ---
-Description: Hier erhalten Sie ausführliche Analysen für Ihre Windows-apps im Partner Center oder über andere Methoden.
+description: Hier erhalten Sie ausführliche Analysen für Ihre Windows-apps im Partner Center oder über andere Methoden.
 title: Analysieren der App-Leistung
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Analysen, Berichte, Dashboards, apps, Daten, Metriken
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b14ee776b31e21fbb8a0ee1d66b933648549b69
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 08ee9c5ddf729ac7a9026c36bc9fbddad0af5dc5
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162084"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032983"
 ---
 # <a name="analyze-app-performance"></a>Analysieren der App-Leistung
 
@@ -21,7 +21,7 @@ Sie können analytische Berichte direkt in Partner Center anzeigen oder [die Ber
 
 ## <a name="view-key-analytics-for-all-your-apps"></a>Wichtige Analysen für alle Ihre apps anzeigen
 
-Wenn Sie wichtige Analysen zu ihren am häufigsten heruntergeladenen apps anzeigen möchten, erweitern Sie **analysieren** , und wählen Sie **Übersicht**. Standardmäßig werden auf der Übersichtsseite Informationen zu den fünf apps angezeigt, die über die meisten Lebensdauer Käufe verfügen. Wählen Sie **Filter**aus, um unterschiedliche veröffentlichte Apps für die Anzeige auszuwählen.
+Wenn Sie wichtige Analysen zu ihren am häufigsten heruntergeladenen apps anzeigen möchten, erweitern Sie **analysieren** , und wählen Sie **Übersicht** . Standardmäßig werden auf der Übersichtsseite Informationen zu den fünf apps angezeigt, die über die meisten Lebensdauer Käufe verfügen. Wählen Sie **Filter** aus, um unterschiedliche veröffentlichte Apps für die Anzeige auszuwählen.
 
 ## <a name="view-individual-reports-for-each-app"></a>Anzeigen einzelner Berichte für jede APP
 

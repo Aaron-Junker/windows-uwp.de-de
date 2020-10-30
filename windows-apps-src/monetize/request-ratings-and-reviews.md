@@ -1,16 +1,16 @@
 ---
-Description: Erfahren Sie mehr über verschiedene Möglichkeiten, wie Sie Kundenprogramm gesteuert ermöglichen können, Ihre APP zu bewerten und zu überprüfen.
+description: Erfahren Sie mehr über verschiedene Möglichkeiten, wie Sie Kundenprogramm gesteuert ermöglichen können, Ihre APP zu bewerten und zu überprüfen.
 title: Anfordern von Bewertungen und Überprüfungen für Ihre APP
 ms.date: 01/22/2019
 ms.topic: article
 keywords: Windows 10, UWP, Bewertungen, Reviews
 ms.localizationpriority: medium
-ms.openlocfilehash: c0a668ac66f48e386a6299a64e5bcc18cec4fccc
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9dbc33eaaf3adcb05a6ad37e2f54ceec4769f530
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158374"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034403"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>Anfordern von Bewertungen und Überprüfungen für Ihre APP
 
@@ -110,8 +110,8 @@ Nachdem Sie die Anforderung zum Anzeigen des Dialog Felds "Bewertung und Überpr
 Im folgenden Beispiel wird der Rückgabewert für diese Anforderung veranschaulicht, nachdem der Kunde eine Bewertung oder Überprüfung erfolgreich übermittelt hat.
 
 ```json
-{ 
-  "status": "success", 
+{ 
+  "status": "success", 
   "data": {
     "updated": false
   },
@@ -122,8 +122,8 @@ Im folgenden Beispiel wird der Rückgabewert für diese Anforderung veranschauli
 Im folgenden Beispiel wird der Rückgabewert für diese Anforderung veranschaulicht, nachdem der Kunde entschieden hat, keine Bewertung oder Überprüfung zu senden.
 
 ```json
-{ 
-  "status": "aborted", 
+{ 
+  "status": "aborted", 
   "errorDetails": "Navigation was unsuccessful"
 }
 ```
@@ -132,8 +132,8 @@ In der folgenden Tabelle werden die Felder in der JSON-formatierten Daten Zeiche
 
 | Feld          | BESCHREIBUNG                                                                                                                                   |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| *status*       | Eine Zeichenfolge, die angibt, ob der Kunde eine Bewertung oder Überprüfung erfolgreich übermittelt hat. Die unterstützten Werte sind **Erfolg** und werden **abgebrochen**. |
-| *data*         | Ein-Objekt, das einen einzelnen booleschen Wert mit dem Namen " *aktualisiert*" enthält. Dieser Wert gibt an, ob der Kunde eine vorhandene Bewertung oder Überprüfung aktualisiert hat. Das *Daten* Objekt ist nur in Erfolgs Antworten enthalten. |
+| *status*       | Eine Zeichenfolge, die angibt, ob der Kunde eine Bewertung oder Überprüfung erfolgreich übermittelt hat. Die unterstützten Werte sind **Erfolg** und werden **abgebrochen** . |
+| *data*         | Ein-Objekt, das einen einzelnen booleschen Wert mit dem Namen " *aktualisiert* " enthält. Dieser Wert gibt an, ob der Kunde eine vorhandene Bewertung oder Überprüfung aktualisiert hat. Das *Daten* Objekt ist nur in Erfolgs Antworten enthalten. |
 | *errorDetails* | Eine Zeichenfolge, die die Fehlerdetails für die Anforderung enthält.                                                                                     |
 
 ## <a name="launch-the-rating-and-review-page-for-your-app-in-the-store"></a>Starten Sie die Seite "Bewertung und Überprüfung" für Ihre APP im Store.
@@ -152,7 +152,7 @@ Zum Analysieren der Bewertungen und zum Überprüfen von Daten von ihren Kunden 
 * Sie können den Bericht [Reviews](../publish/reviews-report.md) im Partner Center verwenden, um die Bewertungen und Bewertungen ihrer Kunden anzuzeigen. Sie können diesen Bericht auch herunterladen, um ihn offline anzuzeigen.
 * Sie können die Methoden " [Get App Ratings](get-app-ratings.md) " und " [Get App Reviews](get-app-reviews.md) " in der Store Analytics-API verwenden, um die Bewertungen und Reviews von ihren Kunden im JSON-Format Programm gesteuert abzurufen.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Senden von Anfragen an den Store](send-requests-to-the-store.md)
 * [Starten der Microsoft Store-App](../launch-resume/launch-store-app.md)

@@ -1,5 +1,5 @@
 ---
-Description: In diesem Artikel wird beschrieben, wie Sie mit adaptiven Kachelvorlagen eine lokale Benachrichtigung an eine primäre Kachel und an eine sekundäre Kachel senden.
+description: In diesem Artikel wird beschrieben, wie Sie mit adaptiven Kachelvorlagen eine lokale Benachrichtigung an eine primäre Kachel und an eine sekundäre Kachel senden.
 title: Senden einer lokalen Kachelbenachrichtigung
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a8e3bee4a32c4a66ece5f486386340e9f9122f87
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6b93f9731fb9bf843ce9bb03bd8c6526546c4249
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156804"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034463"
 ---
 # <a name="send-a-local-tile-notification"></a>Senden einer lokalen Kachelbenachrichtigung
  
@@ -24,7 +24,7 @@ Primäre App-Kacheln in Windows 10 werden im App-Manifest definiert, sekundäre 
 > [!NOTE] 
 >Weitere Informationen zum [Erstellen von adaptiven Kacheln](create-adaptive-tiles.md) und [Kachel Inhalts Schemas](../tiles-and-notifications/tile-schema.md).
 
- 
+ 
 
 ## <a name="install-the-nuget-package"></a>Installieren des NuGet-Pakets
 
@@ -125,7 +125,7 @@ Auf einer mittelgroßen Kachel wird der Inhalt der Benachrichtigung wie folgt an
 ## <a name="create-the-notification"></a>Erstellen der Benachrichtigung
 
 
-Wenn Sie den Inhalt der Benachrichtigung erstellt haben, müssen Sie eine neue [**TileNotification**](/uwp/api/Windows.UI.Notifications.TileNotification)-Klasse erstellen. Der **TileNotification**-Konstruktor akzeptiert ein Windows-Runtime-[**XmlDocument**](/uwp/api/windows.data.xml.dom.xmldocument)-Objekt, das Sie aus der **TileContent.GetXml**-Methode abrufen können, wenn Sie die [Benachrichtigungsbibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) verwenden.
+Wenn Sie den Inhalt der Benachrichtigung erstellt haben, müssen Sie eine neue [**TileNotification**](/uwp/api/Windows.UI.Notifications.TileNotification)-Klasse erstellen. Der **TileNotification** -Konstruktor akzeptiert ein Windows-Runtime- [**XmlDocument**](/uwp/api/windows.data.xml.dom.xmldocument)-Objekt, das Sie aus der **TileContent.GetXml** -Methode abrufen können, wenn Sie die [Benachrichtigungsbibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) verwenden.
 
 Mit diesem Codebeispiel wird eine Benachrichtigung für eine neue Kachel erstellt.
 
@@ -284,7 +284,7 @@ doc.LoadXml(content);
 var notification = new TileNotification(doc);
 ```
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Erstellen adaptiver Kacheln](create-adaptive-tiles.md)
 * [Kachelinhaltsschema](../tiles-and-notifications/tile-schema.md)
@@ -293,6 +293,6 @@ var notification = new TileNotification(doc);
 * [**Windows.UI.Notifications-Namespace**](/uwp/api/Windows.UI.Notifications)
 * [So wird’s gemacht: Verwenden der Benachrichtigungswarteschlange (XAML)](/previous-versions/windows/apps/hh868234(v=win.10))
 * [Zustellen von Benachrichtigungen](choosing-a-notification-delivery-method.md)
- 
+ 
 
- 
+ 

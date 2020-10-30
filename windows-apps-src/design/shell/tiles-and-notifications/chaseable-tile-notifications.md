@@ -1,5 +1,5 @@
 ---
-Description: Verwenden Sie Benachrichtigungen über eine Kachel, um herauszufinden, was Ihre APP auf der Live-Kachel angezeigt hat, als der Benutzer darauf geklickt hat.
+description: Verwenden Sie Benachrichtigungen über eine Kachel, um herauszufinden, was Ihre APP auf der Live-Kachel angezeigt hat, als der Benutzer darauf geklickt hat.
 title: Verfolgbare Kachelbenachrichtigungen
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Chaseable tile notifications
@@ -8,12 +8,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: Windows 10, UWP, verwertbare Kacheln, Live-Kacheln, Benachrichtigungen zu beschreibbaren Kacheln
 ms.localizationpriority: medium
-ms.openlocfilehash: 951dc891fb34ae4be7551c08ff47eabc19ae9eb6
-ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
+ms.openlocfilehash: 636b0214ced9b63c7bd435ab551059faca7e810c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100278"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034023"
 ---
 # <a name="chaseable-tile-notifications"></a>Verfolgbare Kachelbenachrichtigungen
 
@@ -21,10 +21,10 @@ Mit einer beschreibbaren Kachel Benachrichtigung können Sie feststellen, welche
 Beispielsweise könnte eine News-App dieses Feature verwenden, um zu bestimmen, welche Nachrichten Story die Live-Kachel beim Starten des Benutzers anzeigt hat. Dadurch kann sichergestellt werden, dass die Story hervorgehoben wird, damit der Benutzer Sie finden kann. 
 
 > [!IMPORTANT]
-> Das **Anniversary Update ist erforderlich**: zur Verwendung von Verlaufs fähigen Kachel Benachrichtigungen mit c#-, C++-oder VB-basierten UWP-apps müssen Sie das SDK 14393 als Ziel verwenden und Build 14393 oder höher ausführen. Bei JavaScript-basierten UWP-apps müssen Sie auf SDK 17134 abzielen und Build 17134 oder höher ausführen. 
+> Das **Anniversary Update ist erforderlich** : zur Verwendung von Verlaufs fähigen Kachel Benachrichtigungen mit c#-, C++-oder VB-basierten UWP-apps müssen Sie das SDK 14393 als Ziel verwenden und Build 14393 oder höher ausführen. Bei JavaScript-basierten UWP-apps müssen Sie auf SDK 17134 abzielen und Build 17134 oder höher ausführen. 
 
 
-> **Wichtige APIs**: [launchactivatedeventargs. tileactivatedinfo-Eigenschaft](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), [tileactivatedinfo-Klasse](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
+> **Wichtige APIs** : [launchactivatedeventargs. tileactivatedinfo-Eigenschaft](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), [tileactivatedinfo-Klasse](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
 
 
 ## <a name="how-it-works"></a>Funktionsweise
@@ -40,7 +40,7 @@ Die Benachrichtigungen zu beschreibbaren Kacheln werden in der Regel verwendet, 
 
 ## <a name="what-to-do-with-a-chaseable-tile-notifications"></a>Vorgehensweisen bei einer beschreibbaren Kachel Benachrichtigung
 
-Wichtig zu beachten ist, dass Sie in den meisten Szenarien **nicht direkt zu der spezifischen Benachrichtigung navigieren sollten** , die auf der Kachel war, als der Benutzer darauf geklickt hat. Ihre Live-Kachel wird als Einstiegspunkt für Ihre Anwendung verwendet. Es gibt zwei Szenarios, in denen ein Benutzer auf die Live-Kachel klickt: (1) die APP sollte normal gestartet werden, oder (2) Sie möchten weitere Informationen zu einer bestimmten Benachrichtigung anzeigen, die auf der Live-Kachel war. Da es nicht möglich ist, dass der Benutzer explizit das gewünschte Verhalten anweist, empfiehlt es sich, die **App normal zu starten und gleichzeitig sicherzustellen, dass die vom Benutzer erkannte Benachrichtigung leicht erkennbar ist**.
+Wichtig zu beachten ist, dass Sie in den meisten Szenarien **nicht direkt zu der spezifischen Benachrichtigung navigieren sollten** , die auf der Kachel war, als der Benutzer darauf geklickt hat. Ihre Live-Kachel wird als Einstiegspunkt für Ihre Anwendung verwendet. Es gibt zwei Szenarios, in denen ein Benutzer auf die Live-Kachel klickt: (1) die APP sollte normal gestartet werden, oder (2) Sie möchten weitere Informationen zu einer bestimmten Benachrichtigung anzeigen, die auf der Live-Kachel war. Da es nicht möglich ist, dass der Benutzer explizit das gewünschte Verhalten anweist, empfiehlt es sich, die **App normal zu starten und gleichzeitig sicherzustellen, dass die vom Benutzer erkannte Benachrichtigung leicht erkennbar ist** .
 
 Wenn Sie beispielsweise auf die Live-Kachel der MSN News-App klicken, wird die APP normal gestartet: Sie zeigt die Startseite oder den Artikel an, den der Benutzer zuvor gelesen hat. Auf der Startseite stellt die APP jedoch sicher, dass die Story von der Live-Kachel leicht erkennbar ist. Auf diese Weise werden beide Szenarien unterstützt: das Szenario, in dem Sie die APP einfach starten/fortsetzen möchten, und das Szenario, in dem Sie die jeweilige Story anzeigen möchten.
 
@@ -49,7 +49,7 @@ Wenn Sie beispielsweise auf die Live-Kachel der MSN News-App klicken, wird die A
 
 In einer Benachrichtigungs Nutzlast ermöglicht die Arguments-Eigenschaft ihrer APP, Daten bereitzustellen, die Sie verwenden können, um die Benachrichtigung zu einem späteren Zeitpunkt zu identifizieren. Ihre Argumente können z. b. die Story-ID enthalten, sodass Sie beim Start die Story abrufen und anzeigen können. Die-Eigenschaft akzeptiert eine Zeichenfolge, die Sie beliebig serialisieren können (Abfrage Zeichenfolge, JSON usw.), aber es wird empfohlen, das Format der Abfrage Zeichenfolge zu empfehlen, da es sich um eine fein-und XML-Codierung handelt.
 
-Die-Eigenschaft kann sowohl für die **tilevisual** -als auch für die **tilebinding** -Elemente festgelegt werden und wird nach unten weitergegeben. Wenn Sie für jede Kachel Größe die gleichen Argumente wünschen, legen Sie einfach die Argumente für das **tilevisual**fest. Wenn Sie bestimmte Argumente für bestimmte Kachel Größen benötigen, können Sie die Argumente für einzelne **tilebinding** -Elemente festlegen.
+Die-Eigenschaft kann sowohl für die **tilevisual** -als auch für die **tilebinding** -Elemente festgelegt werden und wird nach unten weitergegeben. Wenn Sie für jede Kachel Größe die gleichen Argumente wünschen, legen Sie einfach die Argumente für das **tilevisual** fest. Wenn Sie bestimmte Argumente für bestimmte Kachel Größen benötigen, können Sie die Argumente für einzelne **tilebinding** -Elemente festlegen.
 
 In diesem Beispiel wird eine Benachrichtigungs Nutzlast erstellt, bei der die Arguments-Eigenschaft verwendet wird, damit die Benachrichtigung später identifiziert werden kann. 
 
@@ -57,48 +57,48 @@ In diesem Beispiel wird eine Benachrichtigungs Nutzlast erstellt, bei der die Ar
 // Uses the following NuGet packages
 // - Microsoft.Toolkit.Uwp.Notifications
 // - QueryString.NET
- 
+ 
 TileContent content = new TileContent()
 {
-    Visual = new TileVisual()
-    {
-        // These arguments cascade down to Medium and Wide
-        Arguments = new QueryString()
-        {
-            { "action", "storyClicked" },
-            { "story", "201c9b1" }
-        }.ToString(),
- 
- 
-        // Medium tile
-        TileMedium = new TileBinding()
-        {
-            Content = new TileBindingContentAdaptive()
-            {
-                // Omitted
-            }
-        },
- 
- 
-        // Wide tile is same as Medium
-        TileWide = new TileBinding() { /* Omitted */ },
- 
- 
-        // Large tile is an aggregate of multiple stories
-        // and therefore needs different arguments
-        TileLarge = new TileBinding()
-        {
-            Arguments = new QueryString()
-            {
-                { "action", "storiesClicked" },
-                { "story", "43f939ag" },
-                { "story", "201c9b1" },
-                { "story", "d9481ca" }
-            }.ToString(),
- 
-            Content = new TileBindingContentAdaptive() { /* Omitted */ }
-        }
-    }
+    Visual = new TileVisual()
+    {
+        // These arguments cascade down to Medium and Wide
+        Arguments = new QueryString()
+        {
+            { "action", "storyClicked" },
+            { "story", "201c9b1" }
+        }.ToString(),
+ 
+ 
+        // Medium tile
+        TileMedium = new TileBinding()
+        {
+            Content = new TileBindingContentAdaptive()
+            {
+                // Omitted
+            }
+        },
+ 
+ 
+        // Wide tile is same as Medium
+        TileWide = new TileBinding() { /* Omitted */ },
+ 
+ 
+        // Large tile is an aggregate of multiple stories
+        // and therefore needs different arguments
+        TileLarge = new TileBinding()
+        {
+            Arguments = new QueryString()
+            {
+                { "action", "storiesClicked" },
+                { "story", "43f939ag" },
+                { "story", "201c9b1" },
+                { "story", "d9481ca" }
+            }.ToString(),
+ 
+            Content = new TileBindingContentAdaptive() { /* Omitted */ }
+        }
+    }
 };
 ```
 
@@ -116,26 +116,26 @@ Jede showntilenotifiweist eine Arguments-Eigenschaft auf. Die Arguments-Eigensch
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs args)
 {
-    // If the API is present (doesn't exist on 10240 and 10586)
-    if (ApiInformation.IsPropertyPresent(typeof(LaunchActivatedEventArgs).FullName, nameof(LaunchActivatedEventArgs.TileActivatedInfo)))
-    {
-        // If clicked on from tile
-        if (args.TileActivatedInfo != null)
-        {
-            // If tile notification(s) were present
-            if (args.TileActivatedInfo.RecentlyShownNotifications.Count > 0)
-            {
-                // Get arguments from the notifications that were recently displayed
-                string[] allArgs = args.TileActivatedInfo.RecentlyShownNotifications
-                .Select(i => i.Arguments)
-                .ToArray();
- 
-                // TODO: Highlight each story in the app
-            }
-        }
-    }
- 
-    // TODO: Initialize app
+    // If the API is present (doesn't exist on 10240 and 10586)
+    if (ApiInformation.IsPropertyPresent(typeof(LaunchActivatedEventArgs).FullName, nameof(LaunchActivatedEventArgs.TileActivatedInfo)))
+    {
+        // If clicked on from tile
+        if (args.TileActivatedInfo != null)
+        {
+            // If tile notification(s) were present
+            if (args.TileActivatedInfo.RecentlyShownNotifications.Count > 0)
+            {
+                // Get arguments from the notifications that were recently displayed
+                string[] allArgs = args.TileActivatedInfo.RecentlyShownNotifications
+                .Select(i => i.Arguments)
+                .ToArray();
+ 
+                // TODO: Highlight each story in the app
+            }
+        }
+    }
+ 
+    // TODO: Initialize app
 }
 ```
 
@@ -145,7 +145,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 Desktop-Apps (z. b. WPF usw.) können mithilfe der [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop)auch beschreibbare Kacheln verwenden. Der einzige Unterschied besteht darin, auf die ongestartete Argumente zuzugreifen. Beachten Sie, dass Sie [Ihre APP zunächst mit der Desktop Bridge Verpacken](/windows/msix/desktop/source-code-overview)müssen.
 
 > [!IMPORTANT]
-> **Erfordert das Update vom Oktober 2018**: um die API zu verwenden `AppInstance.GetActivatedEventArgs()` , müssen Sie das SDK 17763 als Ziel verwenden und Build 17763 oder höher ausführen.
+> **Erfordert das Update vom Oktober 2018** : um die API zu verwenden `AppInstance.GetActivatedEventArgs()` , müssen Sie das SDK 17763 als Ziel verwenden und Build 17763 oder höher ausführen.
 
 Führen Sie für Desktop Anwendungen die folgenden Schritte aus, um auf die Start Argumente zuzugreifen...
 
@@ -165,19 +165,19 @@ static void Main()
             var launchArgs = args as LaunchActivatedEventArgs;
 
             // If clicked on from tile
-            if (launchArgs.TileActivatedInfo != null)
-            {
-                // If tile notification(s) were present
-                if (launchArgs.TileActivatedInfo.RecentlyShownNotifications.Count > 0)
-                {
-                    // Get arguments from the notifications that were recently displayed
-                    string[] allTileArgs = launchArgs.TileActivatedInfo.RecentlyShownNotifications
-                    .Select(i => i.Arguments)
-                    .ToArray();
-     
-                    // TODO: Highlight each story in the app
-                }
-            }
+            if (launchArgs.TileActivatedInfo != null)
+            {
+                // If tile notification(s) were present
+                if (launchArgs.TileActivatedInfo.RecentlyShownNotifications.Count > 0)
+                {
+                    // Get arguments from the notifications that were recently displayed
+                    string[] allTileArgs = launchArgs.TileActivatedInfo.RecentlyShownNotifications
+                    .Select(i => i.Arguments)
+                    .ToArray();
+     
+                    // TODO: Highlight each story in the app
+                }
+            }
     
             break;
 ```
@@ -189,31 +189,31 @@ Wenn Sie anstelle der Benachrichtigungs Bibliothek unformatierte XML-Daten verwe
 
 ```xml
 <tile>
-  <visual arguments="action=storyClicked&amp;story=201c9b1">
- 
-    <binding template="TileMedium">
-       
-      <text>Kitten learns how to drive a car...</text>
-      ... (omitted)
-     
-    </binding>
- 
-    <binding template="TileWide">
-      ... (same as Medium)
-    </binding>
-     
-    <!--Large tile is an aggregate of multiple stories-->
-    <binding
-      template="TileLarge"
-      arguments="action=storiesClicked&amp;story=43f939ag&amp;story=201c9b1&amp;story=d9481ca">
-   
-      <text>Can your dog understand what you're saying?</text>
-      ... (another story)
-      ... (one more story)
-   
-    </binding>
- 
-  </visual>
+  <visual arguments="action=storyClicked&amp;story=201c9b1">
+ 
+    <binding template="TileMedium">
+       
+      <text>Kitten learns how to drive a car...</text>
+      ... (omitted)
+     
+    </binding>
+ 
+    <binding template="TileWide">
+      ... (same as Medium)
+    </binding>
+     
+    <!--Large tile is an aggregate of multiple stories-->
+    <binding
+      template="TileLarge"
+      arguments="action=storiesClicked&amp;story=43f939ag&amp;story=201c9b1&amp;story=d9481ca">
+   
+      <text>Can your dog understand what you're saying?</text>
+      ... (another story)
+      ... (one more story)
+   
+    </binding>
+ 
+  </visual>
 </tile>
 ```
 

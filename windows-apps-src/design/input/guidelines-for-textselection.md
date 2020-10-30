@@ -1,5 +1,5 @@
 ---
-Description: In diesem Thema wird die neue Windows-Benutzeroberfläche für das auswählen und Bearbeiten von Text, Bildern und Steuerelementen beschrieben und Richtlinien zur Benutzeroberfläche bereitstellt, die bei der Verwendung dieser neuen Auswahl-und manipulationsmechanismen in der Windows-App berücksichtigt werden sollten
+description: In diesem Thema wird die neue Windows-Benutzeroberfläche für das auswählen und Bearbeiten von Text, Bildern und Steuerelementen beschrieben und Richtlinien zur Benutzeroberfläche bereitstellt, die bei der Verwendung dieser neuen Auswahl-und manipulationsmechanismen in der Windows-App berücksichtigt werden sollten
 title: Auswählen von Text und Bildern
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
@@ -8,19 +8,19 @@ keywords: Tastatur, Text, Eingabe, Benutzerinteraktionen
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 179eeffd014cb614fb5314826068d9690fc29807
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 0b7954ec21b2282700352b94e7a84bf6914d7f9c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216973"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032853"
 ---
 # <a name="selecting-text-and-images"></a>Auswählen von Text und Bildern
 
 
 In diesem Artikel wird das Auswählen und Bearbeiten von Text, Bildern und Steuerelementen beschrieben. Außerdem enthält er Richtlinien für die Benutzeroberfläche, die Sie bei der Verwendung dieser Mechanismen in Ihren Apps berücksichtigen sollten.
 
-> **Wichtige APIs**: [**Windows. UI. XAML. Input**](/uwp/api/Windows.UI.Xaml.Input), [**Windows. UI. Input**](/uwp/api/Windows.UI.Input)
+> **Wichtige APIs** : [**Windows. UI. XAML. Input**](/uwp/api/Windows.UI.Xaml.Input), [**Windows. UI. Input**](/uwp/api/Windows.UI.Input)
  
 
 
@@ -78,9 +78,9 @@ Im folgenden Bild wird veranschaulicht, wie Sie das Kontextmenü aufrufen, indem
 
 ![Tippen (oder drücken und halten) Sie in die Auswahl oder auf ein Ziehelement, um das Kontextmenü aufzurufen.](images/textselection-show-context.png)
 
-**Hinweis**    Diese Interaktionen sind bei falsch geschriebenen Wörtern etwas unterschiedlich. Wenn Sie auf ein Wort tippen, das als falsch geschrieben gekennzeichnet ist, wird das gesamte Wort hervorgehoben. Außerdem wird das Kontextmenü mit der vorgeschlagenen Schreibweise aufgerufen.
+**Hinweis**  Bei einem falsch geschriebenen Wort weichen diese Interaktionen etwas ab. Wenn Sie auf ein Wort tippen, das als falsch geschrieben gekennzeichnet ist, wird das gesamte Wort hervorgehoben. Außerdem wird das Kontextmenü mit der vorgeschlagenen Schreibweise aufgerufen.
 
- 
+ 
 
 **Nicht bearbeitbare Inhalte**
 

@@ -1,5 +1,5 @@
 ---
-Description: Mithilfe sekundärer Kacheln können Benutzer bestimmten Inhalt und Tiefe Verknüpfungen aus ihrer app in das Startmenü anheften, um einen einfachen Zugriff auf den Inhalt in Ihrer APP zu ermöglichen.
+description: Mithilfe sekundärer Kacheln können Benutzer bestimmten Inhalt und Tiefe Verknüpfungen aus ihrer app in das Startmenü anheften, um einen einfachen Zugriff auf den Inhalt in Ihrer APP zu ermöglichen.
 title: Sekundäre Kacheln
 label: Secondary tiles
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, sekundäre Kacheln
 ms.localizationpriority: medium
-ms.openlocfilehash: ecafd52be36b34c83d9b11757ccd733e796fd727
-ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
+ms.openlocfilehash: 066a6dcb3683e2e55f7452b1f09bb834157aee62
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100338"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034503"
 ---
 # <a name="secondary-tiles"></a>Sekundäre Kacheln
 
@@ -25,7 +25,7 @@ Beispielsweise können Benutzer das Wetter für zahlreiche bestimmte Orte in Ihr
 
 Durch das Hinzufügen sekundärer Kacheln zu Ihrer APP helfen Sie dem Benutzer, schnell und effizient mit Ihrer APP zu kommunizieren. Dadurch wird es Ihnen aufgrund des einfachen Zugriffs, den sekundäre Kacheln bietet, häufiger zu helfen.
 
-**Nur Benutzer können eine sekundäre Kachel anheften. Apps können sekundäre Kacheln ohne Benutzergenehmigung nicht Programm**gesteuert anheften. Der Benutzer muss in der APP explizit auf eine "Pin"-Schaltfläche klicken. an diesem Punkt wird die API zum Erstellen einer sekundären Kachel verwendet, und das System zeigt ein Dialogfeld an, in dem der Benutzer gefragt wird, ob die Kachel angeheftet werden soll.
+**Nur Benutzer können eine sekundäre Kachel anheften. Apps können sekundäre Kacheln ohne Benutzergenehmigung nicht Programm** gesteuert anheften. Der Benutzer muss in der APP explizit auf eine "Pin"-Schaltfläche klicken. an diesem Punkt wird die API zum Erstellen einer sekundären Kachel verwendet, und das System zeigt ein Dialogfeld an, in dem der Benutzer gefragt wird, ob die Kachel angeheftet werden soll.
 
 ## <a name="quick-links"></a>Quicklinks
 

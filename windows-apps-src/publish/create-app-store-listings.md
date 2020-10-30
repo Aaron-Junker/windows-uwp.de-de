@@ -1,17 +1,17 @@
 ---
-Description: Im Abschnitt Store-Auflistungen des App-Übermittlungs Prozesses geben Sie den Text und die Bilder an, die Kunden angezeigt werden, wenn Sie die Liste Ihrer Apps im Microsoft Store anzeigen.
+description: Im Abschnitt Store-Auflistungen des App-Übermittlungs Prozesses geben Sie den Text und die Bilder an, die Kunden angezeigt werden, wenn Sie die Liste Ihrer Apps im Microsoft Store anzeigen.
 title: Erstellen von Store-Einträgen für Apps
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.date: 03/13/2019
 ms.topic: article
 keywords: Windows 10, UWP, Auflistung, Beschreibung, Store-Seite, Anmerkungen zu dieser Version, Titel
 ms.localizationpriority: medium
-ms.openlocfilehash: 6124ea17d8c1c348e9093882df901c829f2cd90e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: cb895dcabcc72361575f2d160b10fade03905d9a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164194"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033293"
 ---
 # <a name="create-app-store-listings"></a>Erstellen von Store-Einträgen für Apps
 
@@ -31,11 +31,11 @@ Sie müssen die Seite **Store-Eintrag** für mindestens eine Sprache ausfüllen.
 > [!NOTE]
 > Wenn Ihre Übermittlung bereits Pakete enthält, werden die in ihren Paketen unterstützten [Sprachen](supported-languages.md) auf der Übersichtsseite für die Übermittlung angezeigt (es sei denn, Sie entfernen Sie).
 
-Klicken Sie zum Hinzufügen oder Entfernen von Sprachen für Ihre Store-Listen auf der Seite Übersicht über die Übermittlung auf **Sprachen hinzufügen/entfernen** . Wenn Sie bereits Pakete hochgeladen haben, sind die Sprachen dafür im Abschnitt **Languages supported by your packages** aufgeführt. Klicken Sie zum Entfernen einer oder mehrerer dieser Sprachen auf **Entfernen**. Wenn Sie später eine Sprache angeben möchten, die Sie zuvor aus diesem Abschnitt entfernt haben, können Sie auf **Hinzufügen** klicken.
+Klicken Sie zum Hinzufügen oder Entfernen von Sprachen für Ihre Store-Listen auf der Seite Übersicht über die Übermittlung auf **Sprachen hinzufügen/entfernen** . Wenn Sie bereits Pakete hochgeladen haben, sind die Sprachen dafür im Abschnitt **Languages supported by your packages** aufgeführt. Klicken Sie zum Entfernen einer oder mehrerer dieser Sprachen auf **Entfernen** . Wenn Sie später eine Sprache angeben möchten, die Sie zuvor aus diesem Abschnitt entfernt haben, können Sie auf **Hinzufügen** klicken.
 
-Im Abschnitt **Additional Store listing languages** können Sie auf **Manage additional languages** klicken, um Sprachen hinzuzufügen oder zu entfernen, die  *nicht* in Ihren Paketen enthalten sind. Aktivieren Sie die Kontrollkästchen für die Sprachen, die Sie hinzufügen möchten, und klicken Sie dann auf **Aktualisieren**. Die ausgewählten Sprachen werden im Abschnitt **Additional Store listing languages** angezeigt. Klicken Sie zum Entfernen einer oder mehrerer dieser Sprachen auf **Entfernen** (oder klicken Sie auf **Manage additional languages**, und deaktivieren Sie die Kontrollkästchen für die Sprachen, die Sie entfernen möchten).
+Im Abschnitt **Additional Store listing languages** können Sie auf **Manage additional languages** klicken, um Sprachen hinzuzufügen oder zu entfernen, die  *nicht* in Ihren Paketen enthalten sind. Aktivieren Sie die Kontrollkästchen für die Sprachen, die Sie hinzufügen möchten, und klicken Sie dann auf **Aktualisieren** . Die ausgewählten Sprachen werden im Abschnitt **Additional Store listing languages** angezeigt. Klicken Sie zum Entfernen einer oder mehrerer dieser Sprachen auf **Entfernen** (oder klicken Sie auf **Manage additional languages** , und deaktivieren Sie die Kontrollkästchen für die Sprachen, die Sie entfernen möchten).
 
-Wenn Sie Ihre Auswahl getroffen haben, klicken Sie auf **Speichern**, um zur Übermittlungsübersicht zurückzukehren.
+Wenn Sie Ihre Auswahl getroffen haben, klicken Sie auf **Speichern** , um zur Übermittlungsübersicht zurückzukehren.
 
 ## <a name="add-and-edit-store-listing-info"></a>Hinzufügen und Bearbeiten von Speicher Listen Informationen
 
@@ -64,11 +64,11 @@ Tipps zum Erstellen einer aussagekräftigen Beschreibung finden Sie unter [Erste
 
 ## <a name="whats-new-in-this-version"></a>Neuerungen in dieser Version
 
-Wenn Sie Ihre APP zum ersten Mal einreichen, lassen Sie dieses Feld leer. Wenn Sie ein Update für eine vorhandene app ausführen möchten, können Sie den Kunden mitteilen, was sich in der neuesten Version geändert hat. Dieses Feld ist auf 1.500 Zeichen beschränkt. (Zuvor hieß dieses Feld Versions **Hinweise**).
+Wenn Sie Ihre APP zum ersten Mal einreichen, lassen Sie dieses Feld leer. Wenn Sie ein Update für eine vorhandene app ausführen möchten, können Sie den Kunden mitteilen, was sich in der neuesten Version geändert hat. Dieses Feld ist auf 1.500 Zeichen beschränkt. (Zuvor hieß dieses Feld Versions **Hinweise** ).
 
 ## <a name="product-features"></a>Produkt Features
 
-Hierbei handelt es sich um kurze Zusammenfassungen der wichtigsten App-Features. Sie werden dem Kunden neben der **Beschreibung**im Abschnitt **Features** der Store-Liste Ihrer APP als Auflistungs Liste angezeigt. Die Beschreibung sollte pro Feature nur wenige Wörter (und nicht mehr als 200 Zeichen) enthalten. Sie können bis zu 20 Features hinzufügen.
+Hierbei handelt es sich um kurze Zusammenfassungen der wichtigsten App-Features. Sie werden dem Kunden neben der **Beschreibung** im Abschnitt **Features** der Store-Liste Ihrer APP als Auflistungs Liste angezeigt. Die Beschreibung sollte pro Feature nur wenige Wörter (und nicht mehr als 200 Zeichen) enthalten. Sie können bis zu 20 Features hinzufügen.
 
 > [!NOTE]
 > Diese Features werden in ihrer Store-Auflistung angezeigt. Fügen Sie also keine eigenen Aufzählungen hinzu.
@@ -139,7 +139,7 @@ Sie können bis zu 11 Elemente sowohl für **Mindesthardwareanforderungen** als
 
 ## <a name="additional-information"></a>Zusätzliche Informationen
 
-Die nachfolgend beschriebenen Elemente helfen Kunden dabei, Ihr Produkt zu ermitteln und zu verstehen. (Dieser Abschnitt wurde früher als frei **gegebene Felder**bezeichnet.)
+Die nachfolgend beschriebenen Elemente helfen Kunden dabei, Ihr Produkt zu ermitteln und zu verstehen. (Dieser Abschnitt wurde früher als frei **gegebene Felder** bezeichnet.)
 
 ### <a name="search-terms"></a>Suchbegriffe
 
@@ -170,4 +170,4 @@ Dieses Feld hat eine Beschränkung von 255 Zeichen.
 <a name="privacy-policy"></a>
 
 > [!NOTE]
-> Die Felder " **Datenschutzrichtlinie**", " **Website**" und "Support" für **Kontaktinformationen** befinden sich jetzt auf der [Eigenschaften](enter-app-properties.md) Seite.
+> Die Felder " **Datenschutzrichtlinie** ", " **Website** " und "Support" für **Kontaktinformationen** befinden sich jetzt auf der [Eigenschaften](enter-app-properties.md) Seite.

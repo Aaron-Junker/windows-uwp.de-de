@@ -1,16 +1,16 @@
 ---
-Description: Mithilfe von Windows Push Notification Services (WNS) können Entwickler von Drittanbietern Popup-, Kachel-, Badge-und rohupdates von Ihrem eigenen clouddienst senden. Es gibt viele Möglichkeiten, die Benachrichtigungen abhängig von den Anforderungen Ihrer Anwendung zu senden.
+description: Mithilfe von Windows Push Notification Services (WNS) können Entwickler von Drittanbietern Popup-, Kachel-, Badge-und rohupdates von Ihrem eigenen clouddienst senden. Es gibt viele Möglichkeiten, die Benachrichtigungen abhängig von den Anforderungen Ihrer Anwendung zu senden.
 title: Auswählen des richtigen Kanaltypen für die Pushbenachrichtigungen
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 326012a38f2d4a8cd7d5c406c160db5168c9877d
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 31cf9246276920638db113f27d83ab9969cdecc6
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219223"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034083"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>Auswählen des richtigen Kanaltypen für die Pushbenachrichtigungen
 

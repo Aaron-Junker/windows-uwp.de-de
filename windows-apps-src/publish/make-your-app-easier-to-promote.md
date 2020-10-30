@@ -1,17 +1,17 @@
 ---
-Description: Machen Sie auf Ihre App aufmerksam! Abgesehen davon, dass Ihre APP am besten geeignet ist, können Sie dies tun, was Sie tun können, damit die Microsoft Store und anderen Websites Ihre APP veranschaulichen und Sie dabei unterstützen können.
+description: Machen Sie auf Ihre App aufmerksam! Abgesehen davon, dass Ihre APP am besten geeignet ist, können Sie dies tun, was Sie tun können, damit die Microsoft Store und anderen Websites Ihre APP veranschaulichen und Sie dabei unterstützen können.
 title: Einfacheres Bewerben Ihrer App
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Promotion, Promotion, vorgestellt, Showcase, Store
 ms.localizationpriority: medium
-ms.openlocfilehash: c2503dbd6d585452c8bfec0ac217e2144a4da384
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ea42ff2d4aa7f953ed98813de3d4b2ead1547b16
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161904"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033893"
 ---
 # <a name="make-your-app-easier-to-promote"></a>Einfacheres Bewerben Ihrer App
 
@@ -43,4 +43,4 @@ Die Microsoft Store zeigt verschiedene apps nach Kategorie oder Design gruppiert
 
 
 
- 
+ 

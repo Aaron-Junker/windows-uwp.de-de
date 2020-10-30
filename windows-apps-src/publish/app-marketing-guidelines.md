@@ -1,17 +1,17 @@
 ---
-Description: Erfahren Sie, wie Sie Ihre apps und Inhalte in der Microsoft Store höher stufen. In diesen Richtlinien wird erläutert, wie Sie die verfügbaren Ressourcen in Kombination mit Empfehlungen für die Vermarktung von Apps in gedruckter und digitaler Werbung, in TV-Werbung und Werbung auf sozialen Plattformen verwenden.
+description: Erfahren Sie, wie Sie Ihre apps und Inhalte in der Microsoft Store höher stufen. In diesen Richtlinien wird erläutert, wie Sie die verfügbaren Ressourcen in Kombination mit Empfehlungen für die Vermarktung von Apps in gedruckter und digitaler Werbung, in TV-Werbung und Werbung auf sozialen Plattformen verwenden.
 title: Microsoft Store Marketing Richtlinien für apps
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 64da05c3c3caed204e33890e88222e9a75be3ae0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 753b60cf3da6400d3df695c2f390c0b47c7a9e68
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162054"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033963"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store Marketing Richtlinien für apps
 
@@ -37,7 +37,7 @@ Von folgendem Link können Sie auch den vollständigen Satz von Badge-Bildern (i
 
 Zur Vermarktung Ihrer App möchten Sie vielleicht zeigen, wie sie aussieht, wenn sie auf einem Windows-Gerät ausgeführt wird. Wir haben eine Vielzahl von Geräte Chassis-Images, aus denen Sie auswählen können, darunter Smartphones, Tablets, Laptops und PCs. Bewährte Methoden und technische Spezifikationen für die Verwendung dieser Images finden Sie in den [Microsoft Store Marketing-Richtlinien](https://download.microsoft.com/download/0/7/D/07DF43D4-B1A8-4D38-BC02-4903BB36CEE8/Microsoft_Store_Badge_Guidelines.pdf).
 
-[ ![ Schaltfläche "Download](images/downloadbutton.png)](https://download.microsoft.com/download/1/A/5/1A58A23A-1388-4097-B441-A3E8DBC14849/Windows_Store_Device_Art.zip)" **Windows Device Art**
+[ ![ Schaltfläche "Download](images/downloadbutton.png)](https://download.microsoft.com/download/1/A/5/1A58A23A-1388-4097-B441-A3E8DBC14849/Windows_Store_Device_Art.zip) " **Windows Device Art**
 
 ## <a name="license-to-microsoft-marks"></a>Lizenz für Microsoft Marks
 
@@ -53,6 +53,6 @@ Zur Vermarktung Ihrer App möchten Sie vielleicht zeigen, wie sie aussieht, wenn
 
 Microsoft ist der alleinige Eigentümer der Microsoft Marks und des damit verbundenen Firmenwerts sowie der alleinige Begünstigte des Firmenwerts, der sich aus Ihrer Nutzung der Microsoft Marks ergibt. Microsoft kann diese Lizenz jederzeit und nach eigenem Ermessen widerrufen.
 
- 
+ 
 
- 
+ 

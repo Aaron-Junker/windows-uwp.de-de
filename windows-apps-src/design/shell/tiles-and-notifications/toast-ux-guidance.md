@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie, wie Sie effektive und benutzerorientierte Benachrichtigungen erstellen, mit denen Ihre Benutzer produktiv und zufrieden sind.
+description: Erfahren Sie, wie Sie effektive und benutzerorientierte Benachrichtigungen erstellen, mit denen Ihre Benutzer produktiv und zufrieden sind.
 title: Popup-UX-Leitfaden
 label: Toast UX Guidance
 template: detail.hbs
@@ -7,17 +7,17 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: Windows 10-, UWP-, Benachrichtigungs-, Sammlungs-, Gruppen-, UX-, UX-, Leitfaden-, Aktions-, Popup-, Aktions Center-, nicht interruptive, effektive Benachrichtigungen, nicht eindringliche Benachrichtigungen, Aktions fähig, verwalten, organisieren
 ms.localizationpriority: medium
-ms.openlocfilehash: 9879d052882532e4d47c27c0b636f728293311cf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d6ad253ccfa744864caa8d0229d09ba40d066771
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169174"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033043"
 ---
 # <a name="toast-notification-ux-guidance"></a>Leitfaden für Popup Benachrichtigungs-UX
 Benachrichtigungen sind ein notwendiger Teil des modernen Lebenszyklus. Sie helfen Benutzern, produktiver zu arbeiten und mit apps und Websites zu arbeiten, und bleiben mit allen Updates auf dem laufenden. Allerdings können Benachrichtigungen schnell von Vorteil zu Überlastung und eindringlichem Verhalten werden, wenn Sie nicht auf Benutzer zentrierte Weise entworfen wurden. Ihre Benachrichtigungen werden von einem Rechtsklick entfernt, und es ist unwahrscheinlich, dass Sie deaktiviert werden, wenn Sie ausgeschaltet sind.  Stellen Sie also sicher, dass Ihre Benachrichtigungen den Bildschirmbereich und die Uhrzeit des Benutzers respektieren, damit Sie diesen Engagement-Kanal geöffnet halten können.
 
-> **Wichtige APIs**: [nuget-Paket für Windows Community Toolkit-Benachrichtigungen](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **Wichtige APIs** : [nuget-Paket für Windows Community Toolkit-Benachrichtigungen](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 Wir haben unsere Windows-Telemetrie und andere Fallstudien von erst-und Drittanbietern analysiert, um vier Regeln für eine gute Benachrichtigung zu erhalten.  Wir sind sicher, dass diese Regeln unabhängig von der Plattform universell anwendbar sind und Ihre Benachrichtigungen bei ihren Benutzern positiv beeinflussen können.
 
@@ -59,7 +59,7 @@ Gruppieren Sie diese Benachrichtigungen auf eine Weise, damit relevante Inhalte 
 
 Diese vier Punkte sind eine Anleitung, die wir durch unsere eigene Analyse der Telemetriedaten und durch die ersten und Drittanbieter Experimente wirksam gefunden haben. Beachten Sie jedoch, dass diese Richtlinien nur die folgenden Richtlinien erfüllen: Richtlinien.  Wir sind sicher, dass diese Regeln dabei helfen, das Engagement und die Produktivität Ihrer Benachrichtigungen zu steigern, aber nichts kann die Benutzer zentrierte Betrachtung und das Erlernen aus ihren eigenen Daten ersetzen.  
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Popupinhalt](adaptive-interactive-toasts.md)
 * [Unformatierte Benachrichtigungen](raw-notification-overview.md)

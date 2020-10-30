@@ -1,5 +1,5 @@
 ---
-Description: Dieser Artikel stellt eine Übersicht über die Konzepte und Technologien im Zusammenhang mit Barrierefreiheits Szenarien für Windows-apps dar.
+description: Dieser Artikel stellt eine Übersicht über die Konzepte und Technologien im Zusammenhang mit Barrierefreiheits Szenarien für Windows-apps dar.
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: Übersicht zu Bedienungshilfen
 label: Accessibility overview
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 525f8d3170d94b035648841edca5f903450bf871
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: e772cfb6df47cebe9f1b0229f54ea40a2a1da28d
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216483"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032683"
 ---
 # <a name="accessibility-overview"></a>Übersicht zu Bedienungshilfen
 
@@ -95,7 +95,7 @@ Weitere Informationen zu allen Aspekten der Tastaturunterstützung, einschließl
 
 ## <a name="media-and-captioning"></a>Medien und Untertitelung
 
-Sie zeigen audiovisuelle Medien normalerweise über ein [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement)-Objekt an. Mit **MediaElement**-APIs steuern Sie die Medienwiedergabe. Stellen Sie aus Gründen der Barrierefreiheit Steuerelemente bereit, mit denen Benutzer die Medienwiedergabe nach Bedarf starten, anhalten oder beenden können. Gelegentlich umfassen Medien zusätzliche Komponenten, die für die Barrierefreiheit vorgesehen sind, z. B. Untertitelung oder alternative Audiospuren mit einer Sprachausgabe der Beschreibungen.
+Sie zeigen audiovisuelle Medien normalerweise über ein [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement)-Objekt an. Mit **MediaElement** -APIs steuern Sie die Medienwiedergabe. Stellen Sie aus Gründen der Barrierefreiheit Steuerelemente bereit, mit denen Benutzer die Medienwiedergabe nach Bedarf starten, anhalten oder beenden können. Gelegentlich umfassen Medien zusätzliche Komponenten, die für die Barrierefreiheit vorgesehen sind, z. B. Untertitelung oder alternative Audiospuren mit einer Sprachausgabe der Beschreibungen.
 
 <span id="Accessible_text"/>
 <span id="accessible_text"/>
@@ -107,7 +107,7 @@ Für die Barrierefreiheit sind drei Hauptaspekte von Text relevant:
 
 * Tools müssen feststellen können, ob der Text als Teil der durchlaufenen TAB-Sequenz oder nur als Teil der Gesamtdarstellung eines Dokuments gelesen wird. Sie können dem Steuerelement bei dieser Unterscheidung helfen, indem Sie das richtige Element für die Anzeige des Texts auswählen oder die Eigenschaften dieser Textelemente anpassen. Jedes Element erfüllt einen bestimmten Zweck, und mit diesem ist oft eine entsprechende Benutzeroberflächenautomatisierungsrolle verbunden. Wenn Sie das falsche Element verwenden, kann der Benutzeroberflächenautomatisierung die falsche Rolle gemeldet werden, sodass die Benutzerfreundlichkeit für Hilfstechnologienutzer beeinträchtigt wird.
 * Bei vielen Benutzern ist das Sehvermögen eingeschränkt, sodass Text für sie schwierig zu lesen ist, sofern der Textkontrast zum Hintergrund nicht ausreichend ist. Wie sich dies auf die Benutzer auswirkt, ist für App-Designer, deren Sehvermögen nicht eingeschränkt ist, nicht intuitiv nachvollziehbar. So kann eine schlechte Farbauswahl im Design beispielsweise dazu führen, dass einige farbenblinde Benutzer den Text nicht lesen können. Empfehlungen für die Barrierefreiheit, die ursprünglich für Webinhalt vorgesehen waren, definieren Standards für den Kontrast, die diese Probleme auch in Apps verhindern können. Weitere Informationen finden Sie unter [Anforderungen für barrierefreien Text](accessible-text-requirements.md).
-* Viele Benutzer haben Schwierigkeiten mit dem Lesen von Text, da dieser einfach zu klein ist. Sie können dieses Problem verhindern, indem Sie von vornherein den Text auf der Benutzeroberfläche der App groß genug machen. Dies ist jedoch schwierig für Apps, die sehr viel Text anzeigen oder bei denen Text zwischen andere visuelle Elemente eingestreut wird. Stellen Sie in diesen Fällen sicher, dass die App korrekt mit den Systemfeatures interagiert, die die Anzeige skalieren können, damit der gesamte Text in App ebenfalls vergrößert werden kann. (Einige Benutzer ändern die DPI-Werte zu Zwecken der Barrierefreiheit. Diese Option steht unter **Erleichterte Bedienung** als **Elementgröße ändern** zur Verfügung. Sie führt in der **Systemsteuerung** zum Punkt **Darstellung und Anpassung**/ / **Anzeige**.
+* Viele Benutzer haben Schwierigkeiten mit dem Lesen von Text, da dieser einfach zu klein ist. Sie können dieses Problem verhindern, indem Sie von vornherein den Text auf der Benutzeroberfläche der App groß genug machen. Dies ist jedoch schwierig für Apps, die sehr viel Text anzeigen oder bei denen Text zwischen andere visuelle Elemente eingestreut wird. Stellen Sie in diesen Fällen sicher, dass die App korrekt mit den Systemfeatures interagiert, die die Anzeige skalieren können, damit der gesamte Text in App ebenfalls vergrößert werden kann. (Einige Benutzer ändern die DPI-Werte zu Zwecken der Barrierefreiheit. Diese Option steht unter **Erleichterte Bedienung** als **Elementgröße ändern** zur Verfügung. Sie führt in der **Systemsteuerung** zum Punkt **Darstellung und Anpassung** / / **Anzeige** .
 
 <span id="Supporting_high-contrast_themes"/>
 <span id="supporting_high-contrast_themes"/>
@@ -202,7 +202,7 @@ Beim Erstellen eines benutzerdefinierten Steuerelements empfehlen wir, dass Sie 
 
 Auf in einer XAML-Benutzeroberfläche gehostete Microsoft DirectX-Inhalte (mit [**SwapChainPanel**](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) oder [**SurfaceImageSource**](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)) kann standardmäßig nicht direkt zugegriffen werden. Im [Beispiel für SwapChainPanel-Beispiel für DirectX/XAML-Interoperabilität](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208.1%20Store%20app%20samples/%5BC%23%5D-Windows%208.1%20Store%20app%20samples/XAML%20SwapChainPanel%20DirectX%20interop%20sample) wird veranschaulicht, wie Benutzeroberflächenautomatisierungs-Peers für den gehosteten DirectX-Inhalt erstellt werden. Diese Technik erlaubt den Zugriff auf den gehosteten Inhalt per Benutzeroberflächenautomatisierung.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [**Windows.UI.Xaml.Automation**](/uwp/api/Windows.UI.Xaml.Automation)
 * [Entwerfen für Barrierefreiheit]()

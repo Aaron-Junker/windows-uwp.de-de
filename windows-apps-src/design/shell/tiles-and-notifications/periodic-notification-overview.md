@@ -1,5 +1,5 @@
 ---
-Description: Regelmäßige Benachrichtigungen – auch als abgerufene Benachrichtigungen bezeichnet – aktualisieren Kacheln und Signale in festgelegten Intervallen, indem sie Inhalte aus einem Clouddienst herunterladen.
+description: Regelmäßige Benachrichtigungen – auch als abgerufene Benachrichtigungen bezeichnet – aktualisieren Kacheln und Signale in festgelegten Intervallen, indem sie Inhalte aus einem Clouddienst herunterladen.
 title: Übersicht über regelmäßige Benachrichtigungen
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9936fd6b7210298bdce042b7848a75be8e044040
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5860c4e45a25b0d141e1b2c57421dd2640d5fbb4
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175504"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033783"
 ---
 # <a name="periodic-notification-overview"></a>Übersicht über regelmäßige Benachrichtigungen
  
@@ -25,9 +25,9 @@ Regelmäßige Benachrichtigungen – auch als abgerufene Benachrichtigungen beze
 
 Regelmäßige Benachrichtigungen bieten Ihnen Live-Kachelaktualisierungen mit minimaler Investition in Clouddienst und Client. Sie stellen auch eine gute Methode zum Verteilen desselben Inhalts an eine große Zielgruppe dar.
 
-**Hinweis**    Weitere Informationen erhalten Sie durch Herunterladen des Beispiels für [Pushbenachrichtigungen und periodische Benachrichtigungen](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208)) für Windows 8.1 und wieder verwenden des Quellcodes in Ihrer Windows 10-app.
+**Hinweis**   Weitere Informationen finden Sie durch Herunterladen des [Beispiels für Pushbenachrichtigungen und regelmäßige Benachrichtigungen](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208)) für Windows 8.1 und die Wiederverwendung des Quellcodes in Ihrer App für Windows 10.
 
- 
+ 
 
 ## <a name="how-it-works"></a>Funktionsweise
 
@@ -100,10 +100,10 @@ Um eine Benachrichtigungswarteschlange zu implementieren, aktivieren Sie zunäch
 
 Sie müssen einen eindeutigen URI für jede Benachrichtigung angeben, die Windows für Ihre Kachel herunterladen soll. Mit der [**StartPeriodicUpdateBatch**](/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_)-Methode können Sie bis zu fünf URIs gleichzeitig zur Verwendung mit der Benachrichtigungswarteschlange angeben. Jeder URI wird zur gleichen oder fast zur gleichen Zeit für eine einzige Benachrichtigungsnutzlast abgefragt. Jeder abgefragte URI kann seine eigene Ablaufzeit sowie einen Tag-Wert zurückgeben.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 
 * [Richtlinien für regelmäßige Benachrichtigungen]()
 * [So wird's gemacht: Einrichten regelmäßiger Benachrichtigungen für Signale](/previous-versions/windows/apps/hh761476(v=win.10))
 * [So wird's gemacht: Einrichten regelmäßiger Benachrichtigungen für Kacheln](/previous-versions/windows/apps/hh761476(v=win.10))
- 
+ 

@@ -1,17 +1,17 @@
 ---
-Description: In diesem Artikel wird beschrieben, wie Sie eine Windows-Runtime-Komponente erstellen, die die IBasicAudioEffect-Schnittstelle implementiert, mit der Sie benutzerdefinierte Effekte für Audiostreams erstellen können.
+description: In diesem Artikel wird beschrieben, wie Sie eine Windows-Runtime-Komponente erstellen, die die IBasicAudioEffect-Schnittstelle implementiert, mit der Sie benutzerdefinierte Effekte für Audiostreams erstellen können.
 title: Benutzerdefinierte Audioeffekte
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
-ms.openlocfilehash: e52aa4ebde6f988daad9c1712845e07ee553d7a2
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: b5b9613dc9d480a4193dbff0dbb236929d9ed54a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363963"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033173"
 ---
 # <a name="custom-audio-effects"></a>Benutzerdefinierte Audioeffekte
 
@@ -24,13 +24,13 @@ Sie definieren einen benutzerdefinierte Audioeffekt in einer Klasse, die die [**
 
 **Hinzufügen einer Windows-Runtime-Komponente für den Audioeffekt**
 
-1.  Wechseln Sie in Microsoft Visual Studio bei geöffneter Projektmappe zum Menü **Datei**, und wählen Sie **Hinzufügen-&gt;Neues Projekt** aus.
+1.  Wechseln Sie in Microsoft Visual Studio bei geöffneter Projektmappe zum Menü **Datei** , und wählen Sie **Hinzufügen-&gt;Neues Projekt** aus.
 2.  Wählen Sie den Projekttyp **Komponente für Windows-Runtime (Universal Windows)** aus.
-3.  Nennen Sie das Projekt in diesem Beispiel *AudioEffectComponent*. Auf diesen Namen wird später im Code verwiesen.
-4.  Klicken Sie auf **OK**.
+3.  Nennen Sie das Projekt in diesem Beispiel *AudioEffectComponent* . Auf diesen Namen wird später im Code verwiesen.
+4.  Klicken Sie auf **OK** .
 5.  Die Projektvorlage erstellt eine Klasse namens „Class1.cs“. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Symbol für „Class1.cs“, und wählen Sie **Umbenennen** aus.
-6.  Benennen Sie die Datei in *ExampleAudioEffect.cs* um. Visual Studio zeigt eine Eingabeaufforderung an, in der Sie gefragt werden, ob Sie alle Verweise mit dem neuen Namen aktualisieren möchten. Klicken Sie auf **Ja**.
-7.  Öffnen Sie **ExampleAudioEffect.cs**, und aktualisieren Sie die Definition der Klasse, um die [**IBasicAudioEffect**](/uwp/api/Windows.Media.Effects.IBasicAudioEffect)-Schnittstelle zu implementieren.
+6.  Benennen Sie die Datei in *ExampleAudioEffect.cs* um. Visual Studio zeigt eine Eingabeaufforderung an, in der Sie gefragt werden, ob Sie alle Verweise mit dem neuen Namen aktualisieren möchten. Klicken Sie auf **Ja** .
+7.  Öffnen Sie **ExampleAudioEffect.cs** , und aktualisieren Sie die Definition der Klasse, um die [**IBasicAudioEffect**](/uwp/api/Windows.Media.Effects.IBasicAudioEffect)-Schnittstelle zu implementieren.
 
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/AudioEffectComponent/ExampleAudioEffect.cs" id="SnippetImplementIBasicAudioEffect":::
@@ -51,7 +51,7 @@ Das System überprüft die [**SupportedEncodingProperties**](/uwp/api/windows.me
 
 ### <a name="setencodingproperties-method"></a>SetEncodingProperties-Methode
 
-Das System ruft [**SetEncodingProperties**](/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties) für den Effekt auf, um Ihnen die Codierungseigenschaften für den Audiostream mitzuteilen, für den der Effekt gilt. In diesem Beispiel wird für die Implementierung eines Echoeffekts ein Puffer zur Speicherung von Audiodaten mit einer Sekunde Dauer verwendet. Diese Methode bietet die Möglichkeit, die Größe des Puffers für die Anzahl der Samples in einer Sekunde Audiodaten zu initialisieren, basierend auf der Samplingrate der Aufzeichnung. Der Verzögerungseffekt verwendet auch einen Ganzzahlzähler, um die aktuelle Position im Verzögerungspuffer nachzuverfolgen. Da **SetEncodingProperties** immer dann aufgerufen wird, wenn der Effekt der Audio-Pipeline hinzugefügt wird, ist dies ein guter Zeitpunkt für die Initialisierung dieses Werts auf 0. Sie können auch das an diese Methode übergebene **AudioEncodingProperties**-Objekt zur Verwendung an anderen Stellen Ihres Effekts erfassen.
+Das System ruft [**SetEncodingProperties**](/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties) für den Effekt auf, um Ihnen die Codierungseigenschaften für den Audiostream mitzuteilen, für den der Effekt gilt. In diesem Beispiel wird für die Implementierung eines Echoeffekts ein Puffer zur Speicherung von Audiodaten mit einer Sekunde Dauer verwendet. Diese Methode bietet die Möglichkeit, die Größe des Puffers für die Anzahl der Samples in einer Sekunde Audiodaten zu initialisieren, basierend auf der Samplingrate der Aufzeichnung. Der Verzögerungseffekt verwendet auch einen Ganzzahlzähler, um die aktuelle Position im Verzögerungspuffer nachzuverfolgen. Da **SetEncodingProperties** immer dann aufgerufen wird, wenn der Effekt der Audio-Pipeline hinzugefügt wird, ist dies ein guter Zeitpunkt für die Initialisierung dieses Werts auf 0. Sie können auch das an diese Methode übergebene **AudioEncodingProperties** -Objekt zur Verwendung an anderen Stellen Ihres Effekts erfassen.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/AudioEffectComponent/ExampleAudioEffect.cs" id="SnippetDeclareEchoBuffer":::
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/AudioEffectComponent/ExampleAudioEffect.cs" id="SnippetSetEncodingProperties":::
@@ -69,9 +69,9 @@ In diesem einfachen Beispiel wird das aktuelle Audiosample mit einem Wert aus de
 
 ### <a name="processframe-method"></a>ProcessFrame-Methode
 
-Die [**ProcessFrame**](/uwp/api/windows.media.effects.ibasicaudioeffect.processframe)-Methode ist die Stelle, an der Ihr Effekt die Audiodaten des Streams ändert. Die Methode wird einmal pro Frame aufgerufen, und es wird ihr ein [**ProcessAudioFrameContext**](/uwp/api/Windows.Media.Effects.ProcessAudioFrameContext)-Objekt übergeben. Dieses Objekt enthält ein [**AudioFrame**](/uwp/api/Windows.Media.AudioFrame)-Eingabeobjekt, das den eingehenden Frame umfasst, der verarbeitet werden soll, und ein **AudioFrame**-Ausgabeobjekt, in das Sie Audiodaten schreiben, die dem Rest der Audiopipeline übergeben werden. Ein Audioframe ist ein Puffer von Audiosamples, die einen kurzen Slice von Audiodaten repräsentieren.
+Die [**ProcessFrame**](/uwp/api/windows.media.effects.ibasicaudioeffect.processframe)-Methode ist die Stelle, an der Ihr Effekt die Audiodaten des Streams ändert. Die Methode wird einmal pro Frame aufgerufen, und es wird ihr ein [**ProcessAudioFrameContext**](/uwp/api/Windows.Media.Effects.ProcessAudioFrameContext)-Objekt übergeben. Dieses Objekt enthält ein [**AudioFrame**](/uwp/api/Windows.Media.AudioFrame)-Eingabeobjekt, das den eingehenden Frame umfasst, der verarbeitet werden soll, und ein **AudioFrame** -Ausgabeobjekt, in das Sie Audiodaten schreiben, die dem Rest der Audiopipeline übergeben werden. Ein Audioframe ist ein Puffer von Audiosamples, die einen kurzen Slice von Audiodaten repräsentieren.
 
-Der Zugriff auf den Datenpuffers eines **AudioFrame** erfordert COM-Interoperabilität. Sie sollten daher den **System.Runtime.InteropServices**-Namespace in Ihre Effektklassendatei einschließen und dann den folgenden Code in den Namespace aufnehmen, damit Ihr Effekt die Schnittstelle für den Zugriff auf den Audiopuffer importiert.
+Der Zugriff auf den Datenpuffers eines **AudioFrame** erfordert COM-Interoperabilität. Sie sollten daher den **System.Runtime.InteropServices** -Namespace in Ihre Effektklassendatei einschließen und dann den folgenden Code in den Namespace aufnehmen, damit Ihr Effekt die Schnittstelle für den Zugriff auf den Audiopuffer importiert.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/AudioEffectComponent/ExampleAudioEffect.cs" id="SnippetComImport":::
 
@@ -81,9 +81,9 @@ Der Zugriff auf den Datenpuffers eines **AudioFrame** erfordert COM-Interoperabi
 > 2.  Wählen Sie die Registerkarte **Build** aus.
 > 3.  Aktivieren Sie das Kontrollkästchen **unsicheren Code zulassen** .
 
- 
+ 
 
-Sie können nun Ihrem Effekt die **ProcessFrame**-Methodenimplementierung hinzufügen. Zunächst erhält diese Methode ein [**AudioBuffer**](/uwp/api/Windows.Media.AudioBuffer)-Objekt aus den Ein- und Ausgabe-Audioframes. Beachten Sie, dass der Ausgabeframe zum Schreiben und die Eingabe zum Lesen geöffnet wird. Als Nächstes wird ein [**IMemoryBufferReference**](/uwp/api/Windows.Foundation.IMemoryBufferReference)-Objekt für jeden Puffer durch Aufrufen von [**CreateReference**](/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference) abgerufen. Danach wird der tatsächliche Datenpuffer durch Umwandeln der **IMemoryBufferReference**-Objekte wie die oben definierte COMInterop-Schnittstelle, **IMemoryByteAccess**, und anschließendes Aufrufen von **GetBuffer** abgerufen.
+Sie können nun Ihrem Effekt die **ProcessFrame** -Methodenimplementierung hinzufügen. Zunächst erhält diese Methode ein [**AudioBuffer**](/uwp/api/Windows.Media.AudioBuffer)-Objekt aus den Ein- und Ausgabe-Audioframes. Beachten Sie, dass der Ausgabeframe zum Schreiben und die Eingabe zum Lesen geöffnet wird. Als Nächstes wird ein [**IMemoryBufferReference**](/uwp/api/Windows.Foundation.IMemoryBufferReference)-Objekt für jeden Puffer durch Aufrufen von [**CreateReference**](/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference) abgerufen. Danach wird der tatsächliche Datenpuffer durch Umwandeln der **IMemoryBufferReference** -Objekte wie die oben definierte COMInterop-Schnittstelle, **IMemoryByteAccess** , und anschließendes Aufrufen von **GetBuffer** abgerufen.
 
 Nun, da die Datenpuffer abgerufen wurden, können Sie aus dem Eingabepuffer lesen und in den Ausgabepuffer schreiben. Für jedes Sample im Eingabepuffer wird der Wert abgerufen und mit 1 - **Mix** multipliziert, um den „trockenen“ Signalwert des Effekts festzulegen. Anschließend wird ein Sample aus seiner aktuellen Position im Echopuffer abgerufen und mit **Mix** multipliziert, um den „nassen“ Wert des Effekts einzurichten. Das Ausgabesample wird auf die Summe des „trockenen“ und des „nassen“ Werts gesetzt. Schließlich wird jedes Eingabesample im Echopuffer gespeichert, und der aktuelle Sample-Index wird erhöht.
 
@@ -121,8 +121,8 @@ Legen Sie die [**UseInputFrameForOutput**](/uwp/api/windows.media.effects.ibasic
 
 Um den Audioeffekt aus Ihrer App zu verwenden, müssen Sie Ihrer App einen Verweis auf den Effektprojekt hinzufügen.
 
-1.  Klicken Sie im Projektmappen-Explorer unter Ihrem App-Projekt mit der rechten Maustaste auf **Verweise**, und wählen Sie **Verweis hinzufügen** aus.
-2.  Erweitern Sie die Registerkarte **Projekte**, wählen Sie **Projektmappe** aus, und aktivieren Sie das Kontrollkästchen für den Projektnamen des Effekts. In diesem Beispiel heißt das Projekt *AudioEffectComponent*.
+1.  Klicken Sie im Projektmappen-Explorer unter Ihrem App-Projekt mit der rechten Maustaste auf **Verweise** , und wählen Sie **Verweis hinzufügen** aus.
+2.  Erweitern Sie die Registerkarte **Projekte** , wählen Sie **Projektmappe** aus, und aktivieren Sie das Kontrollkästchen für den Projektnamen des Effekts. In diesem Beispiel heißt das Projekt *AudioEffectComponent* .
 3.  Klicken Sie auf **OK**
 
 Wenn Ihre Audioeffektklasse in einem anderen Namespace deklariert ist, nehmen Sie diesen Namespace in Ihre Codedatei auf.
@@ -130,11 +130,11 @@ Wenn Ihre Audioeffektklasse in einem anderen Namespace deklariert ist, nehmen Si
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetUsingAudioEffectComponent":::
 
 ### <a name="add-your-custom-effect-to-an-audiograph-node"></a>Fügen Sie Ihren benutzerdefinierten Effekt einem AudioGraph-Knoten hinzu
-Allgemeine Informationen zur Verwendung von Audiodiagrammen finden Sie unter [Audio Graphs](audio-graphs.md). Der folgende Codeausschnitt veranschaulicht, wie der in diesem Artikel vorgestellte Beispielechoeffekt einem Audiodiagrammknoten hinzugefügt wird. Zuerst wird ein [**PropertySet**](/uwp/api/Windows.Foundation.Collections.PropertySet) erstellt und ein von dem Effekt definierter Wert für die **Mix**-Eigenschaft festgelegt. Anschließend wird der [**AudioEffectDefinition**](/uwp/api/Windows.Media.Effects.AudioEffectDefinition)-Konstruktor aufgerufen, der den vollständigen Klassennamen des benutzerdefinierten Effekttyps und den Eigenschaftensatz übergibt. Schließlich wird die Effektdefinition der [**EffectDefinitions**](/uwp/api/windows.media.audio.audiofileinputnode.effectdefinitions)-Eigenschaft eines [**FileInputNode**](/uwp/api/windows.media.audio.createaudiofileinputnoderesult.fileinputnode) hinzugefügt, wodurch der ausgegebene Audioinhalt vom benutzerdefinierten Effekt verarbeitet wird. 
+Allgemeine Informationen zur Verwendung von Audiodiagrammen finden Sie unter [Audio Graphs](audio-graphs.md). Der folgende Codeausschnitt veranschaulicht, wie der in diesem Artikel vorgestellte Beispielechoeffekt einem Audiodiagrammknoten hinzugefügt wird. Zuerst wird ein [**PropertySet**](/uwp/api/Windows.Foundation.Collections.PropertySet) erstellt und ein von dem Effekt definierter Wert für die **Mix** -Eigenschaft festgelegt. Anschließend wird der [**AudioEffectDefinition**](/uwp/api/Windows.Media.Effects.AudioEffectDefinition)-Konstruktor aufgerufen, der den vollständigen Klassennamen des benutzerdefinierten Effekttyps und den Eigenschaftensatz übergibt. Schließlich wird die Effektdefinition der [**EffectDefinitions**](/uwp/api/windows.media.audio.audiofileinputnode.effectdefinitions)-Eigenschaft eines [**FileInputNode**](/uwp/api/windows.media.audio.createaudiofileinputnoderesult.fileinputnode) hinzugefügt, wodurch der ausgegebene Audioinhalt vom benutzerdefinierten Effekt verarbeitet wird. 
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetAddCustomEffect":::
 
-Nachdem er einem Knoten hinzugefügt wurde, kann der benutzerdefinierte Effekt durch den Aufruf von [**DisableEffectsByDefinition**](/uwp/api/windows.media.audio.audiofileinputnode.disableeffectsbydefinition) und die Übergabe des **AudioEffectDefinition**-Objekts deaktiviert werden. Weitere Informationen zur Verwendung von Audiodiagrammen in Ihrer App finden Sie unter [AudioGraph](audio-graphs.md).
+Nachdem er einem Knoten hinzugefügt wurde, kann der benutzerdefinierte Effekt durch den Aufruf von [**DisableEffectsByDefinition**](/uwp/api/windows.media.audio.audiofileinputnode.disableeffectsbydefinition) und die Übergabe des **AudioEffectDefinition** -Objekts deaktiviert werden. Weitere Informationen zur Verwendung von Audiodiagrammen in Ihrer App finden Sie unter [AudioGraph](audio-graphs.md).
 
 ### <a name="add-your-custom-effect-to-a-clip-in-a-mediacomposition"></a>Hinzufügen Ihres benutzerdefinierten Effekts zu einem Clip in einer MediaComposition
 
@@ -150,4 +150,4 @@ Der folgende Codeausschnitt veranschaulicht das Hinzufügen des benutzerdefinier
 * [Win2D-Dokumentation](https://microsoft.github.io/Win2D/html/Introduction.htm)
 * [Medienwiedergabe](media-playback.md)
 
- 
+ 

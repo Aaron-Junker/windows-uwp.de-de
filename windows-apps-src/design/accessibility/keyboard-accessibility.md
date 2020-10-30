@@ -1,5 +1,5 @@
 ---
-Description: Wenn Ihre App keine barrierefreie Bedienung mit der Tastatur ermöglicht, können Benutzer, die blind oder in ihrer Beweglichkeit eingeschränkt sind, Schwierigkeiten bei der Verwendung Ihrer App haben oder Ihre App möglicherweise überhaupt nicht nutzen.
+description: Wenn Ihre App keine barrierefreie Bedienung mit der Tastatur ermöglicht, können Benutzer, die blind oder in ihrer Beweglichkeit eingeschränkt sind, Schwierigkeiten bei der Verwendung Ihrer App haben oder Ihre App möglicherweise überhaupt nicht nutzen.
 ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: Barrierefreiheit der Tastaturnavigation
 label: Keyboard accessibility
@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c6fc039ad29fc7c29e609788983274c5342951c2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 79dd977cda50d8573cfeab2628ab6227cc9309c0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174004"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032503"
 ---
 # <a name="keyboard-accessibility"></a>Barrierefreiheit der Tastaturnavigation  
 
@@ -173,7 +173,7 @@ Im Allgemeinen implementieren Sie die benutzerdefinierte Tastenverarbeitung für
 <span id="AN_EXAMPLE_OF_A_VISUAL_STATE_FOR_A_FOCUS_INDICATOR"/>
 
 ## <a name="an-example-of-a-visual-state-for-a-focus-indicator"></a>Beispiel für einen Ansichtszustand für eine Fokusanzeige  
-Wie bereits erwählt sollte jedes benutzerdefinierte Steuerelement, mit dem Benutzer fokussieren können, über eine visuelle Fokusanzeige verfügen. In der Regel kann diese Fokusanzeige einfach durch Zeichnen eines Rechtecks direkt um das normale umgebende Rechteck des Steuerelements erzeugt werden. Das [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Element für visuellen Fokus ist ein Peerelement der übrigen Zusammenstellung des Steuerelements in einer Steuerelementvorlage, wird jedoch anfänglich mit dem [**Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility)-Wert **Collapsed** festgelegt, da das Steuerelement noch nicht fokussiert ist. Wenn das Steuerelement im Fokus steht, wird ein visueller Zustand aufgerufen, der die **Visibility** des visuellen Fokus speziell auf **Visible** festlegt. Sobald der Fokus an eine andere Stelle verschoben wird **, wird ein**anderer visueller Zustand aufgerufen, und die **Sichtbarkeit** wird reduziert.
+Wie bereits erwählt sollte jedes benutzerdefinierte Steuerelement, mit dem Benutzer fokussieren können, über eine visuelle Fokusanzeige verfügen. In der Regel kann diese Fokusanzeige einfach durch Zeichnen eines Rechtecks direkt um das normale umgebende Rechteck des Steuerelements erzeugt werden. Das [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Element für visuellen Fokus ist ein Peerelement der übrigen Zusammenstellung des Steuerelements in einer Steuerelementvorlage, wird jedoch anfänglich mit dem [**Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility)-Wert **Collapsed** festgelegt, da das Steuerelement noch nicht fokussiert ist. Wenn das Steuerelement im Fokus steht, wird ein visueller Zustand aufgerufen, der die **Visibility** des visuellen Fokus speziell auf **Visible** festlegt. Sobald der Fokus an eine andere Stelle verschoben wird **, wird ein** anderer visueller Zustand aufgerufen, und die **Sichtbarkeit** wird reduziert.
 
 Alle standardmäßigen XAML-Steuerelemente weisen eine entsprechende visuelle Fokusanzeige auf, wenn sie im Fokus stehen (sofern dies möglich ist). Es gibt auch potenziell unterschiedliche Designs je nach ausgewähltem Design des Benutzers (insbesondere wenn der Benutzer einen hohen Kontrast verwendet). Wenn Sie die XAML-Steuerelemente in Ihrer UI verwenden und nicht die Steuerelementvorlagen ersetzen, sind für visuelle Fokusanzeigen für Steuerelemente, die korrekt funktionieren und angezeigt werden, keine weiteren Schritte erforderlich sind. Wenn Sie aber eine neue Vorlage für ein Steuerelement verwenden möchten oder sich fragen, wie XAML-Steuerelemente ihre Fokusanzeigen bereitstellen, wird im restlichen Teil dieses Abschnitts erläutert, wie Sie dies in XAML und in der Steuerelementlogik erreichen.
 
@@ -232,20 +232,20 @@ XAML
 </ControlTemplate>
 ```
 
-Nur einer der benannten Zustände passt [**Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility) direkt an, während die anderen scheinbar leer sind. Die Funktionsweise visueller Zustände besteht darin, dass bei Verwendung eines anderen Zustands aus derselben [**VisualStateGroup**](/uwp/api/Windows.UI.Xaml.VisualStateGroup) durch das Steuerelement alle im vorhergehenden Zustand angewendeten Animationen sofort abgebrochen werden. Dies bedeutet, dass das Rechteck nicht angezeigt wird, da die Standard-**Visibility** aus der Zusammensetzung **Collapsed** ist. Die Logik des Steuerelements steuert dies durch Überwachen von Fokusereignissen wie z. B. [**GotFocus**](/uwp/api/windows.ui.xaml.uielement.gotfocus) und Ändern der Status mit [**GoToState**](/uwp/api/windows.ui.xaml.visualstatemanager.gotostate). Bei Verwendung eines Standardsteuerelements oder bei einer Anpassung, die auf einem Steuerelement mit diesem Verhalten basiert, wird dieser Schritt oftmals automatisch für Sie erledigt.
+Nur einer der benannten Zustände passt [**Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility) direkt an, während die anderen scheinbar leer sind. Die Funktionsweise visueller Zustände besteht darin, dass bei Verwendung eines anderen Zustands aus derselben [**VisualStateGroup**](/uwp/api/Windows.UI.Xaml.VisualStateGroup) durch das Steuerelement alle im vorhergehenden Zustand angewendeten Animationen sofort abgebrochen werden. Dies bedeutet, dass das Rechteck nicht angezeigt wird, da die Standard- **Visibility** aus der Zusammensetzung **Collapsed** ist. Die Logik des Steuerelements steuert dies durch Überwachen von Fokusereignissen wie z. B. [**GotFocus**](/uwp/api/windows.ui.xaml.uielement.gotfocus) und Ändern der Status mit [**GoToState**](/uwp/api/windows.ui.xaml.visualstatemanager.gotostate). Bei Verwendung eines Standardsteuerelements oder bei einer Anpassung, die auf einem Steuerelement mit diesem Verhalten basiert, wird dieser Schritt oftmals automatisch für Sie erledigt.
 
 <span id="Keyboard_accessibility_and_Windows_Phone"/>
 <span id="keyboard_accessibility_and_windows_phone"/>
 <span id="KEYBOARD_ACCESSIBILITY_AND_WINDOWS_PHONE"/>
 
 ## <a name="keyboard-accessibility-and-windows-phone"></a>Barrierefreiheit für den Tastaturzugriff und Windows Phone
-Ein Windows Phone-Gerät verfügt in der Regel nicht über eine dedizierte Hardwaretastatur. Ein Soft Input Panel (SIP) kann jedoch mehrere Szenarien der Barrierefreiheit für den Tastaturzugriff unterstützen. Sprachausgaben können Texteingaben vom **Text**-SIP lesen, darunter Löschankündigungen. Benutzer wissen, wo sich ihre Finger befinden, da die Sprachausgabe erkennt, dass der Benutzer Tasten auswählt, und den Namen der ausgewählten Taste laut vorliest. Einige der tastaturbezogenen Konzepte für die Barrierefreiheit können auch zugehörigen Hilfstechnologieverhalten zugeordnet werden, die überhaupt keine Tastatur verwenden. Das SIP verfügt zwar nicht über eine TAB-Taste, die Sprachausgabe unterstützt jedoch eine Touch-Bewegung, die dem Drücken der TAB-Taste entspricht. Daher ist eine geeignete Aktivierreihenfolge über die Steuerelemente in einer UI weiterhin ein wichtiges Barrierefreiheitsprinzip. Pfeiltasten, wie sie für die Navigation innerhalb von komplexen Steuerelementen verwendet werden, werden auch über die Toucheingabe der Sprachausgabe unterstützt. Sobald der Fokus auf einem Steuerelement liegt, das nicht zur Texteingabe dient, unterstützt die Sprachausgabe eine Geste zum Aufrufen der Aktion dieses Steuerelements.
+Ein Windows Phone-Gerät verfügt in der Regel nicht über eine dedizierte Hardwaretastatur. Ein Soft Input Panel (SIP) kann jedoch mehrere Szenarien der Barrierefreiheit für den Tastaturzugriff unterstützen. Sprachausgaben können Texteingaben vom **Text** -SIP lesen, darunter Löschankündigungen. Benutzer wissen, wo sich ihre Finger befinden, da die Sprachausgabe erkennt, dass der Benutzer Tasten auswählt, und den Namen der ausgewählten Taste laut vorliest. Einige der tastaturbezogenen Konzepte für die Barrierefreiheit können auch zugehörigen Hilfstechnologieverhalten zugeordnet werden, die überhaupt keine Tastatur verwenden. Das SIP verfügt zwar nicht über eine TAB-Taste, die Sprachausgabe unterstützt jedoch eine Touch-Bewegung, die dem Drücken der TAB-Taste entspricht. Daher ist eine geeignete Aktivierreihenfolge über die Steuerelemente in einer UI weiterhin ein wichtiges Barrierefreiheitsprinzip. Pfeiltasten, wie sie für die Navigation innerhalb von komplexen Steuerelementen verwendet werden, werden auch über die Toucheingabe der Sprachausgabe unterstützt. Sobald der Fokus auf einem Steuerelement liegt, das nicht zur Texteingabe dient, unterstützt die Sprachausgabe eine Geste zum Aufrufen der Aktion dieses Steuerelements.
 
 Tastenkombinationen sind für Windows Phone-Apps in der Regel nicht relevant, da ein SIP nicht über STRG- und ALT-Tasten verfügt.
 
 <span id="related_topics"/>
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Bedienungshilfen](accessibility.md)
 * [Tastaturinteraktionen](../input/keyboard-interactions.md)

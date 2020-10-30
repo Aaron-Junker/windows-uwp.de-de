@@ -1,17 +1,17 @@
 ---
-Description: Sie können Ihre APP Programm gesteuert an die Taskleiste anheften, und Sie können überprüfen, ob Sie zurzeit fixiert ist.
+description: Sie können Ihre APP Programm gesteuert an die Taskleiste anheften, und Sie können überprüfen, ob Sie zurzeit fixiert ist.
 title: Anheften einer App an die Taskleiste
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Taskleiste, Task leisten-Manager, an Taskleiste anheften, primäre Kachel
 ms.localizationpriority: medium
-ms.openlocfilehash: e43dd7084c042b7480aa98c638f1fc5d216e64c7
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: fa33725447da80b5c3295455f12a3851228a2756
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636630"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034163"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>Anheften einer App an die Taskleiste
 
@@ -20,9 +20,9 @@ Sie können Ihre eigene APP Programm gesteuert an die Taskleiste anheften, genau
 ![Screenshot einer Windows 10-Taskleiste, die die angeheftete App anzeigt.](images/taskbar/taskbar.png)
 
 > [!IMPORTANT]
-> **Erfordert das Fall Creators Update**: Sie müssen das SDK 16299 als Ziel verwenden und Build 16299 oder höher ausführen, um die Task leisten-APIs zu verwenden.
+> **Erfordert das Fall Creators Update** : Sie müssen das SDK 16299 als Ziel verwenden und Build 16299 oder höher ausführen, um die Task leisten-APIs zu verwenden.
 
-> **Wichtige APIs**: [taskbarmanager-Klasse](/uwp/api/windows.ui.shell.taskbarmanager) 
+> **Wichtige APIs** : [taskbarmanager-Klasse](/uwp/api/windows.ui.shell.taskbarmanager) 
 
 
 ## <a name="when-should-you-ask-the-user-to-pin-your-app-to-the-taskbar"></a>Wann sollten Sie den Benutzer bitten, Ihre APP an die Taskleiste anzuheften? 

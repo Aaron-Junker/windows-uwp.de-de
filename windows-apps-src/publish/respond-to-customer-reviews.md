@@ -1,24 +1,24 @@
 ---
-Description: Sie können direkt auf Rezensionen Ihrer App reagieren, um Kunden zu signalisieren, dass Sie ihr Feedback ernst nehmen.
+description: Sie können direkt auf Rezensionen Ihrer App reagieren, um Kunden zu signalisieren, dass Sie ihr Feedback ernst nehmen.
 title: Reagieren auf Kundenrezensionen
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Antworten, Antworten, Review
 ms.localizationpriority: medium
-ms.openlocfilehash: 792d78b93a66b9dd7da2b2c69480bfbd324dd045
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c47e7771f6a76cde451c88ab8e2d9ed26e003f9c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161874"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034603"
 ---
 # <a name="respond-to-customer-reviews"></a>Reagieren auf Kundenrezensionen
 
 
 Sie können auf Überprüfungen Ihrer APP reagieren, damit Kunden wissen, dass Sie Ihr Feedback hören. Wenn Sie auf Kritiken antworten, können Sie Kunden über neue Features oder behobene Schwachstellen informieren, die in Bezug zu ihren Kommentaren stehen, oder Sie erhalten detaillierteres Feedback mit Verbesserungsvorschlägen für Ihre App. Ihre Antworten werden in der Microsoft Store angezeigt, die alle Windows 10-Kunden sehen können. Sie haben auch die Möglichkeit, Ihre Antwort per e-Mail an den Kunden zu senden (wenn Sie sich nicht entschieden haben und ein Gerät mit Windows 10, Version 1803 oder höher) verwenden.
 
-Wenn Sie die Überprüfungen der App anzeigen und Antworten bereitstellen möchten, finden Sie die APP im [Partner Center](https://partner.microsoft.com/dashboard). Erweitern Sie im linken Navigationsmenü **Analysen**, und klicken Sie dann auf **Rezensionen**, um den [Bericht „Rezensionen“](reviews-report.md) anzuzeigen. Wählen Sie **zur Überprüfung Antworten** aus, um Ihre Antwort anzugeben.
+Wenn Sie die Überprüfungen der App anzeigen und Antworten bereitstellen möchten, finden Sie die APP im [Partner Center](https://partner.microsoft.com/dashboard). Erweitern Sie im linken Navigationsmenü **Analysen** , und klicken Sie dann auf **Rezensionen** , um den [Bericht „Rezensionen“](reviews-report.md) anzuzeigen. Wählen Sie **zur Überprüfung Antworten** aus, um Ihre Antwort anzugeben.
 
 > [!TIP]
 > Zusätzlich zur Verwendung von Partner Center für die Reaktion auf Bewertungen können Sie [Programm](../monetize/submit-responses-to-app-reviews.md)gesteuert auf Überprüfungen reagieren.
@@ -32,7 +32,7 @@ Wenn Sie nicht möchten, dass die Antwort im Speicher angezeigt wird, und Sie st
 Beim Beantworten von Kundenrezensionen müssen folgende Richtlinien beachtet werden. Diese gelten für alle Antworten, unabhängig davon, ob Sie öffentlich sind oder nicht.
 
 > [!IMPORTANT]
-> Sie sind nicht in der Lage, die Antworten zu ändern, die Sie in den Store Posten (es sei denn, der Kunde hat seine ursprüngliche Überprüfung revitiert), überprüfen Sie Ihre Antwort sorgfältig Wenn ein Kunde den ursprünglichen Review wieder hat, wird die Antwort aus der Store-Listenseite der APP entfernt. Sie haben dann die Möglichkeit, eine neue Antwort an die überarbeitete Überprüfung zu senden, indem Sie **Ihre Antwort aktualisieren**auswählen.
+> Sie sind nicht in der Lage, die Antworten zu ändern, die Sie in den Store Posten (es sei denn, der Kunde hat seine ursprüngliche Überprüfung revitiert), überprüfen Sie Ihre Antwort sorgfältig Wenn ein Kunde den ursprünglichen Review wieder hat, wird die Antwort aus der Store-Listenseite der APP entfernt. Sie haben dann die Möglichkeit, eine neue Antwort an die überarbeitete Überprüfung zu senden, indem Sie **Ihre Antwort aktualisieren** auswählen.
 
 -   Antworten dürfen nicht länger als 1000 Zeichen sein.
 -   Sie dürfen Benutzern keine Gegenleistungen, einschließlich digitaler Apps, anbieten, um sie zum Ändern ihrer App-Bewertung zu animieren. Wie Sie bereits wissen, dürfen Sie gemäß der [Vereinbarung für App-Entwickler](/legal/windows/agreements/app-developer-agreement) keine Bewertungen manipulieren.

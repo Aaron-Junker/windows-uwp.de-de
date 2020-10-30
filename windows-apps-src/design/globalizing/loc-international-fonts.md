@@ -1,17 +1,17 @@
 ---
-Description: Dieses Thema enthält eine Liste der verfügbaren Schriftarten für Windows-apps, die in anderen Sprachen als US-Englisch lokalisiert werden.
+description: Dieses Thema enthält eine Liste der verfügbaren Schriftarten für Windows-apps, die in anderen Sprachen als US-Englisch lokalisiert werden.
 title: Internationale Schriftarten
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisier barkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 1200b80347a67bb1c9a6414a18697ca9d30bc29f
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 4af2cb68f92f21750bafa8a86e5dd036d5247c4b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220603"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034353"
 ---
 # <a name="international-fonts"></a>Internationale Schriftarten
 
@@ -129,7 +129,7 @@ In der folgenden Tabelle wird in der Spalte "Sprachtag" das [bcp-47-sprach Kennz
 | Wolof | wo-SN | Segoe UI |
 | Yoruba | yo-NG | Segoe UI |
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [BCP-47-Sprachtag](https://tools.ietf.org/html/bcp47)
 * [Unterstützte Sprachen](../../publish/supported-languages.md)

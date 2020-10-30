@@ -1,31 +1,31 @@
 ---
-Description: Zum Ausführen eines Experiments in Ihrer universellen Windows-Plattform (UWP)-App mit einem A/B-Test müssen Sie das Experiment in der App codieren.
+description: Zum Ausführen eines Experiments in Ihrer universellen Windows-Plattform (UWP)-App mit einem A/B-Test müssen Sie das Experiment in der App codieren.
 title: Programmieren Ihrer App für Experimente
 ms.assetid: 6A5063E1-28CD-4087-A4FA-FBB511E9CED5
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK, A/B-Tests, Experimente
 ms.localizationpriority: medium
-ms.openlocfilehash: dbdd95ab0d4ecde5fbe5cfb8d84d2d328b4c5a24
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: a5229be4d0ea2ce98ec10530458fe29af10fa7f0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363663"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033603"
 ---
 # <a name="code-your-app-for-experimentation"></a>Programmieren Ihrer App für Experimente
 
 Nachdem Sie [ein Projekt erstellt und Remote Variablen im Partner Center definiert](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)haben, können Sie den Code in ihrer universelle Windows-Plattform-app (UWP) wie folgt aktualisieren:
 * Empfangen von Remote Variablen Werten aus Partner Center.
 * Remotevariablen zum Konfigurieren von App-Funktionen für die Benutzer zu verwenden
-* Protokollieren Sie Ereignisse in Partner Center, die angeben, wann Benutzer ihr Experiment angezeigt und eine gewünschte Aktion (auch als *Konvertierung*bezeichnet) durchgeführt haben.
+* Protokollieren Sie Ereignisse in Partner Center, die angeben, wann Benutzer ihr Experiment angezeigt und eine gewünschte Aktion (auch als *Konvertierung* bezeichnet) durchgeführt haben.
 
 Um der App dieses Verhalten hinzuzufügen, verwenden Sie die vom Microsoft Store Services SDK bereitgestellten APIs.
 
 In den folgenden Abschnitten wird der allgemeine Prozess zum erhalten von Variationen für das Experimentieren und Protokollieren von Ereignissen an Partner Center beschrieben. Nachdem Sie Ihre APP für Experimente codiert haben, können Sie [ein Experiment in Partner Center definieren](define-your-experiment-in-the-dev-center-dashboard.md). Eine exemplarische Vorgehensweise, die den gesamten Erstellungs- und Ausführungsprozess für ein Experiment veranschaulicht, finden Sie unter [Erstellen und Durchführen eines ersten Experiments mit A/B-Tests](create-and-run-your-first-experiment-with-a-b-testing.md).
 
 > [!NOTE]
-> Einige der experimentieren-APIs im Microsoft Store Services SDK verwenden das [asynchrone Muster](../threading-async/asynchronous-programming-universal-windows-platform-apps.md) zum Abrufen von Daten aus Partner Center. Dies bedeutet, dass ein Teil der Methodenausführung nach dem Aufrufen der Methoden stattfinden kann. Auf diese Weise bleibt die Benutzeroberfläche Ihrer App weiter reaktionsfähig, während die Vorgänge abgeschlossen werden. Für das asynchrone Muster muss die App beim Aufrufen der APIs das **async**-Schlüsselwort und den **await**-Operator verwenden, wie aus den Codebeispielen in diesem Artikel ersichtlich. Asynchrone Methoden enden üblicherweise mit **Async**.
+> Einige der experimentieren-APIs im Microsoft Store Services SDK verwenden das [asynchrone Muster](../threading-async/asynchronous-programming-universal-windows-platform-apps.md) zum Abrufen von Daten aus Partner Center. Dies bedeutet, dass ein Teil der Methodenausführung nach dem Aufrufen der Methoden stattfinden kann. Auf diese Weise bleibt die Benutzeroberfläche Ihrer App weiter reaktionsfähig, während die Vorgänge abgeschlossen werden. Für das asynchrone Muster muss die App beim Aufrufen der APIs das **async** -Schlüsselwort und den **await** -Operator verwenden, wie aus den Codebeispielen in diesem Artikel ersichtlich. Asynchrone Methoden enden üblicherweise mit **Async** .
 
 ## <a name="configure-your-project"></a>Konfigurieren des Projekts
 
@@ -33,9 +33,9 @@ Installieren Sie zunächst das Microsoft Store Services SDK auf dem Entwicklungs
 
 1. [Installieren Sie das Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk).
 2. Öffnen Sie Ihr Projekt in Visual Studio.
-3. Erweitern Sie im Projektmappen-Explorer den Projektknoten, klicken Sie mit der rechten Maustaste auf **Verweise**, und klicken Sie auf **Verweis hinzufügen**.
-3. Erweitern Sie im **Verweis-Manager** die Option **Universelle Windows-App**, und klicken Sie auf **Erweiterungen**.
-4. Aktivieren Sie in der Liste mit den SDKs das Kontrollkästchen neben **Microsoft Engagement Framework**, und klicken Sie anschließend auf **OK**.
+3. Erweitern Sie im Projektmappen-Explorer den Projektknoten, klicken Sie mit der rechten Maustaste auf **Verweise** , und klicken Sie auf **Verweis hinzufügen** .
+3. Erweitern Sie im **Verweis-Manager** die Option **Universelle Windows-App** , und klicken Sie auf **Erweiterungen** .
+4. Aktivieren Sie in der Liste mit den SDKs das Kontrollkästchen neben **Microsoft Engagement Framework** , und klicken Sie anschließend auf **OK** .
 
 > [!NOTE]
 > In den Codebeispielen in diesem Artikel wird davon ausgegangen, dass Ihre Codedatei-Anweisungen für die Namespaces " **System. Threading. Tasks** " und " **Microsoft. Services. Store. Engagement** " **verwendet** .
@@ -74,7 +74,7 @@ In den folgenden Schritten werden die wichtigen Schritte dieses Verfahrens ausf�
 
     :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/ExperimentExamples.cs" id="Snippet5":::
 
-6. Verwenden Sie die Variablenwerte im Code, um das Verhalten des getesteten Features zu ändern. Der folgende Code weist beispielsweise den *buttonText*-Wert dem Inhalt einer Schaltfläche in Ihrer App zu. In diesem Beispiel wird davon ausgegangen, dass Sie diese Schaltfläche bereits an einer anderen Stelle in Ihrem Projekt definiert haben.
+6. Verwenden Sie die Variablenwerte im Code, um das Verhalten des getesteten Features zu ändern. Der folgende Code weist beispielsweise den *buttonText* -Wert dem Inhalt einer Schaltfläche in Ihrer App zu. In diesem Beispiel wird davon ausgegangen, dass Sie diese Schaltfläche bereits an einer anderen Stelle in Ihrem Projekt definiert haben.
 
     :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/ExperimentExamples.cs" id="Snippet6":::
 
@@ -90,7 +90,7 @@ Fügen Sie als nächstes Code hinzu, der [Konvertierungs Ereignisse](run-app-exp
 
 1. Rufen Sie in dem Code, der ausgeführt wird, wenn der Benutzer eines der Ziele für das Experiment erreicht, erneut die [LogForVariation](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)-Methode auf, und übergeben Sie das [StoreServicesExperimentVariation](/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)-Objekt und den Namen eines Umwandlungsereignisses für Ihr Experiment. Diese muss mit einem der Konvertierungs Ereignis Namen identisch sein, die Sie für Ihr Experiment in Partner Center eingegeben haben.
 
-    Im folgenden Beispiel wird ein Umwandlungsereignis namens **userClickedButton** aus dem **Click**-Ereignishandler für eine Schaltfläche protokolliert. In diesem Beispiel besteht das Ziel des Experiments darin, dass der Benutzer auf die Schaltfläche klickt.
+    Im folgenden Beispiel wird ein Umwandlungsereignis namens **userClickedButton** aus dem **Click** -Ereignishandler für eine Schaltfläche protokolliert. In diesem Beispiel besteht das Ziel des Experiments darin, dass der Benutzer auf die Schaltfläche klickt.
 
     :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/ExperimentExamples.cs" id="Snippet8":::
 

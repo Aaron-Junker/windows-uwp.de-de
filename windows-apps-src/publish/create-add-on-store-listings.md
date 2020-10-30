@@ -1,17 +1,17 @@
 ---
-Description: Bei der Übermittlung eines Add-Ons werden die im Schritt „Store-Einträge“ angegebenen Informationen den Kunden angezeigt.
+description: Bei der Übermittlung eines Add-Ons werden die im Schritt „Store-Einträge“ angegebenen Informationen den Kunden angezeigt.
 title: Erstellen von Store-Einträgen für Add-Ons
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 43782a1a5d26ba84fe53f6c164a944fa357edfb1
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: 266386da04b9a16fc5e5016774ab333dc60409e3
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253617"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033393"
 ---
 # <a name="create-add-on-store-listings"></a>Erstellen von Store-Einträgen für Add-Ons
 
@@ -25,11 +25,11 @@ Wenn Sie ein Add-on in [Partner Center](https://partner.microsoft.com/dashboard)
 
 Bevor Sie Informationen zu den Store-Einträgen eingeben können, müssen Sie mindestens eine [Sprache](supported-languages.md) angeben. Sie müssen die Seite **Store-Eintrag** für mindestens eine Sprache ausfüllen. Wir empfehlen, für jede Sprache, die ihre App unterstützt, Speicher Listen zu erstellen.
 
-Klicken Sie im Abschnitt **Store-Auflistung** der Übermittlung des Add-ons auf **Sprachen hinzufügen/entfernen**, und klicken Sie dann auf der nächsten Seite auf **Sprachen verwalten** . Aktivieren Sie die Kontrollkästchen für die Sprachen, die Sie hinzufügen möchten, und klicken Sie dann auf **Aktualisieren**. Die ausgewählten Sprachen werden im Abschnitt **Store listing languages** der Seite angezeigt.
+Klicken Sie im Abschnitt **Store-Auflistung** der Übermittlung des Add-ons auf **Sprachen hinzufügen/entfernen** , und klicken Sie dann auf der nächsten Seite auf **Sprachen verwalten** . Aktivieren Sie die Kontrollkästchen für die Sprachen, die Sie hinzufügen möchten, und klicken Sie dann auf **Aktualisieren** . Die ausgewählten Sprachen werden im Abschnitt **Store listing languages** der Seite angezeigt.
 
 Zum Entfernen einer Sprache klicken Sie auf **Entfernen** (oder klicken Sie auf " **Sprachen verwalten** ", und deaktivieren Sie das Kontrollkästchen für die Sprachen, die Sie entfernen möchten). 
 
-Wenn Sie Ihre Auswahl getroffen haben, klicken Sie auf **Speichern**, um zur Übermittlungsübersicht zurückzukehren.
+Wenn Sie Ihre Auswahl getroffen haben, klicken Sie auf **Speichern** , um zur Übermittlungsübersicht zurückzukehren.
 
 Um eine Store-Auflistung zu bearbeiten, klicken Sie auf der Übersichtsseite für die Add-on-Übermittlung auf den Namen der Sprache. Die Informationen, die Sie für jede Sprache eingeben können, werden im Folgenden beschrieben.
 
@@ -45,9 +45,9 @@ Wenn Sie mehr Informationen als nur einen Titel anzeigen möchten, können Sie h
 
 Sie können auch ein Bild bereitstellen, das dem Kunden angezeigt wird. Dabei muss es sich um eine PNG-Datei mit exakt 300 x 300 Pixeln handeln.
 
- 
+ 
 
- 
+ 
 
 
 

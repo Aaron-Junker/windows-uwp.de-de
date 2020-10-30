@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie, wie Sie eine gehostete app erstellen, die die ausführbaren Attribute, den Einstiegspunkt und die Runtime-Attribute einer Host-App erbt.
+description: Erfahren Sie, wie Sie eine gehostete app erstellen, die die ausführbaren Attribute, den Einstiegspunkt und die Runtime-Attribute einer Host-App erbt.
 title: Erstellen gehosteter Apps
 ms.date: 04/23/2020
 ms.topic: article
@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3424b7a0ead3d4a3abeebc6286aebe935d09eab2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 205f17227b13b2da4177f42fb7773b6779bc02cb
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172994"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032913"
 ---
 # <a name="create-hosted-apps"></a>Erstellen gehosteter Apps
 
-Ab Windows 10, Version 2004, können Sie *gehostete Apps*erstellen. Eine gehostete App nutzt dieselbe ausführbare Datei und Definition wie eine übergeordnete *Host* -APP, sieht aber wie eine separate App auf dem System aus.
+Ab Windows 10, Version 2004, können Sie *gehostete Apps* erstellen. Eine gehostete App nutzt dieselbe ausführbare Datei und Definition wie eine übergeordnete *Host* -APP, sieht aber wie eine separate App auf dem System aus.
 
 Gehostete Apps sind nützlich für Szenarios, in denen sich eine Komponente (z. B. eine ausführbare Datei oder eine Skriptdatei) wie eine eigenständige Windows 10-App verhalten soll. Die Komponente erfordert jedoch einen Hostprozess, um ausgeführt werden zu können. Beispielsweise könnte ein PowerShell-oder Python-Skript als gehostete App übermittelt werden, für die ein Host installiert werden muss, um ausgeführt werden zu können. Eine gehostete App kann über eine eigene Startkachel, eine eigene Identität und eine umfassende Integration in Windows 10-Features verfügen, z. B. Hintergrundaufgaben, Benachrichtigungen, Kacheln und Freigabeziele.
 
@@ -25,7 +25,7 @@ Die Funktion "gehostete Apps" wird von mehreren Elementen und Attributen im Pake
 
 ## <a name="define-a-host"></a>Definieren eines Hosts
 
-Der *Host* ist die hauptausführ Bare Datei oder der Lauf Zeit Prozess für die gehostete app. Zurzeit sind die einzigen unterstützten Hosts Desktop-Apps (.net oder C++/Win32), die über die *Paket Identität*verfügen. UWP-apps werden zurzeit nicht als Hosts unterstützt. Für eine Desktop-App gibt es mehrere Möglichkeiten, die Paket Identität zu haben:
+Der *Host* ist die hauptausführ Bare Datei oder der Lauf Zeit Prozess für die gehostete app. Zurzeit sind die einzigen unterstützten Hosts Desktop-Apps (.net oder C++/Win32), die über die *Paket Identität* verfügen. UWP-apps werden zurzeit nicht als Hosts unterstützt. Für eine Desktop-App gibt es mehrere Möglichkeiten, die Paket Identität zu haben:
 
 * Die gängigste Methode zum gewähren einer Paket Identität an eine Desktop-App besteht darin, [Sie in einem msix-Paket zu verpacken](/windows/msix).
 * In einigen Fällen können Sie alternativ die Paket Identität durch Erstellen eines [sparsepakets](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)erteilen. Diese Option ist nützlich, wenn Sie keine msix-Paket Erstellung für die Bereitstellung Ihrer Desktop-App durchführen können.
@@ -53,12 +53,12 @@ Notieren Sie sich diese wichtigen Details zu den folgenden Elementen.
 
 | Element              | Details |
 |----------------------|-------|
-| [**uap10:Extension**](/wp/schemas/appxpackage/uapmanifestschema/element-uap10-extension) | Die `windows.hostRuntime` Kategorie deklariert eine Paket weite Erweiterung zum Definieren der Laufzeitinformationen, die beim Aktivieren einer gehosteten App verwendet werden sollen. Eine gehostete APP wird mit den in der Erweiterung deklarierten Definitionen ausgeführt. Wenn Sie die im vorherigen Beispiel deklarierte Host-App verwenden, wird eine gehostete App als ausführbare Datei **PyScriptEngine.exe** auf der **mediumil** -Vertrauens Ebene ausgeführt.<br/><br/>Die Attribute " **ausführbare**", " **uap10: runtimebehavior**" und " **uap10: TrustLevel** " geben den Namen der Binärdatei des Host Prozesses im Paket an und wie die gehosteten apps ausgeführt werden. Beispielsweise wird eine gehostete APP, die die Attribute im vorherigen Beispiel verwendet, als ausführbare Datei PyScriptEngine.exe auf der mediumil-Vertrauens Ebene ausgeführt. |
-| [**uap10:HostRuntime**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-hostruntime) | Das **ID** -Attribut deklariert den eindeutigen Bezeichner dieser bestimmten Host-App im Paket. Ein Paket kann über mehrere Host-apps verfügen, und jedes muss über ein **uap10: hostrauuntime** -Element mit einer eindeutigen **ID**verfügen.
+| [**uap10:Extension**](/wp/schemas/appxpackage/uapmanifestschema/element-uap10-extension) | Die `windows.hostRuntime` Kategorie deklariert eine Paket weite Erweiterung zum Definieren der Laufzeitinformationen, die beim Aktivieren einer gehosteten App verwendet werden sollen. Eine gehostete APP wird mit den in der Erweiterung deklarierten Definitionen ausgeführt. Wenn Sie die im vorherigen Beispiel deklarierte Host-App verwenden, wird eine gehostete App als ausführbare Datei **PyScriptEngine.exe** auf der **mediumil** -Vertrauens Ebene ausgeführt.<br/><br/>Die Attribute " **ausführbare** ", " **uap10: runtimebehavior** " und " **uap10: TrustLevel** " geben den Namen der Binärdatei des Host Prozesses im Paket an und wie die gehosteten apps ausgeführt werden. Beispielsweise wird eine gehostete APP, die die Attribute im vorherigen Beispiel verwendet, als ausführbare Datei PyScriptEngine.exe auf der mediumil-Vertrauens Ebene ausgeführt. |
+| [**uap10:HostRuntime**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-hostruntime) | Das **ID** -Attribut deklariert den eindeutigen Bezeichner dieser bestimmten Host-App im Paket. Ein Paket kann über mehrere Host-apps verfügen, und jedes muss über ein **uap10: hostrauuntime** -Element mit einer eindeutigen **ID** verfügen.
 
 ## <a name="declare-a-hosted-app"></a>Deklarieren einer gehosteten App
 
-Eine *gehostete App* deklariert eine Paketabhängigkeit auf einem *Host*. Die gehostete App nutzt die Host-ID (d. h. das **ID** -Attribut der **uap10: hostrauuntime** -Erweiterung im Host Paket) zur Aktivierung, anstatt eine ausführbare Einstiegspunkt Datei im eigenen Paket anzugeben. Die gehostete app enthält in der Regel Inhalte, visuelle Objekte, Skripts oder Binärdateien, auf die der Host zugreifen kann. Der [**targetdevicefamily**](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) -Wert im gehosteten App-Paket sollte auf denselben Wert wie der Host abzielen.
+Eine *gehostete App* deklariert eine Paketabhängigkeit auf einem *Host* . Die gehostete App nutzt die Host-ID (d. h. das **ID** -Attribut der **uap10: hostrauuntime** -Erweiterung im Host Paket) zur Aktivierung, anstatt eine ausführbare Einstiegspunkt Datei im eigenen Paket anzugeben. Die gehostete app enthält in der Regel Inhalte, visuelle Objekte, Skripts oder Binärdateien, auf die der Host zugreifen kann. Der [**targetdevicefamily**](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) -Wert im gehosteten App-Paket sollte auf denselben Wert wie der Host abzielen.
 
 Gehostete App-Pakete können signiert oder nicht signiert werden:
 
@@ -101,7 +101,7 @@ Notieren Sie sich diese wichtigen Details zu den folgenden Elementen.
 | [**Identity**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) | Da das in diesem Beispiel gehostete App-Paket nicht signiert ist, muss das **Publisher** -Attribut die `OID.2.25.311729368913984317654407730594956997722=1` Zeichenfolge enthalten. Dadurch wird sichergestellt, dass das nicht signierte Paket die Identität eines signierten Pakets nicht verspo, kann. |
 | [**TargetDeviceFamily**](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) | Das **MinVersion** -Attribut muss 10.0.19041.0 oder eine spätere Betriebssystemversion angeben. |
 | [**uap10:HostRuntimeDependency**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-hostruntimedependency)  | Dieses Element deklariert eine Abhängigkeit vom Host-App-Paket. Dies besteht aus dem **Namen** und dem **Verleger** des Host Pakets und der **MinVersion** , von der es abhängt. Diese Werte finden Sie unter dem [Identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) -Element im Host Paket. |
-| [**Anwendung**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) | Das **uap10: hostid-** Attribut drückt die Abhängigkeit auf dem Host aus. Das gehostete App-Paket muss dieses Attribut anstelle der üblichen **ausführbaren** Attribute und **entryPoint** -Attribute für ein [**Anwendungs**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) -oder [**Erweiterungs**](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) Element deklarieren. Folglich erbt die gehostete APP die Attribute für **ausführbare**, **entryPoint** und Runtime vom Host mit dem entsprechenden **HostID-** Wert.<br/><br/>Das Attribut **uap10: Parameters** gibt Parameter an, die an die Einstiegspunkt Funktion der ausführbaren Datei des Hosts übermittelt werden. Da der Host wissen muss, was mit diesen Parametern zu tun ist, gibt es einen impliziten Vertrag zwischen dem Host und der gehosteten app. |
+| [**Application**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) | Das **uap10: hostid-** Attribut drückt die Abhängigkeit auf dem Host aus. Das gehostete App-Paket muss dieses Attribut anstelle der üblichen **ausführbaren** Attribute und **entryPoint** -Attribute für ein [**Anwendungs**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) -oder [**Erweiterungs**](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) Element deklarieren. Folglich erbt die gehostete APP die Attribute für **ausführbare** , **entryPoint** und Runtime vom Host mit dem entsprechenden **HostID-** Wert.<br/><br/>Das Attribut **uap10: Parameters** gibt Parameter an, die an die Einstiegspunkt Funktion der ausführbaren Datei des Hosts übermittelt werden. Da der Host wissen muss, was mit diesen Parametern zu tun ist, gibt es einen impliziten Vertrag zwischen dem Host und der gehosteten app. |
 
 ## <a name="register-an-unsigned-hosted-app-package-at-run-time"></a>Registrieren eines nicht signierten gehosteten App-Pakets zur Laufzeit
 
@@ -114,7 +114,7 @@ Verwenden Sie die folgenden Methoden der [**packagemanager**](/uwp/api/windows.m
 
 ### <a name="requirements-for-unsigned-hosted-apps"></a>Anforderungen für nicht signierte gehostete Apps
 
-* Die [**Anwendungs**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) -oder [**Erweiterungs**](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) Elemente im Paket Manifest dürfen keine Aktivierungsdaten enthalten, wie z. b **. die Attribute**"exe", " **entryPoint**" oder " **TrustLevel** " Stattdessen können diese Elemente nur ein **uap10: hostid-** Attribut enthalten, das die Abhängigkeit des Hosts und eines **uap10: Parameters** -Attributs ausdrückt.
+* Die [**Anwendungs**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) -oder [**Erweiterungs**](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) Elemente im Paket Manifest dürfen keine Aktivierungsdaten enthalten, wie z. b **. die Attribute** "exe", " **entryPoint** " oder " **TrustLevel** " Stattdessen können diese Elemente nur ein **uap10: hostid-** Attribut enthalten, das die Abhängigkeit des Hosts und eines **uap10: Parameters** -Attributs ausdrückt.
 * Das Paket muss ein Hauptpaket sein. Es darf sich nicht um ein Bündel, ein frameworkpaket, eine Ressource oder ein optionales Paket handeln.
 
 ### <a name="requirements-for-a-host-that-installs-and-registers-an-unsigned-hosted-app-package"></a>Anforderungen für einen Host, von dem ein nicht signiertes gehostete App-Paket installiert und registriert wird
@@ -138,9 +138,9 @@ Eine voll funktionsfähige Beispiel-APP, die sich selbst als Host deklariert und
 
 ### <a name="the-host"></a>Host
 
-Der Host hat den Namen **pyscriptengine**. Dabei handelt es sich um einen in c# geschriebenen Wrapper, der python-Skripts ausführt. Wenn Sie mit dem- `-Register` Parameter ausführen, wird von der Skript-Engine eine gehostete App mit einem Python-Skript installiert. Wenn ein Benutzer versucht, die neu installierte gehostete APP zu starten, wird der Host gestartet, und das Python-Skript " **Zahlungszeit** " wird ausgeführt.
+Der Host hat den Namen **pyscriptengine** . Dabei handelt es sich um einen in c# geschriebenen Wrapper, der python-Skripts ausführt. Wenn Sie mit dem- `-Register` Parameter ausführen, wird von der Skript-Engine eine gehostete App mit einem Python-Skript installiert. Wenn ein Benutzer versucht, die neu installierte gehostete APP zu starten, wird der Host gestartet, und das Python-Skript " **Zahlungszeit** " wird ausgeführt.
 
-Das Paket Manifest für die Host-app (die Datei "Package. appxmanifest" im Ordner "pyscriptenginepackage") enthält eine **uap10: hostrauuntime** -Erweiterung, die die APP als Host mit der ID " **pythonhost** " und der ausführbaren **PyScriptEngine.exe**deklariert.  
+Das Paket Manifest für die Host-app (die Datei "Package. appxmanifest" im Ordner "pyscriptenginepackage") enthält eine **uap10: hostrauuntime** -Erweiterung, die die APP als Host mit der ID " **pythonhost** " und der ausführbaren **PyScriptEngine.exe** deklariert.  
 
 > [!NOTE]
 > In diesem Beispiel heißt das Paket Manifest "Package. appxmanifest" und ist Teil eines Windows- [anwendungspaketprojekts](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net). Wenn dieses Projekt erstellt wird, [generiert es ein Manifest mit dem Namen AppxManifest.xml](/uwp/schemas/appxpackage/uapmanifestschema/generate-package-manifest) und erstellt das msix-Paket für die Host-app.
@@ -161,7 +161,7 @@ Das Beispiel erfordert die Version 10.0.19041.0 oder höher von Windows 10 und d
 1. Laden Sie das [Beispiel](https://aka.ms/hostedappsample) in einen Ordner auf Ihrem Entwicklungs Computer herunter.
 2. Öffnen Sie die Projekt Mappe pyscriptengine. sln in Visual Studio, und legen Sie das **pyscriptenginepackage** -Projekt als Startprojekt fest.
 3. Erstellen Sie das **pyscriptenginepackage** -Projekt.
-4. Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **pyscriptenginepackage** , **und wählen Sie**bereitstellen aus.
+4. Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **pyscriptenginepackage** , **und wählen Sie** bereitstellen aus.
 5. Öffnen Sie ein Eingabe Aufforderungs Fenster für das Verzeichnis, in das Sie die Beispieldateien kopiert haben, und führen Sie den folgenden Befehl aus, um **die Beispiel-** APP zu registrieren (die gehostete APP). Wechseln `D:\repos\HostedApps` Sie zu dem Pfad, in den Sie die Beispieldateien kopiert haben.
 
     ```CMD

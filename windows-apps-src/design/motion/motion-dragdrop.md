@@ -1,5 +1,5 @@
 ---
-Description: Verwenden Sie Drag & Drop-Animationen, wenn Benutzer Objekte verschieben, z. B. wenn sie ein Element innerhalb einer Liste verschieben oder ein Element auf einem anderen ablegen.
+description: Verwenden Sie Drag & Drop-Animationen, wenn Benutzer Objekte verschieben, z. B. wenn sie ein Element innerhalb einer Liste verschieben oder ein Element auf einem anderen ablegen.
 title: Animationen für Drag & Drop-Vorgang
 ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
 label: Motion--Drag and drop
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a51f60fdbc8d616bd4db360190c8e329e10709e8
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: acc193f0851e2f04113e33aa470e9aa784337921
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220163"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034283"
 ---
 # <a name="drag-animations"></a>Animationen für Drag & Drop-Vorgang
 
@@ -22,7 +22,7 @@ ms.locfileid: "91220163"
 
 Verwenden Sie Drag & Drop-Animationen, wenn Benutzer Objekte verschieben, z. B. wenn sie ein Element innerhalb einer Liste verschieben oder ein Element auf einem anderen ablegen.
 
-> **Wichtige APIs**: [ **dragitempoinmeanimation-Klasse**](/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation)
+> **Wichtige APIs** : [ **dragitempoinmeanimation-Klasse**](/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation)
 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
@@ -65,4 +65,4 @@ Verwenden Sie Drag & Drop-Animationen, wenn Benutzer Objekte verschieben, z. B. 
 * [**DragOverThemeAnimation-Klasse**](/uwp/api/windows.ui.xaml.media.animation.dragoverthemeanimation)
 
 
- 
+ 

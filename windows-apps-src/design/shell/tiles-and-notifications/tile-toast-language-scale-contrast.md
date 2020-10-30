@@ -1,17 +1,17 @@
 ---
-Description: Mit ihren Kacheln und-aufbildern können Zeichen folgen und Bilder geladen werden, die für die Anzeige Sprache, den Anzeige Skalierungsfaktor, den hohen Kontrast und andere Lauf Zeit Kontexte
+description: Mit ihren Kacheln und-aufbildern können Zeichen folgen und Bilder geladen werden, die für die Anzeige Sprache, den Anzeige Skalierungsfaktor, den hohen Kontrast und andere Lauf Zeit Kontexte
 title: Unterstützung für Kachel-und Popup Benachrichtigungen für Sprache, Skalierung und hohen Kontrast
 template: detail.hbs
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: 88bcd5d6ce59d0561e76f46f6291f58ad03ddf3c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0048da25cd1e775391c2523e37cb936243b7308c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156734"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033113"
 ---
 # <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>Unterstützung für Kachel-und Popup Benachrichtigungen für Sprache, Skalierung und hohen Kontrast
 
@@ -73,7 +73,7 @@ Dies sind die Abfrage Zeichenfolgen, die Sie verwenden können.
 | Qualifizierer | Abfragezeichenfolge | Beispiel |
 | --------- | ------------ | ------- |
 | Skalieren | MS-skalieren | ? MS-Scale = 400 |
-| Language | ms-lang | ? ms-lang = en-US |
+| Sprache | ms-lang | ? ms-lang = en-US |
 | Vergleichen Sie | MS-Kontrast | ? MS-Kontrast = hoch |
 
 Eine Verweis Tabelle mit allen möglichen Qualifiziererwerten, die in den Abfrage Zeichenfolgen verwendet werden können, finden Sie unter [resourcecontext. qualifiervalues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues).
@@ -82,7 +82,7 @@ Eine Verweis Tabelle mit allen möglichen Qualifiziererwerten, die in den Abfrag
 
 * [Resourcecontext. qualifiervalues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Bildschirmgrößen und Haltepunkte für reaktionsfähiges Design](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)
 * [Passen Sie Ihre Ressourcen für Sprache, Skalierung und andere Qualifizierer an.](../../../app-resources/tailor-resources-lang-scale-contrast.md)

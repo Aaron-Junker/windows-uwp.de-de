@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie, wie Sie Probleme mit der Genauigkeit der Spracherkennung behandeln, die auf die Qualität der Audioeingabe zurückzuführen sind.
+description: Erfahren Sie, wie Sie Probleme mit der Genauigkeit der Spracherkennung behandeln, die auf die Qualität der Audioeingabe zurückzuführen sind.
 title: Verwalten von Problemen bei der Audioeingabe
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
 label: Manage audio input issues
@@ -8,25 +8,25 @@ keywords: Sprache, Stimme, Spracherkennung, natürliche Sprache, diktieren, Eing
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bbbe9a887afa4637aaf8e6576e14979a92aa6b8f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a5d74346aec4784cea9be2dfcef3ec2efccd8b56
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173394"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034693"
 ---
 # <a name="manage-issues-with-audio-input"></a>Verwalten von Problemen bei der Audioeingabe
 
 
 Erfahren Sie, wie Sie Probleme mit der Genauigkeit der Spracherkennung behandeln, die auf die Qualität der Audioeingabe zurückzuführen sind.
 
-> **Wichtige APIs**: Bewegungs [**Erkennung**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer), [**erkentionqualityerniedrigung**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading), [**Redner erkentionaudioproblem**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionAudioProblem)
+> **Wichtige APIs** : Bewegungs [**Erkennung**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer), [**erkentionqualityerniedrigung**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading), [**Redner erkentionaudioproblem**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionAudioProblem)
 
 
 ## <a name="assess-audio-input-quality"></a>Bewerten der Qualität der Audioeingabe
 
 
-Wenn die Spracherkennung aktiviert ist, verwenden Sie das [**RecognitionQualityDegrading**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading)-Ereignis Ihrer Spracherkennung, um festzustellen, ob Audioprobleme die Spracheingabe stören. Das Ereignisargument ([**SpeechRecognitionQualityDegradingEventArgs**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs)) enthält die [**Problem**](/uwp/api/windows.media.speechrecognition.speechrecognitionqualitydegradingeventargs.problem)-Eigenschaft, die die Probleme mit der Audioeingabe aufzeigt.
+Wenn die Spracherkennung aktiviert ist, verwenden Sie das [**RecognitionQualityDegrading**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading)-Ereignis Ihrer Spracherkennung, um festzustellen, ob Audioprobleme die Spracheingabe stören. Das Ereignisargument ( [**SpeechRecognitionQualityDegradingEventArgs**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs)) enthält die [**Problem**](/uwp/api/windows.media.speechrecognition.speechrecognitionqualitydegradingeventargs.problem)-Eigenschaft, die die Probleme mit der Audioeingabe aufzeigt.
 
 Die Erkennung kann durch zu viele Hintergrundgeräusche, eine Stummschaltung des Mikrofons und die Lautstärke oder Geschwindigkeit des Lautsprechers beeinflusst werden.
 
@@ -109,6 +109,6 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 
 **Beispiele**
 * [Beispiel zu Spracherkennung und Sprachsynthese](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
- 
+ 
 
- 
+ 

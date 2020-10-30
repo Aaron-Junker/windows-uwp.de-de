@@ -1,17 +1,17 @@
 ---
-Description: Sie können Lob-Apps (Line-of-Business) direkt in Unternehmen veröffentlichen, um Sie über die Microsoft Store für Unternehmen oder Microsoft Store for Education zu erwerben, ohne dass die apps im Store allgemein verfügbar gemacht werden.
+description: Sie können Lob-Apps (Line-of-Business) direkt in Unternehmen veröffentlichen, um Sie über die Microsoft Store für Unternehmen oder Microsoft Store for Education zu erwerben, ohne dass die apps im Store allgemein verfügbar gemacht werden.
 title: Verteilen von branchenspezifischen Apps an Unternehmen
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ms.date: 01/16/2020
 ms.topic: article
 keywords: Windows 10, UWP, Lob, Line-of-Business, Unternehmens-apps, Store für Unternehmen, Store für Bildungseinrichtungen, Enterprise
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fccf3cab82724f12789131b8450795201e0fba6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b9bb384ac8514431899fd6ac37cf56303a80d214
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161944"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033923"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>Verteilen von branchenspezifischen Apps an Unternehmen
 
@@ -19,7 +19,7 @@ Sie haben mehrere Optionen für die Verteilung von Branchen-Apps (Line of Busine
 
 ## <a name="microsoft-endpoint-configuration-manager-and-microsoft-intune"></a>Microsoft Endpoint Configuration Manager und Microsoft InTune
 
-Wenn Ihre Organisation Microsoft Endpoint Configuration Manager oder Microsoft InTune verwendet, um Geräte zu verwalten, können Sie Lob-Apps mithilfe dieser Tools bereitstellen. Weitere Informationen finden Sie in folgenden Artikeln:
+Wenn Ihre Organisation Microsoft Endpoint Configuration Manager oder Microsoft InTune verwendet, um Geräte zu verwalten, können Sie Lob-Apps mithilfe dieser Tools bereitstellen. Weitere Informationen und Beispiele finden Sie in diesen Artikeln:
 
 * [Einführung in die Anwendungsverwaltung in Configuration Manager](/configmgr/apps/understand/introduction-to-application-management)
 * [Übersicht über den App-Lebenszyklus in Microsoft Intune](/intune/apps/app-lifecycle)
@@ -39,7 +39,7 @@ Eine weitere Option zum direkten Verteilen von Lob-apps an Benutzer in Ihrer Org
 Sie können Lob-Apps (Line-of-Business) direkt in Unternehmen veröffentlichen, um die Volumen Übernahme über Microsoft Store für Unternehmen oder Microsoft Store für Bildungseinrichtungen zu ermöglichen, ohne dass die apps im Store allgemein verfügbar sind. Wenn Sie diese Option verwenden, werden die apps vom Store signiert und müssen den standardmäßigen Store-Richtlinien entsprechen.
 
 > [!NOTE]
-> Zu diesem Zeitpunkt können nur Kostenlose Apps ausschließlich über Microsoft Store für Unternehmen oder Microsoft Store für Bildungseinrichtungen an Unternehmen verteilt werden. Wenn Sie eine kostenpflichtige app als Lob einreichen, ist Sie für das Unternehmen nicht verfügbar. 
+> Zu diesem Zeitpunkt können nur Kostenlose Apps ausschließlich über Microsoft Store für Unternehmen oder Microsoft Store für Bildungseinrichtungen an Unternehmen verteilt werden. Wenn Sie eine kostenpflichtige app als Lob einreichen, ist Sie für das Unternehmen nicht verfügbar. 
 
 > [!IMPORTANT]
 > Sie können die Microsoft Store Übermittlungs- [API](../monetize/create-and-manage-submissions-using-windows-store-services.md) nicht verwenden, um Lob-apps direkt in Unternehmen zu veröffentlichen. Alle Einsendungen für Branchen-apps müssen über Partner Center veröffentlicht werden.
@@ -53,13 +53,13 @@ Der erste Schritt beim exklusiven Veröffentlichen von branchenspezifischen Apps
 
 Wenn ein Unternehmen Sie zum Veröffentlichen von Apps für die exklusive Nutzung in diesem Unternehmen einlädt, erhalten Sie eine E-Mail mit einem Link, über den Sie die Zuordnung bestätigen können. Sie können diese Zuordnungen auch überprüfen, indem Sie den Abschnitt **Enterprise-Zuordnungen** Ihrer **Kontoeinstellungen** aufrufen (sofern Sie mit dem Microsoft-Konto angemeldet sind, das zum Öffnen des Entwickler Kontos verwendet wurde).
 
-Um die Zuordnung zu bestätigen, klicken Sie auf **Akzeptieren**. Über Ihr Konto können dann Apps zur exklusiven Nutzung durch dieses Unternehmen veröffentlicht werden.
+Um die Zuordnung zu bestätigen, klicken Sie auf **Akzeptieren** . Über Ihr Konto können dann Apps zur exklusiven Nutzung durch dieses Unternehmen veröffentlicht werden.
 
 ### <a name="submit-lob-apps"></a>Branchen-apps übermitteln
 
 Wenn Sie eine App für die exklusive Nutzung durch ein Unternehmen veröffentlichen möchten, ist das Verfahren vergleichbar mit dem Übermitteln von anderen Apps. Die APP durchläuft denselben [Zertifizierungsprozess](the-app-certification-process.md)und muss alle [Microsoft Store Richtlinien](store-policies.md)einhalten. Dieser Prozess weicht nur bei einigen wenigen Schritten ab.
 
-#### <a name="visibility"></a>Sicht
+#### <a name="visibility"></a>Sichtbarkeit
 
 Nachdem Sie eine Unternehmens Zuordnung eingerichtet haben, wird jedes Mal, wenn Sie eine APP einreichen, ein Dropdown-Feld im **Sichtbarkeits** Abschnitt der Seite **Preise und Verfügbarkeit** der Übermittlung angezeigt. Dies ist standardmäßig auf **Einzelhandel – Distribution** festgelegt. Damit die App exklusiv für ein Unternehmen bereitgestellt wird, müssen Sie **Branche – Distribution** auswählen.
 
@@ -79,7 +79,7 @@ Weitere Informationen finden Sie unter [Optionen für die Organisationslizenzier
 
 #### <a name="age-ratings"></a>Altersfreigaben
 
-Beim Übermittlungsvorgang von branchenspezifischen Apps ist der Schritt für die [Altersfreigabe](age-ratings.md) mit dem für Einzelhandels-Apps identisch. Sie verfügen jedoch über eine zusätzliche Option, mit der Sie die Store-Altersfreigabe Ihrer App manuell angeben können, anstatt den Fragebogen auszufüllen oder eine vorhandene Freigabe-ID der IARC zu importieren. Diese manuelle Bewertung kann nur mit der Lob-Verteilung verwendet werden. Wenn Sie also jemals die **Sichtbarkeits** Einstellung der app in die **Einzelhandels Verteilung**ändern, müssen Sie den Fragebogen für Alters Bewertungen übernehmen, bevor Sie die Übermittlung veröffentlichen können.
+Beim Übermittlungsvorgang von branchenspezifischen Apps ist der Schritt für die [Altersfreigabe](age-ratings.md) mit dem für Einzelhandels-Apps identisch. Sie verfügen jedoch über eine zusätzliche Option, mit der Sie die Store-Altersfreigabe Ihrer App manuell angeben können, anstatt den Fragebogen auszufüllen oder eine vorhandene Freigabe-ID der IARC zu importieren. Diese manuelle Bewertung kann nur mit der Lob-Verteilung verwendet werden. Wenn Sie also jemals die **Sichtbarkeits** Einstellung der app in die **Einzelhandels Verteilung** ändern, müssen Sie den Fragebogen für Alters Bewertungen übernehmen, bevor Sie die Übermittlung veröffentlichen können.
 
 ### <a name="enterprise-deployment-of-lob-apps"></a>Unternehmensbereitstellung von branchenspezifischen Apps
 
@@ -92,11 +92,11 @@ Weitere Informationen finden Sie unter [Arbeiten mit Branchen-Apps](/microsoft-s
 
 ### <a name="update-lob-apps"></a>Aktualisieren von Lob-apps
 
-Wenn Sie Updates für eine App veröffentlichen möchten, die bereits als branchenspezifische App veröffentlicht wurde, erstellen Sie einfach eine neue Übermittlung. Sie können neue Pakete hochladen oder andere Änderungen vornehmen. Klicken Sie dann auf **An Store übermitteln**, um die aktualisierte Version verfügbar zu machen. Stellen Sie sicher, dass Sie die Unternehmens-Auswahl auf die gleiche **Sichtbarkeit** behalten, es sei denn, Sie möchten absichtlich Änderungen vornehmen, z. b. das Auswählen eines zusätzlichen Unternehmens zum Abrufen der APP oder das Entfernen eines der Unternehmen, in das Sie es zuvor verteilt haben
+Wenn Sie Updates für eine App veröffentlichen möchten, die bereits als branchenspezifische App veröffentlicht wurde, erstellen Sie einfach eine neue Übermittlung. Sie können neue Pakete hochladen oder andere Änderungen vornehmen. Klicken Sie dann auf **An Store übermitteln** , um die aktualisierte Version verfügbar zu machen. Stellen Sie sicher, dass Sie die Unternehmens-Auswahl auf die gleiche **Sichtbarkeit** behalten, es sei denn, Sie möchten absichtlich Änderungen vornehmen, z. b. das Auswählen eines zusätzlichen Unternehmens zum Abrufen der APP oder das Entfernen eines der Unternehmen, in das Sie es zuvor verteilt haben
 
-Wenn Sie eine App, die Sie zuvor als branchenspezifische App veröffentlicht haben, nicht mehr anbieten möchten und keine neuen Käufe möglich sein sollen, müssen Sie eine neue Übermittlung erstellen. Zuerst müssen Sie Ihre **Sichtbarkeits** Auswahl von der **Line-of-Business (LOB)-Verteilung** in die **Einzelhandels Verteilung**ändern. Wählen Sie dann im Abschnitt [Erkennbarkeit](choose-visibility-options.md#discoverability) die Option **dieses Produkt verfügbar, aber nicht im Store** mit der Option für die **Beendigung des Erwerbs** aus.
+Wenn Sie eine App, die Sie zuvor als branchenspezifische App veröffentlicht haben, nicht mehr anbieten möchten und keine neuen Käufe möglich sein sollen, müssen Sie eine neue Übermittlung erstellen. Zuerst müssen Sie Ihre **Sichtbarkeits** Auswahl von der **Line-of-Business (LOB)-Verteilung** in die **Einzelhandels Verteilung** ändern. Wählen Sie dann im Abschnitt [Erkennbarkeit](choose-visibility-options.md#discoverability) die Option **dieses Produkt verfügbar, aber nicht im Store** mit der Option für die **Beendigung des Erwerbs** aus.
 
 Nachdem die Übermittlung den Zertifizierungsprozess durchlaufen hat, kann die App nicht mehr neu erworben werden. Benutzer, die sie bereits erworben haben, können sie jedoch weiter verwenden.
 
 > [!NOTE]
-> Wenn Sie eine app in die **Einzelhandels Verteilung**ändern, müssen Sie den [Alters Bewertungs-Fragebogen](age-ratings.md) vervollständigen, falls Sie dies noch nicht getan haben, auch wenn die APP nicht für neue Akquisitionen verfügbar ist.
+> Wenn Sie eine app in die **Einzelhandels Verteilung** ändern, müssen Sie den [Alters Bewertungs-Fragebogen](age-ratings.md) vervollständigen, falls Sie dies noch nicht getan haben, auch wenn die APP nicht für neue Akquisitionen verfügbar ist.

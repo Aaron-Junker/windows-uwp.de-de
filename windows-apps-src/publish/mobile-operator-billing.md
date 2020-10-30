@@ -1,17 +1,17 @@
 ---
-Description: Die Microsoft Store bietet die Abrechnung mobiler Bediener als Zahlungsmethode für Mobile Operatoren, die diese Funktion unterstützen.
+description: Die Microsoft Store bietet die Abrechnung mobiler Bediener als Zahlungsmethode für Mobile Operatoren, die diese Funktion unterstützen.
 title: Abrechnung über den Mobilfunkanbieter
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.date: 05/29/2020
 ms.topic: article
 keywords: Windows 10, UWP, Mobile-Operatoren, Mobile Abrechnung, Abrechnung mobiler Bediener
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dbdd2a86d33cf1392844294952eb9223676e256
-ms.sourcegitcommit: 426ccbdaa26bd16c7f0b270e8a51ac4ba87a5b60
+ms.openlocfilehash: df31cfbf113d91680f1570d37ae091e12e5a11de
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91590649"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034733"
 ---
 # <a name="mobile-operator-billing"></a>Abrechnung über den Mobilfunkanbieter
 
@@ -21,7 +21,7 @@ ms.locfileid: "91590649"
 Der Microsoft Store bietet die Abrechnung mobiler Bediener als Zahlungsmethode für Geräte unter Windows 10, Smartphones mit Windows 10 Mobile und Xbox One-Konsolen. Wenn der Mobile Bediener eines Kunden diese Funktion unterstützt, kann der Kunde die Abrechnung mobiler Bediener als Zahlungsmethode hinzufügen und ihn verwenden, um Einkäufe mithilfe seines mobilen Kontos zu tätigen.
 
 > [!TIP]
->  Wenn der Mobile Bediener eines Kunden die Abrechnung mobiler Bediener anbietet, der Kunde diese Option jedoch nicht auf seinem Gerät finden kann, überprüfen Sie diese [Schritte](https://support.microsoft.com/instantanswers/b25d6dd6-fb8b-3710-1e13-4d30eb01b51f).
+>  Wenn der Mobile Bediener eines Kunden die Abrechnung mobiler Bediener anbietet, der Kunde diese Option jedoch nicht auf seinem Gerät finden kann, überprüfen Sie diese [Schritte](https://support.microsoft.com/instantanswers/b25d6dd6-fb8b-3710-1e13-4d30eb01b51f).
 
 Wir arbeiten ständig mit Mobilfunkanbietern zusammen, um die Verfügbarkeit dieser Zahlungsmethode auszubauen. Wenn Sie einen mobilen Operator vorschlagen möchten, der nicht unten aufgeführt ist, wenden Sie sich an den mobilen Bediener, und bitten Sie ihn, diese Zahlungsmethode hinzuzufügen.
 

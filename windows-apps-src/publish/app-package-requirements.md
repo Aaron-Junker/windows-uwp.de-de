@@ -1,17 +1,17 @@
 ---
-Description: Befolgen Sie diese Richtlinien, um die Pakete der APP für die Übermittlung an den Microsoft Store vorzubereiten.
+description: Befolgen Sie diese Richtlinien, um die Pakete der APP für die Übermittlung an den Microsoft Store vorzubereiten.
 title: App-Paketanforderungen
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Paket Anforderungen, Pakete, Paketformat, unterstützte Version, übermitteln
 ms.localizationpriority: medium
-ms.openlocfilehash: 848adbab20765a65ef4673219c55dfbf076e47e0
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 464714388f9e998bace3af45c580f2a4a7638b27
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219773"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034393"
 ---
 # <a name="app-package-requirements"></a>App-Paketanforderungen
 
@@ -26,7 +26,7 @@ Denken Sie daran, [Ihre App mit dem Zertifizierungskit für Windows-Apps zu test
 Wenn Sie Microsoft Visual Studio als Entwicklungsumgebung verwenden, verfügen Sie bereits über integrierte Tools zum schnellen und einfachen Erstellen eines App-Pakets. Weitere Informationen finden Sie unter [Verpacken von Apps](../packaging/index.md).
 
 > [!NOTE]
-> Stellen Sie sicher, dass alle Dateinamen ANSI verwenden. 
+> Stellen Sie sicher, dass alle Dateinamen ANSI verwenden. 
 
 Um Ihr Paket in Visual Studio zu erstellen, müssen Sie sich mit demselben Konto anmelden, das Ihrem Entwicklerkonto zugeordnet ist. Einige Teile des Paketmanifests enthalten spezifische kontobezogene Details. Diese Informationen werden erkannt und automatisch hinzugefügt. Ohne die zusätzlichen Informationen, die dem Manifest hinzugefügt werden, können Fehler beim Hochladen von Paketen auftreten. 
 
@@ -40,7 +40,7 @@ App-Pakete müssen nicht mit einem Stammzertifikat einer vertrauenswürdigen Zer
 Für UWP-apps kann Visual Studio eine APP Bundle (. msixbundle oder. appxbundle) generieren, um die Größe der APP zu reduzieren, die von den Benutzern heruntergeladen wird. Dieser Schritt ist in der Regel sinnvoll, wenn Sie sprachspezifische Ressourcen, mehrere Ressourcen für die Bildgröße oder Ressourcen für bestimmte Versionen von Microsoft DirectX definiert haben.
 
 > [!NOTE]
-> Ein App-Bundle kann Pakete für alle Architekturen umfassen.
+> Ein App-Bundle kann Pakete für alle Architekturen umfassen.
 
 Bei einem App-Bündel lädt der Benutzer nicht alle vorhandenen Ressourcen, sondern nur relevante Dateien herunter. Weitere Informationen zu app-Paketen finden Sie unter [Packen von apps](../packaging/index.md) und [Verpacken einer UWP-App mit Visual Studio](/windows/msix/package/packaging-uwp-apps).
 
@@ -54,13 +54,13 @@ Ausführliche Informationen und die Anforderungen für Manifeste finden Sie in d
 Ihr Manifest muss spezifische konto- und App-bezogene Informationen enthalten. Sie finden diese Informationen unter [Anzeigen von Details zur App-Identität](view-app-identity-details.md) im Abschnitt **App-Verwaltung** der App-Übersichtsseite im Dashboard.
 
 > [!NOTE]
-> Bei Werten im Manifest wird die Groß-/Kleinschreibung beachtet. Leerzeichen und Satzzeichen müssen ebenfalls übereinstimmen. Geben Sie die Werte richtig ein, und überprüfen Sie sie anschließend auf ihre Korrektheit.
+> Bei Werten im Manifest wird die Groß-/Kleinschreibung beachtet. Leerzeichen und Satzzeichen müssen ebenfalls übereinstimmen. Geben Sie die Werte richtig ein, und überprüfen Sie sie anschließend auf ihre Korrektheit.
 
 
 App-Bündel (. msixbundle oder. appxbundle) verwenden ein anderes Manifest. Ausführliche Informationen und die Anforderungen für App-Bündel finden Sie in der Dokumentation zum [Bündelmanifest](/uwp/schemas/bundlemanifestschema/bundle-manifest). Beachten Sie, dass das Manifest jedes enthaltenen Pakets in einer msixbundle-oder appxbundle-Datei dieselben Elemente und Attribute verwenden muss, mit Ausnahme des Attributs **ProcessorArchitecture** des [Identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) -Elements.
 
 > [!TIP]
-> Stellen Sie sicher, dass Sie das [zertifizierungskit für Windows-apps](../debug-test-perf/windows-app-certification-kit.md) ausführen, bevor Sie Ihre Pakete So können Sie feststellen, ob es mit Ihrem Manifest Probleme gibt, die Zertifizierungs- oder Einreichungsfehler verursachen können.
+> Stellen Sie sicher, dass Sie das [zertifizierungskit für Windows-apps](../debug-test-perf/windows-app-certification-kit.md) ausführen, bevor Sie Ihre Pakete So können Sie feststellen, ob es mit Ihrem Manifest Probleme gibt, die Zertifizierungs- oder Einreichungsfehler verursachen können.
 
 
 ## <a name="package-format-requirements"></a>Paketformatanforderungen
@@ -88,6 +88,6 @@ Die derzeit unterstützten Versionen reichen von folgenden Versionen:
 
 „StoreManifest.xml“ ist eine optionale Konfigurationsdatei, die in App-Pakete aufgenommen werden kann. Der Zweck besteht darin, Features zu aktivieren, wie z. b. das Deklarieren der App als Microsoft Store Geräte-APP oder das Deklarieren von Anforderungen, von denen ein Paket abhängig ist, damit es auf ein Gerät anwendbar ist. Wenn Sie verwendet wird, wird StoreManifest.xml mit dem App-Paket übermittelt und muss sich im Stamm Ordner des Hauptprojekts Ihrer APP befinden. Weitere Informationen finden Sie unter [StoreManifest-Schema](/uwp/schemas/storemanifest/store-manifest-schema-portal).
 
- 
+ 
 
- 
+ 

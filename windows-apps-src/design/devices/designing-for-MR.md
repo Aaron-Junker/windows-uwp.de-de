@@ -1,6 +1,6 @@
 ---
-Description: Entwerfen Sie Ihre APP so, dass Sie gut aussieht und gut in gemischter Realität funktioniert.
-title: Entwerfen für gemischte Realität
+description: Entwerfen Sie Ihre APP so, dass Sie gut aussieht und gut in gemischter Realität funktioniert.
+title: Design für Mixed Reality
 ms.assetid: ''
 label: Designing for Mixed Reality
 template: detail.hbs
@@ -13,14 +13,14 @@ design-contact: jeffarn
 dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: c0b1ae069959e74239234ae5c9ba409fe7a65f23
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 225b91b20f35c974fca865cc4e94a96efceda84d
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165974"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034373"
 ---
-# <a name="designing-for-mixed-reality"></a>Entwerfen für gemischte Realität
+# <a name="designing-for-mixed-reality"></a>Design für Mixed Reality
 
 Entwerfen Sie Ihre APP so, dass Sie in gemischter Realität gut aussieht, und profitieren Sie von neuen Eingabemethoden.
 
@@ -40,7 +40,7 @@ Eine immersive App übernimmt die gesamte Anzeige, die für den Benutzer sichtba
 
 Wenn Sie immersive Apps erstellen, besuchen Sie das [Windows Mixed Reality dev Center](https://developer.microsoft.com/mixed-reality) , um weitere Informationen zu erhalten.
 
-Eine 2D-APP wird als herkömmliches flaches Fenster in der Ansicht des Benutzers ausgeführt. Auf dem hololens bedeutet das, dass eine Ansicht an die Wand oder an einem Punkt im Raum der Benutzer in der Praxis der realen Wohn Räume oder im Büro ist. In einem Windows Mixed Reality-Headset wird die APP an eine Wand in der [Mixed Reality-Startseite](/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home) angeheftet (manchmal auch als " *drehhaus*" bezeichnet).
+Eine 2D-APP wird als herkömmliches flaches Fenster in der Ansicht des Benutzers ausgeführt. Auf dem hololens bedeutet das, dass eine Ansicht an die Wand oder an einem Punkt im Raum der Benutzer in der Praxis der realen Wohn Räume oder im Büro ist. In einem Windows Mixed Reality-Headset wird die APP an eine Wand in der [Mixed Reality-Startseite](/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home) angeheftet (manchmal auch als " *drehhaus* " bezeichnet).
 
 ![Mehrere apps, die in gemischter Realität ausgeführt werden](images/MR-multiple.png)
 
@@ -113,9 +113,9 @@ Beim Erstellen einer UWP-APP, die möglicherweise auf einer gemischten Reality-P
 
 ![Der in Mixed Reality-apps angezeigte Text sollte groß sein.](images/MR-text.png)
 
-* [Ihr Blick ist mit der Maus](https://developer.microsoft.com/windows/mixed-reality/gaze_targeting). Wenn der Benutzer etwas ansieht, fungiert es als **Berührungs** Bewegungs Ereignis, sodass das einfache Überprüfen eines Objekts möglicherweise ein unbeabsichtigtes Popup oder eine andere unerwünschte Interaktion auslöst. Sie müssen möglicherweise erkennen, ob die APP derzeit in gemischter Realität ausgeführt wird, und dieses Verhalten ändern. Weitere Informationen finden Sie unten unter **Laufzeitunterstützung**. 
+* [Ihr Blick ist mit der Maus](https://developer.microsoft.com/windows/mixed-reality/gaze_targeting). Wenn der Benutzer etwas ansieht, fungiert es als **Berührungs** Bewegungs Ereignis, sodass das einfache Überprüfen eines Objekts möglicherweise ein unbeabsichtigtes Popup oder eine andere unerwünschte Interaktion auslöst. Sie müssen möglicherweise erkennen, ob die APP derzeit in gemischter Realität ausgeführt wird, und dieses Verhalten ändern. Weitere Informationen finden Sie unten unter **Laufzeitunterstützung** . 
 
-* Wenn ein Benutzer mit einem Bewegungs Controller in Bezug auf etwas oder auf Punkte zeigt, tritt ein Finger **Abdruck Ereignis auf** . Dies besteht aus einem **pointerpoint** , bei dem " **PointerType** " " **berühren**" ist, aber **isincontact** " **false**" ist. Wenn ein Commit ausgeführt wird (z. b. Gamepad eine Schaltfläche, wird ein Clicker-Gerät gedrückt, ein Motion Controller-Befehl gedrückt oder sprach Erkennungs Köpfe "Select"), wird ein **touchpress** angezeigt, wobei der **pointerpoint** mit **isincontact** **true**wird. Weitere Informationen zu diesen Eingabe Ereignissen finden Sie unter [touchinteraktionen](../input/touch-interactions.md) .
+* Wenn ein Benutzer mit einem Bewegungs Controller in Bezug auf etwas oder auf Punkte zeigt, tritt ein Finger **Abdruck Ereignis auf** . Dies besteht aus einem **pointerpoint** , bei dem " **PointerType** " " **berühren** " ist, aber **isincontact** " **false** " ist. Wenn ein Commit ausgeführt wird (z. b. Gamepad eine Schaltfläche, wird ein Clicker-Gerät gedrückt, ein Motion Controller-Befehl gedrückt oder sprach Erkennungs Köpfe "Select"), wird ein **touchpress** angezeigt, wobei der **pointerpoint** mit **isincontact** **true** wird. Weitere Informationen zu diesen Eingabe Ereignissen finden Sie unter [touchinteraktionen](../input/touch-interactions.md) .
 
 * Beachten Sie, dass der Blick nicht so genau ist wie der Mauszeiger. Kleinere Maus Ziele oder Schaltflächen können für Ihre Benutzer zu Frustrationen führen. ändern Sie daher die Größe der Steuerelemente entsprechend. Wenn Sie für die Fingereingabe konzipiert sind, funktionieren Sie in gemischter Realität, aber Sie können einige Schaltflächen zur Laufzeit vergrößern. Weitere Informationen finden [Sie unter Aktualisieren Ihrer vorhandenen universellen App für hololens](https://developer.microsoft.com/windows/mixed-reality/updating_your_existing_universal_app_for_hololens).
 

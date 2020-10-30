@@ -1,5 +1,5 @@
 ---
-Description: Verwenden Sie die Windows. Globalization. datetimeformatierung-API mit benutzerdefinierten Vorlagen und Mustern, um Datumsangaben und Uhrzeiten in genau dem gewünschten Format anzuzeigen.
+description: Verwenden Sie die Windows. Globalization. datetimeformatierung-API mit benutzerdefinierten Vorlagen und Mustern, um Datumsangaben und Uhrzeiten in genau dem gewünschten Format anzuzeigen.
 title: Verwenden von Mustern zum Formatieren von Datums- und Uhrzeitwerten
 ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
 label: Use patterns to format dates and times
@@ -8,12 +8,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisier barkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: da4d9b2c7380a085efdcb234ad210eafca40b1c3
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: dbabbcaccd88b187a03c83909bcb38d5f64b30bb
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493605"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034313"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>Verwenden von Vorlagen und Mustern zum Formatieren von Datums- und Uhrzeitwerten
 
@@ -25,7 +25,7 @@ Die [**datetimeformatter**](/uwp/api/windows.globalization.datetimeformatting?br
 
 Wenn Sie jedoch eine noch größere Kontrolle über die Reihenfolge und das Format der Komponenten des [**DateTime**](/uwp/api/windows.foundation.datetime?branch=live) -Objekts wünschen, das Sie anzeigen möchten, können Sie ein Format Muster an das Format *Template* -Argument des Konstruktors übergeben. Ein Format Muster verwendet eine spezielle Syntax, mit der Sie einzelne Komponenten eines **DateTime** -Objekts nur mit &mdash; dem Monatsnamen oder nur dem Year-Wert abrufen können, um &mdash; Sie z. b. in einem beliebigen benutzerdefinierten Format anzuzeigen. Darüber hinaus kann das Muster mittels Lokalisierung für andere Sprachen und Regionen angepasst werden.
 
-**Hinweis**    Dies ist nur eine Übersicht über Format Muster. Eine ausführlichere Besprechung der Formatvorlagen und Formatmuster finden Sie in der Dokumentation zur [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live)-Klasse im Abschnitt „Anmerkungen“.
+**Hinweis**  Dies ist nur eine Übersicht über Format Muster. Eine ausführlichere Besprechung der Formatvorlagen und Formatmuster finden Sie in der Dokumentation zur [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live)-Klasse im Abschnitt „Anmerkungen“.
 
 ## <a name="the-difference-between-format-templates-and-format-patterns"></a>Der Unterschied zwischen Formatvorlagen und Format Mustern
 
@@ -113,7 +113,7 @@ var time = timeFormatter.Format(dateToFormat);
 string output = string.Format(resourceLoader.GetString("CustomDateTimeFormatString"), date, time);
 ```
 
-`CustomDateTimeFormatString`ein Ressourcen Bezeichner, der sich auf eine lokalisierbare Ressource in einer Ressourcen Datei (. resw) bezieht. Für eine Standardsprache in englischer Sprache (USA) wird dies auf den Wert " {0} | {1} " und einen Kommentar festgelegt, der angibt, dass " {0} " das Datum und " {1} " die Uhrzeit ist. Auf diese Weise können Konvertierer die Format Elemente nach Bedarf anpassen. Sie können z. b. die Reihenfolge der Elemente ändern, wenn Sie in einer Sprache oder Region in einer anderen Sprache oder Region der Zeit vorangestellt ist. Oder Sie können „|“ durch ein anderes Trennzeichen ersetzen.
+`CustomDateTimeFormatString` ein Ressourcen Bezeichner, der sich auf eine lokalisierbare Ressource in einer Ressourcen Datei (. resw) bezieht. Für eine Standardsprache in englischer Sprache (USA) wird dies auf den Wert " {0} | {1} " und einen Kommentar festgelegt, der angibt, dass " {0} " das Datum und " {1} " die Uhrzeit ist. Auf diese Weise können Konvertierer die Format Elemente nach Bedarf anpassen. Sie können z. b. die Reihenfolge der Elemente ändern, wenn Sie in einer Sprache oder Region in einer anderen Sprache oder Region der Zeit vorangestellt ist. Oder Sie können „|“ durch ein anderes Trennzeichen ersetzen.
 
 Eine andere Möglichkeit zur Implementierung dieses Beispiels besteht darin, die beiden Formatierungs Programme für Ihre Format Muster abzufragen, diese miteinander zu verketten und dann ein drittes Formatierungs Programm aus dem resultierenden Format Muster zu erstellen.
 
