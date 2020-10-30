@@ -1,5 +1,5 @@
 ---
-Description: Hier erfahren Sie, wie Sie die UI Ihrer App beim Ein- oder Ausblenden der Touch-Bildschirmtastatur anpassen können.
+description: Hier erfahren Sie, wie Sie die UI Ihrer App beim Ein- oder Ausblenden der Touch-Bildschirmtastatur anpassen können.
 title: Reagieren auf die Anzeige der Bildschirmtastatur
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
@@ -7,12 +7,12 @@ template: detail.hbs
 keywords: Tastatur, Barrierefreiheit, Navigation, Fokus, Text, Eingabe, Benutzerinteraktionen
 ms.date: 09/24/2020
 ms.topic: article
-ms.openlocfilehash: 4af7e7533ebd985a22eedd2e11f35d8bf5f5dc8a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: c3431fcafb86428ce5eddb8ea7a6b0187b64a5e5
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216903"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035083"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>Reagieren auf die Anzeige der Bildschirmtastatur
 
@@ -54,7 +54,7 @@ Im Folgenden finden Sie einige grundlegende Empfehlungen für benutzerdefinierte
 
 - Zeigen Sie die Bildschirmtastatur während der gesamten Interaktion mit dem Formular an.
 
-- Stellen Sie sicher, dass die benutzerdefinierten Steuerelemente den entsprechenden [AutomationControlType](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) für die Benutzeroberflächen Automatisierung aufweisen, damit die Tastatur beibehalten wird, wenn sich der Fokus aus einem Texteingabefeld im Kontext des Text Eintrags verschiebt. Wenn Sie zum Beispiel wünschen, dass die Tastatur eingeblendet bleibt, wenn während des Texteingabeszenarios ein Menü geöffnet wird, muss das Menü den **AutomationControlType** „Menu“ aufweisen.
+- Stellen Sie sicher, dass Ihre benutzerdefinierten Steuerelemente über den richtigen [AutomationControlType](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) für die Benutzeroberflächenautomatisierung verfügen, um zu gewährleisten, dass die Tastatur eingeblendet bleibt, wenn der Fokus während der Texteingabe vom Texteingabefeld verschoben wird. Wenn Sie zum Beispiel wünschen, dass die Tastatur eingeblendet bleibt, wenn während des Texteingabeszenarios ein Menü geöffnet wird, muss das Menü den **AutomationControlType** „Menu“ aufweisen.
 
 - Vermeiden Sie die Manipulation der Eigenschaften der Benutzeroberflächenautomatisierung zur Kontrolle der Bildschirmtastatur. Andere Werkzeuge für die Barrierefreiheit sind von der Genauigkeit der Eigenschaften der Benutzeroberflächenautomatisierung abhängig.
 
@@ -211,7 +211,7 @@ void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibili
 ## <a name="related-articles"></a>Verwandte Artikel
 
 - [Tastaturinteraktionen](keyboard-interactions.md)
-- [Tastatureingabe](../accessibility/keyboard-accessibility.md)
+- [Barrierefreiheit der Tastaturnavigation](../accessibility/keyboard-accessibility.md)
 - [Benutzerdefinierte Automatisierungspeers](../accessibility/custom-automation-peers.md)
 
 ### <a name="samples"></a>Beispiele

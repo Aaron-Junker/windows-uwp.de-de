@@ -1,17 +1,17 @@
 ---
-Description: Wenn Sie während der Partner Center-Registrierung eine Umsatzsteuer-ID angeben müssen, finden Sie hier einige Informationen, um Ihnen den Einstieg zu erleichtern.
+description: Wenn Sie während der Partner Center-Registrierung eine Umsatzsteuer-ID angeben müssen, finden Sie hier einige Informationen, um Ihnen den Einstieg zu erleichtern.
 title: Umsatzsteuerinfo
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c8521ef2988e2108dbbd619812bfde26cecc81b
-ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
+ms.openlocfilehash: bd863210fad66d9494d9d71115966656ccbb8893
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81545080"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034923"
 ---
 # <a name="vat-info"></a>Umsatzsteuerinfo
 
@@ -70,7 +70,7 @@ Beachten Sie, dass Microsoft keine Steuertipps gibt und die folgende Tabelle nur
 <li>Beispiel: 12345678, 123456789 oder 0123456789</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Tschechische</td><td data-th="VAT info">
+<tr><td data-th="Country/region">Tschechien</td><td data-th="VAT info">
 <ul>
 <li>Umsatzsteuernummernformat: 8, 9 oder 10 Ziffern</li>
 <li>Code für Land/Region: CZ</li>
@@ -234,7 +234,7 @@ Beachten Sie, dass Microsoft keine Steuertipps gibt und die folgende Tabelle nur
 <li>Hinweis: Die letzten beiden Zeichen müssen „01“ sein.</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Großbritannien</td><td data-th="VAT info">
+<tr><td data-th="Country/region">Vereinigtes Königreich</td><td data-th="VAT info">
 <ul>
 <li>Umsatzsteuernummernformat: 9 oder 12 Ziffern</li>
 <li>Code für Land/Region: GB</li>
@@ -245,9 +245,9 @@ Beachten Sie, dass Microsoft keine Steuertipps gibt und die folgende Tabelle nur
 </table>
                                                                                                                                                                   
 
- 
+ 
 
- 
+ 
 
 
 

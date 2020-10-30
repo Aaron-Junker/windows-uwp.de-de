@@ -1,5 +1,5 @@
 ---
-Description: Erstellen Sie Windows-apps mit intuitiver und unterschiedlichen Benutzerinteraktionen, die für Touchpad optimiert sind, aber funktionell auf Eingabegeräten einheitlich sind.
+description: Erstellen Sie Windows-apps mit intuitiver und unterschiedlichen Benutzerinteraktionen, die für Touchpad optimiert sind, aber funktionell auf Eingabegeräten einheitlich sind.
 title: Touchpad-Interaktionen
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
@@ -8,19 +8,19 @@ keywords: Touchpad, PTP, Touch, Zeiger, Eingabe, Benutzerinteraktion
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 86c47a3a510f6ed0d865064e8d140c47c8dd9f78
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 6b0e0a7e45ee63d845a1d5b0057d00da11e01c18
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220433"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035093"
 ---
 # <a name="touchpad-design-guidelines"></a>Touchpad-Designrichtlinien
 
 
 Gestalten Sie Ihre App so, dass Benutzer über ein Touchpad mit ihr interagieren können. Ein Touchpad vereint die indirekte Multitoucheingabe mit der Präzisionseingabe eines Zeigegeräts (beispielsweise eine Maus). Durch diese Kombination ist das Touchpad sowohl für eine toucheingabeoptimierte Benutzeroberfläche als auch für die kleineren Ziele von Produktivitäts-Apps geeignet.
 
- 
+ 
 
 ![Touchpad](images/input-patterns/input-touchpad.jpg)
 
@@ -114,12 +114,12 @@ Im Anschluss folgen einige Beispiele für touchpadoptimierte Gesten zum Ausführ
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="hardware"></a>Hardware
 
 
-Fragen Sie die Funktionen des Mausgeräts ([**MouseCapabilities**](/uwp/api/Windows.Devices.Input.MouseCapabilities)) ab, um zu ermitteln, auf welche Elemente der Benutzeroberfläche Ihrer App die Touchpad-Hardware direkt zugreifen kann. Wir empfehlen die Bereitstellung einer Benutzeroberfläche, die sowohl Touch- als auch Mauseingabe ermöglicht.
+Fragen Sie die Funktionen des Mausgeräts ( [**MouseCapabilities**](/uwp/api/Windows.Devices.Input.MouseCapabilities)) ab, um zu ermitteln, auf welche Elemente der Benutzeroberfläche Ihrer App die Touchpad-Hardware direkt zugreifen kann. Wir empfehlen die Bereitstellung einer Benutzeroberfläche, die sowohl Touch- als auch Mauseingabe ermöglicht.
 
 Weitere Informationen zum Abfragen von Gerätefunktionen finden Sie unter [Identifizieren von Eingabegeräten](identify-input-devices.md).
 

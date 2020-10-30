@@ -1,17 +1,17 @@
 ---
-Description: Hier erfahren Sie, was Sie tun können, wenn Ihrer Meinung nach eine App Ihre Rechte an geistigem Eigentum verletzt.
+description: Hier erfahren Sie, was Sie tun können, wenn Ihrer Meinung nach eine App Ihre Rechte an geistigem Eigentum verletzt.
 title: Schutz von Marken und Urheberrechten
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
 ms.date: 06/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 14dae80876e1e7a77151f4e814a8dcd06e039645
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d3ae8467143dd1c254db20c237316e3984573242
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259901"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034973"
 ---
 # <a name="trademark-and-copyright-protection"></a>Schutz von Marken und Urheberrechten
 
@@ -21,7 +21,7 @@ Hier erfahren Sie, was Sie tun können, wenn Ihrer Meinung nach eine App Ihre Re
 ### <a name="1-how-may-i-report-an-infringement-of-my-intellectual-property-rights-within-a-windows-app"></a>1. Wie kann ich eine Verletzung meines Rechts am geistigen Eigentum in einer Windows-App melden?
 
 
-Verwenden Sie das folgende [Formular](https://support.microsoft.com/getsupport/hostpage.aspx?locale=EN-US&ln=EN-US&oaspworkflow=start_1.0.0.0&wfname=RAVCI&wf=0), um eine Beschwerde über die Verletzung von Urheber-, Marken- oder Veröffentlichungsrechten bei einer Windows-App einzureichen. Bei Beschwerden über die Verletzung von Urheber-, Marken- oder Veröffentlichungsrechten in mehreren Apps reichen Sie Ihren Antrag bei mktlegal@microsoft.com ein. Wenn Sie weitere Informationen zur DMCA-Richtlinie von Microsoft benötigen, besuchen Sie Folgendes: [https://www.microsoft.com/info/cpyrtInfrg.aspx](https://www.microsoft.com/info/cpyrtInfrg.aspx).
+Verwenden Sie das folgende [Formular](https://support.microsoft.com/getsupport/hostpage.aspx?locale=EN-US&ln=EN-US&oaspworkflow=start_1.0.0.0&wfname=RAVCI&wf=0), um eine Beschwerde über die Verletzung von Urheber-, Marken- oder Veröffentlichungsrechten bei einer Windows-App einzureichen. Übermitteln Sie Ihre Anforderung für Copyright-, Marken-oder Publizitäts Rechte Verstöße gegen mehrere apps mktlegal@microsoft.com . Weitere Informationen zur DMCA-Richtlinie von Microsoft finden Sie unter: [https://www.microsoft.com/info/cpyrtInfrg.aspx](https://www.microsoft.com/info/cpyrtInfrg.aspx) .
 
 ### <a name="2-i-created-my-app-to-work-with-a-microsoft-productservice-may-i-use-the-microsoft-productservice-name-in-the-name-of-my-app"></a>2. Ich habe meine App für die Verwendung mit einem Microsoft-Produkt/-Dienst erstellt. Darf ich den Namen des Microsoft-Produkts/-Dienstes im Namen meiner App verwenden?
 
@@ -63,9 +63,9 @@ Nein, nicht ohne Genehmigung. Die Idee eines Spiels ist zwar urheberrechtlich ni
 
 Lesen Sie die Benachrichtigung von Microsoft sorgfältig durch, und befolgen sie die Anweisungen. Die Benachrichtigung von Microsoft enthält möglicherweise bestimmte Schritte, die Sie unternehmen können, um uns zu informieren, was Sie getan haben, um das Problem zu beheben, dass Sie der Beschwerde widersprechen und/oder dass Sie Ihre App erneut im Store einreichen möchten.
 
- 
+ 
 
- 
+ 
 
 
 

@@ -1,17 +1,17 @@
 ---
-Description: Auf der Seite App-Eigenschaften des App-Übermittlungsprozesses können Sie die Kategorie Ihrer App festlegen sowie Hardwareeinstellungen und weitere Deklarationen angeben.
+description: Auf der Seite App-Eigenschaften des App-Übermittlungsprozesses können Sie die Kategorie Ihrer App festlegen sowie Hardwareeinstellungen und weitere Deklarationen angeben.
 title: Eingeben von App-Eigenschaften
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Spieleinstellungen, Anzeigemodus, Systemanforderungen, Hardwareanforderungen, minimale Hardware, Empfohlene Hardware, Datenschutzrichtlinie, Support Kontaktinformationen, App-Website, Support Informationen
 ms.localizationpriority: medium
-ms.openlocfilehash: f945b9908a86d660bde9713ca353f1f3a438bf90
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0e02e92d8ae005e5906179f96598805f64e7c7ff
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167404"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035143"
 ---
 # <a name="enter-app-properties"></a>Eingeben von App-Eigenschaften
 
@@ -33,10 +33,10 @@ In diesem Abschnitt können Sie Informationen bereitstellen, die Kunden dabei he
 
 Sie sind dafür verantwortlich, sicherzustellen, dass Ihre APP den Datenschutzbestimmungen und Bestimmungen entspricht, und dass Sie bei Bedarf eine gültige URL für die Datenschutzrichtlinie angeben.
 
-In diesem Abschnitt müssen Sie angeben, ob Ihre APP auf [persönliche Informationen](/legal/windows/agreements/store-policies#105-personal-information)zugreift, Sie sammelt oder überträgt. Wenn Sie auf " **Ja**" Antworten, ist eine Datenschutzrichtlinien-URL erforderlich. Andernfalls ist Sie optional (wenn wir jedoch feststellen, dass Ihre APP eine Datenschutzrichtlinie erfordert, und Sie keine bereitgestellt haben, kann die Übermittlung der Übermittlung fehlschlagen).
+In diesem Abschnitt müssen Sie angeben, ob Ihre APP auf [persönliche Informationen](/legal/windows/agreements/store-policies#105-personal-information)zugreift, Sie sammelt oder überträgt. Wenn Sie auf " **Ja** " Antworten, ist eine Datenschutzrichtlinien-URL erforderlich. Andernfalls ist Sie optional (wenn wir jedoch feststellen, dass Ihre APP eine Datenschutzrichtlinie erfordert, und Sie keine bereitgestellt haben, kann die Übermittlung der Übermittlung fehlschlagen).
 
 > [!NOTE]
-> Wenn Sie feststellen, dass Ihre Pakete [Funktionen](../packaging/app-capability-declarations.md) deklarieren, die es ermöglichen, auf personenbezogene Informationen zuzugreifen, zu übertragen oder zu erfassen, wird diese Frage als **Ja**gekennzeichnet, und Sie müssen eine Datenschutzrichtlinien-URL eingeben.
+> Wenn Sie feststellen, dass Ihre Pakete [Funktionen](../packaging/app-capability-declarations.md) deklarieren, die es ermöglichen, auf personenbezogene Informationen zuzugreifen, zu übertragen oder zu erfassen, wird diese Frage als **Ja** gekennzeichnet, und Sie müssen eine Datenschutzrichtlinien-URL eingeben.
 
 Überprüfen Sie die [App-Entwickler Vereinbarung](/legal/windows/agreements/app-developer-agreement) und die [Microsoft Store Richtlinien](/legal/windows/agreements/store-policies#105-personal-information), damit Sie bestimmen können, ob Ihre APP eine Datenschutzrichtlinie erfordert. 
 
@@ -97,7 +97,7 @@ Das Verhalten für Kunden variiert abhängig von den spezifischen Anforderungen 
      - Der Store überprüft alle Mindestanforderungen und zeigt eine Warnung für Kunden an, deren Gerät die Anforderungen nicht erfüllt.
 - **Für Kunden mit früheren Versionen von Windows 10:**
      - Für die meisten Kunden werden alle Mindest- und empfohlenen Hardwareanforderungen im Store-Eintrag angezeigt (Kunden mit älteren Versionen des Store-Clients werden jedoch nur die Mindesthardwareanforderungen angezeigt).
-     - Der Store versucht, Elemente zu überprüfen, die Sie als **Mindesthardwareanforderungen** kennzeichnen, mit Ausnahme von **Speicher**, **DirectX**, **Videospeicher**, **Grafiken** und **Prozessor**. Diese Optionen werden nicht überprüft, und Kunden mit Geräten, die diese Anforderungen nicht erfüllen, wird keine Warnung angezeigt. 
+     - Der Store versucht, Elemente zu überprüfen, die Sie als **Mindesthardwareanforderungen** kennzeichnen, mit Ausnahme von **Speicher** , **DirectX** , **Videospeicher** , **Grafiken** und **Prozessor** . Diese Optionen werden nicht überprüft, und Kunden mit Geräten, die diese Anforderungen nicht erfüllen, wird keine Warnung angezeigt. 
 - **Für Kunden mit Windows 8.x bzw. Windows Phone 8.x und früheren Versionen:**
      - Wenn Sie das Feld **Mindesthardwareanforderungen** für **Touchscreen** aktivieren, wird diese Anforderung im Store-Eintrag Ihrer App angezeigt und Kunden auf Geräten ohne Touchscreen wird eine Warnung angezeigt, wenn sie versuchen, die App herunterladen. Es werden keine weiteren Anforderungen überprüft oder in Ihrem Store-Eintrag angezeigt.
 

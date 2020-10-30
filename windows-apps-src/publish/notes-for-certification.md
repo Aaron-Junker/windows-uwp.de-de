@@ -1,50 +1,50 @@
 ---
-Description: Beim Einreichen der App haben Sie die Möglichkeit, auf der Seite Hinweise für Zertifizierung zusätzliche Informationen für Zertifizierungstester bereitzustellen. Mit diesen Informationen kann sichergestellt werden, dass die App richtig getestet wird.
-title: Hinweise für Zertifizierung
+description: Beim Einreichen der App haben Sie die Möglichkeit, auf der Seite Hinweise für Zertifizierung zusätzliche Informationen für Zertifizierungstester bereitzustellen. Mit diesen Informationen kann sichergestellt werden, dass die App richtig getestet wird.
+title: Hinweise zur Zertifizierung
 ms.assetid: 4A740A5F-F39F-4FE2-9391-EE00DB46B25A
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, UWP, Hinweise für Tester
+keywords: Windows 10, UWP, Notizen für Tester
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fb465705e2d9a9ef653fe4b31490ed2af6afe4f
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 9d1c662de1fc30bc8cb1c92778e4e015acaaf261
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63827531"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035043"
 ---
-# <a name="notes-for-certification"></a>Hinweise für Zertifizierung
+# <a name="notes-for-certification"></a>Hinweise zur Zertifizierung
 
 
-Beim Einreichen der App haben Sie die Möglichkeit, auf der Seite **Hinweise für Zertifizierung** zusätzliche Informationen für Zertifizierungstester bereitzustellen. Mit diesen Informationen kann sichergestellt werden, dass die App richtig getestet wird. Diese Hinweise sind besonders wichtig für Produkte, die Xbox Live-Dienste verwenden und/oder ein Konto für die Anmeldung erfordern. Wir können Ihre Übermittlung nicht vollständig testen, sie wird möglicherweise nicht zertifiziert.
+Beim Einreichen der App haben Sie die Möglichkeit, auf der Seite **Hinweise für Zertifizierung** zusätzliche Informationen für Zertifizierungstester bereitzustellen. Mit diesen Informationen kann sichergestellt werden, dass die App richtig getestet wird. Das einschließen dieser Notizen ist besonders wichtig für Produkte, die Xbox Live-Dienste verwenden und/oder die sich bei einem Konto anmelden müssen. Wenn die Übermittlung nicht vollständig getestet werden kann, kann es bei der Zertifizierung zu Fehlern kommen.
 
 Achten Sie darauf, folgende Informationen anzugeben (falls sie für Ihre App relevant sind):
 
--   **Testen Sie Benutzernamen und Kennwörter für Konten**: Wenn Ihre app-Benutzer bei einem Dienst oder social Media-Konto anmelden erfordert, geben Sie den Benutzernamen und das Kennwort für ein Testkonto ein. Die Zertifizierungstester verwenden dieses Konto beim Prüfen Ihrer App.
+-   **Benutzernamen und Kenn Wörter für Testkonten** : Wenn Ihre APP erfordert, dass Benutzer sich bei einem Dienst-oder Social Media-Konto anmelden, geben Sie den Benutzernamen und das Kennwort für ein Testkonto an. Die Zertifizierungstester verwenden dieses Konto beim Prüfen Ihrer App.
 
--   **Schritte aus, um den Zugriff auf ausgeblendete oder gesperrte Features**: Beschreiben Sie kurz, wie Tester zugreifen können, alle Funktionen, Modi oder Inhalte, die möglicherweise nicht offensichtlich. Apps, die scheinbar unvollständig sind, werden möglicherweise nicht zertifiziert.
+-   **Schritte zum Zugreifen auf verborgene oder gesperrte Features** : beschreiben Sie kurz, wie Tester auf Funktionen, Modi oder Inhalte zugreifen können, die möglicherweise nicht offensichtlich sind. Apps, die scheinbar unvollständig sind, werden möglicherweise nicht zertifiziert.
 
--   **Schritte zum Überprüfen, ob audio Nutzung Hintergrund**: Wenn die App das Ausführen von Audiodateien im Hintergrund zulässt, benötigen Tester u. U. eine Anleitung für den Zugriff auf dieses Feature, damit sie die ordnungsgemäße Funktionsweise sicherstellen können.
+-   **Schritte zum Überprüfen der Hintergrund Audioverwendung** : Wenn Ihre APP das Ausführen von Audiodaten im Hintergrund zulässt, benötigen Tester möglicherweise Anweisungen zum Zugreifen auf diese Funktion, damit Sie die Funktionsweise der entsprechenden Funktion bestätigen können.
 
--  **Unterschiede im Verhalten basierend auf Region oder andere Einstellungen für die Kunden erwartet**: Z. B. Wenn Kunden in verschiedenen Regionen unterschiedliche Inhalte sehen, müssen Sie dies aufgerufen werden, damit die Tester die Unterschiede verstehen und entsprechend überprüfen.
+-  **Erwartete Unterschiede im Verhalten auf der Grundlage von Regions-oder anderen Kunden Einstellungen** : Wenn z. b. Kunden in unterschiedlichen Regionen unterschiedliche Inhalte sehen, stellen Sie sicher, dass Sie die Unterschiede verstehen und die Unterschiede entsprechend überprüfen.
 
--   **Informationen zu in einem app-Update Änderungen**: Informieren Sie Tester über Änderungen, die Sie an zuvor veröffentlichten Apps vorgenommen haben. Dies gilt insbesondere, wenn Ihre Pakete unverändert bleiben und Sie nur Änderungen am App-Eintrag vornehmen (beispielsweise weitere Screenshots hinzufügen, die App-Kategorie ändern oder die Beschreibung bearbeiten).
+-   Informationen zu den Änderungen an **einem App-Update** : bei Updates für bereits veröffentlichte apps sollten Sie den Testern wissen, was sich geändert hat. Dies gilt insbesondere dann, wenn die Pakete identisch sind und Sie nur Änderungen an Ihrer APP-Liste vornehmen (z. b. das Hinzufügen von Screenshots, das Ändern der Kategorie der APP oder das Bearbeiten der Beschreibung).
 
--   **Das Datum aus, Sie die Anmerkungen zu dieser geben**: Dies ist besonders wichtig, wenn Sie im Partner Center einen Sandkasten für die Entwicklung verwenden (z. B. ist dies der Fall für beliebige Spiele, die Xbox Live integriert), seit die Anmerkungen zu dieser Eingabe beim Veröffentlichen in einer Sandbox bleibt beim Anfordern der Zertifizierung. Das angegebene Datum hilft Testern, alle temporären Probleme zu bewerten, die nicht mehr gelten.
+-   **Das Datum, an dem die Notizen eingegeben** werden: Dies ist besonders wichtig, wenn Sie eine Entwicklungs Sandbox im Partner Center verwenden (z. b. bei jedem Spiel, das in Xbox Live integriert ist), da die Hinweise, die Sie beim Veröffentlichen in einem Sandkasten eingeben, bei der Anforderungs Zertifizierung beibehalten werden. Wenn Sie das Datum sehen, können Tester auswerten, ob temporäre Probleme aufgetreten sind, die möglicherweise nicht mehr zutreffen.
 
--  **Sonstige Denken Sie, dass die Tester müssen bei der Übermittlung**
+-  **Alles, was Sie vermuten, muss von den Testern zu ihrer Übermittlung verstanden werden.**
 
 Berücksichtigen Sie beim Zusammenstellen der Informationen Folgendes:
 
--   **Die Anmerkungen zu dieser liest aus einer realen Person.** Verwenden Sie daher möglichst freundliche Formulierungen und klare, hilfreiche Anweisungen.
+-   **Diese Hinweise kann von realen Benutzern gelesen.** Verwenden Sie daher möglichst freundliche Formulierungen und klare, hilfreiche Anweisungen.
 
--   **Werden Sie die Lage versetzt, kompakte und halten Sie Anweisungen einfach zu.** Sollten weitere detaillierte Erläuterungen erforderlich sein, können Sie eine URL zu einer Seite mit weiteren Informationen angeben. Denken Sie allerdings daran, dass Ihre App-Kunden diese Hinweise nicht sehen können. Wenn Sie komplizierte Anweisungen zum Testen Ihrer App benötigen, überlegen Sie, ob die App vereinfacht werden kann, damit Ihre Kunden (und Tester) wissen, wie sie zu verwenden ist.
+-   **Formulieren Sie knapp und verständlich.** Wenn Sie wirklich etwas ausführlicher erläutern müssen, können Sie die URL in eine Seite mit weiteren Informationen einschließen. Denken Sie jedoch daran, dass Kunden Ihrer APP diese Notizen nicht sehen. Wenn Sie der Meinung sind, dass Sie komplizierte Anweisungen zum Testen Ihrer APP bereitstellen müssen, sollten Sie überprüfen, ob Ihre APP möglicherweise einfacher gestaltet werden muss, damit Kunden (und Tester) wissen, wie Sie verwendet werden.
 
--   **Dienste und externe Komponenten müssen online und verfügbar sein.** Falls Ihre App im Rahmen ihrer Funktion eine Verbindung mit einem Dienst herstellen muss, muss der Dienst online und verfügbar sein. Stellen Sie alle erforderlichen Informationen zum entsprechenden Dienst für Tester bereit, wie beispielsweise Anmeldeinformationen. Falls Ihre App während des Tests nicht auf einen erforderlichen Dienst zugreifen kann, ist die Zertifizierung u. U. nicht erfolgreich.
+-   **Dienste und externe Komponenten müssen online und verfügbar sein.** Wenn Ihre APP eine Verbindung mit einem Dienst herstellen muss, um funktionsfähig zu sein, stellen Sie sicher, dass der Dienst Online und verfügbar ist. Schließen Sie alle Informationen über den Dienst ein, der von Testern benötigt wird, z. b. Anmelde Informationen. Falls Ihre App während des Tests nicht auf einen erforderlichen Dienst zugreifen kann, ist die Zertifizierung u. U. nicht erfolgreich.
 
- 
+ 
 
- 
+ 
 
 
 

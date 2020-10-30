@@ -1,16 +1,16 @@
 ---
-Description: Richten Sie bestimmte Segmente der Kunden mit personalisierten Inhalten ein, um Engagement, Beibehaltung und Monetarisierung zu steigern.
+description: Richten Sie bestimmte Segmente der Kunden mit personalisierten Inhalten ein, um Engagement, Beibehaltung und Monetarisierung zu steigern.
 title: Verwenden gezielter Angebote zum Maximieren von Engagement und Konvertierungen
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, gezielte Angebote, Angebote, Benachrichtigungen
 ms.localizationpriority: medium
-ms.openlocfilehash: ff2c3049154ffcc18164b8084bc9e34a9121905d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 744ea22f741cd3f8a0e43d3eb88b1a7c6f4ce68b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155304"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034933"
 ---
 # <a name="use-targeted-offers-to-maximize-engagement-and-conversions"></a>Verwenden gezielter Angebote zum Maximieren von Engagement und Konvertierungen
 
@@ -32,7 +32,7 @@ Nachdem Sie diese Schritte ausgeführt haben, sehen Kunden, die Ihre APP verwend
 
 ## <a name="to-create-and-send-a-targeted-offer"></a>So erstellen und senden Sie ein Ziel Angebot
 
-1.  Erweitern Sie im [Partner Center](https://partner.microsoft.com/dashboard)im linken Navigationsmenü die Option **einbinden** , und wählen Sie dann **gezielte Angebote**aus.
+1.  Erweitern Sie im [Partner Center](https://partner.microsoft.com/dashboard)im linken Navigationsmenü die Option **einbinden** , und wählen Sie dann **gezielte Angebote** aus.
 2.  Überprüfen Sie die verfügbaren Angebote auf der Seite mit den **Ziel angeboten** . Wählen Sie **Neues Angebot** für alle Angebote erstellen aus, die Sie implementieren möchten.
 
     > [!NOTE]
@@ -40,7 +40,7 @@ Nachdem Sie diese Schritte ausgeführt haben, sehen Kunden, die Ihre APP verwend
 
 3.  Wählen Sie in der neuen Zeile, die unterhalb der verfügbaren Angebote angezeigt wird, das Produkt (app) aus, in dem das Angebot verfügbar sein soll. Wählen Sie dann das Add-on aus, das Sie dem Angebot zuordnen möchten.
 4.  Wiederholen Sie die Schritte 2 und 3, wenn Sie weitere Angebote erstellen möchten. Sie können denselben Angebotstyp mehrmals für dieselbe App implementieren, solange Sie für jedes Angebot verschiedene Add-ons auswählen. Darüber hinaus können Sie dasselbe Add-on mit mehr als einem Angebotstyp verknüpfen.
-5.  Wenn Sie die Erstellung der Angebote abgeschlossen haben, klicken Sie auf **Speichern**.
+5.  Wenn Sie die Erstellung der Angebote abgeschlossen haben, klicken Sie auf **Speichern** .
 
 Nachdem Sie Ihre Angebote implementiert haben, können Sie zur Seite " **Ziel Angebote** " im Partner Center zurückkehren, um die gesamten Konvertierungen für jedes Angebot anzuzeigen.
 

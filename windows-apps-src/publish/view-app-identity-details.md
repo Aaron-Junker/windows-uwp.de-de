@@ -1,24 +1,24 @@
 ---
-Description: Anzeigen von Details im Zusammenhang mit der eindeutigen Identität, die ihrer app durch das Microsoft Store zugewiesen ist, und erhalten eines Links zur Store-Auflistung Ihrer APP.
+description: Anzeigen von Details im Zusammenhang mit der eindeutigen Identität, die ihrer app durch das Microsoft Store zugewiesen ist, und erhalten eines Links zur Store-Auflistung Ihrer APP.
 title: Anzeigen von Details zur App-Identität
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9232acbf83659c661e1b1f3c35a7fb7ad546e819
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 11984d1aa5f8da20b529ab485615bd1f760cc2cd
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157924"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034903"
 ---
 # <a name="view-app-identity-details"></a>Anzeigen von Details zur App-Identität
 
 
 Sie können Details im Zusammenhang mit der eindeutigen Identität, die Ihrer APP zugewiesen ist, anzeigen, indem Sie die Microsoft Store auf den zugehörigen **App-Identitäts** Seiten Sie können auch einen Link zur Store-Auflistung Ihrer APP auf dieser Seite erhalten.
 
-Um diese Informationen zu suchen, navigieren Sie zu einer Ihrer Apps und erweitern im linken Navigationsmenü **App-Verwaltung**. Wählen Sie **App-Identität** aus, um diese Details anzuzeigen.
+Um diese Informationen zu suchen, navigieren Sie zu einer Ihrer Apps und erweitern im linken Navigationsmenü **App-Verwaltung** . Wählen Sie **App-Identität** aus, um diese Details anzuzeigen.
 
 
 ## <a name="values-to-include-in-your-app-package-manifest"></a>Werte, die in das App-Paket Manifest aufgenommen werden sollen
@@ -38,8 +38,8 @@ Zusammen werden durch diese Elemente die Identität Ihrer App deklariert und die
 
 Die folgenden zusätzlichen Werte beziehen sich auf die Paketfamilie der App, werden aber nicht in Ihr Manifest eingeschlossen.
 
--   **Paketfamilienname (PFN)**: Dieser Wert wird bei bestimmten Windows-APIs verwendet.
--   **Paket-SID**: Sie benötigen diesen Wert, um WNS-Benachrichtigungen an Ihre App zu senden. Weitere Informationen finden Sie unter [Übersicht über den Windows-Pushbenachrichtigungsdienst (Windows Push Notification Service, WNS)](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md).
+-   **Paketfamilienname (PFN)** : Dieser Wert wird bei bestimmten Windows-APIs verwendet.
+-   **Paket-SID** : Sie benötigen diesen Wert, um WNS-Benachrichtigungen an Ihre App zu senden. Weitere Informationen finden Sie unter [Übersicht über den Windows-Pushbenachrichtigungsdienst (Windows Push Notification Service, WNS)](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md).
 
 
 ## <a name="link-to-your-apps-listing"></a>Erstellen eines Links zum Eintrag Ihrer App
@@ -52,6 +52,6 @@ Der **Link "Store-Protokoll** " kann verwendet werden, um direkt eine Verbindung
 
 
 
- 
+ 
 
- 
+ 

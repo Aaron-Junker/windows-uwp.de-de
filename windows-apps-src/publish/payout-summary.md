@@ -1,23 +1,23 @@
 ---
-Description: In den Auszahlungs Berichten werden Details zu den Kosten angezeigt, die Sie mit ihren apps und Add-ons erworben haben. Aus ihr geht auch hervor, wann und in welcher Höhe Sie Zahlungen erhalten.
+description: In den Auszahlungs Berichten werden Details zu den Kosten angezeigt, die Sie mit ihren apps und Add-ons erworben haben. Aus ihr geht auch hervor, wann und in welcher Höhe Sie Zahlungen erhalten.
 title: Auszahlungsberichte
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.date: 08/02/2019
 ms.topic: article
 keywords: Windows 10, UWP, Auszahlungs Zusammenfassung, Statement, Payment, Gewinn, Auszahlungen, Zahlung, fortschreitet
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eab86cc1856f5ad206aa8bbceb2f2e04f5410d2
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 11d83031702a642fa21a711edfdbaff69661c853
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763110"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035023"
 ---
 # <a name="payout-reports"></a>Auszahlungsberichte
 
 Die **Auszahlungs Zusammenfassung** zeigt Ihnen Details zu dem Geld, das Sie bei Microsoft erworben haben. Aus ihr geht auch hervor, wann und in welcher Höhe Sie Zahlungen erhalten.
 
-Wenn Sie Produkte in der Azure Marketplace verkaufen, sehen Sie auch Informationen zu erfolgreichen Auszahlungen in der **Auszahlungs Zusammenfassung**. Weitere Informationen zur Bezahlung im Azure Marketplace finden Sie in den [Teilnahmerichtlinien für Microsoft Azure Marketplace](/legal/marketplace/participation-policy) und in der [Microsoft Azure Marketplace-Herausgebervereinbarung](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt).
+Wenn Sie Produkte in der Azure Marketplace verkaufen, sehen Sie auch Informationen zu erfolgreichen Auszahlungen in der **Auszahlungs Zusammenfassung** . Weitere Informationen zur Bezahlung im Azure Marketplace finden Sie in den [Teilnahmerichtlinien für Microsoft Azure Marketplace](/legal/marketplace/participation-policy) und in der [Microsoft Azure Marketplace-Herausgebervereinbarung](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt).
 
 > [!NOTE]
 > Qualifiziert für eine Auszahlung sind Beträge, die den [Zahlungsschwellenwert](payment-thresholds-methods-and-timeframes.md) von 50 US-Dollar erreichen. Weitere Informationen zum Zahlungsschwellenwert finden Sie auf dieser Seite und in der Vereinbarung für App-Entwickler.
@@ -50,7 +50,7 @@ Die Summen auf dieser Seite stehen für alle Programme, an denen Sie teilnehmen.
 | Nächste geschätzte Zahlung | Die nächste nächste Zahlung an Sie (auch wenn andere in Kürze verfügbar sind) in US-Dollar. |
 | Letzte Zahlung           | Der Betrag (in US-Dollar), der Programmname und das Programm Ihrer letzten Zahlung.           |
 | Zahlungen nach Quelle     | Die Menge der Zahlungen in US-Dollar, die durch das Programm in den letzten 12 Monaten dargestellt wird.           |
-| Payments               | Wählen Sie bezahlt oder ausstehend aus, und sortieren Sie Sie nach Ihren Wünschen. Zum Anzeigen weiterer Details einer bestimmten Zahlung wählen Sie Ansicht aus. Wenn Sie eine Kopie der Zahlungsanweisung herunterladen möchten, wählen Sie Herunterladen aus. Beachten Sie, dass es bis zu 24 Stunden dauern kann, bis die Daten für den Transaktionsverlauf angezeigt werden, sodass die zugehörigen Gewinne möglicherweise nicht sofort angezeigt werden. |
+| Zahlungen               | Wählen Sie bezahlt oder ausstehend aus, und sortieren Sie Sie nach Ihren Wünschen. Zum Anzeigen weiterer Details einer bestimmten Zahlung wählen Sie Ansicht aus. Wenn Sie eine Kopie der Zahlungsanweisung herunterladen möchten, wählen Sie Herunterladen aus. Beachten Sie, dass es bis zu 24 Stunden dauern kann, bis die Daten für den Transaktionsverlauf angezeigt werden, sodass die zugehörigen Gewinne möglicherweise nicht sofort angezeigt werden. |
 
 Wählen Sie zum Exportieren der Daten auf dieser Seite exportieren aus, und befolgen Sie dann die Anweisungen auf der Seite Daten exportieren.
 

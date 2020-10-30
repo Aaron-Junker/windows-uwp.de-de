@@ -1,17 +1,17 @@
 ---
-Description: Informationen zu den Steuerformularen, die von Microsoft ausgestellt werden, einschließlich ihres Empfängers und des Zeitpunkts der Verfügbarkeit.
+description: Informationen zu den Steuerformularen, die von Microsoft ausgestellt werden, einschließlich ihres Empfängers und des Zeitpunkts der Verfügbarkeit.
 title: Kennenlernen der von Microsoft ausgestellten IRS-Steuerformulare
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Steuern, IRS, interner Umsatz Dienst, Steuern, Einkommen steuern, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: 6493e20dbc0e38405a7cd30fc22acb9973098431
-ms.sourcegitcommit: 97002cc3e5942f43ab0f14f4ad70543a63db0c03
+ms.openlocfilehash: 05d038aca0670c31f1d8ed10250e3a905e6bfe3b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91128970"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034963"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>Kennenlernen der von Microsoft ausgestellten IRS-Steuerformulare
 
@@ -23,11 +23,11 @@ Nachfolgend erläutern wir diese Formulare eingehender, etwa, wer sie erhält un
 
 | IRS-Steuerformular | BESCHREIBUNG | Verfügbarkeit |
 |--------------|-------------|--------------|
-|1099-MISC, 1099-K | Im Zusammenhang mit Verkaufsaktivitäten und/oder Zahlungen an Sie für die Teilnahme am Microsoft Marketplace | Gedruckte Formulare werden am oder vor dem 31. **Januar**postmarkiert, und PDF-Kopien werden in [Partner Center](https://partner.microsoft.com/dashboard) (in den **Partner Center-Entwicklereinstellungen** unter **Auszahlungs-und Steuer > Auszahlungs-und Steuer profile**) gleichzeitig verfügbar sein. |
-|1042-S | Im Zusammenhang mit Zahlungen, die für Sie durchgeführt werden und die USA der Steuerpflichtige Steuer | Gedruckte Formulare werden am oder vor dem 15. **März**postmarkiert, und PDF-Kopien werden in Partner Center (in den **Partner Center-Entwicklereinstellungen** unter **Auszahlungs-und Steuer > Auszahlungs-und Steuer profile**) gleichzeitig verfügbar sein.  |
+|1099-MISC, 1099-K | Im Zusammenhang mit Verkaufsaktivitäten und/oder Zahlungen an Sie für die Teilnahme am Microsoft Marketplace | Gedruckte Formulare werden am oder vor dem 31. **Januar** postmarkiert, und PDF-Kopien werden in [Partner Center](https://partner.microsoft.com/dashboard) (in den **Partner Center-Entwicklereinstellungen** unter **Auszahlungs-und Steuer > Auszahlungs-und Steuer profile** ) gleichzeitig verfügbar sein. |
+|1042-S | Im Zusammenhang mit Zahlungen, die für Sie durchgeführt werden und die USA der Steuerpflichtige Steuer | Gedruckte Formulare werden am oder vor dem 15. **März** postmarkiert, und PDF-Kopien werden in Partner Center (in den **Partner Center-Entwicklereinstellungen** unter **Auszahlungs-und Steuer > Auszahlungs-und Steuer profile** ) gleichzeitig verfügbar sein.  |
 
 > [!NOTE]
-> Die von uns verwendete Adresse in den IRS-Steuerformularen ergibt sich aus der Adresse Ihres [Steuer Profils](setting-up-your-payout-account-and-tax-forms.md#tax-forms). Wenn sich Ihre Adresse geändert hat, aktualisieren Sie die Adresse auch in Ihrem **Steuerprofil**.
+> Die von uns verwendete Adresse in den IRS-Steuerformularen ergibt sich aus der Adresse Ihres [Steuer Profils](setting-up-your-payout-account-and-tax-forms.md#tax-forms). Wenn sich Ihre Adresse geändert hat, aktualisieren Sie die Adresse auch in Ihrem **Steuerprofil** .
 
 Die Steuerformulare werden von den folgenden Adressen an Sie gesendet:
 
@@ -129,4 +129,4 @@ Ich habe mindestens $600 Zahlungen im Zusammenhang mit den App-Verkäufen von Mi
 
 
 > [!NOTE]
-> Wenn Sie weitere Fragen oder Probleme im Zusammenhang mit **IRS-Steuerformularen**haben, erstellen Sie ein [Support Ticket](https://developer.microsoft.com/windows/support). Microsoft kann keine Fragen im Zusammenhang mit Ihren spezifischen Steuerumständen beantworten. Bei diesen Fragen wenden Sie sich an Ihre Steuerexperten.
+> Wenn Sie weitere Fragen oder Probleme im Zusammenhang mit **IRS-Steuerformularen** haben, erstellen Sie ein [Support Ticket](https://developer.microsoft.com/windows/support). Microsoft kann keine Fragen im Zusammenhang mit Ihren spezifischen Steuerumständen beantworten. Bei diesen Fragen wenden Sie sich an Ihre Steuerexperten.

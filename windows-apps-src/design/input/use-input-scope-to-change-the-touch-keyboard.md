@@ -1,5 +1,5 @@
 ---
-Description: Um Benutzern die Eingabe von Daten mit der Bildschirmtastatur oder dem Soft Input Panel (SIP) zu erleichtern, können Sie den Eingabeumfang des Textsteuerelements an die Art der Daten anpassen, die der Benutzer vermutlich eingeben wird.
+description: Um Benutzern die Eingabe von Daten mit der Bildschirmtastatur oder dem Soft Input Panel (SIP) zu erleichtern, können Sie den Eingabeumfang des Textsteuerelements an die Art der Daten anpassen, die der Benutzer vermutlich eingeben wird.
 MS-HAID: dev\_ctrl\_layout\_txt.use\_input\_scope\_to\_change\_the\_touch\_keyboard
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -9,12 +9,12 @@ template: detail.hbs
 keywords: Tastatur, Barrierefreiheit, Navigation, Fokus, Text, Eingabe, Benutzerinteraktion
 ms.date: 02/08/2017
 ms.topic: article
-ms.openlocfilehash: e6e140a1967ca3ffe7775f427ccae7a7e07c5ca6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9b274d7cafd179157571a51db1122153a33d846e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165814"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035073"
 ---
 # <a name="use-input-scope-to-change-the-touch-keyboard"></a>Verwenden des Eingabeumfangs zum Ändern der Bildschirmtastatur
 
@@ -25,9 +25,9 @@ Um Benutzern die Eingabe von Daten mit der Bildschirmtastatur oder dem Soft Inpu
 - [InputScopeNameValue](/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)
 
 
-Die Bildschirmtastatur kann für die Texteingabe verwendet werden, wenn Ihre App auf einem Gerät mit Touchscreen ausgeführt wird. Die Fingereingabe Tastatur wird aufgerufen, wenn der Benutzer auf ein bearbeitbares Eingabefeld (z. b. ein **[Textfeld](/uwp/api/Windows.UI.Xaml.Controls.TextBox)** oder **[richeditbox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)**) tippt. Sie können es Benutzern viel schneller und einfacher machen, Daten in Ihre APP einzugeben, indem Sie den *Eingabebereich* des Text-Steuer Elements so festlegen, dass es mit der Art der Daten, die Sie für den Benutzer erwarten, entspricht. Der Eingabeumfang bietet dem System einen Hinweis auf die Art von Text, die vermutlich über das Steuerelement eingegeben wird. Auf diese Weise kann das System ein spezielles Bildschirmtastaturlayout für den Eingabetyp bereitstellen.
+Die Bildschirmtastatur kann für die Texteingabe verwendet werden, wenn Ihre App auf einem Gerät mit Touchscreen ausgeführt wird. Die Fingereingabe Tastatur wird aufgerufen, wenn der Benutzer auf ein bearbeitbares Eingabefeld (z. b. ein **[Textfeld](/uwp/api/Windows.UI.Xaml.Controls.TextBox)** oder **[richeditbox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)** ) tippt. Sie können es Benutzern viel schneller und einfacher machen, Daten in Ihre APP einzugeben, indem Sie den *Eingabebereich* des Text-Steuer Elements so festlegen, dass es mit der Art der Daten, die Sie für den Benutzer erwarten, entspricht. Der Eingabeumfang bietet dem System einen Hinweis auf die Art von Text, die vermutlich über das Steuerelement eingegeben wird. Auf diese Weise kann das System ein spezielles Bildschirmtastaturlayout für den Eingabetyp bereitstellen.
 
-Wenn z. b. ein Textfeld nur für die Eingabe einer vierstelligen PIN verwendet wird, legen Sie die [**InputScope**](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) -Eigenschaft auf **Number**fest. Dadurch wird das System angewiesen, die Zehnertastatur anzuzeigen, was dem Benutzer die Eingabe der PIN erleichtert.
+Wenn z. b. ein Textfeld nur für die Eingabe einer vierstelligen PIN verwendet wird, legen Sie die [**InputScope**](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) -Eigenschaft auf **Number** fest. Dadurch wird das System angewiesen, die Zehnertastatur anzuzeigen, was dem Benutzer die Eingabe der PIN erleichtert.
 
 > [!IMPORTANT]
 > - Diese Informationen gelten nur für das SIP. Sie gelten nicht für Hardwaretastaturen oder die Bildschirmtastatur, die in den Windows-Optionen für erleichterte Bedienung verfügbar ist.
@@ -35,7 +35,7 @@ Wenn z. b. ein Textfeld nur für die Eingabe einer vierstelligen PIN verwendet w
 
 ## <a name="changing-the-input-scope-of-a-text-control"></a>Ändern des Eingabeumfangs eines Textsteuerelements
 
-Die in einer App verfügbaren Eingabeumfangoptionen sind Member der **[InputScopeNameValue](/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)**-Enumeration. Sie können die **InputScope**-Eigenschaft eines **[TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox)**- oder **[RichEditBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)**-Elements auf einen dieser Werte festlegen.
+Die in einer App verfügbaren Eingabeumfangoptionen sind Member der **[InputScopeNameValue](/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)** -Enumeration. Sie können die **InputScope** -Eigenschaft eines **[TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox)** - oder **[RichEditBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)** -Elements auf einen dieser Werte festlegen.
 
 > [!IMPORTANT]
 > Die **[InputScope](/uwp/api/windows.ui.xaml.controls.passwordbox.inputscope)** -Eigenschaft in **[PasswordBox](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)** unterstützt nur die **Kennwort** -und **numericpin** -Werte. Andere Werte werden ignoriert.
@@ -143,10 +143,10 @@ In diesen Tabellen werden die Windows-SIP-Layouts (Soft Input Panel) für allgem
 Die standardmäßige Windows-Touchscreen-Tastatur.
 
 ![Standardmäßige Windows-Bildschirmtastatur](images/input-scopes/default.png)
-- Rechtschreibprüfung: aktiviert, wenn **isspellcheckaktivierte**  =  **true**ist, deaktiviert, wenn **isspellcheckaktivierte**  =  **false** ist.
-- Automatische Korrektur: aktiviert, wenn **isspellcheckaktivierte**  =  **true**ist, deaktiviert, wenn **isspellcheckaktivierte**  =  **false** ist.
-- Automatische groß Schreibung: aktiviert, wenn **isrechtschreib checkaktiviert**  =  **true**ist, deaktiviert, wenn **isspellcheckaktivierte**  =  **false** ist.
-- Text Vorhersage: aktiviert, wenn **istextvorhertionaktivierte**  =  **true**ist, deaktiviert, wenn **istextvorhertionaktivierte**  =  **false**
+- Rechtschreibprüfung: aktiviert, wenn **isspellcheckaktivierte**  =  **true** ist, deaktiviert, wenn **isspellcheckaktivierte**  =  **false** ist.
+- Automatische Korrektur: aktiviert, wenn **isspellcheckaktivierte**  =  **true** ist, deaktiviert, wenn **isspellcheckaktivierte**  =  **false** ist.
+- Automatische groß Schreibung: aktiviert, wenn **isrechtschreib checkaktiviert**  =  **true** ist, deaktiviert, wenn **isspellcheckaktivierte**  =  **false** ist.
+- Text Vorhersage: aktiviert, wenn **istextvorhertionaktivierte**  =  **true** ist, deaktiviert, wenn **istextvorhertionaktivierte**  =  **false**
 
 ### <a name="currencyamountandsymbol"></a>CurrencyAmountAndSymbol
 
@@ -168,8 +168,8 @@ Das standardmäßige Tastaturlayout für Ziffern und Sonderzeichen.
 
 ![Windows-Bildschirmtastatur für URLs](images/input-scopes/url.png)
 
-- Enthält die Tasten **.com** und ![Los-Taste](images/input-scopes/kbdgokey.png) (Los). Halten Sie die com-Taste gedrückt, um zusätzliche Optionen anzuzeigen (**. org**, **.net**und regionsspezifische Suffixe) **.**
-- Enthält die **Schlüssel:**, **-** und **/** .
+- Enthält die Tasten **.com** und ![Los-Taste](images/input-scopes/kbdgokey.png) (Los). Halten Sie die com-Taste gedrückt, um zusätzliche Optionen anzuzeigen ( **. org** , **.net** und regionsspezifische Suffixe) **.**
+- Enthält die **Schlüssel:** , **-** und **/** .
 - Rechtschreibprüfung: Standardmäßig deaktiviert, kann aktiviert werden
 - Autokorrektur: Standardmäßig deaktiviert, kann aktiviert werden
 - Automatische Großschreibung: Standardmäßig deaktiviert, kann aktiviert werden
@@ -181,7 +181,7 @@ Das standardmäßige Tastaturlayout für Ziffern und Sonderzeichen.
 `<TextBox InputScope="EmailSmtpAddress"/>`
 
 ![Windows-Bildschirmtastatur für E-Mail-Adressen](images/input-scopes/emailsmtpaddress.png)
-- Schließt die **@** Schlüssel und **. com** ein. Halten Sie die com-Taste gedrückt, um zusätzliche Optionen anzuzeigen (**. org**, **.net**und regionsspezifische Suffixe) **.**
+- Schließt die **@** Schlüssel und **. com** ein. Halten Sie die com-Taste gedrückt, um zusätzliche Optionen anzuzeigen ( **. org** , **.net** und regionsspezifische Suffixe) **.**
 - Enthält die **_** -und- **-** Schlüssel.
 - Rechtschreibprüfung: Standardmäßig deaktiviert, kann aktiviert werden
 - Autokorrektur: Standardmäßig deaktiviert, kann aktiviert werden
@@ -209,7 +209,7 @@ Das standardmäßige Tastaturlayout für Ziffern und Sonderzeichen.
 - Automatische Großschreibung: Immer deaktiviert
 - Textvorhersage: Standardmäßig aktiviert, kann deaktiviert werden
 
-### <a name="search"></a>Suchen,
+### <a name="search"></a>Suche
 
 `<TextBox InputScope="Search"/>`
 

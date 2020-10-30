@@ -1,5 +1,5 @@
 ---
-Description: Dieses Thema beschreibt die Verwendung von Kontaktgeometrie zur Bestimmung von Touchzielen sowie bewährte Methoden für Ziele in Windows-Runtime-Apps.
+description: Dieses Thema beschreibt die Verwendung von Kontaktgeometrie zur Bestimmung von Touchzielen sowie bewährte Methoden für Ziele in Windows-Runtime-Apps.
 title: Zielgruppenadressierung
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 64142b1ec35040ded890d837245ecae36e03fdc1
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: a8b6113294d3f3c0c98946f0fed407e36de8a563
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216983"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035063"
 ---
 # <a name="guidelines-for-touch-targets"></a>Richtlinien für Touch-Ziele
 
@@ -25,7 +25,7 @@ Alle UWP-Steuerelemente wurden mit standardmäßigen Berührungs Zielgrößen un
 
 In diesem Thema werden diese Standardverhalten beschrieben, damit Sie Ihre APP für maximale Nutzbarkeit mithilfe von Platt Form Steuerelementen und benutzerdefinierten Steuerelementen entwerfen können (falls Ihre APP Sie benötigt).
 
-> **Wichtige APIs**: [**Windows. UI. Core**](/uwp/api/Windows.UI.Core), [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Windows. UI. XAML. Input**](/uwp/api/Windows.UI.Xaml.Input)
+> **Wichtige APIs** : [**Windows. UI. Core**](/uwp/api/Windows.UI.Core), [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Windows. UI. XAML. Input**](/uwp/api/Windows.UI.Xaml.Input)
 
 ## <a name="fluent-standard-sizing"></a>Standard-Größenanpassung von Fluent
 
@@ -38,7 +38,7 @@ Die *Standard-Größenanpassung von Fluent* wurde entwickelt, um ein Gleichgewic
 
 ## <a name="fluent-compact-sizing"></a>Compact-Größenanpassung von Fluent
 
-Anwendungen können ein höheres Maß an Informationsdichte mit der *fließenden kompakten Größe*anzeigen. Bei der kompakten Größenanpassung werden Benutzeroberflächen Elemente an ein 32 x 32-EPX-Ziel angepasst, sodass Benutzeroberflächen Elemente an einem engeren Raster ausgerichtet und entsprechend der Skalierung auf Systemebene entsprechend skaliert werden können.
+Anwendungen können ein höheres Maß an Informationsdichte mit der *fließenden kompakten Größe* anzeigen. Bei der kompakten Größenanpassung werden Benutzeroberflächen Elemente an ein 32 x 32-EPX-Ziel angepasst, sodass Benutzeroberflächen Elemente an einem engeren Raster ausgerichtet und entsprechend der Skalierung auf Systemebene entsprechend skaliert werden können.
 
 ### <a name="examples"></a>Beispiele
 

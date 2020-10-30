@@ -1,5 +1,5 @@
 ---
-Description: Mit einer Verschiebung oder einem Bildlauf können Benutzer innerhalb einer einzelnen Ansicht navigieren, um den Inhalt der Ansicht anzuzeigen, der nicht in den Anzeigebereich passt. Beispiele für Ansichten sind die Ordnerstruktur eines Computers, eine Dokumentbibliothek oder ein Fotoalbum.
+description: Mit einer Verschiebung oder einem Bildlauf können Benutzer innerhalb einer einzelnen Ansicht navigieren, um den Inhalt der Ansicht anzuzeigen, der nicht in den Anzeigebereich passt. Beispiele für Ansichten sind die Ordnerstruktur eines Computers, eine Dokumentbibliothek oder ein Fotoalbum.
 title: Verschieben
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
@@ -8,19 +8,19 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 596a9f2f3f234ba90b799eae982523c3a9de9732
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 0a989a6a96ac42b1eb790b6ac0dd223bd55b1bb8
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749936"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035123"
 ---
 # <a name="guidelines-for-panning"></a>Anleitungen für das Verschieben
 
 
 Mit einer Verschiebung oder einem Bildlauf können Benutzer innerhalb einer einzelnen Ansicht navigieren, um den Inhalt der Ansicht anzuzeigen, der nicht in den Anzeigebereich passt. Beispiele für Ansichten sind die Ordnerstruktur eines Computers, eine Dokumentbibliothek oder ein Fotoalbum.
 
-> **Wichtige APIs**: [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Windows. UI. XAML. Input**](/uwp/api/Windows.UI.Xaml.Input)
+> **Wichtige APIs** : [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Windows. UI. XAML. Input**](/uwp/api/Windows.UI.Xaml.Input)
 
 
 ## <a name="dos-and-donts"></a>Empfehlungen für die Vorgehensweise
@@ -32,9 +32,9 @@ Mit einer Verschiebung oder einem Bildlauf können Benutzer innerhalb einer einz
 
 -   Zeigen Sie Panel-und Bild Lauf leisten an, um Adressen und Größen Hinweise bereitzustellen. Blenden Sie diese aus, wenn Sie eine benutzerdefinierte Navigationsfunktion bereitstellen.
 
-    **Hinweis**    Im Gegensatz zu Standard Scrollleisten sind schwenken-Indikatoren rein informativ. Sie werden nicht für Eingabegeräte verfügbar gemacht und können in keiner Weise geändert werden.
+    **Hinweis**  Anders als standardmäßige Bildlaufleisten haben Verschiebungsindikatoren rein informativen Charakter. Sie werden nicht für Eingabegeräte verfügbar gemacht und können in keiner Weise geändert werden.
 
-     
+     
 
 **Verschiebung entlang einer Achse (eindimensionaler Überlauf)**
 
@@ -115,9 +115,9 @@ Abhängig vom erkannten Eingabegerät sind zwei Anzeigemodi für die Verschiebun
 -   Verschiebungsanzeigen für Fingereingabe.
 -   Bildlaufleisten für andere Eingabegeräte wie Maus, Touchpad, Tastatur und Eingabestift.
 
-**Hinweis**    Schwenk Indikatoren werden nur angezeigt, wenn sich der Berührungs Kontakt innerhalb des zwischen Raum baren Bereichs befindet. Ebenso ist die Bildlaufleiste nur sichtbar, wenn sich der Mauszeiger, Eingabe-/Zeichenstiftcursor oder Tastaturfokus im bildlauffähigen Bereich befindet.
+**Hinweis** Verschiebungsanzeigen sind nur sichtbar, wenn der Berührungskontakt innerhalb des verschiebbaren Bereichs erfolgt. Ebenso ist die Bildlaufleiste nur sichtbar, wenn sich der Mauszeiger, Eingabe-/Zeichenstiftcursor oder Tastaturfokus im bildlauffähigen Bereich befindet.
 
- 
+ 
 
 **Verschiebungsindikatoren** Verschiebungsindikatoren sind mit dem Bildlauffeld auf einer Bildlaufleiste vergleichbar. Sie zeigen das Verhältnis zwischen dem angezeigten Inhalt und dem gesamten verschiebbaren Bereich und die relative Position des angezeigten Inhalts im verschiebbaren Bereich an.
 

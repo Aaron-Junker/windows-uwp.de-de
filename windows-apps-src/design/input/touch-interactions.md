@@ -1,5 +1,5 @@
 ---
-Description: Erstellen Sie Windows-apps mit intuitiver und ausgeprägter Benutzerinteraktion, die für die Berührungs Optimierung optimiert sind, aber funktional auf Eingabegeräten einheitlich sind.
+description: Erstellen Sie Windows-apps mit intuitiver und ausgeprägter Benutzerinteraktion, die für die Berührungs Optimierung optimiert sind, aber funktional auf Eingabegeräten einheitlich sind.
 title: Toucheingabe-Interaktionen
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
@@ -8,12 +8,12 @@ keywords: Touch, Zeiger, Eingabe, Benutzerinteraktion
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 302a1f39d85902b229642b60f483b40f51209a72
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 614d8c5340100ca5ba666493ccb23ec4d8ca8498
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750386"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035053"
 ---
 # <a name="touch-interactions"></a>Toucheingabe-Interaktionen
 
@@ -22,7 +22,7 @@ Gehen Sie beim Entwerfen Ihrer App davon aus, dass die Benutzer in erster Linie 
 
 Bedenken Sie dabei jedoch, dass eine für Toucheingaben optimierte Benutzeroberfläche einer herkömmlichen Benutzeroberfläche nicht in jedem Fall überlegen ist. Beide haben Vor- und Nachteile, die je nach Technologie oder Anwendung unterschiedlich sein können. Bei der Umstellung auf eine Touch-First-Benutzeroberfläche ist es wichtig, die wesentlichen Unterschiede zwischen Touch, Touchpad, Stift/Stift, Maus und Tastatureingaben zu verstehen.
 
-> **Wichtige APIs**: [**Windows. UI. XAML. Input**](/uwp/api/Windows.UI.Xaml.Input), [**Windows. UI. Core**](/uwp/api/Windows.UI.Core), [**Windows. Devices. Input**](/uwp/api/Windows.Devices.Input)
+> **Wichtige APIs** : [**Windows. UI. XAML. Input**](/uwp/api/Windows.UI.Xaml.Input), [**Windows. UI. Core**](/uwp/api/Windows.UI.Core), [**Windows. Devices. Input**](/uwp/api/Windows.Devices.Input)
 
 
 Viele Geräte verfügen über Multitouch-Bildschirme, die eine Eingabe mit einem oder mehreren Fingern (oder Berührungskontakten) unterstützen. Die Berührungskontakte und ihre Bewegung werden als Touchbewegungen und Manipulationen interpretiert, um verschiedene Benutzerinteraktionen zu unterstützen.
@@ -75,7 +75,7 @@ In der folgenden Tabelle werden einige der Unterschiede zwischen Eingabegeräten
 > [!NOTE]
 > Die indirekte Eingabe hat den Vorteil, dass sie über 25 Jahre optimiert wurde. Features wie durch Zeigen ausgelöste QuickInfos wurden als Lösung für die Erforschung der UI speziell für die Eingabe über Touchpad, Maus, Zeichen- oder Eingabestift und Tastatur entworfen. Solche UI-Funktionen wurden neu entworfen, um der umfassenden Toucheingabefunktion gerecht zu werden, ohne die Benutzererfahrung auf den anderen Geräten zu beeinträchtigen.
 
- 
+ 
 
 ## <a name="use-touch-feedback"></a>Verwenden von Feedback für die Fingereingabe
 
@@ -111,7 +111,7 @@ Berücksichtigen Sie beim Design ungenaue Interaktionen, indem Sie Folgendes ver
 -   Andockpunkte, die bei Interaktionen der Benutzer mit dem Inhalt das Anhalten an der gewünschten Position erleichtern.
 -   Direktionale "Rails", die beim vertikalen oder horizontalen Schwenken hilfreich sein können, auch wenn die Hand in einem kleinen Bogen bewegt wird. Weitere Informationen finden Sie unter [Richtlinien für das Schwenken](guidelines-for-panning.md).
 
-## <a name="occlusion"></a>Verdeckung
+## <a name="occlusion"></a>Okklusion
 
 Okklusion durch Finger und Hand können Sie durch Folgendes vermeiden:
 
@@ -200,7 +200,7 @@ Hier sehen Sie den grundlegenden Satz von Touchgesten, die von der UWP unterstü
 | Zusammendrücken          | Manipulationsgeste | Mindestens zwei Finger berühren den Bildschirm und bewegen sich dichter zusammen.                         |
 | Stretch        | Manipulationsgeste | Mindestens zwei Finger berühren den Bildschirm und bewegen sich weiter auseinander.                           |
 
- 
+ 
 
 <!-- mijacobs: Removing for now. We don't have a real page to link to yet. 
 For more info about gestures, manipulations, and interactions, see [Custom user interactions](custom-user-input-portal.md).
@@ -232,7 +232,7 @@ Nachfolgend finden Sie eine Liste der Zeigerereignisse und der jeweiligen Ereign
 | [**PointerWheelChanged**](/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)   | Tritt auf, wenn sich der Delta Wert eines Mausrades ändert und wenn das Touchpad fixiert wird.         |
 | [**Pointerroutedebug-Elemente**](/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) | Stellt Daten für alle Zeigerereignisse bereit.                         |
 
- 
+ 
 
 Das folgende Beispiel zeigt, wie die Ereignisse [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed), [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) und [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited) verwendet werden, um eine Tippinteraktion für ein [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Objekt zu behandeln ist.
 
@@ -431,7 +431,7 @@ Nachfolgend finden Sie eine Liste der Manipulationsereignisse und der jeweiligen
 | [**ManipulationVelocities**](/uwp/api/Windows.UI.Input.ManipulationVelocities)                                              | Beschreibt die Geschwindigkeit, mit der die Bearbeitung stattfindet.                                                                                         |
 | [**ManipulationCompletedRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs)             | Stellt Daten für das [**ManipulationCompleted**](/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)-Ereignis bereit.                                       |
 
- 
+ 
 
 Eine Bewegung setzt sich aus einer Reihe von Bearbeitungsereignissen zusammen. Jede Geste beginnt mit einem [**ManipulationStarted**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted) (z. B., wenn ein Benutzer den Bildschirm berührt).
 
@@ -440,7 +440,7 @@ Anschließend wird mindestens ein [**ManipulationDelta**](/uwp/api/windows.ui.xa
 > [!NOTE]
 > Wenn Sie nicht über einen Touchscreen verfügen, können Sie den Manipulations Ereignis Code im Simulator mithilfe einer Maus-und Mausrad Schnittstelle testen.
 
- 
+ 
 
 Das folgende Beispiel zeigt, wie die [**ManipulationDelta**](/uwp/api/windows.ui.xaml.uielement.manipulationdelta)-Ereignisse verwendet werden, um eine Ziehen-Interaktion für ein [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) zu behandeln und es über den Bildschirm zu bewegen.
 
@@ -454,7 +454,7 @@ Zuerst wird ein [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) mit d
 </Grid>
 ```
 
-Anschließend wird ein globales [**TranslateTransform**](/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)-Element mit dem Namen `dragTranslation` erstellt, mit dem das [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Element übersetzt wird. Ein [**ManipulationDelta**](/uwp/api/windows.ui.xaml.uielement.manipulationdelta) -Ereignislistener ist für das **Rechteck**angegeben und `dragTranslation` wird der [**RenderTransform**](/uwp/api/windows.ui.xaml.uielement.rendertransform) des **Rechtecks**hinzugefügt.
+Anschließend wird ein globales [**TranslateTransform**](/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)-Element mit dem Namen `dragTranslation` erstellt, mit dem das [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Element übersetzt wird. Ein [**ManipulationDelta**](/uwp/api/windows.ui.xaml.uielement.manipulationdelta) -Ereignislistener ist für das **Rechteck** angegeben und `dragTranslation` wird der [**RenderTransform**](/uwp/api/windows.ui.xaml.uielement.rendertransform) des **Rechtecks** hinzugefügt.
 
 ```cpp
 // Global translation transform used for changing the position of 

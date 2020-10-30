@@ -1,21 +1,21 @@
 ---
-Description: Wenn Sie das Erstellen der APP-Übermittlung abgeschlossen haben und auf an den Store senden klicken, wird die Übermittlung in den Zertifizierungs Schritt eingegeben.
+description: Wenn Sie das Erstellen der APP-Übermittlung abgeschlossen haben und auf an den Store senden klicken, wird die Übermittlung in den Zertifizierungs Schritt eingegeben.
 title: Der App-Zertifizierungsprozess
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Veröffentlichung, Vorverarbeitung, Zertifizierung, Freigabe, Ausstehend, übermitteln, veröffentlichen, Status, Zeit
 ms.localizationpriority: medium
-ms.openlocfilehash: d88d8deeb467f186f120fb8c1e579d5c9222aaf1
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: 414a182074f03256c3c66492eab21e574e1a960c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253801"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034983"
 ---
 # <a name="the-app-certification-process"></a>Der App-Zertifizierungsprozess
 
-Wenn Sie das Erstellen der APP-Übermittlung abgeschlossen haben und **auf an den Store senden**klicken, wird die Übermittlung in den Zertifizierungs Schritt eingegeben. Dieser Vorgang ist in der Regel innerhalb weniger Stunden abgeschlossen, kann in Einzelfällen aber bis zu drei Arbeitstage dauern. Nachdem die Übermittlung der Zertifizierung weitergeleitet wurde, kann es bis zu 24 Stunden dauern, bis Kunden das Auflisten der APP für eine neue Übermittlung oder eine aktualisierte Übermittlung mit Änderungen an den Paketen sehen. Wenn das Update nur die Details der Liste speichert, wird der Veröffentlichungsprozess in weniger als einer Stunde abgeschlossen.  Sie werden benachrichtigt, wenn ihre Übermittlung veröffentlicht wird, und der Status der APP im Dashboard befindet sich **im Store**.
+Wenn Sie das Erstellen der APP-Übermittlung abgeschlossen haben und **auf an den Store senden** klicken, wird die Übermittlung in den Zertifizierungs Schritt eingegeben. Dieser Vorgang ist in der Regel innerhalb weniger Stunden abgeschlossen, kann in Einzelfällen aber bis zu drei Arbeitstage dauern. Nachdem die Übermittlung der Zertifizierung weitergeleitet wurde, kann es bis zu 24 Stunden dauern, bis Kunden das Auflisten der APP für eine neue Übermittlung oder eine aktualisierte Übermittlung mit Änderungen an den Paketen sehen. Wenn das Update nur die Details der Liste speichert, wird der Veröffentlichungsprozess in weniger als einer Stunde abgeschlossen.  Sie werden benachrichtigt, wenn ihre Übermittlung veröffentlicht wird, und der Status der APP im Dashboard befindet sich **im Store** .
 
 ## <a name="preprocessing"></a>Preprocessing (Vorverarbeitung)
 
@@ -31,13 +31,13 @@ Während dieser Phase werden mehrere Tests durchgeführt:
 
 Nach Abschluss des Zertifizierungsprozesses erhalten Sie einen Zertifizierungsbericht, der Aufschluss darüber gibt, ob Ihre App die Zertifizierung bestanden hat. War die Zertifizierung nicht erfolgreich, ist im Bericht angegeben, welcher Test nicht bestanden bzw. welche [Richtlinie](store-policies.md) nicht erfüllt wurde. Nachdem Sie das Problem behoben haben, können Sie eine neue Einreichung für Ihre App erstellen, um den Zertifizierungsprozess erneut einzuleiten.
 
-## <a name="release"></a>Release
+## <a name="release"></a>Freigabe
 
 Wenn Ihre APP die Zertifizierung übergibt, ist Sie zum **Veröffentlichungs** Prozess bereit.
 
 - Wenn Sie angegeben haben, dass ihre Übermittlung so bald wie möglich veröffentlicht werden soll (Standardoption), beginnt der Veröffentlichungsprozess sofort.
 - Wenn Sie die APP zum ersten Mal veröffentlicht haben und im Abschnitt " [Zeitplan](configure-precise-release-scheduling.md#release) " ein **Veröffentlichungsdatum** angegeben haben, wird die APP gemäß ihrer **Veröffentlichungsdatums** Auswahl verfügbar.
-- Wenn Sie die [Option zum Veröffentlichen von Optionen](manage-submission-options.md#publishing-hold-options) verwendet haben, um anzugeben, dass Sie bis zu einem bestimmten Datum nicht freigegeben werden soll, warten wir bis zum Beginn des Veröffentlichungs Vorgangs, es sei denn, Sie wählen das **Veröffentlichungsdatum ändern**aus.
+- Wenn Sie die [Option zum Veröffentlichen von Optionen](manage-submission-options.md#publishing-hold-options) verwendet haben, um anzugeben, dass Sie bis zu einem bestimmten Datum nicht freigegeben werden soll, warten wir bis zum Beginn des Veröffentlichungs Vorgangs, es sei denn, Sie wählen das **Veröffentlichungsdatum ändern** aus.
 - Wenn Sie die Option zum Veröffentlichen von [Optionen](manage-submission-options.md#publishing-hold-options) verwendet haben, um anzugeben, dass Sie die Übermittlung manuell veröffentlichen möchten, wird der Veröffentlichungsprozess erst gestartet, wenn Sie **Jetzt veröffentlichen** auswählen (oder wählen Sie **Veröffentlichungsdatum ändern** und ein bestimmtes Datum auswählen).
 
 
@@ -47,20 +47,20 @@ Die Pakete Ihrer App werden digital signiert, damit sie nach ihrer Veröffentlic
 
 Bei neuen apps und Updates, die Änderungen an den Paketen der APP einschließen, wird der Veröffentlichungs Vorgang innerhalb von 24 Stunden abgeschlossen. Für Updates, die nur Optionen wie Details zum Store auflisten ändern, aber nicht die Pakete der App ändern, dauert der Veröffentlichungs Vorgang weniger als eine Stunde.
 
-Während Ihre APP in der Veröffentlichungs Phase enthalten ist, können Sie den Link **Details anzeigen** in der Spalte Status für die Übermittlung Ihrer APP informieren, wenn Ihre neuen Pakete und Store-Listen Details für Kunden auf jeder der unterstützten Betriebssystemversionen verfügbar sind. Schritte, die noch nicht abgeschlossen sind, werden **Ausstehend**angezeigt. Ihre APP bleibt in der Veröffentlichungs Phase, bis der Prozess abgeschlossen ist. das bedeutet, dass die neuen Pakete und/oder Auflistungs Details allen potenziellen Kunden Ihrer APP zur Verfügung stehen.
+Während Ihre APP in der Veröffentlichungs Phase enthalten ist, können Sie den Link **Details anzeigen** in der Spalte Status für die Übermittlung Ihrer APP informieren, wenn Ihre neuen Pakete und Store-Listen Details für Kunden auf jeder der unterstützten Betriebssystemversionen verfügbar sind. Schritte, die noch nicht abgeschlossen sind, werden **Ausstehend** angezeigt. Ihre APP bleibt in der Veröffentlichungs Phase, bis der Prozess abgeschlossen ist. das bedeutet, dass die neuen Pakete und/oder Auflistungs Details allen potenziellen Kunden Ihrer APP zur Verfügung stehen.
 
 ## <a name="in-the-store"></a>Im Store 
 
-Nach erfolgreicher Absolvierung der obigen Schritte ändert sich der Status der Übermittlung von **Veröffentlichung** in **Im Store**. Ihre Übermittlung ist dann in der Microsoft Store verfügbar, die Kunden herunterladen können (es sei denn, Sie haben eine andere [auffindbarkeits](choose-visibility-options.md#discoverability) Option ausgewählt). 
+Nach erfolgreicher Absolvierung der obigen Schritte ändert sich der Status der Übermittlung von **Veröffentlichung** in **Im Store** . Ihre Übermittlung ist dann in der Microsoft Store verfügbar, die Kunden herunterladen können (es sei denn, Sie haben eine andere [auffindbarkeits](choose-visibility-options.md#discoverability) Option ausgewählt). 
 
 > [!NOTE]
 > Wir führen auch die Überprüfung von apps nach der Veröffentlichung durch, damit wir potenzielle Probleme erkennen und sicherstellen können, dass Ihre APP allen [Microsoft Store Richtlinien](store-policies.md)entspricht. Falls Probleme gefunden werden, werden Sie benachrichtigt, dass ein Problem aufgetreten ist und wie Sie es ggf. beheben können, oder dass die App aus dem Store entfernt wurde.
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

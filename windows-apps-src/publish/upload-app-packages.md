@@ -1,17 +1,17 @@
 ---
-Description: Auf der Seite Pakete können Sie alle Paketdateien (. appxupload,. AppX,. appxbundle und/oder. xap) für die von Ihnen übermittelt App hochladen.
+description: Auf der Seite Pakete können Sie alle Paketdateien (. appxupload,. AppX,. appxbundle und/oder. xap) für die von Ihnen übermittelt App hochladen.
 title: Hochladen von App-Paketen
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Pakete, Upload, Hochladen von Paketen
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b4fc0c9dfeed1183a1653b525d0f8cc8a62a4c1
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: c2e72a767b9d50f81fba548531965d75d4ce0b56
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220213"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034953"
 ---
 # <a name="upload-app-packages"></a>Hochladen von App-Paketen
 
@@ -44,9 +44,9 @@ Weitere Informationen finden Sie unter [Verfügbarkeit von Gerätefamilien](devi
 
 ## <a name="package-details"></a>Paketdetails
 
-Die hochgeladenen Pakete sind hier aufgelistet, gruppiert nach Ziel Betriebssystem. Name, Version und Architektur des Pakets werden angezeigt. Klicken Sie auf **Details anzeigen**, um weitere Informationen zu erhalten, z. B. die unterstützten Sprachen, die App-Funktionen oder die Dateigröße der einzelnen Pakete.
+Die hochgeladenen Pakete sind hier aufgelistet, gruppiert nach Ziel Betriebssystem. Name, Version und Architektur des Pakets werden angezeigt. Klicken Sie auf **Details anzeigen** , um weitere Informationen zu erhalten, z. B. die unterstützten Sprachen, die App-Funktionen oder die Dateigröße der einzelnen Pakete.
 
-Wenn Sie ein Paket aus der Einsendung entfernen müssen, klicken Sie dazu im Abschnitt **Details** des Pakets unten auf den Link **Entfernen**.
+Wenn Sie ein Paket aus der Einsendung entfernen müssen, klicken Sie dazu im Abschnitt **Details** des Pakets unten auf den Link **Entfernen** .
 
 
 ## <a name="removing-redundant-packages"></a>Entfernen redundanter Pakete
@@ -69,7 +69,7 @@ Wenn die Übermittlung ein Update für eine bereits veröffentlichte App ist, wi
 
 Weitere Informationen finden Sie unter [Herunterladen und Installieren von Paketupdates für Ihre App](../packaging/self-install-package-updates.md).
 
- 
+ 
 
 
 

@@ -1,6 +1,6 @@
 ---
 title: Interaktionen über Anvisieren
-Description: Erfahren Sie, wie Sie Ihre Windows-apps entwerfen und optimieren, um den Benutzern, die sich auf die Überblicks Eingaben von Eye-und Head-Tracker stützen, eine optimale Leistung zu bieten
+description: Erfahren Sie, wie Sie Ihre Windows-apps entwerfen und optimieren, um den Benutzern, die sich auf die Überblicks Eingaben von Eye-und Head-Tracker stützen, eine optimale Leistung zu bieten
 label: Gaze interactions
 template: detail.hbs
 keywords: Blick, Augen Verfolgung, Kopf Nachverfolgung, Blickpunkt, Eingabe, Benutzerinteraktion, Barrierefreiheit, Nutzbarkeit
@@ -11,12 +11,12 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fa08cb65afc46069e48263344270e1e3b1a3d5f5
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 7799c95642b412d67b69c87dba54bf5c68ab9761
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217023"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035133"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-windows-apps"></a>Blick Interaktionen und Eye Tracking in Windows-apps
 
@@ -27,7 +27,7 @@ Unterstützung für die Nachverfolgung der Ansicht, Aufmerksamkeit und Präsenz 
 > [!NOTE]
 > Informationen zu Blick Eingaben in [Windows Mixed Reality](/windows/mixed-reality/)finden Sie unter [Blick](/windows/mixed-reality/gaze).
 
-**Wichtige APIs**: [Windows. Devices. Input. Preview](/uwp/api/windows.devices.input.preview), [gazedevicepreview](/uwp/api/windows.devices.input.preview.gazedevicepreview), [gazepointpreview](/uwp/api/windows.devices.input.preview.gazepointpreview), [gazeinputsourcepreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
+**Wichtige APIs** : [Windows. Devices. Input. Preview](/uwp/api/windows.devices.input.preview), [gazedevicepreview](/uwp/api/windows.devices.input.preview.gazedevicepreview), [gazepointpreview](/uwp/api/windows.devices.input.preview.gazepointpreview), [gazeinputsourcepreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
 
 ## <a name="overview"></a>Übersicht
 
@@ -36,7 +36,7 @@ Die Anzeige von Blick auf die Leistung ist eine leistungsstarke Möglichkeit zur
 Außerdem bietet die Überblicks Eingabe gleichermaßen überzeugende Möglichkeiten für Spiele (einschließlich Ziel Abruf und-Nachverfolgung) und herkömmlichen Produktivitätsanwendungen, Kiosken und andere interaktive Szenarios, in denen herkömmliche Eingabegeräte (Tastatur, Maus, Fingereingabe) nicht verfügbar sind, oder wenn es hilfreich bzw. hilfreich ist, die Benutzer für andere Aufgaben (z. b. die Aufbewahrung von Einkaufswagen) freizugeben
 
 > [!NOTE]
-> Die Unterstützung für die Eye Tracking-Hardware wurde in **Windows 10 Fall Creators Update** zusammen mit der [Eye Control](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control)eingeführt, einem integrierten Feature, mit dem Sie Ihre Augen zum Steuern des Bildschirm Zeigers, zum Eingeben mit der Bildschirmtastatur und zum kommunizieren mit Personen mithilfe von Text-zu-Sprache verwenden können. Eine Reihe von Windows-Runtime-APIs ([Windows. Devices. Input. Preview](/uwp/api/windows.devices.input.preview)) zum Erstellen von Anwendungen, die mit der Überwachungs Hardware interagieren können, finden Sie unter **Windows 10 April 2018 Update (Version 1803, Build 17134)** und neuer.
+> Die Unterstützung für die Eye Tracking-Hardware wurde in **Windows 10 Fall Creators Update** zusammen mit der [Eye Control](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control)eingeführt, einem integrierten Feature, mit dem Sie Ihre Augen zum Steuern des Bildschirm Zeigers, zum Eingeben mit der Bildschirmtastatur und zum kommunizieren mit Personen mithilfe von Text-zu-Sprache verwenden können. Eine Reihe von Windows-Runtime-APIs ( [Windows. Devices. Input. Preview](/uwp/api/windows.devices.input.preview)) zum Erstellen von Anwendungen, die mit der Überwachungs Hardware interagieren können, finden Sie unter **Windows 10 April 2018 Update (Version 1803, Build 17134)** und neuer.
 
 ## <a name="privacy"></a>Datenschutz
 
@@ -50,7 +50,7 @@ Wenn Sie die Blick Eingabe-APIs in Ihrer Windows-App verwenden möchten, müssen
 
 - Geben Sie die `gazeInput` Funktion im App-Manifest an.
 
-    Öffnen Sie die Datei " **Package. appxmanifest** " mit dem Visual Studio-Manifest-Designer, oder fügen Sie die Funktion manuell hinzu, indem Sie **Code anzeigen**auswählen und Folgendes `DeviceCapability` in den `Capabilities` Knoten einfügen:
+    Öffnen Sie die Datei " **Package. appxmanifest** " mit dem Visual Studio-Manifest-Designer, oder fügen Sie die Funktion manuell hinzu, indem Sie **Code anzeigen** auswählen und Folgendes `DeviceCapability` in den `Capabilities` Knoten einfügen:
 
     ```xaml
     <Capabilities>

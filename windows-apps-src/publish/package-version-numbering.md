@@ -1,17 +1,17 @@
 ---
-Description: Der Microsoft Store erzwingt bestimmte Regeln im Zusammenhang mit Versionsnummern, die in unterschiedlichen Betriebssystemversionen etwas unterschiedlich funktionieren.
+description: Der Microsoft Store erzwingt bestimmte Regeln im Zusammenhang mit Versionsnummern, die in unterschiedlichen Betriebssystemversionen etwas unterschiedlich funktionieren.
 title: Paketversionsnummern
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b09c5688fd8a043d1a4ca1783af046398b504050
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 18b4d6b8a901e68ea1e8513b7076a951e939f028
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219733"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035033"
 ---
 # <a name="package-version-numbering"></a>Paketversionsnummern
 
@@ -21,7 +21,7 @@ Jedes von Ihnen bereitgestellte Paket muss eine Versionsnummer aufweisen (als We
 > Dieses Thema bezieht sich auf "Pakete", aber sofern nicht anders angegeben, gelten die gleichen Regeln auch für Versionsnummern sowohl für msix-, AppX-und msixbundle-/appxbundle-Dateien.
 
 
-## <a name="version-numbering-for-windows10-packages"></a>Versionsnummern für Windows 10-Pakete
+## <a name="version-numbering-for-windows-10-packages"></a>Versionsnummern für Windows 10-Pakete
 
 > [!IMPORTANT]
 > Bei Windows 10-Paketen (UWP) ist der letzte (vierte) Abschnitt der Versionsnummer für die Verwendung durch den Speicher reserviert und muss beim Erstellen des Pakets als 0 belassen werden (obwohl der Speicher den Wert in diesem Abschnitt ändern kann). Die anderen Abschnitte müssen auf eine ganze Zahl zwischen 0 und 65535 festgelegt werden (mit Ausnahme des ersten Abschnitts, der nicht 0 sein kann).
@@ -47,10 +47,10 @@ Sie können die Paket-Versionsnummernregeln verwenden, um den Wechsel Ihrer Kund
 | 1          | -   Paketversion: 1.1.10.0 <br> -   Gerätefamilie: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   Paketversion: 1.1.0.0 <br> -   Gerätefamilie: Windows.Mobile, minVersion 10.0.10240.0     | -   Geräte unter Windows 10 Desktop Build 10.0.10240.0 und höher erhalten Versionsnummer 1.1.10.0 <br> -   Geräte unter Windows 10 Mobile Build 10.0.10240.0 und höher erhalten Versionsnummer 1.1.0.0 <br> -   Für andere Gerätefamilien kann die App nicht erworben und installiert werden. |
 | 2          | -   Paketversion: 1.1.10.0 <br> -   Gerätefamilie: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   Paketversion: 1.1.0.0 <br> -   Gerätefamilie: Windows.Mobile, minVersion 10.0.10240.0 <br> <br> -   Paketversion: 1.0.0.0 <br> -   Gerätefamilie: Windows.Universal, minVersion 10.0.10240.0    | -   Geräte unter Windows 10 Desktop Build 10.0.10240.0 und höher erhalten Versionsnummer 1.1.10.0 <br> -   Geräte unter Windows 10 Mobile Build 10.0.10240.0 und höher erhalten Versionsnummer 1.1.0.0 <br> -   Andere (nicht-Desktop, nicht mobile) Gerätefamilien, erhalten nach Einführung Versionsnummer 1.0.0.0 <br> -   Bei Desktop- und mobilen Geräten, auf denen die App bereits installiert ist, wird kein Updates angezeigt (da diese bereits die beste verfügbare Version besitzen – 1.1.10.0 und 1.1.0.0 sind beide höher als 1.0.0.0) |
 | 3          | -   Paketversion: 1.1.10.0 <br> -   Gerätefamilie: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   Paketversion: 1.1.5.0 <br> -   Gerätefamilie: Windows.Universal, minVersion 10.0.10250.0 <br> <br> -   Paketversion: 1.0.0.0 <br> -   Gerätefamilie: Windows.Universal, minVersion 10.0.10240.0    | -   Geräte unter Windows 10 Desktop Build 10.0.10240.0 und höher erhalten Versionsnummer 1.1.10.0 <br> -   Geräte unter Windows 10 Mobile Build 10.0.10250.0 und höher erhalten Versionsnummer 1.1.5.0 <br> -   Geräte unter Windows 10 Mobile Build >= 10.0.10240.0 und < 10.010250.0 erhalten Versionsnummer 1.1.0.0 
-| 4          | -   Paketversion: 2.0.0.0 <br> -   Gerätefamilie: Windows.Universal, minVersion 10.0.10240.0   | -   Alle Kunden mit allen Gerätefamilien unter Windows 10 Build v10.0.10240.0 und höher erhalten Paket 2.0.0.0 | 
+| 4          | -   Paketversion: 2.0.0.0 <br> -   Gerätefamilie: Windows.Universal, minVersion 10.0.10240.0   | -   Alle Kunden mit allen Gerätefamilien unter Windows 10 Build v10.0.10240.0 und höher erhalten Paket 2.0.0.0 | 
 
 > [!NOTE]
->  In allen Fällen erhalten Kunden Geräte das Paket mit der höchstmöglichen Versionsnummer, für die Sie qualifiziert sind. In der dritten Übermittlung oben erhalten beispielsweise alle Desktopgeräte v1.1.10.0, auch wenn sie die Betriebssystemversion 10.0.10250.0 oder höher haben und somit auch mit v1.1.5.0 kompatibel wären. Da 1.1.10.0 für sie die höchsten Versionsnummer ist, erhalten sie dieses Paket.
+>  In allen Fällen erhalten Kunden Geräte das Paket mit der höchstmöglichen Versionsnummer, für die Sie qualifiziert sind. In der dritten Übermittlung oben erhalten beispielsweise alle Desktopgeräte v1.1.10.0, auch wenn sie die Betriebssystemversion 10.0.10250.0 oder höher haben und somit auch mit v1.1.5.0 kompatibel wären. Da 1.1.10.0 für sie die höchsten Versionsnummer ist, erhalten sie dieses Paket.
 
 ### <a name="using-version-numbering-to-roll-back-to-a-previously-shipped-package-for-new-acquisitions"></a>Verwenden der Versionsnummern zum Durchführen eines Rollbacks auf ein vorheriges Paket für Neuanschaffungen
 
@@ -61,7 +61,7 @@ Erstellen Sie zu diesem Zweck eine neue [Übermittlung](app-submissions.md). Ent
 Um das Problem für die Kunden zu beheben, die das problematische Paket bereits erhalten haben, können Sie ein neues Windows 10-Paket mit einer höheren Versionsnummer als das ungültige Paket übermitteln, sobald dies möglich ist. Danach durchläuft die Übermittlung den Zertifizierungsprozess, und alle Kunden werden auf das neue Paket aktualisiert, da es eine höhere Versionsnummer aufweist.
 
 
-## <a name="version-numbering-for-windows81-and-earlier-and-windows-phone-81-packages"></a>Versionsnummern für Windows 8.1 (und früher) und Windows Phone 8.1-Pakete
+## <a name="version-numbering-for-windows-81-and-earlier-and-windows-phone-81-packages"></a>Versionsnummern für Windows 8.1 (und früher) und Windows Phone 8.1-Pakete
 
 > [!IMPORTANT]
 > Sie können keine neuen XAP-Pakete mehr hochladen, die mit den Windows Phone 8. x SDK (s) erstellt wurden. Apps, die bereits mit XAP-Paketen im Speicher gespeichert sind, funktionieren weiterhin auf Windows 10 Mobile-Geräten. Weitere Informationen finden Sie in diesem [Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
@@ -79,10 +79,10 @@ Im folgenden finden Sie einige Beispiele dafür, was in verschiedenen Versionsnu
 
 | Version der App im Store  | Hochgeladene Version | Nachdem sich die neue Version im Speicher befindet, wird Sie in einem neuen Erwerb installiert. | Nachdem sich die neue Version im Speicher befindet, wird Sie aktualisiert, wenn die APP bereits von einem Kunden verwendet wird. |
 |---------------------------------------------|-----------------------------|--------------------------------------------------------------------------------------------|----------|
-| Nothing                                     | x86, v1.0.0.0               | x86, v1.0.0.0 auf x86- und x64-PCs                                                | Nichts. |
+| Nichts                                     | x86, v1.0.0.0               | x86, v1.0.0.0 auf x86- und x64-PCs                                                | Nichts. |
 | x86, v1.0.0.0                               | x64, v1.0.0.0               | v1.0.0.0 für die Architektur des Kunden                                                   | Nichts. Die Versionsnummern sind identisch. |
-| x86, v1.0.0.0 <br> x64, v1.0.0.0            | x64, v1.0.0.1               | v1.0.0.0 für Kunden mit einem x86-PC <br> v1.0.0.1 für Kunden mit einem x64-PC                 | Nichts für Kunden, die die App auf einem x86-PC ausführen. <br> v1.0.0.0 wird für Kunden, die die App auf einem x64-PC ausführen, auf v1.0.0.1 aktualisiert. <br> **Hinweis**    Wenn die x86-Version der APP auf einem x64-Computer ausgeführt wird, wird die APP erst dann auf die x64-Version aktualisiert, wenn der Kunde deinstalliert und neu installiert wird. |
-| Nothing                                     | Neutral, v1.0.0.1           | Neutral, v1.0.0.1 auf allen PCs                                                         | Nichts. |
+| x86, v1.0.0.0 <br> x64, v1.0.0.0            | x64, v1.0.0.1               | v1.0.0.0 für Kunden mit einem x86-PC <br> v1.0.0.1 für Kunden mit einem x64-PC                 | Nichts für Kunden, die die App auf einem x86-PC ausführen. <br> v1.0.0.0 wird für Kunden, die die App auf einem x64-PC ausführen, auf v1.0.0.1 aktualisiert. <br> **Note**  Wenn die x86-Version der App auf einem x64-Computer ausgeführt wird, wird die App erst auf die x64-Version aktualisiert, wenn der Kunde die App deinstalliert und wieder neu installiert. |
+| Nichts                                     | Neutral, v1.0.0.1           | Neutral, v1.0.0.1 auf allen PCs                                                         | Nichts. |
 | Neutral, v1.0.0.1                           | x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | v1.0.0.0 für die Architektur des PC des Kunden.          | Nichts. Kunden mit der neutralen Version v1.0.0.1 verwenden weiter diese Version der App. |
 | Neutral, v1.0.0.1 <br> x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | v1.0.0.1 für die Architektur des PC des Kunden. | Nichts für Kunden mit der neutralen Version v1.0.0.1. <br> v1.0.0.0 wird für Kunden, die die Version v1.0.0.0 der App für die spezifische Architektur ihres PC verwenden, auf v1.0.0.1 aktualisiert. |
 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | x86, v1.0.0.2 <br> x64, v1.0.0.2 <br> ARM, v1.0.0.2 | v1.0.0.2 für die Architektur des PC des Kunden.  | v1.0.0.1 wird für Kunden, die die Version v1.0.0.1 der App für die spezifische Architektur ihres PC verwenden, auf v1.0.0.2 aktualisiert. |

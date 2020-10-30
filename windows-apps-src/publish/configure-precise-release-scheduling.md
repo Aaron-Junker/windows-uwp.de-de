@@ -1,16 +1,16 @@
 ---
-Description: Sie können das genaue Datum und die Uhrzeit festlegen, zu der Ihre APP im Store verfügbar werden soll, sodass Sie mehr Flexibilität und Daten für verschiedene Märkte anpassen können.
+description: Sie können das genaue Datum und die Uhrzeit festlegen, zu der Ihre APP im Store verfügbar werden soll, sodass Sie mehr Flexibilität und Daten für verschiedene Märkte anpassen können.
 title: Konfigurieren des genauen Veröffentlichungszeitplans
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Zeitplan, Veröffentlichungsdatum, Datumsangaben, starten
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ad59071b6a7298cbb6d896bb7dd60a9a5ee0451
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bf9fe34eb36cab57677ba8ef22397c9c345ecb40
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171144"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035173"
 ---
 # <a name="configure-precise-release-scheduling"></a>Konfigurieren des genauen Veröffentlichungszeitplans
 
@@ -34,7 +34,7 @@ Beachten Sie, dass Sie keine Daten im Zeit **Plan** Bereich konfigurieren könne
 
 Die Auswahl, die Sie für den Basis Zeitplan treffen, gilt für alle Märkte, in denen Ihre app verfügbar ist, es sei denn, Sie fügen später Datumsangaben für bestimmte Märkte (oder Markt Gruppen) hinzu, indem Sie [für bestimmte Märkte anpassen](#customize-the-schedule-for-specific-markets)auswählen.
 
-Hier werden zwei Optionen angezeigt: **Release** und **Beendigung des Erwerbs**.
+Hier werden zwei Optionen angezeigt: **Release** und **Beendigung des Erwerbs** .
 
 ## <a name="release"></a>Freigabe
 
@@ -44,11 +44,11 @@ In der **Dropdown** -Dropdown-Datei können Sie festlegen, wann Ihre APP im Stor
 > Nachdem Ihre App veröffentlicht wurde und im Store verfügbar ist, können Sie kein **Veröffentlichungs** Datum mehr auswählen (da die APP bereits freigegeben wurde).
 
 Hier sind die Optionen aufgeführt, die Sie für den **releasezeitplan** eines Produkts konfigurieren können:
-- **so bald wie möglich**: das Produkt wird veröffentlicht, sobald es zertifiziert und veröffentlicht wurde. Dies ist die Standardoption.
-- **an**: das Produkt wird am ausgewählten Zeitpunkt (Datum und Uhrzeit) veröffentlicht. Außerdem haben Sie zwei Möglichkeiten:
-   - **UTC**: die Zeit, die Sie auswählen, wird als UTC-Zeit (Universal koordinierte Zeit) verwendet, sodass die APP gleichzeitig zur gleichen Zeit veröffentlicht wird.
-   - **Lokal**: die ausgewählte Zeit wird in jeder mit einem Markt verknüpften Zeitzone verwendet. (Beachten Sie, dass für Märkte, die mehr als eine Zeitzone enthalten, nur eine Zeitzone in diesem Markt verwendet wird. Für den USA wird die Zeitzone Eastern verwendet. Eine umfassende Liste der Zeitzonen wird weiter unten auf dieser Seite angezeigt.)
-- **nicht geplant**: die APP ist im Store nicht verfügbar. Wenn Sie diese Option auswählen, können Sie die APP später im Store verfügbar machen, indem Sie eine neue Übermittlung erstellen und eine der anderen Optionen auswählen.
+- **so bald wie möglich** : das Produkt wird veröffentlicht, sobald es zertifiziert und veröffentlicht wurde. Dies ist die Standardoption.
+- **an** : das Produkt wird am ausgewählten Zeitpunkt (Datum und Uhrzeit) veröffentlicht. Außerdem haben Sie zwei Möglichkeiten:
+   - **UTC** : die Zeit, die Sie auswählen, wird als UTC-Zeit (Universal koordinierte Zeit) verwendet, sodass die APP gleichzeitig zur gleichen Zeit veröffentlicht wird.
+   - **Lokal** : die ausgewählte Zeit wird in jeder mit einem Markt verknüpften Zeitzone verwendet. (Beachten Sie, dass für Märkte, die mehr als eine Zeitzone enthalten, nur eine Zeitzone in diesem Markt verwendet wird. Für den USA wird die Zeitzone Eastern verwendet. Eine umfassende Liste der Zeitzonen wird weiter unten auf dieser Seite angezeigt.)
+- **nicht geplant** : die APP ist im Store nicht verfügbar. Wenn Sie diese Option auswählen, können Sie die APP später im Store verfügbar machen, indem Sie eine neue Übermittlung erstellen und eine der anderen Optionen auswählen.
 
 ## <a name="stop-acquisition"></a>Erwerb beendet
 
@@ -59,17 +59,17 @@ Standard **mäßig ist die Einstellung für** den Abruf Vorgang auf nie festgele
 Es ist wichtig zu verstehen, dass diese Option die gleichen Auswirkungen hat wie das auswählen, dass **diese APP erkennbar** ist, aber im [Sichtbarkeits](choose-visibility-options.md#discoverability) Abschnitt nicht verfügbar ist, und die Auswahl von **Übernahme aufheben: jeder Kunde mit einem direkten Link kann die Store-Auflistung des Produkts anzeigen, aber Sie kann nur heruntergeladen werden, wenn Sie zuvor das Produkt besaßen, oder ein Windows 10-Gerät verwendet wird.** Um den neuen Kunden eine APP vollständig zu beenden, klicken Sie auf der Seite App-Übersicht auf **App nicht verfügbar machen** . Weitere Informationen finden Sie unter [Entfernen einer App aus dem Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
 
 > [!TIP]
-> Wenn Sie ein Datum auswählen, an dem der **Erwerb beendet**werden soll, und später entscheiden, dass Sie die APP wieder verfügbar machen möchten, können Sie eine neue Übermittlung erstellen und die **Beendigung** des Abrufs wieder in **nie**ändern. Die APP wird wieder verfügbar, nachdem die aktualisierte Übermittlung veröffentlicht wurde.
+> Wenn Sie ein Datum auswählen, an dem der **Erwerb beendet** werden soll, und später entscheiden, dass Sie die APP wieder verfügbar machen möchten, können Sie eine neue Übermittlung erstellen und die **Beendigung** des Abrufs wieder in **nie** ändern. Die APP wird wieder verfügbar, nachdem die aktualisierte Übermittlung veröffentlicht wurde.
 
 ## <a name="customize-the-schedule-for-specific-markets"></a>Anpassen des Zeitplans für bestimmte Märkte
 
-Standardmäßig gelten die oben ausgewählten Optionen für alle Märkte, in denen Ihre APP angeboten wird. Um den Preis für bestimmte Märkte anzupassen, klicken Sie auf **für bestimmte Märkte anpassen**. Das Popup Fenster für die **Markt Auswahl** wird angezeigt, in dem alle Märkte aufgelistet werden, in denen Sie Ihre APP zur Verfügung stellen. Wenn Sie Märkte im Abschnitt " [Märkte](./define-market-selection.md) " ausgeschlossen haben, werden diese Märkte nicht angezeigt.
+Standardmäßig gelten die oben ausgewählten Optionen für alle Märkte, in denen Ihre APP angeboten wird. Um den Preis für bestimmte Märkte anzupassen, klicken Sie auf **für bestimmte Märkte anpassen** . Das Popup Fenster für die **Markt Auswahl** wird angezeigt, in dem alle Märkte aufgelistet werden, in denen Sie Ihre APP zur Verfügung stellen. Wenn Sie Märkte im Abschnitt " [Märkte](./define-market-selection.md) " ausgeschlossen haben, werden diese Märkte nicht angezeigt.
 
-Um einen Zeitplan für einen Markt hinzuzufügen, wählen Sie ihn aus, und klicken Sie auf **Speichern**. Anschließend werden die gleichen **Freigabe** -und **Erfassungs** Optionen angezeigt, die oben beschrieben werden, aber die von Ihnen vorgestellte Auswahl gilt nur für diesen Markt.
+Um einen Zeitplan für einen Markt hinzuzufügen, wählen Sie ihn aus, und klicken Sie auf **Speichern** . Anschließend werden die gleichen **Freigabe** -und **Erfassungs** Optionen angezeigt, die oben beschrieben werden, aber die von Ihnen vorgestellte Auswahl gilt nur für diesen Markt.
 
-Um einen Zeitplan hinzuzufügen, der auf mehrere Märkte angewendet wird, erstellen Sie eine *Marktgruppe*. Wählen Sie hierzu die Märkte aus, die Sie einschließen möchten, und geben Sie dann einen Namen für die Gruppe ein. (Dieser Name dient nur zu Ihrer Referenz und ist für keine Kunden sichtbar.) Wenn Sie z. b. eine Marktgruppe für Nordamerika erstellen möchten, können Sie " **Kanada**", " **Mexiko**" und " **USA**" auswählen und **Nordamerika** oder einen anderen von Ihnen gewählten Namen benennen. Wenn Sie mit dem Erstellen Ihrer Marktgruppe fertig sind, klicken Sie auf **Speichern**. Anschließend werden die gleichen **Freigabe** -und **Erfassungs** Optionen angezeigt, die oben beschrieben werden, aber die von Ihnen vorgestellte Auswahl gilt nur für diese Marktgruppe.
+Um einen Zeitplan hinzuzufügen, der auf mehrere Märkte angewendet wird, erstellen Sie eine *Marktgruppe* . Wählen Sie hierzu die Märkte aus, die Sie einschließen möchten, und geben Sie dann einen Namen für die Gruppe ein. (Dieser Name dient nur zu Ihrer Referenz und ist für keine Kunden sichtbar.) Wenn Sie z. b. eine Marktgruppe für Nordamerika erstellen möchten, können Sie " **Kanada** ", " **Mexiko** " und " **USA** " auswählen und **Nordamerika** oder einen anderen von Ihnen gewählten Namen benennen. Wenn Sie mit dem Erstellen Ihrer Marktgruppe fertig sind, klicken Sie auf **Speichern** . Anschließend werden die gleichen **Freigabe** -und **Erfassungs** Optionen angezeigt, die oben beschrieben werden, aber die von Ihnen vorgestellte Auswahl gilt nur für diese Marktgruppe.
 
-Wenn Sie einen benutzerdefinierten Zeitplan für einen zusätzlichen Markt oder eine zusätzliche Marktgruppe hinzufügen möchten, klicken Sie einfach auf **für bestimmte Märkte anpassen** , und wiederholen Sie diese Schritte. Um die in einer Marktgruppe enthaltenen Märkte zu ändern, wählen Sie den Namen aus. Um den benutzerdefinierten Zeitplan für eine Marktgruppe (oder einen einzelnen Markt) zu entfernen, klicken Sie auf **Entfernen**.
+Wenn Sie einen benutzerdefinierten Zeitplan für einen zusätzlichen Markt oder eine zusätzliche Marktgruppe hinzufügen möchten, klicken Sie einfach auf **für bestimmte Märkte anpassen** , und wiederholen Sie diese Schritte. Um die in einer Marktgruppe enthaltenen Märkte zu ändern, wählen Sie den Namen aus. Um den benutzerdefinierten Zeitplan für eine Marktgruppe (oder einen einzelnen Markt) zu entfernen, klicken Sie auf **Entfernen** .
 
 > [!NOTE]
 > Ein Markt darf nicht mehr als einer der Markt Gruppen angehören, die Sie im Abschnitt " **Zeitplan** " verwenden.

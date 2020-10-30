@@ -1,5 +1,5 @@
 ---
-Description: In diesem Thema werden die Windows-Elemente für das Zoomen und Ändern der Größe beschrieben. Außerdem enthält das Thema Richtlinien für die Benutzeroberfläche zur Verwendung dieser Interaktionsmechanismen in Ihren Apps.
+description: In diesem Thema werden die Windows-Elemente für das Zoomen und Ändern der Größe beschrieben. Außerdem enthält das Thema Richtlinien für die Benutzeroberfläche zur Verwendung dieser Interaktionsmechanismen in Ihren Apps.
 title: Richtlinien für optischen Zoom und Größenänderung
 ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
 label: Optical zoom and resizing
@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f5864be7a4a7f80e376439e8db387e2b2853dfd7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1cf62546efd95c3a4d26ad3ca6f16990b832611c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172484"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035113"
 ---
 # <a name="optical-zoom-and-resizing"></a>Optischer Zoom und Größenänderung
 
@@ -21,7 +21,7 @@ ms.locfileid: "89172484"
 
 In diesem Artikel werden die Windows-Elemente für das Zoomen und die Größenänderung beschrieben. Außerdem enthält er Richtlinien für die Benutzeroberfläche, um diese Interaktionsmechanismen in Ihren Apps zu verwenden.
 
-> **Wichtige APIs**: [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Input (XAML)**](/uwp/api/Windows.UI.Xaml.Input)
+> **Wichtige APIs** : [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Input (XAML)**](/uwp/api/Windows.UI.Xaml.Input)
 
 Mithilfe des optischen Zooms können Benutzer die Ansicht des Inhalts in einem Inhaltsbereich vergrößern (die Vergrößerung erfolgt für den gesamten Inhaltsbereich). Bei der Größenänderung hingegen können Benutzer die relative Größe eines oder mehrerer Objekte ändern, ohne die Ansicht des Inhaltsbereichs zu ändern (die Größenänderung erfolgt für die Objekte im Inhaltsbereich).
 
@@ -29,17 +29,18 @@ Der optische Zoom und die Größenänderung (Interaktion) werden mit den Bewegun
 
 Die folgenden Diagramme verdeutlichen die Unterschiede zwischen Größenänderung und optischem Zoom.
 
-**Optischer Zoom**: Der Benutzer wählt einen Bereich aus und vergrößert den gesamten Bereich.
+**Optischer Zoom** : Der Benutzer wählt einen Bereich aus und vergrößert den gesamten Bereich.
 
 ![Wenn die Finger aufeinander zu bewegt werden, wird der Inhaltsbereich vergrößert, beim Spreizen der Finger wird er verkleinert.](images/areazoom.png)
 
-**Größenänderung**: Der Benutzer wählt ein Objekt in einem Bereich aus und ändert die Größe dieses Objekts.
+**Größenänderung** : Der Benutzer wählt ein Objekt in einem Bereich aus und ändert die Größe dieses Objekts.
 
 ![Wenn die Finger aufeinander zu bewegt werden, wird das Objekt verkleinert, beim Spreizen der Finger wird es vergrößert.](images/objectresize.png)
 
-**Hinweis**    Optischer Zoom sollte mit [semantischem Zoom](../controls-and-patterns/semantic-zoom.md)nicht verwechselt werden. Zwar werden bei beiden Interaktionen dieselben Gesten ausgeführt, jedoch bezieht sich der semantische Zoom auf die Darstellung von und die Navigation in Inhalten in einer einzelnen Ansicht (z. B. in der Ordnerstruktur eines Computers, einer Dokumentbibliothek oder einem Fotoalbum).
+**Hinweis**  
+Der optische Zoom ist nicht mit dem [semantischen Zoom](../controls-and-patterns/semantic-zoom.md) zu verwechseln. Zwar werden bei beiden Interaktionen dieselben Gesten ausgeführt, jedoch bezieht sich der semantische Zoom auf die Darstellung von und die Navigation in Inhalten in einer einzelnen Ansicht (z. B. in der Ordnerstruktur eines Computers, einer Dokumentbibliothek oder einem Fotoalbum).
 
- 
+ 
 
 ## <a name="dos-and-donts"></a>Empfehlungen für die Vorgehensweise
 
@@ -55,7 +56,7 @@ Beachten Sie die folgenden Richtlinien für Apps, die entweder Größenänderung
 
     -   Näherung – Nachdem der Kontakt aufhoben wurde, wird ein Andockpunkt ausgewählt, wenn die Trägheitsbewegung innerhalb einer Distanzschwelle zum Andockpunkt anhält. Bei Näherungsandockpunkten kann ein Zoom- oder Größenänderungsvorgang zwischen Andockpunkten enden.
     -   Erforderlich – Der ausgewählte Andockpunkt ist der Punkt direkt vor oder nach dem Andockpunkt, der vor dem Aufheben des Kontakts zuletzt überschritten wurde (abhängig von der Richtung und Geschwindigkeit der Geste). Eine Manipulation muss an einem erforderlichen Andockpunkt enden.
--   Verwenden Sie Trägheitseffekte. Dabei handelt es sich z. B. um:
+-   Verwenden Sie Trägheitseffekte. Hierzu gehört Folgendes:
     -   Verlangsamung: Findet statt, wenn der Benutzer mit dem Zusammendrücken oder Aufziehen aufhört. Dies ist mit allmählichem Anhalten auf glattem Untergrund vergleichbar.
     -   Springen: Beim Überschreiten einer Größeneinschränkung oder -grenze erfolgt ein leichter Rückpralleffekt.
 -   Verteilen Sie die Steuerelemente entsprechend den [Richtlinien für Zielbestimmung](guidelines-for-targeting.md).
@@ -65,7 +66,8 @@ Beachten Sie die folgenden Richtlinien für Apps, die entweder Größenänderung
     -   Zeichnungsprogramme, in denen in der Größe anpassbare Elemente in einem Zeichenbereich oder auf einer Zeichenfläche, dessen bzw. deren Größe geändert werden kann, angezeigt werden können
     -   Webseiten mit einem eingebetteten Objekt, z. B. einer Karte
 
-    **Hinweis**    In allen Fällen wird die Größe des Inhalts Bereichs geändert, es sei denn, alle Berührungspunkte liegen innerhalb des Objekts, dessen Größe geändert werden kann.
+    **Hinweis**  
+    In allen Fällen wird die Größe des Inhaltsbereichs geändert, es sei denn, alle Berührungspunkte befinden sich in dem in der Größe anpassbaren Objekt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 

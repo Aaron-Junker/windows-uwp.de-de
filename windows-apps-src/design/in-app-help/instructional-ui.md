@@ -1,5 +1,5 @@
 ---
-Description: Entwerfen Sie eine Benutzeroberfläche für die Benutzeroberfläche, mit der Benutzer erfahren, wie Sie mit Ihrer Windows-App arbeiten.
+description: Entwerfen Sie eine Benutzeroberfläche für die Benutzeroberfläche, mit der Benutzer erfahren, wie Sie mit Ihrer Windows-App arbeiten.
 title: Richtlinien für das Entwerfen von Benutzeroberflächen mit Anleitungen
 label: Instructional UI
 template: detail.hbs
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: c87e2f06-339d-4413-b585-172752964f56
 ms.localizationpriority: medium
-ms.openlocfilehash: 47779a6d31d60fe87f639dfadd48275bfb15359e
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 5d9c59c300f5e8fd1ee5cc4233bedcceb1e3089c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217123"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035153"
 ---
 # <a name="instructional-ui-guidelines"></a>Richtlinien für Benutzeroberflächen mit Anleitungen
 
@@ -65,7 +65,7 @@ Unten sind einige Fälle aufgeführt, in denen eine Benutzeroberfläche mit Anle
 
     ![Zugeschnittener Screenshot der Windows Mail-App, der eine Meldung einer Benutzeroberfläche mit Anleitungen zeigt](images/instructional-ui-mail-inbox.png)
 
-    Wenn der Benutzer auf die Meldung klickt, wird auf der rechten Seite des Bildschirms das **Einstellungen**-Flyout der App angezeigt, in dem der Benutzer die Aufgabe ausführen kann. Diese Screenshots zeigen die Mail-App vor und nach dem Klicken auf die Meldung der Benutzeroberfläche mit Anleitungen durch den Benutzer.
+    Wenn der Benutzer auf die Meldung klickt, wird auf der rechten Seite des Bildschirms das **Einstellungen** -Flyout der App angezeigt, in dem der Benutzer die Aufgabe ausführen kann. Diese Screenshots zeigen die Mail-App vor und nach dem Klicken auf die Meldung der Benutzeroberfläche mit Anleitungen durch den Benutzer.
 
     | Vorher                                                               | Danach                                                                                                        |
     |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|

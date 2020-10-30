@@ -1,16 +1,16 @@
 ---
-Description: Der Xbox Analytics-Bericht in Partner Center zeigt Ihnen, wie sich Ihre Kunden mit den Xbox-Features in Ihrem Produkt beschäftigen.
+description: Der Xbox Analytics-Bericht in Partner Center zeigt Ihnen, wie sich Ihre Kunden mit den Xbox-Features in Ihrem Produkt beschäftigen.
 title: Xbox-Analysebericht
 ms.date: 03/21/2019
 ms.topic: article
 keywords: Windows 10, UWP, Xbox Analytics, Xbox Live Analytics, Xbox Statistics
 ms.localizationpriority: medium
-ms.openlocfilehash: d38e60fbe99db09f5fb49e440249ed9454d44c35
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bbe57fa444c4cb43e24944378a49b33f61883866
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157934"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034873"
 ---
 # <a name="xbox-analytics-report"></a>Xbox-Analysebericht
 
@@ -19,7 +19,7 @@ Der **Xbox Analytics** -Bericht in [Partner Center](https://partner.microsoft.co
 > [!IMPORTANT]
 > Dieser Bericht wird nur angezeigt, wenn Sie ein Spiel für Xbox oder ein Spiel veröffentlichen, das Xbox Live-Dienste verwendet. Zu diesem Zweck müssen Sie den [Genehmigungsprozess des Konzepts](../gaming/concept-approval.md)durchlaufen, der Spiele umfasst, die von [Microsoft-Partnern](/gaming/xbox-live/developer-program-overview#microsoft-partners) und-spielen veröffentlicht wurden, die über das [ ID@Xbox Programm](/gaming/xbox-live/developer-program-overview#id)übermittelt wurden. Spiele, die über das [Xbox Live Creators-Programm](/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) veröffentlicht werden, sind in diesem Bericht zurzeit nicht sichtbar.
 
-Sie können den **Xbox Analytics** -Bericht im linken Navigationsmenü des Spiels anzeigen, indem Sie **analysieren** und **Xbox Analytics**auswählen.  Sie können diese Daten im Partner Center anzeigen oder [den Bericht herunterladen, um den Bericht](download-analytic-reports.md) offline anzuzeigen.
+Sie können den **Xbox Analytics** -Bericht im linken Navigationsmenü des Spiels anzeigen, indem Sie **analysieren** und **Xbox Analytics** auswählen.  Sie können diese Daten im Partner Center anzeigen oder [den Bericht herunterladen, um den Bericht](download-analytic-reports.md) offline anzuzeigen.
 
 
 ## <a name="overview-tab"></a>Registerkarte „Übersicht“
@@ -34,7 +34,7 @@ Für viele dieser Statistiken wird auch der **Xbox-Durchschnitt** angezeigt, sod
 
 ### <a name="concurrent-usage"></a>Parallele Verwendung
 
-In diesem Abschnitt werden Verwendungs Daten nahezu in Echtzeit (mit einer Latenz von 5-15 Minuten) über die durchschnittliche Anzahl der Kunden, die Ihr Spiel pro Minute oder Stunde spielen, angezeigt. Sie können den Zeitbereich (von der **letzten Stunde** bis zum **letzten 7 Tagen**) auswählen, indem Sie das Filter Symbol in der oberen rechten Ecke dieses Abschnitts auswählen.
+In diesem Abschnitt werden Verwendungs Daten nahezu in Echtzeit (mit einer Latenz von 5-15 Minuten) über die durchschnittliche Anzahl der Kunden, die Ihr Spiel pro Minute oder Stunde spielen, angezeigt. Sie können den Zeitbereich (von der **letzten Stunde** bis zum **letzten 7 Tagen** ) auswählen, indem Sie das Filter Symbol in der oberen rechten Ecke dieses Abschnitts auswählen.
 
 
 ### <a name="gamerscore-distribution"></a>Gamerscore-Verteilung
@@ -44,7 +44,7 @@ In diesem Abschnitt werden Informationen zum Gamerscore ihrer Kunden angezeigt. 
 
 ### <a name="achievement-unlocks"></a>Entsperren von Leistungen
 
-In diesem Abschnitt wird die Gesamtzahl der Kunden angezeigt, die die einzelnen Leistungen im angegebenen Zeitraum entsperrt haben. Sie können den Zeitbereich (**Letzter Tag**, die **letzten 30 Tage**oder die **Lebensdauer**) auswählen, indem Sie das Filter Symbol in der oberen rechten Ecke dieses Abschnitts auswählen.
+In diesem Abschnitt wird die Gesamtzahl der Kunden angezeigt, die die einzelnen Leistungen im angegebenen Zeitraum entsperrt haben. Sie können den Zeitbereich ( **Letzter Tag** , die **letzten 30 Tage** oder die **Lebensdauer** ) auswählen, indem Sie das Filter Symbol in der oberen rechten Ecke dieses Abschnitts auswählen.
 
 
 ### <a name="game-statistics"></a>Spielstatistik
@@ -89,9 +89,9 @@ Mithilfe der Abschnitte auf der **Registerkarte "Xbox Live Service Health** " k�
 Im oberen Bereich der Registerkarte können Sie den Zeitraum auswählen, für den Sie Daten anzeigen möchten. Die Standardauswahl beträgt **30D** (30 Tage), Sie können jedoch auswählen, dass die Daten für **7D** (7 Tage) oder für einen von Ihnen angegebenen benutzerdefinierten Datumsbereich (nicht mehr als 30 Tage) angezeigt werden. Beachten Sie für einen benutzerdefinierten Datumsbereich, dass alle Diagramme den Diagrammbereich auf den ersten und den letzten Tag der Daten kürzen, die innerhalb des von Ihnen eingegebenen Datums Bereichs bereitgestellt werden.
 
 Sie können auch **Filter** erweitern, um alle Daten auf dieser Seite nach Paketversion, Gerätetyp und/oder Sandbox zu filtern.
-- **Paketversion**: der Standardfilter ist **alle Versionen**, aber Sie können die Dienst Integritäts Daten auf eine bestimmte Paketversion beschränken.
-- **Gerätetyp**: die Standardeinstellung ist " **alle Geräte**", aber Sie können die Dienst Integritäts Daten auf einen bestimmten Gerätetyp beschränken.
-- **Sandbox**: die Standardeinstellung ist " **Retail**", aber Sie können die Dienst Integritäts Daten auf einen bestimmten Sandkasten beschränken.
+- **Paketversion** : der Standardfilter ist **alle Versionen** , aber Sie können die Dienst Integritäts Daten auf eine bestimmte Paketversion beschränken.
+- **Gerätetyp** : die Standardeinstellung ist " **alle Geräte** ", aber Sie können die Dienst Integritäts Daten auf einen bestimmten Gerätetyp beschränken.
+- **Sandbox** : die Standardeinstellung ist " **Retail** ", aber Sie können die Dienst Integritäts Daten auf einen bestimmten Sandkasten beschränken.
 
 Die Informationen in allen unten aufgeführten Diagrammen spiegeln den Datumsbereich und alle Filter wider, die Sie ausgewählt haben. In einigen Abschnitten können Sie auch zusätzliche Filter anwenden.
 
@@ -100,7 +100,7 @@ Die Informationen in allen unten aufgeführten Diagrammen spiegeln den Datumsber
 
 Im Diagramm **Client Fehler nach Dienst wird** die Anzahl der täglichen Client Fehler (4xx) für jeden Xbox Live-Dienst im ausgewählten Zeitraum angezeigt.
 
-Sie können auch nur raten Einschränkungs Fehler anzeigen, indem Sie **Raten Begrenzung**auswählen. Dadurch wird die Anzahl 429 der Pro Xbox Live-Dienste (429e) für die einzelnen Xbox Live-Dienste über den ausgewählten Zeitraum hinweg angezeigt.
+Sie können auch nur raten Einschränkungs Fehler anzeigen, indem Sie **Raten Begrenzung** auswählen. Dadurch wird die Anzahl 429 der Pro Xbox Live-Dienste (429e) für die einzelnen Xbox Live-Dienste über den ausgewählten Zeitraum hinweg angezeigt.
 
 > [!NOTE]
 > Der Statuscode "429e" wurde tatsächlich erfolgreich als 200-Statuscode zurückgegeben, wäre aber nur raten beschränkt, wenn der Dienst zu diesem Zeitpunkt ein hohes Volumen aufwies. Deshalb wird empfohlen, ihn genau so zu behandeln, als wäre er erzwungen (429).
@@ -108,7 +108,7 @@ Sie können auch nur raten Einschränkungs Fehler anzeigen, indem Sie **Raten Be
 In diesem Diagramm werden standardmäßig die ersten sechs Dienste nach Fehler Anzahl angezeigt. Sie können das Filter Symbol in der oberen rechten Ecke dieses Abschnitts auswählen, um verschiedene Dienste auszuwählen. Sie können Fehler für bis zu sechs Dienste gleichzeitig anzeigen.
 
 > [!NOTE]
-> In der Legende wird nur das Präfix-Präfix für jeden Dienst angezeigt (z. b. **Anwesenheit** anstelle von **Presence.XboxLive.com**). Sie finden die vollständige Dienst Adresse in der Tabelle **Client Fehler nach Endpunkt** unten auf der Registerkarte **Xbox Live Service Health** .
+> In der Legende wird nur das Präfix-Präfix für jeden Dienst angezeigt (z. b. **Anwesenheit** anstelle von **Presence.XboxLive.com** ). Sie finden die vollständige Dienst Adresse in der Tabelle **Client Fehler nach Endpunkt** unten auf der Registerkarte **Xbox Live Service Health** .
 
 
 ### <a name="service-availability"></a>Dienstverfügbarkeit
@@ -118,14 +118,14 @@ Das **Dienst Verfügbarkeits** Diagramm zeigt die tägliche Verfügbarkeit für 
 In diesem Diagramm werden standardmäßig die sechs Dienste angezeigt, die die niedrigste Verfügbarkeit aufweisen. Sie können das Filter Symbol in der oberen rechten Ecke dieses Abschnitts auswählen, um verschiedene Dienste auszuwählen. Sie können die Verfügbarkeit für bis zu sechs Dienste gleichzeitig anzeigen.
 
 > [!NOTE]
-> In der Legende wird nur das Präfix-Präfix für jeden Dienst angezeigt (z. b. **Anwesenheit** anstelle von **Presence.XboxLive.com**). Sie finden die vollständige Dienst Adresse in der Tabelle **Client Fehler nach Endpunkt** unten auf der Registerkarte **Xbox Live Service Health** .
+> In der Legende wird nur das Präfix-Präfix für jeden Dienst angezeigt (z. b. **Anwesenheit** anstelle von **Presence.XboxLive.com** ). Sie finden die vollständige Dienst Adresse in der Tabelle **Client Fehler nach Endpunkt** unten auf der Registerkarte **Xbox Live Service Health** .
 
 
 ### <a name="client-errors-by-endpoint"></a>Client Fehler nach Endpunkt
 
 In der Tabelle **Client Fehler nach Endpunkt** wird die Anzahl der täglichen Client Fehler (4xx) angezeigt, die von den einzelnen Xbox Live-Diensten, dem Endpunkt und dem Statuscode im ausgewählten Zeitraum aufgeschlüsselt sind. Standardmäßig wird die Tabelle nach der Gesamtzahl der Dienst Antworten in absteigender Reihenfolge sortiert, aber Sie können die Sortierreihenfolge ändern, indem Sie auf eine der Spaltenüberschriften klicken.
 
-Sie können auch nur raten Einschränkungs Fehler anzeigen, indem Sie **Raten Begrenzung**auswählen. Dadurch wird die Anzahl der Pro Xbox Live-Dienst, Endpunkt und Statuscode über den ausgewählten Zeitraum ausgeschlossenen (429) und Raten einschränkenden Fehler (429e) angezeigt.
+Sie können auch nur raten Einschränkungs Fehler anzeigen, indem Sie **Raten Begrenzung** auswählen. Dadurch wird die Anzahl der Pro Xbox Live-Dienst, Endpunkt und Statuscode über den ausgewählten Zeitraum ausgeschlossenen (429) und Raten einschränkenden Fehler (429e) angezeigt.
 
 > [!NOTE]
 > Der Statuscode "429e" wurde tatsächlich erfolgreich als 200-Statuscode zurückgegeben, wäre aber nur raten beschränkt, wenn der Dienst zu diesem Zeitpunkt ein hohes Volumen aufwies. Deshalb wird empfohlen, ihn genau so zu behandeln, als wäre er erzwungen (429).
@@ -139,6 +139,6 @@ Sie können auch nur raten Einschränkungs Fehler anzeigen, indem Sie **Raten Be
 
 
 
- 
+ 
 
- 
+ 

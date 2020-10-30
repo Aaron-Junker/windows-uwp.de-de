@@ -1,17 +1,17 @@
 ---
-Description: Verwenden Sie Querziehen, um Auswahlinteraktionen mit einer Streifbewegung und Ziehinteraktionen (Verschieben) mit einer Ziehbewegung zu unterstützen.
+description: Verwenden Sie Querziehen, um Auswahlinteraktionen mit einer Streifbewegung und Ziehinteraktionen (Verschieben) mit einer Ziehbewegung zu unterstützen.
 title: Richtlinien für Querziehen
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b16c957991889cb5f39a775397de72ff56beffc
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: ad51e23e29b4fcdb3b1906054762a0e432b6612a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749977"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035163"
 ---
 # <a name="guidelines-for-cross-slide"></a>Richtlinien für Querziehen
 
@@ -56,7 +56,7 @@ Beachten Sie die folgenden Richtlinien, wenn Sie eine Querziehfunktion in Ihrer 
 
 Verwenden Sie das Querziehen für Listen oder Auflistungen, bei denen ein Bildlauf nur in eine Richtung möglich ist. Weitere Informationen finden Sie unter [Hinzufügen von ListView-Steuerelementen](/previous-versions/windows/apps/hh465382(v=win.10)).
 
-**Hinweis**    In Fällen, in denen der Inhalts Bereich in zwei Richtungen (z. b. Webbrowser oder e-Reader) verschoben werden kann, sollte die zeitgesteuerte Interaktion mit Press und Hold zum Aufrufen des Kontextmenüs für Objekte wie Bilder und Hyperlinks verwendet werden.
+**Hinweis**  In Fällen, in denen der Inhaltsbereich in zwei Richtungen verschoben werden kann, z. B. in einem Webbrowser oder E-Reader, sollte die zeitlich festgelegte Interaktion des Gedrückthaltens verwendet werden, um das Kontextmenü für Objekte wie Bilder und Links aufzurufen.
 
 :::row:::
    :::column:::
@@ -152,6 +152,6 @@ Wenn mehrere Objekte verschoben werden müssen, geben Sie dem Benutzer die Mögl
 - [Eingabe: Beispiel für Windows 8-Bewegungen](/samples/browse/?redirectedfrom=MSDN-samples)
 - [Eingabe: Manipulationen und Gesten (Beispiel)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [Beispiel für die DirectX-Fingereingabe](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))
- 
+ 
 
- 
+ 

@@ -1,16 +1,16 @@
 ---
-Description: Intensivieren Sie die Kundenbindung und fördern Sie die Kundenzufriedenheit mithilfe von Features wie Benachrichtigungen, zielgerichteten Angeboten und Reaktionen auf Kritiken und Feedback usw.
+description: Fördern Sie Kundenengagement und-Zufriedenheit mithilfe von Features wie Benachrichtigungen, gezielten angeboten, Antworten auf Reviews und Feedback.
 title: Kundenkontakte intensivieren
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e03e698a7c74dc6c3a9abec30d471a0a16427650
-ms.sourcegitcommit: 2dba9b4e81151d14ca90d36341274a3b59926197
+ms.openlocfilehash: 827001cda13b6335f9aaae06d8138c5223dbbb84
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74057589"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034843"
 ---
 # <a name="engage-with-your-customers"></a>Kundenkontakte intensivieren
 
@@ -53,7 +53,7 @@ Stellen Sie je nach Gruppe optisch ansprechende und personalisierte Inhalte bere
 
 Verwenden Sie das Dashboard, um angepasste Pushbenachrichtigungen an bestimmte Kundengruppen Ihrer App-Kunden zu senden.
 
-[Benachrichtigungen senden](send-push-notifications-to-your-apps-customers.md)
+[Senden von Benachrichtigungen](send-push-notifications-to-your-apps-customers.md)
     :::column-end:::
 :::row-end:::
 
@@ -105,6 +105,6 @@ Vernetzen Sie sich mit Ihren Kunden, indem Sie deren Rezensionen öffentlich ode
 Behalten Sie mithilfe dieser Features und Berichte Registerkarten für Ihre Kundenengagement-Aktivitäten bei.
 
 - [Erstellen von Kundengruppen](create-customer-groups.md)
-- [Rezensionsbericht](reviews-report.md)
+- [Bericht „Rezensionen“](reviews-report.md)
 - [Feedbackbericht](feedback-report.md)
 - [Abrufen von Analysedaten unter Verwendung unserer REST-API](../monetize/access-analytics-data-using-windows-store-services.md)

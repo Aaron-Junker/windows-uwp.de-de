@@ -1,5 +1,5 @@
 ---
-Description: In diesem Thema wird die neue Windows-Benutzeroberfläche für die Rotation beschrieben und Richtlinien zur Benutzeroberfläche erläutert, die bei der Verwendung dieses neuen Interaktions Mechanismus in Ihrer Windows-App berücksichtigt werden sollten.
+description: In diesem Thema wird die neue Windows-Benutzeroberfläche für die Rotation beschrieben und Richtlinien zur Benutzeroberfläche erläutert, die bei der Verwendung dieses neuen Interaktions Mechanismus in Ihrer Windows-App berücksichtigt werden sollten.
 title: Drehung
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
@@ -8,19 +8,19 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 135f7773a94491e1e6470c84ad428265273bc79d
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 755386b8cffa5c546d20cd561693da5d21b30799
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217003"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035103"
 ---
 # <a name="rotation"></a>Drehung
 
 
 Dieser Artikel beschreibt die neue Windows-Benutzeroberfläche für die Rotation und bietet Richtlinien für die Benutzeroberfläche, die bei der Verwendung dieses neuen Interaktions Mechanismus in Ihrer Windows-App berücksichtigt werden sollten.
 
-> **Wichtige APIs**: [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Windows. UI. XAML. Input**](/uwp/api/Windows.UI.Xaml.Input)
+> **Wichtige APIs** : [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Windows. UI. XAML. Input**](/uwp/api/Windows.UI.Xaml.Input)
 
 ## <a name="dos-and-donts"></a>Empfehlungen für die Vorgehensweise
 
@@ -44,7 +44,8 @@ Verwenden Sie Drehung, damit Benutzer leichter UI-Elemente direkt drehen können
 
 ![Diagramm zur Veranschaulichung verschiedener Fingerhaltungen, die für Drehungen unterstützt werden](images/ux-rotate-positions.png)
 
-**Hinweis**    Intuitiv, und in den meisten Fällen ist der Drehpunkt einer der beiden Berührungspunkte, es sei denn, der Benutzer kann einen Drehpunkt angeben, der nicht mit den Kontaktpunkten verknüpft ist (z. b. in einer Zeichnungs-oder layoutanwendung). In den folgenden Abbildungen wird gezeigt, wie die Benutzeroberfläche beeinträchtigt werden kann, wenn der Drehungspunkt nicht auf diese Weise eingeschränkt ist.
+**Hinweis**  
+Intuitiv ist der Drehungspunkt in den meisten Fällen einer der zwei Berührungspunkte, es sei denn, der Benutzer kann einen Drehungspunkt angeben, der in keinem Bezug zu den Kontaktpunkten steht (beispielsweise in einer Zeichen- oder Layoutanwendung). In den folgenden Abbildungen wird gezeigt, wie die Benutzeroberfläche beeinträchtigt werden kann, wenn der Drehungspunkt nicht auf diese Weise eingeschränkt ist.
 
 In der ersten Abbildung sehen Sie den ersten (Daumen) und den zweiten Berührungspunkt (Zeigefinger): Der Zeigefinger berührt einen Baum, und der Daumen berührt einen Holzblock.
 
@@ -59,7 +60,7 @@ In dieser letzten Abbildung wurde der Mittelpunkt der Drehung durch die Anwendun
 
 ![Abbildung mit einem gedrehten Bild, dessen Drehungspunkt durch den am weitesten links angeordneten Mittelpunkt des Bilds anstatt durch die zwei anfänglichen Berührungspunkte eingeschränkt ist](images/ux-rotate-points4.png)
 
- 
+ 
 
 Windows 10 unterstützt drei Arten der Drehung: kostenlos, eingeschränkt und kombiniert.
 
@@ -88,16 +89,16 @@ Windows 10 unterstützt drei Arten der Drehung: kostenlos, eingeschränkt und ko
 <td align="left">Kombinierte Drehung</td>
 <td align="left"><p>Die kombinierte Drehung unterstützt freie Drehung mit Zonen (ähnlich wie Führungsschienen unter <a href="guidelines-for-panning.md">Richtlinien für Verschiebung</a>) an jedem der 90-Grad-Andockpunkte, die durch die eingeschränkte Drehung erzwungen werden. Wenn das Objekt außerhalb einer der 90-Grad-Zonen losgelassen wird, bleibt das Objekt in dieser Position. Anderenfalls wird das Objekt automatisch zu einem Andockpunkt gedreht.</p>
 <div class="alert">
-<strong>Hinweis</strong>    Eine Benutzeroberflächen Schiene ist eine Funktion, bei der ein Bereich um ein Ziel die Bewegung auf einen bestimmten Wert oder Speicherort beschränkt, um die Auswahl zu beeinflussen.
+<strong>Hinweis</strong>  Eine Benutzeroberflächen Schiene ist eine Funktion, bei der ein Bereich um ein Ziel die Bewegung auf einen bestimmten Wert oder Speicherort beschränkt, um die Auswahl zu beeinflussen.
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 ### <a name="samples"></a>Beispiele
 

@@ -1,17 +1,17 @@
 ---
-Description: Mit dem Verwendungs Bericht in Partner Center können Sie sehen, wie Kunden Ihre APP verwenden.
+description: Mit dem Verwendungs Bericht in Partner Center können Sie sehen, wie Kunden Ihre APP verwenden.
 title: Nutzungsbericht
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Verwendung, benutzerdefiniertes Ereignis, Bericht, Telemetrie, Benutzersitzungen
 ms.localizationpriority: medium
-ms.openlocfilehash: a794018b2fcdd07017ee3441e65c6200e7436304
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 7eafc102ca1720aaa14c697fcbff3825436343f9
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220203"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034943"
 ---
 # <a name="usage-report"></a>Nutzungsbericht
 
@@ -25,9 +25,9 @@ Im oberen Bereich der Seite können Sie den Zeitraum auswählen, in dem Sie Date
 
 Sie können auch **Filter** erweitern, um die Daten auf dieser Seite nach Paketversion, Markt und/oder Gerätetyp zu filtern.
 
--   **Paketversion**: Die Standardeinstellung ist **Alle**. Wenn Ihre App mehr als ein Paket enthält, können Sie hier ein bestimmtes Paket auswählen.
--   **Market**: der Standardfilter ist **Alle Märkte**, aber Sie können die Daten auf einen oder mehrere Märkte beschränken.
--   **Gerätetyp**: die Standardeinstellung ist " **alle**", aber Sie können auswählen, dass nur Daten für einen bestimmten Gerätetyp (PC, Konsole, Tablet usw.) angezeigt werden.
+-   **Paketversion** : Die Standardeinstellung ist **Alle** . Wenn Ihre App mehr als ein Paket enthält, können Sie hier ein bestimmtes Paket auswählen.
+-   **Market** : der Standardfilter ist **Alle Märkte** , aber Sie können die Daten auf einen oder mehrere Märkte beschränken.
+-   **Gerätetyp** : die Standardeinstellung ist " **alle** ", aber Sie können auswählen, dass nur Daten für einen bestimmten Gerätetyp (PC, Konsole, Tablet usw.) angezeigt werden.
 
 Die Informationen in allen unten aufgeführten Diagrammen spiegeln den Datumsbereich und alle ausgewählten Filter wider (mit Ausnahme von **neuen Benutzern** im **Verwendungs** Diagramm, die nicht angezeigt werden, wenn Filter ausgewählt werden). In einigen Abschnitten können Sie auch zusätzliche Filter anwenden.
 
@@ -41,13 +41,13 @@ Das **Verwendungs** Diagramm zeigt Details dazu, wie Ihre Kunden Ihre APP über 
 
 Dieses Diagramm enthält separate Registerkarten, die Sie anzeigen können, wobei die Nutzung nach Tag oder Woche (abhängig von der von Ihnen ausgewählten Dauer) angezeigt wird.
 
-- **Benutzer**: zeigt die Gesamtanzahl der **Benutzersitzungen** im ausgewählten Zeitraum an. Jede Benutzersitzung stellt einen bestimmten Zeitraum dar, beginnend beim Start der APP (Prozessstart) und beim Beenden (Prozess Ende) oder nach einem Zeitraum der Inaktivität. Aus diesem Grund kann ein einzelner Kunde über denselben Tag oder eine Woche über mehrere Benutzersitzungen verfügen. Die Gesamtanzahl **aktiver Benutzer** (alle Kunden, die die APP für den Tag oder die Woche verwenden) und **neue Benutzer** (ein Kunde, der Ihre APP zum ersten Mal diesen Tag oder jede Woche verwendet) wird angezeigt. Beachten Sie, dass in diesem Diagramm keine **neuen Benutzer** angezeigt werden, wenn Sie auf der Seite Filter angewendet haben.
-- **Geräte**: zeigt die Anzahl der täglichen Geräte an, die von allen Benutzern für die Interaktion mit Ihrer APP verwendet werden.
-- **Dauer**: zeigt die Gesamtzahl der Engagement-Stunden (Stunden, in denen ein Benutzer Ihre APP aktiv verwendet) an.
-- **Engagement**: zeigt die durchschnittlichen Engagement-Minuten pro Benutzer an (durchschnittliche Dauer aller Benutzersitzungen). 
-- **Aufbewahrung**: zeigt die Gesamtzahl von **Dau/Mau** (tägliche aktive Benutzer/monatliche aktive Benutzer) im ausgewählten Zeitraum an.
+- **Benutzer** : zeigt die Gesamtanzahl der **Benutzersitzungen** im ausgewählten Zeitraum an. Jede Benutzersitzung stellt einen bestimmten Zeitraum dar, beginnend beim Start der APP (Prozessstart) und beim Beenden (Prozess Ende) oder nach einem Zeitraum der Inaktivität. Aus diesem Grund kann ein einzelner Kunde über denselben Tag oder eine Woche über mehrere Benutzersitzungen verfügen. Die Gesamtanzahl **aktiver Benutzer** (alle Kunden, die die APP für den Tag oder die Woche verwenden) und **neue Benutzer** (ein Kunde, der Ihre APP zum ersten Mal diesen Tag oder jede Woche verwendet) wird angezeigt. Beachten Sie, dass in diesem Diagramm keine **neuen Benutzer** angezeigt werden, wenn Sie auf der Seite Filter angewendet haben.
+- **Geräte** : zeigt die Anzahl der täglichen Geräte an, die von allen Benutzern für die Interaktion mit Ihrer APP verwendet werden.
+- **Dauer** : zeigt die Gesamtzahl der Engagement-Stunden (Stunden, in denen ein Benutzer Ihre APP aktiv verwendet) an.
+- **Engagement** : zeigt die durchschnittlichen Engagement-Minuten pro Benutzer an (durchschnittliche Dauer aller Benutzersitzungen). 
+- **Aufbewahrung** : zeigt die Gesamtzahl von **Dau/Mau** (tägliche aktive Benutzer/monatliche aktive Benutzer) im ausgewählten Zeitraum an.
 
-Wenn der Zeitraum von **30D** ausgewählt ist, werden möglicherweise Kreis Markierungen angezeigt, wenn die Registerkarten **Benutzer**, **Geräte**oder **Dauer** angezeigt werden. Diese stellen eine beträchtliche Zunahme oder Abnahme in einem bestimmten Wert dar, über den wir denken, dass Sie wissen möchten. Das Datum, an dem der Kreis angezeigt wird, steht für das Ende der Woche, an dem im Vergleich zur Woche vor der Woche eine beträchtliche Zunahme oder Abnahme festgestellt wurde. Zeigen Sie auf den Kreis, um weitere Details zu den Änderungen anzuzeigen.  
+Wenn der Zeitraum von **30D** ausgewählt ist, werden möglicherweise Kreis Markierungen angezeigt, wenn die Registerkarten **Benutzer** , **Geräte** oder **Dauer** angezeigt werden. Diese stellen eine beträchtliche Zunahme oder Abnahme in einem bestimmten Wert dar, über den wir denken, dass Sie wissen möchten. Das Datum, an dem der Kreis angezeigt wird, steht für das Ende der Woche, an dem im Vergleich zur Woche vor der Woche eine beträchtliche Zunahme oder Abnahme festgestellt wurde. Zeigen Sie auf den Kreis, um weitere Details zu den Änderungen anzuzeigen.  
 
 > [!TIP]
 > Sie können in den letzten 30 Tagen im [Insights-Bericht](insights-report.md)weitere Einblicke in Bezug auf bedeutende Änderungen anzeigen.
@@ -87,4 +87,4 @@ Für jedes Ereignis werden der Ereignis Name und eine Ereignis Anzahl angezeigt,
 
 
 
- 
+ 
