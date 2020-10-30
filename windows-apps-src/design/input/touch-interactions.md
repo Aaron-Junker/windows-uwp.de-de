@@ -8,12 +8,12 @@ keywords: Touch, Zeiger, Eingabe, Benutzerinteraktion
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 614d8c5340100ca5ba666493ccb23ec4d8ca8498
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: f173c90d43b7be795b8a87fe14dd3de9d6284da1
+ms.sourcegitcommit: da44cb95946440cd06ff36254d42ecefcdd87ce2
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/30/2020
-ms.locfileid: "93035053"
+ms.locfileid: "93063012"
 ---
 # <a name="touch-interactions"></a>Toucheingabe-Interaktionen
 
@@ -31,15 +31,15 @@ Die Windows-app enthält eine Reihe von verschiedenen Mechanismen für die Handh
 
 Interaktionen per Toucheingabe erfordern drei Dinge:
 
--   Einen berührungsempfindlichen Bildschirm.
--   Direkter Kontakt von einem oder mehreren Fingern auf dem Bildschirm (oder in der Nähe des Bildschirms, wenn er über Näherungssensoren verfügt und die Erkennung des Daraufzeigens unterstützt).
--   Bewegung der Berührungskontakte (oder das Fehlen der Bewegung basierend auf einem Zeitschwellenwert).
+- Einen berührungsempfindlichen Bildschirm.
+- Direkter Kontakt von einem oder mehreren Fingern auf dem Bildschirm (oder in der Nähe des Bildschirms, wenn er über Näherungssensoren verfügt und die Erkennung des Daraufzeigens unterstützt).
+- Bewegung der Berührungskontakte (oder das Fehlen der Bewegung basierend auf einem Zeitschwellenwert).
 
 Mögliche vom Berührungssensor bereitgestellte Eingabedaten:
 
--   Interpretation als physische Geste für die direkte Manipulation von einem oder mehreren UI-Elementen (z. B. Schwenken, Drehen, Vergrößern/Verkleinern oder Verschieben). Die Interaktion mit einem Element über das zugehörige Eigenschaftenfenster, Dialogfeld oder ein anderes UI-Angebot gilt dagegen als indirekte Manipulation.
--   Erkennung als alternative Eingabemethode, z. B. Maus oder Stift.
--   Wird zum Ergänzen oder Ändern von Aspekten anderer Eingabemethoden verwendet, z. B. zum Verwischen eines mit einem Stift gezeichneten Freihandstrichs.
+- Interpretation als physische Geste für die direkte Manipulation von einem oder mehreren UI-Elementen (z. B. Schwenken, Drehen, Vergrößern/Verkleinern oder Verschieben). Die Interaktion mit einem Element über das zugehörige Eigenschaftenfenster, Dialogfeld oder ein anderes UI-Angebot gilt dagegen als indirekte Manipulation.
+- Erkennung als alternative Eingabemethode, z. B. Maus oder Stift.
+- Wird zum Ergänzen oder Ändern von Aspekten anderer Eingabemethoden verwendet, z. B. zum Verwischen eines mit einem Stift gezeichneten Freihandstrichs.
 
 In der Regel beinhaltet die Toucheingabe die direkte Manipulation eines Elements auf dem Bildschirm. Das Element reagiert sofort auf alle Berührungen in seinem Treffertestbereich und reagiert entsprechend auf alle nachfolgenden Bewegungen des Touchkontakts, einschließlich dessen Entfernung.
 
@@ -88,19 +88,19 @@ Visuelles Feedback ist wichtig, wenn der Benutzer die Fingereingabe für Aktivit
 
 Die Zielbestimmung wird durch Folgendes optimiert:
 
--   Größe der Toucheingabeziele
+- Größe der Toucheingabeziele
 
     Klare Richtlinien für die Größe gewährleisten, dass Anwendungen eine angenehme UI bereitstellen, die Objekte und Steuerelemente enthält, die als Ziele einfach und sicher zu erreichen sind.
 
--   Kontaktgeometrie
+- Kontaktgeometrie
 
     Der gesamte Kontaktbereich des Fingers wird verwendet, um das wahrscheinlichste Zielobjekt zu ermitteln.
 
--   Scrubbing (Bereinigung)
+- Scrubbing (Bereinigung)
 
     Elemente in einer Gruppe können leicht erneut als Ziele bestimmt werden, indem der Finger zwischen ihnen gezogen wird (beispielsweise Optionsfelder). Das aktuelle Element wird aktiviert, wenn der Finger gehoben wird.
 
--   Wackeln
+- Wackeln
 
     Eng angeordnete Elemente (beispielsweise Hyperlinks) können leicht erneut als Ziel bestimmt werden, indem Sie mit dem Finger auf das Element drücken und ohne Ziehen mit dem Finger leicht über den Elementen hin- und herwackeln. Aufgrund von Okklusion wird das aktuelle Element durch eine QuickInfo oder die Statusleiste identifiziert und aktiviert, wenn der Finger gehoben wird.
 
@@ -108,26 +108,26 @@ Die Zielbestimmung wird durch Folgendes optimiert:
 
 Berücksichtigen Sie beim Design ungenaue Interaktionen, indem Sie Folgendes verwenden:
 
--   Andockpunkte, die bei Interaktionen der Benutzer mit dem Inhalt das Anhalten an der gewünschten Position erleichtern.
--   Direktionale "Rails", die beim vertikalen oder horizontalen Schwenken hilfreich sein können, auch wenn die Hand in einem kleinen Bogen bewegt wird. Weitere Informationen finden Sie unter [Richtlinien für das Schwenken](guidelines-for-panning.md).
+- Andockpunkte, die bei Interaktionen der Benutzer mit dem Inhalt das Anhalten an der gewünschten Position erleichtern.
+- Direktionale "Rails", die beim vertikalen oder horizontalen Schwenken hilfreich sein können, auch wenn die Hand in einem kleinen Bogen bewegt wird. Weitere Informationen finden Sie unter [Richtlinien für das Schwenken](guidelines-for-panning.md).
 
 ## <a name="occlusion"></a>Okklusion
 
 Okklusion durch Finger und Hand können Sie durch Folgendes vermeiden:
 
--   Größe und Positionierung der UI
+- Größe und Positionierung der UI
 
     Machen Sie die UI-Elemente groß genug, damit sie nicht vollständig von einem Fingerspitzen-Kontaktbereich verdeckt werden können.
 
     Positionieren Sie Menüs und Popups möglichst immer über dem Kontaktbereich.
 
--   QuickInfos
+- QuickInfos
 
     Wenn der Benutzer den Finger auf einem Objekt liegen lässt, sollten QuickInfos angezeigt werden. Dies dient der Beschreibung der Objektfunktionen. Der Benutzer kann verhindern, dass die QickInfo angezeigt wird, wenn er die Fingerspitze von Objekt herunterzieht.
 
     Versetzen Sie bei kleinen Objekten die QuickInfos, damit sie nicht vom Fingerspitzen-Kontaktbereich verdeckt werden. Dies ist hilfreich für die Zielbestimmung.
 
--   Präzision durch Ziehpunkte
+- Präzision durch Ziehpunkte
 
     Wenn Präzision erforderlich ist (beispielsweise bei der Textauswahl), stellen Sie versetzte Auswahlziehpunkte bereit, um die Genauigkeit zu verbessern. Weitere Informationen finden Sie unter [Richtlinien für die Auswahl von Text und Images (Windows-Runtime-Apps)](guidelines-for-textselection.md).
 
@@ -139,21 +139,21 @@ Eine zeitlich festgelegte Interaktion dagegen tritt nach einer Fingereingabeinte
 
 Die direkte Manipulation bietet gegenüber zeitlich festgelegten Interaktionen eine Reihe von Vorteilen:
 
--   Sofortiges visuelles Feedback bei Interaktionen weckt die Aufmerksamkeit der Benutzer und vermittelt ihnen ein Gefühl von Sicherheit und Kontrolle.
--   Direkte Manipulationen sorgen für mehr Sicherheit beim Erforschen eines Systems, da sie umkehrbar sind, das heißt, Benutzer können ihre Aktionen leicht auf logische und intuitive Weise Schritt für Schritt rückgängig machen.
--   Interaktionen, die direkte Auswirkungen auf Objekte haben und reale Interaktionen nachahmen, sind intuitiver und leichter zu finden und zu merken. Sie sind nicht auf schwer verständliche oder abstrakte Interaktionen angewiesen.
--   Zeitlich festgelegte Interaktionen können schwer auszuführen sein, da die Benutzer willkürliche und unsichtbare Schwellenwerte erreichen müssen.
+- Sofortiges visuelles Feedback bei Interaktionen weckt die Aufmerksamkeit der Benutzer und vermittelt ihnen ein Gefühl von Sicherheit und Kontrolle.
+- Direkte Manipulationen sorgen für mehr Sicherheit beim Erforschen eines Systems, da sie umkehrbar sind, das heißt, Benutzer können ihre Aktionen leicht auf logische und intuitive Weise Schritt für Schritt rückgängig machen.
+- Interaktionen, die direkte Auswirkungen auf Objekte haben und reale Interaktionen nachahmen, sind intuitiver und leichter zu finden und zu merken. Sie sind nicht auf schwer verständliche oder abstrakte Interaktionen angewiesen.
+- Zeitlich festgelegte Interaktionen können schwer auszuführen sein, da die Benutzer willkürliche und unsichtbare Schwellenwerte erreichen müssen.
 
 Darüber hinaus wird Folgendes dringend empfohlen:
 
--   Manipulationen sollten nicht anhand der Anzahl der verwendeten Finger unterschieden werden.
--   Die Interaktionen sollten zusammengesetzte Manipulationen unterstützen. Beispiel: Zoomen durch Zusammendrücken und gleichzeitiges Ziehen der Finger, um etwas zu verschieben.
--   Die Interaktionen sollten nicht anhand der Zeit unterschieden werden. Eine Interaktion sollte unabhängig von der Ausführungsdauer immer zum gleichen Ergebnis führen. Zeitbasierte Aktivierungen führen zu obligatorischen Verzögerungen für Benutzer und beeinträchtigen die immersive Natur der direkten Manipulation und die Wahrnehmung der Reaktion des Systems.
+- Manipulationen sollten nicht anhand der Anzahl der verwendeten Finger unterschieden werden.
+- Die Interaktionen sollten zusammengesetzte Manipulationen unterstützen. Beispiel: Zoomen durch Zusammendrücken und gleichzeitiges Ziehen der Finger, um etwas zu verschieben.
+- Die Interaktionen sollten nicht anhand der Zeit unterschieden werden. Eine Interaktion sollte unabhängig von der Ausführungsdauer immer zum gleichen Ergebnis führen. Zeitbasierte Aktivierungen führen zu obligatorischen Verzögerungen für Benutzer und beeinträchtigen die immersive Natur der direkten Manipulation und die Wahrnehmung der Reaktion des Systems.
 
     > [!NOTE]
     > Eine Ausnahme besteht darin, dass Sie bestimmte zeitgesteuerte Interaktionen verwenden, um das Erlernen und durchsuchen zu unterstützen (z. b. Drücken und halten).
 
--   Entsprechende Beschreibungen und visuelle Hinweise haben einen großen Einfluss auf die Verwendung erweiterter Interaktionen.
+- Entsprechende Beschreibungen und visuelle Hinweise haben einen großen Einfluss auf die Verwendung erweiterter Interaktionen.
 
 
 ## <a name="app-views"></a>App-Ansichten
@@ -176,21 +176,21 @@ Wenn Sie eine eigene Interaktionsunterstützung implementieren, sollten Sie dara
 
 Zum Bereitstellen von angepasster Toucheingabeunterstützung können Sie verschiedene [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement)-Ereignisse behandeln. Diese Ereignisse sind in drei verschiedene Abstraktionsschichten gruppiert.
 
--   Statische Gestikereignisse werden ausgelöst, wenn eine Interaktion abgeschlossen ist. Gesten Ereignisse umfassen [**getippt**](/uwp/api/windows.ui.xaml.uielement.tapped), [**Double**](/uwp/api/windows.ui.xaml.uielement.doubletapped)-, [**righttippt**](/uwp/api/windows.ui.xaml.uielement.righttapped)und [**halten**](/uwp/api/windows.ui.xaml.uielement.holding).
+- Statische Gestikereignisse werden ausgelöst, wenn eine Interaktion abgeschlossen ist. Gesten Ereignisse umfassen [**getippt**](/uwp/api/windows.ui.xaml.uielement.tapped), [**Double**](/uwp/api/windows.ui.xaml.uielement.doubletapped)-, [**righttippt**](/uwp/api/windows.ui.xaml.uielement.righttapped)und [**halten**](/uwp/api/windows.ui.xaml.uielement.holding).
 
     Sie können Gestikereignisse für bestimmte Elemente deaktivieren, indem Sie [**IsTapEnabled**](/uwp/api/windows.ui.xaml.uielement.istapenabled), [**IsDoubleTapEnabled**](/uwp/api/windows.ui.xaml.uielement.isdoubletapenabled), [**IsRightTapEnabled**](/uwp/api/windows.ui.xaml.uielement.isrighttapenabled) und [**IsHoldingEnabled**](/uwp/api/windows.ui.xaml.uielement.isholdingenabled) auf **false** festlegen.
 
--   Zeiger Ereignisse, wie z. b. [**pointerpressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) und [**pointerverschiebe**](/uwp/api/windows.ui.xaml.uielement.pointermoved) , bieten ausführliche Details zu jedem Berührungs Kontakt, einschließlich Zeiger Bewegung und der Möglichkeit, Press-und releaseereignisse zu unterscheiden.
+- Zeiger Ereignisse, wie z. b. [**pointerpressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) und [**pointerverschiebe**](/uwp/api/windows.ui.xaml.uielement.pointermoved) , bieten ausführliche Details zu jedem Berührungs Kontakt, einschließlich Zeiger Bewegung und der Möglichkeit, Press-und releaseereignisse zu unterscheiden.
 
     Bei einem Zeiger handelt es sich um eine generische Eingabeart mit einem vereinheitlichten Ereignismechanismus. Er stellt grundlegende Informationen (wie die Bildschirmposition) für die aktive Eingabequelle (Touch, Touchpad, Maus oder Stift) zur Verfügung.
 
--   Manipulationsgestikereignisse wie [**ManipulationStarted**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted) weisen auf eine fortlaufende Interaktion hin. Sie werden ausgelöst, wenn der Benutzer ein Element berührt, und bleiben so lange aktiv, bis der Benutzer den bzw. die Finger vom Element hebt oder die Manipulation abgebrochen wird.
+- Manipulationsgestikereignisse wie [**ManipulationStarted**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted) weisen auf eine fortlaufende Interaktion hin. Sie werden ausgelöst, wenn der Benutzer ein Element berührt, und bleiben so lange aktiv, bis der Benutzer den bzw. die Finger vom Element hebt oder die Manipulation abgebrochen wird.
 
     Manipulationsereignisse umfassen Multi-Touch-Interaktionen wie Zoomen, Schwenken und Drehen sowie Interaktionen, die Trägheits- und Geschwindigkeitsdaten nutzen (z. B. Ziehen). Die von den Bearbeitungsereignissen bereitgestellten Informationen identifizieren nicht die Form der ausgeführten Interaktion. Stattdessen enthalten sie Daten, z. B. zu Position, Übersetzungsdelta und Geschwindigkeit. Mit diesen Touchdaten können Sie die Art der auszuführenden Interaktion ermitteln.
 
 Hier sehen Sie den grundlegenden Satz von Touchgesten, die von der UWP unterstützt werden.
 
-| Name           | type                 | BESCHREIBUNG                                                                            |
+| Name           | type                 | Description                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|
 | Tippen            | Statische Geste       | Der Bildschirm wird mit einem Finger berührt, und der Finger wird wieder angehoben.                                            |
 | Drücken und Halten | Statische Geste       | Ein Finger berührt den Bildschirm und bleibt auf dem Bildschirm.                                      |
@@ -220,7 +220,7 @@ Zeigerereignisse basieren auf einen einzigen Eingabepunkt (Finger, Stiftspitze, 
 
 Nachfolgend finden Sie eine Liste der Zeigerereignisse und der jeweiligen Ereignisargumente.
 
-| Ereignis oder Klasse                                                       | BESCHREIBUNG                                                   |
+| Ereignis oder Klasse                                                       | Description                                                   |
 |----------------------------------------------------------------------|---------------------------------------------------------------|
 | [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed)             | Tritt auf, wenn ein Finger den Bildschirm berührt.               |
 | [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased)           | Tritt auf, wenn dieser Berührungskontakt gelöst wird.                |
@@ -417,7 +417,7 @@ Mithilfe von Manipulationsereignissen können Sie Interaktionen wie Ziehen, Zoom
 
 Nachfolgend finden Sie eine Liste der Manipulationsereignisse und der jeweiligen Ereignisargumente.
 
-| Ereignis oder Klasse                                                                                               | BESCHREIBUNG                                                                                                                               |
+| Ereignis oder Klasse                                                                                               | Description                                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | [**ManipulationStarting-Ereignis**](/uwp/api/windows.ui.xaml.uielement.manipulationstarting)                                   | Tritt bei der ersten Erstellung des Manipulationsprozessors auf.                                                                                  |
 | [**ManipulationStarted-Ereignis**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted)                                     | Tritt auf, wenn ein Eingabegerät eine Bearbeitung für das [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement)beginnt.                                            |
@@ -571,19 +571,20 @@ End Sub
 
 ## <a name="routed-events"></a>Routingereignisse
 
-
 Alle hier erwähnten Zeiger-, Gestik- und Manipulationsereignisse werden als *Routingereignisse* implementiert. Folglich kann das Ereignis potenziell auch von Objekten behandelt werden, bei denen es sich nicht um das Objekt handelt, von dem das Ereignis ursprünglich ausgelöst wurde. Von aufeinander folgenden übergeordneten Elementen in einer Objektstruktur (wie etwa den übergeordneten Containern eines [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement)-Elements oder dem [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page)-Stammelement Ihrer App) können diese Ereignisse auch dann behandelt werden, wenn sie vom ursprünglichen Element nicht behandelt werden. Umgekehrt gilt: Ein Objekt, von dem das Ereignis nicht behandelt wird, kann das Ereignis als behandelt markieren, damit es keine übergeordneten Elemente mehr erreicht. Weitere Informationen zum Routing Ereignis Konzept und dessen Auswirkungen auf das Schreiben von Handlern für Routing Ereignisse finden Sie unter [Übersicht über Ereignisse und Routing Ereignisse](/previous-versions/windows/apps/hh758286(v=win.10)).
 
-## <a name="dos-and-donts"></a>Empfehlungen für die Vorgehensweise
+> [!Important]
+> Wenn Sie Zeiger Ereignisse für ein [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) in einer Bild lauffähigen Ansicht (z. b. ScrollViewer oder ListView) behandeln müssen, müssen Sie die Unterstützung für Manipulations Ereignisse für das Element in der Ansicht explizit deaktivieren, indem Sie [UIElement. canceldirectmanipulation ()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations)aufrufen. Um Manipulations Ereignisse in der Ansicht erneut zu aktivieren, müssen Sie [UIElement. trystartdirectmanipulation ()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation)aufrufen.
 
+## <a name="dos-and-donts"></a>DOS und Donas
 
--   Entwerfen Sie Anwendungen mit Toucheingabe als primär erwarteter Eingabemethode.
--   Bieten Sie visuelles Feedback für alle Arten von Interaktionen (Berühren, Zeichenstift, Eingabestift, Maus usw.).
--   Optimieren Sie die Zielbestimmung, indem Sie die Größe des Toucheingabeziels, die Kontaktgeometrie, das Scrubbing und das Wackeln anpassen.
--   Optimieren Sie die Genauigkeit durch Verwendung von Andockpunkten und Führungsschienen.
--   Stellen Sie QuickInfos und Handles bereit, um die Genauigkeit der Toucheingabe für eng aneinanderliegende UI-Elemente zu verbessern.
--   Verwenden Sie nach Möglichkeit keine zeitlich festgelegten Interaktionen (Beispiel für eine richtige Verwendung: Berühren und Halten).
--   Verwenden Sie nach Möglichkeit nicht die Anzahl der zu verwendenden Finger, um zwischen den Manipulationen zu unterscheiden.
+- Entwerfen Sie Anwendungen mit Toucheingabe als primär erwarteter Eingabemethode.
+- Bieten Sie visuelles Feedback für alle Arten von Interaktionen (Berühren, Zeichenstift, Eingabestift, Maus usw.).
+- Optimieren Sie die Zielbestimmung, indem Sie die Größe des Toucheingabeziels, die Kontaktgeometrie, das Scrubbing und das Wackeln anpassen.
+- Optimieren Sie die Genauigkeit durch Verwendung von Andockpunkten und Führungsschienen.
+- Stellen Sie QuickInfos und Handles bereit, um die Genauigkeit der Toucheingabe für eng aneinanderliegende UI-Elemente zu verbessern.
+- Verwenden Sie nach Möglichkeit keine zeitlich festgelegten Interaktionen (Beispiel für eine richtige Verwendung: Berühren und Halten).
+- Verwenden Sie nach Möglichkeit nicht die Anzahl der zu verwendenden Finger, um zwischen den Manipulationen zu unterscheiden.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
