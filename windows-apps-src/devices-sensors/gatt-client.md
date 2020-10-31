@@ -5,12 +5,12 @@ ms.date: 06/26/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d4ec2c3d849833b4a1673c4a4f425f32c42d00f
-ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
+ms.openlocfilehash: 339a154c3acf39c4f574d22907cf697db658552b
+ms.sourcegitcommit: 74c2c878b9dbb92785b89f126359c3f069175af2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353760"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93122401"
 ---
 # <a name="bluetooth-gatt-client"></a>Bluetooth GATT-Client
 
@@ -23,7 +23,7 @@ In diesem Artikel wird die Verwendung der Client-APIs für das Bluetooth Generic
 - Benachrichtigungen abonnieren, wenn der Merkmal Wert geändert wird
 
 > [!Important]
-> Sie müssen die Funktion "Bluetooth" in " *Package. appxmanifest*" deklarieren.
+> Sie müssen die Funktion "Bluetooth" in " *Package. appxmanifest* " deklarieren.
 >
 > `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
@@ -52,7 +52,11 @@ Um eine nützliche Implementierung zu erstellen, muss ein Entwickler über vorhe
 
 Aus Gründen der Benutzerfreundlichkeit pflegt Bluetooth SIG eine [Liste der öffentlichen Profile](https://www.bluetooth.com/specifications/adopted-specifications#gattspec), die zur Verfügung stehen.
 
-## <a name="query-for-nearby-devices"></a>Abfragen von Geräten in der Nähe
+## <a name="examples"></a>Beispiele
+
+Ein umfassendes Beispiel finden Sie unter [Bluetooth Low Energy Sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BluetoothLE).
+
+### <a name="query-for-nearby-devices"></a>Abfragen von Geräten in der Nähe
 
 Es gibt zwei Hauptmethoden, um Geräte in der Nähe abzufragen:
 
@@ -89,7 +93,7 @@ deviceWatcher.Start();
 
 Nachdem Sie den devicewatcher gestartet haben, erhalten Sie [DeviceInformation](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) für jedes Gerät, das die Abfrage im Handler für das [hinzugefügte](/uwp/api/windows.devices.enumeration.devicewatcher.added) Ereignis für die fraglichen Geräte erfüllt. Eine ausführlichere Betrachtung von devicewatcher finden Sie im kompletten Beispiel [auf GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing).
 
-## <a name="connecting-to-the-device"></a>Verbindung mit dem Gerät wird hergestellt
+### <a name="connecting-to-the-device"></a>Verbindung mit dem Gerät wird hergestellt
 
 Nachdem ein gewünschtes Gerät ermittelt wurde, verwenden Sie das [DeviceInformation.ID](/uwp/api/windows.devices.enumeration.deviceinformation.id) -Objekt, um das Bluetooth Le-Geräte Objekt für das betreffende Gerät zu erhalten:
 
@@ -111,14 +115,14 @@ bluetoothLeDevice.Dispose();
 Wenn die APP erneut auf das Gerät zugreifen muss, wird durch einfaches erneutes Erstellen des Geräte Objekts und durch den Zugriff auf ein Merkmal (im nächsten Abschnitt erläutert) das Betriebssystem zum erneuten Herstellen der Verbindung bei Bedarf zurückgeführt. Wenn sich das Gerät in der Nähe befindet, erhalten Sie Zugriff auf das Gerät. andernfalls wird ein Fehler mit der Fehlermeldung zurückgegeben.  
 
 > [!NOTE]
-> Durch das Erstellen eines [bluetoothledevice](/uwp/api/windows.devices.bluetooth.bluetoothledevice) -Objekts durch Aufrufen dieser Methode allein (notwendigerweise) wird keine Verbindung initiiert. Wenn Sie eine Verbindung initiieren möchten, legen Sie " [gattsession. wart Connection](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattsession.maintainconnection) " auf fest `true` , oder führen Sie eine nicht zwischengespeicherte Dienst Ermittlungsmethode für **bluetoothledevice**aus, oder führen Sie einen Lese-/Schreibvorgang für das Gerät aus
+> Durch das Erstellen eines [bluetoothledevice](/uwp/api/windows.devices.bluetooth.bluetoothledevice) -Objekts durch Aufrufen dieser Methode allein (notwendigerweise) wird keine Verbindung initiiert. Wenn Sie eine Verbindung initiieren möchten, legen Sie " [gattsession. wart Connection](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattsession.maintainconnection) " auf fest `true` , oder führen Sie eine nicht zwischengespeicherte Dienst Ermittlungsmethode für **bluetoothledevice** aus, oder führen Sie einen Lese-/Schreibvorgang für das Gerät aus
 >
 > - Wenn " **gattsession. wart Connection** " auf "true" festgelegt ist, wartet das System unbegrenzt auf eine Verbindung, und die Verbindung wird hergestellt, wenn das Gerät verfügbar ist. Es gibt nichts, auf den Ihre Anwendung warten kann, da " **gattsession. wart Connection** " eine Eigenschaft ist.
 > - Für Dienst Ermittlung und Lese-/Schreibvorgänge in GATT wartet das System eine endliche, aber Variable Zeit. Alles von sofortiger Zeit bis zu wenigen Minuten. Faktoren beinhaltet den Datenverkehr auf dem Stapel und wie die Anforderung in die Warteschlange eingereiht wird. Wenn keine andere ausstehende Anforderung vorhanden ist und das Remote Gerät nicht erreichbar ist, wartet das System sieben (7) Sekunden, bevor ein Timeout eintritt. Wenn andere ausstehende Anforderungen vorhanden sind, kann jede der Anforderungen in der Warteschlange sieben (7) Sekunden in Anspruch nehmen, sodass sich die weiter unten in der Warteschlange befindet, je länger Sie warten.
 >
 > Der Verbindungsprozess kann derzeit nicht abgebrochen werden.
 
-## <a name="enumerating-supported-services-and-characteristics"></a>Auflisten unterstützter Dienste und Merkmale
+### <a name="enumerating-supported-services-and-characteristics"></a>Auflisten unterstützter Dienste und Merkmale
 
 Nachdem Sie nun über ein bluetoothledevice-Objekt verfügen, besteht der nächste Schritt darin, herauszufinden, welche Daten das Gerät verfügbar macht. Der erste Schritt besteht darin, Dienste abzufragen:
 
@@ -146,7 +150,7 @@ if (result.Status == GattCommunicationStatus.Success)
 
 Das Betriebssystem gibt eine schreibgeschützte Liste von gattobjects-Objekten zurück, für die Sie dann Vorgänge ausführen können.
 
-## <a name="perform-readwrite-operations-on-a-characteristic"></a>Ausführen von Lese-/Schreibvorgängen für ein Merkmal
+### <a name="perform-readwrite-operations-on-a-characteristic"></a>Ausführen von Lese-/Schreibvorgängen für ein Merkmal
 
 Das Merkmal ist die grundlegende Einheit der GATT-basierten Kommunikation. Sie enthält einen Wert, der ein bestimmtes Datenelement auf dem Gerät darstellt. Beispielsweise verfügt das Merkmal der Akku Ebene über einen Wert, der den Akku Pegel des Geräts darstellt.
 
@@ -196,20 +200,20 @@ if (result == GattCommunicationStatus.Success)
 }
 ```
 
-> **Tipp**: " [DataReader](/uwp/api/windows.storage.streams.datareader) " und " [DataWriter](/uwp/api/windows.storage.streams.datawriter) " sind bei der Arbeit mit den rohpuffern, die Sie aus vielen der Bluetooth-APIs erhalten, nicht funktionsunfähig.
+> **Tipp** : " [DataReader](/uwp/api/windows.storage.streams.datareader) " und " [DataWriter](/uwp/api/windows.storage.streams.datawriter) " sind bei der Arbeit mit den rohpuffern, die Sie aus vielen der Bluetooth-APIs erhalten, nicht funktionsunfähig.
 
-## <a name="subscribing-for-notifications"></a>Abonnieren von Benachrichtigungen
+### <a name="subscribing-for-notifications"></a>Abonnieren von Benachrichtigungen
 
 Stellen Sie sicher, dass das Merkmal entweder angeben oder Benachrichtigen unterstützt (überprüfen Sie die Merkmals Eigenschaften, um sicherzustellen).
 
-> **Abgesehen**von: die Angabe ist zuverlässiger als zuverlässiger, da jedes geänderte Ereignis mit einer Bestätigung vom Client Gerät gekoppelt ist. Die Benachrichtigung ist häufiger, da die meisten GATT-Transaktionen die Stromversorgung Verb einsparen und nicht äußerst zuverlässig sein würden. In jedem Fall werden alle auf der Controller Ebene verarbeitet, sodass die APP nicht beteiligt ist. Wir bezeichnen Sie kollektiv als einfach "Benachrichtigungen", aber jetzt wissen Sie.
+> **Abgesehen** von: die Angabe ist zuverlässiger als zuverlässiger, da jedes geänderte Ereignis mit einer Bestätigung vom Client Gerät gekoppelt ist. Die Benachrichtigung ist häufiger, da die meisten GATT-Transaktionen die Stromversorgung Verb einsparen und nicht äußerst zuverlässig sein würden. In jedem Fall werden alle auf der Controller Ebene verarbeitet, sodass die APP nicht beteiligt ist. Wir bezeichnen Sie kollektiv als einfach "Benachrichtigungen", aber jetzt wissen Sie.
 
 Vor dem erhalten von Benachrichtigungen sind zwei Dinge zu berücksichtigen:
 
 - In Client Merkmal konfigurationsdeskriptor schreiben (cccd)
 - Behandeln des Merkmals. ValueChanged-Ereignisses
 
-Beim Schreiben auf die cccd wird dem Server Gerät mitgeteilt, dass dieser Client jedes Mal wissen möchte, wenn sich ein bestimmter Merkmals Wert ändert. Gehen Sie dazu folgendermaßen vor:
+Beim Schreiben auf die cccd wird dem Server Gerät mitgeteilt, dass dieser Client jedes Mal wissen möchte, wenn sich ein bestimmter Merkmals Wert ändert. Gehen Sie dazu wie folgt vor:
 
 ```csharp
 GattCommunicationStatus status = await selectedCharacteristic.WriteClientCharacteristicConfigurationDescriptorAsync(
@@ -235,3 +239,4 @@ void Characteristic_ValueChanged(GattCharacteristic sender,
     // Parse the data however required.
 }
 ```
+
