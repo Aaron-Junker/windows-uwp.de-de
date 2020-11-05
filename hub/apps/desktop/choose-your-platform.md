@@ -1,5 +1,5 @@
 ---
-Description: Wenn Sie eine neue Desktop-App erstellen möchten, müssen Sie zuerst entscheiden, ob Sie die Win32- und COM-API oder .NET verwenden möchten.
+description: Wenn Sie eine neue Desktop-App erstellen möchten, müssen Sie zuerst entscheiden, ob Sie die Win32- und COM-API oder .NET verwenden möchten.
 ms.assetid: 82705644-F1F0-40F3-99B1-7A97BFB32831
 title: Auswählen Ihrer App-Plattform
 ms.topic: article
@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: Windows Win32, Desktopentwicklung
-ms.openlocfilehash: 0aa439010138af80f91c4e02776163577658d6cc
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 46cf8a8e9a57384b85b3156b87697f898ff08ee8
+ms.sourcegitcommit: 37f570c7425a3fa953a0c375c19381bf9cf2b6a2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216733"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93191901"
 ---
 # <a name="choose-your-app-platform"></a>Auswählen Ihrer App-Plattform
 
@@ -133,4 +133,4 @@ Xamarin dient zum Erstellen von plattformübergreifenden Anwendungen für Window
 
 ### <a name="uno-platform"></a>Uno-Plattform
 
-Die Uno-Plattform ermöglicht die Ausführung von Windows UWP-basiertem Code (C# und XAML) unter iOS, Android und WebAssembly. Sie enthält vollständige API-Definitionen für UWP in [Windows 10 2004 (19041)](/windows/uwp/whats-new/windows-10-build-19041) sowie die Implementierung von Teilen der UWP-API, wie z. B. [Windows.UI.Xaml](/uwp/api/windows.ui.xaml.documents?view=winrt-19041), damit UWP-Anwendungen auf diesen Plattformen ausgeführt werden können. Weitere Informationen finden Sie in der [Dokumentation zur Uno-Plattform](https://platform.uno/docs/articles/intro.html).
+Die Uno-Plattform ermöglicht die Ausführung von Windows UWP-basiertem Code (C# und XAML) unter iOS, Android, macOS, Linux und WebAssembly. Sie enthält vollständige API-Definitionen für UWP in [Windows 10 2004 (19041)](/windows/uwp/whats-new/windows-10-build-19041) sowie die Implementierung von Teilen der UWP-API, wie z. B. [Windows.UI.Xaml](/uwp/api/windows.ui.xaml.documents?view=winrt-19041), damit UWP-Anwendungen auf diesen Plattformen ausgeführt werden können. Weitere Informationen finden Sie in der [Dokumentation zur Uno-Plattform](https://platform.uno/docs/articles/intro.html).

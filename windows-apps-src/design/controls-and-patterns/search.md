@@ -1,5 +1,5 @@
 ---
-Description: Die Suche ist eine der besten Möglichkeiten, um Inhalte in Ihrer App zu finden. In diesem Artikel werden Elemente der Suche sowie Suchbereiche, die Implementierung und Beispiele für die Suche im Kontext behandelt.
+description: Die Suche ist eine der besten Möglichkeiten, um Inhalte in Ihrer App zu finden. In diesem Artikel werden Elemente der Suche sowie Suchbereiche, die Implementierung und Beispiele für die Suche im Kontext behandelt.
 title: Suche und „Auf Seite suchen“
 ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
 label: Search
@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 61334cc4d8d91347dac7fa477cc5d508ea8ab5d1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 660b2cdff321bbdbb0fd20b84a95ba410794b83a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174484"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035233"
 ---
 # <a name="search-and-find-in-page"></a>Suche und „Auf Seite suchen“
 
@@ -29,21 +29,21 @@ Die Suche ist eine der besten Möglichkeiten, um Inhalte in Ihrer App zu finden.
 ## <a name="elements-of-the-search-experience"></a>Elemente der Suche
 
 
-**Eingabe.**   Die Texteingabe ist der am häufigsten verwendete Suchmodus und steht daher bei diesem Leitfaden im Mittelpunkt. Andere gängige Eingabemodi sind Spracheingabe und Kamera. Für diese sind jedoch in der Regel eine Verknüpfung mit der Gerätehardware sowie ggf. zusätzliche Steuerelemente oder benutzerdefinierte UI-Elemente in der App erforderlich.
+**Input.**  Die Texteingabe ist der am häufigsten verwendete Suchmodus und steht daher bei diesem Leitfaden im Mittelpunkt. Andere gängige Eingabemodi sind Spracheingabe und Kamera. Für diese sind jedoch in der Regel eine Verknüpfung mit der Gerätehardware sowie ggf. zusätzliche Steuerelemente oder benutzerdefinierte UI-Elemente in der App erforderlich.
 
-**Nulleingabe.**   Nach der Aktivierung des Eingabefelds durch den Benutzer (aber noch vor der Texteingabe) können Sie eine sogenannte Nulleingabe-Canvas anzeigen. Die Nulleingabe-Canvas wird häufig in der App-Canvas angezeigt, sodass der Inhalt durch [einen automatischen Vorschlag](auto-suggest-box.md) ersetzt wird, wenn der Benutzer mit der Eingabe der Abfrage beginnt. Für den Nulleingabezustand eignen sich beispielsweise der aktuelle Suchverlauf, populäre Suchabfragen, kontextbezogene Suchvorschläge sowie Hinweise und Tipps.
+**Nulleingabe.**  Nach der Aktivierung des Eingabefelds durch den Benutzer (aber noch vor der Texteingabe) können Sie eine sogenannte Nulleingabe-Canvas anzeigen. Die Nulleingabe-Canvas wird häufig in der App-Canvas angezeigt, sodass der Inhalt durch [einen automatischen Vorschlag](auto-suggest-box.md) ersetzt wird, wenn der Benutzer mit der Eingabe der Abfrage beginnt. Für den Nulleingabezustand eignen sich beispielsweise der aktuelle Suchverlauf, populäre Suchabfragen, kontextbezogene Suchvorschläge sowie Hinweise und Tipps.
 
 ![Beispiel für Cortana mit Nulleingabe-Canvas](images/search-cortana-example.png)
 
- 
+ 
 
-**Abfrageformulierung/automatischer Vorschlag.**   Die Abfrageformulierung ersetzt den Nulleingabeinhalt, sobald der Benutzer mit der Eingabe beginnt. Während der Eingabe einer Abfragezeichenfolge werden dem Benutzer kontinuierlich aktualisierte Abfragevorschläge oder Optionen zur Mehrdeutigkeitsvermeidung angezeigt, um die Eingabe zu beschleunigen und ihn bei der Formulierung einer geeigneten Abfrage zu unterstützen. Dieses Verhalten von Abfragevorschlägen ist in das [Steuerelement für automatische Vorschläge](auto-suggest-box.md) integriert und ermöglicht auch die Symbolanzeige innerhalb der Suche (beispielsweise ein Mikrofon oder ein Commit-Symbol). Jedes andere Verhalten muss von der App behandelt werden.
+**Abfrageformulierung/automatischer Vorschlag.**  Die Abfrageformulierung ersetzt den Nulleingabeinhalt, sobald der Benutzer mit der Eingabe beginnt. Während der Eingabe einer Abfragezeichenfolge werden dem Benutzer kontinuierlich aktualisierte Abfragevorschläge oder Optionen zur Mehrdeutigkeitsvermeidung angezeigt, um die Eingabe zu beschleunigen und ihn bei der Formulierung einer geeigneten Abfrage zu unterstützen. Dieses Verhalten von Abfragevorschlägen ist in das [Steuerelement für automatische Vorschläge](auto-suggest-box.md) integriert und ermöglicht auch die Symbolanzeige innerhalb der Suche (beispielsweise ein Mikrofon oder ein Commit-Symbol). Jedes andere Verhalten muss von der App behandelt werden.
 
 ![example of query/formulation einen automatischen Vorschlag](images/search-autosuggest-example.png)
 
- 
+ 
 
-**Ergebnissatz.**   Suchergebnisse werden üblicherweise direkt unter dem Eingabefeld der Suche angezeigt. Dies ist zwar nicht zwingend erforderlich, die Gegenüberstellung von Eingabe und Ergebnissen bewahrt jedoch den Kontext und ermöglicht dem Kunden eine direkte Bearbeitung der vorherigen Abfrage oder die Eingabe einer neuen Abfrage. Dieser Zusammenhang kann noch weiter verdeutlicht werden, indem der Hinweistext durch die Abfrage ersetzt wird, auf die der Ergebnissatz zurückzuführen ist.
+**Ergebnissatz.**  Suchergebnisse werden üblicherweise direkt unter dem Eingabefeld der Suche angezeigt. Dies ist zwar nicht zwingend erforderlich, die Gegenüberstellung von Eingabe und Ergebnissen bewahrt jedoch den Kontext und ermöglicht dem Kunden eine direkte Bearbeitung der vorherigen Abfrage oder die Eingabe einer neuen Abfrage. Dieser Zusammenhang kann noch weiter verdeutlicht werden, indem der Hinweistext durch die Abfrage ersetzt wird, auf die der Ergebnissatz zurückzuführen ist.
 
 Eine Möglichkeit für eine wirksame Bearbeitung der vorherigen Abfrage oder die Eingabe einer neuen Abfrage besteht darin, bei Reaktivierung des Felds die vorherige Abfrage hervorzuheben. In diesem Fall ersetzt jede Tastatureingabe die vorherige Zeichenfolge, die Zeichenfolge bleibt jedoch erhalten, sodass der Benutzer einen Cursor platzieren und die vorherige Zeichenfolge bearbeiten oder anhängen kann.
 
@@ -56,11 +56,11 @@ Die Suche ist ein gängiges Feature, und die entsprechenden UI-Elemente begegnen
 
 Im Anschluss finden Sie einige gängige Suchbereiche:
 
-**Global** und **Kontext/Eingrenzung.**  Übergreifende Suche für mehrere Quellen mit Cloud-basierten und lokalen Inhalten. Zu den unterschiedlichen Ergebnisse zählen beispielsweise URLs, Dokumente, Medien, Aktionen und Apps.
+**Global** und **Kontext/Eingrenzung**  Übergreifende Suche für mehrere Quellen mit Cloud-basierten und lokalen Inhalten. Zu den unterschiedlichen Ergebnisse zählen beispielsweise URLs, Dokumente, Medien, Aktionen und Apps.
 
-**Web.**   Suche nach einem Webindex. Die Ergebnisse können unter anderem Seiten, Entitäten und Antworten umfassen.
+**Web.**  Suche nach einem Webindex. Die Ergebnisse können unter anderem Seiten, Entitäten und Antworten umfassen.
 
-**Mein Inhalt.**   Übergreifende Suche für Geräte, Cloud, Soziogramme und mehr. Die Ergebnisse können variieren, sind jedoch durch die Verbindung mit Benutzerkonten eingegrenzt.
+**Eigene Inhalte.**  Übergreifende Suche für Geräte, Cloud, Soziogramme und mehr. Die Ergebnisse können variieren, sind jedoch durch die Verbindung mit Benutzerkonten eingegrenzt.
 
 Verwenden Sie Hinweistext, um den Suchbereich zu kommunizieren. Beispiele:
 
@@ -76,7 +76,7 @@ Verwenden Sie Hinweistext, um den Suchbereich zu kommunizieren. Beispiele:
 
 ![Hinweistextbeispiel für die Suche](images/search-windowsandweb.png)
 
- 
+ 
 
 Durch eine effektive Vermittlung des Bereichs für den Sucheingabepunkt können Sie sicherstellen, dass die Suchfunktionen die Erwartungen erfüllen, die der Benutzer an sie stellt, und dass er sich nicht über die Suche ärgert.
 
@@ -94,7 +94,7 @@ Nach dem Klicken auf das Suchsymbol:
 
 ![Beispiel für die Suche in einem Navigationsmenü](images/search-icon-expanded-maps.png)
 
- 
+ 
 
 Als Einstiegspunkt für die Suche wird immer ein nach rechts geneigtes Lupensymbol verwendet. Dabei ist das Symbol mit dem Hexadezimalzeichencode 0xE0094 (Segoe UI Symbol; üblicherweise mit einem Schriftgrad von 15 Epx) zu verwenden.
 
@@ -115,19 +115,19 @@ Suche als Aktion auf der Symbolleiste von Windows:
 
 ![Beispiel für die Suche als Aktion auf der Symbolleiste von Windows](images/search-toolbar-action.png)
 
- 
+ 
 
 Suche als Eingabe auf der App-Canvas:
 
 ![Beispiel für die Suche auf der App-Canvas](images/search-app-canvas.png)
 
- 
+ 
 
 Suche in einem Navigationsbereich in der Windows-Karten-App:
 
 ![Beispiel für die Suche in einem Navigationsmenü](images/search-icon-expanded-maps.png)
 
- 
+ 
 
 Inlinesuche eignet sich am besten für seltener verwendete oder stark kontextorientierte Suchvorgänge:
 
@@ -172,25 +172,25 @@ Stellen Sie eine einfache Möglichkeit zur Verfügung, um das Feature „Auf Sei
 
 ![„Auf Seite suchen“ (Beispiel 1)](images/findinpage-01.png)
 
- 
+ 
 
 Nach der Auswahl von „Auf Seite suchen“ gibt der Benutzer einen Suchbegriff ein. Textvorschläge können angezeigt werden, wenn ein Suchbegriff eingegeben wird:
 
 ![„Auf Seite suchen“ (Beispiel 2)](images/findinpage-02.png)
 
- 
+ 
 
 Wenn keine Textübereinstimmung in der Suche vorliegt, sollte die Textzeichenfolge „Keine Ergebnisse“ im Ergebnisfeld angezeigt werden:
 
 ![„Auf Seite suchen“ (Beispiel 3)](images/findinpage-03.png)
 
- 
+ 
 
 Wenn eine Textübereinstimmung in der Suche vorliegt, sollte der erste Begriff in einer eindeutigen Farbe hervorgehoben werden, wobei die nachfolgenden Übereinstimmungen in einem dezenteren Ton derselben Farbpalette gehalten werden sollten, wie dies in diesem Beispiel ersichtlich ist:
 
 ![„Auf Seite suchen“ (Beispiel 4)](images/findinpage-04.png)
 
- 
+ 
 
 „Auf Seite suchen“ weist einen Übereinstimmungszähler auf:
 
@@ -214,6 +214,6 @@ Weitere Informationen zum Hinzufügen von Befehlen zur Befehlsleiste finden Sie 
 * [Feld mit automatischen Vorschlägen](auto-suggest-box.md)
 
 
- 
+ 
 
- 
+ 

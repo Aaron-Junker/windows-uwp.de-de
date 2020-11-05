@@ -1,5 +1,5 @@
 ---
-Description: Sie können angefügte Layouts für die Verwendung mit Containern definieren, etwa dem ItemsRepeater-Steuerelement.
+description: Sie können angefügte Layouts für die Verwendung mit Containern definieren, etwa dem ItemsRepeater-Steuerelement.
 title: AttachedLayout
 label: AttachedLayout
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5be16e22a30f0b366ad55f323a0f3f2aa2b7b837
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 62ecc21d3ed9835ae7360d0c0dfdfa0b09cbdced
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220303"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034863"
 ---
 # <a name="attached-layouts"></a>Angefügte Layouts
 
@@ -40,9 +40,9 @@ In diesem Thema befassen wir uns damit, was das Erstellen eines angefügten Layo
 
 Zum Durchführen des Layouts müssen für jedes Element zwei Fragen beantwortet werden:
 
-1. Welche ***Größe*** soll das Element aufweisen?
+1. Welche* **Größe** soll das Element aufweisen?
 
-2. Welche ***Position*** soll das Element haben?
+2. Welche _*_Position_*_ soll das Element haben?
 
 Das XAML-Layoutsystem, das Antworten auf diese Fragen gibt, wird kurz im Rahmen der Erörterung von [benutzerdefinierten Panels](./custom-panels-overview.md) behandelt.
 
@@ -58,7 +58,7 @@ Aus diesem Grund wurde ein Panel in XAML häufig als Synonym für Layout verwend
 Der [ItemsRepeater](../controls-and-patterns/items-repeater.md) verhält sich ebenso wie ein Panel, im Gegensatz zu Panel macht er aber keine Eigenschaft „Children“ verfügbar, die es ermöglicht, untergeordnete UIElements hinzuzufügen oder zu entfernen.  Stattdessen wird die Lebensdauer seiner untergeordneten Elemente automatisch vom Framework so verwaltet, dass sie einer Sammlung von Datenelementen entspricht.  Zwar ist er nicht von Panel abgeleitet, er verhält sich aber wie ein Panel und wird vom Framework auch so behandelt.
 
 > [!NOTE]
-> Das [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) ist ein Container, der von Panel abgeleitet ist und seine Logik an das angefügte [Layout](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout)-Objekt delegiert.  LayoutPanel ist eine *Vorschauversion* und zurzeit nur in den *Vorabversions*-Drops des WinUI-Pakets erhältlich.
+> Das [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) ist ein Container, der von Panel abgeleitet ist und seine Logik an das angefügte [Layout](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout)-Objekt delegiert.  „LayoutPanel“ ist eine _Vorschauversion* und zurzeit nur in den *Vorabversions* -Drops des WinUI-Pakets erhältlich.
 
 #### <a name="containers"></a>Container
 
@@ -77,7 +77,7 @@ Das Konzept des **angefügten Layouts** verdeutlicht die Unterscheidung zwischen
 </LayoutPanel>
 ```
 
-Während des Layoutprozesses stützt sich der Container auf das angefügte *UniformGridLayout*, um seine untergeordneten Elemente zu bemessen und anzuordnen.
+Während des Layoutprozesses stützt sich der Container auf das angefügte *UniformGridLayout* , um seine untergeordneten Elemente zu bemessen und anzuordnen.
 
 #### <a name="per-container-state"></a>Pro-Container-Zustand
 
@@ -149,10 +149,10 @@ Die Vorgehensweise beim Erstellen eines nicht virtualisierenden Layouts sollte a
 
 1. Leiten Sie vom Basistyp [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout) (anstelle von Panel) ab.
 2. *(Optional)* Definieren Sie Abhängigkeitseigenschaften, deren Änderung bewirkt, dass das Layout für ungültig erklärt wird.
-3. _(**Neu**/Optional)_ Initialisieren Sie jedes für das Layout erforderliche Zustandsobjekt als Teil von [InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore). Speichern Sie es im Hostcontainer, indem Sie den im Kontext bereitgestellten [LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) verwenden.
+3. _( **Neu** /Optional)_ Initialisieren Sie jedes für das Layout erforderliche Zustandsobjekt als Teil von [InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore). Speichern Sie es im Hostcontainer, indem Sie den im Kontext bereitgestellten [LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) verwenden.
 4. Überschreiben Sie [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.measureoverride), und rufen Sie die [Measure](/uwp/api/windows.ui.xaml.uielement.measure)-Methode für alle untergeordneten Elemente auf.
 5. Überschreiben Sie [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.arrangeoverride), und rufen Sie die [Arrange](/uwp/api/windows.ui.xaml.uielement.arrange)-Methode für alle untergeordneten Elemente auf.
-6. *(**Neu**/Optional)* Löschen Sie als Teil von [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore) jeden gespeicherten Zustand.
+6. *( **Neu** /Optional)* Löschen Sie als Teil von [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore) jeden gespeicherten Zustand.
 
 ### <a name="example-a-simple-stack-layout-varying-sized-items"></a>Beispiel: Ein einfaches Stapellayout (Elemente verschiedener Größe)
 
@@ -272,7 +272,7 @@ Der VirtualizingLayoutContext bietet zwei zusätzliche Eigenschaften, die für L
 
 ## <a name="data-dependent-virtualizing-layouts"></a>Datenabhängige virtualisierende Layouts
 
-Ein virtualisierendes Layout ist einfacher zu erstellen, wenn Sie wissen, welche Größe jedes Element haben sollte, ohne die anzuzeigenden Inhalte messen zu müssen.  Im Rahmen dieses Dokuments bezeichnen wir diese Kategorie virtualisierender Layouts einfach als **Datenlayouts**, da sie normalerweise eine Untersuchung der Daten mit sich bringen.  Auf der Grundlage der Daten kann eine App eine visuelle Darstellung mit bekannter Größe auswählen – möglicherweise, weil diese Teil der Daten ist oder zuvor im Entwurf festgelegt wurde.
+Ein virtualisierendes Layout ist einfacher zu erstellen, wenn Sie wissen, welche Größe jedes Element haben sollte, ohne die anzuzeigenden Inhalte messen zu müssen.  Im Rahmen dieses Dokuments bezeichnen wir diese Kategorie virtualisierender Layouts einfach als **Datenlayouts** , da sie normalerweise eine Untersuchung der Daten mit sich bringen.  Auf der Grundlage der Daten kann eine App eine visuelle Darstellung mit bekannter Größe auswählen – möglicherweise, weil diese Teil der Daten ist oder zuvor im Entwurf festgelegt wurde.
 
 Das allgemeine Vorgehen beim Layout ist Folgendes:
 
@@ -311,13 +311,13 @@ Der Code unten durchläuft schrittweise dieses potenzielle Beispiel für eine be
 #### <a name="implementation"></a>Implementierung
 
 ```csharp
-/// <summary>
-///  This is a custom layout that displays elements in two different sizes
-///  wide (w) and narrow (n). There are two types of rows 
-///  odd rows - narrow narrow wide
-///  even rows - wide narrow narrow
-///  This pattern repeats.
-/// </summary>
+/// <summary>
+///  This is a custom layout that displays elements in two different sizes
+///  wide (w) and narrow (n). There are two types of rows 
+///  odd rows - narrow narrow wide
+///  even rows - wide narrow narrow
+///  This pattern repeats.
+/// </summary>
 
 public class ActivityFeedLayout : VirtualizingLayout // STEP #1 Inherit from base attached layout
 {

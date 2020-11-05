@@ -1,5 +1,5 @@
 ---
-Description: Hier erfahren Sie, wie Sie die Peer-zu-Peer-Navigation zwischen zwei einfachen Seiten in einer Windows-App ermöglichen.
+description: Hier erfahren Sie, wie Sie die Peer-zu-Peer-Navigation zwischen zwei einfachen Seiten in einer Windows-App ermöglichen.
 title: Peer-zu-Peer-Navigation zwischen zwei Seiten
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
@@ -13,12 +13,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 8eae03b2d92b8854e5368b824b1572a4946761ed
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: d0945db420c2e20fa4b81a8f402f580762afe19c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220633"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031453"
 ---
 # <a name="implement-navigation-between-two-pages"></a>Implementieren der Navigation zwischen zwei Seiten
 
@@ -35,7 +35,7 @@ Hier erfährst du, wie du einen Frame und Seiten verwendest, um in deiner App ei
 3.  Wählen Sie im mittleren Bereich die Option **Leere App** aus.
 4.  Geben Sie in das Feld **Name** den Wert **NavApp1** ein, und klicken Sie anschließend auf **OK**.
     Die Projektmappe wird erstellt, und die Projektdateien werden im **Projektmappen-Explorer** angezeigt.
-5.  Klicken Sie zum Ausführen des Programms im Menü auf **Debuggen** > **Debugging starten**, oder drücken Sie F5.
+5.  Klicken Sie zum Ausführen des Programms im Menü auf **Debuggen** > **Debugging starten** , oder drücken Sie F5.
     Es wird eine leere Seite angezeigt.
 6.  Um das Debuggen zu beenden und zu Visual Studio zurückzukehren, kannst du entweder die App beenden oder im Menü auf **Debuggen beenden** klicken.
 
@@ -43,10 +43,10 @@ Hier erfährst du, wie du einen Frame und Seiten verwendest, um in deiner App ei
 
 Füge als Nächstes deinem Projekt zwei Seiten hinzu.
 
-1.  Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektknoten **BlankApp**, um das Kontextmenü zu öffnen.
+1.  Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektknoten **BlankApp** , um das Kontextmenü zu öffnen.
 2.  Wählen Sie im Kontextmenü **Hinzufügen** > **Neues Element** aus.
 3.  Wählen Sie im Dialogfeld **Neues Element hinzufügen** im mittleren Bereich die Option **Leere Seite** aus.
-4.  Geben Sie in das Feld **Name** den Wert **Page1** (oder **Page2**) ein, und wählen Sie anschließend **Hinzufügen**.
+4.  Geben Sie in das Feld **Name** den Wert **Page1** (oder **Page2** ) ein, und wählen Sie anschließend **Hinzufügen**.
 5. Wiederhole die Schritte 1 bis 4, um die zweite Seite hinzuzufügen.
 
 Die Dateiliste des Projekts „NavApp1“ sollte nun folgende Dateien enthalten:
@@ -87,7 +87,7 @@ Füge in „Page1.xaml“ den folgenden Inhalt hinzu:
 <TextBlock x:Name="pageTitle" Text="Page 1" />
 ```
 
--   Ein [**HyperlinkButton**](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)-Element als untergeordnetes Element des [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid)-Stammelements (nach dem `pageTitle` [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Element).
+-   Ein [**HyperlinkButton**](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)-Element als untergeordnetes Element des [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid)-Stammelements (nach dem `pageTitle` [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Element).
 ```xaml
 <HyperlinkButton Content="Click to go to page 2"
                  Click="HyperlinkButton_Click"
@@ -124,7 +124,7 @@ Füge in „Page2.xaml“ den folgenden Inhalt hinzu:
 <TextBlock x:Name="pageTitle" Text="Page 2" />
 ```
 
--   Ein [**HyperlinkButton**](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)-Element als untergeordnetes Element des [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid)-Stammelements (nach dem `pageTitle` [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Element).
+-   Ein [**HyperlinkButton**](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)-Element als untergeordnetes Element des [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid)-Stammelements (nach dem `pageTitle` [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Element).
 ```xaml
 <HyperlinkButton Content="Click to go to page 1" 
                  Click="HyperlinkButton_Click"
@@ -304,11 +304,11 @@ Erstellen Sie nun die App, und führen Sie sie aus. Klicken Sie auf den Link „
 
 Bevor wir der App weitere Funktionen hinzufügen, sehen wir uns zunächst an, wie die hinzugefügten Seiten die Navigation in unserer App ermöglichen.
 
-Zuerst wird in der CodeBehind-Datei „App.xaml“ in der Methode `App.OnLaunched` eine [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame)-Klasse namens `rootFrame` für die App erstellt. Die **Frame**-Klasse unterstützt verschiedene Navigationsmethoden wie [**Navigate**](/uwp/api/windows.ui.xaml.controls.frame.navigate), [**GoBack**](/uwp/api/windows.ui.xaml.controls.frame.goback)und [**GoForward**](/uwp/api/windows.ui.xaml.controls.frame.goforward) sowie Eigenschaften wie [**BackStack**](/uwp/api/windows.ui.xaml.controls.frame.backstack), [**ForwardStack**](/uwp/api/windows.ui.xaml.controls.frame.forwardstack) und [**BackStackDepth**](/uwp/api/windows.ui.xaml.controls.frame.backstackdepth).
- 
+Zuerst wird in der CodeBehind-Datei „App.xaml“ in der Methode `App.OnLaunched` eine [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame)-Klasse namens `rootFrame` für die App erstellt. Die **Frame** -Klasse unterstützt verschiedene Navigationsmethoden wie [**Navigate**](/uwp/api/windows.ui.xaml.controls.frame.navigate), [**GoBack**](/uwp/api/windows.ui.xaml.controls.frame.goback)und [**GoForward**](/uwp/api/windows.ui.xaml.controls.frame.goforward) sowie Eigenschaften wie [**BackStack**](/uwp/api/windows.ui.xaml.controls.frame.backstack), [**ForwardStack**](/uwp/api/windows.ui.xaml.controls.frame.forwardstack) und [**BackStackDepth**](/uwp/api/windows.ui.xaml.controls.frame.backstackdepth).
+ 
 Die [**Navigate**](/uwp/api/windows.ui.xaml.controls.frame.navigate)-Methode wird zum Anzeigen von Inhalt im **Frame** verwendet. Standardmäßig lädt diese Methode „MainPage.xaml“. In unserem Beispiel wird `Page1` an die Methode **Navigate** übergeben, sodass durch die Methode `Page1` im **Frame** geladen wird. 
 
-`Page1` ist eine Unterklasse der [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page)-Klasse. Die **Page**-Klasse verfügt über eine schreibgeschützte **Frame**-Eigenschaft, die den **Frame** abruft, der **Page** enthält. Wenn der **Click**-Ereignishandler von **HyperlinkButton**`this.Frame.Navigate(typeof(Page2))` in `Page1` aufruft, zeigt das **Frame**-Element den Inhalt von „Page2.xaml“ an.
+`Page1` ist eine Unterklasse der [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page)-Klasse. Die **Page** -Klasse verfügt über eine schreibgeschützte **Frame** -Eigenschaft, die den **Frame** abruft, der **Page** enthält. Wenn der **Click** -Ereignishandler von **HyperlinkButton**`this.Frame.Navigate(typeof(Page2))` in `Page1` aufruft, zeigt das **Frame** -Element den Inhalt von „Page2.xaml“ an.
 
 Und wenn eine Seite in den Frame geladen wird, wird sie als [**PageStackEntry**](/uwp/api/Windows.UI.Xaml.Navigation.PageStackEntry) zu [**BackStack**](/uwp/api/windows.ui.xaml.controls.frame.backstack) oder [**ForwardStack**](/uwp/api/windows.ui.xaml.controls.frame.forwardstack) des [**Frame**](/uwp/api/windows.ui.xaml.controls.page.frame)-Elements hinzugefügt, um die Verwendung von [Verlauf und Rückwärtsnavigation](navigation-history-and-backwards-navigation.md) zu ermöglichen.
 
@@ -316,7 +316,7 @@ Und wenn eine Seite in den Frame geladen wird, wird sie als [**PageStackEntry**]
 
 Unsere App navigiert zwischen zwei Seiten, sie bietet jedoch noch keine interessanten Funktionen. Bei vielen Apps mit mehreren Seiten müssen die Seiten Informationen freigeben. Übergeben wir also einige Informationen der ersten Seite an die zweite Seite.
 
-Ersetze in „Page1.xaml“ das zuvor hinzugefügte **HyperlinkButton**-Element durch die folgende [**StackPanel**](/uwp/api/Windows.UI.Xaml.Controls.StackPanel)-Klasse.
+Ersetze in „Page1.xaml“ das zuvor hinzugefügte **HyperlinkButton** -Element durch die folgende [**StackPanel**](/uwp/api/Windows.UI.Xaml.Controls.StackPanel)-Klasse.
 
 Hier fügen wir eine [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Bezeichnung und ein [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox)-Element (`name`) zum Eingeben einer Textzeichenfolge hinzu.
 
@@ -330,7 +330,7 @@ Hier fügen wir eine [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock
 </StackPanel>
 ```
 
-Füge der `Navigate`-Methode in der CodeBehind-Datei „Page1.xaml“ im `HyperlinkButton_Click`-Ereignishandler einen Parameter hinzu, der auf die `Text`-Eigenschaft von `name` **TextBox** verweist.
+Fügen Sie der `Navigate`-Methode in der CodeBehind-Datei „Page1.xaml“ im `HyperlinkButton_Click`-Ereignishandler einen Parameter hinzu, der auf die `Text`-Eigenschaft von `name`**TextBox** verweist.
 
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
@@ -353,9 +353,9 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 }
 ```
 
-Ersetze in „Page2.xaml“ das zuvor hinzugefügte **HyperlinkButton**-Element durch die folgende **StackPanel**-Klasse.
+Ersetze in „Page2.xaml“ das zuvor hinzugefügte **HyperlinkButton** -Element durch die folgende **StackPanel** -Klasse.
 
-Hier fügen wir einen Textblock ([**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)) zum Anzeigen der von Seite 1 übergebenen Textzeichenfolge hinzu.
+Hier fügen wir einen Textblock ( [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)) zum Anzeigen der von Seite 1 übergebenen Textzeichenfolge hinzu.
 
 ```xaml
 <StackPanel>
@@ -416,13 +416,13 @@ void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 
 Führen Sie die App aus, geben Sie Ihren Namen in das Textfeld ein, und klicken Sie auf den Link **Click to go to page 2**. 
 
-Wenn `this.Frame.Navigate(typeof(Page2), name.Text)` durch das **Click**-Ereignis des **HyperlinkButton**-Elements in `Page1` aufgerufen wird, wird die `name.Text`-Eigenschaft an `Page2` übergeben, und der Wert aus den Ereignisdaten wird für die auf der Seite angezeigte Nachricht verwendet.
+Wenn `this.Frame.Navigate(typeof(Page2), name.Text)` durch das **Click** -Ereignis des **HyperlinkButton** -Elements in `Page1` aufgerufen wird, wird die `name.Text`-Eigenschaft an `Page2` übergeben, und der Wert aus den Ereignisdaten wird für die auf der Seite angezeigte Nachricht verwendet.
 
 ## <a name="4-cache-a-page"></a>4. Zwischenspeichern einer Seite
 
 Seiteninhalt und -zustand werden standardmäßig nicht zwischengespeichert. Wenn du also Informationen zwischenspeichern möchtest, musst du dies auf jeder Seite deiner App aktivieren.
 
-In unserem einfachen Peer-zu-Peer-Beispiel gibt es keine Zurück-Schaltfläche. (Informationen zur Rückwärtsnavigation findest du [hier](navigation-history-and-backwards-navigation.md).) Wenn jedoch eine Zurück-Schaltfläche vorhanden wäre und du auf `Page2` darauf klicken würdest, hätte dies zur Folge, dass das **TextBox**-Element (und alle anderen Felder) auf `Page1` wieder auf den Standardzustand zurückgesetzt werden. Eine Möglichkeit zur Umgehung dieses Problems ist die Verwendung der [**NavigationCacheMode**](/uwp/api/windows.ui.xaml.controls.page.navigationcachemode)-Eigenschaft, um anzugeben, dass eine Seite zum Seitencache des Frames hinzugefügt werden soll. 
+In unserem einfachen Peer-zu-Peer-Beispiel gibt es keine Zurück-Schaltfläche. (Informationen zur Rückwärtsnavigation findest du [hier](navigation-history-and-backwards-navigation.md).) Wenn jedoch eine Zurück-Schaltfläche vorhanden wäre und du auf `Page2` darauf klicken würdest, hätte dies zur Folge, dass das **TextBox** -Element (und alle anderen Felder) auf `Page1` wieder auf den Standardzustand zurückgesetzt werden. Eine Möglichkeit zur Umgehung dieses Problems ist die Verwendung der [**NavigationCacheMode**](/uwp/api/windows.ui.xaml.controls.page.navigationcachemode)-Eigenschaft, um anzugeben, dass eine Seite zum Seitencache des Frames hinzugefügt werden soll. 
 
 Im Konstruktor von `Page1` kannst du **NavigationCacheMode** auf **Enabled** festlegen, um alle Inhalte und Zustandswerte für die Seite beizubehalten, bis der Seitencache für den Frame überschritten wird. Lege [**NavigationCacheMode**](/uwp/api/windows.ui.xaml.controls.page.navigationcachemode) auf [**Required**](/uwp/api/Windows.UI.Xaml.Navigation.NavigationCacheMode) fest, wenn du [**CacheSize**](/uwp/api/windows.ui.xaml.controls.frame.cachesize)-Limits ignorieren möchtest. (Diese Limits geben die Anzahl von Seiten an, die im Navigationsverlauf für den Frame zwischengespeichert werden können.) Die Beschränkung der Cachegröße kann allerdings je nach Arbeitsspeichergröße eines Geräts äußerst wichtig sein.
 

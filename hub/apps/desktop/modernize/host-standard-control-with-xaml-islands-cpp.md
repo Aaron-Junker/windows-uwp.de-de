@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5acf1a017a55ddf75520eccf22b1a3b00ee8084b
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: fcad3bfeb5c31a6b3af85e5fd9a0ea72f11d65da
+ms.sourcegitcommit: caf4dba6bdfc3c6d9685d10aa9924b170b00bed8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253606"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93049511"
 ---
 # <a name="host-a-standard-winrt-xaml-control-in-a-c-win32-app"></a>Hosten eines WinRT-XAML-Standardsteuerelements in einer C++-Win32-App
 
@@ -24,9 +24,9 @@ Dieser Artikel veranschaulicht, wie mithilfe der [UWP XAML-Hosting-API](using-t
 
 ## <a name="create-a-desktop-application-project"></a>Erstellen eines Desktopanwendungsprojekts
 
-1. Erstelle in Visual Studio 2019 mit dem SDK für Windows 10, Version 1903 (Version 10.0.18362) oder höher ein neues Projekt vom Typ **Windows-Desktopanwendung**, und gib ihm den Namen **MyDesktopWin32App**. Dieser Projekttyp steht unter den Projektfiltern **C++** , **Windows** und **Desktop** zur Verfügung.
+1. Erstelle in Visual Studio 2019 mit dem SDK für Windows 10, Version 1903 (Version 10.0.18362) oder höher ein neues Projekt vom Typ **Windows-Desktopanwendung** , und gib ihm den Namen **MyDesktopWin32App**. Dieser Projekttyp steht unter den Projektfiltern **C++** , **Windows** und **Desktop** zur Verfügung.
 
-2. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappenknoten, klicke auf **Projektmappe neu zuweisen**, wähle **10.0.18362.0** oder eine höhere SDK-Version aus, und klicke dann auf **OK**.
+2. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappenknoten, klicke auf **Projektmappe neu zuweisen** , wähle **10.0.18362.0** oder eine höhere SDK-Version aus, und klicke dann auf **OK**.
 
 3. Installiere das NuGet-Paket [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/), um die Unterstützung für [C++/WinRT](/windows/uwp/cpp-and-winrt-apis) in deinem Projekt zu aktivieren:
 
@@ -41,7 +41,7 @@ Dieser Artikel veranschaulicht, wie mithilfe der [UWP XAML-Hosting-API](using-t
 5. Lege den `maxVersionTested`-Wert in deinem [Anwendungsmanifest](/windows/desktop/SbsCs/application-manifests) fest, um anzugeben, dass deine Anwendung mit Windows 10, Version 1903 oder höher kompatibel ist.
 
     1. Falls noch kein Anwendungsmanifest in deinem Projekt enthalten ist, füge deinem Projekt eine neue XML-Datei hinzu, und gibt ihr den Namen **app.manifest**.
-    2. Füge das **compatibility**-Element und die untergeordneten Elemente wie im folgenden Beispiel gezeigt in dein Anwendungsmanifest ein. Ersetze das **Id**-Attribut des **maxVersionTested**-Elements durch die Versionsnummer von Windows 10, die du als Zielplattform verwenden möchtest (hierbei muss es sich um Windows 10.0.18362 oder eine höhere Version handeln).
+    2. Füge das **compatibility** -Element und die untergeordneten Elemente wie im folgenden Beispiel gezeigt in dein Anwendungsmanifest ein. Ersetze das **Id** -Attribut des **maxVersionTested** -Elements durch die Versionsnummer von Windows 10, die du als Zielplattform verwenden möchtest (hierbei muss es sich um Windows 10.0.18362 oder eine höhere Version handeln).
 
         ```xml
         <?xml version="1.0" encoding="UTF-8"?>
@@ -56,32 +56,38 @@ Dieser Artikel veranschaulicht, wie mithilfe der [UWP XAML-Hosting-API](using-t
         </assembly>
         ```
 
+6. Fügen Sie einen Verweis auf die Windows-Runtime-Metadaten hinzu:
+   1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektknoten **Verweise** , und wählen Sie dann **Verweis hinzufügen** aus.
+   2. Klicken Sie auf die Schaltfläche **Durchsuchen** unten auf der Seite, und navigieren Sie zum Ordner „UnionMetadata“ in Ihrem SDK-Installationspfad. Standardmäßig wird das SDK unter `C:\Program Files (x86)\Windows Kits\10\UnionMetadata` installiert. 
+   3. Wählen Sie dann den Ordner aus, der nach der Windows-Version benannt ist, auf die Sie abzielen (z. B. 10.0.18362.0), und wählen Sie in diesem Ordner die Datei `Windows.winmd` aus.
+   4. Klicken Sie auf **OK** , um das Dialogfeld **Verweis hinzufügen** zu schließen.
+
 ## <a name="use-the-xaml-hosting-api-to-host-a-winrt-xaml-control"></a>Verwenden der XAML-Hosting-API zum Hosten eines WinRT-XAML-Steuerelements
 
 Das grundlegende Verfahren bei Verwendung der XAML-Hosting-API zum Hosten eines WinRT-XAML-Steuerelements umfasst diese allgemeinen Schritte:
 
 1. Initialisieren des UWP-XAML-Frameworks für den aktuellen Thread, bevor deine App eines der [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement)-Objekte erstellt, die gehostet werden sollen. Je nachdem, wann du das [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource)-Objekt zum Hosten der Steuerelemente erstellst, gibt es hierfür mehrere Möglichkeiten.
 
-    * Wenn deine Anwendung das **DesktopWindowXamlSource**-Objekt erstellt, bevor eines der zu hostenden **Windows.UI.Xaml.UIElement**-Objekte erstellt wird, wird dieses Framework beim Instanziieren des **DesktopWindowXamlSource**-Objekts für dich initialisiert. In diesem Szenario ist es nicht erforderlich, eigenen Code zum Initialisieren des Frameworks hinzuzufügen.
+    * Wenn deine Anwendung das **DesktopWindowXamlSource** -Objekt erstellt, bevor eines der zu hostenden **Windows.UI.Xaml.UIElement** -Objekte erstellt wird, wird dieses Framework beim Instanziieren des **DesktopWindowXamlSource** -Objekts für dich initialisiert. In diesem Szenario ist es nicht erforderlich, eigenen Code zum Initialisieren des Frameworks hinzuzufügen.
 
-    * Wenn deine Anwendung die **Windows.UI.Xaml.UIElement**-Objekte jedoch erstellt, bevor das **DesktopWindowXamlSource**-Objekt zu deren Hosting erstellt wird, muss deine Anwendung vor dem Instanziieren der **Windows.UI.Xaml.UIElement**-Objekte die statische [WindowsXamlManager.InitializeForCurrentThread](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread)-Methode aufrufen, um das UWP-XAML-Framework explizit zu initialisieren. Deine Anwendung sollte diese Methode in der Regel aufrufen, wenn das übergeordnete Benutzeroberflächenelement instanziiert wird, das **DesktopWindowXamlSource** hostet.
+    * Wenn deine Anwendung die **Windows.UI.Xaml.UIElement** -Objekte jedoch erstellt, bevor das **DesktopWindowXamlSource** -Objekt zu deren Hosting erstellt wird, muss deine Anwendung vor dem Instanziieren der **Windows.UI.Xaml.UIElement** -Objekte die statische [WindowsXamlManager.InitializeForCurrentThread](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread)-Methode aufrufen, um das UWP-XAML-Framework explizit zu initialisieren. Deine Anwendung sollte diese Methode in der Regel aufrufen, wenn das übergeordnete Benutzeroberflächenelement instanziiert wird, das **DesktopWindowXamlSource** hostet.
 
     > [!NOTE]
-    > Diese Methode gibt ein [WindowsXamlManager](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager)-Objekt zurück, das einen Verweise auf das UWP-XAML-Framework enthält. Du kannst für einen bestimmten Thread beliebig viele **WindowsXamlManager**-Objekte erstellen. Da jedoch jedes Objekt einen Verweis auf das UWP-XAML-Framework umfasst, solltest du diese Objekte verwerfen, um sicherzustellen, dass die XAML-Ressourcen schließlich freigegeben werden.
+    > Diese Methode gibt ein [WindowsXamlManager](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager)-Objekt zurück, das einen Verweise auf das UWP-XAML-Framework enthält. Du kannst für einen bestimmten Thread beliebig viele **WindowsXamlManager** -Objekte erstellen. Da jedoch jedes Objekt einen Verweis auf das UWP-XAML-Framework umfasst, solltest du diese Objekte verwerfen, um sicherzustellen, dass die XAML-Ressourcen schließlich freigegeben werden.
 
 2. Erstelle ein [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource)-Objekt, und füge es an ein übergeordnetes Benutzeroberflächenelement in deiner Anwendung an, das einem Fensterhandle zugeordnet ist.
 
     Führe hierzu die folgenden Schritte aus:
 
-    1. Erstelle ein **DesktopWindowXamlSource**-Objekt, und wandle es in die **IDesktopWindowXamlSourceNative**- oder **IDesktopWindowXamlSourceNative2**-COM-Schnittstelle um.
+    1. Erstelle ein **DesktopWindowXamlSource** -Objekt, und wandle es in die **IDesktopWindowXamlSourceNative** - oder **IDesktopWindowXamlSourceNative2** -COM-Schnittstelle um.
         > [!NOTE]
         > Diese Schnittstellen sind in der Headerdatei **windows.ui.xaml.hosting.desktopwindowxamlsource.h** im Windows SDK deklariert. Standardmäßig befindet sich diese Datei in „%programfiles(x86)%\Windows Kits\10\Include\\<Buildnummer\>\um“.
 
-    2. Rufe die **AttachToWindow**-Methode der Schnittstelle **IDesktopWindowXamlSourceNative** oder **IDesktopWindowXamlSourceNative2** auf, und übergebe das Fensterhandle des übergeordneten Benutzeroberflächenelements in deiner Anwendung.
+    2. Rufe die **AttachToWindow** -Methode der Schnittstelle **IDesktopWindowXamlSourceNative** oder **IDesktopWindowXamlSourceNative2** auf, und übergebe das Fensterhandle des übergeordneten Benutzeroberflächenelements in deiner Anwendung.
 
-    3. Lege die anfängliche Größe des internen untergeordneten Fensters fest, das in **DesktopWindowXamlSource** enthalten ist. Standardmäßig ist dieses interne untergeordnete Fenster auf eine Breite und Höhe von 0 festgelegt. Wenn du die Größe des Fensters nicht festlegst, ist keines der WinRT-XAML-Steuerelemente sichtbar, die du **DesktopWindowXamlSource** hinzufügst. Um in **DesktopWindowXamlSource** auf das interne untergeordnete Fenster zuzugreifen, verwendest du die **WindowHandle**-Eigenschaft der Schnittstelle **IDesktopWindowXamlSourceNative** oder **IDesktopWindowXamlSourceNative2**.
+    3. Lege die anfängliche Größe des internen untergeordneten Fensters fest, das in **DesktopWindowXamlSource** enthalten ist. Standardmäßig ist dieses interne untergeordnete Fenster auf eine Breite und Höhe von 0 festgelegt. Wenn du die Größe des Fensters nicht festlegst, ist keines der WinRT-XAML-Steuerelemente sichtbar, die du **DesktopWindowXamlSource** hinzufügst. Um in **DesktopWindowXamlSource** auf das interne untergeordnete Fenster zuzugreifen, verwendest du die **WindowHandle** -Eigenschaft der Schnittstelle **IDesktopWindowXamlSourceNative** oder **IDesktopWindowXamlSourceNative2**.
 
-3. Schließlich weist du das zu hostende **Windows.UI.Xaml.UIElement** der [Content](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content)-Eigenschaft deines **DesktopWindowXamlSource**-Objekts zu.
+3. Schließlich weist du das zu hostende **Windows.UI.Xaml.UIElement** der [Content](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content)-Eigenschaft deines **DesktopWindowXamlSource** -Objekts zu.
 
 Die folgenden Schritte und Codebeispiele veranschaulichen, wie der oben genannte Prozess implementiert wird:
 
@@ -106,7 +112,7 @@ Die folgenden Schritte und Codebeispiele veranschaulichen, wie der oben genannte
     using namespace Windows::Foundation::Numerics;
     ```
 
-3. Kopiere den folgenden Code nach dem vorherigen Abschnitt. Dieser Code definiert die **WinMain**-Funktion für die App. Sie initialisiert ein Basisfenster und verwendet die XAML-Hosting-API, um ein einfaches **TextBlock**-UWP-Steuerelement im Fenster zu hosten.
+3. Kopiere den folgenden Code nach dem vorherigen Abschnitt. Dieser Code definiert die **WinMain** -Funktion für die App. Sie initialisiert ein Basisfenster und verwendet die XAML-Hosting-API, um ein einfaches **TextBlock** -UWP-Steuerelement im Fenster zu hosten.
 
     ```cppwinrt
     LRESULT CALLBACK WindowProc(HWND, UINT, WPARAM, LPARAM);
@@ -263,7 +269,7 @@ Die folgenden Schritte und Codebeispiele veranschaulichen, wie der oben genannte
     }
     ```
 
-5. Speichere die Codedatei, kompiliere die App, und führe sie aus. Vergewissere dich, dass das **TextBlock**-UWP-Steuerelement im App-Fenster angezeigt wird.
+5. Speichere die Codedatei, kompiliere die App, und führe sie aus. Vergewissere dich, dass das **TextBlock** -UWP-Steuerelement im App-Fenster angezeigt wird.
     > [!NOTE]
     > Möglicherweise werden verschiedene Kompilierungswarnungen angezeigt, z. B. `warning C4002:  too many arguments for function-like macro invocation 'GetCurrentTime'` und `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. Diese Warnungen sind bekannte Probleme mit den aktuellen Tools und NuGet-Paketen und können ignoriert werden.
 
@@ -286,7 +292,7 @@ Die folgenden Anweisungen veranschaulichen, wie du alle Komponenten in der Proje
 
 1. Fügen Sie Ihrer Projektmappe ein [Paketerstellungsprojekt für Windows-Anwendungen](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) hinzu. Wählen Sie beim Erstellen des Projekts **Windows 10, Version 1903 (10.0; Build 18362)** sowohl für **Zielversion** als auch für **Mindestversion** aus.
 
-2. Klicke im Paketprojekt mit der rechten Maustaste auf den Knoten **Anwendungen**, und wähle **Verweis hinzufügen** aus. Wähle in der Liste der Projekte das C++/Win32-Desktopanwendungsprojekt in deiner Projektmappe aus, und klicke auf **OK**.
+2. Klicke im Paketprojekt mit der rechten Maustaste auf den Knoten **Anwendungen** , und wähle **Verweis hinzufügen** aus. Wähle in der Liste der Projekte das C++/Win32-Desktopanwendungsprojekt in deiner Projektmappe aus, und klicke auf **OK**.
 
 3. Kompiliere das Paketerstellungsprojekt, und führe es aus. Vergewissere dich, dass die App ausgeführt und die WinRT-XAML-Steuerelemente wie erwartet anzeigt.
 
