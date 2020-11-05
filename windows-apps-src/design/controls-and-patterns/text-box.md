@@ -1,6 +1,6 @@
 ---
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
-Description: Mit dem TextBox-Steuerelement können Benutzer Text in eine App eingeben.
+description: Mit dem TextBox-Steuerelement können Benutzer Text in eine App eingeben.
 title: Textfeld
 label: Text box
 template: detail.hbs
@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 794bf6e99701dd73ee74b07c289fe9a2e5ca9744
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 542822b27f356c9471ec8a6c6f5bec0aac2144ce
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749777"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034753"
 ---
 # <a name="text-box"></a>Textfeld
 
@@ -42,7 +42,7 @@ TextBox bietet eine Reihe von Features, mit denen die Texteingabe vereinfacht we
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
-Ein **TextBox**-Steuerelement ermöglicht es Benutzern, unformatierten Text einzugeben und zu bearbeiten, z. B. in einem Formular. Mit der [Text](/uwp/api/windows.ui.xaml.controls.textbox.text)-Eigenschaft können Sie den Text in einem TextBox abrufen und festlegen.
+Ein **TextBox** -Steuerelement ermöglicht es Benutzern, unformatierten Text einzugeben und zu bearbeiten, z. B. in einem Formular. Mit der [Text](/uwp/api/windows.ui.xaml.controls.textbox.text)-Eigenschaft können Sie den Text in einem TextBox abrufen und festlegen.
 
 Sie können das TextBox-Element als schreibgeschützt festlegen, dies sollte aber nur ein temporärer, bedingter Zustand sein. Wenn der Text nie bearbeitbar sein soll, ziehen Sie stattdessen die Verwendung eines [TextBlock](text-block.md)-Elements in Erwägung.
 
@@ -155,7 +155,7 @@ Es gibt zwei Eigenschaften, mit denen Sie steuern können, ob das TextBox-Elemen
 - Damit das Textfeld Zeilenwechsel- oder Zeilenumbruchzeichen zulässt und anzeigt, legen Sie die [AcceptsReturn](/uwp/api/windows.ui.xaml.controls.textbox.acceptsreturn)-Eigenschaft auf **true** fest.
 - Um Textumbrüche zu ermöglichen, legen Sie die [TextWrapping](/uwp/api/windows.ui.xaml.controls.textbox.textwrapping)-Eigenschaft auf **Wrap** fest. Dies bewirkt, dass der Text umbrochen wird, sobald der Rand des Textfelds erreicht ist – unabhängig von Zeilentrennzeichen.
 
-> **Hinweis**&nbsp;&nbsp;TextBox und RichEditBox unterstützen den **WrapWholeWords**-Wert für ihre TextWrapping-Eigenschaften nicht. Wenn Sie versuchen, WrapWholeWords als Wert für TextBox.TextWrapping oder RichEditBox.TextWrapping zu verwenden, wird eine Ausnahme für ein ungültiges Argument ausgelöst.
+> **Hinweis**&nbsp;&nbsp;TextBox und RichEditBox unterstützen den **WrapWholeWords** -Wert für ihre TextWrapping-Eigenschaften nicht. Wenn Sie versuchen, WrapWholeWords als Wert für TextBox.TextWrapping oder RichEditBox.TextWrapping zu verwenden, wird eine Ausnahme für ein ungültiges Argument ausgelöst.
 
 Ein mehrzeiliges TextBox-Element vergrößert sich während der Texteingabe weiterhin vertikal, sofern es nicht durch seine [Height](/uwp/api/windows.ui.xaml.frameworkelement.height)- oder [MaxHeight](/uwp/api/windows.ui.xaml.frameworkelement.maxheight)-Eigenschaft oder durch einen übergeordneten Container begrenzt wird. Sie sollten testen, ob sich ein mehrzeiliges Textfeld über seinen sichtbaren Bereich hinaus vergrößert, und gegebenenfalls seine Höhe begrenzen. Es wird empfohlen, für ein mehrzeiliges Textfeld immer eine angemessene Höhe festzulegen, die sich während der Texteingabe durch den Benutzer nicht verändert.
 

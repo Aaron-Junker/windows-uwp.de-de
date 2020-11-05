@@ -1,5 +1,5 @@
 ---
-Description: Dieses Tutorial begleitet dich durch die Erstellung einer einfachen Anwendungsbenutzeroberfläche. Es erläutert und veranschaulicht die Verwendung von Grid und StackPanel, zwei der häufigsten XAML-Elemente.
+description: Dieses Tutorial begleitet dich durch die Erstellung einer einfachen Anwendungsbenutzeroberfläche. Es erläutert und veranschaulicht die Verwendung von Grid und StackPanel, zwei der häufigsten XAML-Elemente.
 title: Verwende Grid und StackPanel, um eine einfache App zu erstellen.
 template: detail.hbs
 ms.date: 09/24/2020
@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fa22f303f308b38a59a804604752712895b0ea0
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 03b3a4342e4f464cb61cddc495ee5693570cd28b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219373"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034823"
 ---
 # <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>Tutorial: Verwenden von Grid und StackPanel, um eine einfache Wetter-App zu erstellen
 
@@ -34,7 +34,7 @@ Verwenden Sie zum Erstellen des Layouts für eine einfache Wetter-App mit XAML d
 ## <a name="step-2-define-a-grid"></a>Schritt 2: Definieren eines Rasters
 In XAML besteht ein **Raster** aus einer Reihe von Zeilen und Spalten. Durch Angabe der Zeile und Spalte eines Elements innerhalb eines **Rasters** können Sie andere Elemente in einer Benutzeroberfläche platzieren und anordnen. Zeilen und Spalten werden mit den Elementen **RowDefinition** und **ColumnDefinition** definiert.
 
-Um mit dem Erstellen eines Layouts zu beginnen, öffnen Sie **MainPage.xaml** mithilfe des **Projektmappen-Explorers** und ersetzen das automatisch generierte **Grid**-Element durch diesen Code.
+Um mit dem Erstellen eines Layouts zu beginnen, öffnen Sie **MainPage.xaml** mithilfe des **Projektmappen-Explorers** und ersetzen das automatisch generierte **Grid** -Element durch diesen Code.
 
 ```xml
 <Grid>
@@ -53,10 +53,10 @@ Das neue **Raster** erstellt eine Reihe von zwei Zeilen und Spalten, die das Lay
 
 Informationen zu weiteren Methoden für die Größeneinstellung von Zeilen und Spalten finden Sie unter [Definieren von Layouts mit XAML](./layouts-with-xaml.md).
 
-Wenn Sie die Anwendung jetzt ausführen, wird Ihnen lediglich eine leere Seite angezeigt, da keiner der **Raster**-Bereiche Inhalte enthält. Um das **Raster** anzuzeigen, fügen wir Farbe hinzu.
+Wenn Sie die Anwendung jetzt ausführen, wird Ihnen lediglich eine leere Seite angezeigt, da keiner der **Raster** -Bereiche Inhalte enthält. Um das **Raster** anzuzeigen, fügen wir Farbe hinzu.
 
 ## <a name="step-3-color-the-grid"></a>Schritt 3: Färben des Rasters
-Um dem **Raster** Farbe hinzuzufügen, fügen wir drei **Border**-Elemente mit jeweils einer anderen Hintergrundfarbe hinzu. Jedes Element wird darüber hinaus einer Zeile und Spalte im übergeordneten **Grid** zugewiesen. Dies erfolgt mithilfe der Attribute **Grid.Row** und **Grid.Column**. Die Werte dieser Attribute sind standardmäßig 0. Daher müssen Sie diese dem ersten **Border** nicht zuweisen. Fügen Sie dem **Grid**-Element nach den Zeilen- und Spaltendefinitionen den folgenden Code hinzu.
+Um dem **Raster** Farbe hinzuzufügen, fügen wir drei **Border** -Elemente mit jeweils einer anderen Hintergrundfarbe hinzu. Jedes Element wird darüber hinaus einer Zeile und Spalte im übergeordneten **Grid** zugewiesen. Dies erfolgt mithilfe der Attribute **Grid.Row** und **Grid.Column**. Die Werte dieser Attribute sind standardmäßig 0. Daher müssen Sie diese dem ersten **Border** nicht zuweisen. Fügen Sie dem **Grid** -Element nach den Zeilen- und Spaltendefinitionen den folgenden Code hinzu.
 
 ```xml
 <Border Background="#2f5cb6"/>
@@ -64,7 +64,7 @@ Um dem **Raster** Farbe hinzuzufügen, fügen wir drei **Border**-Elemente mit j
 <Border Grid.Row="1" Grid.ColumnSpan="2" Background="#152951"/>
 ```
 
-Beachten Sie, dass für das dritte **Border**-Element ein zusätzliches Attribut verwendet wird, **Grid.ColumnSpan**. Dieses bewirkt, dass dieses **Border**-Element beide Spalten in der unteren Zeile umfasst. Sie können **Grid.RowSpan** auf die gleiche Weise verwenden. Mit diesen Attributen können Sie ein Element über eine beliebige Anzahl von Zeilen und Spalten ausdehnen. Die obere linke Ecke einer solchen Ausdehnung entspricht stets der **Grid.Column** und **Grid.Row**, die in den Elementattributen angegeben werden.
+Beachten Sie, dass für das dritte **Border** -Element ein zusätzliches Attribut verwendet wird, **Grid.ColumnSpan**. Dieses bewirkt, dass dieses **Border** -Element beide Spalten in der unteren Zeile umfasst. Sie können **Grid.RowSpan** auf die gleiche Weise verwenden. Mit diesen Attributen können Sie ein Element über eine beliebige Anzahl von Zeilen und Spalten ausdehnen. Die obere linke Ecke einer solchen Ausdehnung entspricht stets der **Grid.Column** und **Grid.Row** , die in den Elementattributen angegeben werden.
 
 Wenn Sie die App ausführen, sieht das Ergebnis wie folgt aus.
 
@@ -73,7 +73,7 @@ Wenn Sie die App ausführen, sieht das Ergebnis wie folgt aus.
 ## <a name="step-4-organize-content-by-using-stackpanel-elements"></a>Schritt 4: Organisieren von Inhalten mithilfe von StackPanel-Elementen
 **StackPanel** ist das zweite UI-Element, das wir verwenden, um die Wetter-App zu erstellen. **StackPanel** ist ein grundlegender Bestandteil zahlreicher Basislayouts von Apps, mit dem Sie Elemente vertikal oder horizontal stapeln können.
 
-Im folgenden Code erstellen wir zwei **StackPanel**-Elemente und füllen jedes mit drei **TextBlocks**. Fügen Sie diese **StackPanel**-Elemente dem **Grid** unterhalb der **Border**-Elemente aus Schritt 3 hinzu. Dies bewirkt, dass die **TextBlock**-Elemente auf dem zuvor erstellten farbigen **Grid** gerendert werden.
+Im folgenden Code erstellen wir zwei **StackPanel** -Elemente und füllen jedes mit drei **TextBlocks**. Fügen Sie diese **StackPanel** -Elemente dem **Grid** unterhalb der **Border** -Elemente aus Schritt 3 hinzu. Dies bewirkt, dass die **TextBlock** -Elemente auf dem zuvor erstellten farbigen **Grid** gerendert werden.
 
 ```xml
 <StackPanel Grid.Column="1" Margin="40,0,0,0" VerticalAlignment="Center">
@@ -89,7 +89,7 @@ Im folgenden Code erstellen wir zwei **StackPanel**-Elemente und füllen jedes m
 </StackPanel>
 ```
 
-Im ersten **Stackpanel** wird jeder **TextBlock** vertikal unterhalb des nächsten gestapelt. Dies ist das Standardverhalten eines StackPanel. Daher müssen wir das **Orientation**-Attribut nicht festlegen. Im zweiten StackPanel-Element möchten wir die untergeordneten Elemente horizontal von links nach rechts stapeln. Daher legen wir das **Orientation**-Attribut auf „Horizontal“ fest. Außerdem müssen wir das **Grid.ColumnSpan**-Attribut auf „2“ festlegen, damit der Text über dem unteren **Border**-Element zentriert wird.
+Im ersten **Stackpanel** wird jeder **TextBlock** vertikal unterhalb des nächsten gestapelt. Dies ist das Standardverhalten eines StackPanel. Daher müssen wir das **Orientation** -Attribut nicht festlegen. Im zweiten StackPanel-Element möchten wir die untergeordneten Elemente horizontal von links nach rechts stapeln. Daher legen wir das **Orientation** -Attribut auf „Horizontal“ fest. Außerdem müssen wir das **Grid.ColumnSpan** -Attribut auf „2“ festlegen, damit der Text über dem unteren **Border** -Element zentriert wird.
 
 Wenn Sie die App jetzt ausführen, wird sie Ihnen ungefähr wie folgt angezeigt.
 
@@ -103,15 +103,15 @@ Laden Sie das Bild unten herunter, und speichern Sie es als PNG-Datei mit dem Na
 
 ![Teilweise bewölkt](images/partially-cloudy.PNG)
 
-Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf den Ordner **Assets**, und wähle **Hinzufügen** -> **Vorhandenes Element...** aus. Suche im eingeblendeten Browser die Datei „partially-cloudy.png“, wähle sie aus, und klicke auf **Hinzufügen**.
+Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf den Ordner **Assets** , und wähle **Hinzufügen** -> **Vorhandenes Element...** aus. Suche im eingeblendeten Browser die Datei „partially-cloudy.png“, wähle sie aus, und klicke auf **Hinzufügen**.
 
-Fügen Sie als Nächstes in **"MainPage.xaml"** das folgende **Image**-Element unterhalb der StackPanels aus Schritt 4 hinzu.
+Fügen Sie als Nächstes in **"MainPage.xaml"** das folgende **Image** -Element unterhalb der StackPanels aus Schritt 4 hinzu.
 
 ```xml
 <Image Margin="20" Source="Assets/partially-cloudy.png"/>
 ```
 
-Da das Bild in der ersten Zeile und Spalte angezeigt werden soll, müssen wir dessen **Grid.Row**- oder **Grid.Column**-Attribute nicht festlegen. Diese sind standardmäßig auf „0“ festgelegt.
+Da das Bild in der ersten Zeile und Spalte angezeigt werden soll, müssen wir dessen **Grid.Row** - oder **Grid.Column** -Attribute nicht festlegen. Diese sind standardmäßig auf „0“ festgelegt.
 
 Das war’s! Sie haben das Layout für eine einfache Wetter-App erstellt. Wenn Sie die Anwendung durch Drücken von **F5** ausführen, sollte Ihnen ungefähr Folgendes angezeigt werden:
 

@@ -1,5 +1,5 @@
 ---
-Description: Ein Steuerelement eines semantischen Zooms ermöglicht Benutzern, zwischen zwei verschiedenen semantischen Ansichten des gleichen Datensatzes zu zoomen.
+description: Ein Steuerelement eines semantischen Zooms ermöglicht Benutzern, zwischen zwei verschiedenen semantischen Ansichten des gleichen Datensatzes zu zoomen.
 title: Semantischer Zoom
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f2fea27bf44e2e7f199c6c04f045f2cda6663315
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c945fe25807dcdfa556d7dc9b971b5429b4bcfc8
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174444"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035183"
 ---
 # <a name="semantic-zoom"></a>Semantischer Zoom
 
@@ -31,7 +31,7 @@ Bei der Anzeige eines Adressbuchs kann der Benutzer beispielsweise schnell zum B
 
 > **Wichtige APIs:** [SemanticZoom-Klasse](/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom), [ListView-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView-Klasse](/uwp/api/Windows.UI.Xaml.Controls.GridView)
 
-**Features**:
+**Features** :
 
 -   Die Größe der verkleinerten Ansicht ist durch die Grenzen des Steuerelements für semantischen Zoom beschränkt.
 -   Durch Tippen auf einen Gruppenkopf wird zwischen Ansichten gewechselt. Auch Zusammendrücken kann als Möglichkeit zum Wechseln zwischen den Ansichten aktiviert werden.
@@ -39,7 +39,7 @@ Bei der Anzeige eines Adressbuchs kann der Benutzer beispielsweise schnell zum B
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
-Verwende das Steuerelement **SemanticZoom**, wenn du einen gruppierten Datensatz anzeigen musst, der so groß ist, dass er auf einer oder zwei Seiten nicht ganz angezeigt werden kann.
+Verwende das Steuerelement **SemanticZoom** , wenn du einen gruppierten Datensatz anzeigen musst, der so groß ist, dass er auf einer oder zwei Seiten nicht ganz angezeigt werden kann.
 
 Der semantische Zoom ist nicht mit dem optischen Zoom zu verwechseln. Sie zeigen zwar das gleiche Interaktions- und Grundverhalten (d. h. sie zeigen je nach Zoomfaktor mehr oder weniger Details an), der optische Zoom betrifft jedoch die Größenanpassung für einen Inhaltsbereich oder ein Objekt wie etwa ein Foto. Informationen zu einem Steuerelement, das optisches Zooming durchführt, finden Sie im Artikel über das Steuerelement [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer).
 
@@ -82,7 +82,7 @@ Sie benötigen für einen semantischen Zoom folgende drei Elemente:
 
 Bevor Sie einen semantischen Zoom verwenden, sollten Sie wissen, wie Sie eine Listenansicht mit gruppierten Daten verwenden. Weitere Informationen finden Sie unter [Listenansicht und Rasteransicht](listview-and-gridview.md). 
 
-> **Hinweis**:&nbsp;&nbsp;Um die vergrößerte und verkleinerte Ansicht des SemanticZoom-Steuerelements zu definieren, können Sie zwei beliebige Steuerelemente verwenden, die die Benutzeroberfläche [ISemanticZoomInformation](/uwp/api/Windows.UI.Xaml.Controls.ISemanticZoomInformation) implementieren. Das XAML-Framework bietet drei Steuerelemente, die diese Schnittstelle implementieren: ListView, GridView und Hub.
+> **Hinweis** :&nbsp;&nbsp;Um die vergrößerte und verkleinerte Ansicht des SemanticZoom-Steuerelements zu definieren, können Sie zwei beliebige Steuerelemente verwenden, die die Benutzeroberfläche [ISemanticZoomInformation](/uwp/api/Windows.UI.Xaml.Controls.ISemanticZoomInformation) implementieren. Das XAML-Framework bietet drei Steuerelemente, die diese Schnittstelle implementieren: ListView, GridView und Hub.
  
  Dieser XAML-Code zeigt die Struktur des SemanticZoom-Steuerelements. Sie weisen weitere Steuerelemente den Eigenschaften „ZoomedInView” und „ZoomedOutView” zu.
  

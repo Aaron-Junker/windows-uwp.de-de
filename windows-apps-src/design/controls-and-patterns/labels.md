@@ -1,5 +1,5 @@
 ---
-Description: Verwenden Sie ein Label, um den Benutzer darauf hinzuweisen, was er in ein benachbartes Steuerelement eingeben soll. Sie können auch eine Gruppe verwandter Steuerelemente beschriften oder in der Nähe davon Anweisungstexte anzeigen.
+description: Verwenden Sie ein Label, um den Benutzer darauf hinzuweisen, was er in ein benachbartes Steuerelement eingeben soll. Sie können auch eine Gruppe verwandter Steuerelemente beschriften oder in der Nähe davon Anweisungstexte anzeigen.
 title: Bezeichnungen
 ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
 label: Labels
@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 68b062dc4bd70c81b1b8b57808fad8e9c7498d75
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9c1dc878280b24424aa4bb20d5a1d6324838b127
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172614"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034543"
 ---
 # <a name="labels"></a>Bezeichnungen
 
@@ -53,6 +53,6 @@ In XAML verfügen zahlreiche Steuerelemente über eine integrierte Header-Eigens
 * [RichEditBox.Header-Eigenschaft](/uwp/api/windows.ui.xaml.controls.richeditbox.header)
 * [TextBlock-Klasse](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
- 
+ 
 
- 
+ 

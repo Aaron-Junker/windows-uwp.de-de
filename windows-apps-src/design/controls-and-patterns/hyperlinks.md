@@ -1,5 +1,5 @@
 ---
-Description: Über Hyperlinks können Benutzer zu einem anderen Teil der App oder zu einer anderen App navigieren oder mit einer separaten Browser-App einen bestimmten URI (Uniform Resource Identifier) starten.
+description: Über Hyperlinks können Benutzer zu einem anderen Teil der App oder zu einer anderen App navigieren oder mit einer separaten Browser-App einen bestimmten URI (Uniform Resource Identifier) starten.
 title: Hyperlinks
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 471e17199d6a1858625ce418ea756d79cf8600f9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 90dfaa44205ac8eebfcb21227368e2daa492d3c4
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160134"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030563"
 ---
 # <a name="hyperlinks"></a>Hyperlinks
 
@@ -34,9 +34,9 @@ Verwenden Sie einen Link, wenn Text erforderlich ist, der bei Auswahl reagiert u
 
 Wählen Sie den richtigen Linktyp basierend auf Ihren Anforderungen:
 
--   Verwenden Sie innerhalb eines Textsteuerelements ein Inline-**Link**textelement. Ein Linkelement wird mit anderen Textelementen umgebrochen, und Sie können es in einem beliebigen InlineCollection-Element verwenden. Verwenden Sie einen Textlink, wenn Sie automatischen Textumbruch nutzen möchten und nicht unbedingt ein großes Tippziel benötigen. Der Linktext kann klein sein und sich nur schwer auswählen lassen, insbesondere bei der Toucheingabe.
--   Verwenden Sie ein **HyperlinkButton**-Element für eigenständige Links. Ein HyperlinkButton-Element ist ein spezielles Schaltflächen-Steuerelement, das Sie überall dort verwenden können, wo Sie eine Schaltfläche verwenden würden.
--   Verwenden Sie ein **HyperlinkButton**-Element mit einem [Bild](/uwp/api/windows.ui.xaml.controls.image)als Inhalt, um ein klickbares Bild zu erstellen.
+-   Verwenden Sie innerhalb eines Textsteuerelements ein Inline- **Link** textelement. Ein Linkelement wird mit anderen Textelementen umgebrochen, und Sie können es in einem beliebigen InlineCollection-Element verwenden. Verwenden Sie einen Textlink, wenn Sie automatischen Textumbruch nutzen möchten und nicht unbedingt ein großes Tippziel benötigen. Der Linktext kann klein sein und sich nur schwer auswählen lassen, insbesondere bei der Toucheingabe.
+-   Verwenden Sie ein **HyperlinkButton** -Element für eigenständige Links. Ein HyperlinkButton-Element ist ein spezielles Schaltflächen-Steuerelement, das Sie überall dort verwenden können, wo Sie eine Schaltfläche verwenden würden.
+-   Verwenden Sie ein **HyperlinkButton** -Element mit einem [Bild](/uwp/api/windows.ui.xaml.controls.image)als Inhalt, um ein klickbares Bild zu erstellen.
 
 ## <a name="examples"></a>Beispiele
 
@@ -105,7 +105,7 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 ## <a name="handle-navigation"></a>Handhaben der Navigation
 
-Die Navigation wird bei beiden Linktypen gleich gehandhabt. Sie können die Eigenschaft **NavigateUri** festlegen oder das **Click**-Ereignis behandeln.
+Die Navigation wird bei beiden Linktypen gleich gehandhabt. Sie können die Eigenschaft **NavigateUri** festlegen oder das **Click** -Ereignis behandeln.
 
 **Navigieren zu einem URI**
 

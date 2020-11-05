@@ -1,5 +1,5 @@
 ---
-Description: In diesem Artikel werden bewährte Methoden für das Erstellen und Anzeigen von App-Einstellungen beschrieben.
+description: In diesem Artikel werden bewährte Methoden für das Erstellen und Anzeigen von App-Einstellungen beschrieben.
 title: Richtlinien für App-Einstellungen
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d4bb343f2a8535fae60e19cd417099a99ae852d
-ms.sourcegitcommit: 6c1d2dd99221242d5d09f17e99f87302143c6180
+ms.openlocfilehash: 1b3f3388951dc2e3d854fcb97269e5bfb0449a6e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92644322"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032403"
 ---
 # <a name="guidelines-for-app-settings"></a>Richtlinien für App-Einstellungen
 

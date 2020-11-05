@@ -1,5 +1,5 @@
 ---
-Description: Überlegen Sie einmal, wie häufig wir jeden Tag Texte lesen – E-Mails, Büchern, Straßenschilder, Preise auf einer Speisekarte, Reifendruckangaben oder Plakate auf Werbetafeln an der Bushaltestelle.
+description: Überlegen Sie einmal, wie häufig wir jeden Tag Texte lesen – E-Mails, Büchern, Straßenschilder, Preise auf einer Speisekarte, Reifendruckangaben oder Plakate auf Werbetafeln an der Bushaltestelle.
 title: Textsteuerelemente
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b06767e5009a4d7654fa7937498319a1bbed671
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ca8facaa63f0eb4c99e518c2fafb0e87208b759d
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173884"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033003"
 ---
 # <a name="text-controls"></a>Textsteuerelemente
 
@@ -39,19 +39,19 @@ TextBlock ist in der Regel einfacher zu verwenden und bietet eine bessere Leistu
 
 Er enthält außerdem viele der gleichen Formatierungsoptionen zum Anpassen des Renderns von Text. Du kannst zwar Zeilenumbrüche in den Text einfügen, aber TextBlock ist zum Anzeigen eines einzelnen Absatzes vorgesehen und unterstützt keinen Texteinzug.
 
-Verwenden Sie **RichTextBlock**, wenn Sie Unterstützung für mehrere Absätze, mehrspaltigen Text, andere komplexe Textlayouts oder Inline-UI-Elemente, z. B. Bilder, benötigen. RichTextBlock bietet mehrere Features für erweitertes Textlayout.
+Verwenden Sie **RichTextBlock** , wenn Sie Unterstützung für mehrere Absätze, mehrspaltigen Text, andere komplexe Textlayouts oder Inline-UI-Elemente, z. B. Bilder, benötigen. RichTextBlock bietet mehrere Features für erweitertes Textlayout.
 
-Die Inhaltseigenschaft von RichTextBlock ist die [Blocks](/uwp/api/windows.ui.xaml.controls.richtextblock.blocks)-Eigenschaft, die über das [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph)-Element absatzbasierten Text unterstützt. Es bietet keine **Text**-Eigenschaft, die Sie zum einfachen Zugriff auf den Textinhalt des Steuerelements in Ihrer App verwenden können.  
+Die Inhaltseigenschaft von RichTextBlock ist die [Blocks](/uwp/api/windows.ui.xaml.controls.richtextblock.blocks)-Eigenschaft, die über das [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph)-Element absatzbasierten Text unterstützt. Es bietet keine **Text** -Eigenschaft, die Sie zum einfachen Zugriff auf den Textinhalt des Steuerelements in Ihrer App verwenden können.  
 
 ### <a name="text-input"></a>Texteingabe
 
-Ein **TextBox**-Steuerelement ermöglicht es Benutzern, unformatierten Text einzugeben und zu bearbeiten, z. B. in einem Formular. Mit der [Text](/uwp/api/windows.ui.xaml.controls.textbox.text)-Eigenschaft können Sie den Text in einem TextBox abrufen und festlegen.
+Ein **TextBox** -Steuerelement ermöglicht es Benutzern, unformatierten Text einzugeben und zu bearbeiten, z. B. in einem Formular. Mit der [Text](/uwp/api/windows.ui.xaml.controls.textbox.text)-Eigenschaft können Sie den Text in einem TextBox abrufen und festlegen.
 
 Sie können das TextBox-Element als schreibgeschützt festlegen, dies sollte aber nur ein temporärer, bedingter Zustand sein. Wenn der Text nie bearbeitbar sein soll, ziehen Sie stattdessen die Verwendung eines TextBlock-Elements in Erwägung.
 
-Verwenden Sie ein **PasswordBox**-Steuerelement, um Kennwörter oder andere private Daten wie Sozialversicherungsnummern zu erfassen. Bei einem Kennwortfeld handelt es sich um ein Texteingabefeld, das die darin eingegebenen Zeichen zu Datenschutzzwecken verdeckt. Ein Kennwortfeld sieht wie ein Texteingabefeld aus. Der einzige Unterschied besteht darin, dass anstelle des eingegebenen Texts Aufzählungszeichen erscheinen. Das Aufzählungszeichen ist anpassbar.
+Verwenden Sie ein **PasswordBox** -Steuerelement, um Kennwörter oder andere private Daten wie Sozialversicherungsnummern zu erfassen. Bei einem Kennwortfeld handelt es sich um ein Texteingabefeld, das die darin eingegebenen Zeichen zu Datenschutzzwecken verdeckt. Ein Kennwortfeld sieht wie ein Texteingabefeld aus. Der einzige Unterschied besteht darin, dass anstelle des eingegebenen Texts Aufzählungszeichen erscheinen. Das Aufzählungszeichen ist anpassbar.
 
-Verwenden Sie ein **AutoSuggestBox**-Steuerelement, um eine Liste mit Vorschlägen anzuzeigen, aus der Benutzer während der Eingabe auswählen können. Ein Feld mit automatischen Vorschlägen ist ein Texteingabefeld, das eine Liste grundlegender Suchvorschläge auslöst. Begriffsvorschläge können auf einer Kombination aus häufig verwendeten Suchbegriffen und historischen vom Benutzer eingegebenen Begriffen basieren.
+Verwenden Sie ein **AutoSuggestBox** -Steuerelement, um eine Liste mit Vorschlägen anzuzeigen, aus der Benutzer während der Eingabe auswählen können. Ein Feld mit automatischen Vorschlägen ist ein Texteingabefeld, das eine Liste grundlegender Suchvorschläge auslöst. Begriffsvorschläge können auf einer Kombination aus häufig verwendeten Suchbegriffen und historischen vom Benutzer eingegebenen Begriffen basieren.
 
 Sie sollten außerdem ein AutoSuggestBox-Steuerelement verwenden, um ein Suchfeld zu implementieren.
 
@@ -148,7 +148,7 @@ Weitere Informationen finden Sie unter [Verwenden des Eingabeumfangs zum Ändern
 
 Windows bietet bei Schriftarten die Möglichkeit, für jede Glyphe mehrere farbige Schichten zu verwenden. Die Segoe UI Emoji-Schriftart definiert z. B. farbige Versionen der Emoticon- und anderer Emoji-Zeichen.
 
-Die Standard- und Richt-Text-Steuerelemente unterstützen die Anzeige von farbigen Schriftarten. Standardmäßig ist die **IsColorFontEnabled**-Eigenschaft **true**, und Schriftarten mit diesen zusätzlichen Schichten werden in Farbe gerendert. Die standardmäßige farbige Schriftart im System ist Segoe UI Emoji, und die Steuerelemente kehren für die farbige Anzeige der Glyphen zu dieser Schriftart zurück.
+Die Standard- und Richt-Text-Steuerelemente unterstützen die Anzeige von farbigen Schriftarten. Standardmäßig ist die **IsColorFontEnabled** -Eigenschaft **true** , und Schriftarten mit diesen zusätzlichen Schichten werden in Farbe gerendert. Die standardmäßige farbige Schriftart im System ist Segoe UI Emoji, und die Steuerelemente kehren für die farbige Anzeige der Glyphen zu dieser Schriftart zurück.
 
 ```xaml
 <TextBlock FontSize="30">Hello ☺⛄☂♨⛅</TextBlock>
@@ -196,7 +196,7 @@ Verwenden Sie die Rechtschreibprüfung für Texteingabe-Steuerelemente aus zwei 
 -   Verwenden Sie die Rechtschreibprüfung nicht, wenn ein Wort mit hoher Wahrscheinlichkeit nicht in einem Wörterbuch enthalten ist oder wenn Benutzer die Rechtschreibprüfung nicht als nützlich empfinden. Sie sollten sie beispielsweise nicht aktivieren, wenn das Textfeld für eine Telefonnummer oder einen Namen vorgesehen ist.
 -   Deaktivieren Sie die Rechtschreibprüfung nicht nur deswegen, weil das aktuelle Rechtschreibprüfungsmodul die Sprache Ihrer App nicht unterstützt. Wenn die Rechtschreibprüfung eine Sprache nicht unterstützt, passiert nichts, sodass die Option bedenkenlos aktiviert bleiben kann. Außerdem verfügen einige Benutzer eventuell über einen Eingabemethoden-Editor (Input Method Editor, IME), um eine andere Sprache in Ihre App einzugeben, die unterstützt wird. Deaktivieren Sie, wenn Sie beispielsweise eine japanische Sprachen-App erstellen, nicht die Rechtschreibprüfung, selbst wenn das Rechtschreibprüfungsmodul diese Sprache möglicherweise aktuell nicht erkennt. Der Benutzer könnte zu einem englischsprachigen IME wechseln und englischsprachige Eingaben in der App vornehmen. Wenn die Rechtschreibprüfung aktiviert ist, werden die englischsprachigen Eingaben geprüft.
 
-Für TextBox- und RichEditBox-Steuerelemente ist die Rechtschreibprüfung standardmäßig aktiviert. Sie können sie durch Festlegen der **IsSpellCheckEnabled**-Eigenschaft auf **false** deaktivieren.
+Für TextBox- und RichEditBox-Steuerelemente ist die Rechtschreibprüfung standardmäßig aktiviert. Sie können sie durch Festlegen der **IsSpellCheckEnabled** -Eigenschaft auf **false** deaktivieren.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 

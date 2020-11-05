@@ -1,5 +1,5 @@
 ---
-Description: TabView bietet eine flexible Möglichkeit zum Organisieren mehrerer Dokumente auf dynamischen Registerkarten
+description: TabView bietet eine flexible Möglichkeit zum Organisieren mehrerer Dokumente auf dynamischen Registerkarten
 title: Registerkartenansicht
 template: detail.hbs
 ms.date: 09/24/2020
@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3010feeb1a19f8c4d38883415cc315b8d863bb82
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: f34e2a882746ac833d2b78373a96496c1f079864
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749736"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034773"
 ---
 # <a name="tabview"></a>TabView
 
@@ -39,7 +39,7 @@ Das TabView-Steuerelement bietet eine Möglichkeit, eine Reihe von Registerkarte
 > [!TIP]
 > In diesem Dokument stellt der Alias **muxc** in XAML die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben dem [Page](/uwp/api/windows.ui.xaml.controls.page)-Element Folgendes hinzugefügt: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
->Im CodeBehind stellt ebenfalls der Alias **muxc** in C# die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben am Anfang der Datei die folgende **using**-Anweisung hinzugefügt: `using muxc = Microsoft.UI.Xaml.Controls;`
+>Im CodeBehind stellt ebenfalls der Alias **muxc** in C# die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben am Anfang der Datei die folgende **using** -Anweisung hinzugefügt: `using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -203,7 +203,7 @@ Unabhängig davon, wie der Benutzer mit einer Reihe von Dokumentregisterkarten i
 
 ### <a name="tab-and-cursor-key-behavior"></a>Verhalten der TAB- und CURSORTASTEN
 
-Wenn der Fokus in den _TabStrip_-Bereich bewegt wird, erhält das ausgewählte [TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem) den Fokus. Der Benutzer kann dann mit den NACH-LINKS- und NACH-RECHTS-TASTEN den Fokus (nicht die Auswahl) auf andere Registerkarten im TabStrip-Element verschieben. Der Pfeiltastenfokus ist im TabStrip-Element und in der Schaltfläche zum Hinzufügen von Registerkarten „(+)“ eingeschlossen, falls vorhanden. Um den Fokus aus dem TabStrip-Bereich zu verschieben, kann der Benutzer die TAB-TASTE drücken, die den Fokus auf das nächste Element verschiebt, das den Fokus erhalten kann.
+Wenn der Fokus in den _TabStrip_ -Bereich bewegt wird, erhält das ausgewählte [TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem) den Fokus. Der Benutzer kann dann mit den NACH-LINKS- und NACH-RECHTS-TASTEN den Fokus (nicht die Auswahl) auf andere Registerkarten im TabStrip-Element verschieben. Der Pfeiltastenfokus ist im TabStrip-Element und in der Schaltfläche zum Hinzufügen von Registerkarten „(+)“ eingeschlossen, falls vorhanden. Um den Fokus aus dem TabStrip-Bereich zu verschieben, kann der Benutzer die TAB-TASTE drücken, die den Fokus auf das nächste Element verschiebt, das den Fokus erhalten kann.
 
 Verschieben des Fokus über die TAB-TASTE
 

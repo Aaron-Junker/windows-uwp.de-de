@@ -1,5 +1,5 @@
 ---
-Description: Verwenden Sie eine QuickInfo, damit der Benutzer weitere Informationen über ein Steuerelement erhält, bevor er zum Ausführen einer Aktion aufgefordert wird.
+description: Verwenden Sie eine QuickInfo, damit der Benutzer weitere Informationen über ein Steuerelement erhält, bevor er zum Ausführen einer Aktion aufgefordert wird.
 title: QuickInfos
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a9a5c6deb2ad7ea2b4dad8e7db3e9513700c2c3e
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 0c9d2f26acfe431eb1be895f1021d544f78b52fb
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750626"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030803"
 ---
 # <a name="tooltips"></a>QuickInfos
 
@@ -92,7 +92,7 @@ Eine QuickInfo in der Windows-Karten-App.
 
 Eine [QuickInfo](/uwp/api/Windows.UI.Xaml.Controls.ToolTip) muss einem anderen Benutzeroberflächenelement zugewiesen werden, das ihr Eigentümer ist. Die [ToolTipService](/uwp/api/windows.ui.xaml.controls.tooltipservice)-Klasse bietet statische Methoden zum Anzeigen einer QuickInfo.
 
-Verwenden Sie in XAML die angefügte **ToolTipService.Tooltip**-Eigenschaft, um die QuickInfo einem Eigentümer zuzuweisen.
+Verwenden Sie in XAML die angefügte **ToolTipService.Tooltip** -Eigenschaft, um die QuickInfo einem Eigentümer zuzuweisen.
 
 ```xaml
 <Button Content="Submit" ToolTipService.ToolTip="Click to submit"/>
@@ -126,7 +126,7 @@ Sie können jedes beliebige Objekt als [Inhalt](/uwp/api/windows.ui.xaml.control
 
 Standardmäßig wird eine QuickInfo über dem Zeiger zentriert angezeigt. Die Platzierung wird nicht durch das App-Fenster eingeschränkt, sodass die QuickInfo möglicherweise teilweise oder komplett außerhalb der Grenzen des App-Fensters angezeigt wird.
 
-Verwenden Sie die Eigenschaft [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) oder die angefügte **ToolTipService.Placement**-Eigenschaft, um die QuickInfo über, unter, links oder rechts neben dem Zeiger zu platzieren. Sie können die Eigenschaften [VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset) und [HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset) so festlegen, dass der Abstand zwischen dem Zeiger und der QuickInfo geändert wird. Nur einer der beiden Offset-Werte beeinflusst die endgültige Position: VerticalOffset, wenn eine Platzierung oben oder unten, HorizontalOffset, wenn eine Platzierung links oder rechts erfolgt.
+Verwenden Sie die Eigenschaft [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) oder die angefügte **ToolTipService.Placement** -Eigenschaft, um die QuickInfo über, unter, links oder rechts neben dem Zeiger zu platzieren. Sie können die Eigenschaften [VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset) und [HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset) so festlegen, dass der Abstand zwischen dem Zeiger und der QuickInfo geändert wird. Nur einer der beiden Offset-Werte beeinflusst die endgültige Position: VerticalOffset, wenn eine Platzierung oben oder unten, HorizontalOffset, wenn eine Platzierung links oder rechts erfolgt.
 
 ```xaml
 <!-- An Image with an offset ToolTip. -->
@@ -139,7 +139,7 @@ Verwenden Sie die Eigenschaft [Placement](/uwp/api/windows.ui.xaml.controls.tool
 </Image>
 ```
 
-Wenn eine QuickInfo den Inhalt verdeckt, auf den sie sich bezieht, können Sie ihre Position mit der neuen **PlacementRect**-Eigenschaft genau festlegen. PlacementRect verankert die Position der QuickInfo und bildet außerdem einen Bereich, der von der QuickInfo nicht verdeckt wird, sofern der Platz auf dem Bildschirm ausreicht, um die QuickInfo außerhalb dieses Bereichs zu zeichnen. Du kannst den Ursprung des Rechtecks in Bezug auf den Eigentümer der QuickInfo sowie Höhe und Breite des Ausschlussbereichs angeben. Die [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement)-Eigenschaft legt fest, ob die QuickInfo über, unter, links oder rechts von PlacementRect gezeichnet wird. 
+Wenn eine QuickInfo den Inhalt verdeckt, auf den sie sich bezieht, können Sie ihre Position mit der neuen **PlacementRect** -Eigenschaft genau festlegen. PlacementRect verankert die Position der QuickInfo und bildet außerdem einen Bereich, der von der QuickInfo nicht verdeckt wird, sofern der Platz auf dem Bildschirm ausreicht, um die QuickInfo außerhalb dieses Bereichs zu zeichnen. Du kannst den Ursprung des Rechtecks in Bezug auf den Eigentümer der QuickInfo sowie Höhe und Breite des Ausschlussbereichs angeben. Die [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement)-Eigenschaft legt fest, ob die QuickInfo über, unter, links oder rechts von PlacementRect gezeichnet wird. 
 
 ```xaml
 <!-- An Image with a non-occluding ToolTip. -->

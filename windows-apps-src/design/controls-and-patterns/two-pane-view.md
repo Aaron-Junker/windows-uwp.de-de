@@ -1,17 +1,17 @@
 ---
-Description: TwoPaneView ist ein Layoutsteuerelement, mit dem Sie die Anzeige von Apps mit zwei verschiedenen Inhaltsbereichen verwalten können.
+description: TwoPaneView ist ein Layoutsteuerelement, mit dem Sie die Anzeige von Apps mit zwei verschiedenen Inhaltsbereichen verwalten können.
 title: Ansicht mit zwei Bereichen
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 681405694880024e158b4ef5798ca2862a38fde2
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 76a6264a8ce1704e9bd209a6246c81ba9665265f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750226"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034433"
 ---
 # <a name="two-pane-view"></a>Ansicht mit zwei Bereichen
 
@@ -44,7 +44,7 @@ Das TwoPaneView-Steuerelement funktioniert zwar auf allen Windows-Geräten, ist 
 > [!TIP]
 > In diesem Dokument stellt der Alias **muxc** in XAML die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben dem [Page](/uwp/api/windows.ui.xaml.controls.page)-Element Folgendes hinzugefügt: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
->Im CodeBehind stellt ebenfalls der Alias **muxc** in C# die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben am Anfang der Datei die folgende **using**-Anweisung hinzugefügt: `using muxc = Microsoft.UI.Xaml.Controls;`
+>Im CodeBehind stellt ebenfalls der Alias **muxc** in C# die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben am Anfang der Datei die folgende **using** -Anweisung hinzugefügt: `using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 

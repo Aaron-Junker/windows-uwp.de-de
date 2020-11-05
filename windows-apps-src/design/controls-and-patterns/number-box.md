@@ -1,5 +1,5 @@
 ---
-Description: Ein Zahlenfeld (NumberBox) ist ein Steuerelement, das zum Anzeigen und Bearbeiten von Zahlen verwendet werden kann.
+description: Ein Zahlenfeld (NumberBox) ist ein Steuerelement, das zum Anzeigen und Bearbeiten von Zahlen verwendet werden kann.
 title: Zahlenfeld
 template: detail.hbs
 ms.date: 09/24/2020
@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 42f37a2753cced0f53fab54af393af74c21f3597
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 4bba2f90d7240b454c4dbd5331251e306f946af7
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749756"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030913"
 ---
 # <a name="number-box"></a>Zahlenfeld
 
@@ -37,7 +37,7 @@ Stellt ein Steuerelement dar, das zum Anzeigen und Bearbeiten von Zahlen verwend
 > [!TIP]
 > In diesem Dokument stellt der Alias **muxc** in XAML die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben dem [Page](/uwp/api/windows.ui.xaml.controls.page)-Element Folgendes hinzugefügt: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
->Im CodeBehind stellt ebenfalls der Alias **muxc** in C# die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben am Anfang der Datei die folgende **using**-Anweisung hinzugefügt: `using muxc = Microsoft.UI.Xaml.Controls;`
+>Im CodeBehind stellt ebenfalls der Alias **muxc** in C# die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben am Anfang der Datei die folgende **using** -Anweisung hinzugefügt: `using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 

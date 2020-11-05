@@ -1,16 +1,16 @@
 ---
-Description: Verwende die AppWindow-Klasse, um verschiedene Teile der App in einzelnen Fenstern anzuzeigen.
+description: Verwende die AppWindow-Klasse, um verschiedene Teile der App in einzelnen Fenstern anzuzeigen.
 title: Verwenden der AppWindow-Klasse zum Anzeigen sekundärer Fenster für eine App
 ms.date: 07/19/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b89d9100157cf40266bb983e258aa187f65dc93
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: a3f8644612954c4693ad28d3c1b41870855b37ca
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68867463"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034883"
 ---
 # <a name="show-multiple-views-with-appwindow"></a>Anzeigen mehrerer Ansichten mit AppWindow
 

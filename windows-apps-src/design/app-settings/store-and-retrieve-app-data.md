@@ -1,5 +1,5 @@
 ---
-Description: Hier erfahren Sie, wie Sie lokale, Roaming- und temporäre App-Daten speichern und abrufen können.
+description: Hier erfahren Sie, wie Sie lokale, Roaming- und temporäre App-Daten speichern und abrufen können.
 title: Speichern und Abrufen von Einstellungen und anderen App-Daten
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
@@ -8,16 +8,16 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 642f49927a113a79e50dad52c1a73d32a1571fcb
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9f4736c598e18bc4f1225a7fa8e0488c3601420c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173944"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031463"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>Speichern und Abrufen von Einstellungen und anderen App-Daten
 
-*App-Daten* sind änderbare Daten, die von einer bestimmten App erstellt und verwaltet werden. Sie beinhalten den Laufzeitstatus, App-Einstellungen, Benutzereinstellungen, Referenzinhalte (beispielsweise die Wörterbuchdefinitionen in einer Wörterbuch-App) und andere Einstellungen. App-Daten unterscheiden sich von *Benutzerdaten*, Daten, die der Benutzer beim Verwenden einer App erstellt und verwaltet. Benutzerdaten umfassen Dokument- oder Mediendateien, E-Mail- oder Kommunikationstranskripte oder Datenbankeinträge, mit vom Benutzer erstellte Inhalte enthalten. Benutzerdaten können für mehrere Apps nützlich oder von Bedeutung sein. Häufig handelt es sich dabei um Daten, die der Benutzer als von der App unabhängige Entität ändern oder übertragen möchte (z. B. ein Dokument).
+*App-Daten* sind änderbare Daten, die von einer bestimmten App erstellt und verwaltet werden. Sie beinhalten den Laufzeitstatus, App-Einstellungen, Benutzereinstellungen, Referenzinhalte (beispielsweise die Wörterbuchdefinitionen in einer Wörterbuch-App) und andere Einstellungen. App-Daten unterscheiden sich von *Benutzerdaten* , Daten, die der Benutzer beim Verwenden einer App erstellt und verwaltet. Benutzerdaten umfassen Dokument- oder Mediendateien, E-Mail- oder Kommunikationstranskripte oder Datenbankeinträge, mit vom Benutzer erstellte Inhalte enthalten. Benutzerdaten können für mehrere Apps nützlich oder von Bedeutung sein. Häufig handelt es sich dabei um Daten, die der Benutzer als von der App unabhängige Entität ändern oder übertragen möchte (z. B. ein Dokument).
 
 **Wichtiger Hinweis zu App-Daten:** Die Lebensdauer der App-Daten ist an die Lebensdauer der App gebunden. Wenn die App entfernt wird, gehen auch alle App-Daten verloren. Verwenden Sie App-Daten nicht zum Speichern von Benutzerdaten oder anderen Daten, die Benutzer als wertvoll und unersetzlich betrachten. Solche Informationen sollten in den Bibliotheken des Benutzers und auf Microsoft OneDrive gespeichert werden. App-Daten eignen sich perfekt zum Speichern von App-spezifischen (Benutzer-)Einstellungen und Favoriten.
 
@@ -31,13 +31,13 @@ Verwenden Sie die Einstellungen zum Speichern von Benutzereinstellungen und Anwe
 
 Im Folgenden finden Sie Datentypen, die Sie für App-Einstellungen verwenden können:
 
-- **UInt8**, **Int16**, **UInt16**, **Int32**, **UInt32**, **Int64**, **UInt64**, **Single**, **Double**
+- **UInt8** , **Int16** , **UInt16** , **Int32** , **UInt32** , **Int64** , **UInt64** , **Single** , **Double**
 - **Boolean**
-- **Char16**, **String**
+- **Char16** , **String**
 - [**DateTime**](/uwp/api/Windows.Foundation.DateTime), [**TimeSpan**](/uwp/api/Windows.Foundation.TimeSpan)
     - Verwenden Sie für C#/.NET Folgendes: [**System.DateTimeOffset**](/dotnet/api/system.datetimeoffset?view=dotnet-uwp-10.0), [**System.TimeSpan**](/dotnet/api/system.timespan?view=dotnet-uwp-10.0)
-- **GUID**, [**Point**](/uwp/api/Windows.Foundation.Point), [**Size**](/uwp/api/Windows.Foundation.Size), [**Rect**](/uwp/api/Windows.Foundation.Rect)
-- [**ApplicationDataCompositeValue:** ](/uwp/api/Windows.Storage.ApplicationDataCompositeValue) Eine Reihe von verwandten App-Einstellungen, die atomisch serialisiert und deserialisiert werden müssen. Verwenden Sie Verbundeinstellungen, um atomische Aktualisierungen voneinander abhängiger Einstellungen problemlos behandeln zu können. Das System stellt die Integrität von Verbundeinstellungen bei gleichzeitigem Zugriff und Roaming sicher. Verbundeinstellungen sind für kleine Datenmengen vorgesehen. Bei Verwendung für große Datasets kann die Leistung beeinträchtigt werden.
+- **GUID** , [**Point**](/uwp/api/Windows.Foundation.Point), [**Size**](/uwp/api/Windows.Foundation.Size), [**Rect**](/uwp/api/Windows.Foundation.Rect)
+- [**ApplicationDataCompositeValue:**](/uwp/api/Windows.Storage.ApplicationDataCompositeValue) Eine Reihe von verwandten App-Einstellungen, die atomisch serialisiert und deserialisiert werden müssen. Verwenden Sie Verbundeinstellungen, um atomische Aktualisierungen voneinander abhängiger Einstellungen problemlos behandeln zu können. Das System stellt die Integrität von Verbundeinstellungen bei gleichzeitigem Zugriff und Roaming sicher. Verbundeinstellungen sind für kleine Datenmengen vorgesehen. Bei Verwendung für große Datasets kann die Leistung beeinträchtigt werden.
 
 ### <a name="files"></a>Dateien
 

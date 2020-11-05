@@ -1,5 +1,5 @@
 ---
-Description: Die universellen Entwurfsfeatures von UWP-Apps ermöglichen die Erstellung von Apps, die sich problemlos auf verschiedensten Geräten skalieren lassen.
+description: Die universellen Entwurfsfeatures von UWP-Apps ermöglichen die Erstellung von Apps, die sich problemlos auf verschiedensten Geräten skalieren lassen.
 title: Einführung in das Design von Windows-Apps (Windows-Apps)
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 ms.date: 09/24/2020
@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d3179a553e0d30bd009765ec55640989720628c2
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 78ccbe1f18167c318ffa38f3614cfab61782d147
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763086"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032443"
 ---
 # <a name="introduction-to-windows-app-design"></a>Einführung in das Design von Windows-Apps
 

@@ -1,5 +1,5 @@
 ---
-Description: Hier erfahren Sie, wie Sie Code für eine benutzerdefinierte Panel-Klasse schreiben. Dabei implementieren Sie die Methoden „ArrangeOverride“ und „MeasureOverride“ und verwenden die Children-Eigenschaft.
+description: Hier erfahren Sie, wie Sie Code für eine benutzerdefinierte Panel-Klasse schreiben. Dabei implementieren Sie die Methoden „ArrangeOverride“ und „MeasureOverride“ und verwenden die Children-Eigenschaft.
 MS-HAID: dev\_ctrl\_layout\_txt.boxpanel\_example\_custom\_panel
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -12,12 +12,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e44b95918a34e50af3c794b4f76e5d0f2d2f0517
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 4bd3318e02974e4409d40df3a60e9cb74b6b7ada
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220393"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034833"
 ---
 # <a name="boxpanel-an-example-custom-panel"></a>BoxPanel, ein Beispiel für benutzerdefinierte Panels
 
@@ -25,7 +25,7 @@ ms.locfileid: "91220393"
 
 Hier erfahren Sie, wie Sie Code für eine benutzerdefinierte [**Panel**](/uwp/api/Windows.UI.Xaml.Controls.Panel)-Klasse schreiben. Dabei implementieren Sie die Methoden [**ArrangeOverride**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) und [**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) und verwenden die [**Children**](/uwp/api/windows.ui.xaml.controls.panel.children)-Eigenschaft. 
 
-> **Wichtige APIs:** [**Panel**](/uwp/api/Windows.UI.Xaml.Controls.Panel), [**ArrangeOverride**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride),[**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 
+> **Wichtige APIs:** [**Panel**](/uwp/api/Windows.UI.Xaml.Controls.Panel), [**ArrangeOverride**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride), [**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 
 
 Der Beispielcode zeigt eine benutzerdefinierte Panelimplementierung. Wir gehen jedoch nicht detailliert auf die Erklärung der Layoutkonzepte ein, die Einfluss darauf haben, wie Sie ein Panel für verschiedene Layoutszenarien anpassen können. Wenn Sie weitere Informationen zu diesen Layoutkonzepten und der Anwendbarkeit auf Ihr jeweiliges Layoutszenario benötigen, lesen Sie [Übersicht über benutzerdefinierte XAML-Panels](custom-panels-overview.md).
 
@@ -43,11 +43,11 @@ Ein Layoutszenario wird durch folgende Aspekte ausgedrückt:
 
 Unter Berücksichtigung dieser Aspekte ist das hier gezeigte `BoxPanel` für ein bestimmtes Szenario geeignet. Da in diesem Beispiel der Code im Vordergrund stehen soll, werden wir das Szenario noch nicht detailliert erläutern, sondern uns stattdessen auf die notwendigen Schritte und die Codierungsmuster konzentrieren. Wenn Sie sich zunächst detaillierter über das Szenario informieren möchten, lesen Sie unter [Szenario für `BoxPanel`](#the-scenario-for-boxpanel) weiter, und kehren Sie später zum Code zurück.
 
-## <a name="start-by-deriving-from-panel"></a>Erster Schritt: Ableiten von der **Panel**-Klasse
+## <a name="start-by-deriving-from-panel"></a>Erster Schritt: Ableiten von der **Panel** -Klasse
 
 Leiten Sie zunächst aus der [**Panel**](/uwp/api/Windows.UI.Xaml.Controls.Panel)-Klasse eine benutzerdefinierte Klasse ab. Die einfachste Methode dafür ist wahrscheinlich, mithilfe der Kontextmenüoptionen **Hinzufügen** | **Neues Element** | **Klasse** für ein Projekt aus dem **5Projektmappen-Explorer** in Microsoft Visual Studio eine separate Codedatei für diese Klasse zu definieren. Benennen Sie die Klasse (und Datei) mit `BoxPanel`.
 
-Die Vorlagendatei für eine Klasse beginnt nicht mit vielen **using**-Anweisungen, weil sie nicht ausschließlich für Windows-Apps bestimmt ist. Fügen Sie daher zuerst **using**-Anweisungen hinzu. Die Vorlagendatei beginnt außerdem mit einigen **using**-Anweisungen, die Sie vielleicht nicht benötigen, und die gelöscht werden können. Hier ist eine Liste mit Vorschlägen für **using**-Anweisungen zur Auflösung von Typen, die Sie für einen typischen Code eines benutzerdefinierten Panels benötigen:
+Die Vorlagendatei für eine Klasse beginnt nicht mit vielen **using** -Anweisungen, weil sie nicht ausschließlich für Windows-Apps bestimmt ist. Fügen Sie daher zuerst **using** -Anweisungen hinzu. Die Vorlagendatei beginnt außerdem mit einigen **using** -Anweisungen, die Sie vielleicht nicht benötigen, und die gelöscht werden können. Hier ist eine Liste mit Vorschlägen für **using** -Anweisungen zur Auflösung von Typen, die Sie für einen typischen Code eines benutzerdefinierten Panels benötigen:
 
 ```CSharp
 using System;
@@ -66,7 +66,7 @@ public class BoxPanel : Panel
 }
 ```
 
-Definieren Sie auf Klassenebene einige **int**- und **double**-Werte, die von mehreren Logikfunktionen gemeinsam verwendet werden, aber nicht als öffentliche API verfügbar gemacht werden müssen. In dem Beispiel sind diese wie folgt benannt: `maxrc`, `rowcount`, `colcount`, `cellwidth`, `cellheight`, `maxcellheight`, `aspectratio`.
+Definieren Sie auf Klassenebene einige **int** - und **double** -Werte, die von mehreren Logikfunktionen gemeinsam verwendet werden, aber nicht als öffentliche API verfügbar gemacht werden müssen. In dem Beispiel sind diese wie folgt benannt: `maxrc`, `rowcount`, `colcount`, `cellwidth`, `cellheight`, `maxcellheight`, `aspectratio`.
 
 Nachdem Sie dies getan haben, sieht die vollständige Codedatei wie folgt aus (Kommentare zu **using** werden entfernt, da Sie nun wissen, wozu sie dienen):
 
@@ -85,7 +85,7 @@ public class BoxPanel : Panel
 }
 ```
 
-Ab hier zeigen wir Ihnen jeweils eine Memberdefinition. Dabei kann es sich um eine Methodenüberschreibung oder eine Unterstützung wie eine Abhängigkeitseigenschaft handeln. Sie können diese dem oben gezeigten Skelett in beliebiger Reihenfolge hinzufügen. Wir zeigen die **using**-Anweisungen oder die Definition des Klassenbereichs erst wieder in den Codeausschnitten, wenn wir den finalen Code präsentieren.
+Ab hier zeigen wir Ihnen jeweils eine Memberdefinition. Dabei kann es sich um eine Methodenüberschreibung oder eine Unterstützung wie eine Abhängigkeitseigenschaft handeln. Sie können diese dem oben gezeigten Skelett in beliebiger Reihenfolge hinzufügen. Wir zeigen die **using** -Anweisungen oder die Definition des Klassenbereichs erst wieder in den Codeausschnitten, wenn wir den finalen Code präsentieren.
 
 ## <a name="measureoverride"></a>**MeasureOverride**
 
@@ -125,11 +125,11 @@ protected override Size MeasureOverride(Size availableSize)
 }
 ```
 
-Das notwendige Muster einer [**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)-Implementierung ist die Schleife durch die einzelnen Elemente in [**Panel.Children**](/uwp/api/windows.ui.xaml.controls.panel.children). Rufen Sie für jedes dieser Elemente immer die [**Measure**](/uwp/api/windows.ui.xaml.uielement.measure)-Methode auf. **Measure** hat einen Parameter vom Typ [**Size**](/uwp/api/Windows.Foundation.Size). An dieser Stelle übergeben Sie die Größe, die dem Panel für das jeweilige untergeordnete Element zur Verfügung stehen soll. Bevor Sie also den Schleife ausführen und mit dem **Measure**-Aufruf beginnen können, müssen Sie wissen, wie viel Platz die einzelnen Zellen belegen können. Aus der **MeasureOverride**-Methode selbst stammt der *availableSize*-Wert. Dies ist die Größe, die vom übergeordneten Panel beim **Measure**-Aufruf verwendet wurde. Dies war in erster Linie der Auslöser für diesen **MeasureOverride**-Aufruf. Eine typische Logik besteht also darin, ein Schema zu entwerfen, in dem jedes untergeordnete Element den Raum des gesamten *availableSize*-Werts für das Panel teilt. Anschließend übergeben Sie die einzelnen Größenteilungen für jedes untergeordnete Element an **Measure**.
+Das notwendige Muster einer [**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)-Implementierung ist die Schleife durch die einzelnen Elemente in [**Panel.Children**](/uwp/api/windows.ui.xaml.controls.panel.children). Rufen Sie für jedes dieser Elemente immer die [**Measure**](/uwp/api/windows.ui.xaml.uielement.measure)-Methode auf. **Measure** hat einen Parameter vom Typ [**Size**](/uwp/api/Windows.Foundation.Size). An dieser Stelle übergeben Sie die Größe, die dem Panel für das jeweilige untergeordnete Element zur Verfügung stehen soll. Bevor Sie also den Schleife ausführen und mit dem **Measure** -Aufruf beginnen können, müssen Sie wissen, wie viel Platz die einzelnen Zellen belegen können. Aus der **MeasureOverride** -Methode selbst stammt der *availableSize* -Wert. Dies ist die Größe, die vom übergeordneten Panel beim **Measure** -Aufruf verwendet wurde. Dies war in erster Linie der Auslöser für diesen **MeasureOverride** -Aufruf. Eine typische Logik besteht also darin, ein Schema zu entwerfen, in dem jedes untergeordnete Element den Raum des gesamten *availableSize* -Werts für das Panel teilt. Anschließend übergeben Sie die einzelnen Größenteilungen für jedes untergeordnete Element an **Measure**.
 
 Die Größe wird vom `BoxPanel` ziemlich einfach aufgeteilt: Es teilt den Platz in mehrere Felder, deren Anzahl größtenteils durch die Anzahl Elemente bestimmt wird. Die Größenanpassung der Felder basiert auf der Anzahl der Zeilen und Spalten und auf der verfügbaren Größe. Mitunter wird eine Zeile oder Spalte eines Quadrats nicht benötigt. Demzufolge wird es verworfen, und der Bereich ist bezüglich des Zeilen-/Spaltenverhältnisses kein Quadrat mehr, sondern wird zu einem Rechteck. Wenn Sie weitere Informationen dazu erhalten möchten, wie diese Logik erstellt wurde, lesen Sie unter [„Das Szenario für BoxPanel](#the-scenario-for-boxpanel)“ weiter.
 
-Was geschieht also während des Messdurchlaufs? Dabei wird für jedes Element, bei dem [**Measure**](/uwp/api/windows.ui.xaml.uielement.measure) aufgerufen wurde, ein Wert für die schreibgeschützte [**DesiredSize**](/uwp/api/windows.ui.xaml.uielement.desiredsize)-Eigenschaft festgelegt. Das Vorhandensein eines **DesiredSize**-Werts kann beim Erreichen des Anordnungsdurchlaufs von Bedeutung sein, weil **DesiredSize** Aufschluss darüber gibt, wie die Größe bei der Anordnung und in der finalen Darstellung lauten kann oder soll. Selbst wenn Sie **DesiredSize** in Ihrer eigenen Logik nicht verwenden, wird der Wert dennoch vom System benötigt.
+Was geschieht also während des Messdurchlaufs? Dabei wird für jedes Element, bei dem [**Measure**](/uwp/api/windows.ui.xaml.uielement.measure) aufgerufen wurde, ein Wert für die schreibgeschützte [**DesiredSize**](/uwp/api/windows.ui.xaml.uielement.desiredsize)-Eigenschaft festgelegt. Das Vorhandensein eines **DesiredSize** -Werts kann beim Erreichen des Anordnungsdurchlaufs von Bedeutung sein, weil **DesiredSize** Aufschluss darüber gibt, wie die Größe bei der Anordnung und in der finalen Darstellung lauten kann oder soll. Selbst wenn Sie **DesiredSize** in Ihrer eigenen Logik nicht verwenden, wird der Wert dennoch vom System benötigt.
 
 Dieses Panel kann verwendet werden, wenn die Höhenkomponenten von *availableSize* unbegrenzt ist. Wenn dies wahr ist, verfügt das Panel über keine bekannte Höhe zum Teilen. In diesem Fall informiert die Logik für den Messdurchlauf jedes untergeordnete Element darüber, dass es noch keine begrenzte Höhe aufweist. Dazu wird ein [**Size**](/uwp/api/Windows.Foundation.Size)-Wert an den [**Measure**](/uwp/api/windows.ui.xaml.uielement.measure)-Aufruf für untergeordnete Elemente übergeben, wobei [**Size.Height**](/uwp/api/windows.foundation.size.height) endlos ist. Dies ist zulässig. Beim Aufruf von **Measure** wird der [**DesiredSize**](/uwp/api/windows.ui.xaml.uielement.desiredsize)-Wert laut Logik als Minimalwert von Folgendem festgelegt: an **Measure** übergebene Werte oder die natürliche Größe des jeweiligen Elements aus Faktoren wie den explizit festgelegten Werten [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) und [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width).
 
@@ -176,13 +176,13 @@ protected override Size ArrangeOverride(Size finalSize)
 
 Das notwendige Muster einer [**ArrangeOverride**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)-Implementierung ist die Schleife durch die einzelnen Elemente in [**Panel.Children**](/uwp/api/windows.ui.xaml.controls.panel.children). Rufen Sie für jedes dieser Elemente immer die [**Arrange**](/uwp/api/windows.ui.xaml.uielement.arrange)-Methode auf.
 
-Beachten Sie, dass hier nicht so viele Berechnungen erfolgen wie in [**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) – das ist typisch. Die Größe der untergeordneten Elemente ist bereits aus der eigenen **MeasureOverride**-Logik des Panels oder aus dem [**DesiredSize**](/uwp/api/windows.ui.xaml.uielement.desiredsize)-Wert der einzelnen untergeordneten Elemente bekannt, der während des Messdurchlaufs festgelegt wird. Dennoch müssen wir die Position innerhalb des Panels festlegen, an der die einzelnen untergeordneten Elemente angezeigt werden. In einem typischen Panel sollte jedes untergeordnete Element an einer anderen Position gerendert werden. Ein Panel, das überlappende Elemente erzeugt, ist für gewöhnliche Szenarien nicht wünschenswert (obwohl Sie durchaus Panels mit zweckmäßigen Überlappungen erstellen können, wenn dies wirklich das beabsichtigte Szenario ist).
+Beachten Sie, dass hier nicht so viele Berechnungen erfolgen wie in [**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) – das ist typisch. Die Größe der untergeordneten Elemente ist bereits aus der eigenen **MeasureOverride** -Logik des Panels oder aus dem [**DesiredSize**](/uwp/api/windows.ui.xaml.uielement.desiredsize)-Wert der einzelnen untergeordneten Elemente bekannt, der während des Messdurchlaufs festgelegt wird. Dennoch müssen wir die Position innerhalb des Panels festlegen, an der die einzelnen untergeordneten Elemente angezeigt werden. In einem typischen Panel sollte jedes untergeordnete Element an einer anderen Position gerendert werden. Ein Panel, das überlappende Elemente erzeugt, ist für gewöhnliche Szenarien nicht wünschenswert (obwohl Sie durchaus Panels mit zweckmäßigen Überlappungen erstellen können, wenn dies wirklich das beabsichtigte Szenario ist).
 
 Dieses Panel wird nach dem Konzept von Zeilen und Spalten angeordnet. Die Anzahl Zeilen und Spalten wurde bereits berechnet (dies war für die Messung nötig). Die Form der Zeilen und Spalten sowie die bekannten Größen der einzelnen Zellen sind also Teil der Definitionslogik einer Darstellungsposition (`anchorPoint`) für jedes Element, das in diesem Panel enthalten ist. Dieser [**Point**](/uwp/api/Windows.Foundation.Point)-Wert und der bereits aus der Messung bekannte [**Size**](/uwp/api/Windows.Foundation.Size)-Wert werden zusammen als die beiden Komponenten verwendet, aus denen eine [**Rect**](/uwp/api/Windows.Foundation.Rect)-Struktur konstruiert wird. **Rect** ist der Eingabetyp für [**Arrange**](/uwp/api/windows.ui.xaml.uielement.arrange).
 
-Panels müssen die zugehörigen Inhalte mitunter beschneiden. Wenn dies der Fall ist, entspricht die beschnittene Größe der in [**DesiredSize**](/uwp/api/windows.ui.xaml.uielement.desiredsize) vorhandenen Größe, weil sie die [**Measure**](/uwp/api/windows.ui.xaml.uielement.measure)-Logik als Mindestwert, der an **Measure** übergeben wurde, oder als andere natürliche Größenfaktoren festlegt. Normalerweise müssen Sie die Beschneidung in der [**Arrange**](/uwp/api/windows.ui.xaml.uielement.arrange)-Phase also nicht überprüfen. Die Beschneidung erfolgt einfach basierend auf der Übergabe der **DesiredSize** an die einzelnen **Arrange**-Aufrufe.
+Panels müssen die zugehörigen Inhalte mitunter beschneiden. Wenn dies der Fall ist, entspricht die beschnittene Größe der in [**DesiredSize**](/uwp/api/windows.ui.xaml.uielement.desiredsize) vorhandenen Größe, weil sie die [**Measure**](/uwp/api/windows.ui.xaml.uielement.measure)-Logik als Mindestwert, der an **Measure** übergeben wurde, oder als andere natürliche Größenfaktoren festlegt. Normalerweise müssen Sie die Beschneidung in der [**Arrange**](/uwp/api/windows.ui.xaml.uielement.arrange)-Phase also nicht überprüfen. Die Beschneidung erfolgt einfach basierend auf der Übergabe der **DesiredSize** an die einzelnen **Arrange** -Aufrufe.
 
-Beim Durchlaufen der Schleife benötigen Sie nicht immer eine Zählung, wenn alle zum Definieren der Renderingposition benötigten Informationen anderweitig bekannt sind. Zum Beispiel ist in der [**Canvas**](/uwp/api/Windows.UI.Xaml.Controls.Canvas)-Layoutlogik die Position in der [**Children**](/uwp/api/windows.ui.xaml.controls.panel.children)-Sammlung unerheblich. Alle zum Positionieren der einzelnen Elemente in einer **Canvas** benötigten Infos sind durch Lesen der Werte [**Canvas.Left**](/dotnet/api/system.windows.controls.canvas.left) und [**Canvas.Top**](/dotnet/api/system.windows.controls.canvas.top) der untergeordneten Elemente im Rahmen der Anordnungslogik bekannt. Die `BoxPanel`-Logik benötigt eine Zählung für den Vergleich mit dem *colcount*-Wert, damit ersichtlich ist, wann eine neue Zeile begonnen und der *y*-Wert versetzt wird.
+Beim Durchlaufen der Schleife benötigen Sie nicht immer eine Zählung, wenn alle zum Definieren der Renderingposition benötigten Informationen anderweitig bekannt sind. Zum Beispiel ist in der [**Canvas**](/uwp/api/Windows.UI.Xaml.Controls.Canvas)-Layoutlogik die Position in der [**Children**](/uwp/api/windows.ui.xaml.controls.panel.children)-Sammlung unerheblich. Alle zum Positionieren der einzelnen Elemente in einer **Canvas** benötigten Infos sind durch Lesen der Werte [**Canvas.Left**](/dotnet/api/system.windows.controls.canvas.left) und [**Canvas.Top**](/dotnet/api/system.windows.controls.canvas.top) der untergeordneten Elemente im Rahmen der Anordnungslogik bekannt. Die `BoxPanel`-Logik benötigt eine Zählung für den Vergleich mit dem *colcount* -Wert, damit ersichtlich ist, wann eine neue Zeile begonnen und der *y* -Wert versetzt wird.
 
 Normalerweise sind der eingegebene Wert für *finalSize* und der Wert für [**Size**](/uwp/api/Windows.Foundation.Size), der aus einer [**ArrangeOverride**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)-Implementierung zurückgegeben wird, identisch. Weitere Informationen zu den entsprechenden Gründen finden Sie unter [Übersicht über benutzerdefinierte XAML-Panels](custom-panels-overview.md) im Abschnitt **ArrangeOverride**.
 

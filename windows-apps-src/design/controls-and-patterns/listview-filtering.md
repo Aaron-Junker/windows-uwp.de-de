@@ -1,5 +1,5 @@
 ---
-Description: Filtern der Elemente in Ihrer Sammlung mithilfe von Benutzereingaben.
+description: Filtern der Elemente in Ihrer Sammlung mithilfe von Benutzereingaben.
 title: Filtern von Sammlungen
 label: Filtering collections
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 12/3/2019
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: anawish
-ms.openlocfilehash: b1ffa6374753343321f34d388eb994a62614cb15
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a62ec52fe2b8f6caac2ac27cfc4d002ec44a5b32
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172603"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034533"
 ---
 # <a name="filtering-collections-and-lists-through-user-input"></a>Filtern von Sammlungen und Listen mithilfe von Benutzereingaben
 Wenn Ihre Sammlung viele Elemente aufweist oder stark an Benutzerinteraktion gebunden ist, ist Filterung eine nützliche Funktion, die Sie implementieren können. Filtern mithilfe der in diesem Artikel beschriebenen Methoden kann in den meisten Steuerelementen für Sammlungen implementiert werden, einschließlich [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView](/uwp/api/windows.ui.xaml.controls.gridview) und [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2). Viele Arten von Benutzereingaben können zum Filtern einer Sammlung verwendet werden – beispielsweise Kontrollkästchen, Optionsfelder und Schieberegler –, dieser Artikel konzentriert sich aber auf die Verwendung von textbasierten Benutzereingaben zum Aktualisieren einer ListView in Echtzeit, ausgehend von der Suche des Benutzers. 

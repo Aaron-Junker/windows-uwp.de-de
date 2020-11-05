@@ -1,5 +1,5 @@
 ---
-Description: Verwenden Sie Vorlagen, um das Erscheinungsbild der Elemente in ListView- und GridView-Steuerelementen zu ändern.
+description: Verwenden Sie Vorlagen, um das Erscheinungsbild der Elemente in ListView- und GridView-Steuerelementen zu ändern.
 title: Elementcontainer und Vorlagen
 label: Item containers and templates
 template: detail.hbs
@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 505e03124f345b8b32c6b3454ffa4aad32a72e29
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 74cacee6dc8ea7bec0af4e5ffab66b392a0f945c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172754"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034683"
 ---
 # <a name="item-containers-and-templates"></a>Elementcontainer und Vorlagen
 
  
 
-Die **ListView**- und **GridView**-Steuerelemente verwalten, wie ihre Elemente angeordnet werden (horizontal, vertikal, an welcher Stelle der Umbruch in die nächste Zeile erfolgt, usw.), und wie die Benutzer mit den Elementen interagieren, nicht jedoch, wie die einzelnen Elemente auf dem Bildschirm angezeigt werden. Die Visualisierung der Elemente wird von Elementcontainern verwaltet. Wenn Sie einer Listenansicht Elemente hinzufügen, werden diese automatisch in einem Container platziert. Der Standardelementcontainer für ListView ist [ListViewItem](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem); für GridView ist es [GridViewItem](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem).
+Die **ListView** - und **GridView** -Steuerelemente verwalten, wie ihre Elemente angeordnet werden (horizontal, vertikal, an welcher Stelle der Umbruch in die nächste Zeile erfolgt, usw.), und wie die Benutzer mit den Elementen interagieren, nicht jedoch, wie die einzelnen Elemente auf dem Bildschirm angezeigt werden. Die Visualisierung der Elemente wird von Elementcontainern verwaltet. Wenn Sie einer Listenansicht Elemente hinzufügen, werden diese automatisch in einem Container platziert. Der Standardelementcontainer für ListView ist [ListViewItem](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem); für GridView ist es [GridViewItem](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem).
 
 > **Wichtige APIs:** [ListView-Klasse](/uwp/api/windows.ui.xaml.controls.listview), [GridView-Klasse](/uwp/api/windows.ui.xaml.controls.gridview), [ListViewItem-Klasse](/uwp/api/windows.ui.xaml.controls.listviewitem), [GridViewItem-Klasse](/uwp/api/windows.ui.xaml.controls.gridviewitem), [ItemTemplate-Eigenschaft](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate), [ItemContainerStyle-Eigenschaft](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)
 
@@ -40,8 +40,8 @@ Wie bereits erwähnt, werden ListView-Elemente automatisch im ListViewItem-Conta
 ## <a name="introduction-to-customization"></a>Einführung in die Anpassung
 Containersteuerelemente (wie ListViewItem und GridViewItem) bestehen aus zwei wichtigen Komponenten, die zusammen die endgültige visuelle Darstellung für ein Element erstellen, der *Datenvorlage* und der *Steuerelementvorlage*.
 
-- **Datenvorlage**: Sie legen eine [DataTemplate](/uwp/api/Windows.UI.Xaml.DataTemplate) für die [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)-Eigenschaft der Listenansicht fest, um anzugeben, wie die einzelnen Datenelemente angezeigt werden.
-- **Steuerelementvorlage**: Die Steuerelementvorlage ist die Komponente für die Visualisierung des Elements, für die das Framework verantwortlich ist, beispielsweise optische Zustände. Sie können die [ItemContainerStyle](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)-Eigenschaft verwenden, um die Steuerelementvorlage zu ändern. In der Regel tun Sie dies, um die Farben der Listenansicht entsprechend Ihrem Branding zu ändern, oder um zu ändern, wie ausgewählte Elemente angezeigt werden.
+- **Datenvorlage** : Sie legen eine [DataTemplate](/uwp/api/Windows.UI.Xaml.DataTemplate) für die [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)-Eigenschaft der Listenansicht fest, um anzugeben, wie die einzelnen Datenelemente angezeigt werden.
+- **Steuerelementvorlage** : Die Steuerelementvorlage ist die Komponente für die Visualisierung des Elements, für die das Framework verantwortlich ist, beispielsweise optische Zustände. Sie können die [ItemContainerStyle](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)-Eigenschaft verwenden, um die Steuerelementvorlage zu ändern. In der Regel tun Sie dies, um die Farben der Listenansicht entsprechend Ihrem Branding zu ändern, oder um zu ändern, wie ausgewählte Elemente angezeigt werden.
 
 Diese Abbildung zeigt, wie die Steuerelementvorlage und die Datenvorlage zusammen die endgültige optische Darstellung für ein Element festlegen.
 
@@ -90,7 +90,7 @@ Nachstehend finden Sie den XAML-Code zur Erstellung dieser Elemente. Die Vorlage
 
 ## <a name="the-data"></a>Die Daten
 
-Bevor wir genauer betrachten, wie Datenelemente in einer Listenansicht angezeigt werden, müssen wir die Daten, die angezeigt werden sollen, kennen. In diesem Beispiel erstellen wir einen Datentyp mit dem Namen `NamedColor`. Er besteht aus einem Farbnamen, einem Farbwert und einem **SolidColorBrush**-Objekt für die Farbe, die als 3 Eigenschaften verfügbar sind: `Name`, `Color` und `Brush`.
+Bevor wir genauer betrachten, wie Datenelemente in einer Listenansicht angezeigt werden, müssen wir die Daten, die angezeigt werden sollen, kennen. In diesem Beispiel erstellen wir einen Datentyp mit dem Namen `NamedColor`. Er besteht aus einem Farbnamen, einem Farbwert und einem **SolidColorBrush** -Objekt für die Farbe, die als 3 Eigenschaften verfügbar sind: `Name`, `Color` und `Brush`.
  
 Anschließend füllen wir eine **Liste** mit einem `NamedColor`-Objekt für jede benannte Farbe in der Klasse [Colors](/uwp/api/windows.ui.colors). Die Liste wird als [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) für die Listenansicht festgelegt.
 
@@ -156,7 +156,7 @@ namespace ColorsListApp
 
 Sie geben eine Datenvorlage an, um der Listenansicht mitzuteilen, wie das Datenelement angezeigt werden soll. 
 
-Datenelemente werden in der Listenansicht standardmäßig als Zeichenfolgendarstellung des Datenobjekts angezeigt, an das sie gebunden sind. Wenn Sie die „NamedColors“-Daten in einer Listenansicht anzeigen, ohne der Listenansicht mitzuteilen, wie sie aussehen sollten, wird der Inhalt so angezeigt, wie von der **ToString**-Methode zurückgegeben. Dies sieht dann so aus.
+Datenelemente werden in der Listenansicht standardmäßig als Zeichenfolgendarstellung des Datenobjekts angezeigt, an das sie gebunden sind. Wenn Sie die „NamedColors“-Daten in einer Listenansicht anzeigen, ohne der Listenansicht mitzuteilen, wie sie aussehen sollten, wird der Inhalt so angezeigt, wie von der **ToString** -Methode zurückgegeben. Dies sieht dann so aus.
 
 **XAML**
 ```xaml
@@ -352,7 +352,7 @@ Jetzt sieht die Listenansicht mit etwas mehr Platz zwischen den Elementen so aus
 
 ![Elemente in der Listenansicht mit Abständen](images/listview-data-template-1.png)
 
-In dem Standardstil für ListViewItem ist die **ContentMargin**-Eigenschaft über ein [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) mit der **Padding**-Eigenschaft (`<ListViewItemPresenter ContentMargin="{TemplateBinding Padding}"/>`) des ListViewItem-Objekts verknüpft. Wenn wir die Padding-Eigenschaft festlegen, wird dieser Wert eigentlich an die ContentMargin-Eigenschaft von ListViewItemPresenter übergeben.
+In dem Standardstil für ListViewItem ist die **ContentMargin** -Eigenschaft über ein [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) mit der **Padding** -Eigenschaft (`<ListViewItemPresenter ContentMargin="{TemplateBinding Padding}"/>`) des ListViewItem-Objekts verknüpft. Wenn wir die Padding-Eigenschaft festlegen, wird dieser Wert eigentlich an die ContentMargin-Eigenschaft von ListViewItemPresenter übergeben.
 
 Um andere ListViewItemPresenter-Eigenschaften zu ändern, die nicht per Vorlage an ListViewItems-Eigenschaften gebunden sind, müssen Sie die Vorlage für ListViewItem mit einem neuen ListViewItemPresenter umschreiben, dessen Eigenschaften Sie dann ändern können. 
 
@@ -361,14 +361,14 @@ Um andere ListViewItemPresenter-Eigenschaften zu ändern, die nicht per Vorlage 
 
 **So erstellen Sie eine Kopie der Standardvorlage in Visual Studio**
  
-1. Öffnen Sie das Dokumentgliederungsfenster (**Ansicht > Weitere Fenster > Dokumentgliederung**).
+1. Öffnen Sie das Dokumentgliederungsfenster ( **Ansicht > Weitere Fenster > Dokumentgliederung** ).
 2. Wählen Sie das Listen- oder Rasterelement aus, das Sie ändern möchten. In diesem Beispiel ändern Sie das `colorsGridView`-Element.
 3. Klicken mit der rechten Maustaste, und wählen Sie **Weitere Vorlagen bearbeiten > Erzeugten Elementcontainer bearbeiten (ItemContainerStyle) > Kopie bearbeiten**.
     ![Visual Studio-Editor](images/listview-itemcontainerstyle-vs.png)
 4. Geben Sie im Dialogfeld „Stilressource erstellen“ einen Namen für den Stil ein. In diesem Beispiel verwenden Sie `colorsGridViewItemStyle`.
     ![Visual Studio Create Style Resource dialog(images/listview-style-resource-vs.png)
 
-Anschließend wird Ihrer App eine Kopie des Standardstils als Ressource hinzugefügt, und die **GridView.ItemContainerStyle**-Eigenschaft wird auf diese Ressource festgelegt, wie in diesem XAML-Code dargestellt. 
+Anschließend wird Ihrer App eine Kopie des Standardstils als Ressource hinzugefügt, und die **GridView.ItemContainerStyle** -Eigenschaft wird auf diese Ressource festgelegt, wie in diesem XAML-Code dargestellt. 
 
 ```xaml
 <Style x:Key="colorsGridViewItemStyle" TargetType="GridViewItem">
@@ -430,7 +430,7 @@ Wenn **SelectionMode** auf **Multiple** festgelegt ist, wird in der Steuerelemen
 
 Sie können über die [CheckMode](/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.checkmode)-Eigenschaft festlegen, ob das Kontrollkästchen im Inlineformat oder im Overlayformat angezeigt wird.
 
-- **Inline**: Bei diesem Stil wird das Kontrollkästchen links neben dem Inhalt angezeigt. Der Hintergrund des Elementcontainers wird farbig hervorgehoben, um darauf hinzuweisen, dass es ausgewählt ist. Dies ist der Standardstil für ListView.
+- **Inline** : Bei diesem Stil wird das Kontrollkästchen links neben dem Inhalt angezeigt. Der Hintergrund des Elementcontainers wird farbig hervorgehoben, um darauf hinzuweisen, dass es ausgewählt ist. Dies ist der Standardstil für ListView.
 - **Overlay** (Überlagerung): Bei diesem Stil wird das Kontrollkästchen über dem Inhalt angezeigt. Es wird nur der Rahmen des Elementcontainers farbig hervorgehoben, um darauf hinzuweisen, dass es ausgewählt ist. Dies ist der Standardstil für GridView.
 
 Die folgende Tabelle zeigt die visuellen Standardelemente, mit denen auf eine Auswahl hingewiesen wird.
@@ -468,14 +468,14 @@ ListViewItemPresenter hat noch andere Pinseleigenschaften für Datenplatzhalter 
 
 ### <a name="expanded-xaml-item-templates"></a>Erweiterte XAML-Elementvorlagen
 
-Wenn Sie mehr Änderungen vornehmen müssen, als die **ListViewItemPresenter** Eigenschaften zulassen (wenn Sie z. B. die Position des Kontrollkästchens ändern müssen), können Sie die *ListViewItemExpanded*- oder *GridViewItemExpanded*-Vorlage verwenden. Diese Vorlagen sind in den Standardstilen in „generic.xaml“ enthalten. Sie basieren auf dem XAML-Standardmuster für alle visuellen Elemente der einzelnen UIElements.
+Wenn Sie mehr Änderungen vornehmen müssen, als die **ListViewItemPresenter** Eigenschaften zulassen (wenn Sie z. B. die Position des Kontrollkästchens ändern müssen), können Sie die *ListViewItemExpanded* - oder *GridViewItemExpanded* -Vorlage verwenden. Diese Vorlagen sind in den Standardstilen in „generic.xaml“ enthalten. Sie basieren auf dem XAML-Standardmuster für alle visuellen Elemente der einzelnen UIElements.
 
 Wie bereits erwähnt, hat die Anzahl der UIElements in einer Elementvorlage erhebliche Auswirkungen auf die Leistung der Listenansicht. Wenn Sie ListViewItemPresenter durch erweiterte XAML-Vorlagen ersetzen, erhöht sich die Anzahl der Elemente erheblich. Wenn in der Listenansicht eine große Anzahl von Elementen angezeigt wird oder die Leistung von Bedeutung ist, wird davon abgeraten.
 
 > [!NOTE]
 > **ListViewItemPresenter** wird nur unterstützt, wenn [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) der Listenansicht [ItemsWrapGrid](/uwp/api/windows.ui.xaml.controls.itemswrapgrid) oder [ItemsStackPanel](/uwp/api/windows.ui.xaml.controls.itemsstackpanel) entspricht. Wenn Sie die ItemsPanel ändern und [VariableSizedWrapGrid](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid), [WrapGrid](/uwp/api/windows.ui.xaml.controls.wrapgrid) oder [StackPanel](/uwp/api/windows.ui.xaml.controls.stackpanel) verwenden, wird die Elementvorlage in der erweiterten XAML-Vorlage automatisch gewechselt. Weitere Informationen finden Sie unter [Optimieren der ListView- und GridView-Benutzeroberfläche](../../debug-test-perf/optimize-gridview-and-listview.md).
 
-Um eine erweiterte XAML-Vorlage anzupassen, müssen Sie in der App eine Kopie von ihr erstellen und die **ItemContainerStyle**-Eigenschaft auf diese Kopie festlegen.
+Um eine erweiterte XAML-Vorlage anzupassen, müssen Sie in der App eine Kopie von ihr erstellen und die **ItemContainerStyle** -Eigenschaft auf diese Kopie festlegen.
 
 **So kopieren Sie die erweiterte Vorlage**
 1. Legen Sie die ItemContainerStyle-Eigenschaft für die ListView oder GridView wie hier dargestellt fest.

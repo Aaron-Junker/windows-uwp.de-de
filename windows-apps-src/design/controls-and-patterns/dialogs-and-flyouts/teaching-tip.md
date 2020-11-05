@@ -1,5 +1,5 @@
 ---
-Description: Ein Unterrichtstipp ist ein semipersistentes und inhaltsreiches Flyout, das Kontextinformationen bereitstellt.
+description: Ein Unterrichtstipp ist ein semipersistentes und inhaltsreiches Flyout, das Kontextinformationen bereitstellt.
 title: Unterrichtstipps
 template: detail.hbs
 ms.date: 09/24/2020
@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: fbe23101861429f3aef9298f854a600521d20613
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 8d4322e5d5dcdfad768b9c87b555093e42becd7e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750526"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033313"
 ---
 # <a name="teaching-tip"></a>Unterrichtstipp
 
@@ -42,11 +42,11 @@ Ein Unterrichtstipp ist möglicherweise einfach ausblendbar oder erfordert expli
 > [!TIP]
 > In diesem Dokument stellt der Alias **muxc** in XAML die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben dem [Page](/uwp/api/windows.ui.xaml.controls.page)-Element Folgendes hinzugefügt: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
->Im CodeBehind stellt ebenfalls der Alias **muxc** in C# die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben am Anfang der Datei die folgende **using**-Anweisung hinzugefügt: `using muxc = Microsoft.UI.Xaml.Controls;`
+>Im CodeBehind stellt ebenfalls der Alias **muxc** in C# die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben am Anfang der Datei die folgende **using** -Anweisung hinzugefügt: `using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
-Verwende ein **TeachingTip**-Steuerelement, um die Aufmerksamkeit eines Benutzers auf neue oder wichtigen Updates und Features zu lenken, ihn an Optionen zu erinnern, die nicht zwingend erforderlich sind, aber die Benutzung optimieren, oder ihm zu erläutern, wie eine Aufgabe abgeschlossen werden soll.
+Verwende ein **TeachingTip** -Steuerelement, um die Aufmerksamkeit eines Benutzers auf neue oder wichtigen Updates und Features zu lenken, ihn an Optionen zu erinnern, die nicht zwingend erforderlich sind, aber die Benutzung optimieren, oder ihm zu erläutern, wie eine Aufgabe abgeschlossen werden soll.
 
 Da Unterrichtstipps vorübergehend sind, sind sie nicht das empfohlene Steuerelement, um Benutzer auf Fehler oder wichtige Statusänderungen hinzuweisen.
 
@@ -171,10 +171,10 @@ Ein nicht zielgerichteter Unterrichtstipp, bei dem PreferredPlacement auf „Bot
 ![Eine Beispiel-App mit einem Unterrichtstipp in der unteren linken Ecke Der Tipptitel lautet „Saving automatically“ (Automatisch speichern) und der Untertitel lautet „We save your changes as you go - so you never have to.“ (Wir speichern deine Änderungen während der Arbeit, damit du das nicht tun musst.). Rechts oben im Unterrichtstipp gibt es eine Schaltfläche zum Schließen.](../images/teaching-tip-non-targeted-preferred-placement.png)
 
 Das folgende Diagramm zeigt das Ergebnis aller 13 PreferredPlacement-Modi, die für zielgerichtete Unterrichtstipps festgelegt werden können.
-![Abbildung mit 13 Unterrichtstipps, die jeweils einen andere Zielplatzierungsmodus zeigen Jeder Unterrichtstipp ist mit dem Modus gekennzeichnet, den er darstellt. Das erste Wort einen Platzierungsmodus gibt die Seite des Ziels an, wo der Unterrichtstipp zentriert angezeigt wird. Die Spitze der Unterrichtstipps befindet sich immer in der Mitte der Seite des Ziels und verweist auf das Ziel. Wenn im Platzierungsmodus ein zweites Wort vorhanden ist, wird der Text des Unterrichtstipps nicht zentriert, sondern wird stattdessen in die angegebene Richtung verschoben. Beispiel: Im Platzierungsmodus „TopRight“ erscheint der Unterrichtstipp über dem Ziel und nach rechts verschoben, wobei die Spitze am oberen Rand des Ziels zentriert nach unten weist. Da der Text nach rechts verschoben wurde, befindet sich die Spitze fast am linken Rand des Texts des Unterrichtstipps, der sich über den rechten Rand des Ziels hinaus erstreckt. Die Platzierungsmodus „Center“ ist eindeutig und platziert die Spitze des Unterrichtstipps in der Mitte des Ziels, und der Unterrichtstipp befindet sich zentriert über der oberen Hälfte des Ziels.](../images/teaching-tip-targeted-preferred-placement-modes.png)
+![Abbildung mit 13 Unterrichtstipps, die jeweils einen andere Zielplatzierungsmodus zeigen Jeder Unterrichtstipp ist mit dem Modus gekennzeichnet, den er darstellt.  Das erste Wort einen Platzierungsmodus gibt die Seite des Ziels an, wo der Unterrichtstipp zentriert angezeigt wird. Die Spitze der Unterrichtstipps befindet sich immer in der Mitte der Seite des Ziels und verweist auf das Ziel. Wenn im Platzierungsmodus ein zweites Wort vorhanden ist, wird der Text des Unterrichtstipps nicht zentriert, sondern wird stattdessen in die angegebene Richtung verschoben. Beispiel: Im Platzierungsmodus „TopRight“ erscheint der Unterrichtstipp über dem Ziel und nach rechts verschoben, wobei die Spitze am oberen Rand des Ziels zentriert nach unten weist. Da der Text nach rechts verschoben wurde, befindet sich die Spitze fast am linken Rand des Texts des Unterrichtstipps, der sich über den rechten Rand des Ziels hinaus erstreckt. Die Platzierungsmodus „Center“ ist eindeutig und platziert die Spitze des Unterrichtstipps in der Mitte des Ziels, und der Unterrichtstipp befindet sich zentriert über der oberen Hälfte des Ziels.](../images/teaching-tip-targeted-preferred-placement-modes.png)
 
 Das folgende Diagramm zeigt das Ergebnis aller 13 PreferredPlacement-Modi, die für nicht zielgerichtete Unterrichtstipps festgelegt werden können.
-![Abbildung mit neun Unterrichtstipps, die jeweils einen anderen nicht zielgerichteten Platzierungsmodus zeigen Jeder Unterrichtstipp ist mit dem Modus gekennzeichnet, den er darstellt. Das erste Wort eines Platzierungsmodus gibt die Seite des XAML-Stamms an, wo der Unterrichtstipp zentriert angezeigt wird. Wenn im Platzierungsmodus ein zweites Wort vorhanden ist, wird der Unterrichtstipp zur angegebenen Ecke des XAML-Stamms hin platziert. Beispiel: Der Platzierungsmodus „TopRight“ sorgt dafür, dass der Unterrichtstipp in der oberen rechten Ecke des XAML-Stamms angezeigt wird. Bei nicht zielgerichteten Platzierungsmodi wirkt sich die Reihenfolge der Wörter nicht auf die Platzierung aus. TopRight entspricht RightTop. Der Platzierungsmodus „Center“ ist eindeutig und sorgt dafür, dass der Unterrichtstipp in der vertikalen und horizontalen Mitte des XAML-Stamms angezeigt wird.](../images/teaching-tip-non-targeted-preferred-placement-modes.png)
+![Abbildung mit neun Unterrichtstipps, die jeweils einen anderen nicht zielgerichteten Platzierungsmodus zeigen Jeder Unterrichtstipp ist mit dem Modus gekennzeichnet, den er darstellt.  Das erste Wort eines Platzierungsmodus gibt die Seite des XAML-Stamms an, wo der Unterrichtstipp zentriert angezeigt wird.  Wenn im Platzierungsmodus ein zweites Wort vorhanden ist, wird der Unterrichtstipp zur angegebenen Ecke des XAML-Stamms hin platziert. Beispiel: Der Platzierungsmodus „TopRight“ sorgt dafür, dass der Unterrichtstipp in der oberen rechten Ecke des XAML-Stamms angezeigt wird. Bei nicht zielgerichteten Platzierungsmodi wirkt sich die Reihenfolge der Wörter nicht auf die Platzierung aus. TopRight entspricht RightTop.  Der Platzierungsmodus „Center“ ist eindeutig und sorgt dafür, dass der Unterrichtstipp in der vertikalen und horizontalen Mitte des XAML-Stamms angezeigt wird.](../images/teaching-tip-non-targeted-preferred-placement-modes.png)
 
 ### <a name="add-a-placement-margin"></a>Hinzufügen eines Platzierungsrands
 

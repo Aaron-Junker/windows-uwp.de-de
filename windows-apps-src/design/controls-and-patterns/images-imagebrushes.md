@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie, wie Sie Bilder in Ihre App integrieren. Dazu gehört auch die Verwendung der APIs der beiden XAML-Hauptklassen, Image und ImageBrush.
+description: Erfahren Sie, wie Sie Bilder in Ihre App integrieren. Dazu gehört auch die Verwendung der APIs der beiden XAML-Hauptklassen, Image und ImageBrush.
 title: Bilder und Bildpinsel
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
@@ -8,23 +8,23 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 753f17d73d82707d2283b4ae2ca64eeed7a04e45
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7cbe6de9f6c01ee2adca8e9aa716c92491c04e8a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160164"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033443"
 ---
 # <a name="images-and-image-brushes"></a>Bilder und Bildpinsel
 
-Sie können zum Anzeigen von Bildern das **Image**-Objekt oder das **ImageBrush**-Objekt verwenden. Ein Image-Objekt rendert ein Bild. Ein ImageBrush-Objekt zeichnet ein anderes Objekt mit einem Bild. 
+Sie können zum Anzeigen von Bildern das **Image** -Objekt oder das **ImageBrush** -Objekt verwenden. Ein Image-Objekt rendert ein Bild. Ein ImageBrush-Objekt zeichnet ein anderes Objekt mit einem Bild. 
 
 > **Wichtige APIs:** [Image-Klasse](/uwp/api/Windows.UI.Xaml.Controls.Image), [Source-Eigenschaft](/uwp/api/windows.ui.xaml.controls.image.source), [ImageBrush-Klasse](/uwp/api/Windows.UI.Xaml.Media.ImageBrush), [ImageSource-Eigenschaft](/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)
 
 ## <a name="are-these-the-right-elements"></a>Sind dies die richtigen Elemente?
-Verwenden Sie ein **Image**-Element, um ein eigenständiges Bild in Ihrer App anzuzeigen.
+Verwenden Sie ein **Image** -Element, um ein eigenständiges Bild in Ihrer App anzuzeigen.
 
-Verwenden Sie **ImageBrush**, um ein Image auf ein anderes Objekt anzuwenden. „ImageBrush“ kann u. a. für dekorative Effekte für Text oder Hintergründe für Steuerelemente oder Layoutcontainer verwendet werden.
+Verwenden Sie **ImageBrush** , um ein Image auf ein anderes Objekt anzuwenden. „ImageBrush“ kann u. a. für dekorative Effekte für Text oder Hintergründe für Steuerelemente oder Layoutcontainer verwendet werden.
 
 ## <a name="examples"></a>Beispiele
 
@@ -80,10 +80,10 @@ Hier ist die Ellipse, die von „ImageBrush“ gezeichnet wurde.
 
 Wenn du den Wert für [Width](/uwp/api/windows.ui.xaml.frameworkelement.width) oder [Height](/uwp/api/windows.ui.xaml.frameworkelement.height) eines Objekts vom Typ **Image** nicht festlegst, wird es mit den von **Source** angegebenen Bilddimensionen angezeigt. Durch das Festlegen von **Width** und **Height** wird ein rechteckiger Bereich erstellt, in dem das Bild angezeigt wird. Mithilfe der [Stretch](/uwp/api/windows.ui.xaml.controls.image.stretch)-Eigenschaft kannst du angeben, wie das Bild den enthaltenden Bereich ausfüllen soll. Die Stretch-Eigenschaft akzeptiert die folgenden Werte, die durch die [Stretch](/uwp/api/Windows.UI.Xaml.Media.Stretch)-Enumeration definiert werden:
 
--   **None**: Das Bild wird nicht gestreckt, um den Ausgabebereich auszufüllen. Bei dieser Stretch-Einstellung ist Folgendes zu beachten: Ist das Quellbild größer als der enthaltende Bereich, wird das Bild abgeschnitten, was in der Regel nicht wünschenswert ist, da du anders als bei der bewussten Verwendung von [Clip](/uwp/api/windows.ui.xaml.uielement.clip) keine Kontrolle über den Anzeigebereich hast.
--   **Uniform**: Das Bild wird auf die Abmessungen der Ausgabe skaliert. Das Seitenverhältnis des Inhalts bleibt jedoch erhalten. Dies ist der Standardwert.
--   **UniformToFill**: Das Bild wird skaliert, sodass es den Ausgabebereich vollständig ausfüllt, und das ursprüngliche Seitenverhältnis wird beibehalten.
--   **Fill**: Das Bild wird auf die Abmessungen der Ausgabe skaliert. Da Höhe und Breite des Inhalts unabhängig voneinander dimensioniert werden, wird das ursprüngliche Seitenverhältnis möglicherweise nicht beibehalten. Mit anderen Worten, das Bild wird eventuell verzerrt, um den Ausgabebereich vollständig auszufüllen
+-   **None** : Das Bild wird nicht gestreckt, um den Ausgabebereich auszufüllen. Bei dieser Stretch-Einstellung ist Folgendes zu beachten: Ist das Quellbild größer als der enthaltende Bereich, wird das Bild abgeschnitten, was in der Regel nicht wünschenswert ist, da du anders als bei der bewussten Verwendung von [Clip](/uwp/api/windows.ui.xaml.uielement.clip) keine Kontrolle über den Anzeigebereich hast.
+-   **Uniform** : Das Bild wird auf die Abmessungen der Ausgabe skaliert. Das Seitenverhältnis des Inhalts bleibt jedoch erhalten. Dies ist der Standardwert.
+-   **UniformToFill** : Das Bild wird skaliert, sodass es den Ausgabebereich vollständig ausfüllt, und das ursprüngliche Seitenverhältnis wird beibehalten.
+-   **Fill** : Das Bild wird auf die Abmessungen der Ausgabe skaliert. Da Höhe und Breite des Inhalts unabhängig voneinander dimensioniert werden, wird das ursprüngliche Seitenverhältnis möglicherweise nicht beibehalten. Mit anderen Worten, das Bild wird eventuell verzerrt, um den Ausgabebereich vollständig auszufüllen
 
 ![Ein Beispiel für Streckeinstellungen](images/Image_Stretch.jpg)
 
@@ -91,7 +91,7 @@ Wenn du den Wert für [Width](/uwp/api/windows.ui.xaml.frameworkelement.width) o
 
 Mit der [Clip](/uwp/api/windows.ui.xaml.uielement.clip)-Eigenschaft kannst du einen Bereich der Bildausgabe beschneiden. Die Clip-Eigenschaft wird für eine [Geometry](/uwp/api/Windows.UI.Xaml.Media.Geometry)-Klasse festgelegt. Das Beschneiden wird derzeit nur für Rechtecke unterstützt.
 
-Im nächsten Beispiel erfährst du, wie du eine [RectangleGeometry](/uwp/api/Windows.UI.Xaml.Media.RectangleGeometry)-Klasse als Zuschneidebereich für ein Bild verwendest. In diesem Beispiel definieren wir ein **Image**-Objekt mit einer Höhe von 200. Eine **RectangleGeometry**-Klasse definiert ein Rechteck für den Bereich des Bilds, der angezeigt wird. Die [Rect](/uwp/api/windows.ui.xaml.media.rectanglegeometry.rect)-Eigenschaft ist auf „25,25,100,150“ festgelegt. Dadurch wird ein Rechteck mit der Startposition „25,25“, der Breite „100“ und der Höhe „150“ definiert. Nur der Teil des Bilds, der sich innerhalb des Rechteckbereichs befindet, wird angezeigt.
+Im nächsten Beispiel erfährst du, wie du eine [RectangleGeometry](/uwp/api/Windows.UI.Xaml.Media.RectangleGeometry)-Klasse als Zuschneidebereich für ein Bild verwendest. In diesem Beispiel definieren wir ein **Image** -Objekt mit einer Höhe von 200. Eine **RectangleGeometry** -Klasse definiert ein Rechteck für den Bereich des Bilds, der angezeigt wird. Die [Rect](/uwp/api/windows.ui.xaml.media.rectanglegeometry.rect)-Eigenschaft ist auf „25,25,100,150“ festgelegt. Dadurch wird ein Rechteck mit der Startposition „25,25“, der Breite „100“ und der Höhe „150“ definiert. Nur der Teil des Bilds, der sich innerhalb des Rechteckbereichs befindet, wird angezeigt.
 
 ```xaml
 <Image Source="sunset.jpg" Height="200">
@@ -131,7 +131,7 @@ Dies ist das gerenderte Bild mit einer Transparenz von 0,5 und einem schwarzen H
 
 Die APIs für [Image](/uwp/api/Windows.UI.Xaml.Controls.Image), [BitmapImage](/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) und [BitmapSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapSource) enthalten keine dedizierten Methoden für das Codieren und Decodieren von Medienformaten. Sämtliche Codier- und Decodiervorgänge sind integriert. Aspekte dieser Vorgänge sind auf der Oberfläche allenfalls als Bestandteil von Ereignisdaten für Load-Ereignisse sichtbar. Falls du gezielt mit der Codierung und Decodierung von Bildern arbeiten möchtest, weil deine App beispielsweise Bildkonvertierungen oder Bildbearbeitungsfunktionen ausführt, musst du die im [Windows.Graphics.Imaging](/uwp/api/Windows.Graphics.Imaging)-Namespace verfügbaren APIs verwenden. Die APIs werden außerdem von der Windows-Bilderstellungskomponente (Windows Imaging Component, WIC) unterstützt.
 
-Ab Windows 10, Version 1607, unterstützt das **Image**-Element animierte GIF-Bilder. Bei Verwendung eines **BitmapImage** als **Source** für das Bild können Sie auf BitmapImage-APIs zugreifen, um die Wiedergabe des animierten GIF-Bilds zu steuern. Weitere Informationen findest du in den Anmerkungen auf der Seite für die [BitmapImage](/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage)-Klasse.
+Ab Windows 10, Version 1607, unterstützt das **Image** -Element animierte GIF-Bilder. Bei Verwendung eines **BitmapImage** als **Source** für das Bild können Sie auf BitmapImage-APIs zugreifen, um die Wiedergabe des animierten GIF-Bilds zu steuern. Weitere Informationen findest du in den Anmerkungen auf der Seite für die [BitmapImage](/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage)-Klasse.
 
 > **Hinweis:** &nbsp;&nbsp;Animierte GIFs werden unterstützt, wenn deine App für die Version 1607 von Windows 10 kompiliert wurde und mindestens unter der Version 1607 ausgeführt wird. Wenn Ihre App für frühere Versionen kompiliert wurde oder auf früheren Versionen ausgeführt wird, wird der erste Frame des GIF-Bilds angezeigt, ist jedoch nicht animiert.
 
@@ -139,7 +139,7 @@ Weitere Informationen zu App-Ressourcen und zum Packen von Bildquellen in einer 
 
 ### <a name="writeablebitmap"></a>WriteableBitmap
 
-[WriteableBitmap](/uwp/api/Windows.UI.Xaml.Media.Imaging.WriteableBitmap) stellt eine Bitmap-Quelle ([BitmapSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapSource)) bereit, die geändert werden kann und nicht die grundlegende dateibasierte Decodierung aus der WIC verwendet. Sie können Bilder dynamisch bearbeiten und das aktualisierte Bild erneut rendern. Verwende zum Definieren des Pufferinhalts eines **WriteableBitmap**-Elements die [PixelBuffer](/uwp/api/windows.ui.xaml.media.imaging.writeablebitmap.pixelbuffer)-Eigenschaft, um auf den Puffer zuzugreifen, und einen Datenstrom oder sprachspezifischen Puffertyp, um ihn zu füllen. Beispielcode findest du unter [WriteableBitmap](/uwp/api/Windows.UI.Xaml.Media.Imaging.WriteableBitmap).
+[WriteableBitmap](/uwp/api/Windows.UI.Xaml.Media.Imaging.WriteableBitmap) stellt eine Bitmap-Quelle ([BitmapSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapSource)) bereit, die geändert werden kann und nicht die grundlegende dateibasierte Decodierung aus der WIC verwendet. Sie können Bilder dynamisch bearbeiten und das aktualisierte Bild erneut rendern. Verwende zum Definieren des Pufferinhalts eines **WriteableBitmap** -Elements die [PixelBuffer](/uwp/api/windows.ui.xaml.media.imaging.writeablebitmap.pixelbuffer)-Eigenschaft, um auf den Puffer zuzugreifen, und einen Datenstrom oder sprachspezifischen Puffertyp, um ihn zu füllen. Beispielcode findest du unter [WriteableBitmap](/uwp/api/Windows.UI.Xaml.Media.Imaging.WriteableBitmap).
 
 ### <a name="rendertargetbitmap"></a>RenderTargetBitmap
 

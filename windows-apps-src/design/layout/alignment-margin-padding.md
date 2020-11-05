@@ -1,17 +1,17 @@
 ---
-Description: Verwende die Eigenschaften für Ausrichtung, Rand und Abstand, um das Layout von Elementen auf einer Seite anzuordnen.
+description: Verwende die Eigenschaften für Ausrichtung, Rand und Abstand, um das Layout von Elementen auf einer Seite anzuordnen.
 title: Ausrichtung, Rand und Abstand beim Layout
 ms.date: 03/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1982bdd60ea8f14d19b9b29556b143abd8931127
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f2782118b2ed35578ac48f2996839ceefcf5b71b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165664"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034893"
 ---
 # <a name="alignment-margin-padding"></a>Ausrichtung, Rand, Abstand
 
@@ -36,8 +36,8 @@ Durch Ausrichtung erhält deine Benutzeroberfläche ein ordentliches, organisier
 ![Diagramm zur Ausrichtung](images/alignment.svg)
 
 - [**HorizontalAlignment**](/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment) und [**VerticalAlignment**](/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment) geben an, wie ein Element innerhalb des übergeordneten Containers positioniert werden soll.
-    - Die Werte für **HorizontalAlignment** sind **Left**, **Center**, **Right** und **Stretch**.
-    - Die Werte für **VerticalAlignment** sind **Top**, **Center**, **Bottom** und **Stretch**.
+    - Die Werte für **HorizontalAlignment** sind **Left** , **Center** , **Right** und **Stretch**.
+    - Die Werte für **VerticalAlignment** sind **Top** , **Center** , **Bottom** und **Stretch**.
 
 - **Stretch** ist der Standard für beide Eigenschaften. Elemente füllen den gesamten Platz aus, der ihnen im übergeordneten Container zur Verfügung steht. Echte Zahlen für Height und Width heben einen Stretch-Wert auf, der dann stattdessen als Center-Wert fungiert. Einige Steuerelemente, z. B. Schaltflächen, setzen den Stretch-Standardwert in ihrem Standardstil außer Kraft.
 
@@ -68,10 +68,10 @@ Eigenschaften für Rand und Abstand verhindern, dass die Benutzeroberfläche zu 
 
 Im Gegensatz zu Margin ist Padding keine Eigenschaft von FrameworkElement. Es gibt mehrere Klassen, die jeweils eine eigene Padding-Eigenschaft definieren:
 
--   [**Control.Padding:** ](/uwp/api/windows.ui.xaml.controls.control.padding) wird für alle von [**Control**](/uwp/api/windows.ui.xaml.controls) abgeleiteten Klassen vererbt. Nicht alle Steuerelemente weisen Inhalte auf, sodass bei diesen Steuerelementen das Festlegen der Eigenschaft nichts bewirkt. Wenn das Steuerelement einen Rahmen aufweist, gilt der Abstand innerhalb dieses Rahmens.
--   [**Border.Padding:** ](/uwp/api/windows.ui.xaml.controls.border.padding) definiert den Abstand zwischen der von [**BorderThickness**](/uwp/api/windows.ui.xaml.controls.border.borderthickness)/[**BorderBrush**](/uwp/api/windows.ui.xaml.controls.border.borderbrush) gebildeten Rechtecklinie und dem [**Child**](/uwp/api/windows.ui.xaml.controls.border.child)-Element.
--   [**ItemsPresenter.Padding:** ](/uwp/api/windows.ui.xaml.controls.itemspresenter.padding) trägt zur Darstellung der Objekte für Elemente in Elementsteuerelementen bei. Dabei wird der angegebene Abstand um die einzelnen Elemente herum platziert.
--   [**TextBlock.Padding**](/uwp/api/windows.ui.xaml.controls.textblock.padding) und [**RichTextBlock.Padding**](/uwp/api/windows.ui.xaml.controls.richtextblock.padding): erweitern den Begrenzungsrahmen um den Text des Textelements. Diese Textelemente weisen keine **Background**-Eigenschaft auf, sodass sie schwierig zu erkennen sein können. Verwende für [**Block**](/uwp/api/windows.ui.xaml.documents.block)-Container daher stattdessen [**Margin**](/uwp/api/windows.ui.xaml.documents.block.margin)-Einstellungen.
+-   [**Control.Padding:**](/uwp/api/windows.ui.xaml.controls.control.padding) wird für alle von [**Control**](/uwp/api/windows.ui.xaml.controls) abgeleiteten Klassen vererbt. Nicht alle Steuerelemente weisen Inhalte auf, sodass bei diesen Steuerelementen das Festlegen der Eigenschaft nichts bewirkt. Wenn das Steuerelement einen Rahmen aufweist, gilt der Abstand innerhalb dieses Rahmens.
+-   [**Border.Padding:**](/uwp/api/windows.ui.xaml.controls.border.padding) definiert den Abstand zwischen der von [**BorderThickness**](/uwp/api/windows.ui.xaml.controls.border.borderthickness)/[**BorderBrush**](/uwp/api/windows.ui.xaml.controls.border.borderbrush) gebildeten Rechtecklinie und dem [**Child**](/uwp/api/windows.ui.xaml.controls.border.child)-Element.
+-   [**ItemsPresenter.Padding:**](/uwp/api/windows.ui.xaml.controls.itemspresenter.padding) trägt zur Darstellung der Objekte für Elemente in Elementsteuerelementen bei. Dabei wird der angegebene Abstand um die einzelnen Elemente herum platziert.
+-   [**TextBlock.Padding**](/uwp/api/windows.ui.xaml.controls.textblock.padding) und [**RichTextBlock.Padding**](/uwp/api/windows.ui.xaml.controls.richtextblock.padding): erweitern den Begrenzungsrahmen um den Text des Textelements. Diese Textelemente weisen keine **Background** -Eigenschaft auf, sodass sie schwierig zu erkennen sein können. Verwende für [**Block**](/uwp/api/windows.ui.xaml.documents.block)-Container daher stattdessen [**Margin**](/uwp/api/windows.ui.xaml.documents.block.margin)-Einstellungen.
 
 In allen diesen Fällen weisen Elemente auch eine Margin-Eigenschaft auf. Wenn sowohl Margin als auch Padding angewandt werden, sind sie additiv: Der erkennbare Abstand zwischen einem äußeren Container und beliebigem innerem Inhalt beträgt Margin plus Padding.
 

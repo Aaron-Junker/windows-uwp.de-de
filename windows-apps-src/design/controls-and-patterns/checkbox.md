@@ -1,5 +1,5 @@
 ---
-Description: Dient zum Aktivieren oder Deaktivieren von Aktionselementen. Kann für einzelne oder mehrere Listenelemente verwendet werden.
+description: Dient zum Aktivieren oder Deaktivieren von Aktionselementen. Kann für einzelne oder mehrere Listenelemente verwendet werden.
 title: Kontrollkästchen
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7add5ca356f5d1c41ddeb1fa19ea54c69ef9e583
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: e18f750f7a442fdfe5d5ffc0119a8a64f5571407
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750566"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030963"
 ---
 # <a name="check-boxes"></a>Kontrollkästchen
 
@@ -100,7 +100,7 @@ checkBox1.Content = "I agree to the terms of service.";
 Mit der [IsChecked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)-Eigenschaft können Sie den Aktivierungszustand des Kontrollkästchens ermitteln. Der Wert der IsChecked-Eigenschaft kann an einen anderen binären Wert gebunden werden.
 Da es sich bei „IsChecked“ aber um einen booleschen Wert vom Typ [Nullable](/dotnet/api/system.nullable-1) handelt, müssen Sie entweder eine Umwandlung oder einen Wertkonverter verwenden, um sie an eine boolesche Eigenschaft zu binden. Dies hängt von dem tatsächlich verwendeten Bindungstyp ab. Nachfolgend finden Sie Beispiele für alle möglichen Typen. 
 
-In diesem Beispiel wird die **IsChecked**-Eigenschaft des Kontrollkästchens zum Akzeptieren der Servicebedingungen an die [IsEnabled](/uwp/api/windows.ui.xaml.controls.control.isenabled)-Eigenschaft der Schaltfläche zum Absenden gebunden. Die Schaltfläche zum Absenden wird nur aktiviert, wenn die Vertragsbedingungen akzeptiert werden.
+In diesem Beispiel wird die **IsChecked** -Eigenschaft des Kontrollkästchens zum Akzeptieren der Servicebedingungen an die [IsEnabled](/uwp/api/windows.ui.xaml.controls.control.isenabled)-Eigenschaft der Schaltfläche zum Absenden gebunden. Die Schaltfläche zum Absenden wird nur aktiviert, wenn die Vertragsbedingungen akzeptiert werden.
 
 #### <a name="using-xbind"></a>Verwenden von „x:Bind“
 
@@ -167,13 +167,13 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 
 Wenn bei einer Änderung des Kontrollkästchenzustands eine Aktion ausgeführt werden soll, behandeln Sie das [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignis oder die Ereignisse [Checked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) und [Unchecked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.unchecked). 
 
-Das **Click**-Ereignis tritt bei jeder Änderung des Aktivierungszustands auf. Verwenden Sie beim Behandeln des Click-Ereignisses die **IsChecked**-Eigenschaft, um den Zustand des Kontrollkästchens zu ermitteln.
+Das **Click** -Ereignis tritt bei jeder Änderung des Aktivierungszustands auf. Verwenden Sie beim Behandeln des Click-Ereignisses die **IsChecked** -Eigenschaft, um den Zustand des Kontrollkästchens zu ermitteln.
 
 Die Ereignisse **Checked** und **Unchecked** treten unabhängig voneinander auf. Daher müssen immer beide Ereignisse behandelt werden, um auf Zustandsänderungen des Kontrollkästchens zu reagieren.
 
 In den folgenden Beispielen wird die Behandlung des Click-Ereignis und der Ereignisse „Checked“ und „Unchecked“ gezeigt.
 
-Mehrere Kontrollkästchen können den gleichen Ereignishandler verwenden. Im folgenden Beispiel werden vier Kontrollkästchen zum Auswählen von Pizzabelägen erstellt. Die vier Kontrollkästchen verwenden den gleichen **Click**-Ereignishandler, um die Liste mit den gewählten Belägen zu aktualisieren.
+Mehrere Kontrollkästchen können den gleichen Ereignishandler verwenden. Im folgenden Beispiel werden vier Kontrollkästchen zum Auswählen von Pizzabelägen erstellt. Die vier Kontrollkästchen verwenden den gleichen **Click** -Ereignishandler, um die Liste mit den gewählten Belägen zu aktualisieren.
 
 ```XAML
 <StackPanel Margin="40">

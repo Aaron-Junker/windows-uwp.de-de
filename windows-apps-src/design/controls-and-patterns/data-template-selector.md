@@ -1,5 +1,5 @@
 ---
-Description: Verwenden Sie die Datenvorlagenauswahl, um die Formate ihrer Elemente auf der Grundlage der Elementeigenschaften anzupassen.
+description: Verwenden Sie die Datenvorlagenauswahl, um die Formate ihrer Elemente auf der Grundlage der Elementeigenschaften anzupassen.
 title: Datenvorlagenauswahl
 label: Data template selection
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 10/18/2019
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: anawish
-ms.openlocfilehash: 382e28b38347a4901e781a12637423260c4bd3e3
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5b10afc03a1936c033977a53bd12effdae1c2ead
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160384"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032333"
 ---
 # <a name="data-template-selection-styling-items-based-on-their-properties"></a>Datenvorlagenauswahl: Formatieren von Elementen basierend auf ihren Eigenschaften
 
@@ -130,7 +130,7 @@ Nachdem der Code kompiliert wurde, wird jedes Sammlungselement über die übersc
 
 Wenn Sie ein ListView- oder GridView-Objekt mit einer großen Datensammlung verwenden, kann die Leistung beim Scrollen und Schwenken ein Problem darstellen. Um die Leistung großer Sammlungen zu gewährleisten, können Sie einige Schritte ausführen, um die Leistung Ihrer Datenvorlagen zu verbessern. Diese werden in [Optimieren der ListView- und GridView-Benutzeroberfläche](../../debug-test-perf/optimize-gridview-and-listview.md) ausführlich beschrieben.
 
-- _Elementreduzierung pro Element_: Begrenzen Sie die Anzahl der Oberflächenelemente in einer Datenvorlage auf ein vernünftiges Minimum.
+- _Elementreduzierung pro Element_ : Begrenzen Sie die Anzahl der Oberflächenelemente in einer Datenvorlage auf ein vernünftiges Minimum.
 - Containerwiederverwendung mit heterogenen Sammlungen
-  - Verwenden des _ChoosingItemContainer-Ereignisses_: Dieses Ereignis ist eine leistungsstarke Möglichkeit zur Verwendung unterschiedlicher Datenvorlagen für verschiedene Elemente. Um eine optimale Leistung zu erzielen, sollten Sie das Zwischenspeichern optimieren und Datenvorlagen für Ihre spezifischen Daten auswählen.
-  - Verwenden Sie eine _Elementvorlagenauswahl_: Eine Elementvorlagenauswahl (`DataTemplateSelector`) sollte in einigen Fällen aufgrund der Auswirkung auf die Leistung vermieden werden.
+  - Verwenden des _ChoosingItemContainer-Ereignisses_ : Dieses Ereignis ist eine leistungsstarke Möglichkeit zur Verwendung unterschiedlicher Datenvorlagen für verschiedene Elemente. Um eine optimale Leistung zu erzielen, sollten Sie das Zwischenspeichern optimieren und Datenvorlagen für Ihre spezifischen Daten auswählen.
+  - Verwenden Sie eine _Elementvorlagenauswahl_ : Eine Elementvorlagenauswahl (`DataTemplateSelector`) sollte in einigen Fällen aufgrund der Auswirkung auf die Leistung vermieden werden.

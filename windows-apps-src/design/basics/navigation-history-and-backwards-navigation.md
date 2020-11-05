@@ -1,5 +1,5 @@
 ---
-Description: In diesem Artikel erfahren Sie, wie Sie die Rückwärtsnavigation zum Durchlaufen des Navigationsverlaufs eines Benutzers in einer Windows-App implementieren.
+description: In diesem Artikel erfahren Sie, wie Sie die Rückwärtsnavigation zum Durchlaufen des Navigationsverlaufs eines Benutzers in einer Windows-App implementieren.
 title: Navigationsverlauf und Rückwärtsnavigation
 template: detail.hbs
 op-migration-status: ready
@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 50f87c02f726512f54830f8678fa8bbec5ecee4f
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 17303da53e7822be2e4984e6b852664c63c0919c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763052"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030993"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Navigationsverlauf und Rückwärtsnavigation für Windows-Apps
 
@@ -286,9 +286,9 @@ bool App::On_BackRequested()
 
 Diese Anleitung für das Rückwärtsnavigationsdesign gilt für alle Geräte. Verschiedene Geräte und Formfaktoren können jedoch von der Optimierung profitieren. Dies hängt auch von der Hardware-Zurück-Taste ab, der von verschiedenen Shells unterstützt wird.
 
-- **Smartphone/Tablet**: Eine Hardware- oder Software-Zurück-Schaltfläche ist auf jedem Smartphone und Tablet vorhanden, aber wir empfehlen, eine In-App-Zurück-Schaltfläche zu verwenden, um die Übersichtlichkeit zu erhöhen.
-- **Desktop/Hub**: Stellen Sie den In-App-Button in der linken oberen Ecke der Benutzeroberfläche Ihrer App dar.
-- **Xbox/TV**: Nutzen Sie keine Zurück-Schaltfläche. Sie macht die Benutzeroberfläche unnötigerweise unübersichtlich. Verlassen Sie sich stattdessen auf die Gamepad-Taste B, um rückwärts zu navigieren.
+- **Smartphone/Tablet** : Eine Hardware- oder Software-Zurück-Schaltfläche ist auf jedem Smartphone und Tablet vorhanden, aber wir empfehlen, eine In-App-Zurück-Schaltfläche zu verwenden, um die Übersichtlichkeit zu erhöhen.
+- **Desktop/Hub** : Stellen Sie den In-App-Button in der linken oberen Ecke der Benutzeroberfläche Ihrer App dar.
+- **Xbox/TV** : Nutzen Sie keine Zurück-Schaltfläche. Sie macht die Benutzeroberfläche unnötigerweise unübersichtlich. Verlassen Sie sich stattdessen auf die Gamepad-Taste B, um rückwärts zu navigieren.
 
 Wenn Ihre App auf mehreren Geräten läuft, [erstellen Sie einen benutzerdefinierten visuellen Trigger für die Xbox](../devices/designing-for-tv.md#custom-visual-state-trigger-for-xbox), um die Sichtbarkeit der Schaltfläche umzuschalten. Das NavigationView-Steuerelement schaltet automatisch die Sichtbarkeit der Zurück-Schaltfläche um, wenn Ihre App auf der Xbox läuft. 
 

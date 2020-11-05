@@ -1,5 +1,5 @@
 ---
-Description: Gepackte Desktop-Apps können eine Vielzahl von Windows-Runtime-APIs verwenden, selbst wenn sie nicht vollständig in eine UWP-App umgewandelt wurden. In diesem Artikel werden die verfügbaren Klassen aufgelistet, die deine gepackte App verwenden kann.
+description: Gepackte Desktop-Apps können eine Vielzahl von Windows-Runtime-APIs verwenden, selbst wenn sie nicht vollständig in eine UWP-App umgewandelt wurden. In diesem Artikel werden die verfügbaren Klassen aufgelistet, die deine gepackte App verwenden kann.
 title: Für eine gepackte Desktop-App (Desktop-Brücke) verfügbare Windows-Runtime-APIs
 ms.date: 04/19/2019
 ms.topic: article
@@ -9,12 +9,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 419ffb348aa57183020c324fae3835074ac556ad
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 252ce5d39f09e957abed4f2629abc4d79580fab2
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172714"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031143"
 ---
 # <a name="windows-runtime-apis-available-to-desktop-apps"></a>Für Desktop-Apps verfügbare Windows-Runtime-APIs
 

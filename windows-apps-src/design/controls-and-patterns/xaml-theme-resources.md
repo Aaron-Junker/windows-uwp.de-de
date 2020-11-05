@@ -1,5 +1,5 @@
 ---
-Description: Bei Designressourcen in XAML handelt es sich um einen Satz von Ressourcen, die abhängig vom aktiven Systemdesign verschiedene Werte anwenden.
+description: Bei Designressourcen in XAML handelt es sich um einen Satz von Ressourcen, die abhängig vom aktiven Systemdesign verschiedene Werte anwenden.
 MS-HAID: dev\_ctrl\_layout\_txt.xaml\_theme\_resources
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -11,18 +11,18 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ac4f7c7705fef0a3a7a1d556635e1c80e9c04a29
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 6da668c005f95d51f6fb0588f60fdcf63aea4fd7
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217211"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034423"
 ---
 # <a name="xaml-theme-resources"></a>XAML-Designressourcen
 
 Bei Designressourcen in XAML handelt es sich um einen Satz von Ressourcen, die abhängig vom aktiven Systemdesign verschiedene Werte anwenden. Es gibt drei Designs, die vom XAML-Framework unterstützt werden: „Hell“, „Dunkel“ und „Hoher Kontrast“.
 
-**Voraussetzungen**: In diesem Thema wird vorausgesetzt, dass Sie [ResourceDictionary- und XAML-Ressourcenreferenzen](resourcedictionary-and-xaml-resource-references.md) gelesen haben.
+**Voraussetzungen** : In diesem Thema wird vorausgesetzt, dass Sie [ResourceDictionary- und XAML-Ressourcenreferenzen](resourcedictionary-and-xaml-resource-references.md) gelesen haben.
 
 ## <a name="theme-resources-v-static-resources"></a>Designressourcen im Vergleich zu statischen Ressourcen
 
@@ -228,7 +228,7 @@ Eine Anleitung zur Verwendung der Windows-Typhierarchie in Ihrer App finden Sie 
 
 ### <a name="basetextblockstyle"></a>BaseTextBlockStyle
 
-**TargetType**: [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
+**TargetType** : [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
 Stellt die gemeinsamen Eigenschaften für alle anderen [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Containerformatvorlagen bereit.
 
@@ -338,7 +338,7 @@ Stellt die gemeinsamen Eigenschaften für alle anderen [TextBlock](/uwp/api/Wind
 
 ### <a name="baserichtextblockstyle"></a>BaseRichTextBlockStyle
 
-**TargetType**: [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)
+**TargetType** : [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)
 
 Stellt die gemeinsamen Eigenschaften für alle anderen [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)-Containerformatvorlagen bereit.
 
@@ -375,7 +375,7 @@ Stellt die gemeinsamen Eigenschaften für alle anderen [RichTextBlock](/uwp/api/
 </Style>
 ```
 
-**Hinweis**:  Die [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)-Formatvorlagen verfügen nicht über alle Texthierarchie-Formatvorlagen von [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock). Dies liegt hauptsächlich daran, dass das blockbasierte Dokumentobjektmodell für **RichTextBlock** das Festlegen von Attributen für die einzelnen Textelemente erleichtert. Außerdem entsteht, wenn Sie [TextBlock.Text](/uwp/api/windows.ui.xaml.controls.textblock.text) mit der XAML-Inhaltseigenschaft festlegen, eine Situation, in der kein zu formatierendes Textelement vorhanden ist und Sie daher den Container formatieren müssen. Das ist für **RichTextBlock** kein Problem, da sein Textinhalt immer in spezifischen Textelementen wie [Absatz](/uwp/api/Windows.UI.Xaml.Documents.Paragraph) enthalten sein muss, in denen Sie XAML-Stile für die Kopfzeile, die Seitenunterüberschrift und ähnliche Texthierarchiedefinitionen festlegen können.
+**Hinweis** :  Die [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)-Formatvorlagen verfügen nicht über alle Texthierarchie-Formatvorlagen von [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock). Dies liegt hauptsächlich daran, dass das blockbasierte Dokumentobjektmodell für **RichTextBlock** das Festlegen von Attributen für die einzelnen Textelemente erleichtert. Außerdem entsteht, wenn Sie [TextBlock.Text](/uwp/api/windows.ui.xaml.controls.textblock.text) mit der XAML-Inhaltseigenschaft festlegen, eine Situation, in der kein zu formatierendes Textelement vorhanden ist und Sie daher den Container formatieren müssen. Das ist für **RichTextBlock** kein Problem, da sein Textinhalt immer in spezifischen Textelementen wie [Absatz](/uwp/api/Windows.UI.Xaml.Documents.Paragraph) enthalten sein muss, in denen Sie XAML-Stile für die Kopfzeile, die Seitenunterüberschrift und ähnliche Texthierarchiedefinitionen festlegen können.
 
 ## <a name="miscellaneous-named-styles"></a>Sonstige benannte Stile
 
@@ -383,13 +383,13 @@ Es gibt eine Reihe von weiteren [Formatvorlagen](/uwp/api/Windows.UI.Xaml.Style)
 
 ### <a name="textblockbuttonstyle"></a>TextBlockButtonStyle
 
-**TargetType**: [ButtonBase](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)
+**TargetType** : [ButtonBase](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)
 
 Wendet diese Formatvorlage auf eine [Schaltfläche](/uwp/api/Windows.UI.Xaml.Controls.Button) an, wenn Sie Text darstellen müssen, auf den ein Benutzer klicken, kann, um eine Aktion auszulösen. Der Text wird mithilfe der aktuellen Akzentfarbe formatiert, um ihn als interaktiv hervorzuheben, und weist Fokusrechtecke auf, die gut für Text geeignet sind. Im Gegensatz zur impliziten Formatvorlage eines [HyperlinkButton](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)-Elements unterstreicht der **TextBlockButtonStyle** den Text nicht.
 
 Die Vorlage formatiert außerdem den angezeigten Text für die Verwendung von **SystemControlHyperlinkBaseMediumBrush** (für den Zustand „PointerOver“), **SystemControlHighlightBaseMediumLowBrush** (für den Zustand „Pressed“) und **SystemControlDisabledBaseLowBrush** (für den Zustand „Disabled“).
 
-Hier ist ein [Schaltflächen](/uwp/api/Windows.UI.Xaml.Controls.Button)-Element mit darauf angewendeter **TextBlockButtonStyle**-Ressource.
+Hier ist ein [Schaltflächen](/uwp/api/Windows.UI.Xaml.Controls.Button)-Element mit darauf angewendeter **TextBlockButtonStyle** -Ressource.
 
 ```XAML
 <Button Content="Clickable text" Style="{StaticResource TextBlockButtonStyle}"
@@ -402,11 +402,11 @@ Er sieht ungefähr so aus:
 
 ### <a name="navigationbackbuttonnormalstyle"></a>NavigationBackButtonNormalStyle
 
-**TargetType**: [Schaltfläche](/uwp/api/Windows.UI.Xaml.Controls.Button)
+**TargetType** : [Schaltfläche](/uwp/api/Windows.UI.Xaml.Controls.Button)
 
-Diese [Formatvorlage](/uwp/api/Windows.UI.Xaml.Style) stellt eine vollständige Vorlage für ein [Schaltflächen](/uwp/api/Windows.UI.Xaml.Controls.Button)-Element bereit, bei der es sich um die Navigationsschaltfläche „Zurück“ für eine Navigations-App handeln kann. Die Standardgröße ist 40 x 40 Pixel. Um die Formatvorlage anzupassen, können Sie die Eigenschaften [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height), [Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width), [FontSize](/uwp/api/windows.ui.xaml.controls.control.fontsize) und andere für Ihr **Schaltflächen**-Element explizit festlegen oder eine abgeleitete Formatvorlage mithilfe von [BasedOn](/uwp/api/windows.ui.xaml.style.basedon) erstellen.
+Diese [Formatvorlage](/uwp/api/Windows.UI.Xaml.Style) stellt eine vollständige Vorlage für ein [Schaltflächen](/uwp/api/Windows.UI.Xaml.Controls.Button)-Element bereit, bei der es sich um die Navigationsschaltfläche „Zurück“ für eine Navigations-App handeln kann. Die Standardgröße ist 40 x 40 Pixel. Um die Formatvorlage anzupassen, können Sie die Eigenschaften [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height), [Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width), [FontSize](/uwp/api/windows.ui.xaml.controls.control.fontsize) und andere für Ihr **Schaltflächen** -Element explizit festlegen oder eine abgeleitete Formatvorlage mithilfe von [BasedOn](/uwp/api/windows.ui.xaml.style.basedon) erstellen.
 
-Hier ist ein [Schaltflächen](/uwp/api/Windows.UI.Xaml.Controls.Button)-Element mit der angewendeten **NavigationBackButtonNormalStyle**-Ressource.
+Hier ist ein [Schaltflächen](/uwp/api/Windows.UI.Xaml.Controls.Button)-Element mit der angewendeten **NavigationBackButtonNormalStyle** -Ressource.
 
 ```XAML
 <Button Style="{StaticResource NavigationBackButtonNormalStyle}" />
@@ -418,11 +418,11 @@ Er sieht ungefähr so aus:
 
 ### <a name="navigationbackbuttonsmallstyle"></a>NavigationBackButtonSmallStyle
 
-**TargetType**: [Schaltfläche](/uwp/api/Windows.UI.Xaml.Controls.Button)
+**TargetType** : [Schaltfläche](/uwp/api/Windows.UI.Xaml.Controls.Button)
 
-Diese [Formatvorlage](/uwp/api/Windows.UI.Xaml.Style) stellt eine vollständige Vorlage für ein [Schaltflächen](/uwp/api/Windows.UI.Xaml.Controls.Button)-Element bereit, bei der es sich um die Navigationsschaltfläche „Zurück“ für eine Navigations-App handeln kann. Sie ähnelt **NavigationBackButtonNormalStyle**, aber die Größe beträgt 30x30 Pixel.
+Diese [Formatvorlage](/uwp/api/Windows.UI.Xaml.Style) stellt eine vollständige Vorlage für ein [Schaltflächen](/uwp/api/Windows.UI.Xaml.Controls.Button)-Element bereit, bei der es sich um die Navigationsschaltfläche „Zurück“ für eine Navigations-App handeln kann. Sie ähnelt **NavigationBackButtonNormalStyle** , aber die Größe beträgt 30x30 Pixel.
 
-Hier sehen Sie eine [Schaltfläche](/uwp/api/Windows.UI.Xaml.Controls.Button) mit darauf angewendeter **NavigationBackButtonSmallStyle**-Ressource.
+Hier sehen Sie eine [Schaltfläche](/uwp/api/Windows.UI.Xaml.Controls.Button) mit darauf angewendeter **NavigationBackButtonSmallStyle** -Ressource.
 
 ```XAML
 <Button Style="{StaticResource NavigationBackButtonSmallStyle}" />

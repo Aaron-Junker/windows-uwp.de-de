@@ -1,5 +1,5 @@
 ---
-Description: Der Umschalter stellt einen physischen Schalter dar, mit dem Benutzer Dinge ein- oder ausschalten können.
+description: Der Umschalter stellt einen physischen Schalter dar, mit dem Benutzer Dinge ein- oder ausschalten können.
 title: Richtlinien für Umschaltersteuerelemente
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c8df28335bf67c00f0429d6967e9013c73ec351
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 03714fef129ccb51bd84a73317bfda702317f313
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154194"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034713"
 ---
 # <a name="toggle-switches"></a>Umschalter
 

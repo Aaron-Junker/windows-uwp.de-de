@@ -1,5 +1,5 @@
 ---
-Description: Über Befehlsleisten-Flyouts erhalten Benutzer Inlinezugriff auf die häufigsten Aufgaben in Ihrer App.
+description: Über Befehlsleisten-Flyouts erhalten Benutzer Inlinezugriff auf die häufigsten Aufgaben in Ihrer App.
 title: Befehlsleisten-Flyout
 label: Command bar flyout
 template: detail.hbs
@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a2f6e61373ae343d8d683d6e5f9169cc399f1594
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 3ca79795264fd0629c19877f22bdc3eb332fa69f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750546"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031493"
 ---
 # <a name="command-bar-flyout"></a>Befehlsleisten-Flyout
 
@@ -25,7 +25,7 @@ ms.locfileid: "91750546"
 
 ![Erweitertes Befehlsleisten-Text-Flyout](images/command-bar-flyout-text-full.png)
 
-Wie [CommandBar](app-bars.md) verfügt auch CommandBarFlyout über die Eigenschaften **PrimaryCommands** und **SecondaryCommands**, über die Sie Befehle hinzufügen können. Sie können Befehle in einer oder beiden Sammlungen platzieren. Wann und wie die primären und sekundären Befehle angezeigt werden, hängt vom Anzeigemodus ab.
+Wie [CommandBar](app-bars.md) verfügt auch CommandBarFlyout über die Eigenschaften **PrimaryCommands** und **SecondaryCommands** , über die Sie Befehle hinzufügen können. Sie können Befehle in einer oder beiden Sammlungen platzieren. Wann und wie die primären und sekundären Befehle angezeigt werden, hängt vom Anzeigemodus ab.
 
 Das Befehlsleisten-Flyout verfügt über zwei Anzeigemodi: *Reduziert* und *Erweitert*.
 
@@ -145,7 +145,7 @@ Wenn Sie Kontextbefehle proaktiv anzeigen, sollten standardmäßig nur die prim�
 
 Zum proaktiven Anzeigen von Befehlen wird normalerweise das [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)- oder [Tapped](/uwp/api/windows.ui.xaml.uielement.tapped)-Ereignis verarbeitet, um das Befehlsleisten-Flyout anzuzeigen. Legen Sie [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) für das Flyout auf **Transient** oder **TransientWithDismissOnPointerMoveAway** fest, um das Flyout im reduzierten Modus ohne Fokus zu öffnen.
 
-Ab Windows 10 Insider Preview umfassen Textsteuerelemente eine **SelectionFlyout**-Eigenschaft. Wenn Sie dieser Eigenschaft ein Flyout zuweisen, wird es automatisch angezeigt, wenn Text ausgewählt wird.
+Ab Windows 10 Insider Preview umfassen Textsteuerelemente eine **SelectionFlyout** -Eigenschaft. Wenn Sie dieser Eigenschaft ein Flyout zuweisen, wird es automatisch angezeigt, wenn Text ausgewählt wird.
 
 ### <a name="show-commands-reactively"></a>Reaktives Anzeigen von Befehlen
 
@@ -162,9 +162,9 @@ Wenn Sie die Anzeige des Flyouts selbst festlegen möchten (z. B. für ein [Rig
 
 Das Steuerelement CommandBarFlyout umfasst 2 Eigenschaften, mit denen Sie Befehle und Inhalte hinzufügen können: [PrimaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.primarycommands) und [SecondaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.secondarycommands).
 
-Befehlsleistenelemente werden standardmäßig der **PrimaryCommands**-Sammlung hinzugefügt. Diese Befehle werden auf der Befehlsleiste angezeigt und sind im reduzierten und im erweiterten Modus sichtbar. Im Unterschied zu CommandBar werden primäre Befehle nicht automatisch bei den sekundären Befehlen übernommen und werden möglicherweise gekürzt.
+Befehlsleistenelemente werden standardmäßig der **PrimaryCommands** -Sammlung hinzugefügt. Diese Befehle werden auf der Befehlsleiste angezeigt und sind im reduzierten und im erweiterten Modus sichtbar. Im Unterschied zu CommandBar werden primäre Befehle nicht automatisch bei den sekundären Befehlen übernommen und werden möglicherweise gekürzt.
 
-Sie können Befehle auch der **SecondaryCommands**-Sammlung hinzufügen. Sekundäre Befehle werden im Menübereich des Steuerelements angezeigt und sind nur im erweiterten Modus sichtbar.
+Sie können Befehle auch der **SecondaryCommands** -Sammlung hinzufügen. Sekundäre Befehle werden im Menübereich des Steuerelements angezeigt und sind nur im erweiterten Modus sichtbar.
 
 ### <a name="app-bar-buttons"></a>App-Leistenschaltflächen
 
@@ -415,8 +415,8 @@ In der folgenden Tabelle sind die in TextCommandBarFlyout enthaltenen Befehle au
 
 TextCommandBarFlyout kann nicht angepasst werden und wird von jedem Textsteuerelement automatisch verwaltet. Sie können jedoch das Standard-TextCommandBarFlyout durch benutzerdefinierte Befehle ersetzen.
 
-- Um das standardmäßig bei der Textauswahl angezeigte TextCommandBarFlyout zu ersetzen, können Sie ein benutzerdefiniertes CommandBarFlyout (oder einen anderen Flyout-Typ) erstellen und der **SelectionFlyout**-Eigenschaft zuweisen. Wenn Sie SelectionFlyout auf **null** festlegen, werden bei der Textauswahl keine Befehle angezeigt.
-- Um das standardmäßig als Kontextmenü angezeigte TextCommandBarFlyout zu ersetzen, weisen Sie der **ContextFlyout**-Eigenschaft eines Textsteuerelements ein benutzerdefiniertes CommandBarFlyout (oder einen anderen Flyout-Typ) zu. Wenn Sie ContextFlyout auf **null** festlegen, wird das Menü-Flyout, das in vorherigen Versionen des Textsteuerelements angezeigt wird, anstelle von TextCommandBarFlyout angezeigt.
+- Um das standardmäßig bei der Textauswahl angezeigte TextCommandBarFlyout zu ersetzen, können Sie ein benutzerdefiniertes CommandBarFlyout (oder einen anderen Flyout-Typ) erstellen und der **SelectionFlyout** -Eigenschaft zuweisen. Wenn Sie SelectionFlyout auf **null** festlegen, werden bei der Textauswahl keine Befehle angezeigt.
+- Um das standardmäßig als Kontextmenü angezeigte TextCommandBarFlyout zu ersetzen, weisen Sie der **ContextFlyout** -Eigenschaft eines Textsteuerelements ein benutzerdefiniertes CommandBarFlyout (oder einen anderen Flyout-Typ) zu. Wenn Sie ContextFlyout auf **null** festlegen, wird das Menü-Flyout, das in vorherigen Versionen des Textsteuerelements angezeigt wird, anstelle von TextCommandBarFlyout angezeigt.
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 

@@ -1,16 +1,16 @@
 ---
-Description: Verwende die ApplicationView-Klasse, um verschiedene Teile der App in separaten Fenstern anzuzeigen.
+description: Verwende die ApplicationView-Klasse, um verschiedene Teile der App in separaten Fenstern anzuzeigen.
 title: Verwenden der ApplicationView-Klasse zum Anzeigen sekundärer Fenster für eine App
 ms.date: 07/19/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2005f254118c44b386879f771cc4e5c0ae2cadc4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2cdee3c0844fc5a01d0749e4e6219d92cd8178a0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165624"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034853"
 ---
 # <a name="show-multiple-views-with-applicationview"></a>Anzeigen mehrerer Ansichten mit ApplicationView
 
@@ -26,7 +26,7 @@ Ansichten werden durch das [**CoreApplication**](/uwp/api/Windows.ApplicationMod
 
 In der Regel arbeiten Sie nicht direkt mit der [**CoreApplicationView**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView). Stattdessen wird die [**ApplicationView**](/uwp/api/Windows.UI.ViewManagement.ApplicationView)-Klasse von der Windows-Runtime im [**Windows.UI.ViewManagement**](/uwp/api/Windows.UI.ViewManagement)-Namespace bereitgestellt. Diese Klasse stellt Eigenschaften, Methoden und Ereignisse bereit, die Sie bei der Interaktion zwischen App und Windowing-System verwenden. Wenn Sie mit einer **ApplicationView** arbeiten möchten, rufen Sie die statische [**ApplicationView.GetForCurrentView**](/uwp/api/windows.ui.viewmanagement.applicationview.getforcurrentview)-Methode auf, die eine an den aktuellen Thread der **CoreApplicationView** gebundene Instanz von **ApplicationView** abruft.
 
-Entsprechend umschließt das XAML-Framework das [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)-Objekt in einem [**Windows.UI.XAML.Window**](/uwp/api/Windows.UI.Xaml.Window)-Objekt. In einer XAML-App interagieren Sie normalerweise mit dem **Window**-Objekt, anstatt direkt mit dem **CoreWindow** zu arbeiten.
+Entsprechend umschließt das XAML-Framework das [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)-Objekt in einem [**Windows.UI.XAML.Window**](/uwp/api/Windows.UI.Xaml.Window)-Objekt. In einer XAML-App interagieren Sie normalerweise mit dem **Window** -Objekt, anstatt direkt mit dem **CoreWindow** zu arbeiten.
 
 ## <a name="show-a-new-view"></a>Anzeigen einer neuen Ansicht
 
@@ -71,9 +71,9 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 3.  Füllen Sie das Fenster im neuen Thread auf.
 
-    Mithilfe der [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync)-Methode können Sie die Arbeit am UI-Thread für die neue Ansicht planen. Mithilfe eines [Lambdaausdrucks](/dotnet/csharp/language-reference/operators/lambda-expressions) übergeben Sie eine Funktion als Argument an die **RunAsync**-Methode. Die in der Lambdafunktion ausgeführten Arbeiten finden im Thread der neuen Ansicht statt.
+    Mithilfe der [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync)-Methode können Sie die Arbeit am UI-Thread für die neue Ansicht planen. Mithilfe eines [Lambdaausdrucks](/dotnet/csharp/language-reference/operators/lambda-expressions) übergeben Sie eine Funktion als Argument an die **RunAsync** -Methode. Die in der Lambdafunktion ausgeführten Arbeiten finden im Thread der neuen Ansicht statt.
 
-    In XAML fügen Sie der [**Content**](/uwp/api/windows.ui.xaml.window.content)-Eigenschaft von [**Window**](/uwp/api/Windows.UI.Xaml.Window) in der Regel einen [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) hinzu und navigieren dann den **Frame** zu einer XAML-[**Seite**](/uwp/api/Windows.UI.Xaml.Controls.Page), auf der Sie den App-Inhalt definiert haben. Weitere Informationen zu Frames und Seiten findest du unter [Peer-zu-Peer-Navigation zwischen zwei Seiten](../basics/navigate-between-two-pages.md).
+    In XAML fügen Sie der [**Content**](/uwp/api/windows.ui.xaml.window.content)-Eigenschaft von [**Window**](/uwp/api/Windows.UI.Xaml.Window) in der Regel einen [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) hinzu und navigieren dann den **Frame** zu einer XAML- [**Seite**](/uwp/api/Windows.UI.Xaml.Controls.Page), auf der Sie den App-Inhalt definiert haben. Weitere Informationen zu Frames und Seiten findest du unter [Peer-zu-Peer-Navigation zwischen zwei Seiten](../basics/navigate-between-two-pages.md).
 
     Nachdem das neue [**Window**](/uwp/api/Windows.UI.Xaml.Window) aufgefüllt wurde, müssen Sie die [**Activate**](/uwp/api/windows.ui.xaml.window.activate)-Methode von **Window** aufrufen, um das **Window** später anzuzeigen. Diese Arbeit findet im Thread der neuen Ansicht statt, sodass das neue **Window** aktiviert ist.
 
@@ -94,7 +94,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 4.  Zeigen Sie die neue Ansicht an, indem Sie [**ApplicationViewSwitcher.TryShowAsStandaloneAsync**](/uwp/api/windows.ui.viewmanagement.applicationviewswitcher.tryshowasstandaloneasync) aufrufen.
 
-    Nachdem Sie eine neue Ansicht erstellt haben, können Sie sie in einem neuen Fenster anzeigen, indem Sie die [**ApplicationViewSwitcher.TryShowAsStandaloneAsync**](/uwp/api/windows.ui.viewmanagement.applicationviewswitcher.tryshowasstandaloneasync)-Methode aufrufen. Der *viewId*-Parameter für diese Methode ist eine ganze Zahl, die die einzelnen Ansichten in der App eindeutig identifiziert. Sie rufen die [**Id**](/uwp/api/windows.ui.viewmanagement.applicationview.id) der Ansicht entweder über die **ApplicationView.Id**-Eigenschaft oder die [**ApplicationView.GetApplicationViewIdForWindow**](/uwp/api/windows.ui.viewmanagement.applicationview.getapplicationviewidforwindow)-Methode ab.
+    Nachdem Sie eine neue Ansicht erstellt haben, können Sie sie in einem neuen Fenster anzeigen, indem Sie die [**ApplicationViewSwitcher.TryShowAsStandaloneAsync**](/uwp/api/windows.ui.viewmanagement.applicationviewswitcher.tryshowasstandaloneasync)-Methode aufrufen. Der *viewId* -Parameter für diese Methode ist eine ganze Zahl, die die einzelnen Ansichten in der App eindeutig identifiziert. Sie rufen die [**Id**](/uwp/api/windows.ui.viewmanagement.applicationview.id) der Ansicht entweder über die **ApplicationView.Id** -Eigenschaft oder die [**ApplicationView.GetApplicationViewIdForWindow**](/uwp/api/windows.ui.viewmanagement.applicationview.getapplicationviewidforwindow)-Methode ab.
 
     ```csharp
     bool viewShown = await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newViewId);
