@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eea2d228ddf5ad6dfaef227bfaeb0bafb071490
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8c0e174613357ad9e4e45d2776f3fbc618535b30
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170494"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339458"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Hinzufügen von Unterstützung für „Meine Kontakte“ zu einer Anwendung
 
@@ -23,7 +23,7 @@ Mit der Funktion "meine Personen" können Benutzer Kontakte aus einer Anwendung 
 
 ## <a name="requirements"></a>Anforderungen
 
-+ Windows 10 und Microsoft Visual Studio 2019. Weitere Informationen zur Installation finden Sie unter [Einrichten von Visual Studio](../get-started/get-set-up.md).
++ Windows 10 und Microsoft Visual Studio 2019. Weitere Informationen zur Installation finden Sie unter [Einrichten von Visual Studio](/windows/apps/get-started/get-set-up).
 + Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache. Informationen zu den ersten Schritten mit c# finden Sie unter [Erstellen einer "Hello, World"-App](../get-started/create-a-hello-world-app-xaml-universal.md).
 
 ## <a name="overview"></a>Übersicht
@@ -38,7 +38,7 @@ Wenn Sie dies abgeschlossen haben, wird die Anwendung im Kontaktbereich für mit
 
 ## <a name="declaring-support-for-the-contract"></a>Deklarieren der Unterstützung für den Vertrag
 
-Um die Unterstützung für den Vertrag "meine Personen" zu deklarieren, öffnen Sie die Anwendung in Visual Studio. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf **Package. appxmanifest** , und wählen Sie **Öffnen mit**aus. Wählen Sie im Menü die Option **XML (Text)-Editor)** aus, und klicken Sie auf **OK**. Nehmen Sie die folgenden Änderungen am Manifest vor:
+Um die Unterstützung für den Vertrag "meine Personen" zu deklarieren, öffnen Sie die Anwendung in Visual Studio. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Package. appxmanifest** , und wählen Sie **Öffnen mit** aus. Wählen Sie im Menü die Option **XML (Text)-Editor)** aus, und klicken Sie auf **OK**. Nehmen Sie die folgenden Änderungen am Manifest vor:
 
 **Vorher**
 
@@ -220,7 +220,7 @@ PinnedContactManager pinnedContactManager = PinnedContactManager.GetDefault();
 ```
 
 ## <a name="pinning-and-unpinning-contacts"></a>Anhepten und lösen von Kontakten
-Sie können jetzt Kontakte mit dem soeben erstellten pinnedcontactmanager anheften und lösen. Die Methoden " **requestpincontactasync** " und " **requestunpincontactasync** " stellen dem Benutzer Bestätigungs Dialogfelder zur Verfügung, sodass Sie von Ihrem Anwendungs Thread für Single Thread-Apartment (ASTA oder UI) aufgerufen werden müssen.
+Sie können jetzt Kontakte mit dem soeben erstellten pinnedcontactmanager anheften und lösen. Die Methoden " **requestpincontactasync** " und " **requestunpincontactasync** " stellen dem Benutzer Bestätigungs Dialogfelder bereit, sodass Sie von Ihrer Anwendung aufgerufen werden müssen, Single-Threaded Apartment-(ASTA-oder UI-) Thread.
 
 ```Csharp
 async void PinContact (Contact contact)

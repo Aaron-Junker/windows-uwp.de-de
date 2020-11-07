@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7116f1aa6f06eda1351183963ea8169625a8df70
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 3bc7fab8bff98fc2711747122d62031fb4d3a65d
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93033023"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339778"
 ---
 # <a name="toast-content-schema"></a>Popupinhaltsschema
 
@@ -21,7 +21,7 @@ ms.locfileid: "93033023"
 
 Im folgenden werden alle Eigenschaften und Elemente innerhalb des Popup Inhalts beschrieben.
 
-Wenn Sie anstelle der [Benachrichtigungs Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)unformatierte XML-Daten verwenden möchten, lesen Sie [das XML-Schema](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/schema-root).
+Wenn Sie anstelle der [Benachrichtigungs Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)unformatierte XML-Daten verwenden möchten, lesen Sie [das XML-Schema](/uwp/schemas/tiles/toastschema/schema-root).
 
 [Inhalts Inhalt](#toastcontent)
 * [-Visualisierung](#toastvisual)
@@ -176,7 +176,7 @@ Gibt das gewünschte Zuschneiden des Bilds an.
 | Wert | Bedeutung |
 |---|---|
 | **Standard** | Standardwert. Das durch Renderer festgelegte zuschneideverhalten. |
-| **None** | Das Bild wird nicht abgeschnitten. |
+| **Keine** | Das Bild wird nicht abgeschnitten. |
 | **Circle** | Das Bild wird auf eine Kreisform zugeschnitten. |
 
 
@@ -275,7 +275,7 @@ Steuert das Zuschneiden des App-Logo Bilds.
 | Wert | Bedeutung |
 |---|---|
 | **Standard** | Beim Zuschneiden wird das Standardverhalten des Renderers verwendet. |
-| **None** | Das Bild wird nicht abgeschnitten, das Quadrat wird angezeigt. |
+| **Keine** | Das Bild wird nicht abgeschnitten, das Quadrat wird angezeigt. |
 | **Circle** | Das Bild wird auf einen Kreis zugeschnitten. |
 
 

@@ -6,12 +6,12 @@ keywords: wählen, radiales, Tutorial
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cc1618432d35687fe1bfa619396bc2b798dd40bf
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: d6da91818abcf140c7d381f9d481fc92ba2feb56
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216923"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339698"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-windows-app"></a>Tutorial: unterstützen der Oberflächen Wahl (und anderer radgeräte) in der Windows-App
 
@@ -45,25 +45,25 @@ Der wählwert unterstützt drei grundlegende Gesten:
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Ein radgerät (zu diesem Zeitpunkt nur die [Oberflächen Wahl](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116) )
 * Wenn Sie mit der Entwicklung von Windows-apps mit Visual Studio noch nicht vertraut sind, sehen Sie sich diese Themen an, bevor Sie mit diesem Tutorial beginnen:  
-    * [Vorbereiten](../../get-started/get-set-up.md)
+    * [Vorbereiten](/windows/apps/get-started/get-set-up)
     * [Erstellen der App „Hello, world“ (XAML)](../../get-started/create-a-hello-world-app-xaml-universal.md)
 
 ## <a name="set-up-your-devices"></a>Einrichten Ihrer Geräte
 
 1. Stellen Sie sicher, dass Ihr Windows-Gerät eingeschaltet ist.
-2. Wechseln Sie zu **Start**, wählen Sie **Einstellungen**  >  **Geräte**  >  **Bluetooth & andere Geräte**aus, und aktivieren Sie dann **Bluetooth** .
+2. Wechseln Sie zu **Start** , wählen Sie **Einstellungen**  >  **Geräte**  >  **Bluetooth & andere Geräte** aus, und aktivieren Sie dann **Bluetooth** .
 3. Entfernen Sie den unteren Rand der Oberfläche, um das Akku Depot zu öffnen, und stellen Sie sicher, dass in zwei AAA-Akkus vorhanden sind.
 4. Wenn die Registerkarte Akku auf der Unterseite des wähles vorhanden ist, entfernen Sie Sie.
 5. Halten Sie die kleine, eingelegte Schaltfläche neben den Akkus gedrückt, bis das Bluetooth-Licht blinkt.
-6. Wechseln Sie zurück zu Ihrem Windows-Gerät, und wählen Sie **Bluetooth oder anderes Gerät hinzufügen**aus.
-7. Wählen Sie im Dialogfeld **Gerät hinzufügen** die Option **Bluetooth**-  >  **Oberfläche**auswählen aus. Ihre Oberfläche sollte nun eine Verbindung herstellen und der Liste der Geräte unter **Maus, Tastatur, & Stift** auf der Seite **Bluetooth & andere Geräte** Einstellungen hinzugefügt werden.
+6. Wechseln Sie zurück zu Ihrem Windows-Gerät, und wählen Sie **Bluetooth oder anderes Gerät hinzufügen** aus.
+7. Wählen Sie im Dialogfeld **Gerät hinzufügen** die Option **Bluetooth** -  >  **Oberfläche** auswählen aus. Ihre Oberfläche sollte nun eine Verbindung herstellen und der Liste der Geräte unter **Maus, Tastatur, & Stift** auf der Seite **Bluetooth & andere Geräte** Einstellungen hinzugefügt werden.
 8. Testen Sie die Auswahl, indem Sie Sie für einige Sekunden drücken und halten, um das integrierte Menü anzuzeigen.
 9. Wenn das Menü nicht auf dem Bildschirm angezeigt wird (die Auswahl muss ebenfalls vibrieren), kehren Sie zu den Bluetooth-Einstellungen zurück, entfernen Sie das Gerät, und versuchen Sie erneut, das Gerät zu verbinden.
 
 > [!NOTE]
 > Radgeräte können über die **Radeinstellungen** konfiguriert werden:
-> 1. Wählen Sie im **Startmenü** die Option **Einstellungen**aus.
-> 2. Wählen Sie **Geräte**  >  **Rad**aus.    
+> 1. Wählen Sie im **Startmenü** die Option **Einstellungen** aus.
+> 2. Wählen Sie **Geräte**  >  **Rad** aus.    
 > ![Bildschirm mit Radeinstellungen](images/radialcontroller/wheel-settings.png)
 
 Jetzt sind Sie bereit, dieses Tutorial zu starten. 
@@ -75,7 +75,7 @@ Laden Sie dieses Visual Studio-Beispiel und den Quellcode von [GitHub](https://g
 
 1. Wählen Sie die Schaltfläche grünes **Klonen oder herunterladen** aus.  
 ![Klonen des Repositorys](images/radialcontroller/wheel-clone.png)
-2. Wenn Sie über ein GitHub-Konto verfügen, können Sie das Repository auf Ihrem lokalen Computer Klonen, indem Sie **in Visual Studio öffnen**auswählen. 
+2. Wenn Sie über ein GitHub-Konto verfügen, können Sie das Repository auf Ihrem lokalen Computer Klonen, indem Sie **in Visual Studio öffnen** auswählen. 
 3. Wenn Sie nicht über ein GitHub-Konto verfügen oder nur eine lokale Kopie des Projekts wünschen, wählen Sie **ZIP herunterladen** aus (Sie müssen regelmäßig zurückkehren, um die neuesten Updates herunterzuladen).
 
 > [!IMPORTANT]
@@ -98,7 +98,7 @@ Nachdem Sie die radialcontroller-Beispiel-App heruntergeladen haben, vergewisser
 3. Drücken Sie F5, um zu kompilieren, bereitzustellen und auszuführen. 
 
 > [!NOTE]
-> Alternativ können Sie **Debug**  >  das Menü Element**Debuggen Debuggen starten** auswählen, oder wählen Sie die Schaltfläche **lokaler Computer** ausführen aus, die hier angezeigt wird: ![ Schaltfläche "Projekt](images/radialcontroller/wheel-vsrun.png)
+> Alternativ können Sie **Debug**  >  das Menü Element **Debuggen Debuggen starten** auswählen, oder wählen Sie die Schaltfläche **lokaler Computer** ausführen aus, die hier angezeigt wird: ![ Schaltfläche "Projekt](images/radialcontroller/wheel-vsrun.png)
 
 Das App-Fenster wird geöffnet, und nachdem ein Begrüßungsbildschirm für einige Sekunden angezeigt wird, sehen Sie diesen ersten Bildschirm.
 
@@ -346,7 +346,7 @@ Die Oberfläche und andere radgeräte können Benutzern ein haptisches Feedback 
 In diesem Schritt zeigen wir, wie Sie haptisches Feedback anpassen können, indem wir die Schieberegler-und UMSCHALT Steuerelemente zuordnen und diese verwenden, um das Verhalten von haptischem Feedback dynamisch anzugeben. In diesem Beispiel muss der umschaltschalter auf ON festgelegt werden, damit das Feedback aktiviert wird, während der Schieberegler-Wert angibt, wie oft das Click-Feedback wiederholt wird. 
 
 > [!NOTE]
-> Haptisches Feedback kann vom Benutzer auf der Seite mit den **Einstellungen**für Geräte deaktiviert werden  >   **Devices**  >  **Wheel** .
+> Haptisches Feedback kann vom Benutzer auf der Seite mit den **Einstellungen** für Geräte deaktiviert werden  >   **Devices**  >  **Wheel** .
 
 1. Öffnen Sie die Datei App.xaml.cs.
 2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist ("Schritt 6: Anpassen der Geräte Haptik").
@@ -611,7 +611,7 @@ Um dies in Aktion zu sehen (Sie benötigen ein Surface Studio):
 
 ## <a name="summary"></a>Zusammenfassung
 
-Herzlichen Glückwunsch, Sie haben das Tutorial für die ersten Schritte abgeschlossen *: Unterstützung der Oberfläche (und anderer radgeräte) in Ihrer Windows-App*! Wir haben Ihnen den grundlegenden Code gezeigt, der für die Unterstützung eines radgeräts in Ihren Windows-apps erforderlich ist, und die Bereitstellung einiger der umfassenderen Benutzeroberflächen, die von den **radialcontroller** -APIs unterstützt werden
+Herzlichen Glückwunsch, Sie haben das Tutorial für die ersten Schritte abgeschlossen *: Unterstützung der Oberfläche (und anderer radgeräte) in Ihrer Windows-App* ! Wir haben Ihnen den grundlegenden Code gezeigt, der für die Unterstützung eines radgeräts in Ihren Windows-apps erforderlich ist, und die Bereitstellung einiger der umfassenderen Benutzeroberflächen, die von den **radialcontroller** -APIs unterstützt werden
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
@@ -638,7 +638,7 @@ Herzlichen Glückwunsch, Sie haben das Tutorial für die ersten Schritte abgesch
 
 [Radialcontroller-Anpassung](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip)
 
-#### <a name="other-samples"></a>Andere Beispiele
+#### <a name="other-samples"></a>Weitere Beispiele
 [Beispiel für ein Farb Buch](https://github.com/Microsoft/Windows-appsample-coloringbook)
 
 [Universelle Windows-Plattform – Beispiele (C# und C++)](https://github.com/Microsoft/Windows-universal-samples/tree/b78d95134ce2d57c848e0a8dc339fc362748fb9c/Samples/RadialController)

@@ -6,12 +6,12 @@ ms.date: 01/25/2018
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Einstieg
 localizationpriority: medium
-ms.openlocfilehash: 7d3e50f5d32cd8c6a497ff3de67005972d3a0f7f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3368186fdf860df48d7ae49e08d47e1abf667aa3
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175314"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339448"
 ---
 # <a name="getting-started"></a>Erste Schritte
 
@@ -37,7 +37,7 @@ Wenn Sie beabsichtigen, eine Spiele-Engine und andere Middleware zu verwenden, f
 
 ### <a name="step-2-prepare-your-hardware-for-development"></a>Schritt 2: Vorbereiten der Hardware für die Entwicklung
 
-Wenn Sie die Entwicklung zum ersten Mal durchgeführt haben, müssen Sie den Entwicklermodus auf Ihrem Gerät aktivieren. Weitere Informationen finden Sie unter [Aktivieren von Geräten für die Entwicklung](../get-started/enable-your-device-for-development.md).
+Wenn Sie die Entwicklung zum ersten Mal durchgeführt haben, müssen Sie den Entwicklermodus auf Ihrem Gerät aktivieren. Weitere Informationen finden Sie unter [Aktivieren von Geräten für die Entwicklung](/windows/apps/get-started/enable-your-device-for-development).
 
 Für diejenigen, die die Entwicklung eines Xbox-Spiels mithilfe der Xbox Console im Einzelhandel planen, müssen Sie auch den Entwicklermodus auf diesem aktivieren und aktivieren. Weitere Informationen finden Sie im Thema zum [Aktivieren von Xbox One-Entwicklermodus](../xbox-apps/devkit-activation.md) und ersten Schritten [mit der UWP-App-Entwicklung auf Xbox](../xbox-apps/getting-started.md). 
 

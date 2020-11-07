@@ -6,12 +6,12 @@ keywords: frei Hand Eingaben, Tutorial
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f726f4ab4a422cc94f00493261620ddff8b6122b
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: fb74b5d15b731a6b08a0adcec20a801b7e133a7f
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860198"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339818"
 ---
 # <a name="tutorial-support-ink-in-your-windows-app"></a>Tutorial: unterstützen von Freihand in Ihrer Windows-App
 
@@ -40,7 +40,7 @@ Mit Windows Ink können Sie Ihren Kunden die digitale Entsprechung von fast jede
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Abhängig von Ihrer Konfiguration müssen Sie möglicherweise das nuget-Paket [Microsoft. Netcore. universalwindowsplatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) installieren und den **Entwicklermodus** in Ihren Systemeinstellungen aktivieren (Einstellungen-> Update & Security-> für Entwickler, > Entwickler Features verwenden).
 * Wenn Sie mit der Entwicklung von Windows-apps mit Visual Studio noch nicht vertraut sind, sehen Sie sich diese Themen an, bevor Sie mit diesem Tutorial beginnen:  
-    * [Vorbereiten](../../get-started/get-set-up.md)
+    * [Vorbereiten](/windows/apps/get-started/get-set-up)
     * [Erstellen der App „Hello, world“ (XAML)](../../get-started/create-a-hello-world-app-xaml-universal.md)
 * **[Optional]** Ein digitaler Stift und ein Computer mit einer Anzeige, die Eingaben von diesem digitalen Stift unterstützt.
 
@@ -79,7 +79,7 @@ Nachdem Sie die radialcontroller-Beispiel-App heruntergeladen haben, vergewisser
 3. Drücken Sie F5, um zu kompilieren, bereitzustellen und auszuführen.  
 
    > [!NOTE]
-   > Alternativ können Sie **Debug**  >  das Menü Element**Debuggen Debuggen starten** auswählen oder die hier angezeigte Schaltfläche **lokaler Computer** ausführen auswählen.
+   > Alternativ können Sie **Debug**  >  das Menü Element **Debuggen Debuggen starten** auswählen oder die hier angezeigte Schaltfläche **lokaler Computer** ausführen auswählen.
    > ![Schaltfläche zum Erstellen eines Projekts in Visual Studio.](images/ink/ink-vsrun-small.png)
 
 Das App-Fenster wird geöffnet, und nachdem ein Begrüßungsbildschirm für einige Sekunden angezeigt wird, sehen Sie diesen ersten Bildschirm.
@@ -211,8 +211,8 @@ In diesem Schritt verwenden wir die Handschrifterkennungsfunktionen von Windows 
 
 > [!NOTE]
 > Die Handschrifterkennung kann über den **Stift & Windows-Ink** -Einstellungen verbessert werden:
-> 1. Öffnen Sie das Startmenü, und wählen Sie **Einstellungen**aus.
-> 2. Wählen Sie im Bildschirm "Einstellungen" die Option **Geräte**  >  **Stift & Windows**frei.
+> 1. Öffnen Sie das Startmenü, und wählen Sie **Einstellungen** aus.
+> 2. Wählen Sie im Bildschirm "Einstellungen" die Option **Geräte**  >  **Stift & Windows** frei.
 > ![Screenshot der Seite "Stift & Windows-Ink-Einstellungen".](images/ink/ink-settings-small.png)
 > 3. Wählen Sie **Get to Know Your Hand Hand** , um das Dialogfeld für die **Handschrift Personalisierung** zu öffnen
 > ![Screenshot des Dialog Felds "Handschrift Erkennungs Personalisierung".](images/ink/ink-settings-handwritingpersonalization-small.png)

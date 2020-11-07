@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Spieleentwicklung
 ms.localizationpriority: medium
-ms.openlocfilehash: c6cae9e2416eb992815f098649d6b02ee472da14
-ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
+ms.openlocfilehash: be63c7ec1e682924e2364a2c6ea8e4d2d81dee3f
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92192970"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339508"
 ---
 # <a name="windows-10-game-development-guide"></a>Handbuch zur Entwicklung von Spielen unter Windows 10
 
@@ -217,15 +217,15 @@ Für Windows 10-Spiele und -Apps stehen zahlreiche Beispiele zur Verfügung, die
     </tr>
     <tr>
         <td>JavaScript-Beispiel für 2D-Spiel</td>
-        <td><a href="../get-started/get-started-tutorial-game-js2d.md">Erstellen eines UWP-Spiels in JavaScript</a></td>
+        <td><a href="/windows/uwp/get-started/">Erstellen eines UWP-Spiels in JavaScript</a></td>
     </tr>
     <tr>
         <td>JavaScript 3D-Spielbeispiel</td>
-        <td><a href="../get-started/get-started-tutorial-game-js3d.md">Erstellen eines 3D-JavaScript-Spiels mit „three.js“</a></td>
+        <td><a href="/windows/uwp/get-started/">Erstellen eines 3D-JavaScript-Spiels mit „three.js“</a></td>
     </tr>
     <tr>
         <td>Monogame 2D UWP-Spielbeispiel</td>
-        <td><a href="../get-started/get-started-tutorial-game-mg2d.md">Erstellen eines UWP-Spiels in MonoGame-2D</a></td>
+        <td><a href="/windows/uwp/get-started/">Erstellen eines UWP-Spiels in MonoGame-2D</a></td>
     </tr>
 </table>
 
@@ -512,7 +512,7 @@ C# (sprich: „C sharp“) ist eine moderne, innovative Sprache, die einfach, le
     </colgroup>
     <tr>
         <td>C#-Programmieranleitung und -Referenz</td>
-        <td><a href="/dotnet/articles/csharp/csharp">C#-Sprachreferenz</a></td>
+        <td><a href="/dotnet/articles/csharp/csharp">C#-Programmiersprachenreferenz</a></td>
     </tr>
 </table>
 
@@ -752,7 +752,7 @@ MonoGame ist ein plattformübergreifendes Open-Source-Framework für die Spielee
     </tr>
     <tr>
         <td>Monogame 2D UWP-Spielbeispiel</td>
-        <td><a href="../get-started/get-started-tutorial-game-mg2d.md">Erstellen eines UWP-Spiels in MonoGame-2D</a></td>
+        <td><a href="/windows/uwp/get-started/">Erstellen eines UWP-Spiels in MonoGame-2D</a></td>
     </tr>
 </table>
 
@@ -970,7 +970,7 @@ Wenn Sie noch keine Erfahrungen mit der UWP-Programmierung haben und die Verwend
     </tr>
 </table>
 
-### <a name="windows-desktop-apisto-uwp"></a>Windows-Desktop-APIs für UWP
+### <a name="windows-desktop-apis-to-uwp"></a>Windows-Desktop-APIs für UWP
 
 Dies sind einige Links, mit denen Sie Ihr Windows-Desktop Spiel auf UWP umstellen können.
 
@@ -1267,7 +1267,7 @@ Dies sind einige zusätzliche DirectX-Dokumentationen, die von externen Partnern
     </tr>
 </table>
 
-## <a name="production"></a>Bereitstellung
+## <a name="production"></a>Produktion
 
 Ihr Studio ist jetzt vollständig eingebunden und beginnt mit dem Produktionszyklus, wobei die Arbeiten auf die einzelnen Teammitglieder aufgeteilt werden. Der Prototyp wird optimiert, überarbeitet und erweitert, um ein vollständiges Spiel zu erhalten.
 

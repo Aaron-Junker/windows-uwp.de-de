@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 76d52fe3ed7e7fb74ae5338e589ab34751bedebe
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8cbf82592e91b82e2d9d34d116d00aecf2ddd021
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173664"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339408"
 ---
 # <a name="my-people-sharing"></a>Freigeben von „Meine Kontakte”
 
@@ -20,7 +20,7 @@ Mit der Funktion "meine Personen" können Benutzer Kontakte an Ihre Taskleiste a
 
 ## <a name="requirements"></a>Anforderungen
 
-+ Windows 10 und Microsoft Visual Studio 2019. Weitere Informationen zur Installation finden Sie unter [Einrichten von Visual Studio](../get-started/get-set-up.md).
++ Windows 10 und Microsoft Visual Studio 2019. Weitere Informationen zur Installation finden Sie unter [Einrichten von Visual Studio](/windows/apps/get-started/get-set-up).
 + Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache. Informationen zu den ersten Schritten mit c# finden Sie unter [Erstellen einer "Hello, World"-App](../get-started/create-a-hello-world-app-xaml-universal.md).
 
 ## <a name="overview"></a>Übersicht
@@ -37,7 +37,7 @@ Wenn Sie dies abgeschlossen haben, wird die Anwendung als Freigabe Ziel im Freig
 
 ## <a name="declaring-support-for-the-share-contract"></a>Deklarieren der Unterstützung für den Freigabe Vertrag
 
-Um die Unterstützung für Ihre Anwendung als Freigabe Ziel zu deklarieren, öffnen Sie zuerst die Anwendung in Visual Studio. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf **Package. appxmanifest** , und wählen Sie **Öffnen mit**aus. Wählen Sie im Menü **XML (Text)-Editor** aus, und klicken Sie auf **OK**. Nehmen Sie dann die folgenden Änderungen am Manifest vor:
+Um die Unterstützung für Ihre Anwendung als Freigabe Ziel zu deklarieren, öffnen Sie zuerst die Anwendung in Visual Studio. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Package. appxmanifest** , und wählen Sie **Öffnen mit** aus. Wählen Sie im Menü **XML (Text)-Editor** aus, und klicken Sie auf **OK**. Nehmen Sie dann die folgenden Änderungen am Manifest vor:
 
 
 **Vorher**

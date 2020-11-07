@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c7f0e1ba5c78ce41a5326d3643b5afe80f380b3c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d343b2da4bdfee73479c3b5f3c45fd56a92ada35
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155174"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339788"
 ---
 # <a name="walkthrough-of-creating-a-ccx-windows-runtime-component-and-calling-it-from-javascript-or-c"></a>Exemplarische Vorgehensweise zum Erstellen einer Komponente für Windows-Runtime in C++/CX und Aufrufen der Komponente über JavaScript oder C#
 
@@ -26,16 +26,16 @@ In diesem Beispiel erstellen wir zunächst das Komponentenprojekt. Sie können a
 Beachten Sie, dass die Hauptklasse der Komponente Beispiele für Eigenschafts- und Methodendefinitionen sowie eine Ereignisdeklaration enthält. Diese werden nur aus Gründen der Anschaulichkeit bereitgestellt. Sie sind nicht erforderlich, und in diesem Beispiel ersetzen wir den gesamten generierten Code durch unseren eigenen Code.
 
 ### <a name="to-create-the-c-component-project"></a>**So erstellen Sie das C++-Komponentenprojekt**
-1. Wählen Sie in der Visual Studio-Menüleiste **Datei, neu und Projekt**aus.
+1. Wählen Sie in der Visual Studio-Menüleiste **Datei, neu und Projekt** aus.
 
-2. Erweitern Sie im Dialogfeld **Neues Projekt** im linken Bereich **Visual C++**, und wählen Sie dann den Knoten für universelle Windows-Apps aus.
+2. Erweitern Sie im Dialogfeld **Neues Projekt** im linken Bereich **Visual C++** , und wählen Sie dann den Knoten für universelle Windows-Apps aus.
 
 3. Wählen Sie im mittleren Bereich **Windows-Runtime Komponente** aus, und benennen Sie das Projekt mit WinRT \_ cpp.
 
 4. Klicken Sie auf die Schaltfläche **OK** .
 
 ## <a name="to-add-an-activatable-class-to-the-component"></a>**So fügen Sie der Komponente eine aktivierbare Klasse hinzu**
-Eine aktivierbare Klasse kann vom Clientcode mithilfe eines **new**-Ausdrucks (**New** in Visual Basic oder **ref new** in C++) erstellt werden. In der Komponente können Sie sie als **public ref class sealed** deklarieren. Die Class1.h- und CPP-Dateien verfügen bereits über eine Verweisklasse. Sie können den Namen ändern, aber in diesem Beispiel verwenden wir den Standardnamen – Class1. Sie können zusätzliche Verweisklassen oder Standardklassen in der Komponente definieren, falls sie benötigt werden. Weitere Informationen zu Verweisklassen finden Sie unter [Typsystem (C++/CX)](/cpp/cppcx/type-system-c-cx).
+Eine aktivierbare Klasse kann vom Clientcode mithilfe eines **new** -Ausdrucks ( **New** in Visual Basic oder **ref new** in C++) erstellt werden. In der Komponente können Sie sie als **public ref class sealed** deklarieren. Die Class1.h- und CPP-Dateien verfügen bereits über eine Verweisklasse. Sie können den Namen ändern, aber in diesem Beispiel verwenden wir den Standardnamen – Class1. Sie können zusätzliche Verweisklassen oder Standardklassen in der Komponente definieren, falls sie benötigt werden. Weitere Informationen zu Verweisklassen finden Sie unter [Typsystem (C++/CX)](/cpp/cppcx/type-system-c-cx).
 
 Fügen Sie \# Class1. h diese include-Direktiven hinzu:
 
@@ -275,7 +275,7 @@ Wenn Sie einen c#-Client erstellen möchten, können Sie diesen Abschnitt übers
 > Universelle Windows-Plattform-Projekte (UWP) werden in Visual Studio 2019 nicht unterstützt. Weitere Informationen finden Sie [unter JavaScript und typescript in Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019?view=vs-2019#projects). Zum Befolgen dieses Abschnitts wird die Verwendung von Visual Studio 2017 empfohlen. Weitere Informationen finden Sie [unter JavaScript in Visual Studio 2017](/visualstudio/javascript/javascript-in-vs-2017).
 
 ### <a name="to-create-a-javascript-project"></a>So erstellen Sie ein JavaScript-Projekt
-1. Öffnen Sie in Projektmappen-Explorer (in Visual Studio 2017; siehe **Hinweis** oben) das Kontextmenü für den Projektmappenknoten, und wählen Sie **hinzufügen, neues Projekt**aus.
+1. Öffnen Sie in Projektmappen-Explorer (in Visual Studio 2017; siehe **Hinweis** oben) das Kontextmenü für den Projektmappenknoten, und wählen Sie **hinzufügen, neues Projekt** aus.
 
 2. Erweitern Sie „JavaScript“ (kann unter **Andere Sprachen** verschachtelt sein), und wählen Sie **Leere App (universelle Windows-App)** aus.
 
@@ -426,7 +426,7 @@ function ButtonClear_Click() {
 }
 ```
 
-Fügen Sie Code zum Hinzufügen von Ereignis-Listenern durch Ersetzen des vorhandenen Aufrufs von „WinJS.UI.processAll“ in „app.onactivated“ in „default.js“ durch den folgenden Code hinzu, der die Ereignisregistrierung in einem „then“-Block implementiert. Eine ausführliche Erläuterung hierzu finden Sie unter [Erstellen einer "Hello, World"-app (JS)](../get-started/create-a-hello-world-app-js-uwp.md).
+Fügen Sie Code zum Hinzufügen von Ereignis-Listenern durch Ersetzen des vorhandenen Aufrufs von „WinJS.UI.processAll“ in „app.onactivated“ in „default.js“ durch den folgenden Code hinzu, der die Ereignisregistrierung in einem „then“-Block implementiert. Eine ausführliche Erläuterung hierzu finden Sie unter [Erstellen einer "Hello, World"-app (JS)](/windows/apps/get-started/).
 
 ```JavaScript
 args.setPromise(WinJS.UI.processAll().then( function completed() {
@@ -456,7 +456,7 @@ Drücken Sie F5, um die App auszuführen.
 
 5. Fügen Sie einen Projektverweis zu WinRT_CPP hinzu:
 
-   - Öffnen Sie das Kontextmenü für den Knoten **Verweise** , und wählen Sie **Verweis hinzufügen**aus.
+   - Öffnen Sie das Kontextmenü für den Knoten **Verweise** , und wählen Sie **Verweis hinzufügen** aus.
 
    - Klicken Sie im linken Bereich des Dialog Felds **Verweis-Manager** auf **Projekte** , und wählen Sie dann Projekt Mappe **aus.**
 
@@ -598,7 +598,7 @@ Im Objektkatalog können Sie alle Windows-Runtime-Typen untersuchen, die in WINM
 Laden Sie für einen besseren Debugvorgang die Debuggingsymbole von den öffentlichen Microsoft-Symbolservern herunter:
 
 ### <a name="to-download-debugging-symbols"></a>**So laden Sie Debuggingsymbole herunter**
-1. Wählen Sie in der Menüleiste Extras **, Optionen**aus.
+1. Wählen Sie in der Menüleiste Extras **, Optionen** aus.
 
 2. Erweitern Sie im Dialogfeld **Optionen** die Option **Debuggen** , und wählen Sie **Symbole** aus.
 
@@ -614,5 +614,5 @@ Wenn der JavaScript-Code die öffentlichen Eigenschaften oder Methoden in der Ko
 
 Wenn Sie ein C++-Komponentenprojekt für Windows-Runtime aus einer Projektmappe entfernen, müssen Sie den Projektverweis auch aus dem JavaScript-Projekt manuell entfernen. Andernfalls werden nachfolgende Debug- oder Buildvorgänge verhindert. Bei Bedarf können Sie dann einen Assemblyverweis zur DLL-Datei hinzufügen.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 * [Komponenten für Windows-Runtime mit C++/CX](creating-windows-runtime-components-in-cpp.md)
