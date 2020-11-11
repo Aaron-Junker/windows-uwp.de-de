@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a8b6113294d3f3c0c98946f0fed407e36de8a563
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: c0f18feed166ea775f540a28fd873d7e81083cf0
+ms.sourcegitcommit: 4fffc66fac18fc4c80281e2a4afa9c4f2e1f7551
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93035063"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94513689"
 ---
 # <a name="guidelines-for-touch-targets"></a>Richtlinien für Touch-Ziele
 
@@ -66,7 +66,7 @@ Compact Sizing kann auf Seiten-oder Rasterebene angewendet werden.
 
 Legen Sie im Allgemeinen die Größe des touchziels auf einen quadratischen Bereich von 7,5 mm fest (40 x 40 Pixel auf einer 135-ppi-Anzeige auf einem 1.0 x-Skalierungs Plateau). UWP-Steuerelemente entsprechen in der Regel dem 7,5-mm-Berührungs Ziel (Dies kann je nach dem spezifischen Steuerelement und allen gängigen Verwendungs Mustern variieren). Weitere Details finden Sie unter [Steuerelement Größe und Dichte](../style/spacing.md) .
 
-Sie können diese Empfehlungen für die Zielgröße an die Anforderungen des jeweiligen Szenarios anpassen. Folgende Punkte sollten berücksichtigt werden:
+Sie können diese Empfehlungen für die Zielgröße an die Anforderungen des jeweiligen Szenarios anpassen. Nachfolgend sind einige Dinge aufgeführt, die Sie bedenken sollten:
 
 - Häufigkeit von Berührungen: Stellen Sie sich vor, dass Ziele, die wiederholt oder häufig gedrückt werden, die minimale Größe überschreiten.
 - Fehler Folge: Ziele, die schwerwiegende Folgen haben, wenn Sie bei einem Fehler berührt werden, sollten größere Abstände aufweisen und am Rand des Inhalts Bereichs weiter platziert werden. Dies gilt insbesondere für Ziele, die häufig berührt werden.
@@ -95,6 +95,5 @@ Sie können diese Empfehlungen für die Zielgröße an die Anforderungen des jew
 - [Eingabe: Beispiel für Fingereingabe-Treffertests](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
 - [Beispiel für XAML-scrollen, Schwenken und Zoomen](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
 - [Eingabe: vereinfachtes Freihandbeispiel](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
-- [Eingabe: Beispiel für Windows 8-Bewegungen](/samples/browse/?redirectedfrom=MSDN-samples)
 * [Eingabe: Manipulationen und Gesten (Beispiel)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [Beispiel für die DirectX-Fingereingabe](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))
