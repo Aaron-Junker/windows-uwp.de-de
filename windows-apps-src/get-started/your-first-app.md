@@ -6,12 +6,12 @@ ms.date: 10/13/2020
 ms.topic: article
 keywords: Windows 10, UWP, erste App, C#, C++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a5491ef0e57399c9465697f933aa8fff92664cd
-ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
+ms.openlocfilehash: fe802fca1b17b49c11bf74b54f74d3b3107e6a9c
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92011374"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339768"
 ---
 # <a name="create-your-first-app"></a>Erstellen Ihrer ersten App
 
@@ -41,7 +41,7 @@ Weitere Informationen zu C++/WinRT.
 
 * [C++/WinRT](../cpp-and-winrt-apis/index.md)
 
-## <a name="visualc-component-extensions-ccx-and-xaml"></a>Visual C++-Komponentenerweiterungen (C++/CX) und XAML
+## <a name="visual-c-component-extensions-ccx-and-xaml"></a>Visual C++-Komponentenerweiterungen (C++/CX) und XAML
 
 Greifen Sie auf Ihre C++-Programmierkenntnisse zurück, um Apps mit Visual C++-Komponentenerweiterungen (C++/CX) und XAML (Extensible Application Markup Language) zu erstellen.
 
@@ -57,7 +57,7 @@ Weitere Informationen zu C++ finden Sie hier.
 Wenn Sie bereit sind, um etwas Anspruchsvolleres als „Hello, World!“ auszuprobieren, probieren Sie diese Tutorials.
 
 * [Tutorial: Erstellen einer Benutzeroberfläche](../design/basics/xaml-basics-ui.md)
-* [Windows-Apps auf Microsoft Learn](https://docs.microsoft.com/learn/browse/?products=windows)
+* [Windows-Apps auf Microsoft Learn](/learn/browse/?products=windows)
 
 ## <a name="see-also"></a>Weitere Informationen
 

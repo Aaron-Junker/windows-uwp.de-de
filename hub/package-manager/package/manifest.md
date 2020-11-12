@@ -4,12 +4,12 @@ description: Wenn Sie ein Softwarepaket an das Windows-Paket-Manager-Repository 
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a3a1acebf2b48e767fbd16998967145976305434
-ms.sourcegitcommit: 94841d1d59703897b42b11597c28a9d966626f47
+ms.openlocfilehash: c0c01d87dc7e02b356a4fba20b01519e3361b28a
+ms.sourcegitcommit: 36ae65013da22930c8e838fc65a63564a0bafee2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110564"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94377796"
 ---
 # <a name="create-your-package-manifest"></a>Erstellen des Paketmanifests
 
@@ -166,7 +166,7 @@ ManifestVersion: 0.1.0
 
 ## <a name="installer-switches"></a>Installer-Switches
 
-Sie können oft herausfinden, welche automatischen `Switches` für ein Installationsprogramm verfügbar sind, indem Sie ein `-?` über die Befehlszeile an das Installationsprogramm übergeben. Hier sehen Sie einige gebräuchliche automatische `Swtiches`, die für verschiedene Installertypen verwendet werden können.
+Sie können oft herausfinden, welche automatischen `Switches` für ein Installationsprogramm verfügbar sind, indem Sie ein `-?` über die Befehlszeile an das Installationsprogramm übergeben. Hier sehen Sie einige gebräuchliche automatische `Switches`, die für verschiedene Installertypen verwendet werden können.
 
 | Installer | Befehl  | Dokumentation |  
 | :--- | :-- | :--- |  
@@ -177,7 +177,7 @@ Sie können oft herausfinden, welche automatischen `Switches` für ein Installat
 
 ## <a name="tips-and-best-practices"></a>Tipps und bewährte Methoden
 
-* Um eine optimale Benutzerfreundlichkeit der Such- und Installationsfunktionen für Ihre Software zu erzielen, wird empfohlen, dass Sie über das erforderliche Schema hinaus so viele optionale Elemente wie möglich einschließen. Beispielsweise ist das Feld `AppMoniker` optional. Wenn Sie dieses Feld jedoch einschließen, werden Kunden Ergebnisse angezeigt, die dem `AppMoniker`-Wert zugeordnet sind, wenn Sie den Befehl [search](../winget/search.md) ausführen (z. B. **vscode** für **Visual Studio Code**). Wenn nur eine App mit dem angegebenen `AppMoniker`-Wert vorhanden ist, können Kunden die Anwendung installieren, indem Sie anstelle der vollqualifizierten ID den Moniker angeben.
+* Um eine optimale Benutzerfreundlichkeit der Such- und Installationsfunktionen für Ihre Software zu erzielen, wird empfohlen, dass Sie über das erforderliche Schema hinaus so viele optionale Elemente wie möglich einschließen. Beispielsweise ist das Feld `AppMoniker` optional. Wenn Sie dieses Feld jedoch einschließen, werden Kunden Ergebnisse angezeigt, die dem `AppMoniker`-Wert zugeordnet sind, wenn Sie den Befehl [search](../winget/search.md) ausführen (z. B. **vscode** für **Visual Studio Code** ). Wenn nur eine App mit dem angegebenen `AppMoniker`-Wert vorhanden ist, können Kunden die Anwendung installieren, indem Sie anstelle der vollqualifizierten ID den Moniker angeben.
 * Die `Id` muss eindeutig sein. Mehrere Übermittlungen mit dem gleichen Paketbezeichner sind nicht zulässig. Vermeiden Sie Leerzeichen, da Benutzer die `Id` ansonsten in Anführungszeichen setzen müssen, wenn Sie den [winget](../index.md)-Client verwenden.
 * Vermeiden Sie das Erstellen mehrerer Ordner für den Herausgeber. Erstellen Sie z. B. keinen Ordner „Contoso Ltd“, wenn der Ordner „Contoso“ bereits vorhanden ist. Vermeiden Sie Leerzeichen auch beim Erstellen von Ordnern.
 * Wenn möglich, sollten alle Pakete mit einer unbeaufsichtigten Installation übermittelt werden. Wenn Sie über eine ausführbare Datei verfügen, die keine unbeaufsichtigte Installation unterstützt, beeinträchtigt dies die Benutzerfreundlichkeit.

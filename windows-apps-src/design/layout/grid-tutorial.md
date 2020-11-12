@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
-ms.openlocfilehash: 03b3a4342e4f464cb61cddc495ee5693570cd28b
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: a75023629054b680ec1444f6b24328c18ffcd0b5
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034823"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339728"
 ---
 # <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>Tutorial: Verwenden von Grid und StackPanel, um eine einfache Wetter-App zu erstellen
 
@@ -21,7 +21,7 @@ Verwenden Sie zum Erstellen des Layouts für eine einfache Wetter-App mit XAML d
 > **Wichtige APIs:** [Grid-Klasse](/uwp/api/windows.ui.xaml.controls.grid), [StackPanel-Klasse](/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## <a name="prerequisites"></a>Voraussetzungen
-- Windows 10 und Microsoft Visual Studio ab 2015. (Neueste Visual Studio-Version für aktuelle Entwicklungs- und Sicherheitsupdates empfohlen) [Klicke hier, um zu erfahren, wie Visual Studio eingerichtet wird](../../get-started/get-set-up.md).
+- Windows 10 und Microsoft Visual Studio ab 2015. (Neueste Visual Studio-Version für aktuelle Entwicklungs- und Sicherheitsupdates empfohlen) [Klicke hier, um zu erfahren, wie Visual Studio eingerichtet wird](/windows/apps/get-started/get-set-up).
 - Kenntnisse im Erstellen einer einfachen „Hello, World“-App mit XAML und C#. Wenn du noch keine hast, [klicke hier, um zu erfahren, wie eine „Hello World“-App erstellt wird](../../get-started/create-a-hello-world-app-xaml-universal.md).
 
 ## <a name="step-1-create-a-blank-app"></a>Schritt 1: Erstellen einer leeren App

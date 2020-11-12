@@ -6,20 +6,20 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, UWP, erste App, Hello world
 ms.localizationpriority: medium
-ms.openlocfilehash: dda1c0f9a7b61c13965ff2f71c8100a8e771bd7d
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: b602970b2b1f37a4511e2a87eb1be72fba7f5423
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860080"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339838"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Erstellen einer „Hello, World“- App (XAML)
 
-In diesem Tutorial erfährst du, wie du XAML und C# zum Erstellen einer einfachen App vom Typ „Hello, world“ für die universelle Windows-Plattform (UWP) unter Windows 10 verwendest. Mit nur einem Projekt in Microsoft Visual Studio kannst du eine App erstellen, die auf allen Geräten mit Windows 10 ausgeführt werden kann.
+In diesem Lernprogramm erfahren Sie, wie Sie XAML und C# zum Erstellen einer einfachen „Hello, World“-App für die universelle Windows-Plattform (UWP) unter Windows 10 verwenden. Mit nur einem Projekt in Microsoft Visual Studio können Sie eine App erstellen, die auf allen Geräten mit Windows 10 ausgeführt werden kann.
 
 Hier erfahren Sie Folgendes:
 
--   Erstellen eines neuen **Visual Studio**-Projekts für **Windows 10** und die **UWP**
+-   Erstellen eines neuen **Visual Studio** -Projekts für **Windows 10** und die **UWP**
 -   Schreiben Sie XAML zum Ändern der UI auf der Startseite.
 -   Ausführen des Projekts auf dem lokalen Desktop in Visual Studio
 -   Verwenden Sie einen SpeechSynthesizer, um die App sprechen zu lassen, wenn Sie auf eine Schaltfläche klicken.
@@ -28,7 +28,7 @@ Hier erfahren Sie Folgendes:
 ## <a name="before-you-start"></a>Vorbereitung
 
 -   [Was ist eine universelle Windows-App?](universal-application-platform-guide.md)
--   [Visual Studio 2017 (und Windows 10) herunterladen](https://developer.microsoft.com/windows/downloads). [Hier](get-set-up.md) findest du hilfreiche Informationen zur Einrichtung.
+-   [Visual Studio 2017 (und Windows 10) herunterladen](https://developer.microsoft.com/windows/downloads). [Hier](/windows/apps/get-started/get-set-up) findest du hilfreiche Informationen zur Einrichtung.
 -   Außerdem wird davon ausgegangen, dass Sie das Standardfensterlayout in Visual Studio verwenden. Wenn Sie das Standardlayout ändern, können Sie es im Menü **Fenster** mit dem Befehl **Fensterlayout zurücksetzen** wiederherstellen.
 
 > [!NOTE]
@@ -46,7 +46,7 @@ Hier erfahren Sie Folgendes:
 
 3.  Wähle in der Liste der Vorlagen auf der linken Seite **Installiert > Visual C# > Windows Universal** aus, um eine Liste der UWP-Projektvorlagen anzuzeigen.
 
-    (Werden keine universellen Vorlagen angezeigt, fehlen möglicherweise die Komponenten zum Erstellen von UWP-Apps. Du kannst die Installation wiederholen und UWP-Unterstützung hinzufügen, indem du im Dialogfeld *Neues Projekt* auf **Visual Studio-Installer öffnen** klickst. Siehe [Vorbereiten](get-set-up.md))
+    (Werden keine universellen Vorlagen angezeigt, fehlen möglicherweise die Komponenten zum Erstellen von UWP-Apps. Du kannst die Installation wiederholen und UWP-Unterstützung hinzufügen, indem du im Dialogfeld *Neues Projekt* auf **Visual Studio-Installer öffnen** klickst. Siehe [Vorbereiten](/windows/apps/get-started/get-set-up))
 
     ![So wiederholst du den Installationsvorgang](images/win10-cs-install.png)
 
@@ -55,7 +55,7 @@ Hier erfahren Sie Folgendes:
     ![Das Fenster für ein neues Projekt](images/win10-cs-01.png)
 
 > [!NOTE]
-> Wenn du Visual Studio zum ersten Mal verwendest, wird möglicherweise das Dialogfeld „Einstellungen“ angezeigt, in dem du zur Aktivierung von **Entwicklermodus** aufgefordert wirst. Der Entwicklermodus ist eine spezielle Einstellung, die bestimmte Features unterstützt, z. B. die direkte Ausführung von Apps und nicht nur die Ausführung aus dem Store. Weitere Informationen findest du unter [Aktivieren deines Geräts für die Entwicklung](enable-your-device-for-development.md). Wähle **Entwicklermodus** aus, klicke auf **Ja**, und schließe das Dialogfeld, um mit dem Tutorial fortzufahren.
+> Wenn du Visual Studio zum ersten Mal verwendest, wird möglicherweise das Dialogfeld „Einstellungen“ angezeigt, in dem du zur Aktivierung von **Entwicklermodus** aufgefordert wirst. Der Entwicklermodus ist eine spezielle Einstellung, die bestimmte Features unterstützt, z. B. die direkte Ausführung von Apps und nicht nur die Ausführung aus dem Store. Weitere Informationen findest du unter [Aktivieren deines Geräts für die Entwicklung](/windows/apps/get-started/enable-your-device-for-development). Wähle **Entwicklermodus** aus, klicke auf **Ja** , und schließe das Dialogfeld, um mit dem Tutorial fortzufahren.
 
  ![Dialogfeld zum Aktivieren des Entwicklermodus](images/win10-cs-00.png)
 
@@ -106,7 +106,7 @@ Doppelklicken Sie zum Anzeigen und Bearbeiten einer Datei im Projekt im **Projek
 
 Fügen wir nun der Seite eine Schaltfläche hinzu. In diesem Tutorial verwendest du lediglich einige der zuvor aufgeführten Dateien: „App.xaml“, „MainPage.xaml“ und „MainPage.xaml.cs“.
 
-1.  Doppelklicken Sie auf die Datei **MainPage.xaml**, um sie in der Entwurfsansicht zu öffnen.
+1.  Doppelklicken Sie auf die Datei **MainPage.xaml** , um sie in der Entwurfsansicht zu öffnen.
 
     Sie werden feststellen, dass eine grafische Ansicht im oberen Teil des Bildschirms und die XAML-Codeansicht darunter vorhanden ist. Sie können jeweils Änderungen vornehmen, wir verwenden jetzt jedoch die grafische Ansicht.
 
@@ -116,7 +116,7 @@ Fügen wir nun der Seite eine Schaltfläche hinzu. In diesem Tutorial verwendest
 
     ![Screenshot des Toolboxbereichs mit einem roten Pfeil, der auf das Symbol „Anheften“ zeigt.](images/win10-cs-05.png)
 
-3.  Erweitern Sie **Häufig verwendete XAML-Steuerelemente**, und ziehen Sie die **Schaltfläche** in die Mitte der Design-Canvas.
+3.  Erweitern Sie **Häufig verwendete XAML-Steuerelemente** , und ziehen Sie die **Schaltfläche** in die Mitte der Design-Canvas.
 
     ![Screenshot des Toolboxbereichs und der „Main Page X A M L“-Designansicht mit der hervorgehobenen Schaltflächenoption im Toolboxbereich und einer Schaltfläche in der Designansicht.](images/win10-cs-06.png)
 
@@ -198,7 +198,7 @@ Viel zu bieten hat die App zwar noch nicht, aber trotzdem: Herzlichen Glückwuns
 
   Natürlich können Sie den gesamten Code auch manuell erstellen. Oder Sie klicken zum Auswählen auf die Schaltfläche und suchen im Bereich **Eigenschaften** unten rechts. Wenn Sie zu **Ereignisse** (kleiner Gewitterblitz) wechseln, können Sie den Namen des Ereignishandlers hinzufügen.
 
-3.  Bearbeiten Sie den Ereignishandlercode in *MainPage.xaml.cs*, der CodeBehind-Seite. An dieser Stelle wird die Sache interessant. Der Standard-Ereignishandler sieht wie folgt aus:
+3.  Bearbeiten Sie den Ereignishandlercode in *MainPage.xaml.cs* , der CodeBehind-Seite. An dieser Stelle wird die Sache interessant. Der Standard-Ereignishandler sieht wie folgt aus:
 
 ```cs
 private void Button_Click(object sender, RoutedEventArgs e)
@@ -220,7 +220,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Gib nun unbedingt das **async**-Schlüsselwort in der Methodensignatur an, oder du erhältst beim Ausführen der App einen Fehler.
+Gib nun unbedingt das **async** -Schlüsselwort in der Methodensignatur an, oder du erhältst beim Ausführen der App einen Fehler.
 
 ### <a name="what-did-we-just-do"></a>Was haben wir gerade gemacht?
 
@@ -231,7 +231,7 @@ Wenn Sie die App ausführen und auf die Schaltfläche klicken, sagt Ihr Computer
 
 ## <a name="summary"></a>Zusammenfassung
 
-Herzlichen Glückwunsch, du hast deine erste App für Windows 10 und die UWP erstellt!
+Herzlichen Glückwunsch, Sie haben Ihre erste App für Windows 10 und die UWP erstellt!
 
 Informationen dazu, wie du XAML für die Gestaltung der Steuerelemente in deiner App verwendest, findest du im [Tutorial zu Rastern](../design/layout/grid-tutorial.md). Du kannst auch direkt mit den [nächsten Schritten](./create-uwp-apps.md) fortfahren.
 
@@ -242,4 +242,4 @@ Informationen dazu, wie du XAML für die Gestaltung der Steuerelemente in deiner
 * [Anleitungen zur Entwicklung von UWP App](../develop/index.md)
 * [Codebeispiele für UWP-Entwickler](https://developer.microsoft.com/windows/samples)
 * [Was ist eine universelle Windows-App?](universal-application-platform-guide.md)
-* [Registrieren für ein Windows-Konto](sign-up.md)
+* [Registrieren für ein Windows-Konto](/windows/apps/get-started/sign-up)

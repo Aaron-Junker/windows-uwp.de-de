@@ -6,22 +6,22 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: Windows 10, UWP, Debuggen, Testen, Leistung
 ms.localizationpriority: medium
-ms.openlocfilehash: c21586bceef11b1a2c19900160796bf702578ffb
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 1d537ca64e94d68a8cc9bbe9c59d341d04821cd9
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763061"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339747"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>Bereitstellen und Debuggen von UWP-Apps
 
 Dieser Artikel führt Sie Schritt für Schritt durch die Ausrichtung Ihrer Apps auf verschiedene Bereitstellungs- und Debugziele.
 
-Microsoft Visual Studio ermöglicht es, deine UWP-Apps (Universelle Windows-Plattform) auf einer Vielzahl von Windows 10-Geräten bereitzustellen und zu debuggen. Das Erstellen und Registrieren der App auf dem Zielgerät wird von Visual Studio abgewickelt.
+Microsoft Visual Studio ermöglicht es Ihnen, Ihre UWP-Apps (Universelle Windows-Plattform) auf einer Vielzahl von Windows 10-Geräten bereitzustellen und zu debuggen. Das Erstellen und Registrieren der App auf dem Zielgerät wird von Visual Studio abgewickelt.
 
 ## <a name="picking-a-deployment-target"></a>Auswählen eines Bereitstellungsziels
 
-Zur Auswahl eines Ziels navigieren Sie zur Dropdownliste mit Debugzielen neben der Schaltfläche **Debugging starten**, und wählen Sie das Ziel aus, auf dem Sie Ihre App bereitstellen möchten. Nachdem Sie das Ziel ausgewählt haben, wählen Sie entweder **Debugging starten (F5)** aus, um das Bereitstellen und Debuggen in einem Schritt auszuführen, oder drücken Sie **STRG+F5**, um nur die Bereitstellung auf dem Ziel auszuführen.
+Zur Auswahl eines Ziels navigieren Sie zur Dropdownliste mit Debugzielen neben der Schaltfläche **Debugging starten** , und wählen Sie das Ziel aus, auf dem Sie Ihre App bereitstellen möchten. Nachdem Sie das Ziel ausgewählt haben, wählen Sie entweder **Debugging starten (F5)** aus, um das Bereitstellen und Debuggen in einem Schritt auszuführen, oder drücken Sie **STRG+F5** , um nur die Bereitstellung auf dem Ziel auszuführen.
 
 ![Liste mit Zielgeräten für das Debuggen](images/debug-device-target-list.png)
 
@@ -29,13 +29,13 @@ Zur Auswahl eines Ziels navigieren Sie zur Dropdownliste mit Debugzielen neben d
 - Mit **Lokaler Computer** wird die App auf dem aktuellen Entwicklungscomputer bereitgestellt. Diese Option ist nur verfügbar, wenn die **Mindestversion der Zielplattform** deiner App nicht über der Version des Betriebssystems auf dem Entwicklungscomputer liegt.
 - Über **Remotecomputer** können Sie ein Remoteziel angeben, auf dem die App bereitgestellt werden soll. Weitere Informationen zur Bereitstellung auf einem Remotecomputer finden Sie unter [Angeben eines Remotegeräts](#specifying-a-remote-device).
 - Mit **Gerät** wird die App auf einem über USB verbundenen Gerät bereitgestellt. Das Gerät muss für Entwickler entsperrt sein und über einen entsperrten Bildschirm verfügen.
-- Bei einem **Emulator**-Ziel wird die App in einem Emulator gestartet und bereitgestellt, wobei die Konfiguration im Namen angegeben ist. Emulatoren sind nur auf Hyper-V-fähigen Computern verfügbar, auf denen Windows 8.1 oder eine höhere Version ausgeführt wird.
+- Bei einem **Emulator** -Ziel wird die App in einem Emulator gestartet und bereitgestellt, wobei die Konfiguration im Namen angegeben ist. Emulatoren sind nur auf Hyper-V-fähigen Computern verfügbar, auf denen Windows 8.1 oder eine höhere Version ausgeführt wird.
 
 ## <a name="debugging-deployed-apps"></a>Debuggen von bereitgestellten Apps
 
-Visual Studio kann über den Menübefehl **Debuggen**, **An Prozess anhängen** an alle ausgeführten Prozesse in einer UWP-App angehängt werden. Für das Anhängen an einen laufenden Prozess ist das ursprüngliche Visual Studio-Projekt nicht erforderlich. Das Laden der [Symbole](#symbols) des Prozesses hilft beim Debuggen eines Prozesses ohne den ursprünglichen Code erheblich.  
+Visual Studio kann über den Menübefehl **Debuggen** , **An Prozess anhängen** an alle ausgeführten Prozesse in einer UWP-App angehängt werden. Für das Anhängen an einen laufenden Prozess ist das ursprüngliche Visual Studio-Projekt nicht erforderlich. Das Laden der [Symbole](#symbols) des Prozesses hilft beim Debuggen eines Prozesses ohne den ursprünglichen Code erheblich.  
 
-Darüber hinaus kann über den Menübefehl **Debuggen**, **Andere**, **Installierte App-Pakete debuggen** jedes installierten App-Paket angehängt und debuggt werden.
+Darüber hinaus kann über den Menübefehl **Debuggen** , **Andere** , **Installierte App-Pakete debuggen** jedes installierten App-Paket angehängt und debuggt werden.
 
 ![Dialogfeld „Installiertes App-Paket debuggen"](images/gs-debug-uwp-apps-002.png)
 
@@ -47,7 +47,7 @@ UWP-Apps können unter Windows 8.1 oder höher entwickelt und kompiliert werden
 
 Seit Visual Studio 2015 Update 3 wurde für Entwickler die Option hinzugefügt, den Layoutpfad für ihre UWP-Apps anzugeben. Hiermit wird festgelegt, an welchen Ort auf dem Datenträger das Paketlayout beim Erstellen der App kopiert wird. In der Standardeinstellung wird diese Eigenschaft relativ zum Stammverzeichnis des Projekts festgelegt. Wenn Sie diese Eigenschaft nicht ändern, entspricht das Verhalten dem der früheren Versionen von Visual Studio.
 
-Diese Eigenschaft kann in den **Debug**-Eigenschaften des Projekts geändert werden.
+Diese Eigenschaft kann in den **Debug** -Eigenschaften des Projekts geändert werden.
 
 Wenn Sie beim Erstellen eines Pakets für die App alle Layoutdateien in dieses einschließen möchten, müssen Sie die Projekteigenschaft `<IncludeLayoutFilesInPackage>true</IncludeLayoutFilesInPackage>` hinzufügen.
 
@@ -73,11 +73,11 @@ Wenn du eine App auf einem Remote-PC bereitstellen möchtest, der noch nicht das
 
 ### <a name="c-and-javascript"></a>C++ und JavaScript
 
-So gibst du ein Remotecomputer-Ziel für eine C++- oder JavaScript-UWP-App an
+So geben Sie ein Remotecomputer-Ziel für eine C++- oder JavaScript-UWP-App an:
 
 1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und klicken Sie dann auf **Eigenschaften**.
-2. Navigieren Sie zu den Einstellungen für **Debuggen**, und wählen Sie unter **Zu startender Debugger** die Option **Remotecomputer** aus.
-3. Geben Sie den **Computernamen** ein (oder klicken Sie auf **Suchen**, um einen Namen zu suchen), und legen Sie die Eigenschaft **Authentifizierungstyp** fest.
+2. Navigieren Sie zu den Einstellungen für **Debuggen** , und wählen Sie unter **Zu startender Debugger** die Option **Remotecomputer** aus.
+3. Geben Sie den **Computernamen** ein (oder klicken Sie auf **Suchen** , um einen Namen zu suchen), und legen Sie die Eigenschaft **Authentifizierungstyp** fest.
 
 ![Seiten mit den Eigenschaften für das Debuggen](images/debug-property-pages.png)
 
@@ -90,15 +90,15 @@ Nachdem der Computer angegeben wurde, können Sie in der Dropdownliste mit Debug
 
 Für die Bereitstellung auf einem Remote-PC, der noch nicht das Creators-Update enthält, müssen auf dem Ziel-PC die Remotetools für Visual Studio installiert sein. Außerdem muss auf dem Remote-PC eine Version von Windows ausgeführt werden, die höher oder gleich der Version ist, die in der Eigenschaft **Mindestversion der Zielplattform** deiner App festgelegt wurde. Nachdem Sie die Remotetools installiert haben, müssen Sie den Remotedebugger auf dem Ziel-PC starten.
 
-Suchen Sie dazu im Menü **Start** nach **Remotedebugger**, öffnen Sie den Debugger, und erlauben Sie ihm die Konfiguration Ihrer Firewalleinstellungen, wenn Sie dazu aufgefordert werden. Standardmäßig wird der Debugger mit Windows-Authentifizierung gestartet. Somit werden die Benutzeranmeldeinformationen benötigt, falls der angemeldete Benutzer nicht auf beiden PCs identisch ist.
+Suchen Sie dazu im Menü **Start** nach **Remotedebugger** , öffnen Sie den Debugger, und erlauben Sie ihm die Konfiguration Ihrer Firewalleinstellungen, wenn Sie dazu aufgefordert werden. Standardmäßig wird der Debugger mit Windows-Authentifizierung gestartet. Somit werden die Benutzeranmeldeinformationen benötigt, falls der angemeldete Benutzer nicht auf beiden PCs identisch ist.
 
-Um die Einstellung in **Keine Authentifizierung** zu ändern, wechsle unter **Remotedebugger** zu **Extras** -&gt; **Optionen**, und lege **Keine Authentifizierung** fest. Nach dem Einrichten des Remotedebuggers müssen Sie zudem sicherstellen, dass das Hostgerät auf [Entwicklermodus](../get-started/enable-your-device-for-development.md) gesetzt wurde. Anschließend können Sie die Bereitstellung über Ihren Entwicklungscomputer ausführen.
+Um die Einstellung in **Keine Authentifizierung** zu ändern, wechsle unter **Remotedebugger** zu **Extras** -&gt; **Optionen** , und lege **Keine Authentifizierung** fest. Nach dem Einrichten des Remotedebuggers müssen Sie zudem sicherstellen, dass das Hostgerät auf [Entwicklermodus](/windows/apps/get-started/enable-your-device-for-development) gesetzt wurde. Anschließend können Sie die Bereitstellung über Ihren Entwicklungscomputer ausführen.
 
 Weitere Informationen findest du auf der Seite [Download Center](https://visualstudio.microsoft.com/downloads/) in Visual Studio.
 
 ## <a name="passing-command-line-debug-arguments"></a>Übergeben von Debugargumenten in der Befehlszeile
 
-In Visual Studio 2019 kannst du beim Starten des Debuggens von UWP-Anwendungen Debugargumente in der Befehlszeile übergeben. Du kannst auf die Debugargumente für die Befehlszeile mit dem Parameter *Args* in der **OnLaunched**-Methode der [**Application**](/uwp/api/windows.ui.xaml.application)-Klasse zugreifen. Öffne die Projekteigenschaften, und navigiere zur Registerkarte **Debuggen**, um Debugargumente für die Befehlszeile anzugeben.
+In Visual Studio 2019 kannst du beim Starten des Debuggens von UWP-Anwendungen Debugargumente in der Befehlszeile übergeben. Du kannst auf die Debugargumente für die Befehlszeile mit dem Parameter *Args* in der **OnLaunched** -Methode der [**Application**](/uwp/api/windows.ui.xaml.application)-Klasse zugreifen. Öffne die Projekteigenschaften, und navigiere zur Registerkarte **Debuggen** , um Debugargumente für die Befehlszeile anzugeben.
 
 > [!NOTE]
 > Diese Registerkarte ist in Visual Studio 2017 (Version 15.1) für C#, VB und C++ verfügbar. JavaScript ist in neueren Versionen verfügbar. Debugargumente in der Befehlszeile sind für alle Bereitstellungstypen mit Ausnahme des Simulators verfügbar.
@@ -111,7 +111,7 @@ Für C++- und JS-UWP-Projekte wird das Feld **Befehlszeilenargumente** in den **
 
 ![Screenshot der Eigenschaftenseiten der App 4 mit ausgewählter Option „Konfigurationseigenschaften > Debuggen“ und in der Tabelle aufgelisteter Eigenschaft „Befehlszeilenargumente“.](images/command-line-arguments-cpp.png)
 
-Nach dem Festlegen der Befehlszeilenargumente kannst du auf den Wert des Arguments in der **OnLaunched**-Methode der App zugreifen. Die *Args* des [**LaunchActivatedEventArgs**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs)-Objekts enthalten die **Arguments**-Eigenschaft, deren Wert auf den Text im Feld **Befehlszeilenargumente** festgelegt ist.
+Nach dem Festlegen der Befehlszeilenargumente kannst du auf den Wert des Arguments in der **OnLaunched** -Methode der App zugreifen. Die *Args* des [**LaunchActivatedEventArgs**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs)-Objekts enthalten die **Arguments** -Eigenschaft, deren Wert auf den Text im Feld **Befehlszeilenargumente** festgelegt ist.
 
 ![Screenshot der Befehlszeilenargumenten für C++ und JS.](images/command-line-arguments-debugging.png)
 
@@ -121,7 +121,7 @@ Für die Bereitstellung auf Remotecomputern gibt es drei Authentifizierungsmodi:
 
 - **Universell (unverschlüsseltes Protokoll):** Verwende diesen Authentifizierungsmodus bei der Bereitstellung auf einem Remotegerät. Derzeit ist dies für IoT-, Xbox- und HoloLens-Geräte sowie PCs mit Creators-Update (oder neuer) möglich. „Universell (unverschlüsseltes Protokoll)“ sollte nur in vertrauenswürdigen Netzwerken verwendet werden. Die Debuggingverbindung ist anfällig für böswillige Benutzer, die zwischen dem Entwicklungs- und dem Remotecomputer übertragene Daten abfangen und manipulieren könnten.
 - **Windows:** Dieser Authentifizierungsmodus sollte nur für die Bereitstellung auf Remote-PCs (Desktop oder Laptop) verwendet werden, auf denen die Remotetools für Visual Studio ausgeführt werden. Verwenden Sie diesen Authentifizierungsmodus, wenn Sie Zugriff auf die Anmeldeinformationen des beim Zielcomputer angemeldeten Benutzers haben. Dies ist der sicherste Kanal für die Remotebereitstellung.
-- **None**: Dieser Authentifizierungsmodus sollte nur für die Bereitstellung auf Remote-PCs (Desktop oder Laptop) verwendet werden, auf denen die Remotetools für Visual Studio ausgeführt werden. Verwenden Sie diese Authentifizierungsmoduseinstellung, wenn Sie einen Testcomputer in einer Umgebung eingerichtet haben, bei der die Anmeldung über ein Testkonto erfolgte und keine Anmeldeinformationen eingegeben werden können. Die Remotedebuggereinstellungen müssen so festgelegt sein, dass sie den Modus „Keine Authentifizierung“ akzeptieren.
+- **None** : Dieser Authentifizierungsmodus sollte nur für die Bereitstellung auf Remote-PCs (Desktop oder Laptop) verwendet werden, auf denen die Remotetools für Visual Studio ausgeführt werden. Verwenden Sie diese Authentifizierungsmoduseinstellung, wenn Sie einen Testcomputer in einer Umgebung eingerichtet haben, bei der die Anmeldung über ein Testkonto erfolgte und keine Anmeldeinformationen eingegeben werden können. Die Remotedebuggereinstellungen müssen so festgelegt sein, dass sie den Modus „Keine Authentifizierung“ akzeptieren.
 
 ## <a name="advanced-remote-deployment-options"></a>Erweiterte Remotebereitstellungsoptionen
 
@@ -191,7 +191,7 @@ Auf dem Remotegerät wird das Layout je nach Gerätefamilie am folgenden Standar
 
 Unter Windows 10 kannst du die Startleistung von UWP-Apps verbessern, indem du Apps proaktiv startest und dann mithilfe eines als [Vorabstart](../launch-resume/handle-app-prelaunch.md) bezeichneten Verfahrens anhältst. Viele Apps sind in diesem Modus sofort funktionsfähig, das Verhalten einiger Apps muss jedoch möglicherweise angepasst werden. Um das Debuggen von Problemen in diesen Codepfaden zu erleichtern, können Sie das Debuggen der App von Visual Studio im Vorabstartmodus starten.
 
-Das Debuggen wird sowohl von einem Visual Studio-Projekt (**Debuggen** -&gt; **Andere Debugziele** -&gt; **Vorabstart der universellen Windows-App debuggen**) als auch für bereits auf dem Computer installierte Apps (**Debuggen** -&gt; **Andere Debugziele** -&gt; **Installiertes App-Paket debuggen** mit aktiviertem Kontrollkästchen **App mit Vorabstart aktivieren**) unterstützt. Weitere Informationen finden Sie unter [Debuggen des UWP-Vorabstarts](https://blogs.msdn.com/b/visualstudioalm/archive/2015/11/30/debug-uwp-prelaunch-with-vs2015.aspx).
+Das Debuggen wird sowohl von einem Visual Studio-Projekt ( **Debuggen** -&gt; **Andere Debugziele** -&gt; **Vorabstart der universellen Windows-App debuggen** ) als auch für bereits auf dem Computer installierte Apps ( **Debuggen** -&gt; **Andere Debugziele** -&gt; **Installiertes App-Paket debuggen** mit aktiviertem Kontrollkästchen **App mit Vorabstart aktivieren** ) unterstützt. Weitere Informationen finden Sie unter [Debuggen des UWP-Vorabstarts](https://blogs.msdn.com/b/visualstudioalm/archive/2015/11/30/debug-uwp-prelaunch-with-vs2015.aspx).
 
 Sie können die folgenden Bereitstellungsoptionen auf der Eigenschaftenseite **Debuggen** des Startprojekts festlegen:
 
@@ -201,14 +201,14 @@ Sie können die folgenden Bereitstellungsoptionen auf der Eigenschaftenseite **D
 
   So entfernen Sie die Netzwerkloopback-Ausnahme aus der App
 
-  - Deaktiviere auf der Eigenschaftenseite  **Debuggen** für C# und Visual Basic das Kontrollkästchen **Lokales Netzwerkloopback zulassen**.
+  - Deaktivieren Sie auf der Eigenschaftenseite **Debuggen** für C# und Visual Basic das Kontrollkästchen **Lokales Netzwerkloopback zulassen**.
   - Legen Sie den Wert **Lokales Netzwerkloopback zulassen** auf der Eigenschaftenseite **Debuggen** für JavaScript und C++ auf **Nein** fest.
 
 - **Eigenen Code zunächst nicht starten, sondern debuggen/Anwendung starten**
 
   So konfigurieren Sie die Bereitstellung für das automatische Starten einer Debugsitzung beim Starten der App
 
-  - Aktiviere auf der Eigenschaftenseite  **Debuggen** für C# und Visual Basic das Kontrollkästchen **Eigenen Code zunächst nicht starten, sondern debuggen**.
+  - Aktivieren Sie auf der Eigenschaftenseite **Debuggen** für C# und Visual Basic das Kontrollkästchen **Eigenen Code zunächst nicht starten, sondern debuggen**.
   - Legen Sie den Wert **Anwendung starten** auf der Eigenschaftenseite **Debuggen** für JavaSCript und C++ auf **Ja** fest.
 
 ## <a name="symbols"></a>Sonderzeichen
@@ -219,7 +219,7 @@ Wählen Sie zum Festlegen von Symboloptionen für Visual Studio **Extras > Optio
 
 ![Optionen (Dialogfeld)](images/gs-debug-uwp-apps-004.png)
 
-Legen Sie die **Sympath**-Variable auf dem Speicherort des Symbolpakets fest, um die Symbole in einer Debugsitzung mit [WinDbg](#windbg) zu laden. Der folgende Befehl lädt beispielsweise Symbole vom Microsoft-Symbolserver und speichert sie dann im Verzeichnis C:\Symbols zwischen:
+Legen Sie die **Sympath** -Variable auf dem Speicherort des Symbolpakets fest, um die Symbole in einer Debugsitzung mit [WinDbg](#windbg) zu laden. Der folgende Befehl lädt beispielsweise Symbole vom Microsoft-Symbolserver und speichert sie dann im Verzeichnis C:\Symbols zwischen:
 
 ```cmd
 .sympath SRV*C:\Symbols*http://msdl.microsoft.com/download/symbols

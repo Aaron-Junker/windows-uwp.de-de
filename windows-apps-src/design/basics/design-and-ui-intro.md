@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 78ccbe1f18167c318ffa38f3614cfab61782d147
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 1f6474170967986bfee555eb07d7ea41601e9e48
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93032443"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339758"
 ---
 # <a name="introduction-to-windows-app-design"></a>Einführung in das Design von Windows-Apps
 
@@ -162,7 +162,7 @@ Wir stellen verschiedene Tools bereit, um dich dabei zu unterstützen.
 
 - Auf der Seite [Design-Toolkits und Beispiele für UWP-Apps](../downloads/index.md) findest du Toolkits für XD, Illustrator, Photoshop, Framer und Sketch sowie zusätzliche Design-Tools und Downloads für Schriftarten.
 
-- Wie du deinen Computer für die Programmierung von UWP-Apps einrichtest, erfährst du unter [Beginnen &gt; Einrichten](../../get-started/get-set-up.md).
+- Wie du deinen Computer für die Programmierung von UWP-Apps einrichtest, erfährst du unter [Beginnen &gt; Einrichten](/windows/apps/get-started/get-set-up).
 
 - Anregungen zur UI-Implementierung für UWP findest du in unseren umfassenden [UWP-Beispiel-Apps](https://developer.microsoft.com/windows/samples).
 
