@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, App-Zertifizierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 06ac1525a91426f6d39e20c9a9416154ad3d6f3e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: be02f9b049a1beb1866d21c97f11fe3efeb815f3
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174024"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339348"
 ---
 # <a name="windows-app-certification-kit"></a>Zertifizierungskit für Windows-Apps
 
@@ -21,9 +21,9 @@ Um eine [Windows-Zertifizierung](/windows/win32/win_cert/windows-certification-p
 
 Voraussetzungen für das Testen einer universellen Windows-App:
 
-- Installieren und Ausführen von Windows 10.
-- Du musst das [Zertifizierungskit für Windows-Apps](https://developer.microsoft.com/windows/downloads/app-certification-kit/) installieren, das im Windows Software Development Kit (SDK) für Windows 10 enthalten ist.
-- Sie müssen [Ihr Gerät für die Entwicklung aktivieren](../get-started/enable-your-device-for-development.md).
+- Installieren und verwenden Sie Windows 10.
+- Sie müssen das [Zertifizierungskit für Windows-Apps](https://developer.microsoft.com/windows/downloads/app-certification-kit/) installieren, das im Windows Software Development Kit (SDK) für Windows 10 enthalten ist.
+- Sie müssen [Ihr Gerät für die Entwicklung aktivieren](/windows/apps/get-started/enable-your-device-for-development).
 - Sie müssen die zu testende Windows-App auf Ihrem Computer bereitstellen.
 
 > [!NOTE]
@@ -31,7 +31,7 @@ Voraussetzungen für das Testen einer universellen Windows-App:
 
 ## <a name="validate-your-windows-app-using-the-windows-app-certification-kit-interactively"></a>Interaktive Überprüfung der Windows-App mit dem Zertifizierungskit für Windows-Apps
 
-1. Suche im **Startmenü** nach den Einträgen **Apps** und **Windows Kits**, und klicke auf die Option für das **Zertifizierungskit für Windows-Apps**.
+1. Suche im **Startmenü** nach den Einträgen **Apps** und **Windows Kits** , und klicke auf die Option für das **Zertifizierungskit für Windows-Apps**.
 
 2. Wählen Sie im Zertifizierungskit für Windows-Apps die Kategorie der auszuführenden Überprüfung aus. Beispiel: Wenn du eine Windows-App überprüfst, wähle die Option **Windows-App validieren** aus.
 
@@ -59,7 +59,7 @@ Voraussetzungen für das Testen einer universellen Windows-App:
 
 1. Navigieren Sie im Befehlsfenster zum Verzeichnis mit dem Zertifizierungskit für Windows-Apps.
 
-    **Hinweis**  Der Standardpfad lautet „C:\\Programme\\Windows Kits\\10\\App Certification Kit\\“.
+    **Hinweis:** Der Standardpfad lautet „C:\\Programme\\Windows Kits\\10\\App Certification Kit\\“.
 
 2. Geben Sie die folgenden Befehle in dieser Reihenfolge ein, um eine App zu testen, die bereits auf dem Testcomputer installiert ist:
 
@@ -75,9 +75,9 @@ Voraussetzungen für das Testen einer universellen Windows-App:
 
 3. Öffnen Sie nach dem Test die Berichtsdatei `[report file name]`, und überprüfen Sie die Testergebnisse.
 
-**Hinweis**  Das Zertifizierungskit für Windows-Apps kann über einen Dienst ausgeführt werden. Der Dienst muss den Prozess für das Kit jedoch innerhalb einer aktiven Benutzersitzung initiieren, eine Ausführung in „Session0“ ist nicht möglich.
+**Hinweis** Das Zertifizierungskit für Windows-Apps kann über einen Dienst ausgeführt werden. Der Dienst muss den Kitvorgang jedoch innerhalb einer aktiven Benutzersitzung initiieren, und die Ausführung unter „Session0“ ist nicht möglich.
 
-**Hinweis**  Weitere Informationen zur Befehlszeile des Zertifizierungskits für Windows-Apps erhältst du durch Eingabe des Befehls `appcert.exe /?`.
+**Hinweis** Weitere Informationen zur Befehlszeile des Zertifizierungskits für Windows-Apps erhalten Sie, wenn Sie den Befehl `appcert.exe /?` eingeben.
 
 ## <a name="testing-with-a-low-power-computer"></a>Testen mit einem Computer mit geringem Energieverbrauch
 
