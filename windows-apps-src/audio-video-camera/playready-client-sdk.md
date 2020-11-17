@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a444b8af0121c6012bc90adda075c161111838b3
-ms.sourcegitcommit: 4fffc66fac18fc4c80281e2a4afa9c4f2e1f7551
+ms.openlocfilehash: be670dfab9e7bd27c4c380e9b00ec8a655704885
+ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94513659"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94691528"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -77,7 +77,7 @@ PlayReady DRM wurden die folgenden neuen Schnittstellen, Klassen und Enumeration
 -   [**PlayReadySecureStopIterator**](/uwp/api/Windows.Media.Protection.PlayReady.PlayReadySecureStopIterator)-Klasse
 -   [**PlayReadyHardwareDRMFeatures**](/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures)-Enumerator
 
-Es wurde ein neues Beispiel erstellt, um die Verwendung der neuen Features von PlayReady DRM zu veranschaulichen. Das Beispiel kann aus dem [Code Samples-Browser](samples/microsoft/windows-universal-samples/playready/)heruntergeladen werden.
+Es wurde ein neues Beispiel erstellt, um die Verwendung der neuen Features von PlayReady DRM zu veranschaulichen. Das Beispiel kann aus dem [Code Samples-Browser](/samples/microsoft/windows-universal-samples/playready/)heruntergeladen werden.
 
 ## <a name="things-to-consider"></a>Zu beachtende Aspekte
 
@@ -164,7 +164,7 @@ Die folgende Tabelle veranschaulicht die Zuordnungen zwischen verschiedenen OPLs
                 **Wenn die HDCP-Typbeschränkung NICHT definiert ist:** Inhalt wird mit HDCP übergeben. Sollte die Einbindung von HDCP nicht möglich sein, wird die Wiedergabe über HDMI/DVI-Anschlüsse blockiert.
             </p>
             <p>
-                **Wenn die HDCP-Typeinschränkung definiert ist** : übergibt Inhalt mit HDCP 2,2 und dem inhaltsstreamtyp auf 1. Wenn die Einbindung von HDCP nicht möglich ist oder der Inhaltsdatenstromtyp nicht auf 1 festgelegt werden kann, wird die Wiedergabe über HDMI/DVI-Anschlüsse blockiert.
+                **Wenn die HDCP-Typeinschränkung definiert ist**: übergibt Inhalt mit HDCP 2,2 und dem inhaltsstreamtyp auf 1. Wenn die Einbindung von HDCP nicht möglich ist oder der Inhaltsdatenstromtyp nicht auf 1 festgelegt werden kann, wird die Wiedergabe über HDMI/DVI-Anschlüsse blockiert.
             </p>
         </td>
     </tr>
@@ -507,7 +507,7 @@ Es gibt zwei primäre Szenarien für das Senden einer Abfrage für sicheres Been
 -   Wenn die Mediendarstellung beendet wird, weil das Ende des Inhalts erreicht wurde, oder wenn die Mediendarstellung vor ihrem Ende vom Benutzer beendet wurde.
 -   Wenn die vorherige Sitzung unerwartet beendet wurde (z. B. aufgrund eines System- oder App-Absturzes). Die App muss beim Starten oder Herunterfahren alle ausstehenden Sitzungen für sicheres Beenden abfragen und von anderen Medienwiedergaben getrennte Abfragen senden.
 
-Eine Beispiel Implementierung von Secure stoppt finden Sie in der **securestop.cs** -Datei im PlayReady-Beispiel im [Code Beispiel Browser](samples/microsoft/windows-universal-samples/playready//).
+Eine Beispiel Implementierung von Secure stoppt finden Sie in der **securestop.cs** -Datei im PlayReady-Beispiel im [Code Beispiel Browser](/samples/microsoft/windows-universal-samples/playready/).
 
 ## <a name="use-playready-drm-on-xbox-one"></a>Verwenden von PlayReady DRM auf Xbox One
 
@@ -518,8 +518,8 @@ Um PlayReady DRM in einer UWP-App auf Xbox One verwenden zu können, müssen Sie
 
 Wenn Sie die Autorisierung erhalten haben, müssen Sie dem App-Manifest eine zusätzliche `<DeviceCapability>` hinzufügen. Sie müssen diese manuell hinzufügen, da derzeit im App Manifest Designer keine Einstellung verfügbar ist. Führen Sie folgende Schritte durch, um dies zu konfigurieren:
 
-1. Öffnen Sie das Projekt in Visual Studio, öffnen Sie den **Solution Explorer** , und klicken Sie mit der rechten Maustaste auf **Package.appxmanifest**.
-2. Wählen Sie **Öffnen mit...** und anschließend **XML (Text) Editor** , und klicken Sie auf **OK**.
+1. Öffnen Sie das Projekt in Visual Studio, öffnen Sie den **Solution Explorer**, und klicken Sie mit der rechten Maustaste auf **Package.appxmanifest**.
+2. Wählen Sie **Öffnen mit...** und anschließend **XML (Text) Editor**, und klicken Sie auf **OK**.
 3. Fügen Sie zwischen den `<Capabilities>`-Tags die folgende `<DeviceCapability>` ein:
 
     ```xml

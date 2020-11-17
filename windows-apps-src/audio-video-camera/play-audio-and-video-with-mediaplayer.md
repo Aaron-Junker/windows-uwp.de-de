@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ce223d4d70f883545114507ec49fcd9d7084d2a5
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 166a498ba7323869fe60f7d3392b93ac501dd331
+ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363903"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94691548"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>Wiedergeben von Audio- und Videoinhalten mit „MediaPlayer“
 
@@ -29,7 +29,7 @@ Anders als **MediaElement** startet **MediaPlayer** nicht standardmäßig automa
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetSimpleFilePlayback":::
 
-Wenn Ihre App die Verwendung eines **MediaPlayers** beendet hat, sollten Sie die Methode[**Close**](/uwp/api/windows.media.playback.mediaplayer.close) aufrufen (**Dispose**-Methode in C#), um die vom Player verwendeten Ressourcen zu bereinigen.
+Wenn Ihre App die Verwendung eines **MediaPlayers** beendet hat, sollten Sie die Methode [**Close**](/uwp/api/windows.media.playback.mediaplayer.close) aufrufen (**Dispose**-Methode in C#), um die vom Player verwendeten Ressourcen zu bereinigen.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetCloseMediaPlayer":::
 
@@ -122,7 +122,7 @@ Im [**DoubleTapped**](/uwp/api/windows.ui.xaml.uielement.doubletapped)-Ereignish
 
 In einigen Fällen kann das System die Wiedergabe eines Medien Elements beeinträchtigen, wie z. b. das Reduzieren der Auflösung (durch strierung), basierend auf einer Richtlinie und nicht mit einem Leistungsproblem. Beispielsweise kann das Video durch das System beeinträchtigt werden, wenn es mit einem nicht signierten Videotreiber wiedergegeben wird. Sie können [**mediaplaybacksession. getoutputdegradationpolicystate**](/uwp/api/windows.media.playback.mediaplaybacksession.getoutputdegradationpolicystate#Windows_Media_Playback_MediaPlaybackSession_GetOutputDegradationPolicyState) aufrufen, um zu bestimmen, ob und warum diese Richtlinien basierte einer auftritt, und den Benutzer zu benachrichtigen oder den Grund für Telemetriezwecke aufzuzeichnen.
 
-Das folgende Beispiel zeigt eine Implementierung eines Handlers für das **Media Player. mediageöffnete** -Ereignis, das ausgelöst wird, wenn der Spieler ein neues Medien Element öffnet. **Getoutputdegradationpolicystate** wird für den **Media Player** aufgerufen, der an den-Handler weitergeleitet wird. Der Wert von [**videomenstrictionreason**](/uwp/api/windows.media.playback.mediaplaybacksessionoutputdegradationpolicystate.videoconstrictionreason#Windows_Media_Playback_MediaPlaybackSessionOutputDegradationPolicyState_VideoConstrictionReason) gibt den Grund für die Ursache des Videos an. Wenn der Wert nicht " **None**" ist, protokolliert dieses Beispiel den Grund für die Herabstufung der Telemetrie. Außerdem wird in diesem Beispiel gezeigt, wie die Bitrate der **adaptivemediasource** , die zurzeit wiedergegeben wird, auf die niedrigste Bandbreite festgelegt wird, um die Datennutzung zu sparen, da das Video verstrichen ist und trotzdem nicht mit hoher Auflösung angezeigt wird. Weitere Informationen zur Verwendung von **adaptivemediasource**finden Sie unter [Adaptive Streaming](adaptive-streaming.md).
+Das folgende Beispiel zeigt eine Implementierung eines Handlers für das **Media Player. mediageöffnete** -Ereignis, das ausgelöst wird, wenn der Spieler ein neues Medien Element öffnet. **Getoutputdegradationpolicystate** wird für den **Media Player** aufgerufen, der an den-Handler weitergeleitet wird. Der Wert von [**videomenstrictionreason**](/uwp/api/windows.media.playback.mediaplaybacksessionoutputdegradationpolicystate.videoconstrictionreason#Windows_Media_Playback_MediaPlaybackSessionOutputDegradationPolicyState_VideoConstrictionReason) gibt den Grund für die Ursache des Videos an. Wenn der Wert nicht " **None**" ist, protokolliert dieses Beispiel den Grund für die Herabstufung der Telemetrie. Außerdem wird in diesem Beispiel gezeigt, wie die Bitrate der **adaptivemediasource** , die zurzeit wiedergegeben wird, auf die niedrigste Bandbreite festgelegt wird, um die Datennutzung zu sparen, da das Video verstrichen ist und trotzdem nicht mit hoher Auflösung angezeigt wird. Weitere Informationen zur Verwendung von **adaptivemediasource** finden Sie unter [Adaptive Streaming](adaptive-streaming.md).
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetPolicyDegradation":::
         
@@ -195,7 +195,7 @@ Zum Wiedergeben von sphärischen Videos führen Sie die Schritte zum Wiedergeben
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetOpenSphericalVideo":::
 
-Überprüfen Sie im **mediageöffneten** -Handler zuerst das Frame Format des neu geöffneten Medien Elements, indem Sie die Eigenschaft [**playbacksession. sphericalvideoprojection. frameformat**](/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection.FrameFormat) überprüfen. Wenn dieser Wert [**sphericavideoframeformat. equirecht eckig**](/uwp/api/windows.media.mediaproperties.sphericalvideoframeformat)ist, kann das System den Videoinhalt automatisch projizieren. Legen Sie zunächst die Eigenschaft [**playbacksession. sphericalvideoprojection. isaktiviauf**](/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection.IsEnabled) **true**fest. Sie können auch Eigenschaften anpassen, z. b. die Ansichts Ausrichtung und das Sichtfeld, die der Media Player zum Projizieren des Video Inhalts verwendet. In diesem Beispiel wird das Feld der Ansicht auf einen Breitenwert von 120 Grad festgelegt, indem die [**horizontalfieldofviewindegrees**](/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection.HorizontalFieldOfViewInDegrees) -Eigenschaft festgelegt wird.
+Überprüfen Sie im **mediageöffneten** -Handler zuerst das Frame Format des neu geöffneten Medien Elements, indem Sie die Eigenschaft [**playbacksession. sphericalvideoprojection. frameformat**](/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection.FrameFormat) überprüfen. Wenn dieser Wert [**sphericavideoframeformat. equirecht eckig**](/uwp/api/windows.media.mediaproperties.sphericalvideoframeformat)ist, kann das System den Videoinhalt automatisch projizieren. Legen Sie zunächst die Eigenschaft [**playbacksession. sphericalvideoprojection. isaktiviauf**](/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection.IsEnabled) **true** fest. Sie können auch Eigenschaften anpassen, z. b. die Ansichts Ausrichtung und das Sichtfeld, die der Media Player zum Projizieren des Video Inhalts verwendet. In diesem Beispiel wird das Feld der Ansicht auf einen Breitenwert von 120 Grad festgelegt, indem die [**horizontalfieldofviewindegrees**](/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection.HorizontalFieldOfViewInDegrees) -Eigenschaft festgelegt wird.
 
 Wenn der Videoinhalt kugelförmig ist, aber in einem anderen Format als equirecht eckig vorliegt, können Sie mit dem Frame Server Modus von Media Player einen eigenen Projektions Algorithmus implementieren, um einzelne Frames zu empfangen und zu verarbeiten.
 
@@ -214,7 +214,7 @@ Rufen Sie im **videotrackschge** -Ereignishandler die Codierungs Eigenschaften f
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetSphericalTracksChanged":::
 
 ## <a name="use-mediaplayer-in-frame-server-mode"></a>Verwenden von Media Player im Frame Server Modus
-Ab Windows 10, Version 1703, können Sie **Media Player** im Frame Server Modus verwenden. In diesem Modus renbt **Media Player** keine Frames automatisch zu einem zugeordneten **mediaplayerelement**. Stattdessen kopiert Ihre APP den aktuellen Frame vom **Media Player** in ein Objekt, das [**IDirect3DSurface**](/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface)implementiert. Das primäre Szenario, das diese Funktion ermöglicht, besteht in der Verwendung von Pixel-Shadern, um von **Media Player**bereitgestellte Video Frames zu verarbeiten Ihre APP ist für die Anzeige der einzelnen Frames nach der Verarbeitung zuständig, z. b. durch Anzeigen des Frames in einem XAML- [**Bild**](/uwp/api/windows.ui.xaml.controls.image) -Steuerelement.
+Ab Windows 10, Version 1703, können Sie **Media Player** im Frame Server Modus verwenden. In diesem Modus renbt **Media Player** keine Frames automatisch zu einem zugeordneten **mediaplayerelement**. Stattdessen kopiert Ihre APP den aktuellen Frame vom **Media Player** in ein Objekt, das [**IDirect3DSurface**](/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface)implementiert. Das primäre Szenario, das diese Funktion ermöglicht, besteht in der Verwendung von Pixel-Shadern, um von **Media Player** bereitgestellte Video Frames zu verarbeiten Ihre APP ist für die Anzeige der einzelnen Frames nach der Verarbeitung zuständig, z. b. durch Anzeigen des Frames in einem XAML- [**Bild**](/uwp/api/windows.ui.xaml.controls.image) -Steuerelement.
 
 Im folgenden Beispiel wird ein neuer **Media Player** initialisiert, und Videoinhalt wird geladen. Als nächstes wird ein Handler für [**videoframeavailable**](/uwp/api/windows.media.playback.mediaplayer.VideoFrameAvailable) registriert. Der Frame Server Modus wird aktiviert, indem die [**isvideoframeserveraktivierte**](/uwp/api/windows.media.playback.mediaplayer.IsVideoFrameServerEnabled) Eigenschaft des **Media Player** -Objekts auf " **true**" festgelegt wird. Zum Schluss wird die Medienwiedergabe mit einem [**Play**](/uwp/api/windows.media.playback.mediaplayer.Play)-Befehl gestartet.
 
@@ -222,9 +222,9 @@ Im folgenden Beispiel wird ein neuer **Media Player** initialisiert, und Videoin
 
 Das nächste Beispiel zeigt einen Handler für **videoframeavailable** , der [Win2D](https://github.com/Microsoft/Win2D) verwendet, um jedem Frame eines Videos einen einfachen Weichzeichnereffekt hinzuzufügen, und dann die verarbeiteten Frames in einem XAML- [Bild](/uwp/api/windows.ui.xaml.controls.image) Steuerelement anzeigt.
 
-Wenn der **videoframeavailable** -Handler aufgerufen wird, wird die [**copyframetovideosurface**](/uwp/api/windows.media.playback.mediaplayer.copyframetovideosurface) -Methode verwendet, um den Inhalt des Frames in ein [**IDirect3DSurface**](/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface)zu kopieren. Sie können auch [**copyframedestereoscopicvideo-Oberflächen**](/uwp/api/windows.media.playback.mediaplayer.copyframetostereoscopicvideosurfaces) verwenden, um 3D-Inhalte in zwei Oberflächen zu kopieren, um den linken und den rechten Inhalt separat zu verarbeiten. Um ein Objekt zu erhalten, das implementiert **IDirect3DSurface**  in diesem Beispiel wird eine [**softwardaemmap**](/uwp/api/windows.graphics.imaging.softwarebitmap) erstellt. Anschließend wird dieses Objekt verwendet, um eine Win2D **canvasbitmap**zu erstellen, die die erforderliche Schnittstelle implementiert. Eine **canvasimagesource** ist ein Win2D-Objekt, das als Quelle für ein **Image** -Steuerelement verwendet werden kann, sodass ein neues erstellt und als Quelle für das **Bild** festgelegt wird, in dem der Inhalt angezeigt wird. Als nächstes wird eine **canvasdrawingsession** erstellt. Diese wird von Win2D verwendet, um den Weichzeichnereffekt zu erzeugen.
+Wenn der **videoframeavailable** -Handler aufgerufen wird, wird die [**copyframetovideosurface**](/uwp/api/windows.media.playback.mediaplayer.copyframetovideosurface) -Methode verwendet, um den Inhalt des Frames in ein [**IDirect3DSurface**](/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface)zu kopieren. Sie können auch [**copyframedestereoscopicvideo-Oberflächen**](/uwp/api/windows.media.playback.mediaplayer.copyframetostereoscopicvideosurfaces) verwenden, um 3D-Inhalte in zwei Oberflächen zu kopieren, um den linken und den rechten Inhalt separat zu verarbeiten. Um ein Objekt zu erhalten, das implementiert **IDirect3DSurface**  in diesem Beispiel wird eine [**softwardaemmap**](/uwp/api/windows.graphics.imaging.softwarebitmap) erstellt. Anschließend wird dieses Objekt verwendet, um eine Win2D **canvasbitmap** zu erstellen, die die erforderliche Schnittstelle implementiert. Eine **canvasimagesource** ist ein Win2D-Objekt, das als Quelle für ein **Image** -Steuerelement verwendet werden kann, sodass ein neues erstellt und als Quelle für das **Bild** festgelegt wird, in dem der Inhalt angezeigt wird. Als nächstes wird eine **canvasdrawingsession** erstellt. Diese wird von Win2D verwendet, um den Weichzeichnereffekt zu erzeugen.
 
-Nachdem alle erforderlichen Objekte instanziiert wurden, wird **copyframeumvideosurface** aufgerufen, das den aktuellen Frame aus **Media Player** in die **canvasbitmap**kopiert. Als nächstes wird ein Win2D **gausianblureffect** erstellt, wobei die **canvasbitmap** als Quelle des Vorgangs festgelegt ist. Schließlich wird " **canvasdrawingsession. DrawImage** " aufgerufen, um das Quell Bild, bei dem der weich Zieh Effekt angewendet wurde, in " **canvasimagesource** " zu zeichnen, das dem **Image** -Steuerelement zugeordnet ist, was dazu führt, dass es in der Benutzeroberfläche gezeichnet wird.
+Nachdem alle erforderlichen Objekte instanziiert wurden, wird **copyframeumvideosurface** aufgerufen, das den aktuellen Frame aus **Media Player** in die **canvasbitmap** kopiert. Als nächstes wird ein Win2D **gausianblureffect** erstellt, wobei die **canvasbitmap** als Quelle des Vorgangs festgelegt ist. Schließlich wird " **canvasdrawingsession. DrawImage** " aufgerufen, um das Quell Bild, bei dem der weich Zieh Effekt angewendet wurde, in " **canvasimagesource** " zu zeichnen, das dem **Image** -Steuerelement zugeordnet ist, was dazu führt, dass es in der Benutzeroberfläche gezeichnet wird.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetVideoFrameAvailable":::
 
@@ -240,7 +240,7 @@ Weitere Informationen zu Win2D finden Sie im [Win2D GitHub-Repository](https://g
 6.  Akzeptieren Sie die Paketlizenz.
 
 ## <a name="detect-and-respond-to-audio-level-changes-by-the-system"></a>Erkennen und reagieren auf audioleveländerungen durch das System
-Ab Windows 10, Version 1803, kann Ihre APP erkennen, wenn das System die Audioebene eines gerade wiedergegebenen **Media Player**-oder-Mutes absinkt. Beispielsweise kann das System die Audiowiedergabe Ebene verringern oder "Enten", wenn ein Alarm klingelt. Das System wird Ihre APP stumm schalten, wenn Sie in den Hintergrund wechselt, wenn Ihre APP die *backgroundmediaplayback* -Funktion nicht im App-Manifest deklariert hat. Die [**audiostatuemonitor**](./uwp/api/windows.media.audio.audiostatemonitor) -Klasse ermöglicht es Ihnen, sich für den Empfang eines Ereignisses zu registrieren, wenn das System das Volume eines Audiodatenstroms ändert. Greifen Sie auf die **audiostatuemonitor** -Eigenschaft eines **Media Player** zu, und registrieren Sie einen Handler für das [**soundlevelchanged**](/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) -Ereignis, um benachrichtigt zu werden, wenn die Audioebene für den **Media Player** vom System geändert wird.
+Ab Windows 10, Version 1803, kann Ihre APP erkennen, wenn das System die Audioebene eines gerade wiedergegebenen **Media Player**-oder-Mutes absinkt. Beispielsweise kann das System die Audiowiedergabe Ebene verringern oder "Enten", wenn ein Alarm klingelt. Das System wird Ihre APP stumm schalten, wenn Sie in den Hintergrund wechselt, wenn Ihre APP die *backgroundmediaplayback* -Funktion nicht im App-Manifest deklariert hat. Die [**audiostatuemonitor**](/uwp/api/windows.media.audio.audiostatemonitor) -Klasse ermöglicht es Ihnen, sich für den Empfang eines Ereignisses zu registrieren, wenn das System das Volume eines Audiodatenstroms ändert. Greifen Sie auf die **audiostatuemonitor** -Eigenschaft eines **Media Player** zu, und registrieren Sie einen Handler für das [**soundlevelchanged**](/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) -Ereignis, um benachrichtigt zu werden, wenn die Audioebene für den **Media Player** vom System geändert wird.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetRegisterAudioStateMonitor":::
 
@@ -258,9 +258,9 @@ Der Benutzer kann festlegen, dass die Wiedergabe angehalten oder fortgesetzt wer
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetButtonUserClick":::
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [Medienwiedergabe](media-playback.md)
-* [Medienelemente, Wiedergabelisten und Titel](media-playback-with-mediasource.md)
+* [Medienelemente, Wiedergabelisten und Spuren](media-playback-with-mediasource.md)
 * [Integrieren in die Steuerelemente für den Systemmedientransport](integrate-with-systemmediatransportcontrols.md)
 * [Erstellen, Planen und Verwalten von Medienunterbrechungen](create-schedule-and-manage-media-breaks.md)
 * [Wiedergeben von Medien im Hintergrund](background-audio.md)
@@ -269,6 +269,6 @@ Der Benutzer kann festlegen, dass die Wiedergabe angehalten oder fortgesetzt wer
 
 
 
- 
+ 
 
- 
+ 
