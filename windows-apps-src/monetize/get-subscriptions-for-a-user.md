@@ -1,33 +1,33 @@
 ---
 ms.assetid: 94B5B2E9-BAEE-4B7F-BAF1-DA4D491427D7
-description: Verwenden Sie diese Methode in der Microsoft Store-Einkaufs-API, um Abonnements abzurufen, für die ein bestimmter Benutzer Nutzungsberechtigungen hat.
+description: Verwenden Sie diese Methode in der Microsoft Store Purchase-API, um die Abonnements zu erhalten, für die ein bestimmter Benutzer berechtigt ist, zu verwenden.
 title: Abrufen von Abonnements für einen Benutzer
 ms.date: 07/10/2018
 ms.topic: article
-keywords: Windows 10, UWP, Microsoft Store-Einkaufs-API, Abonnements
+keywords: Windows 10, UWP, Microsoft Store Purchase API, Abonnements
 ms.localizationpriority: medium
-ms.openlocfilehash: f6ff6ea5a5daac1a6412c26c76dad899ca1f5881
-ms.sourcegitcommit: 74c674c70b86bafeac7c8c749b1662fae838c428
+ms.openlocfilehash: c77218cc7157e3d9a5508146395b284b57397d0f
+ms.sourcegitcommit: 2a23972e9a0807256954d6da5cf21d0bbe7afb0a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252325"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94941796"
 ---
 # <a name="get-subscriptions-for-a-user"></a>Abrufen von Abonnements für einen Benutzer
 
-Verwenden Sie diese Methode in der Microsoft Store-Einkaufs-API, um die Abonnement-Add-Ons abzurufen, für die ein bestimmter Benutzer Nutzungsberechtigungen hat.
+Verwenden Sie diese Methode in der Microsoft Store Purchase-API, um die Add-ons für Abonnements zu erhalten, für die ein bestimmter Benutzer berechtigt ist, zu verwenden.
 
 > [!NOTE]
-> Diese Methode kann nur über Entwicklerkonten verwendet werden, die von Microsoft bereitgestellt wurden, um Abonnement-Add-Ons für UWP-Apps (Universelle Windows-Plattform) erstellen zu können. Abonnement-Add-Ons sind derzeit für die meisten Entwicklerkonten nicht verfügbar.
+> Diese Methode kann nur von Entwickler Konten verwendet werden, die von Microsoft bereitgestellt wurden, um Abonnement-Add-ons für universelle Windows-Plattform-Apps (UWP) erstellen zu können. Add-ons für Abonnements sind zurzeit für die meisten Entwickler Konten nicht verfügbar.
 
-## <a name="prerequisites"></a>Erforderliche Komponenten
+## <a name="prerequisites"></a>Voraussetzungen
 
 Zur Verwendung dieser Methode benötigen Sie:
 
-* Ein Azure AD-Zugriffstoken, das mit dem Zielgruppen-URI `https://onestore.microsoft.com` erstellt wurde.
-* Ein Microsoft Store-ID-Schlüssel, der die Identität des Benutzers darstellt, dessen Abonnements Sie abrufen möchten.
+* Ein Azure AD Zugriffs Token, das den Wert für den Zielgruppen-Uri aufweist `https://onestore.microsoft.com` .
+* Ein Microsoft Store ID-Schlüssel, der die Identität des Benutzers darstellt, dessen Abonnements Sie erhalten möchten.
 
-Weitere Informationen finden Sie unter [Verwalten von Produktansprüchen aus einem Dienst](view-and-grant-products-from-a-service.md).
+Weitere Informationen finden Sie unter [Verwalten von Produkt Berechtigungen von einem Dienst](view-and-grant-products-from-a-service.md).
 
 ## <a name="request"></a>Anforderung
 
@@ -41,32 +41,32 @@ Weitere Informationen finden Sie unter [Verwalten von Produktansprüchen aus ein
 
 ### <a name="request-header"></a>Anforderungsheader
 
-| Header         | Typ   | Beschreibung      |
+| Header         | type   | BESCHREIBUNG      |
 |----------------|--------|-------------------|
-| Autorisierung  | String | Erforderlich. Das Azure AD Zugriffs Token im Formular **Träger** &lt;-*Token*&gt;.                           |
-| Host           | String | Muss auf den Wert **purchase.mp.microsoft.com** festgelegt werden.                                            |
-| Content-Length | number | Die Länge des Anforderungstexts.                                                                       |
-| Content-Type   | String | Gibt den Anforderungs- und Antworttyp an. Derzeit wird als einziger Wert **application/json** unterstützt. |
+| Authorization  | Zeichenfolge | Erforderlich. Das Azure AD-Zugriffstoken im Format **Bearer** &lt;*token*&gt;.                           |
+| Host           | Zeichenfolge | Muss auf den Wert " **Purchase.MP.Microsoft.com**" festgelegt werden.                                            |
+| Content-Length | Anzahl | Die Länge des Anforderungstexts.                                                                       |
+| Content-Type   | Zeichenfolge | Gibt den Anforderungs- und Antworttyp an. Derzeit wird als einziger Wert **application/json** unterstützt. |
 
 
 ### <a name="request-body"></a>Anforderungstext
 
-| Parameter      | Typ   | Beschreibung     | Erforderlich |
+| Parameter      | type   | BESCHREIBUNG     | Erforderlich |
 |----------------|--------|-----------------|----------|
-| b2bKey         | String | Der [Microsoft Store-ID-Schlüssel](view-and-grant-products-from-a-service.md#step-4), der die Identität des Benutzers darstellt, dessen Abonnements Sie abrufen möchten.  | Ja      |
-| continuationToken |  String     |  Wenn der Benutzer über Berechtigungen für mehrere Abonnements verfügt, gibt der Antworttext ein Fortsetzungstoken zurück, wenn das Seitenlimit erreicht wird. Geben Sie das Fortsetzungstoken hier bei nachfolgenden Aufrufen an, um die verbleibenden Produkte abzurufen.    | Nein      |
-| pageSize       | String | Die maximale Anzahl von Abonnements, die in einer Antwort zurückgegeben werden sollen. Der Standardwert ist 25.     |  Nein      |
+| b2bKey         | Zeichenfolge | Der [Microsoft Store ID-Schlüssel](view-and-grant-products-from-a-service.md#step-4) , der die Identität des Benutzers darstellt, dessen Abonnements Sie erhalten möchten.  | Ja      |
+| continuationToken |  Zeichenfolge     |  Wenn der Benutzer über Berechtigungen für mehrere Abonnements verfügt, gibt der Antworttext ein Fortsetzungs Token zurück, wenn das Seiten Limit erreicht ist. Geben Sie das Fortsetzungstoken hier bei nachfolgenden Aufrufen an, um die verbleibenden Produkte abzurufen.    | Nein      |
+| pageSize       | Zeichenfolge | Die maximale Anzahl von Abonnements, die in einer Antwort zurückgegeben werden sollen. Der Standard ist 25.     |  Nein      |
 
 
 ### <a name="request-example"></a>Anforderungsbeispiel
 
-Im folgenden Beispiel wird veranschaulicht, wie Sie mit dieser Methode die Abonnement-Add-Ons abrufen, für die ein bestimmter Benutzer Nutzungsberechtigungen hat. Ersetzen Sie den Wert *b2bKey* durch den [Microsoft Store-ID-Schlüssel](view-and-grant-products-from-a-service.md#step-4), der die Identität des Benutzers darstellt, dessen Abonnements Sie abrufen möchten.
+Im folgenden Beispiel wird veranschaulicht, wie diese Methode verwendet wird, um die Add-ons für Abonnements zu erhalten, für die ein bestimmter Benutzer berechtigt ist, zu verwenden. Ersetzen Sie den *b2bKey* -Wert durch den [Microsoft Store ID-Schlüssel](view-and-grant-products-from-a-service.md#step-4) , der die Identität des Benutzers darstellt, dessen Abonnements Sie erhalten möchten.
 
 ```json
 POST https://purchase.mp.microsoft.com/v8.0/b2b/recurrences/query HTTP/1.1
 Authorization: Bearer <your access token>
 Content-Type: application/json
-Host: https://purchase.mp.microsoft.com
+Host: purchase.mp.microsoft.com
 
 {
   "b2bKey":  "eyJ0eXAiOiJ..."
@@ -76,7 +76,7 @@ Host: https://purchase.mp.microsoft.com
 
 ## <a name="response"></a>Antwort
 
-Diese Methode gibt einen JSON-Antworttext mit einer Sammlung von Datenobjekten zurück, die die Abonnement-Add-Ons beschreiben, für die der Benutzer Nutzungsberechtigungen hat. Das folgende Beispiel zeigt den Antworttext für einen Benutzer, der über eine Berechtigung für ein Abonnement verfügt.
+Diese Methode gibt einen JSON-Antworttext zurück, der eine Auflistung von Datenobjekten enthält, die die Abonnement-Add-ons beschreiben, für die der Benutzer über Berechtigungen zur Verwendung verfügt. Das folgende Beispiel veranschaulicht den Antworttext für einen Benutzer, der über eine Berechtigung für ein Abonnement verfügt.
 
 ```json
 {
@@ -102,34 +102,34 @@ Diese Methode gibt einen JSON-Antworttext mit einer Sammlung von Datenobjekten z
 
 Der Antworttext enthält die folgenden Daten.
 
-| Wert        | Typ   | Beschreibung            |
+| Wert        | type   | BESCHREIBUNG            |
 |---------------|--------|---------------------|
-| items | array | Ein Array von Objekten, die Daten zu den einzelnen Abonnement-Add-Ons enthalten, für die der angegebene Benutzer Nutzungsberechtigungen hat. Weitere Informationen zu den Daten in den einzelnen Objekten finden Sie in der folgenden Tabelle.  |
+| items | array | Ein Array von-Objekten, die Daten zu jedem Abonnement-Add-on enthalten, das der angegebene Benutzer verwenden darf. Weitere Informationen zu den Daten in den einzelnen Objekten finden Sie in der folgenden Tabelle.  |
 
 
-Jedes Objekt im *items*-Array enthält die folgenden Werte:
+Jedes-Objekt im *Items* -Array enthält die folgenden Werte.
 
-| Wert        | Typ   | Beschreibung                                                                 |
+| Wert        | type   | BESCHREIBUNG                                                                 |
 |---------------|--------|-----------------------------------------------|
-| autoRenew | Boolesch |  Gibt an, ob das Abonnement für die automatische Verlängerung am Ende des aktuellen Abonnementzeitraums konfiguriert ist.   |
-| beneficiary | String |  Die ID des Begünstigten für die Berechtigung, die diesem Abonnement zugeordnet ist.   |
-| expirationTime | String | Datum und Uhrzeit, an dem bzw. zu der das Abonnement abläuft, im Format ISO 8601. Dieses Feld ist nur verfügbar, wenn sich das Abonnement in bestimmten Zuständen befindet. Die Ablaufzeit gibt in der Regel an, wann der aktuelle Zustand abläuft. Beispiel: Bei einem aktiven Abonnement gibt das Ablaufdatum an, wann die nächste automatische Verlängerung erfolgt.    |
-| expirationtimewithgrace | String | Das Datum und die Uhrzeit, zu der das Abonnement abläuft, einschließlich der Toleranz Periode im ISO 8601-Format. Dieser Wert gibt an, wann der Benutzer den Zugriff auf das Abonnement verliert, nachdem das Abonnement nicht automatisch verlängert werden konnte.    |
-| id | String |  Die ID des Abonnements. Verwenden Sie diesen Wert, um das Abonnement anzugeben, das Sie durch Aufrufen der Methode zum [Ändern des Abrechnungszustands eines Abonnements für einen Benutzer ](change-the-billing-state-of-a-subscription-for-a-user.md) ändern möchten.    |
-| isTrial | Boolesch |  Gibt an, ob es sich bei dem Abonnement um eine Testversion handelt.     |
-| lastModified | String |  Datum und Uhrzeit, an dem bzw. zu der das Abonnement zuletzt geändert wurde, im Format ISO 8601.      |
-| market | String | Der Ländercode (ein aus zwei Buchstaben bestehendes ISO 3166-1-Alpha-2-Format), der vom Benutzer beim Kauf des Abonnement verwendet wurde.      |
-| productId | String |  Die [Store-ID](in-app-purchases-and-trials.md#store-ids) für das [Produkt](in-app-purchases-and-trials.md#products-skus-and-availabilities), die das Abonnement-Add-On im Microsoft Store-Katalog darstellt. Ein Beispiel für eine Store-ID für ein Produkt ist 9NBLGGH42CFD.     |
-| skuId | String |  Die [Store-ID](in-app-purchases-and-trials.md#store-ids) für die [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities), die das Abonnement-Add-On im Microsoft Store-Katalog darstellt. Ein Beispiel für eine Store-ID für eine SKU ist 0010.    |
-| startTime | String |  Startdatum und -uhrzeit des Abonnements im Format ISO 8601.     |
-| recurrenceState | String  |  Einer der folgenden Werte:<ul><li>**None**:&nbsp;&nbsp;Gibt ein unbefristetes Abonnement an.</li><li>**Active**:&nbsp;&nbsp;Das Abonnement ist aktiv und der Benutzer ist zur Verwendung der Dienste berechtigt.</li><li>**Inactive**:&nbsp;&nbsp;Das Abonnement hat das Ablaufdatum überschritten und der Benutzer hat die Option zur automatischen Verlängerung des Abonnements deaktiviert.</li><li>**Canceled**:&nbsp;&nbsp;Das Abonnement wurde absichtlich vor dem Ablaufdatum beendet, mit oder ohne Rückerstattung.</li><li>**InDunning**:&nbsp;&nbsp;Das Abonnement befindet sich im *Mahnstatus* (d. h. das Abonnement läuft in Kürze ab und Microsoft versucht, die Mittel zur automatischen Verlängerung des Abonnements zu akquirieren).</li><li>**Failed**:&nbsp;&nbsp;Der Mahnungszeitraum ist abgelaufen und das Abonnement konnte trotz mehrerer Versuche nicht verlängert werden.</li></ul><p>**Hinweis**:</p><ul><li>**Inactive**/**Canceled**/**Failed** sind abschließende Zustände. Wenn ein Abonnement in einen dieser Status wechselt, muss der Benutzer das Abonnement erneut kaufen, um es wieder zu aktivieren. Der Benutzer ist nicht berechtigt, die Dienste in diesen Zuständen zu verwenden.</li><li>Wenn ein Abonnement sich im Status **Canceled** befindet, wird die Ablaufzeit mit dem Datum und der Uhrzeit des Abbruchs aktualisiert.</li><li>Die ID des Abonnements bleibt während der gesamten Gültigkeitsdauer unverändert. Sie wird nicht geändert, wenn die Option zur automatischen Verlängerung aktiviert oder deaktiviert wird. Wenn ein Benutzer ein Abonnement nach Erreichen eines abschließenden Zustands erneut kauft, wird eine neue Abonnement-ID erstellt.</li><li>Die Abonnement-ID sollte bei allen Aktionen verwendet werden, die auf ein individuelles Abonnement angewendet werden.</li><li>Wenn ein Benutzer ein Abonnement nach der Kündigung bzw. Einstellung erneut erwirbt, werden beim Anfordern der Ergebnisse zum betreffenden Benutzer zwei Einträge angezeigt: ein Eintrag mit der alten Abonnement-ID in einem abschließenden Zustand und ein Eintrag mit der neuen Abonnement-ID in einem aktiven Zustand.</li><li>Es empfiehlt sich, die Werte „recurrenceState“ und „expirationTime“ stets zu überprüfen, da Aktualisierungen auf „recurrenceState“ u. U. einige Minuten (gelegentlich auch Stunden) verzögert erfolgen.       |
-| cancellationDate | String   |  Datum und Uhrzeit, an dem bzw. zu der das Abonnement des Benutzers storniert wurde, im Format ISO 8601.     |
+| autorumew | Boolesch |  Gibt an, ob das Abonnement für die automatische Verlängerung am Ende des aktuellen Abonnementzeitraums konfiguriert ist.   |
+| beneficiary | Zeichenfolge |  Die ID des Empfängers der Berechtigung, die diesem Abonnement zugeordnet ist.   |
+| expirationTime | Zeichenfolge | Das Datum und die Uhrzeit bis zum Ablauf des Abonnements im ISO 8601-Format. Dieses Feld ist nur verfügbar, wenn sich das Abonnement in einem bestimmten Zustand befindet. Die Ablaufzeit gibt normalerweise an, wenn der aktuelle Zustand abläuft. Bei einem aktiven Abonnement gibt das Ablaufdatum z. b. an, wann die nächste automatische Erneuerung stattfindet.    |
+| expirationtimewithgrace | Zeichenfolge | Das Datum und die Uhrzeit, zu der das Abonnement abläuft, einschließlich der Toleranz Periode im ISO 8601-Format. Dieser Wert gibt an, wann der Benutzer den Zugriff auf das Abonnement verliert, nachdem das Abonnement nicht automatisch verlängert werden konnte.    |
+| id | Zeichenfolge |  Die ID des Abonnements. Verwenden Sie diesen Wert, um anzugeben, welches Abonnement Sie ändern möchten, wenn Sie den [Abrechnungs Zustand eines Abonnements für eine Benutzer Methode ändern](change-the-billing-state-of-a-subscription-for-a-user.md) .    |
+| istrial | Boolesch |  Gibt an, ob das Abonnement eine Testversion ist.     |
+| lastModified | Zeichenfolge |  Das Datum und die Uhrzeit der letzten Änderung des Abonnements im ISO 8601-Format.      |
+| market | Zeichenfolge | Der Ländercode (im 2-Buch-Format ISO 3166-1 Alpha-2), in dem der Benutzer das Abonnement erworben hat.      |
+| productId | Zeichenfolge |  Die [Speicher-ID](in-app-purchases-and-trials.md#store-ids) für das [Produkt](in-app-purchases-and-trials.md#products-skus-and-availabilities) , das das Abonnement-Add-on im Microsoft Store Katalog darstellt. Eine Beispiel-Speicher-ID für ein Produkt ist 9nblggh42cfd.     |
+| skuId | Zeichenfolge |  Die [Speicher-ID](in-app-purchases-and-trials.md#store-ids) für die [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) , die das Add-on des Abonnements für den Microsoft Store Katalog darstellt. Eine Beispiel-Speicher-ID für eine SKU ist 0010.    |
+| startTime | Zeichenfolge |  Das Startdatum und die Start Uhrzeit für das Abonnement im ISO 8601-Format.     |
+| RecurrenceState | Zeichenfolge  |  Einer der folgenden Werte:<ul><li>**None**: &nbsp; &nbsp; gibt ein unbefristete Abonnement an.</li><li>**Aktiv**: &nbsp; &nbsp; das Abonnement ist aktiv, und der Benutzer ist berechtigt, die Dienste zu verwenden.</li><li>**Inaktiv**: &nbsp; &nbsp; das Abonnement liegt nach dem Ablaufdatum, und der Benutzer hat die Option zur automatischen Verlängerung für das Abonnement deaktiviert.</li><li>**Abgebrochen**: &nbsp; &nbsp; das Abonnement wurde absichtlich vor dem Ablaufdatum mit oder ohne Rückerstattung beendet.</li><li>**Indunning**: &nbsp; &nbsp; das Abonnement befindet sich in *Dunning* (das heißt, das Abonnement läuft bald ab, und Microsoft versucht, Geld zu erwerben, um das Abonnement automatisch zu erneuern).</li><li>**Failed** Fehler: &nbsp; &nbsp; der Gültigkeits Zeitraum ist abgelaufen, und das Abonnement konnte nach mehreren versuchen nicht verlängert werden.</li></ul><p>**Hinweis:**</p><ul><li>**Inaktiv** / **Abgebrochen** / **Failed** sind Terminal Zustände. Wenn ein Abonnement in einen dieser Zustände gelangt, muss der Benutzer das Abonnement erneut erwerben, um es erneut zu aktivieren. Der Benutzer ist nicht berechtigt, die Dienste in diesen Zuständen zu verwenden.</li><li>Wenn ein Abonnement **abgebrochen** wird, wird der ExpirationTime-Wert mit dem Datum und der Uhrzeit des Abbruchs aktualisiert.</li><li>Die ID des Abonnements bleibt während der gesamten Lebensdauer unverändert. Wenn die Option für die automatische Verlängerung aktiviert oder deaktiviert ist, wird Sie nicht geändert. Wenn ein Benutzer ein Abonnement nach dem Erreichen eines Endzustands erneut erwirbt, wird eine neue Abonnement-ID erstellt.</li><li>Die ID eines Abonnements sollte verwendet werden, um jeden Vorgang für ein einzelnes Abonnement auszuführen.</li><li>Wenn ein Benutzer ein Abonnement erneut erwirbt, nachdem es abgebrochen oder zurückgesetzt wurde, erhalten Sie beim Abfragen der Ergebnisse für den Benutzer zwei Einträge: einen mit der alten Abonnement-ID in einem Endzustand und einen, der die neue Abonnement-ID im aktiven Status aufweist.</li><li>Es ist immer eine bewährte Vorgehensweise, rekurrencestate und ExpirationTime zu überprüfen, da Aktualisierungen von RecurrenceState möglicherweise um ein paar Minuten (oder gelegentlich Stunden) verzögert werden.       |
+| cancellationdate | Zeichenfolge   |  Das Datum und die Uhrzeit, zu der das Abonnement des Benutzers abgebrochen wurde, im ISO 8601-Format.     |
 
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Verwalten von Produkt Berechtigungen von einem Dienst](view-and-grant-products-from-a-service.md)
-* [Ändern des Abrechnungs Zustands eines Abonnements für einen Benutzer](change-the-billing-state-of-a-subscription-for-a-user.md)
-* [Abfragen von Produkten](query-for-products.md)
-* [Als erfüllt nutzbare Produkte melden](report-consumable-products-as-fulfilled.md)
-* [Einen Microsoft Store ID-Schlüssel erneuern](renew-a-windows-store-id-key.md)
+* [Verwalten von Produktansprüchen aus einem Dienst](view-and-grant-products-from-a-service.md)
+* [Ändern des Abrechnungszustands eines Abonnements für einen Benutzer](change-the-billing-state-of-a-subscription-for-a-user.md)
+* [Produktabfrage](query-for-products.md)
+* [Melden von konsumierbaren Produkten als erfüllt](report-consumable-products-as-fulfilled.md)
+* [Verlängern eines Microsoft Store-ID-Schlüssels](renew-a-windows-store-id-key.md)

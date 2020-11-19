@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP, Senden von Popup Benachrichtigungen, Benachrichtigungen, Senden von Benachrichtigungen, Popup Benachrichtigungen, Vorgehensweise, Schnellstart, erste Schritte, Codebeispiel, Exemplarische Vorgehensweise
 ms.localizationpriority: medium
-ms.openlocfilehash: 4142fb3d036bb19eb652ca9048a70325eb64b17d
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: 0a2e8c25aa7efcb96166b741a073122e3c077c08
+ms.sourcegitcommit: 2a23972e9a0807256954d6da5cf21d0bbe7afb0a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339808"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94941826"
 ---
 # <a name="send-a-local-toast-notification-from-uwp-apps"></a>Lokale Popup Benachrichtigung von UWP-apps senden
 
@@ -23,7 +23,7 @@ Eine Popup Benachrichtigung ist eine Meldung, die eine APP erstellen und an den 
 > [!IMPORTANT]
 > Desktop Anwendungen (einschließlich gepackter [msix](/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Desktop-Apps) haben unterschiedliche Schritte zum Senden von Benachrichtigungen und zur Handhabung der Aktivierung Weitere Informationen zum Implementieren von-Umfassungen finden Sie in der Dokumentation zu [Desktop-Apps](toast-desktop-apps.md) .
 
-> **Wichtige APIs** : die Klasse "- [Benachrichtigungs Klasse](/uwp/api/Windows.UI.Notifications.ToastNotification)", die Klasse "" der [Klasse](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs) ""
+> **Wichtige APIs**: die Klasse "- [Benachrichtigungs Klasse](/uwp/api/Windows.UI.Notifications.ToastNotification)", die Klasse "" der [Klasse](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs) ""
 
 
 
@@ -62,7 +62,7 @@ var content = new ToastContentBuilder()
 var notif = new ToastNotification(content.GetXml());
 
 // And show it!
-ToastNotificationManager.CreateToastNotifier().Show();
+ToastNotificationManager.CreateToastNotifier().Show(notif);
 ```
 
 ## <a name="step-4-handling-activation"></a>Schritt 4: Behandeln der Aktivierung
