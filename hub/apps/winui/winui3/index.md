@@ -3,12 +3,12 @@ title: WinUI 3 Vorschau 3 (November 2020)
 description: Übersicht über das Release von WinUI 3 Vorschau 3.
 ms.date: 11/17/2020
 ms.topic: article
-ms.openlocfilehash: d2ff1646c431ef1f79455260a61027d0a84f77ca
-ms.sourcegitcommit: f723edbe3dc846c1988d721f6e8078aaec371899
+ms.openlocfilehash: d91d957434b2a39182e2c764aecf49fc43f7a601
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701966"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933175"
 ---
 # <a name="windows-ui-library-3-preview-3-november-2020"></a>Windows-UI-Bibliothek 3 Vorschau 3 (November 2020)
 
@@ -43,15 +43,19 @@ WinUI 3 Vorschau 3 enthält Visual Studio-Projektvorlagen, die Ihnen beim Erst
     Zum Erstellen von C++-Apps müssen Sie außerdem die folgenden Workloads einschließen:
     - Desktopentwicklung mit C++
     - Die optionale Komponente *C++ (v142) UWP-Tools (Universelle Windows-Plattform)* für die UWP-Workload (siehe „Installationsdetails“ im Abschnitt „Entwicklung mit der universellen Windows-Plattform“ im rechten Bereich).
-3. Stellen Sie sicher, dass auf Ihrem System eine NuGet-Paketquelle für **nuget.org** aktiviert ist. Weitere Informationen finden Sie unter [Allgemeine NuGet-Konfigurationen](/nuget/consume-packages/configuring-nuget-behavior).
+3. Stellen Sie sicher, dass auf Ihrem System eine NuGet-Paketquelle für **nuget.org** aktiviert ist. Weitere Informationen finden Sie unter [Allgemeine NuGet-Konfigurationen](/nuget/consume-packages/configuring-nuget-behavior).[Windows Community Toolkit](#windows-community-toolkit)
 
 4. Laden Sie das [WinUI 3 Vorschau 3-VSIX-Paket](https://aka.ms/winui3/preview3-download) herunter und installieren Sie es. Dadurch werden Visual Studio 2019 die WinUI 3-Projektvorlagen und das NuGet-Paket mit den WinUI 3-Bibliotheken hinzugefügt.
 
     Anweisungen zum Hinzufügen des VSIX-Pakets zu Visual Studio finden Sie unter [Suchen nach und Verwenden von Visual Studio-Erweiterungen](/visualstudio/ide/finding-and-using-visual-studio-extensions#install-without-using-the-manage-extensions-dialog-box).
 
-5. Wenn Sie das WebView2-Steuerelement in Ihrer App verwenden, installieren Sie die Dev Channel-Version des Microsoft Edge-Browsers von [Microsoft Edge Insider Channels](https://www.microsoftedgeinsider.com/en-us/download). Stellen Sie sicher, dass alle vorhandenen Instanzen von Microsoft Edge Beta, Microsoft Edge Dev und Microsoft Edge WebView2 Runtime deinstalliert werden.
+#### <a name="webview2"></a>Webansicht2
 
-6. Wenn Sie das Windows Community Toolkit verwenden, [laden Sie die neueste Version herunter](https://aka.ms/wct-winui3).
+Wenn Sie das WebView2-Steuerelement in Ihrer App verwenden, installieren Sie die **Dev Channel-Version des Microsoft Edge-Browsers** von [Microsoft Edge Insider Channels](https://www.microsoftedgeinsider.com/en-us/download). Stellen Sie sicher, dass alle vorhandenen Instanzen von Microsoft Edge Beta, Microsoft Edge Dev und Microsoft Edge WebView2 Runtime deinstalliert werden.
+
+#### <a name="windows-community-toolkit"></a>Windows-Community-Toolkit
+
+Wenn Sie das Windows Community Toolkit verwenden, [laden Sie die neueste Version herunter](https://aka.ms/wct-winui3).
 
 ## <a name="create-winui-projects"></a>Erstellen von WinUI-Projekten
 
@@ -66,7 +70,7 @@ Weitere Informationen zu den ersten Schritten mit den WinUI-Projektvorlagen find
 
 Abgesehen von den [Einschränkungen und bekannten Problemen](#preview-3-limitations-and-known-issues) ist das Erstellen einer App mithilfe der WinUI-Projekte vergleichbar mit dem Erstellen einer UWP-App mit XAML und WinUI 2.x. Daher lassen sich die meisten [Anleitungsdokumentationen](/windows/uwp/design/) für UWP-Apps und die **Windows.UI** WinRT-Namespaces im Windows SDK anwenden.
 
-Mit dieser Version wurde auch [WinUI 3 API-Referenzdokumentation](/uwp/api/overview/winui/) für alle auf WinUI 3 portierten WinRT-APIs hinzugefügt.
+Mit dieser Version wurde auch [WinUI 3 API-Referenzdokumentation](/windows/winui/api/) für alle auf WinUI 3 portierten WinRT-APIs hinzugefügt.
 
 Wenn Sie ein Projekt mit WinUI 3 Vorschau 2 erstellt haben, können Sie Ihr Projekt auf die Verwendung von Vorschau 3 upgraden. Im [WinUI GitHub-Repository](https://aka.ms/winui3/upgrade-instructions) finden Sie ausführliche Anleitungen.
 
