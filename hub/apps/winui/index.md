@@ -4,12 +4,12 @@ description: WinUI-Bibliotheken für die Entwicklung von Windows-Apps.
 ms.topic: article
 ms.date: 07/15/2020
 keywords: Windows 10, UWP, Toolkit SDK, WinUI, Windows-UI-Bibliothek
-ms.openlocfilehash: eb87744ed5d3eb5882b4ebae75b8dcf295d89f10
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 932b3c898737426db6d62d6699b11c8f8c1b484b
+ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166754"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94691508"
 ---
 # <a name="windows-ui-library-winui"></a>Windows UI Library (WinUI)
 
@@ -46,7 +46,7 @@ Durch Beibehalten von Abwärtskompatibilität mit früheren Versionen von Window
 - [Quellcode](https://aka.ms/winui)
 - [XAML-Steuerelementekatalog-App](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
 
-## <a name="windows-ui-3-library-preview-2"></a>Windows UI 3-Bibliothek (Vorschau 2)
+## <a name="windows-ui-3-library-preview-3"></a>Windows-UI 3-Bibliothek (Vorschau 3)
 
 WinUI 3 ist die nächste WinUI-Version, eine Plattform für eine native Windows 10-Benutzeroberfläche, die komplett vom [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) entkoppelt ist.
 
@@ -69,8 +69,8 @@ Beachten Sie, dass die universelle Windows-Plattform mehr als nur das XAML-Frame
 
 ### <a name="related-links-for-winui-3"></a>Verwandte Links für WinUI 3
 
-- [Windows-UI-Bibliothek 3 Vorschau 2 (Juli 2020)](winui3/index.md)
-- [XAML-Steuerelementkatalog-App (WinUI 3 Vorschau 2)](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)
+- [Windows-UI-Bibliothek 3 Vorschau 3 (November 2020)](winui3/index.md)
+- [XAML-Steuerelementkatalog-App (WinUI 3 Vorschau 3)](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)
 
 ## <a name="winui-resources"></a>WinUI-Ressourcen
 

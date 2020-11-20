@@ -90,7 +90,7 @@
       items:
         - name: Übersicht
           href: winui/index.md
-        - name: "Windows-UI-Bibliothek 3.0\_Vorschau\_2"
+        - name: "Windows-UI-Bibliothek 3\_Vorschau\_3"
           items:
             - name: Übersicht und Versionshinweise
               href: winui/winui3/index.md

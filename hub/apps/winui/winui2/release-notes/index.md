@@ -3,12 +3,12 @@ title: Versionsanmerkungen zu WinUI
 description: Index der WinUI-Versionsanmerkungen.
 ms.date: 07/15/2020
 ms.topic: reference
-ms.openlocfilehash: 33d4b9dfb497017f446549d4f3daf737a8fa5ebb
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2055ba69566a901ea1491a36d742455fc13b5cb3
+ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166694"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94691538"
 ---
 # <a name="windows-ui-library-2x-release-notes"></a>Versionshinweise zu Windows-UI-Bibliothek 2.x
 
@@ -52,6 +52,6 @@ Versionsverlauf für das [NuGet-Hauptpaket Microsoft.UI.Xaml](https://www.nuget.
 | [2.1](winui-2.1.md) | Stabil | April 2019 | [Versionshinweise](winui-2.1.md) | **Erstes Open-Source-Release** aus [GitHub](https://github.com/microsoft/microsoft-ui-xaml). Enthält [ItemsRepeater](winui-2.1.md#itemsrepeater), [AnimatedVisualPlayer](winui-2.1.md#animatedvisualplayer), [TeachingTip](winui-2.1.md#teachingtip), [RadioMenuFlyoutItem](winui-2.1.md#radiomenuflyoutitem), [CompactDensity](winui-2.1.md#compactdensity), [Shadows](winui-2.1.md#shadows). |
 | [2.0](winui-2.0.md) | Stabil | Oktober 2018 | [Versionshinweise](winui-2.0.md) | **Erstes Release**. Enthält offizielle native Fluent-Steuerelemente und Features für Windows UWP-Apps.  |
 
-### <a name="windows-ui-library-3-preview-2-july-2020"></a>Windows-UI-Bibliothek 3 Vorschau 2 (Juli 2020)
+### <a name="windows-ui-library-3-preview-3-november-2020"></a>Windows-UI-Bibliothek 3 Vorschau 3 (November 2020)
 
-Informationen zum Ausprobieren früherer Vorschauversionen von WinUI 3 finden Sie unter [WinUI-Bibliothek 3 Vorschau 2 (Juli 2020)](../../winui3/index.md).
+Informationen zum Ausprobieren früherer Vorschauversionen von WinUI 3 finden Sie unter [WinUI-Bibliothek 3 Vorschau 3 (November 2020)](../../winui3/index.md).
