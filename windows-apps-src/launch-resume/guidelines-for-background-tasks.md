@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Hintergrundaufgabe
 ms.localizationpriority: medium
-ms.openlocfilehash: 00717a64135ef32a99b06c61b31e2ff59a587878
-ms.sourcegitcommit: b66796c73f14da63794efa66c8ded2caa25da0f7
+ms.openlocfilehash: b73568c5fb4bae6392051fedcd6ca3dea078a98d
+ms.sourcegitcommit: 4491da3f509b1126601990a816c6eb301d35ecc6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89285451"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95416617"
 ---
 # <a name="guidelines-for-background-tasks"></a>Richtlinien für Hintergrundaufgaben
 
@@ -47,7 +47,7 @@ Alternativ können Sie eine Verzögerung bewirken und asynchrone Methodenaufrufe
 
 Wenn Sie über mehrere Hintergrundaufgaben verfügen, sollten Sie berücksichtigen, ob Sie im selben Host Prozess ausgeführt werden oder in verschiedene Host Prozesse aufgeteilt werden sollen. Platzieren Sie Sie in separaten Host Prozessen, wenn Sie Bedenken haben, dass ein Fehler in einer Hintergrundaufgabe andere Hintergrundaufgaben verursachen könnte.  Verwenden Sie den **Ressourcengruppen** Eintrag im Manifest-Designer, um Hintergrundaufgaben in verschiedenen Host Prozessen zu gruppieren. 
 
-Um die **Ressourcengruppe**festzulegen, öffnen Sie den Package. appxmanifest-Designer, wählen Sie **Deklarationen**aus, und fügen Sie eine **App Service** Deklaration hinzu:
+Um die **Ressourcengruppe** festzulegen, öffnen Sie den Package. appxmanifest-Designer, wählen Sie **Deklarationen** aus, und fügen Sie eine **App Service** Deklaration hinzu:
 
 ![Ressourcengruppen Einstellung](images/resourcegroup.png)
 
@@ -59,11 +59,11 @@ Hintergrundaufgaben, die im gleichen Prozess wie die Vordergrund-App ausgeführt
 
 **Anfordern der Ausführung von Hintergrundaufgaben:**
 
-> **Wichtig**    Ab Windows 10 müssen sich apps nicht mehr auf dem Sperrbildschirm befinden als Voraussetzung für die Durchführung von Hintergrundaufgaben.
+> **Wichtig**  Ab Windows 10 ist es keine Voraussetzung mehr, dass sich Apps auf dem Sperrbildschirm befinden, um Hintergrundaufgaben auszuführen.
 
 UWP (Universelle Windows-Plattform)-Apps können alle unterstützten Aufgabentypen ausführen, ohne auf dem Sperrbildschirm angeheftet zu sein. Apps müssen jedoch [**getaccessstate**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) aufrufen und überprüfen, dass die Ausführung der APP im Hintergrund nicht verweigert wird. Stellen Sie sicher, dass **getaccessstatus** nicht eine der abgelehnten [**backgroundaccessstatus**](/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) -Aufstände zurückgibt. Diese Methode gibt z. b. **backgroundaccessstatus. deniedbyuser** zurück, wenn der Benutzer die Berechtigungen für Hintergrundaufgaben für Ihre APP in den Geräteeinstellungen explizit verweigert hat.
 
-Wenn die Ausführung Ihrer APP im Hintergrund verweigert wird, sollte Ihre APP [**requestaccessasync**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) aufrufen und sicherstellen, dass die Antwort nicht verweigert wird, bevor Hintergrundaufgaben registriert werden.
+Wenn die Ausführung Ihrer APP im Hintergrund verweigert wird, sollte Ihre APP [**requestaccessasync**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) aufrufen und sicherstellen, dass die Antwort nicht verweigert wird, bevor Hintergrundaufgaben registriert werden.
 
 Weitere Informationen zur Benutzer Auswahl im Zusammenhang mit Hintergrund Aktivitäten und Batterie Schoner finden Sie unter [Optimieren von Hintergrund Aktivitäten](../debug-test-perf/optimize-background-activity.md). 
 ## <a name="background-task-checklist"></a>Prüfliste für Hintergrundaufgaben
@@ -89,13 +89,21 @@ Weitere Informationen zur Benutzer Auswahl im Zusammenhang mit Hintergrund Aktiv
 *Gilt nur für Hintergrundaufgaben innerhalb von Prozessen*
 
 - Stellen Sie beim Abbrechen einer Aufgabe sicher, dass der `BackgroundActivated`-Ereignishandler vorhanden ist, bevor der Abbruch eintritt, oder der gesamte Prozess wird beendet.
--   Schreiben Sie Hintergrundaufgaben mit kurzer Laufzeit. Hintergrundaufgaben sind auf 30 Sekunden der Gesamtbetrachtungszeit beschränkt.
--   Verlassen Sie sich bei Hintergrundaufgaben nicht auf Benutzerinteraktionen.
+-   Schreiben Sie Hintergrundaufgaben mit kurzer Laufzeit. Die meisten Hintergrundaufgaben sind auf 30 Sekunden der Verwendung von Wall-Clock beschränkt.
 
-## <a name="related-topics"></a>Zugehörige Themen
 
-* [Erstellen und registrieren Sie eine Prozess interne Hintergrundaufgabe](create-and-register-an-inproc-background-task.md).
+*Dinge, die Sie vermeiden sollten*
+- Minimieren Sie die Verwendung der prozessübergreifenden Kommunikation über com oder RPC.
+-   Der Prozess, mit dem Sie kommunizieren möchten, befindet sich möglicherweise nicht im Status "wird ausgeführt". Dies kann zu einem Absturz führen.
+-   Es könnte eine beträchtliche Zeitspanne für die prozessübergreifende Kommunikation aufgewendet werden, die mit der für die Durchführung ihrer Hintergrundaufgabe vorgesehenen Zeit gerechnet wird.
+- Verlassen Sie sich bei Hintergrundaufgaben nicht auf Benutzerinteraktionen.
+
+
+## <a name="related-topics"></a>Verwandte Themen
+
+* [Erstellen und Registrieren einer Hintergrundaufgabe innerhalb von Prozessen](create-and-register-an-inproc-background-task.md)
 * [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](create-and-register-a-background-task.md)
+* [Erstellen und Registrieren einer WinMain-COM-Hintergrundaufgabe](create-and-register-a-winmain-background-task.md)
 * [Deklarieren von Hintergrundaufgaben im Anwendungsmanifest](declare-background-tasks-in-the-application-manifest.md)
 * [Wiedergeben von Medien im Hintergrund](../audio-video-camera/background-audio.md)
 * [Behandeln einer abgebrochenen Hintergrundaufgabe](handle-a-cancelled-background-task.md)
@@ -109,6 +117,6 @@ Weitere Informationen zur Benutzer Auswahl im Zusammenhang mit Hintergrund Aktiv
 * [Debuggen einer Hintergrundaufgabe](debug-a-background-task.md)
 * [Gewusst wie: Starten von Suspend-, Resume-und Background-Ereignissen in UWP-Apps (beim Debuggen)](/previous-versions/hh974425(v=vs.110))
 
- 
+ 
 
- 
+ 
