@@ -3,12 +3,12 @@ title: WinUI 3 Vorschau 3 (November 2020)
 description: Übersicht über das Release von WinUI 3 Vorschau 3.
 ms.date: 11/17/2020
 ms.topic: article
-ms.openlocfilehash: d91d957434b2a39182e2c764aecf49fc43f7a601
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
+ms.openlocfilehash: ac641036af8505b1e51fb81385f5206a9aa44f40
+ms.sourcegitcommit: 29c8999fb7a941fc6e26b49cf10f4cc1fcb69641
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933175"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "95002915"
 ---
 # <a name="windows-ui-library-3-preview-3-november-2020"></a>Windows-UI-Bibliothek 3 Vorschau 3 (November 2020)
 
@@ -177,6 +177,7 @@ WinUI 3 Vorschau 3 ist mit PCs kompatibel, auf denen mindestens das Windows 1
 - Desktop-Apps unterstützen .NET 5 und C# 9 und müssen in einer MSIX-App gepackt sein.
 - UWP-Apps unterstützen .NET Native und C# 7.3
 - Entwicklertools und IntelliSense funktionieren in Visual Studio Version 16.8 möglicherweise nicht ordnungsgemäß.
+- Keine Unterstützung für XAML-Designer
 - Neue C++/CX-Apps werden nicht unterstützt. Deine bestehenden Apps funktionieren jedoch weiterhin (steige so schnell wie möglich auf C++/WinRT um)
 - Die Unterstützung mehrerer Fenster in Desktop-Apps ist in Entwicklung, aber noch nicht abgeschlossen und stabil.
   - Wenn Sie neue Probleme oder Regressionen mit dem Verhalten mehrerer Fenstern finden, melden Sie diese Fehler in unserem Repository.
