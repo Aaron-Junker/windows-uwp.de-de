@@ -3,12 +3,12 @@ title: WinUI 2.3 – Anmerkungen zu dieser Version
 description: Versionshinweise zu WinUI 2.3 einschließlich neuer Features und Bugfixe.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 1043ae488342fc8396902c73c2f00eb5b19f584d
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: ad589b15b5481b5b7ff402fc2043afd71c139479
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636510"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933065"
 ---
 # <a name="windows-ui-library-23"></a>Windows-UI-Bibliothek 2.3
 
@@ -73,4 +73,4 @@ https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt) installieren
 
 Anleitungen für Steuerelemente der Windows-UI-Bibliothek sind in der [Dokumentation zu Steuerelementen der universellen Windows-Plattform](/windows/uwp/design/controls-and-patterns/) enthalten.
 
-API-Referenzdokumente findest du hier: [Windows-UI-Bibliotheks-APIs](/uwp/api/overview/winui/)
+API-Referenzdokumente findest du hier: [Windows-UI-Bibliotheks-APIs](/windows/winui/api/)

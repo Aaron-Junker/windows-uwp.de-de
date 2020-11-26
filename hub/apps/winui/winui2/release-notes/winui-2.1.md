@@ -3,12 +3,12 @@ title: WinUI 2.1 – Anmerkungen zu dieser Version
 description: Versionshinweise zu WinUI 2.1 einschließlich neuer Features und Bugfixe.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: f5087e9f5059a568e92f972c04b25d8c618015f2
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: d743b5653a824753706cebbfe1f1a60c419debfe
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762875"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933135"
 ---
 # <a name="windows-ui-library-21"></a>Windows-UI-Bibliothek 2.1
 
@@ -87,7 +87,7 @@ https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 Anleitungen für Steuerelemente der Windows-UI-Bibliothek sind in der [Dokumentation zu Steuerelementen der universellen Windows-Plattform](/windows/uwp/design/controls-and-patterns/) enthalten.
 
-API-Referenzdokumente findest du hier: [Windows-UI-Bibliotheks-APIs](/uwp/api/overview/winui/)
+API-Referenzdokumente findest du hier: [Windows-UI-Bibliotheks-APIs](/windows/winui/api/)
 
 ## <a name="microsoftuixaml-21-version-history"></a>Microsoft.UI.Xaml 2.1 Version History
 

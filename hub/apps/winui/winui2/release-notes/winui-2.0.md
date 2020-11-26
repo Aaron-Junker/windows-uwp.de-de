@@ -3,12 +3,12 @@ title: WinUI 2.0 – Anmerkungen zu dieser Version
 description: Versionshinweise für WinUI 2.0
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: eb1cde864427768ab1adb3b982e4acc5b58906db
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d6b362f78049cc6bb1ed6dfe341c2e5b083484a4
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154814"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933085"
 ---
 # <a name="windows-ui-library-20"></a>Windows-UI-Bibliothek 2.0
 
@@ -76,4 +76,4 @@ https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 Anleitungen für Steuerelemente der Windows-UI-Bibliothek sind in der [Dokumentation zu Steuerelementen der universellen Windows-Plattform](/windows/uwp/design/controls-and-patterns/) enthalten.
 
-API-Referenzdokumente findest du hier: [Windows-UI-Bibliotheks-APIs](/uwp/api/overview/winui/)
+API-Referenzdokumente findest du hier: [Windows-UI-Bibliotheks-APIs](/windows/winui/api/)

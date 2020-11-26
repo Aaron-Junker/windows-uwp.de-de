@@ -5,12 +5,12 @@ keywords: Neuigkeiten, Update, Features, Entwicklerleitfäden, Windows 10, Sept
 ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d15cd0289b3de0c086a3ddc974e1b121447188c5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 064ffbcc8c254b50704b2e63579e424a78933b3c
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155224"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933165"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im September 2018
 
@@ -34,7 +34,7 @@ Das [GitHub-Repository „Windows-Machine-Learning“](https://github.com/Micros
 
 Die [Windows-UI-Bibliothek](/uwp/toolkits/winui/) umfasst eine Reihe von NuGet-Paketen, mit denen Steuerelemente und andere Benutzeroberflächenelemente für UWP-Apps bereitgestellt werden. Diese Pakete sind auch mit früheren Versionen von Windows 10 kompatibel, sodass Ihre App selbst dann funktioniert, wenn die Benutzer nicht mit der neuesten Betriebssystemversion arbeiten.
 
-Weitere Informationen zur Windows-UI-Bibliothek findest du in [dieser Liste mit API-Namespaces, die im NuGet-Paket enthalten sind](/uwp/api/overview/winui/).
+Weitere Informationen zur Windows-UI-Bibliothek findest du in [dieser Liste mit API-Namespaces, die im NuGet-Paket enthalten sind](/windows/winui/api/).
 
 ## <a name="developer-guidance"></a>Erläuterungen für Entwickler
 

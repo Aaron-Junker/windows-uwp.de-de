@@ -3,12 +3,12 @@ title: WinUI 2.2 – Anmerkungen zu dieser Version
 description: Versionshinweise zu WinUI 2.2 einschließlich neuer Features und Bugfixe.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 603c2c439e47c82695c8bdf5cd16fceebc9bc068
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: b14b96ffc03d5e3e934b72d71ae9e2a8a3f0eb1d
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762942"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933145"
 ---
 # <a name="windows-ui-library-22"></a>Windows-UI-Bibliothek 2.2
 
@@ -40,7 +40,7 @@ Das TabView-Steuerelement ist eine Sammlung von Registerkarten, die jeweils eine
 
 #### <a name="documentation"></a>Dokumentation
 
-https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2
+https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2&preserve-view=true
 
 #### <a name="navigationview-updates"></a>NavigationView-Updates
 
@@ -144,7 +144,7 @@ https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 Anleitungen für Steuerelemente der Windows-UI-Bibliothek sind in der [Dokumentation zu Steuerelementen der universellen Windows-Plattform](/windows/uwp/design/controls-and-patterns/) enthalten.
 
-API-Referenzdokumente findest du hier: [Windows-UI-Bibliotheks-APIs](/uwp/api/overview/winui/)
+API-Referenzdokumente findest du hier: [Windows-UI-Bibliotheks-APIs](/windows/winui/api/)
 
 ## <a name="microsoftuixaml-22-prerelease-version-history"></a>Microsoft.UI.Xaml 2.2-Vorschauversion Versionsverlauf
 
@@ -158,7 +158,7 @@ Juli 2019
 
 ### <a name="experimental-feature"></a>Experimentelles Feature
 
-* [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2)
+* [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2&preserve-view=true)
 
 ### <a name="microsoftuixaml-2220190416001-prerelease"></a>Microsoft.UI.Xaml 2.2.20190416001-Vorschauversion
 
