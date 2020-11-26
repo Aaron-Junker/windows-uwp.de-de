@@ -6,12 +6,12 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b54e0b4417dd4ba9b835622a4c064b803de7fca9
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 416e3947678de0ba70687d9070c245fdfb4376df
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219704"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933185"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>Neuigkeiten für Entwickler in Windows 10, Build 17763
 
@@ -34,7 +34,7 @@ Seitenübergänge | [Seitenübergänge](../design/motion/page-transitions.md) la
 Textskalierung | In der neuen [Anleitung zur Textskalierung](../design/input/text-scaling.md) wird erläutert, wie Sie eine Anwendung so aktualisieren, dass sie den neuen Textskalierungsverhaltensweisen entspricht, über die Benutzer den relativen Schriftgrad sowohl für das Betriebssystem als auch für einzelne Anwendungen ändern können. Statt eine Bildschirmlupen-App zu verwenden(die normalerweise einfach alles in einem Bereich des Bildschirms vergrößert und eigene Nutzbarkeitsprobleme mit sich bringt), die Bildschirmauflösung zu ändern oder sich auf die DPI-Skalierung zu verlassen (bei der die Größen aller Elemente anhand der Anzeige und des typischen Betrachtungsabstands geändert werden), kann ein Benutzer schnell auf eine Einstellung zugreifen, um nur die Textgröße im Bereich von 100 % (Standardgröße) bis zu 225 % zu ändern.
 Toolkits | Das [Adobe XD- und das Adobe Illustrator-Toolkit](../design/downloads/index.md) wurden mit neuen Features aktualisiert. Diese Design-Toolkits enthalten Steuerelemente und Layoutvorlagen für das Entwerfen von UWP-Apps.
 Befehle in der Benutzeroberfläche | Zu den Aktualisierungen der [UWP-Befehlsinfrastruktur](../design/basics/commanding-basics.md) gehören eine bessere Kapselung eines Befehlsobjekts (Verhalten, Bezeichnung, Symbol, Zugriffstasten und Beschreibung) und ein Standardsatz von häufig verwendeten Befehlen, etwa Ausschneiden, Kopieren, Einfügen, Beenden usw., wodurch es nicht mehr erforderlich ist, diese Eigenschaften manuell festzulegen. </br> Die neue [XamlUICommand](/uwp/api/windows.ui.xaml.input.xamluicommand)-Klasse stellt eine Basisklasse bereit, mit der das Befehlsverhalten eines interaktiven Benutzeroberflächenelements definiert werden kann, das eine Aktion ausführt, wenn es aufgerufen wird. Diese Klasse ist die übergeordnete Klasse für die [StandardUICommand](/uwp/api/windows.ui.xaml.input.standarduicommand)-Klasse, die eine Reihe von Standardplattformbefehlen mit vordefinierten Eigenschaften verfügbar macht. 
-Windows-UI-Bibliothek | Die [Windows-UI-Bibliothek](/uwp/toolkits/winui/) umfasst eine Reihe von NuGet-Paketen, mit denen Steuerelemente und andere Benutzeroberflächenelemente für UWP-Apps bereitgestellt werden. Diese Pakete sind auch mit früheren Versionen von Windows 10 kompatibel, sodass Ihre App selbst dann funktioniert, wenn die Benutzer nicht mit der neuesten Betriebssystemversion arbeiten. </br> Weitere Informationen zu den Neuerungen in der Windows-UI-Bibliothek finden Sie in [dieser Liste von API-Namespaces, die im NuGet-Paket enthalten sind](/uwp/api/overview/winui/).
+Windows-UI-Bibliothek | Die [Windows-UI-Bibliothek](/uwp/toolkits/winui/) umfasst eine Reihe von NuGet-Paketen, mit denen Steuerelemente und andere Benutzeroberflächenelemente für UWP-Apps bereitgestellt werden. Diese Pakete sind auch mit früheren Versionen von Windows 10 kompatibel, sodass Ihre App selbst dann funktioniert, wenn die Benutzer nicht mit der neuesten Betriebssystemversion arbeiten. </br> Weitere Informationen zu den Neuerungen in der Windows-UI-Bibliothek finden Sie in [dieser Liste von API-Namespaces, die im NuGet-Paket enthalten sind](/windows/winui/api/).
 
 ## <a name="develop-windows-apps"></a>Windows-Apps entwickeln
 

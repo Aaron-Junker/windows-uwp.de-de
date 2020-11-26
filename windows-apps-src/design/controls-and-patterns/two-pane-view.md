@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 76a6264a8ce1704e9bd209a6246c81ba9665265f
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "93034433"
 ---
 # <a name="two-pane-view"></a>Ansicht mit zwei Bereichen
@@ -44,7 +44,7 @@ Das TwoPaneView-Steuerelement funktioniert zwar auf allen Windows-Geräten, ist 
 > [!TIP]
 > In diesem Dokument stellt der Alias **muxc** in XAML die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben dem [Page](/uwp/api/windows.ui.xaml.controls.page)-Element Folgendes hinzugefügt: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
->Im CodeBehind stellt ebenfalls der Alias **muxc** in C# die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben am Anfang der Datei die folgende **using** -Anweisung hinzugefügt: `using muxc = Microsoft.UI.Xaml.Controls;`
+>Im CodeBehind stellt ebenfalls der Alias **muxc** in C# die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben am Anfang der Datei die folgende **using**-Anweisung hinzugefügt: `using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
