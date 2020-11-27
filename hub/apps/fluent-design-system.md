@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: f5d1829d9fca4f5805a52ed34a1218723897c13d
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: 55dfda48feb87538abc9ae206f93cd577dc63eb8
+ms.sourcegitcommit: 4f82bc9e2096d0212f10d633899f4bc19b7fe75d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91932991"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94973301"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Fluent Design-System für Ersteller von Windows-Apps
 
@@ -251,7 +251,7 @@ Bringen Sie Material in Ihre UWP-App:
 
 ## <a name="design-toolkits-and-code-samples"></a>Design-Toolkits und Codebeispiele
 
-Sie möchten Ihre eigenen Apps mit Fluent Design erstellen? Unsere Toolkits für Adobe XD, Adobe Illustrator, Adobe Photoshop, Framer und Sketch dienen Ihnen als Hilfe bei Ihrer Entwurfsarbeit, und mit unseren Beispielen können Sie schneller entwickeln.
+Sie möchten Ihre eigenen Apps mit Fluent Design erstellen? Unsere Toolkits für Figma, Adobe XD und Sketch dienen Ihnen als Hilfe bei Ihrer Entwurfsarbeit, und mit unseren Beispielen können Sie schneller entwickeln.
 
 :::row:::
     :::column:::
