@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: e9cb4a52e56862f9be27c72ef46afced895633c3
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: ee0c92ec81f7bbabc2218afbf263000a167d2057
+ms.sourcegitcommit: e81227399ba0f286e74e4977d757237829440a2e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860098"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96310208"
 ---
 # <a name="keyboard-accelerators"></a>Tastaturkürzel
 
@@ -33,9 +33,9 @@ Weitere Informationen zum Navigieren in der Benutzeroberfläche einer Windows-An
 Zugriffstasten enthalten in der Regel die Funktionstasten F1 bis F12 oder eine Kombination aus einem Standardschlüssel, der mit einer oder mehreren modifiziererschlüsseln gekoppelt ist (STRG, UMSCHALT).
 
 > [!NOTE]
-> UWP-Platt Form Steuerelemente verfügen über integrierte Tastaturbeschleuniger. ListView unterstützt z. b. STRG + A, um alle Elemente in der Liste auszuwählen, und richeditbox unterstützt STRG + TAB, um eine Registerkarte in das Textfeld einzufügen. Diese integrierten Tastaturbeschleuniger werden als **Steuerungs Beschleuniger** bezeichnet und nur ausgeführt, wenn sich der Fokus auf dem Element oder einem seiner untergeordneten Elemente befindet. Zugriffstasten, die durch Sie mithilfe der hier beschriebenen Tastatur Zugriffs-APIs definiert werden, werden als **App Accelerators**bezeichnet.
+> UWP-Platt Form Steuerelemente verfügen über integrierte Tastaturbeschleuniger. ListView unterstützt z. b. STRG + A, um alle Elemente in der Liste auszuwählen, und richeditbox unterstützt STRG + TAB, um eine Registerkarte in das Textfeld einzufügen. Diese integrierten Tastaturbeschleuniger werden als **Steuerungs Beschleuniger** bezeichnet und nur ausgeführt, wenn sich der Fokus auf dem Element oder einem seiner untergeordneten Elemente befindet. Zugriffstasten, die durch Sie mithilfe der hier beschriebenen Tastatur Zugriffs-APIs definiert werden, werden als **App Accelerators** bezeichnet.
 
-Tastaturbeschleuniger sind nicht für jede Aktion verfügbar, aber häufig mit Befehlen verknüpft, die in Menüs verfügbar gemacht werden (und mit dem Menü Element Inhalt angegeben werden sollten).Accelerators können auch Aktionen zugeordnet werden, die keine entsprechenden Menü Elemente aufweisen. Da sich die Benutzer jedoch auf die Menüs einer Anwendung verlassen, um den verfügbaren Befehlssatz zu ermitteln und zu erlernen, sollten Sie versuchen, die Ermittlung von Accelerators so einfach wie möglich zu machen (mit Bezeichnungen oder eingerichteten Mustern können Sie dies unterstützen).
+Tastaturbeschleuniger sind nicht für jede Aktion verfügbar, aber häufig mit Befehlen verknüpft, die in Menüs verfügbar gemacht werden (und mit dem Menü Element Inhalt angegeben werden sollten). Accelerators können auch Aktionen zugeordnet werden, die keine entsprechenden Menü Elemente aufweisen. Da sich die Benutzer jedoch auf die Menüs einer Anwendung verlassen, um den verfügbaren Befehlssatz zu ermitteln und zu erlernen, sollten Sie versuchen, die Ermittlung von Accelerators so einfach wie möglich zu machen (mit Bezeichnungen oder eingerichteten Mustern können Sie dies unterstützen).
 
 ![Screenshot der Tastaturbeschleuniger in einer Menü Element Bezeichnung.](images/accelerators/accelerators_menuitemlabel.png)  
 *In einer Menü Element Bezeichnung beschriebene Tastaturbeschleuniger*
@@ -127,11 +127,11 @@ Es wird empfohlen, dass Sie für die gängigsten Aktionen in der APP Tastaturbes
 ```
 
 ![Screenshot einer Tastatur Beschleunigung in einer QuickInfo.](images/accelerators/accelerators_tooltip.png)  
-***In einer QuickInfo beschriebene Tastatur Beschleunigung***
+**_In einer QuickInfo beschriebene Tastatur Beschleunigung_* _
 
 Das [UIElement](/uwp/api/windows.ui.xaml.uielement) -Objekt verfügt über eine [keyboardaccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator) -Auflistung ( [keyboardaccelerators](/uwp/api/windows.ui.xaml.uielement.KeyboardAccelerators)), in der Sie die benutzerdefinierten keyboardaccelerator-Objekte angeben und die Tastatureingaben für die Zugriffstaste definieren:
 
--   **[Key](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)** : der [virtualkey](/uwp/api/windows.system.virtualkey) , der für die Zugriffstaste verwendet wird.
+-   _ *[Key](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)**: der für die Tastatur Zugriffs [Taste verwendete virtualkey](/uwp/api/windows.system.virtualkey) .
 
 -   **[Modifiziererer](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Modifiers)** – die für die Tastatur Zugriffstaste verwendeten [virtualkeymodifier](/uwp/api/windows.system.virtualkeymodifiers) . Wenn Modifizierer nicht festgelegt ist, ist der Standardwert None.
 
@@ -202,7 +202,7 @@ Im folgenden Beispiel löst Control + S das Click-Ereignis aus, da die Schaltfl�
 ``` xaml 
 <Button Content="Save" Click="OnSave">
   <Button.KeyboardAccelerators>
-    <KeyboardAccelerator Key="S" Modifiers="Control" />
+    <KeyboardAccelerator Key="S" Modifiers="Control" />
   </Button.KeyboardAccelerators>
 </Button>
 ```
@@ -211,7 +211,7 @@ Wenn ein Element mehrere Steuerelement Muster implementiert, kann nur ein Elemen
 1.  Aufrufen (Schaltfläche)
 2.  Umschalten (Kontrollkästchen)
 3.  Auswahl (ListView)
-4.  Erweitern/reduzieren (ComboBox) 
+4.  Erweitern/reduzieren (ComboBox) 
 
 Wenn keine Entsprechung gefunden wird, ist die Zugriffstaste ungültig, und es wird eine Debugmeldung bereitgestellt ("Es wurden keine Automatisierungs Muster für diese Komponente gefunden. Implementieren Sie das gesamte gewünschte Verhalten im aufgerufenen Ereignis. Wenn die Einstellung in Ihrem Ereignishandler auf true festgelegt wird, wird diese Meldung unterdrückt. ")
 
@@ -219,7 +219,7 @@ Wenn keine Entsprechung gefunden wird, ist die Zugriffstaste ungültig, und es w
 
 Das aufgerufene Ereignis des [keyboardaccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator) -Objekts wird ausgelöst, wenn die Zugriffstaste ausgeführt wird. Das [keyboardacceleratorinvokeabventargs](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs) -Ereignis Objekt enthält die folgenden Eigenschaften:
 
-- [**Behandelt**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (boolesch): Wenn diese Einstellung auf "true" festgelegt wird, wird verhindert, dass das Ereignis das-Steuerelement Muster auslöst, und das Der Standardwert ist false.
+- [**Behandelt**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (boolesch): Wenn diese Einstellung auf "true" festgelegt wird, wird verhindert, dass das Ereignis das-Steuerelement Muster auslöst, und das Die Standardeinstellung ist „false“.
 - - [**Element**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element) (DependencyObject): das der Zugriffstaste zugeordnete Objekt.
 - [**Keyboardaccelerator**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator): die Tastenkombination, mit der das aufgerufene Ereignis ausgelöst wird.
 
@@ -228,8 +228,8 @@ Hier veranschaulichen wir, wie Sie eine Auflistung von Tastatur Accelerators fü
 ``` xaml
 <ListView x:Name="MyListView">
   <ListView.KeyboardAccelerators>
-    <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
-    <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
+    <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
+    <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
   </ListView.KeyboardAccelerators>
 </ListView>
 ```
@@ -285,10 +285,10 @@ Wenn ein Steuerelement deaktiviert ist, wird auch die zugehörige Zugriffstaste 
   <TextBox>
     <TextBox.KeyboardAccelerators>
       <KeyboardAccelerator 
-        Key="A" 
-        Modifiers="Control" 
-        Invoked="CustomTextSelecAllInvoked" 
-        IsEnabled="False" />
+        Key="A" 
+        Modifiers="Control" 
+        Invoked="CustomTextSelecAllInvoked" 
+        IsEnabled="False" />
     </TextBox.KeyboardAccelerators>
   </TextBox>
 
@@ -308,18 +308,18 @@ In diesem Beispiel gibt AutomationProperty. AcceleratorKey die Zeichenfolge "Con
   <ListView.KeyboardAccelerators>
 
     <KeyboardAccelerator 
-      Key="A" 
-      Modifiers="Control,Shift" 
-      Invoked="CustomSelectAllInvoked" />
+      Key="A" 
+      Modifiers="Control,Shift" 
+      Invoked="CustomSelectAllInvoked" />
       
     <KeyboardAccelerator 
-      Key="F5" 
-      Modifiers="None" 
-      Invoked="RefreshInvoked" />
+      Key="F5" 
+      Modifiers="None" 
+      Invoked="RefreshInvoked" />
 
   </ListView.KeyboardAccelerators>
 
-</ListView>   
+</ListView>   
 ```
 
 > [!NOTE] 
@@ -354,14 +354,14 @@ Dies ist möglicherweise aufgrund von Unterschieden in der Funktionalität von a
 | Suchen von Inhalten in einem Steuerelement oder Fenster mit Fokus | STRG + F |
 | Zum nächsten Suchergebnis wechseln | F3 |
 | **Weitere Aktionen** | |
-| Favoriten hinzufügen | STRG+D | 
-| Aktualisieren | F5 oder STRG + R | 
-| Vergrößern | STRG + + | 
-| Verkleinern | STRG +- | 
-| In Standardansicht Zoomen | STRG + 0 | 
-| Speichern | STRG+ S | 
-| Close (Schließen) | STRG + W | 
-| Drucken | STRG+P | 
+| Favoriten hinzufügen | STRG+D | 
+| Aktualisieren | F5 oder STRG + R | 
+| Vergrößern | STRG + + | 
+| Verkleinern | STRG +- | 
+| In Standardansicht Zoomen | STRG + 0 | 
+| Speichern | STRG+ S | 
+| Schließen | STRG + W | 
+| Drucken | STRG+P | 
 
 Beachten Sie, dass einige der Kombinationen für lokalisierte Versionen von Windows nicht gültig sind. Beispielsweise wird in der spanischen Version von Windows STRG + N als fett formatiert anstelle von STRG + B verwendet. Es wird empfohlen, lokalisierte Tastaturbeschleuniger bereitzustellen, wenn die APP lokalisiert wird.
 
@@ -526,14 +526,24 @@ Da das Ereignis " [Merkmal empfangen](/uwp/api/windows.ui.core.corewindow.Charac
 Die Vorschau Eingabeereignisse werden vor allen anderen Ereignissen ausgelöst. Wenn Sie diese Ereignisse nicht behandeln, wird die Zugriffstaste für das Element, das den Fokus besitzt, ausgelöst, gefolgt vom KeyDown-Ereignis. Beide Ereignisse Blasen bis zur Behandlung.
 
 
-![Diagramm mit der Ereignis Sequenz für Key Event Sequence ](images/accelerators/accelerators_keyevents.png)
- ***Key***
+![Diagramm mit der Key Event Sequence ](images/accelerators/accelerators_keyevents.png) 
+* **Key-Ereignis Sequenz** _
 
 Reihenfolge der Ereignisse:
 
-KeyDown-Ereignis Vorschau...
-App Accelerator OnKeyDown-Methode KeyDown Event App Accelerators auf der übergeordneten OnKeyDown-Methode für das übergeordnete KeyDown-Ereignis auf dem übergeordneten Element (Blasen zum Stamm)...
-Schlüssel für Ereignis präviewkeyup-Ereignisse keyupeer Vents
+Vorschau der KeyDown-Ereignisse<br>
+…<br>
+App-Accelerator<br>
+OnKeyDown-Methode<br>
+KeyDown-Ereignis<br>
+App-Acceleratoren auf dem übergeordneten Element<br>
+OnKeyDown-Methode für das übergeordnete Element<br>
+KeyDown-Ereignis für das übergeordnete Element<br>
+(Blasen zum Stamm)<br>
+…<br>
+Ereignis "Merkmal empfangen"<br>
+PreviewKeyUp-Ereignisse<br>
+Keyupeer Vents<br>
 
 Wenn das Accelerator-Ereignis behandelt wird, wird das KeyDown-Ereignis ebenfalls als behandelt markiert. Das KeyUp-Ereignis bleibt unverändert.
 
@@ -572,8 +582,7 @@ protected override void OnProcessKeyboardAccelerators(
 
 Es wird empfohlen, alle Tastaturbeschleuniger zu lokalisieren. Dies ist mit der standardmäßigen UWP-Ressourcen Datei (. resw) und dem x:UID-Attribut in den XAML-Deklarationen möglich. In diesem Beispiel lädt der Windows-Runtime die Ressourcen automatisch.
 
-![Diagramm zur Lokalisierung der Tastatur Beschleunigung mit UWP-Ressourcen Datei ](images/accelerators/accelerators_localization.png)
- ***Tastatur Zugriffs Lokalisierung mit UWP-Ressourcen Datei***
+![Diagramm der Tastatur Zugriffstaste mit UWP-Ressourcen Datei ](images/accelerators/accelerators_localization.png) _ *_Tastatur Beschleunigung-Lokalisierung mit UWP-Ressourcen Datei_**
 
 ``` xaml
 <Button x:Uid="myButton" Click="OnSave">
@@ -634,6 +643,6 @@ public class MyListView : ListView
 - [Tastaturinteraktionen](keyboard-interactions.md)
 - [Zugriffsschlüssel](access-keys.md)
 
-### <a name="samples"></a>Beispiele
+### <a name="samples"></a>Proben
 
 - [XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery)

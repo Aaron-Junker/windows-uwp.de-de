@@ -6,12 +6,12 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bc0365ced06e85a99fa063c86cad0946526b3f26
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: 4ddd5ddddb31cf93977cb0d5bd9c16e916c4126b
+ms.sourcegitcommit: e81227399ba0f286e74e4977d757237829440a2e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304662"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96310198"
 ---
 # <a name="use-the-compass"></a>Verwenden des Kompasses
 
@@ -19,7 +19,7 @@ ms.locfileid: "89304662"
 **Wichtige APIs**
 
 -   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
--   [**Kompass**](/uwp/api/Windows.Devices.Sensors.Compass)
+-   [**Compass**](/uwp/api/Windows.Devices.Sensors.Compass)
 
 **Beispiel**
 
@@ -39,7 +39,7 @@ Das verwendete Gerät oder der Emulator muss einen Kompass unterstützen.
 
 Dieser Abschnitt ist in zwei Unterabschnitte unterteilt: Der erste Unterabschnitt enthält die Schritte zum Erstellen einer einfachen Kompassanwendung. Im zweiten Unterabschnitt wird die erstellte App dann näher erläutert.
 
-### <a name="instructions"></a>Instructions
+### <a name="instructions"></a>Anweisungen
 
 -   Erstellen Sie ein neues Projekt. Wählen Sie dabei unter den Projektvorlagen für **Visual C#** die Option **Leere App (Universelle Windows-App)** aus.
 
@@ -106,14 +106,14 @@ Dieser Abschnitt ist in zwei Unterabschnitte unterteilt: Der erste Unterabschnit
             }
         }
     }
-    ```
+```
 
-You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **CompassCS**, you'd replace `namespace App1` with `namespace CompassCS`.
+Sie müssen den Namespace im vorhergehenden Codeausschnitt durch den Namen ersetzen, den Sie für Ihr Projekt angegeben haben. Wenn Sie z. B. ein Projekt mit dem Namen **CompassCS** erstellt haben, ersetzen Sie `namespace App1` durch `namespace CompassCS`.
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+-   Öffnen Sie die Datei „MainPage.xaml“, und ersetzen Sie den ursprünglichen Inhalt durch den folgenden XML-Code.
 
 ```xml
-        <Page
+    <Page
         x:Class="App1.MainPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -173,6 +173,6 @@ Die neuen Werte werden in die TextBlock-Elemente des XAML-Projektcodes geschrieb
  <TextBlock x:Name="txtMagnetic" HorizontalAlignment="Left" Height="22" Margin="130,18,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFFBF6F6"/>
  <TextBlock x:Name="txtNorth" HorizontalAlignment="Left" Height="18" Margin="130,58,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFF5F1F1"/>
 ```
- 
+ 
 
- 
+ 
