@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: fcffbf9fd3f333aa4aea4f155c5508d2867c2776
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 493a9936fa5d97ef2ac8d8d67bec15ce2f4df3c2
+ms.sourcegitcommit: 25063560ff0a37fb404bc50e3b6e66759ee1051d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158727"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96420369"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Aktivieren von Apps für Websites mithilfe von App-URI-Handlern
 
@@ -59,8 +59,8 @@ Erstellen Sie eine JSON-Datei (ohne die Erweiterung .json) mit dem Namen **Windo
 
 ``` JSON
 [{
-  "packageFamilyName": "Your app's package family name, e.g MyApp_9jmtgj1pbbz6e",
-  "paths": [ "*" ],
+  "packageFamilyName" : "Your app's package family name, e.g MyApp_9jmtgj1pbbz6e",
+  "paths" : [ "*" ],
   "excludePaths" : [ "/news/*", "/blog/*" ]
  }]
 ```
@@ -71,10 +71,10 @@ Windows wird eine Https-Verbindung mit Ihrer Website herstellen und nach der ent
 
 Das obige für eine JSON-Datei veranschaulicht die Verwendung von Platzhaltern. Platzhalter erlauben es Ihnen eine Vielzahl von Links mit weniger Codezeilen zu unterstützen. Die Web-zu-App-Verknüpfung unterstützt zwei Arten von Platzhaltern in der JSON-Datei:
 
-| **Wild** | **Beschreibung**               |
+| **Platzhalter** | **Beschreibung**               |
 |--------------|-------------------------------|
-| **\***       | Repräsentiert eine beliebige Teilzeichenfolge      |
-| **?**        | Steht für ein einzelnes Zeichen |
+| **\** _       | Repräsentiert eine beliebige Teilzeichenfolge      |
+| _ *?**        | Steht für ein einzelnes Zeichen |
 
 `"excludePaths" : [ "/news/*", "/blog/*" ]`Im obigen Beispiel unterstützt Ihre APP beispielsweise alle Pfade, die mit der Adresse Ihrer Website beginnen (z. b. MSN.com), mit **Ausnahme** der unter `/news/` und `/blog/` . **MSN.com/weather.html** wird unterstützt, aber nicht **MSN.com/News/topnews.html**.
 
@@ -193,7 +193,7 @@ Wenn Sie der protocol activation logic zu folgen möchten, legen Sie einen Halte
 - Alle quergeladenen Apps mit AppUriHandlern werden validierte Links für den Host on Install haben Sie müssen kein JSON-Datei hochgeladen haben, um das Feature zu testen.
 - Dieses Feature funktioniert, wann immer Ihre App eine UWP-App ist, die mit  [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) gestartet ist, oder eine Windows-Desktop-App, gestartet mit  [ShellExecuteEx](/windows/desktop/api/shellapi/nf-shellapi-shellexecuteexa). Wenn die URL einen registrierten URI App Handler entspricht, wird die App anstelle des Browsers gestartet werden.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Beispiel Projekt](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts) 
  für Web-to-App [Windows. Protocol-Registrierung](/uwp/schemas/appxpackage/appxmanifestschema/element-protocol) 

@@ -6,12 +6,12 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ms.date: 01/23/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 519ff7ee7bd581ce0f19c0e4297ad1ba34380068
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9e21d52567a8bc88fdb9f73ba1a960b5e6d24462
+ms.sourcegitcommit: 25063560ff0a37fb404bc50e3b6e66759ee1051d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173034"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96420379"
 ---
 # <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Lebenszyklus von Windows 10-UWP-Apps (Universelle Windows-Plattform)
 
@@ -56,7 +56,7 @@ Den vorherigen Zustand Ihrer App können Sie von der [LaunchActivatedEventArgs.P
 |**ClosedByUser** | Der Benutzer hat die App im Tablet-Modus mit der Geste zum Schließen oder mit ALT+F4 geschlossen. Wenn der Benutzer die App schließt, wird sie zunächst angehalten und anschließend beendet. | Da die App im Wesentlichen dieselben Phasen durchlaufen hat, die zum Zustand „Terminated“ führen, behandeln Sie sie genauso wie eine App im Zustand „Terminated“.|
 |**Wird ausgeführt** | Die App war bereits geöffnet, als der Benutzer versucht hat, sie erneut zu starten. | Nichts. Beachten Sie, dass keine weitere App-Instanz gestartet wird. Es wird einfach die bereits ausgeführte Instanz aktiviert. |
 
-**Hinweis**  *Aktuelle Benutzersitzung* basiert auf Windows-Anmeldung. Solange sich der aktuelle Benutzer nicht abgemeldet oder Windows heruntergefahren oder neu gestartet hat, bleibt die aktuelle Benutzersitzung unabhängig von bestimmten Ereignissen – wie Sperrbildschirmauthentifizierung, Benutzerwechsel usw. – bestehen. 
+**Hinweis**  *Aktuelle Benutzersitzung* basiert auf Windows-Anmeldung. Solange sich der aktuelle Benutzer nicht abgemeldet oder Windows heruntergefahren oder neu gestartet hat, bleibt die aktuelle Benutzersitzung unabhängig von bestimmten Ereignissen – wie Sperrbildschirmauthentifizierung, Benutzerwechsel usw. – bestehen. 
 
 Folgendes sollte unbedingt beachtet werden: Wenn das Gerät über genügend Ressourcen verfügt, startet das Betriebssystem häufig verwendete Apps, für die dieses Verhalten zulässig ist, vorab, um die Reaktionsfähigkeit zu verbessern. Eine vorab gestartete App wird Hintergrund gestartet und dann schnell angehalten. Bei Bedarf kann sie fortgesetzt werden, wodurch der Benutzer schneller darauf zugreifen kann als bei einem Start der App.
 
@@ -83,7 +83,7 @@ Die [**Windows.UI.Xaml.Application**](/uwp/api/Windows.UI.Xaml.Application)-Klas
 
 Die Ereignisdaten für diese Methoden enthalten dieselbe [**PreviousExecutionState**](/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.previousexecutionstate)-Eigenschaft wie oben, an der Sie erkennen, in welchem Zustand sich die App vor der Aktivierung befunden hat. Um den Zustand zu interpretieren und die auszuführende Aktion zu ermitteln, gehen Sie auf dieselbe Weise vor, wie oben im Abschnitt [Starten einer App](#app-launch) beschrieben.
 
-**Hinweis**   Wenn Sie sich mit dem Administrator Konto des Computers anmelden, können Sie keine UWP-Apps aktivieren.
+**Hinweis** Wenn Sie sich mit dem Administratorkonto des Computers anmelden, können Sie keine UWP-Apps aktivieren.
 
 ## <a name="running-in-the-background"></a>Ausführung im Hintergrund ##
 
@@ -121,7 +121,7 @@ Weitere Details finden Sie unter [Reduzieren der Speicherverwendung, wenn die Ap
 
 Der Ereignishandler für die Aussetzung ist der beste Ort zum Speichern des App-Zustands. Wenn Sie jedoch im Hintergrund arbeiten (z. b. Audiowiedergabe, mit einer erweiterten Ausführungs Sitzung oder in-proc-Hintergrundaufgabe), empfiehlt es sich auch, die Daten asynchron aus dem **Enter** Prise-Ereignishandler zu speichern. Dies liegt daran, dass es möglich ist, dass Ihre APP beendet wird, während Sie im Hintergrund eine niedrigere Priorität hat. Und da die App in diesem Fall nicht den Zustand „Angehalten“ durchlaufen hat, gehen Ihre Daten verloren.
 
-Wenn Sie Ihre Daten in Ihrem **enteredbackground** -Ereignishandler speichern, bevor die Hintergrund Aktivität beginnt, wird eine gute Benutzererfahrung gewährleistet, wenn der Benutzer die APP wieder in den Vordergrund bringt. Zum Speichern von Daten und Einstellungen können Sie die Anwendungsdaten-APIs verwenden. Weitere Informationen finden Sie unter [Speichern und Abrufen von Einstellungen und anderen APP-Daten](../design/app-settings/store-and-retrieve-app-data.md).
+Wenn Sie Ihre Daten in Ihrem **enteredbackground** -Ereignishandler speichern, bevor die Hintergrund Aktivität beginnt, wird eine gute Benutzererfahrung gewährleistet, wenn der Benutzer die APP wieder in den Vordergrund bringt. Zum Speichern von Daten und Einstellungen können Sie die Anwendungsdaten-APIs verwenden. Weitere Informationen finden Sie unter [Speichern und Abrufen von Einstellungen und anderen App-Daten](../design/app-settings/store-and-retrieve-app-data.md).
 
 Nachdem Sie Ihre Daten gespeichert haben, können Sie bei einer Überschreitung der maximalen Speicherauslastung die Daten aus dem Speicher freigeben, da Sie sie später erneut laden können. Dadurch wird Speicher freigegeben, der von den für Hintergrundaktivitäten benötigten Ressourcen genutzt werden kann.
 
@@ -153,7 +153,7 @@ Falls Sie mehr Zeit benötigen, können Sie auch [ExtendedExecutionSession](/arc
 
 ### <a name="app-terminate"></a>Beenden einer App
 
-Das System versucht, die App und die zugehörigen Daten im Arbeitsspeicher beizubehalten, während sie angehalten ist. Wenn das System aber nicht über die notwendigen Ressourcen verfügt, um die App im Arbeitsspeicher beizubehalten, wird die App beendet. Apps erhalten keine Benachrichtigung, dass sie beendet werden. App-Daten können also nur im **OnSuspension**-Ereignishandler oder asynchron im **EnteredBackground**-Handler gespeichert werden.
+Das System versucht, die App und die zugehörigen Daten im Arbeitsspeicher beizubehalten, während sie angehalten ist. Wenn das System aber nicht über die notwendigen Ressourcen verfügt, um die App im Arbeitsspeicher beizubehalten, wird die App beendet. Apps erhalten keine Benachrichtigung, dass Sie beendet werden, sodass die einzige Gelegenheit zum Speichern der Daten Ihrer APP im **onangeh** enden Ereignishandler oder asynchron von Ihrem **enteredbackground** -Handler ist.
 
 Wenn Ihre App feststellt, dass sie nach dem Beenden aktiviert wurde, sollte sie die gespeicherten Anwendungsdaten laden, damit die App denselben Zustand wie vor dem Beenden aufweist. Wenn der Benutzer wieder zu einer angehaltenen App wechselt, die beendet wurde, sollte die App ihre Anwendungsdaten mithilfe der [**OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched)-Methode wiederherstellen. Das System benachrichtigt eine App nicht, wenn sie beendet wird. Bevor Ihre App angehalten wird, muss sie die Anwendungsdaten speichern und exklusive Ressourcen und Dateihandles freigeben und diese wiederherstellen, wenn sie nach der Beendigung erneut aktiviert wird.
 
@@ -173,7 +173,7 @@ Wenn die angehaltene App beendet wurde, gibt es kein **Resuming**-Ereignis, und 
 
 Angehaltene Apps empfangen keine Netzwerkereignisse, für deren Empfang sie registriert sind. Diese Netzwerkereignisse werden nicht in die Warteschlange gestellt, sondern einfach verpasst. Apps sollten beim Fortsetzen daher den Netzwerkstatus prüfen.
 
-**Hinweis**    Da das [**resuming**](/uwp/api/windows.ui.xaml.application.resuming) -Ereignis nicht vom UI-Thread ausgelöst wird, muss ein Verteiler verwendet werden, wenn der Code in Ihrem Resume-Handler mit ihrer Benutzeroberfläche kommuniziert. Ein Codebeispiel zur Vorgehensweise finden Sie unter [Aktualisieren des UI-Threads von einem Hintergrundthread](https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/UI-thread-access-from-background-thread.md).
+**Hinweis**  Da das [**Resuming**](/uwp/api/windows.ui.xaml.application.resuming)-Ereignis nicht vom UI-Thread ausgelöst wird, muss ein Dispatcher verwendet werden, wenn der Code im Resume-Handler mit der Benutzeroberfläche kommuniziert. Ein Codebeispiel zur Vorgehensweise finden Sie unter [Aktualisieren des UI-Threads von einem Hintergrundthread](https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/UI-thread-access-from-background-thread.md).
 
 Allgemeine Richtlinien finden Sie unter [Richtlinien für das Anhalten und Fortsetzen von Apps](./index.md).
 
@@ -183,7 +183,7 @@ Im Allgemeinen müssen Benutzer Apps nicht schließen, sondern können deren Ver
 
 Es gibt kein Ereignis zum Angeben, dass der Benutzer die App geschlossen hat. Wenn eine App durch den Benutzer geschlossen wird, wird sie zuerst angehalten, damit Sie ihren Zustand speichern können. In Windows 8.1 und höher wird eine App nach dem Schließen durch den Benutzer vom Bildschirm und aus der Umschaltliste entfernt, aber nicht explizit beendet.
 
-**Verhalten durch geschlossene Benutzer:**    Wenn Ihre APP etwas anderes tun muss, wenn Sie vom Benutzer geschlossen wird, als wenn Sie von Windows geschlossen wird, können Sie den Aktivierungs Ereignishandler verwenden, um zu bestimmen, ob die APP vom Benutzer oder von Windows beendet wurde. Beschreibungen zu den Status **ClosedByUser** und **Terminated** finden Sie in der Referenz für die [**ApplicationExecutionState**](/uwp/api/Windows.ApplicationModel.Activation.ApplicationExecutionState)-Enumeration.
+**Verhalten durch geschlossene Benutzer:**  Wenn Ihre APP etwas anderes tun muss, wenn Sie vom Benutzer geschlossen wird, als wenn Sie von Windows geschlossen wird, können Sie den Aktivierungs Ereignishandler verwenden, um zu bestimmen, ob die APP vom Benutzer oder von Windows beendet wurde. Beschreibungen zu den Status **ClosedByUser** und **Terminated** finden Sie in der Referenz für die [**ApplicationExecutionState**](/uwp/api/Windows.ApplicationModel.Activation.ApplicationExecutionState)-Enumeration.
 
 Wir raten dazu, dass Apps sich selbst nur dann programmgesteuert schließen sollten, wenn dies absolut erforderlich ist. Wenn eine App beispielsweise einen Arbeitsspeicherverlust erkennt, kann sie sich selbst schließen, um die Sicherheit der persönlichen Daten des Benutzers zu wahren.
 
@@ -222,6 +222,6 @@ Der grundlegende Code, der für den Lebenszyklus der App relevant ist, wird in d
 * [Hintergrund Aktivität mit dem Modell mit einem einzelnen Prozess](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)
 * [Wiedergeben von Medien im Hintergrund](../audio-video-camera/background-audio.md)
 
- 
+ 
 
- 
+ 
