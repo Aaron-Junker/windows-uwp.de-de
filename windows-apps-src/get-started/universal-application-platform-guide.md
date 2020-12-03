@@ -7,18 +7,18 @@ ms.topic: article
 ms.custom: contperfq1
 keywords: Windows 10, UWP, universell
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c6fd1f2ebee2e4e3a7d3ceb028f5def19e932c6
-ms.sourcegitcommit: 733d422fa1e3433cde842e2f200d3ef202767cc1
+ms.openlocfilehash: 630ac23c6af6e0fb184edf0a0d477b020810abc6
+ms.sourcegitcommit: 25063560ff0a37fb404bc50e3b6e66759ee1051d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94333285"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96420389"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>Was ist eine App der universellen Windows-Plattform (UWP)?
 
 UWP ist eine von vielen Methoden zum Erstellen von Clientanwendungen für Windows. UWP-Apps verwenden WinRT-APIs, um leistungsstarke Benutzeroberflächen und erweiterte asynchrone Features bereitzustellen, die für mit dem Internet verbundene Geräte ideal sind.
 
-Informationen zum Herunterladen der Tools, die Sie benötigen, um mit der Erstellung von UWP-Apps zu beginnen, finden Sie unter [Vorbereiten](/windows/apps/get-set-up.md). Anschließend können Sie [Ihre erste App schreiben](your-first-app.md).
+Informationen zum Herunterladen der Tools, die Sie benötigen, um mit der Erstellung von UWP-Apps zu beginnen, finden Sie unter [Vorbereiten](/windows/apps/get-set-up). Anschließend können Sie [Ihre erste App schreiben](your-first-app.md).
 
 
 ## <a name="where-does-uwp-fit-in-the-microsoft-development-story"></a>Wie passt UWP in die Microsoft-Entwicklungsgeschichte?
@@ -120,7 +120,7 @@ UWP-Apps verwenden die Windows-Runtime, die native, vom Betriebssystem bereitges
 
 ### <a name="get-set-up"></a>Vorbereiten
 
-Navigieren Sie zu [Vorbereiten](/windows/apps/get-started/get-set-up.md), um die erforderlichen Tools herunterzuladen und mit dem Erstellen von Apps zu beginnen, und [schreiben Sie Ihre erste App](your-first-app.md).
+Navigieren Sie zu [Vorbereiten](/windows/apps/get-started/get-set-up), um die erforderlichen Tools herunterzuladen und mit dem Erstellen von Apps zu beginnen, und [schreiben Sie Ihre erste App](your-first-app.md).
 
 ### <a name="design-your-app"></a>Entwerfen der App
 

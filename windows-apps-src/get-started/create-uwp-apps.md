@@ -5,12 +5,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, erste Schritte
 ms.localizationpriority: medium
-ms.openlocfilehash: 143e393a72aa24f81561e792148e4cc8b39bdeb4
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: efc9a2d7d4cf775a53b94bcfa01f416512f30a34
+ms.sourcegitcommit: 25063560ff0a37fb404bc50e3b6e66759ee1051d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339798"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96420359"
 ---
 # <a name="start-coding"></a>Beginnen mit der Codierung
 
@@ -18,7 +18,7 @@ ms.locfileid: "94339798"
 
 Willkommen bei der [UWP-Plattform](universal-application-platform-guide.md)! Auf dieser Seite zeigen wir Ihnen, was Sie benötigen, um Windows 10-Apps zu programmieren.
 
-Bevor Sie mit der Entwicklung beginnen, sollten Sie sicherstellen, dass [alles vorbereitet](/windows/apps/get-started/get-set-up.md) ist.
+Bevor Sie mit der Entwicklung beginnen, sollten Sie sicherstellen, dass [alles vorbereitet](/windows/apps/get-started/get-set-up) ist.
 
 ## <a name="learning-tracks"></a>Lernpfade
 
