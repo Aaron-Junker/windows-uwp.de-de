@@ -6,25 +6,32 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
-ms.openlocfilehash: 29bcb1b248b6b2392845962bb49eb11efed035f2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d93fef1b06fa52616b7e5eddf7b3ac0530856dc2
+ms.sourcegitcommit: a15bc17aa0640722d761d0d33f878cb2a822e8ed
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174754"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96577102"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>Aktivierung des Xbox One-Entwicklermodus
 
 ## <a name="how-developer-mode-works"></a>Funktionsweise des Entwicklermodus
-Xbox One verfügt über zwei Modi, den *Einzelhandels* Modus (**1**) und den *Entwickler* Modus (**2**). Im Einzelhandelsmodus ist die Konsole in dem Zustand, in dem sie von jedem Kunden oder Benutzer einer Xbox One-Konsole verwendet wird: Sie können als Benutzer Spiele spielen und Apps ausführen. Im Entwicklermodus können Sie Software für die Konsole entwickeln, jedoch keine Spiele spielen und Apps ausführen.
+Dieser Artikel gilt nur für Xbox One-und Xbox-Serie X | S-Konsolen, die über Einzelhandelskanäle erworben wurden. Informationen zu Development Kit-HW, die über ein verwaltetes Entwicklungsprogramm erworben wurden, finden Sie im Hinweis am Ende des Artikels.
 
-Der Entwicklermodus kann auf jeder Xbox One-Konsole aktiviert werden. Nachdem der Entwicklermodus aktiviert ist, können Sie zwischen dem Einzelhandel (**2a**) und den Entwickler Modi (**2B**) hin-und herwechseln.
+Xbox Retail-Konsolen können über zwei Modi, den Einzelhandels Modus (1) und den Entwicklermodus (2) verfügen. Im Einzelhandels Modus befindet sich die Konsole in Ihrem normalen Zustand: Sie können Spiele spielen und apps ausführen, die über den Xbox Store erworben wurden. Im Entwicklermodus können Sie Software für die-Konsole entwickeln und testen, Sie können jedoch keine Einzelhandels Spiele spielen oder Verkaufs-apps ausführen.
+
+Der Entwicklermodus kann in jeder Einzelhandel-Xbox-Konsole über die app "Retail-zu-dev-Kit-Konvertierung" im Xbox Store aktiviert werden. Nachdem der Entwicklermodus auf der Einzelhandels Konsole aktiviert wurde, können Sie zwischen Retail (2a) und Developer Modes (2B) hin-und herwechseln.
+
+> [!NOTE]
+> Führen Sie diese Konvertierungs-APP nicht auf einer Xbox-Entwicklungs Hardware aus, die über ein von Xbox verwaltetes Programm (z. b.) erworben wurde, ID@Xbox oder führen Sie bei der Entwicklung Ihres Spiels Fehler und Verzögerungen ein Wenn Sie ein verwalteter Partner sind, können Sie weitere Informationen zum Aktivieren der Entwicklungs Hardware erhalten. Gehe zu https://developer.microsoft.com/en-us/games/xbox/docs/gdk/provisioning-role.
+
+<br></br>
 
 ![Xbox One-Modi](images/dev-mode-flow.png)
 
-## <a name="activate-developer-mode-on-your-retail-xbox-one-console"></a>Aktivieren des Entwicklermodus auf der Xbox One-Konsole
+## <a name="activate-developer-mode-on-your-retail-xbox-console"></a>Aktivieren des Entwicklermodus auf der Xbox-Konsole des Einzelhandels
 
-1.  Starten Sie die Xbox One-Konsole.
+1.  Starten Sie Ihre Xbox Console.
 
 2.  Suchen und installieren Sie die Entwickler **Modus-Aktivierungs** -App aus dem Xbox One-Speicher.
 
@@ -59,14 +66,14 @@ Der Entwicklermodus kann auf jeder Xbox One-Konsole aktiviert werden. Nachdem de
 ## <a name="switch-between-retail-and-developer-mode"></a>Wechseln zwischen Einzelhandels- und Entwicklermodus
 Nachdem der Entwicklermodus auf der Konsole aktiviert wurde, können Sie mithilfe von **Dev Home** zwischen Einzelhandelsmodus und Entwicklermodus wechseln. Weitere Informationen zum Starten und Verwenden von dev Home finden Sie unter [Einführung in Xbox One-Tools](introduction-to-xbox-tools.md).
 
-* Öffnen Sie **dev Home**, um in den Einzelhandels Modus zu wechseln. Wählen Sie unter " **schnelle Aktionen**" die Option Entwicklungs **Modus verlassen**aus. Dadurch wird die Konsole im Einzelhandelsmodus neu gestartet.    
+* Öffnen Sie **dev Home**, um in den Einzelhandels Modus zu wechseln. Wählen Sie unter " **schnelle Aktionen**" die Option Entwicklungs **Modus verlassen** aus. Dadurch wird die Konsole im Einzelhandelsmodus neu gestartet.    
 
   ![Aktivierungsschritt 13](images/activation-step-13-rs4.png)  
   
-* Um zum Entwicklermodus zu wechseln, verwenden Sie die DevMode-Aktivierungsapp. Öffnen Sie die APP, und wählen Sie **Switch und Restart**aus. Dadurch wird die Konsole im Entwicklermodus neu gestartet.  
+* Um zum Entwicklermodus zu wechseln, verwenden Sie die DevMode-Aktivierungsapp. Öffnen Sie die APP, und wählen Sie **Switch und Restart** aus. Dadurch wird die Konsole im Entwicklermodus neu gestartet.  
 
   ![Aktivierungsschritt 14](images/activation-step-12.png)  
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 - [Deaktivierung des Xbox One-Entwicklermodus](devkit-deactivation.md)
 - [UWP auf Xbox One](index.md)
