@@ -216,6 +216,8 @@
           href: controls-and-patterns/progress-controls.md
         - name: QuickInfo
           href: controls-and-patterns/tooltips.md
+        - name: Infoleiste
+          href: controls-and-patterns/infobar.md
     - name: Text
       items:
         - name: Übersicht
@@ -328,7 +330,7 @@
                   href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
         - name: Popupinhalt
           items:
-            - name: Content
+            - name: Inhalt
               href: shell/tiles-and-notifications/adaptive-interactive-toasts.md
             - name: Schema
               href: shell/tiles-and-notifications/toast-schema.md
