@@ -1,17 +1,17 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: Diese Roadmap enthält eine Übersicht über wichtige Unternehmensfeatures für Windows 10-Apps und Apps für die Universelle Windows-Plattform (UWP).
+description: Diese Roadmap enthält eine Übersicht über wichtige Unternehmensfeatures für Windows 10-Apps und Apps für die universelle Windows-Plattform (UWP).
 title: Enterprise
 ms.date: 01/16/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ff96cd25c32418f518f6b1807e08eb72c3e14c6a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4bd6c92729766b99630958d4b33514ef4791d4bf
+ms.sourcegitcommit: 3153ef4838c35084a64173c7ed88719c8864f8cc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168434"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96755287"
 ---
 # <a name="enterprise"></a>Enterprise
 
@@ -19,8 +19,7 @@ Dieser Artikel enthält eine Übersicht über die wichtigsten Unternehmensfeatur
 
 ## <a name="feature-highlights"></a>Wichtige Features
 
-<a id="template-studio" />
-
+<a id="template-studio"></a>
 ### <a name="windows-template-studio"></a>Windows Template Studio
 
 Windows Template Studio ist eine Visual Studio 2019-Erweiterung, die mit einer assistentenbasierten Oberfläche die Erstellung neuer UWP-Apps (Universelle Windows-Plattform) beschleunigt. Das sich ergebende UWP-Projekt ist wohlgeformter, lesbarer Code, der die neuesten Windows 10-Features integriert und gleichzeitig bewährte Muster und bewährte Methoden implementiert.
@@ -29,8 +28,7 @@ Windows Template Studio ist eine Visual Studio 2019-Erweiterung, die mit einer a
 
 Weitere Informationen finden Sie unter [Windows Template Studio](https://marketplace.visualstudio.com/items?itemName=WASTeamAccount.WindowsTemplateStudio).
 
-<a id="desktop-style-UI" />
-
+<a id="desktop-style-UI"></a>
 ### <a name="controls-to-create-desktop-style-uis"></a>Steuerelemente zum Erstellen von Benutzeroberflächen im Desktopstil
 
 Wir haben neue UWP-XAML-Steuerelemente veröffentlicht, mit denen die Lücke zwischen der Benutzeroberfläche einer herkömmlichen Desktopanwendung und einer UWP-Benutzeroberfläche gefüllt wird.
@@ -39,8 +37,7 @@ Mit den neuen Steuerelementen [MenuBar](../design/controls-and-patterns/menus.md
 
 ![MenuBar](images/menu-bar.png)
 
-<a id="enterprise" />
-
+<a id="enterprise"></a>
 ### <a name="controls-to-support-enterprise-scenarios"></a>Steuerelemente zur Unterstützung von Unternehmensszenarien
 
 [DataGridView](/windows/communitytoolkit/controls/datagrid) ermöglicht das flexible Anzeigen einer Sammlung mit Daten in Zeilen und Spalten.
@@ -58,16 +55,14 @@ Die Windows-UI-Bibliothek umfasst eine Reihe von NuGet-Paketen, mit denen Steuer
 
 Informationen hierzu finden Sie unter [Windows UI Library (Preview Version)](/uwp/toolkits/winui/) (Windows-UI-Bibliothek (Vorschauversion)).
 
-<a id="xaml-islands" />
-
+<a id="xaml-islands"></a>
 ### <a name="uwp-controls-in-desktop-applications-xaml-islands"></a>UWP-Steuerelemente in Desktopanwendungen (XAML-Inseln)
 
 Windows 10 ermöglicht Ihnen jetzt die Verwendung von UWP-Steuerelementen in WPF-, Windows Forms- und C++-Win32-Desktopanwendungen mithilfe eines Features namens *XAML-Inseln*. Dies bedeutet, dass Sie das Aussehen, das Erscheinungsbild und die Funktionalität Ihrer vorhandenen Desktopanwendungen mit den aktuellen Windows 10-Benutzeroberflächenfeatures erweitern können, die nur über UWP-Steuerelemente verfügbar sind, z. B. Windows Ink und Steuerelemente, die das Fluent Design-System unterstützen. Dieses Feature wird als „XAML-Inseln“ bezeichnet.
 
 Informationen hierzu finden Sie unter [UWP-Steuerelemente in Desktopanwendungen](/windows/apps/desktop/modernize/xaml-islands).
 
-<a id="standard" />
-
+<a id="standard"></a>
 ### <a name="net-standard-20"></a>.NET-Standard 2.0
 
 .NET Standard 2.0 enthält über 20.000 APIs mehr als .NET Standard 1.x. Dies ist eine deutliche Vereinfachung beim Migrieren von vorhandenen .NET Framework-Bibliotheken und ihrer anschließenden Nutzung für verschiedene .NET-Anwendungen, z. B. Ihre UWP-Anwendung.
@@ -76,16 +71,14 @@ Informationen hierzu finden Sie unter [UWP-Steuerelemente in Desktopanwendungen]
 
 Weitere Informationen finden Sie unter [Teilen von Code zwischen einer Desktop-App und einer UWP-App](../porting/desktop-to-uwp-migrate.md).
 
-<a id="sql-server" />
-
+<a id="sql-server"></a>
 ### <a name="sql-server-connectivity"></a>SQL Server Connectivity
 
 Ihre App kann sich direkt mit einer SQL Server-Datenbank verbinden und dann Daten über Klassen im Namespace [System.Data.SqlClient](/dotnet/api/system.data.sqlclient) speichern und abrufen.
 
 Informationen hierzu finden Sie unter [Verwenden einer SQL Server-Datenbank in einer UWP-App](../data-access/sql-server-databases.md).
 
-<a id="MSIX" />
-
+<a id="MSIX"></a>
 ### <a name="msix-deployment"></a>MSIX-Bereitstellung
 
 MSIX ist ein Paketformat für Windows-Apps, das die besten Features von MSI, AppX, App-V und ClickOnce kombiniert, um eine moderne und zuverlässige Paketerstellung für alle Windows-Apps zu ermöglichen. Beim MSIX-Paket wird die Funktionalität von vorhandenen App-Paketen und Installationsdateien beibehalten, und es werden moderne Verpackungs- und Bereitstellungsfeatures für Win32-, WPF- und Windows Forms-Apps ermöglicht. 
@@ -94,11 +87,10 @@ MSIX ist ein Paketformat für Windows-Apps, das die besten Features von MSI, App
 
 Informationen hierzu finden Sie in der [MSIX-Dokumentation](/windows/msix/).
 
-<a id="distribution" />
-
+<a id="distribution"></a>
 ## <a name="security"></a>Sicherheit
 
-Windows 10 umfasst eine Suite mit Sicherheitsfeatures für App-Entwickler zum Schutz der Identität der Benutzer, der Sicherheit von Unternehmensnetzwerken und auf Geräten gespeicherten Unternehmensdaten. Neu bei Windows 10 ist Microsoft Passport, eine einfach bereitzustellende, alternative zweistufige Authentifizierungsmethode, die über eine PIN oder Windows Hello zugänglich ist. Dies sorgt für Sicherheit im Unternehmen und unterstützt eine Authentifizierung auf Basis von Fingerabdrücken, Gesichtserkennung und Irisscans.
+Windows 10 bietet eine Suite von Sicherheitsfeatures für App-Entwickler zum Schutz der Identität der Benutzer, der Sicherheit von Unternehmensnetzwerken und auf Geräten gespeicherten Unternehmensdaten. Neu bei Windows 10 ist Microsoft Passport, eine einfach bereitzustellende, alternative zweistufige Authentifizierungsmethode, die über eine PIN oder Windows Hello zugänglich ist. Dies sorgt für Sicherheit im Unternehmen und unterstützt eine Authentifizierung auf Basis von Fingerabdrücken, Gesichtserkennung und Irisscans.
 
 | Thema | BESCHREIBUNG |
 |-------|-------------|
@@ -173,6 +165,6 @@ Eine Codebasis für umfangreiche Apps im Unternehmen kann schwer zu handhaben se
 
 Weitere Informationen zu Prism finden Sie im [GitHub-Repository](https://github.com/PrismLibrary/Prism).
 
- 
+ 
 
- 
+ 
