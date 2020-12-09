@@ -3,12 +3,12 @@ title: WinUI 3 Vorschau 3 (November 2020)
 description: Übersicht über das Release von WinUI 3 Vorschau 3.
 ms.date: 11/17/2020
 ms.topic: article
-ms.openlocfilehash: ac641036af8505b1e51fb81385f5206a9aa44f40
-ms.sourcegitcommit: 29c8999fb7a941fc6e26b49cf10f4cc1fcb69641
+ms.openlocfilehash: 69855aea647b608d9253e4f71b6d7d38917def61
+ms.sourcegitcommit: a4ca8ba143862411cd1104515cfeb98f1bcdb780
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "95002915"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96857421"
 ---
 # <a name="windows-ui-library-3-preview-3-november-2020"></a>Windows-UI-Bibliothek 3 Vorschau 3 (November 2020)
 
@@ -43,7 +43,7 @@ WinUI 3 Vorschau 3 enthält Visual Studio-Projektvorlagen, die Ihnen beim Erst
     Zum Erstellen von C++-Apps müssen Sie außerdem die folgenden Workloads einschließen:
     - Desktopentwicklung mit C++
     - Die optionale Komponente *C++ (v142) UWP-Tools (Universelle Windows-Plattform)* für die UWP-Workload (siehe „Installationsdetails“ im Abschnitt „Entwicklung mit der universellen Windows-Plattform“ im rechten Bereich).
-3. Stellen Sie sicher, dass auf Ihrem System eine NuGet-Paketquelle für **nuget.org** aktiviert ist. Weitere Informationen finden Sie unter [Allgemeine NuGet-Konfigurationen](/nuget/consume-packages/configuring-nuget-behavior).[Windows Community Toolkit](#windows-community-toolkit)
+3. Stellen Sie sicher, dass auf Ihrem System eine NuGet-Paketquelle für **nuget.org** aktiviert ist. Weitere Informationen finden Sie unter [Allgemeine NuGet-Konfigurationen](/nuget/consume-packages/configuring-nuget-behavior).
 
 4. Laden Sie das [WinUI 3 Vorschau 3-VSIX-Paket](https://aka.ms/winui3/preview3-download) herunter und installieren Sie es. Dadurch werden Visual Studio 2019 die WinUI 3-Projektvorlagen und das NuGet-Paket mit den WinUI 3-Bibliotheken hinzugefügt.
 
