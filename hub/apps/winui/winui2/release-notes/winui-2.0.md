@@ -3,16 +3,16 @@ title: WinUI 2.0 – Anmerkungen zu dieser Version
 description: Versionshinweise für WinUI 2.0
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: d6b362f78049cc6bb1ed6dfe341c2e5b083484a4
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
+ms.openlocfilehash: 0e6c1bed21619d9ab12f5699c6a446754576cc29
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933085"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603817"
 ---
 # <a name="windows-ui-library-20"></a>Windows-UI-Bibliothek 2.0
 
-WinUI 2.0 ist die erste öffentliche Version der Windows-Benutzeroberflächenbibliothek.
+WinUI 2.0 ist das erste öffentliche Release der Windows-UI-Bibliothek (veröffentlicht im Oktober 2018).
 
 WinUI stellt die einfachste Möglichkeit dar, hervorragende Fluent Design-Benutzererfahrungen für Windows zu schaffen.
 

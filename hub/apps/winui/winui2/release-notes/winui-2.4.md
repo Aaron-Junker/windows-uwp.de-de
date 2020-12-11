@@ -3,16 +3,16 @@ title: WinUI 2.4 – Anmerkungen zu dieser Version
 description: Versionshinweise zu WinUI 2.4 einschließlich neuer Features und Bugfixe.
 ms.date: 07/15/2020
 ms.topic: reference
-ms.openlocfilehash: 5e2ff23b3b0ea63002ad54a367e82e81ee1cd542
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: d6c6f029b63ea8ad32f1b0109ed983b74f2b4c4d
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762919"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603697"
 ---
 # <a name="windows-ui-library-24"></a>Windows-UI-Bibliothek 2.4
 
-WinUI 2.4 ist die neueste offizielle Version der Windows-Benutzeroberflächenbibliothek (WinUI).
+WinUI 2.4 ist das Mai 2020-Release der Windows-UI-Bibliothek (WinUI).
 
 WinUI ist ein Open-Source-Projekt, das auf GitHub im [Windows UI Library-Repository](https://aka.ms/winui) gehostet wird. Bitte registrieren Sie alle Fehlerberichte, Featureanforderungen und Communitycodebeiträge in diesem Repository.
 
@@ -83,13 +83,13 @@ Nachfolgend sind einige der Steuerelemente aus der TextBox-Steuerelementfamilie 
 
 ### <a name="hierarchical-navigation"></a>Hierarchische Navigation
 
-Das [NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview?view=winui-2.4)-Steuerelement unterstützt nun die hierarchische Navigation und umfasst die Anzeigemodi „Left“, „Top“ und „LeftCompact“. Ein hierarchisches NavigationView-Steuerelement ist beim Anzeigen der Kategorien von Seiten, beim Identifizieren von Seiten mit zugeordneten Unterseiten oder bei der Verwendung in Apps mit Seiten im Hubstil nützlich, die Verknüpfungen zu vielen weiteren Seiten aufweisen.
+Das [NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview?view=winui-2.4&preserve-view=true)-Steuerelement unterstützt nun die hierarchische Navigation und umfasst die Anzeigemodi „Left“, „Top“ und „LeftCompact“. Ein hierarchisches NavigationView-Steuerelement ist beim Anzeigen der Kategorien von Seiten, beim Identifizieren von Seiten mit zugeordneten Unterseiten oder bei der Verwendung in Apps mit Seiten im Hubstil nützlich, die Verknüpfungen zu vielen weiteren Seiten aufweisen.
 
 ![Hierarchical NavigationView-Steuerelement](..\images\HierarchicalNavView.gif)<br>*Hierarchical NavigationView-Steuerelement*
 
 [Nutzungsrichtlinien](/windows/uwp/design/controls-and-patterns/navigationview#hierarchical-navigation)
 
-[API-Referenz](/uwp/api/microsoft.ui.xaml.controls.navigationview)
+[API-Referenz](/uwp/api/microsoft.ui.xaml.controls.navigationview?view=winui-2.4&preserve-view=true)
 
 ## <a name="samples"></a>Beispiele
 

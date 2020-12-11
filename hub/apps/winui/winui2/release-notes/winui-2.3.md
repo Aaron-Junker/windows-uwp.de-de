@@ -3,16 +3,16 @@ title: WinUI 2.3 – Anmerkungen zu dieser Version
 description: Versionshinweise zu WinUI 2.3 einschließlich neuer Features und Bugfixe.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: ad589b15b5481b5b7ff402fc2043afd71c139479
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
+ms.openlocfilehash: e3f6aca344fb86725e6addc7758110aca9eaf01b
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933065"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603847"
 ---
 # <a name="windows-ui-library-23"></a>Windows-UI-Bibliothek 2.3
 
-WinUI 2.3 ist die neueste offizielle Version der Windows-Benutzeroberflächenbibliothek (WinUI).
+WinUI 2.3 ist das Januar 2020-Release der Windows-UI-Bibliothek (WinUI).
 
 WinUI ist ein Open-Source-Projekt, das auf GitHub im [Windows UI Library-Repository](https://aka.ms/winui) gehostet wird. Bitte registrieren Sie alle Fehlerberichte, Featureanforderungen und Communitycodebeiträge in diesem Repository.
 

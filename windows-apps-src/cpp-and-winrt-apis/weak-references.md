@@ -6,16 +6,21 @@ ms.topic: article
 keywords: Windows 10, uwp, Standard, c++, cpp, winrt, Projektion, stark, schwach, Verweis
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2176fe1ee5893b7150b27edf4ea753ae368b41ee
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9ca3ae231a70b69f9f41bb1077b875dca798eb05
+ms.sourcegitcommit: e6a7749f9ddc0fe165b68506b0be465d4ca51ab6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154269"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96935982"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>Starke und schwache Verweise in C++/WinRT
 
 Windows-Runtime ist ein System mit Verweiszählung. Es ist wichtig, dass Sie mit der Bedeutung und dem Unterschied zwischen starken und schwachen Verweisen vertraut sind (und mit Verweisen, die keins von beidem sind, wie etwa der implizite *this*-Zeiger). Wie Sie in diesem Thema erfahren werden, kann das Wissen um den korrekten Umgang mit diesen Verweisen den Unterschied zwischen einem zuverlässigen System bedeuten, das reibungslos läuft, und einem, das zu unvorhersehbaren Abstürzen neigt. Durch die Bereitstellung von Hilfsfunktionen mit tiefgreifender Unterstützung in der Sprachprojektion kommt Ihnen [C++/WinRT](./intro-to-using-cpp-with-winrt.md) bei Ihrer Arbeit, komplexere Systeme einfach und ordnungsgemäß aufzubauen, auf halbem Weg entgegen.
+
+> [!NOTE]
+> Mit nur wenigen Ausnahmen ist die Unterstützung für schwache Referenzen für Windows-Runtime-Typen, die Sie in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) konsumieren oder erstellen, standardmäßig aktiviert. **Windows.UI.Composition** und **Windows.Devices.Input.PenDevice** sind Beispiele für Ausnahmen, d. h. Namespaces, in denen die Unterstützung für schwache Referenzen für diese Typen *nicht* aktiviert ist. Siehe auch [Wenn das Registrieren des Delegaten fehlschlägt](/windows/uwp/cpp-and-winrt-apis/handle-events#if-your-auto-revoke-delegate-fails-to-register).
+> 
+> Wenn Sie Typen erstellen, dann sehen Sie sich den Abschnitt [Schwache Referenzen in C++/WinRT](#weak-references-in-cwinrt) in diesem Thema an.
 
 ## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>Sicherer Zugriff auf den *this*-Zeiger in einer Klassenmember-Coroutine
 
@@ -81,7 +86,7 @@ int main()
 
     auto myclass_instance{ winrt::make_self<MyClass>() };
     auto async{ myclass_instance->RetrieveValueAsync() };
-    myclass_instance = nullptr; // Simulate the class instance going out of scope.
+    myclass_instance = nullptr; // Simulate the class instance going out of scope.
 
     winrt::hstring result{ async.get() }; // Behavior is now undefined; crashing is likely.
     std::wcout << result.c_str() << std::endl;
@@ -224,7 +229,7 @@ int main()
 }
 ```
 
-Der Ereignisempfänger wird zerstört, aber der Lambda-Ereignishandler in seinem Innern hat immer noch das **Event**Ereignis abonniert. Wenn das Ereignis ausgelöst wird, versucht die Lambda, den *this*-Zeiger zu dereferenzieren, der an diesem Punkt ungültig ist. In diesen Fällen kommt es zu einer Zugriffsverletzung durch Code in einem Handler (oder in der Fortsetzung einer Coroutine), der versucht, ihn zu verwenden.
+Der Ereignisempfänger wird zerstört, aber der Lambda-Ereignishandler in seinem Innern hat immer noch das **Event** Ereignis abonniert. Wenn das Ereignis ausgelöst wird, versucht die Lambda, den *this*-Zeiger zu dereferenzieren, der an diesem Punkt ungültig ist. In diesen Fällen kommt es zu einer Zugriffsverletzung durch Code in einem Handler (oder in der Fortsetzung einer Coroutine), der versucht, ihn zu verwenden.
 
 > [!IMPORTANT]
 > Wenn Sie auf eine derartige Situation stoßen, dann müssen Sie über die Lebensdauer des *this*-Objekts nachdenken. Sie müssen feststellen, ob das verwendete *this*-Objekt überlebt oder nicht. Wenn nicht, dann verwenden Sie es mit einem starken oder schwachen Verweis, wie wir unten verdeutlichen werden.
@@ -317,7 +322,7 @@ Rufen Sie für einen starken Verweis einfach [**get_strong**](/uwp/cpp-ref-for-w
 event_source.Event({ get_strong(), &EventRecipient::OnEvent });
 ```
 
-Das Erfassen eines starken Verweises bedeutet, dass das Objekt erst zur Zerstörung verfügbar wird, nachdem die Registrierung des Handlers aufgehoben wurde und alle ausstehenden Rückrufe zurückgegeben wurden. Diese Garantie gilt aber nur zu dem Zeitpunkt, zu dem das Ereignis ausgelöst wird. Wenn der Ereignishandler asynchron ist, muss die Coroutine einen starken Verweis auf die Klasseninstanz vor dem ersten Anhaltepunkt erhalten (Informationen und Code dazu findest du im Abschnitt [Sicherer Zugriff auf den*this*-Zeiger in einer Klassenmember-Coroutine](#safely-accessing-the-this-pointer-in-a-class-member-coroutine) weiter oben in diesem Thema). Dadurch entsteht jedoch ein Zirkelbezug zwischen der Ereignisquelle und deinem Objekt, daher muss dieser durch Widerrufen des Ereignisses explizit unterbrochen werden.
+Das Erfassen eines starken Verweises bedeutet, dass das Objekt erst zur Zerstörung verfügbar wird, nachdem die Registrierung des Handlers aufgehoben wurde und alle ausstehenden Rückrufe zurückgegeben wurden. Diese Garantie gilt aber nur zu dem Zeitpunkt, zu dem das Ereignis ausgelöst wird. Wenn der Ereignishandler asynchron ist, muss die Coroutine einen starken Verweis auf die Klasseninstanz vor dem ersten Anhaltepunkt erhalten (Informationen und Code dazu findest du im Abschnitt [Sicherer Zugriff auf den *this*-Zeiger in einer Klassenmember-Coroutine](#safely-accessing-the-this-pointer-in-a-class-member-coroutine) weiter oben in diesem Thema). Dadurch entsteht jedoch ein Zirkelbezug zwischen der Ereignisquelle und deinem Objekt, daher muss dieser durch Widerrufen des Ereignisses explizit unterbrochen werden.
 
 Für einen schwachen Verweis rufen Sie [**get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) auf. C++/ WinRT stellt sicher, dass die resultierende Stellvertretung einen schwachen Verweis enthält. Hinter den Kulissen versucht die Stellvertretung in letzter Minute, den schwachen Verweis in einen starken aufzulösen und ruft die Memberfunktion nur auf, wenn dies Erfolg hat.
 

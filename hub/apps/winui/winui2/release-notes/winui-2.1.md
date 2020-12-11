@@ -3,16 +3,16 @@ title: WinUI 2.1 – Anmerkungen zu dieser Version
 description: Versionshinweise zu WinUI 2.1 einschließlich neuer Features und Bugfixe.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: d743b5653a824753706cebbfe1f1a60c419debfe
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
+ms.openlocfilehash: eb9d01c49dffd8017b2a70557f9408ceb758ae1e
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933135"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603857"
 ---
 # <a name="windows-ui-library-21"></a>Windows-UI-Bibliothek 2.1
 
-Die neueste offizielle Version der Windows UI-Bibliothek – WinUI 2.1 – wurde am 8. April 2019 veröffentlicht 
+Die erste Open Source-Version der Windows-UI-Bibliothek – WinUI 2.1 (veröffentlicht im April 2019).
 
 Mit WinUI erhältst du viele der aktuellsten Features der Windows UX-Plattform, einschließlich aktueller Fluent-Steuerelemente und Formatvorlagen, die in einer sofort nutzbaren Weise zur Verfügung stehen und mit Windows 10 Anniversary Update (14393) kompatibel sind. Der [XAML-Steuerelementkatalog](/windows/uwp/design/controls-and-patterns/#xaml-controls-gallery) gibt Beispiele, anhand derer du all die coolen neuen Features erkunden kannst, die der Bibliothek hinzugefügt wurden.
 

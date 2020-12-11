@@ -1,33 +1,35 @@
 ---
 description: In diesem Artikel finden Sie eine Liste der in der Schriftart „Segoe MDL2 Assets“ enthaltenen Glyphen und Hinweise zu deren Verwendung.
 Search.Refinement.TopicID: 184
-title: Richtlinien für Segoe MDL2-Symbole
+title: Symbole für Segoe MDL2-Ressourcen
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
-label: Segoe MDL2 icons
+label: Segoe MDL2 Assets icons
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 12/05/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.custom: contperfq1
-ms.openlocfilehash: debafac51bee529ba2f78b80bed529cc571e1c6a
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.custom: contperfq2
+ms.openlocfilehash: 4283e896faca3cccfdf86d1a42f81367fe7d7964
+ms.sourcegitcommit: f7535655a37cec610fbdc23c17f9c83fe68409ff
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91862141"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96611906"
 ---
-# <a name="segoe-mdl2-icons"></a>Segoe MDL2-Symbole
+# <a name="segoe-mdl2-assets-icons"></a>Symbole für Segoe MDL2-Ressourcen
 
- 
+Dieser Artikel enthält Richtlinien für Entwickler für die Verwendung der Symbole für MDL2-Ressourcen und listet die Schriftartglyphen zusammen mit ihren Unicodewerten und beschreibenden Namen auf. 
 
-In diesem Artikel werden die Symbole der Schriftart Segoe MDL2 Assets aufgeführt. 
+**Wichtige APIs:** 
 
-> **Wichtige APIs:** [**Symbol-Enumeration**](/uwp/api/windows.ui.xaml.controls.symbol), [**FontIcon-Klasse**](/uwp/api/windows.ui.xaml.controls.fonticon)
+* [**Symbol-Enumeration**](/uwp/api/windows.ui.xaml.controls.symbol)
+* [**FontIcon-Klasse**](/uwp/api/windows.ui.xaml.controls.fonticon)
 
 ## <a name="about-segoe-mdl2-assets"></a>Informationen zu MDL2 Assets
 
-Mit der Veröffentlichung von Windows 10 wurde die Schriftart Segoe UI Symbol von Windows 8/8.1 durch die Schriftart Segoe MDL2 Assets ersetzt. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (**Segoe UI Symbol** ist weiterhin als „veraltete“ Ressource verfügbar. Es wird jedoch empfohlen, Apps auf die neue Schriftart **Segoe MDL2 Assets** zu aktualisieren.)
+> [!TIP]
+> Mit der Veröffentlichung von Windows 10 wurde die Schriftart Segoe UI Symbol von Windows 8/8.1 durch die Schriftart Segoe MDL2 Assets ersetzt. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> **Segoe UI Symbol** steht jedoch weiterhin als „veraltete“ Ressource zur Verfügung. Wir empfehlen jedoch, Ihre App zu aktualisieren, um die neue **Segoe MDL2 Assets** zu verwenden.
 
 Die Mehrzahl der in der Schriftart **Segoe MDL2 Assets** enthaltenen Symbole und Benutzeroberflächen-Steuerelemente sind dem Unicode-Bereich „Private Use Area“ (PUA) zugeordnet. Mithilfe des PUA können Entwickler Glyphen, die keinen vorhandenen Codepunkten zugeordnet sind, private Unicode-Werte zuweisen. Dies ist hilfreich bei der Erstellung einer Symbolschriftart, führt jedoch auch zu einem Interoperabilitätsproblem. Ist die Schriftart nicht verfügbar, werden die Glyphen nicht angezeigt. Verwenden Sie die Glyphen nur, wenn Sie die Schriftart **Segoe MDL2 Assets** explizit angeben können.
 
@@ -69,10 +71,28 @@ Sie können auch mit der statischen Ressource `SymbolThemeFontFamily` auf **Sego
 ## <a name="icon-list"></a>Liste der Symbole
 Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symbole enthält, als hier gezeigt werden können. Viele der Symbole dienen speziellen Zwecken und werden für gewöhnlich nicht an anderer Stelle verwendet.
 
-<table style="background-color: white; color: black">
+> [!NOTE]
+> Glyphen mit Präfixen im Bereich von **E0-** bis **E5-** (z. B. E001, E5B1) werden derzeit als veraltet markiert und werden daher verworfen.
 
+In den folgenden Tabellen sind alle Symbole für Segoe MDL2-Ressourcen sowie ihre jeweiligen Unicodewerte und beschreibenden Namen aufgeführt. Wählen Sie einen Bereich aus der folgenden Liste aus, um Glyphen entsprechend dem PUA-Bereich anzuzeigen, zu dem sie gehören.
+
+* [PUA E700-E900](#pua-e700-e900)
+* [PUA EA00-EC00](#pua-ea00-ec00)
+* [PUA ED00-EF00](#pua-ed00-ef00)
+* [PUA F000-F200](#pua-f000-f200)
+* [PUA F300-F500](#pua-f300-f500)
+* [PUA F600-F800](#pua-f600-f800)
+
+### <a name="pua-e700-e900"></a>PUA E700-E900
+
+Die folgende Tabelle mit Glyphen enthält Unicodepunkte mit den Präfixen „E7-“ bis „E9-“.
+
+[Zurück nach oben](#icon-list)
+
+</br>
+<table style="background-color: white; color: black">
  <tr>
-  <td>Symbol</td>
+  <td>Glyphe</td>
   <td>Unicode-Punkt</td>
   <td>Beschreibung</td>
  </tr>
@@ -2400,6 +2420,21 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
   <td>E9F9</td>
   <td>ReportDocument</td>
  </tr>
+</table>
+
+ ### <a name="pua-ea00-ec00"></a>PUA EA00-EC00
+
+Die folgende Tabelle mit Glyphen enthält Unicodepunkte mit den Präfixen „EA-“ bis „EC-“.
+
+[Zurück nach oben](#icon-list)
+
+</br>
+ <table style="background-color: white; color: black">
+ <tr>
+  <td>Glyphe</td>
+  <td>Unicode-Punkt</td>
+  <td>Beschreibung</td>
+ </tr>
 <tr><td><img src="images/segoe-mdl/EA0C.png" width="32" height="32" alt="VideoSolid" /></td>
   <td>EA0C</td>
   <td>VideoSolid</td>
@@ -3580,6 +3615,21 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
   <td>ECF3</td>
   <td>USBSafeConnect</td>
  </tr>
+</table>
+
+ ### <a name="pua-ed00-ef00"></a>PUA ED00-EF00
+
+Die folgende Tabelle mit Glyphen enthält Unicodepunkte mit den Präfixen „ED-“ bis „EF-“.
+
+[Zurück nach oben](#icon-list)
+
+</br>
+<table style="background-color: white; color: black">
+ <tr>
+  <td>Glyphe</td>
+  <td>Unicode-Punkt</td>
+  <td>Beschreibung</td>
+ </tr>
 <tr><td><img src="images/segoe-mdl/ED0C.png" width="32" height="32" alt="ActionCenterNotificationMirrored" /></td>
   <td>ED0C</td>
   <td>ActionCenterNotificationMirrored</td>
@@ -3892,9 +3942,13 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
   <td>EDDB</td>
   <td>CaretUpSolid8</td>
  </tr>
-<tr><td><img src="images/segoe-mdl/EDDC.png" width="32" height="32" alt="CaretDownSolid8" /></td>
+ <tr><td><img src="images/segoe-mdl/EDDC.png" width="32" height="32" alt="CaretDownSolid8" /></td>
   <td>EDDC</td>
   <td>CaretDownSolid8</td>
+ </tr>
+ <tr><td><img src="images/segoe-mdl/EDE0.png" width="32" height="32" alt="Strikethrough" /></td>
+  <td>EDE0</td>
+  <td>Durchgestrichen</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EDE1.png" width="32" height="32" alt="Export" /></td>
   <td>EDE1</td>
@@ -3931,6 +3985,14 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
 <tr><td><img src="images/segoe-mdl/EE40.png" width="32" height="32" alt="TaskViewSettings" /></td>
   <td>EE40</td>
   <td>TaskViewSettings</td>
+ </tr>
+ <tr><td><img src="images/segoe-mdl/EE47.png" width="32" height="32" alt="MiniExpand2Mirrored" /></td>
+  <td>EE47</td>
+  <td>MiniExpand2Mirrored</td>
+ </tr>
+ <tr><td><img src="images/segoe-mdl/EE49.png" width="32" height="32" alt="MiniContract2Mirrored" /></td>
+  <td>EE49</td>
+  <td>MiniContract2Mirrored</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EE4A.png" width="32" height="32" alt="Play36" /></td>
   <td>EE4A</td>
@@ -4087,6 +4149,21 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
 <tr><td><img src="images/segoe-mdl/EFA9.png" width="32" height="32" alt="Speech" /></td>
   <td>EFA9</td>
   <td>Speech</td>
+ </tr>
+</table>
+
+ ### <a name="pua-f000-f200"></a>PUA F000-F200
+
+Die folgende Tabelle mit Glyphen enthält Unicodepunkte mit den Präfixen „F0-“ bis „F2-“.
+
+[Zurück nach oben](#icon-list)
+
+</br>
+<table style="background-color: white; color: black">
+ <tr>
+  <td>Glyphe</td>
+  <td>Unicode-Punkt</td>
+  <td>Beschreibung</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F000.png" width="32" height="32" alt="KnowledgeArticle" /></td>
   <td>F000</td>
@@ -4279,6 +4356,10 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
 <tr><td><img src="images/segoe-mdl/F0EE.png" width="32" height="32" alt="SpatialVolume3" /></td>
   <td>F0EE</td>
   <td>SpatialVolume3</td>
+ </tr>
+ <tr><td><img src="images/segoe-mdl/F0EF.png" width="32" height="32" alt="ApplicationGuard" /></td>
+  <td>F0EF</td>
+  <td>ApplicationGuard</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F0F7.png" width="32" height="32" alt="OutlineStarLeftHalf" /></td>
   <td>F0F7</td>
@@ -4600,6 +4681,14 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
   <td>F19D</td>
   <td>EyeGaze</td>
  </tr>
+ <tr><td><img src="images/segoe-mdl/F19E.png" width="32" height="32" alt="ToggleLeft" /></td>
+  <td>F19E</td>
+  <td>ToggleLeft</td>
+ </tr>
+ <tr><td><img src="images/segoe-mdl/F19F.png" width="32" height="32" alt="ToggleRight" /></td>
+  <td>F19F</td>
+  <td>ToggleRight</td>
+ </tr>
 <tr><td><img src="images/segoe-mdl/F1AD.png" width="32" height="32" alt="WindowsInsider" /></td>
   <td>F1AD</td>
   <td>WindowsInsider</td>
@@ -4692,9 +4781,28 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
   <td>F2B7</td>
   <td>LocaleLanguage</td>
 </tr>
+</table>
+
+### <a name="pua-f300-f500"></a>PUA F300-F500
+
+Die folgende Tabelle mit Glyphen enthält Unicodepunkte mit den Präfixen „F3-“ bis „F5-“.
+
+[Zurück nach oben](#icon-list)
+
+</br>
+<table style="background-color: white; color: black">
+ <tr>
+  <td>Glyphe</td>
+  <td>Unicode-Punkt</td>
+  <td>Beschreibung</td>
+ </tr>
 <tr><td><img src="images/segoe-mdl/F32A.png" width="32" height="32" alt="PassiveAuthentication" /></td>
   <td>F32A</td>
   <td>PassiveAuthentication</td>
+ </tr>
+ <tr><td><img src="images/segoe-mdl/F354.png" width="32" height="32" alt="ColorSolid" /></td>
+  <td>F354</td>
+  <td>ColorSolid</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F384.png" width="32" height="32" alt="NetworkOffline" /></td>
   <td>F384</td>
@@ -4807,6 +4915,10 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
  <tr><td><img src="images/segoe-mdl/F49A.png" width="32" height="32" alt="Globe2" /></td>
   <td>F49A</td>
   <td>Globe2</td>
+</tr>
+ <tr><td><img src="images/segoe-mdl/F4A5.png" width="32" height="32" alt="SpecialEffectSize" /></td>
+  <td>F4A5</td>
+  <td>SpecialEffectSize</td>
 </tr>
 <tr><td><img src="images/segoe-mdl/F4A9.png" width="32" height="32" alt="GIF" /></td>
   <td>F4A9</td>
@@ -5180,6 +5292,21 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
   <td>F5FF</td>
   <td>VerticalBatteryCharging2</td>
  </tr>
+</table>
+
+ ### <a name="pua-f600-f800"></a>PUA F600-F800
+
+Die folgende Tabelle mit Glyphen enthält Unicodepunkte mit den Präfixen „F6-“ bis „F8-“.
+
+[Zurück nach oben](#icon-list)
+
+</br>
+<table style="background-color: white; color: black">
+ <tr>
+  <td>Glyphe</td>
+  <td>Unicode-Punkt</td>
+  <td>Beschreibung</td>
+ </tr>
 <tr><td><img src="images/segoe-mdl/F600.png" width="32" height="32" alt="VerticalBatteryCharging3" /></td>
   <td>F600</td>
   <td>VerticalBatteryCharging3</td>
@@ -5307,6 +5434,14 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
 <tr><td><img src="images/segoe-mdl/F69E.png" width="32" height="32" alt="CHTLanguageBar" /></td>
   <td>F69E</td>
   <td>CHTLanguageBar</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F6A9.png" width="32" height="32" alt="ComposeMode" /></td>
+  <td>F6A9</td>
+  <td>ComposeMode</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F6B8.png" width="32" height="32" alt="ExpressiveInputEntry" /></td>
+  <td>F6B8</td>
+  <td>ExpressiveInputEntry</td>
 </tr>
 <tr><td><img src="images/segoe-mdl/F6BA.png" width="32" height="32" alt="EmojiTabMoreSymbols" /></td>
   <td>F6BA</td>
@@ -5512,7 +5647,74 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
   <td>F847</td>
   <td>Eject</td>
 </tr>
-
+<tr><td><img src="images/segoe-mdl/F87B.png" width="32" height="32" alt="Spelling" /></td>
+  <td>F87B</td>
+  <td>Rechtschreibung</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F87C.png" width="32" height="32" alt="SpellingKorean" /></td>
+  <td>F87C</td>
+  <td>SpellingKorean</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F87D.png" width="32" height="32" alt="SpellingSerbian" /></td>
+  <td>SpellingSerbian</td>
+  <td>Eject</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F87E.png" width="32" height="32" alt="SpellingChinese" /></td>
+  <td>F87E</td>
+  <td>SpellingChinese</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F89A.png" width="32" height="32" alt="FolderSelect" /></td>
+  <td>F89A</td>
+  <td>FolderSelect</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8A5.png" width="32" height="32" alt="SmartScreen" /></td>
+  <td>F8A5</td>
+  <td>SmartScreen</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8A6.png" width="32" height="32" alt="ExploitProtection" /></td>
+  <td>F8A6</td>
+  <td>ExploitProtection</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8AA.png" width="32" height="32" alt="AddBold" /></td>
+  <td>F8AA</td>
+  <td>AddBold</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8AB.png" width="32" height="32" alt="SubtractBold" /></td>
+  <td>F8AB</td>
+  <td>SubtractBold</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8AC.png" width="32" height="32" alt="BackSolidBold" /></td>
+  <td>F8AC</td>
+  <td>BackSolidBold</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8AD.png" width="32" height="32" alt="ForwardSolidBold" /></td>
+  <td>F8AD</td>
+  <td>ForwardSolidBold</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8AE.png" width="32" height="32" alt="PauseBold" /></td>
+  <td>F8AE</td>
+  <td>PauseBold</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8AF.png" width="32" height="32" alt="ClickSolid" /></td>
+  <td>F8AF</td>
+  <td>ClickSolid</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8B0.png" width="32" height="32" alt="SettingsSolid" /></td>
+  <td>F8B0</td>
+  <td>SettingsSolid</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8B1.png" width="32" height="32" alt="MicrophoneSolidBold" /></td>
+  <td>F8B1</td>
+  <td>MicrophoneSolidBold</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8B2.png" width="32" height="32" alt="SpeechSolidBold" /></td>
+  <td>F8B2</td>
+  <td>SpeechSolidBold</td>
+</tr>
+<tr><td><img src="images/segoe-mdl/F8B3.png" width="32" height="32" alt="ClickedOutLoudSolidBold" /></td>
+  <td>F8B3</td>
+  <td>ClickedOutLoudSolidBold</td>
+</tr>
 </table>
 
 
