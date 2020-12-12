@@ -5,12 +5,12 @@ ms.date: 03/06/2019
 ms.topic: article
 keywords: Windows 10, UWP, Ankündigungs Netzwerk, App-Metadaten
 ms.localizationpriority: medium
-ms.openlocfilehash: f7db2659bc08ab6da426de94c7dcaf1fb8a7d802
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 371f855e644a990191cd8f8b9365553bc2df9693
+ms.sourcegitcommit: 368753aea2792984857f6a57a22daed1035f1a33
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493225"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97349700"
 ---
 # <a name="get-acquisitions-data-for-your-games-and-apps"></a>Abrufen von Kaufdaten für Ihre Spiele und Apps 
 Verwenden Sie diese Methode in der Microsoft Store Analytics-API, um aggregierte Erfassungsdaten im JSON-Format für UWP-apps und Xbox One-Spiele zu erhalten, die über das Xbox Developer Portal (XDP) erfasst und im XDP-Analyse Dashboard zur Verfügung stehen. 
@@ -39,17 +39,15 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
-| Parameter | type | BESCHREIBUNG | Erforderlich |
+| Parameter | type | Beschreibung | Erforderlich |
 | --- | --- | --- | --- |
 | applicationId | Zeichenfolge | Die Produkt-ID des Xbox One-Spiels, für das Sie die Erwerbs Daten abrufen. Um die Produkt-ID Ihres Spiels zu erhalten, navigieren Sie zu Ihrem Spiel im XDP-Analyseprogramm, und rufen Sie die Produkt-ID aus der URL ab. Wenn Sie Ihre Erstellungs Daten aus dem Partner Center Analytics-Bericht herunterladen, ist die Produkt-ID in der TSV-Datei enthalten.  | Ja |
 | startDate | date | Das Startdatum im Datumsbereich der Kaufdaten, die abgerufen werden sollen. Als Standardeinstellung wird das aktuelle Datum festgelegt.  | Nein |
 | endDate | date | Das Enddatum im Datumsbereich der Kaufdaten, die abgerufen werden sollen. Als Standardeinstellung wird das aktuelle Datum festgelegt.  | Nein |
-| top | integer | Die Anzahl der Daten Zeilen, die zurückgegeben werden sollen. Der Maximal- und Standardwert ist 10.000, wenn nicht anders angegeben. Sind in der Abfrage keine weiteren Zeilen, enthält der Antworttext den Link „Weiter“, über den Sie die nächste Seite mit Daten anfordern können.  | Nein |
-| skip | integer | Die Anzahl der Zeilen, die in der Abfrage übersprungen werden sollen. Verwenden Sie diesen Parameter, um große Datensätze durchzublättern. Beispielsweise ruft *Top = 10000 und Skip = 0* die ersten 10000 Zeilen der Daten ab, *Top = 10000 und Skip = 10000* Ruft die nächsten 10000 Daten Zeilen ab usw.  | Nein |
-| filter | Zeichenfolge | Mindestens eine Anweisung, die die Zeilen in der Antwort filtert. Jede-Anweisung enthält einen Feldnamen aus dem Antworttext und den Wert, die den **EQ** -oder **ne** -Operatoren zugeordnet sind, und-Anweisungen können mithilfe von **and** oder **or**kombiniert werden. Zeichenfolgenwerte im Parameter filter müssen von einfachen Anführungszeichen eingeschlossen werden. Beispiel: *Filter = Market EQ ' US ' und Geschlecht EQ 'm '*.  <br/> Sie können die folgenden Felder aus dem Antworttext angeben: <ul><li>**acquisitionType**</li><li>**Eder**</li><li>**storeClient**</li><li>**gender**</li><li>**Marktforschungs**</li><li>**osVersion**</li><li>**deviceType**</li><li>**sandboxId**</li></ul> | Nein |
+| filter | Zeichenfolge | Mindestens eine Anweisung, die die Zeilen in der Antwort filtert. Jede-Anweisung enthält einen Feldnamen aus dem Antworttext und den Wert, die den **EQ** -oder **ne** -Operatoren zugeordnet sind, und-Anweisungen können mithilfe von **and** oder **or** kombiniert werden. Zeichenfolgenwerte im Parameter filter müssen von einfachen Anführungszeichen eingeschlossen werden. Beispiel: *Filter = Market EQ ' US ' und Geschlecht EQ 'm '*.  <br/> Sie können die folgenden Felder aus dem Antworttext angeben: <ul><li>**acquisitionType**</li><li>**Eder**</li><li>**storeClient**</li><li>**gender**</li><li>**Marktforschungs**</li><li>**osVersion**</li><li>**den DeviceType "**</li><li>**sandboxId**</li></ul> | Nein |
 | aggregationLevel | Zeichenfolge | Gibt den Zeitraum an, für den aggregierte Daten abgerufen werden sollen. Dies kann eine der folgenden Zeichenfolgen sein: **day**, **week** oder **month**. Wenn keine Angabe erfolgt, lautet der Standardwert **day**.  | Nein |
-| orderby | Zeichenfolge | Eine Anweisung, die die Ergebnisdatenwerte für die einzelnen Käufe anfordert. Syntax *: OrderBy = Field [Order], Field [Order],...* Der *Feld* Parameter kann eine der folgenden Zeichen folgen sein: <ul><li>**date**</li><li>**acquisitionType**</li><li>**Eder**</li><li>**storeClient**</li><li>**gender**</li><li>**Marktforschungs**</li><li>**osVersion**</li><li>**deviceType**</li><li>**paymentinstrumenttype**</li><li>**sandboxId**</li><li>**xboxtitleidhex**</li></ul> Der Parameter *order* ist optional und kann **asc** oder **desc** sein, um die auf- oder absteigende Anordnung der einzelnen Felder anzugeben. Der Standardwert ist **ASC**. Hier ist ein Beispiel für eine *OrderBy* -Zeichenfolge: *OrderBy = Date, Market*  | Nein |
-| groupby | Zeichenfolge | Eine Anweisung, die nur auf die angegebenen Felder Datenaggregationen anwendet. Sie können die folgenden Felder angeben: <ul><li>**date**</li><li>**applicationName**</li><li>**acquisitionType**</li><li>**ageGroup**</li><li>**storeClient**</li><li>**gender**</li><li>**Marktforschungs**</li><li>**osVersion**</li><li>**deviceType**</li><li>**paymentinstrumenttype**</li><li>**sandboxId**</li><li>**xboxtitleidhex**</li></ul> Die zurückgegebenen Datenzeilen enthalten die Felder, die im Parameter *groupby* angegeben sind, sowie die folgenden: <ul><li>**date**</li><li>**applicationId**</li><li>**acquisitionQuantity**</li></ul> Der Parameter *groupby* kann mit dem Parameter aggregationLevel verwendet werden. Beispiel: *&GroupBy = AgeGroup, Market&aggregationlevel = Week*  | Nein |
+| orderby | Zeichenfolge | Eine Anweisung, die die Ergebnisdatenwerte für die einzelnen Käufe anfordert. Syntax *: OrderBy = Field [Order], Field [Order],...* Der *Feld* Parameter kann eine der folgenden Zeichen folgen sein: <ul><li>**date**</li><li>**acquisitionType**</li><li>**Eder**</li><li>**storeClient**</li><li>**gender**</li><li>**Marktforschungs**</li><li>**osVersion**</li><li>**den DeviceType "**</li><li>**paymentinstrumenttype**</li><li>**sandboxId**</li><li>**xboxtitleidhex**</li></ul> Der Parameter *order* ist optional und kann **asc** oder **desc** sein, um die auf- oder absteigende Anordnung der einzelnen Felder anzugeben. Der Standardwert ist **ASC**. Hier ist ein Beispiel für eine *OrderBy* -Zeichenfolge: *OrderBy = Date, Market*  | Nein |
+| groupby | Zeichenfolge | Eine Anweisung, die nur auf die angegebenen Felder Datenaggregationen anwendet. Sie können die folgenden Felder angeben: <ul><li>**date**</li><li>**applicationName**</li><li>**acquisitionType**</li><li>**ageGroup**</li><li>**storeClient**</li><li>**gender**</li><li>**Marktforschungs**</li><li>**osVersion**</li><li>**den DeviceType "**</li><li>**paymentinstrumenttype**</li><li>**sandboxId**</li><li>**xboxtitleidhex**</li></ul> Die zurückgegebenen Datenzeilen enthalten die Felder, die im Parameter *groupby* angegeben sind, sowie die folgenden: <ul><li>**date**</li><li>**applicationId**</li><li>**acquisitionQuantity**</li></ul> Der Parameter *groupby* kann mit dem Parameter aggregationLevel verwendet werden. Beispiel: *&GroupBy = AgeGroup, Market&aggregationlevel = Week*  | Nein |
 
 ### <a name="request-example"></a>Anforderungsbeispiel
 Im folgenden Beispiel werden mehrere Anforderungen zum Abrufen von Xbox One-Spiel Erfassungsdaten veranschaulicht. Ersetzen Sie den Wert *ApplicationId* durch die Produkt-ID für das Spiel.  
@@ -68,20 +66,19 @@ Authorization: Bearer <your access token>
 | Wert | type | BESCHREIBUNG |
 | --- | --- | --- |
 | Wert | array | Ein Array von-Objekten, die aggregierte Erfassungsdaten für das Spiel enthalten. Weitere Informationen zu den Daten in den einzelnen Objekten finden Sie unten im Abschnitt [Kaufwerte](#acquisition-values). |
-| @nextLink | Zeichenfolge | Wenn weitere Seiten mit Daten vorhanden sind, enthält diese Zeichenfolge einen URI, mit dem Sie die nächste Seite mit Daten anfordern können. Beispielsweise wird dieser Wert zurückgegeben, wenn der Parameter **top** der Anforderung auf 10000 festgelegt ist, es jedoch mehr als 10.000 Zeilen mit Kaufdaten für die Abfrage gibt. |
 | TotalCount | integer | Die Gesamtzahl der Zeilen im Datenergebnis für die Abfrage. |
 
 ### <a name="acquisition-values"></a>Kaufwerte 
 Elemente im Array *Value* enthalten die folgenden Werte. 
 
-| Wert | type | BESCHREIBUNG |
+| Wert | type | Beschreibung |
 | --- | --- | --- |
 | date | Zeichenfolge | Das erste Datum im Datumsbereich für die Kaufdaten. Wenn die Anforderung einen einzelnen Tag angibt, ist dieses Datum dieser Wert. Wenn die Anforderung eine Woche, einen Monat oder einen anderen Datumsbereich angibt, ist dieser Wert das erste Datum in diesem Datumsbereich. |
 | applicationId | Zeichenfolge | Die Produkt-ID des Xbox One-Spiels, für das Sie die Erwerbs Daten abrufen. |
 | applicationName | Zeichenfolge | Der Anzeige Name des Spiels. |
-| acquisitionType | Zeichenfolge | Eine der folgenden Zeichen folgen, die den Typ des Erwerbs angibt:  <ul><li>**Free**</li><li>**Testversion**</li><li>**Bezahlt**</li><li>**Aktions Code**</li><li>**IAP**</li><li>**Abonnement-IAP**</li><li>**Private Zielgruppe**</li><li>**Vorab anordnen**</li><li>**Xbox Game Pass** (oder **Game Pass** bei der Abfrage von Daten vor dem 23. März 2018)</li><li>**Disk**</li><li>**Prepaid-Code**</li><li>**Vorabbestellung abgerechnet**</li><li>**Abbruch vor der Bestellung**</li><li>**Fehler bei der Vorabbestellung**</li></ul> |
+| acquisitionType | Zeichenfolge | Eine der folgenden Zeichen folgen, die den Typ des Erwerbs angibt:  <ul><li>**Free**</li><li>**Testversion**</li><li>**Kostenpflichtig**</li><li>**Aktions Code**</li><li>**IAP**</li><li>**Abonnement-IAP**</li><li>**Private Zielgruppe**</li><li>**Vorab anordnen**</li><li>**Xbox Game Pass** (oder **Game Pass** bei der Abfrage von Daten vor dem 23. März 2018)</li><li>**Datenträger**</li><li>**Prepaid-Code**</li><li>**Vorabbestellung abgerechnet**</li><li>**Abbruch vor der Bestellung**</li><li>**Fehler bei der Vorabbestellung**</li></ul> |
 | age | Zeichenfolge | Eine der folgenden Zeichen folgen, die die Altersgruppe des Benutzers angibt, der die Übernahme durchgeführt hat: <ul><li>**Weniger als 13**</li><li>**13-17**</li><li>**18-24**</li><li>**25-34**</li><li>**35-44**</li><li>**44-55**</li><li>**Größer als 55**</li><li>**Unbekannt**</li></ul> |
-| deviceType | Zeichenfolge | Eine der folgenden Zeichen folgen, die den Typ des Geräts angibt, das den Erwerb abgeschlossen hat: <ul><li>**PC**</li><li>**Smartphone**</li><li>**Konsole-Xbox One**</li><li>**Konsole-Xbox Series X**</li><li>**IoT**</li><li>**Server**</li><li>**Tablet**</li><li>**Holographic**</li><li>**Unbekannt**</li></ul> |
+| deviceType | Zeichenfolge | Eine der folgenden Zeichen folgen, die den Typ des Geräts angibt, das den Erwerb abgeschlossen hat: <ul><li>**PCs**</li><li>**Anschluss**</li><li>**Konsole-Xbox One**</li><li>**Konsole-Xbox Series X**</li><li>**IoT**</li><li>**Server**</li><li>**Tablet**</li><li>**Holographic**</li><li>**Unbekannt**</li></ul> |
 | gender | Zeichenfolge | Eine der folgenden Zeichen folgen, die das Geschlecht des Benutzers angibt, der die Übernahme durchgeführt hat: <ul><li>**m**</li><li>**f**</li><li>**Unbekannt**</li></ul> |
 | market | Zeichenfolge | Die ISO 3166-Ländercode des Markts, in dem der Kauf erfolgte. |
 | osVersion | Zeichenfolge | Die Version des Betriebssystems, auf dem der Kauf ausgeführt wurde. Bei dieser Methode ist dieser Wert immer **Windows 10**. |
@@ -141,10 +138,10 @@ Das folgende Beispiel zeigt ein Beispiel für einen JSON-Antworttext für diese 
         } 
     ], 
 
-    "@nextLink": "acquisitions?applicationId=9WZDNCRFHXHT&aggregationLevel=day&startDate=2017-01-01T08:00:00.0000000Z&endDate=2019-01-16T08:44:15.6045249Z&top=1&skip=1", 
+    "@nextLink": null,
     
     "TotalCount": 12221 
 } 
 ```
 
- 
+ 

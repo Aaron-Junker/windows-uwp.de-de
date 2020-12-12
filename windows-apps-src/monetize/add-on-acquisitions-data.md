@@ -5,12 +5,12 @@ ms.date: 03/06/2019
 ms.topic: article
 keywords: Windows 10, UWP, Ankündigungs Netzwerk, App-Metadaten
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e1349582515ce66232ea8266efc588610faae98
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 406519bb6a38c3f7c8225d81fbd6fd37611ed1e0
+ms.sourcegitcommit: 368753aea2792984857f6a57a22daed1035f1a33
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493565"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97349710"
 ---
 # <a name="get-add-on-acquisitions-data-for-your-games-and-apps"></a>Abrufen von Add-On-Kaufdaten für Ihre Spiele und Apps 
 Verwenden Sie diese Methode in der Microsoft Store Analytics-API, um aggregierte Add-on-Erfassungsdaten im JSON-Format für UWP-apps und Xbox One-Spiele zu erhalten, die über das Xbox Developer Portal (XDP) erfasst wurden und auf dem XDP Analytics Partner Center-Dashboard verfügbar sind. 
@@ -39,18 +39,16 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 ### <a name="request-parameters"></a>Anforderungsparameter
 Der *ApplicationId* -Parameter oder der *addonproductid-* Parameter ist erforderlich. Um Kaufdaten für alle für die App registrierten Add-Ons abzurufen, geben Sie den Parameter *applicationId* an. Um Erwerbs Daten für ein einzelnes Add-on abzurufen, geben Sie den *addonproductid-* Parameter an. Wenn Sie beide Parameter angeben, wird der Parameter *applicationId* ignoriert. 
 
-| Parameter | type | BESCHREIBUNG | Erforderlich | 
+| Parameter | type | Beschreibung | Erforderlich | 
 | --- | --- | --- | --- |
 | applicationId | Zeichenfolge | Die *ProductID* des Xbox One-Spiels, für das Sie die Erfassungsdaten abrufen. Um die *ProductID* Ihres Spiels zu erhalten, navigieren Sie zu Ihrem Spiel im XDP-Analyseprogramm, und rufen Sie die *ProductID* aus der URL ab. Wenn Sie Ihre Erstellungs Daten aus dem Partner Center Analytics-Bericht herunterladen, ist die *ProductID* alternativ in der TSV-Datei enthalten. | Ja |
 | addonproductid | Zeichenfolge | Die *ProductID* des Add-on, für das Sie Erwerbs Daten abrufen möchten. | Ja |
 | startDate | date | Das Startdatum im Datumsbereich der Add-On-Kaufdaten, die abgerufen werden sollen. Als Standardeinstellung wird das aktuelle Datum festgelegt. | Nein |
 | endDate | date | Das Enddatum im Datumsbereich der Add-On-Kaufdaten, die abgerufen werden sollen. Als Standardeinstellung wird das aktuelle Datum festgelegt. | Nein |
-| top | INT | Die Anzahl der Datenzeilen, die in der Anforderung zurückgegeben werden sollen. Der Maximal- und Standardwert ist 10.000, wenn nicht anders angegeben. Sind in der Abfrage keine weiteren Zeilen, enthält der Antworttext den Link „Weiter“, über den Sie die nächste Seite mit Daten anfordern können. | Nein |
-| skip | INT | Die Anzahl der Zeilen, die in der Abfrage übersprungen werden sollen. Verwenden Sie diesen Parameter, um große Datensätze durchzublättern. Beispielsweise rufen „top=10000“ und „skip=0“ die ersten 10.000 Datenzeilen ab, „top=10000“ und „skip=10000“ die nächsten 10.000 Datenzeilen usw. | Nein |
-| filter | Zeichenfolge | Mindestens eine Anweisung, die die Zeilen in der Antwort filtert. Jede-Anweisung enthält einen Feldnamen aus dem Antworttext und den Wert, die den EQ-oder ne-Operatoren zugeordnet sind, und-Anweisungen können mithilfe von and oder or kombiniert werden. Zeichenfolgenwerte im Parameter filter müssen von einfachen Anführungszeichen eingeschlossen werden. Beispiel: Filter = Market EQ ' US ' und Geschlecht EQ 'm '. <br/> Sie können die folgenden Felder aus dem Antworttext angeben: <ul><li>**acquisitionType**</li><li>**Eder**</li><li>**storeClient**</li><li>**gender**</li><li>**Marktforschungs**</li><li>**osVersion**</li><li>**deviceType**</li><li>**sandboxId**</li></ul> | Nein |
+| filter | Zeichenfolge | Mindestens eine Anweisung, die die Zeilen in der Antwort filtert. Jede-Anweisung enthält einen Feldnamen aus dem Antworttext und den Wert, die den EQ-oder ne-Operatoren zugeordnet sind, und-Anweisungen können mithilfe von and oder or kombiniert werden. Zeichenfolgenwerte im Parameter filter müssen von einfachen Anführungszeichen eingeschlossen werden. Beispiel: Filter = Market EQ ' US ' und Geschlecht EQ 'm '. <br/> Sie können die folgenden Felder aus dem Antworttext angeben: <ul><li>**acquisitionType**</li><li>**Eder**</li><li>**storeClient**</li><li>**gender**</li><li>**Marktforschungs**</li><li>**osVersion**</li><li>**den DeviceType "**</li><li>**sandboxId**</li></ul> | Nein |
 | aggregationLevel | Zeichenfolge | Gibt den Zeitraum an, für den aggregierte Daten abgerufen werden sollen. Dies kann eine der folgenden Zeichenfolgen sein: **day**, **week** oder **month**. Wenn keine Angabe erfolgt, lautet der Standardwert **day**. | Nein |
-| orderby | Zeichenfolge | Eine Anweisung, die die Ergebnisdatenwerte für die einzelnen Add-On-Käufe anfordert. Syntax *: OrderBy = Field [Order], Field [Order],...* Der *Feld* Parameter kann eine der folgenden Zeichen folgen sein: <ul><li>**date**</li><li>**acquisitionType**</li><li>**Eder**</li><li>**storeClient**</li><li>**gender**</li><li>**Marktforschungs**</li><li>**osVersion**</li><li>**deviceType**</li><li>**orderName**</li></ul> Der Parameter order ist optional und kann **asc** oder **desc** sein, um die auf- oder absteigende Anordnung der einzelnen Felder anzugeben. Der Standardwert ist **ASC**. <br/> Hier ist ein Beispiel für eine *OrderBy* -Zeichenfolge: *OrderBy = Date, Market* | Nein |
-| groupby | Zeichenfolge | Eine Anweisung, die nur auf die angegebenen Felder Datenaggregationen anwendet. Sie können die folgenden Felder angeben: <ul><li>**date**</li><li>**applicationName**</li><li>**addonproductname**</li> <li>**acquisitionType**</li><li>**Eder**</li> <li>**storeClient**</li><li>**gender**</li> <li>**Marktforschungs**</li> <li>**osVersion**</li><li>**deviceType**</li><li>**paymentinstrumenttype**</li><li>**sandboxId**</li><li>**xboxtitleidhex**</li></ul> Die zurückgegebenen Datenzeilen enthalten die Felder, die im Parameter *groupby* angegeben sind, sowie die folgenden: <ul><li>**date**</li><li>**applicationId**</li><li>**addonproductid**</li><li>**acquisitionQuantity**</li></ul> Der Parameter groupby kann mit dem Parameter *aggregationLevel* verwendet werden. Beispiel: *&GroupBy = Age, Market&aggregationlevel = Week* | Nein |
+| orderby | Zeichenfolge | Eine Anweisung, die die Ergebnisdatenwerte für die einzelnen Add-On-Käufe anfordert. Syntax *: OrderBy = Field [Order], Field [Order],...* Der *Feld* Parameter kann eine der folgenden Zeichen folgen sein: <ul><li>**date**</li><li>**acquisitionType**</li><li>**Eder**</li><li>**storeClient**</li><li>**gender**</li><li>**Marktforschungs**</li><li>**osVersion**</li><li>**den DeviceType "**</li><li>**orderName**</li></ul> Der Parameter order ist optional und kann **asc** oder **desc** sein, um die auf- oder absteigende Anordnung der einzelnen Felder anzugeben. Der Standardwert ist **ASC**. <br/> Hier ist ein Beispiel für eine *OrderBy* -Zeichenfolge: *OrderBy = Date, Market* | Nein |
+| groupby | Zeichenfolge | Eine Anweisung, die nur auf die angegebenen Felder Datenaggregationen anwendet. Sie können die folgenden Felder angeben: <ul><li>**date**</li><li>**applicationName**</li><li>**addonproductname**</li> <li>**acquisitionType**</li><li>**Eder**</li> <li>**storeClient**</li><li>**gender**</li> <li>**Marktforschungs**</li> <li>**osVersion**</li><li>**den DeviceType "**</li><li>**paymentinstrumenttype**</li><li>**sandboxId**</li><li>**xboxtitleidhex**</li></ul> Die zurückgegebenen Datenzeilen enthalten die Felder, die im Parameter *groupby* angegeben sind, sowie die folgenden: <ul><li>**date**</li><li>**applicationId**</li><li>**addonproductid**</li><li>**acquisitionQuantity**</li></ul> Der Parameter groupby kann mit dem Parameter *aggregationLevel* verwendet werden. Beispiel: *&GroupBy = Age, Market&aggregationlevel = Week* | Nein |
 
 ### <a name="request-example"></a>Anforderungsbeispiel
 Die folgenden Beispiele zeigen verschiedene Anforderungen für das Abrufen von Add-On-Kaufdaten. Ersetzen Sie die Werte " *addonproductid* " und " *ApplicationId* " durch die entsprechende Speicher-ID für das Add-on oder die app. 
@@ -74,17 +72,16 @@ Authorization: Bearer <your access token>
 | Wert | type | BESCHREIBUNG |
 | --- | --- | --- |
 | Wert | array | Ein Array von Objekten, die aggregierte Add-On-Kaufdaten enthalten. Weitere Informationen zu den Daten in den einzelnen Objekten finden Sie unten im Abschnitt [Add-On-Kaufwerte](#add-on-acquisition-values). |
-| @nextLink | Zeichenfolge | Wenn weitere Seiten mit Daten vorhanden sind, enthält diese Zeichenfolge einen URI, mit dem Sie die nächste Seite mit Daten anfordern können. Beispielsweise wird dieser Wert zurückgegeben, wenn der Parameter **top** der Anforderung auf 10000 festgelegt ist, es jedoch mehr als 10.000 Zeilen mit Add-On-Kaufdaten für die Abfrage gibt. |
 | TotalCount | INT | Die Gesamtzahl der Zeilen im Datenergebnis für die Abfrage. |
 
 ### <a name="add-on-acquisition-values"></a>Add-On-Kaufwerte
 Elemente im Array Value enthalten die folgenden Werte.
 
-| Wert | type | BESCHREIBUNG | 
+| Wert | type | Beschreibung | 
 | --- | --- | --- |
 | date | Zeichenfolge | Das erste Datum im Datumsbereich für die Kaufdaten. Wenn die Anforderung einen einzelnen Tag angibt, ist dieses Datum dieser Wert. Wenn die Anforderung eine Woche, einen Monat oder einen anderen Datumsbereich angibt, ist dieser Wert das erste Datum in diesem Datumsbereich. |
 | addonproductid | Zeichenfolge | Die *ProductID* des Add-Ins, für das Sie Erfassungsdaten abrufen. |
-| addonproductname | Zeichenfolge | Der Anzeigename des Add-Ons. Dieser Wert wird nur in den Antwortdaten angezeigt, wenn der *aggregationlevel* -Parameter auf **Day**festgelegt ist, es sei denn, Sie geben das **addonproductname** -Feld im *GroupBy* -Parameter an. |
+| addonproductname | Zeichenfolge | Der Anzeigename des Add-Ons. Dieser Wert wird nur in den Antwortdaten angezeigt, wenn der *aggregationlevel* -Parameter auf **Day** festgelegt ist, es sei denn, Sie geben das **addonproductname** -Feld im *GroupBy* -Parameter an. |
 | applicationId | Zeichenfolge | Die *ProductID* der APP, für die Sie Add-on-Erwerbs Daten abrufen möchten. |
 | applicationName | Zeichenfolge | Der Anzeige Name des Spiels. |
 | deviceType | Zeichenfolge | Eine der folgenden Zeichen folgen, die den Typ des Geräts angibt, das den Erwerb abgeschlossen hat: <ul><li>PCs</li><li>Smartphone</li><li>"Console-Xbox One"</li><li>"Console-Xbox Series X"</li><li>IOT</li><li>Servers</li><li>Tablet</li><li>Holographic</li><li>Unbekannter</li></ul> |
