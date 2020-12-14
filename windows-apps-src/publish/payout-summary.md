@@ -6,18 +6,18 @@ ms.date: 08/02/2019
 ms.topic: article
 keywords: Windows 10, UWP, Auszahlungs Zusammenfassung, Statement, Payment, Gewinn, Auszahlungen, Zahlung, fortschreitet
 ms.localizationpriority: medium
-ms.openlocfilehash: 11d83031702a642fa21a711edfdbaff69661c853
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 996f77db55d959fb1e328e4e722166cc466a8dbd
+ms.sourcegitcommit: d5ad11e2289d1d04319405a78dd02aaacf866e3a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93035023"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97390358"
 ---
 # <a name="payout-reports"></a>Auszahlungsberichte
 
 Die **Auszahlungs Zusammenfassung** zeigt Ihnen Details zu dem Geld, das Sie bei Microsoft erworben haben. Aus ihr geht auch hervor, wann und in welcher Höhe Sie Zahlungen erhalten.
 
-Wenn Sie Produkte in der Azure Marketplace verkaufen, sehen Sie auch Informationen zu erfolgreichen Auszahlungen in der **Auszahlungs Zusammenfassung** . Weitere Informationen zur Bezahlung im Azure Marketplace finden Sie in den [Teilnahmerichtlinien für Microsoft Azure Marketplace](/legal/marketplace/participation-policy) und in der [Microsoft Azure Marketplace-Herausgebervereinbarung](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt).
+Wenn Sie Produkte in der Azure Marketplace verkaufen, sehen Sie auch Informationen zu erfolgreichen Auszahlungen in der **Auszahlungs Zusammenfassung**. Weitere Informationen zur Bezahlung im Azure Marketplace finden Sie in den [Teilnahmerichtlinien für Microsoft Azure Marketplace](/legal/marketplace/participation-policy) und in der [Microsoft Azure Marketplace-Herausgebervereinbarung](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt).
 
 > [!NOTE]
 > Qualifiziert für eine Auszahlung sind Beträge, die den [Zahlungsschwellenwert](payment-thresholds-methods-and-timeframes.md) von 50 US-Dollar erreichen. Weitere Informationen zum Zahlungsschwellenwert finden Sie auf dieser Seite und in der Vereinbarung für App-Entwickler.
@@ -34,9 +34,9 @@ Wenn Sie eine der Seiten der Auszahlungszusammenfassung öffnen möchten, gehen 
 
 ## <a name="transaction-history-page"></a>Seite „Transaktionsverlauf“
 
-Auf dieser Seite werden alle Ihre individuellen Einnahmen angezeigt, einschließlich Datum, Typ und jeweiliger Einnahme. Sie können einen anzuzeigenden Zeitraum auswählen. Außerdem können Sie nach Registrierungs-ID, Programm, Zahlungs-ID, Einnahmetyp, Hebel und Status filtern. Es sind Daten für das aktuelle Geschäftsjahr (1. Juli bis 30. Juni) und die letzten beiden Geschäftsjahre verfügbar.
+Auf dieser Seite werden alle Ihre individuellen Einnahmen angezeigt, einschließlich Datum, Typ und jeweiliger Einnahme. Sie können einen Zeitraum auswählen, der angezeigt werden soll. Außerdem können Sie nach Registrierungs-ID, Programm, Zahlungs-ID, Erstellungsart, Hebel, geschätzter Zahlungs Monat, Anpassung und Status filtern. Es sind Daten für das aktuelle Geschäftsjahr (1. Juli bis 30. Juni) und die letzten beiden Geschäftsjahre verfügbar.
 
-Zum Anzeigen weiterer Details zu einer Einnahme klicken Sie rechts auf der Seite auf den Pfeil nach unten. Dadurch werden Hebel, Umsatzbetrag und Produkt angezeigt. Wenn eine dieser Daten aus irgendeinem Grund nicht verfügbar ist, Sie aber darauf zugreifen müssen, wenden Sie sich an den [Support](https://developer.microsoft.com/windows/support). Wenn das Ergebnis einer Anpassung und nicht einer Transaktion entspricht, werden die Produktfelder nicht angezeigt.
+Zum Anzeigen weiterer Details zu einer Einnahme klicken Sie rechts auf der Seite auf den Pfeil nach unten. Dadurch werden der Hebel, der Umsatz Betrag, der geschätzte Zahlungs Monat und das Produkt angezeigt. Wenn eine dieser Daten aus irgendeinem Grund nicht verfügbar ist, Sie aber darauf zugreifen müssen, wenden Sie sich an den [Support](https://developer.microsoft.com/windows/support). Wenn das Ergebnis einer Anpassung und nicht einer Transaktion entspricht, werden die Produktfelder nicht angezeigt. Der Anpassungs Grund wird nicht angezeigt, es sei denn, es gibt eine Anpassung, und der Anpassungs Filter ist ausgewählt.
 
 Wählen Sie zum Exportieren der Transaktionsdaten auf dieser Seite die Option Exportieren aus, und befolgen Sie dann die Anweisungen auf der Seite Daten exportieren. Dateien, die aus der Seite Transaktionsverlauf exportiert wurden, zeigen Daten in Transaktionswährung, Einnahmen in Transaktionswährung und US-Dollar sowie den bezahlten Wert in Zahlung in Währung an.
 
