@@ -7,12 +7,12 @@ keywords: Windows Win32, Desktopentwicklung
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 34b860916b90d1adc8ae9e7ae8c8ac7950125ce7
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 554869625c0db7a2a19dc7c01837e47029bd28e6
+ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216743"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97214267"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>Erstellen von Desktop-Apps für Windows-PCs
 
@@ -20,10 +20,11 @@ Dieser Artikel enthält Informationen, die Sie benötigen, um mit dem Entwickeln
 
 ## <a name="platforms-for-desktop-apps"></a>Plattformen für Desktop-Apps
 
-Es gibt vier Hauptplattformen zum Entwickeln von Desktop-Apps für Windows-PCs. Jede Plattform bietet ein App-Modell, das den Lebenszyklus der App definiert, ein vollständiges UI-Framework mit einem vollständigen Satz von UI-Steuerelementen, mit denen Sie Desktop-Apps wie Word, Excel und Photoshop erstellen können, sowie Zugriff auf einen umfassenden Satz verwalteter oder nativer APIs für die Verwendung von Windows-Features. Einen ausführlichen Vergleich dieser Plattformen sowie zusätzliche Ressourcen für jede Plattform finden Sie unter [Auswählen Ihrer App-Plattform](choose-your-platform.md).
+Es gibt vier Hauptplattformen zum Entwickeln von Desktop-Apps für Windows-PCs. Jede Plattform bietet ein App-Modell, das den Lebenszyklus der App definiert, ein vollständiges UI-Framework mit einem vollständigen Satz von UI-Steuerelementen, mit denen Sie Desktop-Apps wie Word, Excel und Photoshop erstellen können, sowie Zugriff auf einen umfassenden Satz verwalteter oder nativer APIs für die Verwendung von Windows-Features. 
+
+Einen ausführlichen Vergleich dieser Plattformen sowie zusätzliche Ressourcen für jede Plattform finden Sie unter [Auswählen Ihrer App-Plattform](choose-your-platform.md).
 
 <br/>
-
 <table>
 <colgroup>
 <col width="20%" />
@@ -61,8 +62,17 @@ Es gibt vier Hauptplattformen zum Entwickeln von Desktop-Apps für Windows-PCs. 
 </tbody>
 </table>
 
-> [!NOTE]
-> Unter Windows 10 unterstützen alle diese Plattformen auch die Windows-UI-Bibliothek (WinUI) zum Erstellen von Benutzeroberflächen. Weitere Informationen zu WinUI für Desktop-Apps finden Sie in [diesem Abschnitt](choose-your-platform.md#windows-ui-library).
+### <a name="future-roadmap"></a>Featureroadmap
+
+Mit Blick auf die Zukunft entwickeln wir die Windows-App-Entwicklungsplattformen mit der Windows-UI-Bibliothek (WinUI) und Project Reunion weiter.
+
+* **WinUI** ist eine natives Framework für die Benutzererfahrung (UX) für Windows 10-Apps. WinUI begann als ein Toolkit, das neue und aktualisierte Versionen von UWP-Steuerelementen für UWP-Apps in älteren Versionen von Windows 10 bereitstellte. Der Umfang von WinUI hat zugenommen, sodass WinUI 3 (aktuell in der Vorschau) heute die Plattform für moderne native Benutzeroberflächen (UI) für mit UWP, .NET und Win32 entwickelte Windows 10-Apps ist. 
+
+    Weitere Informationen erhalten Sie unter [Windows-UI-Bibliothek (WinUI)](../winui/index.md).
+
+* **Project Reunion** (aktuell in der Vorschau) ist der Codename für einen umfangreichen neuen Satz von Entwicklerkomponenten und -tools, die die nächste Weiterentwicklung der Windows-App-Entwicklungsplattform darstellen. Project Reunion bietet einen einheitlichen Satz von APIs und Tools, die von jeder App auf einer breiten Palette von Zielversionen des Windows 10-Betriebssystems auf konsistente Weise verwendet werden können. Project Reunion ergänzt die bestehenden Windows-App-Plattformen und -Frameworks wie UWP und natives Win32 sowie .NET um einen gemeinsamen Satz von APIs und Tools, auf die sich Entwickler plattformübergreifend verlassen können. 
+
+    Weitere Informationen finden Sie unter [Project Reunion](../project-reunion/index.md).
 
 ## <a name="update-existing-desktop-apps-for-windows-10"></a>Aktualisieren vorhandener Desktop-Apps für Windows 10
 
