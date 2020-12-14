@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ccdea35b8923c756489f6b671d394fc516a960c
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 24ba67dfa51c039055cc5bc4cb31d4aff4de6765
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749746"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603887"
 ---
 # <a name="progress-controls"></a>Statussteuerelemente
 
@@ -61,11 +61,12 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 ## <a name="types-of-progress"></a>Typen von Statussteuerelementen
 
-Es gibt zwei Steuerelemente, die dem Benutzer anzeigen, dass ein Vorgang ausgeführt wird: ein ProgressBar-Element oder ein ProgressRing-Element.
+Es gibt zwei Steuerelemente, die dem Benutzer anzeigen, dass ein Vorgang ausgeführt wird: ein ProgressBar-Element oder ein ProgressRing-Element. Sowohl das ProgressBar- als auch das ProgressRing-Steuerelement weist zwei Zustände auf, die vermitteln, ob der Benutzer mit der Anwendung interagieren kann oder nicht. 
 
--   Der ProgressBar-Status *bestimmt* gibt den Prozentsatz an, zu dem eine Aufgabe abgeschlossen ist. Dieses Element sollte für Vorgänge verwendet werden, deren Dauer bekannt ist, deren Fortschritt jedoch nicht die Interaktion des Benutzers mit der App blockieren sollte.
--   Der ProgressBar-Status *unbestimmt* gibt an, dass ein Vorgang ausgeführt wird, der die Interaktion des Benutzers mit der App nicht blockiert und dessen Abschlusszeit nicht bekannt ist.
--   Für das ProgressRing-Element gibt es nur den Status *unbestimmt*. Es sollte verwendet werden, wenn vor dem Abschluss eines Vorgangs keine Benutzerinteraktion möglich ist.
+-   Der Status *bestimmt* der ProgressBar- und ProgressRing-Steuerelemente gibt an, zu welchem Prozentsatz eine Aufgabe abgeschlossen ist. Dieses Element sollte für Vorgänge verwendet werden, deren Dauer bekannt ist, deren Fortschritt jedoch nicht die Interaktion des Benutzers mit der App blockieren sollte.
+-   Der Status *unbestimmt* des ProgressBar-Steuerelements gibt an, dass ein Vorgang ausgeführt wird, der die Interaktion des Benutzers mit der App nicht blockiert und dessen Abschlusszeit nicht bekannt ist.
+-   Der Status *unbestimmt* des ProgressRing-Steuerelements gibt an, dass ein Vorgang ausgeführt wird, der die Interaktion des Benutzers mit der App blockiert und dessen Abschlusszeit nicht bekannt ist.
+
 
 Ein Statussteuerelement ist zudem schreibgeschützt und nicht interaktiv. Dies bedeutet, dass der Benutzer diese Steuerelemente nicht direkt aufrufen oder verwenden kann.
 
@@ -73,7 +74,8 @@ Ein Statussteuerelement ist zudem schreibgeschützt und nicht interaktiv. Dies b
 |---|---|
 | Unbestimmtes ProgressBar-Element | ![ProgressBar – unbestimmt](images/progressbar-indeterminate.gif) |
 | Bestimmtes ProgressBar-Element | ![ProgressBar – bestimmt](images/progressbar-determinate.png)|
-| Unbestimmtes ProgressRing-Element | ![ProgressRing-Status](images/progressring-indeterminate.gif)|
+| Unbestimmtes ProgressRing-Element | ![ProgressRing-Status „unbestimmt“](images/progressring-indeterminate.gif)|
+| Bestimmtes ProgressRing-Steuerelement | ![ProgressRing-Status „bestimmt“](images/progress_ring.jpg)|
 
 
 ## <a name="examples"></a>Beispiele
@@ -117,11 +119,15 @@ Es ist nicht immer klar erkennbar, welches Steuerelement oder welcher Status (be
 
 -   **Muss der Benutzer den Abschluss des Vorgangs abwarten, bevor er seine Aktivität fortsetzen kann?**
 
-    Wenn ein Vorgang bis zu seinem Abschluss eine umfassende Interaktion mit der App erfordert, empfiehlt sich die Verwendung eines ProgressRing-Elements. Das ProgressRing-Steuerelement ist für modale Interaktionen vorgesehen, in denen die Aktivitäten des Benutzers blockiert werden, bis das ProgressRing-Element nicht mehr angezeigt wird.
+    Wenn ein Vorgang bis zu seinem Abschluss eine umfassende Interaktion mit der App erfordert, empfiehlt sich die Verwendung eines unbestimmten ProgressRing-Steuerelements.
+
+    -   **Verfügt das Steuerelement über eine festgelegte Dauer oder ein vorhersehbares Ende?**
+
+    Verwenden Sie ein bestimmtes ProgressRing-Steuerelement, wenn das visuelle Objekt ein Ring statt eines Balkens sein soll, und aktualisieren Sie den Prozentsatz oder Wert entsprechend. 
 
 -   **Wartet die App darauf, dass der Benutzer eine Aufgabe ausführt?**
 
-    In diesem Fall verwendest du ein ProgressRing-Steuerelement, um den Benutzer auf eine unbestimmte Wartezeit hinzuweisen.
+    In diesem Fall verwenden Sie ein unbestimmtes ProgressRing-Steuerelement, um den Benutzer auf eine unbestimmte Wartezeit hinzuweisen.
 
 -   **Schlüsselwörter**
 
@@ -169,6 +175,12 @@ Wenn die Dauer des Vorgangs nicht bekannt ist, verwenden Sie ein unbestimmtes Pr
 ![Beispiel für ein unbestimmtes ProgressRing-Steuerelement](images/PR_IndeterminateExample.png)
 
 Unbestimmte ProgressRing-Elemente werden verwendet, wenn jegliche Benutzerinteraktion mit der App ausgesetzt ist oder die App auf eine Benutzereingabe wartet, um den Vorgang fortzusetzen. Das Beispiel „Anmelden...“ ist ein optimales Szenario für das ProgressRing-Steuerelement, da der Benutzer die App erst weiterverwenden kann, nachdem der Anmeldevorgang abgeschlossen ist.
+
+**ProgressRing – bestimmt**
+
+![Beispiel für ein bestimmtes ProgressRing-Steuerelement](images/progress_ring_determinate_example.png)
+
+Wenn die Dauer des Vorgangs bekannt ist und Sie den Ring als visuelles Objekt verwenden möchten, etwa beim Installieren, Herunterladen oder Einrichten, eignet sich ein bestimmtes ProgressRing-Steuerelement.
 
 ## <a name="customizing-a-progress-control"></a>Anpassen eines Statussteuerelements
 

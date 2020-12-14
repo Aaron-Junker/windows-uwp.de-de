@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 689f55393df5fc7af59af6ce1e51fb002f49b713
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 614cfc03ade485ba7cf2e6a8d819ec2d33d2d947
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031133"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603911"
 ---
 # <a name="navigation-view"></a>Navigationsansicht
 
@@ -41,9 +41,9 @@ _Navigationsansicht unterstützt die Anordnung von Bereichen bzw. Menüs sowohl 
 
 > **Plattform-APIs:** [Windows.UI.Xaml.Controls.NavigationView-Klasse](/uwp/api/windows.ui.xaml.controls.navigationview)
 >
-> **Windows-UI-Bibliotheks-APIs** : [Microsoft.UI.Xaml.Controls.NavigationView-Klasse](/uwp/api/microsoft.ui.xaml.controls.navigationview)
+> **Windows-UI-Bibliotheks-APIs**: [Microsoft.UI.Xaml.Controls.NavigationView-Klasse](/uwp/api/microsoft.ui.xaml.controls.navigationview)
 >
-> Für einige Features von „NavigationView“, z. B. die Navigation _oben_ und die _hierarchische_ Navigation, ist Windows 10, Version 1809 ( [SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) oder höher oder die [Windows-UI-Bibliothek](/uwp/toolkits/winui/) erforderlich.
+> Für einige Features von „NavigationView“, z. B. die Navigation _oben_ und die _hierarchische_ Navigation, ist Windows 10, Version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) oder höher oder die [Windows-UI-Bibliothek](/uwp/toolkits/winui/) erforderlich.
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -88,7 +88,7 @@ Du kannst die PaneDisplayMode-Eigenschaft verwenden, um verschiedene Navigations
     :::column-end:::
 :::row-end:::
 
-Wir empfehlen die Navigation _oben_ , wenn Folgendes gilt:
+Wir empfehlen die Navigation _oben_, wenn Folgendes gilt:
 
 - Du hast fünf oder weniger Navigationskategorien der obersten Ebene, die alle die gleiche Wichtigkeit aufweisen. Alle weiteren Navigationskategorien der obersten Ebene, die sich im Dropdown-Überlaufmenü befinden, werden als weniger wichtig angesehen.
 - Du musst alle Navigationsoptionen auf dem Bildschirm anzeigen.
@@ -106,7 +106,7 @@ Wir empfehlen die Navigation _oben_ , wenn Folgendes gilt:
     :::column-end:::
 :::row-end:::
 
-Wir empfehlen die Navigation _links_ , wenn Folgendes gilt:
+Wir empfehlen die Navigation _links_, wenn Folgendes gilt:
 
 - Du verfügst über fünf bis zehn Navigationskategorien der obersten Ebene mit gleicher Wichtigkeit.
 - Du möchtest, dass die Navigationskategorien hervorgehoben sind und weniger Platz für anderen App-Inhalt vorhanden ist.
@@ -191,9 +191,22 @@ Hier ist der ausführliche Seitenaufbau für die Anordnung des Bereichs oben und
 1. AutoSuggestBox (optional)
 1. Schaltfläche „Einstellungen“ (optional)
 
+#### <a name="footer-menu-items"></a>Fußzeilen-Menüelemente
+Sie können [FooterMenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.FooterMenuItems) verwenden, um Navigationselemente an das Ende des Navigationsbereichs zu platzieren (im Gegensatz zur [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.MenuItems)-Eigenschaft, mit der Elemente an den Anfang des Bereichs platziert werden).
+
+Das FooterMenuItems-Steuerelement wird standardmäßig vor dem Element „Settings“ angezeigt. Das Settings-Element kann nach wie vor mithilfe der [`IsSettingsVisible`](/uwp/api/microsoft.ui.xaml.controls.navigationview.IsSettingsVisible)-Eigenschaft aktiviert/deaktiviert werden.
+
+In FooterMenuItems-Steuerelemente sollten nur Navigationselemente gesetzt werden. Alle anderen Inhalte, die an der Fußzeile des Bereichs ausgerichtet werden müssen, sollten in das [PaneFooter](/uwp/api/microsoft.ui.xaml.controls.navigationview.PaneFooter)-Steuerelement gesetzt werden.
+
+Ein Beispiel für das Hinzufügen von FooterMenuItems-Steuerelementen zu ihrem NavigationView-Steuerelement finden Sie in der [FooterMenuItems-Klasse](/uwp/api/microsoft.ui.xaml.controls.navigationview.FooterMenuItems). 
+
+Die folgende Abbildung zeigt ein NavigationView-Steuerelement mit den Navigationselementen „Konto“, „Ihr Warenkorb“ und „Hilfe“ im Fußzeilenmenü. 
+
+![NavigationView-Steuerelement mit FooterMenuItems-Steuerelement](images/footermenu-leftmode.png)
+
 #### <a name="pane-footer"></a>Fußzeile des Bereichs
 
-Du kannst den Freiforminhalt in der Fußzeile des Bereichs anordnen, indem du ihn der [PaneFooter](/uwp/api/windows.ui.xaml.controls.navigationview.PaneFooter)-Eigenschaft hinzufügst.
+Du kannst den Freiforminhalt in der Fußzeile des Bereichs anordnen, indem du ihn der [PaneFooter](/uwp/api/microsoft.ui.xaml.controls.navigationview.PaneFooter)-Eigenschaft hinzufügst.
 
 :::row:::
     :::column:::
@@ -380,11 +393,13 @@ Du kannst beide Ereignisse verarbeiten, um Aufgaben für die angeforderte Naviga
 
 **SelectionChanged** kann von einem Benutzer ausgelöst werden, der ein derzeit nicht ausgewähltes Element aufruft, oder indem das ausgewählte Element programmgesteuert geändert wird. Wenn die Änderung der Auswahl erfolgt, weil ein Benutzer ein Element aufgerufen hat, tritt das ItemInvoked-Ereignis zuerst ein. Bei einer programmgesteuerten Änderung der Auswahl wird das ItemInvoked-Ereignis nicht ausgelöst.
 
+Alle Navigationselemente sind Teil desselben Auswahlmodells, egal ob sie Teil von [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.MenuItems) oder [FooterMenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.FooterMenuItems) sind. Es kann immer nur ein Navigationselement ausgewählt werden. 
+
 ### <a name="backwards-navigation"></a>Rückwärtsnavigation
 
 „NavigationView“ verfügt über eine integrierte Zurück-Schaltfläche. Wie bei der Vorwärtsnavigation auch, wird die Rückwärtsnavigation aber nicht automatisch durchgeführt. Wenn der Benutzer auf die Zurück-Schaltfläche tippt, wird das [BackRequested](/uwp/api/windows.ui.xaml.controls.navigationview.BackRequested)-Ereignis ausgelöst. Du verarbeitest dieses Ereignis, um die Rückwärtsnavigation durchzuführen. Weitere Informationen und Codebeispiele findest du unter [Navigationsverlauf und Rückwärtsnavigation für UWP-Apps](../basics/navigation-history-and-backwards-navigation.md).
 
-Im Modus „Minimal“ oder „Kompakt“ wird der Bereich der Navigationsansicht als Flyout geöffnet. In diesem Fall wird durch das Klicken auf die Zurück-Schaltfläche der Bereich geschlossen und stattdessen das **PaneClosing** -Ereignis ausgelöst.
+Im Modus „Minimal“ oder „Kompakt“ wird der Bereich der Navigationsansicht als Flyout geöffnet. In diesem Fall wird durch das Klicken auf die Zurück-Schaltfläche der Bereich geschlossen und stattdessen das **PaneClosing**-Ereignis ausgelöst.
 
 Du kannst die Zurück-Schaltfläche ausblenden oder deaktivieren, indem du diese Eigenschaften festlegst:
 
@@ -411,7 +426,7 @@ In diesem Beispiel wird veranschaulicht, wie Sie **NavigationView** sowohl mit e
 
 Das Beispiel veranschaulicht eine empfohlene Vorgehensweise zum Einrichten von Navigationsdaten, die für viele gängige Szenarien geeignet ist. Darüber hinaus wird veranschaulicht, wie Sie die Rückwärtsnavigation mit der Zurück-Schaltfläche von **NavigationView** und der Navigation über die Tastatur implementieren.
 
-In diesem Code wird vorausgesetzt, dass deine App Seiten mit den folgenden Namen enthält, auf die navigiert werden kann: *HomePage* , *AppsPage* , *GamesPage* , *MusicPage* , *MyContentPage* und *SettingsPage*. Der Code für diese Seiten ist nicht angegeben.
+In diesem Code wird vorausgesetzt, dass deine App Seiten mit den folgenden Namen enthält, auf die navigiert werden kann: *HomePage*, *AppsPage*, *GamesPage*, *MusicPage*, *MyContentPage* und *SettingsPage*. Der Code für diese Seiten ist nicht angegeben.
 
 > [!IMPORTANT]
 > Informationen zu den Seiten der App werden in einem [ValueTuple](/dotnet/api/system.valuetuple)-Element gespeichert. Für diese Struktur muss als Mindestversion für dein App-Projekt das SDK 17763 oder höher verwendet werden. Wenn du die WinUI-Version von „NavigationView“ für frühere Versionen von Windows 10 verwendest, kannst du stattdessen das [NuGet-Paket „System.ValueTuple NuGet“](https://www.nuget.org/packages/System.ValueTuple/) nutzen.
@@ -647,7 +662,7 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 ```
 
 > [!NOTE]
-> Erstellen Sie für die [C++/WinRT](../../cpp-and-winrt-apis/index.md)-Version dieses Codebeispiels zunächst ein neues Projekt, das auf der Projektvorlage **Leere App (C++/WinRT)** basiert. Fügen Sie den aufgeführten Quellcodedateien dann den Code in der Auflistung hinzu. Benennen Sie Ihr neues Projekt *NavigationViewCppWinRT* , um den Quellcode genau wie in der Auflistung gezeigt zu verwenden.
+> Erstellen Sie für die [C++/WinRT](../../cpp-and-winrt-apis/index.md)-Version dieses Codebeispiels zunächst ein neues Projekt, das auf der Projektvorlage **Leere App (C++/WinRT)** basiert. Fügen Sie den aufgeführten Quellcodedateien dann den Code in der Auflistung hinzu. Benennen Sie Ihr neues Projekt *NavigationViewCppWinRT*, um den Quellcode genau wie in der Auflistung gezeigt zu verwenden.
 
 ```cppwinrt
 // MainPage.idl
@@ -953,7 +968,7 @@ namespace winrt::NavigationViewCppWinRT::implementation
 
 Der oben gezeigte C#- und C++/WinRT-Code ist so konzipiert, dass Sie für beide Versionen dasselbe XAML-Markup verwenden können. Es gibt jedoch eine weitere Möglichkeit, die in diesem Abschnitt beschriebene C++/WinRT-Version zu implementieren, die Sie möglicherweise bevorzugen.
 
-Im Folgenden finden Sie eine alternative Version des **NavView_ItemInvoked** -Handlers. Das Verfahren in dieser Version des Handlers umfasst als Erstes das Speichern des vollständigen Typnamens der Seite (im Tag des [**NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)-Elements), zu der Sie navigieren möchten. Im Handler führst du das Unboxing für diesen Wert durch, wandelst ihn in ein [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename)-Objekt um und verwendest dieses Objekt, um zur Zielseite zu navigieren. Es ist nicht erforderlich, die Zuordnungsvariable mit dem Namen `_pages` aus dem obigen Beispiel zu nutzen. Sie können Komponententests erstellen, um zu bestätigen, dass die Werte in den Tags einen gültigen Typ aufweisen. Weitere Informationen findest du unter [Boxing und Unboxing von Skalarwerten für „IInspectable“ mit C++/WinRT](../../cpp-and-winrt-apis/boxing.md).
+Im Folgenden finden Sie eine alternative Version des **NavView_ItemInvoked**-Handlers. Das Verfahren in dieser Version des Handlers umfasst als Erstes das Speichern des vollständigen Typnamens der Seite (im Tag des [**NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)-Elements), zu der Sie navigieren möchten. Im Handler führst du das Unboxing für diesen Wert durch, wandelst ihn in ein [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename)-Objekt um und verwendest dieses Objekt, um zur Zielseite zu navigieren. Es ist nicht erforderlich, die Zuordnungsvariable mit dem Namen `_pages` aus dem obigen Beispiel zu nutzen. Sie können Komponententests erstellen, um zu bestätigen, dass die Werte in den Tags einen gültigen Typ aufweisen. Weitere Informationen findest du unter [Boxing und Unboxing von Skalarwerten für „IInspectable“ mit C++/WinRT](../../cpp-and-winrt-apis/boxing.md).
 
 ```cppwinrt
 void MainPage::NavView_ItemInvoked(
@@ -977,7 +992,7 @@ void MainPage::NavView_ItemInvoked(
 ## <a name="hierarchical-navigation"></a>Hierarchische Navigation
 Einige Apps verfügen möglicherweise über eine komplexere hierarchische Struktur, die mehr als nur eine flache Liste von Navigationselementen erfordert. Möglicherweise möchten Sie Navigationselemente auf oberster Ebene verwenden, um Seitenkategorien anzuzeigen, und untergeordnete Elemente, um bestimmte Seiten anzuzeigen. Dies ist auch nützlich, wenn Sie über Seiten im Hub-Format verfügen, die nur als Link zu anderen Seiten dienen. In solchen Fällen sollten Sie eine hierarchische Navigationsansicht erstellen.
 
-Verwenden Sie entweder die [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitems?view=winui-2.4)-Eigenschaft oder die [MenuItemsSource](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitemssource?view=winui-2.4)-Eigenschaft von **NavigationViewItem** , um eine hierarchische Liste von verschachtelten Navigationselementen im Fensterbereich anzuzeigen.
+Verwenden Sie entweder die [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitems)-Eigenschaft oder die [MenuItemsSource](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitemssource)-Eigenschaft von **NavigationViewItem**, um eine hierarchische Liste von verschachtelten Navigationselementen im Fensterbereich anzuzeigen.
 Jedes NavigationViewItem kann andere NavigationViewItems und Organisationselemente wie Elementheader und Trennzeichen enthalten. Um bei Verwendung von `MenuItemsSource` eine hierarchische Liste anzuzeigen, legen Sie `ItemTemplate` als NavigationViewItem fest, und binden Sie seine `MenuItemsSource`-Eigenschaft an die nächste Ebene der Hierarchie.
 
 Obwohl NavigationViewItem beliebig viele verschachtelte Ebenen enthalten kann, empfehlen wir, die Navigationshierarchie Ihrer App flach zu halten. Wir glauben, dass zwei Ebenen zum Zwecke der Verwendbarkeit und des Verständnisses ideal sind.
@@ -1010,7 +1025,7 @@ Fügen Sie NavigationView eine Hierarchie von Menüelementen hinzu, durch
 * Binden der MenuItemsSource-Eigenschaft an die hierarchischen Daten
 * Definieren der Elementvorlage als NavigationViewMenuItem, wobei als sein Inhalt die Bezeichnung des Menüelements festgelegt ist und seine MenuItemsSource-Eigenschaft an die nächste Ebene der Hierarchie gebunden ist
 
-Dieses Beispiel veranschaulicht auch das [Erweitern](/uwp/api/microsoft.ui.xaml.controls.navigationview.expanding?view=winui-2.4) und [Reduzieren](/uwp/api/microsoft.ui.xaml.controls.navigationview.collapsed?view=winui-2.4) von Ereignissen. Diese Ereignisse werden für ein Menüelement mit untergeordneten Elementen ausgelöst.
+Dieses Beispiel veranschaulicht auch das [Erweitern](/uwp/api/microsoft.ui.xaml.controls.navigationview.expanding) und [Reduzieren](/uwp/api/microsoft.ui.xaml.controls.navigationview.collapsed) von Ereignissen. Diese Ereignisse werden für ein Menüelement mit untergeordneten Elementen ausgelöst.
 
 ```xaml
 <Page ... xmlns:muxc="using:Microsoft.UI.Xaml.Controls" ... >
@@ -1384,7 +1399,7 @@ In der gesamten NavigationView wird nicht mehr als ein Auswahlindikator angezeig
 
 Durch Klicken auf die Pfeile von NavigationViewItems in den Modi „Top“ und „Left“ wird die Unterstruktur erweitert oder reduziert. Durch Klicken oder Tippen _an anderer Stelle_ von NavigationViewItem wird das `ItemInvoked`-Ereignis ausgelöst und zudem die Teilstruktur reduziert oder erweitert.
 
-Um zu verhindern, dass ein Element beim Aufruf den Auswahlindikator anzeigt, legen Sie dessen [SelectsOnInvoked](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.selectsoninvoked?view=winui-2.3)-Eigenschaft auf „False“ fest, wie unten dargestellt:
+Um zu verhindern, dass ein Element beim Aufruf den Auswahlindikator anzeigt, legen Sie dessen [SelectsOnInvoked](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.selectsoninvoked)-Eigenschaft auf „False“ fest, wie unten dargestellt:
 
 ```xaml
 <Page ... xmlns:muxc="using:Microsoft.UI.Xaml.Controls" ... >

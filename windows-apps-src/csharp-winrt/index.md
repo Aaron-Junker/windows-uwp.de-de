@@ -5,12 +5,12 @@ ms.date: 05/19/2020
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C#, WinRT, CSWinRT, Projektion
 ms.localizationpriority: medium
-ms.openlocfilehash: 107c85b7e2562edb9995a6bfd76e47904750536b
-ms.sourcegitcommit: a15bc17aa0640722d761d0d33f878cb2a822e8ed
+ms.openlocfilehash: ef6fad694dd45e80d462f6a0c5c73ac5539fe16a
+ms.sourcegitcommit: c063d0d130944558afa20181dd294ffe7a187a3f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96577092"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090684"
 ---
 # <a name="cwinrt"></a>C#/WinRT
 
@@ -96,9 +96,9 @@ Möglicherweise treten in einem Projekt, das mit einer früheren .NET SDK-Versio
 
 | Fehler- oder Warnmeldung | `Reason` |
 |--------------------------|--------|
-| System.IO.FileLoadException | Dieser Laufzeitfehler tritt beim Aufrufen von APIs in einer Bibliothek auf, die keine Windows SDK-Typen verfügbar macht. |
-| Warnung MSB3277: Es wurden Konflikte zwischen verschiedenen Versionen von Microsoft.Windows.SDK.NET gefunden, die nicht aufgelöst werden konnten. | Dieser Buildfehler tritt auf, wenn auf eine Bibliothek verwiesen wird, die Windows SDK-Typen auf der API-Oberfläche verfügbar macht. |
-| [CS1705](/dotnet/csharp/language-reference/compiler-messages/cs1705): Die Assembly „AssemblyName1“ verwendet „TypeName“ mit einer höheren Version als die referenzierte Assembly „AssemblyName2“. | Dieser Buildcompilerfehler tritt auf, wenn auf verfügbar gemachte Windows SDK-Typen in einer Bibliothek verwiesen wird und diese verarbeitet werden. |
+| Warnung MSB3277: Es wurden Konflikte zwischen verschiedenen Versionen von WinRT.Runtime oder Microsoft.Windows.SDK.NET gefunden, die nicht aufgelöst werden konnten. | Diese Buildwarnung tritt auf, wenn auf eine Bibliothek verwiesen wird, die Windows SDK-Typen auf der API-Oberfläche verfügbar macht. |
+| [Fehler CS1705](/dotnet/csharp/language-reference/compiler-messages/cs1705): Die Assembly „AssemblyName1“ verwendet „TypeName“ mit einer höheren Version als die referenzierte Assembly „AssemblyName2“. | Dieser Buildcompilerfehler tritt auf, wenn auf verfügbar gemachte Windows SDK-Typen in einer Bibliothek verwiesen wird und diese verarbeitet werden. |
+| System.IO.FileLoadException | Dieser Laufzeitfehler kann beim Aufrufen bestimmter APIs in einer Bibliothek auftreten, die keine Windows SDK-Typen verfügbar macht. |
 
 Aktualisieren Sie das .NET SDK auf die neueste Version, um diese Fehler zu beheben. Dadurch wird sichergestellt, dass die von Ihrer Anwendung verwendeten Laufzeitversionen und Windows SDK-Assemblyversionen mit allen Abhängigkeiten kompatibel sind. Diese Fehler treten möglicherweise bei frühen Wartungs-/Featureaktualisierungen für das .NET 5 SDK auf, da bei Laufzeitkorrekturen möglicherweise Aktualisierungen der Assemblyversionen erforderlich sind.
 
