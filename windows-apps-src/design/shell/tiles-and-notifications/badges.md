@@ -1,5 +1,5 @@
 ---
-description: Erfahren Sie, wie Sie mithilfe von Kacheln, Signalen, Popups und Benachrichtigungen Einstiegspunkte in Ihre App bereitstellen und Benutzer auf dem neuesten Stand halten können.
+description: Erfahren Sie, wie Sie eine Badge-Benachrichtigung verwenden, um Übersichts-oder Statusinformationen für Ihre APP zu übermittelt.
 title: Signalbenachrichtigungen für Windows-Apps
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 64d5595bcc315b24228401ff23a1a59d29282eae
-ms.sourcegitcommit: cbdfac0e2d8bead6c225e815e7d6dffe1f5ef864
+ms.openlocfilehash: a1edb80db6858c7b8ccbbf443df2a0c01d3ede5d
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92344968"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598881"
 ---
 # <a name="badge-notifications-for-windows-apps"></a>Signalbenachrichtigungen für Windows-Apps
 
@@ -50,7 +50,7 @@ Achtung | :::image type="icon" source="images/badges/badge-attention.png"::: | `
 verfügbar | :::image type="icon" source="images/badges/badge-available.png"::: | `<badge value="available"/>`
 abwesend | :::image type="icon" source="images/badges/badge-away.png"::: | `<badge value="away"/>`
 beschäftigt | :::image type="icon" source="images/badges/badge-busy.png"::: | `<badge value="busy"/>`
-Fehler | :::image type="icon" source="images/badges/badge-error.png"::: | `<badge value="error"/>`
+error | :::image type="icon" source="images/badges/badge-error.png"::: | `<badge value="error"/>`
 newMessage | :::image type="icon" source="images/badges/badge-newMessage.png"::: | `<badge value="newMessage"/>`
 angehalten | :::image type="icon" source="images/badges/badge-paused.png"::: | `<badge value="paused"/>`
 Wiedergabe | :::image type="icon" source="images/badges/badge-playing.png"::: | `<badge value="playing"/>`

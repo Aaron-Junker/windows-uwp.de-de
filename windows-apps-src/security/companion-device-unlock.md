@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: 96aea61073cf0c62f0c9636519018e1f19d0c8b3
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: 8c7a18578d04211c5fd4ef6fc0e409207aa37005
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91933091"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598871"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Entsperren von Windows mit Windows Hello-Begleitgeräten (IoT)
 
@@ -166,7 +166,7 @@ Benutzer können ein Windows Hello-Begleitgerät von einem Windows 10-Desktopge
 Unternehmen stehen zum Steuern des Windows Hello-Begleitgeräteframeworks zwei Optionen zur Verfügung:
 
 - Aktivieren oder Deaktivieren des Features
-- Definieren einer Whitelist mit Windows Hello-Begleitgeräten, die das Windows-App-Schließfach verwenden dürfen
+- Definieren der Zulassungs von Windows Hello Companion-Geräten, die mit Windows App locker zulässig sind
 
 Das Windows Hello-Begleitgeräteframework unterstützt keine zentralisierte Inventarisierung verfügbarer Begleitgeräte und keine Methode zur weiteren Filterung der zulässigen Instanzen eines Windows Hello-Begleitgerätetyps. (So kann beispielsweise nicht festgelegt werden, dass nur Begleitgeräte mit einer Seriennummer zwischen X und Y zulässig sind.) App-Entwickler können solche Funktionen jedoch über einen eigenen Dienst bereitstellen. Ausführlichere Informationen finden Sie im Abschnitt „Roaming, Sperrung und Filterdienst“.
 
@@ -655,7 +655,7 @@ Folgende Anleitungs- und Fehlermeldungen stehen zur Verfügung. Der Gerätename 
 - "Tippen Sie auf *Gerätename* , um sich anzumelden."
 - „Legen Sie Ihren Finger zur Anmeldung auf *Gerätename*.“
 - "Schwenken Sie den Finger auf den *Gerätenamen* , um sich anzumelden."
-- "Die Anmeldung mit dem *Gerätenamen*war nicht möglich. Verwenden Sie eine andere Anmeldeoption.“
+- "Die Anmeldung mit dem *Gerätenamen* war nicht möglich. Verwenden Sie eine andere Anmeldeoption.“
 - „Es ist ein Problem aufgetreten. Verwenden Sie eine andere Anmeldeoption, und richten Sie *Gerätename* erneut ein.“
 - „Versuchen Sie es noch mal.“
 - „Sagen Sie Ihre gesprochene Passphrase in *Gerätename*.“

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, ACPI, GPIO, I2C, SPI, UEFI
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: 76ef3c6b75a5d1a4bd8daebba3a392062c845215
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: 0fc07cf45fc4762b202698c07b7cf2088e260e1b
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860185"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598841"
 ---
 # <a name="enable-user-mode-access-to-gpio-i2c-and-spi"></a>Aktivieren des Benutzermoduszugriffs auf GPIO, I2C und SPI
 
@@ -46,6 +46,9 @@ Als nächstes deklarieren wir jede der GPIO-und SPB-Ressourcen, die für den Ben
 ### <a name="spi"></a>SPI
 
 Raspberry Pi verfügt über zwei verfügbar gemachte SPI-Busse. SPI0 hat zwei Hardware-Chip-Auswahlzeilen und SPI1 verfügt über eine Hardware-Chip-Auswahlzeile. Eine SPISerialBus()-Ressourcendeklaration ist für jede Chip-Auswahlzeile für jeden Bus erforderlich. Die folgenden zwei SPISerialBus-Ressourcendeklarationen beziehen sich auf die zwei Chip-Auswahlzeilen in SPI0. Das DeviceSelection-Feld enthält einen eindeutigen Wert, das der Treiber als Hardware-Chip-Auswahlzeilenidentifikator interpretiert. Der genaue Wert, den Sie im DeviceSelection-Feld eingeben, hängt davon ab, wie Ihr Treiber dieses Feld des ACPI-Verbindungsdeskriptors interpretiert.
+
+> [!NOTE]
+> Dieser Artikel enthält Verweise auf den Begriff Slave, einen Begriff, den Microsoft nicht mehr verwendet. Sobald der Begriff aus der Software entfernt wird, wird er auch aus diesem Artikel entfernt.
 
 ```cpp
 // Index 0
