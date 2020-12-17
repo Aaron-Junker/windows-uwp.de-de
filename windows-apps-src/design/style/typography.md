@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5f06d5e804d41b1751c72af4d07224fa346323b2
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: 3660417f6e88268dd2ad814ce4dba62354029828
+ms.sourcegitcommit: 05f9bb0c563e12daaacf7732d46f1c7f578dbe6a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860110"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97529287"
 ---
 # <a name="typography-in-windows-apps"></a>Typografie in Windows-Apps
 
@@ -123,7 +123,7 @@ Standardmäßig ist das [TextAlignment](/uwp/api/windows.ui.xaml.textalignment) 
 
 :::row:::
     :::column:::
-![[Vierter Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/do.svg)
+![Vierter Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/do.svg)
 Halten Sie sich zur besseren Lesbarkeit an 50 bis 60 Buchstaben pro Zeile.
     :::column-end:::
     :::column:::
@@ -143,7 +143,7 @@ Wenn die Textmenge den verfügbaren Speicherplatz überschreitet, wird empfohlen
 
 :::row:::
     :::column:::
-![[Fünfter Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/do.svg)
+![Fünfter Screenshot eines grünen Balkens mit einem grünen Häkchen und dem darin enthaltenen Wort „Do“ (machen).](images/do.svg)
 Schneiden Sie Text zu, und umbrechen Sie ihn, wenn mehrere Zeilen aktiviert sind.
     :::column-end:::
     :::column:::
