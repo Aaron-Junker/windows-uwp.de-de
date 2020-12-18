@@ -6,12 +6,12 @@ ms.date: 06/26/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ad25d4ba5d8dfe638d3de3e210f69ea204c48a14
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 2f550fc90a8035d2c7e355d70b7ddd2b9a9e17fc
+ms.sourcegitcommit: f83f2f582f8c7c3447ec62df40a8f0724f7f3bbc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220013"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97675791"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>Starten der Standard-App für einen URI
 
@@ -42,6 +42,7 @@ In diesem Thema werden einige der folgenden URI-Schemas beschrieben, die in Wind
 |[ms-tonepicker:](#tone-picker-uri-scheme) | Tonauswahl |
 |[ms-yellowpage:](#nearby-numbers-app-uri-scheme) | Nearby Numbers-App |
 |[msnweather:](#weather-app-uri-scheme) | Wetter-App |
+|[Microsoft-Edge:](#microsoft-edge-uri-scheme) | Microsoft Edge |
 
 <br>
 Der folgende URI öffnet beispielsweise den Standardbrowser und zeigt die Bing-Website an.
@@ -119,7 +120,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 Quell-Apps, die [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) aufrufen, können anfordern, nach dem Start eines URIs auf dem Bildschirm zu verbleiben. Standardmäßig wird von Windows versucht, den gesamten verfügbaren Speicherplatz gleichmäßig zwischen der Quell- und der Ziel-App aufzuteilen, die den URI verarbeitet. Quell-Apps können die Eigenschaft [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview) verwenden. Hiermit geben sie dem Betriebssystem an, mehr oder weniger des verfügbaren Speicherplatzes für ihr App-Fenster zu verwenden. **DesiredRemainingView** kann auch verwendet werden, um anzugeben, dass die Quell-App nach dem Start des URIs nicht auf dem Bildschirm verbleiben muss und vollständig durch die Ziel-App ersetzt werden kann. Mit dieser Eigenschaft wird nur die bevorzugte Fenstergröße der aufrufenden App angegeben. Es wird nicht das Verhalten anderer Apps angegeben, die ggf. zur gleichen Zeit auf dem Bildschirm angezeigt werden.
 
-**Hinweis**    In Windows werden mehrere verschiedene Faktoren berücksichtigt, wenn die endgültige Fenstergröße der Quell-App bestimmt wird, z. b. die Einstellung der Quell-APP, die Anzahl der apps auf dem Bildschirm, die Bildschirm Ausrichtung usw. Das Festlegen von [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview) garantiert kein bestimmtes Fensterverhalten für die Quell-App.
+**Hinweis**  Windows bestimmt die endgültige Fenstergröße einer Quell-App anhand zahlreicher Faktoren (z. B. Einstellung der Quell-App, Anzahl der Apps auf dem Bildschirm, Bildschirmausrichtung usw.). Das Festlegen von [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview) garantiert kein bestimmtes Fensterverhalten für die Quell-App.
 
 ```cs
 // Set the desired remaining view.
@@ -245,3 +246,11 @@ Verwenden Sie das Schema **msnweather:** URI, um die Wetter-App zu starten.
 | URI-Schema | Ergebnisse |
 |------------|---------|
 | msnweather://Forecast? La = \[ Breitengrad \]&Lo = \[ Längengrad\] | Hiermit wird die Wetter-App auf der Seite "Vorhersage" basierend auf geografischen Koordinaten des Standorts gestartet.<br>`latitude` bezieht sich auf den Breitengrad der Position.<br> `longitude` bezieht sich auf den Längengrad der Position.<br> |
+
+### <a name="microsoft-edge-uri-scheme"></a>Microsoft Edge-URI-Schema
+
+Verwenden Sie das Schema **Microsoft-Edge:** URI, um den Microsoft Edge-Browser auf eine angegebene URL zu starten.
+
+| URI-Schema | Ergebnisse |
+|------------|---------|
+| Microsoft-Edge: https://example.com/ ] | Öffnet den Microsoft Edge-Browser und navigiert zu https://example.com/<br> |
