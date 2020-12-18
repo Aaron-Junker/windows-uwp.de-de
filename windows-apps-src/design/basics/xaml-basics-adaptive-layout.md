@@ -5,12 +5,12 @@ keywords: XAML, UWP, Erste Schritte
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f71eb48264570df384fce672b1ca895d98e1109
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 6919a2dc15aac7c5e589f2c0355f9c1cc13bfc7a
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636590"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598811"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>Tutorial: Erstellen von adaptiven Layouts
 
@@ -48,7 +48,7 @@ Für dieses Tutorial starten Sie mit einer vereinfachten Version des PhotoLab-Be
 
     **Wenn Sie mit GitHub vertraut sind:**
 
-    ein. Klonen Sie den Master-Branch des Repositorys lokal.
+    ein. Klonen Sie den Hauptbranch des Repositorys lokal.
 
     b. Wechsle zum `Windows-appsample-photo-lab\xaml-basics-starting-points\adaptive-layout`-Verzeichnis.
 
@@ -197,7 +197,7 @@ Erstellen Sie nun die `StateTriggers`, die den einzelnen „Andockpunkten“ ent
 
             <!-- Large window trigger -->
             <VisualState.StateTriggers>
-                <AdaptiveTrigger MinWindowWidth="{StaticResource LargeWindowSnapPoint}"/>
+                <AdaptiveTrigger MinWindowWidth="{StaticResource LargeWindowBreakpoint}"/>
             </VisualState.StateTriggers>
 
         </VisualState>
@@ -207,7 +207,7 @@ Erstellen Sie nun die `StateTriggers`, die den einzelnen „Andockpunkten“ ent
 
             <!-- Medium window trigger -->
             <VisualState.StateTriggers>
-                <AdaptiveTrigger MinWindowWidth="{StaticResource MediumWindowSnapPoint}"/>
+                <AdaptiveTrigger MinWindowWidth="{StaticResource MediumWindowBreakpoint}"/>
             </VisualState.StateTriggers>
 
         </VisualState>
@@ -217,7 +217,7 @@ Erstellen Sie nun die `StateTriggers`, die den einzelnen „Andockpunkten“ ent
 
             <!-- Small window trigger -->
             <VisualState.StateTriggers >
-                <AdaptiveTrigger MinWindowWidth="{StaticResource MinWindowSnapPoint}"/>
+                <AdaptiveTrigger MinWindowWidth="{StaticResource MinWindowBreakpoint}"/>
             </VisualState.StateTriggers>
 
         </VisualState>

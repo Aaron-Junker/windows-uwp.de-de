@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: Windows Win32, Desktopentwicklung
-ms.openlocfilehash: cdd21279e987f329024c53434e47777e427b95ab
-ms.sourcegitcommit: b69edc6d73370923f31df61c7e42b53de6c928ee
+ms.openlocfilehash: 7ed2d4100bc827dbc0db93897f534b77e1292b7e
+ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94870906"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97214351"
 ---
 # <a name="choose-your-windows-app-platform"></a>Auswählen Ihrer Windows-App-Plattform
 
@@ -68,7 +68,7 @@ Weitere Informationen zu Windows Forms finden Sie in den folgenden Artikeln:
 * [Erste Schritte mit Windows Forms](/dotnet/framework/winforms/getting-started-with-windows-forms)
 * [Projektvorlagen](visual-studio-templates.md#net-templates)
 * [Erstellen Ihrer ersten Windows Forms-App](/dotnet/framework/winforms/creating-a-new-windows-form)
-* [Tutorial: Erstellen eines Bildanzeigeprogramms](/visualstudio/ide/tutorial-1-create-a-picture-viewer?view=vs-2019)
+* [Tutorial: Erstellen eines Bildanzeigeprogramms](/visualstudio/ide/tutorial-1-create-a-picture-viewer)
 * [API-Referenz (.NET)](/dotnet/api/index)
 * [Erweitern von Windows Forms-Apps](/dotnet/framework/winforms/advanced/)
 
@@ -103,6 +103,14 @@ Sie können WinUI auf folgende Weise in Desktop-Apps einsetzen:
 * Sie können vorhandene WPF-, Windows Forms- und C++/Win32-Anwendungen aktualisieren, um [XAML-Inseln](modernize/xaml-islands.md) zum Hosten von WinUI 2.x-Steuerelementen in den Apps zu verwenden.
 * Ab [WinUI 3.0](../winui/winui3/index.md) können Sie [.NET- und C++/Win32-Apps erstellen, die eine vollständig WinUI-basierte Benutzeroberfläche](../winui/winui3/get-started-winui3-for-desktop.md) aufweisen.
 
+## <a name="project-reunion-preview"></a>Project Reunion (Vorschau)
+
+Project Reunion ist der Codename für einen umfangreichen neuen Satz von Entwicklerkomponenten und -tools, die die nächste Weiterentwicklung der Windows-App-Entwicklungsplattform darstellen. Project Reunion bietet einen einheitlichen Satz von APIs und Tools, die von jeder App auf einer breiten Palette von Zielversionen des Windows 10-Betriebssystems auf konsistente Weise verwendet werden können. Project Reunion ergänzt die bestehenden Windows-App-Plattformen und -Frameworks wie UWP und natives Win32 sowie .NET um einen gemeinsamen Satz von APIs und Tools, auf die sich Entwickler plattformübergreifend verlassen können.
+
+Project Reunion ist derzeit als frühe Entwicklervorschau verfügbar. Wir empfehlen Ihnen, diese Version in Ihrer Entwicklungsumgebung zu testen. Berücksichtigen Sie jedoch, dass sich Project Reunion bis zur endgültigen Veröffentlichung in vielerlei Hinsicht verändern wird. Project Reunion wird für Apps, die in Produktionsumgebungen verwendet werden, nicht unterstützt.
+
+Weitere Informationen finden Sie unter [Project Reunion](../project-reunion/index.md) und in unserem [GitHub-Repository](https://github.com/microsoft/ProjectReunion/).
+
 ## <a name="platform-comparison-uwp-wpf-and-windows-forms"></a>Plattformvergleich: UWP, WPF und Windows Forms
 
 In der folgenden Tabelle werden die verschiedenen Merkmale von Windows Forms, WPF und UWP detailliert verglichen.
@@ -133,4 +141,4 @@ Xamarin dient zum Erstellen von plattformübergreifenden Anwendungen für Window
 
 ### <a name="uno-platform"></a>Uno-Plattform
 
-Die Uno-Plattform ermöglicht die Ausführung von Windows UWP-basiertem Code (C# und XAML) unter iOS, Android, macOS, Linux und WebAssembly. Sie enthält vollständige API-Definitionen für UWP in [Windows 10 2004 (19041)](/windows/uwp/whats-new/windows-10-build-19041) sowie die Implementierung von Teilen der UWP-API, wie z. B. [Windows.UI.Xaml](/uwp/api/windows.ui.xaml.documents?view=winrt-19041), damit UWP-Anwendungen auf diesen Plattformen ausgeführt werden können. Weitere Informationen finden Sie in der [Dokumentation zur Uno-Plattform](https://platform.uno/docs/articles/intro.html).
+Die Uno-Plattform ermöglicht die Ausführung von Windows UWP-basiertem Code (C# und XAML) unter iOS, Android, macOS, Linux und WebAssembly. Sie enthält vollständige API-Definitionen für UWP in [Windows 10 2004 (19041)](/windows/uwp/whats-new/windows-10-build-19041) sowie die Implementierung von Teilen der UWP-API, wie z. B. [Windows.UI.Xaml](/uwp/api/windows.ui.xaml.documents), damit UWP-Anwendungen auf diesen Plattformen ausgeführt werden können. Weitere Informationen finden Sie in der [Dokumentation zur Uno-Plattform](https://platform.uno/docs/articles/intro.html).

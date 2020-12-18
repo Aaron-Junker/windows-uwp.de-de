@@ -5,12 +5,12 @@ keywords: XAML, UWP, Erste Schritte
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 942b2ff4af0fa093a0b343c37074185970f8209d
-ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
+ms.openlocfilehash: c1754edd6901b5de778b40294078b16c03dc0dda
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91829543"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598821"
 ---
 # <a name="tutorial-create-a-user-interface"></a>Tutorial: Erstellen einer Benutzeroberfläche
 
@@ -51,7 +51,7 @@ Für dieses Tutorial starten Sie mit einer vereinfachten Version des PhotoLab-Be
 
     **Wenn Sie mit GitHub vertraut sind:**
 
-    ein. Klonen Sie den Master-Branch des Repositorys lokal.
+    ein. Klonen Sie den Hauptbranch des Repositorys lokal.
 
     b. Wechsle zum `Windows-appsample-photo-lab\xaml-basics-starting-points\user-interface`-Verzeichnis.
 

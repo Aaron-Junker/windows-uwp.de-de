@@ -5,12 +5,12 @@ keywords: XAML, UWP, Erste Schritte
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3435718794cb22745e1438ef634db29076ed33c1
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: f84ba4e77369730ef9883ab7f14b52751182b773
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636660"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598831"
 ---
 # <a name="tutorial-create-data-bindings"></a>Tutorial: Erstellen von Datenbindungen
 
@@ -52,7 +52,7 @@ Für dieses Tutorial starten Sie mit einer vereinfachten Version des PhotoLab-Be
 
     **Wenn Sie mit GitHub vertraut sind:**
 
-    ein. Klonen Sie den Master-Branch des Repositorys lokal.
+    ein. Klonen Sie den Hauptbranch des Repositorys lokal.
 
     b. Wechsle zum `Windows-appsample-photo-lab\xaml-basics-starting-points\data-binding`-Verzeichnis.
 

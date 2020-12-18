@@ -4,12 +4,12 @@ description: Nachdem Sie ein Paketmanifest erstellt, das Ihre Anwendung beschrei
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ef94a77d5012adcedf31ae1ecfddc036bcc3a059
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fef6cc96604639f84ee2c81e2de4fb28442e3f8d
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166504"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598801"
 ---
 # <a name="submit-your-manifest-to-the-repository"></a>Übermitteln des Manifests an das Repository
 
@@ -96,7 +96,7 @@ Nun können Sie das neue Manifest per Push an das Remoterepository übermitteln.
 
 ### <a name="step-5-create-a-pull-request"></a>Schritt 5: Erstellen einer Pull-Anforderung
 
-Nachdem Sie Ihre Änderungen per Push übertragen haben, kehren Sie zu [https://github.com/microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs) zurück, und erstellen Sie eine Pull Request, um die Verzweigung oder den Branch mit dem **Master**-Branch zusammenzuführen.
+Nachdem Sie Ihre Änderungen per Push übertragen haben, kehren Sie zu [https://github.com/microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs) zurück, und erstellen Sie eine Pull Request, um die Verzweigung oder den Branch mit dem Hauptbranch zusammenzuführen.
 
 ![Abbildung der Registerkarte „Pull Request“](images\pull-request.png)
 

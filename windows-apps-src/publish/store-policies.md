@@ -1,17 +1,17 @@
 ---
 title: Microsoft Store-Richtlinien
 description: Produkte im Store müssen unsere Zertifizierungsstandards erfüllen, für Kunden wirklich hilfreich und ansprechend sein sowie gut in den Store passen.
-ms.date: 10/01/2019
+ms.date: 12/16/2020
 ms.topic: article
 keywords: Store-Richtlinienvereinbarung
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: 4d7c30b49ea0e6276e1d7959a17086f7ff829915
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fc7a9ebd3ebe9ce86f4c44e7e13ea25d5a01240e
+ms.sourcegitcommit: 5dac88ad541b71ebe85b78951e6b357a3db176cc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170910"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97611458"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store-Richtlinien
 
@@ -22,6 +22,9 @@ ms.locfileid: "89170910"
 
 > [!NOTE]
 > Eine Zusammenfassung der zuletzt vorgenommenen Änderungen an dieser Vereinbarung finden Sie im Abschnitt [Änderungsverlauf](store-policies-change-history.md).
+
+> [!NOTE]
+> **16. Dezember 2020, Hinweis zur Richtlinienaktualisierung**: Für Spieleprodukte, die auf die Konsole abzielen und im Rahmen des [Xbox Live Creators-Programms](https://www.xbox.com/developers/creators-program/) entwickelt wurden, gilt die Anforderung der Integration in die XBL-Dienste nicht mehr. Die spezifische Richtlinie ([Richtlinie 10.13.1](https://docs.microsoft.com/windows/uwp/publish/store-policies#1013-gaming-and-xbox)) wird bei der nächsten Aktualisierung des Store-Richtliniendokuments aktualisiert, um diese Änderung widerzuspiegeln, aber ab dieser Bekanntmachung wird die Richtlinie für das XBL Creators Program nicht mehr durchgesetzt. 
 
 Vielen Dank für Ihr Interesse an der Entwicklung von Produkten für den Microsoft Store<sup>1</sup>. „Produkt“ bezeichnet in beliebiger Form übermittelte Inhalte, einschließlich Apps, Spielen, Titeln und weiteren Inhalten, die innerhalb eines Produkts angeboten oder verkauft werden. Wir bemühen uns um einen vielseitigen Katalog mit Produkten für Kunden weltweit. Produkte im Store müssen unsere Zertifizierungsstandards erfüllen, für Kunden wirklich hilfreich und ansprechend sein sowie gut in den Store passen.
 
@@ -38,7 +41,7 @@ Ihre Produkte prägen die Erfahrungen mehrerer hundert Millionen Kunden. Wie sin
 Feedback zu den Richtlinien ist jederzeit willkommen. Veröffentlichen Sie hierzu einfach einen Kommentar in unserem [Forum](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=windowsstore). Wir lassen keinen Kommentar unbeachtet.
 
 
-## <a name="table-of-contents"></a>Inhalt
+## <a name="table-of-contents"></a>Inhaltsverzeichnis
 
 **Produktrichtlinien:**
 

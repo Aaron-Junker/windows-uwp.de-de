@@ -5,12 +5,12 @@ keywords: XAML, UWP, Erste Schritte
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 04357cc43ed227b109d4aab20c509077261360ee
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 051d7a31afac09a6372f527355efcd6b925cb71f
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636600"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598861"
 ---
 # <a name="tutorial-create-custom-styles"></a>Tutorial: Erstellen benutzerdefinierter Stile
 
@@ -48,7 +48,7 @@ Für dieses Tutorial starten Sie mit einer vereinfachten Version des PhotoLab-Be
 
     **Wenn Sie mit GitHub vertraut sind:**
 
-    ein. Klonen Sie den Master-Branch des Repositorys lokal.
+    ein. Klonen Sie den Hauptbranch des Repositorys lokal.
 
     b. Wechsle zum `Windows-appsample-photo-lab\xaml-basics-starting-points\style`-Verzeichnis.
 

@@ -1,5 +1,5 @@
 ---
-description: Dialogfelder und Flyouts zeigen vorübergehende UI-Elemente an, die angezeigt werden, wenn der Benutzer sie anfordert oder eine Aktion erfolgt, die eine Benachrichtigung oder Genehmigung erfordert.
+description: Dialogfelder zeigen vorübergehende UI-Elemente an, die angezeigt werden, wenn der Benutzer sie anfordert oder eine Aktion erfolgt, die eine Benachrichtigung oder Genehmigung erfordert.
 title: Dialogfeld-Steuerelemente
 label: Dialogs
 template: detail.hbs
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 05b472efe65b57359a398c6a2405b499ff062d73
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: c1ca51f0831b919c2d46b786b1720f9377c8e974
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034453"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598781"
 ---
 # <a name="dialog-controls"></a>Dialogfeld-Steuerelemente
 

@@ -106,7 +106,33 @@
                 - name: Übermitteln des Manifests an das Repository
                   href: ../package-manager/package/repository.md
         - name: PowerToys
-          href: 'https://github.com/microsoft/PowerToys'
+          items:
+            - name: Übersicht
+              items:
+                - name: Info zu PowerToys
+                  href: ../powertoys/index.md
+                - name: Installieren von PowerToys
+                  href: ../powertoys/install.md
+                - name: Im Administratormodus ausführen
+                  href: ../powertoys/administrator.md
+            - name: Farbauswahl
+              href: ../powertoys/color-picker.md
+            - name: FancyZones
+              href: ../powertoys/fancyzones.md
+            - name: Datei-Explorer
+              href: ../powertoys/file-explorer.md
+            - name: Bildgrößenänderung
+              href: ../powertoys/image-resizer.md
+            - name: Tastatur-Manager
+              href: ../powertoys/keyboard-manager.md
+            - name: PowerRename
+              href: ../powertoys/powerrename.md
+            - name: PowerToys-Startprogramm
+              href: ../powertoys/run.md
+            - name: Tastenkombinationsübersicht
+              href: ../powertoys/shortcut-guide.md
+            - name: Videokonferenz-Stummschaltung
+              href: ../powertoys/video-conference-mute.md
         - name: VS-Code
           href: 'https://code.visualstudio.com/docs'
         - name: Visual Studio
