@@ -4,12 +4,12 @@ description: Installieren Sie PowerToys, eine Reihe von Dienstprogrammen für di
 ms.date: 12/02/2020
 ms.topic: quickstart
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f051d44609653029a1bab40d2978eca91a4499c
-ms.sourcegitcommit: 5dac88ad541b71ebe85b78951e6b357a3db176cc
+ms.openlocfilehash: c695be3784ff2145788e4887b5f9022fcc7a6999
+ms.sourcegitcommit: ea1115b921d18c7bbddc95dba9275568ff57af02
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97612281"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97794226"
 ---
 # <a name="install-powertoys"></a>Installieren von PowerToys
 
@@ -19,12 +19,12 @@ Es gibt mehrere Möglichkeiten zum Installieren von PowerToys:
 - [Windows-Paket-Manager](#install-with-windows-package-manager-preview) *(Vorschau)*
 - Von der [Community gesteuerte Installations Tools](#community-driven-install-tools) *(nicht offiziell unterstützt)*
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 - Windows 10 1803 (Build 17134) oder höher.
 - [.Net Core 3,1-Desktop Laufzeit](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-desktop-3.1.4-windows-x64-installer). Diese Anforderung wird vom PowerToys-Installer verarbeitet.
 
-Um sicherzustellen, dass Ihr Computer diese Anforderungen erfüllt, überprüfen Sie Ihre Windows 10-Version und die Buildnummer, indem Sie den **⊞ Win** *(Windows-Taste)*  +  **D** auswählen und dann **winver** und **OK** auswählen. (Oder geben Sie den Befehl `ver` an der Windows-Eingabeaufforderung ein.) Sie können im Menü " **Einstellungen** " [auf die neueste Windows-Version aktualisieren](ms-settings:windowsupdate) .
+Um sicherzustellen, dass Ihr Computer diese Anforderungen erfüllt, überprüfen Sie Ihre Windows 10-Version und die Buildnummer, indem Sie den **⊞ Win** *(Windows-Taste)*  +  **R** auswählen, geben Sie dann **winver** und **OK** ein. (Oder geben Sie den Befehl `ver` an der Windows-Eingabeaufforderung ein.) Sie können im Menü " **Einstellungen** " [auf die neueste Windows-Version aktualisieren](ms-settings:windowsupdate) .
 
 ## <a name="install-with-windows-executable-file"></a>Mithilfe der ausführbaren Windows-Datei installieren
 

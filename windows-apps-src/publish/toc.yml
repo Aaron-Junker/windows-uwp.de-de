@@ -169,23 +169,6 @@
       href: ../publish/advertising-performance-report.md
     - name: Herunterladen von Analyseberichten
       href: ../publish/download-analytic-reports.md
-- name: Erhalten der Bezahlung
-  href: ../publish/getting-paid-apps.md
-  items:
-    - name: Einrichten von Auszahlungskonten und Steuerformularen
-      href: ../publish/setting-up-your-payout-account-and-tax-forms.md
-    - name: 'Auszahlungsschwellenwerte, Methoden und Zeiträume'
-      href: ../publish/payment-thresholds-methods-and-timeframes.md
-    - name: Auszahlungsberichte
-      href: ../publish/payout-summary.md
-    - name: Steuerinformationen
-      href: ../publish/tax-details-for-paid-apps.md
-    - name: Kennenlernen der IRS-Steuerformulare
-      href: ../publish/understand-irs-tax-forms.md
-    - name: Abrechnung über den Mobilfunkanbieter
-      href: ../publish/mobile-operator-billing.md
-    - name: Umsatzsteuerinfo
-      href: ../publish/vat-info.md
 - name: Richtlinien und Verhaltensregeln für den Store
   href: ../publish/store-policies-and-code-of-conduct.md
   items:

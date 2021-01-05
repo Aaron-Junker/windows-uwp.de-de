@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d343b2da4bdfee73479c3b5f3c45fd56a92ada35
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: bfd8fdccc62dc45928085c53fa3f5b32fe9db98c
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339788"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860157"
 ---
 # <a name="walkthrough-of-creating-a-ccx-windows-runtime-component-and-calling-it-from-javascript-or-c"></a>Exemplarische Vorgehensweise zum Erstellen einer Komponente für Windows-Runtime in C++/CX und Aufrufen der Komponente über JavaScript oder C#
 
@@ -28,14 +28,14 @@ Beachten Sie, dass die Hauptklasse der Komponente Beispiele für Eigenschafts- u
 ### <a name="to-create-the-c-component-project"></a>**So erstellen Sie das C++-Komponentenprojekt**
 1. Wählen Sie in der Visual Studio-Menüleiste **Datei, neu und Projekt** aus.
 
-2. Erweitern Sie im Dialogfeld **Neues Projekt** im linken Bereich **Visual C++** , und wählen Sie dann den Knoten für universelle Windows-Apps aus.
+2. Erweitern Sie im Dialogfeld **Neues Projekt** im linken Bereich **Visual C++**, und wählen Sie dann den Knoten für universelle Windows-Apps aus.
 
 3. Wählen Sie im mittleren Bereich **Windows-Runtime Komponente** aus, und benennen Sie das Projekt mit WinRT \_ cpp.
 
 4. Klicken Sie auf die Schaltfläche **OK** .
 
 ## <a name="to-add-an-activatable-class-to-the-component"></a>**So fügen Sie der Komponente eine aktivierbare Klasse hinzu**
-Eine aktivierbare Klasse kann vom Clientcode mithilfe eines **new** -Ausdrucks ( **New** in Visual Basic oder **ref new** in C++) erstellt werden. In der Komponente können Sie sie als **public ref class sealed** deklarieren. Die Class1.h- und CPP-Dateien verfügen bereits über eine Verweisklasse. Sie können den Namen ändern, aber in diesem Beispiel verwenden wir den Standardnamen – Class1. Sie können zusätzliche Verweisklassen oder Standardklassen in der Komponente definieren, falls sie benötigt werden. Weitere Informationen zu Verweisklassen finden Sie unter [Typsystem (C++/CX)](/cpp/cppcx/type-system-c-cx).
+Eine aktivierbare Klasse kann vom Clientcode mithilfe eines **new**-Ausdrucks (**New** in Visual Basic oder **ref new** in C++) erstellt werden. In der Komponente können Sie sie als **public ref class sealed** deklarieren. Die Class1.h- und CPP-Dateien verfügen bereits über eine Verweisklasse. Sie können den Namen ändern, aber in diesem Beispiel verwenden wir den Standardnamen – Class1. Sie können zusätzliche Verweisklassen oder Standardklassen in der Komponente definieren, falls sie benötigt werden. Weitere Informationen zu Verweisklassen finden Sie unter [Typsystem (C++/CX)](/cpp/cppcx/type-system-c-cx).
 
 Fügen Sie \# Class1. h diese include-Direktiven hinzu:
 
@@ -272,7 +272,7 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 Wenn Sie einen c#-Client erstellen möchten, können Sie diesen Abschnitt überspringen.
 
 > [!NOTE]
-> Universelle Windows-Plattform-Projekte (UWP) werden in Visual Studio 2019 nicht unterstützt. Weitere Informationen finden Sie [unter JavaScript und typescript in Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019?view=vs-2019#projects). Zum Befolgen dieses Abschnitts wird die Verwendung von Visual Studio 2017 empfohlen. Weitere Informationen finden Sie [unter JavaScript in Visual Studio 2017](/visualstudio/javascript/javascript-in-vs-2017).
+> Universelle Windows-Plattform-Projekte (UWP) werden in Visual Studio 2019 nicht unterstützt. Weitere Informationen finden Sie [unter JavaScript und typescript in Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019#projects). Zum Befolgen dieses Abschnitts wird die Verwendung von Visual Studio 2017 empfohlen. Weitere Informationen finden Sie [unter JavaScript in Visual Studio 2017](/visualstudio/javascript/javascript-in-vs-2017).
 
 ### <a name="to-create-a-javascript-project"></a>So erstellen Sie ein JavaScript-Projekt
 1. Öffnen Sie in Projektmappen-Explorer (in Visual Studio 2017; siehe **Hinweis** oben) das Kontextmenü für den Projektmappenknoten, und wählen Sie **hinzufügen, neues Projekt** aus.
@@ -614,5 +614,5 @@ Wenn der JavaScript-Code die öffentlichen Eigenschaften oder Methoden in der Ko
 
 Wenn Sie ein C++-Komponentenprojekt für Windows-Runtime aus einer Projektmappe entfernen, müssen Sie den Projektverweis auch aus dem JavaScript-Projekt manuell entfernen. Andernfalls werden nachfolgende Debug- oder Buildvorgänge verhindert. Bei Bedarf können Sie dann einen Assemblyverweis zur DLL-Datei hinzufügen.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [Komponenten für Windows-Runtime mit C++/CX](creating-windows-runtime-components-in-cpp.md)

@@ -5,12 +5,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 62f1c6462e56b14396e3fdaed16221698c0333fd
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: 4e27333c87b596948afcb430eb1cf1ef4998e851
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91933161"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860441"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>Wechseln von einer Desktop Anwendung zu einer UWP
 
@@ -48,7 +48,7 @@ Fügen Sie der Projekt Mappe zunächst mindestens eine .NET Standard-Klassenbibl
 
 Die Anzahl der Bibliotheken, die Sie Ihrer Projekt Mappe hinzufügen, hängt davon ab, wie Sie Ihren Code organisieren möchten.
 
-Stellen Sie sicher, dass jede Klassenbibliothek auf den **.NET Standard 2,0**abzielt.
+Stellen Sie sicher, dass jede Klassenbibliothek auf den **.NET Standard 2,0** abzielt.
 
 ![Ziel .NET Standard 2,0](images/desktop-to-uwp/target-standard-20.png)
 
@@ -70,7 +70,7 @@ Verwenden Sie dieselben Tools, um Ihren Code zu analysieren. Laden Sie die Tools
 &nbsp;
 > [!VIDEO https://www.youtube-nocookie.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2]
 
-Wenn Ihr Code nicht mit dem Standard kompatibel ist, sollten Sie andere Möglichkeiten in Erwägung nehmen, den Code zu implementieren. Öffnen Sie zunächst den [.NET-API-Browser](/dotnet/api/?view=netstandard-2.0). Sie können diesen Browser zum Überprüfen der APIs verwenden, die in der .NET Standard 2,0 verfügbar sind. Stellen Sie sicher, dass Sie den Bereich der Liste auf den .NET Standard 2,0 festlegen.
+Wenn Ihr Code nicht mit dem Standard kompatibel ist, sollten Sie andere Möglichkeiten in Erwägung nehmen, den Code zu implementieren. Öffnen Sie zunächst den [.NET-API-Browser](/dotnet/api/?view=netstandard-2.0&preserve-view=true). Sie können diesen Browser zum Überprüfen der APIs verwenden, die in der .NET Standard 2,0 verfügbar sind. Stellen Sie sicher, dass Sie den Bereich der Liste auf den .NET Standard 2,0 festlegen.
 
 ![DotNet-Option](images/desktop-to-uwp/dot-net-option.png)
 
@@ -112,7 +112,7 @@ public static ArrayList GetCustomerNames()
 }
 
 ```
-Mit dem .net- [API-Browser](/dotnet/api/?view=netstandard-2.0) können Sie jedoch eine Alternative suchen. Die ``DbConnection`` ``DbCommand`` Klassen, und ``DbDataReader`` sind alle im .NET Standard 2,0 verfügbar, damit wir Sie stattdessen verwenden können.  
+Mit dem .net- [API-Browser](/dotnet/api/?view=netstandard-2.0&preserve-view=true) können Sie jedoch eine Alternative suchen. Die ``DbConnection`` ``DbCommand`` Klassen, und ``DbDataReader`` sind alle im .NET Standard 2,0 verfügbar, damit wir Sie stattdessen verwenden können.  
 
 Diese überarbeitete Version verwendet diese Klassen, um eine Kundenliste zu erhalten. zum Erstellen einer ``DbConnection`` Klasse müssen wir jedoch ein Factoryobjekt übergeben, das in der Client Anwendung erstellt wird.
 

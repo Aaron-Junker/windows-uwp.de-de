@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e2648cc9a85c538d71f87f69d8525b171d2bed98
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: c7ac5b8c34f007e18e04eb8299d9ccddd583ad29
+ms.sourcegitcommit: 9378b1b2c2a5ba6e774ae76b53d755cbc5215af2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031513"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97709649"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Entwerfen für Xbox und Fernsehgeräte
 
@@ -122,7 +122,7 @@ Interaktive Benutzeroberflächenelemente sollten eine Mindesthöhe von 32 epx (
 
 #### <a name="number-of-clicks"></a>Anzahl der Klicks
 
-Um Ihre Benutzeroberfläche zu vereinfachen, sollten Benutzer nicht mehr als **sechs Klicks** benötigen, wenn sie von einem Rand des Fernsehbildschirms zum anderen navigieren. Auch hier gilt der Grundsatz der **Einfachheit** . 
+Um Ihre Benutzeroberfläche zu vereinfachen, sollten Benutzer nicht mehr als **sechs Klicks** benötigen, wenn sie von einem Rand des Fernsehbildschirms zum anderen navigieren. Auch hier gilt der Grundsatz der **Einfachheit**. 
 
 ![6 Symbole insgesamt](images/designing-for-tv/six-clicks.png)
 
@@ -241,7 +241,7 @@ Mit dem folgenden Codeausschnitt wird dieser Effekt erzielt:
 
 [CommandBar](/uwp/api/Windows.UI.Xaml.Controls.CommandBar) ist ein weiteres Beispiel für einen Bereich, der häufig in der Nähe eines oder mehrerer Ränder der App positioniert ist. Daher sollte dessen Hintergrund auf Fernsehbildschirmen bis an die Ränder des Bildschirms erweitert werden. In der Regel gibt es auf der rechten Seite die Schaltfläche **Mehr** (dargestellt durch „...“), die weiter im fernsehsicheren Bereich angezeigt werden sollte. Im Folgenden finden Sie einige unterschiedliche Strategien, um die gewünschten Interaktionen und visuellen Effekte zu erzielen.
 
-**Option 1** : Ändern der `CommandBar`-Hintergrundfarbe in transparent oder in die Farbe des Seitenhintergrunds:
+**Option 1**: Ändern der `CommandBar`-Hintergrundfarbe in transparent oder in die Farbe des Seitenhintergrunds:
 
 ```xml
 <CommandBar x:Name="topbar"
@@ -252,7 +252,7 @@ Mit dem folgenden Codeausschnitt wird dieser Effekt erzielt:
 
 Hierdurch sieht die `CommandBar` aus, als ob sie auf dem gleichen Hintergrund wie der Rest der Seite angezeigt wird, sodass sich der Hintergrund nahtlos bis an den Rand des Bildschirms erstreckt.
 
-**Option 2** : Hinzufügen eines Hintergrund-Rechtecks, dessen Füllung die gleiche Farbe wie der `CommandBar`-Hintergrund hat und das unten der `CommandBar` und über dem Rest der Seite liegt:
+**Option 2**: Hinzufügen eines Hintergrund-Rechtecks, dessen Füllung die gleiche Farbe wie der `CommandBar`-Hintergrund hat und das unten der `CommandBar` und über dem Rest der Seite liegt:
 
 ```xml
 <Rectangle VerticalAlignment="Top"
@@ -333,7 +333,7 @@ Sie platzieren den zuvor angezeigten Codeausschnitt entweder in die Seitenressou
 > [!NOTE]
 > Dieser Codeausschnitt gilt speziell für `ListView`-Elemente. Legen Sie bei einem `GridView`-Stil das [TargetType](/uwp/api/windows.ui.xaml.controls.controltemplate.targettype)-Attribut für [ControlTemplate](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) und [Style](/uwp/api/Windows.UI.Xaml.Style) auf `GridView` fest.
 
-Wenn Ihre Anwendung auf Version 1803 oder höher ausgerichtet ist, können Sie das [UIElement. bringindeviewangeforderten-Ereignis](/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)verwenden, um eine präzisere Kontrolle darüber zu erhalten, wie Elemente in die Ansicht aufgenommen werden. Sie können Sie in [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) ablegen, damit die **ListView** - / **GridView** Sie vor dem internen **ScrollViewer** abfängt, wie in den folgenden Code Ausschnitten:
+Wenn Ihre Anwendung auf Version 1803 oder höher ausgerichtet ist, können Sie das [UIElement. bringindeviewangeforderten-Ereignis](/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)verwenden, um eine präzisere Kontrolle darüber zu erhalten, wie Elemente in die Ansicht aufgenommen werden. Sie können Sie in [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) ablegen, damit die **ListView**- / **GridView** Sie vor dem internen **ScrollViewer** abfängt, wie in den folgenden Code Ausschnitten:
 
 ```xaml
 <GridView x:Name="gridView">
@@ -391,7 +391,7 @@ Sie können ein **Anwendungsdesign** (dunkel oder hell) wählen, je nach Ihrer A
 
 Die UWP ermöglicht Apps darüber hinaus, das Design dynamisch festzulegen, basierend auf den Systemeinstellungen, die von den Geräten bereitgestellt werden, auf denen sie ausgeführt werden.
 Während die UWP stets die vom Benutzer angegebenen Designeinstellungen beachtet, stellt jedes Gerät auch ein entsprechendes Standarddesign bereit.
-Aufgrund des Zwecks der Xbox One, die eher eine *Medien* - als eine *Produktivitäts* umgebung bereitstellen soll, ist das Systemdesign standardmäßig dunkel.
+Aufgrund des Zwecks der Xbox One, die eher eine *Medien*- als eine *Produktivitäts* umgebung bereitstellen soll, ist das Systemdesign standardmäßig dunkel.
 Wenn das Design Ihrer App auf den Systemeinstellungen basiert, sollten Sie berücksichtigen, dass es auf Xbox One standardmäßig dunkel ist.
 
 ### <a name="accent-color"></a>Akzentfarbe
@@ -403,7 +403,7 @@ Solange Ihre App diese Akzentfarben über Pinsel oder Farbressourcen aufruft, wi
 
 Beachten Sie auch, dass der Benutzerfarbensatz auf Xbox One nicht identisch mit dem Benutzerfarbensatz auf PCs, Smartphones und anderen Geräten ist.
 
-Solange Ihre APP eine Pinsel Ressource wie z. b. **systemcontrolforegroundaccentbrush** oder eine Color-Ressource ( **systemaccentcolor** ) verwendet oder stattdessen Akzentfarben direkt über die [uicolortype. Akzent *](/uwp/api/Windows.UI.ViewManagement.UIColorType) -API aufruft, werden diese Farben durch die auf Xbox One verfügbaren Akzentfarben ersetzt. Pinsel Farben mit hohem Kontrast werden ebenfalls auf der gleichen Weise wie auf einem PC und Telefon vom System abgerufen.
+Solange Ihre APP eine Pinsel Ressource wie z. b. **systemcontrolforegroundaccentbrush** oder eine Color-Ressource (**systemaccentcolor**) verwendet oder stattdessen Akzentfarben direkt über die [uicolortype. Akzent *](/uwp/api/Windows.UI.ViewManagement.UIColorType) -API aufruft, werden diese Farben durch die auf Xbox One verfügbaren Akzentfarben ersetzt. Pinsel Farben mit hohem Kontrast werden ebenfalls auf der gleichen Weise wie auf einem PC und Telefon vom System abgerufen.
 
 Weitere Informationen zu Akzentfarben im Allgemeinen finden Sie unter [Akzentfarbe](../style/color.md#accent-color).
 
@@ -436,11 +436,13 @@ Ein [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot) ermöglicht über verschied
 
 Sie können die [Pivot.IsHeaderItemsCarouselEnabled](/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty)-Eigenschaft auf `true` festlegen, damit Pivots stets die gleiche Position haben und die Kopfzeile des ausgewählten Pivots nicht stets an die erste Position verschoben wird. Dies ist besser für große Geräte mit großen Bildschirmanzeigen wie Fernsehgeräte geeignet, da Kopfzeilenumbrüche Benutzer stark ablenken können. Wenn nicht alle Pivotkopfzeilen gleichzeitig auf den Bildschirm passen, wird eine Bildlaufleiste angezeigt, damit Kunden die restlichen Kopfzeilen sehen. Sie sollten jedoch sicherstellen, dass alle Kopfzeilen auf den Bildschirm passen, um eine optimale Erfahrung bereitzustellen. Weitere Informationen finden Sie unter [Registerkarten und Pivots](../controls-and-patterns/pivot.md).
 
-### <a name="navigation-pane"></a>Navigationsbereich <a name="navigation-pane" />
+<a name="navigation-pane"></a>
+
+### <a name="navigation-pane"></a>Navigationsbereich
 
 Ein Navigationsbereich (auch *Hamburger-Menü* genannt) ist ein Navigationssteuerelement, das häufig in UWP-Apps verwendet wird. In der Regel handelt es sich um einen Bereich mit mehreren Optionen im Stil eine Liste, mit denen die Benutzer zu anderen Seiten wechseln können. Im Allgemeinen ist dieser Bereich zu Beginn reduziert, um Platz zu sparen. Der Benutzer kann ihn durch Klicken auf eine Schaltfläche öffnen.
 
-Während Nav-Bereiche leicht über die Maus- und Touch-Bedienung genutzt werden können, ist die Bedienung über Gamepads/Fernbedienungen weniger praktisch. Der Benutzer muss hier immer erst zu einer Schaltfläche navigieren, um den jeweiligen Bereich zu öffnen. Aus diesem Grund empfiehlt es sich, den Navigationsbereich über die **Ansicht** -Schaltfläche zu öffnen und dem Benutzer das Öffnen über das Navigieren zum linken Rand der Seite zu ermöglichen. Ein Code Beispiel zum Implementieren dieses Entwurfs Musters finden Sie Unterprogramm gesteuertes [Fokus Navigations](../input/focus-navigation-programmatic.md#split-view-code-sample) Dokument. So steht dem Benutzer ein sehr einfacher Zugriff auf die Inhalte des Bereichs zur Verfügung. Weitere Informationen zum Verhalten von Navigationsbereichen auf unterschiedlichen Bildschirmgrößen sowie zu bewährten Vorgehensweisen für die Navigation mit Gamepads/Fernbedienungen finden Sie unter [Navigationsbereiche](../controls-and-patterns/navigationview.md).
+Während Nav-Bereiche leicht über die Maus- und Touch-Bedienung genutzt werden können, ist die Bedienung über Gamepads/Fernbedienungen weniger praktisch. Der Benutzer muss hier immer erst zu einer Schaltfläche navigieren, um den jeweiligen Bereich zu öffnen. Aus diesem Grund empfiehlt es sich, den Navigationsbereich über die **Ansicht**-Schaltfläche zu öffnen und dem Benutzer das Öffnen über das Navigieren zum linken Rand der Seite zu ermöglichen. Ein Code Beispiel zum Implementieren dieses Entwurfs Musters finden Sie Unterprogramm gesteuertes [Fokus Navigations](../input/focus-navigation-programmatic.md#split-view-code-sample) Dokument. So steht dem Benutzer ein sehr einfacher Zugriff auf die Inhalte des Bereichs zur Verfügung. Weitere Informationen zum Verhalten von Navigationsbereichen auf unterschiedlichen Bildschirmgrößen sowie zu bewährten Vorgehensweisen für die Navigation mit Gamepads/Fernbedienungen finden Sie unter [Navigationsbereiche](../controls-and-patterns/navigationview.md).
 
 ### <a name="commandbar-labels"></a>CommandBar-Beschriftungen
 
@@ -468,7 +470,7 @@ Weitere Informationen zur geschachtelten UI finden Sie unter [Geschachtelte UI b
 
 ### <a name="mediatransportcontrols"></a>MediaTransportControls
 
-Das [MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls)-Element ermöglicht Benutzern die Interaktion mit ihren Medien. Hierzu stellt es eine standardmäßige Wiedergabeumgebung bereit, in der Benutzer unter anderem die Wiedergabe starten und anhalten sowie Untertitel aktivieren können. Dieses Steuerelement ist eine Eigenschaft von [MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) und unterstützt zwei Layoutoptionen: *einzeilig* und *zweizeilig* . Beim einzeiligen Layout befinden sich der Schieberegler und die Wiedergabeschaltflächen alle in einer Zeile, und die Schaltfläche für Wiedergabe/Pause wird links neben dem Schieberegler angezeigt. Beim zweizeiligen Layout befindet sich der Schieberegler in einer eigenen Zeile, und die Wiedergabeschaltflächen werden in einer Zeile darunter angezeigt. Bei Designs für die 10-Fuß-Erfahrung empfiehlt sich die Verwendung des zweizeiligen Layouts, da es eine bessere Gamepadnavigation ermöglicht. Wenn Sie das zweizeilige Layout aktivieren möchten, legen Sie in der [TransportControls](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols)-Eigenschaft von `MediaPlayerElement` für das `MediaTransportControls`-Element Folgendes fest: `IsCompact="False"`.
+Das [MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls)-Element ermöglicht Benutzern die Interaktion mit ihren Medien. Hierzu stellt es eine standardmäßige Wiedergabeumgebung bereit, in der Benutzer unter anderem die Wiedergabe starten und anhalten sowie Untertitel aktivieren können. Dieses Steuerelement ist eine Eigenschaft von [MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) und unterstützt zwei Layoutoptionen: *einzeilig* und *zweizeilig*. Beim einzeiligen Layout befinden sich der Schieberegler und die Wiedergabeschaltflächen alle in einer Zeile, und die Schaltfläche für Wiedergabe/Pause wird links neben dem Schieberegler angezeigt. Beim zweizeiligen Layout befindet sich der Schieberegler in einer eigenen Zeile, und die Wiedergabeschaltflächen werden in einer Zeile darunter angezeigt. Bei Designs für die 10-Fuß-Erfahrung empfiehlt sich die Verwendung des zweizeiligen Layouts, da es eine bessere Gamepadnavigation ermöglicht. Wenn Sie das zweizeilige Layout aktivieren möchten, legen Sie in der [TransportControls](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols)-Eigenschaft von `MediaPlayerElement` für das `MediaTransportControls`-Element Folgendes fest: `IsCompact="False"`.
 
 ```xml
 <MediaPlayerElement x:Name="mediaPlayerElement1"  
@@ -482,24 +484,25 @@ Das [MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportCon
 
 Weitere Informationen zum Hinzufügen von Medien zu Ihrer App finden Sie unter [Medienwiedergabe](../controls-and-patterns/media-playback.md).
 
-> ![HINWEIS:] `MediaPlayerElement` steht erst ab der Windows 10-Version 1607 zur Verfügung. Bei Apps für niedrigere Windows 10-Versionen muss stattdessen [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) verwendet werden. Die hier angegebenen Empfehlungen gelten auch für `MediaElement`, und der Zugriff auf die `TransportControls`-Eigenschaft erfolgt auf die gleiche Weise.
+> [!NOTE]
+> `MediaPlayerElement` ist nur in Windows 10, Version 1607 und höher, verfügbar. Bei Apps für niedrigere Windows 10-Versionen muss stattdessen [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) verwendet werden. Die hier angegebenen Empfehlungen gelten auch für `MediaElement`, und der Zugriff auf die `TransportControls`-Eigenschaft erfolgt auf die gleiche Weise.
 
 ### <a name="search-experience"></a>Suchoberfläche
 
-Die Suche nach Inhalten ist eine der am häufigsten ausgeführten Funktionen in der 10-Fuß-Erfahrung. Wenn Ihre App eine Suchfunktion zur Verfügung stellt, sollte der Benutzer auf diese schnell über die **Y** -Taste auf dem Gamepad zugreifen können.
+Die Suche nach Inhalten ist eine der am häufigsten ausgeführten Funktionen in der 10-Fuß-Erfahrung. Wenn Ihre App eine Suchfunktion zur Verfügung stellt, sollte der Benutzer auf diese schnell über die **Y**-Taste auf dem Gamepad zugreifen können.
 
-Die meisten Kunden sollten mit dieser Beschleunigungsfunktion bereits vertraut sein. Sie können aber auch der Benutzeroberfläche eine visuelle **Y** -Glyphe hinzufügen, um anzuzeigen, dass der Benutzer mit dieser Taste auf die Suchfunktion zugreifen kann. In diesem Fall müssen Sie das Symbol aus der Schriftart **Segoe Xbox MDL2 Symbol** (`&#xE3CC;` für XAML-Apps, `\E426` für HTML-Apps) verwenden, um die Konsistenz sicherzustellen.
+Die meisten Kunden sollten mit dieser Beschleunigungsfunktion bereits vertraut sein. Sie können aber auch der Benutzeroberfläche eine visuelle **Y**-Glyphe hinzufügen, um anzuzeigen, dass der Benutzer mit dieser Taste auf die Suchfunktion zugreifen kann. In diesem Fall müssen Sie das Symbol aus der Schriftart **Segoe Xbox MDL2 Symbol** (`&#xE3CC;` für XAML-Apps, `\E426` für HTML-Apps) verwenden, um die Konsistenz sicherzustellen.
 
 > [!NOTE]
 > Da die Schriftart **Segoe Xbox MDL2 Symbol** nur auf Xbox verfügbar ist, wird das Symbol auf Ihrem PC nicht ordnungsgemäß angezeigt. Es wird jedoch auf dem Fernseher angezeigt, nachdem Sie auf Xbox bereitstellen.
 
-Da die **Y** -Taste nur auf dem Gamepad verfügbar ist, müssen Sie auch andere Möglichkeiten für den Zugriff auf die Suche zur Verfügung stellen, wie Schaltflächen in der Benutzeroberfläche. Andernfalls können einige Kunden möglicherweise nicht auf diese Funktion zugreifen.
+Da die **Y**-Taste nur auf dem Gamepad verfügbar ist, müssen Sie auch andere Möglichkeiten für den Zugriff auf die Suche zur Verfügung stellen, wie Schaltflächen in der Benutzeroberfläche. Andernfalls können einige Kunden möglicherweise nicht auf diese Funktion zugreifen.
 
 In der 10-Fuß-Erfahrung ist es für Kunden oft einfacher, eine Vollbildschirm-Suche durchzuführen, da der Platz auf dem Display begrenzt ist. Unabhängig davon, ob Sie eine Voll- oder Teilbildschirm-Direktsuche haben, empfehlen wir, dass die Bildschirmtastatur bereits geöffnet ist, wenn der Benutzer die Suchfunktion öffnet, damit sofort Suchbegriffe eingegeben werden können.
 
 ## <a name="custom-visual-state-trigger-for-xbox"></a>Benutzerdefinierter visueller Zustandsauslöser für Xbox
 
-Um Ihre UWP-App an die 10-Fuß-Erfahrung anzupassen, empfehlen wir Ihnen, das Layout zu ändern, wenn die App erkennt, dass sie auf einer Xbox-Konsole gestartet wurde. Eine Möglichkeit, um dies zu erreichen ist die Verwendung eines benutzerdefinierten *visuellen Zustandsauslösers* . Visuelle Zustandsauslöser sind besonders dann nützlich, wenn Sie in **Blend für Visual Studio** arbeiten möchten. Der folgende Codeausschnitt zeigt, wie ein visueller Zustandsauslöser für Xbox erstellt wird:
+Um Ihre UWP-App an die 10-Fuß-Erfahrung anzupassen, empfehlen wir Ihnen, das Layout zu ändern, wenn die App erkennt, dass sie auf einer Xbox-Konsole gestartet wurde. Eine Möglichkeit, um dies zu erreichen ist die Verwendung eines benutzerdefinierten *visuellen Zustandsauslösers*. Visuelle Zustandsauslöser sind besonders dann nützlich, wenn Sie in **Blend für Visual Studio** arbeiten möchten. Der folgende Codeausschnitt zeigt, wie ein visueller Zustandsauslöser für Xbox erstellt wird:
 
 ```xml
 <VisualStateManager.VisualStateGroups>

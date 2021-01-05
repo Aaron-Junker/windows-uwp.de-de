@@ -6,16 +6,16 @@ ms.date: 11/18/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.custom: contperfq2
+ms.custom: contperf-fy21q2
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 309568b80d51cc8bd6cd2394317ef3bb8266a212
-ms.sourcegitcommit: 2a23972e9a0807256954d6da5cf21d0bbe7afb0a
+ms.openlocfilehash: 78d843ff9bdd0625b7172af0bc973581d8bd988a
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94941816"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860413"
 ---
 # <a name="launch-the-windows-settings-app"></a>Starten der Windows-Einstellungs-App
 
@@ -82,7 +82,7 @@ In den folgenden Abschnitten werden verschiedene Kategorien von MS-Settings-URIs
 * [Mixed Reality](#mixed-reality)
 * [Netzwerk und Internet](#network-and-internet)
 * [Personalisierung](#personalization)
-* [Smartphone](#phone)
+* [Phone](#phone)
 * [Datenschutz](#privacy)
 * [Surface Hub](#surface-hub)
 * [System](#system)
@@ -171,7 +171,7 @@ In den folgenden Abschnitten werden verschiedene Kategorien von MS-Settings-URIs
 | Cursor & Zeiger | MS-Settings: easeofakcess-currsorandpointersize |
 | Anzeige | MS-Settings: easeofakcess-Display |
 | Eye-Steuerelement | MS-Settings: easeofakcess-eyecontrol |
-| Fonts | MS-Settings: Schriftarten |
+| Schriftarten | MS-Settings: Schriftarten |
 | Hoher Kontrast | ms-settings:easeofaccess-highcontrast |
 | Tastatur | ms-settings:easeofaccess-keyboard |
 | Bildschirmlupe | ms-settings:easeofaccess-magnifier |
@@ -212,7 +212,7 @@ In den folgenden Abschnitten werden verschiedene Kategorien von MS-Settings-URIs
 | Seite "Einstellungen" | URI |
 |---------------|-----|
 | Audiodaten und Spracheingaben | MS-Settings: Holographic-Audiodaten |
-| Environment | MS-Settings: Privacy-Holographic-Environment |
+| Umgebung | MS-Settings: Privacy-Holographic-Environment |
 | Headset-Anzeige | MS-Settings: Holographic-Headset |
 | Deinstallieren | MS-Settings: Holographic-Management |
 
@@ -235,7 +235,7 @@ In den folgenden Abschnitten werden verschiedene Kategorien von MS-Settings-URIs
 | WLAN | MS-Settings: Network-WiFi (nur verfügbar, wenn das Gerät über einen WiFi-Adapter verfügt) |
 | Wi-Fi aufrufen | MS-Settings: Network-wifcall (nur verfügbar, wenn Wi-Fi Aufrufen von aktiviert ist) |
 
-### <a name="personalization"></a>Personalisierung
+### <a name="personalization"></a>Personalization
 
 |Seite "Einstellungen"| URI |
 |-------------|-----|
@@ -250,7 +250,7 @@ In den folgenden Abschnitten werden verschiedene Kategorien von MS-Settings-URIs
 | Taskleiste | MS-Settings: Taskleiste |
 | Designs | MS-Settings: Designs |
 
-### <a name="phone"></a>Anschluss
+### <a name="phone"></a>Phone
 
 |Seite "Einstellungen"| URI |
 |-------------|-----|
@@ -267,12 +267,12 @@ In den folgenden Abschnitten werden verschiedene Kategorien von MS-Settings-URIs
 | App-Diagnosen | MS-Settings: Privacy-appdiagnostics |
 | Automatisches Herunterladen von Dateien | MS-Settings: Privacy-automaticfiledownloads |
 | Hintergrund-Apps | ms-settings:privacy-backgroundapps |
-| Kalender | ms-settings:privacy-calendar |
+| Calendar | ms-settings:privacy-calendar |
 | Anrufliste | ms-settings:privacy-callhistory |
 | Kamera | ms-settings:privacy-webcam |
 | Kontakte | ms-settings:privacy-contacts |
 | Dokumente | MS-Settings: Privacy-Documents |
-| Email | ms-settings:privacy-email |
+| E-Mail | ms-settings:privacy-email |
 | Eyetracker. | MS-Settings: Privacy-Eyetracker (erfordert die "pipetracker"-Hardware) |
 | Feedback und Diagnose | ms-settings:privacy-feedback |
 | Dateisystem | MS-Settings: Privacy-broadfilesystemaccess |
@@ -324,14 +324,14 @@ In den folgenden Abschnitten werden verschiedene Kategorien von MS-Settings-URIs
 | Nachrichten | ms-settings:messaging |
 | Multitasking | MS-Settings: Multitasking |
 | Nachtlicht Einstellungen | MS-Settings: Nightlight |
-| Anschluss | MS-Settings: Phone-defaultapps |
+| Phone | MS-Settings: Phone-defaultapps |
 | Projizieren auf diesen PC | MS-Settings: Projekt |
 | Gemeinsame Erfahrung | MS-Settings: crossdevice |
 | Tablet-Modus | MS-Settings: tabletmode |
 | Taskleiste | MS-Settings: Taskleiste |
 | Benachrichtigungen & Infos | ms-settings:notifications |
 | Remotedesktop | MS-Settings: Remotedesktop |
-| Anschluss | MS-Settings: Phone (**veraltet in Windows 10, Version 1809 und** höher) |
+| Phone | MS-Settings: Phone (**veraltet in Windows 10, Version 1809 und** höher) |
 | Ein/Aus und Standbymodus | ms-settings:powersleep |
 | Sound | MS-Settings: Sound |
 | Storage | ms-settings:storagesense |
@@ -362,7 +362,7 @@ In den folgenden Abschnitten werden verschiedene Kategorien von MS-Settings-URIs
 | Problembehandlung | MS-Settings: Problembehandlung |
 | Windows-Sicherheit | MS-Settings: windowsdefender |
 | Windows-Insider-Programm | MS-Settings: windowsinsider (nur vorhanden, wenn der Benutzer in WIP registriert ist)<br/>MS-Settings: windowsinsider-optin |
-| Windows Update | ms-settings:windowsupdate<br>MS-Settings: windowsupdate-Action |
+| Windows-Update | ms-settings:windowsupdate<br>MS-Settings: windowsupdate-Action |
 | Optionen für Windows Update-Advanced | MS-Settings: windowsupdate-Optionen |
 | Optionen für Windows Update-Restart | MS-Settings: windowsupdate-restartoptions |
 | Windows Update-View Update Verlauf | MS-Settings: windowsupdate-History |

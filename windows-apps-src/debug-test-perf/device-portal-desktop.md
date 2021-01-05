@@ -4,15 +4,15 @@ title: Geräteportal für Windows-Desktop
 description: Hier erfahren Sie, wie das Windows Device Portal Diagnose und Automatisierung auf dem Windows-Desktop öffnet.
 ms.date: 08/20/2020
 ms.topic: article
-ms.custom: contperfq1
+ms.custom: contperf-fy21q1
 keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
-ms.openlocfilehash: 1618b2de1f0db96989a7aedf5b53805fd70f535e
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: 42f6f35fe2cea38d4c1f194fbc740b7a8290ea8c
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339568"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860339"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Geräteportal für Windows-Desktop
 
@@ -132,7 +132,7 @@ Im folgenden findest du einige häufige Fehler, die beim Einrichten des Gerätep
 
 Dieser Fehler kann auftreten, wenn du versuchst, die Entwicklerpakete in einem Vorabversionsbuild von Windows 10 zu installieren. Diese FOD-Pakete (Feature-on-Demand) werden auf Windows Update gehostet. Wenn du sie in Vorabversionsbuilds herunterlädst, musst du dich für das Flighting entscheiden. Wenn deine Installation nicht für das Flighting für die richtige Build-and-Ring-Kombination aktiviert ist, kann die Nutzlast nicht heruntergeladen werden. Überprüfe Folgendes gründlich:
 
-1. Navigiere zu **Einstellungen > Update und Sicherheit > Windows Insider-Programm** , und vergewissere dich, dass der **Windows-Insider-Konto** -Abschnitt die richtigen Kontoinformationen enthält. Wenn dieser Abschnitt nicht angezeigt wird, wähle **Windows-Insider-Konto verknüpfen** aus, füge dein E-Mail-Konto hinzu und bestätige, dass es in der **Windows-Insider-Konto** -Überschrift angezeigt wird (möglicherweise musst du **Windows-Insider-Konto verknüpfen** ein zweites Mal auswählen, um tatsächlich ein neu hinzugefügtes Konto zu verknüpfen).
+1. Navigiere zu **Einstellungen > Update und Sicherheit > Windows Insider-Programm**, und vergewissere dich, dass der **Windows-Insider-Konto**-Abschnitt die richtigen Kontoinformationen enthält. Wenn dieser Abschnitt nicht angezeigt wird, wähle **Windows-Insider-Konto verknüpfen** aus, füge dein E-Mail-Konto hinzu und bestätige, dass es in der **Windows-Insider-Konto**-Überschrift angezeigt wird (möglicherweise musst du **Windows-Insider-Konto verknüpfen** ein zweites Mal auswählen, um tatsächlich ein neu hinzugefügtes Konto zu verknüpfen).
  
 2. Stelle unter **Welche Inhalte möchten Sie erhalten?** sicher, dass **Aktive Entwicklung von Windows** ausgewählt ist.
  

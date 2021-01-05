@@ -4,12 +4,12 @@ description: Ein Hilfsprogramm, das Benutzern das Neudefinieren von Schlüsseln 
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c2f8f146e02cf9006e4ac74ce3426ccba0d6000c
-ms.sourcegitcommit: 46a7e9db64e17a645ee6e888f62a9b04632c56af
+ms.openlocfilehash: eb17cd5a7ad76728e6b063f76369c8d194a5e12c
+ms.sourcegitcommit: 1a997d7e0100e58886150f9fba33d7b205f41df1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97618549"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97865465"
 ---
 # <a name="keyboard-manager-utility"></a>Tastatur-Manager
 
@@ -26,7 +26,10 @@ Der PowerToys-Tastatur-Manager muss aktiviert sein (mit PowerToys, der im Hinter
 ![Screenshot der Tastenkombinationen für PowerToys-Tastatur-Manager](../images/powertoys-keyboard-shortcuts.png)
 
 > [!NOTE]
-> Einige [Schlüssel/Betriebssystem-reservierte Verknüpfungen können nicht ersetzt werden](https://github.com/microsoft/PowerToys/wiki/Keyboard-Manager-Overview#14-keys-that-cannot-be-remapped).
+> Es gibt einige Tastenkombinationen, die für das Betriebssystem reserviert sind und nicht ersetzt werden können. Folgende Schlüssel können nicht neu zugeordnet werden:
+> - `⊞ Win`+`L`und `Ctrl`  +  `Alt`  +  `Del` können nicht neu zugeordnet werden, da Sie vom Windows-Betriebssystem reserviert werden.
+> - Der `Fn` (-Funktions-) Schlüssel kann (in den meisten Fällen) nicht neu zugeordnet werden. Die `F1` - `F12` Schlüssel (und `F13` - `F24` ) können zugeordnet werden.
+> - `Pause` sendet nur ein sngle-KeyDown-Ereignis. Wenn Sie die Zuordnung beispielsweise mit der RÜCKTASTE-Taste durchführt und durch Drücken von + halten, wird nur ein einzelnes Zeichen gelöscht.
 
 ## <a name="settings"></a>Einstellungen
 

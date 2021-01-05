@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 288795b2dc189dae7b350a30446410b40044d08f
-ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
+ms.openlocfilehash: 9cda36c6027ae74df9beb5d1de68f69f273dc5f0
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92192950"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860101"
 ---
 # <a name="windows-runtime-components-with-ccx"></a>Komponenten für Windows-Runtime mit C++/CX
 
@@ -543,7 +543,7 @@ C# und Visual Basic bieten Sprachunterstützung für Enumerationen. Diese Sprach
 ## <a name="asynchronous-methods"></a>Asynchrone Methoden
 Verwenden Sie die [task-Klasse (Concurrency Runtime)](/cpp/parallel/concrt/reference/task-class), um asynchrone Methoden zu nutzen, die von anderen Windows-Runtime-Objekten verfügbar gemacht werden. Weitere Informationen finden Sie unter [Aufgabenparallelität (Concurrency Runtime)](/cpp/parallel/concrt/task-parallelism-concurrency-runtime).
 
-Verwenden Sie zum Implementieren von asynchronen Methoden in C++/CX die [Create \_ Async](/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017) -Funktion, die in "ppltasks. h" definiert ist. Weitere Informationen finden Sie unter [Erstellen von asynchronen Vorgängen in C++/CX für UWP-apps](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps). Ein Beispiel finden Sie unter Exemplarische Vorgehensweise: [Erstellen einer C++ Windows-Runtime/CX-Komponente und Aufrufen dieser Komponente über JavaScript oder c#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md). Die .NET-Sprachen verwenden asynchrone C++/CX-Methoden genauso wie jede beliebige asynchrone Methode, die in .net definiert ist.
+Verwenden Sie zum Implementieren von asynchronen Methoden in C++/CX die [Create \_ Async](/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017&preserve-view=true) -Funktion, die in "ppltasks. h" definiert ist. Weitere Informationen finden Sie unter [Erstellen von asynchronen Vorgängen in C++/CX für UWP-apps](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps). Ein Beispiel finden Sie unter Exemplarische Vorgehensweise: [Erstellen einer C++ Windows-Runtime/CX-Komponente und Aufrufen dieser Komponente über JavaScript oder c#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md). Die .NET-Sprachen verwenden asynchrone C++/CX-Methoden genauso wie jede beliebige asynchrone Methode, die in .net definiert ist.
 
 ## <a name="exceptions"></a>Ausnahmen
 Sie können jeden Ausnahmetyp auslösen, der von der Windows-Runtime definiert ist. Sie können keine benutzerdefinierten Typen von einem Windows-Runtime-Ausnahmetyp ableiten. Allerdings können Sie eine COMException auslösen und ein benutzerdefiniertes HRESULT bereitstellen, auf das der Code, der die Ausnahme abfängt, zugreifen kann. Es gibt keine Möglichkeit, eine benutzerdefinierte Meldung in einer COMException anzugeben.
@@ -557,5 +557,5 @@ Wenn der JavaScript-Code die öffentlichen Eigenschaften oder Methoden in der Ko
 
 Wenn Sie ein C++ Windows-Runtime/CX-Komponenten Projekt aus einer Projekt Mappe entfernen, müssen Sie auch den Projekt Verweis manuell aus dem JavaScript-Projekt entfernen. Andernfalls werden nachfolgende Debug- oder Buildvorgänge verhindert. Bei Bedarf können Sie dann einen Assemblyverweis zur DLL-Datei hinzufügen.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [Exemplarische Vorgehensweise zum Erstellen einer Komponente für Windows-Runtime in C++/CX und Aufrufen der Komponente über JavaScript oder C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)

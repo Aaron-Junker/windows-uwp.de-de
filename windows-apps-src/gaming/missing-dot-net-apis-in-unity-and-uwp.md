@@ -6,12 +6,12 @@ ms.date: 02/21/2018
 ms.topic: article
 keywords: Windows 10, UWP, Games, .net, Unity
 ms.localizationpriority: medium
-ms.openlocfilehash: dcacb227205c0049cfc3467c9906784b0b55728f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b687f3ec09a99ae6ccb81e5c205eb454e0af0e04
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165234"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860119"
 ---
 # <a name="missing-net-apis-in-unity-and-uwp"></a>Fehlende .NET-APIs in Unity und UWP
 
@@ -27,21 +27,21 @@ Um zu verstehen, warum einige APIs möglicherweise nicht funktionieren, ist es w
 
 Jede Version des UWP SDK entspricht einer anderen .NET Standard Ebene. Beispielsweise unterstützt das 16299 SDK (das Fall Creators Update) .NET Standard 2,0.
 
-Wenn Sie wissen möchten, ob eine bestimmte .NET-API in der UWP-Version unterstützt wird, die Sie als Ziel verwenden, können Sie die [.NET Standard-API-Referenz](/dotnet/api/index?view=netstandard-2.0) überprüfen und die Version der .NET Standard auswählen, die von dieser Version von UWP unterstützt wird.
+Wenn Sie wissen möchten, ob eine bestimmte .NET-API in der UWP-Version unterstützt wird, die Sie als Ziel verwenden, können Sie die [.NET Standard-API-Referenz](/dotnet/api/index?view=netstandard-2.0&preserve-view=true) überprüfen und die Version der .NET Standard auswählen, die von dieser Version von UWP unterstützt wird.
 
 ## <a name="scripting-backend-configuration"></a>Skripterstellung für Backend
 
-Wenn Sie Probleme beim Erstellen von UWP haben, müssen Sie zunächst die **Player Einstellungen** überprüfen (**Datei > Buildeinstellungen**, wählen Sie **universelle Windows-Plattform**und dann **Spieler Einstellungen**). Unter **anderen Einstellungen > Konfiguration**sind die ersten drei Dropdown Listen (**Skript-Lauf Zeit Version**, **Skript**-Back-End und **API-Kompatibilitäts Grad**) alle wichtigen Einstellungen zu beachten.
+Wenn Sie Probleme beim Erstellen von UWP haben, müssen Sie zunächst die **Player Einstellungen** überprüfen (**Datei > Buildeinstellungen**, wählen Sie **universelle Windows-Plattform** und dann **Spieler Einstellungen**). Unter **anderen Einstellungen > Konfiguration** sind die ersten drei Dropdown Listen (**Skript-Lauf Zeit Version**, **Skript**-Back-End und **API-Kompatibilitäts Grad**) alle wichtigen Einstellungen zu beachten.
 
 Die **Skripting-Laufzeitversion** verwendet das Unity-Skript-Back-End, mit dem Sie die (ungefähr) gleichwertige Version .NET Framework von Ihnen ausgewählten Unterstützung erhalten können. Beachten Sie jedoch, dass nicht alle APIs in dieser Version der .NET Framework unterstützt werden, sondern nur die APIs in der Version von .NET Standard, für die ihre UWP als Ziel verwendet wird.
 
 Häufig werden bei neuen .NET-Releases weitere APIs zu .NET Standard hinzugefügt, die es Ihnen ermöglichen, den gleichen Code für eigenständige und UWP zu verwenden. Beispielsweise wurde die [System.Runtime.Serialization.Js](/dotnet/api/system.runtime.serialization.json) für den Namespace in .NET Standard 2,0 eingeführt. Wenn Sie die CLR- **Laufzeitversion** auf **.NET 3,5-Äquivalent** festlegen (was auf eine frühere Version der .NET Standard abzielt), erhalten Sie eine Fehlermeldung, wenn Sie versuchen, die API zu verwenden. Wechseln Sie zur **.NET 4,6-Entsprechung** (die .NET Standard 2,0 unterstützt), und die API funktioniert.
 
-Das **Skript** für die Skripterstellung kann **.net** oder **IL2CPP**sein. In diesem Thema wird davon ausgegangen, dass Sie **.net**ausgewählt haben, da hier die hier beschriebenen Probleme auftreten. Weitere Informationen finden Sie unter [Skripting-Back-Ends](https://docs.unity3d.com/Manual/windowsstore-scriptingbackends.html) .
+Das **Skript** für die Skripterstellung kann **.net** oder **IL2CPP** sein. In diesem Thema wird davon ausgegangen, dass Sie **.net** ausgewählt haben, da hier die hier beschriebenen Probleme auftreten. Weitere Informationen finden Sie unter [Skripting-Back-Ends](https://docs.unity3d.com/Manual/windowsstore-scriptingbackends.html) .
 
-Schließlich sollten Sie den API- **Kompatibilitäts Grad** auf die Version von .net festlegen, auf der das Spiel ausgeführt werden soll. Dies sollte der **Skript Lauf Zeit Version**entsprechen.
+Schließlich sollten Sie den API- **Kompatibilitäts Grad** auf die Version von .net festlegen, auf der das Spiel ausgeführt werden soll. Dies sollte der **Skript Lauf Zeit Version** entsprechen.
 
-Im Allgemeinen sollten Sie für die **Skript Laufzeit-Version** und den **API-Kompatibilitäts Grad**die neueste verfügbare Version auswählen, um eine höhere Kompatibilität mit dem .NET Framework zu ermöglichen und so die Verwendung von weiteren .NET-APIs zu ermöglichen.
+Im Allgemeinen sollten Sie für die **Skript Laufzeit-Version** und den **API-Kompatibilitäts Grad** die neueste verfügbare Version auswählen, um eine höhere Kompatibilität mit dem .NET Framework zu ermöglichen und so die Verwendung von weiteren .NET-APIs zu ermöglichen.
 
 ![Konfiguration: Skripterstellung für Lauf Zeit Version; Skripterstellung für Backend API-Kompatibilitäts Grad](images/missing-dot-net-apis-in-unity-1.png)
 
@@ -115,7 +115,7 @@ private void UsingThreads()
 
 ### <a name="security"></a>Sicherheit
 
-Ein Teil von " **System. Security".** * Namespaces, wie z. b [. System. Security. Cryptography. X509Certificates](/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0), sind nicht verfügbar, wenn Sie ein Unity-Spiel für UWP erstellen. In diesen Fällen verwenden Sie die **Windows. Security.** * APIs, die einen Großteil der gleichen Funktionalität abdecken.
+Ein Teil von " **System. Security".** _-Namespaces, wie z. b [. System. Security. Cryptography. X509Certificates](/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0&preserve-view=true), sind nicht verfügbar, wenn Sie ein Unity-Spiel für UWP erstellen. In diesen Fällen verwenden Sie die _*Windows. Security.* *_ APIs, die einen Großteil der gleichen Funktionalität abdecken.
 
 Im folgenden Beispiel werden einfach die Zertifikate aus einem Zertifikat Speicher mit dem angegebenen Namen abgerufen:
 
@@ -138,9 +138,9 @@ Weitere Informationen zur Verwendung der WinRT-Sicherheits-APIs finden Sie unter
 
 ### <a name="networking"></a>Netzwerk
 
-Ein Teil des **System &period; Netzwerks.** * Namespaces, wie z [. b. System .net. Mail](/dotnet/api/system.net.mail?view=netstandard-2.0), sind auch beim Aufbau eines Unity-Spiels für UWP nicht verfügbar. Verwenden Sie für die meisten dieser APIs das entsprechende **Windows. Networking.** * und **Windows. Web.** * WinRT-APIs, um eine ähnliche Funktionalität zu erhalten. Weitere Informationen finden Sie unter [Netzwerk-und Webdienste](../networking/index.md) .
+Einige der _*System- &period; net.* *_ Namespaces, wie z. b [. System .net. Mail](/dotnet/api/system.net.mail?view=netstandard-2.0&preserve-view=true), sind auch bei der Erstellung eines Unity-Spiels für UWP nicht verfügbar. Verwenden Sie für die meisten dieser APIs die entsprechende _*Windows. Networking.* *_ und _*Windows. Web.* *_ WinRT-APIs, um eine ähnliche Funktionalität zu erhalten. Weitere Informationen finden Sie unter [Netzwerk-und Webdienste](../networking/index.md) .
 
-Verwenden Sie im Fall von **System .net. Mail**den [Windows. applicationmodel. Email-](/uwp/api/windows.applicationmodel.email) Namespace. Weitere Informationen finden [Sie unter e-Mail senden](../contacts-and-calendar/sending-email.md) .
+Verwenden Sie im Fall von _ * System .net. Mail * * den [Windows. applicationmodel. Email-](/uwp/api/windows.applicationmodel.email) Namespace. Weitere Informationen finden [Sie unter e-Mail senden](../contacts-and-calendar/sending-email.md) .
 
 ## <a name="see-also"></a>Weitere Informationen
 

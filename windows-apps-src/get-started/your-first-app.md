@@ -6,12 +6,12 @@ ms.date: 10/13/2020
 ms.topic: article
 keywords: Windows 10, UWP, erste App, C#, C++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: fe802fca1b17b49c11bf74b54f74d3b3107e6a9c
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: d24c5952d7432c123ff6f4d3e9b93593d08ac777
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339768"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860271"
 ---
 # <a name="create-your-first-app"></a>Erstellen Ihrer ersten App
 
@@ -49,8 +49,8 @@ Greifen Sie auf Ihre C++-Programmierkenntnisse zurück, um Apps mit Visual C++-K
 
 Weitere Informationen zu C++ finden Sie hier.
 
-* [C++ für UWP-Apps](/cpp/cppcx/universal-windows-apps-cpp?view=vs-2019)
-* [C++ für Desktop-Apps](/cpp/windows/desktop-applications-visual-cpp?view=vs-2019)
+* [C++ für UWP-Apps](/cpp/cppcx/universal-windows-apps-cpp)
+* [C++ für Desktop-Apps](/cpp/windows/desktop-applications-visual-cpp)
 
 ## <a name="next-steps"></a>Nächste Schritte
 

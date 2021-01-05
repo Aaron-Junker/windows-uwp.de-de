@@ -1,23 +1,23 @@
 ---
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: Vorbereiten
-description: Das Durchführen der Vorbereitung ist einfacher, als Sie denken. Befolgen Sie diese Anweisungen, um mit dem Erstellen von UWP-Apps (Universelle Windows-Plattform) für Windows 10 zu beginnen.
+description: Das Durchführen der Vorbereitung ist einfacher, als Sie denken. Befolgen Sie diese Anweisungen, um mit dem Erstellen von Universellen Windows-Plattform (UWP)-Apps für Windows 10 zu beginnen.
 ms.date: 10/13/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b0991e4d1173bc665e0cf14786e1901e26e4823c
-ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
+ms.openlocfilehash: 6c80bb9a3b9fe59550dff0603bdbe1b87e5b2982
+ms.sourcegitcommit: 3eb43ba2a6c52ad83523d63d825ac5d4d9050cd3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92011898"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811961"
 ---
 # <a name="get-set-up"></a>Vorbereiten
 
 ![Vorbereitungen für die Verwendung von Visual Studio](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-Das Durchführen der Vorbereitung ist einfacher, als Sie denken. Befolgen Sie diese Anweisungen, um mit dem Erstellen von UWP-Apps (Universelle Windows-Plattform) für Windows 10 zu beginnen.
+Das Durchführen der Vorbereitung ist einfacher, als Sie denken. Befolgen Sie diese Anweisungen, um mit dem Erstellen von Universellen Windows-Plattform (UWP)-Apps für Windows 10 zu beginnen.
 
 ## <a name="1-download-or-update-visual-studio"></a>1. Laden Sie Visual Studio herunter, oder aktualisieren Sie Ihre Version.
 
@@ -57,8 +57,8 @@ Sie können jetzt mit der Entwicklung von Apps beginnen. Zum Übermitteln an den
 
 Nachdem Sie die Tools installiert und Ihr Gerät für die Entwicklung aktiviert haben, schauen Sie sich unsere Anleitungen mit den ersten Schritten zum Erstellen von Windows 10-Apps an.
 
--   [Auswählen der Plattform](/windows/desktop/apps/choose-your-platform.md)
--   [Programmieren von UWP-apps starten](/windows/uwp/get-started/create-uwp-apps.md)
+-   [Auswählen der Plattform](../desktop/choose-your-platform.md)
+-   [Programmieren von UWP-apps starten](/windows-apps-src/get-started/create-uwp-apps.md)
 
 ## <a name="windows-development-setup-scripts"></a>Setupskripts für die Windows-Entwicklung
 
@@ -73,5 +73,5 @@ Die vollständige Liste der Tools und Downloads finden Sie unter [Downloads](htt
 ## <a name="see-also"></a>Weitere Informationen
 
 * [Codebeispiele für UWP-Entwickler](https://developer.microsoft.com/windows/samples)
-* [Was ist eine UWP-App?](/windows/uwp/get-started/universal-application-platform-guide.md)
+* [Was ist eine UWP-App?](/windows-apps-src/get-started/universal-application-platform-guide.md)
 * [Registrieren für ein Windows-Konto](sign-up.md)

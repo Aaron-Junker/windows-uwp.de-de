@@ -6,12 +6,12 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bdd003445bed4ad59b21e0b744281651c30bf04f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5c5b4867d8a58779aa716245130a468374054288
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166884"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860127"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-18362"></a>Neuigkeiten für Entwickler in Windows 10, Build 18362
 
@@ -53,7 +53,7 @@ Progressive Web-Apps für Xbox | Mit [Progressive Web-Apps für Xbox One](/micro
 Project Rome | Das Project Rome-SDK ist jetzt für Android und iOS verfügbar. Erfahren Sie, wie Sie Graph-Benachrichtigungen in jede Plattform integrieren: [Android](/windows/project-rome/notifications/how-to-guide-for-android) und [iOS](/windows/project-rome/notifications/how-to-guide-for-ios).
 Remotekameras | Verwenden Sie die DeviceWatcher-Klasse, um [Verbindungen mit Remotekameras herzustellen](../audio-video-camera/connect-to-remote-cameras.md) und Frames aus diesen Kameras in Ihre Windows-App zu lesen.
 UWP-Steuerelemente in Desktopanwendungen (XAML-Inseln) | Die im Windows SDK enthaltenen APIs zum Hosten von UWP-Steuerelementen in WPF-, Windows Forms-, und C++ Win32-Desktopanwendungen liegen nicht mehr in der Entwicklervorschau vor. Weitere Informationen finden Sie unter [UWP controls in desktop applications](/windows/apps/desktop/modernize/xaml-islands) (Verwenden von Steuerelementen in Desktopanwendungen).
-Visual Studio 2019 | Visual Studio-2019 wurde mit den neuesten Tools und Diensten für jeden Entwickler, jede App oder jede Plattform veröffentlicht. Lesen Sie [Neuigkeiten in Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019?view=vs-2019), um das Neueste zu erfahren und zu beginnen.
+Visual Studio 2019 | Visual Studio-2019 wurde mit den neuesten Tools und Diensten für jeden Entwickler, jede App oder jede Plattform veröffentlicht. Lesen Sie [Neuigkeiten in Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019), um das Neueste zu erfahren und zu beginnen.
 Win32 WebView | Im Abschnitt [Häufig gestellte Fragen](/windows/communitytoolkit/controls/wpf-winforms/webview#frequently-asked-questions-faqs) finden Sie sowohl Antworten auf allgemeine Fragen zum Verwenden von Microsoft Edge-WebView in Desktopanwendungen als auch Links zu Beispielen und weiteren Ressourcen.
 Windows-Befehlszeile | [Neue Konsolenfeatures](https://devblogs.microsoft.com/commandline/new-experimental-console-features/) umfassen die experimentelle Registerkarte „Terminal“ mit Einstellungen für Scrollen, Cursorform und Cursorfarben. Erfahren Sie mehr im [Blog „Windows Command Line Tools For Developers“](https://devblogs.microsoft.com/commandline/).
 Windows-Community-Toolkit | Windows-Community-Toolkit V5. 1 bietet interessante Updates für Animationen, Remotegeräte, Bildzuschneidung und Barrierefreiheit. </br> • Die neue [Lottie-Windows-Bibliothek](/windows/communitytoolkit/animations/lottie) bietet hochwertige Animationsunterstützung unter Windows 10 (1809) durch Verwenden der Windows.UI.Composition-APIs und ermöglicht es, [Bodymovin](https://aescripts.com/bodymovin/)-JSON-Dateien oder optimierte codegenerierte Klassen für Wiedergabe in Ihren Windows-Apps zu verwenden. Testen Sie die neue [Lottie Viewer-App](https://www.microsoft.com/p/lottie-viewer/9p7x9k692tmw) aus dem Microsoft Store, um Animationen auszuprobieren und optimierten Code für Ihre Windows-Apps zu generieren. </br> • Das neue [RemoteDevicePicker](/windows/communitytoolkit/controls/remotedevicepicker)-Steuerelement ermöglicht es einem Benutzer, ein Gerät auszuwählen (über unmittelbaren oder Cloudzugriff), eine App auf diesem Gerät zu starten oder mit App-Diensten auf dem Remotegerät zu kommunizieren. </br> • Das neue [ImageCropper Steuerelement](/windows/communitytoolkit/controls/imagecropper) integriert Zuschnittfunktionalität für Auswählen von Profilbildern oder Verwenden von Tools zur Fotobearbeitung. </br> • Darüber hinaus gibt es Verbesserungen hinsichtlich der Barrierefreiheit in den Steuerelementen, ein Update des [Microsoft.Toolkit.Win32](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32) 6.0-Vorschaupakets für WPF und WinForms sowie weitere Features, zu denen Sie Informationen in den [Anmerkungen zu dieser Version ](https://github.com/windows-toolkit/WindowsCommunityToolkit/releases/tag/v5.1.0) finden.

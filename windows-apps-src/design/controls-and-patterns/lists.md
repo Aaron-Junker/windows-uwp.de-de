@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fd6cfb7fb0ffd7102f32d7159aba2b4c1042b76
-ms.sourcegitcommit: da44cb95946440cd06ff36254d42ecefcdd87ce2
+ms.openlocfilehash: 7b1304032243c7675c4aba6cbda7e7899e8deddb
+ms.sourcegitcommit: e252ccb4a76c4883c7073083d73007957202b84d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93063022"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657677"
 ---
 # <a name="collections-and-lists"></a>Sammlungen und Listen
 
@@ -41,7 +41,7 @@ Jedes dieser Steuerelemente (mit Ausnahme von ItemsRepeater) verfügt außerdem 
 
 Eines der Szenarien, die in diesem Artikel nicht behandelt werden, ist das Anzeigen von Sammlungen in einer Tabelle oder über mehrere Spalten. Wenn du eine Sammlung in diesem Format anzeigen möchten, bietet es sich an, das [DataGrid-Steuerelement](/windows/communitytoolkit/controls/datagrid) aus dem [Windows Community Toolkit](/windows/communitytoolkit/) zu verwenden. 
 
-> **Windows 10 Fall Creators Update – Verhaltensänderung** : Beim Schwenken/Bildlauf in der Liste der Windows-Apps wird jetzt standardmäßig anstelle des Ausführens der Auswahl ein aktiver Stift verwendet (z. B. Toucheingabe, Touchpad und passiver Stift).
+> **Windows 10 Fall Creators Update – Verhaltensänderung**: Beim Schwenken/Bildlauf in der Liste der Windows-Apps wird jetzt standardmäßig anstelle des Ausführens der Auswahl ein aktiver Stift verwendet (z. B. Toucheingabe, Touchpad und passiver Stift).
 > Wenn Ihre App vom vorherigen Verhalten abhängig ist, können Sie die Stift-Bildlaufaktionen außer Kraft setzen und auf das vorherige Verhalten zurückzusetzen. Weitere Details finden Sie im API-Referenzthema für die [ScrollViewer-Klasse](/uwp/api/windows.ui.xaml.controls.scrollviewer).
 
 ## <a name="examples"></a>Beispiele
@@ -333,7 +333,7 @@ Die folgenden drei Beispiele sind alle ItemsRepeater-Steuerelemente, die an dies
 - [Master/Details](master-details.md)
 - [Navigationsbereich](navigationview.md)
 - [Semantischer Zoom](semantic-zoom.md)
-- [Drag & Drop](https://docs.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [Drag & Drop](../input/drag-and-drop.md)
 - [Miniaturbilder](../../files/thumbnails.md)
 
 **API-Referenz**

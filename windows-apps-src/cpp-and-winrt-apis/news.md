@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, neuerungen, neues
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0d7c42b1346805c9c03714eb9bbb3944fe940ccf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f5cfe5dc66df98e3dd4d4290023cac1874ae797a
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154464"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860281"
 ---
 # <a name="whats-new-in-cwinrt"></a>Neuerungen in C++/WinRT
 
@@ -34,7 +34,7 @@ Eine Verringerung der Größe um 20 % und eine Verringerung der Erstellungszeit 
 
 ### <a name="improved-msbuild-support"></a>Verbesserte MSBuild-Unterstützung
 
-Wir haben viel Arbeit in eine verbesserte [MSBuild](/visualstudio/msbuild/msbuild?view=vs-2019)-Unterstützung für eine große Auswahl an unterschiedlichen Szenarien investiert.
+Wir haben viel Arbeit in eine verbesserte [MSBuild](/visualstudio/msbuild/msbuild)-Unterstützung für eine große Auswahl an unterschiedlichen Szenarien investiert.
 
 ### <a name="even-faster-factory-caching"></a>Noch schnelleres Factoryzwischenspeichern
 
@@ -107,9 +107,9 @@ Die vollständig portierbare Bibliothek nur mit Headern (zum Analysieren des Met
 #### <a name="fewer-dependencies"></a>Weniger Abhängigkeiten
 
 Dank des xlang-Metadatenreaders hat das `cppwinrt.exe`-Tool weniger Abhängigkeiten. Dadurch ist es deutlich flexibler und kann in mehr Szenarios eingesetzt werden – besonders in eingeschränkten Buildumgebungen. Insbesondere ist es nicht mehr von `RoMetadata.dll` abhängig.
- 
+ 
 Im Folgenden sind alle Abhängigkeiten für `cppwinrt.exe` 2.0 aufgelistet:
- 
+ 
 - ADVAPI32.dll
 - KERNEL32.dll
 - SHLWAPI.dll
@@ -142,7 +142,7 @@ Vergleichen Sie die Liste oben mit den folgenden Abhängigkeiten, die für `cppw
 - api-ms-win-core-threadpool-l1-2-0.dll
 - api-ms-win-core-com-l1-1-0.dll
 - api-ms-win-core-com-l1-1-1.dll
-- api-ms-win-core-synch-l1-2-0.dll 
+- api-ms-win-core-synch-l1-2-0.dll 
 
 #### <a name="the-windows-runtime-noexcept-attribute"></a>Das Windows-Runtime-Attribut `noexcept`
 
@@ -171,14 +171,14 @@ Diese Änderung ergänzt Maßnahmen, die vom Microsoft C++-Team ergriffen wurden
 ```cpp
 int32_t Function() noexcept
 {
-    try
-    {
-        // code here constitutes unique value.
-    }
-    catch (...)
-    {
-        // code here is always duplicated.
-    }
+    try
+    {
+        // code here constitutes unique value.
+    }
+    catch (...)
+    {
+        // code here is always duplicated.
+    }
 }
 ```
 
@@ -228,14 +228,14 @@ using namespace Windows::System;
 ...
 fire_and_forget Async(DispatcherQueueController controller)
 {
-    bool queued = co_await resume_foreground(controller.DispatcherQueue());
-    assert(queued);
+    bool queued = co_await resume_foreground(controller.DispatcherQueue());
+    assert(queued);
 
-    // This is just to simulate queue failure...
-    co_await controller.ShutdownQueueAsync();
+    // This is just to simulate queue failure...
+    co_await controller.ShutdownQueueAsync();
 
-    queued = co_await resume_foreground(controller.DispatcherQueue());
-    assert(!queued);
+    queued = co_await resume_foreground(controller.DispatcherQueue());
+    assert(!queued);
 }
 ```
 
@@ -266,20 +266,20 @@ Der Rückgabewert von **final_release** kann `void`, ein Objekt eines asynchrone
 ```cppwinrt
 struct Sample : implements<Sample, IStringable>
 {
-    hstring ToString()
-    {
-        return L"Sample";
-    }
+    hstring ToString()
+    {
+        return L"Sample";
+    }
 
-    ~Sample()
-    {
-        // Called when the unique_ptr below is reset.
-    }
+    ~Sample()
+    {
+        // Called when the unique_ptr below is reset.
+    }
 
-    static void final_release(std::unique_ptr<Sample> self) noexcept
-    {
-        // Move 'self' as needed to delay destruction.
-    }
+    static void final_release(std::unique_ptr<Sample> self) noexcept
+    {
+        // Move 'self' as needed to delay destruction.
+    }
 };
 ```
 
@@ -290,27 +290,27 @@ Sie müssen **final_release** nicht als Coroutine implementieren. Es würde aber
 ```cppwinrt
 struct MainPage : PageT<MainPage>
 {
-    MainPage()
-    {
-    }
+    MainPage()
+    {
+    }
 
-    ~MainPage()
-    {
-        DataContext(nullptr);
-    }
+    ~MainPage()
+    {
+        DataContext(nullptr);
+    }
 
-    static IAsyncAction final_release(std::unique_ptr<MainPage> self)
-    {
-        co_await 5s;
+    static IAsyncAction final_release(std::unique_ptr<MainPage> self)
+    {
+        co_await 5s;
 
-        co_await resume_foreground(self->Dispatcher());
-        co_await self->resource.CloseAsync();
+        co_await resume_foreground(self->Dispatcher());
+        co_await self->resource.CloseAsync();
 
-        // The object is destructed normally at the end of final_release,
+        // The object is destructed normally at the end of final_release,
         // when the std::unique_ptr<MyClass> destructs. If you want to destruct
-        // the object earlier than that, then you can set *self* to `nullptr`.
-        self = nullptr;
-    }
+        // the object earlier than that, then you can set *self* to `nullptr`.
+        self = nullptr;
+    }
 };
 ```
 
@@ -343,13 +343,13 @@ In der unten stehenden Tabelle werden Änderungen für C++/WinRT im Windows SDK,
 | Es gibt neue Funktionen und Basisklassen, mit denen Sie ein Sammlungsobjekt an eine Windows-Runtime-Funktion übergeben oder Ihre eigenen Sammlungseigenschaften und Sammlungstypen implementieren können. | Weitere Informationen finden Sie unter [Collections with C++/WinRT (Sammlungen in C++/WinRT)](collections.md). |
 | Sie können die Markup-Erweiterung [{Binding}](../xaml-platform/binding-markup-extension.md) mit Ihren C++/WinRT-Runtimeklassen verwenden. | Weitere Informationen und Codebeispiele finden Sie in der [Übersicht über Datenbindung](../data-binding/data-binding-quickstart.md). |
 | Durch Unterstützung für das Abbrechen einer Coroutine können Sie einen Abbruchsrückruf registrieren. | Weitere Informationen finden Sie unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](concurrency-2.md#canceling-an-asynchronous-operation-and-cancellation-callbacks). |
-| Beim Erstellen eines Delegaten, der auf eine Memberfunktion zeigt, können Sie einen starken oder einen schwachen Verweis auf das aktuelle Objekt (statt eines unformatierten *this*-Zeiger) erstellen. | Weitere Informationen und Codebeispiele finden Sie im Unterabschnitt **If you use a member function as a delegate (Wenn Sie eine Memberfunktion als Delegaten verwenden)** im Artikel [*Strong and weak references in C++/WinRT (Starke und schwache Verweise in C++/WinRT)* ](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate). |
+| Beim Erstellen eines Delegaten, der auf eine Memberfunktion zeigt, können Sie einen starken oder einen schwachen Verweis auf das aktuelle Objekt (statt eines unformatierten *this*-Zeiger) erstellen. | Weitere Informationen und Codebeispiele finden Sie im Unterabschnitt **If you use a member function as a delegate (Wenn Sie eine Memberfunktion als Delegaten verwenden)** im Artikel [*Strong and weak references in C++/WinRT (Starke und schwache Verweise in C++/WinRT)*](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate). |
 | Es wurden Probleme behoben, die durch die verbesserte Konformität mit dem C++-Standard in Visual Studio erkannt wurden. Die LLVM- und Clang-Toolkette wird zudem besser eingesetzt, um die Konformität mit Standards in C++/WinRT zu prüfen. | Das unter [Warum wird mein neues Projekt nicht kompiliert? Ich verwende Visual Studio 2017 (Version 15.8.0 oder höher) und die SDK-Version 17134](faq.md#why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134) beschriebene Problem tritt nicht mehr auf. |
 
 Sonstige Änderungen
 
-- **Breaking Change**. [**winrt::get_abi(winrt::hstring const&)** ](/uwp/cpp-ref-for-winrt/get-abi) gibt jetzt `void*` statt `HSTRING` zurück. Sie können `static_cast<HSTRING>(get_abi(my_hstring));` verwenden, um HSTRING abzurufen. Siehe [Interaktion mit dem HSTRING der ABI](interop-winrt-abi.md#interoperating-with-the-abis-hstring).
-- **Breaking Change**. [**winrt::put_abi(winrt::hstring&)** ](/uwp/cpp-ref-for-winrt/put-abi) gibt jetzt `void**` statt `HSTRING*` zurück. Sie können `reinterpret_cast<HSTRING*>(put_abi(my_hstring));` verwenden, um HSTRING* abzurufen. Siehe [Interaktion mit dem HSTRING der ABI](interop-winrt-abi.md#interoperating-with-the-abis-hstring).
+- **Breaking Change**. [**winrt::get_abi(winrt::hstring const&)**](/uwp/cpp-ref-for-winrt/get-abi) gibt jetzt `void*` statt `HSTRING` zurück. Sie können `static_cast<HSTRING>(get_abi(my_hstring));` verwenden, um HSTRING abzurufen. Siehe [Interaktion mit dem HSTRING der ABI](interop-winrt-abi.md#interoperating-with-the-abis-hstring).
+- **Breaking Change**. [**winrt::put_abi(winrt::hstring&)**](/uwp/cpp-ref-for-winrt/put-abi) gibt jetzt `void**` statt `HSTRING*` zurück. Sie können `reinterpret_cast<HSTRING*>(put_abi(my_hstring));` verwenden, um HSTRING* abzurufen. Siehe [Interaktion mit dem HSTRING der ABI](interop-winrt-abi.md#interoperating-with-the-abis-hstring).
 - **Breaking Change**. HRESULT wird jetzt als **winrt::hresult** projiziert. Wenn Sie HRESULT benötigen, z. B. zur Typüberprüfung oder zur Unterstützung für Typmerkmale, können Sie `static_cast` für **winrt::hresult** verwenden. Andernfalls wird **winrt::hresult** in HRESULT konvertiert, wenn Sie `unknwn.h` vor C++/WinRT-Headern einfügen.
 - **Breaking Change**. GUID wird jetzt als **winrt::guid** projiziert. Wenn Sie APIs implementieren, müssen Sie **winrt::guid** für GUID-Parameter verwenden. Andernfalls wird **winrt::guid** in GUID konvertiert, wenn Sie `unknwn.h` vor C++/WinRT-Headern einfügen. Siehe [Interaktion mit der GUID-Struktur der ABI](interop-winrt-abi.md#interoperating-with-the-abis-guid-struct).
 - **Breaking Change**. Der Konstruktor [**winrt::handle_type**](/uwp/cpp-ref-for-winrt/handle-type#handle_typehandle_type-constructor) wurde gehärtet, indem es explizit gemacht wurde (es ist jetzt nicht mehr so leicht, falschen Code damit zu schreiben). Wenn Sie einen unformatierten handle-Wert zuweisen müssen, rufen Sie stattdessen die [**Funktion handle_type::attach**](/uwp/cpp-ref-for-winrt/handle-type#handle_typeattach-function) auf.

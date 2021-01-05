@@ -4,12 +4,12 @@ description: Erfahren Sie mehr zu den Grundsätzen abgerundeter Ecken, Entwurfsa
 ms.date: 10/08/2019
 ms.topic: article
 keywords: Windows 10, UWP, Eckradius, gerundet
-ms.openlocfilehash: 044ae628ffe397005113f658191398e06fd245f5
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 33432ac0083c0d6660d0669ea43805e0ae73f37e
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636530"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860194"
 ---
 # <a name="corner-radius"></a>Eckradius
 
@@ -22,7 +22,7 @@ Hier sehen Sie zwei Schaltflächen-Steuerelemente abgebildet, das eine ohne abge
 Wenn Sie das NuGet-Paket für WinUI 2.2 oder höher installieren, werden sowohl für WinUI-Steuerelemente als auch für Plattformsteuerelemente neue Standardformatvorlagen installiert. Diese Formatvorlagen werden automatisch verwendet, wenn Sie WinUI 2.2 in Ihrer App verwenden. Sie brauchen keine weiteren Maßnahmen zu ergreifen, um die neuen Formatvorlagen zu verwenden. Weiter unten in diesem Artikel erläutern wir jedoch die Anpassung der abgerundeten Ecken, sollte dies bei Ihnen erforderlich sein.
 
 > [!IMPORTANT]
-> Einige Steuerelemente stehen sowohl für die Plattform ([Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls)) als auch für WinUI ([Microsoft.UI.Xaml.Controls](/uwp/api/microsoft.ui.xaml.controls?view=winui-2.2)) zur Verfügung; beispielsweise **TreeView** oder **ColorPicker**. Wenn Sie WinUI in Ihrer App verwenden, sollten Sie die WinUI-Version des Steuerelements verwenden. Das Abrunden der Ecken wird bei Verwendung mit WinUI in der Plattformversion möglicherweise inkonsistent übernommen.
+> Einige Steuerelemente stehen sowohl für die Plattform ([Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls)) als auch für WinUI ([Microsoft.UI.Xaml.Controls](/uwp/api/microsoft.ui.xaml.controls?view=winui-2.2&preserve-view=true)) zur Verfügung; beispielsweise **TreeView** oder **ColorPicker**. Wenn Sie WinUI in Ihrer App verwenden, sollten Sie die WinUI-Version des Steuerelements verwenden. Das Abrunden der Ecken wird bei Verwendung mit WinUI in der Plattformversion möglicherweise inkonsistent übernommen.
 
 > **Wichtige APIs:** [Control.CornerRadius-Eigenschaft](/uwp/api/windows.ui.xaml.controls.control.cornerradius)
 

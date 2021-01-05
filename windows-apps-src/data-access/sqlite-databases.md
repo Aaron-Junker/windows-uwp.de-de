@@ -5,12 +5,12 @@ ms.date: 06/26/2020
 ms.topic: article
 keywords: Windows 10, UWP, SQLite, Datenbank
 ms.localizationpriority: medium
-ms.openlocfilehash: 56b45b14f9eb73a0257993d31b05cc084f10dfef
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: ba2bcf104bd1fee9657e83f7a20334522fa0450c
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763034"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860203"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>Verwenden einer SQLite-Datenbank in einer UWP-App
 Sie können SQLite verwenden, um Daten in einer einfachen Datenbank auf dem Gerät des Benutzers zu speichern und abzurufen. Dieser Leitfaden zeigt Ihnen wie.
@@ -39,7 +39,7 @@ Weitere Informationen finden Sie unter [Erste Schritte mit EF Core auf der Unive
 
 ### <a name="sqlite-library"></a>SQLite-Bibliothek
 
-Die [Microsoft.Data.Sqlite](/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0)-Bibliothek implementiert die Schnittstellen im [System.Data.Common](/dotnet/api/system.data.common)-Namespace. Microsoft pflegt diese Implementierungen aktiv und bietet einen intuitiven Wrapper für die native SQLite-API auf niedriger Ebene.
+Die [Microsoft.Data.Sqlite](/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0&preserve-view=true)-Bibliothek implementiert die Schnittstellen im [System.Data.Common](/dotnet/api/system.data.common)-Namespace. Microsoft pflegt diese Implementierungen aktiv und bietet einen intuitiven Wrapper für die native SQLite-API auf niedriger Ebene.
 
 Der Rest dieses Leitfadens hilft Ihnen bei der Verwendung dieser Bibliothek.
 
@@ -199,7 +199,7 @@ public async static void InitializeDatabase()
 
 Dieser Code erstellt die SQLite-Datenbank und speichert sie im lokalen Datenspeicher der Anwendung.
 
-In diesem Beispiel benennen wir die Datenbank als ``sqlliteSample.db``. Sie können aber jeden beliebigen Namen verwenden, solange Sie diesen Namen in allen instanziierten [SqliteConnection](/dotnet/api/microsoft.data.sqlite.sqliteconnection?view=msdata-sqlite-2.0.0)-Objekten verwenden.
+In diesem Beispiel benennen wir die Datenbank als ``sqlliteSample.db``. Sie können aber jeden beliebigen Namen verwenden, solange Sie diesen Namen in allen instanziierten [SqliteConnection](/dotnet/api/microsoft.data.sqlite.sqliteconnection?view=msdata-sqlite-2.0.0&preserve-view=true)-Objekten verwenden.
 
 Rufen Sie im Konstruktor der Datei **App.xaml.cs** Ihres UWP-Projekts die ``InitializeDatabase``-Methode der **DataAccess**-Klasse auf.
 
@@ -276,9 +276,9 @@ public static List<String> GetData()
 }
 ```
 
-Die [Read](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.read?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_Read)-Methode durchläuft die Zeilen der zurückgegebenen Daten. Sie gibt **true** zurück, wenn noch Zeilen übrig sind, andernfalls **false**.
+Die [Read](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.read?view=msdata-sqlite-2.0.0&preserve-view=true#Microsoft_Data_Sqlite_SqliteDataReader_Read)-Methode durchläuft die Zeilen der zurückgegebenen Daten. Sie gibt **true** zurück, wenn noch Zeilen übrig sind, andernfalls **false**.
 
-Die [GetString](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getstring?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetString_System_Int32_)-Methode gibt den Wert der angegebenen Spalte als Zeichenfolge zurück. Sie akzeptiert einen Ganzzahlwert, der die nullbasierte Spalten-Ordinalzahl der gewünschten Daten darstellt. Sie können Methoden wie [GetDataTime](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getdatetime?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetDateTime_System_Int32_) und [GetBoolean](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getboolean?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetBoolean_System_Int32_) verwenden. Wählen Sie eine Methode für den Datentyp der Spalte aus.
+Die [GetString](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getstring?view=msdata-sqlite-2.0.0&preserve-view=true#Microsoft_Data_Sqlite_SqliteDataReader_GetString_System_Int32_)-Methode gibt den Wert der angegebenen Spalte als Zeichenfolge zurück. Sie akzeptiert einen Ganzzahlwert, der die nullbasierte Spalten-Ordinalzahl der gewünschten Daten darstellt. Sie können Methoden wie [GetDataTime](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getdatetime?view=msdata-sqlite-2.0.0&preserve-view=true#Microsoft_Data_Sqlite_SqliteDataReader_GetDateTime_System_Int32_) und [GetBoolean](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getboolean?view=msdata-sqlite-2.0.0&preserve-view=true#Microsoft_Data_Sqlite_SqliteDataReader_GetBoolean_System_Int32_) verwenden. Wählen Sie eine Methode für den Datentyp der Spalte aus.
 
 Der Ordinalparameter ist in diesem Beispiel nicht so wichtig, da wir alle Einträge in einer einzigen Spalte auswählen. Wenn jedoch mehrere Spalten Teil Ihrer Abfrage sind, verwenden Sie den Ordinalwert, um die Spalte zu erhalten, aus der Sie Daten abrufen möchten.
 
@@ -315,7 +315,7 @@ private void AddData(object sender, RoutedEventArgs e)
 }
 ```
 
-Das war's. Erkunden Sie [Microsoft.Data.Sqlite](/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0), um zu erfahren, welche weiteren Vorgänge Sie mit Ihrer SQLite-Datenbank ausführen können. Besuchen Sie die Links unten, um mehr über andere Möglichkeiten der Datenverwendung in Ihrer UWP-App zu erfahren.
+Das war's. Erkunden Sie [Microsoft.Data.Sqlite](/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0&preserve-view=true), um zu erfahren, welche weiteren Vorgänge Sie mit Ihrer SQLite-Datenbank ausführen können. Besuchen Sie die Links unten, um mehr über andere Möglichkeiten der Datenverwendung in Ihrer UWP-App zu erfahren.
 
 ## <a name="next-steps"></a>Nächste Schritte
 

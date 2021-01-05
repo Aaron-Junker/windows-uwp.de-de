@@ -5,15 +5,15 @@ ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
 ms.date: 09/28/2020
 ms.topic: article
-ms.custom: contperfq1
+ms.custom: contperf-fy21q1
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b63e88f6d83e84bbe07fc4c5cbe7befba6dc3c8a
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: 6003db167d2a36205ac02f98750295d32a03ca62
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878503"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860263"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Übersicht über Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS) 
 
@@ -65,7 +65,7 @@ Im Anschluss finden Sie eine Übersicht über die Informationskette:
 Im Rahmen der Authentifizierung gegenüber WNS übermittelt der Clouddienst eine HTTP-Anforderung per SSL (Secure Sockets Layer). Die Parameter werden im Format „application/x-www-for-urlencoded” angegeben. Geben Sie die Paket-sid im Feld "Client- \_ ID" und ihren geheimen Schlüssel im Feld "Client \_ Geheimnis" an, wie im folgenden Beispiel gezeigt. Ausführliche Informationen zur Syntax finden Sie in der Referenz zur [Zugriffstokenanforderung](/previous-versions/windows/apps/hh465435(v=win.10)).
 
 > [!NOTE]
-> Dies ist nur ein Beispiel, kein Ausschneide-und Einfüge Code, den Sie in Ihrem eigenen Code erfolgreich verwenden können. 
+> Dies ist nur ein Beispiel, kein Ausschneide-und Einfüge Code, den Sie in Ihrem eigenen Code erfolgreich verwenden können. 
 
 ``` http
  POST /accesstoken.srf HTTP/1.1

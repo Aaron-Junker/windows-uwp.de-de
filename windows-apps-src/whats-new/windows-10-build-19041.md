@@ -5,12 +5,12 @@ keywords: Neuigkeiten, Neuerungen, Windows, Windows 10, Aktualisierung, Updates,
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a6138841a19629523b452eab2f3e7b5d125c37
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 04fba2a6fd1f7a13dae3e3509ccb3a0470396dad
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174424"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860145"
 ---
 # <a name="whats-new-for-developers-in-windows-10-build-19041"></a>Neuerungen für Entwickler in Windows 10, Build 19041
 
@@ -31,7 +31,7 @@ Direct3D | Unter [Verwenden von DirectX mit High Dynamic Range-Anzeigen (HDR) un
 Direct3D 12 | [Die Featureebene Direct3D 12 Core 1.0](/windows/win32/direct3d12/core-feature-levels) wurde zur Verwendung von *Nur-Compute*-Geräten hinzugefügt. </br> Für die [Schnittstelle ID3D12Debug3](/windows/win32/api/d3d12sdklayers/nn-d3d12sdklayers-id3d12debug3) wurden neue Artikel hinzugefügt.
 Direct ML | Es wurden 18 Operatoren zu DirectML hinzugefügt, der Low-Level-API mit Hardwarebeschleunigung, auf die WinML aufbaut. Ein Beispiel ist die [DML_ACTIVATION_SHRINK_OPERATOR_DESC-Struktur](/windows/win32/api/directml/ns-directml-dml_activation_shrink_operator_desc).
 Fehlerberichterstattung | Die RoFailFastWithErrorContextInternal2-Funktion wurde zu Win32 hinzugefügt. Diese löst eine Ausnahme aus, die zusätzlichen Fehlerkontext enthalten kann.
-Maschinelles Lernen | Windows Machine Learning [unterstützt jetzt die ONNX-Version 1.4 und opset 9](/windows/ai/windows-ml/release-notes). </br>  Mit der [CloseModelOnSessionCreation](/uwp/api/windows.ai.machinelearning.learningmodelsessionoptions.closemodelonsessioncreation?view=winrt-19041)-API können Sie Arbeitsspeicher einsparen, indem Lernmodelle automatisch geschlossen werden, sobald sie nicht mehr benötigt werden.
+Maschinelles Lernen | Windows Machine Learning [unterstützt jetzt die ONNX-Version 1.4 und opset 9](/windows/ai/windows-ml/release-notes). </br>  Mit der [CloseModelOnSessionCreation](/uwp/api/windows.ai.machinelearning.learningmodelsessionoptions.closemodelonsessioncreation)-API können Sie Arbeitsspeicher einsparen, indem Lernmodelle automatisch geschlossen werden, sobald sie nicht mehr benötigt werden.
 WLAN | Es wurden mehrere neue native WLAN-Funktionen und -Strukturen hinzugefügt, z. B. die [Funktion WlanDeviceServiceCommand](/windows/win32/api/wlanapi/nf-wlanapi-wlandeviceservicecommand).
 Wi-Fi Hotspot 2 | Unter [Bereitstellen eines WLAN-Profils über eine Website](/windows/win32/nativewifi/prov-wifi-profile-via-website) werden die neuen Funktionen von Wi-Fi Hotspot 2 erläutert.
 Windows Holographic Interop | Der Header [`windows.graphics.holographic.interop.h`](/windows/win32/api/windows.graphics.holographic.interop) wurde zusammen mit 17 Win32-APIs hinzugefügt. Die APIs unterstützen die Interaktion zwischen Win32 und der Windows-Runtime. Die APIs wurden bereits in Windows 10, Build 18362 hinzugefügt, aber der Header ist für Build 19041 neu.

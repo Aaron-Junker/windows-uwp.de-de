@@ -3,12 +3,12 @@ title: WinUI 2.5 – Anmerkungen zu dieser Version
 description: Versionshinweise zu WinUI 2.5 einschließlich neuer Features und Bugfixes.
 ms.date: 12/01/2020
 ms.topic: reference
-ms.openlocfilehash: d1b7873e874ff38037fbf766ef16b1e924edec16
-ms.sourcegitcommit: 03308873eafd0f768e1c518f4d1cc4e4fe0b70b7
+ms.openlocfilehash: 1fe64ea547b3e8966ea0ec085e77225a3a1895df
+ms.sourcegitcommit: e252ccb4a76c4883c7073083d73007957202b84d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96606029"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657667"
 ---
 # <a name="windows-ui-library-25"></a>Windows-UI-Bibliothek 2.5
 
@@ -26,7 +26,7 @@ Download des NuGet-Pakets: [Microsoft.UI.Xaml](https://www.nuget.org/packages/Mi
 
 ### <a name="infobar"></a>InfoBar
 
-Das Steuerelement [InfoBar](/uwp/design/controls-and-patterns/infobar) wird verwendet, um App-weite Statusmeldungen anzuzeigen, die für Benutzer deutlich sichtbar, aber auch nicht aufdringlich sind. Das Steuerelement enthält eine Eigenschaft „Severity“ (Schweregrad), mit der der Typ der angezeigten Meldung angegeben wird, sowie eine Option zum Festlegen einer Schaltfläche für eigene Handlungsaufforderungen oder Links. Wird das InfoBar-Steuerelement inline mit anderem Benutzeroberflächeninhalt angezeigt, können Sie zudem angeben, ob es immer sichtbar ist oder ob es vom Benutzer abgewiesen werden kann.
+Das Steuerelement [InfoBar](/windows/uwp/design/controls-and-patterns/infobar) wird verwendet, um App-weite Statusmeldungen anzuzeigen, die für Benutzer deutlich sichtbar, aber auch nicht aufdringlich sind. Das Steuerelement enthält eine Eigenschaft „Severity“ (Schweregrad), mit der der Typ der angezeigten Meldung angegeben wird, sowie eine Option zum Festlegen einer Schaltfläche für eigene Handlungsaufforderungen oder Links. Wird das InfoBar-Steuerelement inline mit anderem Benutzeroberflächeninhalt angezeigt, können Sie zudem angeben, ob es immer sichtbar ist oder ob es vom Benutzer abgewiesen werden kann.
 
 Dieses Beispiel zeigt ein InfoBar-Steuerelement im Standardzustand mit einer Schließen-Schaltfläche und einer Meldung.
 
@@ -42,7 +42,7 @@ Dieses animierte Beispiel zeigt ein InfoBar-Steuerelement mit verschiedenen Schw
 
 ### <a name="determinate-progressring"></a>Bestimmtes ProgressRing-Steuerelement
 
-Der bestimmte Status des [ProgressRing](/uwp/design/controls-and-patterns/progress-controls)-Steuerelements gibt an, zu welchem Prozentsatz eine Aufgabe abgeschlossen ist. Dieses Element sollte für Vorgänge verwendet werden, deren Dauer bekannt ist und deren Fortschritt nicht die Interaktion des Benutzers mit der App blockieren sollte.
+Der bestimmte Status des [ProgressRing](/windows/uwp/design/controls-and-patterns/progress-controls)-Steuerelements gibt an, zu welchem Prozentsatz eine Aufgabe abgeschlossen ist. Dieses Element sollte für Vorgänge verwendet werden, deren Dauer bekannt ist und deren Fortschritt nicht die Interaktion des Benutzers mit der App blockieren sollte.
 
 Das folgende animierte Bild veranschaulicht ein bestimmte ProgressRing-Steuerelement.
 

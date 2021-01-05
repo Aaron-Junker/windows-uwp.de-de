@@ -7,15 +7,15 @@ ms.date: 12/3/2019
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: anawish
-ms.openlocfilehash: a62ec52fe2b8f6caac2ac27cfc4d002ec44a5b32
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: cd78d46abacd57be5b08d6caf057e9c703b32560
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034533"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860362"
 ---
 # <a name="filtering-collections-and-lists-through-user-input"></a>Filtern von Sammlungen und Listen mithilfe von Benutzereingaben
-Wenn Ihre Sammlung viele Elemente aufweist oder stark an Benutzerinteraktion gebunden ist, ist Filterung eine nützliche Funktion, die Sie implementieren können. Filtern mithilfe der in diesem Artikel beschriebenen Methoden kann in den meisten Steuerelementen für Sammlungen implementiert werden, einschließlich [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView](/uwp/api/windows.ui.xaml.controls.gridview) und [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2). Viele Arten von Benutzereingaben können zum Filtern einer Sammlung verwendet werden – beispielsweise Kontrollkästchen, Optionsfelder und Schieberegler –, dieser Artikel konzentriert sich aber auf die Verwendung von textbasierten Benutzereingaben zum Aktualisieren einer ListView in Echtzeit, ausgehend von der Suche des Benutzers. 
+Wenn Ihre Sammlung viele Elemente aufweist oder stark an Benutzerinteraktion gebunden ist, ist Filterung eine nützliche Funktion, die Sie implementieren können. Filtern mithilfe der in diesem Artikel beschriebenen Methoden kann in den meisten Steuerelementen für Sammlungen implementiert werden, einschließlich [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView](/uwp/api/windows.ui.xaml.controls.gridview) und [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2&preserve-view=true). Viele Arten von Benutzereingaben können zum Filtern einer Sammlung verwendet werden – beispielsweise Kontrollkästchen, Optionsfelder und Schieberegler –, dieser Artikel konzentriert sich aber auf die Verwendung von textbasierten Benutzereingaben zum Aktualisieren einer ListView in Echtzeit, ausgehend von der Suche des Benutzers. 
 
 > [!NOTE]
 > Dieser Artikel konzentriert sich auf das Filtern in einer Listenansicht (ListView). Bitte beachten Sie, dass diese Filtermethode auch auf andere Sammlungssteuerelemente wie GridView, ItemsRepeater oder TreeView angewendet werden kann.
