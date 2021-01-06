@@ -9,13 +9,13 @@ ms.date: 12/05/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.custom: contperfq2
-ms.openlocfilehash: 4283e896faca3cccfdf86d1a42f81367fe7d7964
-ms.sourcegitcommit: f7535655a37cec610fbdc23c17f9c83fe68409ff
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: dee870a22a3c574a2a3c45936a62b608302f9ccb
+ms.sourcegitcommit: 1a997d7e0100e58886150f9fba33d7b205f41df1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96611906"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97865513"
 ---
 # <a name="segoe-mdl2-assets-icons"></a>Symbole für Segoe MDL2-Ressourcen
 
@@ -5656,8 +5656,8 @@ Die folgende Tabelle mit Glyphen enthält Unicodepunkte mit den Präfixen „F6-
   <td>SpellingKorean</td>
 </tr>
 <tr><td><img src="images/segoe-mdl/F87D.png" width="32" height="32" alt="SpellingSerbian" /></td>
+  <td>F87D</td>
   <td>SpellingSerbian</td>
-  <td>Eject</td>
 </tr>
 <tr><td><img src="images/segoe-mdl/F87E.png" width="32" height="32" alt="SpellingChinese" /></td>
   <td>F87E</td>

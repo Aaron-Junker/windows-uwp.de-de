@@ -5,12 +5,12 @@ keywords: XAML, UWP, Erste Schritte
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6919a2dc15aac7c5e589f2c0355f9c1cc13bfc7a
-ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
+ms.openlocfilehash: e9db25c822d524ec36c6e512e132e49a69a2bd7d
+ms.sourcegitcommit: 7aa0e1108fd1a19ebc5632acbc9f66ea9af2b321
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97598811"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97691530"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>Tutorial: Erstellen von adaptiven Layouts
 
@@ -266,10 +266,7 @@ Führen Sie die App aus. Wenn die App geladen wird, versuchen Sie, die Größe d
 
 Nach Abschluss dieser Übung verfügen Sie über ausreichende Kenntnisse über das adaptive Layout, um selbst weiter zu experimentieren. Als größere Herausforderung können Sie versuchen, das Layout für größere Bildschirmgrößen zu optimieren, wie z. B. für Surface Hub. Wenn Sie ein Surface Hub-Layout testen möchten, finden Sie weitere Informationen unter [Testen von Surface Hub-Apps mit Visual Studio](../../debug-test-perf/test-surface-hub-apps-using-visual-studio.md).
 
-Wenn Sie Probleme haben, finden Sie weitere Unterstützung in den folgenden Abschnitten von [Dynamische Layouts mit XAML](../layout/layouts-with-xaml.md).
-
-+ [Visuelle Zustände und Zustandsauslöser](../layout/layouts-with-xaml.md#adaptive-layouts-with-visual-states-and-state-triggers)
-+ [Maßgeschneiderte Layouts](../layout/layouts-with-xaml.md#tailored-layouts)
+Wenn Sie Probleme haben, finden Sie weitere Unterstützung unter [Dynamische Layouts mit XAML](../layout/layouts-with-xaml.md).
 
 Auch wenn Sie weitere Informationen erhalten möchten, wie die erste Fotobearbeitungs-App erstellt wurde, sehen Sie sich diese Lernprogramme zu [Benutzeroberflächen](../basics/xaml-basics-ui.md) und [Datenbindung](../../data-binding/xaml-basics-data-binding.md) in XAML an.
 

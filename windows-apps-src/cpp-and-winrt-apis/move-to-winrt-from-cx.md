@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e25f9cdb091f96b648ddc00d5f5cc96bf18d1d1
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 035003be1c9b8ef84d0563af6be9f5b3a01978c7
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750596"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860138"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Umstellen von C++/CX auf C++/WinRT
 
@@ -328,7 +328,7 @@ C++Sammlungstypen verwenden den Standardkonstruktor, was zu einer unbeabsichtigt
 
 ### <a name="more-about-collections-of-empty-references"></a>Weitere Informationen zu Sammlungen leerer Verweise
 
-Wenn du über ein **Platform::Array\^** -Element in C++ verfügst (siehe [Port **Platform:: Array\^** ](#port-platformarray)), kannst du es in ein **std::vector**-Element in C++/WinRT portieren (tatsächlich in jeden beliebigen zusammenhängenden Container), anstatt es als Array zu belassen. Die Auswahl von **std::vector** bietet Vorteile.
+Wenn du über ein **Platform::Array\^** -Element in C++ verfügst (siehe [Port **Platform:: Array\^**](#port-platformarray)), kannst du es in ein **std::vector**-Element in C++/WinRT portieren (tatsächlich in jeden beliebigen zusammenhängenden Container), anstatt es als Array zu belassen. Die Auswahl von **std::vector** bietet Vorteile.
 
 Während es beispielsweise eine Kurzform für die Erstellung eines Vektors von leeren Verweisen mit fester Größe gibt (siehe Tabelle oben), gibt es keine solche Kurzform für die Erstellung eines *Arrays* von leeren Verweisen. Du musst `nullptr` für jedes Element im Array wiederholen. Wenn zu wenige „nullptr“ vorhanden sind, werden die zusätzlichen Elemente standardmäßig konstruiert.
 
@@ -490,7 +490,7 @@ C++/CX und C# lösen Ausnahmen aus, wenn du versuchst, ein Unboxing eines NULL-Z
 
 Ein string-Element ist in einigen Fällen ein Werttyp, in anderen Fällen ein Verweistyp. C++/CX und C++/WinRT behandeln string-Elemente unterschiedlich.
 
-Der ABI-Typ [**HSTRING**](/windows/win32/winrt/hstring) ist ein Zeiger auf ein als Verweis gezähltes string-Element. Er wird jedoch nicht von [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable) abgeleitet, ist also technisch gesehen kein *Objekt*. Darüber hinaus stellt ein **HSTRING** mit Wert NULL ein leeres string-Element dar. Das Boxing von Elementen, die nicht von **IInspectable** abgeleitet werden, erfolgt über den Einschluss in [**IReference\<T\>** ](/uwp/api/windows.foundation.ireference_t_), und die Windows-Runtime stellt eine Standardimplementierung in Form des [**PropertyValue**](/uwp/api/windows.foundation.propertyvalue)-Objekts bereit (benutzerdefinierte Typen werden als [**PropertyType::OtherType**](/uwp/api/windows.foundation.propertytype) gemeldet).
+Der ABI-Typ [**HSTRING**](/windows/win32/winrt/hstring) ist ein Zeiger auf ein als Verweis gezähltes string-Element. Er wird jedoch nicht von [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable) abgeleitet, ist also technisch gesehen kein *Objekt*. Darüber hinaus stellt ein **HSTRING** mit Wert NULL ein leeres string-Element dar. Das Boxing von Elementen, die nicht von **IInspectable** abgeleitet werden, erfolgt über den Einschluss in [**IReference\<T\>**](/uwp/api/windows.foundation.ireference_t_), und die Windows-Runtime stellt eine Standardimplementierung in Form des [**PropertyValue**](/uwp/api/windows.foundation.propertyvalue)-Objekts bereit (benutzerdefinierte Typen werden als [**PropertyType::OtherType**](/uwp/api/windows.foundation.propertytype) gemeldet).
 
 C++/CX stellt ein string-Element der Windows-Runtime als Referenztyp dar, C++/WinRT dagegen als Werttyp. Das bedeutet, dass eine geboxte NULL-Zeichenfolge unterschiedliche Darstellungen aufweisen kann, je nachdem, wie du dorthin gelangt bist.
 
@@ -535,7 +535,7 @@ Unter C++/CX werden im **Platform**-Namespace verschiedene Datentypen bereitgest
 | C++/CX | C++/WinRT |
 | ---- | ---- |
 | **Platform::Agile\^** | [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) |
-| **Platform::Array\^** | Siehe [Portieren von **Platform::Array\^** ](#port-platformarray) |
+| **Platform::Array\^** | Siehe [Portieren von **Platform::Array\^**](#port-platformarray) |
 | **Platform::Exception\^** | [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) |
 | **Platform::InvalidArgumentException\^** | [**winrt::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) |
 | **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
@@ -625,7 +625,7 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 
 **Platform::String\^** ist das Äquivalent zum HSTRING-ABI-Typ der Windows-Runtime. Für C++/WinRT ist die Entsprechung [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring). Bei C++/WinRT kannst du aber Windows-Runtime-APIs mit Wide-String-Typen der C++-Standardbibliothek, z. B. **std::wstring**, bzw. Wide-String-Literale aufrufen. Weitere Informationen und Codebeispiele findest du unter [String-Verarbeitung in C++/WinRT](strings.md).
 
-Mit C++/CX kannst du auf die Eigenschaft [**Platform::String::Data**](/cpp/cppcx/platform-string-class?view=vs-2019#data) zugreifen, um die Zeichenfolge als **const wchar_t\*** -Array im C-Stil abzurufen (z. B. zur Übergabe an **std::wcout**).
+Mit C++/CX können Sie auf die Eigenschaft [**Platform::String::Data**](/cpp/cppcx/platform-string-class#data) zugreifen, um die Zeichenfolge als **const wchar_t\* *-Array im C-Stil abzurufen (z. B. zur Übergabe an* std::wcout**).
 
 ```cppcx
 auto var{ titleRecord->TitleName->Data() };

@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Windows 10, Microsoft, Python unter Windows, Python-Web mit WSL, Python-Web-App mit Windows-Subsystem für Linux, Python-Webentwicklung unter Windows, Flask-App unter Windows, Django-App unter Windows, Python-Web, Flask-Webentwicklung unter Windows, Django-Webentwicklung unter Windows, Windows-Webentwicklung mit Python, VS Code Python-Webentwicklung, Remote-WSL-Erweiterung, Ubuntu, WSL, venv, PIP, Microsoft Python-Erweiterung, Python unter Windows ausführen, Python unter Windows verwenden, mit Python unter Windows erstellen
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 187195133dd614818d3c68473cc53b71a0b32333
-ms.sourcegitcommit: 27552ed7d3d889f50d8e01776a24b8d486a8d97c
+ms.openlocfilehash: 3b5ed80b746d0aa1441bf77e6468101deee320a6
+ms.sourcegitcommit: 3fafc6b6d548a03e6191fa95ebf9384c42396a30
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91958743"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97880553"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>Erste Schritte bei der Verwendung von Python für die Webentwicklung unter Windows
 
@@ -119,7 +119,7 @@ Python ist eine interpretierte Sprache und unterstützt verschiedene Arten von I
 
 Wir erstellen nun ein einfaches Python-Programm als Test, führen es aus und überprüfen, ob der richtige Python-Interpreter ausgewählt ist.
 
-1. Öffnen Sie den VS Code-Datei-Explorer, indem Sie **STRG+UMSCHALT+E** drücken (oder im Menü zu**Ansicht** > **Explorer** navigieren).
+1. Öffnen Sie den VS Code-Datei-Explorer, indem Sie **STRG+UMSCHALT+E** drücken (oder im Menü zu **Ansicht** > **Explorer** navigieren).
 
 2. Wenn es noch nicht geöffnet ist, öffnen Sie das integrierte WSL-Terminal, indem Sie **STRG+UMSCHALT+`** drücken, und vergewissern Sie sich, dass der Ordner des Python-Projekts **HelloWorld** ausgewählt ist.
 
@@ -202,7 +202,7 @@ Herzlichen Glückwunsch! Sie können nun Python-Programme erstellen und ausführ
 
 14. Öffnen Sie die gerenderte Seite im Standardwebbrowser, und klicken Sie bei gedrückter **STRG-Taste** auf die URL http://127.0.0.1:5000/ im Terminal. Im Browser sollte die folgende Meldung angezeigt werden:
 
-    ![Hello, Flask!](../images/hello-flask.png)
+    ![Hello World! Ich verwende Flask.](../images/hello-flask.png)
 
 15. Beachten Sie, dass beim Aufrufen einer URL wie „/“ im Debugterminal eine Meldung mit der HTTP-Anforderung angezeigt wird:
 

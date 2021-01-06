@@ -5,38 +5,39 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
+ms.custom: contperf-fy21q2
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: fd2f755153b29c9be766d39fb685a3f923868946
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 4c2ff55b0f89e913cd2093add37f008c38e9312f
+ms.sourcegitcommit: 7aa0e1108fd1a19ebc5632acbc9f66ea9af2b321
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750417"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97691538"
 ---
 # <a name="responsive-layouts-with-xaml"></a>Dynamische Layouts mit XAML
 
-XAML bietet Ihnen ein flexibles Layoutsystem, mit dem Sie die automatische Größenanpassung, Layoutpanel, visuelle Zustände und sogar getrennte UI-Definitionen verwenden können, um eine reaktionsfähige Benutzeroberfläche zu erstellen. Mit einem dynamischen Layout können Sie für Ihre App ein großartiges Erscheinungsbild auf Bildschirmen mit unterschiedlichen Größen, Auflösungen, Pixeldichten und Ausrichtungen von App-Fenstern erstellen. Sie können XAML auch verwenden, um die Benutzeroberfläche Ihrer Anwendung neu zu positionieren, die Größe zu ändern, neu zu ordnen, anzuzeigen/auszublenden, zu ersetzen oder neu zu strukturieren, wie in [Reaktionsfähige Design-Techniken](responsive-design.md) beschrieben. Hier wird besprochen, wie man dynamische Layouts mit XAML realisiert.
+Das XAML-Layoutsystem bietet automatische Größenanpassung von Elementen, Layoutpanels und visuelle Zustände, um eine reaktionsfähige Benutzeroberfläche zu erstellen. Mit einem dynamischen Layout können Sie für Ihre App ein großartiges Erscheinungsbild auf Bildschirmen mit unterschiedlichen Größen, Auflösungen, Pixeldichten und Ausrichtungen von App-Fenstern erstellen. Sie können XAML auch verwenden, um die Benutzeroberfläche Ihrer Anwendung neu zu positionieren, die Größe zu ändern, neu zu ordnen, anzuzeigen/auszublenden, zu ersetzen oder neu zu strukturieren, wie in [Reaktionsfähige Design-Techniken](responsive-design.md) beschrieben. Hier wird besprochen, wie man dynamische Layouts mit XAML realisiert.
 
 ## <a name="fluid-layouts-with-properties-and-panels"></a>Fluid-Layouts mit Eigenschaften und Panels
 
-Die Grundlage für ein dynamisches Layout ist die richtige Verwendung von XAML-Layouteigenschaften und -panels, um die Position und Größe von Inhalten zu ändern und Inhalte neu anzuordnen. 
+Die Grundlage für ein dynamisches Layout ist die richtige Verwendung von XAML-Layouteigenschaften und -panels, um die Position und Größe von Inhalten zu ändern und Inhalte neu anzuordnen.
 
-Das XAML-Layoutsystem unterstützt sowohl statische als auch dynamische Layouts. In einem statischen Layout weisen Sie Steuerelementen feste Größen in Pixel und Positionen zu. Wenn der Benutzer die Auflösung oder Ausrichtung seines Geräts ändert, bleibt die UI unverändert. Statische Layouts können auf bestimmte Formfaktoren und Anzeigegrößen beschnitten werden. Dynamische Layouts passen sich andererseits durch Vergrößerung, Verkleinerung und Umbrüche an den auf einem Gerät verfügbaren Platz für die Anzeige an. 
+Das XAML-Layoutsystem unterstützt sowohl statische als auch dynamische Layouts. In einem statischen Layout weisen Sie Steuerelementen feste Größen in Pixel und Positionen zu. Wenn der Benutzer die Auflösung oder Ausrichtung seines Geräts ändert, bleibt die UI unverändert. Statische Layouts können auf bestimmte Formfaktoren und Anzeigegrößen beschnitten werden. Dynamische Layouts passen sich andererseits durch Vergrößerung, Verkleinerung und Umbrüche an den auf einem Gerät verfügbaren Platz für die Anzeige an.
 
 In der Praxis verwenden Sie eine Kombination aus statischen und dynamischen Elemente zum Erstellen der Benutzeroberfläche. Statische Elemente und Werte kommen an bestimmten Stellen immer noch vor, es sollte jedoch darauf geachtet werden, dass die Gesamt-UI reaktionsfähig ist und sich an verschiedene Auflösungen, Bildschirmgrößen und Ansichten anpasst.
 
 Hier erörtern wir die Verwendung von XAML-Eigenschaften und Layoutpanels zur Erstellung eines Fluid-Layouts für Ihre App.
 
 ### <a name="layout-properties"></a>Layouteigenschaften
-Zum Bestimmen der Größe und Position eines Elements legen Sie seine Layouteigenschaften fest. Um ein dynamisches Layout zu erstellen, verwenden Sie die automatische oder proportionale Größenanpassung für Elemente, und lassen Sie die Layoutpanels die Position für ihre untergeordneten Elemente wie erforderlich positionieren. 
+Zum Bestimmen der Größe und Position eines Elements legen Sie seine Layouteigenschaften fest. Um ein dynamisches Layout zu erstellen, verwenden Sie die automatische oder proportionale Größenanpassung für Elemente, und lassen Sie die Layoutpanels die Position für ihre untergeordneten Elemente wie erforderlich positionieren.
 
 Hier sind einige allgemeine Layout-Eigenschaften und wie man sie zur Erstellung von Fluid-Layouts verwendet.
 
 **Höhe und Breite**
 
-Die Eigenschaften [**Height**](/uwp/api/windows.ui.xaml.frameworkelement.height) und [**Width**](/uwp/api/windows.ui.xaml.frameworkelement.width) geben die Größe eines Elements an. Sie können feste Werte verwenden, die in effektiven Pixeln gemessen werden, oder Sie können eine automatische oder proportionale Größenanpassung verwenden. 
+Die Eigenschaften [**Height**](/uwp/api/windows.ui.xaml.frameworkelement.height) und [**Width**](/uwp/api/windows.ui.xaml.frameworkelement.width) geben die Größe eines Elements an. Sie können feste Werte verwenden, die in effektiven Pixeln gemessen werden, oder Sie können eine automatische oder proportionale Größenanpassung verwenden.
 
 Verwenden Sie die automatische Größenanpassung, damit die Größe von UI-Elementen entsprechend ihren Inhalten oder der Größe des übergeordneten Containers geändert wird. Sie können die automatische Größenanpassung auch für die Zeilen und Spalten eines Rasters verwenden. Um die automatische Größenanpassung zu verwenden, legen Sie für „Height“ und/oder „Width“ von UI-Elementen **Auto** fest.
 
@@ -47,7 +48,7 @@ Die proportionale Größenanpassung, die auch als *Größenanpassung mit Sternva
 
 In diesem Beispiel wird die feste, automatische und proportionale Größenanpassung in einem [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) mit 4 Spalten kombiniert.
 
-| Column | Festlegen der Größe | BESCHREIBUNG |
+| Spalte | Festlegen der Größe | BESCHREIBUNG |
 | ------ | ------ | ----------- |
 Column_1 | **Auto** | Die Breite der Spalte wird entsprechend ihres Inhalts angepasst.
 Column_2 | * | Nach dem Berechnen der Spalten mit automatischer Breite erhält diese Spalte einen Teil der verbleibenden Breite. Column_2 ist nur halb so breit wie Column_4.
@@ -127,9 +128,9 @@ Mit Layoutpanels können Sie die Benutzeroberfläche als logische Steuerelementg
 ## <a name="adaptive-layouts-with-visual-states-and-state-triggers"></a>Adaptive Layouts mit visuellen Zuständen und Zustandsauslösern
 Verwenden Sie visuelle Zustände, um wesentliche Änderungen an Ihrer UI basierend auf der Fenstergröße oder andere Änderungen vorzunehmen.
 
-Wenn sich die Größe Ihres App-Fensters über einen bestimmten Punkt vergrößert oder verkleinert, können Sie Layouteigenschaften ändern, um die Größe und Position von Abschnitten Ihrer UI zu ändern oder diese neu anzuordnen, einzublenden oder zu ersetzen. Sie können verschiedene visuelle Zustände für Ihre Benutzeroberfläche definieren und diese anwenden, wenn die Fensterbreite oder Fensterhöhe einen bestimmten Schwellenwert überschreitet. 
+Wenn sich die Größe Ihres App-Fensters über einen bestimmten Punkt vergrößert oder verkleinert, können Sie Layouteigenschaften ändern, um die Größe und Position von Abschnitten Ihrer UI zu ändern oder diese neu anzuordnen, einzublenden oder zu ersetzen. Sie können verschiedene visuelle Zustände für Ihre Benutzeroberfläche definieren und diese anwenden, wenn die Fensterbreite oder Fensterhöhe einen bestimmten Schwellenwert überschreitet.
 
-Ein [**AdaptiveTrigger**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) bietet eine einfache Möglichkeit, um einen Schwellenwert (auch „Haltepunkt“ genannt) festzulegen, wenn ein Zustand angewendet wird. Ein [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) definiert Eigenschaftswerte, die auf ein Element angewendet werden, wenn es sich in einem bestimmten Zustand befindet. Gruppieren Sie visuelle Zustände in einem [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager), der den entsprechenden „VisualState“ anwendet, wenn die angegebenen Bedingungen erfüllt werden.
+Ein [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) definiert Eigenschaftswerte, die auf ein Element angewendet werden, wenn es sich in einem bestimmten Zustand befindet. Gruppieren Sie visuelle Zustände in einem [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager), der den entsprechenden „VisualState“ anwendet, wenn die angegebenen Bedingungen erfüllt werden. Ein [**AdaptiveTrigger**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) bietet eine einfache Möglichkeit, um einen Schwellenwert (auch „Haltepunkt“ genannt) festzulegen, wenn ein Zustand in XAML angewendet wird. Oder Sie können die [**VisualStateManager.GoToState**](/uwp/api/windows.ui.xaml.visualstatemanager.gotostate)-Methode aufrufen, um einen visuellen Zustand aus Code anzuwenden. Beispiele für beide Möglichkeiten werden in den nächsten Abschnitten gezeigt.
 
 ### <a name="set-visual-states-in-code"></a>Festlegen von visuellen Zuständen im Code
 
@@ -139,7 +140,6 @@ Hier enthält eine [**VisualStateGroup**](/uwp/api/Windows.UI.Xaml.VisualStateGr
 
 > [!NOTE]
 > Windows bietet keine Möglichkeit für Ihre App zum Erkennen des Geräts, auf dem sie ausgeführt wird. Sie kann die Gerätefamilie des Geräts (mobil, Desktop usw.), auf dem sie ausgeführt wird, die effektive Auflösung und den für die App verfügbaren Bildschirmbereich (Größe des App-Fensters) erkennen. Wir empfehlen, visuelle Zustände für [Bildschirmgrößen und Breakpoints](screen-sizes-and-breakpoints-for-responsive-design.md) zu definieren.
-
 
 ```xaml
 <Page ...
@@ -257,7 +257,7 @@ In diesem Beispiel wird die gleiche Aufgabe wie im vorherigen Beispiel ausgefüh
 
 In einem „VisualState“ wird in der Regel ein Wert für eine Steuerelementeigenschaft oder für eine der angefügten Eigenschaften des Panels festgelegt, das das Steuerelement enthält. Wenn Sie eine angefügte Eigenschaft festlegen, verwenden Sie Klammern um den Namen der angefügten Eigenschaft.
 
-In diesem Beispiel wird veranschaulicht, wie die angefügte [ **„RelativePanel.AlignHorizontalCenterWithPanel“-Eigenschaft für ein** ](/uwp/api/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithpanelproperty)TextBox`myTextBox` mit dem Namen festgelegt wird. Das erste XAML-Markup verwendet [**ObjectAnimationUsingKeyFrames**](/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)-Syntax und das zweite die **Setter**-Syntax.
+In diesem Beispiel wird veranschaulicht, wie die angefügte [ **„RelativePanel.AlignHorizontalCenterWithPanel“-Eigenschaft für ein**](/uwp/api/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithpanelproperty)TextBox`myTextBox` mit dem Namen festgelegt wird. Das erste XAML-Markup verwendet [**ObjectAnimationUsingKeyFrames**](/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)-Syntax und das zweite die **Setter**-Syntax.
 
 ```xaml
 <!-- Set an attached property using ObjectAnimationUsingKeyFrames. -->
@@ -345,82 +345,8 @@ In diesem vereinfachten XAML-Markup aus dem Beispiel für Zustandsauslöser wird
 </Page>
 ```
 
-## <a name="tailored-layouts"></a>Maßgeschneiderte Layouts
-
-Wenn Sie wesentliche Änderungen am Layout der Benutzeroberfläche für verschiedene Geräte vornehmen, empfiehlt es sich unter Umständen, eine separate UI-Datei mit einem maßgeschneiderten Layout für das Gerät zu definieren, anstatt eine einzelne Benutzeroberfläche anzupassen. Wenn die Funktionalität auf allen Geräten gleich ist, können Sie separate XAML-Ansichten definieren, die die gleiche Codedatei gemeinsam nutzen. Wenn sich die Ansicht und die Funktionalität auf allen Geräten deutlich unterscheiden, können Sie separate „Page“-Elemente definieren und auswählen, zu welcher „Page“ navigiert werden soll, wenn die App geladen wird.
-
-### <a name="separate-xaml-views-per-device-family"></a>Separate XAML-Ansichten pro Gerätefamilie
-
-Verwenden Sie XAML-Ansichten, um unterschiedliche UI-Definitionen zu erstellen, die den gleichen CodeBehind verwenden. Sie können eine eindeutige UI-Definition für jede Gerätefamilie bereitstellen. Führen Sie die folgenden Schritte aus, um eine XAML-Ansicht zu Ihrer App hinzuzufügen.
-
-**So fügen Sie eine XAML-Ansicht zu einer App hinzu**
-1. Klicken Sie auf „Projekt“ > „Neues Element hinzufügen“. Das Dialogfeld „Neues Element hinzufügen“ wird geöffnet.
-    > **Tipp**&nbsp;&nbsp;Stellen Sie sicher, dass im Projektmappen-Explorer nicht die Projektmappe, sondern ein Ordner oder das Projekt ausgewählt ist.
-2. Wählen Sie im linken Bereich unter Visual C# oder Visual Basic den Vorlagentyp XAML aus.
-3. Wählen Sie im mittleren Bereich XAML-Ansicht aus.
-4. Geben Sie den Namen für die Ansicht ein. Die Ansicht muss korrekt benannt werden. Weitere Informationen zur Benennung finden Sie weiter unten in diesem Abschnitt.
-5. Klicken Sie auf Hinzufügen. Die Datei wird dem Projekt hinzugefügt.
-
-Mit den vorherigen Schritten wird nur eine XAML-Datei erstellt, aber keine zugehörige CodeBehind-Datei. Stattdessen wird die XAML-Ansicht mithilfe eines „DeviceName“-Qualifizierers, der Teil des Datei- oder Ordnernamens ist, einer vorhandenen „CodeBehind“-Datei zugeordnet. Der Name dieses Qualifizierers kann einem Zeichenfolgenwert zugeordnet werden, der die Gerätefamilie des Geräts darstellt, auf dem die App derzeit ausgeführt wird, z. B. „Desktop“, „Tablet“ und die Namen der anderen Gerätefamilien (siehe [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues)).
-
-Sie können den Qualifizierer dem Dateinamen hinzufügen, oder Sie können die Datei einem Ordner hinzufügen, der den Qualifizierernamen aufweist.
-
-**Verwenden des Dateinamens**
-
-Um den Qualifizierernamen mit der Datei zu verwenden, verwenden Sie das folgende Format: *[pageName]* .DeviceFamily- *[qualifierString]* .xaml.
-
-Sehen wir uns nun ein Beispiel für eine Datei mit dem Namen „MainPage.xaml“ an. Um eine Ansicht für Tablet-Geräte zu erstellen, geben Sie der XAML-Ansicht den Namen „MainPage.DeviceFamily-Tablet.xaml“. Um eine Ansicht für PC-Geräte zu erstellen, geben Sie der Ansicht den Namen „MainPage.DeviceFamily-Desktop.xaml“. Nachfolgend sehen Sie, wie die Projektmappe in Microsoft Visual Studio aussieht.
-
-![XAML-Ansichten mit qualifizierten Dateinamen](images/xaml-layout-view-ex-1.png)
-
-**Verwenden des Ordnernamens**
-
-Um die Ansichten in Ihrem Visual Studio-Projekt mithilfe von Ordnern zu organisieren, können Sie den Qualifizierernamen mit dem Ordner verwenden. Benennen Sie Ihren Ordner zu diesem Zweck wie folgt: DeviceFamily- *[qualifierString]* . In diesem Fall hat jede XAML-Ansichtsdatei den gleichen Namen. Schließen Sie den Qualifizierer nicht in den Dateinamen ein.
-
-Hier sehen Sie ein Beispiel, bei dem die Datei wieder den Namen „MainPage.xaml“ trägt. Um eine Ansicht für Tablet- Geräte zu erstellen, erstellen Sie einen Ordner mit dem Namen „DeviceFamily-Tablet“, und platzieren Sie eine XAML-Ansicht namens „MainPage.xaml“ im Ordner. Um eine Ansicht für PC-Geräte zu erstellen, erstellen Sie einen Ordner mit dem Namen „DeviceFamily-Desktop“, und platzieren Sie eine weitere XAML-Ansicht namens „MainPage.xaml“ darin. Nachfolgend sehen Sie, wie die Projektmappe in Visual Studio aussieht.
-
-![XAML-Ansichten in Ordnern](images/xaml-layout-view-ex-2.png)
-
-In beiden Fällen wird eine eindeutige Ansicht für Tablet- und PC-Geräte verwendet. Die standardmäßige „MainPage.xaml“-Datei wird verwendet, wenn das Gerät, auf dem sie ausgeführt wird, nicht mit einer der speziellen Ansichten für Gerätefamilien übereinstimmt.
-
-### <a name="separate-xaml-pages-per-device-family"></a>Separate XAML-Seiten pro Gerätefamilie
-
-Um eindeutige Ansichten und Funktionen bereitzustellen, können Sie separate „Page“-Dateien (XAML und Code) erstellen und dann zu der entsprechenden Seite navigieren, wenn die Seite benötigt wird.
-
-**So fügen Sie einer App eine XAML-Seite hinzu**
-1. Klicken Sie auf „Projekt“ > „Neues Element hinzufügen“. Das Dialogfeld „Neues Element hinzufügen“ wird geöffnet.
-    > **Tipp**&nbsp;&nbsp;Stellen Sie sicher, dass im Projektmappen-Explorer nicht die Projektmappe, sondern das Projekt ausgewählt ist.
-2. Wählen Sie im linken Bereich unter Visual C# oder Visual Basic den Vorlagentyp XAML aus.
-3. Wählen Sie im mittleren Bereich „Leere Seite“ aus.
-4. Geben Sie den Namen für die Seite ein. Beispielsweise „MainPage_Tablet“. Es wird sowohl eine MainPage_Tablet.xaml- als auch eine MainPage_Tablet.xaml.cs/vb/cpp-Codedatei erstellt.
-5. Klicken Sie auf Hinzufügen. Die Datei wird dem Projekt hinzugefügt.
-
-Überprüfen Sie zur Laufzeit die Gerätefamilie, auf der die App ausgeführt wird, und navigieren Sie zu der korrekten Seite.
-
-```csharp
-if (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Tablet")
-{
-    rootFrame.Navigate(typeof(MainPage_Tablet), e.Arguments);
-}
-else
-{
-    rootFrame.Navigate(typeof(MainPage), e.Arguments);
-}
-```
-```cppwinrt
-if (Windows::System::Profile::AnalyticsInfo::VersionInfo().DeviceFamily() == L"Windows.Tablet")
-{
-    rootFrame.Navigate(xaml_typename<WinRT_UWP::MainPage_Tablet>(), box_value(e.Arguments()));
-}
-else
-{
-    rootFrame.Navigate(xaml_typename<WinRT_UWP::MainPage>(), box_value(e.Arguments()));
-}
-```
-
-Sie können auch unterschiedliche Kriterien verwenden, um zu bestimmen, zur welcher Seite navigiert werden soll. Weitere Beispiele finden Sie im Beispiel [Mehrere Ansichten für maßgeschneiderte Inhalte](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlTailoredMultipleViews), in dem die [**GetIntegratedDisplaySize**](/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getintegrateddisplaysize)-Funktion verwendet wird, um die physische Größe einer integrierten Anzeige zu überprüfen.
-
 ## <a name="related-topics"></a>Zugehörige Themen
+
 - [Tutorial: Erstellen von adaptiven Layouts](../basics/xaml-basics-adaptive-layout.md)
 - [Beispiel zu dynamischen Designtechniken (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlResponsiveTechniques)
 - [Beispiel zu Zustandsauslösern (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlStateTriggers)

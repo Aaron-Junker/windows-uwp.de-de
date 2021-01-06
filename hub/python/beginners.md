@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Windows 10, Microsoft, Python lernen, Python unter Windows für Anfänger, Python aus dem Microsoft Store installieren, Python mit VS Code, pygame unter Windows
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 076c62658431ba75bdbd7f385ced86f27fb2f7d0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f225932685e71cb2374249ad96efeac11184d000
+ms.sourcegitcommit: 3fafc6b6d548a03e6191fa95ebf9384c42396a30
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174144"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97880543"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>Erste Schritte bei der Verwendung von Python unter Windows für Anfänger
 
@@ -31,7 +31,7 @@ So installieren Sie Python mit dem Microsoft Store:
 
 1. Wechseln Sie zum Menü **Start** (unteres linkes Windows-Symbol), geben Sie „Microsoft Store“ ein, und wählen Sie den Link zum Öffnen des Stores aus.
 
-2. Sobald der Store geöffnet ist, wählen Sie im oberen rechten Menü **Suchen** aus, und geben Sie „Python“ ein. Öffnen Sie „Python 3.7“ in den Ergebnissen unter „Apps“. Wählen Sie **Abrufen** aus.
+2. Sobald der Store geöffnet ist, wählen Sie im oberen rechten Menü **Suchen** aus, und geben Sie „Python“ ein. Öffnen Sie „Python 3.9“ in den Ergebnissen unter „Apps“. Wählen Sie **Abrufen** aus.
 
 3. Nachdem Python den Download- und Installationsprozess abgeschlossen hat, öffnen Sie Windows PowerShell über das Menü **Start** (unteres linkes Windows-Symbol). Wenn PowerShell geöffnet ist, geben Sie `Python --version` ein, um zu bestätigen, dass Python 3 auf Ihrem Computer installiert wurde.
 
