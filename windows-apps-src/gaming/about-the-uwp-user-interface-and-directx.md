@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, DirectX, App-Objekt
 ms.localizationpriority: medium
-ms.openlocfilehash: 29eaba70a7114624474275b8f98ec77f8038b2b0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 08d2039bd7b3b8aa248acca31615d34635929aa1
+ms.sourcegitcommit: 48702934676ae366fd46b7d952396c5e2fb2cbbe
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163164"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97927774"
 ---
 # <a name="the-app-object-and-directx"></a>Das App-Objekt und DirectX
 
@@ -34,7 +34,7 @@ Zunächst sind die Windows-Runtime-Namespaces zu erwähnen, die Sie (mit **using
 
 ## <a name="the-windows-runtime-app-object"></a>Das Windows-Runtime-App-Objekt
 
-Sie möchten in Ihrer UWP-App ein Fenster und einen Ansichtsanbieter abrufen, von dem Sie wiederum eine Ansicht abrufen und mit dem Sie Ihre Swapchain (Ihre Anzeigepuffer) verbinden können. Sie können diese Ansicht auch in die fensterspezifischen Ereignisse für die ausgeführte App einbinden. Um das übergeordnete Fenster für das App-Objekt zu erhalten, das durch den [**corewindow**](/uwp/api/Windows.UI.Core.CoreWindow) -Typ definiert ist, erstellen Sie einen Typ, der [**iframeworkviewsource**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkViewSource)implementiert. Ein [C++/WinRT](../cpp-and-winrt-apis/index.md) -Codebeispiel, das zeigt, wie **iframeworkviewsource**implementiert wird, finden Sie unter [Komposition Native Interoperation with DirectX and Direct2D](../composition/composition-native-interop.md).
+Sie möchten in Ihrer UWP-App ein Fenster und einen Ansichtsanbieter abrufen, von dem Sie wiederum eine Ansicht abrufen und mit dem Sie Ihre Swapchain (Ihre Anzeigepuffer) verbinden können. Sie können diese Ansicht auch in die fensterspezifischen Ereignisse für die ausgeführte App einbinden. Um das übergeordnete Fenster für das App-Objekt zu erhalten, das durch den [**corewindow**](/uwp/api/Windows.UI.Core.CoreWindow) -Typ definiert ist, erstellen Sie einen Typ, der [**iframeworkviewsource**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkViewSource)implementiert. Ein [C++/WinRT](../cpp-and-winrt-apis/index.md) -Codebeispiel, das zeigt, wie **iframeworkviewsource** implementiert wird, finden Sie unter [Komposition Native Interoperation with DirectX and Direct2D](../composition/composition-native-interop.md).
 
 Hier finden Sie die grundlegenden Schritte zum Einrichten eines Fensters mithilfe des Core-Benutzeroberflächen-Frameworks.
 
@@ -94,12 +94,13 @@ Sie können auch den Fenster Ereignis Verteiler für das Fenster abrufen, indem 
 
 Sie können das Threadingverhalten der Ereignisverteilung für ein Fenster mit dem [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher)-Typ bestimmen. Bei diesem Typ gibt es eine besonders wichtige Methode: die [**CoreDispatcher.ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents)-Methode, die die Fensterereignisverarbeitung startet. Wenn Sie diese Methode mit der falschen Option für Ihre App aufrufen, kann dies zu allen möglichen unerwarteten Verhaltensweisen bei der Ereignisverarbeitung führen.
 
-| CoreProcessEventsOption-Option                                                           | BESCHREIBUNG                                                                                                                                                                                                                                  |
-|------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**CoreProcessEventsOption.ProcessOneAndAllPending**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | Verteilen Sie alle derzeit in der Warteschlange verfügbaren Ereignisse. Wenn keine Ereignisse ausstehen, warten Sie auf das nächste neue Ereignis.                                                                                                                                 |
-| [**CoreProcessEventsOption.ProcessOneIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption)     | Verteilen Sie ein Ereignis, wenn es in der Warteschlange aussteht. Wenn keine Ereignisse ausstehen, warten Sie nicht, dass ein neues Ereignis ausgelöst wird, sondern kehren Sie stattdessen sofort zurück.                                                                                          |
-| [**CoreProcessEventsOption.ProcessUntilQuit**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption)        | Warten Sie auf neue Ereignisse, und verteilen Sie alle verfügbaren Ereignisse. Setzen Sie dieses Verhalten fort, bis das Fenster geschlossen wird oder die Anwendung die [**Close**](/uwp/api/windows.ui.core.corewindow.close)-Methode für die [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)-Instanz aufruft. |
-| [**CoreProcessEventsOption.ProcessAllIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption)     | Verteilen Sie alle derzeit in der Warteschlange verfügbaren Ereignisse. Wenn keine Ereignisse ausstehen, kehren Sie sofort zurück.                                                                                                                                          |
+| CoreProcessEventsOption-Option | BESCHREIBUNG |
+|--------------------------------|-------------|
+| [**CoreProcessEventsOption.ProcessOneAndAllPending**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | Verteilen Sie alle derzeit in der Warteschlange verfügbaren Ereignisse. Wenn keine Ereignisse ausstehen, warten Sie auf das nächste neue Ereignis. |
+| [**CoreProcessEventsOption.ProcessOneIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | Verteilen Sie ein Ereignis, wenn es in der Warteschlange aussteht. Wenn keine Ereignisse ausstehen, warten Sie nicht, dass ein neues Ereignis ausgelöst wird, sondern kehren Sie stattdessen sofort zurück. |
+| [**CoreProcessEventsOption.ProcessUntilQuit**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | Warten Sie auf neue Ereignisse, und verteilen Sie alle verfügbaren Ereignisse. Setzen Sie dieses Verhalten fort, bis das Fenster geschlossen wird oder die Anwendung die [**Close**](/uwp/api/windows.ui.core.corewindow.close)-Methode für die [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)-Instanz aufruft. |
+| [**CoreProcessEventsOption.ProcessAllIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | Verteilen Sie alle derzeit in der Warteschlange verfügbaren Ereignisse. Wenn keine Ereignisse ausstehen, kehren Sie sofort zurück. |
+
 UWP mit DirectX muss die [**CoreProcessEventsOption.ProcessAllIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption)-Option verwenden, um blockierendes Verhalten zu verhindern, das Grafikaktualisierungen beeinträchtigen könnte.
 
 ## <a name="asta-considerations-for-directx-devs"></a>Überlegungen zu ASTA für DirectX-Entwickler

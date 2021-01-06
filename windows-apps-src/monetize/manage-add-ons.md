@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Übermittlungs-API, Add-ons, in-App-Produkt, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f02e222cf495f56352a645ac3a366da39dc5e3a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9ec2213f5a46318f3aaddbbe5d55b58f6816fcce
+ms.sourcegitcommit: 48702934676ae366fd46b7d952396c5e2fb2cbbe
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158414"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97927782"
 ---
 # <a name="manage-add-ons"></a>Verwalten von Add-Ons
 
@@ -49,7 +49,7 @@ Diese Methoden können nur verwendet werden, um Add-Ons abzurufen, zu erstellen 
 <td align="left"><a href="create-an-add-on.md">Erstellen eines Add-Ons</a></td>
 </tr>
 <tr>
-<td align="left">Delete</td>
+<td align="left">DELETE</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}</td>
 <td align="left"><a href="delete-an-add-on.md">Löschen eines Add-Ons</a></td>
 </tr>
@@ -97,7 +97,7 @@ Diese Ressource beschreibt ein Add-On.
 
 Die Ressource hat die folgenden Werte.
 
-| Wert      | Typ   | BESCHREIBUNG        |
+| Wert      | type   | BESCHREIBUNG        |
 |------------|--------|--------------|
 | applications      | array  | Ein Array mit genau einer [Anwendungsressource](#application-object), die die App darstellt, der dieses Add-On zugeordnet ist. In diesem Array wird nur ein Element unterstützt.  |
 | id | Zeichenfolge  | Die Store-ID des Add-Ons. Dieser Wert wird vom Store bereitgestellt. Beispiel für eine Store-ID: 9NBLGGH4TNMP.  |
@@ -128,10 +128,10 @@ Diese Ressource beschreibt die App, der ein Add-On zugeordnet ist. Das folgende 
 
 Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG        |
-|-----------------|---------|-----------|
-| value            | Objekt (object)  |  Ein Objekt, das die folgenden Werte enthält: <br/><br/> <ul><li>*ID*. die Speicher-ID der app. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](../publish/view-app-identity-details.md).</li><li>*resourcelokation*. Ein relativer Pfad, den Sie an den Basisanforderungs-URI ```https://manage.devcenter.microsoft.com/v1.0/my/``` anfügen können, um die vollständigen Daten für die App abzurufen.</li></ul>   |
-| totalCount   | INT  | Die Anzahl der App-Objekte im *applications*-Array des Antworttexts.                                                                                                                                                 |
+| Wert | type | BESCHREIBUNG |
+|-------|------|-------------|
+| value | Objekt (object) | Ein Objekt, das die folgenden Werte enthält: <ul><li>*ID*. die Speicher-ID der app. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](../publish/view-app-identity-details.md).</li><li>*resourcelokation*. Ein relativer Pfad, den Sie an den Basisanforderungs-URI `https://manage.devcenter.microsoft.com/v1.0/my/` anfügen können, um die vollständigen Daten für die App abzurufen.</li></ul> |
+| totalCount | INT | Die Anzahl der App-Objekte im *applications*-Array des Antworttexts. |
 
 <span id="submission-object" />
 
@@ -150,11 +150,11 @@ Diese Ressource enthält Informationen über eine Übermittlung für ein Add-On.
 
 Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG     |
+| Wert           | type    | BESCHREIBUNG     |
 |-----------------|---------|------------------|
 | id            | Zeichenfolge  | Die ID der Übermittlung.    |
-| resourceLocation   | Zeichenfolge  | Ein relativer Pfad, den Sie an den Basisanforderungs-URI ```https://manage.devcenter.microsoft.com/v1.0/my/``` anfügen können, um die vollständigen Daten für die Übermittlung abzurufen.     |
- 
+| resourceLocation   | Zeichenfolge  | Ein relativer Pfad, den Sie an den Basisanforderungs-URI `https://manage.devcenter.microsoft.com/v1.0/my/` anfügen können, um die vollständigen Daten für die Übermittlung abzurufen.     |
+
 <span/>
 
 ## <a name="related-topics"></a>Zugehörige Themen

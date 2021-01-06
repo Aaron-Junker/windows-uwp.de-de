@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Benutzer Rollen, Benutzer Berechtigung, benutzerdefinierte Rollen, Benutzer Zugriff, Berechtigungen anpassen, Standardrollen
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cdd1904dad82e0145305fe2709360be01518a7f
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: e18c7bcffe7249f6c191fc456422e0dd0c7300ef
+ms.sourcegitcommit: 48702934676ae366fd46b7d952396c5e2fb2cbbe
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878483"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97927803"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>Festlegen von Rollen oder benutzerdefinierten Berechtigungen für Kontobenutzer
 
@@ -35,13 +35,13 @@ Beachten Sie beim Bestimmen der anzuwendenden Rolle und der anzuwendenden Berech
 
 Standardmäßig wird eine Reihe von Standardrollen angezeigt, die Sie auswählen können, wenn Sie Ihrem Partner Center-Konto eine Benutzer-, Gruppen-oder Azure AD Anwendung hinzufügen. Jede Rolle verfügt über spezifische Berechtigungen, mit denen bestimmte Funktionen innerhalb des Kontos ausgeführt werden können. 
 
-Wenn Sie [benutzerdefinierte Berechtigungen](#custom) nicht durch Auswahl von **Berechtigungen anpassen**definieren, muss jedem Benutzer, jeder Gruppe oder Azure AD Anwendung, die Sie einem Konto hinzufügen, mindestens eine der folgenden Standardrollen zugewiesen werden. 
+Wenn Sie [benutzerdefinierte Berechtigungen](#custom) nicht durch Auswahl von **Berechtigungen anpassen** definieren, muss jedem Benutzer, jeder Gruppe oder Azure AD Anwendung, die Sie einem Konto hinzufügen, mindestens eine der folgenden Standardrollen zugewiesen werden. 
 
 > [!NOTE]
 > Der **Besitzer** des Kontos ist die Person, die Sie erstmalig mit einem Microsoft-Konto erstellt hat (und keine Benutzer, die über Azure AD hinzugefügt wurden). Dieser Kontobesitzer ist die einzige Person mit Vollzugriff auf das Konto. Hierzu zählt die Möglichkeit, Apps zu löschen, zu erstellen und zu bearbeiten, alle Kontobenutzer zu bearbeiten sowie sämtliche finanziellen Einstellungen und Kontoeinstellungen zu ändern. 
 
 
-| Role                 | BESCHREIBUNG              |
+| Rolle                 | BESCHREIBUNG              |
 |----------------------|--------------------------|
 | Manager              | Verfügt über vollständigen Zugriff auf das Konto, kann jedoch keine Steuer- und Auszahlungseinstellungen ändern. Dies umfasst die Verwaltung von Benutzern in Partner Center, aber beachten Sie, dass die Möglichkeit, Benutzer im Azure AD Mandanten zu erstellen und zu löschen, von der Berechtigung des Kontos in Azure AD abhängig ist. Das heißt, wenn einem Benutzer die Rolle "Manager" zugewiesen ist, aber keine globalen Administrator Berechtigungen im Azure Ad der Organisation vorhanden sind, können Sie keine neuen Benutzer erstellen oder Benutzer aus dem Verzeichnis löschen (obwohl Sie die Partner Center-Rolle eines Benutzers ändern können). <p> Beachten Sie Folgendes: Wenn das Partner Center-Konto mehr als einem Azure AD Mandanten zugeordnet ist, kann ein Manager keine kompletten Details für einen Benutzer anzeigen (einschließlich Vorname, Nachname, e-Mail-Adresse für Kenn Wort Wiederherstellung und ob es sich um einen Azure AD globalen Administrator handelt), es sei denn, Sie sind beim gleichen Mandanten wie der Benutzer mit einem Konto mit globalen Administrator Berechtigungen für diesen Mandanten angemeldet Allerdings können Sie Benutzer in jedem Mandanten hinzufügen und entfernen, der dem Partner Center-Konto zugeordnet ist. |
 | Entwickler            | Kann Pakete hochladen und Apps und Add-Ons einreichen sowie den [Nutzungsbericht](usage-report.md) für Telemetriedetails einsehen. Kann auf [Geräte übergreifende](https://developer.microsoft.com/windows/project-rome) Funktionen zugreifen. Kann keine finanziellen Informationen oder Kontoeinstellungen anzeigen.   |
@@ -61,7 +61,7 @@ In der nachfolgenden Tabelle sind einige der spezifischen Features aufgeführt, 
 |    **Steuerprofil**                                        |    Kann aktualisieren                    |    Kein Zugriff                     |    Kein Zugriff                     |    Kein Zugriff               |    Kann aktualisieren             |    Kein Zugriff                     |
 |    **Auszahlungszusammenfassung**                                     |    Kann anzeigen                      |    Kein Zugriff                     |    Kein Zugriff                     |    Kein Zugriff               |    Kann anzeigen               |    Kein Zugriff                     |
 
-Wenn keine der Standardrollen geeignet ist oder Sie den Zugriff auf bestimmte apps und/oder Add-ons einschränken möchten, können Sie dem Benutzer benutzerdefinierte Berechtigungen erteilen, indem Sie wie unten beschrieben die Option **Berechtigungen anpassen**auswählen.
+Wenn keine der Standardrollen geeignet ist oder Sie den Zugriff auf bestimmte apps und/oder Add-ons einschränken möchten, können Sie dem Benutzer benutzerdefinierte Berechtigungen erteilen, indem Sie wie unten beschrieben die Option **Berechtigungen anpassen** auswählen.
 
 
 <span id="custom" />
@@ -75,7 +75,7 @@ Um eine Berechtigung für den Benutzer zu aktivieren, aktivieren Sie das Kontrol
 ![Anleitung für die Zugriffseinstellungen](images/permission_key.png)
 
 - **Kein Zugriff**: Der Benutzer verfügt nicht über die angegebene Berechtigung.
-- Schreib **geschützt: der**Benutzer hat Zugriff auf die Anzeige von Features im Zusammenhang mit dem jeweiligen Bereich, kann jedoch keine Änderungen vornehmen. 
+- Schreib **geschützt: der** Benutzer hat Zugriff auf die Anzeige von Features im Zusammenhang mit dem jeweiligen Bereich, kann jedoch keine Änderungen vornehmen. 
 - **Lese-/Schreibzugriff**: Der Benutzer kann für den Bereich Änderungen vornehmen sowie diesen anzeigen.
 - **Gemischt**: Diese Option kann nicht direkt ausgewählt werden. **Gemischt** ist jedoch verfügbar, wenn Sie für die Berechtigung eine Zugriffskombination zugelassen haben. Wenn Sie z. B. **Schreibgeschützt** bei **Preise und Verfügbarkeit** für **Alle Produkte** festlegen, anschließend jedoch **Lese-/Schreibzugriff** auf **Preise und Verfügbarkeit** für ein bestimmtes Produkt gewähren, wird für **Preise und Verfügbarkeit** unter **Alle Produkte** „Gemischt“ angezeigt. Dasselbe gilt, wenn für einige Produkte als Berechtigung **Kein Zugriff** festgelegt ist, für andere jedoch **Lese-/Schreibzugriff** und/oder **Schreibgeschützt**.
 
@@ -96,12 +96,12 @@ Die Berechtigungen in diesem Abschnitt können nicht auf bestimmte Produkte bes
     <thead>
     <tr class="header">
     <th align="left">Berechtigungsname</th>
-    <th align="left">Schreibgeschützt</th>
+    <th align="left">Nur Lesezugriff</th>
     <th align="left">Lesen/Schreiben</th>
     </tr>
     </thead>
     <tbody>
-<tr><td align="left">    <b>Kontoeinstellungen</b>                    </td><td align="left">  Kann alle Seiten im Abschnitt <b>Kontoeinstellungen</b> anzeigen, einschließlich der <a href="/windows/uwp/publish/manage-account-settings-and-profile">Kontaktinformationen</a>.       </td><td align="left">  Kann alle Seiten im Abschnitt <b>Kontoeinstellungen</b> anzeigen. Kann Änderungen an <a href="/windows/uwp/publish/manage-account-settings-and-profile">Kontaktinformationen</a> und anderen Seiten, nicht jedoch am Auszahlungskonto oder Steuerprofil vornehmen (es sei denn, diese Berechtigung wird separat erteilt).            </td></tr>
+<tr><td align="left">    <b>Kontoeinstellungen</b>                    </td><td align="left">  Kann alle Seiten im Abschnitt <b>Kontoeinstellungen</b> anzeigen, einschließlich der <a href="/partner-center/partner-center-account-setup">Kontaktinformationen</a>.       </td><td align="left">  Kann alle Seiten im Abschnitt <b>Kontoeinstellungen</b> anzeigen. Kann Änderungen an <a href="/partner-center/partner-center-account-setup">Kontaktinformationen</a> und anderen Seiten, nicht jedoch am Auszahlungskonto oder Steuerprofil vornehmen (es sei denn, diese Berechtigung wird separat erteilt).            </td></tr>
 <tr><td align="left">    <b>Kontobenutzer</b>                       </td><td align="left">  Kann Benutzer anzeigen, die dem Konto im Abschnitt " <b>Benutzer</b> " hinzugefügt wurden.          </td><td align="left">  Können Benutzer zum Konto hinzufügen und vorhandene Benutzer im Abschnitt " <b>Benutzer</b> " ändern.             </td></tr>
 <tr><td align="left">    <b>AD-Leistungsbericht auf Kontoebene</b> </td><td align="left">  Kann den <a href="advertising-performance-report.md">Bericht zur Anzeigenleistung auf Kontoebene</a> anzeigen.      </td><td align="left">  –   </td></tr>
 <tr><td align="left">    <b>Werbekampagnen</b>                        </td><td align="left">  Kann im Konto erstellte <a href="/windows/uwp/monetize/">Anzeigenkampagnen</a> anzeigen.      </td><td align="left">  Kann im Konto erstellte <a href="/windows/uwp/monetize/">Anzeigenkampagnen</a> erstellen, verwalten und anzeigen.          </td></tr>
@@ -113,7 +113,7 @@ Die Berechtigungen in diesem Abschnitt können nicht auf bestimmte Produkte bes
 <tr><td align="left">    <b>Leistungsberichte zu Unternehmen</b>      </td><td align="left">  Kann den <a href="/windows/uwp/publish/advertising-performance-report">Bericht zur Partneranzeigenleistung</a> für alle Produkte des Kontos anzeigen.   </td><td align="left">  –   </td></tr>
 <tr><td align="left">    <b>App-Installations Anzeige Berichte</b>             </td><td align="left">  Kann den <a href="/windows/uwp/publish/ad-campaign-report">Bericht der Werbekampagne</a>anzeigen.           </td><td align="left">  –   </td></tr>
 <tr><td align="left">    <b>Communitywerbung</b>                       </td><td align="left">  Kann die Nutzung kostenloser <a href="/windows/uwp/monetize/">Community-Anzeigen</a> für alle Produkte des Kontos anzeigen.          </td><td align="left">  Kann die Nutzung kostenloser <a href="/windows/uwp/monetize/">Community-Anzeigen</a> für alle Produkte des Kontos erstellen, verwalten und anzeigen.               </td></tr>
-<tr><td align="left">    <b>Kontaktinformationen</b>                        </td><td align="left">  Kann <a href="/windows/uwp/publish/manage-account-settings-and-profile">Kontaktinformationen</a> im Abschnitt mit den Kontoeinstellungen anzeigen.        </td><td align="left">  Kann <a href="/windows/uwp/publish/manage-account-settings-and-profile">Kontaktinformationen</a> im Abschnitt mit den Kontoeinstellungen anzeigen und bearbeiten.            </td></tr>
+<tr><td align="left">    <b>Kontaktinformationen</b>                        </td><td align="left">  Kann <a href="/partner-center/partner-center-account-setup">Kontaktinformationen</a> im Abschnitt mit den Kontoeinstellungen anzeigen.        </td><td align="left">  Kann <a href="/partner-center/partner-center-account-setup">Kontaktinformationen</a> im Abschnitt mit den Kontoeinstellungen anzeigen und bearbeiten.            </td></tr>
 <tr><td align="left">    <b>Coppa-Konformität</b>                    </td><td align="left">  Kann für alle Produkte des Kontos die Einstellungen für die <a href="in-app-ads.md#coppa-compliance">COPPA-Compliance</a> anzeigen (die angeben, ob sich Produkte an Kinder unter 13 Jahren richten).                                            </td><td align="left">  Kann für alle Produkte des Kontos die Einstellungen für die <a href="in-app-ads.md#coppa-compliance">COPPA-Compliance</a> anzeigen und bearbeiten (die angeben, ob sich Produkte an Kinder unter 13 Jahren richten).         </td></tr>
 <tr><td align="left">    <b>Kundengruppen</b>                     </td><td align="left">  Kann <a href="create-customer-groups.md">Kundengruppen</a> (Segmente und bekannte Benutzergruppen) anzeigen.      </td><td align="left">  Können <a href="create-customer-groups.md">Kundengruppen</a> (Segmente und bekannte Benutzergruppen) erstellen, bearbeiten und anzeigen.       </td></tr>
 <tr><td align="left">    <b>Verwalten von Produktgruppen</b>&nbsp;*                            </td><td align="left">  Kann die neue Seite für die Erstellung von Produktgruppen anzeigen, aber keine neuen Produktgruppen erstellen.    </td><td align="left">  Können Produktgruppen erstellen und bearbeiten.     </td></tr>
@@ -138,12 +138,12 @@ Die Berechtigungen in diesem Abschnitt können nicht auf bestimmte Produkte bes
 
 Die Berechtigungen in diesem Abschnitt können für alle Produkte im Konto erteilt werden. Zudem können sie so angepasst werden, dass sie nur für ein oder mehrere bestimmte Produkte erteilt werden. 
 
-Berechtigungen auf Produktebene sind in vier Kategorien unterteilt: **Analytics**, **Monetarisierung**, **Veröffentlichung**und **Xbox Live**. Sie können die einzelnen Kategorien erweitern, um die jeweiligen Berechtigungen anzuzeigen. Sie haben auch die Möglichkeit, **alle Berechtigungen** für ein oder mehrere bestimmte Produkte zu aktivieren.
+Berechtigungen auf Produktebene sind in vier Kategorien unterteilt: **Analytics**, **Monetarisierung**, **Veröffentlichung** und **Xbox Live**. Sie können die einzelnen Kategorien erweitern, um die jeweiligen Berechtigungen anzuzeigen. Sie haben auch die Möglichkeit, **alle Berechtigungen** für ein oder mehrere bestimmte Produkte zu aktivieren.
 
-Wenn Sie für jedes Produkt im Konto eine Berechtigung erteilen möchten, treffen Sie die Auswahl für diese Berechtigung (indem **Sie** in der Zeile, die als " **Alle Produkte**" gekennzeichnet ist, das Kontrollkästchen für schreibgeschützt oder **Lese-/Schreibzugriff**aktivieren. 
+Wenn Sie für jedes Produkt im Konto eine Berechtigung erteilen möchten, treffen Sie die Auswahl für diese Berechtigung (indem **Sie** in der Zeile, die als " **Alle Produkte**" gekennzeichnet ist, das Kontrollkästchen für schreibgeschützt oder **Lese-/Schreibzugriff** aktivieren. 
  
 > [!TIP]
-> Die für **Alle Produkte** vorgenommenen Auswahl gilt für jedes Produkt, das sich derzeit im Konto und auch für künftige Produkte, die im Konto erstellt werden. Wenn Sie verhindern möchten, dass Berechtigungen auf zukünftige Produkte angewendet werden, wählen Sie alle Produkte einzeln aus, anstatt **Alle Produkte**auszuwählen.
+> Die für **Alle Produkte** vorgenommenen Auswahl gilt für jedes Produkt, das sich derzeit im Konto und auch für künftige Produkte, die im Konto erstellt werden. Wenn Sie verhindern möchten, dass Berechtigungen auf zukünftige Produkte angewendet werden, wählen Sie alle Produkte einzeln aus, anstatt **Alle Produkte** auszuwählen.
 
 Unterhalb der Zeile **Alle Produkte** sind die einzelnen Produkte des Kontos in jeweils eigenen Zeilen aufgeführt. Um nur für ein bestimmtes Produkt eine Berechtigung zu erteilen, treffen Sie Ihre Berechtigungsauswahl in der Zeile für das Produkt.
 
@@ -152,7 +152,7 @@ Jedes Add-On wird in einer separaten Zeile unterhalb des übergeordneten Produkt
 Beachten Sie, dass einige Berechtigungen nicht für Add-Ons festgelegt werden können. Dies liegt entweder daran, dass sie nicht für Add-Ons gelten (z. B. die Berechtigung **Kundenfeedback**), oder dass die auf der Ebene des übergeordneten Produkts erteilte Berechtigung für alle Add-Ons des Produkts gilt (z. B. **Werbecodes**). Beachten Sie jedoch, dass alle für Add-Ons verfügbaren Berechtigungen separat festgelegt werden müssen. Add-Ons erben nicht die für das übergeordnete Produkt getroffene Auswahl. Wenn Sie z. B. einem Benutzer gestatten möchten, Preis- und Verfügbarkeitsoptionen für ein Add-On vorzunehmen, müssen Sie die Berechtigung **Preise und Verfügbarkeit** für das Add-On (oder für **Alle Add-Ons**) unabhängig davon aktivieren, ob Sie die Berechtigung **Preise und Verfügbarkeit** für das übergeordnete Produkt erteilt haben. 
 
 
-### <a name="analytics"></a>Analyse
+### <a name="analytics"></a>Analytics
 
 <table>
     <thead>
