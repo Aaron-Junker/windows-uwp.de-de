@@ -8,18 +8,18 @@ keywords: Windows 10, UWP
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d3e2385b1e15334b26663f6f17b3ef47ab015eec
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: b676cf274121ae991066f908b18f1be705d1c580
+ms.sourcegitcommit: 77903451ae8ab1ba854494488f79184e674707df
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216635"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911010"
 ---
 # <a name="page-transitions"></a>Seitenübergänge
 
 Seiten Übergänge Navigieren durch Benutzer zwischen Seiten in einer APP und geben Feedback als Beziehung zwischen den Seiten an. Mithilfe von Seiten Übergängen können Benutzer verstehen, ob Sie sich am Anfang einer Navigations Hierarchie befinden, sich zwischen gleich geordneten Seiten bewegen oder tiefer in die Seiten Hierarchie navigieren.
 
-Zwei verschiedene Animationen werden für die Navigation zwischen Seiten in einer APP, *Seiten Aktualisierung* und Drilldown bereit *gestellt und durch*Unterklassen von [**navigationtransitioninfo**](/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo)dargestellt.
+Zwei verschiedene Animationen werden für die Navigation zwischen Seiten in einer APP, *Seiten Aktualisierung* und Drilldown bereit *gestellt und durch* Unterklassen von [**navigationtransitioninfo**](/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo)dargestellt.
 
 ## <a name="examples"></a>Beispiele
 
@@ -104,4 +104,4 @@ Dies kann hilfreich sein, wenn Sie das Navigationsverhalten dynamisch basierend 
 ## <a name="related-topics"></a>Zugehörige Themen
 
 - [Navigieren zwischen zwei Seiten](../basics/navigate-between-two-pages.md)
-- [Bewegung in uwindowswp-apps](index.md)
+- [Bewegung in UWP-apps](index.md)
