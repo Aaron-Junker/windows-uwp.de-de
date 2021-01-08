@@ -2,17 +2,17 @@
 description: Erfahren Sie mehr über Project Reunion, welche Vorteile es für Entwickler bietet, was jetzt für Entwickler bereitsteht und wie Sie Feedback geben können.
 title: Projektzusammenführung
 ms.topic: article
-ms.date: 11/17/2020
+ms.date: 01/07/2021
 keywords: Windows Win32, Desktopentwicklung, Project Reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d5969afacc0f811e3a5c40488f45bb5b421c4b3
-ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
+ms.openlocfilehash: de1115281859ba322a03e3bab7a8d0e4ef71440d
+ms.sourcegitcommit: 044c75ea0c6fb3463a0150acdae1ff867dc05f29
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97349357"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97972124"
 ---
 # <a name="build-windows-apps-with-project-reunion-prerelease"></a>Erstellen von Windows-Apps mit Project Reunion (Vorabversion)
 
@@ -61,11 +61,12 @@ Wenn Sie Project Reunion 0.1 Prerelease ausprobieren möchten, müssen Sie mit e
 
 1. Stelle sicher, dass auf deinem Entwicklungscomputer Windows 10 (Version 1809, Build 17763) oder eine höhere Betriebssystemversion installiert ist.
 
-2. Installieren Sie [Visual Studio 2019, Version 16.9, Vorschau 2 (oder höher)](https://visualstudio.microsoft.com/vs/preview/). Bei der Installation von Visual Studio müssen Sie die folgenden Workloads einschließen:
-    - .NET-Desktopentwicklung
-    - Entwicklung für die universelle Windows-Plattform
-    - Desktopentwicklung mit C++
-    - Die optionale Komponente **C++ (v142) UWP-Tools** (Universelle Windows-Plattform) für die UWP-Workload (siehe **Installationsdetails** im Abschnitt **Entwicklung mit der universellen Windows-Plattform** im rechten Bereich des Installationsprogramms)
+2. Installieren Sie [Visual Studio 2019, Version 16.9, Vorschau 2 (oder höher)](https://visualstudio.microsoft.com/vs/preview/). Stellen Sie sicher, dass die folgenden Elemente im Visual Studio-Installer ausgewählt sind:
+    - Stellen Sie sicher, dass auf der Registerkarte **Workloads** die folgenden Workloads ausgewählt sind.
+        - **.NET-Desktopentwicklung**
+        - **Desktopentwicklung mit C++**
+        - **Entwicklung für die universelle Windows-Plattform** (stellen Sie außerdem sicher, dass die optionale Komponente **UWP-Tools (Universelle Windows-Plattform) für C++ (v142)** für diesen Workload auf der Registerkarte **Installationsdetails** ausgewählt ist)
+    - Stellen Sie sicher, dass auf der Registerkarte **Einzelne Komponenten** im Abschnitt **SDKs, Bibliotheken und Frameworks** die Option **Windows 10 SDK (10.0.19041.0)** ausgewählt ist.
 
 3. Installieren Sie die neueste Version der [C++/WinRT Visual Studio-Erweiterung (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) aus dem Visual Studio Marketplace.
 
