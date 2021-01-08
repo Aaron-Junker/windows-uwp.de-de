@@ -6,12 +6,12 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Collection-API, Microsoft Store Purchase-API, Produkte anzeigen, Produkte gewähren
 ms.localizationpriority: medium
-ms.openlocfilehash: 769366cd45b4734987e3f558c11a6e0e105cfe21
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 700749c45c563be0bb78de557cac3550767846bd
+ms.sourcegitcommit: fc7fb82121a00e552eaebafba42e5f8e1623c58a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164454"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97978575"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Verwalten von Produktansprüchen aus einem Dienst
 
@@ -51,19 +51,21 @@ Bevor Sie die Microsoft Store Sammlungs-API oder die Kauf-API verwenden können,
 
 1.  Wenn Sie dies noch nicht getan haben, befolgen Sie die Anweisungen unter [integrieren von Anwendungen in Azure Active Directory](/azure/active-directory/develop/active-directory-integrating-applications) , um eine **Web-App/API-** Anwendung bei Azure AD zu registrieren.
     > [!NOTE]
-    > Wenn Sie Ihre Anwendung registrieren, müssen Sie **Web-App/API** als Anwendungstyp auswählen, damit Sie einen Schlüssel (auch als *geheimer Client*Schlüssel bezeichnet) für Ihre Anwendung abrufen können. Wenn Sie die Microsoft Store Sammlungs-API oder die Erwerb-API aufrufen möchten, müssen Sie einen geheimen Client Schlüssel angeben, wenn Sie in einem späteren Schritt ein Zugriffs Token von Azure AD anfordern.
+    > Wenn Sie Ihre Anwendung registrieren, müssen Sie **Web-App/API** als Anwendungstyp auswählen, damit Sie einen Schlüssel (auch als *geheimer Client* Schlüssel bezeichnet) für Ihre Anwendung abrufen können. Wenn Sie die Microsoft Store Sammlungs-API oder die Erwerb-API aufrufen möchten, müssen Sie einen geheimen Client Schlüssel angeben, wenn Sie in einem späteren Schritt ein Zugriffs Token von Azure AD anfordern.
 
 2.  Navigieren Sie im [Azure-Verwaltungsportal](https://portal.azure.com/)zu **Azure Active Directory**. Wählen Sie Ihr Verzeichnis aus, klicken Sie im linken Navigationsbereich auf **App-Registrierungen** , und wählen Sie dann Ihre Anwendung aus.
 3.  Sie gelangen zur Haupt Registrierungsseite der Anwendung. Kopieren Sie auf dieser Seite den Wert der **Anwendungs-ID** für die spätere Verwendung.
-4.  Erstellen Sie einen Schlüssel, den Sie später benötigen (Dies wird als *geheimer Client*Schlüssel bezeichnet). Klicken Sie im linken Bereich auf **Einstellungen** und dann auf **Schlüssel**. Führen Sie auf dieser Seite die Schritte zum [Erstellen eines Schlüssels](/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis)aus. Kopieren Sie diesen Schlüssel zur späteren Verwendung.
+4.  Erstellen Sie einen Schlüssel, den Sie später benötigen (Dies wird als *geheimer Client* Schlüssel bezeichnet). Klicken Sie im linken Bereich auf **Einstellungen** und dann auf **Schlüssel**. Führen Sie auf dieser Seite die Schritte zum [Erstellen eines Schlüssels](/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis)aus. Kopieren Sie diesen Schlüssel zur späteren Verwendung.
 5.  Fügen Sie dem [Anwendungs Manifest](/azure/active-directory/develop/active-directory-application-manifest)mehrere erforderliche Audience-URIs hinzu. Klicken Sie im linken Bereich auf **Manifest**. Klicken Sie auf **Bearbeiten**, ersetzen Sie den `"identifierUris"` Abschnitt durch den folgenden Text, und klicken Sie dann auf **Speichern**.
 
     ```json
-    "identifierUris" : [                                
-            "https://onestore.microsoft.com",
-            "https://onestore.microsoft.com/b2b/keys/create/collections",
-            "https://onestore.microsoft.com/b2b/keys/create/purchase"
+    "accessTokenAcceptedVersion": 1,
+    "identifierUris": [
+        "https://onestore.microsoft.com",
+        "https://onestore.microsoft.com/b2b/keys/create/collections",
+        "https://onestore.microsoft.com/b2b/keys/create/purchase"
         ],
+    "signInAudience": "AzureADMyOrg",
     ```
 
     Diese Zeichenfolgen stellen die von der Anwendung unterstützten Zielgruppen dar. In einem späteren Schritt erstellen Sie Azure AD-Zugriffstoken, die den einzelnen Zielgruppenwerten zugeordnet werden.
@@ -122,7 +124,7 @@ grant_type=client_credentials
 
 Geben Sie für jedes Token die folgenden Parameterdaten an:
 
-* Geben Sie für die Parameter *Client- \_ ID* und * \_ geheimer Client* Schlüssel die Anwendungs-ID und den geheimen Client Schlüssel für die Anwendung an, die Sie aus dem [Azure-Verwaltungsportal](https://portal.azure.com/)abgerufen haben. Beide Parameter sind erforderlich, um ein Zugriffs Token mit der Authentifizierungs Ebene zu erstellen, die von der Microsoft Store Sammlungs-API oder der Kauf-API benötigt wird.
+* Geben Sie für die Parameter *Client- \_ ID* und *\_ geheimer Client* Schlüssel die Anwendungs-ID und den geheimen Client Schlüssel für die Anwendung an, die Sie aus dem [Azure-Verwaltungsportal](https://portal.azure.com/)abgerufen haben. Beide Parameter sind erforderlich, um ein Zugriffs Token mit der Authentifizierungs Ebene zu erstellen, die von der Microsoft Store Sammlungs-API oder der Kauf-API benötigt wird.
 
 * Geben Sie für den *Ressourcen* Parameter einen der im [vorherigen Abschnitt](#access-tokens)aufgelisteten Zielgruppen-URIs an, abhängig vom Typ des Zugriffs Tokens, das Sie erstellen.
 
