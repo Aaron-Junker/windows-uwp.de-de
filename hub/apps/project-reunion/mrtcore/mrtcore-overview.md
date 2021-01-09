@@ -7,18 +7,18 @@ keywords: MRT, mrtcore, PRI, makepri, Ressourcen, Laden von Ressourcen
 ms.author: hickeys
 author: hickeys
 ms.localizationpriority: medium
-ms.openlocfilehash: 0039d2a585f850bd7a15afc619d3500c092de50b
-ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
+ms.openlocfilehash: ce07491dcab2a11738bd5407e9094d8d780ea219
+ms.sourcegitcommit: 30d1a27fd78d198cec5c50af5621f9e65c7b965e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97349384"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98043059"
 ---
 # <a name="introduction-to-mrt-core-project-reunion"></a>Einführung in MRT Core (Projekt Zusammenführung)
 
 MRT Core ist eine optimierte Version des modernen Windows- [Ressourcen Verwaltungssystems](/windows/uwp/app-resources/resource-management-system) , das als Teil der [Projekt Zusammenführung](../index.md)verteilt wird.
 
-MRT Core hat sowohl Build-als auch Lauf Zeitfunktionen. Zum Zeitpunkt der Erstellung erstellt das System einen Index aller verschiedenen Varianten der Ressourcen, die mit Ihrer APP verpackt werden. Bei diesem Index handelt es sich um den Paket Ressourcen Index oder den PRI-Index, der auch in Ihrem App-Paket enthalten ist. Zur Laufzeit werden vom System die Benutzer-und Computereinstellungen erkannt, die in Kraft sind, die Informationen in der PRI werden und automatisch die Ressourcen geladen, die für diese Einstellungen am besten geeignet sind.
+MRT Core hat sowohl Build-als auch Lauf Zeitfunktionen. Zum Zeitpunkt der Erstellung erstellt das System einen Index aller verschiedenen Varianten der Ressourcen, die mit Ihrer APP verpackt werden. Bei diesem Index handelt es sich um den Paket Ressourcen Index oder den PRI-Index, der auch in Ihrem App-Paket enthalten ist.
 
 ## <a name="package-resource-index-pri-file"></a>Paket Ressourcen Index Datei (PRI)
 
@@ -43,17 +43,13 @@ Die [ResourceManager](/windows/winui/api/microsoft.applicationmodel.resources.re
 
 Ein [resourcecandidate](/windows/winui/api/microsoft.applicationmodel.resources.resourcecandidate) -Objekt stellt einen einzelnen konkreten Ressourcen Wert und seine Qualifizierer dar, z. b. die Zeichenfolge "Hallo Welt" für Englisch oder "logo.scale-100.jpg" als qualifizierte Bildressource, die für die Auflösung von "Scale-100" spezifisch ist.
 
-Ressourcen, die für eine app verfügbar sind, werden in hierarchischen Sammlungen gespeichert, auf die Sie mit einem [ResourceMap](/windows/winui/api/microsoft.applicationmodel.resources.resourcemap) -Objekt zugreifen können. Die **ResourceManager** -Klasse bietet Zugriff auf die verschiedenen von der APP verwendeten **ResourceMap** -Instanzen der obersten Ebene, die den verschiedenen Paketen für die App entsprechen. Der [ResourceManager. mainresourcemap](/windows/winui/api/microsoft.applicationmodel.resources.resourcemanager.mainresourcemap) -Wert entspricht der Ressourcen Zuordnung für das aktuelle App-Paket und schließt alle referenzierten Framework-Pakete aus. Jede **ResourceMap** wird als Paketname benannt, der im Manifest des Pakets angegeben wird. In einer " **ResourceMap** " sind Teil Strukturen (siehe [ResourceMap. getsubtree]/Windows/WinUI/API/Microsoft.applicationmodel.resources.ResourceMap.getsubtree)), die weitere **namedresource** -Objekte enthalten. Die Teil Strukturen entsprechen in der Regel den Ressourcen Dateien, die die Ressource enthalten.
-
-Beachten Sie, dass der Ressourcen Bezeichner als Uniform Resource Identifier (URI)-Fragment behandelt wird, das der URI-Semantik unterliegt. Beispielsweise `GetValue("Caption%20")` wird als behandelt `GetValue("Caption ")` . Verwenden Sie nicht "?" oder "#" in Ressourcen bezeichgern, da die Auswertung des Ressourcen Pfads beendet wird. Beispiel: "MyResource? 3" wird als "MyResource" behandelt.
+Ressourcen, die für eine app verfügbar sind, werden in hierarchischen Sammlungen gespeichert, auf die Sie mit einem [ResourceMap](/windows/winui/api/microsoft.applicationmodel.resources.resourcemap) -Objekt zugreifen können. Die **ResourceManager** -Klasse bietet Zugriff auf die verschiedenen von der APP verwendeten **ResourceMap** -Instanzen der obersten Ebene, die den verschiedenen Paketen für die App entsprechen. Der [ResourceManager. mainresourcemap](/windows/winui/api/microsoft.applicationmodel.resources.resourcemanager.mainresourcemap) -Wert entspricht der Ressourcen Zuordnung für das aktuelle App-Paket und schließt alle referenzierten Framework-Pakete aus. Jede **ResourceMap** wird als Paketname benannt, der im Manifest des Pakets angegeben wird. In einer " **ResourceMap** " sind Teil Strukturen (siehe " [ResourceMap. getsubtree](/windows/winui/api/microsoft.applicationmodel.resources.resourcemap.getsubtree)"). Die Teil Strukturen entsprechen in der Regel den Ressourcen Dateien, die die Ressource enthalten.
 
 Der **ResourceManager** -Dienst unterstützt nicht nur den Zugriff auf die Zeichen folgen Ressourcen einer APP, sondern auch die Möglichkeit, die verschiedenen Datei Ressourcen aufzulisten und zu überprüfen. Um Konflikte zwischen Dateien und anderen Ressourcen zu vermeiden, die aus einer Datei stammen, befinden sich alle indizierten Dateipfade in einer reservierten **ResourceMap** -Unterstruktur. Beispielsweise entspricht die Datei ' \Images\logo.png ' dem Ressourcennamen ' files/Images/logo.png '.
 
-Die [storagefile](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) -APIs behandeln Verweise auf Dateien transparent als Ressourcen und sind für typische Verwendungs Szenarien geeignet. Der **ResourceManager** sollte nur für erweiterte Szenarien verwendet werden, z. b. Wenn Sie den aktuellen Kontext überschreiben möchten.
-
 ### <a name="resourcecontext"></a>ResourceContext
 
-Ressourcen Kandidaten werden basierend auf einem bestimmten [resourcecontext](/windows/winui/api/microsoft.applicationmodel.resources.resourcecontext)ausgewählt. dabei handelt es sich um eine Sammlung von Ressourcen Qualifiziererwerten (Sprache, Skalierung, Kontrast usw.). Ein Standardkontext verwendet die aktuelle Konfiguration der APP für jeden qualifiziererwert, es sei denn, Sie wird überschrieben. Beispielsweise können Ressourcen wie z. b. Images für die Skalierung qualifiziert werden, die von einem Monitor zu einem anderen und somit von einer Anwendungs Ansicht zu einem anderen abweicht. Aus diesem Grund hat jede Anwendungs Ansicht einen eindeutigen Standardkontext. Der Standardkontext für eine bestimmte Ansicht kann mithilfe von [resourcecontext. getforcurrentview](/windows/winui/api/microsoft.applicationmodel.resources.resourcecontext)abgerufen werden. Wenn Sie einen Ressourcen Kandidaten abrufen, sollten Sie eine **resourcecontext** -Instanz übergeben, um den am besten geeigneten Wert für eine bestimmte Ansicht zu erhalten.
+Ressourcen Kandidaten werden basierend auf einem bestimmten [resourcecontext](/windows/winui/api/microsoft.applicationmodel.resources.resourcecontext)ausgewählt. dabei handelt es sich um eine Sammlung von Ressourcen Qualifiziererwerten (Sprache, Skalierung, Kontrast usw.). Ein Standardkontext verwendet die aktuelle Konfiguration der APP für jeden qualifiziererwert, es sei denn, Sie wird überschrieben. Beispielsweise können Ressourcen wie z. b. Images für die Skalierung qualifiziert werden, die von einem Monitor zu einem anderen und somit von einer Anwendungs Ansicht zu einem anderen abweicht. Aus diesem Grund hat jede Anwendungs Ansicht einen eindeutigen Standardkontext. Wenn Sie einen Ressourcen Kandidaten abrufen, sollten Sie eine **resourcecontext** -Instanz übergeben, um den am besten geeigneten Wert für eine bestimmte Ansicht zu erhalten.
 
 ### <a name="important-apis"></a>Wichtige APIs
 
