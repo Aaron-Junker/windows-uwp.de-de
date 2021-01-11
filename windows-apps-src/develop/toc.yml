@@ -310,17 +310,15 @@
         - name: Windows-Geräteportal
           href: ../debug-test-perf/device-portal.md
           items:
-            - name: Geräteportal für Desktop
+            - name: Windows-Geräteportal für Desktop
               href: ../debug-test-perf/device-portal-desktop.md
-            - name: Geräteportal für Mobilgeräte
+            - name: Windows-Geräteportal für Mobilgeräte
               href: ../debug-test-perf/device-portal-mobile.md
-            - name: Geräteportal für HoloLens
-              href: ../debug-test-perf/device-portal-hololens.md
-            - name: Die wichtigsten Device Portal-APIs
+            - name: Windows-Geräteportal Core-REST-APIs
               href: ../debug-test-perf/device-portal-api-core.md
-            - name: Schreiben eines benutzerdefinierten Plug-Ins für das Geräteportal
+            - name: Schreiben eines benutzerdefinierten Plug-Ins für das Windows-Geräteportal
               href: ../debug-test-perf/device-portal-plugin.md
-            - name: Bereitstellen eines Geräteportals mit einem benutzerdefinierten SSL-Zertifikat
+            - name: Bereitstellen eines Windows-Geräteportals mit einem benutzerdefinierten SSL-Zertifikat
               href: ../debug-test-perf/device-portal-ssl.md
         - name: Zertifizierungskit für Windows-Apps
           href: ../debug-test-perf/windows-app-certification-kit.md
