@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Akquisitionen, App-Verkäufe, App-Downloads, Installationen, Trichter, Erwerb, Konvertierungen, Channel, App-Seitenaufrufe
 ms.localizationpriority: medium
-ms.openlocfilehash: cabdbd1433da64c927fe5e8326b7906095573497
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 7de7e934a89f64335698e43b31e3f04fce898aa2
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93033283"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104611"
 ---
 # <a name="acquisitions-report"></a>Bericht „Käufe“
 
@@ -23,7 +23,7 @@ Sie können diese Daten im Partner Center anzeigen oder [den Bericht herunterlad
 In diesem Bericht bedeutet eine **Anschaffung** , dass ein neuer Kunde eine Lizenz für Ihre APP erhalten hat (egal, ob Sie Geld abgerechnet haben oder Sie kostenlos angeboten haben). Eine **Installation** bezieht sich auf die APP, die auf einem Windows 10-Gerät installiert wird.
 
 > [!IMPORTANT]
-> Der Bericht " **Akquisitionen** " enthält keine Daten über Erstattungen, Umleitungen, Rückstände usw. Um die APP zu schätzen, besuchen Sie die [Auszahlungs Zusammenfassung](payout-summary.md). Klicken Sie im Abschnitt **Reserviert** auf den Link **Reservierte Transaktionen herunterladen** .
+> Der Bericht " **Akquisitionen** " enthält keine Daten über Erstattungen, Umleitungen, Rückstände usw. Um die APP zu schätzen, besuchen Sie die [Auszahlungs Zusammenfassung](/partner-center/payout-statement). Klicken Sie im Abschnitt **Reserviert** auf den Link **Reservierte Transaktionen herunterladen**.
 >
 > Mit Ausnahme der Seiten Ansichts Daten (wie nachstehend beschrieben) enthält dieser Bericht keine Daten, die sich auf Kunden beziehen, die eine App abrufen, ohne bei einem Microsoft-Konto angemeldet zu sein.
 
@@ -34,8 +34,8 @@ Im oberen Bereich der Seite können Sie den Zeitraum auswählen, in dem Sie Date
 
 Sie können auch **Filter** erweitern, um alle Daten auf dieser Seite nach Markt und/oder nach Gerätetyp zu filtern.
 
--   **Market** : der Standardfilter ist **Alle Märkte** , aber Sie können die Daten auf einen oder mehrere Märkte beschränken.
--   **Gerätetyp** : Die Standardeinstellung ist **Alle Geräte** . Wenn Sie nur Daten für Akquisitionen von einem bestimmten Gerätetyp anzeigen möchten (z. b. PC, Konsole oder Tablet), können Sie hier eine bestimmte auswählen.
+-   **Market**: der Standardfilter ist **Alle Märkte**, aber Sie können die Daten auf einen oder mehrere Märkte beschränken.
+-   **Gerätetyp**: Die Standardeinstellung ist **Alle Geräte**. Wenn Sie nur Daten für Akquisitionen von einem bestimmten Gerätetyp anzeigen möchten (z. b. PC, Konsole oder Tablet), können Sie hier eine bestimmte auswählen.
 
 Die Informationen in allen unten aufgeführten Diagrammen spiegeln den Datumsbereich und alle Filter wider, die Sie ausgewählt haben. In einigen Abschnitten können Sie auch zusätzliche Filter anwenden.
 
@@ -85,10 +85,10 @@ Der **Erfassungs Trichter** zeigt Ihnen, wie viele Kunden die einzelnen Schritte
 
 Die Schritte im Trichter sind:
 
-- **Seitenaufrufe** : Diese Zahl stellt die Gesamtzahl der Ansichten der Store-Auflistung Ihrer APP dar, einschließlich Personen, die nicht mit einem Microsoft-Konto angemeldet sind. Dabei handelt es sich nicht um Daten von Kunden, die sich für die Bereitstellung dieser Informationen an Microsoft entschieden haben.
-- **Akquisitionen** : die Anzahl der neuen Kunden, die eine Lizenz für Ihre APP erhalten haben (bei der Anmeldung mit Ihrem Microsoft-Konto) innerhalb von 48 Stunden nach dem Anzeigen der Store-Auflistung.
-- **Installiert** : die Anzahl der Kunden, die die APP nach dem Erwerb installiert haben.
-- **Verwendung** : die Anzahl der Kunden, die die APP nach der Installation verwendet haben.
+- **Seitenaufrufe**: Diese Zahl stellt die Gesamtzahl der Ansichten der Store-Auflistung Ihrer APP dar, einschließlich Personen, die nicht mit einem Microsoft-Konto angemeldet sind. Dabei handelt es sich nicht um Daten von Kunden, die sich für die Bereitstellung dieser Informationen an Microsoft entschieden haben.
+- **Akquisitionen**: die Anzahl der neuen Kunden, die eine Lizenz für Ihre APP erhalten haben (bei der Anmeldung mit Ihrem Microsoft-Konto) innerhalb von 48 Stunden nach dem Anzeigen der Store-Auflistung.
+- **Installiert**: die Anzahl der Kunden, die die APP nach dem Erwerb installiert haben.
+- **Verwendung**: die Anzahl der Kunden, die die APP nach der Installation verwendet haben.
 
 Optional können Sie die Ergebnisse nach Geschlecht und/oder Altersgruppe sowie nach benutzerdefinierter Kampagnen-ID filtern.
 

@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, ADS, Werbung, Banner, Ad Control, Interstitial
 ms.localizationpriority: medium
-ms.openlocfilehash: c12d79b97010826b05bf42a9de46780dd2f93756
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: 3b4c49c08deb793614bacb0e30136dd4bd8cdfb3
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91933121"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104651"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Anzeigen von Werbung mithilfe des Microsoft Advertising-SDK in der App
 
@@ -103,7 +103,7 @@ Um mit der Verwendung von AD-Mediation in ihrer UWP-APP zu beginnen, [Konfigurie
 
 Nachdem Sie die Entwicklung Ihrer APP mit anzeigen abgeschlossen haben, können Sie [Ihre aktualisierte APP](../publish/app-submissions.md) im Partner Center einreichen, um Sie im Store verfügbar zu machen. Apps, die ADS anzeigen, müssen die zusätzlichen Anforderungen erfüllen, die in [Abschnitt 10,10 der Microsoft Store Richtlinien](/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) und der [App-Entwickler Vereinbarung](/legal/windows/agreements/app-developer-agreement)angegeben sind.
 
-Nachdem Ihre App veröffentlicht und im Store verfügbar ist, können Sie Ihre [Leistungsberichte](../publish/advertising-performance-report.md) für Ankündigungen im Partner Center überprüfen und weiterhin Änderungen an den Vermittlungs Einstellungen vornehmen, um die Leistung Ihrer Werbeeinblendungen zu optimieren. Ihr Werbe Umsatz ist in Ihrer [Auszahlungs Zusammenfassung](../publish/payout-summary.md)enthalten.
+Nachdem Ihre App veröffentlicht und im Store verfügbar ist, können Sie Ihre [Leistungsberichte](../publish/advertising-performance-report.md) für Ankündigungen im Partner Center überprüfen und weiterhin Änderungen an den Vermittlungs Einstellungen vornehmen, um die Leistung Ihrer Werbeeinblendungen zu optimieren. Ihr Werbe Umsatz ist in Ihrer [Auszahlungs Zusammenfassung](/partner-center/payout-statement)enthalten.
 
 <span id="additional-help" />
 

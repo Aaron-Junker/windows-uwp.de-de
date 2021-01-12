@@ -5,12 +5,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e27333c87b596948afcb430eb1cf1ef4998e851
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
+ms.openlocfilehash: fef8499ca10f65c2eeeb9cc37bc96b482db8ad24
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860441"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104631"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>Wechseln von einer Desktop Anwendung zu einer UWP
 
@@ -20,7 +20,7 @@ Wenn Sie über eine vorhandene Desktop Anwendung verfügen, die mit dem .NET Fra
 
 Sie können Ihre Desktop Anwendung in einem msix-Paket Verpacken, um Zugriff auf viele weitere Windows 10-Funktionen zu erhalten. MSIX ist ein modernes Windows-App-Paketformat, bei dem eine universelle Verpackungsoberfläche für alle Windows-Apps bereitgestellt wird, z. B. UWP-, WPF-, Windows Forms- und Win32-Apps. Durch das Verpacken Ihrer Windows-Desktop-Apps in MSIX-Paketen erhalten Sie Zugriff auf eine stabile Installations- und Aktualisierungsoberfläche, ein verwaltetes Sicherheitsmodell mit einem flexiblen Funktionssystem, Support für den Microsoft Store, Unternehmensverwaltung und viele benutzerdefinierte Distributionsmodelle. Sie können Ihre Anwendung Verpacken, unabhängig davon, ob Sie über den Quellcode verfügen oder ob Sie nur über eine vorhandene Installationsdatei verfügen (z. b. einen MSI-oder App-V-Installer). Nachdem Sie die Anwendung Paketieren, können Sie UWP-Funktionen wie Paket Erweiterungen und andere UWP-Komponenten integrieren.
 
-Weitere Informationen finden Sie unter [Package Desktop Applications (Desktop Bridge)](/windows/msix/desktop/desktop-to-uwp-root) und [Features, die die Paket Identität erfordern](/windows/apps/desktop/modernize/modernize-packaged-apps).
+Weitere Informationen finden Sie unter [Erstellen eines msix-Pakets aus Ihrem Code](/windows/msix/desktop/desktop-to-uwp-root) und [Features, die eine Paket Identität erfordern](/windows/apps/desktop/modernize/modernize-packaged-apps).
 
 ## <a name="use-windows-runtime-apis"></a>Verwenden von Windows-Runtime-APIs
 

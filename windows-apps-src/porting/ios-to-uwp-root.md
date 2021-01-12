@@ -7,16 +7,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ef0f712a87f0b2aea7fdb2204691e9b439315b44
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2a420ae0d34548e4e0e1e14f820d191b4d27f54a
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155384"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104491"
 ---
 # <a name="move-from-ios-to-uwp"></a>Wechsel von iOS zu UWP
 
-Wenn Sie ein iOS-Entwickler sind und sich fragen, wie Sie Ihre Benutzerbasis auf Windows 10 und die universelle Windows-Plattform (UWP) erweitern können, dann gibt es eine zunehmende Zahl von Tools, die Sie dabei unterstützen können. Die Methoden, die Sie anwenden können, sind von der Art der App, an der Sie arbeiten (Spiel, Lifestyle, Unternehmen usw.) und davon abhängig, in welcher Phase des Entwicklungsprozesses Sie sich befinden. Beispielsweise ist ein fertiges oder beinahe fertiges Spiel, das in hohem Maß von OpenGL oder Cocos2D abhängig ist, ein idealer Kandidat für die [Windows-Brücke für iOS](https://developer.microsoft.com/windows/bridges/ios). Wenn Sie jedoch eine plattformübergreifende App für ein kleines Unternehmen planen, sollten Sie [Xamarin.Forms](/xamarin/xamarin-forms/) in Betracht ziehen. Wenn Sie Ihre App in einem plattformübergreifenden Tool wie Unity geschrieben haben, ist die [Veröffentlichung für Windows](https://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) ziemlich einfach.
+Wenn Sie ein iOS-Entwickler sind und sich fragen, wie Sie Ihre Benutzerbasis auf Windows 10 und die universelle Windows-Plattform (UWP) erweitern können, dann gibt es eine zunehmende Zahl von Tools, die Sie dabei unterstützen können. Die Methoden, die Sie anwenden können, sind von der Art der App, an der Sie arbeiten (Spiel, Lifestyle, Unternehmen usw.) und davon abhängig, in welcher Phase des Entwicklungsprozesses Sie sich befinden. Beispielsweise ist ein fertiges oder beinahe fertiges Spiel, das in hohem Maß von OpenGL oder Cocos2D abhängig ist, ein idealer Kandidat für die [Windows-Brücke für iOS](https://github.com/microsoft/WinObjC). Wenn Sie jedoch eine plattformübergreifende App für ein kleines Unternehmen planen, sollten Sie [Xamarin.Forms](/xamarin/xamarin-forms/) in Betracht ziehen. Wenn Sie Ihre App in einem plattformübergreifenden Tool wie Unity geschrieben haben, ist die [Veröffentlichung für Windows](https://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/) ziemlich einfach.
 
 ## <a name="why-windows"></a>Weshalb Windows?
 

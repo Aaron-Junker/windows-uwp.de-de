@@ -6,12 +6,12 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Collection-API, Microsoft Store Purchase-API, Produkte anzeigen, Produkte gewähren
 ms.localizationpriority: medium
-ms.openlocfilehash: 700749c45c563be0bb78de557cac3550767846bd
-ms.sourcegitcommit: fc7fb82121a00e552eaebafba42e5f8e1623c58a
+ms.openlocfilehash: 1447a8f7a689b3405ac1ebb8807c1c68b81294db
+ms.sourcegitcommit: ad33b2b191c7e62dc68a46bd349a87ff8ca7cef8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97978575"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108923"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Verwalten von Produktansprüchen aus einem Dienst
 
@@ -33,7 +33,6 @@ In den folgenden Schritten wird der End-to-End-Prozess für die Verwendung der M
 2.  Ordnen [Sie Ihre Azure AD Anwendungs-ID Ihrer APP im Partner Center zu](#step-2).
 3.  Erstellen Sie in Ihrem Dienst [Azure AD Zugriffs Token](#step-3) , die ihre Herausgeber Identität darstellen.
 4.  Erstellen Sie in Ihrer Windows-Client-App [einen Microsoft Store ID-Schlüssel](#step-4) , der die Identität des aktuellen Benutzers darstellt, und übergeben Sie diesen Schlüssel an den Dienst zurück.
-5.  Wenn Sie über das erforderliche Azure AD Zugriffs Token und Microsoft Store ID-Schlüssel verfügen, müssen Sie [die Microsoft Store Sammlungs-API oder die Erwerb-API von Ihrem Dienst aufrufen](#step-5).
 
 Dieser End-to-End-Prozess umfasst zwei Softwarekomponenten, die verschiedene Aufgaben ausführen:
 
@@ -182,29 +181,6 @@ Führen Sie die folgenden Schritte aus, um einen Microsoft Store ID-Schlüssel z
 Das folgende Diagramm veranschaulicht den Prozess der Erstellung eines Microsoft Store ID-Schlüssels.
 
   ![Windows Store-ID-Schlüssel erstellen](images/b2b-1.png)
-
-<span id="step-5"/>
-
-## <a name="step-5-call-the-microsoft-store-collection-api-or-purchase-api-from-your-service"></a>Schritt 5: Abrufen der API für die Microsoft Store Sammlung oder der Erwerb-API von Ihrem Dienst
-
-Wenn Ihr Dienst über einen Microsoft Store ID-Schlüssel verfügt, mit dem der Zugriff auf die Informationen des Produkt Besitzes eines bestimmten Benutzers möglich ist, kann der Dienst die Microsoft Store Sammlungs-API oder die Erwerb-API aufrufen, indem er die folgenden Anweisungen befolgen:
-
-* [Produktabfrage](query-for-products.md)
-* [Melden von konsumierbaren Produkten als erfüllt](report-consumable-products-as-fulfilled.md)
-* [Gewähren kostenloser Produkte](grant-free-products.md)
-* [Abrufen von Abonnements für einen Benutzer](get-subscriptions-for-a-user.md)
-* [Ändern des Abrechnungszustands eines Abonnements für einen Benutzer](change-the-billing-state-of-a-subscription-for-a-user.md)
-
-Übergeben Sie bei jedem Szenario die folgenden Informationen an die API:
-
--   Übergeben Sie im Anforderungs Header das Azure AD Zugriffs Token, das den Wert für den Zielgruppen-Uri aufweist `https://onestore.microsoft.com` . Dies ist eines der Token, die Sie [zuvor in Schritt 3](#step-3)erstellt haben. Dieses Token stellt die Herausgeberidentität dar.
--   Übergeben Sie im Anforderungs Text den Microsoft Store ID-Schlüssel, den Sie [zuvor in Schritt 4](#step-4) abgerufen haben, aus dem Client seitigen Code in Ihrer APP. Dieser Schlüssel stellt die Identität des Benutzers dar, auf dessen Produktbesitzerinformationen Sie zugreifen möchten.
-
-### <a name="diagram"></a>Diagramm
-
-Das folgende Diagramm beschreibt den Prozess des Aufrufs einer Methode in der Microsoft Store Auflistungs-API oder der Kauf-API von Ihrem Dienst.
-
-  ![Aufrufe von Sammlungen oder der Kauf-API](images/b2b-2.png)
 
 ## <a name="claims-in-a-microsoft-store-id-key"></a>Ansprüche in einem Microsoft Store ID-Schlüssel
 

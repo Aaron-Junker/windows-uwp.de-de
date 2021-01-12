@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Monetarisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: c827c257947ea0f365bafe497e627841b501d40d
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: 009d4740fed47c7cde392d41bf52384071715106
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878583"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104621"
 ---
 #  <a name="monetization-for-games"></a>Monetarisierung für Spiele
 
@@ -38,7 +38,7 @@ Hier sind einige wichtige Konzepte bezüglich der Preise für Ihr Spiel im Store
 ### <a name="base-price"></a>Grundpreis
 
 Der Grundpreis für das Spiel bestimmt, ob Ihr Spiel als _bezahlt_ oder _kostenlos_ eingestuft wird. Sie können [Partner Center](https://partner.microsoft.com/dashboard) verwenden, um den Basispreis auf der Grundlage von Land und Region zu konfigurieren.
-Beim Festlegen des Preises müssen unter Umständen [Steuerpflichten beim Verkauf in anderen Ländern](../publish/tax-details-for-paid-apps.md) und [Kostenüberlegungen für bestimmte Märkte](../publish/define-market-selection.md) in Betracht gezogen werden. Sie können auch [angepasste Preise für spezifische Märkte](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets) festlegen.
+Beim Festlegen des Preises müssen unter Umständen [Steuerpflichten beim Verkauf in anderen Ländern](/partner-center/tax-details-marketplace) und [Kostenüberlegungen für bestimmte Märkte](../publish/define-market-selection.md) in Betracht gezogen werden. Sie können auch [angepasste Preise für spezifische Märkte](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets) festlegen.
 
 ### <a name="sale-price"></a>Angebotspreis
 
@@ -47,7 +47,7 @@ Sie können Angebotskampagnen im Voraus planen, indem Sie Start- und Enddatum de
 
 ## <a name="in-game-purchases"></a>In-Game-Käufe
 
-Bei In-Game-Käufen handelt es sich um Produkte, die in einem Spiel gekauft werden. Sie werden allgemein auch als _In-App-Käufe_ bezeichnet. In der Microsoft Store werden diese Produkte als _Add-ons_bezeichnet. [Add-ons werden](../publish/add-on-submissions.md) über Partner Center veröffentlicht. Sie müssen die Add-Ons außerdem im Code Ihres Spiels aktivieren.
+Bei In-Game-Käufen handelt es sich um Produkte, die in einem Spiel gekauft werden. Sie werden allgemein auch als _In-App-Käufe_ bezeichnet. In der Microsoft Store werden diese Produkte als _Add-ons_ bezeichnet. [Add-ons werden](../publish/add-on-submissions.md) über Partner Center veröffentlicht. Sie müssen die Add-Ons außerdem im Code Ihres Spiels aktivieren.
 
 ### <a name="types-of-add-ons"></a>Arten von Add-Ons
 
@@ -69,7 +69,7 @@ In diesem Abschnitt wird anhand eines vereinfachten Kaufbeispiels die Verwendung
 |In-Game-Aktionen/-Aktivität                                                | Hintergrundaufgaben                  |
 |--------------------------------------------------------------------------|----------------------------------------|
 |Ein Spieler betritt ein Geschäft. Das Einkaufsmenü mit den verfügbaren Add-Ons und dem jeweiligen Kaufpreis wird angezeigt. |  Das Spiel [ruft die Produktinfos](../monetize/get-product-info-for-apps-and-add-ons.md) des Add-Ons ab, [bestimmt, ob die Add-Ons über die entsprechende Lizenz verfügen](../monetize/get-license-info-for-apps-and-add-ons.md) und zeigt im Einkaufsmenü die Add-Ons an, die für den Spieler zum Kauf zur Verfügung stehen.                           |
-|Der Spieler klickt auf __Kaufen__um ein Element zu kaufen.             |Die Aktion __Kaufen__ sendet eine Anforderung zum Kauf des Elements und beginnt den Zahlungsprozess, um es zu erwerben. Die Implementierung variiert je nach Elementtyp. Handelt es sich um ein [Gebrauchsgut oder ein einmalig erworbenes Element](../monetize/enable-in-app-purchases-of-apps-and-add-ons.md), kann der Kunde nur ein einzelnes Element besitzen, bis es abläuft. Ist das Element ein [Verbrauchsartikel](../monetize/enable-consumable-add-on-purchases.md), kann der Kunde mehrere davon besitzen. |
+|Der Spieler klickt auf __Kaufen__ um ein Element zu kaufen.             |Die Aktion __Kaufen__ sendet eine Anforderung zum Kauf des Elements und beginnt den Zahlungsprozess, um es zu erwerben. Die Implementierung variiert je nach Elementtyp. Handelt es sich um ein [Gebrauchsgut oder ein einmalig erworbenes Element](../monetize/enable-in-app-purchases-of-apps-and-add-ons.md), kann der Kunde nur ein einzelnes Element besitzen, bis es abläuft. Ist das Element ein [Verbrauchsartikel](../monetize/enable-consumable-add-on-purchases.md), kann der Kunde mehrere davon besitzen. |
 
 ### <a name="test-in-game-purchases-during-game-development"></a>Testen von In-Game-Käufen während der Spieleentwicklung
 
@@ -90,7 +90,7 @@ So erstellen Sie ein Paket, das in den Store hochgeladen werden kann:
 
 1. Öffnen Sie Ihre Spielelösung in Visual Studio.
 2. Wechseln Sie in Visual Studio zum __Projekt__  >  __Speicher__  >  __App-Pakete erstellen...__
-3. Wählen Sie für die Option möchten __Sie Pakete zum Hochladen in die Microsoft Store? erstellen?__ die Option __Ja__aus.
+3. Wählen Sie für die Option möchten __Sie Pakete zum Hochladen in die Microsoft Store? erstellen?__ die Option __Ja__ aus.
 4. Melden Sie sich bei Ihrem [Partner Center](https://partner.microsoft.com/dashboard) -Entwicklerkonto an. Oder [registrieren](https://developer.microsoft.com/store/register) Sie sich für ein Entwicklerkonto, falls Sie keins besitzen.
 5. Wählen Sie eine App aus, für die das Uploadpaket erstellt werden soll. Falls Sie noch keine App-Übermittlung erstellt haben, geben Sie einen neuen App-Namen ein, um eine neue Übermittlung zu erstellen. Weitere Informationen finden Sie unter [Erstellen einer App durch Reservieren eines Namens](../publish/create-your-app-by-reserving-a-name.md).
 6. Nachdem das Paket erfolgreich erstellt wurde, klicken Sie auf __Zertifizierungskit für Windows-Apps starten__, um den Testprozess zu starten.
@@ -138,7 +138,7 @@ Weitere Konfigurationen für Add-Ons:
 * [Preise und Verfügbarkeit](../publish/set-add-on-pricing-and-availability.md)
 * [Store-Auflistung](../publish/create-add-on-store-listings.md)
 
-Wenn Ihr Spiel viele Add-ons enthält, können Sie Sie mithilfe der Microsoft Store Übermittlungs- __API__Programm gesteuert erstellen. Weitere Informationen finden Sie unter [Erstellen und Verwalten von Übermittlungen mithilfe von Microsoft Store-Diensten](../monetize/create-and-manage-submissions-using-windows-store-services.md).
+Wenn Ihr Spiel viele Add-ons enthält, können Sie Sie mithilfe der Microsoft Store Übermittlungs- __API__ Programm gesteuert erstellen. Weitere Informationen finden Sie unter [Erstellen und Verwalten von Übermittlungen mithilfe von Microsoft Store-Diensten](../monetize/create-and-manage-submissions-using-windows-store-services.md).
 
 ## <a name="display-ads-in-your-game"></a>Anzeigen von Werbung in Ihrem Spiel
 
@@ -169,7 +169,7 @@ Laden Sie zunächst das [Microsoft Advertising SDK](https://marketplace.visualst
 
 #### <a name="implementation-guides"></a>Implementierungshandbücher
 
-Diese exemplarischen Vorgehensweisen zeigen, wie Sie ADS mithilfe von __adcontrol__, __interstitialad__und __nativead__implementieren:
+Diese exemplarischen Vorgehensweisen zeigen, wie Sie ADS mithilfe von __adcontrol__, __interstitialad__ und __nativead__ implementieren:
 
 * [Erstellen von Banner Anzeigen in XAML und .net](../monetize/adcontrol-in-xaml-and--net.md)
 * [Erstellen von Banner Anzeigen in HTML5 und JavaScript](../monetize/adcontrol-in-html-5-and-javascript.md)
@@ -219,13 +219,13 @@ Wählen Sie zwischen verschiedenen Kampagnenarten, mit denen Sie die Zahl von Sp
 
 |Kampagnentyp             | Anzeigen für Ihr Spiel werden in folgenden Apps angezeigt:                                                                                                                                                                   |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|Bezahlt                      |Apps, die dem Gerät oder der Kategorie Ihres Spiels entsprechen                                                                                                                                                   |
+|Kostenpflichtig                      |Apps, die dem Gerät oder der Kategorie Ihres Spiels entsprechen                                                                                                                                                   |
 |Kostenlose Community-Anzeigen            |Apps, die von anderen Entwicklern veröffentlicht werden, die ebenfalls Community-Anzeigenkampagnen nutzen. Weitere Informationen finden Sie unter [Informationen zu Community-Anzeigen](../monetize/index.md).|
 |Kostenlose Eigenwerbung                |Nur in Apps, die Sie veröffentlicht haben. Weitere Informationen finden Sie unter [Über Eigenwerbung](../monetize/index.md).                                                            |
 
 ## <a name="related-links"></a>Verwandte Links
 
-* [Bezahlung](../publish/getting-paid-apps.md)
+* [Bezahlung](/partner-center/marketplace-get-paid)
 * [Kontotypen, Standorte und Gebühren](../publish/account-types-locations-and-fees.md)
 * [Analyse](../publish/analytics.md)
 * [Globalisierung und Lokalisierung](../design/globalizing/globalizing-portal.md)

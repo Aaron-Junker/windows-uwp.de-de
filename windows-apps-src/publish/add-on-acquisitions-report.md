@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Add-on-Verkäufe, Add-on-Akquisitionen, IAP-Verkäufe, in-App-Produkte, IAPS, Add-ons
 ms.localizationpriority: medium
-ms.openlocfilehash: f996fdcdff8664564379d99e529398e0f998e813
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 042922db077edb83b365a70e4451abe130614afe
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93033953"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104501"
 ---
 # <a name="add-on-acquisitions-report"></a>Bericht zu Add-On-Käufen
 
@@ -23,7 +23,7 @@ Sie können diese Daten im Partner Center anzeigen oder [den Bericht herunterlad
 In diesem Bericht bedeutet ein Add-on-Erwerb, dass ein Kunde ein Add-on von Ihnen gekauft hat (oder es ohne Zahlung erworben hat, wenn Sie es kostenlos angeboten haben). Wenn ein Kunde mehrere Käufe desselben konsumierbaren Add-Ons getätigt hat, werden diese als separate Add-On-Käufe aufgeführt.
 
 > [!IMPORTANT]
-> Der Bericht zu den **Add-on-Akquisitionen** enthält keine Daten über Erstattungen, Umleitungen, Rückstände usw. Um die APP zu schätzen, besuchen Sie die [Auszahlungs Zusammenfassung](payout-summary.md). Klicken Sie im Abschnitt **Reserviert** auf den Link **Reservierte Transaktionen herunterladen** .
+> Der Bericht zu den **Add-on-Akquisitionen** enthält keine Daten über Erstattungen, Umleitungen, Rückstände usw. Um die APP zu schätzen, besuchen Sie die [Auszahlungs Zusammenfassung](/partner-center/payout-statement). Klicken Sie im Abschnitt **Reserviert** auf den Link **Reservierte Transaktionen herunterladen**.
 
 
 ## <a name="apply-filters"></a>Anwenden von Filtern
@@ -32,9 +32,9 @@ Im oberen Bereich der Seite können Sie den Zeitraum auswählen, in dem Sie Date
 
 Sie können auch **Filter** erweitern, um alle Daten auf dieser Seite nach bestimmten Add-ons, nach Markt und/oder nach Gerätetyp zu filtern.
 
--   **Add-on** : der Standardfilter ist **alle Add-ons** , aber Sie können die Daten auf ein oder mehrere der Add-ons der APP beschränken.
--   **Market** : der Standardfilter ist **Alle Märkte** , aber Sie können die Daten auf einen oder mehrere Märkte beschränken.
--   **Gerätetyp** : Die Standardeinstellung ist **Alle Geräte** . Wenn Sie nur Daten für Akquisitionen von einem bestimmten Gerätetyp anzeigen möchten (z. b. PC, Konsole oder Tablet), können Sie hier eine bestimmte auswählen.
+-   **Add-on**: der Standardfilter ist **alle Add-ons**, aber Sie können die Daten auf ein oder mehrere der Add-ons der APP beschränken.
+-   **Market**: der Standardfilter ist **Alle Märkte**, aber Sie können die Daten auf einen oder mehrere Märkte beschränken.
+-   **Gerätetyp**: Die Standardeinstellung ist **Alle Geräte**. Wenn Sie nur Daten für Akquisitionen von einem bestimmten Gerätetyp anzeigen möchten (z. b. PC, Konsole oder Tablet), können Sie hier eine bestimmte auswählen.
 
 Die Informationen in allen unten aufgeführten Diagrammen spiegeln den Datumsbereich und alle Filter wider, die Sie ausgewählt haben. In einigen Abschnitten können Sie auch zusätzliche Filter anwenden.
 
