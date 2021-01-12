@@ -6,18 +6,18 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: Windows 10, UWP, Monetarisierung, Kundenbindung, Werben, Store-Dienste
 ms.localizationpriority: medium
-ms.openlocfilehash: f2516a1708948f0322d197bf4fdd524ede6ba0b0
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: 29dcc02375358c7f16f38748ca92dbaeaf3ebdb7
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878543"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104701"
 ---
 # <a name="monetization-engagement-and-store-services"></a>Monetarisierung, Kundenbindung und Store-Dienste
 
 Das Windows SDK, das Microsoft Advertising-SDK, das Microsoft Store Services SDK und der Microsoft Store bieten Features, durch die Sie mit Ihren Apps mehr Geld verdienen und Kunden durch Förderung der Kundenbindung gewinnen können. In den Themen dieses Abschnitts erfahren Sie, wie Sie diese Features in die App integrieren.
 
-Ausführliche Informationen zu den vom Microsoft Store erhobenen Gebühren und zur Auszahlung des mit der App verdienten Gelds finden Sie unter [Bezahlung](../publish/getting-paid-apps.md).
+Ausführliche Informationen zu den vom Microsoft Store erhobenen Gebühren und zur Auszahlung des mit der App verdienten Gelds finden Sie unter [Bezahlung](/partner-center/marketplace-get-paid).
 
 ## <a name="choose-a-pricing-model"></a>Ein Preismodell auswählen
 
@@ -126,7 +126,7 @@ Suchen Sie nach anderen Methoden zum Erhöhen der Monetisierung? Berücksichtige
 
 Mithilfe dieser Berichte bleiben Sie über die Leistungsfähigkeit Ihrer App im Store informiert.
 
-- [Auszahlungszusammenfassung](../publish/payout-summary.md)
+- [Auszahlungszusammenfassung](/partner-center/payout-statement)
 - [Bericht „Käufe“](../publish/acquisitions-report.md)
 - [Bericht zu Add-On-Käufen](../publish/add-on-acquisitions-report.md)
 - [Bericht zur Anzeigenleistung](../publish/advertising-performance-report.md)

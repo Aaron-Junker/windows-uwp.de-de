@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Veröffentlichung, veröffentlichen, Verkauf, verkaufen, verteilen, Verteilung, Store, Dashboard
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e7f5b2e34bb9de99adaf5ea79fa015cae76ed0b
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: fe4dc46b7f6d5a9f55ecf8b5fe8ee58da27850de
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878553"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104601"
 ---
 # <a name="publish-windows-apps-and-games"></a>Veröffentlichen von Windows-Apps und -Spielen  
 
@@ -59,7 +59,7 @@ Veröffentlichen Sie mit [Partner Center](https://partner.microsoft.com/dashboar
         <img src="https://docs.microsoft.com/media/illustrations/team-services-get-started-account-manager.svg" alt="Payment icon" />
         <h3 style="margin-top: 10px; margin-bottom: 0px">Zahlungen und Berichte</h3>
         <a href="account-types-locations-and-fees.md">Kontotypen, Standorte und Gebühren</a><br/>
-        <a href="getting-paid-apps.md">Bezahlung</a><br/>
+        <a href="/partner-center/marketplace-get-paid">Bezahlung</a><br/>
         <a href="in-app-ads.md">In-App-Anzeigen</a><br/>
         <a href="analytics.md">Analyseberichte</a><br/>
     :::column-end:::
