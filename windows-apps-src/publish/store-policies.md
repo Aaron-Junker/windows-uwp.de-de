@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Store-Richtlinienvereinbarung
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: fc7a9ebd3ebe9ce86f4c44e7e13ea25d5a01240e
-ms.sourcegitcommit: 5dac88ad541b71ebe85b78951e6b357a3db176cc
+ms.openlocfilehash: 7d9679b591b64f804ae9c84badc5849cac28de99
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97611458"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104661"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store-Richtlinien
 
@@ -24,7 +24,7 @@ ms.locfileid: "97611458"
 > Eine Zusammenfassung der zuletzt vorgenommenen Änderungen an dieser Vereinbarung finden Sie im Abschnitt [Änderungsverlauf](store-policies-change-history.md).
 
 > [!NOTE]
-> **16. Dezember 2020, Hinweis zur Richtlinienaktualisierung**: Für Spieleprodukte, die auf die Konsole abzielen und im Rahmen des [Xbox Live Creators-Programms](https://www.xbox.com/developers/creators-program/) entwickelt wurden, gilt die Anforderung der Integration in die XBL-Dienste nicht mehr. Die spezifische Richtlinie ([Richtlinie 10.13.1](https://docs.microsoft.com/windows/uwp/publish/store-policies#1013-gaming-and-xbox)) wird bei der nächsten Aktualisierung des Store-Richtliniendokuments aktualisiert, um diese Änderung widerzuspiegeln, aber ab dieser Bekanntmachung wird die Richtlinie für das XBL Creators Program nicht mehr durchgesetzt. 
+> **16. Dezember 2020, Hinweis zur Richtlinienaktualisierung**: Für Spieleprodukte, die auf die Konsole abzielen und im Rahmen des [Xbox Live Creators-Programms](https://www.xbox.com/developers/creators-program/) entwickelt wurden, gilt die Anforderung der Integration in die XBL-Dienste nicht mehr. Die spezifische Richtlinie ([Richtlinie 10.13.1](#1013-gaming-and-xbox)) wird bei der nächsten Aktualisierung des Store-Richtliniendokuments aktualisiert, um diese Änderung widerzuspiegeln, aber ab dieser Bekanntmachung wird die Richtlinie für das XBL Creators Program nicht mehr durchgesetzt. 
 
 Vielen Dank für Ihr Interesse an der Entwicklung von Produkten für den Microsoft Store<sup>1</sup>. „Produkt“ bezeichnet in beliebiger Form übermittelte Inhalte, einschließlich Apps, Spielen, Titeln und weiteren Inhalten, die innerhalb eines Produkts angeboten oder verkauft werden. Wir bemühen uns um einen vielseitigen Katalog mit Produkten für Kunden weltweit. Produkte im Store müssen unsere Zertifizierungsstandards erfüllen, für Kunden wirklich hilfreich und ansprechend sein sowie gut in den Store passen.
 
