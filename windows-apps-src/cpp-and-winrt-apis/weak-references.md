@@ -6,19 +6,19 @@ ms.topic: article
 keywords: Windows 10, uwp, Standard, c++, cpp, winrt, Projektion, stark, schwach, Verweis
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9ca3ae231a70b69f9f41bb1077b875dca798eb05
-ms.sourcegitcommit: e6a7749f9ddc0fe165b68506b0be465d4ca51ab6
+ms.openlocfilehash: 46b62c202d090a7760445b3e07bca073d2636c66
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96935982"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104481"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>Starke und schwache Verweise in C++/WinRT
 
 Windows-Runtime ist ein System mit Verweiszählung. Es ist wichtig, dass Sie mit der Bedeutung und dem Unterschied zwischen starken und schwachen Verweisen vertraut sind (und mit Verweisen, die keins von beidem sind, wie etwa der implizite *this*-Zeiger). Wie Sie in diesem Thema erfahren werden, kann das Wissen um den korrekten Umgang mit diesen Verweisen den Unterschied zwischen einem zuverlässigen System bedeuten, das reibungslos läuft, und einem, das zu unvorhersehbaren Abstürzen neigt. Durch die Bereitstellung von Hilfsfunktionen mit tiefgreifender Unterstützung in der Sprachprojektion kommt Ihnen [C++/WinRT](./intro-to-using-cpp-with-winrt.md) bei Ihrer Arbeit, komplexere Systeme einfach und ordnungsgemäß aufzubauen, auf halbem Weg entgegen.
 
 > [!NOTE]
-> Mit nur wenigen Ausnahmen ist die Unterstützung für schwache Referenzen für Windows-Runtime-Typen, die Sie in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) konsumieren oder erstellen, standardmäßig aktiviert. **Windows.UI.Composition** und **Windows.Devices.Input.PenDevice** sind Beispiele für Ausnahmen, d. h. Namespaces, in denen die Unterstützung für schwache Referenzen für diese Typen *nicht* aktiviert ist. Siehe auch [Wenn das Registrieren des Delegaten fehlschlägt](/windows/uwp/cpp-and-winrt-apis/handle-events#if-your-auto-revoke-delegate-fails-to-register).
+> Mit nur wenigen Ausnahmen ist die Unterstützung für schwache Referenzen für Windows-Runtime-Typen, die Sie in [C++/WinRT](./index.md) konsumieren oder erstellen, standardmäßig aktiviert. **Windows.UI.Composition** und **Windows.Devices.Input.PenDevice** sind Beispiele für Ausnahmen, d. h. Namespaces, in denen die Unterstützung für schwache Referenzen für diese Typen *nicht* aktiviert ist. Siehe auch [Wenn das Registrieren des Delegaten fehlschlägt](./handle-events.md#if-your-auto-revoke-delegate-fails-to-register).
 > 
 > Wenn Sie Typen erstellen, dann sehen Sie sich den Abschnitt [Schwache Referenzen in C++/WinRT](#weak-references-in-cwinrt) in diesem Thema an.
 

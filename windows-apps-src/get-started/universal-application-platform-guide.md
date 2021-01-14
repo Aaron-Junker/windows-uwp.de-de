@@ -7,12 +7,12 @@ ms.topic: article
 ms.custom: contperf-fy21q1
 keywords: Windows 10, UWP, universell
 ms.localizationpriority: medium
-ms.openlocfilehash: 6871512e26b4c1f960034a5e97d88ade0b211094
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
+ms.openlocfilehash: e0d6991f261a9ee207a7e36f3dc5ad6a145f3b12
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860421"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104671"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>Was ist eine App der universellen Windows-Plattform (UWP)?
 
@@ -144,7 +144,7 @@ Zusätzlich zur Interaktion auf verschiedenen Geräten sollten Sie [Ihre App pla
 
 Im [Partner Center](https://partner.microsoft.com/dashboard) können Sie all Ihre Apps für Windows-Geräte zentral verwalten und übermitteln. Informieren Sie sich unter [Veröffentlichen von Windows-Apps und -Spielen](../publish/index.md), wie Sie Ihre Apps für die Veröffentlichung im Microsoft Store übermitteln.
 
-Neue Features vereinfachen Prozesse und geben Ihnen mehr Kontrolle. Sie finden dort auch detaillierte [Analyseberichte](../publish/analytics.md) in Kombination mit [Auszahlungsdetails](../publish/payout-summary.md), Möglichkeiten, [Ihre App zu bewerben und Kunden zu erreichen](../publish/attract-customers-and-promote-your-apps.md) und vieles mehr.
+Neue Features vereinfachen Prozesse und geben Ihnen mehr Kontrolle. Sie finden dort auch detaillierte [Analyseberichte](../publish/analytics.md) in Kombination mit [Auszahlungsdetails](/partner-center/payout-statement), Möglichkeiten, [Ihre App zu bewerben und Kunden zu erreichen](../publish/attract-customers-and-promote-your-apps.md) und vieles mehr.
 
 Weitere einführende Informationen finden Sie unter [Einführung in das Entwickeln von Windows-Apps für Windows 10-Geräte](/archive/msdn-magazine/2015/may/windows-10-an-introduction-to-building-windows-apps-for-windows-10-devices).
 
