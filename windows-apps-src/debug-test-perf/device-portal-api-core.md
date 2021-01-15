@@ -1,22 +1,22 @@
 ---
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
-title: Referenz zu Kern-APIs des Device Portal
+title: Referenz zur Kern-API des Windows-Geräteportals
 description: Hier erhalten Sie Informationen zu den Kern-REST-APIs für das Windows Device Portal, die Sie für den Zugriff auf die Daten und die programmatische Steuerung des Geräts verwenden können.
 ms.custom: 19H1
-ms.date: 04/19/2019
+ms.date: 01/08/2021
 ms.topic: article
-keywords: Windows 10, UWP, Geräteportal
+keywords: Windows 10, UWP, Geräteportal, REST
 ms.localizationpriority: medium
-ms.openlocfilehash: c8615620e09d6f00881c1bb229d98f876a95978c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 33e914d124520b8f4eacd120c191ed63715a3168
+ms.sourcegitcommit: 02d220ef0ec0ecd7ed733086ba164ee9653d9602
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173614"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98056053"
 ---
-# <a name="device-portal-core-api-reference"></a>Referenz zu Kern-APIs des Device Portal
+# <a name="windows-device-portal-core-rest-api-reference"></a>Referenz zur Kern-API des Windows-Geräteportals
 
-Alle Funktionen im Geräteportal basieren auf REST-APIs, die Entwickler direkt aufrufen können, um auf Ressourcen zuzugreifen und ihre Geräte programmgesteuert zu steuern.
+Alle Funktionen im Windows-Geräteportal (WDP) basieren auf REST-APIs, die Entwickler direkt aufrufen können, um auf Ressourcen zuzugreifen und ihre Geräte programmgesteuert zu steuern.
 
 ## <a name="app-deployment"></a>App-Bereitstellung
 

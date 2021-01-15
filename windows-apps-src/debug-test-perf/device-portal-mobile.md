@@ -1,19 +1,19 @@
 ---
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
-title: Geräteportal für Mobilgeräte
+title: Windows-Geräteportal für Mobilgeräte
 description: Hier erfahren Sie, wie Sie mit dem Windows Device Portal Ihr mobiles Gerät per Fernzugriff konfigurieren und verwalten können.
-ms.date: 02/08/2017
+ms.date: 01/08/2021
 ms.topic: article
 keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
-ms.openlocfilehash: 29a6f85dfb13e47617138e401c8444cb5b5f6809
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: b661c1b8249f4244049a19ecb3ccab865218aab2
+ms.sourcegitcommit: 02d220ef0ec0ecd7ed733086ba164ee9653d9602
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339578"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98055993"
 ---
-# <a name="device-portal-for-mobile"></a>Geräteportal für Mobilgeräte
+# <a name="windows-device-portal-for-mobile"></a>Windows-Geräteportal für Mobilgeräte
 
 Ab Windows 10, Version 1511, sind weitere Entwicklerfeatures für Mobilgeräte verfügbar. Diese Features sind nur verfügbar, wenn der Entwicklermodus auf dem Gerät aktiviert ist.
 
@@ -21,11 +21,11 @@ Informationen zum Aktivieren des Entwicklermodus finden Sie unter [Aktivieren Ih
 
 ![Screenshot der Einstellungen für die Geräteermittlung und das Geräteportal.](images/device-portal/mob-dev-mode-options.png)
 
-## <a name="set-up-device-portal-on-windows-phone"></a>Einrichten eines Device Portal auf Windows Phone
+## <a name="set-up-windows-device-portal-on-windows-phone"></a>Einrichten des Windows-Geräteportals unter Windows Phone
 
 ### <a name="turn-on-device-discovery-and-pairing"></a>Aktivieren der Geräteermittlung und -kopplung
 
-Damit du eine Verbindung mit dem Geräteportal herstellen kannst, musst du in den Einstellungen deines Telefons die Geräteermittlung und das Geräteportal aktivieren. Auf diese Weise können Sie Ihr Telefon mit einem PC oder einem anderen Windows 10-Gerät koppeln. Beide Geräte müssen über eine kabelgebundene oder drahtlose Verbindung mit dem gleichen Subnetz des Netzwerks verbunden sein oder über USB verbunden werden.
+Damit Sie eine Verbindung mit dem Windows-Geräteportal (WDP) herstellen können, müssen Sie in den Einstellungen Ihres Telefons die Geräteermittlung und das Geräteportal aktivieren. Auf diese Weise können Sie Ihr Telefon mit einem PC oder einem anderen Windows 10-Gerät koppeln. Beide Geräte müssen über eine kabelgebundene oder drahtlose Verbindung mit dem gleichen Subnetz des Netzwerks verbunden sein oder über USB verbunden werden.
 
 Wenn Sie das erste Mal eine Verbindung mit dem Geräteportal herstellen, werden Sie aufgefordert, einen sechsstelligen Sicherheitscode einzugeben (mit Beachtung der Groß- und Kleinschreibung). Dadurch wird sichergestellt, dass Sie Zugriff auf das Smartphone haben, und Sie werden vor Angriffen geschützt. Tippen Sie auf Ihrem Smartphone auf die Schaltfläche „Koppeln“, um den Code zu generieren und anzuzeigen. Geben Sie dann die sechs Zeichen in das Textfeld im Browser ein.
 

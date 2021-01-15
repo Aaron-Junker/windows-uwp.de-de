@@ -2,30 +2,35 @@
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: Übersicht über das Windows Device Portal
 description: Hier erfahren Sie, wie Sie mit dem Windows Device Portal Ihr Gerät per Remotezugriff über ein Netzwerk oder eine USB-Verbindung konfigurieren und verwalten.
-ms.date: 04/09/2019
+ms.date: 01/08/2021
 ms.topic: article
 keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
-ms.openlocfilehash: a4fc5cc5b8bc99e830d3c31604e581f8e57c1007
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b860b081ba7693964b419def670da2f30d1c54c2
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173634"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104531"
 ---
 # <a name="windows-device-portal-overview"></a>Übersicht über das Windows Device Portal
 
-Mit dem Windows Device Portal können Sie Ihr Gerät remote über ein Netzwerk oder eine USB-Verbindung konfigurieren und verwalten. Es bietet zudem erweiterte Diagnosetools, mit denen Sie Probleme beim Windows-Gerät behandeln und dessen Leistung in Echtzeit anzeigen können.
+Das Windows-Geräteportal (WDP) ist ein in Windows-Geräten enthaltener Webserver, mit dem Sie die Einstellungen für das Gerät über ein Netzwerk oder eine USB-Verbindung konfigurieren und verwalten können (lokale Verbindungen werden auch auf Geräten mit einem Webbrowser unterstützt).
 
-Das Windows-Geräteportal ist ein Webserver auf Ihrem Gerät, mit dem Sie über einen Webbrowser auf dem PC eine Verbindung herstellen können. Wenn Ihr Gerät über einen Webbrowser verfügt, können Sie auch mit dem Browser auf dem Gerät eine lokale Verbindung herstellen.
+WDP bietet außerdem erweiterte Diagnosetools für die Problembehandlung und die Anzeige der Echtzeitleistung Ihres Windows-Geräts.
 
-Das Windows-Geräteportal ist für jede Gerätefamilie verfügbar, die Features und die Einrichtung variieren jedoch abhängig von den Anforderungen des jeweiligen Geräts. Dieser Artikel enthält eine allgemeine Beschreibung des Device Portals und Links zu Artikeln mit ausführlicheren Informationen für jede Gerätefamilie.
+Die WDP-Funktionen werden programmatisch über eine Sammlung von [REST-APIs](device-portal-api-core.md) bereitgestellt.
 
-Die Funktionalität des Windows-Geräteportals ist mithilfe von [REST-APIs](device-portal-api-core.md) implementiert, die Sie direkt für den Zugriff auf Daten und die programmatische Steuerung Ihres Geräts verwenden können.
+Dieser Artikel enthält eine allgemeine Beschreibung des Windows-Geräteportals und Links zu Artikeln mit ausführlicheren Informationen zu jeder Windows-Gerätefamilie.
 
-## <a name="setup"></a>Setup
+> [!NOTE]
+> Eine Gerätefamilie identifiziert die APIs, Systemmerkmale und Verhaltensweisen, die Sie auf allen Geräteklassen erwarten können.
 
-Für jedes Gerät gelten spezielle Anweisungen zum Herstellen der Verbindung mit dem Device Portal, diese allgemeinen Schritte sind jedoch für jedes Gerät erforderlich:
+## <a name="setup"></a>Einrichten
+
+Jede Gerätefamilie bietet eine Version des WDPs, aber die Features und die Einrichtung variieren je nach den Anforderungen eines Geräts.
+
+Folgende grundlegende Schritte gelten für alle Geräte.
 
 1. Aktivieren Sie den Entwicklermodus und das Geräteportal auf Ihrem Gerät (konfiguriert in der Einstellungen-App).
 
@@ -33,23 +38,17 @@ Für jedes Gerät gelten spezielle Anweisungen zum Herstellen der Verbindung mit
 
 3. Navigieren Sie im Browser zu der Seite für das Geräteportal. In dieser Tabelle sind die Ports und Protokolle aufgeführt, die von jeder Gerätefamilie verwendet werden.
 
-Gerätefamilie | Standardmäßig aktiviert? | HTTP | HTTPS | USB
---------------|----------------|------|-------|----
-HoloLens | Ja, im Entwicklermodus | 80 (Standard) | 443 (Standard) | http://127.0.0.1:10080
-IoT | Ja, im Entwicklermodus | 8080 | Über Registrierungsschlüssel aktivieren | NICHT ZUTREFFEND
-Xbox | Im Entwicklermodus aktivieren | Deaktiviert | 11443 | NICHT ZUTREFFEND
-Desktop| Im Entwicklermodus aktivieren | 50080\* | 50043\* | NICHT ZUTREFFEND
-Anschluss | Im Entwicklermodus aktivieren | 80| 443 | http://127.0.0.1:10080
+In der folgenden Tabelle sind gerätespezifische Details für das WDP enthalten.
 
-\* Dies ist nicht stets der Fall, da das Geräteportal auf Desktops Ports in flüchtigen Bereich anfordert (> 50.000), um Konflikte mit vorhandenen Portanforderungen auf dem Gerät zu verhindern. Weitere Informationen hierzu finden Sie im Abschnitt zu [Porteinstellungen](device-portal-desktop.md#registry-based-configuration-for-device-portal) für den Desktop.  
+Gerätefamilie | Standardmäßig aktiviert? | HTTP | HTTPS | USB | Instructions |
+--------------|----------------|------|-------|-----|--------------|
+Desktop| Im Entwicklermodus aktivieren | 50080\* | 50043\* | – | [Einrichten des Windows-Geräteportals auf einem Desktop-Gerät](device-portal-desktop.md#set-up-windows-device-portal-on-a-desktop-device) |
+Xbox | Im Entwicklermodus aktivieren | Deaktiviert | 11443 | – | [Geräteportal für Xbox](../xbox-apps/device-portal-xbox.md) |
+HoloLens | Ja, im Entwicklermodus | 80 (Standardwert) | 443 (Standard) | http://127.0.0.1:10080 | [Geräteportal für HoloLens](/windows/mixed-reality/develop/platform-capabilities-and-apis/using-the-windows-device-portal) |
+IoT | Ja, im Entwicklermodus | 8080 | Über Registrierungsschlüssel aktivieren | – | [Geräteportal für IoT](/windows/iot-core/manage-your-device/DevicePortal) |
+Anschluss | Im Entwicklermodus aktivieren | 80| 443 | http://127.0.0.1:10080 | [Geräteportal für Mobilgeräte](device-portal-mobile.md) |
 
-Gerätespezifische Anweisungen zum Einrichten finden Sie in folgenden Artikeln:
-
-- [Geräteportal für HoloLens](./device-portal-hololens.md)
-- [Geräteportal für IoT](/windows/iot-core/manage-your-device/DevicePortal)
-- [Geräteportal für Mobilgeräte](device-portal-mobile.md)
-- [Geräteportal für Xbox](../xbox-apps/device-portal-xbox.md)
-- [Geräteportal für Windows-Desktop](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
+\* Dies ist nicht stets der Fall, da das Geräteportal auf Desktops Ports in flüchtigen Bereich anfordert (> 50.000), um Konflikte mit vorhandenen Portanforderungen auf dem Gerät zu verhindern. Weitere Informationen finden Sie im Abschnitt [Registrierungsbasierte Konfiguration](device-portal-desktop.md#registry-based-configuration) im [Windows-Geräteportal für Desktop](device-portal-desktop.md).  
 
 ## <a name="features"></a>Features
 
@@ -223,3 +222,7 @@ Zum Schutz vor [CSRF-Angriffen](https://en.wikipedia.org/wiki/Cross-site_request
 #### <a name="cross-site-websocket-hijacking-cswsh-protection"></a>Schutz vor websiteübergreifendem WebSocket-Hijacking (Cross-Site WebSocket Hijacking, CSWSH)
 
 Zum Schutz vor [CSWSH-Angriffen](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html) müssen alle Clients, die eine WebSocket-Verbindung mit einem Geräteportal herstellen, einen dem Hostheader entsprechenden Origin-Header angeben. Dadurch wird gegenüber dem Geräteportal belegt, dass die Anforderung entweder von der Benutzeroberfläche des Geräteportals oder von einer gültigen Clientanwendung stammt. Anforderungen ohne Origin-Header werden abgelehnt.
+
+## <a name="see-also"></a>Weitere Informationen
+
+[Referenz zur Kern-API des Geräteportals](device-portal-api-core.md)

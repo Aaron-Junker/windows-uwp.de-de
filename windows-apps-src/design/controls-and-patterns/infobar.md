@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 ms.custom: 20H2
 ms.localizationpriority: medium
-ms.openlocfilehash: 422d2cb0874abe2fbe767a75d718cd1f0637ccee
-ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
+ms.openlocfilehash: f790e4ed1d16ac42c95f9a835a3b9cc7f3598190
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96604963"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104541"
 ---
 # <a name="infobar"></a>InfoBar
 Das Steuerelement „InfoBar“ wird verwendet, um Benutzern App-weite Statusmeldungen anzuzeigen, die deutlich sichtbar, aber nicht aufdringlich sind. Es gibt integrierte Schweregrade, um die Art der angezeigten Meldung auf einfache Weise anzugeben, sowie die Option, eine eigene Schaltfläche für Handlungsaufforderungen oder Links einzubinden. Da das InfoBar-Steuerelement eine Inlinebenachrichtigung neben anderen Inhalten der Benutzeroberfläche darstellt, besteht die Möglichkeit, festzulegen, dass das Steuerelement immer sichtbar ist oder vom Benutzer verworfen werden kann. 
@@ -182,7 +182,7 @@ Sie können dieses Symbol entfernen, indem Sie die Eigenschaft „IsIconVisible�
 
 ### <a name="add-an-action-button"></a>Hinzufügen einer Aktionsschaltfläche
 
-Sie können eine zusätzliche Aktionsschaltfläche hinzufügen, indem Sie eine eigene Schaltfläche definieren, die [ButtonBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase) erbt, und diese in der Eigenschaft „ActionButton“ festlegen. Benutzerdefinierte Formatierungen werden auf Aktionsschaltflächen des Typs [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) und [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) angewendet, um Konsistenz und Barrierefreiheit zu gewährleisten. Neben der ActionButton-Eigenschaft können zusätzliche Aktionsschaltflächen über benutzerdefinierte Inhalte hinzugefügt werden und werden dann unterhalb der Meldung angezeigt.
+Sie können eine zusätzliche Aktionsschaltfläche hinzufügen, indem Sie eine eigene Schaltfläche definieren, die [ButtonBase](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase) erbt, und diese in der Eigenschaft „ActionButton“ festlegen. Benutzerdefinierte Formatierungen werden auf Aktionsschaltflächen des Typs [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) und [HyperlinkButton](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) angewendet, um Konsistenz und Barrierefreiheit zu gewährleisten. Neben der ActionButton-Eigenschaft können zusätzliche Aktionsschaltflächen über benutzerdefinierte Inhalte hinzugefügt werden und werden dann unterhalb der Meldung angezeigt.
 
 
 ```xaml
@@ -240,7 +240,7 @@ XAML-Inhalt kann mithilfe der Content-Eigenschaft zu einem InfoBar-Steuerelement
     Message="Your documents are being saved to the cloud"
     IsClosable="False">
     <muxc:InfoBar.Content>
-        <ProgressBar IsIndeterminate="True" Margin="0,0,0,6"/>
+        <muxc:ProgressBar IsIndeterminate="True" Margin="0,0,0,6" MaxWidth="200"/>
     </muxc:InfoBar.Content>
 </muxc:InfoBar>
 ```
@@ -249,13 +249,14 @@ XAML-Inhalt kann mithilfe der Content-Eigenschaft zu einem InfoBar-Steuerelement
 
 ### <a name="lightweight-styling"></a>Einfache Formatierung
 
-Sie können das Standardformat und das ControlTemplate-Steuerelement ändern, um dem Steuerelement ein einzigartiges Aussehen zu verleihen. Weitere Informationen finden Sie im Abschnitt [Einfache Formatierung](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling) im Artikel über die [Formatierung von Steuerelementen](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles).
+Sie können das Standardformat und das ControlTemplate-Steuerelement ändern, um dem Steuerelement ein einzigartiges Aussehen zu verleihen. Eine Liste der verfügbaren Designressourcen finden Sie im Abschnitt [Steuerelementstil und Vorlage](/windows/winui/api/microsoft.ui.xaml.controls.infobar#control-style-and-template) in der Dokumentation zur InfoBar-API.
+Weitere Informationen finden Sie im Abschnitt [Einfache Formatierung](./xaml-styles.md#lightweight-styling) im Artikel über die [Formatierung von Steuerelementen](./xaml-styles.md). 
 
-Zum Beispiel bewirkt das Folgende, dass die Schriftgröße der Titelleiste der InfoBar-Steuerelemente einer Seite 22 pt beträgt:
+Zum Beispiel bewirkt das Folgende, dass die Hintergrundfarbe für alle InfoBar-Steuerelemente auf einer Seite blau ist:
 
 ```xaml
 <Page.Resources>
-    <x:Double x:Key="InfoBarTitleFontSize">22</x:Double>
+    <x:SolidColorBrush x:Key="InfoBarInformationalSeverityBackgroundBrush" Color="LightBlue"></x:SolidColorBrush>
 </Page.Resources>
 ```
 ### <a name="canceling-close"></a>Abbrechen des Schließen-Ereignisses

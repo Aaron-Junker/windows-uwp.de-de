@@ -1,21 +1,21 @@
 ---
 ms.assetid: 82ab5fc9-3a7f-4d9e-9882-077ccfdd0ec9
-title: Schreiben eines benutzerdefinierten Plug-Ins für das Geräteportal
+title: Schreiben eines benutzerdefinierten Plug-Ins für das Windows-Geräteportal
 description: Erfahre, wie du eine UWP-App schreibst, die mit dem Windows-Geräteportal eine Webseite hostet und Diagnoseinformationen bereitstellt.
-ms.date: 07/06/2020
+ms.date: 01/08/2021
 ms.topic: article
 keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
-ms.openlocfilehash: f66650291e2966d6a3a6ac2b5d794006382d2fbf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c01cc48f78abba95b99dc05e1372640241d9af49
+ms.sourcegitcommit: 02d220ef0ec0ecd7ed733086ba164ee9653d9602
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170024"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98056003"
 ---
-# <a name="write-a-custom-plugin-for-device-portal"></a>Schreiben eines benutzerdefinierten Plug-Ins für das Geräteportal
+# <a name="write-a-custom-plugin-for-windows-device-portal"></a>Schreiben eines benutzerdefinierten Plug-Ins für das Windows-Geräteportal
 
-Erfahre, wie du eine UWP-App schreibst, die mit dem Windows-Geräteportal eine Webseite hostet und Diagnoseinformationen bereitstellt.
+Erfahre, wie Sie eine UWP-App schreiben, die mit dem Windows-Geräteportal (WDP) eine Webseite hostet und Diagnoseinformationen bereitstellt.
 
 Seit dem Windows 10 Creators Update (Version 1703, Build 15063) kannst du die Diagnoseschnittstellen deiner App im Geräteportal hosten. In diesem Artikel werden die drei Aspekte beschrieben, die zum Erstellen eines DevicePortalProvider für deine App erforderlich sind: die [Anwendungspaketmanifest](/uwp/schemas/appxpackage/appx-package-manifest)-Änderungen, das Einrichten der App-Verbindung mit dem [Geräteportal-Dienst](./device-portal.md) und das Behandeln eingehender Anforderungen.
 

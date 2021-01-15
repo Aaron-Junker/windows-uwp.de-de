@@ -1,34 +1,35 @@
 ---
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
-title: Geräteportal für Windows-Desktop
-description: Hier erfahren Sie, wie das Windows Device Portal Diagnose und Automatisierung auf dem Windows-Desktop öffnet.
-ms.date: 08/20/2020
+title: Windows-Geräteportal für Desktop
+description: Erfahren Sie, wie das Windows-Geräteportal Einstellungen, Diagnosedaten und Automatisierungsfunktionen auf Ihrem Desktop-PC bereitstellt.
+ms.date: 01/08/2021
 ms.topic: article
-ms.custom: contperf-fy21q1
+ms.custom: contperf-fy21q3
 keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
-ms.openlocfilehash: 42f6f35fe2cea38d4c1f194fbc740b7a8290ea8c
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
+ms.openlocfilehash: 11bfc81f045887dfdbba9d380eedd6b9ff40709a
+ms.sourcegitcommit: 02d220ef0ec0ecd7ed733086ba164ee9653d9602
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860339"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98055983"
 ---
-# <a name="device-portal-for-windows-desktop"></a>Geräteportal für Windows-Desktop
+# <a name="windows-device-portal-for-desktop"></a>Windows-Geräteportal für Desktop
 
-Das Windows-Geräteportal ist ein Debugtool, mit dem Sie Diagnoseinformationen anzeigen und über HTTP von einem Webbrowser aus mit Ihrem Desktop-PC interagieren können. Informationen zum Debuggen anderer Geräte finden Sie unter [Übersicht über das Windows-Geräteportal](device-portal.md).
+Das Windows-Geräteportal (WDP) ist ein Tool zum Verwalten und Debuggen von Geräten, mit dem Sie Geräteeinstellungen konfigurieren und verwalten sowie Diagnoseinformationen über HTTP in einem Webbrowser anzeigen können. WDP-Details zu anderen Geräten finden Sie unter [Übersicht über das Windows-Geräteportal](device-portal.md).
 
+Sie können das WDP für folgende Aufgaben verwenden:
 
-Sie haben im Device Portal folgende Möglichkeiten:
+- Verwalten von Geräteeinstellungen (ähnlich der **Windows-Einstellungen**-App)
 - Anzeigen und Bearbeiten einer Liste laufender Prozesse
 - Installieren, Löschen, Starten und Beenden von Apps
-- Ändern von WLAN-Profilen und Anzeigen der Signalstärke und der ipconfig
+- Ändern von WLAN-Profilen und Anzeigen der Signalstärke und der ipconfig-Details
 - Anzeigen von Live-Diagrammen zur Auslastung von CPU, Arbeitsspeicher, E/A, Netzwerk und GPU
 - Sammeln von Prozesssicherungen
-- Sammeln von ETW-Ablaufverfolgungen 
+- Sammeln von ETW-Ablaufverfolgungen
 - Bearbeiten des isolierten Speichers quergeladener Apps
 
-## <a name="set-up-device-portal-on-windows-desktop"></a>Einrichten des Geräteportals unter Windows-Desktop
+## <a name="set-up-windows-device-portal-on-a-desktop-device"></a>Einrichten des Windows-Geräteportals auf einem Desktop-Gerät
 
 ### <a name="turn-on-developer-mode"></a>Aktivieren des Entwicklermodus
 
@@ -37,37 +38,36 @@ Ab Windows 10, Version 1607, sind einige der neueren Funktionen für den Desktop
 > [!IMPORTANT]
 > In manchen Fällen wird der Entwicklermodus aufgrund von Problemen mit dem Netzwerk oder der Kompatibilität nicht ordnungsgemäß installiert. Lies den [entsprechenden Abschnitt von „Aktivieren Sie Ihr Gerät für die Entwicklung”](/windows/apps/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package), um Hilfe bei der Behebung dieser Probleme zu erhalten.
 
-### <a name="turn-on-device-portal"></a>Aktivieren des Geräteportals
+### <a name="turn-on-windows-device-portal"></a>Aktivieren des Windows-Geräteportals
 
-Du kannst das Geräteportal im Bereich **Für Entwickler** unter **Einstellungen** aktivieren. Wenn du es aktivierst, musst du auch einen entsprechenden Benutzernamen und ein Kennwort erstellen. Verwenden Sie nicht Ihr Microsoft-Konto oder andere Windows-Anmeldeinformationen.
+Sie können das WDP im Bereich **Für Entwickler** unter **Einstellungen** aktivieren. Wenn du es aktivierst, musst du auch einen entsprechenden Benutzernamen und ein Kennwort erstellen. Verwenden Sie nicht Ihr Microsoft-Konto oder andere Windows-Anmeldeinformationen.
 
-![Geräteportalabschnitt der Einstellungen-App](images/device-portal/device-portal-desk-settings.png)
+![Abschnitt des Windows-Geräteportals in der Einstellungen-App](images/device-portal/device-portal-desk-settings.png)
 
-Sobald das Geräteportal aktiviert ist, werden unten im Abschnitt Links angezeigt. Beachte die Portnummer am Ende der aufgeführten URLs: Diese Nummer wird zufällig generiert, wenn das Geräteportal aktiviert ist, sollte aber zwischen den Neustarts des Desktops konsistent bleiben.
+Sobald das WDP aktiviert ist, werden unten im Abschnitt Links angezeigt. Beachten Sie die Portnummer am Ende der aufgeführten URLs: Diese Nummer wird zufällig generiert, wenn das WDP aktiviert ist, sollte aber zwischen den Neustarts des Desktops konsistent bleiben.
 
-Diese Links bieten zwei Möglichkeiten, sich mit dem Geräteportal zu verbinden: über das lokale Netzwerk (einschließlich VPN) oder über den lokalen Host. Sobald Sie eine Verbindung hergestellt haben, sollte es ungefähr so aussehen:
+Diese Links bieten zwei Möglichkeiten, sich mit dem WDP zu verbinden: über das lokale Netzwerk (einschließlich VPN) oder über den lokalen Host. Sobald Sie eine Verbindung hergestellt haben, sollte es ungefähr so aussehen:
 
-![Geräteportal](images/device-portal/device-portal-example.png)
+![Windows-Geräteportal](images/device-portal/device-portal-example.png)
 
+### <a name="turn-off-windows-device-portal"></a>Deaktivieren des Windows-Geräteportals
 
-### <a name="turn-off-device-portal"></a>Deaktivieren des Geräteportals
+Sie können das WDP im Bereich **Für Entwickler** unter **Windows-Einstellungen** deaktivieren.
 
-Sie können das Geräteportal im Bereich **Für Entwickler** unter **Einstellungen** deaktivieren.
+### <a name="connect-to-windows-device-portal"></a>Herstellen einer Verbindung mit dem Windows-Geräteportal
 
-### <a name="connect-to-device-portal"></a>Verbinden mit dem Geräteportal
+Um eine Verbindung über einen lokalen Host herzustellen, öffnen Sie ein Browserfenster, und geben eine der hier angezeigte URIs (basierend auf dem von Ihnen verwendeten Verbindungstyp) ein.
 
-Um eine Verbindung über einen lokalen Host herzustellen, öffnen Sie ein Browserfenster und geben die hier angezeigte Adresse für den von Ihnen verwendeten Verbindungstyp ein.
-
-* Localhost: `http://127.0.0.1:<PORT>` oder `http://localhost:<PORT>`
-* Lokales Netzwerk: `https://<IP address of the desktop>:<PORT>`
+- Localhost: `http://127.0.0.1:<PORT>` oder `http://localhost:<PORT>`
+- Lokales Netzwerk: `https://<IP address of the desktop>:<PORT>`
 
 Für die Authentifizierung und sichere Kommunikation ist HTTPS erforderlich.
 
-Sie können die Authentifizierungsoption deaktivieren, wenn Sie das Geräteportal in einer geschützten Umgebung verwenden, z. B. in einem Testlabor, in dem Sie allen Benutzern im lokalen Netzwerk vertrauen, keine persönlichen Informationen auf dem Gerät gespeichert haben und eindeutige Anforderungen bestehen. Dies ermöglicht eine unverschlüsselte Kommunikation, und jeder, der die IP-Adresse deines Computers kennt, kann sich verbinden und ihn steuern.
+Sie können die Authentifizierungsoption deaktivieren, wenn Sie das WDP in einer geschützten Umgebung verwenden, z. B. in einem Testlabor, in dem Sie allen Benutzern im lokalen Netzwerk vertrauen, keine persönlichen Informationen auf dem Gerät gespeichert haben und eindeutige Anforderungen bestehen. Dies ermöglicht eine unverschlüsselte Kommunikation, und jeder, der die IP-Adresse deines Computers kennt, kann sich verbinden und ihn steuern.
 
-## <a name="device-portal-content-on-windows-desktop"></a>Geräteportal-Inhalte auf dem Windows-Desktop
+## <a name="windows-device-portal-content"></a>Inhalt des Windows-Geräteportals
 
-Das Geräteportal unter Windows Desktop zeigt eine Sammlung von Seiten an, die in [Übersicht über das Windows-Geräteportal](device-portal.md) beschrieben wird.
+WDP stellt die folgenden Seiten bereit.
 
 - App-Manager
 - Xbox Live
@@ -87,46 +87,47 @@ Das Geräteportal unter Windows Desktop zeigt eine Sammlung von Seiten an, die i
 - Position
 - Entwurf
 
-## <a name="using-device-portal-for-windows-desktop-to-test-and-debug-msix-apps"></a>Verwenden des Geräteportals für Windows Desktop zum Testen und Debuggen von MSIX-Apps
+## <a name="using-windows-device-portal-to-test-and-debug-msix-apps"></a>Verwenden des Windows-Geräteportals zum Testen und Debuggen von MSIX-Apps
 
 
 > [!VIDEO https://www.youtube.com/embed/PdgXeOMt4hk]
 
 
-## <a name="more-device-portal-options"></a>Weitere Optionen für das Geräteportal
+## <a name="more-windows-device-portal-options"></a>Weitere Optionen des Windows-Geräteportals
 
-### <a name="registry-based-configuration-for-device-portal"></a>Registrierungsbasierte Konfiguration für das Geräteportal
+### <a name="registry-based-configuration"></a>Registrierungsbasierte Konfiguration
 
-Wenn Sie Portnummern für Device Portal auswählen möchten (z. B. 80 und 443), können Sie die folgenden Registrierungsschlüssel festlegen:
+Wenn Sie Portnummern für WDP auswählen möchten (z. B. 80 und 443), können Sie die folgenden Registrierungsschlüssel festlegen:
 
 - Unter `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
     - `UseDynamicPorts`: Ein erforderlicher DWORD-Wert. Legen Sie den Wert auf 0 fest, um die von Ihnen ausgewählten Portnummern beizubehalten.
-    - `HttpPort`: Ein erforderlicher DWORD-Wert. Enthält die Portnummer, an der Device Portal nach HTTP-Verbindungen lauscht.    
-    - `HttpsPort`: Ein erforderlicher DWORD-Wert. Enthält die Portnummer, an der Device Portal nach HTTPS-Verbindungen lauscht.
+    - `HttpPort`: Ein erforderlicher DWORD-Wert. Enthält die Portnummer, die das WDP auf HTTP-Verbindungen überwacht.
+    - `HttpsPort`: Ein erforderlicher DWORD-Wert. Enthält die Portnummer, die das WDP auf HTTPS-Verbindungen überwacht.
     
 Unter dem gleichen regkey-Pfad kannst du auch die Authentifizierungsanforderung deaktivieren:
 - `UseDefaultAuthorizer` - `0` für deaktiviert, `1` für aktiviert.  
     - Dies steuert sowohl die grundlegende Authentifizierungsanforderung für jede Verbindung als auch die Weiterleitung von HTTP nach HTTPS.  
     
-### <a name="command-line-options-for-device-portal"></a>Befehlszeilenoptionen für das Geräteportal
-Über eine administrative Eingabeaufforderung kannst du Teile des Geräteportal aktivieren und konfigurieren. Um den neuesten Satz von Befehlen zu sehen, die von deinem Build unterstützt werden, kannst du `webmanagement /?` ausführen.
+### <a name="command-line-options-for-windows-device-portal"></a>Befehlszeilenoptionen für das Windows-Geräteportal
 
-- `sc start webmanagement` oder `sc stop webmanagement` 
+Über eine administrative Eingabeaufforderung können Sie Teile des WDPs aktivieren und konfigurieren. Um den neuesten Satz von Befehlen zu sehen, die von deinem Build unterstützt werden, kannst du `webmanagement /?` ausführen.
+
+- `sc start webmanagement` oder `sc stop webmanagement`
     - Schalte den Dienst ein oder aus. Dazu muss ebenfalls der Entwicklermodus aktiviert sein. 
 - `-Credentials <username> <password>` 
-    - Lege einen Benutzernamen und ein Kennwort für das Geräteportal fest. Der Benutzername muss den Basic-Auth-Standards entsprechen, darf also keinen Doppelpunkt (:) enthalten und sollte aus Standard-ASCII-Zeichen wie z. B. [a-z, A-Z, 0-9] aufgebaut sein, da Browser standardmäßig nicht den gesamten Zeichensatz verarbeiten.  
+    - Legen Sie einen Benutzernamen und ein Kennwort für das WDP fest. Der Benutzername muss den Basic-Auth-Standards entsprechen, darf also keinen Doppelpunkt (:) enthalten und sollte aus Standard-ASCII-Zeichen wie z. B. [a-z, A-Z, 0-9] aufgebaut sein, da Browser standardmäßig nicht den gesamten Zeichensatz verarbeiten.  
 - `-DeleteSSL` 
     - Dadurch wird der für HTTPS-Verbindungen verwendete SSL-Zertifikat-Cache zurückgesetzt. Wenn du auf TLS-Verbindungsfehler stößt, die nicht umgangen werden können (im Gegensatz zur erwarteten Zertifikatswarnung), kann diese Option das Problem für dich beheben. 
 - `-SetCert <pfxPath> <pfxPassword>`
-    - Weitere Informationen findest du unter [Bereitstellen eines Geräteportals mit einem benutzerdefinierten SSL-Zertifikat](./device-portal-ssl.md).  
-    - Auf diese Weise kannst du dein eigenes SSL-Zertifikat installieren, um die SSL-Warnseite zu reparieren, die normalerweise im Geräteportal angezeigt wird. 
+    - Weitere Informationen finden Sie unter [Bereitstellen eines Windows-Geräteportals mit einem benutzerdefinierten SSL-Zertifikat](./device-portal-ssl.md).  
+    - Auf diese Weise können Sie Ihr eigenes SSL-Zertifikat installieren, um die SSL-Warnseite zu reparieren, die normalerweise im WDP angezeigt wird. 
 - `-Debug <various options for authentication, port selection, and tracing level>`
-    - Führe eine eigenständige Version des Geräteportals mit einer bestimmten Konfiguration und sichtbaren Debugmeldungen aus. Dies ist besonders nützlich für die Erstellung eines [gepackten Plugins](./device-portal-plugin.md). 
+    - Führen Sie eine eigenständige Version des WDPs mit einer bestimmten Konfiguration und sichtbaren Debugmeldungen aus. Dies ist besonders nützlich für die Erstellung eines [gepackten Plugins](./device-portal-plugin.md). 
     - Lies den [Artikel im MSDN Magazine](/archive/msdn-magazine/2017/october/windows-device-portal-write-a-windows-device-portal-packaged-plug-in) mit Details darüber, wie du es als „System” ausführen kannst, um dein gepacktes Plugin vollständig zu testen.
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
-Im folgenden findest du einige häufige Fehler, die beim Einrichten des Geräteportals auftreten können.
+Im folgenden finden Sie einige häufige Fehler, die beim Einrichten des Windows-Geräteportals auftreten können.
 
 ### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbs_e_invalid_windows_update_count"></a>WindowsUpdateSearch gibt eine ungültige Anzahl von Updates zurück (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT).
 
@@ -151,4 +152,4 @@ Dieser Fehler wird möglicherweise angezeigt, wenn du über eine getaktete Inter
 ## <a name="see-also"></a>Weitere Informationen
 
 * [Übersicht über das Windows-Geräteportal](device-portal.md)
-* [Referenz zu Kern-APIs des Device Portal](./device-portal-api-core.md)
+* [Referenz zur Kern-API des Windows-Geräteportals](./device-portal-api-core.md)
