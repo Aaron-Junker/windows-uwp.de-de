@@ -4,12 +4,12 @@ description: Ein Hilfsprogramm, das Benutzern das Neudefinieren von Schlüsseln 
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: eb17cd5a7ad76728e6b063f76369c8d194a5e12c
-ms.sourcegitcommit: 1a997d7e0100e58886150f9fba33d7b205f41df1
+ms.openlocfilehash: a8ffd782a1b23d1e439be0462300ebdf20593913
+ms.sourcegitcommit: 375cf20e0583335805ec246d65819dc1674a2e32
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97865465"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98241000"
 ---
 # <a name="keyboard-manager-utility"></a>Tastatur-Manager
 
@@ -33,7 +33,7 @@ Der PowerToys-Tastatur-Manager muss aktiviert sein (mit PowerToys, der im Hinter
 
 ## <a name="settings"></a>Einstellungen
 
-Um Zuordnungen mit dem Tastatur-Manager zu erstellen, haben Sie folgende Möglichkeiten:
+Um Zuordnungen mit dem Tastatur-Manager zu erstellen, müssen Sie die PowerToys-Einstellungen öffnen (suchen Sie im Windows-Startmenü nach der PowerToys-APP, und wählen Sie das Fenster PowerToys-Einstellungen wird geöffnet) aus. In den PowerToys-Einstellungen auf der Registerkarte Tastatur-Manager werden die folgenden Optionen angezeigt:
 
 - Fenster "Remap-Tastatur Einstellungen" starten, indem Sie <kbd>einen Schlüssel</kbd> neu zuordnen auswählen
 - Öffnen Sie das Fenster für die Neuzuordnung von Verknüpfungen, indem Sie die <kbd>Verknüpfung</kbd> neu zuordnen auswählen.
@@ -120,7 +120,7 @@ Der Tastatur-Manager verwendet die Prozessnamen (nicht Anwendungsnamen), um Apps
   | Spotify-Musik     |  spotify.exe  |
   | Google Chrome     |  chrome.exe   |
   | Excel             |  excel.exe    |
-  | Word              |  winword.exe  |
+  | Wort              |  winword.exe  |
   | PowerPoint        |  powerpnt.exe |
 
 ### <a name="keys-that-cannot-be-remapped"></a>Schlüssel, die nicht neu zugeordnet werden können

@@ -6,12 +6,12 @@ ms.date: 1/8/2021
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bb64345ff14d26a14095feb8065b250598aa78f0
-ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
+ms.openlocfilehash: 9c8dbc8ff25d60b2ea1527c13125ca5ad2aa299a
+ms.sourcegitcommit: 375cf20e0583335805ec246d65819dc1674a2e32
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98104551"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98240960"
 ---
 # <a name="get-set-up"></a>Vorbereiten
 
@@ -53,12 +53,13 @@ Sie können jetzt mit der Entwicklung von Apps beginnen. Zum Übermitteln an den
 
 -   Um ein Entwicklerkonto zu erhalten, müssen Sie auf die Seite für die [Registrierung](sign-up.md) zugreifen.
 
-## <a name="whats-next"></a>Ausblick
+## <a name="whats-next"></a>Wie geht es weiter?
 
 Nachdem Sie die Tools installiert und Ihr Gerät für die Entwicklung aktiviert haben, schauen Sie sich unsere Anleitungen mit den ersten Schritten zum Erstellen von Windows 10-Apps an.
 
 -   [Auswählen der Plattform](../desktop/choose-your-platform.md)
 -   [Beginnen Sie mit der Codierung](/windows/uwp/get-started/create-uwp-apps)
+
 
 ## <a name="windows-development-setup-scripts"></a>Setupskripts für die Windows-Entwicklung
 
