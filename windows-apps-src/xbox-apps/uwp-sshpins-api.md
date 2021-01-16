@@ -4,24 +4,25 @@ description: Erfahren Sie, wie Sie alle vertrauenswürdigen Secure Shell (SSH)-P
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 307af4cdd4e998832f4a2fe7a8f874615fe10ad7
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: 999a77051b0eebe6ae5d8be9e4c2640709431b6d
+ms.sourcegitcommit: b0a82c2a132212eb5fb72b67f0789cac1014642f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043532"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98254205"
 ---
 # <a name="ssh-pins-api-reference"></a>SSH-Pins-API-Referenz
+
 Mit dieser Rest-API können Sie alle vertrauenswürdigen SSH-Pins in Ihrem devkit entfernen.
 
 ## <a name="remove-trusted-ssh-pins"></a>Entfernen vertrauenswürdiger SSH-Pins
 
 **Anforderung**
 
-Methode      | Anforderungs-URI
-:------     | :-----
-Delete | /ext/app/sshpins
-<br />
+| Methode | Anforderungs-URI |
+|--------|-------------|
+| DELETE | /ext/app/sshpins |
+
 **URI-Parameter**
 
 - Keine
@@ -30,26 +31,24 @@ Delete | /ext/app/sshpins
 
 - Keine
 
-**Anforderungstext**   
+**Anforderungstext**
 
 - Keine
 
-**Antwort**   
+**Antwort**
 
-- Keine 
+- Keine
 
 **Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
-HTTP-Statuscode      | Beschreibung
-:------     | :-----
-204 | Die Anforderung zum Löschen der Pins war erfolgreich.
-4XX | Fehlercodes
-5XX | Fehlercodes
+| HTTP-Statuscode | BESCHREIBUNG |
+|------------------|-------------|
+| 204 | Die Anforderung zum Löschen der Pins war erfolgreich. |
+| 4XX | Fehlercodes |
+| 5XX | Fehlercodes |
 
-<br />
 **Verfügbare Gerätefamilien**
 
 * Windows Xbox
-

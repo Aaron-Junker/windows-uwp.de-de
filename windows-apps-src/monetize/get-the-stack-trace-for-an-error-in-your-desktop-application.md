@@ -5,12 +5,12 @@ ms.date: 06/05/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store Services, Microsoft Store Analytics-API, Stapel Überwachung, Fehler, Desktop Anwendung
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a960a455260c208b5a38139e24d00076c4fc45d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 319323ffbd8ed9aecda29cb012a47476f74c7811
+ms.sourcegitcommit: b0a82c2a132212eb5fb72b67f0789cac1014642f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155584"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98254175"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-desktop-application"></a>Abrufen der Stapelüberwachung für einen Fehler in Ihrer Desktopanwendung
 
@@ -20,7 +20,6 @@ Bevor Sie diese Methode verwenden können, müssen Sie zunächst die [Get Detail
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 * Wenn Sie dies nicht bereits getan haben, müssen Sie alle [Voraussetzungen](access-analytics-data-using-windows-store-services.md#prerequisites) für die Microsoft Store Analytics-API erfüllen.
@@ -29,29 +28,25 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 ## <a name="request"></a>Anforderung
 
-
 ### <a name="request-syntax"></a>Anforderungssyntax
 
-| Methode | Anforderungs-URI                                                          |
-|--------|----------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/stacktrace``` |
-
+| Methode | Anforderungs-URI                                                                   |
+|--------|-------------------------------------------------------------------------------|
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/stacktrace` |
 
 ### <a name="request-header"></a>Anforderungsheader
 
 | Header        | type   | BESCHREIBUNG                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | Zeichenfolge | Erforderlich. Das Azure AD-Zugriffstoken im Format **Bearer** &lt;*token*&gt;. |
- 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
-| Parameter        | Typ   |  BESCHREIBUNG      |  Erforderlich  |
+| Parameter        | type   |  BESCHREIBUNG      |  Erforderlich  |
 |---------------|--------|---------------|------|
-| applicationId | Zeichenfolge | Die Produkt-ID der Desktop Anwendung, für die Sie eine Stapel Überwachung erhalten möchten. Wenn Sie die Produkt-ID einer Desktop Anwendung abrufen möchten, öffnen Sie einen beliebigen [Analysebericht für Ihre Desktop Anwendung im Partner Center](/windows/desktop/appxpkg/windows-desktop-application-program) (z. b. den Integritäts **Bericht**), und rufen Sie die Produkt-ID aus der URL ab. |  Ja  |
-| cabidhash | Zeichenfolge | Der eindeutige ID-Hash der CAB-Datei, die dem Fehler zugeordnet ist, für den Sie die Stapel Überwachung abrufen möchten. Um diesen Wert abzurufen, verwenden Sie die [Get Details für einen Fehler in der Desktop Anwendungs](get-details-for-an-error-in-your-desktop-application.md) Methode, um Details für einen bestimmten Fehler in Ihrer Anwendung abzurufen, und verwenden Sie den **cabidhash** -Wert im Antworttext dieser Methode. |  Ja  |
+| applicationId | string | Die Produkt-ID der Desktop Anwendung, für die Sie eine Stapel Überwachung erhalten möchten. Wenn Sie die Produkt-ID einer Desktop Anwendung abrufen möchten, öffnen Sie einen beliebigen [Analysebericht für Ihre Desktop Anwendung im Partner Center](/windows/desktop/appxpkg/windows-desktop-application-program) (z. b. den Integritäts **Bericht**), und rufen Sie die Produkt-ID aus der URL ab. |  Ja  |
+| cabidhash | string | Der eindeutige ID-Hash der CAB-Datei, die dem Fehler zugeordnet ist, für den Sie die Stapel Überwachung abrufen möchten. Um diesen Wert abzurufen, verwenden Sie die [Get Details für einen Fehler in der Desktop Anwendungs](get-details-for-an-error-in-your-desktop-application.md) Methode, um Details für einen bestimmten Fehler in Ihrer Anwendung abzurufen, und verwenden Sie den **cabidhash** -Wert im Antworttext dieser Methode. |  Ja  |
 
- 
 ### <a name="request-example"></a>Anforderungsbeispiel
 
 Im folgenden Beispiel wird gezeigt, wie Sie mit dieser Methode eine Stapelüberwachung abrufen. Ersetzen Sie die Parameter *ApplicationId* und *cabidhash* durch die entsprechenden Werte für Ihre Desktop Anwendung.
@@ -63,27 +58,24 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>Antwort
 
-
 ### <a name="response-body"></a>Antworttext
 
-| Wert      | Typ    | BESCHREIBUNG                  |
+| Wert      | Type    | BESCHREIBUNG                  |
 |------------|---------|--------------------------------|
 | Wert      | array   | Ein Array von Objekten, die jeweils einen einzelnen Frame der Stapelüberwachungsdaten enthalten. Weitere Informationen zu den Daten in den einzelnen Objekten finden Sie unten im Abschnitt [Stapelüberwachungswerte](#stack-trace-values). |
-| @nextLink  | Zeichenfolge  | Wenn weitere Seiten mit Daten vorhanden sind, enthält diese Zeichenfolge einen URI, mit dem Sie die nächste Seite mit Daten anfordern können. Beispielsweise wird dieser Wert zurückgegeben, wenn der Parameter **top** der Anforderung auf 10 festgelegt ist, es jedoch mehr als 10 Zeilen mit Fehlern für die Abfrage gibt. |
+| @nextLink  | string  | Wenn weitere Seiten mit Daten vorhanden sind, enthält diese Zeichenfolge einen URI, mit dem Sie die nächste Seite mit Daten anfordern können. Beispielsweise wird dieser Wert zurückgegeben, wenn der Parameter **top** der Anforderung auf 10 festgelegt ist, es jedoch mehr als 10 Zeilen mit Fehlern für die Abfrage gibt. |
 | TotalCount | integer | Die Gesamtzahl der Zeilen im Datenergebnis für die Abfrage.          |
-
 
 ### <a name="stack-trace-values"></a>Stapelüberwachungswerte
 
 Elemente im Array *Value* enthalten die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG      |
+| Wert           | Type    | BESCHREIBUNG      |
 |-----------------|---------|----------------|
-| Level            | Zeichenfolge  |  Die Framenummer, die dieses Element im Aufrufstapel darstellt.  |
+| Level            | string  |  Die Framenummer, die dieses Element im Aufrufstapel darstellt.  |
 | image   | Zeichenfolge  |   Den Namen der ausführbaren Datei oder des Bibliothekbilds, die/das die Funktion enthält, die in diesem Stapelframe aufgerufen wird.           |
-| Funktion | Zeichenfolge  |  Der Name der Funktion, die in diesem Stapelframe aufgerufen wird. Dies ist nur verfügbar, wenn Ihre App Symbole für die ausführbare Datei oder die Bibliothek enthält.              |
-| offset     | Zeichenfolge  |  Der Byte-Offset der aktuellen Anweisung relativ zum Start der Funktion.      |
-
+| Funktion | string  |  Der Name der Funktion, die in diesem Stapelframe aufgerufen wird. Dies ist nur verfügbar, wenn Ihre App Symbole für die ausführbare Datei oder die Bibliothek enthält.              |
+| offset     | string  |  Der Byte-Offset der aktuellen Anweisung relativ zum Start der Funktion.      |
 
 ### <a name="response-example"></a>Antwortbeispiel
 

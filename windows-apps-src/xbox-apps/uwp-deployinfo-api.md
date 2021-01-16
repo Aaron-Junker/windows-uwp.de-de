@@ -4,21 +4,21 @@ description: Erfahren Sie, wie Sie die Rest-API DeployInfo des Xbox-Geräte Port
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 5260125625ced6c258a683bcfb9b552e57d07f06
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 2819b21e12d25aca941808e1feeb8a7539750a91
+ms.sourcegitcommit: b0a82c2a132212eb5fb72b67f0789cac1014642f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88943000"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98254225"
 ---
 # <a name="requests-deployment-information-for-one-or-more-installed-packages"></a>Fordert Bereitstellungs Informationen für mindestens ein installiertes Paket an.
 
 **Anforderung**
 
-Methode      | Anforderungs-URI
-:------     | :------
-POST | /ext/app/deployinfo
-<br />
+| Methode | Anforderungs-URI |
+|--------|-------------|
+| POST | /ext/app/deployinfo |
+
 **URI-Parameter**
 
  - Keine
@@ -35,7 +35,7 @@ Ein JSON-Array im folgenden Format:
   * Packagefullname: der Name des Pakets, zu dem Informationen angefordert werden.
   * Overlayfolder: optionaler Pfad zu einem Überlagerungs Ordner Pfad, wenn dieses Feature verwendet wird.
 
-###<a name="response"></a>Antwort
+### <a name="response"></a>Antwort
 
 **Antworttext**
 
@@ -53,12 +53,11 @@ Ein JSON-Array im folgenden Format (einige Felder sind optional):
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
-HTTP-Statuscode      | BESCHREIBUNG
-:------     | :-----
-200 | Erfolg
-4XX | Fehlercodes
-5XX | Fehlercodes
-<br />
+| HTTP-Statuscode | BESCHREIBUNG |
+|------------------|-------------|
+| 200 | Erfolg |
+| 4XX | Fehlercodes |
+| 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 

@@ -1,30 +1,31 @@
 ---
-title: Geräteportal-Controller – API-Referenz
-description: Hier erfahren Sie, wie Sie die Anzahl der angeschlossenen physischen Controller abrufen und sie programmgesteuert deaktivieren.
+title: API-Referenz für Geräte Portal Controller
+description: Erfahren Sie, wie Sie die Anzahl angefügter physischer Controller erhalten und Sie Programm gesteuert deaktivieren.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b5061f9193d78d4ff23f5fa707b0bea67a10f98
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 535846d7dbeb2d29328b5c5d01b06d4449a53790
+ms.sourcegitcommit: b0a82c2a132212eb5fb72b67f0789cac1014642f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57657005"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98254185"
 ---
-# <a name="controller-api-reference"></a>Controller – API-Referenz   
-Mit dieser REST-API können Sie die Anzahl der angeschlossenen physischen Controller abrufen und deaktivieren.
+# <a name="controller-api-reference"></a>Controller-API-Referenz
 
-## <a name="determine-the-number-of-attached-physical-controllers"></a>Bestimmen der Anzahl der angeschlossenen physischen Controller
+Sie können die Anzahl angefügter physischer Controller erhalten und diese mithilfe dieser Rest-API ausschalten.
+
+## <a name="determine-the-number-of-attached-physical-controllers"></a>Bestimmen der Anzahl angefügter physischer Controller
 
 **Anforderung**
 
-Sie können die Anzahl der angeschlossenen physischen Controller auf dem Gerät mit der folgenden Anforderung überprüfen.
+Sie können die Anzahl angefügter physischer Controller auf dem Gerät mithilfe der folgenden Anforderung überprüfen.
 
-Methode      | Anforderungs-URI
-:------     | :-----
-GET | /ext/remoteinput/controllers
-<br />
+Methode | Anforderungs-URI |
+-------|-------------|
+| GET | /ext/remoteinput/controllers |
+
 **URI-Parameter**
 
 - Keine
@@ -39,28 +40,28 @@ GET | /ext/remoteinput/controllers
 
 **Antwort**   
 
-- Die JSON-Number-Eigenschaft ConnectedControllerCount, die die Anzahl der angeschlossenen physischen Controller angibt.
+- JSON-Zahlen Eigenschaft connectedcontrollercount, die die Anzahl angefügter physischer Controller angibt.
 
-**Statuscode:**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
-HTTP-Statuscode      | Beschreibung
-:------     | :-----
-200 | Möglich
-4XX | Fehlercodes
-5XX | Fehlercodes
+| HTTP-Statuscode | BESCHREIBUNG |
+|------------------|-------------|
+| 200 | Erfolg |
+| 4XX | Fehlercodes |
+| 5XX | Fehlercodes |
 
-## <a name="disconnect-all-physical-controllers-on-the-devkit"></a>Trennen aller physischen Controller im Entwickler-Kit
+## <a name="disconnect-all-physical-controllers-on-the-devkit"></a>Trennen Sie alle physischen Controller im devkit.
 
 **Anforderung**
 
-Sie können alle physischen Controller auf dem Gerät mithilfe der folgenden Anforderung trennen.
+Mithilfe der folgenden Anforderung können Sie alle physischen Controller auf dem Gerät trennen.
 
-Methode      | Anforderungs-URI
-:------     | :-----
-DELETE | /ext/remoteinput/controllers
-<br />
+| Methode | Anforderungs-URI |
+|--------|-------------|
+| DELETE | /ext/remoteinput/controllers |
+
 **URI-Parameter**
 
 - Keine
@@ -77,17 +78,16 @@ DELETE | /ext/remoteinput/controllers
 
 - Keine 
 
-**Statuscode:**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
-HTTP-Statuscode      | Beschreibung
-:------     | :-----
-204 | Die Anforderung zum Trennen der Controller war erfolgreich.
-4XX | Fehlercodes
-5XX | Fehlercodes
+| HTTP-Statuscode | BESCHREIBUNG |
+|------------------|-------------|
+| 204 | Die Anforderung zum Trennen der Controller war erfolgreich. |
+| 4XX | Fehlercodes |
+| 5XX | Fehlercodes |
 
-<br />
-**Gerätefamilien verfügbar**
+**Verfügbare Gerätefamilien**
 
 * Windows Xbox

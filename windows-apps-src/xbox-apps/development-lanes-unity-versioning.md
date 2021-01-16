@@ -4,12 +4,12 @@ description: Erfahren Sie, wie Sie die Versionskontrolle mit einem Unity-Spiel f
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 1c0eb9bfc6ee758b854754b0531299fb30b51d1c
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 67c4ec927d83ecba1257eb73fec451e3281333b2
+ms.sourcegitcommit: b0a82c2a132212eb5fb72b67f0789cac1014642f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749856"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98254165"
 ---
 # <a name="unity-version-control-your-uwp-project"></a>Unity: Versionskontrolle für Ihr UWP-Projekt
 
@@ -17,9 +17,9 @@ Sie haben Ihr Unity-Spiel für Xbox noch immer nicht in die universelle Windows-
 
 Es gibt verschiedene Gründe dafür, Teile Ihres generierten UWP-Verzeichnisses der Versionskontrolle hinzuzufügen. Hierzu zählt unter anderem das Hinzufügen von Abhängigkeiten (z. B. Xbox Live SDK).  Dieses Szenario wird in diesem Lernprogramm als Beispiel herangezogen und hilft Ihnen hoffentlich dabei, die individuellen Anforderungen Ihres Projekts zu erfüllen.
 
-***Haftungsausschluss: Wir verwenden git als Lösung für die Versionskontrolle.  Wenn Sie sich unterscheiden, sollten die Konzepte weiterhin übersetzt werden.***
+***Haftungsausschluss: Wir verwenden git als Lösung für die Versionskontrolle.  Wenn Sie sich unterscheiden, sollten die Konzepte weiterhin übersetzt werden.** _
 
-Zur Erinnerung: Das Verzeichnis für unser Spiel ***ScrapyardPhoenix*** sieht aktuell wie folgt aus:
+Um den Arbeitsspeicher zu aktualisieren, sieht das Verzeichnis für das Spiel, _*_scrapyardphoenix_*_, wie folgt aus:
 
 ![Build-Zielordner](images/build-destination.png)
 
@@ -27,9 +27,9 @@ Und unser UWP-Verzeichnis sieht wie folgt aus:
 
 ![UWP-VS-Lösung](images/uwp-vs-solution.png)
 
-In diesem Verzeichnis interessiert uns nur der Ordner ***ScrapyardPhoenix*** (Name Ihres Spiels).  Alles andere ist für unsere Versionskontrolle nicht relevant.
+In diesem Verzeichnis geht es nur um einen Ordner, den Ordner " _*_scrapyardphoenix_*_ " (fügen Sie hier den Namen Ihres Spiels ein).  Alles andere ist für unsere Versionskontrolle nicht relevant.
 
-***Sie sind nicht vertraut, was eine gitignore-Datei ist?  Weitere Informationen finden Sie unter [gitignore](https://git-scm.com/docs/gitignore).***
+_*_Sie sind nicht vertraut, was eine gitignore-Datei ist?  Weitere Informationen finden Sie unter [gitignore](https://git-scm.com/docs/gitignore)._*_
 
 ```console
 ##################################################################
@@ -41,7 +41,7 @@ In diesem Verzeichnis interessiert uns nur der Ordner ***ScrapyardPhoenix*** (Na
 ...
 
 # ignore the whole UWP directory
-/UWP/**
+/UWP/_*
 
 # except we want to keep... (this line will be modified and removed further down)
 !/UWP/ScrapyardPhoenix/
@@ -53,19 +53,23 @@ Wir möchten einige unterschiedliche Dateien und Ordner aus dem Ordner **UWP/Scr
 
 ## <a name="folders"></a>Ordner  
 
-`Assets` | ***Einschließen*** | Enthält Microsoft Store Bilder  
-`Data`   | ***Ignorieren*** | Wenn Unity das Projekt in kompiliert (Szenen, Shader, Skripts, Prefabs usw.)  
-`Dependencies` | ***Einschließen*** | Dieser Ordner wurde erstellt, um alle UWP-Abhängigkeiten beizubehalten (z. b. XboxLiveSDK.dll).  
-`Properties` | ***Einschließen*** | Enthält erweiterte Einstellungen, die vom Entwickler geändert werden können.  
-`Unprocessed` | ***Ignorieren*** | Enthält Unity `.dll` und `.pdb` Dateien  
+| Ordnername | Einstellung | BESCHREIBUNG |
+|-------------|---------|-------------|
+| `Assets` | **_Include_* _ | Enthält Microsoft Store Bilder |
+| `Data` | _*_Ignorieren_*_ | Wenn Unity das Projekt in kompiliert (Szenen, Shader, Skripts, Prefabs usw.) |
+| `Dependencies` | _*_Darunter_*_ | Dieser Ordner wurde erstellt, um alle UWP-Abhängigkeiten beizubehalten (z. b. XboxLiveSDK.dll). |
+| `Properties` | _*_Darunter_*_ | Enthält erweiterte Einstellungen, die vom Entwickler geändert werden können. |
+| `Unprocessed` | _*_Ignorieren_*_ | Enthält Unity `.dll` und `.pdb` Dateien |
 
-## <a name="files"></a>Files  
+## <a name="files"></a>Dateien  
 
-`App.cs` | ***Einschließen*** | Einstiegspunkt für Ihre UWP-Anwendung Diese kann geändert und mit anderen Quelldateien erweitert werden.  
-`Package.appxmanifest` | ***Einschließen*** | App-Paket Manifest-Quelldatei für das msix-oder AppX-Paket  
-`project.json` | ***Einschließen*** | Beschreibt die nuget-Pakete, von denen Sie `*.csproj` abhängig sind  
-`ScrapyardPhoenix.csproj` | ***Einschließen*** | Beschreibt das UWP-Buildziel. Wenn Sie dem UWP-Projekt zusätzliche Abhängigkeiten hinzufügen, `*.csproj` enthält diese Datei diese Informationen.  
-`ScrapyardPhoenix.csproj.user` | ***Ignorieren*** | Diese Datei enthält lokale Benutzerinformationen.
+| Ordnername | Einstellung | BESCHREIBUNG |
+|-------------|---------|-------------|
+| `App.cs` | _*_Einschließen_*_ | Einstiegspunkt für Ihre UWP-Anwendung Diese kann geändert und mit anderen Quelldateien erweitert werden. |
+| `Package.appxmanifest` | _*_Darunter_*_ | App-Paket Manifest-Quelldatei für das msix-oder AppX-Paket |
+| `project.json` | _*_Darunter_*_ | Beschreibt die nuget-Pakete, von denen Sie `_.csproj` abhängig sind |
+| `ScrapyardPhoenix.csproj` | ***Include** _ | Beschreibt das UWP-Buildziel. Wenn Sie dem UWP-Projekt zusätzliche Abhängigkeiten hinzufügen, `_.csproj` enthält diese Datei diese Informationen. |
+| `ScrapyardPhoenix.csproj.user` | ***Ignorieren** _ | Diese Datei enthält lokale Benutzerinformationen. |
 
 ## <a name="resulting-gitignore"></a>Resultierende GITIGNORE-Datei
 
@@ -79,7 +83,7 @@ Wir möchten einige unterschiedliche Dateien und Ordner aus dem Ordner **UWP/Scr
 ...
 
 # ignore the whole UWP directory
-/UWP/**
+/UWP/_*
 
 # except we want to keep...
 !/UWP/ScrapyardPhoenix/Assets/*
@@ -101,8 +105,9 @@ Fügen Sie Abhängigkeiten zu DLL- und WINMD-Dateien hinzu, indem Sie diese im U
 
 ![UWP-Lösung](images/uwp-solution.PNG)
 
-***ScrapyardPhoenix (Universal Windows)*** ist das Projekt, dem Sie einen Verweis (etwa auf das Xbox Live SDK) hinzufügen würden.
+**_Scrapyardphoenix (universelles Windows)_** ist das Projekt, zu dem Sie einen Verweis hinzufügen würden, z. b. das Xbox Live SDK.
 
 ## <a name="see-also"></a>Weitere Informationen
+
 - [Portieren vorhandener Spiele zu Xbox](development-lanes-landing.md)
 - [UWP auf Xbox One](index.md)

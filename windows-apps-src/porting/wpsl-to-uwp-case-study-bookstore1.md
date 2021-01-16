@@ -1,19 +1,19 @@
 ---
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
 description: In diesem Thema wird eine Fallstudie für das Portieren einer sehr einfachen Windows Phone Silverlight-App zu einer UWP (Universelle Windows-Plattform)-App für Windows 10 vorgestellt.
-title: Windows Phone von Silverlight zur UWP-Fallstudie, Bookstore1
+title: Windows Phone Silverlight zu UWP – Fallstudie, Bookstore1
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ea840a3f4e1f80fa7a5a60ce4a7bfd1aaef8074
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8c771de3f5ad0d042d278c0851849c306e7edb4d
+ms.sourcegitcommit: b0a82c2a132212eb5fb72b67f0789cac1014642f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171194"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98254235"
 ---
-# <a name="windowsphone-silverlight-to-uwp-case-study-bookstore1"></a>Windows Phone Silverlight zu UWP – Fallstudie, Bookstore1
+# <a name="windows-phone-silverlight-to-uwp-case-study-bookstore1"></a>Windows Phone Silverlight zu UWP – Fallstudie, Bookstore1
 
 
 In diesem Thema wird eine Fallstudie für das Portieren einer sehr einfachen Windows Phone Silverlight-App zu einer UWP (Universelle Windows-Plattform)-App für Windows 10 vorgestellt. Mit Windows 10 können Sie ein einzelnes App-Paket erstellen, das Ihre Kunden auf einer Vielzahl von Geräten installieren können – und genau das werden wir in dieser Fallstudie tun. Weitere Informationen finden Sie unter [Anleitung für UWP-Apps](../get-started/universal-application-platform-guide.md).
@@ -22,7 +22,7 @@ Die portierte App besteht aus einem **ListBox**-Element, das an ein Ansichtsmode
 
 Die vorherigen Themen in diesem Abschnitt beschreiben die Unterschiede zwischen den Plattformen und bieten umfassende Informationen und Anleitungen zum Portierungsprozess für verschiedene Aspekte einer App, vom XAML-Markup über die Bindung an ein Ansichtsmodell bis hin zum Zugreifen auf Daten. Dieser Leitfaden soll anhand einer Fallstudie ergänzt werden, indem ein praktisches Beispiel vorgestellt wird. Bei den Fallstudien wird davon ausgegangen, dass Sie die Anleitung gelesen haben. Sie wird nicht wiederholt.
 
-**Hinweis**    Wenn Sie Bookstore1Universal \_ 10 in Visual Studio öffnen, wenn die Meldung "Visual Studio-Update erforderlich" angezeigt wird, führen Sie die Schritte zum Auswählen einer Versionsverwaltung für die Zielplattform in " [targetplatformversion](wpsl-to-uwp-troubleshooting.md)" aus.
+**Hinweis**   Wenn Sie Bookstore1Universal \_ 10 in Visual Studio öffnen, wenn die Meldung "Visual Studio-Update erforderlich" angezeigt wird, führen Sie die Schritte zum Auswählen einer Versionsverwaltung für die Zielplattform in " [targetplatformversion](wpsl-to-uwp-troubleshooting.md)" aus.
 
 ## <a name="downloads"></a>Downloads
 
@@ -30,13 +30,13 @@ Die vorherigen Themen in diesem Abschnitt beschreiben die Unterschiede zwischen 
 
 [Laden Sie die \_ app "Bookstore1Universal 10 Windows 10" herunter](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1Universal_10).
 
-## <a name="the-windowsphone-silverlight-app"></a>Die Windows Phone Silverlight-App
+## <a name="the-windows-phone-silverlight-app"></a>Die Windows Phone Silverlight-App
 
 So sieht „Bookstore1WPSL8“ aus – die App, die wir portieren werden. Es handelt sich dabei einfach um ein Listenfeld mit Büchern mit vertikalem Bildlauf unter der Überschrift des App-Namens und dem Seitentitel.
 
 ![Erscheinungsbild von „Bookstore1WPSL8“](images/wpsl-to-uwp-case-studies/c01-01-wpsl-how-the-app-looks.png)
 
-## <a name="porting-to-a-windows10-project"></a>Portieren auf ein Windows 10-Projekt
+## <a name="porting-to-a-windows-10-project"></a>Portieren auf ein Windows 10-Projekt
 
 Das Erstellen eines neuen Projekts in Visual Studio geht sehr schnell: Kopieren Sie Dateien aus „Bookstore1WPSL8“, und fügen Sie die kopierten Dateien in das neue Projekt ein. Erstellen Sie zunächst ein neues Projekt vom Typ „Leere Anwendung“ (Windows Universal). Nennen Sie Sie Bookstore1Universal \_ 10. Dabei handelt es sich um die Dateien, die von Bookstore1WPSL8 nach Bookstore1Universal 10 kopiert werden sollen \_ .
 
@@ -76,7 +76,7 @@ Die Ansicht und das Ansichtsmodell arbeiten ordnungsgemäß zusammen, und das **
 
 ## <a name="paying-off-the-debt-items-and-some-initial-styling"></a>Zurückzahlen der Schulden und erste Formatierungen
 
-Standardmäßig werden alle Ausrichtungen unterstützt. Die Windows Phone Silverlight-App beschränkt sich explizit auf das Hochformat, sodass die Schulden Elemente \# 1 und \# 2 abbezahlt werden, indem Sie das App-Paket Manifest im neuen Projekt aufrufen und das **Portrait** Hochformat in **unterstützten Ausrichtungen**überprüfen.
+Standardmäßig werden alle Ausrichtungen unterstützt. Die Windows Phone Silverlight-App beschränkt sich explizit auf das Hochformat, sodass die Schulden Elemente \# 1 und \# 2 abbezahlt werden, indem Sie das App-Paket Manifest im neuen Projekt aufrufen und das  Hochformat in **unterstützten Ausrichtungen** überprüfen.
 
 Für diese APP ist Element \# 3 keine Schuld, weil die Statusleiste (früher als "Systemleiste" bezeichnet) standardmäßig angezeigt wird. Für \# die Elemente 4 und \# 5 müssen wir vier universelle Windows-Plattform (UWP) **TextBlock** -Stile finden, die den Windows Phone Silverlight-Stilen entsprechen, die wir verwenden. Sie können die Windows Phone Silverlight-App im Emulator ausführen und nebeneinander mit der Abbildung im Abschnitt [Text](wpsl-to-uwp-porting-xaml-and-ui.md) vergleichen. Aufgrund dieser Vorgehensweise und anhand der Eigenschaften der Windows Phone Silverlight-Systemstile können wir folgende Tabelle erstellen:
 
@@ -86,7 +86,7 @@ Für diese APP ist Element \# 3 keine Schuld, weil die Statusleiste (früher als
 | PhoneTextSubtleStyle                | SubtitleTextBlockStyle |
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
- 
+
 Zum Festlegen dieser Stile können Sie sie einfach in den Markup-Editor eingeben oder die Visual Studio-XAML-Tools verwenden und sie festlegen, ohne etwas einzugeben. Klicken Sie dazu mit der rechten Maustaste auf **TextBlock**, und klicken Sie dann auf **Stil bearbeiten** &gt; **Ressource anwenden**. Um dies für die **TextBlock**-Elemente in der Elementvorlage auszuführen, klicken Sie mit der rechten Maustaste auf das **ListBox**-Element und klicken dann auf **Weitere Vorlagen bearbeiten** &gt; **Erstellte Elemente bearbeiten (ItemTemplate)**.
 
 Die Elemente sind mit einem weißen Hintergrund mit 80 % Deckkraft unterlegt, da der Standardstil des **ListBox**-Steuerelements den Hintergrund auf die `ListBoxBackgroundThemeBrush`-Systemressource festlegt. Legen Sie `Background="Transparent"` für das **ListBox**-Element fest, um den Hintergrund zu löschen. Zur Linksausrichtung der **TextBlock**-Elemente in der Elementvorlage bearbeiten Sie sie erneut wie oben beschrieben und legen unter **Margin** für beide **TextBlock**-Elemente den Wert `"9.6,0"` fest.
@@ -104,7 +104,7 @@ In „Bookstore1WPSL8“ haben wir Folgendes vorgenommen:
     return new BitmapImage(new Uri(this.CoverImagePath, UriKind.Relative));
 ```
 
-In „Bookstore1Universal“ verwenden wir das [URI-Schema](/previous-versions/windows/apps/jj655406(v=win.10)) „ms-appx“. Damit der Rest unseres Codes beibehalten werden kann, können wir eine andere Überladung des **System.Uri**-Konstruktors verwenden, um das URI-Schema „ms-appx“ in einen Basis-URI einzufügen und den restlichen Pfad anzufügen. Und zwar so:
+In „Bookstore1Universal“ verwenden wir das [URI-Schema](/previous-versions/windows/apps/jj655406(v=win.10)) „ms-appx“. Damit der Rest unseres Codes beibehalten werden kann, können wir eine andere Überladung des **System.Uri**-Konstruktors verwenden, um das URI-Schema „ms-appx“ in einen Basis-URI einzufügen und den restlichen Pfad anzufügen. Dies sieht folgendermaßen aus:
 
 ```csharp
     // this.BookCoverImagePath contains a path of the form "/Assets/CoverImages/one.png".
