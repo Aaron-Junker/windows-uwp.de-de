@@ -3,12 +3,12 @@ title: WinUI 3 Vorschau 3 (November 2020)
 description: Übersicht über das Release von WinUI 3 Vorschau 3.
 ms.date: 11/17/2020
 ms.topic: article
-ms.openlocfilehash: 69855aea647b608d9253e4f71b6d7d38917def61
-ms.sourcegitcommit: a4ca8ba143862411cd1104515cfeb98f1bcdb780
+ms.openlocfilehash: cbda5dc7ea58111ef40c0b9f92aef192bd61e422
+ms.sourcegitcommit: 617344ae1a1f5b580c938b61e910d99120b73626
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96857421"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620836"
 ---
 # <a name="windows-ui-library-3-preview-3-november-2020"></a>Windows-UI-Bibliothek 3 Vorschau 3 (November 2020)
 
@@ -36,10 +36,12 @@ WinUI 3 Vorschau 3 enthält Visual Studio-Projektvorlagen, die Ihnen beim Erst
 
 2. Installieren von [Visual Studio 2019, Version 16.9, Vorschau](https://visualstudio.microsoft.com/vs/preview/)
 
-    Bei der Installation von Visual Studio müssen Sie die folgenden Workloads einschließen:
-    - NET-Desktop-Entwicklung (dadurch wird auch .NET 5 installiert)
+    Bei der Installation von Visual Studio müssen Sie den folgenden Workload einschließen:
     - Entwicklung für die universelle Windows-Plattform
 
+    Zum Erstellen von .NET-Apps müssen Sie außerdem die folgenden Workloads einschließen:
+    - NET-Desktop-Entwicklung (dadurch wird auch .NET 5 installiert)
+    
     Zum Erstellen von C++-Apps müssen Sie außerdem die folgenden Workloads einschließen:
     - Desktopentwicklung mit C++
     - Die optionale Komponente *C++ (v142) UWP-Tools (Universelle Windows-Plattform)* für die UWP-Workload (siehe „Installationsdetails“ im Abschnitt „Entwicklung mit der universellen Windows-Plattform“ im rechten Bereich).
