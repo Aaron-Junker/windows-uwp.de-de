@@ -2,16 +2,16 @@
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
 description: Wenn Sie über einen Katalog mit apps und Add-ons verfügen, können Sie die Microsoft Store Sammlungs-API und Microsoft Store Purchase-API verwenden, um über ihre Dienste auf Besitz Informationen für diese Produkte zuzugreifen.
 title: Verwalten von Produktansprüchen aus einem Dienst
-ms.date: 08/01/2018
+ms.date: 01/21/2021
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Collection-API, Microsoft Store Purchase-API, Produkte anzeigen, Produkte gewähren
 ms.localizationpriority: medium
-ms.openlocfilehash: 1447a8f7a689b3405ac1ebb8807c1c68b81294db
-ms.sourcegitcommit: ad33b2b191c7e62dc68a46bd349a87ff8ca7cef8
+ms.openlocfilehash: 7674a9b966510d914850e1fc8b2c8ca531f64a20
+ms.sourcegitcommit: 069f5ab4be85a7d638fc2a426afaed824e5dfeae
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98108923"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98668739"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Verwalten von Produktansprüchen aus einem Dienst
 
@@ -45,9 +45,6 @@ Dieser End-to-End-Prozess umfasst zwei Softwarekomponenten, die verschiedene Auf
 
 Bevor Sie die Microsoft Store Sammlungs-API oder die Kauf-API verwenden können, müssen Sie eine Azure AD-Webanwendung erstellen, die Mandanten-ID und die Anwendungs-ID für die Anwendung abrufen und einen Schlüssel generieren. Die Azure AD-Webanwendung stellt den Dienst dar, von dem aus Sie die Microsoft Store Sammlungs-API oder die Kauf-API abrufen möchten. Sie benötigen die Mandanten-ID, die Anwendungs-ID und den Schlüssel, um Azure AD Zugriffs Token zu generieren, die Sie zum Aufrufen der API benötigen.
 
-> [!NOTE]
-> Sie müssen die Aufgaben in diesem Abschnitt nur einmal ausführen. Nachdem Sie das Azure AD Anwendungs Manifest aktualisiert haben und ihre Mandanten-ID, Anwendungs-ID und geheimer Client Schlüssel vorliegen, können Sie diese Werte jederzeit wieder verwenden, wenn Sie ein neues Azure AD Zugriffs Token erstellen müssen.
-
 1.  Wenn Sie dies noch nicht getan haben, befolgen Sie die Anweisungen unter [integrieren von Anwendungen in Azure Active Directory](/azure/active-directory/develop/active-directory-integrating-applications) , um eine **Web-App/API-** Anwendung bei Azure AD zu registrieren.
     > [!NOTE]
     > Wenn Sie Ihre Anwendung registrieren, müssen Sie **Web-App/API** als Anwendungstyp auswählen, damit Sie einen Schlüssel (auch als *geheimer Client* Schlüssel bezeichnet) für Ihre Anwendung abrufen können. Wenn Sie die Microsoft Store Sammlungs-API oder die Erwerb-API aufrufen möchten, müssen Sie einen geheimen Client Schlüssel angeben, wenn Sie in einem späteren Schritt ein Zugriffs Token von Azure AD anfordern.
@@ -55,19 +52,6 @@ Bevor Sie die Microsoft Store Sammlungs-API oder die Kauf-API verwenden können,
 2.  Navigieren Sie im [Azure-Verwaltungsportal](https://portal.azure.com/)zu **Azure Active Directory**. Wählen Sie Ihr Verzeichnis aus, klicken Sie im linken Navigationsbereich auf **App-Registrierungen** , und wählen Sie dann Ihre Anwendung aus.
 3.  Sie gelangen zur Haupt Registrierungsseite der Anwendung. Kopieren Sie auf dieser Seite den Wert der **Anwendungs-ID** für die spätere Verwendung.
 4.  Erstellen Sie einen Schlüssel, den Sie später benötigen (Dies wird als *geheimer Client* Schlüssel bezeichnet). Klicken Sie im linken Bereich auf **Einstellungen** und dann auf **Schlüssel**. Führen Sie auf dieser Seite die Schritte zum [Erstellen eines Schlüssels](/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis)aus. Kopieren Sie diesen Schlüssel zur späteren Verwendung.
-5.  Fügen Sie dem [Anwendungs Manifest](/azure/active-directory/develop/active-directory-application-manifest)mehrere erforderliche Audience-URIs hinzu. Klicken Sie im linken Bereich auf **Manifest**. Klicken Sie auf **Bearbeiten**, ersetzen Sie den `"identifierUris"` Abschnitt durch den folgenden Text, und klicken Sie dann auf **Speichern**.
-
-    ```json
-    "accessTokenAcceptedVersion": 1,
-    "identifierUris": [
-        "https://onestore.microsoft.com",
-        "https://onestore.microsoft.com/b2b/keys/create/collections",
-        "https://onestore.microsoft.com/b2b/keys/create/purchase"
-        ],
-    "signInAudience": "AzureADMyOrg",
-    ```
-
-    Diese Zeichenfolgen stellen die von der Anwendung unterstützten Zielgruppen dar. In einem späteren Schritt erstellen Sie Azure AD-Zugriffstoken, die den einzelnen Zielgruppenwerten zugeordnet werden.
 
 <span id="step-2"/>
 
@@ -76,7 +60,7 @@ Bevor Sie die Microsoft Store Sammlungs-API oder die Kauf-API verwenden können,
 Bevor Sie die Microsoft Store Sammlungs-API oder die Kauf-API verwenden können, um den Besitz und die Einkäufe für Ihre APP oder Ihr Add-on zu konfigurieren, müssen Sie Ihre Azure AD Anwendungs-ID der APP (oder der APP, die das Add-on enthält) im Partner Center zuordnen.
 
 > [!NOTE]
-> Sie müssen diese Aufgabe nur einmal ausführen.
+> Sie müssen diese Aufgabe nur einmal ausführen. Nachdem Sie Ihre Mandanten-ID, Anwendungs-ID und den geheimen Client Schlüssel erhalten haben, können Sie diese Werte jederzeit wieder verwenden, wenn Sie ein neues Azure AD Zugriffs Token erstellen müssen.
 
 1.  Melden Sie sich bei [Partner Center](https://partner.microsoft.com/dashboard) an, und wählen Sie Ihre APP aus.
 2.  Wechseln Sie zur Seite **Dienste** &gt; **Produkt Sammlungen und Einkäufe** , und geben Sie Ihre Azure AD Anwendungs-ID in eines der verfügbaren **Client-ID** -Felder ein.
@@ -94,7 +78,7 @@ Bevor Sie einen Microsoft Store-ID-Schlüssel abrufen oder die Microsoft Store S
 
 ### <a name="understanding-the-different-tokens-and-audience-uris"></a>Grundlegendes zu den verschiedenen Token und Zielgruppen-URIs
 
-Abhängig von den Methoden, die Sie in der Microsoft Store Sammlungs-API oder der Kauf-API aufzurufen möchten, müssen Sie entweder zwei oder drei verschiedene Token erstellen. Jedes Zugriffs Token ist einem anderen Zielgruppen-URI zugeordnet (Dies sind dieselben URIs, die Sie zuvor dem `"identifierUris"` Abschnitt des Azure AD Anwendungs Manifests hinzugefügt haben).
+Abhängig von den Methoden, die Sie in der Microsoft Store Sammlungs-API oder der Kauf-API aufzurufen möchten, müssen Sie entweder zwei oder drei verschiedene Token erstellen. Jedem Zugriffs Token ist ein anderer Zielgruppen-URI zugeordnet.
 
   * In allen Fällen müssen Sie ein Token mit dem Zielgruppen- `https://onestore.microsoft.com` URI erstellen. In einem späteren Schritt übergeben Sie dieses Token an den **Autorisierungs** Header der Methoden in der Microsoft Store Sammlungs-API oder der Kauf-API.
       > [!IMPORTANT]
