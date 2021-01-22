@@ -4,12 +4,12 @@ description: Eine Windows-Shellerweiterung für das Massen Umbenennen von Dateie
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 52c24b295e6d93a7a66fda25f89462ed0607bc19
-ms.sourcegitcommit: 46a7e9db64e17a645ee6e888f62a9b04632c56af
+ms.openlocfilehash: 39e06685b6948ed3d3935c69a8b4dafeb9ecc2ea
+ms.sourcegitcommit: 8040760f5520bd1732c39aedc68144c4496319df
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97618559"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98691335"
 ---
 # <a name="powerrename-utility"></a>Powerrename-Hilfsprogramm
 
@@ -93,26 +93,26 @@ Die Attribute für Erstellungsdatum und-Uhrzeit einer Datei können im Text *ers
 
 Variablenmuster |Erklärung
 |:---|:---|
-|$YYYY|Jahr, das durch eine vollständige vier oder fünf Ziffern dargestellt wird, je nach verwendetem Kalender.
-|$YY|Jahr, das nur durch die letzten zwei Ziffern dargestellt wird. Für einstellige Jahre wird eine führende Null hinzugefügt.
-|$Y|Jahr, das nur durch die letzte Ziffer dargestellt wird.
-|$MMMM|Name des Monats
-|$MMM|Abgekürzte Name des Monats
-|$MM|Monat als Ziffern mit führenden Nullen für einstellige Monate.
-|$M|Monat als Ziffern ohne führende Nullen für einstellige Monate.
-|$DDDD|Name des Wochentags
-|$DDD|Abgekürzte Name des Wochentags
-|$DD|Tag des Monats als Ziffern mit führenden Nullen für Einstellige Tage.
-|$D|Tag des Monats als Ziffern ohne führende Nullen für Einstellige Tage.
-|$hh|Stunden mit führenden Nullen für Einstellige Stunden
-|$h|Stunden ohne führende Nullen für Einstellige Stunden
-|$mm|Minuten mit führenden Nullen für Einstellige Minuten.
-|$m|Minuten ohne führende Nullen für Einstellige Minuten.
-|$ss|Sekunden mit führenden Nullen für Einstellige Sekunden.
-|$s|Sekunden ohne führende Nullen für Einstellige Sekunden.
-|$fff|Millisekunden, die durch vollständige drei Ziffern dargestellt werden.
-|$ff|Millisekunden, die nur durch die ersten beiden Ziffern dargestellt werden.
-|$f|Millisekunden, die nur durch die erste Ziffer dargestellt werden.
+|`$YYYY`|Jahr, das durch eine vollständige vier oder fünf Ziffern dargestellt wird, je nach verwendetem Kalender.
+|`$YY`|Jahr, das nur durch die letzten zwei Ziffern dargestellt wird. Für einstellige Jahre wird eine führende Null hinzugefügt.
+|`$Y`|Jahr, das nur durch die letzte Ziffer dargestellt wird.
+|`$MMMM`|Name des Monats
+|`$MMM`|Abgekürzte Name des Monats
+|`$MM`|Monat als Ziffern mit führenden Nullen für einstellige Monate.
+|`$M`|Monat als Ziffern ohne führende Nullen für einstellige Monate.
+|`$DDDD`|Name des Wochentags
+|`$DDD`|Abgekürzte Name des Wochentags
+|`$DD`|Tag des Monats als Ziffern mit führenden Nullen für Einstellige Tage.
+|`$D`|Tag des Monats als Ziffern ohne führende Nullen für Einstellige Tage.
+|`$hh`|Stunden mit führenden Nullen für Einstellige Stunden
+|`$h`|Stunden ohne führende Nullen für Einstellige Stunden
+|`$mm`|Minuten mit führenden Nullen für Einstellige Minuten.
+|`$m`|Minuten ohne führende Nullen für Einstellige Minuten.
+|`$ss`|Sekunden mit führenden Nullen für Einstellige Sekunden.
+|`$s`|Sekunden ohne führende Nullen für Einstellige Sekunden.
+|`$fff`|Millisekunden, die durch vollständige drei Ziffern dargestellt werden.
+|`$ff`|Millisekunden, die nur durch die ersten beiden Ziffern dargestellt werden.
+|`$f`|Millisekunden, die nur durch die erste Ziffer dargestellt werden.
 
 Beispielsweise mit den Dateinamen:
 
@@ -143,27 +143,27 @@ Aktivieren Sie das Kontrollkästchen "reguläre Ausdrücke verwenden", um regul�
 
 #### <a name="simple-matching-examples"></a>Beispiele für einfache Übereinstimmungen
 
-| Suchen nach     | BESCHREIBUNG                                           |
-| -------------- | ------------- |
-| ^              | Mit dem Anfang des Datei namens vergleichen                   |
-| $              | Entsprechung für das Ende des Datei namens                         |
-| .*             | Entsprechung für den gesamten Text im Namen                        |
-| ^ foo           | Entsprechung für Text, der mit "foo" beginnt                     |
-| Balken $           | Abgleichen von Text, der auf "Bar" endet                       |
-| ^ foo. \* Balken $    | Entsprechung für Text, der mit "foo" beginnt und mit "Bar" endet |
-| .+? (? = Leiste)     | Entsprechung für alles bis "Balken"                          |
-| foo [\s\S] \* Leiste | Vergleichen Sie alles zwischen "foo" und "Bar"              |
+| Suchen nach       | BESCHREIBUNG                                           |
+| ---------------- | ------------- |
+| `^`              | Mit dem Anfang des Datei namens vergleichen                   |
+| `$`              | Entsprechung für das Ende des Datei namens                         |
+| `.*`             | Entsprechung für den gesamten Text im Namen                        |
+| `^foo`           | Entsprechung für Text, der mit "foo" beginnt                     |
+| `bar$`           | Abgleichen von Text, der auf "Bar" endet                       |
+| `^foo.*bar$`     | Entsprechung für Text, der mit "foo" beginnt und mit "Bar" endet |
+| `.+?(?=bar)`     | Entsprechung für alles bis "Balken"                          |
+| `foo[\s\S]*bar`  | Vergleichen Sie alles zwischen "foo" und "Bar"              |
 
 #### <a name="matching-and-variable-examples"></a>Übereinstimmende und Variable Beispiele
 
 *Wenn Sie die Variablen verwenden, muss die Option "alle Vorkommen vergleichen" aktiviert sein.*
 
-| Suchen nach | Ersetzen durch  | BESCHREIBUNG                                |
-| ---------- | ------------- |--------------------------------------------|
-| (.\*). PNG  | foo \_ $1.png   | "Foo \_ " dem vorhandenen Dateinamen voranstellen |
-| (.\*). PNG  | $1 \_foo.png   | Fügt " \_ foo" an den vorhandenen Dateinamen an.  |
-| (.\*)      | $1.txt        | Fügt die Erweiterung ". txt" an den vorhandenen Dateinamen an. |
-| (^ \w + \. $) \| (^ \w + $) | $2.txt | Fügt die Erweiterung ". txt" nur an den vorhandenen Dateinamen an, wenn keine Erweiterung vorhanden ist. |
+| Suchen nach   | Ersetzen durch    | BESCHREIBUNG                                |
+| ------------ | --------------- |--------------------------------------------|
+| `(.*).png`   | `foo_$1.png`   | "Foo \_ " dem vorhandenen Dateinamen voranstellen |
+| `(.*).png`   | `$1_foo.png`   | Fügt " \_ foo" an den vorhandenen Dateinamen an.  |
+| `(.*)`       | `$1.txt`        | Fügt die Erweiterung ". txt" an den vorhandenen Dateinamen an. |
+| `(^\w+\.$)|(^\w+$)` | `$2.txt` | Fügt die Erweiterung ". txt" nur an den vorhandenen Dateinamen an, wenn keine Erweiterung vorhanden ist. |
 
 ### <a name="additional-resources-for-learning-regular-expressions"></a>Weitere Ressourcen für das Erlernen regulärer Ausdrücke
 
