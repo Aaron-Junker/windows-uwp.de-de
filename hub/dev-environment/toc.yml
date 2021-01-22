@@ -31,7 +31,7 @@
           items:
             - name: Übersicht
               href: ../nodejs/index.yml
-            - name: Setup mit WSL2
+            - name: "Setup mit WSL\_2"
               href: ../nodejs/setup-on-wsl2.md
             - name: Setup mit Windows (Einsteiger)
               href: ../nodejs/setup-on-windows.md
