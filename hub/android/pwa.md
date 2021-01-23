@@ -7,12 +7,12 @@ manager: jken
 ms.topic: article
 keywords: Android unter Windows, PWA, Android, Cordova, Ionic, PhoneGap, Hybrid-Web-App
 ms.date: 04/28/2020
-ms.openlocfilehash: 482fd02ed7b5d978d81ec52309006034f70b7e47
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4559e795b4a9737bf68129790029f6f9136b4f81
+ms.sourcegitcommit: 99f5544d9642c87a16e3bd21f76c2fcbc97c20d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163984"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743593"
 ---
 # <a name="get-started-developing-a-pwa-or-hybrid-web-app-for-android"></a>Einstieg in die Entwicklung einer PWA-oder Hybrid-Web-App für Android
 
@@ -49,13 +49,13 @@ Sie benötigen kein Framework, um eine Hybrid-APP oder PWA zu erstellen, aber es
 
 Es gibt zwei beliebte Verteilungen von Cordova:
 
-- [PhoneGap](https://phonegap.com/)
+- [PhoneGap](https://blog.phonegap.com/update-for-customers-using-phonegap-and-phonegap-build-cc701c77502c): Unterstützung wurde von Adobe eingestellt.
 
 - [Ionic](https://ionicframework.com/)
 
 ## <a name="adobe-phonegap"></a>Adobe PhoneGap
 
-[PhoneGap](https://phonegap.com/): ein von Adobe unterstütztes Framework, das Cordova mit zusätzlichen Tools unterstützt, wie z. b. eine [Befehlszeile](http://docs.phonegap.com/getting-started/1-install-phonegap/cli/), eine [Desktop-App](https://phonegap.com/products#desktop-app-section)und [PhoneGap Build](https://build.phonegap.com/), ein Dienst, mit dem Sie Ihren Code auf einen Adobe-Server hochladen können, der Native Apps für Sie erstellt, ohne dass Native sdche auf dem lokalen Computer installiert werden müssen. Dies ermöglicht Ihnen das Erstellen einer IOS-App mithilfe Ihres Windows-Computers.
+Die Unterstützung wurde vor kurzem eingestellt. Weitere Informationen finden Sie in diesem [Blogbeitrag von Adobe](https://blog.phonegap.com/update-for-customers-using-phonegap-and-phonegap-build-cc701c77502c).
 
 ### <a name="install-phonegap"></a>Installieren von PhoneGap
 
@@ -120,7 +120,7 @@ Weitere Informationen finden Sie in der [Ionic Cordova Angular](https://ionicfra
 
 ## <a name="create-a-new-project-with-ionic-capacitor-and-angular"></a>Erstellen eines neuen Projekts mit Ionic-Kondensator und Angular
 
-Installieren Sie Ionic und Cordova-res, indem Sie Folgendes in der Befehlszeile eingeben:
+Installieren Sie die Ionic-und Cordova-Res, indem Sie Folgendes in der Befehlszeile eingeben:
 
 ```bash
 npm install -g @ionic/cli native-run cordova-res
