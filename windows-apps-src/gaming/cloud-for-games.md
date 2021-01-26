@@ -6,12 +6,12 @@ ms.date: 03/27/2018
 ms.topic: article
 keywords: Windows 10, UWP, Games, Cloud Services
 ms.localizationpriority: medium
-ms.openlocfilehash: ca575975b27a71798b7cad1cac0cc83ec870d756
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9252e6c2b47e51f51f7cb3cd28f49de08478019d
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173174"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811247"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>Nutzen von Clouddiensten für UWP-Spiele
 
@@ -49,9 +49,9 @@ Hier erfahren Sie, wie andere Entwickler Cloudlösungen in ihre Spiele implement
     </colgroup>
     <tr class="header" align="left">
         <th>Entwickler</th>
-        <th>BESCHREIBUNG</th>
+        <th>Beschreibung</th>
         <th>Kerndaten des Spiels</th>
-        <th>Weitere Informationen</th>
+        <th>Erfahren Sie mehr</th>
     </tr>
     <tr>
         <td><a href="https://www.tencent.com">Tencent-Spiele</a></td>
@@ -112,7 +112,7 @@ Hier erfahren Sie, wie andere Entwickler Cloudlösungen in ihre Spiele implement
     </tr>
     <tr>
         <td><a href="http://www.crimecoast.com/">Pixel Squad</a></td>
-        <td>Pixel Squad entwickelte mit der Unity-Engine und Azure das Spiel <b>Crime Coast</b>. <b>Crime Coast</b> ist ein Social-Strategiespiel für Android, iOS und die Windows-Plattformen. Für das Spiel wurden Azure Blob Speicher, Managed Azure Redis Cache und mehrere IIS-VMs mit Lastenausgleich sowie der Microsoft Notification-Hub eingesetzt. Erfahren Sie, wie die Skalierung und Handhabung der Spieler bei 5.000 gleichzeitigen Spielern möglich ist.
+        <td>Pixel Squad entwickelte mit der Unity-Engine und Azure das Spiel <b>Crime Coast</b>. <b>Crime Coast</b> ist ein Social-Strategiespiel für Android, iOS und die Windows-Plattformen. Azure BLOB Storage, verwaltete Azure redis Cache, ein Array von IIS-VMS mit Lastenausgleich und Microsoft Notification Hub wurden in Ihrem Spiel verwendet. Erfahren Sie, wie die Skalierung und Handhabung der Spieler bei 5.000 gleichzeitigen Spielern möglich ist.
         </td>
         <td>
             <ul>
@@ -159,7 +159,7 @@ Zunächst müssen Sie entscheiden, welche Dienstform für Spiel am besten geeign
 
 In diesem Abschnitt lernen Sie Möglichkeiten zur Nutzung der Azure Cloudangebote für ein Spiel kennen. Azure arbeitet mit Windows, Linux und bekannten Open-Source-Technologien wie Ruby, Python, Java und PHP. Weitere Informationen finden Sie unter [Azure für Gaming](https://azure.microsoft.com/solutions/gaming/).
 
-| Anforderungen                 | Aktivitätsszenarien                            | Produktangebot                      | Produktfunktionen                                    |
+| Requirements (Anforderungen)                 | Aktivitätsszenarien                            | Produktangebot                      | Produktfunktionen                                    |
 |-----------------------------------|-----------------------------------------------|---------------------------------------|----------------------------------------------------|
 | Hosten Ihrer Domäne in der Cloud     | Effizientes Beantworten von DNS-Abfragen            | [Azure DNS](https://azure.microsoft.com/services/dns/) | Hosten Ihrer Domäne mit hoher Leistung und Verfügbarkeit  |
 | Anmeldung, Identitätsüberprüfung      | Spieler meldet sich an und seine Identität wird authentifiziert  | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) | Einmaliges Anmelden mit mehrstufiger Authentifizierung für alle Cloud-Web-Apps und lokalen Web-Apps            | 
@@ -228,6 +228,6 @@ Wir sind ständig auf dem neuesten stellen und fügen neue Features hinzu. Weite
 * [ID@Xbox](https://www.xbox.com/Developers/id)
 
 
- 
+ 
 
- 
+ 

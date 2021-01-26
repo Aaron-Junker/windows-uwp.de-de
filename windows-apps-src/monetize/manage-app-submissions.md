@@ -6,12 +6,12 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Übermittlungs-API, App-Übermittlung
 ms.localizationpriority: medium
-ms.openlocfilehash: de612607da2192af3358c94874e0896557ca6d08
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 00820f00360575f0a335d37aa0859b94648709e3
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171364"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811282"
 ---
 # <a name="manage-app-submissions"></a>Verwalten von App-Übermittlungen
 
@@ -40,7 +40,7 @@ Verwenden Sie die folgenden Methoden zum Abrufen, Erstellen, Aktualisieren, Comm
 <tr class="header">
 <th align="left">Methode</th>
 <th align="left">URI</th>
-<th align="left">BESCHREIBUNG</th>
+<th align="left">Beschreibung</th>
 </tr>
 </thead>
 <tbody>
@@ -70,7 +70,7 @@ Verwenden Sie die folgenden Methoden zum Abrufen, Erstellen, Aktualisieren, Comm
 <td align="left"><a href="commit-an-app-submission.md">Committen einer neuen oder aktualisierten App-Übermittlung</a></td>
 </tr>
 <tr>
-<td align="left">Delete</td>
+<td align="left">DELETE</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}</td>
 <td align="left"><a href="delete-an-app-submission.md">Löschen einer App-Übermittlung</a></td>
 </tr>
@@ -95,10 +95,10 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für eine App zu erstellen.
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions
     ```
 
-    Der Antworttext enthält eine Ressource zur [App-Übermittlung](#app-submission-object) , die die ID der neuen Übermittlung, den SAS-URI (Shared Access Signature) zum Hochladen verwandter Dateien für die Übermittlung in Azure BLOB Storage (z. b. app-Pakete, Auflisten von Bildern und Nachspann Dateien) sowie alle Daten für die neue Übermittlung (z. b. die Listen und Preisinformationen) enthält.
+    Der Antworttext enthält eine Ressource zur [App-Übermittlung](#app-submission-object) , die die ID der neuen Übermittlung enthält, den SAS-URI (Shared Access Signature) für das Hochladen verwandter Dateien für die Übermittlung an Azure BLOB Storage (z. b. app-Pakete, Auflistungs Bilder und Nachspann Dateien) und alle Daten für die neue Übermittlung (z. b. die Auflistungen und Preisinformationen).
 
     > [!NOTE]
-    > Ein SAS-URI ermöglicht den Zugriff auf eine sichere Ressource in Azure Storage, ohne dass Kontoschlüssel erforderlich sind. Hintergrundinformationen zu SAS-URIs und deren Verwendung mit Azure Blob Storage finden Sie unter [Shared Access Signatures, Teil 1: Verstehen des SAS-Modells](/azure/storage/common/storage-sas-overview) und [Shared Access Signatures, Teil 2: Erstellen und Verwenden einer SAS mit BLOB-Speicher](/azure/storage/common/storage-sas-overview).
+    > Ein SAS-URI ermöglicht den Zugriff auf eine sichere Ressource in Azure Storage, ohne dass Kontoschlüssel erforderlich sind. Hintergrundinformationen zu SAS-URIs und deren Verwendung mit Azure BLOB Storage finden Sie unter [Shared Access Signature, Part 1: Grundlegendes zum SAS-Modell](/azure/storage/common/storage-sas-overview) und [Shared Access Signature, Teil 2: Erstellen und Verwenden einer SAS mit BLOB Storage](/azure/storage/common/storage-sas-overview).
 
 4. Wenn Sie neue Pakete, Auflistung von Bildern oder Nachspann Dateien für die Übermittlung hinzufügen, [bereiten Sie die APP-Pakete](../publish/app-package-requirements.md) vor, und bereiten Sie [die APP-Screenshots,-Images und-](../publish/app-screenshots-and-images.md)Auflistungen vor. Fügen Sie all diese Dateien einem ZIP-Archiv hinzu.
 
@@ -110,13 +110,13 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für eine App zu erstellen.
       > [!NOTE]
       > Wenn Sie neue Dateien für die Übermittlung hinzufügen, stellen Sie sicher, dass Sie die Übermittlungs Daten aktualisieren, um auf den Namen und den relativen Pfad dieser Dateien im ZIP-Archiv zu verweisen.
 
-4. Wenn Sie neue Pakete, Auflistung von Bildern oder Nachspann Dateien für die Übermittlung hinzufügen, laden Sie das ZIP-Archiv in [Azure BLOB Storage](/azure/storage/storage-introduction#blob-storage) hoch, indem Sie den SAS-URI verwenden, der im Antworttext der Post-Methode bereitgestellt wurde, die Sie zuvor aufgerufen haben. Zu diesem Zweck können Sie verschiedene Azure-Bibliotheken auf unterschiedlichen Plattformen verwenden, darunter:
+4. Wenn Sie neue Pakete, Auflistung von Bildern oder Nachspann Dateien für die Übermittlung hinzufügen, laden Sie das ZIP-Archiv in [Azure BLOB Storage](/azure/storage/storage-introduction#blob-storage) mit dem SAS-URI hoch, der im Antworttext der Post-Methode bereitgestellt wurde, die Sie zuvor aufgerufen haben. Zu diesem Zweck können Sie verschiedene Azure-Bibliotheken auf unterschiedlichen Plattformen verwenden, darunter:
 
     * [Azure Storage-Client Bibliothek für .net](/azure/storage/storage-dotnet-how-to-use-blobs)
     * [Azure Storage-SDK für Java](/azure/storage/storage-java-how-to-use-blob-storage)
     * [Azure Storage SDK für python](/azure/storage/storage-python-how-to-use-blob-storage)
 
-    Das folgende C#-Codebeispiel zeigt, wie Sie ein ZIP-Archiv mithilfe der [CloudBlockBlob](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob)-Klasse in der Azure Storage-Clientbibliothek für .NET auf Azure Blob Storage hochladen. Im Beispiel wird davon ausgegangen, dass das ZIP-Archiv bereits in ein Datenstromobjekt geschrieben wurde.
+    Im folgenden c#-Codebeispiel wird veranschaulicht, wie ein ZIP-Archiv in Azure BLOB Storage mithilfe der [cloudblockblob](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) -Klasse in der Azure Storage-Client Bibliothek für .net hochgeladen wird. Im Beispiel wird davon ausgegangen, dass das ZIP-Archiv bereits in ein Datenstromobjekt geschrieben wurde.
 
     ```csharp
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -165,7 +165,7 @@ Nachdem ein graduelles Paketrollout für eine App-Übermittlung aktiviert wurde,
 <tr class="header">
 <th align="left">Methode</th>
 <th align="left">URI</th>
-<th align="left">BESCHREIBUNG</th>
+<th align="left">Beschreibung</th>
 </tr>
 </thead>
 <tbody>
@@ -335,15 +335,15 @@ Diese Ressource beschreibt eine App-Übermittlung.
 
 Die Ressource hat die folgenden Werte.
 
-| Wert      | Typ   | BESCHREIBUNG      |
+| Wert      | type   | BESCHREIBUNG      |
 |------------|--------|-------------------|
 | id            | Zeichenfolge  | Die ID der Übermittlung. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen einer APP-Übermittlung](create-an-app-submission.md), zum [erhalten aller apps](get-all-apps.md)und zum [erhalten einer APP](get-an-app.md)verfügbar. Für eine Übermittlung, die im Partner Center erstellt wurde, ist diese ID auch in der URL für die Übermittlungs Seite im Partner Center verfügbar.  |
 | applicationCategory           | Zeichenfolge  |   Eine Zeichenfolge, die [Kategorie und/oder Unterkategorie](../publish/category-and-subcategory-table.md) für Ihre App angibt. Kategorien und Unterkategorien werden mit einem Unterstrich „_“ zu einer einzigen Zeichenfolge zusammengefasst, z. B. **BooksAndReference_EReader**.      |  
-| Preise           |  Objekt (object)  | Eine [Preisressource](#pricing-object), die Preisinformationen für die App enthält.        |   
+| Preise           |  object  | Eine [Preisressource](#pricing-object), die Preisinformationen für die App enthält.        |   
 | Sichtbarkeit           |  Zeichenfolge  |  Die Sichtbarkeit der App. Mögliche Werte: <ul><li>Ausgeblendet</li><li>Öffentlich</li><li>Privat</li><li>NotSet</li></ul>       |   
 | targetPublishMode           | Zeichenfolge  | Der Veröffentlichungsmodus für die Übermittlung. Mögliche Werte: <ul><li>Unmittelbar</li><li>Manuell</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | Zeichenfolge  | Das Veröffentlichungsdatum der Übermittlung im ISO 8601-Format, wenn *TargetPublishMode* den Wert SpecificDate hat.  |  
-| listings           |   Objekt (object)  |  Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei ein Schlüssel ein Ländercode und ein Wert eine [Eintragsressource](#listing-object) ist, die Eintragsinfos für die App enthält.       |   
+| listings           |   object  |  Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei ein Schlüssel ein Ländercode und ein Wert eine [Eintragsressource](#listing-object) ist, die Eintragsinfos für die App enthält.       |   
 | hardwarePreferences           |  array  |   Ein Array von Zeichenfolgen, die die [Hardwareeinstellungen](../publish/enter-app-properties.md) für die App definieren. Mögliche Werte: <ul><li>Touch</li><li>Tastatur</li><li>Maus</li><li>Kamera</li><li>NfcHce</li><li>Nfc</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
 | automaticBackupEnabled           |  boolean  |   Gibt an, ob Windows die App-Daten in automatische Sicherungen auf OneDrive aufnehmen können. Weitere Informationen finden Sie unter [App-Deklarationen](../publish/product-declarations.md).   |   
 | canInstallOnRemovableMedia           |  boolean  |   Gibt an, ob Kunden die App auf Wechselmedien installieren können. Weitere Informationen finden Sie unter [App-Deklarationen](../publish/product-declarations.md).     |   
@@ -352,14 +352,14 @@ Die Ressource hat die folgenden Werte.
 | hasExternalInAppProducts           |     boolean          |   Gibt an, ob Ihre APP es Benutzern ermöglicht, den Einkauf außerhalb des Microsoft Store Commerce-Systems zu tätigen. Weitere Informationen finden Sie unter [App-Deklarationen](../publish/product-declarations.md).     |   
 | meetAccessibilityGuidelines           |    boolean           |  Gibt an, ob getestet wurde, ob die App die Richtlinien zur Barrierefreiheit erfüllt. Weitere Informationen finden Sie unter [App-Deklarationen](../publish/product-declarations.md).      |   
 | notesForCertification           |  Zeichenfolge  |   Enthält [Hinweise zur Zertifizierung](../publish/notes-for-certification.md) für Ihre App.    |    
-| status           |   Zeichenfolge  |  Der Status der Übermittlung. Mögliche Werte: <ul><li>Keine</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Veröffentlichung</li><li>Veröffentlicht</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Zertifizierung</li><li>CertificationFailed</li><li>Freigabe</li><li>ReleaseFailed</li></ul>      |    
-| statusDetails           |   Objekt (object)  | Eine [Ressource für Statusdetails](#status-details-object), die zusätzliche Details über den Status der Übermittlung enthält, einschließlich Fehlerinformationen.       |    
+| status           |   Zeichenfolge  |  Der Status der Übermittlung. Mögliche Werte: <ul><li>Keine</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Veröffentlichung</li><li>Veröffentlicht</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Zertifizierung</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>      |    
+| statusDetails           |   object  | Eine [Ressource für Statusdetails](#status-details-object), die zusätzliche Details über den Status der Übermittlung enthält, einschließlich Fehlerinformationen.       |    
 | fileUploadUrl           |   Zeichenfolge  | Der Shared Access Signature (SAS)-URI für das Hochladen der Pakete für die Übermittlung. Wenn Sie neue Pakete, Auflistung von Bildern oder Nachspann Dateien für die Übermittlung hinzufügen, laden Sie das ZIP-Archiv, das die Pakete und Bilder enthält, in diesen URI hoch. Weitere Informationen finden Sie unter [Erstellen einer App-Übermittlung](#create-an-app-submission).       |    
 | applicationPackages           |   array  | Ein Array von [Ressourcen für Anwendungspakete](#application-package-object), die Details über die einzelnen Pakete in der Übermittlung bereitstellen. |    
-| packageDeliveryOptions    | Objekt (object)  | Eine [Ressource für Paketübermittlungsoptionen](#package-delivery-options-object), die Einstellungen zu graduellen Paketrollouts und zu verpflichtenden Updates für die Übermittlung enthält.  |
+| packageDeliveryOptions    | object  | Eine [Ressource für Paketübermittlungsoptionen](#package-delivery-options-object), die Einstellungen zu graduellen Paketrollouts und zu verpflichtenden Updates für die Übermittlung enthält.  |
 | enterpriseLicensing           |  Zeichenfolge  |  Einer der [Werte für Unternehmenslizenzierung](#enterprise-licensing), die das Verhalten der Unternehmenslizenzierung für die App angeben.  |    
 | allowmicrosoftdecideappavailabilitydefuturedevicefamilies           |  boolean   |  Gibt an, ob Microsoft [die App für zukünftige Windows 10-Gerätefamilien verfügbar machen](../publish/set-app-pricing-and-availability.md) darf.    |    
-| allowTargetFutureDeviceFamilies           | Objekt (object)   |  Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei jeder Schlüssel eine [Windows 10-Gerätefamilie](../publish/set-app-pricing-and-availability.md) ist und jeder Wert ein boolescher Wert ist, der angibt, ob Ihre App auf die angegebene Gerätefamilie ausgerichtet werden darf.     |    
+| allowTargetFutureDeviceFamilies           | object   |  Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei jeder Schlüssel eine [Windows 10-Gerätefamilie](../publish/set-app-pricing-and-availability.md) ist und jeder Wert ein boolescher Wert ist, der angibt, ob Ihre App auf die angegebene Gerätefamilie ausgerichtet werden darf.     |    
 | friendlyName           |   Zeichenfolge  |  Der Anzeige Name der Übermittlung, wie in Partner Center gezeigt. Dieser Wert wird beim Erstellen der Übermittlung für Sie generiert.       |  
 | Bet           |  array |   Ein Array, das bis zu 15 Nachspann [Ressourcen](#trailer-object) enthält, die videonachspann für die APP-Auflistung darstellen.<br/><br/>   |  
 
@@ -370,13 +370,13 @@ Die Ressource hat die folgenden Werte.
 
 Diese Ressource enthält Preisinformationen für die App. Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG        |
+| Wert           | type    | Beschreibung        |
 |-----------------|---------|------|
 |  trialPeriod               |    Zeichenfolge     |  Eine Zeichenfolge, die den Testzeitraum für die App angibt. Mögliche Werte: <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
-|  marketSpecificPricings               |    Objekt (object)     |  Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei jeder Schlüssel ein aus zwei Buchstaben bestehender ISO 3166-1-Alpha-2-Ländercode ist und jeder Wert ein [Preisniveau](#price-tiers) ist. Diese Elemente stellen die [benutzerdefinierten Preise für Ihre App in bestimmten Märkten](../publish/define-market-selection.md) dar. Alle Elemente in diesem Verzeichnis überschreiben den durch den Wert *priceId* angegebenen Basispreis für den angegebenen Markt.      |     
+|  marketSpecificPricings               |    object     |  Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei jeder Schlüssel ein aus zwei Buchstaben bestehender ISO 3166-1-Alpha-2-Ländercode ist und jeder Wert ein [Preisniveau](#price-tiers) ist. Diese Elemente stellen die [benutzerdefinierten Preise für Ihre App in bestimmten Märkten](../publish/define-market-selection.md) dar. Alle Elemente in diesem Verzeichnis überschreiben den durch den Wert *priceId* angegebenen Basispreis für den angegebenen Markt.      |     
 |  Vertrieb               |   array      |  **Veraltet**. Ein Array von [Verkaufsressourcen](#sale-object), die Verkaufsinformationen für die App enthalten.   |     
 |  priceId               |   Zeichenfolge      |  Ein [Preisniveau](#price-tiers), das den [Basispreis](../publish/define-market-selection.md) für die App angibt.   |     
-|  isadvancedpricingmodel               |   boolean      |  **True**gibt an, dass Ihr Entwicklerkonto über Zugriff auf die erweiterten Preisstufen von. 99 USD auf 1999,99 USD verfügt. Bei " **false**" hat ihr Entwicklerkonto Zugriff auf den ursprünglichen Satz von Preisstufen von. 99 USD auf 999,99 USD. Weitere Informationen zu den verschiedenen Tarifen finden Sie unter [Preisstufen](#price-tiers).<br/><br/>**Note** &nbsp; Hinweis &nbsp; Dieses Feld ist schreibgeschützt.   |
+|  isadvancedpricingmodel               |   boolean      |  **True** gibt an, dass Ihr Entwicklerkonto über Zugriff auf die erweiterten Preisstufen von. 99 USD auf 1999,99 USD verfügt. Bei " **false**" hat ihr Entwicklerkonto Zugriff auf den ursprünglichen Satz von Preisstufen von. 99 USD auf 999,99 USD. Weitere Informationen zu den verschiedenen Tarifen finden Sie unter [Preisstufen](#price-tiers).<br/><br/> &nbsp; Hinweis &nbsp; Dieses Feld ist schreibgeschützt.   |
 
 
 <span id="sale-object" />
@@ -392,13 +392,13 @@ Diese Ressource enthält die Verkaufsinformationen für eine App.
 
 Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG    |
+| Wert           | type    | Beschreibung    |
 |-----------------|---------|------|
 |  name               |    Zeichenfolge     |   Der Name des Verkaufs.    |     
 |  basePriceId               |   Zeichenfolge      |  Das [Preisniveau](#price-tiers), das für den Basispreis des Verkaufs verwendet werden soll.    |     
 |  startDate               |   Zeichenfolge      |   Das Startdatum für den Verkauf im Format ISO 8601.  |     
 |  endDate               |   Zeichenfolge      |  Das Enddatum für den Verkauf im Format ISO 8601.      |     
-|  marketSpecificPricings               |   Objekt (object)      |   Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei jeder Schlüssel ein aus zwei Buchstaben bestehender ISO 3166-1-Alpha-2-Ländercode ist und jeder Wert ein [Preisniveau](#price-tiers) ist. Diese Elemente stellen die [benutzerdefinierten Preise für Ihre App in bestimmten Märkten](../publish/define-market-selection.md) dar. Alle Elemente in diesem Verzeichnis überschreiben den durch den Wert *basePriceId* angegebenen Basispreis für den angegebenen Markt.    |
+|  marketSpecificPricings               |   object      |   Ein Verzeichnis von Schlüssel-Wert-Paaren, wobei jeder Schlüssel ein aus zwei Buchstaben bestehender ISO 3166-1-Alpha-2-Ländercode ist und jeder Wert ein [Preisniveau](#price-tiers) ist. Diese Elemente stellen die [benutzerdefinierten Preise für Ihre App in bestimmten Märkten](../publish/define-market-selection.md) dar. Alle Elemente in diesem Verzeichnis überschreiben den durch den Wert *basePriceId* angegebenen Basispreis für den angegebenen Markt.    |
 
 
 <span id="listing-object" />
@@ -407,10 +407,10 @@ Die Ressource hat die folgenden Werte.
 
 Diese Ressource enthält die Eintragsinformationen für eine App. Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG                  |
+| Wert           | type    | Beschreibung                  |
 |-----------------|---------|------|
-|  baseListing               |   Objekt (object)      |  Die Informationen für den [Basiseintrag](#base-listing-object) für die App, die die standardmäßigen Eintragsinformationen für alle Plattformen definiert.   |     
-|  platformOverrides               | Objekt (object) |   Ein Verzeichnis von Schlüssel-Wert-Paaren, in denen jeder Schlüssel eine Zeichenfolge ist, die eine Plattform identifiziert, für die die Eintragsinformationen überschrieben werden sollen, und jeder Wert eine [Basiseintragsressource](#base-listing-object) ist (die nur die Werte von Beschreibung bis Titel enthält), die die Eintragsinformationen angibt, die für die angegebene Plattform überschrieben werden sollen. Die Schlüssel können die folgenden Werte haben: <ul><li>Unbekannt</li><li>Windows80</li><li>Windows81</li><li>WindowsPhone71</li><li>WindowsPhone80</li><li>WindowsPhone81</li></ul>     |      |     
+|  baseListing               |   object      |  Die Informationen für den [Basiseintrag](#base-listing-object) für die App, die die standardmäßigen Eintragsinformationen für alle Plattformen definiert.   |     
+|  platformOverrides               | object |   Ein Verzeichnis von Schlüssel-Wert-Paaren, in denen jeder Schlüssel eine Zeichenfolge ist, die eine Plattform identifiziert, für die die Eintragsinformationen überschrieben werden sollen, und jeder Wert eine [Basiseintragsressource](#base-listing-object) ist (die nur die Werte von Beschreibung bis Titel enthält), die die Eintragsinformationen angibt, die für die angegebene Plattform überschrieben werden sollen. Die Schlüssel können die folgenden Werte haben: <ul><li>Unbekannt</li><li>Windows80</li><li>Windows81</li><li>WindowsPhone71</li><li>WindowsPhone80</li><li>WindowsPhone81</li></ul>     |      |     
 
 <span id="base-listing-object" />
 
@@ -418,7 +418,7 @@ Diese Ressource enthält die Eintragsinformationen für eine App. Die Ressource 
 
 Diese Ressource enthält die Basiseintragsinformationen für eine App. Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG       |
+| Wert           | type    | Beschreibung       |
 |-----------------|---------|------|
 |  copyrightAndTrademarkInfo                |   Zeichenfolge      |  Optionale [Copyright- und/oder Markeninformationen](../publish/create-app-store-listings.md).  |
 |  keywords                |  array       |  Ein Array von [keyword](../publish/create-app-store-listings.md), um die Anzeige Ihrer App in Suchergebnissen zu unterstützen.    |
@@ -445,7 +445,7 @@ Diese Ressource enthält die Basiseintragsinformationen für eine App. Die Resso
 
 Diese Ressource enthält Bild- und Symboldaten für einen App-Eintrag. Weitere Informationen zu Bildern und Symbolen für eine APP-Auflistung finden Sie unter [App-Screenshots und Bilder](../publish/app-screenshots-and-images.md). Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG           |
+| Wert           | type    | Beschreibung           |
 |-----------------|---------|------|
 |  fileName               |    Zeichenfolge     |   Der Name der Bilddatei im ZIP-Archiv, das Sie für die Übermittlung hochgeladen haben.    |     
 |  fileStatus               |   Zeichenfolge      |  Der Status der Bilddatei. Mögliche Werte: <ul><li>Keine</li><li>PendingUpload</li><li>Hochgeladen</li><li>PendingDelete</li></ul>   |
@@ -486,7 +486,7 @@ Diese Ressource enthält spielbezogene Einstellungen für die app. Die Werte in 
 
 Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG        |
+| Wert           | type    | Beschreibung        |
 |-----------------|---------|------|
 |  genres               |    array     |  Ein Array aus einer oder mehreren der folgenden Zeichen folgen, die die Genres des Spiels beschreiben: <ul><li>Games_ActionAndAdventure</li><li>Games_CardAndBoard</li><li>Games_Casino</li><li>Games_Educational</li><li>Games_FamilyAndKids</li><li>Games_Fighting</li><li>Games_Music</li><li>Games_Platformer</li><li>Games_PuzzleAndTrivia</li><li>Games_RacingAndFlying</li><li>Games_RolePlaying</li><li>Games_Shooter</li><li>Games_Simulation</li><li>Games_Sports</li><li>Games_Strategy</li><li>Games_Word</li></ul>    |
 |  islocalmultiplayer               |    boolean     |  Gibt an, ob das Spiel lokalen Multiplayer unterstützt.      |     
@@ -499,7 +499,7 @@ Die Ressource hat die folgenden Werte.
 |  localkooperativemaxplayers               |   INT      |   Gibt die maximale Anzahl der Spieler an, die das Spiel für das lokale Co-op unterstützt.  |     
 |  isbroadcastingprivilegeerteilt               |   boolean      |  Gibt an, ob das Spiel Broadcasting unterstützt.   |     
 |  iscrossplayaktivierte               |   boolean      |   Gibt an, ob das Spiel multiplayersitzungen zwischen Playern auf Windows 10-PCs und Xbox unterstützt.  |     
-|  kinectdataforextern               |   Zeichenfolge      |  Einer der folgenden Zeichen folgen Werte, der angibt, ob das Spiel kinect-Daten sammeln und an externe Dienste senden kann: <ul><li>NotSet</li><li>Unbekannt</li><li>Aktiviert</li><li>Disabled</li></ul>   |
+|  kinectdataforextern               |   Zeichenfolge      |  Einer der folgenden Zeichen folgen Werte, der angibt, ob das Spiel kinect-Daten sammeln und an externe Dienste senden kann: <ul><li>NotSet</li><li>Unbekannt</li><li>Enabled</li><li>Disabled</li></ul>   |
 
 > [!NOTE]
 > Die Ressource *gamingoptions* wurde im Mai 2017 hinzugefügt, nachdem die Microsoft Store Übermittlungs-API erstmals für Entwickler freigegeben wurde. Wenn Sie vor der Einführung dieser Ressource eine Übermittlung für eine APP über die Übermittlungs-API erstellt haben und diese Übermittlung noch nicht ausgeführt wird, ist diese Ressource für die Übermittlung der APP NULL, bis Sie erfolgreich ein Commit für die Übermittlung ausführen oder Sie löschen. Wenn die Ressource " *gamingoptions* " für Übermittlungen für eine APP nicht verfügbar ist, ist das Feld *hasadvancedlistingberechtigung* der [Anwendungs Ressource](get-app-data.md#application_object) , die von der Methode [Get an App](get-an-app.md) zurückgegeben wird, auf false festgelegt.
@@ -510,11 +510,11 @@ Die Ressource hat die folgenden Werte.
 
 Diese Ressource enthält weitere Informationen über den Status einer Übermittlung. Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG         |
+| Wert           | type    | Beschreibung         |
 |-----------------|---------|------|
-|  errors               |    Objekt (object)     |   Ein Array von [Ressourcen für einzelne Statusdetails](#status-detail-object), die Fehlerdetails zur Übermittlung enthalten.    |     
-|  warnings               |   Objekt (object)      | Ein Array von [Ressourcen für einzelne Statusdetails](#status-detail-object), die Warnungsdetails zur Übermittlung enthalten.      |
-|  certificationReports               |     Objekt (object)    |   Ein Array von [Ressourcen für Zertifizierungsberichte](#certification-report-object), die den Zugriff auf die Zertifizierungsberichtsdaten für die Übermittlung ermöglichen. Sie können diese Berichte auf weitere Informationen überprüfen, wenn die Zertifizierung nicht erfolgreich ist.   |  
+|  errors               |    object     |   Ein Array von [Ressourcen für einzelne Statusdetails](#status-detail-object), die Fehlerdetails zur Übermittlung enthalten.    |     
+|  warnings               |   object      | Ein Array von [Ressourcen für einzelne Statusdetails](#status-detail-object), die Warnungsdetails zur Übermittlung enthalten.      |
+|  certificationReports               |     object    |   Ein Array von [Ressourcen für Zertifizierungsberichte](#certification-report-object), die den Zugriff auf die Zertifizierungsberichtsdaten für die Übermittlung ermöglichen. Sie können diese Berichte auf weitere Informationen überprüfen, wenn die Zertifizierung nicht erfolgreich ist.   |  
 
 
 <span id="status-detail-object" />
@@ -523,7 +523,7 @@ Diese Ressource enthält weitere Informationen über den Status einer Übermittl
 
 Diese Ressource enthält weitere Informationen zu Fehlern oder Warnungen für eine Übermittlung. Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG        |
+| Wert           | type    | Beschreibung        |
 |-----------------|---------|------|
 |  code               |    Zeichenfolge     |   Ein [Übermittlungsstatuscode](#submission-status-code), der den Fehler- oder Warnungstyp beschreibt.   |     
 |  Details               |     Zeichenfolge    |  Eine Meldung mit weiteren Details zum Problem.     |
@@ -565,9 +565,9 @@ Diese Ressource enthält Details zu einem App-Paket für die Übermittlung.
 Die Ressource hat die folgenden Werte.  
 
 > [!NOTE]
-> Beim Aufrufen der [App](update-an-app-submission.md) -Übermittlungs Methode aktualisieren werden nur die Werte *filename*, *File Status*, *minimumdirectxversion*und *minimumsystemram* dieses Objekts im Anforderungs Text benötigt. Die anderen Werte werden von Partner Center aufgefüllt.
+> Beim Aufrufen der [App](update-an-app-submission.md) -Übermittlungs Methode aktualisieren werden nur die Werte *filename*, *File Status*, *minimumdirectxversion* und *minimumsystemram* dieses Objekts im Anforderungs Text benötigt. Die anderen Werte werden von Partner Center aufgefüllt.
 
-| Wert           | Typ    | BESCHREIBUNG                   |
+| Wert           | type    | Beschreibung                   |
 |-----------------|---------|------|
 | fileName   |   Zeichenfolge      |  Der Name des Pakets.    |  
 | fileStatus    | Zeichenfolge    |  Der Status des Pakets. Mögliche Werte: <ul><li>Keine</li><li>PendingUpload</li><li>Hochgeladen</li><li>PendingDelete</li></ul>    |  
@@ -588,7 +588,7 @@ Die Ressource hat die folgenden Werte.
 
 Diese Ressource stellt den Zugriff auf die Zertifizierungsberichtsdaten für eine Übermittlung bereit. Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG             |
+| Wert           | type    | Beschreibung             |
 |-----------------|---------|------|
 |     date            |    Zeichenfolge     |  Das Datum und die Uhrzeit, zu der der Bericht generiert wurde, im ISO 8601-Format.    |
 |     reportUrl            |    Zeichenfolge     |  Die URL, unter der Sie auf den Bericht zugreifen können.    |
@@ -617,9 +617,9 @@ Diese Ressource enthält Einstellungen zu graduellen Paketrollouts und zu verpfl
 
 Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG        |
+| Wert           | type    | Beschreibung        |
 |-----------------|---------|------|
-| packageRollout   |   Objekt (object)      |  Eine [Ressource für Paketrollouts](#package-rollout-object), die Einstellungen zu graduellen Paketrollouts für die Übermittlung enthält.   |  
+| packageRollout   |   object      |  Eine [Ressource für Paketrollouts](#package-rollout-object), die Einstellungen zu graduellen Paketrollouts für die Übermittlung enthält.   |  
 | isMandatoryUpdate    | boolean    |  Gibt an, ob die Pakete in dieser Übermittlung für automatisch installierte App-Updates als verpflichtend behandelt werden sollen. Weitere Informationen zu verpflichtenden Paketen für automatisch installierte App-Aktualisierungen finden Sie unter [Herunterladen und Installieren von Paketupdates für Ihre App](../packaging/self-install-package-updates.md).    |  
 | mandatoryUpdateEffectiveDate    |  date   |  Zeitpunkt (Datum und Uhrzeit), zu dem die Pakete in dieser Übermittlung verpflichtend werden, im ISO 8601-Format und gemäß UTC-Zeitzone.   |        
 
@@ -629,7 +629,7 @@ Die Ressource hat die folgenden Werte.
 
 Diese Ressource enthält [Einstellungen für graduelle Paketrollouts](#manage-gradual-package-rollout) für die Übermittlung. Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG        |
+| Wert           | type    | Beschreibung        |
 |-----------------|---------|------|
 | isPackageRollout   |   boolean      |  Gibt an, ob für die Übermittlung der graduelle Paketrollout aktiviert ist.    |  
 | packageRolloutPercentage    | float    |  Der Prozentsatz der Benutzer, die im Rahmen des graduellen Paketrollouts die Pakete erhalten.    |  
@@ -673,12 +673,12 @@ Sie können bis zu 15 Nachspann *Ressourcen zum Nachspann Array in* einer [App](
 
 Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG        |
+| Wert           | type    | BESCHREIBUNG        |
 |-----------------|---------|------|
 |  id               |    Zeichenfolge     |   Die ID für den Nachspann. Dieser Wert wird von Partner Center bereitgestellt.   |
 |  videofilename               |    Zeichenfolge     |    Der Name der Videodatei im ZIP-Archiv, das Dateien für die Übermittlung enthält.    |     
 |  videofilleid               |   Zeichenfolge      |  Die ID für die Nachspann-Videodatei. Dieser Wert wird von Partner Center bereitgestellt.   |     
-|  trailerassets               |   Objekt (object)      |  Ein Wörterbuch von Schlüssel-Wert-Paaren, wobei jeder Schlüssel ein Sprachcode ist und jeder Wert eine Nachspann [Ressourcen-Ressource](#trailer-assets-object) ist, die zusätzliche Gebiets Schema spezifische Ressourcen für den Nachspann enthält. Weitere Informationen zu den unterstützten Sprachcodes finden Sie [unter Unterstützte Sprachen](../publish/supported-languages.md).    |     
+|  trailerassets               |   object      |  Ein Wörterbuch von Schlüssel-Wert-Paaren, wobei jeder Schlüssel ein Sprachcode ist und jeder Wert eine Nachspann [Ressourcen-Ressource](#trailer-assets-object) ist, die zusätzliche Gebiets Schema spezifische Ressourcen für den Nachspann enthält. Weitere Informationen zu den unterstützten Sprachcodes finden Sie [unter Unterstützte Sprachen](../publish/supported-languages.md).    |     
 
 > [!NOTE]
 > Die Ressource " *Trailers* " wurde im Mai 2017 hinzugefügt, nachdem die Microsoft Store Übermittlungs-API erstmals für Entwickler freigegeben wurde. Wenn Sie vor der Einführung dieser Ressource eine Übermittlung für eine APP über die Übermittlungs-API erstellt haben und diese Übermittlung noch nicht ausgeführt wird, ist diese Ressource für die Übermittlung der APP NULL, bis Sie erfolgreich ein Commit für die Übermittlung ausführen oder Sie löschen. Wenn die " *Trailers* "-Ressource für Übermittlungen für eine APP nicht verfügbar ist, ist das *hasadvancedlistingberechtigung* -Feld der [Anwendungs Ressource](get-app-data.md#application_object) , das von der Methode [Get an App](get-an-app.md) zurückgegeben wird, false.
@@ -689,7 +689,7 @@ Die Ressource hat die folgenden Werte.
 
 Diese Ressource enthält zusätzliche Gebiets Schema spezifische Assets für einen Nachspann, der in einer nach Spann [Ressource](#trailer-object)definiert ist. Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG        |
+| Wert           | type    | Beschreibung        |
 |-----------------|---------|------|
 | title   |   Zeichenfolge      |  Der lokalisierte Titel des Nachspann. Der Titel wird angezeigt, wenn der Benutzer den Nachspann im Vollbildmodus abspielt.     |  
 | ImageList    | array    |   Ein Array, das eine [Bild](#image-for-trailer-object) Ressource enthält, die das Miniaturbild für den Nachspann bereitstellt. Sie können nur eine [Bild](#image-for-trailer-object) Ressource in dieses Array einschließen.  |   
@@ -701,7 +701,7 @@ Diese Ressource enthält zusätzliche Gebiets Schema spezifische Assets für ein
 
 Diese Ressource beschreibt das Miniaturbild für einen Nachspann. Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG           |
+| Wert           | type    | Beschreibung           |
 |-----------------|---------|------|
 |  fileName               |    Zeichenfolge     |   Der Name der Miniaturbild Datei im ZIP-Archiv, den Sie für die Übermittlung hochgeladen haben.    |     
 |  id  |  Zeichenfolge  | Die ID für das Miniaturbild. Dieser Wert wird von Partner Center bereitgestellt.  |
@@ -719,12 +719,12 @@ Diese Methoden verwenden die folgenden Enumerationen.
 
 Die folgenden Werte stellen die verfügbaren Tarife in der Ressourcen Ressource " [Preise](#pricing-object) " für eine APP-Übermittlung dar.
 
-| Wert           | BESCHREIBUNG        |
+| Wert           | Beschreibung        |
 |-----------------|------|
 |  Basis               |   Das Preisniveau ist nicht festgelegt. Verwenden Sie den Basispreis für die App.      |     
 |  NotAvailable              |   Die App ist für die angegebene Region nicht verfügbar.    |     
-|  Free              |   Die Apps ist kostenlos.    |    
-|  Ebene*xxx*               |   Eine Zeichenfolge, die die Preis Ebene für die APP im Format **Tier<em>xxxx</em>** angibt. Derzeit werden die folgenden Preisstufen Bereiche unterstützt:<br/><br/><ul><li>Wenn der Wert *isadvancedpricingmodel* der [Preis Ressource](#pricing-object) **true**lautet, sind die verfügbaren Preisstufen Werte für Ihr Konto **Tier1012**  -  **Tier1424**.</li><li>Wenn der Wert *isadvancedpricingmodel* der [Preis Ressource](#pricing-object) **false**lautet, sind die verfügbaren Preisstufen Werte für Ihr Konto **Instanzen**  -  **Tier96**.</li></ul>Wenn Sie die gesamte Tabelle mit den Preisstufen anzeigen möchten, die für Ihr Entwicklerkonto verfügbar sind, einschließlich der marktspezifischen Preise **für die einzelnen** Tarife, besuchen Sie die Seite mit den Preisen **und Verfügbarkeit** Ihrer APP-Übermittlungen im Partner Center, und klicken Sie im Abschnitt " **Märkte und benutzerdefinierte Preise** " auf den Link " **Tabelle anzeigen** ".    |
+|  Kostenlos              |   Die Apps ist kostenlos.    |    
+|  Ebene *xxx*               |   Eine Zeichenfolge, die die Preis Ebene für die APP im Format **Tier <em>xxxx</em>** angibt. Derzeit werden die folgenden Preisstufen Bereiche unterstützt:<br/><br/><ul><li>Wenn der Wert *isadvancedpricingmodel* der [Preis Ressource](#pricing-object) **true** lautet, sind die verfügbaren Preisstufen Werte für Ihr Konto **Tier1012**  -  **Tier1424**.</li><li>Wenn der Wert *isadvancedpricingmodel* der [Preis Ressource](#pricing-object) **false** lautet, sind die verfügbaren Preisstufen Werte für Ihr Konto **Instanzen**  -  **Tier96**.</li></ul>Wenn Sie die gesamte Tabelle mit den Preisstufen anzeigen möchten, die für Ihr Entwicklerkonto verfügbar sind, einschließlich der marktspezifischen Preise **für die einzelnen** Tarife, besuchen Sie die Seite mit den Preisen **und Verfügbarkeit** Ihrer APP-Übermittlungen im Partner Center, und klicken Sie im Abschnitt " **Märkte und benutzerdefinierte Preise** " auf den Link " **Tabelle anzeigen** ".    |
 
 
 <span id="enterprise-licensing" />
@@ -737,7 +737,7 @@ Die folgenden Werte stellen das Organisations Lizenzierungs Verhalten der APP da
 > Obwohl Sie die Organisations Lizenzierungsoptionen für eine APP-Übermittlung über die Übermittlungs-API konfigurieren können, können Sie diese API nicht zum Veröffentlichen von Übermittlungen für [Volumen Einkäufe über die Microsoft Store for Business und Microsoft Store for Education](../publish/organizational-licensing.md)verwenden. Zum Veröffentlichen von Übermittlungen im Microsoft Store für Unternehmen und Microsoft Store for Education müssen Sie Partner Center verwenden.
 
 
-| Wert           |  BESCHREIBUNG      |
+| Wert           |  Beschreibung      |
 |-----------------|---------------|
 | Keine            |     Ihre App soll Unternehmen nicht über die Store-verwaltete Volumenlizenzierung (Onlinevolumenlizenzierung) zur Verfügung gestellt werden.         |     
 | Online        |     Ihre App soll Unternehmen über die Store-verwaltete Volumenlizenzierung (Onlinevolumenlizenzierung) zur Verfügung gestellt werden.  |
@@ -750,7 +750,7 @@ Die folgenden Werte stellen das Organisations Lizenzierungs Verhalten der APP da
 
 Die folgenden Werte stellen den Statuscode einer Übermittlung dar.
 
-| Wert           |  BESCHREIBUNG      |
+| Wert           |  Beschreibung      |
 |-----------------|---------------|
 | Keine            |     Es wurde kein Code angegeben.         |     
 | InvalidArchive        |     Das ZIP-Archiv, das das Paket enthält, ist ungültig oder hat ein unbekanntes Archivformat.  |
@@ -764,12 +764,12 @@ Die folgenden Werte stellen den Statuscode einer Übermittlung dar.
 | ListingOptOutWarning | Der Entwickler hat einen Eintrag aus einer vorherigen Übermittlung entfernt oder Eintragsinformationen nicht hinzugefügt, die vom Paket unterstützt werden. |
 | ListingOptInWarning  | Der Entwickler hat einen Eintrag hinzugefügt. |
 | UpdateOnlyWarning | Der Entwickler versucht, etwas einzufügen, für das nur Aktualisierungsunterstützung verfügbar ist. |
-| Sonstiges  | Die Übermittlung befindet sich in einem nicht erkannten oder nicht kategorisierten Zustand. |
+| Andere  | Die Übermittlung befindet sich in einem nicht erkannten oder nicht kategorisierten Zustand. |
 | PackageValidationWarning | Der Paketüberprüfungsvorgang hat zu einer Warnung geführt. |
 
 <span/>
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Erstellen und Verwalten von Übermittlungen mithilfe von Microsoft Store Services](create-and-manage-submissions-using-windows-store-services.md)
 * [App-Daten mithilfe der Microsoft Store Übermittlungs-API](get-app-data.md)

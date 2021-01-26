@@ -1,17 +1,17 @@
 ---
 ms.assetid: 4920D262-B810-409E-BA3A-F68AADF1B1BC
 description: Verwenden Sie die Java-Codebeispiele in diesem Abschnitt, um weitere Informationen zur Verwendung der Microsoft Store Übermittlungs-API zu erhalten.
-title: 'Java-Beispiel: Übermittlungen für apps, Add-ons und Flüge'
+title: 'Java-Beispiel: Übermittlungen für Apps, Add-Ons und Flights'
 ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Übermittlungs-API, Codebeispiele, Java
 ms.localizationpriority: medium
-ms.openlocfilehash: d10390dbb5364ff4f05de211167551d91dfab858
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 383514a7390e00ce0406be1d846fb38621007745
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363933"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811291"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Java-Beispiel: Übermittlungen für Apps, Add-Ons und Flights
 
@@ -73,7 +73,7 @@ Im folgenden Beispiel wird gezeigt, wie Sie in der Microsoft Store Übermittlung
 1. Zunächst [ruft die Methode Daten für die angegebene App ab](get-an-app.md).
 2. Als Nächstes [löscht sie die ausstehende Übermittlung für die App](delete-an-app-submission.md), wenn vorhanden.
 3. Anschließend [wird eine neue Übermittlung für die App erstellt](create-an-app-submission.md). (Die neue Übermittlung ist eine Kopie der letzten veröffentlichten Übermittlung.)
-4. Es werden einige Details für die neue Übermittlung geändert und ein neues Paket für die Übermittlung zu Azure Blob Storage hochgeladen.
+4. Es werden einige Details für die neue Übermittlung geändert und ein neues Paket für die Übermittlung an Azure BLOB Storage hochgeladen.
 5. [Im nächsten](commit-an-app-submission.md) Schritt wird die neue Übermittlung an Partner Center [aktualisiert](update-an-app-submission.md) und anschließend ein Commit ausgeführt.
 6. Schließlich [wird der Status der neuen Übermittlung regelmäßig überprüft](get-status-for-an-app-submission.md), bis die Übermittlung erfolgreich gesendet wurde.
 
@@ -88,7 +88,7 @@ Im folgenden Beispiel wird gezeigt, wie mehrere Methoden in der Microsoft Store 
 1. Zunächst [ruft die Methode Daten für das angegebene Add-On ab](get-an-add-on.md).
 2. Als Nächstes [wird die ausstehende Übermittlung für das Add-On gelöscht](delete-an-add-on-submission.md), wenn vorhanden.
 3. Anschließend [wird eine neue Übermittlung für das Add-On erstellt](create-an-add-on-submission.md). (Die neue Übermittlung ist eine Kopie der letzten veröffentlichten Übermittlung.)
-4. Es wird ein ZIP-Archiv hochgeladen, das Symbole für die Übermittlung an Azure Blob Storage enthält.
+4. Es lädt ein ZIP-Archiv hoch, das Symbole für die Übermittlung an Azure BLOB Storage enthält.
 5. [Im nächsten](commit-an-add-on-submission.md) Schritt wird die neue Übermittlung an Partner Center [aktualisiert](update-an-add-on-submission.md) und anschließend ein Commit ausgeführt.
 6. Schließlich [wird der Status der neuen Übermittlung regelmäßig überprüft](get-status-for-an-add-on-submission.md), bis die Übermittlung erfolgreich gesendet wurde.
 
@@ -103,7 +103,7 @@ Im folgenden Beispiel wird gezeigt, wie mehrere Methoden in der Microsoft Store 
 1. Zunächst [ruft die Methode Daten für das angegebene Flight-Paket ab](get-a-flight.md).
 2. Als Nächstes [wird die ausstehende Übermittlung für das Flight-Paket gelöscht](delete-a-flight-submission.md), wenn vorhanden.
 3. Anschließend [wird eine neue Übermittlung für das Flight-Paket erstellt](create-a-flight-submission.md). (Die neue Übermittlung ist eine Kopie der letzten veröffentlichten Übermittlung.)
-4. Es wird ein neues Paket für die Übermittlung auf Azure Blob Storage hochgeladen.
+4. Es wird ein neues Paket für die Übermittlung an Azure BLOB Storage hochgeladen.
 5. [Im nächsten](commit-a-flight-submission.md) Schritt wird die neue Übermittlung an Partner Center [aktualisiert](update-a-flight-submission.md) und anschließend ein Commit ausgeführt.
 6. Schließlich [wird der Status der neuen Übermittlung regelmäßig überprüft](get-status-for-a-flight-submission.md), bis die Übermittlung erfolgreich gesendet wurde.
 
@@ -115,7 +115,7 @@ Im folgenden Beispiel wird gezeigt, wie mehrere Methoden in der Microsoft Store 
 
 Die folgenden Hilfsmethoden veranschaulichen diese Aufgaben:
 
-* Hochladen eines ZIP-Archivs mit neuen Ressourcen für eine App- oder Add-On-Übermittlung auf Azure Blob Storage Weitere Informationen zum Hochladen eines ZIP-Archivs auf Azure Blob Storage für App- und Add-On-Übermittlungen finden Sie unter [Erstellen einer App-Übermittlung](manage-app-submissions.md#create-an-app-submission), [Erstellen einer Add-On-Übermittlung](manage-add-on-submissions.md#create-an-add-on-submission) und [Erstellen einer Flight-Paket-Übermittlung](manage-flight-submissions.md#create-a-package-flight-submission).
+* Hochladen eines ZIP-Archivs, das neue Assets für eine APP oder eine Add-on-Übermittlung in Azure BLOB Storage enthält. Weitere Informationen zum Hochladen eines ZIP-Archivs in Azure BLOB Storage für die Übermittlung von apps und Add-on finden Sie in den entsprechenden Anweisungen unter [Erstellen einer APP-Übermittlung](manage-app-submissions.md#create-an-app-submission), [Erstellen einer Add-on-Übermittlung](manage-add-on-submissions.md#create-an-add-on-submission)und [Erstellen einer paketflight-Übermittlung](manage-flight-submissions.md#create-a-package-flight-submission).
 * Behandeln von Anforderungsantworten
 
 :::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/java/CompleteExample.java" range="433-490":::

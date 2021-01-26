@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Übermittlungs-API, Flug Übermittlung
 ms.localizationpriority: medium
-ms.openlocfilehash: 46af08512970798be52187013e40335b6ee1561b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a5c8a8c83420830c5ec20c9586c46d54a02a5238
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164524"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811274"
 ---
 # <a name="manage-package-flight-submissions"></a>Verwalten von Flight-Paket-Übermittlungen
 
@@ -36,7 +36,7 @@ Verwenden Sie die folgenden Methoden zum Abrufen, Erstellen, Aktualisieren, Comm
 <tr class="header">
 <th align="left">Methode</th>
 <th align="left">URI</th>
-<th align="left">BESCHREIBUNG</th>
+<th align="left">Beschreibung</th>
 </tr>
 </thead>
 <tbody>
@@ -66,7 +66,7 @@ Verwenden Sie die folgenden Methoden zum Abrufen, Erstellen, Aktualisieren, Comm
 <td align="left"><a href="commit-a-flight-submission.md">Committen einer neuen oder aktualisierten Flight-Paket-Übermittlung</a></td>
 </tr>
 <tr>
-<td align="left">Delete</td>
+<td align="left">DELETE</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}</td>
 <td align="left"><a href="delete-a-flight-submission.md">Löschen einer Flight-Paket-Übermittlung</a></td>
 </tr>
@@ -92,7 +92,7 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für ein Flight-Paket zu er
     Der Antworttext enthält eine Ressource für die [Flug Übermittlung](#flight-submission-object) , die die ID der neuen Übermittlung, den SAS-URI (Shared Access Signature) zum Hochladen von Paketen für die Übermittlung an Azure BLOB Storage und die Daten für die neue Übermittlung (einschließlich aller Auflistungen und Preisinformationen) enthält.
 
     > [!NOTE]
-    > Ein SAS-URI ermöglicht den Zugriff auf eine sichere Ressource in Azure Storage, ohne dass Kontoschlüssel erforderlich sind. Hintergrundinformationen zu SAS-URIs und deren Verwendung mit Azure Blob Storage finden Sie unter [Shared Access Signatures, Teil 1: Verstehen des SAS-Modells](/azure/storage/common/storage-sas-overview) und [Shared Access Signatures, Teil 2: Erstellen und Verwenden einer SAS mit BLOB-Speicher](/azure/storage/common/storage-sas-overview).
+    > Ein SAS-URI ermöglicht den Zugriff auf eine sichere Ressource in Azure Storage, ohne dass Kontoschlüssel erforderlich sind. Hintergrundinformationen zu SAS-URIs und deren Verwendung mit Azure BLOB Storage finden Sie unter [Shared Access Signature, Part 1: Grundlegendes zum SAS-Modell](/azure/storage/common/storage-sas-overview) und [Shared Access Signature, Teil 2: Erstellen und Verwenden einer SAS mit BLOB Storage](/azure/storage/common/storage-sas-overview).
 
 4. Wenn Sie neue Pakete für die Übermittlung hinzufügen, müssen Sie [die Pakete vorbereiten](../publish/app-package-requirements.md) und einem ZIP-Archiv hinzufügen.
 
@@ -104,13 +104,13 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für ein Flight-Paket zu er
       > [!NOTE]
       > Wenn Sie neue Pakete für die Übermittlung hinzufügen, stellen Sie sicher, dass Sie die Übermittlungs Daten aktualisieren, um auf den Namen und den relativen Pfad dieser Dateien im ZIP-Archiv zu verweisen.
 
-4. Wenn Sie neue Pakete für die Übermittlung hinzufügen, müssen Sie das ZIP-Archiv mit dem SAS-URI auf [Azure Blob Storage](/azure/storage/storage-introduction#blob-storage) hochladen, der im Antworttext der POST-Methode bereitgestellt wurde, die Sie zuvor aufgerufen haben. Zu diesem Zweck können Sie verschiedene Azure-Bibliotheken auf unterschiedlichen Plattformen verwenden, darunter:
+4. Wenn Sie neue Pakete für die Übermittlung hinzufügen, laden Sie das ZIP-Archiv in [Azure BLOB Storage](/azure/storage/storage-introduction#blob-storage) mit dem SAS-URI hoch, der im Antworttext der Post-Methode bereitgestellt wurde, die Sie zuvor aufgerufen haben. Zu diesem Zweck können Sie verschiedene Azure-Bibliotheken auf unterschiedlichen Plattformen verwenden, darunter:
 
     * [Azure Storage-Client Bibliothek für .net](/azure/storage/storage-dotnet-how-to-use-blobs)
     * [Azure Storage-SDK für Java](/azure/storage/storage-java-how-to-use-blob-storage)
     * [Azure Storage SDK für python](/azure/storage/storage-python-how-to-use-blob-storage)
 
-    Das folgende C#-Codebeispiel zeigt, wie Sie ein ZIP-Archiv mithilfe der [CloudBlockBlob](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob)-Klasse in der Azure Storage-Clientbibliothek für .NET auf Azure Blob Storage hochladen. Im Beispiel wird davon ausgegangen, dass das ZIP-Archiv bereits in ein Datenstromobjekt geschrieben wurde.
+    Im folgenden c#-Codebeispiel wird veranschaulicht, wie ein ZIP-Archiv in Azure BLOB Storage mithilfe der [cloudblockblob](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) -Klasse in der Azure Storage-Client Bibliothek für .net hochgeladen wird. Im Beispiel wird davon ausgegangen, dass das ZIP-Archiv bereits in ein Datenstromobjekt geschrieben wurde.
 
     ```csharp
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -175,7 +175,7 @@ Nachdem ein graduelles Paketrollout für eine Flight-Paket-Übermittlung aktivie
 <tr class="header">
 <th align="left">Methode</th>
 <th align="left">URI</th>
-<th align="left">BESCHREIBUNG</th>
+<th align="left">Beschreibung</th>
 </tr>
 </thead>
 <tbody>
@@ -255,14 +255,14 @@ Diese Ressource beschreibt eine Flight-Paket-Übermittlung.
 
 Die Ressource hat die folgenden Werte.
 
-| Wert      | Typ   | BESCHREIBUNG              |
+| Wert      | type   | BESCHREIBUNG              |
 |------------|--------|------------------------------|
 | id            | Zeichenfolge  | Die ID für die Übermittlung.  |
 | flightId           | Zeichenfolge  |  Die ID des Flight-Pakets, dem die Übermittlung zugeordnet ist.  |  
-| status           | Zeichenfolge  | Der Status der Übermittlung. Mögliche Werte: <ul><li>Keine</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Veröffentlichung</li><li>Veröffentlicht</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Zertifizierung</li><li>CertificationFailed</li><li>Freigabe</li><li>ReleaseFailed</li></ul>   |
-| statusDetails           | Objekt (object)  |  Eine [Ressource für Statusdetails](#status-details-object), die zusätzliche Details über den Status der Übermittlung enthält, einschließlich Fehlerinformationen.  |
+| status           | Zeichenfolge  | Der Status der Übermittlung. Mögliche Werte: <ul><li>Keine</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Veröffentlichung</li><li>Veröffentlicht</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Zertifizierung</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
+| statusDetails           | object  |  Eine [Ressource für Statusdetails](#status-details-object), die zusätzliche Details über den Status der Übermittlung enthält, einschließlich Fehlerinformationen.  |
 | flightPackages           | array  | Enthält [Ressourcen für Flight-Pakete](#flight-package-object), die Details über die einzelnen Pakete in der Übermittlung bereitstellen.   |
-| packageDeliveryOptions    | Objekt (object)  | Eine [Ressource für Paketübermittlungsoptionen](#package-delivery-options-object), die Einstellungen zu graduellen Paketrollouts und zu verpflichtenden Updates für die Übermittlung enthält.   |
+| packageDeliveryOptions    | object  | Eine [Ressource für Paketübermittlungsoptionen](#package-delivery-options-object), die Einstellungen zu graduellen Paketrollouts und zu verpflichtenden Updates für die Übermittlung enthält.   |
 | fileUploadUrl           | Zeichenfolge  | Der Shared Access Signature (SAS)-URI für das Hochladen der Pakete für die Übermittlung. Wenn Sie neue Pakete oder Bilder für die Übermittlung hinzufügen, müssen Sie das ZIP-Archiv, das die Pakete enthält, zu dieser URI hochladen. Weitere Informationen finden Sie unter [Erstellen einer Flight-Paket-Übermittlung](#create-a-package-flight-submission).  |
 | targetPublishMode           | Zeichenfolge  | Der Veröffentlichungsmodus für die Übermittlung. Mögliche Werte: <ul><li>Unmittelbar</li><li>Manuell</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | Zeichenfolge  | Das Veröffentlichungsdatum der Übermittlung im ISO 8601-Format, wenn *TargetPublishMode* den Wert SpecificDate hat.  |
@@ -274,11 +274,11 @@ Die Ressource hat die folgenden Werte.
 
 Diese Ressource enthält weitere Informationen über den Status einer Übermittlung. Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG                   |
+| Wert           | type    | Beschreibung                   |
 |-----------------|---------|------|
-|  errors               |    Objekt (object)     |   Ein Array von [Ressourcen für einzelne Statusdetails](#status-detail-object), die Fehlerdetails zur Übermittlung enthalten.   |     
-|  warnings               |   Objekt (object)      | Ein Array von [Ressourcen für einzelne Statusdetails](#status-detail-object), die Warnungsdetails zur Übermittlung enthalten.     |
-|  certificationReports               |     Objekt (object)    |   Ein Array von [Ressourcen für Zertifizierungsberichte](#certification-report-object), die den Zugriff auf die Zertifizierungsberichtsdaten für die Übermittlung ermöglichen. Sie können diese Berichte auf weitere Informationen überprüfen, wenn die Zertifizierung nicht erfolgreich ist.    |  
+|  errors               |    object     |   Ein Array von [Ressourcen für einzelne Statusdetails](#status-detail-object), die Fehlerdetails zur Übermittlung enthalten.   |     
+|  warnings               |   object      | Ein Array von [Ressourcen für einzelne Statusdetails](#status-detail-object), die Warnungsdetails zur Übermittlung enthalten.     |
+|  certificationReports               |     object    |   Ein Array von [Ressourcen für Zertifizierungsberichte](#certification-report-object), die den Zugriff auf die Zertifizierungsberichtsdaten für die Übermittlung ermöglichen. Sie können diese Berichte auf weitere Informationen überprüfen, wenn die Zertifizierung nicht erfolgreich ist.    |  
 
 
 <span id="status-detail-object" />
@@ -287,7 +287,7 @@ Diese Ressource enthält weitere Informationen über den Status einer Übermittl
 
 Diese Ressource enthält weitere Informationen zu Fehlern oder Warnungen für eine Übermittlung. Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG       |
+| Wert           | type    | Beschreibung       |
 |-----------------|---------|------|
 |  code               |    Zeichenfolge     |   Ein [Übermittlungsstatuscode](#submission-status-code), der den Fehler- oder Warnungstyp beschreibt. |  
 |  Details               |     Zeichenfolge    |  Eine Meldung mit weiteren Details zum Problem.     |
@@ -299,7 +299,7 @@ Diese Ressource enthält weitere Informationen zu Fehlern oder Warnungen für ei
 
 Diese Ressource stellt den Zugriff auf die Zertifizierungsberichtsdaten für eine Übermittlung bereit. Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG         |
+| Wert           | type    | Beschreibung         |
 |-----------------|---------|------|
 |     date            |    Zeichenfolge     |  Das Datum und die Uhrzeit, zu der der Bericht generiert wurde, im ISO 8601-Format.    |
 |     reportUrl            |    Zeichenfolge     |  Die URL, unter der Sie auf den Bericht zugreifen können.    |
@@ -333,7 +333,7 @@ Die Ressource hat die folgenden Werte.
 > [!NOTE]
 > Beim Aufrufen der Methode zum [Aktualisieren einer paketübertragungs](update-a-flight-submission.md) -Methode ist nur der *Dateiname*, der *fileStatus*-Wert, der *minimumdirectxversion*-Wert und der *minimumsystemram* -Wert dieses Objekts im Anforderungs Text erforderlich. Die anderen Werte werden von Partner Center aufgefüllt.
 
-| Wert           | Typ    | BESCHREIBUNG              |
+| Wert           | type    | Beschreibung              |
 |-----------------|---------|------|
 | fileName   |   Zeichenfolge      |  Der Name des Pakets.    |  
 | fileStatus    | Zeichenfolge    |  Der Status des Pakets. Mögliche Werte: <ul><li>Keine</li><li>PendingUpload</li><li>Hochgeladen</li><li>PendingDelete</li></ul>    |  
@@ -369,9 +369,9 @@ Diese Ressource enthält Einstellungen zu graduellen Paketrollouts und zu verpfl
 
 Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG        |
+| Wert           | type    | Beschreibung        |
 |-----------------|---------|------|
-| packageRollout   |   Objekt (object)      |   Eine [Ressource für Paketrollouts](#package-rollout-object), die Einstellungen zu graduellen Paketrollouts für die Übermittlung enthält.    |  
+| packageRollout   |   object      |   Eine [Ressource für Paketrollouts](#package-rollout-object), die Einstellungen zu graduellen Paketrollouts für die Übermittlung enthält.    |  
 | isMandatoryUpdate    | boolean    |  Gibt an, ob die Pakete in dieser Übermittlung für automatisch installierte App-Updates als verpflichtend behandelt werden sollen. Weitere Informationen zu verpflichtenden Paketen für automatisch installierte App-Aktualisierungen finden Sie unter [Herunterladen und Installieren von Paketupdates für Ihre App](../packaging/self-install-package-updates.md).    |  
 | mandatoryUpdateEffectiveDate    |  date   |  Zeitpunkt (Datum und Uhrzeit), zu dem die Pakete in dieser Übermittlung verpflichtend werden, im ISO 8601-Format und gemäß UTC-Zeitzone.   |        
 
@@ -381,7 +381,7 @@ Die Ressource hat die folgenden Werte.
 
 Diese Ressource enthält [Einstellungen für graduelle Paketrollouts](#manage-gradual-package-rollout) für die Übermittlung. Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG        |
+| Wert           | type    | Beschreibung        |
 |-----------------|---------|------|
 | isPackageRollout   |   boolean      |  Gibt an, ob für die Übermittlung der graduelle Paketrollout aktiviert ist.    |  
 | packageRolloutPercentage    | float    |  Der Prozentsatz der Benutzer, die im Rahmen des graduellen Paketrollouts die Pakete erhalten.    |  
@@ -417,12 +417,12 @@ Die folgenden Codes stellen den Status einer Übermittlung dar.
 | ListingOptOutWarning | Der Entwickler hat einen Eintrag aus einer vorherigen Übermittlung entfernt oder Eintragsinformationen nicht hinzugefügt, die vom Paket unterstützt werden. |
 | ListingOptInWarning  | Der Entwickler hat einen Eintrag hinzugefügt. |
 | UpdateOnlyWarning | Der Entwickler versucht, etwas einzufügen, für das nur Aktualisierungsunterstützung verfügbar ist. |
-| Sonstiges  | Die Übermittlung befindet sich in einem nicht erkannten oder nicht kategorisierten Zustand. |
+| Andere  | Die Übermittlung befindet sich in einem nicht erkannten oder nicht kategorisierten Zustand. |
 | PackageValidationWarning | Der Paketüberprüfungsvorgang hat zu einer Warnung geführt. |
 
 <span/>
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Erstellen und Verwalten von Übermittlungen mithilfe von Microsoft Store Services](create-and-manage-submissions-using-windows-store-services.md)
 * [Verwalten von Paket Flügen mithilfe der Microsoft Store Übermittlungs-API](manage-flights.md)

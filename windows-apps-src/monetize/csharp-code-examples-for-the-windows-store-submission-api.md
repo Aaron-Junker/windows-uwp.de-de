@@ -6,12 +6,12 @@ ms.date: 08/03/2017
 ms.topic: article
 keywords: 'Windows 10, UWP, Microsoft Store Übermittlungs-API, Codebeispiele, C #'
 ms.localizationpriority: medium
-ms.openlocfilehash: ac16d6932a2f20e701d7446ac8c21c316cfe5d4a
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: c1f5704963dd1d6d6ad786a48c63ecfcd789aff9
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364123"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811299"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>C \# -Beispiel: Übermittlungen für apps, Add-ons und Flüge
 
@@ -59,7 +59,7 @@ Im folgenden Beispiel wird eine-Klasse implementiert, die mehrere Methoden in de
 1. Zunächst [ruft die Methode Daten für die angegebene App ab](get-an-app.md).
 2. Als Nächstes [löscht sie die ausstehende Übermittlung für die App](delete-an-app-submission.md), wenn vorhanden.
 3. Anschließend [wird eine neue Übermittlung für die App erstellt](create-an-app-submission.md). (Die neue Übermittlung ist eine Kopie der letzten veröffentlichten Übermittlung.)
-4. Es werden einige Details für die neue Übermittlung geändert und ein neues Paket für die Übermittlung zu Azure Blob Storage hochgeladen.
+4. Es werden einige Details für die neue Übermittlung geändert und ein neues Paket für die Übermittlung an Azure BLOB Storage hochgeladen.
 5. [Im nächsten](commit-an-app-submission.md) Schritt wird die neue Übermittlung an Partner Center [aktualisiert](update-an-app-submission.md) und anschließend ein Commit ausgeführt.
 6. Schließlich [wird der Status der neuen Übermittlung regelmäßig überprüft](get-status-for-an-app-submission.md), bis die Übermittlung erfolgreich gesendet wurde.
 
@@ -74,7 +74,7 @@ Im folgenden Beispiel wird eine-Klasse implementiert, die mehrere Methoden in de
 
 1. Zunächst [erstellt die Methode ein neues Add-On](create-an-add-on.md).
 2. Als Nächstes [erstellt sie eine neue Übermittlung für das Add-On](create-an-add-on-submission.md).
-3. Es wird ein ZIP-Archiv hochgeladen, das Symbole für die Übermittlung an Azure Blob Storage enthält.
+3. Es lädt ein ZIP-Archiv hoch, das Symbole für die Übermittlung an Azure BLOB Storage enthält.
 4. Als Nächstes führt Sie einen Commit [für die neue Übermittlung an Partner Center](commit-an-add-on-submission.md)durch.
 5. Schließlich [wird der Status der neuen Übermittlung regelmäßig überprüft](get-status-for-an-add-on-submission.md), bis die Übermittlung erfolgreich gesendet wurde.
 
@@ -105,7 +105,7 @@ Im folgenden Beispiel wird eine-Klasse implementiert, die mehrere Methoden in de
 1. Zunächst [ruft die Methode Daten für das angegebene Flight-Paket ab](get-a-flight.md).
 2. Als Nächstes [wird die ausstehende Übermittlung für das Flight-Paket gelöscht](delete-a-flight-submission.md), wenn vorhanden.
 3. Anschließend [wird eine neue Übermittlung für das Flight-Paket erstellt](create-a-flight-submission.md). (Die neue Übermittlung ist eine Kopie der letzten veröffentlichten Übermittlung.)
-4. Es wird ein neues Paket für die Übermittlung auf Azure Blob Storage hochgeladen.
+4. Es wird ein neues Paket für die Übermittlung an Azure BLOB Storage hochgeladen.
 5. [Im nächsten](commit-a-flight-submission.md) Schritt wird die neue Übermittlung an Partner Center [aktualisiert](update-a-flight-submission.md) und anschließend ein Commit ausgeführt.
 6. Schließlich [wird der Status der neuen Übermittlung regelmäßig überprüft](get-status-for-a-flight-submission.md), bis die Übermittlung erfolgreich gesendet wurde.
 
@@ -119,7 +119,7 @@ Im folgenden Beispiel wird eine-Klasse implementiert, die mehrere Methoden in de
 Die ```IngestionClient```-Klasse stellt Hilfsmethoden bereit, die von anderen Methoden in der Beispiel-App verwendet werden, um die folgenden Aufgaben auszuführen:
 
 * Rufen Sie [ein Azure AD Zugriffs Token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) ab, das zum Aufrufen von Methoden in der Microsoft Store Übermittlungs-API verwendet werden kann. Nachdem Sie ein Token erhalten haben, haben Sie 60 Minuten Zeit, dieses Token in Aufrufen der Microsoft Store Übermittlungs-API zu verwenden, bevor das Token abläuft. Nach dem Ablauf des Tokens können Sie ein neues Token generieren.
-* Hochladen eines ZIP-Archivs mit neuen Ressourcen für eine App- oder Add-On-Übermittlung in Azure Blob Storage. Weitere Informationen zum Hochladen eines ZIP-Archivs in Azure Blob Storage für App- und Add-On-Übermittlungen finden Sie unter [Erstellen einer App-Übermittlung](manage-app-submissions.md#create-an-app-submission) und [Erstellen einer Add-On-Übermittlung](manage-add-on-submissions.md#create-an-add-on-submission).
+* Laden Sie ein ZIP-Archiv hoch, das neue Assets für eine APP oder eine Add-on-Übermittlung in Azure BLOB Storage enthält. Weitere Informationen zum Hochladen eines ZIP-Archivs in Azure BLOB Storage für die Übermittlung von apps und Add-on finden Sie in den entsprechenden Anweisungen unter [Erstellen einer APP-Übermittlung](manage-app-submissions.md#create-an-app-submission) und [Erstellen einer Add-on-Übermittlung](manage-add-on-submissions.md#create-an-add-on-submission).
 * Verarbeiten Sie die HTTP-Anforderungen für die Microsoft Store Übermittlungs-API.
 
 > [!div class="tabbedCodeSnippets"]

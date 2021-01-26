@@ -5,12 +5,12 @@ ms.date: 10/16/2020
 ms.topic: article
 keywords: Windows 10, UWP, Animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 75adcd2f762fd4314d7b852811760d523ef522aa
-ms.sourcegitcommit: fe21402578a1f434769866dd3c78aac63dbea5ea
+ms.openlocfilehash: 29fdffd2ab5c871fe2e455e8811615a96368259a
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92152412"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811236"
 ---
 # <a name="relation-based-animations"></a>Beziehungs basierte Animationen
 
@@ -95,7 +95,7 @@ Wir konzentrieren uns auf die expressionanimation, die in #3 definiert ist. Wir 
 
 In dieser Gleichung sind zwei Eigenschaften vorhanden, auf die vom PropertySet verwiesen werden muss. eine ist ein Mittelpunkt Offset, und die andere ist die Drehung.
 
-```
+```csharp
 var propSetCenterPoint =
 _propertySet.GetReference().GetVector3Property("CenterPointOffset");
 
@@ -105,7 +105,7 @@ var propSetRotation = _propertySet.GetReference().GetScalarProperty("Rotation");
 
 Als nächstes müssen Sie die Vector3-Komponente definieren, die die tatsächliche Umlauf Drehung berücksichtigt.
 
-```
+```csharp
 var orbitRotation = EF.Vector3(
     EF.Cos(EF.ToRadians(propSetRotation)) * 150,
     EF.Sin(EF.ToRadians(propSetRotation)) * 75, 0);
@@ -118,7 +118,7 @@ var orbitRotation = EF.Vector3(
 
 Kombinieren Sie schließlich diese Komponenten zusammen, und verweisen Sie auf die Position der roten Kugel, um die mathematische Beziehung zu definieren.
 
-```
+```csharp
 var orbitExpression = redSprite.GetReference().Offset + propSetCenterPoint + orbitRotation;
 blueSprite.StartAnimation("Offset", orbitExpression);
 ```
@@ -127,7 +127,7 @@ Wenn Sie in einer hypothetischen Situation denselben Ausdruck verwenden möchten
 
 In diesem Fall ändern Sie den Ausdruck, den Sie zuvor erstellt haben. Anstatt einen Verweis auf das compositionobject zu erhalten, erstellen Sie einen Verweis mit einem Namen und weisen dann unterschiedliche Werte zu:
 
-```
+```csharp
 var orbitExpression = ExpressionValues.Reference.CreateVisualReference("orbitRoundVisual");
 orbitExpression.SetReferenceParameter("orbitRoundVisual", redSprite);
 blueSprite.StartAnimation("Offset", orbitExpression);
@@ -138,13 +138,13 @@ greenSprite.StartAnimation("Offset", orbitExpression);
 
 Dies ist der Code, wenn Sie Ihren Ausdruck mit Zeichen folgen über die öffentliche API definiert haben.
 
-```
-ExpressionAnimation expressionAnimation =
-compositor.CreateExpressionAnimation("visual.Offset + " +
-"propertySet.CenterPointOffset + " +
-"Vector3(cos(ToRadians(propertySet.Rotation)) * 150," + "sin(ToRadians(propertySet.Rotation)) * 75, 0)");
- var propSetCenterPoint = _propertySet.GetReference().GetVector3Property("CenterPointOffset");
- var propSetRotation = _propertySet.GetReference().GetScalarProperty("Rotation");
+```csharp
+ExpressionAnimation expressionAnimation = compositor.CreateExpressionAnimation("visual.Offset + " +
+    "propertySet.CenterPointOffset + " +
+    "Vector3(cos(ToRadians(propertySet.Rotation)) * 150," + "sin(ToRadians(propertySet.Rotation)) * 75, 0)");
+    
+var propSetCenterPoint = _propertySet.GetReference().GetVector3Property("CenterPointOffset");
+var propSetRotation = _propertySet.GetReference().GetScalarProperty("Rotation");
 expressionAnimation.SetReferenceParameter("propertySet", _propertySet);
 expressionAnimation.SetReferenceParameter("visual", redSprite);
 ```
