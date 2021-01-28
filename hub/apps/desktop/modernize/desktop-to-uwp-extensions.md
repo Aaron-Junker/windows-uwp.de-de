@@ -8,16 +8,16 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b88f65ba45a2b8a79d822eba525733550f965372
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
+ms.openlocfilehash: 91b5e975c40b7c9642cd452b3c67045c7be1127d
+ms.sourcegitcommit: 069f5ab4be85a7d638fc2a426afaed824e5dfeae
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860178"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98668724"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Integrieren deiner Desktop-App in Windows 10 und UWP
 
-Wenn deine Desktop-App eine [Paketidentität](modernize-packaged-apps.md) umfasst, kannst du deine App mithilfe von Erweiterungen in Windows 10 integrieren, indem du vordefinierte Erweiterungen im [Paketmanifest](/uwp/schemas/appxpackage/uapmanifestschema/schema-root) nutzt.
+Wenn Ihre Desktop-App eine [Paketidentität](modernize-packaged-apps.md) umfasst, können Sie Ihre App mithilfe von Erweiterungen in Windows 10 integrieren, indem Sie vordefinierte Erweiterungen im [Paketmanifest](/uwp/schemas/appxpackage/uapmanifestschema/extensions) nutzen.
 
 Verwende beispielsweise eine Erweiterung, um eine Firewallausnahme festzulegen, lege deine App als Standard-App für einen Dateityp fest, oder verweise mit Startkacheln auf deine App. Um eine Erweiterung zu verwenden, fügst du einfach etwas XML zur Paketmanifestdatei deiner App hinzu. Es ist kein Code erforderlich.
 

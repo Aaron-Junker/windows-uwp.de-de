@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: a8f5b141e5726d19651aeafeb9b6d432e20c2f47
-ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
+ms.openlocfilehash: 4d98877fb0d48d2c3c677af5f2b89d9fd65c05f1
+ms.sourcegitcommit: b4c782b2403da83a6e0b5b7416cc4dc835b068d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671529"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98922748"
 ---
 # <a name="host-a-standard-winrt-xaml-control-in-a-wpf-app-using-xaml-islands"></a>Hosten eines WinRT-XAML-Standardsteuerelements in einer WPF-App unter Verwendung von XAML Islands
 
-In diesem Artikel werden zwei Möglichkeiten zum Hosten eines WinRT-XAML-Standardsteuerelements (d. h. eines vom Windows SDK bereitgestellten WinRT-XAML-Erstanbietersteuerelements) in einer WPF-App mithilfe von [XAML Islands](xaml-islands.md) veranschaulicht:
+In diesem Artikel werden zwei Möglichkeiten der Verwendung von [XAML Islands](xaml-islands.md) zum Hosten eines WinRT-XAML-Standardsteuerelements (d. h. eines vom Windows SDK bereitgestellten WinRT-XAML-Erstanbietersteuerelements) in einer WPF-App für die Zielplattform .NET Core 3.1 veranschaulicht:
 
 * Es wird gezeigt, wie du die UWP-Steuerelemente [InkCanvas](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) und [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar) unter Verwendung von [umschlossenen Steuerelementen](xaml-islands.md#wrapped-controls) im Windows-Community-Toolkit hostest. Diese Steuerelemente kapseln Schnittstelle und Funktionalität einer kleinen Teilmenge nützlicher WinRT-XAML-Steuerelemente. Du kannst sie direkt zur Entwurfsoberfläche deines WPF- oder Windows Forms-Projekts hinzufügen und sie dann wie jedes andere WPF- oder Windows Forms-Steuerelement im Designer verwenden.
 
@@ -25,11 +25,14 @@ In diesem Artikel werden zwei Möglichkeiten zum Hosten eines WinRT-XAML-Standar
 
 In diesem Artikel wird gezeigt, wie du WinRT-XAML-Steuerelemente in einer WPF-App hosten kannst, aber das Vorgehen für eine Windows Forms-App ist ähnlich.
 
+> [!NOTE]
+> Die Verwendung von XAML Islands zum Hosten von WinRT-XAML-Steuerelementen in WPF- und Windows Forms-Apps wird aktuell nur in Apps für die Zielplattform .NET Core 3.x unterstützt. XAML Islands werden in Apps für die Zielplattform .NET 5 oder in Apps für eine beliebige Version von .NET Frameworks noch nicht unterstützt.
+
 ## <a name="required-components"></a>Erforderliche Komponenten
 
 Um ein WinRT-XAML-Steuerelement in einer WPF-App (oder einer Windows Forms-App) zu hosten, benötigen Sie die folgenden Komponenten in Ihrer Projektmappe. Dieser Artikel stellt Anweisungen zum Erstellen jeder dieser Komponenten bereit.
 
-* **Projekt- und Quellcode für deine App**. Die Verwendung des [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelements zum Hosten benutzerdefinierter WinRT-XAML-Steuerelemente wird nur in Apps für die Zielplattform .NET Core 3.x unterstützt.
+* **Projekt- und Quellcode für deine App**. Die Verwendung des [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelements zum Hosten benutzerdefinierter WinRT-XAML-Steuerelemente wird derzeit nur in Apps für die Zielplattform .NET Core 3.x unterstützt.
 
 * **UWP-App-Projekt mit Definition einer Stammanwendungsklasse, die von XamlApplication abgeleitet ist**. Dein WPF- oder Windows Forms-Projekt muss Zugriff auf eine Instanz der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse haben, die durch das Windows-Community-Toolkit bereitgestellt wird, sodass benutzerdefinierte UWP XAML-Steuerelemente ermittelt und geladen werden können. Die empfohlene Vorgehensweise hierfür besteht darin, dieses Objekt in einem separaten UWP-App-Projekt zu definieren, das nicht Bestandteil der Projektmappe für Ihre WPF- oder Windows Forms-App ist. 
 
@@ -317,9 +320,12 @@ Die folgenden Anweisungen veranschaulichen, wie Sie alle Komponenten in der Proj
 > [!NOTE]
 > Wenn du deine Anwendung nicht in einem [MSIX-Paket](/windows/msix) für die Bereitstellung packst, muss auf Computern zur Ausführung deiner App die [Visual C++-Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installiert sein.
 
-1. Fügen Sie Ihrer Projektmappe ein [Paketerstellungsprojekt für Windows-Anwendungen](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) hinzu. Wählen Sie beim Erstellen des Projekts **Windows 10, Version 1903 (10.0; Build 18362)** sowohl für **Zielversion** als auch für **Mindestversion** aus.
+1. Fügen Sie Ihrer Projektmappe ein [Paketerstellungsprojekt für Windows-Anwendungen](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) hinzu. Wählen Sie beim Erstellen des Projekts dieselbe **Zielversion** und **Mindestversion** aus, wie Sie sie für das UWP-Projekt ausgewählt haben.
 
 2. Klicken Sie im Paketprojekt mit der rechten Maustaste auf den Knoten **Anwendungen**, und wählen Sie **Verweis hinzufügen** aus. Wähle in der Liste der Projekte das WPF-Projekt in deiner Projektmappe aus, und klicke auf **OK**.
+
+    > [!NOTE]
+    > Wenn Sie Ihre App im Microsoft Store veröffentlichen möchten, müssen Sie im Paketprojekt einen Verweis auf das UWP-Projekt hinzufügen.
 
 3. Konfiguriere deine Projektmappe für eine Zielplattform wie beispielsweise x86 oder x64. Dies ist erforderlich, um die WPF-App über „Paketerstellungsprojekt für Windows-Anwendungen“ in einem MSIX-Paket zu packen.
 
@@ -329,7 +335,7 @@ Die folgenden Anweisungen veranschaulichen, wie Sie alle Komponenten in der Proj
     4. Wähle im Dialogfeld **Neue Projektmappenplattform** die Option **x64** oder **x86** aus (dieselbe Plattform, die du für **Aktive Projektmappenplattform** ausgewählt hast), und klicke auf **OK**.
     5. Schließe die geöffneten Dialogfelder.
 
-5. Kompiliere das Paketerstellungsprojekt, und führe es aus. Vergewissern Sie sich, dass die WPF-App ausgeführt und das benutzerdefinierte UWP-Steuerelement wie erwartet angezeigt wird.
+5. Kompiliere das Paketerstellungsprojekt, und führe es aus. Vergewissern Sie sich, dass die WPF-App ausgeführt und das UWP-Steuerelement wie erwartet angezeigt wird.
 
 ## <a name="related-topics"></a>Zugehörige Themen
 

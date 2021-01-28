@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 752b02f4bbf6faaca1fd04007c85cfe41f6c28f9
-ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
+ms.openlocfilehash: b8cb2670c09c5a93d2edd67e3f338a33eeb488ad
+ms.sourcegitcommit: b4c782b2403da83a6e0b5b7416cc4dc835b068d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671549"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98922757"
 ---
 # <a name="host-winrt-xaml-controls-in-desktop-apps-xaml-islands"></a>Hosten von WinRT-XAML-Steuerelementen in Desktop-Apps (XAML Islands)
 
@@ -40,12 +40,12 @@ XAML Islands hat folgende Runtimeanforderungen:
 
 ## <a name="wpf-and-windows-forms-applications"></a>WPF- und Windows Forms-Anwendungen
 
+> [!NOTE]
+> Die Verwendung von XAML Islands zum Hosten von WinRT-XAML-Steuerelementen in WPF- und Windows Forms-Apps wird aktuell nur in Apps für die Zielplattform .NET Core 3.x unterstützt. XAML Islands werden in Apps für die Zielplattform .NET 5 oder in Apps für eine beliebige Version von .NET Frameworks noch nicht unterstützt.
+
 Wir empfehlen, für WPF- und Windows Forms-Anwendungen die XAML Island-.NET-Steuerelemente zu verwenden, die im Windows Community Toolkit verfügbar sind. Diese Steuerelemente bieten ein Objektmodell, das die Eigenschaften, Methoden und Ereignisse der entsprechenden WinRT-XAML-Steuerelemente nachahmt (oder Zugriff auf sie bietet). Darüber hinaus verarbeiten sie Verhalten wie Tastaturnavigation und Layoutänderungen.
 
 Es gibt zwei Sätze von XAML Island-Steuerelementen für WPF- und Windows Forms-Anwendungen: *umschließende Steuerelemente* und *Hoststeuerelemente*. 
-
-> [!NOTE]
-> Die Verwendung von XAML Islands zum Hosten von WinRT-XAML-Steuerelemente wird nur in WPF- und Windows Forms-Apps für die Zielplattform .NET Core 3.x unterstützt. XAML Islands wird in Apps für die Zielplattform .NET Framework nicht unterstützt.
 
 ### <a name="wrapped-controls"></a>Umschließende Steuerelemente
 

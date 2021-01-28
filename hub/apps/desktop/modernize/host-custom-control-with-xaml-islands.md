@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: cdfdf9b7396943e3ee5345249f38a35d48beb128
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: 16dc1b59147cb937a09eb085c716ebac0e1cef7b
+ms.sourcegitcommit: b4c782b2403da83a6e0b5b7416cc4dc835b068d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253627"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98922735"
 ---
 # <a name="host-a-custom-winrt-xaml-control-in-a-wpf-app-using-xaml-islands"></a>Hosten eines benutzerdefinierten WinRT-XAML-Steuerelements in einer WPF-App unter Verwendung von XAML Islands
 
@@ -21,11 +21,14 @@ Dieser Artikel veranschaulicht die Verwendung des [WindowsXamlHost](/windows/com
 
 Zwar wird in diesem Artikel das Vorgehen in einer WPF-App gezeigt, das Vorgehen für eine Windows Forms-App ist aber ähnlich. Eine Übersicht über das Hosten von WinRT-XAML-Steuerelementen in WPF- und Windows Forms-Apps finden Sie in [diesem Artikel](xaml-islands.md#wpf-and-windows-forms-applications).
 
+> [!NOTE]
+> Die Verwendung von XAML Islands zum Hosten von WinRT-XAML-Steuerelementen in WPF- und Windows Forms-Apps wird aktuell nur in Apps für die Zielplattform .NET Core 3.x unterstützt. XAML Islands werden in Apps für die Zielplattform .NET 5 oder in Apps für eine beliebige Version von .NET Frameworks noch nicht unterstützt.
+
 ## <a name="required-components"></a>Erforderliche Komponenten
 
 Um ein benutzerdefiniertes WinRT-XAML-Steuerelement in einer WPF-App (oder einer Windows Forms-App) zu hosten, benötigen Sie die folgenden Komponenten in Ihrer Projektmappe. Dieser Artikel stellt Anweisungen zum Erstellen jeder dieser Komponenten bereit.
 
-* **Projekt- und Quellcode für Ihre App**. Die Verwendung des [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelements zum Hosten benutzerdefinierter Steuerelemente wird nur in Apps für die Zielplattform .NET Core 3.x unterstützt. Dieses Szenario wird in Apps für die Zielplattform .NET Framework nicht unterstützt.
+* **Projekt- und Quellcode für Ihre App**. Die Verwendung des [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelements zum Hosten benutzerdefinierter Steuerelemente wird nur in Apps für die Zielplattform .NET Core 3.x unterstützt.
 
 * **Das benutzerdefinierte WinRT-XAML-Steuerelement**. Sie benötigen den Quellcode für das benutzerdefinierte Steuerelement, das Sie hosten möchten, damit Sie es mit Ihrer Anwendung kompilieren können. In der Regel ist das benutzerdefinierte Steuerelement in einem UWP-Klassenbibliotheks-Projekt definiert, auf das Sie in der Projektmappe Ihres WPF- oder Windows Forms-Projekts verweisen.
 
@@ -322,7 +325,18 @@ Die folgenden Anweisungen veranschaulichen, wie Sie alle Komponenten in der Proj
 
 2. Klicken Sie im Paketprojekt mit der rechten Maustaste auf den Knoten **Anwendungen**, und wählen Sie **Verweis hinzufügen** aus. Wähle in der Liste der Projekte das WPF-Projekt in deiner Projektmappe aus, und klicke auf **OK**.
 
-3. Kompilieren Sie das Paketerstellungsprojekt, und führen Sie es aus. Vergewissern Sie sich, dass die WPF-App ausgeführt und das benutzerdefinierte UWP-Steuerelement wie erwartet angezeigt wird.
+    > [!NOTE]
+    > Wenn Sie Ihre App im Microsoft Store veröffentlichen möchten, müssen Sie im Paketprojekt einen Verweis auf das UWP-Projekt hinzufügen.
+
+3. Konfiguriere deine Projektmappe für eine Zielplattform wie beispielsweise x86 oder x64. Dies ist erforderlich, um die WPF-App über „Paketerstellungsprojekt für Windows-Anwendungen“ in einem MSIX-Paket zu packen.
+
+    1. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappenknoten, und wähle **Eigenschaften** -> **Konfigurationseigenschaften** -> **Konfigurations-Manager** aus.
+    2. Wähle unter **Aktive Projektmappenplattform** die Option **x64** oder **x86** aus.
+    3. Wähle in der Zeile für dein WPF-Projekt in der Spalte **Plattform** die Option **Neu** aus.
+    4. Wähle im Dialogfeld **Neue Projektmappenplattform** die Option **x64** oder **x86** aus (dieselbe Plattform, die du für **Aktive Projektmappenplattform** ausgewählt hast), und klicke auf **OK**.
+    5. Schließe die geöffneten Dialogfelder.
+
+4. Kompiliere das Paketerstellungsprojekt, und führe es aus. Vergewissern Sie sich, dass die WPF-App ausgeführt und das benutzerdefinierte UWP-Steuerelement wie erwartet angezeigt wird.
 
 ## <a name="related-topics"></a>Zugehörige Themen
 

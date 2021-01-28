@@ -8,24 +8,45 @@ ms.topic: article
 keywords: Python, Windows 10, Microsoft, pip, py.exe, Dateipfade, PYTHONPATH, Python-Entwicklung, Python-Paketerstellung
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 4504e7550d19d2cc713284abebed43b6305b5dbd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c1cada0fef5968846100f66bb41b3dd70ea5b59a
+ms.sourcegitcommit: 8040760f5520bd1732c39aedc68144c4496319df
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174124"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98691305"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>Häufig gestellte Fragen zum Verwenden von Python unter Windows
 
-## <a name="why-cant-i-pip-install-a-certain-package"></a>Warum kann ich ein bestimmtes Paket nicht mithilfe von pip installieren?
+## <a name="trouble-installing-a-package-with-pip-install"></a>Probleme bei der Installation eines Pakets mit der PIP-Installation
 
-Es gibt eine Reihe von Gründen, warum bei einer Installation Fehler auftreten. In den meisten Fällen empfiehlt es sich, sich an den Paketentwickler zu wenden.
+Es gibt eine Reihe von Gründen, warum bei einer Installation Fehler auftreten. In vielen Fällen empfiehlt es sich, sich an den Paketentwickler zu wenden.
 
-Die häufigste Ursache für Probleme ist die Installation an einem Speicherort, für den Sie nicht über die Berechtigung zum Ändern verfügen. Beispielsweise sind für das Standardinstallationsverzeichnis möglicherweise Administratorrechte erforderlich, Python weist diese jedoch standardmäßig nicht auf. Die beste Lösung besteht darin, eine virtuelle Umgebung zu erstellen und die Installation dort durchzuführen.
+Eine häufige Ursache für Probleme ist die Installation an einem Speicherort, für den Sie nicht über die Berechtigung zum Ändern verfügen. Beispielsweise sind für das Standardinstallationsverzeichnis möglicherweise Administratorrechte erforderlich, Python weist diese jedoch standardmäßig nicht auf. Die beste Lösung besteht darin, eine [virtuelle Umgebung](./web-frameworks.md#create-a-virtual-environment) zu erstellen und die Installation dort durchzuführen.
 
 Einige Pakete enthalten nativen Code, für dessen Installation ein C- oder C++-Compiler erforderlich ist. Im Allgemeinen sollten Paketentwickler vorkompilierte Versionen veröffentlichen, dies ist aber nicht oft der Fall. Einige dieser Pakete werden möglicherweise ausgeführt, wenn Sie [Buildtools für Visual Studio installieren](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019) und die C++-Option auswählen. In den meisten Fällen müssen Sie sich jedoch an den Paketentwickler wenden.
 
-[Verfolgen Sie die Diskussion auf Stack Overflow](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379).
+[Verfolgen Sie die Diskussion auf Stack Overflow](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379)
+
+### <a name="trouble-installing-pip-with-wsl"></a>Probleme bei der Installation von PIP mit WSL
+
+Bei der Installation eines Pakets (z. B. Flask) mit PIP auf dem Windows-Subsystem für Linux (WSL oder WSL2), z. B. `python3 -m pip install flask`, tritt möglicherweise ein Fehler wie der folgende auf:
+
+```bash
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None))
+after connection broken by 'NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection
+object at 0x7f655471da30>: Failed to establish a new connection: [Errno -3]
+Temporary failure in name resolution')': /simple/flask/
+```
+
+Bei der Untersuchung dieses Problems werden Sie möglicherweise in mehrere Strudel geleitet, von denen keiner mit einer WSL-Verteilung besonders produktiv ist. (Warnung: Versuchen Sie auf der WSL nicht, `resolv.conf` zu bearbeiten. Diese Datei ist ein symbolischer Link und das Ändern dieser Datei kann zu komplizierten Problemen führen). Wenn Sie über keine Aftermarket-Firewall verfügen, ist die Lösung wahrscheinlich die Neuinstallation von PIP:
+
+```bash
+sudo apt -y purge python3-pip
+sudo python3 -m pip uninstall pip
+sudo apt -y install python3-pip --fix-missing
+```
+
+**Eine weiterführende Diskussion finden Sie im [WSL-Produktrepository auf GitHub](https://github.com/microsoft/WSL/issues/4020). Ein Dank geht an unsere Benutzercommunity für den [Beitrag zu diesem Problem](https://github.com/MicrosoftDocs/windows-uwp/issues/2679) in der Dokumentation.*
 
 ## <a name="what-is-pyexe"></a>Was ist „py.exe“?
 

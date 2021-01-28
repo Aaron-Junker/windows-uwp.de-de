@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Windows 10, Microsoft, Python-Systemverwaltung, Python-Dateiautomatisierung, Python-Skripts unter Windows, Einrichten von Python unter Windows, Python-Entwicklerumgebung unter Windows, Python-Entwicklungsumgebung unter Windows, Python mit PowerShell, Python-Skripts für Dateisystemtasks
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: d465d46a0524345a45dff9b1cc7c425e4cb468a4
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: a8f13243f3501b2af42d38c13bff580be2e5b42a
+ms.sourcegitcommit: 8040760f5520bd1732c39aedc68144c4496319df
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253673"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98691325"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>Erste Schritte bei der Verwendung von Python unter Windows für Skripts und Automatisierung
 
@@ -114,7 +114,7 @@ Beginnen wir mit einem einfachen Skript, das eine Verzeichnisstruktur durchläuf
 
 6. Öffnen Sie das Projekt in VS Code, indem Sie Folgendes eingeben: `code .`.
 
-7. Öffnen Sie den VS Code-Datei-Explorer, indem Sie **STRG+UMSCHALT+E** drücken (oder im Menü zu**Ansicht** > **Explorer** navigieren) und die gerade erstellte Datei „list-directory-contents.py“ auswählen. Die Microsoft Python-Erweiterung lädt automatisch einen Python-Interpreter. Sie können sehen, welcher Interpreter am unteren Rand des VS Code-Fensters geladen wurde.
+7. Öffnen Sie den VS Code-Datei-Explorer, indem Sie **STRG+UMSCHALT+E** drücken (oder im Menü zu **Ansicht** > **Explorer** navigieren) und die gerade erstellte Datei „list-directory-contents.py“ auswählen. Die Microsoft Python-Erweiterung lädt automatisch einen Python-Interpreter. Sie können sehen, welcher Interpreter am unteren Rand des VS Code-Fensters geladen wurde.
 
     > [!NOTE]
     > Python ist eine übersetzte Sprache, d. h., sie fungiert als virtueller Computer, der einen physischen Computer emuliert. Verschiedene Arten von Python-Interpretern stehen Ihnen zur Verwendung zur Verfügung: Python 2, Python 3, Anaconda, PyPy etc. Zum Ausführen von Python-Code und Abrufen von Python IntelliSense müssen Sie VS Code mitteilen, welcher Interpreter verwendet werden soll. Sie sollten bei dem Interpreter bleiben, den VS Code standardmäßig auswählt (in unserem Fall Python 3), es sei denn, Sie haben einen bestimmten Grund für eine andere Auswahl. Um den Python-Interpreter zu ändern, wählen Sie den aktuell in der blauen Leiste unten im VS Code-Fenster angezeigten Interpreter aus, oder öffnen Sie die **Befehlspalette** (STRG+UMSCHALT+P), und geben Sie den Befehl **Python: Interpreter auswählen** ein. Dadurch wird eine Liste der derzeit installierten Python-Interpreter angezeigt. [Weitere Informationen zum Konfigurieren von Python-Umgebungen](https://code.visualstudio.com/docs/python/environments).
@@ -176,6 +176,9 @@ Beginnen wir mit einem einfachen Skript, das eine Verzeichnisstruktur durchläuf
 
 Herzlichen Glückwunsch! Sie haben soeben ein automatisiertes Systemverwaltungsskript geschrieben, das das erstellte Verzeichnisse und die erstellten Dateien liest und mit Python die Verzeichnisstruktur anzeigt und anschließend in eine eigene Textdatei ausgibt.
 
+> [!NOTE]
+> Wenn Sie Python 3 nicht aus dem Microsoft Store installieren können, finden Sie [hier](https://github.com/MicrosoftDocs/windows-uwp/issues/2901) ein Beispiel für die Verarbeitung des Pfads für dieses Beispielskript.
+
 ## <a name="example-script-to-modify-all-files-in-a-directory"></a>Beispielskript zum Ändern aller Dateien in einem Verzeichnis
 
 In diesem Beispiel werden die Dateien und Verzeichnisse verwendet, die Sie soeben erstellt haben. Dabei wird jede der Dateien umbenannt, indem das Datum der letzten Änderung dem Dateinamen vorangestellt wird.
@@ -210,7 +213,7 @@ In diesem Beispiel werden die Dateien und Verzeichnisse verwendet, die Sie soebe
 
 3. Testen Sie das update-filenames.py-Skript, indem Sie es ausführen: `python3 update-filenames.py`, und führen Sie dann das list-directory-contents.py-Skript erneut aus: `python3 list-directory-contents.py`.
 
-4. Eine Ausgabe wie die folgende sollte angezeigt werden:
+4. Eine ähnliche Ausgabe wie die folgende sollte angezeigt werden:
 
     ```powershell
     Renaming: ..\food\fruits\banana.txt to: ..\food\fruits\2019-07-18 12.24.46.385185_banana.txt
