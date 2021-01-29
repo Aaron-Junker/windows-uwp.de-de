@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Sprache in Windows 10, Speech, Voice, Conversation, Win32 Speech apps, UWP Speech apps, WPF Speech apps, WinForms Speech apps
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: d810f08a2db60309e4528167bcb4bddc95d850c6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d157d33316925db6112ab892e13b2c849cfcaa5d
+ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174154"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98988702"
 ---
 # <a name="speech-voice-and-conversation-in-windows-10"></a>Sprache, Stimme und Konversation in Windows 10
 
@@ -72,13 +72,15 @@ Diese Seite enthält Informationen dazu, wie die verschiedenen Windows-Entwicklu
 
       **Azure-Sprachdienste**
 
-      Entwerfen, erstellen und testen Sie barrierefreie Websites mit Azure Speech Services.
+      Integrieren Sie die Sprachverarbeitung in apps und Dienste.
 
       [Spracherkennung](https://azure.microsoft.com/services/cognitive-services/speech-to-text/)
 
       [Sprachsynthese](https://azure.microsoft.com/services/cognitive-services/text-to-speech/)
       
       [Sprachübersetzung](https://azure.microsoft.com/services/cognitive-services/speech-translation/)
+
+      [Sprechererkennung](https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/)
 
       [Voice-First Virtual Assistenten](/azure/cognitive-services/speech-service/voice-first-virtual-assistants)
    :::column-end:::
@@ -87,16 +89,21 @@ Diese Seite enthält Informationen dazu, wie die verschiedenen Windows-Entwicklu
    :::column span="2":::
       **Legacy Features**
 
-      Ältere, veraltete und/oder nicht unterstützte Versionen der Microsoft-Sprachtechnologie.
+      Ältere, veraltete und/oder nicht unterstützte Versionen der Sprach-und Konversations Technologie von Microsoft.
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
+      [Cortana-Funktionskit](/cortana/skills/)
+
+      Als Teil unserer Zielsetzung, die modernen Produktivitäts Erfahrungen zu transformieren, indem Cortana tief in Microsoft 365 eingebettet wird, wird das Cortana Skills Kit für Consumer (die Entwicklerplattform) und alle Fähigkeiten, die auf dieser Plattform aufbauen, zurückgezogen.
+   :::column-end:::
+   :::column:::
+
       [Microsoft-Agent](/windows/win32/lwef/microsoft-agent)
 
       [Microsoft Speech Application Software Development Kit (sasdk) Version 1,0](https://www.microsoft.com/download/details.aspx?id=2200)
-   :::column-end:::
-   :::column:::
+
       [Microsoft Speech API (SAPI) 5,3](/previous-versions/windows/desktop/ms723627(v=vs.85))
 
       [Microsoft Speech API (SAPI) 5,4](/previous-versions/windows/desktop/ee125663(v=vs.85))

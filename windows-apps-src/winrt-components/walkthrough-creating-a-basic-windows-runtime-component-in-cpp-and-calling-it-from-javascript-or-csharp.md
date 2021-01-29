@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bfd8fdccc62dc45928085c53fa3f5b32fe9db98c
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
+ms.openlocfilehash: 155fd01b16f93ac8419282e5b2256f7e8a939a7f
+ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860157"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98988752"
 ---
 # <a name="walkthrough-of-creating-a-ccx-windows-runtime-component-and-calling-it-from-javascript-or-c"></a>Exemplarische Vorgehensweise zum Erstellen einer Komponente für Windows-Runtime in C++/CX und Aufrufen der Komponente über JavaScript oder C#
 
@@ -272,7 +272,7 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 Wenn Sie einen c#-Client erstellen möchten, können Sie diesen Abschnitt überspringen.
 
 > [!NOTE]
-> Universelle Windows-Plattform-Projekte (UWP) werden in Visual Studio 2019 nicht unterstützt. Weitere Informationen finden Sie [unter JavaScript und typescript in Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019#projects). Zum Befolgen dieses Abschnitts wird die Verwendung von Visual Studio 2017 empfohlen. Weitere Informationen finden Sie [unter JavaScript in Visual Studio 2017](/visualstudio/javascript/javascript-in-vs-2017).
+> Universelle Windows-Plattform (UWP)-Projekte, die JavaScript verwenden, werden in Visual Studio 2019 nicht unterstützt. Weitere Informationen finden Sie [unter JavaScript und typescript in Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019#projects). Zum Befolgen dieses Abschnitts wird die Verwendung von Visual Studio 2017 empfohlen. Weitere Informationen finden Sie [unter JavaScript in Visual Studio 2017](/visualstudio/javascript/javascript-in-vs-2017).
 
 ### <a name="to-create-a-javascript-project"></a>So erstellen Sie ein JavaScript-Projekt
 1. Öffnen Sie in Projektmappen-Explorer (in Visual Studio 2017; siehe **Hinweis** oben) das Kontextmenü für den Projektmappenknoten, und wählen Sie **hinzufügen, neues Projekt** aus.

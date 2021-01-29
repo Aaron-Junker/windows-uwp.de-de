@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 773ff1da19116a088d52a11dfc3180ea271efe82
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: a1d931e98f21160badb7a8c2603a580c2adfd682
+ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339718"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98988742"
 ---
 # <a name="walkthrough-of-creating-a-c-or-visual-basic-windows-runtime-component-and-calling-it-from-javascript"></a>Exemplarische Vorgehensweise zum Erstellen einer Komponente für Windows-Runtime in C# oder Visual Basic und Aufrufen der Komponente über JavaScript
 
@@ -34,14 +34,17 @@ Extern können die Member ihres Typs nur Windows-Runtime Typen für Ihre Paramet
 - Windows 10
 - [Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/)
 
+> [!NOTE]
+> Universelle Windows-Plattform (UWP)-Projekte, die JavaScript verwenden, werden in Visual Studio 2019 nicht unterstützt. Weitere Informationen finden Sie [unter JavaScript und typescript in Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019#projects). Um dieses Thema zu befolgen, empfiehlt es sich, Visual Studio 2017 zu verwenden. Weitere Informationen finden Sie [unter JavaScript in Visual Studio 2017](/visualstudio/javascript/javascript-in-vs-2017).
+
 ## <a name="creating-a-simple-windows-runtime-class"></a>Erstellen eine einfache Windows-Runtime-Klasse
 
 In diesem Abschnitt wird eine JavaScript-UWP-Anwendung erstellt, und der Projekt Mappe wird eine Visual Basic-oder c#-Windows-Runtime Komponenten Projekt hinzugefügt. Es wird gezeigt, wie ein Windows-Runtime Typ definiert, eine Instanz des Typs aus JavaScript erstellt und statische Member und Instanzmember aufgerufen werden. Die visuelle Darstellung der Beispiel-APP ist absichtlich niedrig, um den Fokus auf die Komponente zu behalten.
 
 1. Erstellen Sie in Visual Studio ein neues JavaScript-Projekt: Wählen Sie auf der Menüleiste **Datei, Neu, Projekt** aus. Wählen Sie im Abschnitt **Installierte Vorlagen** des Dialogfelds **Neues Projekt** die Option **JavaScript** und dann **Windows** sowie **Universelle** aus. (Falls Windows nicht verfügbar ist, stellen Sie sicher, dass Sie Windows 8 oder höher verwenden.) Wählen Sie die Vorlage **Leere Anwendung** aus, und geben Sie „SampleApp“ als Namen des Projekts ein.
 2.  Erstellen Sie das Komponentenprojekt: Öffnen Sie im Projektmappen-Explorer das Kontextmenü für die Projektmappe „SampleApp“, und wählen Sie **Hinzufügen** und dann **Neues Projekt** aus, um ein neues C#- oder Visual Basic-Projekt der Projektmappe hinzuzufügen. Wählen Sie im Abschnitt **Installierte Vorlagen** des Dialogfelds **Neues Projekt hinzufügen** die Option **Visual Basic** oder **Visual C#** und dann **Windows** und **Universelle** aus. Wählen Sie die Vorlage **Komponente für Windows-Runtime** aus, und geben Sie **SampleComponent** als Projektnamen ein.
-3.  Ändern Sie den Namen der Klasse in **Example**. Beachten Sie, dass die Klasse standardmäßig mit **public sealed** ( **Public NotInheritable** in Visual Basic) gekennzeichnet ist. Die Windows-Runtime-Klassen, die Sie von Ihrer Komponente aus bereitstellen, müssen versiegelt sein.
-4.  Fügen Sie der Klasse zwei einfache Member hinzu, eine **static** -Methode ( **Shared** -Methode in Visual Basic) und eine Instanzeigenschaft:
+3.  Ändern Sie den Namen der Klasse in **Example**. Beachten Sie, dass die Klasse standardmäßig mit **public sealed** (**Public NotInheritable** in Visual Basic) gekennzeichnet ist. Die Windows-Runtime-Klassen, die Sie von Ihrer Komponente aus bereitstellen, müssen versiegelt sein.
+4.  Fügen Sie der Klasse zwei einfache Member hinzu, eine **static**-Methode (**Shared**-Methode in Visual Basic) und eine Instanzeigenschaft:
 
     > [!div class="tabbedCodeSnippets"]
     > ```csharp
@@ -69,7 +72,7 @@ In diesem Abschnitt wird eine JavaScript-UWP-Anwendung erstellt, und der Projekt
     > ```
 
 5.  Optional: Um IntelliSense für die neu hinzugefügte Member zu aktivieren, öffnen Sie im Projektmappen-Explorer das Kontextmenü für das Projekt „SampleComponent“, und wählen Sie dann **Erstellen** aus.
-6.  Öffnen Sie im Projektmappen-Explorer im JavaScript-Projekt das Kontextmenü für **Verweise** , und wählen Sie dann **Verweis hinzufügen** aus, um den **Verweis-Manager** zu öffnen. Wählen Sie **Projekte** und dann **Projektmappe** aus. Aktivieren Sie das Kontrollkästchen für das Projekt „SampleComponent“, und wählen Sie **OK** aus, um einen Verweis hinzuzufügen.
+6.  Öffnen Sie im Projektmappen-Explorer im JavaScript-Projekt das Kontextmenü für **Verweise**, und wählen Sie dann **Verweis hinzufügen** aus, um den **Verweis-Manager** zu öffnen. Wählen Sie **Projekte** und dann **Projektmappe** aus. Aktivieren Sie das Kontrollkästchen für das Projekt „SampleComponent“, und wählen Sie **OK** aus, um einen Verweis hinzuzufügen.
 
 ## <a name="call-the-component-from-javascript"></a>Aufrufen der Komponente über JavaScript
 
@@ -190,7 +193,7 @@ Windows-Runtime kann aus JavaScript oder verwaltetem Code aufgerufen werden. Win
 
 > **Wichtig**  In diesem Beispiel wird das Ereignis im UI-Thread ausgelöst. Wenn Sie das Ereignis über einen Hintergrundthread auslösen, z. B. in einem asynchronen Aufruf, müssen Sie einige zusätzliche Arbeiten ausführen, damit JavaScript das Ereignis behandelt. Weitere Informationen finden Sie unter [Auswerfen von Ereignissen in Windows-Runtime-Komponenten](raising-events-in-windows-runtime-components.md).
 
-Fügen Sie im SampleComponent-Projekt eine neue **public sealed** -Klasse ( **Public NotInheritable** -Klasse in Visual Basic) mit dem Namen „PropertySetStats“ hinzu. Die Klasse umschließt eine PropertySet-Auflistung und behandelt das MapChanged-Ereignis. Der Ereignishandler verfolgt die Anzahl der aufgetretenen Änderungen jeder Art, und die DisplayStats-Methode erstellt einen Bericht, der in HTML formatiert ist. Beachten Sie die zusätzliche **using** -Anweisung ( **Imports** -Anweisung in Visual Basic). Achten Sie darauf, diese Anweisung den vorhandenen **using** -Anweisungen hinzuzufügen, anstatt sie zu überschreiben.
+Fügen Sie im SampleComponent-Projekt eine neue **public sealed**-Klasse (**Public NotInheritable**-Klasse in Visual Basic) mit dem Namen „PropertySetStats“ hinzu. Die Klasse umschließt eine PropertySet-Auflistung und behandelt das MapChanged-Ereignis. Der Ereignishandler verfolgt die Anzahl der aufgetretenen Änderungen jeder Art, und die DisplayStats-Methode erstellt einen Bericht, der in HTML formatiert ist. Beachten Sie die zusätzliche **using**-Anweisung (**Imports**-Anweisung in Visual Basic). Achten Sie darauf, diese Anweisung den vorhandenen **using**-Anweisungen hinzuzufügen, anstatt sie zu überschreiben.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -536,7 +539,7 @@ Sie können Ereignisse mit dem standardmäßigen .NET Framework-Ereignismuster o
 
 Wenn Sie ein Ereignis in Windows-Runtime verfügbar machen, erbt die „EventArgs“-Klasse von „System.Object“. Er erbt nicht von System. EventArgs, wie es in .net der Fall wäre, da EventArgs kein Windows-Runtime Typ ist.
 
-Wenn Sie benutzerdefinierte Ereignisaccessoren für das Ereignis deklarieren ( **Custom** -Schlüsselwort in Visual Basic), müssen Sie das Windows-Runtime-Ereignismuster verwenden. Siehe [benutzerdefinierte Ereignisse und Ereignisaccessoren in Windows-Runtime-Komponenten](custom-events-and-event-accessors-in-windows-runtime-components.md).
+Wenn Sie benutzerdefinierte Ereignisaccessoren für das Ereignis deklarieren (**Custom**-Schlüsselwort in Visual Basic), müssen Sie das Windows-Runtime-Ereignismuster verwenden. Siehe [benutzerdefinierte Ereignisse und Ereignisaccessoren in Windows-Runtime-Komponenten](custom-events-and-event-accessors-in-windows-runtime-components.md).
 
 Fügen Sie die events1-Funktion zu „default.js“ hinzu, um das Testereignis zu behandeln. Die „events1“Funktion erstellt eine Ereignishandlerfunktion für das Testereignis und ruft sofort die „OnTest-Methode“ zum Auslösen des Ereignisses auf. Wenn Sie einen Haltepunkt im Textbereich des Ereignishandlers platzieren, können Sie sehen, dass das Objekt, das an den einzelnen Parameter übergeben wird, das Quellobjekt und beide Member von „TestEventArgs“ enthält.
 
@@ -726,7 +729,7 @@ Die asyncCancel-Funktion ruft einfach die cancel-Methode des WinJS.Promise-Objek
 
 Drücken Sie zum Ausführen der App die F5-TASTE. Wählen Sie zum Starten des asynchronen Vorgangs die Schaltfläche **Async** aus. Was als Nächstes passiert, hängt von der Geschwindigkeit des Computers ab. Wenn die Statusleiste den Abschluss erreicht, bevor Sie auch nur blinzeln können, erhöhen Sie die Startzahl, die an „GetPrimesInRangeAsync“ übergeben wird, um den Faktor zehn oder ein Vielfaches davon. Sie können die Dauer des Vorgangs optimieren, indem Sie die Anzahl der Testzahlen erhöhen oder verringern, allerdings hat das Hinzufügen von Nullen (0) in der Mitte der Startzahl einen größeren Einfluss. Um den Vorgang abzubrechen, wählen Sie die Schaltfläche **Cancel Async** aus.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Übersicht über .net für UWP-apps](/previous-versions/windows/apps/br230302(v=vs.140))
 * [.NET für UWP-Apps](/dotnet/api/index?view=dotnet-uwp-10.0)
