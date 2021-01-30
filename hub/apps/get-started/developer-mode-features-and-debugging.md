@@ -5,12 +5,12 @@ keywords: Erste Schritte Entwicklerlizenz Visual Studio, Entwicklerlizenz Gerät
 ms.date: 10/13/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a8e42b9f35866f07a07122043ced803045bf99d6
-ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
+ms.openlocfilehash: 85c64cd4baed7be9edde0dfc008ab90c1d537ca4
+ms.sourcegitcommit: d0eef123b167dc63f482a9f4432a237c1c6212db
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92011918"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99077228"
 ---
 # <a name="developer-mode-features-and-debugging"></a>Entwicklermodus-Features und-Debugging
 
@@ -28,12 +28,13 @@ Die folgende Abbildung zeigt Entwicklerfeatures für Windows 10:
 
 Weitere Informationen zum Geräteportal findest du in der [Übersicht über das Windows-Geräteportal](/windows/uwp/debug-test-perf/device-portal.md).
 
+
 Gerätespezifische Anweisungen zum Einrichten finden Sie in folgenden Artikeln:
-- [Geräteportal für Windows-Desktop](/windows/uwp/debug-test-perf/device-portal-desktop.md)
+- [Geräteportal für Windows-Desktop](/windows/uwp/debug-test-perf/device-portal-desktop)
 - [Geräteportal für HoloLens](/windows/mixed-reality/using-the-windows-device-portal)
-- [Geräteportal für IoT](/windows/iot-core/manage-your-device/DevicePortal)
-- [Geräteportal für Mobilgeräte](/windows/uwp/debug-test-perf/device-portal-mobile.md)
-- [Geräteportal für Xbox](/windows/xbox-apps/device-portal-xbox.md)
+- [Geräteportal für IoT](/windows/iot-core/manage-your-device/deviceportal)
+- [Geräteportal für Mobilgeräte](/windows/uwp/debug-test-perf/device-portal-mobile)
+- [Geräteportal für Xbox](/windows/uwp/xbox-apps/device-portal-xbox)
 
 Solltest du Probleme beim Aktivieren des Entwicklermodus oder des Geräteportals haben, findest du im Forum [Bekannte Probleme](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) entsprechende Problemumgehungen. Alternativ findest du unter [Fehler beim Installieren des Entwicklermoduspakets](#failure-to-install-developer-mode-package) zusätzliche Details sowie Informationen dazu, welche WSUS-KBs zugelassen werden müssen, um das Entwicklermoduspaket zu entsperren.
 
