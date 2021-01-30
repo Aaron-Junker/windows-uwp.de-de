@@ -8,12 +8,12 @@ keywords: Cortana, Cortana-Canvas, Cortana-Design, Benutzeroberfläche, Sprachbe
 ms.date: 01/27/2021
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fca4da482585ddd4b7f9d54008c1905e372ca030
-ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
+ms.openlocfilehash: ca9f77d10f6e22d4e244b102cb8b85e1f75113fc
+ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98988732"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99057561"
 ---
 # <a name="cortana-interactions-in-windows-apps"></a>Cortana-Interaktionen in Windows-apps
 
@@ -22,7 +22,7 @@ ms.locfileid: "98988732"
 
 Erweitern Sie die Grundfunktionen von **Cortana** durch Sprachbefehle, die eine einzelne Aktion in einer Windows-Anwendung starten und ausführen.
 
-Die Ziel-App kann abhängig von der Komplexität der Interaktion entweder im Vordergrund gestartet (die App erhält den Fokus, und **Cortana** wird geschlossen) oder im Hintergrund aktiviert werden (**Cortana** behält den Fokus und zeigt Ergebnisse aus der App an). Sprachbefehle, die zusätzlichen Kontext oder Benutzereingaben erfordern, werden im Allgemeinen am besten in einer Vordergrund-App behandelt, während grundlegende Befehle in **Cortana** über eine Hintergrund-App behandelt werden können. 
+Die Ziel-App kann abhängig von der Komplexität der Interaktion entweder im Vordergrund gestartet (die App erhält den Fokus, und **Cortana** wird geschlossen) oder im Hintergrund aktiviert werden (**Cortana** behält den Fokus und zeigt Ergebnisse aus der App an). Sprachbefehle, die zusätzlichen Kontext oder Benutzereingaben erfordern, werden im Allgemeinen am besten in einer Vordergrund-App behandelt, während grundlegende Befehle in **Cortana** über eine Hintergrund-App behandelt werden können.
 
 **Cortana** integriert die grundlegenden Funktionen Ihrer App, bietet einen zentralen Einstiegspunkt, über den der Benutzer die meisten Aufgaben ohne Öffnen der App ausführen kann, und wird somit zum Bindeglied zwischen Ihrer App und dem Benutzer. Wenn Sie diese Verknüpfung für die APP-Funktionalität bereitstellen und die Notwendigkeit, apps zu wechseln, verringern, kann der Benutzer viel Zeit und Aufwand sparen.
 
@@ -45,12 +45,6 @@ Sehen Sie sich das [Cortana Skills Kit](/cortana/skills/) an, wenn Sie Cortana e
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [VCD elements and attributes v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
-
-### <a name="designers"></a>Designer
-
-* [Cortana-Entwurfs Richtlinien](cortana-design-guidelines.md)
-
-### <a name="samples"></a>Beispiele
-
-* [Cortana-Sprachbefehlbeispiel](https://go.microsoft.com/fwlink/p/?LinkID=619899)
+- [VCD elements and attributes v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
+- [Cortana-Entwurfs Richtlinien](cortana-design-guidelines.md)
+- [Cortana-Sprachbefehlbeispiel](https://go.microsoft.com/fwlink/p/?LinkID=619899)

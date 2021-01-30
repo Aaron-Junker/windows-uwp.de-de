@@ -8,12 +8,12 @@ ms.date: 01/27/2021
 ms.topic: article
 keywords: Cortana, Entwurf
 ms.localizationpriority: medium
-ms.openlocfilehash: 008a2612b808f1ca9dac5d55fd4472f23d39cef3
-ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
+ms.openlocfilehash: 0d1f27c2e70ce8bf9d77f07dd0871cf09a441bdc
+ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "99041553"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99057571"
 ---
 # <a name="cortana-design-guidelines"></a>Cortana-Entwurfsrichtlinien
 
@@ -26,7 +26,7 @@ Mithilfe von **Cortana** können im Hintergrund ausgeführte Anwendungen den Ben
 
 Dem Benutzer soll das Gefühl vermittelt werden, dass **Cortana** den Prozess möglichst komfortabel und einfach macht. Gleichzeitig soll **Cortana** aber auch deutlich machen, dass die Aufgabe von Ihrer App ausgeführt wird.
 
-Wir verwenden eine in die **Cortana**-UI integrierte Reiseplanungs- und Verwaltungs-App mit dem Namen **Adventure Works**, um viele der hier vorgestellten Konzepte und Features zu veranschaulichen.
+Wir verwenden eine in die **Cortana**-UI integrierte Reiseplanungs- und Verwaltungs-App mit dem Namen **Adventure Works**, um viele der hier vorgestellten Konzepte und Features zu veranschaulichen. Weitere Informationen finden Sie im [Cortana Voice-Befehlsbeispiel](https://go.microsoft.com/fwlink/p/?LinkID=619899).
 
 :::image type="content" source="images/cortana/cortana-overview.png" alt-text="Screenshot der Cortana-Canvas":::
 
@@ -179,9 +179,9 @@ Im Anschluss gehen wir ausführlicher auf die einzelnen Schritte ein.
 
 ### <a name="handoff"></a>Übergabe
 
-:::image type="content" source="images/cortana/cortana-backgroundapp-result.png" alt-text="Screenshot der Cortana-Canvas für den End-to-End-Cortana-Hintergrund-App-Flow unter Verwendung von AdventureWorks-Abbruch Fahrten ohne Übergabe von":::*AdventureWorks "Abbrechen von Fahrten" ohne Übergabe Bildschirm*
+:::image type="content" source="images/cortana/cortana-backgroundapp-result.png" alt-text="Screenshot der Cortana-Canvas für den End-to-End-Cortana-Hintergrund-App-Flow unter Verwendung von AdventureWorks bevorstehende Fahrten ohne Übergabe von":::*AdventureWorks "bevorstehende Fahrt" ohne Übergabe-Bildschirm*
 
-:::image type="content" source="images/cortana/cortana-backgroundapp-progress-result.png" alt-text="Screenshot des Cortana-Canvas für den End-to-End-Cortana-Hintergrund-App-Flow unter Verwendung von AdventureWorks Abbrechen von Fahrten mit der Übergabe von":::*AdventureWorks "Abbrechen von Fahrten" mit Übergabe Bildschirm*
+:::image type="content" source="images/cortana/cortana-backgroundapp-progress-result.png" alt-text="Screenshot des Cortana-Canvas für den End-to-End-Cortana-Hintergrund-App-Flow unter Verwendung von AdventureWorks bevorstehende Fahrt mit der Übergabe von":::*AdventureWorks "bevorstehende Fahrt" mit Übergabe Bildschirm*
 
 Aufgaben, auf die Ihre App in unter 500 ms reagieren kann und für die keine zusätzlichen Informationen vom Benutzer benötigt werden, können abgesehen von der Anzeige des Abschlussbildschirms ohne weitere Beteiligung von **Cortana** durchgeführt werden.
 
@@ -350,4 +350,6 @@ Bei Auftreten eines der folgenden Fehler zeigt **Cortana** die gleiche allgemein
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-[Cortana-Interaktionen in Windows-apps](cortana-interactions.md)
+- [Cortana-Interaktionen in Windows-apps](cortana-interactions.md)
+- [VCD elements and attributes v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
+- [Cortana-Sprachbefehlbeispiel](https://go.microsoft.com/fwlink/p/?LinkID=619899)
