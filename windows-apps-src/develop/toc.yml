@@ -827,6 +827,8 @@
           href: ../csharp-winrt/net-projection-from-cppwinrt-component.md
         - name: Erstellen einer C#/WinRT-Komponente und deren Verwenden aus C++/WinRT
           href: ../csharp-winrt/create-windows-runtime-component-cswinrt.md
+        - name: Diagnostizieren von Komponentenfehlern
+          href: ../csharp-winrt/authoring-diagnostics.md
         - name: Agile Objekte
           href: ../csharp-winrt/agile-objects.md
     - name: Sicherheit
