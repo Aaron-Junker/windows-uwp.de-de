@@ -2,17 +2,17 @@
 description: Es wird beschrieben, wie Sie in das Erstellen von Desktop-Apps für Windows-PCs einsteigen, z. B. das Auswählen der richtigen App-Plattform für neue Apps und das Modernisieren von vorhandenen Apps für Windows 10.
 title: Erstellen von Desktop-Apps für Windows-PCs
 ms.topic: article
-ms.date: 9/10/2020
+ms.date: 02/03/2021
 keywords: Windows Win32, Desktopentwicklung
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 554869625c0db7a2a19dc7c01837e47029bd28e6
-ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
+ms.openlocfilehash: 2518d838ca41e5ca2faa6dbd5697d64ea9257922
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97214267"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534369"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>Erstellen von Desktop-Apps für Windows-PCs
 
@@ -66,7 +66,7 @@ Einen ausführlichen Vergleich dieser Plattformen sowie zusätzliche Ressourcen 
 
 Mit Blick auf die Zukunft entwickeln wir die Windows-App-Entwicklungsplattformen mit der Windows-UI-Bibliothek (WinUI) und Project Reunion weiter.
 
-* **WinUI** ist eine natives Framework für die Benutzererfahrung (UX) für Windows 10-Apps. WinUI begann als ein Toolkit, das neue und aktualisierte Versionen von UWP-Steuerelementen für UWP-Apps in älteren Versionen von Windows 10 bereitstellte. Der Umfang von WinUI hat zugenommen, sodass WinUI 3 (aktuell in der Vorschau) heute die Plattform für moderne native Benutzeroberflächen (UI) für mit UWP, .NET und Win32 entwickelte Windows 10-Apps ist. 
+* **WinUI** ist eine natives Framework für die Benutzererfahrung (UX) für Windows 10-Apps. WinUI begann als ein Toolkit, das neue und aktualisierte Versionen von WinRT-Steuerelementen für UWP-Apps in älteren Versionen von Windows 10 bereitstellte. Mit WinUI 3 (noch in der Vorschau) wächst WinUI zum führenden nativen Benutzeroberflächenframework für Windows 10-Apps über UWP-, .NET- und Win32-App-Plattformen hinweg.
 
     Weitere Informationen erhalten Sie unter [Windows-UI-Bibliothek (WinUI)](../winui/index.md).
 
