@@ -4,18 +4,18 @@ description: Ein Fenster-Manager-Hilfsprogramm zum Anordnen und Ausrichten von F
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 00b849e19d3ae8fcf76e1f2a63dc1915353aad30
-ms.sourcegitcommit: 5dac88ad541b71ebe85b78951e6b357a3db176cc
+ms.openlocfilehash: b1f417307c173e868284254c0a1721e4e6ef5536
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97612326"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534439"
 ---
 # <a name="fancyzones-utility"></a>Fancyzones (Hilfsprogramm)
 
 Fancyzones ist ein Fenster-Manager-Hilfsprogramm zum Anordnen und Ausrichten von Fenstern in effiziente Layouts, um die Geschwindigkeit des Workflows zu verbessern und Layouts schnell wiederherzustellen. Mit fancyzones kann der Benutzer eine Reihe von Fenster Standorten für einen Desktop definieren, die als Drag-Ziele für Windows dienen.  Wenn der Benutzer ein Fenster in eine Zone zieht, wird die Größe des Fensters geändert und neu positioniert, um diese Zone auszufüllen.  
 
-![Bildschirm Abbildung von fancyzones](../images/pt-fancy-zones2.png)
+![Screenshot von FancyZones](../images/pt-fancy-zones2.png)
 
 ## <a name="getting-started"></a>Erste Schritte
 
@@ -35,17 +35,17 @@ Wenn Sie über Anwendungen verfügen, die mit erhöhten Rechten ausgeführt werd
 
 ## <a name="choose-your-layout-layout-editor"></a>Layout auswählen (Layouteditor)
 
-Beim ersten Start zeigt der Zonen-Editor eine Liste von Layouts an, die anhand der Anzahl von Fenstern auf dem Monitor angepasst werden können. Wenn Sie ein Layout auswählen, wird eine Vorschau dieses Layouts auf dem Monitor angezeigt. Durch Auswahl von anwenden wird das Layout auf den Monitor festgelegt.  
+Beim ersten Start zeigt der Zonen-Editor eine Liste von Layouts an, die anhand der Anzahl von Fenstern auf dem Monitor angepasst werden können. Wenn Sie ein Layout auswählen, wird eine Vorschau dieses Layouts auf dem Monitor angezeigt. Das ausgewählte Layout wird automatisch angewendet.  
 
 ![Bildschirm Abbildung der fancyzones-Auswahl](../images/pt-fancyzones-picker.png)
 
-Wenn mehrere Anzeigen verwendet werden, erkennt der Editor die verfügbaren Monitore und zeigt Sie an, zwischen denen der Benutzer wählen kann. Der ausgewählte Monitor ist dann das Ziel des ausgewählten Layouts, wenn es angewendet wird.
+Wenn mehrere Anzeigen verwendet werden, erkennt der Editor die verfügbaren Monitore und zeigt Sie an, zwischen denen der Benutzer wählen kann. Der ausgewählte Monitor ist dann das Ziel des ausgewählten Layouts.
 
 ![Fancyzones-Auswahl mehrerer Monitore](../images/pt-fancyzones-multimon.png)
 
 ### <a name="space-around-zones"></a>Leerraum um Zonen
 
-Mithilfe des Kontrollkästchens **Raum um Zonen anzeigen** können Sie die Sortierreihenfolge oder den Rand jedes fancyzone-Fensters festlegen. Im Feld **Leerraum um Zonen** können Sie einen benutzerdefinierten Wert für die Breite des Rahmens festlegen.
+Mit der UMSCHALT **Fläche Raum um Zonen anzeigen** können Sie die Sortierreihenfolge oder den Rand jedes fancyzone-Fensters festlegen. Im Feld **Leerraum um Zonen** können Sie einen benutzerdefinierten Wert für die Breite des Rahmens festlegen.
 
 Mithilfe der **Entfernung von angrenzenden Zonen** können Sie einen benutzerdefinierten Wert für den Leerraum zwischen den Fenstern "fancyzone" festlegen, bis Sie zusammengeführt werden, oder bevor beide hervorgehoben werden, sodass Sie zusammengeführt werden können.
 
@@ -55,19 +55,19 @@ Aktivieren und deaktivieren Sie den Zonen-Editor, und deaktivieren Sie das Feld 
 
 ### <a name="creating-a-custom-layout"></a>Erstellen eines benutzerdefinierten Layouts
 
-Der Zonen-Editor unterstützt auch das Erstellen und Speichern von benutzerdefinierten Layouts. Wählen Sie im oberen Menü des Zonen-Editors die Registerkarte **Benutzer** definiert neben **Vorlagen** aus.
+Der Zonen-Editor unterstützt auch das Erstellen und Speichern von benutzerdefinierten Layouts. Klicken Sie unten rechts auf die Schaltfläche **Neues Layout erstellen** .
   
-Es gibt zwei Möglichkeiten, benutzerdefinierte Zonen Layouts zu erstellen: Fenster Layout und Tabellenlayout. Diese können auch als Additive und subtraktive Modelle betrachtet werden.  
+Es gibt zwei Möglichkeiten, benutzerdefinierte Zonen Layouts zu erstellen: **Raster** Layout und **Canvas** -Layout. Diese können auch als subtraktive und Additive Modelle angesehen werden.  
 
-Das Modell des Additiven Fensterlayouts beginnt mit einem leeren Layout und unterstützt das Hinzufügen von Zonen, die ähnlich wie Windows gezogen und geändert werden können.
-
-![Fenster-Editor-Modus "fancyzones"](../images/pt-fancyzones-windoweditor.png)
-
-Das subtraktive Table-Layoutmodell beginnt mit einem Tabellenlayout und ermöglicht das Erstellen von Zonen durch aufteilen und Zusammenführen von Zonen und anschließendes Ändern der Größe des Bundstegs zwischen Zonen.
+Das subtraktive **Raster** Modell beginnt mit einem drei spaltigen Raster und ermöglicht das Erstellen von Zonen, indem Zonen aufgeteilt und gemergt werden, sodass die Größe des Bundstegs zwischen den Zonen nach Belieben geändert wird.
 
 Zum Zusammenführen von zwei Zonen aktivieren und halten Sie die linke Maustaste gedrückt, und ziehen Sie die Maus, bis eine zweite Zone ausgewählt ist, und geben Sie dann die Schaltfläche ein, und es wird ein Popup Menü angezeigt.
 
-![Tabellen-Editor-Modus von fancyzones](../images/pt-fancyzones-tableeditor.png)
+![Tabellen-Editor-Modus von fancyzones](../images/pt-fancyzones-grideditor.png)
+
+Das Additive **Canvas** -Modell beginnt mit einem leeren Layout und unterstützt das Hinzufügen von Zonen, die ähnlich wie Windows gezogen und geändert werden können.
+
+![Fenster-Editor-Modus "fancyzones"](../images/pt-fancyzones-canvaseditor.png)
 
 ## <a name="snapping-a-window-to-two-or-more-zones"></a>Ausrichten eines Fensters an zwei oder mehr Zonen
 

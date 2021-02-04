@@ -4,16 +4,16 @@ description: Ein schnell Startprogramm für Poweruser, das einige zusätzliche F
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9be1d54946ec2286d95dbe7d4518a631efd471e9
-ms.sourcegitcommit: 46a7e9db64e17a645ee6e888f62a9b04632c56af
+ms.openlocfilehash: 126c38cd98f0d8ff1102c7f53f14cb95ec7e38c5
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97618529"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534399"
 ---
 # <a name="powertoys-run-utility"></a>PowerToys-Hilfsprogramm ausführen
 
-PowerToys Run ist ein schnelles Start Programm für Hauptbenutzer, das einige zusätzliche Features enthält, ohne die Leistung zu beeinträchtigen. Es ist Open Source und modular für zusätzliche Plug-ins.
+PowerToys Run ist ein schnelles Start Programm für Hauptbenutzer, das einige zusätzliche Features enthält, ohne die Leistung zu beeinträchtigen. Das Programm ist Open Source und für weitere Plug-Ins modular ausgelegt.
 
 Um PowerToys auszuführen, wählen Sie <kbd>alt</kbd> + <kbd>LEERTASTE</kbd> aus, und beginnen Sie mit der Eingabe.
 
@@ -21,7 +21,7 @@ Um PowerToys auszuführen, wählen Sie <kbd>alt</kbd> + <kbd>LEERTASTE</kbd> aus
 
 ![PowerToys führt demoöffnende Apps aus](../images/pt-powerrun-demo.gif)
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 - Windows 10, Version 1903 oder höher
 - Nach der Installation von muss PowerToys aktiviert und im Hintergrund ausgeführt werden, damit dieses Hilfsprogramm funktioniert.
@@ -75,6 +75,22 @@ Diese werden erzwingen, dass PowerToys nur als Ziel-Plug-Ins ausgeführt wird.
   | `//` | Nur URLs. Beispiel `//docs.microsoft.com` für das Wechseln Ihres Standard Browsers zu https://docs.microsoft.com |
   | `<` | Nur ausführen von Prozessen. Beispiel `<outlook` für die Suche nach allen Prozessen, die Outlook enthalten |
   | `>` | Nur Shellbefehl. Beispiel `>ping localhost` für eine Ping-Abfrage |
+  | `:` | Nur Registrierungsschlüssel. Beispiel `:hkcu` für die Suche nach dem Registrierungsschlüssel HKEY_CURRENT_USER |
+  | `!` | Nur Windows-Dienste. Beispiel für `!alu` die Suche nach dem anwendungsebenengateway-Dienst, der gestartet oder beendet werden soll |
+
+## <a name="system-commands"></a>System Befehle
+
+Mit PowerToys v 0,31 und on gibt es Aktionen auf Systemebene, die Sie jetzt ausführen können.
+
+  | **Aktions Schlüssel**   |   **Aktion** |
+  | ------------------ | ---------------------------------------------------------------------------------|
+  | `Shutdown` | Fährt den Computer herunter. |
+  | `Restart` | Startet den Computer neu. |
+  | `Sign Out` | Meldet den aktuellen Benutzer ab. |
+  | `Lock` | Sperrt den Computer. |
+  | `Sleep` | Computer im Ruhezustand |
+  | `Hibernate` | Ruhezustand des Computers |
+  | `Empty Recycle Bin` | Leert den Papierkorb. |
 
 ## <a name="indexer-settings"></a>Indexer-Einstellungen
 

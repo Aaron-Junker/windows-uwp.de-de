@@ -4,12 +4,12 @@ description: Eine Windows-Shellerweiterung für das Massen Umbenennen von Dateie
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 39e06685b6948ed3d3935c69a8b4dafeb9ecc2ea
-ms.sourcegitcommit: 8040760f5520bd1732c39aedc68144c4496319df
+ms.openlocfilehash: 3c751624c93fec5996885c766e73b5ab1849fd4c
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98691335"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534389"
 ---
 # <a name="powerrename-utility"></a>Powerrename-Hilfsprogramm
 
@@ -44,6 +44,8 @@ Geben Sie Text ein, *um den zuvor eingegebenen Wert zu ersetzen* , der den ausge
 ### <a name="options---use-regular-expressions"></a>Optionen: reguläre Ausdrücke verwenden
 
 Wenn dieses Kontrollkästchen aktiviert ist, wird der Suchwert als [regulärer Ausdruck](https://wikipedia.org/wiki/Regular_expression) (Regex) interpretiert. Der Wert Replace kann auch Regex-Variablen enthalten (siehe Beispiele unten).  Wenn diese Option nicht aktiviert ist, wird der Suchwert als Klartext interpretiert, um durch den Text im Feld ersetzen ersetzt zu werden.
+
+Weitere Informationen zur `Use Boost library` Option im Menü "Einstellungen" für erweiterte Regex-Funktionen finden Sie im [Abschnitt "reguläre Ausdrücke](#regular-expressions)".
 
 ### <a name="options---case-sensitive"></a>Optionen: Groß-/Kleinschreibung
 
@@ -139,6 +141,8 @@ Aktivieren Sie das Kontrollkästchen "reguläre Ausdrücke verwenden", um regul�
 
 **Hinweis:** Sie möchten bei Verwendung regulärer Ausdrücke wahrscheinlich "alle Vorkommen vergleichen" aktivieren.
 
+Wenn Sie anstelle der Standardbibliothek die [Boost-Bibliothek](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html) verwenden möchten, aktivieren Sie die `Use Boost library` Option in den PowerToys-Einstellungen. Sie ermöglicht erweiterte Funktionen, wie z `[lookbehind](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html#boost_regex.syntax.perl_syntax.lookbehind)` . b., die von der Standardbibliothek nicht unterstützt werden.
+
 ### <a name="examples-of-regular-expressions"></a>Beispiele für reguläre Ausdrücke
 
 #### <a name="simple-matching-examples"></a>Beispiele für einfache Übereinstimmungen
@@ -164,6 +168,7 @@ Aktivieren Sie das Kontrollkästchen "reguläre Ausdrücke verwenden", um regul�
 | `(.*).png`   | `$1_foo.png`   | Fügt " \_ foo" an den vorhandenen Dateinamen an.  |
 | `(.*)`       | `$1.txt`        | Fügt die Erweiterung ". txt" an den vorhandenen Dateinamen an. |
 | `(^\w+\.$)|(^\w+$)` | `$2.txt` | Fügt die Erweiterung ". txt" nur an den vorhandenen Dateinamen an, wenn keine Erweiterung vorhanden ist. |
+|  `(\d\d)-(\d\d)-(\d\d\d\d)` | `$3-$2-$1` | Verschieben von Zahlen im Dateinamen: "29-03-2020" wird zu "2020-03-29". |
 
 ### <a name="additional-resources-for-learning-regular-expressions"></a>Weitere Ressourcen für das Erlernen regulärer Ausdrücke
 
