@@ -1,34 +1,33 @@
 ---
-Description: Media Player wird zum Anzeigen und Wiedergeben von Videos, Audiodateien und Bildern verwendet.
+description: Die Medienwiedergabe umfasst das Anschauen und Anhören von Video- und Audiodateien über Inline- oder dedizierte Vollbilddarstellungen.
 title: Media Player
 ms.assetid: 9AABB5DE-1D81-4791-AB47-7F058F64C491
 dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
-label: Media player
+label: Media playback controls
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e7f575f22a56c7c97700e1949494848402d239c6
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: a1471eb468e85bb1c4706c5432e38e501c4c1469
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218705"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534409"
 ---
-# <a name="media-player"></a>Media Player
+# <a name="media-players"></a>Media Player
 
+Die Medienwiedergabe umfasst das Anschauen und Anhören von Video- und Audiodateien über Inline- (in eine Seite eingebettet oder zusammen mit einer Gruppe anderer Steuerelemente) oder dedizierte Vollbilddarstellungen.
 
-
-Der Media Player wird verwendet, um Videos und Audio anzuzeigen und zu hören. Die Medienwiedergabe kann inline (eingebettet auf einer Seite oder mit einer Gruppe von anderen Steuerelementen) oder in einer dedizierten Vollbildansicht erfolgen. Sie können die Schaltflächen des Players ändern, den Hintergrund der Steuerelementleiste ändern und Layouts wie gewünscht anordnen. Beachten Sie jedoch, dass Benutzer eine Reihe grundlegender Steuerelemente (Wiedergabe/Pause, Zurückspringen, Vorwärts springen) erwarten.
+Benutzer erwarten eine Grundausstattung an Steuerelementen, wie z. B. Wiedergabe/Pause, Zurückspringen, Vorwärtsspringen, die Sie nach Bedarf ändern können (einschließlich Schaltflächen des Media Players, Hintergrund der Steuerleiste sowie Anordnung oder Layout der Steuerelemente).
 
 ![Media Player-Element mit Transportsteuerelementen](images/controls/mtc_double_video_inprod.png)
 
 > **Wichtige APIs:** [MediaPlayerElement-Klasse](/uwp/api/windows.ui.xaml.controls.mediaplayerelement), [MediaTransportControls-Klasse](/uwp/api/windows.ui.xaml.controls.mediatransportcontrols)
 
-
-> [!NOTE]
-> **MediaPlayerElement** steht erst ab Windows 10, Version 1607, zur Verfügung. Für das Entwickeln von Apps für niedrigere Windows 10-Versionen muss stattdessen [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) verwendet werden. Alle Empfehlungen auf dieser Seite gelten auch für MediaElement.
+> [!Important]
+> **MediaPlayerElement** steht erst ab Windows 10, Version 1607, zur Verfügung. Wenn Sie eine App für eine frühere Version von Windows 10 entwickeln, müssen Sie stattdessen das Steuerelement [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement)-verwenden. Alle hier aufgeführten Empfehlungen gelten auch für „MediaElement“.
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -97,9 +96,9 @@ Das [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) i
 ### <a name="set-the-media-source"></a>Festlegen der Medienquelle
 Um Dateien im Netzwerk oder in die App eingebettete Dateien wiederzugeben, legen Sie die [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source)-Eigenschaft auf eine [MediaSource](/uwp/api/windows.media.core.mediasource) mit dem Pfad der Datei fest.
 
-**Tipp**  Zum Öffnen von Dateien aus dem Internet müssen Sie die **Internet (Client)** -Funktion im App-Manifest (Package.appxmanifest) deklarieren. Weitere Informationen zum Deklarieren von Funktionen finden Sie unter [Deklaration der App-Funktionen](../../packaging/app-capability-declarations.md).
+**Tipp**  Zum Öffnen von Dateien aus dem Internet müssen Sie die **Internet (Client)**-Funktion im App-Manifest (Package.appxmanifest) deklarieren. Weitere Informationen zum Deklarieren von Funktionen finden Sie unter [Deklaration der App-Funktionen](../../packaging/app-capability-declarations.md).
 
- 
+ 
 
 Dieser Code versucht, die [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source)-Eigenschaft des im XAML-Code definierten [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) auf den Pfad einer Datei festzulegen, der in ein [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox)-Element eingegeben wurde.
 

@@ -3,17 +3,17 @@ description: Wenn Sie eine neue Windows-Desktop-App erstellen möchten, müssen 
 ms.assetid: 82705644-F1F0-40F3-99B1-7A97BFB32831
 title: Auswählen Ihrer Windows-App-Plattform
 ms.topic: article
-ms.date: 11/04/2019
+ms.date: 02/03/2021
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: Windows Win32, Desktopentwicklung
-ms.openlocfilehash: 51d799a4779f6d3ecee2119277b6c41485e0d377
-ms.sourcegitcommit: e1c182ea23da9b0bd9e89425f7f1a00baec81136
+ms.openlocfilehash: 62567b36d16e01fc6091f9514137c60dc352942a
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97826271"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534379"
 ---
 # <a name="choose-your-windows-app-platform"></a>Auswählen Ihrer Windows-App-Plattform
 
@@ -23,7 +23,7 @@ Wenn Sie eine neue Desktop Anwendung für Windows-PCs erstellen möchten, müsse
 * [WPF](#wpf) und [Windows Forms](#windows-forms): Diese auf .NET basierenden Plattformen bieten ein gemeinsames Typensystem, APIs und ein Anwendungsmodell für verwaltete Anwendungen.
 * [Win32](#win32): Die ursprüngliche Plattform für native C-/C++-Windows-Anwendungen, die direkten Zugriff auf Windows und Hardware erfordern. Dadurch ist die Win32-API die Plattform der Wahl für Anwendungen, die das höchste Maß an Leistung und den direkten Zugriff auf die Systemhardware benötigen.
 
-Jede dieser Plattformen bietet ein komplettes Benutzeroberflächen-Framework und eine Reihe von Benutzeroberflächen-Steuerelementen, mit denen Desktopanwendungen wie Word, Excel und Photoshop erstellen werden können, die auf dem klassischen Windows-Desktop laufen und die spezifischen Features dieser Umgebung voll ausnutzen können. Unter Windows 10 unterstützen alle diese Plattformen auch die [Windows-UI-Bibliothek (WinUI)](#windows-ui-library) zum Erstellen ihrer Benutzeroberflächen.
+Jede dieser Plattformen bietet ein komplettes Benutzeroberflächen-Framework und eine Reihe von Benutzeroberflächen-Steuerelementen, mit denen Desktopanwendungen wie Word, Excel und Photoshop erstellen werden können, die auf dem klassischen Windows-Desktop laufen und die spezifischen Features dieser Umgebung voll ausnutzen können. Unter Windows 10 unterstützen alle diese Plattformen auch die [Windows-UI-Bibliothek (WinUI)](#use-the-windows-ui-library-with-windows-apps) zum Erstellen von Benutzeroberflächen.
 
 Einige dieser Plattformen weisen bestimmte Gemeinsamkeiten auf und eignen sich besser für bestimmte Arten von Anwendungen. Beispielsweise sind UWP und .NET umfassend in Visual Studio integriert. Dies bietet zahlreiche Vorteile, insbesondere in den Bereichen Entwicklerproduktivität, komplexer und anpassbarer Benutzeroberflächen und Anwendungssicherheit. Da diese Frameworks visuelle Designer und Benutzeroberflächen-Markup für die schnelle Erstellung von Benutzeroberflächen unterstützen, sind sie für branchenspezifische Anwendungen besonders gut geeignet.
 
@@ -93,24 +93,6 @@ Weitere Informationen findest du in den folgenden Artikeln:
 * [API-Referenz](/windows/win32/apiindex/windows-api-list/)
 * [Beispiele](https://github.com/Microsoft/Windows-classic-samples)
 
-## <a name="windows-ui-library"></a>Windows-UI-Bibliothek
-
-Unter Windows 10 unterstützen alle diese wichtigen Desktop-Plattformen auch die [Windows-UI-Bibliothek (WinUI)](../winui/index.md) zum Erstellen ihrer Benutzeroberflächen. WinUI begann als ein Toolkit, das neue und aktualisierte Versionen von UWP-Steuerelementen für UWP-Apps in älteren Versionen von Windows 10 bereitstellte. Der Umfang von WinUI hat zugenommen, sodass WinUI heute die Plattform für moderne native Benutzeroberflächen (UI) für mit UWP, .NET und Win32 entwickelte Windows 10-Apps ist.
-
-Sie können WinUI auf folgende Weise in Desktop-Apps einsetzen:
-
-* UWP-Apps können WinUI-Steuerelemente anstelle der vom Windows SDK bereitgestellten UWP-Steuerelemente nutzen.
-* Sie können vorhandene WPF-, Windows Forms- und C++/Win32-Anwendungen aktualisieren, um [XAML-Inseln](modernize/xaml-islands.md) zum Hosten von WinUI 2.x-Steuerelementen in den Apps zu verwenden.
-* Ab [WinUI 3.0](../winui/winui3/index.md) können Sie [.NET- und C++/Win32-Apps erstellen, die eine vollständig WinUI-basierte Benutzeroberfläche](../winui/winui3/get-started-winui3-for-desktop.md) aufweisen.
-
-## <a name="project-reunion-preview"></a>Project Reunion (Vorschau)
-
-Project Reunion ist der Codename für einen umfangreichen neuen Satz von Entwicklerkomponenten und -tools, die die nächste Weiterentwicklung der Windows-App-Entwicklungsplattform darstellen. Project Reunion bietet einen einheitlichen Satz von APIs und Tools, die von jeder App auf einer breiten Palette von Zielversionen des Windows 10-Betriebssystems auf konsistente Weise verwendet werden können. Project Reunion ergänzt die bestehenden Windows-App-Plattformen und -Frameworks wie UWP und natives Win32 sowie .NET um einen gemeinsamen Satz von APIs und Tools, auf die sich Entwickler plattformübergreifend verlassen können.
-
-Project Reunion ist derzeit als frühe Entwicklervorschau verfügbar. Wir empfehlen Ihnen, diese Version in Ihrer Entwicklungsumgebung zu testen. Berücksichtigen Sie jedoch, dass sich Project Reunion bis zur endgültigen Veröffentlichung in vielerlei Hinsicht verändern wird. Project Reunion wird für Apps, die in Produktionsumgebungen verwendet werden, nicht unterstützt.
-
-Weitere Informationen finden Sie unter [Project Reunion](../project-reunion/index.md) und in unserem [GitHub-Repository](https://github.com/microsoft/ProjectReunion/).
-
 ## <a name="platform-comparison-uwp-wpf-and-windows-forms"></a>Plattformvergleich: UWP, WPF und Windows Forms
 
 In der folgenden Tabelle werden die verschiedenen Merkmale von Windows Forms, WPF und UWP detailliert verglichen.
@@ -128,6 +110,22 @@ In der folgenden Tabelle werden die verschiedenen Merkmale von Windows Forms, WP
 <sup>1</sup> Wir haben Features in einer zukünftigen Version von Windows 10 öffentlich angekündigt, die diesem Szenario gerecht werden.
 
 <sup>2</sup> Obwohl die Plattform keine erstklassige API-Unterstützung für dieses Szenario bietet, können Entwickler dieses Szenario mit Problemumgehungen unterstützen.
+
+## <a name="use-the-windows-ui-library-with-windows-apps"></a>Verwenden der Windows-UI-Bibliothek mit Windows-Apps
+
+Als Ergänzung zu den wichtigsten Windows-App-Plattformen können Sie auch die [Windows-UI-Bibliothek (WinUI)](../winui/index.md) in Ihren Apps verwenden. WinUI begann als ein Toolkit, das neue und aktualisierte Versionen von WinRT-Steuerelementen für UWP-Apps in älteren Versionen von Windows 10 bereitstellte. Mit WinUI 3 (noch in der Vorschau) wächst WinUI zum führenden nativen Benutzeroberflächenframework für Windows 10-Apps über UWP-, .NET- und Win32-App-Plattformen hinweg.
+
+Sie können WinUI auf folgende Weise in Windows -Apps einsetzen.
+
+* [WinUI 2.x](../winui/winui2/index.md):
+  * UWP-Apps können WinUI 2.x-Steuerelemente anstelle der vom Windows SDK bereitgestellten WinRT-Steuerelemente nutzen. Diese Releases von WinUI enthalten sowohl komplett neue Steuerelemente als auch aktualisierte Versionen bestehender Steuerelemente aus dem Windows SDK.
+  * Sie können vorhandene WPF-, Windows Forms- und C++/Win32-Apps mit [XAML Islands](modernize/xaml-islands.md) aktualisieren, um WinUI 2.x-Steuerelemente zu hosten.
+
+* [WinUI 3 (Vorschau)](../winui/winui3/index.md):
+  * Ab WinUI 3 können Sie [.NET- und C++/Win32-Apps](../winui/winui3/get-started-winui3-for-desktop.md) sowie [UWP-Apps](../winui/winui3/get-started-winui3-for-uwp.md) erstellen, die eine vollständig WinUI-basierte Benutzeroberfläche aufweisen. Dieses Release enthält Visual Studio-Projektvorlagen, die alles bieten, was Sie zum Erstellen dieser Anwendungen benötigen.
+
+> [!NOTE]
+> WinUI 3 befindet sich noch in der Vorschau und sollte daher nicht für Apps in Produktionsumgebungen verwendet werden.
 
 ## <a name="other-app-platforms"></a>Andere App-Plattformen
 

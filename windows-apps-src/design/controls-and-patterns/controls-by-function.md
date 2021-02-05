@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 36397e64215bfe4b57aac32e9eccc94182495688
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: c84595a8d5aadfb22f84a5fe780e93b9518490dc
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93033303"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534479"
 ---
 # <a name="controls-by-function"></a>Steuerelemente nach Funktion
 
@@ -41,7 +41,7 @@ Die folgende nach Funktionen geordnete Liste enthält die allgemeinen XAML-Steue
 ## <a name="appbars-and-commands"></a>App-Leisten und -Befehle
 
 ### <a name="app-bar"></a>App-Leiste
-Eine Symbolleiste für anwendungsspezifische Befehle. Siehe Befehlsleiste.
+Eine Symbolleiste für anwendungsspezifische Befehle. Siehe [Befehlsleiste](#command-bar).
 
 Referenz: [AppBar](/uwp/api/Windows.UI.Xaml.Controls.AppBar) 
 
@@ -91,7 +91,7 @@ Beispielcode: [Beispiel für XAML-Befehle](https://github.com/Microsoft/Windows-
 ## <a name="buttons"></a>Schaltflächen
 
 ### <a name="button"></a>Schaltfläche
-Ein Steuerelement, das auf Benutzereingaben reagiert und ein **Click** -Ereignis auslöst.
+Ein Steuerelement, das auf Benutzereingaben reagiert und ein **Click**-Ereignis auslöst.
 
 ![Standardschaltfläche](images/controls/button.png)
 
@@ -105,7 +105,7 @@ Referenz: [Schaltfläche](/uwp/api/Windows.UI.Xaml.Controls.Button)
 Design und Vorgehensweise: [Leitfaden für Schaltflächen-Steuerelement](buttons.md) 
 
 ### <a name="hyperlink"></a>Hyperlink
-Siehe „Linkschaltfläche“.
+Siehe [Linkschaltfläche](#hyperlink-button).
 
 ### <a name="hyperlink-button"></a>Linkschaltfläche
 Eine Schaltfläche, die als markierter Text dargestellt wird und den angegebenen URI in einem Browser öffnet.
@@ -122,7 +122,7 @@ Referenz: [HyperlinkButton](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
 Design und Vorgehensweise: [Leitfaden für Hyperlinksteuerelement](hyperlinks.md)
 
 ### <a name="repeat-button"></a>Wiederholungsschaltfläche
-Eine Schaltfläche, die ihr **Click** -Ereignis auslöst, das andauert, solange die Schaltfläche betätigt wird. 
+Eine Schaltfläche, die ihr **Click**-Ereignis auslöst, das andauert, solange die Schaltfläche betätigt wird. 
 
 ![Ein Schaltflächen-Steuerelement zum Wiederholen](images/controls/repeat-button.png) 
 
@@ -248,7 +248,7 @@ Design und Vorgehensweise: [Kalender-, Datums- und Uhrzeitsteuerelemente](date-a
 ## <a name="flyouts"></a>Flyouts
 
 ### <a name="context-menu"></a>Kontextmenü
-Siehe „Menü-Flyout“ und „Popupmenü“.
+Siehe [Menü-Flyout](#menu-flyout) und [Popupmenü](#popup-menu).
 
 ### <a name="flyout"></a>Flyout
 Zeigt eine Meldung an, die einen Benutzereingriff erfordert. (Im Gegensatz zu einem Dialogfeld wird von einem Flyout kein separates Fenster erstellt und keine Benutzerinteraktion blockiert.)
@@ -416,7 +416,7 @@ Ein Layoutpanel, das die Anordnung von untergeordneten Elementen in Zeilen und S
 Referenz: [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid)
  
 ### <a name="panning-scroll-viewer"></a>Verschiebungs-Bildlaufanzeige
-Siehe „Bildlaufanzeige“.
+Siehe [Bildlaufanzeige](#scroll-viewer).
 
 ### <a name="relativepanel"></a>RelativePanel
 Ein Bereich, in dem Sie untergeordnete Objekte relativ zueinander oder in Relation zum übergeordneten Objekt positionieren und ausrichten können.
@@ -433,7 +433,7 @@ Ein Bereich, in dem Sie untergeordnete Objekte relativ zueinander oder in Relati
 Referenz: [RelativePanel](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel)
 
 ### <a name="scroll-bar"></a>Bildlaufleiste
-Siehe Bildlaufanzeige. (ScrollBar ist ein Element von ScrollViewer. Es wird normalerweise nicht als eigenständiges Steuerelement verwendet.)
+Siehe [Bildlaufanzeige](#scroll-viewer). (ScrollBar ist ein Element von ScrollViewer. Es wird normalerweise nicht als eigenständiges Steuerelement verwendet.)
 
 Referenz: [ScrollBar](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ScrollBar)
  
@@ -511,23 +511,28 @@ Ein Containersteuerelement, das seinen Inhalt auf eine angegebene Größe skalie
 Referenz: [Viewbox](/uwp/api/Windows.UI.Xaml.Controls.Viewbox)
  
 ### <a name="zooming-scroll-viewer"></a>Zoombildlaufanzeige
-Siehe „Bildlaufanzeige“.
+Siehe [Bildlaufanzeige](#scroll-viewer).
 
 ## <a name="media-controls"></a>Mediensteuerelemente
 
 ### <a name="audio"></a>Audio
-Siehe „Medienelement“.
 
-### <a name="media-element"></a>Medienelement
+Siehe [Media Player-Element](#media-player-element).
+
+### <a name="media-player-element"></a>Media Player-Element
+
 Ein Steuerelement, das Audio- und Videoinhalte wiedergibt.
 
 ```xaml
-<MediaElement x:Name="myMediaElement"/>
+<MediaPlayerElement x:Name="myMediaPlayerElement"/>
 ```
 
-Referenz: [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 
+> [!Important]
+> **MediaPlayerElement** steht erst ab Windows 10, Version 1607, zur Verfügung. Wenn Sie eine App für eine frühere Version von Windows 10 entwickeln, müssen Sie stattdessen das Steuerelement [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement)-verwenden.
 
-Design und Vorgehensweise: [Leitfaden für Medienelement-Steuerelement](media-playback.md)
+Referenz: [MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)
+
+Design und Vorgehensweise: [Medienwiedergabe](media-playback.md)
 
 ### <a name="mediatransportcontrols"></a>MediaTransportControls
 Ein Steuerelement, das Wiedergabesteuerelemente für eine „MediaElement“-Klasse bereitstellt.
@@ -540,12 +545,12 @@ Ein Steuerelement, das Wiedergabesteuerelemente für eine „MediaElement“-Kla
 
 Referenz: [MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 
 
-Design und Vorgehensweise: [Leitfaden für Medienelement-Steuerelement](media-playback.md) 
+Design und Vorgehensweise: [Medienwiedergabe](media-playback.md)
 
 Beispielcode: [Beispiel für Steuerelemente für den Medientransport](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls)
 
 ### <a name="video"></a>Video
-Siehe „Medienelement“.
+Siehe [Media Player-Element](#media-player-element).
 
 ## <a name="navigation"></a>Navigation
 
@@ -666,7 +671,7 @@ Design und Vorgehensweise: [Textsteuerelemente](text-controls.md), [Richtlinien 
 Beispielcode: [Beispiel für AutoSuggestBox-Migration](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlAutoSuggestBox)
 
 ### <a name="multi-line-text-box"></a>Mehrzeiliges Textfeld
-Siehe „Textfeld“.
+Siehe [Textfeld](#text-box).
 
 ### <a name="password-box"></a>Kennwortfeld
 Ein Steuerelement für die Kennworteingabe.
@@ -698,13 +703,13 @@ Design und Vorgehensweise: [Textsteuerelemente](text-controls.md), [Leitfaden f�
 Beispielcode: [Beispiel für XAML-Text](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208))
 
 ### <a name="search-box"></a>Suchfeld
-Siehe „Feld mit automatischen Vorschlägen“.
+Siehe [Feld mit automatischen Vorschlägen](#auto-suggest-box).
 
 ### <a name="single-line-text-box"></a>Einzeiliges Textfeld
-Siehe „Textfeld“.
+Siehe [Textfeld](#text-box).
 
 ### <a name="static-textparagraph"></a>Statischer Text/Absatz
-Siehe „Textblock“.
+Siehe [Textblock](#text-block).
 
 ### <a name="text-block"></a>Textblock
 Ein Steuerelement, das Text angezeigt.

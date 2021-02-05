@@ -1,19 +1,19 @@
 ---
 description: Optimieren Sie Ihre Desktop-Anwendung für Windows 10-Benutzer mithilfe von Windows-Runtime-APIs.
 title: Windows-Runtime-APIs in Desktop-Apps aufrufen
-ms.date: 08/20/2019
+ms.date: 01/28/2021
 ms.topic: article
 keywords: Windows 10, UWP
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bf460b8c05f1dbb274aa9015e6b892339df9f634
-ms.sourcegitcommit: 21a76fc02ae261f609a2dbb7a56c5de25844c068
+ms.openlocfilehash: 2dc56597dccf00a15ffc672f60ca2e1f0936f14f
+ms.sourcegitcommit: 6f15cc14e0c4c13999c862664fa7a70de8730b74
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93381390"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98981869"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>Windows-Runtime-APIs in Desktop-Apps aufrufen
 
@@ -31,9 +31,9 @@ Für .NET-Projekte bestehen mehrere Optionen:
 * Für frühere .NET-Versionen können Sie das NuGet-Paket `Microsoft.Windows.SDK.Contracts` installieren, um alle notwendigen Referenzen zu Ihrem Projekt hinzuzufügen. Diese Option wird in Projekten unterstützt, die auf Windows 10, Version 1803 oder höher, ausgerichtet sind.
 * Wenn Ihr Projekt auf mehrere Ziele ausgerichtet ist – .NET 5 Preview 8 (oder höher) und frühere Versionen von .NET – können Sie die Projektdatei so konfigurieren, dass beide Optionen verwendet werden (Multi-Targeting).
 
-### <a name="net-5-preview-8-and-later-use-the-target-framework-moniker-option"></a>.NET 5 Preview 8 und höher: Verwenden der Zielframeworkmoniker-Option 
+### <a name="net-5-use-the-target-framework-moniker-option"></a>.NET 5: Verwenden der Zielframeworkmoniker-Option
 
-Diese Option wird nur in Projekten unterstützt, die .NET 5 Preview 8 (oder ein höheres Release) verwenden und auf Windows 10, Version 1809, oder ein späteres Release des Betriebssystems ausgerichtet sind. Weitere Hintergrundinformationen zu diesem Szenario finden Sie in [diesem Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/).
+Diese Option wird nur in Projekten unterstützt, die .NET 5 (oder ein höheres Release) verwenden und auf Windows 10, Version 1809, oder ein späteres Release des Betriebssystems ausgerichtet sind. Weitere Hintergrundinformationen zu diesem Szenario finden Sie in [diesem Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/).
 
 1. Klicken Sie bei in Visual Studio geöffnetem Projekt mit der rechten Maustaste im **Projektmappen-Explorer** auf das Projekt, und wählen Sie **Projektdatei bearbeiten** aus. Ihre Projektdatei sollte etwa wie folgt aussehen.
 
@@ -47,11 +47,11 @@ Diese Option wird nur in Projekten unterstützt, die .NET 5 Preview 8 (oder ein 
     </Project>
     ```
 
-2. Ersetzen Sie den Wert des **TargetFramework** -Elements durch eine der folgenden Zeichenfolgen:
+2. Ersetzen Sie den Wert des **TargetFramework**-Elements durch eine der folgenden Zeichenfolgen:
 
-    * **net5.0-windows10.0.17763.0** : Verwenden Sie diesen Wert, wenn Ihre App auf Windows 10, Version 1809, ausgerichtet ist.
-    * **net5.0-windows10.0.18362.0** : Verwenden Sie diesen Wert, wenn Ihre App auf Windows 10, Version 1903, ausgerichtet ist.
-    * **net5.0-windows10.0.19041.0** : Verwenden Sie diesen Wert, wenn Ihre App auf Windows 10, Version 2004, ausgerichtet ist.
+    * **net5.0-windows10.0.17763.0**: Verwenden Sie diesen Wert, wenn Ihre App auf Windows 10, Version 1809, ausgerichtet ist.
+    * **net5.0-windows10.0.18362.0**: Verwenden Sie diesen Wert, wenn Ihre App auf Windows 10, Version 1903, ausgerichtet ist.
+    * **net5.0-windows10.0.19041.0**: Verwenden Sie diesen Wert, wenn Ihre App auf Windows 10, Version 2004, ausgerichtet ist.
 
     Das folgende Element ist zum Beispiel für ein Projekt bestimmt, das auf Windows 10, Version 2004, ausgerichtet ist.
 
@@ -74,12 +74,12 @@ Verwenden Sie diese Option, wenn Ihre Anwendung .NET Core 3.x, .NET 5 Preview 7 
 
 3. Wählen Sie im Fenster **NuGet-Paket-Manager** die Registerkarte **Durchsuchen** aus, und suchen Sie nach `Microsoft.Windows.SDK.Contracts`.
 
-4. Nachdem Sie das `Microsoft.Windows.SDK.Contracts`-Paket gefunden haben, wählen Sie im rechten Bereich des **NuGet-Paket-Manager** -Fensters die **Version** des Pakets aus, das Sie installieren möchten, ausgehend von der Windows 10-Version, die Sie als Zielplattform festlegen möchten:
+4. Nachdem Sie das `Microsoft.Windows.SDK.Contracts`-Paket gefunden haben, wählen Sie im rechten Bereich des **NuGet-Paket-Manager**-Fensters die **Version** des Pakets aus, das Sie installieren möchten, ausgehend von der Windows 10-Version, die Sie als Zielplattform festlegen möchten:
 
-    * **10.0.19041.xxxx** : Wählen Sie dies für Windows 10, Version 2004.
-    * **10.0.18362.xxxx** : Wählen Sie dies für Windows 10, Version 1903.
-    * **10.0.17763.xxxx** : Wählen Sie dies für Windows 10, Version 1809.
-    * **10.0.17134.xxxx** : Wählen Sie dies für Windows 10, Version 1803.
+    * **10.0.19041.xxxx**: Wählen Sie dies für Windows 10, Version 2004.
+    * **10.0.18362.xxxx**: Wählen Sie dies für Windows 10, Version 1903.
+    * **10.0.17763.xxxx**: Wählen Sie dies für Windows 10, Version 1809.
+    * **10.0.17134.xxxx**: Wählen Sie dies für Windows 10, Version 1803.
 
 5. Klicken Sie auf **Installieren**.
 
@@ -99,12 +99,12 @@ Wenn Ihr Projekt auf mehrere Ziele ausgerichtet ist – .NET 5 Preview 8 (ode
     </Project>
     ```
 
-2. Ersetzen Sie das **TargetFramework** -Element in der Datei durch ein **TargetFrameworks** -Element (beachten Sie den Plural). Geben Sie in diesem Element die Zielframeworkmoniker für alle Versionen von .NET an, die Sie als Ziel verwenden möchten, getrennt durch Semikolons. 
+2. Ersetzen Sie das **TargetFramework**-Element in der Datei durch ein **TargetFrameworks**-Element (beachten Sie den Plural). Geben Sie in diesem Element die Zielframeworkmoniker für alle Versionen von .NET an, die Sie als Ziel verwenden möchten, getrennt durch Semikolons. 
 
     * Für .NET 5 Preview 8 oder höher verwenden Sie einen der folgenden Zielframeworkmoniker:
-        * **net5.0-windows10.0.17763.0** : Verwenden Sie diesen Wert, wenn Ihre App auf Windows 10, Version 1809, ausgerichtet ist.
-        * **net5.0-windows10.0.18362.0** : Verwenden Sie diesen Wert, wenn Ihre App auf Windows 10, Version 1903, ausgerichtet ist.
-        * **net5.0-windows10.0.19041.0** : Verwenden Sie diesen Wert, wenn Ihre App auf Windows 10, Version 2004, ausgerichtet ist.
+        * **net5.0-windows10.0.17763.0**: Verwenden Sie diesen Wert, wenn Ihre App auf Windows 10, Version 1809, ausgerichtet ist.
+        * **net5.0-windows10.0.18362.0**: Verwenden Sie diesen Wert, wenn Ihre App auf Windows 10, Version 1903, ausgerichtet ist.
+        * **net5.0-windows10.0.19041.0**: Verwenden Sie diesen Wert, wenn Ihre App auf Windows 10, Version 2004, ausgerichtet ist.
     * Verwenden Sie für .NET Core 3.x **netcoreapp3.0** oder **netcoreapp3.1**.
     * Verwenden Sie für .NET Framework **net46**.
 
@@ -114,7 +114,7 @@ Wenn Ihr Projekt auf mehrere Ziele ausgerichtet ist – .NET 5 Preview 8 (ode
     <TargetFrameworks>netcoreapp3.1;net5.0-windows10.0.19041.0</TargetFrameworks>
     ```
 
-3. Fügen Sie nach dem **PropertyGroup** -Element ein **PackageReference** -Element hinzu, das eine bedingte Anweisung enthält, die das NuGet-Paket `Microsoft.Windows.SDK.Contracts` für alle Versionen von .NET Core 3.x oder .NET Framework installiert, auf die Ihre App ausgerichtet ist. Das **PackageReference** -Element muss ein untergeordnetes Element des **ItemGroup** -Elements sein. Das folgende Beispiel veranschaulicht die Vorgehensweise für .NET Core 3.1.
+3. Fügen Sie nach dem **PropertyGroup**-Element ein **PackageReference**-Element hinzu, das eine bedingte Anweisung enthält, die das NuGet-Paket `Microsoft.Windows.SDK.Contracts` für alle Versionen von .NET Core 3.x oder .NET Framework installiert, auf die Ihre App ausgerichtet ist. Das **PackageReference**-Element muss ein untergeordnetes Element des **ItemGroup**-Elements sein. Das folgende Beispiel veranschaulicht die Vorgehensweise für .NET Core 3.1.
 
     ```csharp
     <ItemGroup>
@@ -172,12 +172,12 @@ Weitere Ideen finden Sie in der [UWP-Dokumentation](/windows/uwp/get-started/).
 
 Wir verwenden häufig die Begriffe *verbessern* und *erweitern*. Daher möchten wir erklären, was diese Begriffe bedeuten.
 
-Wir verwenden den Begriff *verbessern* , um Windows-Runtime-APIs zu beschreiben, die Sie direkt aus Ihrer Desktop-App aufrufen können (unabhängig davon, ob Sie sich entschieden haben, die Anwendung in einem MSIX-Paket zu verpacken). Wenn Sie eine Windows 10-Funktion ausgewählt haben, identifizieren Sie die APIs, die Sie benötigen, um sie zu erstellen. Überprüfen Sie dann, ob die API in [dieser Liste](desktop-to-uwp-supported-api.md) aufgeführt wird. Hierbei handelt es sich um eine Liste der APIs, die Sie direkt aus Ihrer Desktopanwendung aufrufen können. Wenn Ihre API nicht in dieser Liste aufgeführt ist, kann die Funktionalität der zugeordneten API nur in einem UWP-Prozess ausgeführt werden. Oftmals sind dies APIs, die UWP XAML rendern, etwa ein UWP-Kartensteuerelement oder eine Windows Hello-Sicherheitsaufforderung.
+Wir verwenden den Begriff *verbessern*, um Windows-Runtime-APIs zu beschreiben, die Sie direkt aus Ihrer Desktop-App aufrufen können (unabhängig davon, ob Sie sich entschieden haben, die Anwendung in einem MSIX-Paket zu verpacken). Wenn Sie eine Windows 10-Funktion ausgewählt haben, identifizieren Sie die APIs, die Sie benötigen, um sie zu erstellen. Überprüfen Sie dann, ob die API in [dieser Liste](desktop-to-uwp-supported-api.md) aufgeführt wird. Hierbei handelt es sich um eine Liste der APIs, die Sie direkt aus Ihrer Desktopanwendung aufrufen können. Wenn Ihre API nicht in dieser Liste aufgeführt ist, kann die Funktionalität der zugeordneten API nur in einem UWP-Prozess ausgeführt werden. Oftmals sind dies APIs, die UWP XAML rendern, etwa ein UWP-Kartensteuerelement oder eine Windows Hello-Sicherheitsaufforderung.
 
 > [!NOTE]
 > Zwar können APIs, die UWP XAML rendern, normalerweise nicht direkt aus Ihrer Desktopanwendung aufgerufen werden, möglicherweise können Sie aber alternative Vorgehensweisen verwenden. Wenn Sie UWP-XAML-Steuerelemente oder andere benutzerdefinierte visuelle Funktionen hosten möchten, können Sie [XAML Islands](xaml-islands.md) (ab Windows 10, Version 1903) und die [visuelle Ebene](visual-layer-in-desktop-apps.md) (ab Windows 10, Version 1803) verwenden. Diese Features können in verpackten oder unverpackten Desktop-Apps verwendet werden.
 
-Wenn Sie sich dafür entschieden haben, Ihre Desktop-App in einem MSIX-Paket zu verpacken, besteht eine weitere Möglichkeit darin, die Anwendung zu *erweitern* , indem Sie Ihrer Projektmappe ein UWP-Projekt hinzufügen. Das Desktop-Projekt bildet immer noch den Einstiegspunkt der Anwendung, aber das UWP-Projekt ermöglicht den Zugriff auf alle APIs, die nicht in [dieser Liste](desktop-to-uwp-supported-api.md) aufgeführt sind. Die Desktopanwendung kann mithilfe eines App-Diensts mit dem UWP-Prozess kommunizieren. Wir stellen zahlreiche Anleitungen zum Einrichten dieser Kommunikation bereit. Wenn Sie eine Funktion hinzufügen möchten, die ein UWP-Projekt erfordert, finden Sie unter [Erweitern mit UWP-Komponenten](desktop-to-uwp-extend.md) weitere Informationen.
+Wenn Sie sich dafür entschieden haben, Ihre Desktop-App in einem MSIX-Paket zu verpacken, besteht eine weitere Möglichkeit darin, die Anwendung zu *erweitern*, indem Sie Ihrer Projektmappe ein UWP-Projekt hinzufügen. Das Desktop-Projekt bildet immer noch den Einstiegspunkt der Anwendung, aber das UWP-Projekt ermöglicht den Zugriff auf alle APIs, die nicht in [dieser Liste](desktop-to-uwp-supported-api.md) aufgeführt sind. Die Desktopanwendung kann mithilfe eines App-Diensts mit dem UWP-Prozess kommunizieren. Wir stellen zahlreiche Anleitungen zum Einrichten dieser Kommunikation bereit. Wenn Sie eine Funktion hinzufügen möchten, die ein UWP-Projekt erfordert, finden Sie unter [Erweitern mit UWP-Komponenten](desktop-to-uwp-extend.md) weitere Informationen.
 
 :white_check_mark: **Verweisen auf API-Verträge**
 

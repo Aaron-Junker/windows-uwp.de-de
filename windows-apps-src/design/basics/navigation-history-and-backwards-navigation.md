@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 269d3b9f256016cb0d10441dc394eb4783ef6ec9
-ms.sourcegitcommit: 9bd23e0e08ed834accebde4db96fc87f921d983d
+ms.openlocfilehash: 738efe43afaf5c278425d5636bddc72cecadf47a
+ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 01/28/2021
-ms.locfileid: "98949126"
+ms.locfileid: "98988762"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Navigationsverlauf und Rückwärtsnavigation für Windows-Apps
 
@@ -102,7 +102,7 @@ Es wird empfohlen, die folgenden Ereignisse (zusätzlich zum Klick auf die Schal
 | Ereignis | Eingabe |
 | --- | --- |
 | [CoreDispatcher.AcceleratorKeyActivated](/uwp/api/windows.ui.core.coredispatcher.acceleratorkeyactivated) | ALT+NACH-LINKS,<br/>VirtualKey.GoBack |
-| [SystemNavigationManager.BackRequested](/api/windows.ui.core.systemnavigationmanager.backrequested) | B-TASTE auf dem Gamepad,<br/>Tablet-Modus Zurück-Schaltfläche,<br/>Hardware-Zurück-Taste |
+| [SystemNavigationManager.BackRequested](/api/windows.ui.core.systemnavigationmanager.backrequested) | WINDOWS+RÜCKTASTE,<br/>B-TASTE auf dem Gamepad,<br/>Tablet-Modus Zurück-Schaltfläche,<br/>Hardware-Zurück-Taste |
 | [CoreWindow.PointerPressed](/uwp/api/windows.ui.core.corewindow.pointerpressed) | VirtualKey.XButton1<br/>(z. B. die Zurück-Schaltfläche auf einigen Mäusen.) |
 
 ## <a name="code-examples"></a>Codebeispiele
@@ -115,7 +115,7 @@ Sie müssen mindestens das Ereignis `Click` für die Zurück-Schaltfläche verar
 
 Dieser Beispielcode verdeutlicht, wie Sie das Rückwärtsnavigationsverhalten mit einer Zurück-Schaltfläche implementieren. Der Code reagiert auf das „Button [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click)“-Ereignis, um zu navigieren. Die Zurück-Schaltfläche wird in der Methode [OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) aktiviert oder deaktiviert, die beim Navigieren zu einer neuen Seite aufgerufen wird.
 
-Hier wird der Code für `MainPage` gezeigt, aber Sie fügen diesen Code zu jeder Seite hinzu, die die Rückwärtsnavigation unterstützt. Um eine Duplizierung zu vermeiden, können Sie den auf die Navigation bezogenen Code in der `App`-Klasse in der `App.xaml`-Code-Behind-Seite unterbringen.
+Hier wird der Code für `MainPage` gezeigt, aber Sie fügen diesen Code zu jeder Seite hinzu, die die Rückwärtsnavigation unterstützt. Um eine Duplizierung zu vermeiden, können Sie den auf die Navigation bezogenen Code in der `App`-Klasse in der `App.xaml.*`-Code-Behind-Seite unterbringen.
 
 ```xaml
 <!-- MainPage.xaml -->
@@ -135,13 +135,13 @@ CodeBehind:
 // MainPage.xaml.cs
 private void BackButton_Click(object sender, RoutedEventArgs e)
 {
-    ((App)Application.Current).TryGoBack();
+    App.TryGoBack();
 }
 
 // App.xaml.cs
 //
 // Add this method to the App class.
-public bool TryGoBack()
+public static bool TryGoBack()
 {
     Frame rootFrame = Window.Current.Content as Frame;
     if (rootFrame.CanGoBack)
@@ -163,7 +163,7 @@ namespace winrt::AppName::implementation
  
         void MainPage::BackButton_Click(IInspectable const&, RoutedEventArgs const&)
         {
-            m_navigationHelper->TryGoBack();
+            App::TryGoBack();
         }
     };
 }
@@ -188,7 +188,7 @@ struct App : AppT<App>
     // ...
 
     // Perform back navigation if possible.
-    bool TryGoBack()
+    static bool TryGoBack()
     {
         Frame rootFrame{ nullptr };
         auto content = Window::Current().Content();
@@ -576,7 +576,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 // ...
 
 // (Add these methods to the App class.)
-public bool TryGoBack()
+public static bool TryGoBack()
 {
     Frame rootFrame = Window.Current.Content as Frame;
     if (rootFrame.CanGoBack)
@@ -700,7 +700,7 @@ struct App : AppT<App>
     // ...
 
     // Perform back navigation if possible.
-    bool TryGoBack()
+    static bool TryGoBack()
     {
         Frame rootFrame{ nullptr };
         auto content = Window::Current().Content();

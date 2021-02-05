@@ -8,16 +8,16 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f4736c598e18bc4f1225a7fa8e0488c3601420c
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 9f00a056085b6b1f4315a19d223c21c7a4cd6638
+ms.sourcegitcommit: d0eef123b167dc63f482a9f4432a237c1c6212db
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031463"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99077238"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>Speichern und Abrufen von Einstellungen und anderen App-Daten
 
-*App-Daten* sind änderbare Daten, die von einer bestimmten App erstellt und verwaltet werden. Sie beinhalten den Laufzeitstatus, App-Einstellungen, Benutzereinstellungen, Referenzinhalte (beispielsweise die Wörterbuchdefinitionen in einer Wörterbuch-App) und andere Einstellungen. App-Daten unterscheiden sich von *Benutzerdaten* , Daten, die der Benutzer beim Verwenden einer App erstellt und verwaltet. Benutzerdaten umfassen Dokument- oder Mediendateien, E-Mail- oder Kommunikationstranskripte oder Datenbankeinträge, mit vom Benutzer erstellte Inhalte enthalten. Benutzerdaten können für mehrere Apps nützlich oder von Bedeutung sein. Häufig handelt es sich dabei um Daten, die der Benutzer als von der App unabhängige Entität ändern oder übertragen möchte (z. B. ein Dokument).
+*App-Daten* sind änderbare Daten, die von einer bestimmten App erstellt und verwaltet werden. Sie beinhalten den Laufzeitstatus, App-Einstellungen, Benutzereinstellungen, Referenzinhalte (beispielsweise die Wörterbuchdefinitionen in einer Wörterbuch-App) und andere Einstellungen. App-Daten unterscheiden sich von *Benutzerdaten*, Daten, die der Benutzer beim Verwenden einer App erstellt und verwaltet. Benutzerdaten umfassen Dokument- oder Mediendateien, E-Mail- oder Kommunikationstranskripte oder Datenbankeinträge, mit vom Benutzer erstellte Inhalte enthalten. Benutzerdaten können für mehrere Apps nützlich oder von Bedeutung sein. Häufig handelt es sich dabei um Daten, die der Benutzer als von der App unabhängige Entität ändern oder übertragen möchte (z. B. ein Dokument).
 
 **Wichtiger Hinweis zu App-Daten:** Die Lebensdauer der App-Daten ist an die Lebensdauer der App gebunden. Wenn die App entfernt wird, gehen auch alle App-Daten verloren. Verwenden Sie App-Daten nicht zum Speichern von Benutzerdaten oder anderen Daten, die Benutzer als wertvoll und unersetzlich betrachten. Solche Informationen sollten in den Bibliotheken des Benutzers und auf Microsoft OneDrive gespeichert werden. App-Daten eignen sich perfekt zum Speichern von App-spezifischen (Benutzer-)Einstellungen und Favoriten.
 
@@ -31,12 +31,12 @@ Verwenden Sie die Einstellungen zum Speichern von Benutzereinstellungen und Anwe
 
 Im Folgenden finden Sie Datentypen, die Sie für App-Einstellungen verwenden können:
 
-- **UInt8** , **Int16** , **UInt16** , **Int32** , **UInt32** , **Int64** , **UInt64** , **Single** , **Double**
+- **UInt8**, **Int16**, **UInt16**, **Int32**, **UInt32**, **Int64**, **UInt64**, **Single**, **Double**
 - **Boolean**
-- **Char16** , **String**
+- **Char16**, **String**
 - [**DateTime**](/uwp/api/Windows.Foundation.DateTime), [**TimeSpan**](/uwp/api/Windows.Foundation.TimeSpan)
     - Verwenden Sie für C#/.NET Folgendes: [**System.DateTimeOffset**](/dotnet/api/system.datetimeoffset?view=dotnet-uwp-10.0), [**System.TimeSpan**](/dotnet/api/system.timespan?view=dotnet-uwp-10.0)
-- **GUID** , [**Point**](/uwp/api/Windows.Foundation.Point), [**Size**](/uwp/api/Windows.Foundation.Size), [**Rect**](/uwp/api/Windows.Foundation.Rect)
+- **GUID**, [**Point**](/uwp/api/Windows.Foundation.Point), [**Size**](/uwp/api/Windows.Foundation.Size), [**Rect**](/uwp/api/Windows.Foundation.Rect)
 - [**ApplicationDataCompositeValue:**](/uwp/api/Windows.Storage.ApplicationDataCompositeValue) Eine Reihe von verwandten App-Einstellungen, die atomisch serialisiert und deserialisiert werden müssen. Verwenden Sie Verbundeinstellungen, um atomische Aktualisierungen voneinander abhängiger Einstellungen problemlos behandeln zu können. Das System stellt die Integrität von Verbundeinstellungen bei gleichzeitigem Zugriff und Roaming sicher. Verbundeinstellungen sind für kleine Datenmengen vorgesehen. Bei Verwendung für große Datasets kann die Leistung beeinträchtigt werden.
 
 ### <a name="files"></a>Dateien
@@ -152,6 +152,10 @@ async void ReadTimestamp()
 
 ## <a name="roaming-data"></a>Roamingdaten
 
+> [!WARNING]
+> Ab Windows 10, Version 1909, wurde [angekündigt](/windows/deployment/planning/windows-10-deprecated-features), dass Package State Roaming (PSR) in einem zukünftigen Update entfernt werden soll. PSR ermöglicht Nicht-Microsoft-Entwicklern, auf Roamingdaten auf Geräten zugreifen. Dadurch können Entwickler von UWP-Anwendungen Daten in Windows schreiben und diese mit anderen Instanziierungen von Windows für den entsprechenden Benutzer synchronisieren.
+> 
+>Der empfohlene Ersatz für PSR ist [Azure App Service](/azure/app-service/). Azure App Service wird umfassend unterstützt, ist gut dokumentiert, zuverlässig und unterstützt plattform-/ökosystemübergreifende Szenarien wie iOS, Android und Web.
 
 Wenn Sie Roamingdaten in Ihrer App verwenden, können Benutzer die App-Daten der App problemlos für mehrere Geräte synchronisieren. Installiert ein Benutzer eine App auf mehreren Geräten, sorgt das Betriebssystem dafür, dass die App-Daten synchronisiert sind, und verringert so den Einrichtungsaufwand für die App auf weiteren Geräten. Mittels Roaming können Benutzer außerdem eine Aufgabe (beispielsweise das Erstellen einer Liste) an genau dem Punkt fortsetzen, an dem sie die Aufgabe auf einem anderen Gerät unterbrochen haben. Das Betriebssystem repliziert aktualisierte Roamingdaten in der Cloud und synchronisiert die Daten mit den anderen Geräten, auf denen die App installiert ist.
 
@@ -160,6 +164,8 @@ Das Betriebssystem begrenzt für jede App die Menge der App-Daten für das Roami
 Roamingdaten für Apps sind in der Cloud verfügbar, solange der Benutzer innerhalb des erforderlichen Zeitintervalls mit einem Gerät darauf zugreift. Führt ein Benutzer eine App für eine dieses Zeitintervall nicht überschreitende Spanne aus, werden die Roamingdaten aus der Cloud gelöscht. Bei der Deinstallation einer App werden die entsprechenden Roamingdaten in der Cloud nicht automatisch gelöscht, sondern beibehalten. Installiert der Benutzer die App innerhalb des Zeitintervalls wieder, werden die Roamingdaten über die Cloud synchronisiert.
 
 ### <a name="roaming-data-dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen für Roamingdaten
+
+> Wichtiger Hinweis zu [Roamingdaten](#roaming-data).
 
 - Verwenden Sie Roaming für Benutzereinstellungen und -anpassungen, Links und kleine Datendateien. Sie können mithilfe von Roaming beispielsweise dafür sorgen, dass die vom Benutzer vorgenommene Einstellung für die Hintergrundfarbe auf allen Geräten angewendet wird.
 - Verwenden Sie Roaming, damit Benutzer eine Aufgabe auf mehreren Geräten fortsetzen können. Sie können das Roaming für Anwendungsdaten beispielsweise implementieren, um den Inhalt eines E-Mail-Entwurfs oder die zuletzt angezeigte Seite in einer Lese-App zu speichern.
@@ -173,23 +179,33 @@ Roamingdaten für Apps sind in der Cloud verfügbar, solange der Benutzer innerh
 
 ### <a name="roaming-pre-requisites"></a>Voraussetzungen für Roaming
 
+> Wichtiger Hinweis zu [Roamingdaten](#roaming-data).
+
 Jeder Benutzer kann von Roaming-App-Daten profitieren, wenn ein Microsoft-Konto zur Anmeldung am Gerät verwendet wird. Benutzer und Gruppenrichtlinienadministratoren haben jedoch die Möglichkeit, das Roaming von App-Daten auf einem Gerät zu deaktivieren. Benutzer, die kein Microsoft-Konto verwenden oder die Datenroamingfunktion deaktivieren, können Ihre App weiterhin verwenden, die App-Daten sind dann jedoch auf jedem Gerät lokal.
 
-Daten, die im [**PasswordVault**](/uwp/api/Windows.Security.Credentials.PasswordVault) gespeichert sind, werden nur übertragen, wenn ein Benutzer ein Gerät als "vertrauenswürdig" eingestuft hat. Wird einem Gerät nicht vertraut, werden die in diesem Tresor gespeicherten Daten nicht für das Roaming verwendet.
+Daten, die im [**PasswordVault**](/uwp/api/Windows.Security.Credentials.PasswordVault) gespeichert sind, werden nur übertragen, wenn ein Benutzer ein Gerät als „vertrauenswürdig“ eingestuft hat. Wird einem Gerät nicht vertraut, werden die in diesem Tresor gespeicherten Daten nicht für das Roaming verwendet.
 
-### <a name="conflict-resolution"></a>Konfliktauflösung
+### <a name="conflict-resolution"></a>Konfliktlösung
+
+> Wichtiger Hinweis zu [Roamingdaten](#roaming-data).
 
 Das Roaming von App-Daten ist nicht für eine gleichzeitige Verwendung auf mehreren Geräten vorgesehen Wenn es während der Synchronisierung zu einem Konflikt kommt, weil eine bestimmte Dateneinheit auf beiden Geräten geändert wurde, verwendet das System vorzugsweise immer den zuletzt geschriebenen Wert. Dadurch wird sichergestellt, dass der App immer die aktuellsten Informationen zur Verfügung stehen. Handelt es sich bei der Dateneinheit um eine zusammengesetzte Einstellung, findet die Konfliktlösung trotzdem auf der Ebene der Einstellungseinheit statt, d. h. der zuletzt geänderte Wert der Zusammensetzung wird synchronisiert.
 
 ### <a name="when-to-write-data"></a>Zeitpunkt für das Schreiben von Daten
 
-Je nach erwarteter Lebensdauer der Einstellung sollten Daten zu unterschiedlichen Zeitpunkten geschrieben werden. Selten bzw. langsam geänderte App-Daten sollten sofort geschrieben werden. Häufig geänderte App-Daten sollten dagegen nur in bestimmten Zeiträumen regelmäßig (beispielsweise einmal alle fünf Minuten) und bei angehaltener App geschrieben werden. So kann eine Musik-App beispielsweise die Einstellung für den aktuellen Titel schreiben, wenn ein neuer Titel wiedergegeben wird, aber die aktuelle Position im Titel sollte nur in angehaltenem Zustand der Anwendung geschrieben werden.
+> Wichtiger Hinweis zu [Roamingdaten](#roaming-data).
+
+Je nach erwarteter Lebensdauer der Einstellung sollten Daten zu unterschiedlichen Zeitpunkten geschrieben werden. Selten bzw. langsam geänderte App-Daten sollten sofort geschrieben werden. Häufig geänderte App-Daten sollten dagegen nur in bestimmten Zeiträumen regelmäßig (beispielsweise einmal alle fünf Minuten) und bei angehaltener App geschrieben werden. So kann eine Musik-App beispielsweise die Einstellung für den „aktuellen Titel“ schreiben, wenn ein neuer Titel wiedergegeben wird, aber die aktuelle Position im Titel sollte nur in angehaltenem Zustand der Anwendung geschrieben werden.
 
 ### <a name="excessive-usage-protection"></a>Schutz vor übermäßiger Nutzung
 
+> Wichtiger Hinweis zu [Roamingdaten](#roaming-data).
+
 Das System verfügt über verschiedene Schutzmechanismen, um unangemessene Verwendung der Ressourcen zu verhindern. Falls App-Daten nicht wie erwartet übertragen werden, wurde das Gerät wahrscheinlich vorübergehend beschränkt. Wenn Sie einige Zeit warten, wird dieses Problem normalerweise automatisch behoben, ohne dass eine Aktion erforderlich ist.
 
-### <a name="versioning"></a>Versionsverwaltung
+### <a name="versioning"></a>Versionskontrolle
+
+> Wichtiger Hinweis zu [Roamingdaten](#roaming-data).
 
 App-Daten können die Versionsinformationen nutzen, um von einer Datenstruktur auf eine andere zu aktualisieren. Die Versionsnummer unterscheidet sich von der App-Version und kann nach Belieben festgelegt werden. Auch wenn es nicht zwingend erforderlich ist, empfiehlt es sich, aufsteigende Versionsnummern zu verwenden, da beim Übergang zu einer kleineren Nummer, die neuere Daten darstellt, unerwünschte Komplikationen (z. B. Datenverluste) entstehen können.
 
@@ -197,14 +213,17 @@ Das Roaming für App-Daten wird nur in installierten Apps mit der gleichen Versi
 
 ### <a name="testing-and-tools"></a>Tests und Tools
 
+> Wichtiger Hinweis zu [Roamingdaten](#roaming-data).
+
 Entwickler können ihr Gerät sperren, um eine Synchronisierung von Roaming-App-Daten auszulösen. Wenn die App-Daten scheinbar nicht innerhalb eines bestimmten Zeitrahmens übertragen werden, überprüfen Sie die folgenden Elemente, und stellen Sie sicher, dass:
 
 - Ihre Roamingdaten nicht die maximal zulässige Größe überschreiten (siehe auch [**RoamingStorageQuota**](/uwp/api/windows.storage.applicationdata.roamingstoragequota)).
 - Ihre Dateien geschlossen und ordnungsgemäß veröffentlicht wurden.
 - Sie über mindestens zwei Geräte mit derselben App-Version verfügen.
 
-
 ### <a name="register-to-receive-notification-when-roaming-data-changes"></a>Registrieren, um Benachrichtigungen bei der Änderung von Roamingdaten zu erhalten
+
+> Wichtiger Hinweis zu [Roamingdaten](#roaming-data).
 
 Um das Roaming von App-Daten verwenden zu können, müssen Sie die Roamingdatenänderungen registrieren und die Roamingdatencontainer abrufen, damit Sie Einstellungen lesen und schreiben können.
 
@@ -237,6 +256,8 @@ Windows.Storage.ApplicationDataContainer roamingSettings =
 ```
 
 ### <a name="create-and-retrieve-roaming-settings"></a>Erstellen und Abrufen von Roamingeinstellungen
+
+> Wichtiger Hinweis zu [Roamingdaten](#roaming-data).
 
 Verwenden Sie die [**ApplicationDataContainer.Values**](/uwp/api/windows.storage.applicationdatacontainer.values)-Eigenschaft, um auf die Einstellungen im Container `roamingSettings` zuzugreifen, den wir im vorherigen Abschnitt abgerufen haben. In diesem Beispiel wird eine einfache Einstellung namens `exampleSetting` und ein zusammengesetzter Wert namens `composite` erstellt.
 
@@ -282,6 +303,8 @@ else
 
 ### <a name="create-and-retrieve-roaming-files"></a>Erstellen und Abrufen von Roamingdateien
 
+> Wichtiger Hinweis zu [Roamingdaten](#roaming-data).
+
 Verwenden Sie die Datei-APIs, z. B. [**Windows.Storage.StorageFolder.CreateFileAsync**](/uwp/api/windows.storage.storagefolder.createfileasync) und [**Windows.Storage.FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync), um eine Datei im Roamingspeicher für App-Daten zu erstellen und zu aktualisieren. In diesem Beispiel wird im Container `roamingFolder` die Datei `dataFile.txt` erstellt, in die das aktuelle Datum und die Uhrzeit geschrieben werden. Der Wert **ReplaceExisting** aus der [**CreationCollisionOption**](/uwp/api/Windows.Storage.CreationCollisionOption)-Enumeration gibt an, dass die Datei ersetzt werden soll, falls sie bereits vorhanden ist.
 
 ```csharp
@@ -313,7 +336,6 @@ async void ReadTimestamp()
    }
 }
 ```
-
 
 ## <a name="temporary-app-data"></a>Temporäre App-Daten
 
