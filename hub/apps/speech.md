@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Sprache in Windows 10, Speech, Voice, Conversation, Win32 Speech apps, UWP Speech apps, WPF Speech apps, WinForms Speech apps
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: d157d33316925db6112ab892e13b2c849cfcaa5d
-ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
+ms.openlocfilehash: 0051ecb0556b72f768c142f04c38f3f34b2dd334
+ms.sourcegitcommit: 99a3f996a57ecc5df7382fb46bc9b8ba75614a53
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98988702"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99579011"
 ---
 # <a name="speech-voice-and-conversation-in-windows-10"></a>Sprache, Stimme und Konversation in Windows 10
 
@@ -43,7 +43,8 @@ Diese Seite enthält Informationen dazu, wie die verschiedenen Windows-Entwicklu
 
       [Konversations-Agents](/uwp/api/windows.applicationmodel.conversationalagent)
 
-      [Cortana-Sprachbefehle](/cortana/voice-commands/vcd)
+      [Cortana-Sprachbefehle](/cortana/voice-commands/vcd)<br>
+      (wird in Windows 10 Mai 2020 Update und höher nicht unterstützt)
    :::column-end:::
    :::column:::
       ![Win32-Plattform-Apps](images/platform-win32.png)
@@ -96,7 +97,7 @@ Diese Seite enthält Informationen dazu, wie die verschiedenen Windows-Entwicklu
    :::column:::
       [Cortana-Funktionskit](/cortana/skills/)
 
-      Als Teil unserer Zielsetzung, die modernen Produktivitäts Erfahrungen zu transformieren, indem Cortana tief in Microsoft 365 eingebettet wird, wird das Cortana Skills Kit für Consumer (die Entwicklerplattform) und alle Fähigkeiten, die auf dieser Plattform aufbauen, zurückgezogen.
+      Als Teil unserer Zielsetzung, die modernen Produktivitäts Erfahrungen zu transformieren, indem Cortana tief in [Microsoft 365](/microsoft-365/admin/misc/cortana-integration)eingebettet wird, werden die Cortana Skills Kit-Entwicklerplattform und alle Fähigkeiten, die auf dieser Plattform erstellt wurden, zurückgezogen.
    :::column-end:::
    :::column:::
 
