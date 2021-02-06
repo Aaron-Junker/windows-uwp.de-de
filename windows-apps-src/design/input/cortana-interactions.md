@@ -8,17 +8,19 @@ keywords: Cortana, Cortana-Canvas, Cortana-Design, Benutzeroberfläche, Sprachbe
 ms.date: 01/27/2021
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ca9f77d10f6e22d4e244b102cb8b85e1f75113fc
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: 6187022f4fcce254d142c61f1c2fe222c11bd8a5
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057561"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606045"
 ---
 # <a name="cortana-interactions-in-windows-apps"></a>Cortana-Interaktionen in Windows-apps
 
 >[!WARNING]
 > Diese Funktion wird ab dem Windows 10-Update vom Mai 2020 (Version 2004, Codename "20h1") nicht mehr unterstützt.
+>
+> Informationen dazu, wie Cortana moderne Produktivitäts Umgebungen transformiert, finden Sie [unter Cortana in Microsoft 365](/microsoft-365/admin/misc/cortana-integration) .
 
 Erweitern Sie die Grundfunktionen von **Cortana** durch Sprachbefehle, die eine einzelne Aktion in einer Windows-Anwendung starten und ausführen.
 

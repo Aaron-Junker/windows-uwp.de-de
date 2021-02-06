@@ -5,17 +5,19 @@ ms.assetid: e42917dc-aece-4880-813f-80b897f9126c
 ms.date: 01/28/2021
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: 111f945c548d34f614305e31c1c79ce9197f0925
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: 835a2f60d2b86e5bef49195d4f937fa844f4d921
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057793"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606075"
 ---
 # <a name="interact-with-a-background-app-in-cortana"></a>Interagieren mit einer Hintergrund-App in Cortana
 
 >[!WARNING]
 > Diese Funktion wird ab dem Windows 10-Update vom Mai 2020 (Version 2004, Codename "20h1") nicht mehr unterstützt.
+>
+> Informationen dazu, wie Cortana moderne Produktivitäts Umgebungen transformiert, finden Sie [unter Cortana in Microsoft 365](/microsoft-365/admin/misc/cortana-integration) .
 
 Ermöglichen Sie Benutzerinteraktion mit einer Hintergrund-App über Sprach- und Texteingabe im **Cortana**-Canvas, während ein Sprachbefehl ausgeführt wird.
 

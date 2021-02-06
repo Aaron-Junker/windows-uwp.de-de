@@ -7,17 +7,19 @@ ms.assetid: c2959c1b-c2f2-4a8d-8f3e-79585f69afcf
 ms.date: 01/28/2021
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: 94f3d6323649737f978128e442c95449bce94075
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: 7716d4d623653c6b2d943135f2e2cf1ac9a40343
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057792"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99605995"
 ---
 # <a name="support-natural-language-voice-commands-in-cortana"></a>Unterstützen von Sprachbefehlen in natürlicher Sprache in Cortana
 
 >[!WARNING]
 > Diese Funktion wird ab dem Windows 10-Update vom Mai 2020 (Version 2004, Codename "20h1") nicht mehr unterstützt.
+>
+> Informationen dazu, wie Cortana moderne Produktivitäts Umgebungen transformiert, finden Sie [unter Cortana in Microsoft 365](/microsoft-365/admin/misc/cortana-integration) .
 
 Erweitern Sie **Cortana** mit flexibleren Befehlen in natürlicher Sprache, bei denen der Benutzer den App-Namen an beliebiger Stelle im Befehl verwenden kann.
 

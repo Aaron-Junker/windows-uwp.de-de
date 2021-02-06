@@ -5,17 +5,19 @@ ms.assetid: b497145b-c7a0-454a-8329-6bc1228953bb
 ms.date: 01/28/2021
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: 9f9e0aeb1cf23eb64df3104cf1f90e2b30d083ba
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: 1f61a08e9eeb66371ed39b44eb39dacbc1bf3cf5
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057809"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606035"
 ---
 # <a name="dynamically-modify-cortana-vcd-phrase-lists"></a>Dynamisches Ändern von Cortana VCD-Ausdrucks Listen
 
 >[!WARNING]
 > Diese Funktion wird ab dem Windows 10-Update vom Mai 2020 (Version 2004, Codename "20h1") nicht mehr unterstützt.
+>
+> Informationen dazu, wie Cortana moderne Produktivitäts Umgebungen transformiert, finden Sie [unter Cortana in Microsoft 365](/microsoft-365/admin/misc/cortana-integration) .
 
 Erfahren Sie, wie Sie mithilfe des Spracherkennungsergebnisses zur Laufzeit auf die Liste der unterstützten Begriffe (**PhraseList**-Elemente) in einer VCD-Datei (Voice Command Definition) zugreifen und diese aktualisieren
 

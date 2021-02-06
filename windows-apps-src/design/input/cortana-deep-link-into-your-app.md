@@ -5,17 +5,19 @@ ms.assetid: 6fe5fcc5-9ee4-4c04-92f4-7b1bf7ef5651
 ms.date: 01/28/2021
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: 5d0f841ed653adac6770089a9ec9c1be0335e346
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: d96e54604c5def61802a77625a6c18c556db909d
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057836"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606055"
 ---
 # <a name="deep-link-from-a-background-app-in-cortana-to-a-foreground-app"></a>Deep-Link von einer Hintergrund-app in Cortana zu einer Vordergrund-App
 
 >[!WARNING]
 > Diese Funktion wird ab dem Windows 10-Update vom Mai 2020 (Version 2004, Codename "20h1") nicht mehr unterstützt.
+>
+> Informationen dazu, wie Cortana moderne Produktivitäts Umgebungen transformiert, finden Sie [unter Cortana in Microsoft 365](/microsoft-365/admin/misc/cortana-integration) .
 
 Stellen Sie Deep-Links von einer Hintergrund-App in **Cortana** bereit, die die App in einem bestimmten Zustand oder Kontext im Vordergrund starten.
 

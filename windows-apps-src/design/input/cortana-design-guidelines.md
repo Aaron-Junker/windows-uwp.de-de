@@ -8,17 +8,19 @@ ms.date: 01/27/2021
 ms.topic: article
 keywords: Cortana, Entwurf
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d1f27c2e70ce8bf9d77f07dd0871cf09a441bdc
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: b7711f9fd653bbd635582a0b2268a5eb0ed7417b
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057571"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606085"
 ---
 # <a name="cortana-design-guidelines"></a>Cortana-Entwurfsrichtlinien
 
 >[!WARNING]
 > Diese Funktion wird ab dem Windows 10-Update vom Mai 2020 (Version 2004, Codename "20h1") nicht mehr unterstützt.
+>
+> Informationen dazu, wie Cortana moderne Produktivitäts Umgebungen transformiert, finden Sie [unter Cortana in Microsoft 365](/microsoft-365/admin/misc/cortana-integration) .
 
 Diese Richtlinien und Empfehlungen beschreiben, wie Ihre App bei der Benutzerinteraktion am besten von **Cortana** profitieren kann, um den Benutzer beim Ausführen einer Aufgabe zu unterstützen und ihm dabei deutlich zu vermitteln, was passiert.
 

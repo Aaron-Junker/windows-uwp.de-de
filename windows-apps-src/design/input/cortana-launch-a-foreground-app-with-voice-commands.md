@@ -5,17 +5,19 @@ ms.assetid: e4bf3714-6f62-466f-9e7c-3b03ee86a117
 ms.date: 01/28/2021
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: a9df2d107482234fa8783d92a1f4fbb075e7d505
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: 6e4e1b30d7d6e259ff66cdccebeed325ded57c18
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057785"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606015"
 ---
 # <a name="activate-a-foreground-app-with-voice-commands-through-cortana"></a>Aktivieren einer Vordergrund-App mit Sprachbefehlen über Cortana
 
 >[!WARNING]
 > Diese Funktion wird ab dem Windows 10-Update vom Mai 2020 (Version 2004, Codename "20h1") nicht mehr unterstützt.
+>
+> Informationen dazu, wie Cortana moderne Produktivitäts Umgebungen transformiert, finden Sie [unter Cortana in Microsoft 365](/microsoft-365/admin/misc/cortana-integration) .
 
 Zusätzlich zur Verwendung von Sprachbefehlen in **Cortana** für den Zugriff auf Systemfeatures können Sie **Cortana** auch mit Features und Funktionalität von Ihrer App erweitern. Durch die Verwendung von Sprachbefehlen kann Ihre App im Vordergrund aktiviert und eine Aktion oder ein Befehl in der App ausgeführt werden.
 

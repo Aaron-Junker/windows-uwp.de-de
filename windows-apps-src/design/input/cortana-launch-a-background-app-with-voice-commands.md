@@ -5,17 +5,19 @@ ms.assetid: e2c7eae3-6beb-4156-92a5-474bba53451e
 ms.date: 09/24/2019
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: 9331a87eb6a7f2f8a09beb57f82540518993806a
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: f1ed51107f41318cecf2d8fea73484713b4b837c
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057815"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606065"
 ---
 # <a name="activate-a-background-app-in-cortana-using-voice-commands"></a>Aktivieren einer Hintergrund-app in Cortana mithilfe von Sprachbefehlen  
 
 >[!WARNING]
 > Diese Funktion wird ab dem Windows 10-Update vom Mai 2020 (Version 2004, Codename "20h1") nicht mehr unterstützt.
+>
+> Informationen dazu, wie Cortana moderne Produktivitäts Umgebungen transformiert, finden Sie [unter Cortana in Microsoft 365](/microsoft-365/admin/misc/cortana-integration) .
 
 Zusätzlich zur Verwendung von Sprachbefehlen in **Cortana** für den Zugriff auf System Features können Sie **Cortana** auch mit Features und Funktionen von Ihrer APP (als Hintergrundaufgabe) erweitern, indem Sie Sprachbefehle verwenden, die eine Aktion oder einen auszuführenden Befehl angeben. Wenn eine App einen Sprachbefehl im Hintergrund verarbeitet, steht sie nicht im Fokus. Stattdessen werden das gesamte Feedback und alle Ergebnisse über den **Cortana**-Canvas und die **Cortana**-Stimme zurückgegeben.  
 
@@ -132,7 +134,7 @@ destinationTile.Image = await StorageFile.GetFileFromApplicationUriAsync(
 1. Klicken Sie mit der rechten Maustaste auf den Projektmappennamen, und wählen Sie **Neu > Projekt**  
 2. Wählen Sie unter **installierte > Vorlagen > Visual C \# > Windows > Universal** aus, und wählen Sie **Windows-Runtime Komponente** aus. Die **Windows-Runtime Komponente** ist die Komponente, die den App Service ([**Windows. applicationmodel. Appservice**](/uwp/api/Windows.ApplicationModel.AppService)) implementiert.  
 3. Geben Sie einen Namen für das Projekt ein, und klicken Sie auf die Schaltfläche **OK** .  
-    Beispiel: `VoiceCommandService`  
+    Beispiel: `VoiceCommandService`.  
 4. Wählen Sie in **Projektmappen-Explorer** das `VoiceCommandService` Projekt aus, und benennen Sie die `Class1.cs` von Visual Studio generierte Datei um.
     Beispiel: **Adventure Works** verwendet `AdventureWorksVoiceCommandService.cs` .  
 5. Klicken Sie auf die Schaltfläche **Ja** . Wenn Sie gefragt werden, ob Sie alle Vorkommen von umbenennen möchten `Class1.cs` .  
@@ -140,7 +142,7 @@ destinationTile.Image = await StorageFile.GetFileFromApplicationUriAsync(
     1. Fügen Sie Folgendes mithilfe einer Direktive hinzu.  
         `using Windows.ApplicationModel.Background;`  
     2. Wenn Sie ein neues Projekt erstellen, wird der Projektname als standardmäßiger Stamm-Namespace in allen Dateien verwendet. Benennen Sie den Namespace um, um den App-Dienstcode unter dem primären Projekt zu schachteln.
-        Beispiel: `namespace AdventureWorks.VoiceCommands`  
+        Beispiel: `namespace AdventureWorks.VoiceCommands`.  
     3. Klicken Sie mit der rechten Maustaste auf den Namen des App Service-Projekts in Projektmappen-Explorer und wählen Sie **Eigenschaften** aus.  
     4. Aktualisieren Sie auf der Registerkarte **Bibliothek** das Feld **Standard Namespace** mit dem gleichen Wert.  
         Beispiel: `AdventureWorks.VoiceCommands`).  
@@ -201,7 +203,7 @@ destinationTile.Image = await StorageFile.GetFileFromApplicationUriAsync(
     4. Fügen Sie [`uap:Extension`](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) dem-Element ein-Element hinzu [`Extensions`](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extensions) .  
     5. Fügen Sie `Category` dem-Element ein-Attribut hinzu, `uap:Extension` und legen Sie den Wert des- `Category` Attributs auf fest `windows.appService` .  
     6. Fügen Sie `EntryPoint` dem-Element ein-Attribut hinzu, `uap: Extension` und legen Sie den Wert des- `EntryPoint` Attributs auf den Namen der Klasse fest, die implementiert [`IBackgroundTask`](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) .  
-        Beispiel: `AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService`  
+        Beispiel: `AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService`.  
     7. Fügen Sie [`uap:AppService`](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-appservice) dem-Element ein-Element hinzu `uap:Extension` .  
     8. Fügen Sie `Name` dem [`uap:AppService`](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-appservice) -Element ein-Attribut hinzu, und legen Sie den Wert des- `Name` Attributs auf einen Namen für den App Service fest, in diesem Fall `AdventureWorksVoiceCommandService` .  
     9. Fügen Sie dem-Element ein zweites- [`uap:Extension`](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension) Element hinzu [`Extensions`](/uwp/schemas/appxpackage/uapmanifestschema/element-1-extensions) .  
@@ -236,7 +238,7 @@ destinationTile.Image = await StorageFile.GetFileFromApplicationUriAsync(
 
 1. Klicken Sie in Visual Studio mit der rechten Maustaste auf den Namen Ihres primären Projekts, und wählen Sie **> neues Element hinzufügen** aus. Fügen Sie eine **XML-Datei** hinzu.  
 2. Geben Sie einen Namen für die [**VCD**](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2) -Datei ein.  
-    Beispiel: `AdventureWorksCommands.xml`
+    Beispiel: `AdventureWorksCommands.xml`.
 3. Klicken Sie auf die Schaltfläche **Hinzufügen** .  
 4. Wählen Sie im **Projektmappen-Explorer** die [**VCD**](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)-Datei aus.  
 5. Legen Sie im Fenster **Eigenschaften** die Option **Buildvorgang** auf **Inhalt** fest, und legen Sie dann **In Ausgabeverzeichnis kopieren** auf **Kopieren, wenn neuer** fest.  
@@ -515,7 +517,7 @@ Geben Sie an, wie Ihre APP auf nachfolgende sprach Befehls Aktivierungen antwort
 Verarbeiten Sie den Sprachbefehl im App-Dienst.  
 
 1. Fügen Sie die folgenden using-Direktiven der sprach Befehls Dienst-Datei hinzu.  
-    Beispiel: `AdventureWorksVoiceCommandService.cs`  
+    Beispiel: `AdventureWorksVoiceCommandService.cs`.  
 
     ```csharp
         using Windows.ApplicationModel.VoiceCommands;
