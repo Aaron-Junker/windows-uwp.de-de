@@ -4,12 +4,12 @@ description: Installieren Sie PowerToys, eine Reihe von Dienstprogrammen für di
 ms.date: 12/02/2020
 ms.topic: quickstart
 ms.localizationpriority: medium
-ms.openlocfilehash: d0018e69e5a107baa595e4d3dd05a924257551a8
-ms.sourcegitcommit: d0eef123b167dc63f482a9f4432a237c1c6212db
+ms.openlocfilehash: 3effdd927b89a53b2ff92efeb422fb32293f98ba
+ms.sourcegitcommit: 447382282a6f549825480c2ff5b3cec9568d0e47
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99077218"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99624629"
 ---
 # <a name="install-powertoys"></a>Installieren von PowerToys
 
@@ -34,7 +34,7 @@ So installieren Sie PowerToys mithilfe einer ausführbaren Windows-Datei:
 - [.Net Core 3,1-Desktop Laufzeit](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-desktop-3.1.4-windows-x64-installer). Diese Anforderung wird vom PowerToys-Installer verarbeitet.
 - x64-Architektur wird derzeit unterstützt. Arm-und x86-Unterstützung, um zu einem späteren Zeitpunkt verfügbar zu werden.
 
-Um sicherzustellen, dass Ihr Computer diese Anforderungen erfüllt, überprüfen Sie Ihre Windows 10-Version und die Buildnummer, indem Sie den **⊞ Win** *(Windows-Taste)*  +  **D** auswählen und dann **winver** und **OK** auswählen. (Oder geben Sie den Befehl `ver` an der Windows-Eingabeaufforderung ein.) Sie können im Menü " **Einstellungen** " [auf die neueste Windows-Version aktualisieren](ms-settings:windowsupdate) .
+Um sicherzustellen, dass Ihr Computer diese Anforderungen erfüllt, überprüfen Sie Ihre Windows 10-Version und die Buildnummer, indem Sie den **⊞ Win** *(Windows-Taste)*  +  **R** auswählen, geben Sie dann **winver** und **OK** ein. (Oder geben Sie den Befehl `ver` an der Windows-Eingabeaufforderung ein.) Sie können im Menü " **Einstellungen** " [auf die neueste Windows-Version aktualisieren](ms-settings:windowsupdate) .
 
 ## <a name="alternative-install-methods"></a>Alternative Installationsmethoden
 
