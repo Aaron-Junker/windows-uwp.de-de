@@ -6,18 +6,22 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Bildung
 ms.localizationpriority: medium
-ms.openlocfilehash: 29a5d2749531e12ef7ce9b44cd6598c38cd089db
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: d4ed3bf3062deac308b9ed39ff7be709bcee4af3
+ms.sourcegitcommit: 3be258523c5ee3666498d6a98ed2648b27b2907d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031523"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99973100"
 ---
 # <a name="take-a-test-javascript-api"></a>JavaScript-API für Prüfung
 
 [Test](/education/windows/take-tests-in-windows-10) ist eine browserbasierte UWP-APP, die gesperrte Online Bewertungen für Tests mit hoher Beteiligung rendert, sodass Dozenten sich auf die Bewertungs Inhalte konzentrieren können, anstatt eine sichere Testumgebung bereitzustellen. Um dies zu erreichen, wird eine JavaScript-API verwendet, die von jeder Webanwendung verwendet werden kann. Die Take-a-Test-API unterstützt den [SBAC-Browser-API-Standard](https://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) für allgemeine Kern Tests.
 
 Weitere Informationen zur APP selbst finden Sie in der [technischen Referenz zum Erstellen einer Test-App](/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396) . Hilfe zur Problembehandlung finden Sie unter [Problembehandlung bei Microsoft Prüfung mithilfe der Ereignisanzeige](troubleshooting.md).
+
+> [!NOTE]
+> Dieser Artikel enthält Verweise auf den Begriff Blacklist, der von Microsoft nicht mehr verwendet wird. Sobald der Begriff aus der Software entfernt wird, wird er auch aus diesem Artikel entfernt.
+
 
 ## <a name="reference-documentation"></a>Referenzdokumentation
 Die Take a Test-APIs sind in den folgenden Namespaces vorhanden. Beachten Sie, dass alle APIs von einem globalen Objekt abhängig sind `SecureBrowser` .
@@ -277,7 +281,7 @@ Wenn die Zielfunktion dem Browser unbekannt ist, übergibt diese Funktion den We
 `Boolean SecureBrowser.security.isRemoteSession();`
 
 **Rückgabewert**  
-**true** , wenn die aktuelle Sitzung Remote ist, andernfalls **false** .
+**true** , wenn die aktuelle Sitzung Remote ist, andernfalls **false**.
 
 **Anforderungen**  
 Windows 10, Version 1709
@@ -293,7 +297,7 @@ Windows 10, Version 1709
 `Boolean SecureBrowser.security.isVMSession();`
 
 **Rückgabewert**  
-**true** , wenn die aktuelle Sitzung auf einem virtuellen Computer ausgeführt wird, andernfalls **false** .
+**true** , wenn die aktuelle Sitzung auf einem virtuellen Computer ausgeführt wird, andernfalls **false**.
 
 **Anmerkungen**  
 Mit dieser API-Überprüfung können nur VM-Sitzungen erkannt werden, die in bestimmten Hypervisoren ausgeführt werden, die die entsprechenden APIs implementieren.
