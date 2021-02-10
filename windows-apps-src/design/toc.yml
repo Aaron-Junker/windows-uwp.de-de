@@ -78,8 +78,6 @@
       href: controls-and-patterns/controls-and-events-intro.md
     - name: Einführung in Befehle
       href: controls-and-patterns/commanding.md
-    - name: Index der Steuerelemente nach Funktion
-      href: controls-and-patterns/controls-by-function.md
     - name: Grundlegende Eingabeelemente
       items:
         - name: Schaltflächen
