@@ -825,7 +825,7 @@
           href: ../csharp-winrt/index.md
         - name: 'Exemplarische Vorgehensweise: Generieren einer .NET 5.0-Projektion aus einer C++/WinRT-Komponente'
           href: ../csharp-winrt/net-projection-from-cppwinrt-component.md
-        - name: Erstellen einer C#/WinRT-Komponente und deren Verwenden aus C++/WinRT
+        - name: 'Exemplarische Vorgehensweise: Erstellen einer C#/WinRT-Komponente und deren Verwenden aus C++/WinRT'
           href: ../csharp-winrt/create-windows-runtime-component-cswinrt.md
         - name: Diagnostizieren von Komponentenfehlern
           href: ../csharp-winrt/authoring-diagnostics.md
