@@ -4,12 +4,12 @@ description: Installieren Sie PowerToys, eine Reihe von Dienstprogrammen für di
 ms.date: 12/02/2020
 ms.topic: quickstart
 ms.localizationpriority: medium
-ms.openlocfilehash: 3effdd927b89a53b2ff92efeb422fb32293f98ba
-ms.sourcegitcommit: 447382282a6f549825480c2ff5b3cec9568d0e47
+ms.openlocfilehash: 7b6cf15e7d21eca9e24fcc2d81f9409b2cd94b6f
+ms.sourcegitcommit: 884318ec5118cade85a31f4d5644436614e9f272
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99624629"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100524986"
 ---
 # <a name="install-powertoys"></a>Installieren von PowerToys
 
@@ -78,6 +78,7 @@ Wenn bei der Installation/Aktualisierung Probleme auftreten, besuchen Sie das [P
 Führen Sie den folgenden Befehl über die Befehlszeile/PowerShell aus, um PowerToys mithilfe von " [Scoop](https://scoop.sh/)" zu installieren:
 
 ```powershell
+scoop bucket add extras
 scoop install powertoys
 ```
 
