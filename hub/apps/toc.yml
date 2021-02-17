@@ -64,6 +64,8 @@
                   href: desktop/modernize/modernize-packaged-apps.md
                 - name: Integrieren mit Paketerweiterungen
                   href: desktop/modernize/desktop-to-uwp-extensions.md
+                - name: Integrieren einer gepackten Desktop-App in den Datei-Explorer
+                  href: desktop/modernize/integrate-packaged-app-with-file-explorer.md
                 - name: Erhalten von Aktivierungsinformationen für App-Pakete
                   href: desktop/modernize/get-activation-info-for-packaged-apps.md
                 - name: Erweitern mit UWP-Komponenten
@@ -90,7 +92,7 @@
       items:
         - name: Übersicht
           href: winui/index.md
-        - name: "Windows-UI-Bibliothek 3\_Vorschau\_3"
+        - name: "Windows-UI-Bibliothek 3\_Vorschau\_4"
           items:
             - name: Übersicht und Versionshinweise
               href: winui/winui3/index.md

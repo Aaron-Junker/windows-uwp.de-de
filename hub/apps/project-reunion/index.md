@@ -7,12 +7,12 @@ keywords: Windows Win32, Desktopentwicklung, Project Reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: de1115281859ba322a03e3bab7a8d0e4ef71440d
-ms.sourcegitcommit: 044c75ea0c6fb3463a0150acdae1ff867dc05f29
+ms.openlocfilehash: e4b5507c36da520c7356b07857b8532162e05785
+ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97972124"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100335090"
 ---
 # <a name="build-windows-apps-with-project-reunion-prerelease"></a>Erstellen von Windows-Apps mit Project Reunion (Vorabversion)
 
@@ -72,7 +72,7 @@ Wenn Sie Project Reunion 0.1 Prerelease ausprobieren möchten, müssen Sie mit e
 
 4. Stellen Sie sicher, dass auf Ihrem System eine NuGet-Paketquelle für **nuget.org** aktiviert ist. Weitere Informationen finden Sie unter [Allgemeine NuGet-Konfigurationen](/nuget/consume-packages/configuring-nuget-behavior).
 
-5. Laden Sie das [WinUI 3 Vorschau 3-VSIX-Paket](https://aka.ms/winui3/preview3-download) herunter und installieren Sie es. Dieser Schritt ist nur für die Beispiele „Hallo Welt“ und „MRT Core“ erforderlich, die bereits für die Verwendung von WinUI 3 konfiguriert sind. Anweisungen zum Hinzufügen des VSIX-Pakets zu Visual Studio finden Sie unter [Suchen nach und Verwenden von Visual Studio-Erweiterungen](/visualstudio/ide/finding-and-using-visual-studio-extensions#install-without-using-the-manage-extensions-dialog-box).
+5. Laden Sie das [WinUI 3 Vorschau 4-VSIX-Paket](https://aka.ms/winui3/preview3-download) herunter und installieren Sie es. Dieser Schritt ist nur für die Beispiele „Hallo Welt“ und „MRT Core“ erforderlich, die bereits für die Verwendung von WinUI 3 konfiguriert sind. Anweisungen zum Hinzufügen des VSIX-Pakets zu Visual Studio finden Sie unter [Suchen nach und Verwenden von Visual Studio-Erweiterungen](/visualstudio/ide/finding-and-using-visual-studio-extensions#install-without-using-the-manage-extensions-dialog-box).
 
 6. Klonen und untersuchen Sie die folgenden Beispiele:
     - [Beispiel für den DWriteCore-Katalog](https://github.com/microsoft/Project-Reunion-Samples/tree/main/DWriteCore/DWriteCoreGallery): Diese Beispielanwendung veranschaulicht die [DWriteCore](dwritecore.md)-API.
