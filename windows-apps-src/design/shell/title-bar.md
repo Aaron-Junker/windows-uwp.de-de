@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Titelleiste
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d8aa92ec320c18b1947cb9b3fa7777070e19726
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 5fdc3f6a38e6115e211eb5ea0644ad82df840301
+ms.sourcegitcommit: 06d59b59a95aad009acb947a0dac7432116bdb60
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220083"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100544640"
 ---
 # <a name="title-bar-customization"></a>Anpassen der Titelleiste
 
@@ -75,6 +75,7 @@ Beim Festlegen der Farben der Titelleiste sind einige Punkte zu beachten:
 - Die Eigenschaften der Schaltflächen Farbe werden bei der Verwendung auf die zurück-Schaltfläche des Systems angewendet. ([Siehe Navigationsverlauf und rückwärts Navigation](../basics/navigation-history-and-backwards-navigation.md).)
 - Wenn eine Color-Eigenschaft auf **null** festgelegt wird, wird diese auf die Standardsystem Farbe zurückgesetzt.
 - Transparente Farben können nicht festgelegt werden. Der Alphakanal der Farbe wird ignoriert.
+- Die Farbe auf dem Bildschirm unterscheidet sich möglicherweise von den Optionen, z. b. aufgrund von Einstellungen wie Farbfiltern oder Modus für hohe Kontraste. Verlassen Sie sich nicht ausschließlich auf die Farbe, um wichtige Informationen zu vermitteln.
 
 Windows gibt einem Benutzer die Möglichkeit, die ausgewählte [Akzentfarbe](../style/color.md#accent-color) auf die Titelleiste anzuwenden. Wenn Sie eine Titelleisten Farbe festlegen, wird empfohlen, alle Farben explizit festzulegen. Dadurch wird sichergestellt, dass aufgrund benutzerdefinierter Farbeinstellungen keine unbeabsichtigten Farbkombinationen vorhanden sind.
 
@@ -82,9 +83,9 @@ Windows gibt einem Benutzer die Möglichkeit, die ausgewählte [Akzentfarbe](../
 
 Wenn Sie sich für die vollständige Anpassung der Titelleiste entscheiden, wird der Client Bereich Ihrer APP so erweitert, dass das gesamte Fenster einschließlich der Titelleisten Fläche abgedeckt wird. Sie sind verantwortlich für die Zeichnung und Eingabe Behandlung für das gesamte Fenster außer den Beschriftungs Schaltflächen, die oberhalb der Canvas der APP überlagert werden.
 
-Um die Standard Titelleiste auszublenden und ihren Inhalt auf den Titelleisten Bereich zu erweitern, legen Sie die Eigenschaft [coreapplicationviewtitlebar. extendviewindetitlebar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar) auf **true**fest.
+Um die Standard Titelleiste auszublenden und ihren Inhalt auf den Titelleisten Bereich zu erweitern, legen Sie die Eigenschaft [coreapplicationviewtitlebar. extendviewindetitlebar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar) auf **true** fest.
 
-In diesem Beispiel wird gezeigt, wie die coreapplicationviewtitlebar abgerufen und die extendviewindetitlebar-Eigenschaft auf **true**festgelegt wird. Dies kann in der [OnStart](/uwp/api/windows.ui.xaml.application.onlaunched) -Methode Ihrer APP (_app.XAML.cs_) oder auf der ersten Seite Ihrer APP erfolgen.
+In diesem Beispiel wird gezeigt, wie die coreapplicationviewtitlebar abgerufen und die extendviewindetitlebar-Eigenschaft auf **true** festgelegt wird. Dies kann in der [OnStart](/uwp/api/windows.ui.xaml.application.onlaunched) -Methode Ihrer APP (_app.XAML.cs_) oder auf der ersten Seite Ihrer APP erfolgen.
 
 ```csharp
 // using Windows.ApplicationModel.Core;
@@ -249,11 +250,11 @@ Diese applicationviewtitlebar-Eigenschaften können transparent sein:
 
 Die Hintergrundfarbe der Schaltfläche wird nicht auf die Schaltflächen "Schließen" und "gedrückt" angewendet. Die Schaltfläche Schließen verwendet immer die System definierte Farbe für diese Zustände.
 
-Alle anderen Farbeigenschaften ignorieren weiterhin den Alphakanal. Wenn extendviewindetitlebar auf **false**festgelegt ist, wird der Alphakanal für alle applicationviewtitlebar-Farbeigenschaften immer ignoriert.
+Alle anderen Farbeigenschaften ignorieren weiterhin den Alphakanal. Wenn extendviewindetitlebar auf **false** festgelegt ist, wird der Alphakanal für alle applicationviewtitlebar-Farbeigenschaften immer ignoriert.
 
 ### <a name="full-screen-and-tablet-mode"></a>Vollbild-und Tablet-Modus
 
-Wenn Ihre APP im _voll Bild_ Modus oder im _Tablet-Modus_ausgeführt wird, blendet das System die Steuer Schaltflächen Titelleiste und Beschriftung aus. Der Benutzer kann jedoch die Titelleiste aufrufen, um ihn als Überlagerung auf der Benutzeroberfläche der APP zu sehen.
+Wenn Ihre APP im _voll Bild_ Modus oder im _Tablet-Modus_ ausgeführt wird, blendet das System die Steuer Schaltflächen Titelleiste und Beschriftung aus. Der Benutzer kann jedoch die Titelleiste aufrufen, um ihn als Überlagerung auf der Benutzeroberfläche der APP zu sehen.
 Sie können das [coreapplicationviewtitlebar. isvisiblechanged](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.IsVisibleChanged) -Ereignis behandeln, um benachrichtigt zu werden, wenn die Titelleiste ausgeblendet oder aufgerufen wird. Sie können den benutzerdefinierten Titelleisten Inhalt bei Bedarf ein-oder ausblenden.
 
 Dieses Beispiel zeigt, wie isvisiblechanged behandelt wird, um das zuvor gezeigte Element anzuzeigen und auszublenden `AppTitleBar` .
