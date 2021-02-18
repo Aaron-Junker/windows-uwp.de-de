@@ -6,12 +6,12 @@ ms.date: 10/02/2020
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 99bb68ff7d990b0b633df0c4efa2d8eafad759cd
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: e57a3fc5444a4afa2217cc128dabec76844ef549
+ms.sourcegitcommit: 71701f5ffc540951f86d6f77a52416c6d75fe305
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031063"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100632671"
 ---
 # <a name="modernize-your-desktop-apps"></a>Modernisieren Ihrer Desktop-Apps
 
@@ -28,8 +28,8 @@ Die Windows-UI-Bibliothek umfasst eine Reihe von NuGet-Paketen, die Steuerelemen
 
 Sie können WinUI auf folgende Weise in Desktop-Apps einsetzen:
 
-* Sie können vorhandene WPF-, Windows Forms- und C++/Win32-Anwendungen aktualisieren, um [XAML-Inseln](xaml-islands.md) zum Hosten von WinUI 2.x-Steuerelementen in den Apps zu verwenden.
-* Ab [WinUI 3.0 Vorschau 1](../../winui/winui3/index.md) können Sie [.NET- und C++/Win32-Apps erstellen, die eine vollständig WinUI-basierte Benutzeroberfläche](../../winui/winui3/get-started-winui3-for-desktop.md) aufweisen.
+* Sie können vorhandene WPF-, Windows Forms- und C++/Win32-Apps mit [XAML Islands](xaml-islands.md) aktualisieren und WinUI 2.x-Steuerelemente hosten.
+* Verwenden Sie [WinUi 3.0](../../winui/winui3/index.md) (Vorschau), um verwaltete [C#/.NET Core- und native C++/Win32-Desktop-Apps](../../winui/winui3/get-started-winui3-for-desktop.md) mit einer vollständig WinUI-basierten Benutzeroberfläche zu erstellen.
 
 Weitere Informationen finden Sie unter [Windows-UI-Bibliothek (WinUI)](../../winui/index.md).
 
