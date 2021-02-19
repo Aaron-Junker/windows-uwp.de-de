@@ -819,6 +819,8 @@
           items:
             - name: Wertekategorien und Verweise
               href: ../cpp-and-winrt-apis/cpp-value-categories.md
+        - name: Erstellen einer C#-Komponente für Windows-Runtime zur Verwendung aus einer C++/WinRT-App
+          href: ../cpp-and-winrt-apis/use-csharp-component-from-cpp-winrt.md
     - name: C#/WinRT
       items:
         - name: Übersicht
