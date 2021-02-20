@@ -1,27 +1,27 @@
 ---
 description: Diese Anleitung zeigt dir, wie du mit der Erstellung von .NET- und C++/Win32-Desktop Apps mit einer WinUI 3-Benutzeroberfläche beginnen kannst.
 title: Erste Schritte mit WinUI 3 für Desktop-Apps
-ms.date: 11/17/2020
+ms.date: 02/09/2021
 ms.topic: article
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 067e6a6798fbfc2633c3e356be64ecae0403cc6d
-ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
+ms.openlocfilehash: dcf3309f9b4a82019e867789bbeabb07c724ea0d
+ms.sourcegitcommit: 71701f5ffc540951f86d6f77a52416c6d75fe305
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96025156"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100632701"
 ---
 # <a name="get-started-with-winui-3-for-desktop-apps"></a>Erste Schritte mit WinUI 3 für Desktop-Apps
 
-WinUI 3 Vorschau 3 enthält neue Projektvorlagen, die es dir ermöglicht, verwaltete C#-/.NET Core-Desktop-Apps und native C++/Win32-Desktop-Apps mit einer vollständig WinUI-basierten Benutzeroberfläche zu erstellen. Wenn Sie Apps mit diesen Projektvorlagen erstellen, wird die gesamte Benutzeroberfläche Ihrer Anwendung mithilfe von Fenstern, Steuerelementen und anderen Benutzeroberflächentypen implementiert, die von WinUI 3 zur Verfügung gestellt werden. Eine vollständige Liste der Projektvorlagen finden Sie in [diesem Abschnitt](index.md#project-templates-for-winui-3).
+WinUI 3 Vorschau 4 enthält neue Projektvorlagen, die es Ihnen ermöglichen, verwaltete C#-/.NET Core-Apps und native C++/Win32-Desktop-Apps mit einer vollständig WinUI-basierten Benutzeroberfläche zu erstellen. Wenn Sie Apps mit diesen Projektvorlagen erstellen, wird die gesamte Benutzeroberfläche Ihrer Anwendung mithilfe von Fenstern, Steuerelementen und anderen Benutzeroberflächentypen implementiert, die von WinUI 3 zur Verfügung gestellt werden. Eine vollständige Liste der Projektvorlagen finden Sie in [diesem Abschnitt](index.md#project-templates-for-winui-3).
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-Um die in diesem Artikel beschriebenen WinUI 3 für Desktop-Projektvorlagen zu verwenden, konfigurieren Sie Ihren Entwicklungscomputer, und installieren Sie WinUI 3 Vorschau 3 entsprechend [diesen Anweisungen](index.md#install-winui-3-preview-3).
+Um die in diesem Artikel beschriebenen WinUI 3 für Desktop-Projektvorlagen zu verwenden, konfigurieren Sie Ihren Entwicklungscomputer, und installieren Sie WinUI 3 Vorschau 4 entsprechend [diesen Anweisungen](index.md#install-winui-3-preview-4).
 
 ## <a name="create-a-winui-3-desktop-app-for-c-and-net-5"></a>Erstellen einer WinUI 3-Desktop-App für C# und .NET 5
 
@@ -113,8 +113,8 @@ Um mehrere Sprachen in einer WinUI-Desktop-App zu unterstützen und die ordnungs
 
 ## <a name="known-issues-and-limitations"></a>Bekannte Probleme und Einschränkungen
 
-Eine Liste bekannter Probleme und Einschränkungen finden Sie in [diesem Abschnitt](index.md#preview-3-limitations-and-known-issues).
+Weitere Informationen finden Sie im Abschnitt [Einschränkungen und bekannte Probleme](index.md#limitations-and-known-issues) der [Windows-UI-Bibliothek 3 Vorschau 4 (Februar 2021)](index.md).
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
-* [Windows-UI-Bibliothek 3](index.md)
+* [Windows-UI-Bibliothek 3 Vorschau 4 (Februar 2021)](index.md)

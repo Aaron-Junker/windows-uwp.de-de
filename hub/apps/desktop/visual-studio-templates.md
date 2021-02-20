@@ -7,12 +7,12 @@ keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
-ms.openlocfilehash: f84bd251bbae9c3f1a1326ab3ac3c7cf0fce3938
-ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
+ms.openlocfilehash: 7f288d301583c08b0fd4104802b643a7c31ad99f
+ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94691598"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100335106"
 ---
 # <a name="visual-studio-project-and-item-templates-for-windows-apps"></a>Visual Studio-Projekt- und -Elementvorlagen für Windows-Apps
 
@@ -25,7 +25,7 @@ Visual Studio 2019 bietet zahlreiche Projekt- und Elementvorlagen, die Sie beim
 
 Die [Windows-UI-Bibliothek (WinUI)](../winui/index.md) ist die Plattform für die moderne native Benutzeroberfläche (UI) für Windows-Apps auf allen Desktop- (.NET und natives Win32) und UWP-App-Plattformen. [WinUI 3](../winui/winui3/index.md) (derzeit als Entwicklervorschau verfügbar) ist die neueste Hauptversion von WinUI und transformiert WinUI in ein vollständiges UX-Framework für Windows-Desktop-Apps um.
 
-WinUI 3 enthält ein VSIX-Paket für Visual Studio 2019, das Projekt- und Elementvorlagen bereitstellt, die Ihnen den Einstieg in das Erstellen von Apps mit einer WinUI-basierten Schnittstelle erleichtern. Weitere Informationen zum WinUI 3 VSIX-Paket und den Projektvorlagen, die es bereitstellt, finden Sie in [diesem Abschnitt](../winui/winui3/index.md#install-winui-3-preview-3).
+WinUI 3 enthält ein VSIX-Paket für Visual Studio 2019, das Projekt- und Elementvorlagen bereitstellt, die Ihnen den Einstieg in das Erstellen von Apps mit einer WinUI-basierten Schnittstelle erleichtern. Weitere Informationen zum WinUI 3 VSIX-Paket und den Projektvorlagen, die es bereitstellt, finden Sie unter [Installieren von WinUI 3 Vorschau 4](../winui/winui3/index.md#install-winui-3-preview-4).
 
 > [!IMPORTANT]
 > WinUI 3, einschließlich der zugehörigen Visual Studio-Vorlagen, ist zurzeit als Entwicklervorschau verfügbar, die für die frühe Evaluierung und das Sammeln von Feedback aus der Entwicklercommunity vorgesehen ist. Diese Version sollte zu diesem Zeitpunkt NICHT für Produktions-Apps verwendet werden.

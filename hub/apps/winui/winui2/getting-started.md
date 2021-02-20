@@ -4,12 +4,12 @@ description: Installieren und Verwenden der Windows-UI-Bibliothek.
 ms.topic: article
 ms.date: 07/15/2020
 keywords: windows 10, uwp, toolkit-sdk
-ms.openlocfilehash: 939da99d7fce59a9f242fe0ce8ed203a3f52eab6
-ms.sourcegitcommit: 617344ae1a1f5b580c938b61e910d99120b73626
+ms.openlocfilehash: 801c1f578c08df627264f542cbe1496d275afc0a
+ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98620852"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100334965"
 ---
 # <a name="getting-started-with-the-windows-ui-2x-library"></a>Erste Schritte mit der Windows-UI 2.x-Bibliothek
 
@@ -18,7 +18,7 @@ ms.locfileid: "98620852"
 Die Bibliothek ist als NuGet-Paket verfügbar, die zu jedem neuen oder vorhandenen Visual Studio-Projekt hinzugefügt werden kann.
 
 > [!NOTE]
-> Weitere Informationen zum Ausprobieren früherer Vorschauversionen von WinUI 3 finden Sie unter [WinUI-Bibliothek 3 Vorschau 3 (November 2020)](../winui3/index.md).
+> Weitere Informationen zum Ausprobieren früherer Vorschauversionen von WinUI 3 finden Sie unter [WinUI-Bibliothek 3 Vorschau 4 (Februar 2021)](../winui3/index.md).
 
 ## <a name="download-and-install-the-windows-ui-library"></a>Herunterladen und Installieren der Windows UI-Bibliothek
 
@@ -29,44 +29,61 @@ Die Bibliothek ist als NuGet-Paket verfügbar, die zu jedem neuen oder vorhanden
     > [!IMPORTANT]
     > Um WinUI 2.5 verwenden zu können, musst du in den Projekteigenschaften TargetPlatformVersion >= 10.0.18362.0 und TargetPlatformMinVersion >= 10.0.15063.0 festlegen.
 
-3. Klicke im Bereich des Projektmappen-Explorers mit der rechten Maustaste auf den Namen deines Projekts, und wähle **NuGet-Pakete verwalten** aus. Wähle die Registerkarte **Durchsuchen** aus, und suche nach **Microsoft.UI.Xaml** oder **WinUI**. Wähle dann aus, welche [NuGet-Pakete der Windows-UI-Bibliothek](nuget-packages.md) du verwenden möchtest.
-Das **Microsoft.UI.Xaml**-Paket enthält Fluent-Steuerelemente und Features, die für alle Apps geeignet sind.  
-Optional kannst du „Vorabversion einbeziehen“ markieren, um die neuesten Vorabversionen anzuzeigen, die experimentelle neue Features enthalten.
+3. Klicke im Bereich des Projektmappen-Explorers mit der rechten Maustaste auf den Namen deines Projekts, und wähle **NuGet-Pakete verwalten** aus. 
 
-    ![Screenshot des Projektmappen-Explorer-Bereichs mit dem Projekt, auf das mit der rechten Maustaste geklickt wurde, und der hervorgehobenen Option „NuGet-Pakete verwalten“.](images/ManageNugetPackages.png "Bild „NuGet-Pakete verwalten“")
+    :::image type="content" source="images/ManageNugetPackages.png" alt-text="Screenshot des Projektmappen-Explorer-Bereichs mit dem Projekt, auf das mit der rechten Maustaste geklickt wurde, und der hervorgehobenen Option „NuGet-Pakete verwalten“.":::<br/>*Projektmappen-Explorer-Bereich mit dem Projekt, auf das mit der rechten Maustaste geklickt wurde, und der hervorgehobenen Option „NuGet-Pakete verwalten“.*
 
-    ![Screenshot des Dialogfelds „NuGet-Paket-Manager“ mit angezeigter Registerkarte „Durchsuchen“ und „winui“ im Suchfeld.](images/NugetPackages.png)
+4. Wählen Sie im **NuGet-Paket-Manager** die Registerkarte **Durchsuchen** aus, und suchen Sie nach **Microsoft.UI.Xaml** oder **WinUI**. Wählen Sie aus, welche [NuGet-Pakete der Windows-UI-Bibliothek](nuget-packages.md) Sie verwenden möchten (das **Microsoft.UI.Xaml**-Paket enthält Fluent-Steuerelemente und Features, die für alle Apps geeignet sind). Klicken Sie auf „Installieren“. 
 
-4. Füge die Ressourcen des Windows UI-Designs (WinUI) deinen App.xaml-Ressourcen hinzu. Dafür gibt es zwei Möglichkeiten, abhängig davon, ob du zusätzliche Anwendungsressourcen verwendest.
+    Aktivieren Sie das Kontrollkästchen „Vorabversion einbeziehen“, um die neuesten Vorabversionen anzuzeigen, die experimentelle neue Features enthalten.
 
-    ein. Wenn du keine weiteren Anwendungsressourcen verwendest, füge deiner Application.Resources `<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>` hinzu:
+    :::image type="content" source="images/NugetPackages.png" alt-text="Screenshot des Dialogfelds „NuGet-Paket-Manager“ mit der Registerkarte „Durchsuchen“, „winui“ im Suchfeld und aktivierter Option „Vorabversion einschließen“.":::<br/>*Dialogfeld „NuGet-Paket-Manager“ mit der Registerkarte „Durchsuchen“, „winui“ im Suchfeld und aktivierter Option „Vorabversion einschließen“.*
+
+5. Fügen Sie die Ressourcen des Windows-UI-Designs (WinUI) zu Ihrer Datei „App.xaml“ hinzu.
+
+    Dafür gibt es zwei Möglichkeiten, abhängig davon, ob du zusätzliche Anwendungsressourcen verwendest.
+
+    ein. Wenn Sie keine anderen Anwendungsressourcen benötigen, fügen Sie das WinUI-Ressourcenelement `<XamlControlsResources` hinzu, wie im folgenden Beispiel gezeigt:
 
     ``` XAML
-    <Application>
+    <Application
+        x:Class="ExampleApp.App"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        RequestedTheme="Light">
+
         <Application.Resources>
             <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
         </Application.Resources>
+
     </Application>
     ```
 
-    b. Andernfalls, wenn du mehr als einen Satz Anwendungsressourcen verwendest, füge Application.Resources.MergedDictionaries `<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>` hinzu:
+    b. Wenn Sie mehr als eine Anwendungsressource benötigen, fügen Sie das WinUI-Ressourcenelement `<XamlControlsResources` in `<ResourceDictionary.MergedDictionaries>` hinzu, wie hier gezeigt:
 
     ``` XAML
-    <Application>
+    <Application
+        x:Class="ExampleApp.App"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        RequestedTheme="Light">
+
         <Application.Resources>
             <ResourceDictionary>
                 <ResourceDictionary.MergedDictionaries>
                     <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                    <ResourceDictionary Source="/Styles/Styles.xaml"/>
                 </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>
         </Application.Resources>
+
     </Application>
     ```
 
     > [!IMPORTANT]
     > Die Reihenfolge der Ressourcen, die einem ResourceDictionary hinzugefügt werden, wirkt sich auf die Reihenfolge aus, in der sie angewendet werden. Das `XamlControlsResources`-Wörterbuch überschreibt viele Standardressourcenschlüssel und sollte daher zuerst zu `Application.Resources` hinzugefügt werden, damit keine anderen benutzerdefinierten Stile oder Ressourcen in der App überschrieben werden. Weitere Informationen zum Laden von Ressourcen findest du unter [ResourceDictionary- und XAML-Ressourcenreferenz](/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references).
 
-5. Füge einen Verweis auf XAML-Seiten und deine Code-Behind-Seiten zum Toolkit hinzu.
+6. Fügen Sie einen Verweis auf das WinUI-Paket zu XAML-Seiten und/oder Code-Behind-Seiten hinzu.
 
     * Füge oben auf deiner XAML-Seite einen Verweis hinzu
 

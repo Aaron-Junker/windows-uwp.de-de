@@ -5,12 +5,12 @@ ms.date: 06/01/2018
 ms.topic: article
 keywords: Windows 10, UWP, Geräteportal, App-Manager, Bereitstellung, SDK
 ms.localizationpriority: medium
-ms.openlocfilehash: 7006d32777e7b3ece5c5b6ed066bd23265b0bbb7
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: 34302b421f51fcc9fdf408baabc178190c7ed335
+ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339618"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100334890"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>Bereitstellen einer App über die Registrierung loser Dateien 
 
@@ -31,7 +31,7 @@ Ein loses Dateilayout ist ganz einfach das Platzieren von App-Inhalten in einem 
 
 ## <a name="how-to-register-a-loose-file-layout"></a>Registrieren eines losen Dateilayouts
 
-Windows bietet mehrere Entwicklertools zum Registrieren von losen Dateilayouts auf lokalen und Remotegeräten. Du kannst zwischen `WinDeployAppCmd` (Windows SDK-Tool), Windows-Geräteportal, PowerShell und [Visual Studio](./deploying-and-debugging-uwp-apps.md#register-layout-from-network) auswählen. Im Folgenden wird erläutert, wie du mit diesen Tools lose Dateien registrierst. Stelle zunächst sicher, dass du über das folgende Setup verfügst:
+Windows bietet mehrere Entwicklertools zum Registrieren von losen Dateilayouts auf lokalen und Remotegeräten. Du kannst zwischen `WinAppDeployCmd` (Windows SDK-Tool), Windows-Geräteportal, PowerShell und [Visual Studio](./deploying-and-debugging-uwp-apps.md#register-layout-from-network) auswählen. Im Folgenden wird erläutert, wie du mit diesen Tools lose Dateien registrierst. Stelle zunächst sicher, dass du über das folgende Setup verfügst:
 
 - Auf deinen Geräten muss Windows 10 Creators Update (Build 14965) oder höher ausgeführt werden.
 - Du musst den [Entwicklermodus](/windows/apps/get-started/enable-your-device-for-development) und die [Geräteerkennung](/windows/apps/get-started/enable-your-device-for-development#device-discovery) auf allen Geräten aktivieren.
@@ -39,9 +39,9 @@ Windows bietet mehrere Entwicklertools zum Registrieren von losen Dateilayouts a
 > [!IMPORTANT]
 > Die Registrierung loser Dateien ist nur auf Geräten verfügbar, die das SMB-Protokoll für Netzwerkfreigaben unterstützen: Desktop und Xbox. 
 
-### <a name="register-with-windeployappcmd"></a>Registrieren mit WinDeployAppCmd
+### <a name="register-with-winappdeploycmd"></a>Registrieren bei WinAppDeployCmd
 
-Wenn du die SDK-Tools für das Windows 10 Creators Update (Build 14965) oder höher verwendest, kannst du den Befehl `WinDeployAppCmd` in einer Eingabeaufforderung verwenden.
+Wenn du die SDK-Tools für das Windows 10 Creators Update (Build 14965) oder höher verwendest, kannst du den Befehl `WinAppDeployCmd` in einer Eingabeaufforderung verwenden.
 
 ```cmd
 WinAppDeployCmd.exe registerfiles -remotedeploydir <Network Path> -ip <IP Address> -pin <target machine PIN>

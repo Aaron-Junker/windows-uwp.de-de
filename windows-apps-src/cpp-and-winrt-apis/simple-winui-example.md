@@ -1,20 +1,20 @@
 ---
-description: Dieses Thema führt Sie durch den Prozess zum Hinzufügen von einfacher Unterstützung für WinUI innerhalb eines C++/WinRT-Projekts.
+description: Dieses Thema führt Sie durch den Prozess zum Hinzufügen von grundlegender Unterstützung für WinUI innerhalb eines C++/WinRT-Projekts.
 title: Eine einfache C++/WinRT-Windows-UI-Beispielbibliothek
 ms.date: 07/12/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Windows UI Library, WinUI
 ms.localizationpriority: medium
-ms.openlocfilehash: 8242055e3c448e2720226859f2ea10e1ae54794f
-ms.sourcegitcommit: db48036af630f33f0a2f7a908bfdfec945f3c241
+ms.openlocfilehash: b7323ba63bedfc1ed560effb4da8ea61d1527897
+ms.sourcegitcommit: 71701f5ffc540951f86d6f77a52416c6d75fe305
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84437134"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100632681"
 ---
-# <a name="a-simple-cwinrt-windows-ui-library-example"></a>Eine einfache C++/WinRT-Windows-UI-Beispielbibliothek
+# <a name="a-basic-cwinrt-windows-ui-library-example"></a>Eine grundlegende C++/WinRT-Windows-UI-Beispielbibliothek
 
-Dieses Thema führt durch den Prozess zum Hinzufügen einer einfachen Unterstützung für die [Windows-UI-Bibliothek (WinUI)](https://github.com/Microsoft/microsoft-ui-xaml) zu einem C++/WinRT-Projekt. Die Windows-UI-Bibliothek ist übrigens ebenfalls in C++/WinRT geschrieben.
+Dieses Thema führt durch den Prozess zum Hinzufügen einer grundlegenden Unterstützung für die [Windows-UI-Bibliothek (WinUI)](https://github.com/Microsoft/microsoft-ui-xaml) zu einem C++/WinRT-Projekt. Die Windows-UI-Bibliothek ist übrigens ebenfalls in C++/WinRT geschrieben.
 
 > [!NOTE]
 > Das Toolkit für die Windows-UI-Bibliothek (WinUI) steht in Form von NuGet-Paketen zur Verfügung, die mithilfe von Visual Studio zu einem vorhandenen oder neuen Projekt hinzugefügt werden können, wie wir in diesem Thema sehen werden. Weitere Hintergrundinformationen sowie Details zu Einrichtung und Unterstützung findest du unter [Erste Schritte mit der Windows-UI-Bibliothek](/uwp/toolkits/winui/getting-started).

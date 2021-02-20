@@ -1,25 +1,25 @@
 ---
 description: Diese Anleitung zeigt Ihnen, wie Sie mit der Erstellung von UWP-Apps mit einer WinUI 3-Benutzeroberfläche beginnen können.
 title: Erste Schritte mit WinUI 3 für UWP-Apps
-ms.date: 11/17/2020
+ms.date: 02/09/2021
 ms.topic: article
 keywords: Windows 10, UWP, WinUI
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 5da4944b38fc764eb11bdc2f6daed0cab54ea445
-ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
+ms.openlocfilehash: d13acb2181160ec214070dc1276e844dc1f203ad
+ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96025136"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100334896"
 ---
 # <a name="get-started-with-winui-3-for-uwp-apps"></a>Erste Schritte mit WinUI 3 für UWP-Apps
 
-WinUI 3 Vorschau 3 enthält neue Projektvorlagen, mit denen Sie eine UWP-App (Universelle Windows-Plattform) mit einer Benutzeroberfläche erstellen können, die vollständig mit WinUI erstellt wurde. Wenn Sie Apps mit diesen Projektvorlagen erstellen, wird die gesamte Benutzeroberfläche Ihrer Anwendung mithilfe von Fenstern, Steuerelementen und Stilen implementiert, die von WinUI 3 zur Verfügung gestellt werden. Eine vollständige Liste der unterstützten WinUI 3-Projektvorlagen finden Sie unter [Projektvorlagen für WinUI 3](index.md#project-templates-for-winui-3).
+WinUI 3 Vorschau 4 enthält neue Projektvorlagen, mit denen Sie eine UWP-App (Universelle Windows-Plattform) mit einer Benutzeroberfläche erstellen können, die vollständig mit WinUI erstellt wurde. Wenn Sie Apps mit diesen Projektvorlagen erstellen, wird die gesamte Benutzeroberfläche Ihrer Anwendung mithilfe von Fenstern, Steuerelementen und Stilen implementiert, die von WinUI 3 zur Verfügung gestellt werden. Eine vollständige Liste der unterstützten WinUI 3-Projektvorlagen finden Sie unter [Projektvorlagen für WinUI 3](index.md#project-templates-for-winui-3).
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-Um die in diesem Artikel beschriebene WinUI 3 für UWP-Projektvorlagen zu verwenden, konfigurieren Sie Ihren Entwicklungscomputer, und [installieren Sie WinUI 3 Vorschau 3](index.md#install-winui-3-preview-3).
+Um die in diesem Artikel beschriebene WinUI 3 für UWP-Projektvorlagen zu verwenden, konfigurieren Sie Ihren Entwicklungscomputer, und [installieren Sie WinUI 3 Vorschau 4](index.md#install-winui-3-preview-4).
 
 ## <a name="create-a-winui-3-app-in-uwp-for-c"></a>Erstellen einer „WinUI 3-App in UWP“ für C#
 
@@ -48,7 +48,7 @@ Um die in diesem Artikel beschriebene WinUI 3 für UWP-Projektvorlagen zu verwe
 
 6. Visual Studio generiert das Projekt **WinUI in UWP** mit den folgenden Objekten:
 
-    - **_Projektname_ (Universelles Windows)** : Enthält Ihren Anwendungscode. Dies ist das Standardstartprojekt für Ihre Projektmappe.
+    - ***Projektname* (Universelles Windows)** : Enthält Ihren Anwendungscode. Dies ist das Standardstartprojekt für Ihre Projektmappe.
 
     :::image type="content" source="images/WinUI-and-UWP/vs2019-project.png" alt-text="Screenshot des Projektmappen-Explorer-Bereichs mit hervorgehobener Projektmappe „Universelles Windows“.":::
 
@@ -68,7 +68,7 @@ Um die in diesem Artikel beschriebene WinUI 3 für UWP-Projektvorlagen zu verwe
 
     :::image type="content" source="images/WinUI-and-UWP/vs2019-file-mainpage-xaml-cs.png" alt-text="Visual Studio 2019 – Datei „MainPage.xaml.cs“":::
 
-7. Um Ihrem App-Projekt ein neues Element hinzuzufügen, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektknoten **_Projektname_ (Universelles Windows)** , und wählen Sie **Hinzufügen** -> **Neues Element** aus. Wähle im Dialogfeld **Neues Element hinzufügen** die Registerkarte **WinUI** aus. Wähle das Element, das du hinzufügen möchtest, und klicke dann auf **Hinzufügen**. Weitere Informationen zu den verfügbaren Elementen finden Sie unter [Elementvorlagen für WinUI 3](index.md#item-templates-for-winui-3).
+7. Um Ihrem App-Projekt ein neues Element hinzuzufügen, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektknoten ***Projektname* (Universelles Windows)** , und wählen Sie **Hinzufügen** -> **Neues Element** aus. Wähle im Dialogfeld **Neues Element hinzufügen** die Registerkarte **WinUI** aus. Wähle das Element, das du hinzufügen möchtest, und klicke dann auf **Hinzufügen**. Weitere Informationen zu den verfügbaren Elementen finden Sie unter [Elementvorlagen für WinUI 3](index.md#item-templates-for-winui-3).
 
     :::image type="content" source="images/WinUI-and-UWP/vs2019-add-new-item-dialog.png" alt-text="Visual Studio 2019 – Dialogfeld „Neues Element hinzufügen“":::
 
@@ -84,9 +84,9 @@ Um die in diesem Artikel beschriebene WinUI 3 für UWP-Projektvorlagen zu verwe
 
 ## <a name="known-issues-and-limitations"></a>Bekannte Probleme und Einschränkungen
 
-Eine Liste bekannter Probleme und Einschränkungen finden Sie in [diesem Abschnitt](index.md#preview-3-limitations-and-known-issues).
+Weitere Informationen finden Sie im Abschnitt [Einschränkungen und bekannte Probleme](index.md#limitations-and-known-issues) der [Windows-UI-Bibliothek 3 Vorschau 4 (Februar 2021)](index.md).
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
-- [WinUI 3](index.md)
+- [Windows-UI-Bibliothek 3 Vorschau 4 (Februar 2021)](index.md)
 - [Erste App erstellen](/windows/uwp/get-started/your-first-app)

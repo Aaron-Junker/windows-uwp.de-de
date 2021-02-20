@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 91b5e975c40b7c9642cd452b3c67045c7be1127d
-ms.sourcegitcommit: 069f5ab4be85a7d638fc2a426afaed824e5dfeae
+ms.openlocfilehash: 9da6b1acf2ce27fa6b4ec6c1b4e4274a28491b8b
+ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98668724"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100335096"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Integrieren deiner Desktop-App in Windows 10 und UWP
 
@@ -59,9 +59,9 @@ Deine Benutzer haben möglicherweise deine Desktop-Anwendung an die Taskleiste o
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-rescap3-desktopappmigration).
 
-|Name | Beschreibung |
+|Name | BESCHREIBUNG |
 |-------|-------------|
-|Kategorie |Immer ``windows.desktopAppMigration``.
+|Category |Immer ``windows.desktopAppMigration``.
 |AumID |Die Anwendungsbenutzermodell-ID deiner gepackten App. |
 |ShortcutPath |Der Pfad zu den INK-Dateien, mit denen die Desktopversion deiner App gestartet wird. |
 
@@ -119,9 +119,9 @@ Dazu gibst du den [programmatischen Bezeichner (ProgID)](/windows/desktop/shell/
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Name |Beschreibung |
+|Name |BESCHREIBUNG |
 |-------|-------------|
-|Kategorie |Immer ``windows.fileTypeAssociation``.
+|Category |Immer ``windows.fileTypeAssociation``.
 |Name |Der Name der Dateitypzuordnung. Mit diesem Namen kannst du Dateitypen organisieren und gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen umfassen. |
 |MigrationProgId |Der [programmatische Bezeichner (ProgID)](/windows/desktop/shell/fa-progids), der die Anwendung, die Komponente und die Version der Desktopanwendung beschreibt, aus der die Dateizuordnungen übernommen werden sollen.|
 
@@ -157,7 +157,7 @@ Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapm
 
 ### <a name="associate-your-packaged-application-with-a-set-of-file-types"></a>Zuordnen einer gepackten Anwendung zu einer Gruppe von Dateitypen
 
-Du kannst deine gepackte App bestimmten Dateityperweiterungen zuordnen. Wenn ein Benutzer mit der rechten Maustaste auf eine Datei klickt und **Öffnen mit** auswählt, wird deine App in der Vorschlagsliste angezeigt.
+Sie können Ihre gepackte App bestimmten Dateityperweiterungen zuordnen. Wenn ein Benutzer mit der rechten Maustaste auf eine Datei im Datei-Explorer klickt und **Öffnen mit** auswählt, wird Ihre App in der Vorschlagsliste angezeigt. Weitere Informationen zur Verwendung dieser Erweiterung finden Sie unter [Integrieren einer gepackten Desktop-App im Datei-Explorer](integrate-packaged-app-with-file-explorer.md).
 
 #### <a name="xml-namespaces"></a>XML-Namespaces
 
@@ -178,9 +178,9 @@ Du kannst deine gepackte App bestimmten Dateityperweiterungen zuordnen. Wenn ein
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Name |Beschreibung |
+|Name |BESCHREIBUNG |
 |-------|-------------|
-|Kategorie |Immer ``windows.fileTypeAssociation``.
+|Category |Immer ``windows.fileTypeAssociation``.
 |Name | Der Name der Dateitypzuordnung. Mit diesem Namen kannst du Dateitypen organisieren und gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen umfassen.   |
 |FileType |Die Dateierweiterung, die von deiner App unterstützt wird. |
 
@@ -215,9 +215,7 @@ Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapm
 
 ### <a name="add-options-to-the-context-menus-of-files-that-have-a-certain-file-type"></a>Hinzufügen von Optionen zu den Kontextmenüs von Dateien eines bestimmten Dateityps
 
-In den meisten Fällen doppelklicken Benutzer auf Dateien, um sie zu öffnen. Wenn Benutzer mit der rechten Maustaste auf eine Datei klicken, werden verschiedene Optionen angezeigt.
-
-Du kannst diesem Menü Optionen hinzufügen. Diese Optionen geben Benutzern weitere Möglichkeiten zur Interaktion mit der Datei, beispielsweise durch Optionen zum Drucken, Bearbeiten oder zum Anzeigen einer Vorschau.
+Diese Erweiterung ermöglicht es Ihnen, Optionen zum Kontextmenü hinzuzufügen, das angezeigt wird, wenn Benutzer mit der rechten Maustaste auf eine Datei im Datei-Explorer klicken. Diese Optionen stellen den Benutzern andere Möglichkeiten für die Interaktion mit Ihrer Datei zur Verfügung, z. B. Drucken, Bearbeiten oder Anzeigen einer Dateivorschau. Weitere Informationen zur Verwendung dieser Erweiterung finden Sie unter [Integrieren einer gepackten Desktop-App im Datei-Explorer](integrate-packaged-app-with-file-explorer.md).
 
 #### <a name="xml-namespaces"></a>XML-Namespaces
 
@@ -239,9 +237,9 @@ Du kannst diesem Menü Optionen hinzufügen. Diese Optionen geben Benutzern weit
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Name |Beschreibung |
+|Name |BESCHREIBUNG |
 |-------|-------------|
-|Kategorie | Immer ``windows.fileTypeAssociation``.
+|Category | Immer ``windows.fileTypeAssociation``.
 |Name |Der Name der Dateitypzuordnung. Mit diesem Namen kannst du Dateitypen organisieren und gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen umfassen. |
 |Verb |Der Name, der im Kontextmenü des Datei-Explorers angezeigt wird. Diese Zeichenfolge kann mithilfe von ```ms-resource``` lokalisiert werden.|
 |Id |Die eindeutige ID des Verbs. Bei UWP-Apps wird sie im Rahmen der Aktivierungsereignisargumente übergeben, um eine ordnungsgemäße Verarbeitung der Benutzerauswahl zu ermöglichen. Bei gepackten, als vollständig vertrauenswürdig eingestuften Apps hingegen werden Parameter übergeben (siehe nächster Punkt in der Auflistung). |
@@ -303,9 +301,9 @@ Du kannst sicherstellen, dass die Benutzer zum Öffnen bestimmter Dateitypen sta
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Name |Beschreibung |
+|Name |BESCHREIBUNG |
 |-------|-------------|
-|Kategorie |Immer ``windows.fileTypeAssociation``.
+|Category |Immer ``windows.fileTypeAssociation``.
 |Name |Der Name der Dateitypzuordnung. Mit diesem Namen kannst du Dateitypen organisieren und gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen umfassen. |
 |UseUrl |Gibt an, ob Dateien direkt über ein URL-Ziel geöffnet werden sollen. Wenn du diesen Wert nicht festlegst, lädt das System die Datei zunächst lokal herunter, wenn deine App versucht, die Datei über eine URL zu öffnen. |
 |Parameter | Optionale Parameter. |
@@ -369,7 +367,7 @@ Wenn deine App über einen Port kommunizieren muss, kannst du deine App zur List
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-firewallrules).
 
-|Name |Beschreibung |
+|Name |BESCHREIBUNG |
 |-------|-------------|
 |Kategorie |Immer ``windows.firewallRules``.|
 |Ausführbare Datei |Der Name der ausführbaren Datei, die zur Liste der Firewallausnahmen hinzugefügt werden soll. |
