@@ -1,6 +1,6 @@
 ---
 title: Skripts und Automatisierung mit Python unter Windows
-description: Erste Schritte bei der Verwendung von Python für die Skripterstellung, Automatisierung und Systemverwaltung unter Windows.
+description: Eine Schritt-für-Schritt-Anleitung für den Einstieg in die Verwendung von Python für die Skripterstellung, Automatisierung und Systemverwaltung unter Windows.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Windows 10, Microsoft, Python-Systemverwaltung, Python-Dateiautomatisierung, Python-Skripts unter Windows, Einrichten von Python unter Windows, Python-Entwicklerumgebung unter Windows, Python-Entwicklungsumgebung unter Windows, Python mit PowerShell, Python-Skripts für Dateisystemtasks
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: a8f13243f3501b2af42d38c13bff580be2e5b42a
-ms.sourcegitcommit: 8040760f5520bd1732c39aedc68144c4496319df
+ms.openlocfilehash: 8b6ce391d810fc26ab9964f39939ce8c5a9958e9
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98691325"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823574"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>Erste Schritte bei der Verwendung von Python unter Windows für Skripts und Automatisierung
 

@@ -1,6 +1,6 @@
 ---
 title: Erste Schritte bei der Verwendung von Python unter Windows für Anfänger
-description: Eine Anleitung für den Einstieg in die Verwendung von Python unter Windows ohne Vorkenntnisse.
+description: Diese Schritt-für-Schritt-Anleitung richtet sich an Einsteiger, die sich mit Python unter Windows 10 vertraut machen möchten.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Windows 10, Microsoft, Python lernen, Python unter Windows für Anfänger, Python aus dem Microsoft Store installieren, Python mit VS Code, pygame unter Windows
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: f225932685e71cb2374249ad96efeac11184d000
-ms.sourcegitcommit: 3fafc6b6d548a03e6191fa95ebf9384c42396a30
+ms.openlocfilehash: 614e78b3dc4295b52b58645f04a0c02007bff4d4
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97880543"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823614"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>Erste Schritte bei der Verwendung von Python unter Windows für Anfänger
 

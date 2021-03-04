@@ -1,6 +1,6 @@
 ---
 title: Einrichten der Entwicklungsumgebung unter Windows 10
-description: Ein Leitfaden, der Ihnen hilft, Ihre Entwicklungsumgebung unter Windows einzurichten und Ihre bevorzugten Tools und Codesprachen zu installieren. Ganz gleich, ob Sie Python, NodeJS, VS Code, Git, Bash, Linux-Tools und -Befehle oder Android Studio bevorzugen – Wir haben tolle neue Tools wie Windows Terminal und WSL für Sie.
+description: Eine umfassende Anleitung, die Ihnen hilft, Ihre Entwicklungsumgebung unter Windows einzurichten und Ihre bevorzugten Tools und Codesprachen zu installieren.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Fenster einrichten, Entwicklungsumgebung, Entwicklertools, Entwicklungspfade, Microsoft, Windows, Developer, Tipps, Leistung, WSL, Terminal, nodejs, python
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: 578bc10b26dfe04384ca8e8174e36497c20896cb
-ms.sourcegitcommit: 48702934676ae366fd46b7d952396c5e2fb2cbbe
+ms.openlocfilehash: 58c68522fdb3ffe11c4e11dff48fb49faa79b830
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97927813"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824034"
 ---
 # <a name="set-up-your-development-environment-on-windows-10"></a>Einrichten der Entwicklungsumgebung unter Windows 10
 
@@ -92,9 +92,9 @@ Dieser Leitfaden erleichtert Ihnen den Einstieg bei der Installation der Sprache
     :::column-end:::
     :::column:::
        [![PowerToys-Symbol](../images/powertoys.png)](https://github.com/microsoft/PowerToys)<br>
-        **[Windows PowerToys](../PowerToys/index.md)**<br>
+        **[Windows PowerToys](https://github.com/microsoft/PowerToys)**<br>
         Verfeinern und Optimieren Ihrer Windows-Erfahrung für erhöhte Produktivität mit diesem Satz von Hilfsprogrammen für Poweruser.<br>
-        [Installieren von PowerToys](https://github.com/microsoft/PowerToys#installing-and-running-microsoft-powertoys)
+        [Installieren von PowerToys (öffentliche Vorschau)](https://github.com/microsoft/PowerToys#installing-and-running-microsoft-powertoys)
     :::column-end:::
 :::row-end:::
 :::row:::

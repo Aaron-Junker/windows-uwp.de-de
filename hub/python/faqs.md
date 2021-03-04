@@ -1,6 +1,6 @@
 ---
 title: Häufig gestellte Fragen zum Verwenden von Python unter Windows
-description: Holen Sie sich Hilfe, indem Sie die Antworten auf häufig gestellte Fragen (FAQs) zur Verwendung von Python unter Windows zur Entwicklung durchgehen.
+description: Hier finden Sie Antworten auf die am häufigsten gestellten Fragen (FAQs) zur Verwendung von Python unter Windows zur Entwicklung.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Windows 10, Microsoft, pip, py.exe, Dateipfade, PYTHONPATH, Python-Entwicklung, Python-Paketerstellung
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: c1cada0fef5968846100f66bb41b3dd70ea5b59a
-ms.sourcegitcommit: 8040760f5520bd1732c39aedc68144c4496319df
+ms.openlocfilehash: 7bc1d159bac5ebc9877db5d879b6acd82c51079b
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98691305"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823554"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>Häufig gestellte Fragen zum Verwenden von Python unter Windows
 

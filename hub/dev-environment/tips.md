@@ -1,6 +1,6 @@
 ---
 title: Tipps zur Verbesserung Ihres Entwicklungsworkflows unter Windows 10
-description: Tipps zur Verbesserung Ihres Entwicklungsworkflows unter Windows 10.
+description: Tipps, die Ihnen helfen, Ihre Leistung zu verbessern und Ihren Entwicklungsworkflow unter Windows 10 effizienter und angenehmer zu gestalten.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Microsoft, Windows, Developer, Tipps, Leistung, WSL
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: 7d02e3b46d6938532bbc7024e8840b976b2715a6
-ms.sourcegitcommit: 861c381a31e4a5fd75f94ca19952b2baaa2b72df
+ms.openlocfilehash: ef7ee52e778f49e35f68acb4ea02351d4208b3b7
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92171150"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823954"
 ---
 # <a name="tips-for-improving-performance-and-development-workflows"></a>Tipps zum Verbessern von Leistungs und Entwicklungsworkflows
 

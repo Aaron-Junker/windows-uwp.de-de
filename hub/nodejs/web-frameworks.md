@@ -1,19 +1,19 @@
 ---
 title: Erste Schritte mit Node.js-Webframeworks unter Windows
-description: Ein Leitfaden, der Sie beim Einstieg in Node.js-Webframeworks unter Windows unterstützt.
+description: Ein Schritt-für-Schritt-Leitfaden für den Einstieg in die Verwendung von Node.js-Webframeworks unter Windows, einschließlich Next.js, Nuxt.js und Gatsby.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
-keywords: NodeJS, Node.js, Windows 10, Microsoft, Erlernen von Node.js, Node unter Windows, Node im WSL, Node unter Linux unter Windows, Installieren von Node unter Windows, NodeJS mit VS Code, Entwickeln mit Node unter Windows, Entwickeln mit NodeJS unter Windows, Installieren von Node im WSL, NodeJS im Windows-Subsystem für Linux
+keywords: NodeJS, Node.js, Windows 10, Microsoft, Erlernen von Node.js, Node unter Windows, Node im WSL, Node unter Linux unter Windows, Installieren von Node unter Windows, NodeJS mit VS Code, Entwickeln mit Node unter Windows, Entwickeln mit NodeJS unter Windows, Installieren von Node in WSL, NodeJS im Windows-Subsystem für Linux
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: a8ce1d08136a74504e1b3bad26feadd61b72068f
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: af23ec1374d5fce727579171113402536221e5f2
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72517787"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823604"
 ---
 # <a name="get-started-with-nodejs-web-frameworks-on-windows"></a>Erste Schritte mit Node.js-Webframeworks unter Windows
 
@@ -26,7 +26,7 @@ In dieser Anleitung wird davon ausgegangen, dass du die Schritte zum [Einrichten
 - Installieren von Windows 10 Insider Preview Build 18932 oder höher
 - Aktivieren des WSL 2-Features unter Windows
 - Installieren einer Linux-Distribution (Ubuntu 18.04 für unsere Beispiele) Dies können Sie mit `wsl lsb_release -a` überprüfen.
-- Achten Sie darauf, dass die Distribution Ubuntu 18.04 im WSL 2-Modus ausgeführt wird. (WSL kann Distributionen im V1- oder V2-Modus ausführen.) Sie können dies überprüfen, indem Sie PowerShell öffnen und Folgendes eingeben: `wsl -l -v`.
+- Stelle sicher, dass deine Distribution von Ubuntu 18.04 im WSL 2-Modus ausgeführt wird. (WSL kann Distributionen im V1- oder V2-Modus ausführen.) Sie können dies überprüfen, indem Sie PowerShell öffnen und Folgendes eingeben: `wsl -l -v`.
 - Legen Sie in PowerShell mit `wsl -s ubuntu 18.04` Ubuntu 18.04 als Standarddistribution fest.
 
 ## <a name="get-started-with-nextjs"></a>Erste Schritte mit Next.js
@@ -81,15 +81,15 @@ Das Erstellen eines Nuxt.js-Projekts beinhaltet die Beantwortung einer Reihe von
 
 4. Das Installationsprogramm von Nuxt.js stellt Ihnen nun die folgenden Fragen:
     - Projektname: my-nuxtjs-app
-    - Projektbeschreibung: Beschreibung der Nuxt.js-App.
+    - Projektbeschreibung: Beschreibung meiner Nuxt.js-App.
     - Name des Autors: Ich verwende meinen GitHub-Alias.
-    - Auswahl des Paket-Managers: Yarn oder **Npm**: Wir verwenden für die Beispiele NPM.
-    - Auswahl des UI-Frameworks: Keins, Ant Design Vue, Bootstrap Vue usw. Wählen Sie für dieses Beispiel **Vuetify**. Die Vue-Community hat außerdem eine gute [Zusammenfassung zum Vergleichen dieser UI-Frameworks erstellt](https://vue-community.org/guide/ecosystem/ui-libraries.html#summary-tldr), damit Sie die beste Lösung für Ihr Projekt auswählen können.
-    - Auswahl benutzerdefinierter Serverframeworks: Keins, AdonisJs, Express, Fastify usw. Wählen Sie für dieses Beispiel **Keins** aus. Auf der Seite Dev.to finden Sie einen [Vergleich der Serverframeworks 2019–2020](https://dev.to/santypk4/introducing-the-best-10-node-js-frameworks-for-2019-and-2020-mcm).
-    - Auswahl von Nuxt.js-Modulen (verwenden Sie die LEERTASTE, um Module auszuwählen, oder EINGABE, wenn Sie keine auswählen möchten): Axios (zur Vereinfachung von HTTP-Anforderungen) oder [PWA-Unterstützung](https://pwa.nuxtjs.org/) (zum Hinzufügen eines Serviceworkers, einer manifest.json-Datei usw). Fügen Sie für dieses Beispiel kein Modul hinzu.
-    - Auswählen von Linting-Tools: **ESLint**, Prettier, Lint gestaffelte Dateien. Wählen Sie **ESLint** aus (ein Tool, das Ihren Code analysiert und Sie bei möglichen Fehlern warnt).
-    - Auswahl eines Testframeworks: **Keins**, Jest, AVA. Wählen Sie **Keins** aus, da wir Testen im Rahmen dieses Schnellstarts nicht behandeln.
-    - Auswahl des Rendermodus: **Universal (SSR)** oder Einzelseiten-App (Single Page App, SPA). Wählen Sie für das Beispiel **Universal (SSR)** aus. Die [Nuxt.js-Dokumentation](https://nuxtjs.org/guide#server-rendered-universal-ssr-) weist auf einige der Unterschiede hin – für SSR ist ein laufender Node.js-Server erforderlich, um Ihre App zu rendern, während sich SPA für statisches Hosting eignet.
+    - Paket-Manager auswählen: Yarn oder **Npm**. Wir verwenden NPM für unsere Beispiele.
+    - Benutzeroberflächenframework auswählen: Keins, Ant Design Vue, Bootstrap Vue usw. Wählen Sie für dieses Beispiel **Vuetify**. Die Vue-Community hat außerdem eine gute [Zusammenfassung zum Vergleichen dieser UI-Frameworks erstellt](https://vue-community.org/guide/ecosystem/ui-libraries.html#summary-tldr), damit Sie die beste Lösung für Ihr Projekt auswählen können.
+    - Benutzerdefinierte Serverframeworks auswählen: Keins, AdonisJs, Express, Fastify usw. Wählen Sie für dieses Beispiel **Keins** aus. Auf der Seite Dev.to finden Sie einen [Vergleich der Serverframeworks 2019–2020](https://dev.to/santypk4/introducing-the-best-10-node-js-frameworks-for-2019-and-2020-mcm).
+    - Nuxt.js-Module auswählen (LEERTASTE, um Module auszuwählen oder EINGABETASTE, wenn Sie keine Module auswählen möchten): Axios (zum Vereinfachen von HTTP-Anforderungen) oder [PWA-Unterstützung](https://pwa.nuxtjs.org/) (zum Hinzufügen einer service-worker, manifest.json-Datei usw.). Fügen Sie für dieses Beispiel kein Modul hinzu.
+    - Linting-Tools auswählen: **ESLint**, Prettier, gestaffelte Lint-Dateien. Wählen Sie **ESLint** aus (ein Tool, das Ihren Code analysiert und Sie bei möglichen Fehlern warnt).
+    - Testframework auswählen: **Keins**, Jest, AVA. Wählen Sie **Keins** aus, da wir Testen im Rahmen dieses Schnellstarts nicht behandeln.
+    - Renderingmodus auswählen: **Universal (SSR)** oder Single Page App (SPA). Wählen Sie für das Beispiel **Universal (SSR)** aus. Die [Nuxt.js-Dokumentation](https://nuxtjs.org/guide#server-rendered-universal-ssr-) weist auf einige der Unterschiede hin – für SSR ist ein laufender Node.js-Server erforderlich, um Ihre App zu rendern, während sich SPA für statisches Hosting eignet.
     - Auswahl von Entwicklungstools: **jsconfig.json** (für VS Code empfohlen, damit die Intellisense-Codevervollständigung funktioniert)
 
 5. Nachdem Ihr Projekt erstellt wurde, wechseln Sie mit `cd my-nuxtjs-app` in Ihr Nuxt.js-Projektverzeichnis, und geben Sie dann `code .` ein, um das Projekt in der VS Code WSL-Remote-Umgebung zu öffnen.
@@ -125,7 +125,7 @@ Gatsby.js ist ein statisches Framework zur Websitegenerierung, das auf React.js 
 So erstellen Sie ein Gatsby.js-Projekt:
 
 1. Öffnen Sie das WSL-Terminal (d. h. Ubuntu 18.04).
-2. Erstellen Sie mit `mkdir GatsbyProjects` einen neuen Projektordner, und wechseln Sie mit `cd GatsbyProjects` in das Verzeichnis.
+2. Erstelle mit `mkdir GatsbyProjects` einen neuen Projektordner, und wechsele mit `cd GatsbyProjects` in das Verzeichnis.
 3. Verwenden Sie npm, um die Gatsby-Befehlszeilenschnittstelle zu installieren: `npm install -g gatsby-cli`. Überprüfen Sie nach der Installation die Version mit `gatsby --version`.
 4. Erstellen Sie Ihr Gatsby.js-Projekt: `gatsby new my-gatsby-app`
 5. Nachdem das Paket installiert wurde, wechseln Sie in Ihren neuen App-Ordner `cd my-gatsby-app`, und verwenden Sie dann `code .`, um das Gatsby-Projekt in VS Code zu öffnen. Auf diese Weise können Sie sich mithilfe des Datei-Explorers von VS Code das Gatsby.js-Framework ansehen, das für Ihre App erstellt wurde. Beachten Sie, dass VS Code Ihre App in einer WSL-Remote-Umgebung geöffnet hat (worauf die grüne Registerkarte unten links in Ihrem VS Code-Fenster hinweist). Dies bedeutet, dass Sie zwar VS Code für die Bearbeitung unter dem Windows-Betriebssystem verwenden, Ihre App aber weiterhin unter dem Linux-Betriebssystem ausgeführt wird.
@@ -140,7 +140,7 @@ So erstellen Sie ein Gatsby.js-Projekt:
 
     Öffnen Sie das in VS Code integrierte WSL-Terminal (**Ansicht > Terminal**). Vergewissern Sie sich, dass der Terminalpfad auf das Projektverzeichnis verweist (d. h. `~/GatsbyProjects/my-gatsby-app$`). Versuchen Sie dann, mithilfe von `gatsby develop` eine Entwicklungsinstanz Ihrer neuen App auszuführen.
 
-7. Sobald die Kompilierung des neuen Gatsby-Projekts abgeschlossen ist, zeigt das Terminal an, dass Sie jetzt gatsby-starter-default im Browser unter [http://localhost:8000/](http://localhost:8000/) anzeigen können. Wählen Sie diesen localhost-Link aus, um Ihr neu erstelltes Projekt in einem Webbrowser anzuzeigen.
+7. Sobald die Kompilierung des neuen Gatsby-Projekts abgeschlossen ist, zeigt das Terminal an, dass Sie jetzt gatsby-starter-default im Browser unter [http://localhost:8000/](http://localhost:8000/)." Wählen Sie diesen localhost-Link aus, um Ihr neu erstelltes Projekt in einem Webbrowser anzuzeigen.
 
 > [!NOTE]
 > Sie werden bemerken, dass Ihre Terminalausgabe Sie außerdem darüber informiert, dass Sie GraphiQL, eine in den Browser integrierte IDE, anzeigen können, um die Daten und das Schema Ihrer Website zu untersuchen: [http://localhost:8000/___graphql](http://localhost:8000/___graphql). GraphQL konsolidiert Ihre APIs in einer selbstdokumentierenden IDE (GraphiQL), die in Gatsby integriert ist. Über das Untersuchen von Daten und Schema Ihrer Website hinaus können Sie GraphQL-Vorgänge wie Abfragen, Mutationen und Abonnements ausführen. Weitere Informationen finden Sie unter [Einführung in GraphiQL](https://www.gatsbyjs.org/docs/running-queries-with-graphiql/).

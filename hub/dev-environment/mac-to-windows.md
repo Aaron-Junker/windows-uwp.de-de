@@ -1,6 +1,6 @@
 ---
 title: Hilfe beim Wechsel von Mac (Unix) zu Windows
-description: Eine Anleitung, die dich beim Übergang von einer Mac-Entwicklungsumgebung (Unix) zu einer Windows-Entwicklungsumgebung unterstützt, einschließlich Tastenkombinationszuordnung und einer kurzen Übersicht über die Unterschiede zwischen Mac und Windows.
+description: Eine umfassende Anleitung für den Wechsel von einer Mac- (Unix-) zu einer Windows-Entwicklungsumgebung, der auch die Zuordnung von Tastenkombinationen enthält.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Mac zu Windows, Tastenkombinationszuordnung, Wechsel von UNIX zu Windows, Umstellung von Mac auf Windows, Unterstützung des Wechsels von MacBook zu Surface, Verwendung von Windows für einen Macintosh-Benutzer, Wechsel von Macintosh zu Windows, Unterstützung der Änderung von Entwicklungsumgebungen, Mac OS X zu Windows, Unterstützung des Wechsels von Mac zu PC
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 1d94944037caf7cd909ea4799867f83bd4a6f887
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c23bceecc09677dbecbda7b4e4065377c514cc0d
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157584"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823944"
 ---
 # <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>Leitfaden zum Ändern der Entwicklungsumgebung von Mac zu Windows
 

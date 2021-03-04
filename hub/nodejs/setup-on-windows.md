@@ -1,6 +1,6 @@
 ---
 title: Einrichten von NodeJS nativ unter Windows
-description: Diese Anleitung soll dir helfen, deine Node.js-Entwicklungsumgebung direkt unter Windows einzurichten.
+description: Diese Schritt-für-Schritt-Anleitung soll Ihnen helfen, Ihre Node.js-Entwicklungsumgebung direkt unter Windows einzurichten.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Node.js, Windows 10, nativ unter Windows, direkt unter Windows
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 8c865610ba2678c1c5ab1b25ff7a2c7410d11f15
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bb950dcda9fddd6cf1b4b77da657f88ce2687785
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166584"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823594"
 ---
 # <a name="set-up-your-nodejs-development-environment-directly-on-windows"></a>Einrichten einer Node.js-Entwicklungsumgebung direkt unter Windows
 
@@ -33,7 +33,7 @@ Node.js kann auf unterschiedliche Weise installiert werden. Es wird empfohlen, e
 
     ![nvm für Windows – Installations-Assistent](../images/install-nvm-for-windows-wizard.png)
 
-5. Führe nach Abschluss der Installation folgende Schritte aus. Öffne PowerShell, und verwende „windows-nvm“, um aufzulisten, welche Versionen von Node derzeit installiert sind (zu diesem Zeitpunkt keine): `nvm ls`
+5. Gehen Sie nach Abschluss der Installation wie folgt vor: Öffne PowerShell, und verwende „windows-nvm“, um aufzulisten, welche Versionen von Node derzeit installiert sind (zu diesem Zeitpunkt keine): `nvm ls`
 
     ![nvm-Liste ohne Node-Versionen](../images/windows-nvm-powershell-no-node.png)
 
@@ -75,8 +75,8 @@ Es wird empfohlen, [VS Code](https://code.visualstudio.com) sowie das [Node.js-
 So installierst du das Node.js-Erweiterungspaket
 
 1. Öffne in VS Code das Fenster **Erweiterungen** (STRG+UMSCHALT+X).
-2. Gib im Suchfeld am oberen Rand des Fensters „Erweiterungen“ Folgendes ein: „Node Extension Pack“ (oder den Name der gewünschten Erweiterung).
-3. Wähle **Installieren** aus. Nach der Installation wird die Erweiterung im Fenster **Erweiterungen** im Ordner „Aktiviert“ angezeigt. Du kannst Einstellungen deaktivieren, deinstallieren oder konfigurieren, indem du das Zahnradsymbol neben der Beschreibung der neuen Erweiterung auswählst.
+2. Geben Sie im Suchfeld am oberen Rand des Fensters „Erweiterungen“ Folgendes ein: Node Extension Pack (oder den Namen der gewünschten Erweiterung).
+3. Wählen Sie **Installieren** aus. Nach der Installation wird die Erweiterung im Fenster **Erweiterungen** im Ordner „Aktiviert“ angezeigt. Du kannst Einstellungen deaktivieren, deinstallieren oder konfigurieren, indem du das Zahnradsymbol neben der Beschreibung der neuen Erweiterung auswählst.
 
 Folgende zusätzliche Erweiterungen solltest du ebenfalls in Erwägung ziehen:
 
@@ -101,4 +101,4 @@ Wenn du beabsichtigst, zusammen mit anderen zusammenzuarbeiten oder das Projekt 
 Die direkte Verwendung von Node.js unter Windows eignet sich hervorragend zum Erlernen und Experimentieren mit den Möglichkeiten. Wenn du bereit bist, produktionsfertige Web-Apps zu erstellen, die in der Regel auf einem Linux-basierten Server bereitgestellt werden, solltest du das Windows-Subsystem für Linux Version 2 (WSL 2) für die Entwicklung von Node.js-Web-Apps verwenden. Viele Node.js-Pakete und -Frameworks werden für eine *nix-Umgebung erstellt, und die meisten Node.js-Apps werden unter Linux bereitgestellt. Die Entwicklung im WSL stellt daher die Konsistenz zwischen deiner Entwicklungsumgebung und den Produktionsumgebungen sicher. Informationen zum Einrichten einer WSL-Entwicklungsumgebung findest du unter [Einrichten der Node.js-Entwicklungsumgebung mit WSL 2](./setup-on-wsl2.md).
 
 > [!NOTE]
-> Wenn du sich in der (sehr seltenen) Situation befindest, eine Node.js-App auf einem Windows-Server zu hosten, empfiehlt sich die [Verwendung eines Reverseproxys](https://medium.com/intrinsic/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca). Es gibt dafür zwei Möglichkeiten: 1) [iisnode](https://harveywilliams.net/blog/installing-iisnode) oder [direkt](https://dev.to/petereysermans/hosting-a-node-js-application-on-windows-with-iis-as-reverse-proxy-397b). Wir verwalten diese Ressourcen nicht und empfehlen [die Verwendung von Linux-Servern zum Hosten deiner Node.js-Apps](/azure/app-service/app-service-web-get-started-nodejs).
+> Wenn du sich in der (sehr seltenen) Situation befindest, eine Node.js-App auf einem Windows-Server zu hosten, empfiehlt sich die [Verwendung eines Reverseproxys](https://medium.com/intrinsic/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca). Es gibt zwei Möglichkeiten, dies zu tun: 1) [unter Verwendung von „iisnode“](https://harveywilliams.net/blog/installing-iisnode) oder [direkt](https://dev.to/petereysermans/hosting-a-node-js-application-on-windows-with-iis-as-reverse-proxy-397b). Wir verwalten diese Ressourcen nicht und empfehlen [die Verwendung von Linux-Servern zum Hosten deiner Node.js-Apps](/azure/app-service/app-service-web-get-started-nodejs).

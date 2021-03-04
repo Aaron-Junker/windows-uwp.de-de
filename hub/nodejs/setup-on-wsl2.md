@@ -1,6 +1,6 @@
 ---
 title: Einrichten von Node.js in WSL 2
-description: Diese Anleitung soll dir helfen, deine Node.js-Entwicklungsumgebung im Windows-Subsystem für Linux (WSL) einzurichten.
+description: Diese Schritt-für-Schritt-Anleitung soll Ihnen helfen, Ihre Node.js-Entwicklungsumgebung im Windows-Subsystem für Linux (WSL) einzurichten.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, Node.js, Windows 10, Microsoft, Erlernen von Node.js, Node unter Windows, Node im WSL, Node unter Linux unter Windows, Installieren von Node unter Windows, NodeJS mit VS Code, Entwickeln mit Node unter Windows, Entwickeln mit NodeJS unter Windows, Installieren von Node in WSL, NodeJS im Windows-Subsystem für Linux
 ms.localizationpriority: medium
 ms.date: 07/28/2020
-ms.openlocfilehash: 4e0477c91470d69f9ec5fd726079a1164e2cf276
-ms.sourcegitcommit: 3fafc6b6d548a03e6191fa95ebf9384c42396a30
+ms.openlocfilehash: 70a9e067cc69eb4f040e5f579883113cdeb2ef47
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97880533"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823644"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>Einrichten einer Node.js-Entwicklungsumgebung mit WSL 2
 

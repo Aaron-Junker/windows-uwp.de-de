@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Entwicklung mit Node.js unter Windows
-summary: Erste Schritte bei der Entwicklung mit Node.js unter Windows.
+summary: Erste Schritte bei der Entwicklung mit Node.js unter Windows. Hier finden Sie Ressourcen zum Einrichten Ihrer Entwicklungsumgebung, Webframeworks, Datenbanken und Container.
 metadata:
   author: mattwojo
   description: Erste Schritte bei der Entwicklung mit Node.js unter Windows.
@@ -10,12 +10,12 @@ metadata:
   ms.prod: dev-environment
   ms.technology: windows-nodejs
   ms.topic: landing-page
-  ms.openlocfilehash: 862a1a13e8617ed055adee403b18674f4ed2aded
-  ms.sourcegitcommit: 7aa0e1108fd1a19ebc5632acbc9f66ea9af2b321
+  ms.openlocfilehash: 04ba800e1b2ac247ae158fbdcead6f53446c26c2
+  ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 12/18/2020
-  ms.locfileid: "97691509"
+  ms.lasthandoff: 03/04/2021
+  ms.locfileid: "101823584"
 landingContent:
 - title: Einrichten der Node.js-Entwicklungsumgebung
   linkLists:

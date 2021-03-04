@@ -1,6 +1,6 @@
 ---
 title: Erste Schritte mit Docker für die Remoteentwicklung mit Containern
-description: Anleitung für die ersten Schritte mit Docker Desktop unter Windows oder WSL.
+description: Eine umfassende Anleitung für die ersten Schritte mit Docker Desktop unter Windows oder WSL, einschließlich des von Microsoft angebotenen Supports und einer Vielzahl von Azure-Diensten.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 ms.technology: windows-nodejs
 keywords: Microsoft, Windows, Docker, WSL, Remoteentwicklung, Container, Docker Desktop, Windows vs WSL
 ms.date: 09/24/2020
-ms.openlocfilehash: b3fc2509aa6a623bebd9f4566f3b8e75301251db
-ms.sourcegitcommit: c65f62bda57563f6196691e7b9c25cbf5a8b16e5
+ms.openlocfilehash: 09552a6a2a43e414c143ef0a51b6932fa2aaaf20
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91780575"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824164"
 ---
 # <a name="overview-of-docker-remote-development-on-windows"></a>Übersicht über die Remoteentwicklung mit Docker unter Windows
 

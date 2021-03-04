@@ -1,6 +1,6 @@
 ---
 title: Webentwicklung mit Python unter Windows
-description: Erste Schritte bei der Verwendung von Python für die Webentwicklung unter Windows, einschließlich der Einrichtung für Frameworks wie Flask und Django.
+description: Diese Schritt-für-Schritt-Anleitung beschreibt die ersten Schritte der Verwendung von Python für die Webentwicklung unter Windows, einschließlich der Einrichtung für Frameworks wie Flask und Django.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Windows 10, Microsoft, Python unter Windows, Python-Web mit WSL, Python-Web-App mit Windows-Subsystem für Linux, Python-Webentwicklung unter Windows, Flask-App unter Windows, Django-App unter Windows, Python-Web, Flask-Webentwicklung unter Windows, Django-Webentwicklung unter Windows, Windows-Webentwicklung mit Python, VS Code Python-Webentwicklung, Remote-WSL-Erweiterung, Ubuntu, WSL, venv, PIP, Microsoft Python-Erweiterung, Python unter Windows ausführen, Python unter Windows verwenden, mit Python unter Windows erstellen
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 3b5ed80b746d0aa1441bf77e6468101deee320a6
-ms.sourcegitcommit: 3fafc6b6d548a03e6191fa95ebf9384c42396a30
+ms.openlocfilehash: ae9084541656ababf9ace4207cbfa84e30f7417a
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97880553"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823624"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>Erste Schritte bei der Verwendung von Python für die Webentwicklung unter Windows
 

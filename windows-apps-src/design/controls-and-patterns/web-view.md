@@ -8,18 +8,18 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f2f3bf022210e5b5f329cb5824cb36708154b977
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 3bab93eca2318d7253df5acb16d866ac81d8ae6c
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034383"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824434"
 ---
 # <a name="web-view"></a>Webansicht
 
 Mithilfe eines Webansichtssteuerelements betten Sie eine Ansicht in Ihre App ein, die Webinhalte mit dem Microsoft Edge-Renderingmodul rendert. In einem Webansichtssteuerelement können auch Links angezeigt und verwendet werden.
 
-> **Wichtige APIs:** [WebView-Klasse](/uwp/api/Windows.UI.Xaml.Controls.WebView)
+> **Wichtige APIs**: [WebView-Klasse](/uwp/api/Windows.UI.Xaml.Controls.WebView)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -63,7 +63,7 @@ Wie in der Tabelle „Events“ auf der Seite zur [WebView](/uwp/api/Windows.UI.
 
 ### <a name="navigating-to-content"></a>Navigieren zum Inhalt
 
-Die Webansicht bietet mehrere APIs für die grundlegende Navigation: [GoBack](/uwp/api/windows.ui.xaml.controls.webview.goback), [GoForward](/uwp/api/windows.ui.xaml.controls.webview.goforward), [Stop](/uwp/api/windows.ui.xaml.controls.webview.stop), [Refresh](/uwp/api/windows.ui.xaml.controls.webview.refresh), [CanGoBack](/uwp/api/windows.ui.xaml.controls.webview.cangoback) und [CanGoForward](/uwp/api/windows.ui.xaml.controls.webview.cangoforward). Mit diesen APIs können Sie Ihrer App typische Funktionen für das Webbrowsen hinzufügen. 
+Die Webansicht stellt mehrere APIs zur grundlegenden Navigation zur Verfügung: [GoBack](/uwp/api/windows.ui.xaml.controls.webview.goback), [GoForward](/uwp/api/windows.ui.xaml.controls.webview.goforward), [Stop](/uwp/api/windows.ui.xaml.controls.webview.stop), [Refresh](/uwp/api/windows.ui.xaml.controls.webview.refresh), [CanGoBack](/uwp/api/windows.ui.xaml.controls.webview.cangoback) und [CanGoForward](/uwp/api/windows.ui.xaml.controls.webview.cangoforward). Mit diesen APIs können Sie Ihrer App typische Funktionen für das Webbrowsen hinzufügen. 
 
 Legen Sie zum Einrichten des anfänglichen Inhalts der Webansicht die [Source](/uwp/api/windows.ui.xaml.controls.webview.source)-Eigenschaft in XAML fest. Der XAML-Parser konvertiert die Zeichenfolge automatisch in einen [Uri](/uwp/api/Windows.Foundation.Uri). 
 
@@ -78,9 +78,9 @@ Legen Sie zum Einrichten des anfänglichen Inhalts der Webansicht die [Source](/
 <WebView x:Name="webView3" Source="ms-appx-web:///help/about.html"/>
 ```
 
-Die Source-Eigenschaft kann grundsätzlich im Code festgelegt werden. In der Regel verwenden Sie jedoch eine der **Navigate** -Methoden, um Inhalt in den Code zu laden. 
+Die Source-Eigenschaft kann grundsätzlich im Code festgelegt werden. In der Regel verwenden Sie jedoch eine der **Navigate**-Methoden, um Inhalt in den Code zu laden. 
 
-Verwenden Sie zum Laden des Webinhalts die [Navigate](/uwp/api/windows.ui.xaml.controls.webview.navigate)-Methode mit einem **Uri** , der das HTTP- oder HTTPS-Schema verwendet. 
+Verwenden Sie zum Laden des Webinhalts die [Navigate](/uwp/api/windows.ui.xaml.controls.webview.navigate)-Methode mit einem **Uri**, der das HTTP- oder HTTPS-Schema verwendet. 
 
 ```csharp
 webView1.Navigate("http://www.contoso.com");
@@ -88,7 +88,7 @@ webView1.Navigate("http://www.contoso.com");
 
 Um zu einem URI mit POST-Anforderung und HTTP-Headern zu navigieren, verwenden Sie die [NavigateWithHttpRequestMessage](/uwp/api/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage)-Methode. Die Methode unterstützt nur [HttpMethod.Post](/uwp/api/windows.web.http.httpmethod.post) und [HttpMethod.Get](/uwp/api/windows.web.http.httpmethod.get) als Wert der [HttpRequestMessage.Method](/uwp/api/windows.web.http.httprequestmessage.method)-Eigenschaft. 
 
-Um nicht komprimierte und unverschlüsselte Inhalte aus den Datenspeichern [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder) oder [TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) der App zu laden, verwende die **Navigate** -Methode mit einem **Uri** , der das [ms-appdata-Schema](../../app-resources/uri-schemes.md) verwendet. Damit die Webansicht für dieses Schema unterstützt wird, müssen Sie Ihren Inhalt in einem Unterordner des lokalen oder temporären Ordners platzieren. Dies ermöglicht die Navigation zu URIs wie „ms-appdata:///local/ *folder*/*file*.html“ und „ms-appdata:///temp/ *folder*/*file*.html“. (Informationen zum Laden komprimierter oder verschlüsselter Dateien finden Sie unter [NavigateToLocalStreamUri](/uwp/api/windows.ui.xaml.controls.webview.navigatetolocalstreamuri).) 
+Um nicht komprimierte und unverschlüsselte Inhalte aus den Datenspeichern [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder) oder [TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) der App zu laden, verwende die **Navigate**-Methode mit einem **Uri**, der das [ms-appdata-Schema](../../app-resources/uri-schemes.md) verwendet. Damit die Webansicht für dieses Schema unterstützt wird, müssen Sie Ihren Inhalt in einem Unterordner des lokalen oder temporären Ordners platzieren. Dies ermöglicht die Navigation zu URIs wie „ms-appdata:///local/*folder*/*file*.html“ und „ms-appdata:///temp/*folder*/*file*.html“. (Informationen zum Laden komprimierter oder verschlüsselter Dateien finden Sie unter [NavigateToLocalStreamUri](/uwp/api/windows.ui.xaml.controls.webview.navigatetolocalstreamuri).) 
 
 Jeder dieser Unterordner auf oberster Ebene ist vom Inhalt anderer Unterordner auf oberster Ebene isoliert. Beispielsweise kannst du zu „ms-appdata:///temp/Ordner1/Datei.html“ navigieren, aber keinen Link zu „ms-appdata:///temp/Ordner2/Datei.html“ in diese Datei aufnehmen. Sie können aber trotzdem eine Verknüpfung mit HTML-Inhalt im App-Paket erstellen, indem Sie das **Schema „ms-appx-web“** verwenden, und mit Webinhalt, indem Sie die URI-Schemas **http** und **https** verwenden.
 
@@ -96,7 +96,7 @@ Jeder dieser Unterordner auf oberster Ebene ist vom Inhalt anderer Unterordner a
 webView1.Navigate("ms-appdata:///local/intro/welcome.html");
 ```
 
-Verwenden Sie zum Laden von Inhalt aus Ihrem App-Paket die **Navigate** -Methode mit einem **Uri** , der das [Schema „ms-appx-web“](/previous-versions/windows/apps/jj655406(v=win.10)) verwendet. 
+Verwenden Sie zum Laden von Inhalt aus Ihrem App-Paket die **Navigate**-Methode mit einem **Uri**, der das [Schema „ms-appx-web“](/previous-versions/windows/apps/jj655406(v=win.10)) verwendet. 
 
 ```csharp
 webView1.Navigate("ms-appx-web:///help/about.html");
@@ -106,7 +106,7 @@ Sie können lokalen Inhalt über einen benutzerdefinierten Resolver laden, indem
 
 ### <a name="responding-to-navigation-events"></a>Reagieren auf Navigationsereignisse
 
-Das Webansichtssteuerelement stellt mehrere Ereignisse bereit, mit denen Sie auf Zustände bei der Navigation und beim Laden von Inhalten reagieren können. Die Ereignisse treten für den Stamminhalt der Webansicht in der folgenden Reihenfolge auf: [NavigationStarting](/uwp/api/windows.ui.xaml.controls.webview.navigationstarting), [ContentLoading](/uwp/api/windows.ui.xaml.controls.webview.contentloading), [DOMContentLoaded](/uwp/api/windows.ui.xaml.controls.webview.domcontentloaded), [NavigationCompleted](/uwp/api/windows.ui.xaml.controls.webview.navigationcompleted)
+Das Webansichtssteuerelement stellt mehrere Ereignisse bereit, mit denen Sie auf Zustände bei der Navigation und beim Laden von Inhalten reagieren können. Die Ereignisse treten in der folgenden Reihenfolge für den Webansichtsinhalt im Stammpfad auf: [NavigationStarting](/uwp/api/windows.ui.xaml.controls.webview.navigationstarting), [ContentLoading](/uwp/api/windows.ui.xaml.controls.webview.contentloading), [DOMContentLoaded](/uwp/api/windows.ui.xaml.controls.webview.domcontentloaded), [NavigationCompleted](/uwp/api/windows.ui.xaml.controls.webview.navigationcompleted).
 
 
 **NavigationStarting** – tritt ein, bevor die Webansicht zu neuem Inhalt navigiert. Sie können die Navigation in einem Handler für dieses Ereignis abbrechen, indem Sie die WebViewNavigationStartingEventArgs.Cancel-Eigenschaft auf „true“ festlegen. 
@@ -273,7 +273,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 Skripts im Webansichtsinhalt können **window.external.notify** mit einem Zeichenfolgenparameter verwenden, um Informationen zurück an Ihre App zu senden. Behandeln Sie zum Empfangen dieser Nachrichten das [ScriptNotify](/uwp/api/windows.ui.xaml.controls.webview.scriptnotify)-Ereignis. 
 
-Damit eine externe Webseite das **ScriptNotify** -Ereignis beim Aufrufen von „window.external.notify“ auslösen kann, müssen Sie den URI der Seite in den **ApplicationContentUriRules** -Abschnitt des App-Manifests einfügen. (Sie können diesen Vorgang in Microsoft Visual Studio auf der Registerkarte „Inhalts-URIs“ des Package.appxmanifest-Designers ausführen.) Die URIs in dieser Liste müssen HTTPS verwenden, und sie können Unterdomänenplatzhalter enthalten (z. B. `https://*.microsoft.com`), sie dürfen jedoch keine Domänenplatzhalter (z. B. `https://*.com` und `https://*.*`) enthalten. Die Manifestanforderung gilt nicht für Inhalte, die aus dem App-Paket stammen, die einen URI vom Typ „ms-local-stream:// URI“ verwenden, oder die mit [NavigateToString](/uwp/api/windows.ui.xaml.controls.webview.navigatetostring) geladen werden. 
+Damit eine externe Webseite das **ScriptNotify**-Ereignis beim Aufrufen von „window.external.notify“ auslösen kann, müssen Sie den URI der Seite in den **ApplicationContentUriRules**-Abschnitt des App-Manifests einfügen. (Verwenden Sie dazu in Microsoft Visual Studio die Registerkarte „Inhalts-URIs“ im Designer „Package.appxmanifest“.) Die URIs in dieser Liste müssen HTTPS verwenden und dürfen Unterdomänenplatzhalter (z. B. `https://*.microsoft.com`) enthalten. Sie dürfen jedoch keine Domänenplatzhalter (z. B. `https://*.com` und `https://*.*`) enthalten. Die Manifestanforderung gilt nicht für Inhalte, die aus dem App-Paket stammen, die einen URI vom Typ „ms-local-stream:// URI“ verwenden, oder die mit [NavigateToString](/uwp/api/windows.ui.xaml.controls.webview.navigatetostring) geladen werden. 
 
 ### <a name="accessing-the-windows-runtime-in-a-web-view"></a>Zugreifen auf die Windows-Runtime in einer Webansicht
 
@@ -293,7 +293,7 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 Weitere Informationen finden Sie unter [WebView.AddWebAllowedObject](/uwp/api/windows.ui.xaml.controls.webview.addweballowedobject). 
 
-Zusätzlich kann vertrauenswürdigem JavaScript-Inhalt in einer Webansicht gestattet werden, direkt auf Windows-Runtime-APIs zuzugreifen. Dadurch werden leistungsfähige native Funktionen für in einer Webansicht gehostete Web-Apps bereitgestellt. Um dieses Feature zu aktivieren, muss der URI für vertrauenswürdigen Inhalt in der ApplicationContentUriRules-Whitelist der App in „Package.appxmanifest“ aufgeführt sein, wobei WindowsRuntimeAccess ausdrücklich auf „all“ festgelegt ist. 
+Zusätzlich kann vertrauenswürdigem JavaScript-Inhalt in einer Webansicht gestattet werden, direkt auf Windows-Runtime-APIs zuzugreifen. Dadurch werden leistungsfähige native Funktionen für in einer Webansicht gehostete Web-Apps bereitgestellt. Um dieses Feature zu aktivieren, muss der URI für vertrauenswürdigen Inhalt in der ApplicationContentUriRules-Zulassungsliste der App in „Package.appxmanifest“ aufgeführt sein, wobei WindowsRuntimeAccess ausdrücklich auf „all“ festgelegt ist. 
 
 Dieses Beispiel zeigt einen Abschnitt des App-Manifests. Hier wird einem lokalen URI Zugriff auf die Windows-Runtime gewährt. 
 
