@@ -3,12 +3,12 @@ title: WinUI 3 Vorschau 4 (Februar 2021)
 description: Übersicht über das Release von WinUI 3 Vorschau 4.
 ms.date: 02/09/2021
 ms.topic: article
-ms.openlocfilehash: 7bbc5c4983f77080366942ecaf702e7e1f844886
-ms.sourcegitcommit: 884318ec5118cade85a31f4d5644436614e9f272
+ms.openlocfilehash: a6c74ac64e3384b5a1f5cdc466b4faf441f14445
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100524996"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824084"
 ---
 # <a name="windows-ui-library-3-preview-4-february-2021"></a>Windows-UI-Bibliothek 3 Vorschau 4 (Februar 2021)
 
@@ -80,14 +80,14 @@ Wenn Sie ein Projekt mit WinUI 3 Vorschau 3 erstellt haben, können Sie Ihr Pr
 
 Sie können diese WinUI-Projektvorlagen verwenden, um Apps zu erstellen.
 
-| Vorlage | Language | Beschreibung |
+| Vorlage | Language | BESCHREIBUNG |
 |----------|----------|-------------|
 | Leere App, Gepackt (WinUI in Desktop) | C# und C++ | Erstellt eine .NET 5 (C#)-Desktop- oder native Win32 (C++ )-App mit einer WinUI-basierten Benutzeroberfläche. Das generierte Projekt enthält ein einfaches Fenster, das von der **Microsoft.UI.Xaml.Window**-Klasse in der WinUI-Bibliothek abgeleitet ist, die Sie als Ausgangspunkt verwenden können, um Ihre Benutzeroberfläche zu entwickeln. Weitere Informationen zu diesem Projekttyp finden Sie unter [Erste Schritte mit WinUI für Desktop-Apps](get-started-winui3-for-desktop.md).<p></p>Die Lösung umfasst außerdem ein [Paketerstellungsprojekt für Windows-Anwendungen](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net), das so konfiguriert ist, dass es die App in ein [MSIX-Paket](/windows/msix/overview) umwandelt. Dies bietet eine moderne Bereitstellungserfahrung, die Möglichkeit zur Integration in Windows 10-Features mittels Paketerweiterungen und vieles mehr.  |
 | Leere App (WinUI in UWP)  | C# und C++ | Erstellt eine UWP-App mit einer WinUI-basierten Benutzeroberfläche. Das generierte Projekt enthält eine einfache Seite, die von der **Microsoft.UI.Xaml.Controls.Page**-Klasse in der WinUI-Bibliothek abgeleitet ist, die Sie als Ausgangspunkt verwenden können, um Ihre Benutzeroberfläche zu entwickeln. Weitere Informationen zu diesem Projekttyp finden Sie unter [Erste Schritte mit WinUI für UWP-Apps](get-started-winui3-for-uwp.md). |
 
 Sie können diese WinUI-Projektvorlagen verwenden, um Komponenten zu erstellen, die von einer WinUI-basierten App geladen und verwendet werden können.
 
-| Vorlage | Language | Beschreibung |
+| Vorlage | Language | BESCHREIBUNG |
 |----------|----------|-------------|
 | Klassenbibliothek (WinUI in Desktop) | Nur C# | Erstellt eine verwaltete .NET 5-Klassenbibliothek (DLL) in C# , die von anderen .NET 5-Desktop-Apps mit einer WinUI-basierten Benutzeroberfläche verwendet werden kann.  |
 | Klassenbibliothek (WinUI in UWP)  | Nur C# | Erstellt eine verwaltete Klassenbibliothek (DLL) in C#, die von anderen UWP-Apps mit einer WinUI-basierten Benutzeroberfläche verwendet werden kann. |
@@ -262,36 +262,36 @@ WinUI 3 Vorschau 4 ist mit PCs kompatibel, auf denen mindestens das Windows 1
 
 #### <a name="corewindow-applicationview-coreapplicationview-and-coredispatcher-in-desktop-apps"></a>CoreWindow, ApplicationView, CoreApplicationView und CoreDispatcher in Desktop-Apps
 
-Neu in Preview4, [CoreWindow](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow), [ApplicationView](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationView), [CoreApplicationView](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)
-[CoreDispatcher](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) und deren Abhängigkeiten sind in Desktop-Apps nicht verfügbar.
+Neu in Preview4, [CoreWindow](/uwp/api/Windows.UI.Core.CoreWindow), [ApplicationView](/uwp/api/Windows.UI.ViewManagement.ApplicationView), [CoreApplicationView](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)
+[CoreDispatcher](/uwp/api/Windows.UI.Core.CoreDispatcher) und deren Abhängigkeiten sind in Desktop-Apps nicht verfügbar.
 
-Beispielsweise ist die Eigenschaft [Window.Dispatcher](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window.Dispatcher) immer leer (Null), aber die Window.DispatcherQueue-Eigenschaft kann als Alternative verwendet werden.
+Beispielsweise ist die Eigenschaft [Window.Dispatcher](/uwp/api/Windows.UI.Xaml.Window.Dispatcher) immer leer (Null), aber die Window.DispatcherQueue-Eigenschaft kann als Alternative verwendet werden.
 
 Diese APIs funktionieren nur in UWP-Apps.
 In früheren Vorschauen konnten sie teilweise auch in Desktop-Apps verwendet werden, aber in Preview4 wurden sie vollständig deaktiviert.
 Diese APIs sind für den UWP-Fall konzipiert, in dem es nur ein Fenster pro Thread gibt, und ein Feature von WinUI3 besteht darin, mehrere Fenster zu ermöglichen.
 
-Es gibt APIs, die intern vom Vorhandensein dieser APIs abhängen. Diese APIs werden folglich in einer Desktop-App auch nicht unterstützt. Diese APIs verfügen in der Regel über eine statische `GetForCurrentView`-Methode. Beispielsweise [UIViewSettings.GetForCurrentView](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView).
+Es gibt APIs, die intern vom Vorhandensein dieser APIs abhängen. Diese APIs werden folglich in einer Desktop-App auch nicht unterstützt. Diese APIs verfügen in der Regel über eine statische `GetForCurrentView`-Methode. Beispielsweise [UIViewSettings.GetForCurrentView](/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView).
 
 
 ### <a name="known-issues"></a>Bekannte Probleme
 
 - Alt+F4 schließt Desktop-App-Fenster nicht.
 
-- Aufgrund von Änderungen mit [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow) funktionieren die folgenden WinRT-APIs mit **Desktop**-Apps möglicherweise nicht mehr wie erwartet:
-  - [`ApplicationView`](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) und alle zugehörigen APIs können nicht mehr verwendet werden.
-  - [`CoreApplicationView`](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview) und alle zugehörigen APIs können nicht mehr verwendet werden.
-  - Alle `GetForCurrentView`-APIs werden möglicherweise nicht unterstützt, z. B. [`CoreInputView.GetForCurrentView`](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.Core.CoreInputView.GetForCurrentView).
-  - [`CoreWindow.GetForCurrentThread`](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow.GetForCurrentThread) gibt jetzt „Null“ zurück.
+- Aufgrund von Änderungen mit [CoreWindow](/uwp/api/windows.ui.core.corewindow) funktionieren die folgenden WinRT-APIs mit **Desktop**-Apps möglicherweise nicht mehr wie erwartet:
+  - [`ApplicationView`](/uwp/api/windows.ui.viewmanagement.applicationview) und alle zugehörigen APIs können nicht mehr verwendet werden.
+  - [`CoreApplicationView`](/uwp/api/windows.applicationmodel.core.coreapplicationview) und alle zugehörigen APIs können nicht mehr verwendet werden.
+  - Alle `GetForCurrentView`-APIs werden möglicherweise nicht unterstützt, z. B. [`CoreInputView.GetForCurrentView`](/uwp/api/Windows.UI.ViewManagement.Core.CoreInputView.GetForCurrentView).
+  - [`CoreWindow.GetForCurrentThread`](/uwp/api/Windows.UI.Core.CoreWindow.GetForCurrentThread) gibt jetzt „Null“ zurück.
 
-  Weitere Informationen zur Verwendung von WinRT-APIs in Ihrer WinUI 3 Desktop-App finden Sie unter [Für Desktop-Apps verfügbare Windows-Runtime-APIs](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-supported-api
+  Weitere Informationen zur Verwendung von WinRT-APIs in Ihrer WinUI 3 Desktop-App finden Sie unter [Für Desktop-Apps verfügbare Windows-Runtime-APIs](../../desktop/modernize/desktop-to-uwp-supported-api.md
 ).
 
-- Die Ereignisse [UISettings.ColorValuesChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.colorvalueschanged) und [AccessibilitySettings.HighContrastChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.accessibilitysettings.highcontrastchanged) werden in Desktop-Apps nicht mehr unterstützt. Dies kann zu Problemen führen, wenn Sie sie verwenden, um Änderungen in Windows-Designs zu ermitteln. 
+- Die Ereignisse [UISettings.ColorValuesChanged](/uwp/api/windows.ui.viewmanagement.uisettings.colorvalueschanged) und [AccessibilitySettings.HighContrastChanged](/uwp/api/windows.ui.viewmanagement.accessibilitysettings.highcontrastchanged) werden in Desktop-Apps nicht mehr unterstützt. Dies kann zu Problemen führen, wenn Sie sie verwenden, um Änderungen in Windows-Designs zu ermitteln. 
 
 - Dieses Release enthält einige experimentelle APIs. Diese wurden vom Team noch nicht gründlich getestet und können unbekannte Probleme verursachen. Wenn Probleme auftreten, [melden Sie einen Fehler](https://github.com/microsoft/microsoft-ui-xaml/issues/new?assignees=&labels=&template=bug_report.md&title=) in unserem Repository. 
 
-- Um eine CompositionCapabilities-Instanz abzurufen, mussten Sie bisher [CompositionCapabilites.GetForCurrentView()](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositioncapabilities.getforcurrentview) aufrufen. Die von diesem Aufruf zurückgegebenen Funktionen waren jedoch *nicht* von der Ansicht abhängig. Um dies zu behandelt und widerzuspiegeln, haben wir die statische Methode „GetForCurrentView() in dieser Version gelöscht, sodass Sie ein [CompositionCapabilties](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositioncapabilities)-Objekt jetzt direkt erstellen können.
+- Um eine CompositionCapabilities-Instanz abzurufen, mussten Sie bisher [CompositionCapabilites.GetForCurrentView()](/uwp/api/windows.ui.composition.compositioncapabilities.getforcurrentview) aufrufen. Die von diesem Aufruf zurückgegebenen Funktionen waren jedoch *nicht* von der Ansicht abhängig. Um dies zu behandelt und widerzuspiegeln, haben wir die statische Methode „GetForCurrentView() in dieser Version gelöscht, sodass Sie ein [CompositionCapabilties](/uwp/api/windows.ui.composition.compositioncapabilities)-Objekt jetzt direkt erstellen können.
 
 - Für C# UWP-Apps:
 

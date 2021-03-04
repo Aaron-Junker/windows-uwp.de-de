@@ -7,12 +7,12 @@ ms.date: 12/15/2017
 ms.topic: article
 keywords: Windows 10, UWP, Toast, benutzerdefiniertes Audio, Benachrichtigung, Audio, Sound
 ms.localizationpriority: medium
-ms.openlocfilehash: d2d32b9545cccfb25790d394aec028fd29904ca5
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 54f890ceb0031b4c244e387e1f7068615a2fedc1
+ms.sourcegitcommit: 98ca28fd0b5d306d35f3919fe9dd4d5a0222235e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984406"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102029823"
 ---
 # <a name="custom-audio-on-toasts"></a>Benutzerdefiniertes Audiogerät
 
@@ -79,7 +79,7 @@ Zu den unterstützten Audiodateitypen zählen...
 Das Senden einer Benachrichtigung mit Audiodaten entspricht dem Senden einer regulären Benachrichtigung. Weitere Informationen finden Sie unter [Send local Toast](send-local-toast.md) .
 
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 - [Vollständiges Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-toast-with-custom-audio)
 - [Lokalen Toast senden](send-local-toast.md)

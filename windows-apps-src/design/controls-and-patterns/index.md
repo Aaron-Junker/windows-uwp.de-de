@@ -8,12 +8,12 @@ ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: f7a06c75b37b62436c4ef0ebcb8ccae2a6153b85
-ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
+ms.openlocfilehash: 1e568dfb35f273b4efe045a6a16c944007f1ee7f
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91829425"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824474"
 ---
 # <a name="controls-for-windows-apps"></a>Steuerelemente für Windows-Apps
 
@@ -56,7 +56,7 @@ Das XAML-Framework bietet zahlreiche Anpassungsmöglichkeiten für die App-Darst
 
 ## <a name="alphabetical-index"></a>Alphabetischer Index
 
-Detaillierte Informationen zu bestimmten Steuerelementen und Mustern. (Eine nach Funktionen sortierte Liste finden Sie unter [Index der Steuerelemente nach Funktion](controls-by-function.md).)
+Detaillierte Informationen zu bestimmten Steuerelementen und Mustern. 
 
 :::row:::
     :::column:::
