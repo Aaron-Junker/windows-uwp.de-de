@@ -1,16 +1,16 @@
 ---
-title: Aktivieren einer Vordergrund-App mit Sprachbefehlen über Cortana-Cortana UWP-Entwurf und-Entwicklung
+title: Aktivieren einer Vordergrund-App mit Sprachbefehlen über Cortana – Cortana UWP-Entwurf und -Entwicklung
 description: Verwenden Sie Sprachbefehle, um Ihre APP im Vordergrund zu aktivieren und eine Aktion oder einen Befehl in der APP auszuführen.
 ms.assetid: e4bf3714-6f62-466f-9e7c-3b03ee86a117
 ms.date: 01/28/2021
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: 6e4e1b30d7d6e259ff66cdccebeed325ded57c18
-ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
+ms.openlocfilehash: 4b17a93d950d48209637cedf89bb49759ba0cf1f
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99606015"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824324"
 ---
 # <a name="activate-a-foreground-app-with-voice-commands-through-cortana"></a>Aktivieren einer Vordergrund-App mit Sprachbefehlen über Cortana
 
@@ -59,8 +59,8 @@ Die grundlegenden Schritte zum Hinzufügen der Sprachbefehlserkennung und zum In
 >
 > Wenn Sie noch keine Erfahrung mit der Entwicklung von UWP-Apps (Universelle Windows-App) haben, sollten Sie sich in den folgenden Themen zunächst mit den hier besprochenen Technologien vertraut machen.
 >
-> - [Erste App erstellen](/windows/uwp/get-started/your-first-app)
-> - Informationen zu Ereignissen finden Sie unter [Übersicht über Ereignisse und Routingereignisse](/windows/uwp/xaml-platform/events-and-routed-events-overview).
+> - [Erste App erstellen](../../get-started/your-first-app.md)
+> - Informationen zu Ereignissen finden Sie unter [Übersicht über Ereignisse und Routingereignisse](../../xaml-platform/events-and-routed-events-overview.md).
 >
 > **Richtlinien zur Benutzer Leistung**
 >
@@ -90,7 +90,7 @@ Die grundlegenden Schritte zum Hinzufügen der Sprachbefehlserkennung und zum In
 
 UWP-Apps können automatisch die am besten geeigneten Bilder basierend auf bestimmten Einstellungen und Gerätefunktionen (hoher Kontrast, effektive Pixel, Gebietsschema und so weiter) auswählen. Sie müssen lediglich die Bilder bereitstellen und sicherstellen, dass Sie die entsprechende Benennungskonvention und Ordnerstruktur innerhalb des App-Projekts für die verschiedenen Ressourcenversionen verwenden. Wenn Sie nicht die empfohlenen Ressourcenversionen bereitstellen können, werden unter Umständen je nach Voreinstellungen, Fähigkeiten, Gerätetyp und Standort des Benutzers die Eingabehilfen, Lokalisierung und Bildqualität beeinträchtigt.
 
-Weitere Informationen zu Bild Ressourcen für hohe Kontraste und Skalierungsfaktoren finden Sie unter [Richtlinien für Kachel-und Symbol Objekte](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast).
+Weitere Informationen zu Bild Ressourcen für hohe Kontraste und Skalierungsfaktoren finden Sie unter [Richtlinien für Kachel-und Symbol Objekte](../../app-resources/images-tailored-for-scale-theme-contrast.md).
 
 Sie benennen Ressourcen mithilfe von Qualifizierern. Ressourcenqualifizierer sind Ordner- und Dateinamenmodifikatoren, die den Kontext angeben, in dem eine bestimmte Version einer Ressource verwendet werden soll.
 
@@ -385,7 +385,7 @@ private string SemanticInterpretation(string interpretationKey, SpeechRecognitio
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Cortana-Interaktionen in Windows-apps](cortana-interactions.md)
+- [Cortana-Interaktionen in Windows-Apps](cortana-interactions.md)
 - [Aktivieren einer Hintergrund-app in Cortana mithilfe von Sprachbefehlen](cortana-launch-a-background-app-with-voice-commands.md)
 - [VCD elements and attributes v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
 - [Cortana-Entwurfs Richtlinien](cortana-design-guidelines.md)

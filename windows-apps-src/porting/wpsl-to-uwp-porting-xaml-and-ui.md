@@ -6,14 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a6f78d30b1366078f2094aa17ab15c65a050c43
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c421f071cb3e13e1ebb24b8d2cd9f8aec3341c2b
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164344"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824534"
 ---
-#  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>Portieren von Windows Phone Silverlight-XAML und -UI zu UWP
+#  <a name="porting-windows-phone-silverlight-xaml-and-ui-to-uwp"></a>Portieren von Windows Phone Silverlight-XAML und -UI zu UWP
 
 
 
@@ -30,7 +30,7 @@ Eine allgemeinere Methode zum Auffinden des UWP-Typs, der einem Windows Phone Si
 ## <a name="xaml-namespace-prefix-declarations"></a>XAML-Namespacepräfixdeklarationen
 
 
-Falls Sie in Ihren Ansichten Instanzen von benutzerdefinierten Typen verwenden – vielleicht eine Ansichtsmodellinstanz oder einen Wertkonverter –, enthält Ihr XAML-Markup XAML-Namespacepräfixdeklarationen. Die Syntax dieser Deklarationen unterscheidet sich bei Windows Phone Silverlight und der UWP. Im Folgenden finden Sie einige Beispiele:
+Falls Sie in Ihren Ansichten Instanzen von benutzerdefinierten Typen verwenden – vielleicht eine Ansichtsmodellinstanz oder einen Wertkonverter –, enthält Ihr XAML-Markup XAML-Namespacepräfixdeklarationen. Die Syntax dieser Deklarationen unterscheidet sich bei Windows Phone Silverlight und der UWP. Hier einige Beispiele:
 
 ```xml
     xmlns:ContosoTradingCore="clr-namespace:ContosoTradingCore;assembly=ContosoTradingCore"
@@ -174,7 +174,7 @@ Sie können die [**Image.Source**](/uwp/api/windows.ui.xaml.controls.image.sourc
     return new BitmapImage(new Uri(this.CoverImagePath, UriKind.Relative));
 ```
 
-In einer UWP-App verwenden Sie das [URI-Schema](/previous-versions/windows/apps/jj655406(v=win.10)) „ms-appx“. Damit Sie den Rest des Codes beibehalten können, können Sie eine andere Überladung des **System.Uri**-Konstruktors verwenden, um das URI-Schema „ms-appx“ in einen Basis-URI einzufügen und den restlichen Pfad anzuhängen. Und zwar so:
+In einer UWP-App verwenden Sie das [URI-Schema](/previous-versions/windows/apps/jj655406(v=win.10)) „ms-appx“. Damit Sie den Rest des Codes beibehalten können, können Sie eine andere Überladung des **System.Uri**-Konstruktors verwenden, um das URI-Schema „ms-appx“ in einen Basis-URI einzufügen und den restlichen Pfad anzuhängen. Dies sieht folgendermaßen aus:
 
 ```csharp
     // this.BookCoverImagePath contains a path of the form "/Assets/CoverImages/one.png".
@@ -199,11 +199,11 @@ Windows Phone Silverlight-Apps verwenden in den Namespaces **Microsoft.Phone.Co
 | Panorama | Das Windows Phone Silverlight-Panorama Steuerelement wird den [Richtlinien für Hub-Steuerelemente in Windows-Runtime 8. x-apps](../design/basics/navigation-basics.md) und Richtlinien für das Hub-Steuerelement zugeordnet. <br/> Beachten Sie, dass ein Panorama-Steuerelement aus dem letzten Abschnitt in den ersten Abschnitt umbricht und dass das Hintergrundbild im Parallaxmodus relativ zu den Abschnitten verschoben wird. [Hub](/uwp/api/Windows.UI.Xaml.Controls.Hub)-Abschnitte brechen nicht um, und es wird kein Parallaxmodus verwendet. |
 | Pivotieren | Das UWP-Äquivalent des Windows Phone Silverlight Pivot-Steuerelements ist [Windows.UI.Xaml.Controls.Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot). Es ist für alle Gerätefamilien verfügbar. |
 
-**Hinweis**    Der visuelle Zustand von pointerover ist in benutzerdefinierten Stilen/Vorlagen in Windows 10-apps relevant, aber nicht in Windows Phone Silverlight-apps. Es gibt auch andere Gründe, warum Ihre vorhandenen benutzerdefinierten Stile/Vorlagen unter Umständen für Windows 10-Apps ungeeignet sind, z. B. die von Ihnen verwendeten Systemressourcenschlüssel, Änderungen an den verwendeten Ansichtszustandgruppen und vorgenommene Leistungsverbesserungen für die standardmäßigen Windows 10-Stile/-Vorlagen. Wir empfehlen Ihnen, eine unbenutzte Kopie einer Windows 10-Standardvorlage eines Steuerelements zu bearbeiten und Ihre Stil- und Vorlagenanpassung darauf neu anzuwenden.
+**Hinweis**   Der PointerOver-Ansichtszustand ist für benutzerdefinierte Stile/Vorlagen in Windows 10-Apps relevant, aber nicht für Windows Phone Silverlight-Apps. Es gibt auch andere Gründe, warum Ihre vorhandenen benutzerdefinierten Stile/Vorlagen unter Umständen für Windows 10-Apps ungeeignet sind, z. B. die von Ihnen verwendeten Systemressourcenschlüssel, Änderungen an den verwendeten Ansichtszustandgruppen und vorgenommene Leistungsverbesserungen für die standardmäßigen Windows 10-Stile/-Vorlagen. Wir empfehlen Ihnen, eine unbenutzte Kopie einer Windows 10-Standardvorlage eines Steuerelements zu bearbeiten und Ihre Stil- und Vorlagenanpassung darauf neu anzuwenden.
 
-Weitere Informationen zu UWP-Steuerelementen finden Sie unter [Steuerelemente nach Funktion](../design/controls-and-patterns/controls-by-function.md), [Liste der Steuerelemente](../design/controls-and-patterns/index.md) und [Richtlinien für Steuerelemente](../design/controls-and-patterns/index.md).
+Weitere Informationen zu UWP-Steuerelementen finden Sie unter [Steuerelemente nach Funktion](../design/controls-and-patterns/index.md), [Liste der Steuerelemente](../design/controls-and-patterns/index.md) und [Richtlinien für Steuerelemente](../design/controls-and-patterns/index.md).
 
-##  <a name="design-language-in-windows10"></a>Entwurfssprache in Windows 10
+##  <a name="design-language-in-windows-10"></a>Entwurfssprache in Windows 10
 
 Zwischen Windows Phone Silverlight-Apps und Windows 10-Apps gibt es einige Unterschiede bei der Entwurfssprache. Alle Details finden Sie unter [Design](https://developer.microsoft.com/windows/apps/design). Trotz der Änderungen bei der Entwurfssprache gelten nach wie vor dieselben Designprinzipien: Gestalten Sie Ihre App mit Liebe zum Detail, versuchen Sie aber, alles möglichst einfach zu halten, indem Sie sich auf den Inhalt, nicht auf das Chrom konzentrieren, visuelle Elemente weitgehend reduzieren und für die digitale Welt authentisch bleiben. Nutzen Sie insbesondere bei der Typografie eine visuelle Hierarchie. Entwerfen Sie Ihre App basierend auf einem Raster, und erwecken Sie Ihre Benutzeroberflächen mit flüssigen Animationen zum Leben.
 
@@ -221,7 +221,7 @@ Bedenken Sie bei sämtlichen Informationen zu UWP-Medien und -Grafiken, dass die
 
 Windows Phone Silverlight verfügt über einen **RadialGradientBrush**-Typ, der im Gegensatz zu anderen [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush)-Typen nicht in der UWP vorhanden ist. In einigen Fällen können Sie mit einer Bitmap einen ähnlichen Effekt erzielen. Beachten Sie, dass Sie mit Direct2D einen [radialen Farbverlaufspinsel](/windows/desktop/Direct2D/how-to-create-a-radial-gradient-brush) in einer UWP mit [Microsoft DirectX](/windows/desktop/directx) , XAML und C++ erstellen können.
 
-Windows Phone Silverlight verfügt über die **System.Windows.UIElement.OpacityMask**-Eigenschaft, die jedoch kein Member des UWP [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement)-Typs ist. In einigen Fällen können Sie mit einer Bitmap einen ähnlichen Effekt erzielen. Und Sie können mit Direct2D eine [Deckkraftmaske](/windows/desktop/Direct2D/opacity-masks-overview) in einer UWP-App mit [Microsoft DirectX](/windows/desktop/directx), XAML und C++ erstellen. Häufig wird für **OpacityMask** jedoch eine einzelne Bitmap verwendet, die sich an helle und dunkle Designs anpasst. Für Vektorgrafiken können Sie designabhängige Systempinsel verwenden (z. B. die unten dargestellten Kreisdiagramme). Zum Erstellen einer designabhängigen Bitmap (z. B. die unten dargestellten Häkchen) ist allerdings ein anderer Ansatz erforderlich.
+Windows Phone Silverlight verfügt über die **System.Windows.UIElement.OpacityMask**-Eigenschaft, die jedoch kein Member des UWP  [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement)-Typs ist. In einigen Fällen können Sie mit einer Bitmap einen ähnlichen Effekt erzielen. Und Sie können mit Direct2D eine [Deckkraftmaske](/windows/desktop/Direct2D/opacity-masks-overview) in einer UWP-App mit [Microsoft DirectX](/windows/desktop/directx), XAML und C++ erstellen. Häufig wird für **OpacityMask** jedoch eine einzelne Bitmap verwendet, die sich an helle und dunkle Designs anpasst. Für Vektorgrafiken können Sie designabhängige Systempinsel verwenden (z. B. die unten dargestellten Kreisdiagramme). Zum Erstellen einer designabhängigen Bitmap (z. B. die unten dargestellten Häkchen) ist allerdings ein anderer Ansatz erforderlich.
 
 ![ein designabhängiges Bitmap](images/wpsl-to-uwp-case-studies/wpsl-to-uwp-theme-aware-bitmap.png)
 
@@ -374,7 +374,7 @@ Da der Wert für die feste Breite der Anzeigepixel eines Telefonbildschirms bish
 
 Damit Ihre App auf allen Displays optimal funktioniert, empfiehlt es sich, die einzelnen Bitmap-Ressourcen in verschiedenen Größen zu erstellen, die jeweils für einen bestimmten Skalierungsfaktor geeignet sind. Durch die Bereitstellung von Ressourcen mit einer Skalierung von 100 %, 200 % und 400 % (in dieser Prioritätsreihenfolge) erhalten Sie in den meisten Fällen auch bei allen Skalierungsfaktoren dazwischen hervorragende Ergebnisse.
 
-**Hinweis**    Wenn Sie aus irgendeinem GRUNDRESSOURCEN nicht in mehr als einer Größe erstellen können, erstellen Sie 100% große Ressourcen. In Microsoft Visual Studio bietet die Standardprojektvorlage für UWP-Apps Brandingressourcen (Bilder für Kacheln und Logos) in nur einer Größe, jedoch nicht mit einer Skalierung von 100 %. Befolgen Sie bei der Erstellung von Ressourcen für Ihre eigene App die Informationen in diesem Abschnitt, stellen Sie die Ressourcen mit einer Skalierung von 100 %, 200 % und 400 % bereit, und verwenden Sie Ressourcenpakete.
+**Hinweis**  Wenn Sie aus irgendeinem Grund keine Assets in mehr als einer Größe erstellen können, erstellen Sie Assets in die Skalierung von 100 %. In Microsoft Visual Studio bietet die Standardprojektvorlage für UWP-Apps Brandingressourcen (Bilder für Kacheln und Logos) in nur einer Größe, jedoch nicht mit einer Skalierung von 100 %. Befolgen Sie bei der Erstellung von Ressourcen für Ihre eigene App die Informationen in diesem Abschnitt, stellen Sie die Ressourcen mit einer Skalierung von 100 %, 200 % und 400 % bereit, und verwenden Sie Ressourcenpakete.
 
 Falls Sie komplexe Grafiken verwenden, sollten Sie mehr Skalierungen bereitstellen. Wenn Sie mit Vektorgrafiken beginnen, ist es relativ einfach, qualitativ hochwertige Ressourcen für beliebige Skalierungsfaktoren zu generieren.
 
@@ -393,6 +393,6 @@ In Ihrer UWP-App können Sie eine Mindestgröße (Breite und Höhe) mit imperati
 
 Das nächste Thema ist das [Portieren von e/a-, Geräte-und App-Modellen](wpsl-to-uwp-input-and-sensors.md).
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Namespace- und Klassenzuordnungen](wpsl-to-uwp-namespace-and-class-mappings.md)

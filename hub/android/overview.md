@@ -1,24 +1,24 @@
 ---
 title: Übersicht über die Android-Entwicklung unter Windows
-description: Eine Anleitung für den Einstieg in die Entwicklung für Android unter Windows.
+description: Beginnen Sie mit der Entwicklung für Android unter Windows, einschließlich nativer Android-Entwicklung, plattformübergreifender Entwicklung und Android-Spieleentwicklung.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: Android unter Windows, xamarin. Android, reagieren auf native, Cordova, Ionic, PhoneGap, c++ Android Game, Windows Defender, Emulator
 ms.date: 04/28/2020
-ms.openlocfilehash: e215d9e08fcef7ddb1caae40bd8f3a83e183d197
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b839972033c9edfad3524909345380e7fac9462e
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157704"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823164"
 ---
 # <a name="overview-of-android-development-on-windows"></a>Übersicht über die Android-Entwicklung unter Windows
 
 Es gibt mehrere Pfade zum Entwickeln einer Android-Geräte-App mithilfe des Windows-Betriebssystems. Diese Pfade werden in drei Haupttypen unterteilt: **[native Android-Entwicklung](#native-android)**, **[plattformübergreifende Entwicklung](#cross-platform)** und **[Android-Spieleentwicklung](#game-development)**. Mithilfe dieser Übersicht können Sie entscheiden, welcher Entwicklungspfad für die Entwicklung einer Android-App befolgt werden soll, und dann die [nächsten Schritte](#next-steps) zur Unterstützung der Verwendung von Windows für die Entwicklung mit ausführen:
 
-- [Android (nativ)](native-android.md)
+- [Natives Android](native-android.md)
 - [Xamarin.Android](xamarin-android.md)
 - [Xamarin.Forms](xamarin-forms.md)
 - [React Native](react-native.md)
@@ -31,7 +31,7 @@ Außerdem erhalten Sie in diesem Handbuch Tipps zur Verwendung von Windows für 
 - [Aktualisieren der Windows Defender-Einstellungen zur Verbesserung der Leistung](defender-settings.md)
 - [Entwickeln Sie Dual-Screen-Apps für Android, und erhalten Sie das Surface Duo-Geräte-SDK](/dual-screen/android/)
 
-## <a name="native-android"></a>Android (nativ)
+## <a name="native-android"></a>Natives Android
 
 Die [native Android-Entwicklung unter Windows](./native-android.md) bedeutet, dass Ihre APP nur auf Android (nicht auf IOS-oder Windows-Geräte) abzielt. Sie können [Android Studio](https://developer.android.com/studio/install#windows) oder [Visual Studio](https://visualstudio.microsoft.com/vs/android/) verwenden, um innerhalb des Ökosystems zu entwickeln, das speziell für das Android-Betriebssystem entwickelt wurde. Die Leistung wird für Android-Geräte optimiert. das Erscheinungsbild der Benutzeroberfläche ist mit anderen systemeigenen apps auf dem Gerät konsistent, und alle Features oder Funktionen des Benutzer Geräts sind direkt für den Zugriff und die Nutzung von nutzen. Wenn Sie Ihre APP in einem systemeigenen Format entwickeln, hilft es Ihnen, das richtige zu finden, da Sie alle Interaktionsmuster und die Standards der Benutzererfahrung befolgt, die speziell für Android-Geräte eingerichtet wurden.
 
@@ -41,7 +41,7 @@ Plattformübergreifende Frameworks bieten eine einzelne Codebasis, die (größte
 
 Plattformübergreifende Frameworks Zielen zwar so nah wie möglich bei nativen apps ab, Sie sind jedoch nie so nahtlos integriert wie eine nativ entwickelte APP und können die Leistung beeinträchtigen und die Leistung beeinträchtigt werden. Außerdem verfügen die Tools, die für die Erstellung plattformübergreifender Apps verwendet werden, möglicherweise nicht über alle Features, die von den einzelnen Geräte Plattformen angeboten werden, was möglicherweise Problem Umgehungen erfordert.
 
-Eine Codebasis besteht in der Regel aus **UI-Code**zum Erstellen der Benutzeroberfläche, wie z. b. Seiten, Schaltflächen Steuerelemente, Bezeichnungen, Listen usw., und **Logik Code**, zum Aufrufen von Webdiensten, zum Zugreifen auf eine Datenbank, zum Aufrufen von Hardwarefunktionen und zum Verwalten des Zustands. Im Durchschnitt können 90% dieser wieder verwendet werden, obwohl es in der Regel notwendig ist, Code für jede Geräteplattform anzupassen. Diese Generalisierung hängt größtenteils von der Art der App ab, die Sie erstellen, bietet jedoch einen etwas Kontext, der hoffentlich bei ihrer Entscheidungsfindung hilfreich ist.  
+Eine Codebasis besteht in der Regel aus **UI-Code** zum Erstellen der Benutzeroberfläche, wie z. b. Seiten, Schaltflächen Steuerelemente, Bezeichnungen, Listen usw., und **Logik Code**, zum Aufrufen von Webdiensten, zum Zugreifen auf eine Datenbank, zum Aufrufen von Hardwarefunktionen und zum Verwalten des Zustands. Im Durchschnitt können 90% dieser wieder verwendet werden, obwohl es in der Regel notwendig ist, Code für jede Geräteplattform anzupassen. Diese Generalisierung hängt größtenteils von der Art der App ab, die Sie erstellen, bietet jedoch einen etwas Kontext, der hoffentlich bei ihrer Entscheidungsfindung hilfreich ist.  
 
 ## <a name="choosing-a-cross-platform-framework"></a>Auswählen eines plattformübergreifenden Frameworks
 

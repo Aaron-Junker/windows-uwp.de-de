@@ -1,18 +1,18 @@
 ---
 title: Leistungsgeschwindigkeit durch Aktualisieren von Defender-Einstellungen verbessern
-description: Erfahren Sie, wie Sie die Leistungsgeschwindigkeit und Buildzeiten verbessern können, indem Sie die Windows Defender-Einstellungen aktualisieren, um die Überprüfung
+description: Eine Anleitung zur Verbesserung der Gesamt Leistungsgeschwindigkeit und Buildzeiten durch Aktualisieren von Windows Defender-Einstellungen, um die Überprüfung der angegebenen Dateitypen auszuschließen.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: Android, Windows, Windows Defender, Einstellungen, Konfiguration, Ausschlüsse,% User Profile%, devenv.exe, Leistung, Geschwindigkeit, Build, gradle
 ms.date: 04/28/2020
-ms.openlocfilehash: 0437ffc263c618e52c7a3e4dc3256e9fcd502c8e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e762e595bf2b8aa9b8420d41f68d2890e7d5dfe0
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154864"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823204"
 ---
 # <a name="update-windows-defender-settings-to-improve-performance"></a>Aktualisieren der Windows Defender-Einstellungen zur Verbesserung der Leistung
 
@@ -22,7 +22,7 @@ In dieser Anleitung wird erläutert, wie Sie die Ausschlüsse in Ihren Windows D
 
 In Windows 10, Version 1703 und höher, ist die [Windows Defender Antivirus](/windows/security/threat-protection/windows-defender-antivirus/windows-defender-security-center-antivirus) -App Teil der Windows-Sicherheit. Windows Defender zielt darauf ab, den PC mit integrierter Echtzeitschutz vor Viren, Ransomware, Spyware und anderen Sicherheitsbedrohungen sicher zu halten.
 
-Der Echtzeitschutz von Windows Defender verlangsamt **jedoch**auch den Dateisystem Zugriff und die Buildgeschwindigkeit bei der Entwicklung von Android-Apps erheblich.
+Der Echtzeitschutz von Windows Defender verlangsamt **jedoch** auch den Dateisystem Zugriff und die Buildgeschwindigkeit bei der Entwicklung von Android-Apps erheblich.
 
 Während des Android-Buildprozesses werden viele Dateien auf Ihrem Computer erstellt. Wenn die antivirenüberprüfung in Echtzeit aktiviert ist, wird der Buildprozess jedes Mal angehalten, wenn eine neue Datei erstellt wird, während das Antivirenprogramm diese Datei scannt.
 
@@ -40,7 +40,7 @@ Um die Android-Buildgeschwindigkeit zu verbessern, fügen Sie Ausschlüsse in de
 3. Auswählen von **Viren-und Bedrohungsschutz**
 4. Wählen Sie unter **Viren & Bedrohungsschutz Einstellungen** die Option **Einstellungen verwalten** .
 5. Führen Sie einen **Bildlauf zur Überschrift aus** , und klicken Sie auf **Ausschlüsse**
-6. Wählen Sie **+ Ausschluss hinzufügen**aus. Sie müssen dann auswählen, ob der Ausschluss, den Sie hinzufügen möchten, eine **Datei**, ein **Ordner**, ein **Dateityp**oder ein **Prozess**ist.
+6. Wählen Sie **+ Ausschluss hinzufügen** aus. Sie müssen dann auswählen, ob der Ausschluss, den Sie hinzufügen möchten, eine **Datei**, ein **Ordner**, ein **Dateityp** oder ein **Prozess** ist.
 
 ![Bildschirm Abbildung von Windows Defender Add-Ausschluss](../images/windows-defender-exclusions.png)
 

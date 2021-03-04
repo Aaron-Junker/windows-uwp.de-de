@@ -1,18 +1,18 @@
 ---
 title: Systemeigene Reaktion auf die Android-Entwicklung unter Windows
-description: Beginnen Sie mit der Entwicklung von Android-Apps mit xamarin Native unter Windows.
+description: Eine Schritt-für-Schritt-Anleitung für die ersten Schritte bei der Verwendung von "in Windows reagieren" zum Erstellen einer plattformübergreifenden APP, die auf Android-Geräten funktioniert.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: Android, Windows, System eigenes System, Emulator, Expo, Metro Bundler, Terminal
 ms.date: 04/28/2020
-ms.openlocfilehash: 50c117154b103ca4e201f21bc643e7cbfa609b84
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 82bf078d6c29c8968ce3e0cc19ce4d6f803e6d71
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157714"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823224"
 ---
 # <a name="get-started-developing-for-android-using-react-native"></a>Einstieg in die Entwicklung für Android mithilfe von "auf systemeigenen
 
@@ -30,7 +30,7 @@ Die systemeigene Reaktion ist ein [Open Source-](https://github.com/facebook/rea
 
 3. Erstellen Sie Umgebungsvariablen Pfade für das Java SDK und Android SDK:
     - Geben Sie im Fenster "Windows-Suche" Folgendes ein: "Edit the System Environment Variables". Daraufhin wird das Fenster **Systemeigenschaften** geöffnet.
-    - Wählen Sie **Umgebungsvariablen** aus..., und wählen Sie dann unter **Benutzervariablen**die Option **neu...** aus.
+    - Wählen Sie **Umgebungsvariablen** aus..., und wählen Sie dann unter **Benutzervariablen** die Option **neu...** aus.
     - Geben Sie den Variablennamen und den Wert (Pfad) ein. Die Standard Pfade für die Java-und Android-sdche lauten wie folgt. Wenn Sie einen bestimmten Speicherort für die Installation der Java-und Android-sdche ausgewählt haben, achten Sie darauf, die Variablen Pfade entsprechend zu aktualisieren.
         - JAVA_HOME: c:\programme\android\android studio\jre\jre
         - ANDROID_HOME: c:\users\username\appdata\local\android\sdk
@@ -50,7 +50,7 @@ Die systemeigene Reaktion ist ein [Open Source-](https://github.com/facebook/rea
     npm install -g expo-cli
     ```
 
-2. Verwenden Sie die Expo zum Erstellen einer systemeigenen APP, die unter IOS, Android und Web ausgeführt wird. Sie müssen dann zwischen den Projektvorlagen wählen, die **leer**, **leer (typescript)**, Tabstopps (z. b. Bildschirme mit Reaktions Navigation **),** **Minimal**oder **minimal (typescript)** enthalten.
+2. Verwenden Sie die Expo zum Erstellen einer systemeigenen APP, die unter IOS, Android und Web ausgeführt wird. Sie müssen dann zwischen den Projektvorlagen wählen, die **leer**, **leer (typescript)**, Tabstopps (z. b. Bildschirme mit Reaktions Navigation **),** **Minimal** oder **minimal (typescript)** enthalten.
 
     ```powershell
     expo init my-new-app
@@ -73,9 +73,9 @@ Die systemeigene Reaktion ist ein [Open Source-](https://github.com/facebook/rea
 
     ![Screenshot von Metro Bundler im Browser](../images/metro-bundler.png)
 
-5. Zum Anzeigen des Projekts, das auf einem Android-Gerät ausgeführt wird, müssen Sie zunächst [die Client-App für die Expo mit dem Google Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_US) auf Ihrem Android-Gerät installieren. Nachdem die Expo-Client-App installiert ist, öffnen Sie Sie auf Ihrem Gerät, und wählen Sie **QR-Code Scannen**aus. Sobald der QR-Code registriert ist, können Sie sehen, dass das Paket sowohl auf Ihrem Gerät als auch im Fenster "Metro Bundler", das auf "localhost" in Ihrem Browser ausgeführt wird, erstellt wird.
+5. Zum Anzeigen des Projekts, das auf einem Android-Gerät ausgeführt wird, müssen Sie zunächst [die Client-App für die Expo mit dem Google Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_US) auf Ihrem Android-Gerät installieren. Nachdem die Expo-Client-App installiert ist, öffnen Sie Sie auf Ihrem Gerät, und wählen Sie **QR-Code Scannen** aus. Sobald der QR-Code registriert ist, können Sie sehen, dass das Paket sowohl auf Ihrem Gerät als auch im Fenster "Metro Bundler", das auf "localhost" in Ihrem Browser ausgeführt wird, erstellt wird.
 
-6. Zum Anzeigen des Projekts, das auf einem Android-Emulator ausgeführt wird, müssen Sie zunächst Android Studio öffnen und dann ein virtuelles Gerät erstellen und starten. **Tools**  >  **AVD-Manager**  >  **[+ Virtuelles Gerät erstellen...](https://developer.android.com/studio/run/managing-avds#createavd)** Nachdem das virtuelle Gerät erstellt wurde, wählen Sie die Schaltfläche "Start" ▷ in der Spalte " **Aktionen** " des virtuellen Android-Geräte-Manager aus, um mit der Emulation des Geräts zu beginnen. Sobald das virtuelle Gerät geöffnet ist, kehren Sie zum Fenster "Metro Bundler" zurück, das in Ihrem Internetbrowser Fenster ausgeführt wird, und wählen Sie "auf Android-Gerät/Emulator ausführen" in der linken Spalte aus. Es sollte ein Popup Fenster angezeigt werden, in dem Sie wissen, dass Metro Bundler versucht, einen Simulator zu öffnen... und dann sehen Sie, dass die Expo-Client-app in Ihrem emulierten Android-Gerät geöffnet ist. Sobald der Download des JavaScript-Pakets abgeschlossen ist, wird die Anzeige der systemeigenen app "reagieren" angezeigt. (Wenn Probleme auftreten, [Überprüfen Sie die Dokumentation zum Android-Emulator von Expo](https://docs.expo.io/workflow/android-studio-emulator/).)
+6. Zum Anzeigen des Projekts, das auf einem Android-Emulator ausgeführt wird, müssen Sie zunächst Android Studio öffnen und dann ein virtuelles Gerät erstellen und starten. **Tools**  >  **AVD-Manager**  >  **[+ Virtuelles Gerät erstellen...](https://developer.android.com/studio/run/managing-avds#createavd)** Nachdem das virtuelle Gerät erstellt wurde, wählen Sie die Schaltfläche "Start" ▷ in der Spalte " **Aktionen** " des virtuellen Android-Device Manager aus, um mit der Emulation des Geräts zu beginnen. Sobald das virtuelle Gerät geöffnet ist, kehren Sie zum Fenster "Metro Bundler" zurück, das in Ihrem Internetbrowser Fenster ausgeführt wird, und wählen Sie "auf Android-Gerät/Emulator ausführen" in der linken Spalte aus. Es sollte ein Popup Fenster angezeigt werden, in dem Sie wissen, dass Metro Bundler versucht, einen Simulator zu öffnen... und dann sehen Sie, dass die Expo-Client-app in Ihrem emulierten Android-Gerät geöffnet ist. Sobald der Download des JavaScript-Pakets abgeschlossen ist, wird die Anzeige der systemeigenen app "reagieren" angezeigt. (Wenn Probleme auftreten, [Überprüfen Sie die Dokumentation zum Android-Emulator von Expo](https://docs.expo.io/workflow/android-studio-emulator/).)
 
 7. Öffnen Sie das Native Projekt Ihrer Anwendung, um mit der Arbeit an Ihrer APP zu beginnen. Ihre Änderungen sollten automatisch in der App angezeigt werden, die über den Expo-Client auf Ihrem Gerät oder in Ihrem Android-Emulator ausgeführt wird.
 

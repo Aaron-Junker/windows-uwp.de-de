@@ -1,18 +1,18 @@
 ---
 title: Native Android-Entwicklung unter Windows
-description: Beginnen Sie mit der Entwicklung von Android Native apps unter Windows.
+description: Eine Schritt-für-Schritt-Anleitung für den Einstieg in die Entwicklung von Android Native apps unter Windows.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: Android, Windows, Android Studio, Visual Studio, c++ Android Game, Windows Defender, Emulator, Virtual Device, install, Java, Kotlin
 ms.date: 04/28/2020
-ms.openlocfilehash: c9c718d2cccc6a38ac75d3220a79c7b2ec757f54
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c08aac8968ecc16ec548fadd4bee7d83b74ea719
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166844"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823184"
 ---
 # <a name="get-started-with-native-android-development-on-windows"></a>Beginnen Sie mit der nativen Android-Entwicklung unter Windows
 
@@ -27,11 +27,11 @@ Android Studio ist die offizielle integrierte Entwicklungsumgebung für das Andr
 - Wenn Sie eine exe-Datei heruntergeladen haben (empfohlen), doppelklicken Sie darauf, um Sie zu starten.
 - Wenn Sie eine ZIP-Datei heruntergeladen haben, entpacken Sie die ZIP-Datei, kopieren Sie den Ordner "Android-Studio" in den Ordner "Programme", öffnen Sie den Ordner "Android-Studio > bin", und starten Sie studio64.exe (für 64-Bit-Computer) oder studio.exe (für 32-Bit-Computer).
 
-Führen Sie den Setup-Assistenten in Android Studio aus, und installieren Sie alle von ihm empfohlenen SDK-Pakete. Wenn neue Tools und andere APIs verfügbar werden, werden Sie von Android Studio über ein Popup benachrichtigt, oder Sie suchen nach Updates, indem Sie **Hilfe**  >  **Prüfung für Update**auswählen.
+Führen Sie den Setup-Assistenten in Android Studio aus, und installieren Sie alle von ihm empfohlenen SDK-Pakete. Wenn neue Tools und andere APIs verfügbar werden, werden Sie von Android Studio über ein Popup benachrichtigt, oder Sie suchen nach Updates, indem Sie **Hilfe**  >  **Prüfung für Update** auswählen.
 
 ## <a name="create-a-new-project"></a>Erstellen eines neuen Projekts
 
-Wählen Sie **Datei**  >  **neu**neues  >  **Projekt**aus.
+Wählen Sie **Datei**  >  **neu** neues  >  **Projekt** aus.
 
 Im Fenster " **Projekt auswählen** " können Sie zwischen den folgenden Vorlagen wählen:
 
@@ -105,7 +105,7 @@ So erstellen Sie ein neues Projekt mit C/C++-Unterstützung:
 
 - Wählen Sie im Android Studio Assistenten im Abschnitt **Projekt auswählen** den Typ *native C++** Project aus. Wählen Sie **weiter**, füllen Sie die restlichen Felder aus, und klicken Sie dann erneut auf **weiter** .
 
-- Im Abschnitt **Anpassen der C++-Unterstützung** des Assistenten können Sie das Projekt mit dem **C++-Standard** Feld anpassen. Wählen Sie in der Dropdown Liste aus, welche Standardisierung von C++ Sie verwenden möchten. Bei Auswahl von **Toolchain default** wird die cmake-Standardeinstellung verwendet. Wählen Sie **Fertig stellen**aus.
+- Im Abschnitt **Anpassen der C++-Unterstützung** des Assistenten können Sie das Projekt mit dem **C++-Standard** Feld anpassen. Wählen Sie in der Dropdown Liste aus, welche Standardisierung von C++ Sie verwenden möchten. Bei Auswahl von **Toolchain default** wird die cmake-Standardeinstellung verwendet. Wählen Sie **Fertig stellen** aus.
 
 - Nachdem Android Studio das neue Projekt erstellt hat, finden Sie einen **cpp** -Ordner im **Projekt** Bereich, der die systemeigenen Quelldateien, Header, Buildskripts für cmake oder NDK-Build und vorgefertigte Bibliotheken enthält, die Teil des Projekts sind. Sie können auch eine Beispiel-C++-Quelldatei, `native-lib.cpp` , im `src/main/cpp/` Ordner finden, der eine einfache Funktion bereitstellt, `stringFromJNI()` die die Zeichenfolge "Hello from C++" zurückgibt. Außerdem finden Sie ein cmake [`CMakeLists.txt`](https://developer.android.com/studio/projects/configure-cmake.html) -Buildskript () im Stammverzeichnis Ihres Moduls, das zum Erstellen der nativen Bibliothek erforderlich ist.
 
@@ -124,7 +124,7 @@ Außerdem bietet Microsoft Entwurfs Leit Fäden mit dem Ziel, eine nahtlose Dars
 [Flüssiges Entwurfs System für Android](https://www.microsoft.com/design/fluent/#/android) Design und Erstellung benutzerdefinierter apps, bei denen es sich um System eigene Android-Apps handelt, die weiterhin eindeutig sind
 
 - [Sketch Toolkit](https://aka.ms/fluenttoolkits/android/sketch)
-- [Figma-Toolkit](https://aka.ms/fluenttoolkits/android/figma)
+- [Figma Toolkit](https://aka.ms/fluenttoolkits/android/figma)
 - [Android-Schriftart](https://fonts.google.com/specimen/Roboto)
 - [Richtlinien für Android-Benutzeroberflächen](https://developer.android.com/design/)
 - [Richtlinien für Android-App-Symbole](https://developer.android.com/guide/practices/ui_guidelines/icon_design)

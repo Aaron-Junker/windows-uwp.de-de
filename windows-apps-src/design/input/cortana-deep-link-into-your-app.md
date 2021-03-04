@@ -1,16 +1,16 @@
 ---
-title: Deep-Link von einer Hintergrund-app in Cortana zu einer Vordergrund-App-Cortana UWP-Entwurf und-Entwicklung
+title: Deep-Link aus einer Hintergrund-App in Cortana zu einer Vordergrund-App – Cortana UWP-Entwurf und -Entwicklung
 description: Stellen Sie Deep-Links von einer Hintergrund-App in **Cortana** bereit, die die App in einem bestimmten Zustand oder Kontext im Vordergrund starten.
 ms.assetid: 6fe5fcc5-9ee4-4c04-92f4-7b1bf7ef5651
 ms.date: 01/28/2021
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: d96e54604c5def61802a77625a6c18c556db909d
-ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
+ms.openlocfilehash: 5096e4897d5a75be70deaf272ec52c151c1ad871
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99606055"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823494"
 ---
 # <a name="deep-link-from-a-background-app-in-cortana-to-a-foreground-app"></a>Deep-Link von einer Hintergrund-app in Cortana zu einer Vordergrund-App
 
@@ -230,7 +230,7 @@ Hier deklarieren wir die `windows.personalAssistantLaunch`-Erweiterung für die 
 
 ## <a name="protocol-contract"></a>Protokollvertrag
 
-Ihre App wird über die URI (Uniform Resource Identifier)-Aktivierung mithilfe eines [**Protocol**](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind)-Vertrags im Vordergrund gestartet. Die App muss das [**OnActivated**](/uwp/api/Windows.UI.Xaml.Application)-Ereignis Ihrer App überschreiben und nach einem **ActivationKind**-Element mit dem Wert **Protocol** suchen. Weitere Informationen finden Sie unter [Behandeln der URI-Aktivierung](/windows/uwp/launch-resume/handle-uri-activation).
+Ihre App wird über die URI (Uniform Resource Identifier)-Aktivierung mithilfe eines [**Protocol**](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind)-Vertrags im Vordergrund gestartet. Die App muss das [**OnActivated**](/uwp/api/Windows.UI.Xaml.Application)-Ereignis Ihrer App überschreiben und nach einem **ActivationKind**-Element mit dem Wert **Protocol** suchen. Weitere Informationen finden Sie unter [Behandeln der URI-Aktivierung](../../launch-resume/handle-uri-activation.md).
 
 Hier wird der von [**ProtocolActivatedEventArgs**](/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs) bereitgestellte URI decodiert, um auf das Start-Argument zuzugreifen. In diesem Beispiel wird für den [**Uri**](/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs) „windows.personalassistantlaunch:? LaunchContext = Las Vegas“ festgelegt.
 
@@ -259,7 +259,7 @@ if (args.Kind == ActivationKind.Protocol)
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Cortana-Interaktionen in Windows-apps](cortana-interactions.md)
+- [Cortana-Interaktionen in Windows-Apps](cortana-interactions.md)
 - [Cortana-Entwurfs Richtlinien](cortana-design-guidelines.md)
 - [VCD elements and attributes v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
 - [Cortana-Sprachbefehlbeispiel](https://go.microsoft.com/fwlink/p/?LinkID=619899)

@@ -1,5 +1,5 @@
 ---
-title: Unterstützung von natürlicheren Sprachbefehlen in Cortana-Cortana UWP-Entwurf und-Entwicklung
+title: Unterstützung für natürlichere Sprachbefehle in Cortana – Cortana UWP-Entwurf und -Entwicklung
 description: Erweitern Sie Cortana mit flexibleren Befehlen in natürlicher Sprache, bei denen der Benutzer den App-Namen an beliebiger Stelle im Befehl verwenden kann.
 author: kbridge
 label: Conceptual
@@ -7,12 +7,12 @@ ms.assetid: c2959c1b-c2f2-4a8d-8f3e-79585f69afcf
 ms.date: 01/28/2021
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: 7716d4d623653c6b2d943135f2e2cf1ac9a40343
-ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
+ms.openlocfilehash: c6777a0c7ad9a8e2658b759e516b659bbd4eb9a9
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99605995"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824504"
 ---
 # <a name="support-natural-language-voice-commands-in-cortana"></a>Unterstützen von Sprachbefehlen in natürlicher Sprache in Cortana
 
@@ -46,8 +46,8 @@ Der App-Name kann bei Sprachbefehlen wie folgt verwendet werden:
 >
 > Wenn Sie noch keine Erfahrung mit der Entwicklung von UWP-Apps (Universelle Windows-App) haben, sollten Sie sich in den folgenden Themen zunächst mit den hier besprochenen Technologien vertraut machen.
 >
-> - [Erste App erstellen](/windows/uwp/get-started/your-first-app)
-> - Informationen zu Ereignissen finden Sie unter [Übersicht über Ereignisse und Routingereignisse](/windows/uwp/xaml-platform/events-and-routed-events-overview).
+> - [Erste App erstellen](../../get-started/your-first-app.md)
+> - Informationen zu Ereignissen finden Sie unter [Übersicht über Ereignisse und Routingereignisse](../../xaml-platform/events-and-routed-events-overview.md).
 >
 > **Richtlinien zur Benutzer Leistung**
 >
@@ -206,7 +206,7 @@ Hier sehen Sie eine VCD-Datei, die verschiedene Möglichkeiten für natürlicher
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Cortana-Interaktionen in Windows-apps](cortana-interactions.md)
+- [Cortana-Interaktionen in Windows-Apps](cortana-interactions.md)
 - [Cortana-Entwurfs Richtlinien](cortana-design-guidelines.md)
 - [VCD elements and attributes v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
 - [Cortana-Sprachbefehlbeispiel](https://go.microsoft.com/fwlink/p/?LinkID=619899)

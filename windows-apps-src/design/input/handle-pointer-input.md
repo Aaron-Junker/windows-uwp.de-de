@@ -8,12 +8,12 @@ keywords: Stift, Maus, Touchpad, Toucheingabe, Zeiger, Eingabe, Benutzerinterakt
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bae166c1671421c13302df0d2f85e505985d3f2e
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 80360ef30b50229beda813ae211966f398744941
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93030743"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824674"
 ---
 # <a name="handle-pointer-input"></a>Behandeln von Zeigereingaben
 
@@ -21,7 +21,7 @@ Empfangen, verarbeiten und Verwalten von Eingabedaten von Zeige Geräten (z. b. 
 
 > [!Important]
 > Erstellen Sie benutzerdefinierte Interaktionen nur, wenn eine klare, klar definierte Anforderung vorliegt und die von den Platt Form Steuerelementen unterstützten Interaktionen Ihr Szenario nicht unterstützen.  
-> Wenn Sie die Interaktions Umgebungen in Ihrer Windows-Anwendung anpassen, erwarten Benutzer, dass Sie konsistent, intuitiv und auffindbar sind. Aus diesen Gründen wird empfohlen, dass Sie Ihre benutzerdefinierten Interaktionen mit den von den [Platt Form Steuerelementen](../controls-and-patterns/controls-by-function.md)unterstützten Interaktionen modellieren. Die Platt Form Steuerelemente bieten eine vollständige Benutzerinteraktion mit Windows-apps, einschließlich Standard Interaktionen, animierten Physik Effekten, visuellem Feedback und Barrierefreiheit. 
+> Wenn Sie die Interaktions Umgebungen in Ihrer Windows-Anwendung anpassen, erwarten Benutzer, dass Sie konsistent, intuitiv und auffindbar sind. Aus diesen Gründen wird empfohlen, dass Sie Ihre benutzerdefinierten Interaktionen mit den von den [Platt Form Steuerelementen](../controls-and-patterns/index.md)unterstützten Interaktionen modellieren. Die Platt Form Steuerelemente bieten eine vollständige Benutzerinteraktion mit Windows-apps, einschließlich Standard Interaktionen, animierten Physik Effekten, visuellem Feedback und Barrierefreiheit. 
 
 ## <a name="important-apis"></a>Wichtige APIs
 - [Windows.Devices.Input](/uwp/api/Windows.Devices.Input)
@@ -952,7 +952,7 @@ Schließlich definieren wir die grundlegenden Zeiger Ereignishandler im MainPage
 - [Beispiel für Zeiger Eingabe (Basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)
 - [Beispiel für Zeiger Eingabe (UserControl mit Animation)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)
 
-### <a name="other-samples"></a>Andere Beispiele
+### <a name="other-samples"></a>Weitere Beispiele
 
 - [Einfaches Eingabebeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
 - [Eingabebeispiel mit geringer Latenz](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)

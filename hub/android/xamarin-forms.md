@@ -1,18 +1,18 @@
 ---
 title: Erstellen einer einfachen Android-App mit xamarin. Forms
-description: Einstieg in das Schreiben von Android-Apps mit xamarin. Forms
+description: Eine Schritt-für-Schritt-Anleitung für den Einstieg in die Verwendung von xamarin. Forms unter Windows zum Erstellen einer plattformübergreifenden APP, die auf Android-Geräten funktioniert.
 author: hickeys
 ms.author: hickeys
 manager: jken
 ms.topic: article
 keywords: Android, Windows, xamarin. Forms, XAML, Tutorial
 ms.date: 04/28/2020
-ms.openlocfilehash: a1426bfef9863227c1ac110bc295536786695df7
-ms.sourcegitcommit: 24b19e7ee06e5bb11a0dae334806741212490ee9
+ms.openlocfilehash: b1364d8ac19176ec25ee6d45664c7e765accfe1e
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82255194"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823194"
 ---
 # <a name="get-started-developing-for-android-using-xamarinforms"></a>Einstieg in die Entwicklung für Android mit xamarin. Forms
 
@@ -24,7 +24,7 @@ In diesem Artikel erstellen Sie eine einfache Android-App mit xamarin. Forms und
 
 Um dieses Lernprogramm verwenden zu können, benötigen Sie Folgendes:
 
-- Windows 10
+- Windows 10
 - [Visual Studio 2019: Community, Professional oder Enterprise](https://visualstudio.microsoft.com/downloads/) (siehe Hinweis)
 - Arbeitsauslastung "Mobile-Entwicklung mit .net" für Visual Studio 2019
 
@@ -35,13 +35,13 @@ Sie müssen auch über ein Android-Telefon oder einen konfigurierten Emulator ve
 
 ## <a name="create-a-new-xamarinforms-project"></a>Erstellen eines neuen xamarin. Forms-Projekts
 
-Starten Sie Visual Studio. Klicken Sie auf Datei > neue > Projekt, um ein neues Projekt zu erstellen.
+Starten Sie Visual Studio. Klicken Sie auf Datei > neue > Projekt, um ein neues Projekt zu erstellen.
 
 Wählen Sie im Dialogfeld Neues Projekt die Vorlage **Mobile App (xamarin. Forms)** aus, und klicken Sie auf **weiter**.
 
 Nennen Sie das Projekt **timechangerforms** , und klicken Sie auf **Erstellen**.
 
-Wählen Sie im Dialogfeld neue plattformübergreifende APP die Option **leer**aus. Aktivieren Sie im Abschnitt Plattform die Option **Android** , und deaktivieren Sie alle anderen Felder. Klicken Sie auf **OK**.
+Wählen Sie im Dialogfeld neue plattformübergreifende APP die Option **leer** aus. Aktivieren Sie im Abschnitt Plattform die Option **Android** , und deaktivieren Sie alle anderen Felder. Klicken Sie auf **OK**.
 
 Xamarin erstellt eine neue Projekt Mappe mit zwei Projekten: **timechangerforms** und **timechangerforms. Android.**
 
@@ -91,7 +91,7 @@ Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf MainPage. XA
 
 ### <a name="set-the-current-time"></a>Festlegen der aktuellen Uhrzeit
 
-Der Code in dieser Datei kann auf Steuerelemente verweisen, die in der XAML mit dem Wert des **x:Name** -Attributs des-Steuer Elements deklariert wurden. In diesem Fall wird die Bezeichnung, die die aktuelle Uhrzeit anzeigt `time`, aufgerufen.
+Der Code in dieser Datei kann auf Steuerelemente verweisen, die in der XAML mit dem Wert des **x:Name** -Attributs des-Steuer Elements deklariert wurden. In diesem Fall wird die Bezeichnung, die die aktuelle Uhrzeit anzeigt, aufgerufen `time` .
 
 UI-Steuerelemente müssen im Haupt Thread aktualisiert werden. Von einem anderen Thread vorgenommene Änderungen können das Steuerelement nicht ordnungsgemäß aktualisieren Da es keine Garantie gibt, dass dieser Code immer im Haupt Thread ausgeführt wird, verwenden Sie die **begininvokeonmainthread** -Methode, um sicherzustellen, dass alle Updates ordnungsgemäß angezeigt werden. Hier ist die vollständige updatetimelabel-Methode.
 

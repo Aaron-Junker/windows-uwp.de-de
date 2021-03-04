@@ -1,16 +1,16 @@
 ---
-title: Interagieren mit einer Hintergrund-app in Cortana-Cortana UWP-Entwurf und-Entwicklung
+title: Interagieren mit einer Hintergrund-App in Cortana – Cortana UWP-Entwurf und -Entwicklung
 description: Ermöglichen Sie Benutzerinteraktion mit einer Hintergrund-App über Sprach- und Texteingabe im Cortana-Canvas, während ein Sprachbefehl ausgeführt wird.
 ms.assetid: e42917dc-aece-4880-813f-80b897f9126c
 ms.date: 01/28/2021
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: 835a2f60d2b86e5bef49195d4f937fa844f4d921
-ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
+ms.openlocfilehash: 6e63d86d8d3764f8ca95dce4c1b8b7de437c95ec
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99606075"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824494"
 ---
 # <a name="interact-with-a-background-app-in-cortana"></a>Interagieren mit einer Hintergrund-App in Cortana
 
@@ -43,8 +43,8 @@ Cortana unterstützt einen vollständigen Sprachnavigationsworkflow mit Ihrer Ap
 >
 > Wenn Sie noch keine Erfahrung mit der Entwicklung von UWP-Apps (Universelle Windows-App) haben, sollten Sie sich in den folgenden Themen zunächst mit den hier besprochenen Technologien vertraut machen.
 >
-> - [Erste App erstellen](/windows/uwp/get-started/your-first-app)
-> - Informationen zu Ereignissen finden Sie unter [Übersicht über Ereignisse und Routingereignisse](/windows/uwp/xaml-platform/events-and-routed-events-overview).
+> - [Erste App erstellen](../../get-started/your-first-app.md)
+> - Informationen zu Ereignissen finden Sie unter [Übersicht über Ereignisse und Routingereignisse](../../xaml-platform/events-and-routed-events-overview.md).
 >
 > **Richtlinien zur Benutzer Leistung**
 >
@@ -454,7 +454,7 @@ var userMessage = new VoiceCommandUserMessage();
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Cortana-Interaktionen in Windows-apps](cortana-interactions.md)
+- [Cortana-Interaktionen in Windows-Apps](cortana-interactions.md)
 - [VCD elements and attributes v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
 - [Cortana-Entwurfs Richtlinien](cortana-design-guidelines.md)
 - [Cortana-Sprachbefehlbeispiel](https://go.microsoft.com/fwlink/p/?LinkID=619899)

@@ -1,16 +1,16 @@
 ---
-title: Aktivieren einer Hintergrund-app in Cortana mithilfe von Sprachbefehlen | Cortana UWP-Entwurf und-Entwicklung
+title: Aktivieren einer Hintergrund-App in Cortana mithilfe von Sprachbefehlen | Cortana UWP-Entwurf und -Entwicklung
 description: Erweitern Sie Cortana mit Features von Ihrer APP (als Hintergrundaufgabe) mithilfe von Sprachbefehlen.
 ms.assetid: e2c7eae3-6beb-4156-92a5-474bba53451e
 ms.date: 09/24/2019
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: f1ed51107f41318cecf2d8fea73484713b4b837c
-ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
+ms.openlocfilehash: 987a8f4146e5f97c0338c6a8492ace050fbaa3d0
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99606065"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824634"
 ---
 # <a name="activate-a-background-app-in-cortana-using-voice-commands"></a>Aktivieren einer Hintergrund-app in Cortana mithilfe von Sprachbefehlen  
 
@@ -61,8 +61,8 @@ Die folgenden grundlegenden Schritte fügen sprach Befehlsfunktionen hinzu und e
 >
 > Wenn Sie noch keine Erfahrung mit der Entwicklung von UWP-Apps (Universelle Windows-App) haben, sollten Sie sich in den folgenden Themen zunächst mit den hier besprochenen Technologien vertraut machen.
 >
-> - [Erste App erstellen](/windows/uwp/get-started/your-first-app)
-> - Informationen zu Ereignissen finden Sie unter [Übersicht über Ereignisse und Routingereignisse](/windows/uwp/xaml-platform/events-and-routed-events-overview).
+> - [Erste App erstellen](../../get-started/your-first-app.md)
+> - Informationen zu Ereignissen finden Sie unter [Übersicht über Ereignisse und Routingereignisse](../../xaml-platform/events-and-routed-events-overview.md).
 >
 > **Richtlinien zur Benutzer Leistung**
 >
@@ -98,7 +98,7 @@ Die Ressourcen Versionen werden verwendet, um die folgenden Änderungen an der B
 - Gerätetyp  
 - Standort  
 
-Weitere Informationen zu Bild Ressourcen für hohe Kontraste und Skalierungsfaktoren finden Sie auf der Seite Richtlinien für Kachel-und Symbol Ressourcen unter [MSDN.Microsoft.com/Windows/UWP/Controls-and-Patterns/tiles-and-Notifications-App-Assets](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast).  
+Weitere Informationen zu Bild Ressourcen für hohe Kontraste und Skalierungsfaktoren finden Sie auf der Seite Richtlinien für Kachel-und Symbol Ressourcen unter [MSDN.Microsoft.com/Windows/UWP/Controls-and-Patterns/tiles-and-Notifications-App-Assets](../../app-resources/images-tailored-for-scale-theme-contrast.md).  
 
 Sie müssen Ressourcen mithilfe von Qualifizierern benennen. Ressourcenqualifizierer sind Ordner- und Dateinamenmodifikatoren, die den Kontext angeben, in dem eine bestimmte Version einer Ressource verwendet werden soll.  
 
@@ -675,7 +675,7 @@ Wenn die APP mehr als 0,5 Sekunden benötigt, um den-Befehl durchführen zu kön
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Cortana-Interaktionen in Windows-apps](cortana-interactions.md)
+- [Cortana-Interaktionen in Windows-Apps](cortana-interactions.md)
 - [Aktivieren einer Vordergrund-App mit Sprachbefehlen über Cortana](cortana-launch-a-foreground-app-with-voice-commands.md)
 - [VCD elements and attributes v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
 - [Cortana-Entwurfs Richtlinien](cortana-design-guidelines.md)

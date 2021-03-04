@@ -6,12 +6,12 @@ ms.date: 01/21/2021
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Collection-API, Microsoft Store Purchase-API, Produkte anzeigen, Produkte gewähren
 ms.localizationpriority: medium
-ms.openlocfilehash: 7674a9b966510d914850e1fc8b2c8ca531f64a20
-ms.sourcegitcommit: 069f5ab4be85a7d638fc2a426afaed824e5dfeae
+ms.openlocfilehash: 4e58a3e601c1a9f3ff438342ccaa9ee4014a1450
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98668739"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824424"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Verwalten von Produktansprüchen aus einem Dienst
 
@@ -84,7 +84,7 @@ Abhängig von den Methoden, die Sie in der Microsoft Store Sammlungs-API oder de
       > [!IMPORTANT]
       > Verwenden `https://onestore.microsoft.com` Sie die Zielgruppe nur mit Zugriffs Token, die sicher in Ihrem Dienst gespeichert werden. Durch das Verfügbarmachen von Zugriffstoken mit dieser Zielgruppe außerhalb Ihres Diensts kann er anfällig für Replay-Angriffe werden.
 
-  * Wenn Sie eine Methode in der Microsoft Store Auflistungs-API zum [Abfragen von Produkten, die sich im Besitz eines Benutzers befinden](query-for-products.md) , oder zum [melden eines verbrauchsfähigen Produkts als erfüllt](report-consumable-products-as-fulfilled.md)abrufen möchten, müssen Sie auch ein Token mit dem Zielgruppen- `https://onestore.microsoft.com/b2b/keys/create/collections` URI erstellen. In einem späteren Schritt übergeben Sie dieses Token an eine Client Methode im Windows SDK, um einen Microsoft Store ID-Schlüssel anzufordern, den Sie mit der Microsoft Store Collection-API verwenden können.
+  * Wenn Sie eine Methode in der Microsoft Store Auflistungs-API zum [Abfragen von Produkten, die sich im Besitz eines Benutzers befinden](query-for-products.md) , oder zum [melden eines verbrauchsfähigen Produkts als erfüllt](report-consumable-products-as-fulfilled.md)abrufen möchten, müssen Sie auch ein Token mit dem Zielgruppen- `https://onestore.microsoft.com` URI erstellen. In einem späteren Schritt übergeben Sie dieses Token an eine Client Methode im Windows SDK, um einen Microsoft Store ID-Schlüssel anzufordern, den Sie mit der Microsoft Store Collection-API verwenden können.
 
   * Wenn Sie eine Methode in der Microsoft Store Purchase-API zum Gewähren eines [kostenlosen Produkts](grant-free-products.md)für einen Benutzer, zum Abrufen [von Abonnements für einen Benutzer](get-subscriptions-for-a-user.md)oder [zum Ändern des Abrechnungs Zustands eines Abonnements für einen Benutzer](change-the-billing-state-of-a-subscription-for-a-user.md)abrufen möchten, müssen Sie auch ein Token mit dem Zielgruppen- `https://onestore.microsoft.com/b2b/keys/create/purchase` URI erstellen. In einem späteren Schritt übergeben Sie dieses Token an eine Client Methode im Windows SDK, um einen Microsoft Store ID-Schlüssel anzufordern, den Sie mit der Microsoft Store Purchase-API verwenden können.
 
@@ -206,7 +206,7 @@ Im folgenden finden Sie ein Beispiel für einen decodierten Microsoft Store ID-S
 }
 ```
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Produktabfrage](query-for-products.md)
 * [Melden von konsumierbaren Produkten als erfüllt](report-consumable-products-as-fulfilled.md)

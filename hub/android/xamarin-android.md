@@ -1,18 +1,18 @@
 ---
 title: Erstellen einer einfachen Android-App mit xamarin. Android
-description: Einstieg in das Schreiben von Android-Apps mit xamarin. Android
+description: Eine Schritt-für-Schritt-Anleitung für den Einstieg in die Verwendung von xamarin. Android unter Windows zum Erstellen einer plattformübergreifenden APP, die auf Android-Geräten funktioniert.
 author: hickeys
 ms.author: hickeys
 manager: jken
 ms.topic: article
 keywords: Android, Windows, xamarin. Android, Tutorial, XAML
 ms.date: 04/28/2020
-ms.openlocfilehash: c731b5f96243333e4a4ad150de499ac9459113bc
-ms.sourcegitcommit: 24b19e7ee06e5bb11a0dae334806741212490ee9
+ms.openlocfilehash: 3bcecf24fe6bb90dc2b94dfa62a5768481b298e5
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82255205"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823174"
 ---
 # <a name="get-started-developing-for-android-using-xamarinandroid"></a>Einstieg in die Entwicklung für Android mit xamarin. Android
 
@@ -24,7 +24,7 @@ In diesem Artikel erstellen Sie eine einfache Android-App mit xamarin. Android u
 
 Um dieses Lernprogramm verwenden zu können, benötigen Sie Folgendes:
 
-- Windows 10
+- Windows 10
 - [Visual Studio 2019: Community, Professional oder Enterprise](https://visualstudio.microsoft.com/downloads/) (siehe Hinweis)
 - Arbeitsauslastung "Mobile-Entwicklung mit .net" für Visual Studio 2019
 
@@ -35,23 +35,23 @@ Sie müssen auch über ein Android-Telefon oder einen konfigurierten Emulator ve
 
 ## <a name="create-a-new-xamarinandroid-project"></a>Erstellen eines neuen Xamarin.Android-Projekts
 
-Starten Sie Visual Studio. Wählen Sie Datei > neue > Projekt aus, um ein neues Projekt zu erstellen.
+Starten Sie Visual Studio. Wählen Sie Datei > neue > Projekt aus, um ein neues Projekt zu erstellen.
 
 Wählen Sie im Dialogfeld Neues Projekt die Vorlage **Android-App (xamarin)** aus, und klicken Sie auf **weiter**.
 
 Nennen Sie das Projekt **timechangerandroid** , und klicken Sie auf **Erstellen**.
 
-Wählen Sie im Dialogfeld neue plattformübergreifende APP die Option **leere App**aus. Wählen Sie in der **Android-Mindestversion** **Android 5,0 (Lollipop)** aus. Klicken Sie auf **OK**.
+Wählen Sie im Dialogfeld neue plattformübergreifende APP die Option **leere App** aus. Wählen Sie in der **Android-Mindestversion** **Android 5,0 (Lollipop)** aus. Klicken Sie auf **OK**.
 
 Xamarin erstellt eine neue Projekt Mappe mit einem einzelnen Projekt mit dem Namen **timechangerandroid**.
 
 ## <a name="create-a-ui-with-xaml"></a>Erstellen einer Benutzeroberfläche mit XAML
 
-Öffnen Sie **activity_main. XML**im Verzeichnis **resources\layout** Ihres Projekts. Der XML-Code in dieser Datei definiert den ersten Bildschirm, den ein Benutzer beim Öffnen von timechanger sehen wird.
+Öffnen Sie im Verzeichnis **resources\layout** Ihres Projekts **activity_main.xml**. Der XML-Code in dieser Datei definiert den ersten Bildschirm, den ein Benutzer beim Öffnen von timechanger sehen wird.
 
-Die Benutzeroberfläche von timechanger ist einfach. Es zeigt die aktuelle Uhrzeit an und verfügt über Schaltflächen, um die Zeit in Schritten von einer Stunde anzupassen. Er verwendet eine vertikale `LinearLayout` , um die Zeit oberhalb der Schaltflächen und eine `LinearLayout` horizontale anzuordnen, um die Schaltflächen nebeneinander anzuordnen. Der Inhalt wird auf dem Bildschirm **zentriert, indem** das **Android: Gravity** -Attribut auf zentriert `LinearLayout`in der vertikalen festgelegt wird.
+Die Benutzeroberfläche von timechanger ist einfach. Es zeigt die aktuelle Uhrzeit an und verfügt über Schaltflächen, um die Zeit in Schritten von einer Stunde anzupassen. Er verwendet eine vertikale `LinearLayout` , um die Zeit oberhalb der Schaltflächen und eine horizontale `LinearLayout` anzuordnen, um die Schaltflächen nebeneinander anzuordnen. Der Inhalt wird auf dem Bildschirm zentriert, indem das **Android: Gravity** - **Attribut auf zentriert** in der vertikalen festgelegt wird `LinearLayout` .
 
-Ersetzen Sie den Inhalt der Datei " **activity_main. XML** " durch den folgenden Code.
+Ersetzen Sie den Inhalt **activity_main.xml** durch den folgenden Code.
 
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -93,7 +93,7 @@ An diesem Punkt können Sie **timechangerandroid** ausführen und die Benutzerob
 
 ### <a name="set-the-current-time"></a>Festlegen der aktuellen Uhrzeit
 
-Beziehen Sie zuerst einen Verweis auf den `TextView` , der die Uhrzeit anzeigt. Verwenden Sie **findviewbyid** , um alle Elemente der Benutzeroberfläche mit der richtigen **Android: ID** (die im XML- `"@+id/timeDisplay"` Code aus dem vorherigen Schritt auf festgelegt wurde) zu durchsuchen. Dies ist die `TextView` , die die aktuelle Uhrzeit anzeigt.
+Beziehen Sie zuerst einen Verweis auf den, `TextView` der die Uhrzeit anzeigt. Verwenden Sie **findviewbyid** , um alle Elemente der Benutzeroberfläche mit der richtigen **Android: ID** (die `"@+id/timeDisplay"` im XML-Code aus dem vorherigen Schritt auf festgelegt wurde) zu durchsuchen. Dies ist die `TextView` , die die aktuelle Uhrzeit anzeigt.
 
 ```csharp
 var timeDisplay = FindViewById<TextView>(Resource.Id.timeDisplay);
@@ -147,7 +147,7 @@ public void UpButton_Click(object sender, System.EventArgs e)
 
 ### <a name="wire-up-the-up-and-down-buttons-to-their-corresponding-event-handlers"></a>Richten Sie die nach-oben-und nach-unten-Schaltflächen an die entsprechenden Ereignishandler
 
-Um die Schaltflächen den entsprechenden Ereignis Handlern zuzuordnen, verwenden Sie zuerst findviewbyid, um die Schaltflächen anhand ihrer IDs zu suchen. Sobald Sie über einen Verweis auf das Schaltflächen Objekt verfügen, können Sie dem `Click` Ereignis einen Ereignishandler hinzufügen.
+Um die Schaltflächen den entsprechenden Ereignis Handlern zuzuordnen, verwenden Sie zuerst findviewbyid, um die Schaltflächen anhand ihrer IDs zu suchen. Sobald Sie über einen Verweis auf das Schaltflächen Objekt verfügen, können Sie dem Ereignis einen Ereignishandler hinzufügen `Click` .
 
 ```csharp
 Button upButton = FindViewById<Button>(Resource.Id.upButton);
@@ -217,7 +217,7 @@ namespace TimeChangerAndroid
 }
 ```
 
-## <a name="run-your-app"></a>Führen Sie Ihre App aus.
+## <a name="run-your-app"></a>Ausführen der App
 
 Um die APP auszuführen, drücken Sie **F5** , oder klicken Sie auf Debuggen > Debugging starten. Abhängig davon, wie der [Debugger konfiguriert ist](emulator.md), wird die APP auf einem Gerät oder in einem Emulator gestartet.
 

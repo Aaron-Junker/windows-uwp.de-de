@@ -1,16 +1,16 @@
 ---
-title: Dynamisches Ändern von Cortana VCD-Ausdrucks Listen-Cortana UWP-Entwurf und-Entwicklung
+title: Dynamisches Ändern der Cortana-VCD-Ausdruckslisten – Cortana UWP-Entwurf und -Entwicklung
 description: Erfahren Sie, wie Sie mithilfe des Spracherkennungsergebnisses zur Laufzeit auf die Liste der unterstützten Begriffe (PhraseList-Elemente) in einer VCD-Datei (Voice Command Definition) zugreifen und diese aktualisieren
 ms.assetid: b497145b-c7a0-454a-8329-6bc1228953bb
 ms.date: 01/28/2021
 ms.topic: article
 keywords: Cortana
-ms.openlocfilehash: 1f61a08e9eeb66371ed39b44eb39dacbc1bf3cf5
-ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
+ms.openlocfilehash: 5c28330a975b66c2f04baba1d0df58b38d684356
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99606035"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824414"
 ---
 # <a name="dynamically-modify-cortana-vcd-phrase-lists"></a>Dynamisches Ändern von Cortana VCD-Ausdrucks Listen
 
@@ -47,8 +47,8 @@ Weitere Informationen zu **PhraseList** und anderen VCD-Elementen finden Sie in 
 >
 > Wenn Sie noch keine Erfahrung mit der Entwicklung von UWP-Apps (Universelle Windows-App) haben, sollten Sie sich in den folgenden Themen zunächst mit den hier besprochenen Technologien vertraut machen.
 >
-> - [Erste App erstellen](/windows/uwp/get-started/your-first-app)
-> - Informationen zu Ereignissen finden Sie unter [Übersicht über Ereignisse und Routingereignisse](/windows/uwp/xaml-platform/events-and-routed-events-overview).
+> - [Erste App erstellen](../../get-started/your-first-app.md)
+> - Informationen zu Ereignissen finden Sie unter [Übersicht über Ereignisse und Routingereignisse](../../xaml-platform/events-and-routed-events-overview.md).
 >
 > **Richtlinien zur Benutzer Leistung**
 >
@@ -141,7 +141,7 @@ In unserem Beispiel haben wir ein **phrasetopic** mit dem **Szenario** "Search",
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Cortana-Interaktionen in Windows-apps](cortana-interactions.md)
+- [Cortana-Interaktionen in Windows-Apps](cortana-interactions.md)
 - [VCD elements and attributes v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
 - [Aktivieren einer Vordergrund-App mit Sprachbefehlen über Cortana](cortana-launch-a-foreground-app-with-voice-commands.md)
 - [Aktivieren einer Hintergrund-app in Cortana mithilfe von Sprachbefehlen](cortana-launch-a-background-app-with-voice-commands.md)
