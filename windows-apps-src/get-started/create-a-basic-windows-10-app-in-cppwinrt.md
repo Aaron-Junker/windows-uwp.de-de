@@ -5,12 +5,12 @@ ms.date: 07/11/2020
 ms.topic: article
 keywords: Windows 10, UWP, cppwinrt, C++/WinRT
 ms.localizationpriority: medium
-ms.openlocfilehash: bb6a76f2e8096d63907daf5ededdb6a22eb72a6c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 706b0aceb203fe6a333c281dfd2b691eb35b65b2
+ms.sourcegitcommit: 98ca28fd0b5d306d35f3919fe9dd4d5a0222235e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175204"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102029833"
 ---
 # <a name="create-a-hello-world-app-using-cwinrt"></a>Erstellen einer „Hello, World“- -App mit C++/WinRT
 
@@ -242,6 +242,7 @@ Fügen Sie diesen XAML-Block als erstes untergeordnetes Element des **StackPanel
                 </VisualState.Setters>
             </VisualState>
         </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
     ...
 </StackPanel>
 ```

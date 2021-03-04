@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Fluent
-ms.openlocfilehash: 0c55d98d0680142ad1d4f319b8910fd335fe8d5f
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 7a4c33bbdae980029cdeeb650375b9f8cb38bbf9
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219463"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823344"
 ---
 # <a name="forms"></a>Formulare
 Ein Formular ist eine Gruppe von Steuerelementen, die Daten von Benutzern sammeln und übermitteln. Formulare werden in der Regel für Seiten mit Einstellungen und Umfragen, zum Erstellen von Konten und für vieles mehr verwendet. 
@@ -147,7 +147,7 @@ Control | Verwendung
 [TimePicker](time-picker.md) | Auswählen eines einzelnen Uhrzeitwerts
 
 ### <a name="additional-controls"></a>Zusätzliche Steuerelemente 
-Eine komplette Liste der UWP-Steuerelemente finden Sie unter [Index der Steuerelemente nach Funktion](controls-by-function.md).
+Eine komplette Liste der UWP-Steuerelemente finden Sie unter [Index der Steuerelemente nach Funktion](./index.md).
 
 Komplexere und benutzerdefinierte Steuerelemente der Benutzeroberfläche finden Sie in Ressourcen, die von Unternehmen wie [Telerik](https://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/uwp-ui-controls), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/), [Infragistics](https://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP) und [ActiPro](https://www.actiprosoftware.com/products/controls/universal) bereitgestellt werden.
 
