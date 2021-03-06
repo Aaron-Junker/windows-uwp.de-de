@@ -1,18 +1,18 @@
 ---
-title: PWA-Ansatz für die Android-Entwicklung unter Windows
-description: Eine Schritt-für-Schritt-Anleitung zu den ersten Schritten beim Erstellen einer hybriden Web-App (PWA) unter Windows.
+title: Erstellen einer PWA-oder Hybrid-Web-App für Android
+description: Beginnen Sie mit der Entwicklung von Android-Apps mithilfe des PWA-Ansatzes unter Windows.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: Android unter Windows, PWA, Android, Cordova, Ionic, PhoneGap, Hybrid-Web-App
 ms.date: 04/28/2020
-ms.openlocfilehash: 8115de0dedaa561c7a71621904d060ca62b5ac47
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 1591bedbe79e873def5c4ecc75663fb5271eb1c1
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823154"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254263"
 ---
 # <a name="get-started-developing-a-pwa-or-hybrid-web-app-for-android"></a>Einstieg in die Entwicklung einer PWA-oder Hybrid-Web-App für Android
 

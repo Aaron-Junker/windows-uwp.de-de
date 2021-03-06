@@ -1,18 +1,18 @@
 ---
-title: Leistungsgeschwindigkeit durch Aktualisieren von Defender-Einstellungen verbessern
-description: Eine Anleitung zur Verbesserung der Gesamt Leistungsgeschwindigkeit und Buildzeiten durch Aktualisieren von Windows Defender-Einstellungen, um die Überprüfung der angegebenen Dateitypen auszuschließen.
+title: Windows Defender-Sicherheitseinstellungen
+description: Erfahren Sie, wie Sie die Leistungsgeschwindigkeit und Buildzeiten verbessern können, indem Sie die Windows Defender-Einstellungen aktualisieren, um die Überprüfung
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: Android, Windows, Windows Defender, Einstellungen, Konfiguration, Ausschlüsse,% User Profile%, devenv.exe, Leistung, Geschwindigkeit, Build, gradle
 ms.date: 04/28/2020
-ms.openlocfilehash: e762e595bf2b8aa9b8420d41f68d2890e7d5dfe0
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: f7b2a44f31bf4ec84a4c7f014a3a502350dca748
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823204"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254305"
 ---
 # <a name="update-windows-defender-settings-to-improve-performance"></a>Aktualisieren der Windows Defender-Einstellungen zur Verbesserung der Leistung
 

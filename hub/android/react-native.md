@@ -1,18 +1,18 @@
 ---
-title: Systemeigene Reaktion auf die Android-Entwicklung unter Windows
-description: Eine Schritt-für-Schritt-Anleitung für die ersten Schritte bei der Verwendung von "in Windows reagieren" zum Erstellen einer plattformübergreifenden APP, die auf Android-Geräten funktioniert.
+title: Systemeigene Reaktion auf die Android-Entwicklung
+description: Beginnen Sie mit der Entwicklung von Android-Apps mit xamarin Native unter Windows.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: Android, Windows, System eigenes System, Emulator, Expo, Metro Bundler, Terminal
 ms.date: 04/28/2020
-ms.openlocfilehash: 82bf078d6c29c8968ce3e0cc19ce4d6f803e6d71
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 099dc073e36ee153376f4247b5d7c0526c3a8646
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823224"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254331"
 ---
 # <a name="get-started-developing-for-android-using-react-native"></a>Einstieg in die Entwicklung für Android mithilfe von "auf systemeigenen
 

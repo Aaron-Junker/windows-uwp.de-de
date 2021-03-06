@@ -1,18 +1,18 @@
 ---
-title: Erstellen einer einfachen Android-App mit xamarin. Forms
-description: Eine Schritt-für-Schritt-Anleitung für den Einstieg in die Verwendung von xamarin. Forms unter Windows zum Erstellen einer plattformübergreifenden APP, die auf Android-Geräten funktioniert.
+title: Erstellen einer Android-App mit xamarin. Forms
+description: Einstieg in das Schreiben von Android-Apps mit xamarin. Forms
 author: hickeys
 ms.author: hickeys
 manager: jken
 ms.topic: article
 keywords: Android, Windows, xamarin. Forms, XAML, Tutorial
 ms.date: 04/28/2020
-ms.openlocfilehash: b1364d8ac19176ec25ee6d45664c7e765accfe1e
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: b6c6a00c430dcc04994c0f8fd537d7c5c2083d4e
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823194"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254259"
 ---
 # <a name="get-started-developing-for-android-using-xamarinforms"></a>Einstieg in die Entwicklung für Android mit xamarin. Forms
 

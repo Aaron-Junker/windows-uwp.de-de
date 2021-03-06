@@ -1,18 +1,18 @@
 ---
-title: Übersicht über die Android-Entwicklung unter Windows
-description: Beginnen Sie mit der Entwicklung für Android unter Windows, einschließlich nativer Android-Entwicklung, plattformübergreifender Entwicklung und Android-Spieleentwicklung.
+title: Android-Entwicklung unter Windows
+description: Eine Anleitung für den Einstieg in die Entwicklung für Android unter Windows.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: Android unter Windows, xamarin. Android, reagieren auf native, Cordova, Ionic, PhoneGap, c++ Android Game, Windows Defender, Emulator
 ms.date: 04/28/2020
-ms.openlocfilehash: b839972033c9edfad3524909345380e7fac9462e
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 315c32eb6219deafe2817ba8df36b4f9d1cb1dae
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823164"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254287"
 ---
 # <a name="overview-of-android-development-on-windows"></a>Übersicht über die Android-Entwicklung unter Windows
 
