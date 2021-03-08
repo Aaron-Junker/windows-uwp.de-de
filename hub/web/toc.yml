@@ -1,0 +1,26 @@
+- name: Webentwicklung unter Windows 10
+  items:
+    - name: Webentwicklung unter Windows 10
+      items:
+        - name: Übersicht
+          href: index.md
+        - name: APIs
+          href: apis.md
+    - name: Visual Studio
+      href: /visualstudio/windows/
+    - name: Visual Studio Code
+      href: 'https://code.visualstudio.com/docs'
+    - name: Microsoft Edge
+      href: 'https://developer.microsoft.com/microsoft-edge/'
+    - name: .NET
+      href: 'https://dotnet.microsoft.com/'
+    - name: Windows-Subsystem für Linux
+      href: /windows/wsl/
+    - name: Windows-Terminal
+      href: /windows/terminal/
+    - name: Windows Paket-Manager
+      href: /windows/package-manager/
+    - name: Docker Desktop für Windows
+      href: /windows/dev-environment/docker/overview/
+    - name: Azure Cloud Services
+      href: /azure/

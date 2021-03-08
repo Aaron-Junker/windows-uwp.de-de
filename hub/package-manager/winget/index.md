@@ -4,12 +4,12 @@ description: Mit dem Befehlszeilentool „winget“ können Entwickler Anwendung
 ms.date: 10/22/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dbd2aa76fa6a9b787e73c0bbd5ce7e56b5e6a4a
-ms.sourcegitcommit: c105eb358bf693d34dfdd7a44255af69c1d5a3cd
+ms.openlocfilehash: 39b48114242c8de1fad80bbf78860644b1c0dcd9
+ms.sourcegitcommit: 9842e0e5c369a52594336d2278af877ccf40b049
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92434462"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102196983"
 ---
 # <a name="use-the-winget-tool-to-install-and-manage-applications"></a>Installieren und Verwalten von Anwendungen mit dem Tool „winget“
 
@@ -27,7 +27,7 @@ Es gibt mehrere Möglichkeiten zum Installieren des Tools **winget**:
 
 * [Am Windows-Insider-Flight-Ring](https://insider.windows.com) teilnehmen.
 
-* Installieren Sie das App-Installer-Paket für Windows-Desktop im Release-Ordner des [Repositorys für „winget“](https://github.com/microsoft/winget-cli).
+* Installieren Sie das App-Installer-Paket für Windows-Desktop, das sich auf der [Seite des Repositorys der winget-Releases](https://github.com/microsoft/winget-cli/releases) befindet.
 
 > [!NOTE]
 > Für das Tool **winget** wird Windows 10, Version 1709 (10.0.16299) oder eine höhere Version von Windows 10 benötigt.
@@ -46,8 +46,8 @@ Nachdem **App-Installer** installiert wurde, können Sie **winget** ausführen, 
 
 Einer der häufigsten Anwendungsfälle ist das Suchen und Installieren eines bestimmten Tools.
 
-1. Um nach einem Tool zu [suchen](search.md), geben Sie `winget search \<appname>` ein.
-2. Nachdem Sie sich vergewissert haben, dass das gewünschte Tool verfügbar ist, können Sie das Tool [installieren](install.md), indem Sie `winget install \<appname>` eingeben. Das Tool **winget** startet das Installationsprogramm und installiert die Anwendung auf Ihrem PC.
+1. Um nach einem Tool zu [suchen](search.md), geben Sie `winget search <appname>` ein.
+2. Nachdem Sie sich vergewissert haben, dass das gewünschte Tool verfügbar ist, können Sie das Tool [installieren](install.md), indem Sie `winget install <appname>` eingeben. Das Tool **winget** startet das Installationsprogramm und installiert die Anwendung auf Ihrem PC.
     ![Befehlszeile für „winget“](images\install.png)
 
 3. Zusätzlich zum Installieren und Suchen bietet **winget** eine Reihe weiterer Befehle, mit denen Sie [Details für Anwendungen anzeigen](show.md), [Quellen ändern](source.md) und [Pakete überprüfen](validate.md) können. Zum Anzeigen einer vollständigen Liste der Befehle geben Sie `winget --help` ein.
@@ -73,13 +73,13 @@ Die aktuelle Vorschau des Tools **winget** unterstützt die folgenden Optionen.
 
 | Option | Beschreibung |
 |--------------|-------------|
-| **-v,--version** | Mit dieser Option wird die aktuelle Version von „winget“ zurückgegeben. |
-| **--info** |  Mit „info“ finden Sie detaillierte Informationen zu „winget“, einschließlich der Links zu den Lizenzbedingungen und der Datenschutzerklärung. |
-| **-?, --help** |  Hiermit wird zusätzliche Hilfe zu „winget“ abgerufen. |
+| **-v,--version** | Gibt die aktuelle Version von „winget“ zurück. |
+| **--info** |  Stellt detaillierte Informationen zu „winget“ bereit, einschließlich der Links zu den Lizenzbedingungen und der Datenschutzerklärung. |
+| **-?, --help** |  Zeigt zusätzliche Hilfe für „winget“ an. |
 
 ## <a name="supported-installer-formats"></a>Unterstützte Formate von Installationsprogrammen
 
-Die aktuelle Vorschau des Tools **winget** unterstützt die folgenden Typen von Installationsprogrammen.
+Die aktuelle Vorschau des Tools **winget** unterstützt die folgenden Typen von Installationsprogrammen:
 
 * EXE
 * MSIX
@@ -87,7 +87,7 @@ Die aktuelle Vorschau des Tools **winget** unterstützt die folgenden Typen von 
 
 ## <a name="scripting-winget"></a>Skripterstellung für „winget“
 
-Sie können Batch-Skripts und PowerShell-Skripts erstellen, um mehrere Anwendungen zu installieren.
+Sie können Batch- und PowerShell-Skripts erstellen, um mehrere Anwendungen zu installieren.
 
 ``` CMD
 @echo off  
@@ -105,7 +105,7 @@ if %ERRORLEVEL% EQU 0 Echo Terminal installed successfully.   %ERRORLEVEL%
 
 ## <a name="missing-tools"></a>Fehlende Tools
 
-Wenn das [Community-Repository](../package/repository.md) Ihr Tool oder Ihre Anwendung nicht enthält, übermitteln Sie ein Paket an das [Repository](https://github.com/microsoft/winget-pkgs). Wenn Sie das gesuchte Tool hinzufügen, steht es in Zukunft Ihnen und allen anderen Benutzern zur Verfügung.
+Wenn das [Communityrepository](../package/repository.md) Ihr Tool oder Ihre Anwendung nicht enthält, senden Sie ein Paket an unser [Repository](https://github.com/microsoft/winget-pkgs). Wenn Sie das gesuchte Tool hinzufügen, steht es in Zukunft Ihnen und allen anderen Benutzern zur Verfügung.
 
 ## <a name="customize-winget-settings"></a>Anpassen der winget-Einstellungen
 
