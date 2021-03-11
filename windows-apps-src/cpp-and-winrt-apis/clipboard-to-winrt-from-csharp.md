@@ -5,12 +5,12 @@ ms.date: 04/13/2020
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, C#, Beispiel, Zwischenablage, Fall, Studie
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a7ec46b28a8ddf0b4accadb37b40e786ac8c47a
-ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
+ms.openlocfilehash: f862dd01e91d99e19fb6996921dbc20a33d714da
+ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "89170414"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102629368"
 ---
 # <a name="porting-the-clipboard-sample-to-cwinrt-from-cmdasha-case-study"></a>Portieren des Beispiels „Zwischenablage“ (Clipboard) von C# zu C++/WinRT – eine Fallstudie
 
@@ -778,7 +778,7 @@ Abgesehen von diesen Elementen befolgen Sie einfach dieselben Anweisungen wie zu
 - Erstellen C++/WinRT-Objekte im Stapel, nicht im Heap.
 - Ersetzen Sie Aufrufe von Get-Accessoren für Eigenschaften durch Funktionsaufrufsyntax (`()`).
 
-Eine sehr gängige Ursache von Compiler-/Linkerfehlern ist das Vergessen, die C++/WinRT-Headerdateien des Windows-Namespace einzuschließen, die Sie benötigen. Weitere Informationen zu einem möglichen Fehler finden Sie unter [Warum erhalte ich den Fehler „LNK2019: Nicht aufgelöstes externes Symbol“ vom Linker?](./faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error).
+Eine sehr gängige Ursache von Compiler-/Linkerfehlern ist das Vergessen, die C++/WinRT-Headerdateien des Windows-Namespace einzuschließen, die Sie benötigen. Weitere Informationen zu einem möglichen Fehler finden Sie unter [Warum erhalte ich den Fehler „LNK2019: Nicht aufgelöstes externes Symbol“ vom Linker?](./faq.yml#why-is-the-linker-giving-me-a--lnk2019--unresolved-external-symbol--error-).
 
 Wenn Sie die exemplarische Vorgehensweise durcharbeiten und **DisplayToast** selbst portieren möchten, können Sie Ihre Ergebnisse mit dem Code in der C++/WinRT-Version in der von Ihnen heruntergeladenen ZIP-Datei des Quellcodes für das [Beispiel „Zwischenablage“](/samples/microsoft/windows-universal-samples/clipboard/) vergleichen.
 
@@ -1352,7 +1352,7 @@ if (imageReceived)
 }
 ```
 
-In C++/WinRT-Objekten wird **IClosable** in erster Linie zum Nutzen von Sprachen implementiert, die keine deterministische Finalisierung haben. C++/WinRT hat deterministische Finalisierung, sodass es häufig nicht erforderlich ist, **IClosable::Close** aufzurufen, wenn C++/WinRT-Code geschrieben wird. Es gibt jedoch Situationen, in denen es sinnvoll ist, die Methode aufzurufen, und dies ist eine dieser Situationen. Hier ist der *imageStream*-Bezeichner ein Wrapper mit Verweiszählung, der ein zugrunde liegendes Windows-Runtime-Objekt umschließt (in diesem Fall ein Objekt, in dem [**IRandomAccessStreamWithContentType**](/uwp/api/windows.storage.streams.irandomaccessstreamwithcontenttype) implementiert ist). Zwar lässt sich feststellen, dass der Finalizer von *imageStream* (dessen Destruktor) am Ende des einschließenden Bereichs (die geschweiften Klammern) ausgeführt wird, ist nicht sichergestellt, dass der Finalizer **Close** aufruft. Das liegt daran, dass *imageStream* an andere APIs weitergegeben wurde, und diese ändern möglicherweise weiterhin die Verweisanzahl des zugrunde liegenden Windows-Runtime-Objekts. Dies ist also ein Fall, in dem es sich empfiehlt, **Close** explizit aufzurufen. Weitere Informationen findest du unter [Muss ich IClosable::Close bei von mir verwendeten Laufzeitklassen aufrufen?](./faq.md#do-i-need-to-call-iclosableclose-on-runtime-classes-that-i-consume).
+In C++/WinRT-Objekten wird **IClosable** in erster Linie zum Nutzen von Sprachen implementiert, die keine deterministische Finalisierung haben. C++/WinRT hat deterministische Finalisierung, sodass es häufig nicht erforderlich ist, **IClosable::Close** aufzurufen, wenn C++/WinRT-Code geschrieben wird. Es gibt jedoch Situationen, in denen es sinnvoll ist, die Methode aufzurufen, und dies ist eine dieser Situationen. Hier ist der *imageStream*-Bezeichner ein Wrapper mit Verweiszählung, der ein zugrunde liegendes Windows-Runtime-Objekt umschließt (in diesem Fall ein Objekt, in dem [**IRandomAccessStreamWithContentType**](/uwp/api/windows.storage.streams.irandomaccessstreamwithcontenttype) implementiert ist). Zwar lässt sich feststellen, dass der Finalizer von *imageStream* (dessen Destruktor) am Ende des einschließenden Bereichs (die geschweiften Klammern) ausgeführt wird, ist nicht sichergestellt, dass der Finalizer **Close** aufruft. Das liegt daran, dass *imageStream* an andere APIs weitergegeben wurde, und diese ändern möglicherweise weiterhin die Verweisanzahl des zugrunde liegenden Windows-Runtime-Objekts. Dies ist also ein Fall, in dem es sich empfiehlt, **Close** explizit aufzurufen. Weitere Informationen findest du unter [Muss ich IClosable::Close bei von mir verwendeten Laufzeitklassen aufrufen?](./faq.yml#do-i-need-to-call-iclosable--close-on-runtime-classes-that-i-consume-).
 
 Sieh dir als nächstes den C#-Ausdruck `(uint)(imageDecoder.OrientedPixelWidth * 0.5)` an, den du im **OnDeferredImageRequestedHandler**-Ereignishandler findest. In diesem Ausdruck wird ein `uint`-Wert mit einem `double`-Wert multipliziert, was zu einem `double`-Wert führt. Dieser Wert wird dann in einen `uint`-Wert umgewandelt. In C++/WinRT *könnte* eine ähnlich aussehende Umwandlung im C-Stil verwendet werden (`(uint32_t)(imageDecoder.OrientedPixelWidth() * 0.5)`), aber es ist vorzuziehen, genau die Art von Umwandlung deutlich zu machen, die beabsichtigt ist. In diesem Fall würde dies mit `static_cast<uint32_t>(imageDecoder.OrientedPixelWidth() * 0.5)` vorgenommen.
 

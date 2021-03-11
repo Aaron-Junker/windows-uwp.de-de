@@ -1,20 +1,20 @@
 ---
 description: Übersicht über die MRT-Kernkomponenten und ihre Funktionsweise beim Laden von Anwendungs Ressourcen (Projekt Zusammenführung)
-title: Einführung in MRT Core (Projekt Zusammenführung)
+title: Verwalten von Ressourcen für den MRT-Kern (Projekt Zusammenführung)
 ms.topic: article
-ms.date: 12/11/2020
+ms.date: 03/09/2021
 keywords: MRT, mrtcore, PRI, makepri, Ressourcen, Laden von Ressourcen
 ms.author: hickeys
 author: hickeys
 ms.localizationpriority: medium
-ms.openlocfilehash: ce07491dcab2a11738bd5407e9094d8d780ea219
-ms.sourcegitcommit: 30d1a27fd78d198cec5c50af5621f9e65c7b965e
+ms.openlocfilehash: bde540ff99e763a2d5c622eba1d292f722008ef6
+ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98043059"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102629210"
 ---
-# <a name="introduction-to-mrt-core-project-reunion"></a>Einführung in MRT Core (Projekt Zusammenführung)
+# <a name="manage-resources-with-mrt-core-project-reunion"></a>Verwalten von Ressourcen mit MRT Core (Projekt Zusammenführung)
 
 MRT Core ist eine optimierte Version des modernen Windows- [Ressourcen Verwaltungssystems](/windows/uwp/app-resources/resource-management-system) , das als Teil der [Projekt Zusammenführung](../index.md)verteilt wird.
 

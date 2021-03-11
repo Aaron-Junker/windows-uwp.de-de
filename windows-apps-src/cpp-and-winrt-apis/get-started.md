@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, uwp, Standard, C++, cpp, winrt, Projektion, Erste Schritte
 ms.localizationpriority: medium
-ms.openlocfilehash: f38269acd9f1d6e2e830b51b3fcfa3a9014f2d7e
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 994ca6c28fab60528f9c533fad9587525c003e43
+ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219903"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102629328"
 ---
 # <a name="get-started-with-cwinrt"></a>Erste Schritte mit C++/WinRT
 
@@ -129,7 +129,7 @@ Optional können Sie die Erweiterung [C++/WinRT Visual Studio Extension (VSIX)](
 
 Wechseln Sie zu den Projekteigenschaften **Allgemein** \> **Windows SDK-Version**, und wählen Sie **Alle Konfigurationen** und **Alle Plattformen** aus. Achten Sie darauf, dass die **Windows SDK-Version** auf 10.0.17134.0 (Windows 10, Version 1803) oder höher festgelegt ist.
 
-Bestätigen Sie, dass Sie nicht von [Warum wird mein neues Projekt nicht kompiliert?](./faq.md) betroffen sind.
+Bestätigen Sie, dass Sie nicht von [Warum wird mein neues Projekt nicht kompiliert?](./faq.yml) betroffen sind.
 
 Da C++/WinRT Features aus dem C++17-Standard verwendet, legen Sie die Projekteigenschaft **C/C++**  > **Sprache** > **C++-Sprachstandard** auf *ISO C++17 Standard (/std:c++17)* fest.
 
@@ -183,7 +183,7 @@ Beachten Sie, dass XAML am besten für Programmiersprachen geeignet ist, die Ref
 
 ## <a name="sample-apps-written-in-cwinrt"></a>Beispiel-Apps in C++/WinRT
 
-Unter [Wo finde ich C++/WinRT-Beispiel-Apps?](./faq.md#where-can-i-find-cwinrt-sample-apps) finden Sie weitere Informationen.
+Unter [Wo finde ich C++/WinRT-Beispiel-Apps?](./faq.yml#where-can-i-find-c---winrt-sample-apps-) finden Sie weitere Informationen.
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [SyndicationClient::RetrieveFeedAsync-Methode](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)

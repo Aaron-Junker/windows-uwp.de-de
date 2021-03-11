@@ -10,12 +10,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ae88d30988ff2c3ccb4e7b32e1fefbf4d8bb9fde
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: c5dc119edefbdd3ef4dd155c9de9d2e69fee193b
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031123"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784771"
 ---
 # <a name="navigation-design-basics-for-windows-apps"></a>Grundlagen des Navigationsdesigns für Windows-Apps
 
@@ -204,22 +204,6 @@ Registerkarten können in folgenden Fällen verwendet werden:
 - Benutzer sollen Registerkarten dynamisch öffnen, schließen oder neu anordnen können.
 - Sie erwarten, dass möglicherweise eine große Anzahl von Registerkarten gleichzeitig geöffnet sind.
 - Benutzer sollen Registerkarten auf einfache Weise zwischen Fenstern in Ihrer Anwendung, die mit Registerkarten verwendet, verschieben können, ähnlich wie bei Webbrowsern wie Microsoft Edge.
-
-:::row-end:::
-
-:::row:::
-    :::column:::
-         ![Abbildung: Registerkarten und Pivotbereiche](images/nav/thumbnail-tabs-pivot.svg)
-    :::column-end:::
-        :::column span="2":::
-    [**Pivot**](../controls-and-patterns/pivot.md)
-    
-Ähnlich wie [NavigationView](../controls-and-patterns/navigationview.md), aber mit zusätzlicher Unterstützung von Toucheingaben und etwas anderem Navigationsverhalten.
-    
-Pivot kann in folgenden Fällen verwendet werden:
-- Wenn du in deiner App das Wechseln zwischen Kategorien per Wischgeste ermöglichen möchtest
-- Wenn Navigationsoptionen in Form eines Karussells dargestellt werden sollen
-- Wenn du keine umfangreiche Kontrolle über das Navigationsverhalten zwischen Kategorien benötigst
 
 :::row-end:::
 

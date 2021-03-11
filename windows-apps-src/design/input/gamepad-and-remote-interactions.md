@@ -9,12 +9,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f11cde619b783292e4880927c68b6ae8ff38323
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 7ad6c173596c4f716f58b64f51d9068b6a689905
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217184"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784791"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>Interaktionen mit Gamepad und Fernbedienung
 
@@ -71,23 +71,23 @@ Wie Sie im Diagramm erkennen können, werden einige Schaltflächen auf Gamepads 
 
 In der folgenden Tabelle werden alle Hardware Schaltflächen aufgelistet, die von Windows-Apps unterstützt werden, und welches Eingabegerät diese unterstützt.
 
-| Schaltfläche                    | Gamepad   | Remotesteuerung    |
+| Taste                    | Gamepad   | Remotesteuerung    |
 |---------------------------|-----------|-------------------|
 | A/Auswahl-Taste           | Ja       | Ja               |
 | B/Zurück-Taste             | Ja       | Ja               |
 | Steuerkreuz (D-Pad)   | Ja       | Ja               |
 | Menü-Taste               | Ja       | Ja               |
 | Ansicht-Taste               | Ja       | Ja               |
-| X- und Y-Tasten           | Ja       | Nein                |
-| Linker Stick                | Ja       | Nein                |
-| Rechter Stick               | Ja       | Nein                |
-| Linke und rechte Schalter   | Ja       | Nein                |
-| Linke und rechte Bumper    | Ja       | Nein                |
-| OneGuide-Taste           | Nein        | Ja               |
-| Lautstärke-Taste             | Nein        | Ja               |
-| Kanal-Taste            | Nein        | Ja               |
-| Mediensteuerungs-Tasten     | Nein        | Ja               |
-| Taste zum Stummschalten               | Nein        | Ja               |
+| X- und Y-Tasten           | Ja       | Nein                 |
+| Linker Stick                | Ja       | Nein                 |
+| Rechter Stick               | Ja       | Nein                 |
+| Linke und rechte Schalter   | Ja       | Nein                 |
+| Linke und rechte Bumper    | Ja       | Nein                 |
+| OneGuide-Taste           | Nein         | Ja               |
+| Lautstärke-Taste             | Nein         | Ja               |
+| Kanal-Taste            | Nein         | Ja               |
+| Mediensteuerungs-Tasten     | Nein         | Ja               |
+| Taste zum Stummschalten               | Nein         | Ja               |
 
 ### <a name="built-in-button-support"></a>Integrierte Tastenunterstützung
 
@@ -158,7 +158,7 @@ Die folgende Tabelle zeigt die in die UWP integrierte Beschleunigerunterstützun
 | Interaktion   | Tastatur/Maus   | Gamepad      | Integriert für:  | Empfohlen für: |
 |---------------|------------|--------------|----------------|------------------|
 | Bild auf/Bild ab  | Bild auf/Bild ab | Linker/rechter Trigger | [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView), [ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [ComboBox](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [FlipView](/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Ansichten, die den vertikalen Bildlauf unterstützen
-| Seite nach links/rechts | Keine | Linker/rechter Bumper | [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot), [ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [FlipView](/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Ansichten, die den horizontalen Bildlauf unterstützen
+| Seite nach links/rechts | Keine | Linker/rechter Bumper | [ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox), [listviewbase](/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer` , [Selector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [loopingselector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [flipview](/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Ansichten, die den horizontalen Bildlauf unterstützen
 | Vergrößern/Verkleinern        | STRG +/- | Linker/rechter Trigger | Keine | `ScrollViewer`, Ansichten, die das Vergrößern/Verkleinern unterstützen |
 | Navigationsbereich öffnen/schließen | Keine | Sicht | Keine | Navigationsbereiche |
 | Suchen, | Keine | Y-Taste | Keine | Verknüpfung mit der Hauptsuchfunktion in der App |
@@ -226,19 +226,19 @@ Der folgende Codeausschnitt zeigt, wie Sie das Verhalten der XY-Fokusnavigation 
 
 ```xml
 <StackPanel>
-    <Button x:Name="MyBtnLeft"
+    <Button x:Name="MyBtnLeft"
             Content="Search" />
-    <Button x:Name="MyBtnRight"
+    <Button x:Name="MyBtnRight"
             Content="Delete"/>
-    <Button x:Name="MyBtnTop"
+    <Button x:Name="MyBtnTop"
             Content="Update" />
-    <Button x:Name="MyBtnDown"
+    <Button x:Name="MyBtnDown"
             Content="Undo" />
-    <Button Content="Home"  
+    <Button Content="Home"  
             XYFocusLeft="{x:Bind MyBtnLeft}"
-            XYFocusRight="{x:Bind MyBtnRight}"
-            XYFocusDown="{x:Bind MyBtnDown}"
-            XYFocusUp="{x:Bind MyBtnTop}" />
+            XYFocusRight="{x:Bind MyBtnRight}"
+            XYFocusDown="{x:Bind MyBtnDown}"
+            XYFocusUp="{x:Bind MyBtnTop}" />
 </StackPanel>
 ```
 
@@ -247,8 +247,8 @@ Wenn sich der Fokus auf der `Home`-Schaltfläche und der Benutzer nach links nav
 Um zu verhindern, dass der Fokus von einem Steuerelement in eine bestimmten Richtung verschoben wird, verwenden Sie die `XYFocus*`-Eigenschaft, um auf das gleiche Steuerelement zu zeigen:
 
 ```xml
-<Button Name="HomeButton"  
-        Content="Home"  
+<Button Name="HomeButton"  
+        Content="Home"  
         XYFocusLeft ="{x:Bind HomeButton}" />
 ```
 
@@ -548,14 +548,14 @@ Einige Steuerelemente führen häufig genug dazu, dass Benutzer in einem Steuere
 
 | Control               | Standardeinstellung in Bezug auf die Fokusaktivierung  |
 |-----------------------|---------------------------|
-| CalendarDatePicker    | Andererseits                        |
+| CalendarDatePicker    | Ein                        |
 | FlipView              | Aus                       |
 | GridView              | Aus                       |
 | ListBox               | Aus                       |
 | ListView              | Aus                       |
 | ScrollViewer          | Aus                       |
 | SemanticZoom          | Aus                       |
-| Schieberegler                | Andererseits                        |
+| Slider                | Ein                        |
 
 Alle anderen Windows-Steuerelemente führen zu keinem Verhalten oder visuellen Änderungen, wenn dies der Fall ist `IsFocusEngagementEnabled="True"` .
 

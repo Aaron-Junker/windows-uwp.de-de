@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c7ac5b8c34f007e18e04eb8299d9ccddd583ad29
-ms.sourcegitcommit: 9378b1b2c2a5ba6e774ae76b53d755cbc5215af2
+ms.openlocfilehash: 51dc59f9390e2f4bbbf8dda35ed8fad6de0135a4
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97709649"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784781"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Entwerfen für Xbox und Fernsehgeräte
 
@@ -427,14 +427,6 @@ Wenn Sie eine APP unter Verwendung von DirectX 11 oder DirectX 12 entwickeln und
 ## <a name="guidelines-for-ui-controls"></a>Richtlinien für Benutzeroberflächensteuerelemente
 
 Es gibt mehrere Benutzeroberflächen-Steuerelemente, die auf mehreren Geräten gut funktionieren. Wenn diese jedoch auf Fernsehgeräten verwendet werden, müssen bestimmte Aspekte berücksichtigt werden. Informieren Sie sich über einige bewährte Methoden für die Verwendung dieser Steuerelemente beim Entwerfen für die 10 Fuß-Erfahrung.
-
-### <a name="pivot-control"></a>Pivotsteuerelement
-
-Ein [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot) ermöglicht über verschiedene Header oder Registerkarten eine schnelle Navigation für Ansichten in einer App. Das Steuerelement unterstreicht jeweils den Header, der den Fokus hat. So wird bei der Nutzung von Gamepads/Remotesteuerungen deutlicher, welcher Header zurzeit ausgewählt ist.
-
-![Pivotunterstreichung](images/designing-for-tv/pivot-underline.png)
-
-Sie können die [Pivot.IsHeaderItemsCarouselEnabled](/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty)-Eigenschaft auf `true` festlegen, damit Pivots stets die gleiche Position haben und die Kopfzeile des ausgewählten Pivots nicht stets an die erste Position verschoben wird. Dies ist besser für große Geräte mit großen Bildschirmanzeigen wie Fernsehgeräte geeignet, da Kopfzeilenumbrüche Benutzer stark ablenken können. Wenn nicht alle Pivotkopfzeilen gleichzeitig auf den Bildschirm passen, wird eine Bildlaufleiste angezeigt, damit Kunden die restlichen Kopfzeilen sehen. Sie sollten jedoch sicherstellen, dass alle Kopfzeilen auf den Bildschirm passen, um eine optimale Erfahrung bereitzustellen. Weitere Informationen finden Sie unter [Registerkarten und Pivots](../controls-and-patterns/pivot.md).
 
 <a name="navigation-pane"></a>
 

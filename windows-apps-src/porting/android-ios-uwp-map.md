@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 21cb4c105cc4c95c3a14c4c5bd0049265682f91c
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: d15f0b1dccbdb165cb2bbcf39628e16859a42ed5
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220583"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784731"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Windows-Apps-Konzeptzuordnung für Android- und iOS-Entwickler
 
@@ -127,7 +127,7 @@ Siehe auch die Portierungsinformationen in [Wechsel von iOS zu UWP](ios-to-uwp-r
 <td align="left"><strong>Peer Navigation.</strong> <br><br>Bereitstellen von Methoden für den Benutzer, um zwischen Seiten auf der gleichen Hierarchieebene zu navigieren.</td>
 <td align="left"><strong>Registerkarten</strong>, <strong>wischen-Ansichten</strong> und <strong>Navigations Schub</strong> leisten bieten eine <strong>seitliche Navigation</strong>.</td>
 <td align="left"><strong>Register</strong>Karten leisten Controller, <strong>geteilte Ansichts</strong> Controller und <strong>Seiten Ansichts Controller</strong> ermöglichen die Navigation zwischen Sichten der gleichen Hierarchie.</td>
-<td align="left">Sie können mit <strong><a href="/windows/uwp/controls-and-patterns/tabs-pivot">Registerkarten/Pivots</a></strong> eine dauerhafte Liste von Links/Registerkarten über dem Inhalt anzeigen. Mit <strong><a href="/windows/uwp/controls-and-patterns/split-view">Navigationsbereich/geteilter Ansicht</a></strong> können Sie neben dem Inhalt eine Liste von Links anzeigen.<br/><br/><a href="/windows/uwp/layout/navigation-basics">Navigation</a><br/><br/><a href="/windows/uwp/layout/navigate-between-two-pages">Navigieren zwischen zwei Seiten</a></td>
+<td align="left">Sie können eine persistente Liste von Links/Registerkarten über dem Inhalt mithilfe von <strong><a href="/windows/uwp/controls-and-patterns/navigationview">navigationview</a></strong>anzeigen. Mit <strong><a href="/windows/uwp/controls-and-patterns/split-view">Navigationsbereich/geteilter Ansicht</a></strong> können Sie neben dem Inhalt eine Liste von Links anzeigen.<br/><br/><a href="/windows/uwp/layout/navigation-basics">Navigation</a><br/><br/><a href="/windows/uwp/layout/navigate-between-two-pages">Navigieren zwischen zwei Seiten</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Hierarchische Navigation.</strong> <br><br>Navigieren zwischen über- und untergeordneten Seiten einer Hierarchie.</td>
@@ -348,7 +348,7 @@ Siehe auch die Portierungsinformationen in [Wechsel von iOS zu UWP](ios-to-uwp-r
 <td align="left"><strong>Asynchrone Programmierung.</strong> <br><br>Vermeiden Sie komplexes Threading, indem Sie mit Mustern der asynchronen Programmierung die Reaktionsfähigkeit des UI-Threads aufrechterhalten.</td>
 <td align="left">Zum Erstellen eigener asynchroner Klassen ist <strong>die Verwendung von Threading erforderlich</strong>. Einige integrierte Klassen sind asynchron.</td>
 <td align="left">Zum Erstellen eigener asynchroner Klassen ist <strong>die Verwendung von Threading erforderlich</strong>. Einige integrierte Klassen sind asynchron.</td>
-<td align="left">Sie können asynchrone Muster verwenden, um zu vermeiden, dass der Haupt Thread blockiert wird, wenn Sie Ihre eigenen APIs erstellen, z <strong>await</strong> . b. asynchrone und in c# zu <strong>erwartende und Visual Basic</strong> . Sie können die integrierten asynchronen APIs verwenden, die mit dem Wort <strong>Async</strong> enden.<br/><br/><a href="/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps">Asynchrone Programmierung</a><br/><br/><a href="/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic">Aufrufen asynchroner APIs in C# oder Visual Basic</a></td>
+<td align="left">Sie können asynchrone Muster verwenden, um zu vermeiden, dass der Haupt Thread blockiert wird, wenn Sie Ihre eigenen APIs erstellen, z <strong></strong> . b. asynchrone und in c# zu <strong>erwartende und Visual Basic</strong> . Sie können die integrierten asynchronen APIs verwenden, die mit dem Wort <strong>Async</strong> enden.<br/><br/><a href="/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps">Asynchrone Programmierung</a><br/><br/><a href="/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic">Aufrufen asynchroner APIs in C# oder Visual Basic</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Listen Ansichts Optimierung.</strong> <br><br>Integrierte Muster zum Optimieren von Datenlisten, die häufig eine geringe Leistung aufweisen, wenn große Mengen von Daten angezeigt werden müssen.</td>

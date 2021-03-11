@@ -4,12 +4,12 @@ description: Erfahren Sie mehr zu den Grundsätzen abgerundeter Ecken, Entwurfsa
 ms.date: 10/08/2019
 ms.topic: article
 keywords: Windows 10, UWP, Eckradius, gerundet
-ms.openlocfilehash: 33432ac0083c0d6660d0669ea43805e0ae73f37e
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
+ms.openlocfilehash: 14abadb968e31c52e49d7597241eb017f5ebead7
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860194"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784811"
 ---
 # <a name="corner-radius"></a>Eckradius
 
@@ -94,7 +94,6 @@ Die Formatvorlagen mit abgerundeten Ecken werden in drei Bereichen der Steuerele
 **Steuerelemente**
 
 - NavigationView-Auswahlindikator
-- Pivot-Auswahlindikator
 - ProgressBar
 - ScrollBar (wenn `IndicatorMode=TouchIndicator`)
 - Slider

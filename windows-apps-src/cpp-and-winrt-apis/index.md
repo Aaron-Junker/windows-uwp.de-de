@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion
 ms.localizationpriority: medium
-ms.openlocfilehash: b3ad3a204b2eb4b288e3d3c313a0832bea124de0
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 7812eca3263e266820f3624f88aad41b2d6e6ef5
+ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219893"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102629378"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -40,7 +40,7 @@ Informationen zur Portierung nach C++/WinRT finden Sie in diesen Ressourcen.
 - [Umstellen von WRL auf C++/WinRT](./move-to-winrt-from-wrl.md)
 - [Umstellen von C# auf C++/WinRT](./move-to-winrt-from-csharp.md)
 
-Siehe auch [Wo finde ich C++/WinRT-Beispiel-Apps?](./faq.md#where-can-i-find-cwinrt-sample-apps).
+Siehe auch [Wo finde ich C++/WinRT-Beispiel-Apps?](./faq.yml#where-can-i-find-c---winrt-sample-apps-).
 
 ### <a name="topics-about-cwinrt"></a>Themen zu C++/WinRT
 
@@ -49,7 +49,7 @@ Siehe auch [Wo finde ich C++/WinRT-Beispiel-Apps?](./faq.md#where-can-i-find-cwi
 | [Einführung in C++/WinRT](./intro-to-using-cpp-with-winrt.md) | Enthält eine Einführung in C++/WinRT – eine Standard C++ Sprachprojektion für Windows-Runtime-APIs. |
 | [Erste Schritte mit C++/WinRT](./get-started.md) | Damit Sie C++/WinRT schneller verwenden können, werden in diesem Thema einige einfache Codebeispiele vorgestellt. |
 | [Neuigkeiten in C++/WinRT](./news.md) | Neuigkeiten und Änderungen von C++/WinRT. |
-| [Häufig gestellte Fragen](./faq.md) | Antworten auf Fragen zur Erstellung und Nutzung von Windows-Runtime-APIs mit C++/WinRT. |
+| [Häufig gestellte Fragen](./faq.yml) | Antworten auf Fragen zur Erstellung und Nutzung von Windows-Runtime-APIs mit C++/WinRT. |
 | [Problembehandlung](./troubleshooting.md) | Die Tabelle mit den Symptomen und Problembehandlungen in diesem Thema kann für Sie hilfreich sein. Hierbei spielt es keine Rolle, ob Sie neuen Code schreiben oder eine bestehende App portieren. |
 | [C++/WinRT-Beispielanwendung eines Foto-Editors](./photo-editor-sample.md) | Foto-Editor ist eine UWP-Beispielanwendung, die das Entwickeln von Apps mit der C++/WinRT-Programmiersprache veranschaulicht. Mit der Beispielanwendung können Sie Fotos aus der Bibliothek **Bilder** abrufen und dann das ausgewählte Bild mit verschiedenen Fotoeffekten bearbeiten. | 
 | [String-Verarbeitung](./strings.md) | Mit C++/WinRT können Sie Windows-Runtime-APIs mit C++-String-Standardtypen aufrufen, oder Sie können den Typ [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) verwenden. |

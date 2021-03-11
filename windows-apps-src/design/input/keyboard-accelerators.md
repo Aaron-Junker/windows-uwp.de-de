@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: ee0c92ec81f7bbabc2218afbf263000a167d2057
-ms.sourcegitcommit: e81227399ba0f286e74e4977d757237829440a2e
+ms.openlocfilehash: 6f712dd8e845b3beb52981be4a17df128c48845d
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96310208"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784741"
 ---
 # <a name="keyboard-accelerators"></a>Tastaturkürzel
 
@@ -127,11 +127,11 @@ Es wird empfohlen, dass Sie für die gängigsten Aktionen in der APP Tastaturbes
 ```
 
 ![Screenshot einer Tastatur Beschleunigung in einer QuickInfo.](images/accelerators/accelerators_tooltip.png)  
-**_In einer QuickInfo beschriebene Tastatur Beschleunigung_* _
+***In einer QuickInfo beschriebene Tastatur Beschleunigung***
 
 Das [UIElement](/uwp/api/windows.ui.xaml.uielement) -Objekt verfügt über eine [keyboardaccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator) -Auflistung ( [keyboardaccelerators](/uwp/api/windows.ui.xaml.uielement.KeyboardAccelerators)), in der Sie die benutzerdefinierten keyboardaccelerator-Objekte angeben und die Tastatureingaben für die Zugriffstaste definieren:
 
--   _ *[Key](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)**: der für die Tastatur Zugriffs [Taste verwendete virtualkey](/uwp/api/windows.system.virtualkey) .
+-   **[Key](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)** : der [virtualkey](/uwp/api/windows.system.virtualkey) , der für die Zugriffstaste verwendet wird.
 
 -   **[Modifiziererer](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Modifiers)** – die für die Tastatur Zugriffstaste verwendeten [virtualkeymodifier](/uwp/api/windows.system.virtualkeymodifiers) . Wenn Modifizierer nicht festgelegt ist, ist der Standardwert None.
 
@@ -331,11 +331,11 @@ Es wird empfohlen, Tastaturbeschleuniger in Windows-Anwendungen konsistent zu ma
 
 Dies ist möglicherweise aufgrund von Unterschieden in der Funktionalität von apps nicht immer möglich.
 
-| **Bearbeiten** | **Allgemeine Tastatur Beschleunigung** |
+| **Bearbeitung läuft** | **Allgemeine Tastatur Beschleunigung** |
 | ------------- | ----------------------------------- |
 | Bearbeitungsmodus starten | STRG + E |
 | Alle Elemente in einem Steuerelement oder Fenster mit Fokus auswählen | STRG+A |
-| Suchen und ersetzen | STRG + H |
+| Suchen und ersetzen | STRG + H |
 | Rückgängig | STRG+Z |
 | Wiederholen | STRG+Y |
 | Auswahl löschen und in die Zwischenablage kopieren | STRG+X |
@@ -466,7 +466,7 @@ Steuern Sie das Darstellungs Verhalten, indem Sie die [keyboardacceleratorplacem
 </Button>
 ```
 
-In einigen Fällen müssen Sie möglicherweise eine QuickInfo in Relation zu einem anderen Element (in der Regel ein Container Objekt) darstellen. Beispielsweise ein Pivot-Steuerelement, das die QuickInfo für ein PivotItem mit dem Pivot-Header anzeigt. 
+In einigen Fällen müssen Sie möglicherweise eine QuickInfo in Relation zu einem anderen Element (in der Regel ein Container Objekt) darstellen. 
 
 Hier wird gezeigt, wie die keyboardacceleratorplacementtarget-Eigenschaft verwendet wird, um die Tastenkombination für die Tastenkombination für eine Save-Schaltfläche mit dem Raster Container anstelle der Schaltfläche anzuzeigen.
 
@@ -526,8 +526,8 @@ Da das Ereignis " [Merkmal empfangen](/uwp/api/windows.ui.core.corewindow.Charac
 Die Vorschau Eingabeereignisse werden vor allen anderen Ereignissen ausgelöst. Wenn Sie diese Ereignisse nicht behandeln, wird die Zugriffstaste für das Element, das den Fokus besitzt, ausgelöst, gefolgt vom KeyDown-Ereignis. Beide Ereignisse Blasen bis zur Behandlung.
 
 
-![Diagramm mit der Key Event Sequence ](images/accelerators/accelerators_keyevents.png) 
-* **Key-Ereignis Sequenz** _
+![Diagramm mit der Ereignis Sequenz für Key Event Sequence ](images/accelerators/accelerators_keyevents.png)
+ ***Key***
 
 Reihenfolge der Ereignisse:
 
@@ -582,7 +582,8 @@ protected override void OnProcessKeyboardAccelerators(
 
 Es wird empfohlen, alle Tastaturbeschleuniger zu lokalisieren. Dies ist mit der standardmäßigen UWP-Ressourcen Datei (. resw) und dem x:UID-Attribut in den XAML-Deklarationen möglich. In diesem Beispiel lädt der Windows-Runtime die Ressourcen automatisch.
 
-![Diagramm der Tastatur Zugriffstaste mit UWP-Ressourcen Datei ](images/accelerators/accelerators_localization.png) _ *_Tastatur Beschleunigung-Lokalisierung mit UWP-Ressourcen Datei_**
+![Diagramm zur Lokalisierung der Tastatur Beschleunigung mit UWP-Ressourcen Datei ](images/accelerators/accelerators_localization.png)
+ ***Tastatur Zugriffs Lokalisierung mit UWP-Ressourcen Datei***
 
 ``` xaml
 <Button x:Uid="myButton" Click="OnSave">
@@ -643,6 +644,6 @@ public class MyListView : ListView
 - [Tastaturinteraktionen](keyboard-interactions.md)
 - [Zugriffsschlüssel](access-keys.md)
 
-### <a name="samples"></a>Proben
+### <a name="samples"></a>Beispiele
 
 - [XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery)

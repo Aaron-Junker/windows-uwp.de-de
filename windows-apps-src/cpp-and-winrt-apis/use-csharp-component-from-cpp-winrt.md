@@ -5,12 +5,12 @@ ms.date: 12/30/2020
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c6d766eb757241d6d3f38c425538c62fd057316
-ms.sourcegitcommit: b0cedbb65d00e6241a9350c2ee1b1e89b090a2d2
+ms.openlocfilehash: cc341f6fd716daf0474fdbcb25f567a7c727d507
+ms.sourcegitcommit: 7d542c6367b3b441044225431ee69d869ed0ff4b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101086952"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102402336"
 ---
 # <a name="authoring-a-c-windows-runtime-component-for-use-from-a-cwinrt-app"></a>Erstellen einer C#-Komponente für Windows-Runtime zur Verwendung aus einer C++/WinRT-App
 
@@ -218,5 +218,5 @@ Legen Sie als nächstes die `UseDotNetNativeToolchain`-Eigenschaft in den Releas
 ```
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Komponenten für Windows-Runtime in C# und Visual Basic](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* [Windows-Runtime-Komponenten mit C++/WinRT](/windows-apps-src/winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)
+* [Komponenten für Windows-Runtime in C# und Visual Basic](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic)
+* [Windows-Runtime-Komponenten mit C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)
