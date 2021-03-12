@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Popup Benachrichtigungen, interaktive Toasts, Adaptive Toasts, Popup Inhalt, Toast Nutzlast
 ms.localizationpriority: medium
-ms.openlocfilehash: 92a8f53b2951d7fb3ed5bb5c0afbdf1e7e2424cc
-ms.sourcegitcommit: fc7fb82121a00e552eaebafba42e5f8e1623c58a
+ms.openlocfilehash: b4dfc904bfd7fce4d2444dee1e0dd6e5bc26a6a2
+ms.sourcegitcommit: 5e718720d1032a7089dea46a7c5aefa6cda3385f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97978585"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103226144"
 ---
 # <a name="toast-content"></a>Popupinhalt
 
@@ -27,7 +27,7 @@ Mithilfe von adaptiven und interaktiven Popup Benachrichtigungen können Sie fle
 
 ## <a name="getting-started"></a>Erste Schritte
 
-**Installieren Sie die Benachrichtigungsbibliothek.** Wenn Sie C# anstelle von XML verwenden möchten, um Benachrichtigungen zu generieren, installieren Sie das NuGet-Paket mit dem Namen [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/). (Suchen Sie nach „Benachrichtigungen UWP“.) Die in diesem Artikel bereitgestellten C#-Beispiele verwenden Version 1.0.0 des NuGet-Pakets.
+**Installieren Sie die Benachrichtigungsbibliothek.** Wenn Sie C# anstelle von XML verwenden möchten, um Benachrichtigungen zu generieren, installieren Sie das NuGet-Paket mit dem Namen [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/). (Suchen Sie nach „Benachrichtigungen UWP“.) Die in diesem Artikel bereitgestellten c#-Beispiele verwenden die Version 7.0.0 des nuget-Pakets.
 
 **Installieren Sie den Notifications Visualizer.** Diese kostenlose Windows-App hilft Ihnen beim Entwerfen interaktiver Popup Benachrichtigungen, indem Sie während der Bearbeitung eine sofortige visuelle Vorschau Ihres Popups bereitstellen, ähnlich wie der XAML-Editor/die Entwurfs Ansicht von Visual Studio. Weitere Informationen finden Sie unter [Benachrichtigungs](notifications-visualizer.md) Schnellansicht, oder [Laden Sie die Benachrichtigungs Schnellansicht aus dem Store herunter](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
 
@@ -53,9 +53,15 @@ Der Popup Inhalt ist in unformatiertem XML definiert, aber Sie können unsere [n
 
 ```csharp
 new ToastContentBuilder()
-    .AddToastActivationInfo("app-defined-string", ToastActivationType.Foreground)
+    .AddArgument("conversationId", 9813)
+
     .AddText("Some text")
-    .AddButton("Archive", ToastActivationType.Background, "archive")
+
+    .AddButton(new ToastButton()
+        .SetContent("Archive")
+        .AddArgument("action", "archive")
+        .SetBackgroundActivation())
+
     .AddAudio(new Uri("ms-appx:///Sound.mp3"));
 ```
 
@@ -225,7 +231,7 @@ Für http-und HTTPS-Remoteweb Images gibt es Beschränkungen hinsichtlich der Da
 
 | Normale Verbindung | Getaktete Verbindung | Vor Fall Creators Update |
 | - | - | - |
-| 3 MB | 1 MB | 200 KB |
+| 3 MB | 1 MB | 200 KB |
 
 Wenn ein Bild die Dateigröße überschreitet oder nicht heruntergeladen werden kann oder ein Timeout auftritt, wird das Image gelöscht, und der Rest der Benachrichtigung wird angezeigt.
 
@@ -287,7 +293,7 @@ new ToastContentBuilder()
 ---
 
 
-## <a name="progress-bar"></a>Statusanzeige
+## <a name="progress-bar"></a>Statusleiste
 
 **Neues in Creators Update**: Sie können eine Statusanzeige für ihre Popup Benachrichtigung bereitstellen, um den Benutzer über den Fortschritt von Vorgängen, z. b. Downloads, zu informieren.
 
@@ -389,7 +395,7 @@ new ToastContentBuilder()
 ---
 
 
-## <a name="buttons"></a>Tasten
+## <a name="buttons"></a>Schaltflächen
 
 Schaltflächen machen Ihren Toast interaktiv, sodass der Benutzer schnelle Aktionen für ihre Popup Benachrichtigung durchführen kann, ohne den aktuellen Workflow zu unterbrechen. Beispielsweise können Benutzer direkt von einem Toast aus auf eine Nachricht antworten oder eine e-Mail löschen, ohne die e-Mail-APP zu öffnen. Schaltflächen werden im erweiterten Teil ihrer Benachrichtigung angezeigt.
 
@@ -413,8 +419,14 @@ Schaltflächen können die folgenden unterschiedlichen Aktionen ausführen...
 new ToastContentBuilder()
     ...
     
-    .AddButton("See more details", ToastActivationType.Foreground, "action=viewdetails&contentId=351")
-    .AddButton("Remind me later", ToastActivationType.Background, "action=remindlater&contentId=351");
+    .AddButton(new ToastButton()
+        .SetContent("See more details")
+        .AddArgument("action", "viewDetails"))
+
+    .AddButton(new ToastButton()
+        .SetContent("Remind me later")
+        .AddArgument("action", "remindLater")
+        .SetBackgroundActivation());
 ```
 
 #### <a name="xml"></a>[XML](#tab/xml)
@@ -428,7 +440,7 @@ new ToastContentBuilder()
 
         <action
             content="See more details"
-            arguments="action=viewdetails&amp;contentId=351"
+            arguments="action=viewDetails&amp;contentId=351"
             activationType="foreground"/>
 
         <action
@@ -459,10 +471,11 @@ Sie können den Schaltflächen Symbole hinzufügen. Diese Symbole sind weiß tra
 new ToastContentBuilder()
     ...
     
-    .AddButton(
-        "Dismiss",
-        ToastActivationType.Foreground,
-        "dismiss", new Uri("Assets/NotificationButtonIcons/Dismiss.png", UriKind.Relative));
+    .AddButton(new ToastButton()
+        .SetContent("Dismiss")
+        .AddArgument("action", "dismiss")
+        .SetImageUri(new Uri("Assets/NotificationButtonIcons/Dismiss.png", UriKind.Relative))
+        .SetBackgroundActivation());
 ```
 
 #### <a name="xml"></a>[XML](#tab/xml)
@@ -563,12 +576,12 @@ new ToastContentBuilder()
     
     .AddInputTextBox("tbReply", "Type a reply")
 
-    .AddButton(
-        textBoxId: "tbReply", // To place button next to text box, reference text box's id
-        content: "Reply",
-        activationType: ToastActivationType.Background,
-        arguments: "action=reply&convId=9318",
-        imageUri: new Uri("Assets/Reply.png", UriKind.Relative));
+    .AddButton(new ToastButton()
+        .SetContent("Reply")
+        .SetTextBoxId("tbReply") // To place button next to text box, reference text box's id
+        .SetImageUri(new Uri("Assets/Reply.png", UriKind.Relative))
+        .AddArgument("action", "reply")
+        .SetBackgroundActivation());
 ```
 
 #### <a name="xml"></a>[XML](#tab/xml)
@@ -612,8 +625,14 @@ new ToastContentBuilder()
     
     .AddInputTextBox("tbReply", "Type a reply")
 
-    .AddButton("Reply", ToastActivationType.Background, "action=reply&threadId=9218")
-    .AddButton("Video call", ToastActivationType.Foreground, "action=videocall&threadId=9218");
+    .AddButton(new ToastButton()
+        .SetContent("Reply")
+        .AddArgument("action", "reply")
+        .SetBackgroundActivation())
+
+    .AddButton(new ToastButton()
+        .SetContent("Video call")
+        .AddArgument("action", "videoCall"));
 ```
 
 #### <a name="xml"></a>[XML](#tab/xml)

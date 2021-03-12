@@ -7,12 +7,12 @@ ms.date: 12/15/2017
 ms.topic: article
 keywords: Windows 10, UWP, Toast, benutzerdefiniertes Audio, Benachrichtigung, Audio, Sound
 ms.localizationpriority: medium
-ms.openlocfilehash: 54f890ceb0031b4c244e387e1f7068615a2fedc1
-ms.sourcegitcommit: 98ca28fd0b5d306d35f3919fe9dd4d5a0222235e
+ms.openlocfilehash: 905292155dfc43a82c464edb651b2d176aeab960
+ms.sourcegitcommit: 5e718720d1032a7089dea46a7c5aefa6cda3385f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102029823"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103226124"
 ---
 # <a name="custom-audio-on-toasts"></a>Benutzerdefiniertes Audiogerät
 
@@ -27,11 +27,8 @@ Installieren Sie [Microsoft. Toolkit. UWP. Benachrichtigungen](https://www.nuget
 
 ## <a name="add-namespace-declarations"></a>Hinzufügen von Namespace-Deklarationen
 
-`Windows.UI.Notifications` enthält die Kachel und die Toast-APIs. `Microsoft.Toolkit.Uwp.Notifications` schließt die Benachrichtigungs Bibliothek ein.
-
 ```csharp
 using Microsoft.Toolkit.Uwp.Notifications;
-using Windows.UI.Notifications;
 ```
 
 
@@ -61,7 +58,8 @@ if (supportsCustomAudio)
     contentBuilder.AddAudio(new Uri("ms-appx:///Assets/Audio/CustomToastAudio.m4a"));
 }
 
-// TODO: Send the toast
+// Send the toast
+contentBuilder.Show();
 ```
 
 Zu den unterstützten Audiodateitypen zählen...
@@ -76,10 +74,10 @@ Zu den unterstützten Audiodateitypen zählen...
 
 ## <a name="send-the-notification"></a>Senden der Benachrichtigung
 
-Das Senden einer Benachrichtigung mit Audiodaten entspricht dem Senden einer regulären Benachrichtigung. Weitere Informationen finden Sie unter [Send local Toast](send-local-toast.md) .
+Das Senden einer Benachrichtigung mit Audiodaten entspricht dem Senden einer regulären Benachrichtigung (nur die Show-Methode). Weitere Informationen finden Sie unter [Send local Toast](send-local-toast.md) .
 
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 - [Vollständiges Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-toast-with-custom-audio)
 - [Lokalen Toast senden](send-local-toast.md)

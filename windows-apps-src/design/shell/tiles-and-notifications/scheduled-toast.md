@@ -7,12 +7,12 @@ ms.date: 04/09/2020
 ms.topic: article
 keywords: Windows 10, UWP, geplante Popup Benachrichtigung, scheduledtoastnotification, Vorgehensweise, Schnellstart, erste Schritte, Codebeispiel, Exemplarische Vorgehensweise
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a138458634f0246d7e6bed9d6d65c2479dac3c9
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 488972d4f7d84967299f0a097bd5bbb8e0599aee
+ms.sourcegitcommit: 5e718720d1032a7089dea46a7c5aefa6cda3385f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93030693"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103226104"
 ---
 # <a name="schedule-a-toast-notification"></a>Planen einer Popup Benachrichtigung
 
@@ -23,7 +23,7 @@ Beachten Sie, dass geplante Popup Benachrichtigungen über ein Übermittlungs Fe
 > [!IMPORTANT]
 > Für Desktop Anwendungen (msix/Sparse-Pakete und klassischer Desktop) gibt es etwas andere Schritte zum Senden von Benachrichtigungen und zur Handhabung der Aktivierung. Befolgen Sie die nachfolgenden Anweisungen, aber ersetzen Sie durch `ToastNotificationManager` die `DesktopNotificationManagerCompat` -Klasse aus der [Desktop-Apps-](toast-desktop-apps.md) Dokumentation.
 
-> **Wichtige APIs** : [scheduleddeastnotification-Klasse](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
+> **Wichtige APIs**: [scheduleddeastnotification-Klasse](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
 
 
 ## <a name="prerequisites"></a>Voraussetzungen
@@ -42,10 +42,7 @@ Installieren Sie das [nuget-Paket Microsoft. Toolkit. UWP. Benachrichtigungen](h
 
 ## <a name="step-2-add-namespace-declarations"></a>Schritt 2: Hinzufügen von Namespace Deklarationen
 
-`Windows.UI.Notifications` enthält die Toast-APIs.
-
 ```csharp
-using Windows.UI.Notifications;
 using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ```
 
@@ -55,20 +52,12 @@ using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 Wir werden eine einfache textbasierte Benachrichtigung verwenden, die einen Schüler/Student zu den heute noch fälligen Hausaufgaben erinnert. Erstellen Sie die Benachrichtigung, und planen Sie Sie!
 
 ```csharp
-// Construct the content
-var content = new ToastContentBuilder()
-    .AddToastActivationInfo("itemsDueToday", ToastActivationType.Foreground)
+// Construct the content and schedule the toast!
+new ToastContentBuilder()
+    .AddArgument("action", "viewItemsDueToday")
     .AddText("ASTR 170B1")
     .AddText("You have 3 items due today!");
-    .GetToastContent();
-
-    
-// Create the scheduled notification
-var toast = new ScheduledToastNotification(content.GetXml(), DateTime.Now.AddSeconds(5));
-
-
-// Add your scheduled toast to the schedule
-ToastNotificationManager.CreateToastNotifier().AddToSchedule(toast);
+    .Schedule(DateTime.Now.AddSeconds(5));
 ```
 
 
@@ -81,8 +70,16 @@ Weitere Informationen zum Ersetzen/Entfernen von bereits übermittelten Popup Be
 Die Kombination aus Tag und Gruppe fungiert als zusammengesetzter Primärschlüssel. Die Gruppe ist der allgemeinere Bezeichner, in dem Sie Gruppen wie "wallposts", "Messages", "friendrequests" usw. zuweisen können. Und dann sollte die Kennung die Benachrichtigung selbst innerhalb der Gruppe eindeutig identifizieren. Mithilfe einer generischen Gruppe können Sie dann alle Benachrichtigungen aus dieser Gruppe entfernen, indem Sie die [removegroup-API](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_)verwenden.
 
 ```csharp
-toast.Tag = "18365";
-toast.Group = "ASTR 170B1";
+// Construct the content and schedule the toast!
+new ToastContentBuilder()
+    .AddArgument("action", "viewItemsDueToday")
+    .AddText("ASTR 170B1")
+    .AddText("You have 3 items due today!");
+    .Schedule(DateTime.Now.AddSeconds(5), toast =>
+    {
+        toast.Tag = "18365";
+        toast.Group = "ASTR 170B1";
+    });
 ```
 
 
@@ -94,7 +91,7 @@ Suchen Sie anschließend den geplanten Toast, der mit dem zuvor angegebenen Tag 
 
 ```csharp
 // Create the toast notifier
-ToastNotifier notifier = ToastNotificationManager.CreateToastNotifier();
+ToastNotifierCompat notifier = ToastNotificationManagerCompat.CreateToastNotifier();
 
 // Get the list of scheduled toasts that haven't appeared yet
 IReadOnlyList<ScheduledToastNotification> scheduledToasts = notifier.GetScheduledToastNotifications();
@@ -107,6 +104,9 @@ if (toRemove != null)
     notifier.RemoveFromSchedule(toRemove);
 }
 ```
+
+> [!IMPORTANT]
+> Win32-nicht-msix/Sparse-apps müssen wie oben gezeigt die Klasse "" "" "" "" "" "" "" "" "" Wenn Sie "deastnotificationmanager" verwenden, wird die Ausnahme "Element nicht gefunden" angezeigt. Alle App-Typen können die compat-Klasse verwenden und funktionieren ordnungsgemäß.
 
 
 ## <a name="activation-handling"></a>Aktivierungs Behandlung
