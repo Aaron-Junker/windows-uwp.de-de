@@ -4,12 +4,12 @@ description: Ein schnell Startprogramm für Poweruser, das einige zusätzliche F
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 126c38cd98f0d8ff1102c7f53f14cb95ec7e38c5
-ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
+ms.openlocfilehash: 5b6f86636cb5753d93422a5658e6ae661151d0f9
+ms.sourcegitcommit: eb203b55b1332d0ed135abccd50f3fc287f89a5a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99534399"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193295"
 ---
 # <a name="powertoys-run-utility"></a>PowerToys-Hilfsprogramm ausführen
 
@@ -40,7 +40,7 @@ Die PowerToys-Run-Funktionen umfassen Folgendes:
 
 - Ausführen einer einfachen Berechnung mithilfe des Rechners
 
-## <a name="settings"></a>Einstellungen
+## <a name="settings"></a>Einstellung
 
 Die folgenden Test Lauf Optionen sind im Menü PowerToys-Einstellungen verfügbar.
 
@@ -57,7 +57,7 @@ Die folgenden Test Lauf Optionen sind im Menü PowerToys-Einstellungen verfügba
   | **Verknüpfungen** | **Aktion** |
   | --- | --- |
   | ALT + LEERTASTE | PowerToys-Testlauf öffnen oder ausblenden |
-  | ESC | PowerToys-Run ausblenden |
+  | Esc | PowerToys-Run ausblenden |
   | STRG+UMSCHALT+EINGABE | (Gilt nur für Anwendungen) Ausgewählte Anwendung als Administrator öffnen |
   | Strg+Umschalt+E | (Gilt nur für Anwendungen und Dateien) Enthaltenden Ordner in Datei-Explorer öffnen |
   | STRG+C | (Gilt nur für Ordner und Dateien) Pfad für Kopier Pfad |
@@ -76,7 +76,7 @@ Diese werden erzwingen, dass PowerToys nur als Ziel-Plug-Ins ausgeführt wird.
   | `<` | Nur ausführen von Prozessen. Beispiel `<outlook` für die Suche nach allen Prozessen, die Outlook enthalten |
   | `>` | Nur Shellbefehl. Beispiel `>ping localhost` für eine Ping-Abfrage |
   | `:` | Nur Registrierungsschlüssel. Beispiel `:hkcu` für die Suche nach dem Registrierungsschlüssel HKEY_CURRENT_USER |
-  | `!` | Nur Windows-Dienste. Beispiel für `!alu` die Suche nach dem anwendungsebenengateway-Dienst, der gestartet oder beendet werden soll |
+  | `!` | Nur Windows-Dienste. Beispiel für `!alg` die Suche nach dem anwendungsebenengateway-Dienst, der gestartet oder beendet werden soll |
 
 ## <a name="system-commands"></a>System Befehle
 
