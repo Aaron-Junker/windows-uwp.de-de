@@ -4,12 +4,12 @@ description: Ein schnell Startprogramm für Poweruser, das einige zusätzliche F
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b6f86636cb5753d93422a5658e6ae661151d0f9
-ms.sourcegitcommit: eb203b55b1332d0ed135abccd50f3fc287f89a5a
+ms.openlocfilehash: ce71ac5f4667952be8beb790b0890aadd0d8eb54
+ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/12/2021
-ms.locfileid: "103193295"
+ms.locfileid: "103417111"
 ---
 # <a name="powertoys-run-utility"></a>PowerToys-Hilfsprogramm ausführen
 
@@ -21,7 +21,7 @@ Um PowerToys auszuführen, wählen Sie <kbd>alt</kbd> + <kbd>LEERTASTE</kbd> aus
 
 ![PowerToys führt demoöffnende Apps aus](../images/pt-powerrun-demo.gif)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 - Windows 10, Version 1903 oder höher
 - Nach der Installation von muss PowerToys aktiviert und im Hintergrund ausgeführt werden, damit dieses Hilfsprogramm funktioniert.
@@ -65,13 +65,13 @@ Die folgenden Test Lauf Optionen sind im Menü PowerToys-Einstellungen verfügba
 
 ## <a name="action-key"></a>Aktions Schlüssel
 
-Diese werden erzwingen, dass PowerToys nur als Ziel-Plug-Ins ausgeführt wird.
+Diese Standard Aktivierungs Ausdrücke erzwingen, dass PowerToys nur Ziel-Plug-Ins ausgeführt wird.
 
   | **Aktions Schlüssel** | **Aktion** |
   | --- | --- |
   | `=` | Nur Rechner. Beispiel: `=2+2` |
   | `?` | Nur Dateisuche. Beispiel `?road` für die Suche `roadmap.txt` |
-  | `.` | Nur installierte App-Suche. Beispiel `.code` für das Visual Studio Code |
+  | `.` | Nur installierte Programme. Beispiel `.code` für das Visual Studio Code. Optionen zum Hinzufügen von Parametern zum Start eines Programms finden Sie unter [Programm Parameter](#program-parameters) . |
   | `//` | Nur URLs. Beispiel `//docs.microsoft.com` für das Wechseln Ihres Standard Browsers zu https://docs.microsoft.com |
   | `<` | Nur ausführen von Prozessen. Beispiel `<outlook` für die Suche nach allen Prozessen, die Outlook enthalten |
   | `>` | Nur Shellbefehl. Beispiel `>ping localhost` für eine Ping-Abfrage |
@@ -80,7 +80,7 @@ Diese werden erzwingen, dass PowerToys nur als Ziel-Plug-Ins ausgeführt wird.
 
 ## <a name="system-commands"></a>System Befehle
 
-Mit PowerToys v 0,31 und on gibt es Aktionen auf Systemebene, die Sie jetzt ausführen können.
+Die Ausführung von PowerToys ermöglicht eine Reihe von Aktionen auf Systemebene, die ausgeführt werden können.
 
   | **Aktions Schlüssel**   |   **Aktion** |
   | ------------------ | ---------------------------------------------------------------------------------|
@@ -92,13 +92,33 @@ Mit PowerToys v 0,31 und on gibt es Aktionen auf Systemebene, die Sie jetzt ausf
   | `Hibernate` | Ruhezustand des Computers |
   | `Empty Recycle Bin` | Leert den Papierkorb. |
 
-## <a name="indexer-settings"></a>Indexer-Einstellungen
+## <a name="plugin-manager"></a>Plugin-Manager
 
-Wenn die Indexer-Einstellungen nicht alle Laufwerke abdecken, wird die folgende Warnung angezeigt:
+Mit PowerToys v 0,33 und on enthält das Menü "PowerToys-Lauf Zeit Einstellungen" einen Plug-in-Manager, mit dem Sie die verschiedenen derzeit verfügbaren Plug-ins aktivieren/deaktivieren können. Wenn Sie die Abschnitte auswählen und erweitern, können Sie die von den einzelnen Plug-ins verwendeten Aktivierungs Ausdrücke anpassen. Außerdem können Sie auswählen, ob ein Plug-in globale Ergebnisse angezeigt wird, und zusätzliche Plug-in-Optionen festlegen, sofern verfügbar. 
+
+## <a name="program-parameters"></a>Programm Parameter
+
+Mit PowerToys v 0,33 und höher ermöglicht das PowerToys Run program-Plug-in das Hinzufügen von Programm Argumenten, wenn eine Anwendung gestartet wird. Die Programm Argumente müssen das erwartete Format aufweisen, wie von der Befehlszeilenschnittstelle des Programms definiert.
+
+Wenn Sie z. b. Visual Studio Code starten, können Sie den Ordner angeben, der geöffnet werden soll:
+
+`Visual Studio Code -- C:\myFolder`
+
+Visual Studio Code unterstützt auch eine Reihe von [Befehlszeilen Parametern](https://code.visualstudio.com/docs/editor/command-line), die mit den entsprechenden Argumenten in PowerToys ausgeführt werden können, um beispielsweise den Unterschied zwischen Dateien anzuzeigen:
+
+`Visual Studio Code -d C:\foo.txt C:\bar.txt` 
+
+Wenn die Option "in globales Ergebnis einschließen" des Programm-Plug-ins nicht ausgewählt ist, müssen Sie den Aktivierungs Ausdruck `.` standardmäßig einschließen, um das Verhalten des Plug-ins aufzurufen:
+
+`.Visual Studio Code -- C:\myFolder`
+
+## <a name="windows-search-settings"></a>Windows-Sucheinstellungen
+
+Wenn das Windows Search-Plug-in nicht für alle Laufwerke festgelegt ist, wird die folgende Warnung angezeigt:
 
 ![PowerToys-Warnung zum Ausführen des Indexers](../images/pt-run-warning.png)
 
-Sie können die Warnung in den PowerToys-Einstellungen deaktivieren oder die Warnung auswählen, um zu erweitern, welche Laufwerke indiziert werden. Nachdem Sie die Warnung ausgewählt haben, werden die Optionen Windows 10-Einstellungen "Windows-Suche" geöffnet.
+Sie können die Warnung in den PowerToys-Optionen zum Ausführen des Plug-in-Managers für Windows Search deaktivieren oder die Warnung auswählen, um zu erweitern, welche Laufwerke indiziert werden. Nachdem Sie die Warnung ausgewählt haben, wird das Optionsmenü "Windows 10-Einstellungen Durchsuchen" geöffnet.
 
 ![Indizierungs Einstellungen](../images/pt-run-indexing.png)
 

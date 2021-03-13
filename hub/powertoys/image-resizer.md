@@ -4,12 +4,12 @@ description: 'Eine Windows-Shellerweiterung für das Massen Image: Ändern der G
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 486eb90b8515ec8422e8a475c9f03ced070dafa1
-ms.sourcegitcommit: 46a7e9db64e17a645ee6e888f62a9b04632c56af
+ms.openlocfilehash: e417a70e34ae1e5fdba95e2838a6221b3236e1c6
+ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97618583"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103417073"
 ---
 # <a name="image-resizer-utility"></a>Hilfsprogramm für die Image-Größe
 
@@ -23,7 +23,7 @@ Mit der Bildgrößen Änderung können Sie auch die Größe von Bildern ändern,
 
 ![Demo zum Drag & Drop der Bild Größe](../images/powertoys-resize-drag-drop.gif)
 
-## <a name="settings"></a>Einstellungen
+## <a name="settings"></a>Einstellung
 
 Auf der Registerkarte Größe des PowerToys-Bilds können Sie die folgenden Einstellungen konfigurieren.
 
@@ -41,13 +41,12 @@ Fügen Sie neue Voreinstellungs Größen hinzu. Jede Größe kann als Fill, fit 
 
 Breite und Höhe der angegebenen Größe können ausgetauscht werden, um der Ausrichtung (Hochformat/Querformat) des aktuellen Bilds zu entsprechen. Um die Breite und Höhe immer wie angegeben zu verwenden, deaktivieren Sie **die Ausrichtung von Bildern**.
 
-![Einstellungen für Image-Resizer](../images/powertoys-resize-settings.gif)
 
 ### <a name="fallback-encoding"></a>Fall Back Codierung
 
 Der Fall Back Encoder wird verwendet, wenn die Datei nicht im ursprünglichen Format gespeichert werden kann. Beispielsweise verfügt das Windows-Metadatei-Bildformat (WMF) über einen Decoder zum Lesen des Bilds, aber keinen Encoder zum Schreiben eines neuen Bilds. In diesem Fall kann das Image nicht im ursprünglichen Format gespeichert werden. Mit der Bild Größe für die Bild Größe können Sie angeben, welches Format der Fall Back Encoder verwenden soll: PNG-, JPEG-, TIFF-, BMP-, GIF-oder wmphuto-Einstellungen. *Dabei handelt es sich nicht um ein Tool zum Konvertieren von Dateitypen, sondern nur als Fall Back für nicht unterstützte Dateiformate.*
 
-### <a name="file"></a>Datei
+### <a name="file"></a>File
 
 Der Dateiname des Images, das in der Größe geändert wurde, kann mit den folgenden Parametern geändert werden:
 

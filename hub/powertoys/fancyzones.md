@@ -4,12 +4,12 @@ description: Ein Fenster-Manager-Hilfsprogramm zum Anordnen und Ausrichten von F
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b1f417307c173e868284254c0a1721e4e6ef5536
-ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
+ms.openlocfilehash: 4e297467f6681d3060e085ee4b60fe8c51f1ec21
+ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99534439"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103417125"
 ---
 # <a name="fancyzones-utility"></a>Fancyzones (Hilfsprogramm)
 
@@ -27,7 +27,7 @@ Um mit der Verwendung von fancyzones zu beginnen, müssen Sie das Hilfsprogramm 
 
 Starten Sie den Zonen-Editor mithilfe der Schaltfläche im Menü PowerToys-Einstellungen oder durch Drücken von <kbd>Win</kbd> + <kbd>`</kbd> (Beachten Sie, dass diese Verknüpfung im Dialogfeld "Einstellungen" geändert werden kann).  
 
-![Benutzeroberfläche für fancyzones-Einstellungen](../images/pt-fancyzones-settings1.png) 
+![Benutzeroberfläche für fancyzones-Einstellungen](../images/pt-fancyzones-settings.png) 
 
 ### <a name="elevated-permission-admin-apps"></a>Administrator-apps mit erhöhten Berechtigungen
 
@@ -88,7 +88,7 @@ Wenn Sie ein Fenster mithilfe der Tastatur auf mehrere Zonen ausrichten möchten
 
 Mit fancyzones wird Windows 10 nicht außer Kraft gesetzt `Win ⊞ + Shift + Arrow` , um schnell ein Fenster zu einem angrenzenden Monitor zu verschieben.
 
-## <a name="settings"></a>Einstellungen
+## <a name="settings"></a>Einstellung
 
 | Einstellung | BESCHREIBUNG |
 | --------- | ------------- |

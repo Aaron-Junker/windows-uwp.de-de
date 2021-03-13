@@ -4,12 +4,12 @@ description: Eine Windows-Shellerweiterung für das Massen Umbenennen von Dateie
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c751624c93fec5996885c766e73b5ab1849fd4c
-ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
+ms.openlocfilehash: 26eee9fcb954a0a97ba6f30fae8a9d09395403a3
+ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99534389"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103417101"
 ---
 # <a name="powerrename-utility"></a>Powerrename-Hilfsprogramm
 
@@ -93,7 +93,7 @@ Nur der Datei Erweiterungs Teil (nicht der Dateiname) wird durch den Vorgang ge�
 
 Die Attribute für Erstellungsdatum und-Uhrzeit einer Datei können im Text *ersetzen* durch Eingabe eines Variablen Musters entsprechend der folgenden Tabelle verwendet werden.
 
-Variablenmuster |Erklärung
+Variablenmuster |Erläuterung
 |:---|:---|
 |`$YYYY`|Jahr, das durch eine vollständige vier oder fünf Ziffern dargestellt wird, je nach verwendetem Kalender.
 |`$YY`|Jahr, das nur durch die letzten zwei Ziffern dargestellt wird. Für einstellige Jahre wird eine führende Null hinzugefügt.
@@ -141,7 +141,7 @@ Aktivieren Sie das Kontrollkästchen "reguläre Ausdrücke verwenden", um regul�
 
 **Hinweis:** Sie möchten bei Verwendung regulärer Ausdrücke wahrscheinlich "alle Vorkommen vergleichen" aktivieren.
 
-Wenn Sie anstelle der Standardbibliothek die [Boost-Bibliothek](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html) verwenden möchten, aktivieren Sie die `Use Boost library` Option in den PowerToys-Einstellungen. Sie ermöglicht erweiterte Funktionen, wie z `[lookbehind](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html#boost_regex.syntax.perl_syntax.lookbehind)` . b., die von der Standardbibliothek nicht unterstützt werden.
+Wenn Sie anstelle der Standardbibliothek die [Boost-Bibliothek](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html) verwenden möchten, aktivieren Sie die `Use Boost library` Option in den PowerToys-Einstellungen. Sie ermöglicht erweiterte Funktionen, wie z. b. [Lookbehindassertion](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html#boost_regex.syntax.perl_syntax.lookbehind), die von der Standardbibliothek nicht unterstützt werden.
 
 ### <a name="examples-of-regular-expressions"></a>Beispiele für reguläre Ausdrücke
 

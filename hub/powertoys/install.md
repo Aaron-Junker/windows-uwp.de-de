@@ -4,12 +4,12 @@ description: Installieren Sie PowerToys, eine Reihe von Dienstprogrammen für di
 ms.date: 12/02/2020
 ms.topic: quickstart
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b6cf15e7d21eca9e24fcc2d81f9409b2cd94b6f
-ms.sourcegitcommit: 884318ec5118cade85a31f4d5644436614e9f272
+ms.openlocfilehash: c7add819c201678ceca72814d36c585859972e23
+ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100524986"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103417051"
 ---
 # <a name="install-powertoys"></a>Installieren von PowerToys
 
@@ -28,7 +28,7 @@ So installieren Sie PowerToys mithilfe einer ausführbaren Windows-Datei:
 4. Wählen Sie die `PowerToysSetup-0.##.#-x64.exe` Datei aus, um den ausführbaren Installer für PowerToys herunterzuladen
 5. Öffnen Sie nach dem herunterladen die ausführbare Datei, und befolgen Sie die Installationsanweisungen.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 - Windows 10 1803 (Build 17134) oder höher.
 - [.Net Core 3,1-Desktop Laufzeit](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-desktop-3.1.4-windows-x64-installer). Diese Anforderung wird vom PowerToys-Installer verarbeitet.
@@ -89,3 +89,7 @@ scoop update powertoys
 ```
 
 Wenn beim installieren/aktualisieren Probleme auftreten, melden Sie ein Problem im Scoop-Repository [auf GitHub](https://github.com/lukesampson/scoop/issues).
+
+## <a name="post-install"></a>Nach der Installation
+
+Nach der erfolgreichen Installation von PowerToys wird ein Übersichtsfenster mit einführenden Anleitungen zu den einzelnen verfügbaren Dienstprogrammen angezeigt.
