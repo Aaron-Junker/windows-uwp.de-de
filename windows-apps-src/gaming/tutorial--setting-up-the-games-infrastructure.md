@@ -6,12 +6,12 @@ ms.date: 06/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Games, Setup, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: c0c8d82752d9b73a3e3e7ffcec3ced1515564072
-ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
+ms.openlocfilehash: 86c7b80ba7125547c2a45dae434c40a67a758b0d
+ms.sourcegitcommit: 8bface2162e091999b1cf2218340edda2389da89
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85409589"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103496697"
 ---
 # <a name="set-up-the-game-project"></a>Einrichten des Spieleprojekts
 
@@ -30,7 +30,7 @@ Der erste Schritt bei der Entwicklung Ihres Spiels ist das Erstellen eines Proje
 ## <a name="create-a-new-project-in-visual-studio"></a>Erstellen eines neuen Projekts in Visual Studio
 
 > [!NOTE]
-> Informationen zum Einrichten von Visual Studio für die C++/WinRT-Entwicklung&mdash;einschließlich Installieren und Verwenden der C++/WinRT Visual Studio-Erweiterung (VSIX) und des NuGet-Pakets (die zusammen die Projektvorlage und Buildunterstützung bereitstellen)&mdash; finden Sie unter [Visual Studio-Unterstützung für C++/WinRT](/windows/uwp/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Informationen zum Einrichten von Visual Studio für die C++/WinRT-Entwicklung&mdash;einschließlich Installieren und Verwenden der C++/WinRT Visual Studio-Erweiterung (VSIX) und des NuGet-Pakets (die zusammen die Projektvorlage und Buildunterstützung bereitstellen)&mdash; finden Sie unter [Visual Studio-Unterstützung für C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 Installieren Sie zunächst die neueste Version von C++/WinRT Visual Studio-Erweiterung (VSIX), und installieren Sie Sie. Siehe den obigen Hinweis. Erstellen Sie dann in Visual Studio ein neues Projekt, das auf der Projektvorlage **Core app (C++/WinRT)** basiert. Die neueste allgemein verfügbare Version von Windows SDK (d. h. keine Vorschauversion).
 
@@ -51,7 +51,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 Wir erstellen eine Instanz der **App** -Klasse (Hierbei handelt es sich um die einzige Instanz der erstellten **App** ), und wir übergeben diese an die statische [**coreapplication. Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run) -Methode. Beachten Sie, dass **coreapplication. Run** eine [**iframeworkviewsource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) -Schnittstelle erwartet. Daher muss die **App** -Klasse diese Schnittstelle implementieren.
 
-In den nächsten beiden Abschnitten dieses Themas werden die Schnittstellen [**iframeworkviewsource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) und [**iframeworkview**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) beschrieben. Diese Schnittstellen (und **coreapplication. Run**) stellen eine Methode dar, mit der Ihre APP Windows mit einem *Ansichts Anbieter*bereitstellen kann. Windows verwendet diesen Ansichts Anbieter zum Verbinden Ihrer APP mit der Windows-Shell, damit Sie Ereignisse des Anwendungslebenszyklus behandeln können.
+In den nächsten beiden Abschnitten dieses Themas werden die Schnittstellen [**iframeworkviewsource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) und [**iframeworkview**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) beschrieben. Diese Schnittstellen (und **coreapplication. Run**) stellen eine Methode dar, mit der Ihre APP Windows mit einem *Ansichts Anbieter* bereitstellen kann. Windows verwendet diesen Ansichts Anbieter zum Verbinden Ihrer APP mit der Windows-Shell, damit Sie Ereignisse des Anwendungslebenszyklus behandeln können.
 
 ### <a name="the-iframeworkviewsource-interface"></a>Die iframeworkviewsource-Schnittstelle
 
@@ -71,21 +71,21 @@ struct App : winrt::implements<App, IFrameworkViewSource, IFrameworkView>
 
 Ein Objekt, das **iframeworkviewsource** implementiert, ist ein *Ansichts Anbieter-Factory* -Objekt. Die Aufgabe dieses Objekts besteht darin, ein *Ansichts Anbieter* Objekt zu produzieren und zurückzugeben.
 
-**Iframeworkviewsource** verfügt über die einzige Methode [**iframeworkviewsource:: up view**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource.createview). Windows ruft diese Funktion für das-Objekt auf, das Sie an **coreapplication. Run**übergeben. Wie Sie oben sehen können, gibt die **App:: up view** -Implementierung dieser Methode zurück `*this` . Anders ausgedrückt: das **App** -Objekt gibt sich selbst zurück. Da **iframeworkviewsource:: aufgabenview** den Rückgabe Werttyp [**iframeworkview**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource)aufweist, muss die **App** -Klasse *diese* Schnittstelle ebenfalls implementieren. Und Sie können sehen, dass dies in der obigen Liste der Fall ist.
+**Iframeworkviewsource** verfügt über die einzige Methode [**iframeworkviewsource:: up view**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource.createview). Windows ruft diese Funktion für das-Objekt auf, das Sie an **coreapplication. Run** übergeben. Wie Sie oben sehen können, gibt die **App:: up view** -Implementierung dieser Methode zurück `*this` . Anders ausgedrückt: das **App** -Objekt gibt sich selbst zurück. Da **iframeworkviewsource:: aufgabenview** den Rückgabe Werttyp [**iframeworkview**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource)aufweist, muss die **App** -Klasse *diese* Schnittstelle ebenfalls implementieren. Und Sie können sehen, dass dies in der obigen Liste der Fall ist.
 
 ### <a name="the-iframeworkview-interface"></a>Die iframeworkview-Schnittstelle
 
-Ein Objekt, das [**iframeworkview**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) implementiert, ist ein *Ansichts Anbieter* Objekt. Wir haben jetzt Windows mit diesem Ansichts Anbieter bereitgestellt. Es ist das gleiche **App** -Objekt, das wir in **wWinMain**erstellt haben. Daher fungiert die **App** -Klasse sowohl als *Ansichts Anbieterfactory* als auch als *Ansichts Anbieter*.
+Ein Objekt, das [**iframeworkview**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) implementiert, ist ein *Ansichts Anbieter* Objekt. Wir haben jetzt Windows mit diesem Ansichts Anbieter bereitgestellt. Es ist das gleiche **App** -Objekt, das wir in **wWinMain** erstellt haben. Daher fungiert die **App** -Klasse sowohl als *Ansichts Anbieterfactory* als auch als *Ansichts Anbieter*.
 
-Jetzt kann Windows die Implementierungen der **App** -Klasse der Methoden von **iframeworkview**aufzurufen. In den Implementierungen dieser Methoden hat Ihre APP die Möglichkeit, Aufgaben auszuführen, wie z. b. die Initialisierung, das Laden der benötigten Ressourcen, das Herstellen einer Verbindung mit den entsprechenden Ereignis Handlern und das Empfangen von [**corewindow**](/uwp/api/windows.ui.core.corewindow) , das Ihre APP zum Anzeigen der Ausgabe verwendet.
+Jetzt kann Windows die Implementierungen der **App** -Klasse der Methoden von **iframeworkview** aufzurufen. In den Implementierungen dieser Methoden hat Ihre APP die Möglichkeit, Aufgaben auszuführen, wie z. b. die Initialisierung, das Laden der benötigten Ressourcen, das Herstellen einer Verbindung mit den entsprechenden Ereignis Handlern und das Empfangen von [**corewindow**](/uwp/api/windows.ui.core.corewindow) , das Ihre APP zum Anzeigen der Ausgabe verwendet.
 
 Ihre Implementierungen der Methoden von **iframeworkview** werden in der unten gezeigten Reihenfolge aufgerufen.
 
-- [**Initialize**](/uwp/api/windows.applicationmodel.core.iframeworkview.initialize)
+- [**Initialisieren**](/uwp/api/windows.applicationmodel.core.iframeworkview.initialize)
 - [**SetWindow**](/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow)
 - [**Laden**](/uwp/api/windows.applicationmodel.core.iframeworkview.load)
 - Das [**coreapplicationview:: aktivierte**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) -Ereignis wird ausgelöst. Wenn Sie (optional) registriert haben, um dieses Ereignis zu behandeln, wird der **onaktivierte** Handler zu diesem Zeitpunkt aufgerufen.
-- [**Lauf**](/uwp/api/windows.applicationmodel.core.iframeworkview.run)
+- [**Ausführen**](/uwp/api/windows.applicationmodel.core.iframeworkview.run)
 - [**Uninitialize**](/uwp/api/windows.applicationmodel.core.iframeworkview.uninitialize)
 
 Und hier ist das Gerüst der **App** -Klasse (in `App.cpp` ), die die Signaturen dieser Methoden anzeigt.
@@ -122,7 +122,7 @@ Das Projekt wird erstellt und ausgeführt, aber es wird nur eine voll Tonfarbe i
 
 Um eine Vorstellung davon zu erhalten, wie eine Spiel Schleife aussieht, sehen Sie sich den Quellcode für das [Simple3DGameDX](/samples/microsoft/windows-universal-samples/simple3dgamedx/) -Beispiel Spiel an, das Sie heruntergeladen haben.
 
-Die **App** -Klasse verfügt über einen Datenmember mit dem Namen *m_main*vom Typ **gamemain**. Dieser Member wird in **App:: Run** wie diesem verwendet.
+Die **App** -Klasse verfügt über einen Datenmember mit dem Namen *m_main* vom Typ **gamemain**. Dieser Member wird in **App:: Run** wie diesem verwendet.
 
 ```cppwinrt
 void Run()
@@ -161,7 +161,7 @@ Wenn das Fenster für das Spiel nicht geschlossen ist, verteilen Sie alle Ereign
 
 Die Datei " **Package. appxmanifest** " enthält Metadaten zu einem UWP-Projekt. Diese Metadaten werden zum Verpacken und Starten Ihres Spiels sowie für die Übermittlung an die Microsoft Store verwendet. Die Datei enthält auch wichtige Informationen, die das System des Players verwendet, um den Zugriff auf die Systemressourcen zu ermöglichen, die das Spiel ausführen muss.
 
-Starten Sie den **Manifest-Designer** , indem Sie in **Projektmappen-Explorer**auf die Datei " **Package. appxmanifest** " doppelklicken.
+Starten Sie den **Manifest-Designer** , indem Sie in **Projektmappen-Explorer** auf die Datei " **Package. appxmanifest** " doppelklicken.
 
 ![Screenshot des Paket. AppX-Manifest-Editors.](images/simple-dx-game-setup-app-manifest.png)
 
@@ -175,7 +175,7 @@ Sehen wir uns nun die restlichen Dateien an, die mit der Vorlage **DirectX 11-ap
 
 ## <a name="review-other-important-libraries-and-source-code-files"></a>Andere wichtige Bibliotheken und Quell Code Dateien überprüfen
 
-Wenn Sie beabsichtigen, eine Art von Spiel Projektvorlage für sich selbst zu erstellen, sodass Sie diese als Ausgangspunkt für zukünftige Projekte wieder verwenden können, sollten Sie `GameMain.h` `GameMain.cpp` das [Simple3DGameDX](/samples/microsoft/windows-universal-samples/simple3dgamedx/) -Projekt, das Sie heruntergeladen haben, kopieren und aus dem neuen Core-App-Projekt hinzufügen. Überprüfen Sie diese Dateien, erfahren Sie, was Sie tun, und entfernen Sie alles, was für **Simple3DGameDX**spezifisch ist. Kommentieren Sie auch alle Elemente aus, die von Code abhängen, den Sie noch nicht kopiert haben. Ein Beispiel hierfür `GameMain.h` hängt von ab `GameRenderer.h` . Sie können die Auskommentierung aufheben, wenn Sie weitere Dateien aus **Simple3DGameDX**kopieren.
+Wenn Sie beabsichtigen, eine Art von Spiel Projektvorlage für sich selbst zu erstellen, sodass Sie diese als Ausgangspunkt für zukünftige Projekte wieder verwenden können, sollten Sie `GameMain.h` `GameMain.cpp` das [Simple3DGameDX](/samples/microsoft/windows-universal-samples/simple3dgamedx/) -Projekt, das Sie heruntergeladen haben, kopieren und aus dem neuen Core-App-Projekt hinzufügen. Überprüfen Sie diese Dateien, erfahren Sie, was Sie tun, und entfernen Sie alles, was für **Simple3DGameDX** spezifisch ist. Kommentieren Sie auch alle Elemente aus, die von Code abhängen, den Sie noch nicht kopiert haben. Ein Beispiel hierfür `GameMain.h` hängt von ab `GameRenderer.h` . Sie können die Auskommentierung aufheben, wenn Sie weitere Dateien aus **Simple3DGameDX** kopieren.
 
 Im folgenden finden Sie eine kurze Übersicht über einige der Dateien in **Simple3DGameDX** , die Sie für Ihre Vorlage nützlich finden, wenn Sie eine erstellen. In jedem Fall sind diese gleichermaßen wichtig, um zu verstehen, wie **Simple3DGameDX** selbst funktioniert.
 
@@ -189,7 +189,7 @@ Im folgenden finden Sie eine kurze Übersicht über einige der Dateien in **Simp
 |Vertexshader. HLSL und vertexshaderflat. HLSL|Shader|Enthält den HLSL-Code (High-Level Shader Language) für grundlegende Scheitelpunkt-Shader.|
 |Pixelshader. HLSL und pixelshaderflat. HLSL|Shader|Enthält den HLSL-Code (High-Level Shader Language) für grundlegende Pixel-Shader.|
 |Constantbuffers. hlsli|Shader|Enthält Datenstruktur Definitionen für konstante Puffer und shaderstrukturen, die verwendet werden, um MVP-Matrizen (Model-View-Projection) und pro-Vertex-Daten an den Vertex-Shader zu übergeben.|
-|pch.h/.cpp|–|Enthält allgemeine C++/WinRT-, Windows-und DirectX-includes.| 
+|pch.h/.cpp|Nicht zutreffend|Enthält allgemeine C++/WinRT-, Windows-und DirectX-includes.| 
 
 ### <a name="next-steps"></a>Nächste Schritte
 

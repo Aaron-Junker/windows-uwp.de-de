@@ -7,12 +7,12 @@ keywords: Windows Win32, Desktopentwicklung, Project Reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 2354e7f42ab9c487275c66c9f709f8791ba5005e
-ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
+ms.openlocfilehash: 9e2e4bda8440a9a504cba78286de491236d6bd49
+ms.sourcegitcommit: 2a71bb5c56bed80f26fb67a47ae8f9198c431760
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102629240"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103366235"
 ---
 # <a name="build-desktop-windows-apps-with-project-reunion-05-preview-march-2021"></a>Erstellen von Windows-Desktop-Apps mit Project Reunion 0.5 Preview (März 2021)
 
@@ -59,7 +59,10 @@ Weitere Informationen zu den zukünftigen Plänen der Integration weiterer Kompo
 
 1. Stelle sicher, dass auf deinem Entwicklungscomputer Windows 10 (Version 1809, Build 17763) oder eine höhere Betriebssystemversion installiert ist.
 
-2. Installieren Sie [Visual Studio 2019, Version 16.10 Preview](https://visualstudio.microsoft.com/vs/preview/) (oder höher), falls Sie dies nicht bereits getan haben.
+2. Installieren Sie [Visual Studio 2019, Version 16.10 Preview](https://visualstudio.microsoft.com/vs/preview/) (oder höher), falls Sie dies nicht bereits getan haben. 
+
+    > [!NOTE]
+    > Visual Studio 2019, Version 16.9, unterstützt auch Project Reunion, aber nicht die WinUI 3-Toolfeatures. Weitere Informationen zur Unterstützung von WinUI 3-Tools finden Sie unter „Windows-UI-Bibliothek 3 – Project Reunion 0.5 Preview (März 2021)“.
 
     Bei der Installation von Visual Studio müssen Sie die folgenden Komponenten einschließen:
     - Vergewissern Sie sich auf der Registerkarte **Workloads**, dass **Entwicklung mit der Universellen Windows-Plattform (UWP)** ausgewählt ist.

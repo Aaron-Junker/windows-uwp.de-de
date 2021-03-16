@@ -316,16 +316,14 @@
           href: shell/tiles-and-notifications/toast-ux-guidance.md
         - name: Senden lokaler Popups
           items:
-            - name: UWP-Apps
+            - name: C#-Apps
               href: shell/tiles-and-notifications/send-local-toast.md
-            - name: Desktop-Apps
-              items:
-                - name: Übersicht
-                  href: shell/tiles-and-notifications/toast-desktop-apps.md
-                - name: C#-Apps
-                  href: shell/tiles-and-notifications/send-local-toast-desktop.md
-                - name: C++ WRL-Apps
-                  href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+            - name: C++ UWP-Apps
+              href: shell/tiles-and-notifications/send-local-toast-cpp-uwp.md
+            - name: C++ WRL-Apps
+              href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+            - name: Andere Apps
+              href: shell/tiles-and-notifications/send-local-toast-other-apps.md
         - name: Popupinhalt
           items:
             - name: Inhalt
@@ -540,7 +538,7 @@
   items:
     - name: Übersicht
       href: usability/index.md
-    - name: Zugriff
+    - name: Eingabehilfen
       href: accessibility/accessibility.md
       items:
         - name: Übersicht

@@ -3,12 +3,12 @@ title: WinUI 3 Project Reunion 0.5 Preview (März 2021)
 description: Übersicht über die WinUI 3 Project Reunion 0.5 Preview.
 ms.date: 03/08/2021
 ms.topic: article
-ms.openlocfilehash: 8e5dea7ee18fe305cd9550ab42d30c561b9d803e
-ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
+ms.openlocfilehash: de00c3fa2a9dba5eae3ceadc7e6ad16c10286f77
+ms.sourcegitcommit: 2a71bb5c56bed80f26fb67a47ae8f9198c431760
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102629262"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103366245"
 ---
 # <a name="windows-ui-library-3---project-reunion-05-preview-march-2021"></a>Windows-UI-Bibliothek 3 – Project Reunion 0.5 Preview (März 2021)
 
@@ -94,14 +94,14 @@ Die folgenden Elementvorlagen stehen für die Verwendung in einem WinUI-Projekt 
 
 ### <a name="visual-studio-support"></a>Visual Studio-Unterstützung
 
-Um die neuesten, in WinUI 3 hinzugefügten Toolfeatures wie Hot Reload, Live Visual Tree und Live Property Explorer nutzen zu können, müssen Sie die neueste Vorschauversion von Visual Studio mit der neuesten WinUI 3-Vorschau verwenden und sicherstellen, dass die WinUI-Tools in den Visual Studio Preview-Features aktiviert sind, wie [hier in der Anleitung](https://github.com/microsoft/microsoft-ui-xaml/issues/4140) beschrieben. Die folgende Tabelle zeigt die Kompatibilität zukünftiger Versionen mit WinUI 3 – Project Reunion 0.5 Preview:
+Um die neuesten, in WinUI 3 hinzugefügten Toolfeatures wie Hot Reload, Live Visual Tree und Live Property Explorer nutzen zu können, müssen Sie die neueste **Vorschauversion** von Visual Studio mit der neuesten WinUI 3-Vorschau verwenden und sicherstellen, dass die WinUI-Tools in den Visual Studio Preview-Funktionen aktiviert sind, wie [hier in der Anleitung](https://github.com/microsoft/microsoft-ui-xaml/issues/4140) beschrieben. Die folgende Tabelle zeigt die Kompatibilität zukünftiger Versionen mit WinUI 3 – Project Reunion 0.5 Preview:
 
 | VS-Version  | WinUI 3 – Project Reunion 0.5 Preview  |
 |---|---|
 | 16.8 RTM  | Nein   |
-| 16.9-Vorschauen  | Ja  | 
-| 16.9 RTM  | Nein   |
-| 16.10 Vorschauen  | Ja   |
+| 16.9-Vorschauen  | Ja, mit Tools  | 
+| 16.9 RTM  | Ja, aber ohne Tools   |
+| 16.10 Vorschauen  | Ja, mit Tools   |
 
 ## <a name="major-changes-introduced-in-this-release"></a>Wichtige Änderungen in diesem Release
 
