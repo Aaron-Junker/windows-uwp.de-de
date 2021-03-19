@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, App-Zertifizierung
 ms.localizationpriority: medium
-ms.openlocfilehash: be02f9b049a1beb1866d21c97f11fe3efeb815f3
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: a8be8ff09b962456b70d604a6a44203ceddb8cbc
+ms.sourcegitcommit: 8bface2162e091999b1cf2218340edda2389da89
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339348"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103496687"
 ---
 # <a name="windows-app-certification-kit"></a>Zertifizierungskit für Windows-Apps
 
@@ -22,16 +22,40 @@ Um eine [Windows-Zertifizierung](/windows/win32/win_cert/windows-certification-p
 Voraussetzungen für das Testen einer universellen Windows-App:
 
 - Installieren und verwenden Sie Windows 10.
-- Sie müssen das [Zertifizierungskit für Windows-Apps](https://developer.microsoft.com/windows/downloads/app-certification-kit/) installieren, das im Windows Software Development Kit (SDK) für Windows 10 enthalten ist.
+- Sie müssen das [Zertifizierungskit für Windows-Apps](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) installieren, das im Windows Software Development Kit (SDK) für Windows 10 enthalten ist.
 - Sie müssen [Ihr Gerät für die Entwicklung aktivieren](/windows/apps/get-started/enable-your-device-for-development).
 - Sie müssen die zu testende Windows-App auf Ihrem Computer bereitstellen.
 
 > [!NOTE]
 > **Direktes Upgrade:** Durch die Installation einer neueren Version des [Zertifizierungskits für Windows-Apps](https://developer.microsoft.com/windows/develop/app-certification-kit) werden alle vorherigen Versionen des Kits ersetzt.
 
+## <a name="whats-new"></a>Neuigkeiten
+
+Tests für Windows-[Desktop-Brücke-Apps](/windows/msix/desktop/source-code-overview) werden jetzt im Kit unterstützt. Apps, die [Windows Desktop Bridge-Tests](/windows/uwp/debug-test-perf/windows-desktop-bridge-app-tests) bestehen, haben die beste Chancen, im Microsoft Store veröffentlicht oder zertifiziert zu werden.
+
+Das Kit kann jetzt in automatisierte Tests integriert werden, in denen keine interaktive Benutzersitzung verfügbar ist.
+
+Der Validierungstest für App-Vorabstarts wird nicht mehr unterstützt.
+
+## <a name="known-issues"></a>Bekannte Probleme
+
+Die folgende Liste enthält bekannte Probleme, die mit dem Zertifizierungskit für Windows-Apps auftreten können:
+
+Wenn beim Testen ein Installationsprogramm beendet wird, aktive Prozesse oder Fenster jedoch weiter ausgeführt werden, stellt das Zertifizierungskit für Apps möglicherweise fest, dass das Installationsprogramm noch Arbeitsschritte auszuführen hat. In diesem Fall scheint das Kit bei der Ausführung der Aufgabe „Ablaufverfolgungsdateien für Installation verarbeiten“ festzuhängen, und es ist nicht möglich, mit der Benutzeroberfläche weiterzuarbeiten.
+
+**Lösung:** Schließen Sie nach Abschluss des Installationsprogramms manuell alle vom Installationsprogramm erzeugten aktiven Prozesse oder Fenster.
+
+Für ARM-UWA oder UWA-Apps, die nicht auf die Familie der Desktopgeräte oder OneCore abzielen, wird unter Umständen im Abschlussbericht die folgende Meldung angezeigt: „Während der Überprüfung wurden nicht alle Tests ausgeführt. Dies kann sich auf die Übermittlung an den Store auswirken.“ Diese Meldung gilt nicht in Fällen, in denen der Benutzer keine Test manuell deaktiviert hat.
+
+**Lösung:** n/v
+
+Für Desktop-Brücken-Apps, die das Windows SDK der Version 10.0.15063 verwenden, ignorieren Sie bitte alle Fehler im Application Manifest Resources-Test, die besagen, dass Ihr Image nicht den erwarteten Dimensionen entspricht, wenn diese Dimensionen nur um ein Pixel abweichen. Der Test sollte eine Toleranz von +/-1 Pixel haben. Beispiel: Hätte eine kleine Kachel bei 125 Prozent die Maße 88,75 x 88,75 Pixel, so ergibt das aufgerundet 89 x 89 Pixel, was die Größenbeschränkung von 88 x 88 Pixel übersteigt.
+
+**Lösung:** n/v
+
 ## <a name="validate-your-windows-app-using-the-windows-app-certification-kit-interactively"></a>Interaktive Überprüfung der Windows-App mit dem Zertifizierungskit für Windows-Apps
 
-1. Suche im **Startmenü** nach den Einträgen **Apps** und **Windows Kits** , und klicke auf die Option für das **Zertifizierungskit für Windows-Apps**.
+1. Suche im **Startmenü** nach den Einträgen **Apps** und **Windows Kits**, und klicke auf die Option für das **Zertifizierungskit für Windows-Apps**.
 
 2. Wählen Sie im Zertifizierungskit für Windows-Apps die Kategorie der auszuführenden Überprüfung aus. Beispiel: Wenn du eine Windows-App überprüfst, wähle die Option **Windows-App validieren** aus.
 
@@ -89,5 +113,7 @@ Da Computer mit geringem Energieverbrauch weiterentwickelt werden, können sich 
 
 ## <a name="related-topics"></a>Zugehörige Themen
 
+- [Verwenden des Zertifizierungskits für Windows-Apps](/windows/win32/win_cert/using-the-windows-app-certification-kit)
+- [Zertifizierungsanforderungen für Windows-Desktop-Apps](/windows/win32/win_cert/certification-requirements-for-windows-desktop-apps)
 - [Tests im Zertifizierungskit für Windows-Apps](windows-app-certification-kit-tests.md)
 - [Microsoft Store-Richtlinien](/legal/windows/agreements/store-policies)
