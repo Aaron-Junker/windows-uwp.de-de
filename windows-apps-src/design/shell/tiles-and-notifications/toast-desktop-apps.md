@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, Popup Benachrichtigungen, Desktop Bridge, msix, sparsesloadpaket, Optionen für das Senden von Toasts, com-Server, com-Activator, com, gefälschtes com, Nein com, ohne com, Send Toast
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cdd8e57311400c8603f4eb99e9bfd1a2230f2ce
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 1f7c29c8819f293384e3b38483f02a49d3f65cf6
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93033093"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804944"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>Popup Benachrichtigungen aus Desktop-Apps
 
@@ -36,7 +36,7 @@ In der folgenden Tabelle werden die Optionen für die Unterstützung von Popups 
 
 ## <a name="preferred-option---com-activator"></a>Bevorzugte Option: com-Activator
 
-Dies ist die bevorzugte Option für Desktop-Apps und unterstützt alle Benachrichtigungs Features. Machen Sie sich keine Angst vor "com Activator". Wir verfügen über eine Bibliothek [für c#](send-local-toast-desktop.md) -und [C++-apps](send-local-toast-desktop-cpp-wrl.md) , die dies sehr einfach macht, auch wenn Sie noch nie einen com-Server geschrieben haben.<br/><br/>
+Dies ist die bevorzugte Option für Desktop-Apps und unterstützt alle Benachrichtigungs Features. Machen Sie sich keine Angst vor "com Activator". Wir verfügen über eine Bibliothek [für c#](./send-local-toast.md) -und [C++-apps](send-local-toast-desktop-cpp-wrl.md) , die dies sehr einfach macht, auch wenn Sie noch nie einen com-Server geschrieben haben.<br/><br/>
 
 | Visuals | Aktionen | Eingaben | Prozess interne Aktivierung |
 | -- | -- | -- | -- |
@@ -54,7 +54,7 @@ Mit der com Activator-Option können Sie die folgenden Benachrichtigungs Vorlage
 > [!NOTE]
 > Wenn Sie den com-Aktivator zu Ihrer vorhandenen msix/Sparse-Paket-app hinzufügen, aktivieren Vordergrund-/Hintergrund-und Legacy Benachrichtigungs Aktivierungen nun Ihren com-Aktivierer anstelle der Befehlszeile.
 
-Informationen zur Verwendung dieser Option finden Sie unter [Senden einer lokalen Popup Benachrichtigung von Desktop-c#-apps](send-local-toast-desktop.md) oder [Senden einer lokalen Popup Benachrichtigung von Win32 C++ WRL-apps](send-local-toast-desktop-cpp-wrl.md).
+Informationen zur Verwendung dieser Option finden Sie unter [Senden einer lokalen Popup Benachrichtigung von Desktop-c#-apps](./send-local-toast.md) oder [Senden einer lokalen Popup Benachrichtigung von Win32 C++ WRL-apps](send-local-toast-desktop-cpp-wrl.md).
 
 
 ## <a name="alternative-option---no-com--stub-clsid"></a>Alternative Option-keine com/Stub-CLSID
@@ -81,6 +81,6 @@ Richten Sie für klassische Desktop-Apps die aumid so ein, dass Sie die Umfassun
 
 ## <a name="resources"></a>Ressourcen
 
-* [Senden von Popupbenachrichtigungen von C#-Desktop-Apps](send-local-toast-desktop.md)
+* [Senden von Popupbenachrichtigungen von C#-Desktop-Apps](./send-local-toast.md)
 * [Senden einer lokalen Popup Benachrichtigung von Win32 C++ WRL-apps](send-local-toast-desktop-cpp-wrl.md)
 * [Dokumentation zu Popup Inhalten](adaptive-interactive-toasts.md)

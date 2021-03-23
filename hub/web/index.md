@@ -7,12 +7,12 @@ manager: jken
 ms.topic: article
 keywords: Webentwicklung, Web Dev, Web unter Windows, APIs, Edge
 ms.date: 01/06/2021
-ms.openlocfilehash: 3149e49b258f970989df75b87300a2dce23ff1f2
-ms.sourcegitcommit: 5e40a6f8755aca1e97226ce8f85cda239bdcdad0
+ms.openlocfilehash: 98b5d1443869baec9dd46796088ff7b71521237d
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102259149"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804484"
 ---
 # <a name="web-development-on-windows-10"></a>Webentwicklung unter Windows 10
 
@@ -97,8 +97,8 @@ Microsoft bietet eine Vielzahl von Ressourcen für Webentwickler an, einschließ
         [Installieren der CLI](https://webhint.io/docs/user-guide/)
     :::column-end:::
     :::column:::
-       [![WebDriver-Symbol](../images/webdriver.png)](https://docs.microsoft.com/microsoft-edge/webdriver-chromium/)<br>
-        **[WebDriver](https://docs.microsoft.com/microsoft-edge/webdriver-chromium/)**<br>
+       [![WebDriver-Symbol](../images/webdriver.png)](/microsoft-edge/webdriver-chromium/)<br>
+        **[WebDriver](/microsoft-edge/webdriver-chromium/)**<br>
         Schließen Sie den Kreis in Ihrem Entwicklungszyklus, indem Sie das Testen Ihrer Website in Microsoft Edge mit Microsoft WebDriver automatisieren.<br>
         [WebDriver installieren](https://developer.microsoft.com/microsoft-edge/tools/webdriver/)
     :::column-end:::
@@ -204,11 +204,11 @@ Microsoft bietet eine Vielzahl von Ressourcen für Webentwickler an, einschließ
         [Leistungsproblem einreichen](https://github.com/microsoft/WinDev/issues)
     :::column-end:::
     :::column:::
-       [![Symbol für Dokumente](../images/docs.png)](https://docs.microsoft.com/contribute/)<br>
-        **[Beiträge zu den Dokumenten leisten](https://docs.microsoft.com/contribute/)**<br>
+       [![Symbol für Dokumente](../images/docs.png)](/contribute/)<br>
+        **[Beiträge zu den Dokumenten leisten](/contribute/)**<br>
         Die meisten der Dokumentationssammlungen bei Microsoft sind Open Source und werden auf GitHub gehostet. Beteiligen Sie sich durch Einreichen von Problemen oder Erstellen von Pull Requests.
         <br>
-        [Weitere Informationen](https://docs.microsoft.com/contribute/)
+        [Weitere Informationen](/contribute/)
     :::column-end:::
 :::row-end:::
 
@@ -254,11 +254,11 @@ Microsoft bietet eine Vielzahl von Ressourcen für Webentwickler an, einschließ
         [React Native für macOS installieren](https://microsoft.github.io/react-native-windows/docs/rnm-getting-started)
     :::column-end:::
     :::column:::
-       [![Microsoft Learn-Symbol](../images/learn-icon.png)](https://docs.microsoft.com/learn/browse/?terms=web)<br>
-        **[Microsoft Learn-Kurse zum Thema Webentwicklung](https://docs.microsoft.com/learn/browse/?terms=web)**<br>
+       [![Microsoft Learn-Symbol](../images/learn-icon.png)](/learn/browse/?terms=web)<br>
+        **[Microsoft Learn-Kurse zum Thema Webentwicklung](/learn/browse/?terms=web)**<br>
         Microsoft Learn bietet kostenlose Onlinekurse an, um eine Vielzahl von neuen Kenntnissen zu erlernen sowie Microsoft-Produkte und -Dienste mit Schritt-für-Schritt-Anleitungen zu entdecken.
         <br>
-        [Mit dem Lernen beginnen](https://docs.microsoft.com/learn/browse/?terms=web)
+        [Mit dem Lernen beginnen](/learn/browse/?terms=web)
     :::column-end:::
 :::row-end:::
 

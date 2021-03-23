@@ -7,19 +7,19 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, Popup Benachrichtigungen, Toast senden, lokalen Toast senden, Desktop Bridge, msix, Sparse-Paket, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: 1913eef17ac768b8d7e1f047ac318da9aa1b2925
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: ed35d013d518ac4662bf43318c0dcbcfe3423e63
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034493"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804274"
 ---
 # <a name="send-a-local-toast-notification-from-win32-c-wrl-apps"></a>Senden einer lokalen Popup Benachrichtigung von Win32 C++ WRL-apps
 
 Win32-Apps (einschließlich gepackter [msix](/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Win32-Apps) können interaktive Popup Benachrichtigungen wie Windows-apps senden. Allerdings gibt es einige spezielle Schritte für Win32-apps aufgrund der verschiedenen Aktivierungs Schemas und des potenziellen Mangels an Paket Identität, wenn Sie nicht msix oder ein sparsepaket verwenden.
 
 > [!IMPORTANT]
-> Wenn Sie eine UWP-app schreiben, finden Sie weitere Informationen in der [UWP-Dokumentation](send-local-toast.md). Weitere Desktop Sprachen finden Sie unter [Desktop c#](send-local-toast-desktop.md).
+> Wenn Sie eine UWP-app schreiben, finden Sie weitere Informationen in der [UWP-Dokumentation](send-local-toast.md). Weitere Desktop Sprachen finden Sie unter [Desktop c#](./send-local-toast.md).
 
 
 ## <a name="step-1-enable-the-windows-10-sdk"></a>Schritt 1: Aktivieren des Windows 10 SDK
@@ -31,7 +31,7 @@ Wenn Sie das Windows 10 SDK nicht für ihre Win32-App aktiviert haben, müssen S
 
 Klicken Sie mit der rechten Maustaste, und wählen Sie **Eigenschaften**
 
-Wählen Sie im **Configuration** Menü der obersten Konfiguration **alle Konfigurationen** aus, sodass die folgende Änderung auf Debug und Release angewendet wird.
+Wählen Sie im  Menü der obersten Konfiguration **alle Konfigurationen** aus, sodass die folgende Änderung auf Debug und Release angewendet wird.
 
 Fügen Sie unter **Linker-> Eingabe** `runtimeobject.lib` den **zusätzlichen Abhängigkeiten** hinzu.
 
@@ -94,7 +94,7 @@ Anschließend müssen Sie sich bei der Benachrichtigungs Plattform registrieren.
 
 ### <a name="msixsparse-package"></a>Msix/sparsespaket
 
-Fügen Sie in der [MSIX](/windows/msix/desktop/source-code-overview) Datei "Package. [sparse package](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) appxmanifest" in der Datei " **Package. appxmanifest** " Folgendes hinzu:
+Fügen Sie in der [](/windows/msix/desktop/source-code-overview) Datei "Package. [](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) appxmanifest" in der Datei " **Package. appxmanifest**" Folgendes hinzu:
 
 1. Deklaration für **xmlns: com**
 2. Deklaration für **xmlns: Desktop**
@@ -193,7 +193,7 @@ hr = DesktopNotificationManagerCompat::RegisterActivator();
 
 ## <a name="step-7-send-a-notification"></a>Schritt 7: Senden einer Benachrichtigung
 
-Das Senden einer Benachrichtigung ist mit UWP-apps identisch, mit dem Unterschied, dass Sie " **desktopnotificationmanagercompat** " verwenden, um einen " **deastnotifier** " zu erstellen. Die Kompatibilitäts-Bibliothek behandelt automatisch den Unterschied zwischen dem msix/Sparse-Paket und dem klassischen Win32, sodass Sie den Code nicht verzweigen müssen. Bei klassischem Win32 speichert die Kompatibilitäts-Bibliothek die von Ihnen beim Aufrufen von **registeraumidandcomserver** bereitgestellte aumid zwischen, sodass Sie sich keine Gedanken machen müssen, wann die aumid bereitgestellt oder nicht.
+Das Senden einer Benachrichtigung ist mit UWP-apps identisch, mit dem Unterschied, dass Sie " **desktopnotificationmanagercompat** " verwenden, um einen " **deastnotifier**" zu erstellen. Die Kompatibilitäts-Bibliothek behandelt automatisch den Unterschied zwischen dem msix/Sparse-Paket und dem klassischen Win32, sodass Sie den Code nicht verzweigen müssen. Bei klassischem Win32 speichert die Kompatibilitäts-Bibliothek die von Ihnen beim Aufrufen von **registeraumidandcomserver** bereitgestellte aumid zwischen, sodass Sie sich keine Gedanken machen müssen, wann die aumid bereitgestellt oder nicht.
 
 Stellen Sie sicher, dass Sie die **toastgeneric** -Bindung wie unten gezeigt verwenden, da die Legacy-Windows 8.1 Popup Benachrichtigungs Vorlagen Ihren in Schritt #4 erstellten com-Benachrichtigungs Aktivator nicht aktivieren.
 
@@ -420,7 +420,7 @@ In Windows 8 wurden Popup Benachrichtigungen eingeführt, aber es wurden die Leg
 
 | OS | Mit dem generischen | COM-Activator | Legacy-Popup Vorlagen |
 | -- | ------------ | ------------- | ---------------------- |
-| Windows 10 | Unterstützt | Unterstützt | Unterstützt (com-Server wird jedoch nicht aktiviert) |
+| Windows 10 | Unterstützt | Unterstützt | Unterstützt (com-Server wird jedoch nicht aktiviert) |
 | Windows 8.1/8 | – | – | Unterstützt |
 | Windows 7 und niedriger | – | – | – |
 
@@ -438,7 +438,7 @@ if (IsWindows10OrGreater())
 
 ## <a name="known-issues"></a>Bekannte Probleme
 
-**Korrigiert: die APP wird nach dem Klicken auf "Toast" nicht fokussiert** : in Builds 15063 und früher wurden keine Vordergrund Rechte an Ihre Anwendung übertragen, als der com-Server aktiviert wurde. Daher würde Ihre APP einfach blinken, wenn Sie versucht haben, Sie in den Vordergrund zu verschieben. Für dieses Problem gibt es keine Problem Umgehung. Wir haben dies in Build 16299 und höher korrigiert.
+**Korrigiert: die APP wird nach dem Klicken auf "Toast" nicht fokussiert**: in Builds 15063 und früher wurden keine Vordergrund Rechte an Ihre Anwendung übertragen, als der com-Server aktiviert wurde. Daher würde Ihre APP einfach blinken, wenn Sie versucht haben, Sie in den Vordergrund zu verschieben. Für dieses Problem gibt es keine Problem Umgehung. Wir haben dies in Build 16299 und höher korrigiert.
 
 
 ## <a name="resources"></a>Ressourcen

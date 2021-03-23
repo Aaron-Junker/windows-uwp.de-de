@@ -6,12 +6,12 @@ ms.date: 06/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Games, Setup, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 86c7b80ba7125547c2a45dae434c40a67a758b0d
-ms.sourcegitcommit: 8bface2162e091999b1cf2218340edda2389da89
+ms.openlocfilehash: 8e2e93ad43f866e26b448e2cbcd2cb480054cbc9
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103496697"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804264"
 ---
 # <a name="set-up-the-game-project"></a>Einrichten des Spieleprojekts
 
@@ -30,7 +30,7 @@ Der erste Schritt bei der Entwicklung Ihres Spiels ist das Erstellen eines Proje
 ## <a name="create-a-new-project-in-visual-studio"></a>Erstellen eines neuen Projekts in Visual Studio
 
 > [!NOTE]
-> Informationen zum Einrichten von Visual Studio für die C++/WinRT-Entwicklung&mdash;einschließlich Installieren und Verwenden der C++/WinRT Visual Studio-Erweiterung (VSIX) und des NuGet-Pakets (die zusammen die Projektvorlage und Buildunterstützung bereitstellen)&mdash; finden Sie unter [Visual Studio-Unterstützung für C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Informationen zum Einrichten von Visual Studio für die C++/WinRT-Entwicklung&mdash;einschließlich Installieren und Verwenden der C++/WinRT Visual Studio-Erweiterung (VSIX) und des NuGet-Pakets (die zusammen die Projektvorlage und Buildunterstützung bereitstellen)&mdash; finden Sie unter [Visual Studio-Unterstützung für C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 Installieren Sie zunächst die neueste Version von C++/WinRT Visual Studio-Erweiterung (VSIX), und installieren Sie Sie. Siehe den obigen Hinweis. Erstellen Sie dann in Visual Studio ein neues Projekt, das auf der Projektvorlage **Core app (C++/WinRT)** basiert. Die neueste allgemein verfügbare Version von Windows SDK (d. h. keine Vorschauversion).
 
@@ -189,7 +189,7 @@ Im folgenden finden Sie eine kurze Übersicht über einige der Dateien in **Simp
 |Vertexshader. HLSL und vertexshaderflat. HLSL|Shader|Enthält den HLSL-Code (High-Level Shader Language) für grundlegende Scheitelpunkt-Shader.|
 |Pixelshader. HLSL und pixelshaderflat. HLSL|Shader|Enthält den HLSL-Code (High-Level Shader Language) für grundlegende Pixel-Shader.|
 |Constantbuffers. hlsli|Shader|Enthält Datenstruktur Definitionen für konstante Puffer und shaderstrukturen, die verwendet werden, um MVP-Matrizen (Model-View-Projection) und pro-Vertex-Daten an den Vertex-Shader zu übergeben.|
-|pch.h/.cpp|Nicht zutreffend|Enthält allgemeine C++/WinRT-, Windows-und DirectX-includes.| 
+|pch.h/.cpp|–|Enthält allgemeine C++/WinRT-, Windows-und DirectX-includes.| 
 
 ### <a name="next-steps"></a>Nächste Schritte
 

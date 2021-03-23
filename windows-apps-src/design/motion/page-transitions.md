@@ -8,12 +8,12 @@ keywords: Windows 10, UWP
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b676cf274121ae991066f908b18f1be705d1c580
-ms.sourcegitcommit: 77903451ae8ab1ba854494488f79184e674707df
+ms.openlocfilehash: 0b2bdb95c6383559899e6baf06c391bbd250f3ca
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97911010"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804984"
 ---
 # <a name="page-transitions"></a>Seitenübergänge
 
@@ -99,7 +99,7 @@ Das Unterdrücken der Animation ist hilfreich, wenn Sie mit [verbundenen Animati
 
 Sie können verwenden `Frame.GoBack(NavigationTransitionInfo)` , um einen bestimmten Übergang wiederzugeben, wenn Sie rückwärts navigieren.
 
-Dies kann hilfreich sein, wenn Sie das Navigationsverhalten dynamisch basierend auf der Bildschirmgröße ändern. beispielsweise in einem reaktionsfähigen Master-/Detail-Szenario.
+Dies kann hilfreich sein, wenn Sie das Navigationsverhalten dynamisch basierend auf der Bildschirmgröße ändern. beispielsweise in einem reaktionsfähigen Listen-/detailszenario.
 
 ## <a name="related-topics"></a>Zugehörige Themen
 

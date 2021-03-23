@@ -4,23 +4,23 @@ title: Erstellen einer C#/WinRT-Komponente und deren Verwenden aus C++/WinRT
 ms.date: 01/28/2021
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f5157f97163a72ccce1ce9fc3f560fb4e16b1df
-ms.sourcegitcommit: 61a874d00991f7ca06466a99a557ef0777bd0f7c
+ms.openlocfilehash: be19b88860be127b0db826dffa22554cb86d21a1
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99989643"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804688"
 ---
-# <a name="walkthrough-create-a-cwinrt-component-and-consume-it-from-cwinrt"></a>Exemplarische Vorgehensweise: Erstellen einer/WinRT-Komponente in c# und deren Nutzung aus C++/WinRT
+# <a name="walkthrough-create-a-cwinrt-component-and-consume-it-from-cwinrt"></a>Exemplarische Vorgehensweise: Erstellen einer C#/WinRT-Komponente und deren Verwenden aus C++/WinRT
 
 > [!NOTE]
-> Die in diesem Artikel beschriebene Unterstützung der c#-/WinRT-Erstellung befindet sich derzeit in der Vorschauversion von c#/WinRT Version 1.1.2-Prerelease. 210208.6. Ab dieser Version ist die Verwendung nur für Frühes Feedback und Evaluierung vorgesehen.
+> Die in diesem Artikel beschriebene Unterstützung für die/WinRT-Erstellung in c# befindet sich derzeit in der Vorschauversion von c#/WinRT Version 1.1.4. Ab dieser Version ist die Verwendung nur für Frühes Feedback und Evaluierung vorgesehen.
 
-C#/WinRT ermöglicht Entwicklern von .net 5 das Erstellen eigener Windows-Runtime Komponenten in c# mithilfe eines Klassen Bibliotheks Projekts. Erstellte Komponenten können in nativen Desktop Anwendungen als Paket Verweis oder als Projekt Verweis mit wenigen Änderungen genutzt werden.
+C#/WinRT ermöglicht Entwicklern von .net 5 +, ihre eigenen Windows-Runtime Komponenten in c# mit einem Klassen Bibliotheksprojekt zu erstellen. Erstellte Komponenten können in nativen Desktop Anwendungen als Paket Verweis oder als Projekt Verweis mit wenigen Änderungen genutzt werden.
 
-In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie Sie eine einfache Windows-Runtime Komponente mit c#-/WinRT erstellen, die Komponente als nuget-Paket verteilen und die Komponente aus einer C++/WinRT-Konsolenanwendung nutzen. Den Beispielcode für diese exemplarische Vorgehensweise finden Sie [hier](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/AuthoringDemo)auf GitHub.
+In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie Sie eine einfache Windows-Runtime Komponente mit c#-/WinRT erstellen, die Komponente als nuget-Paket verteilen und die Komponente aus einer C++/WinRT-Konsolenanwendung nutzen. Das vollständige Beispiel, das den Code für diesen Artikel enthält, finden Sie im [c#/WinRT Authoring Sample (in c#](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/AuthoringDemo)). Weitere Informationen zum Erstellen von finden Sie unter [Authoring Components](https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md).
 
-Beachten Sie beim Erstellen der Laufzeitkomponente die Richtlinien und Typeinschränkungen, die in [diesem Artikel](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md) beschrieben werden. Intern können die Windows-Runtime Typen in der Komponente beliebige .NET-Funktionen verwenden, die in einer UWP-App zulässig sind. Weitere Informationen finden Sie unter [.net für UWP-apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true). Extern können die Member ihres Typs nur Windows-Runtime Typen für Ihre Parameter und Rückgabewerte verfügbar machen.
+Beachten Sie beim Erstellen der Laufzeitkomponente die Richtlinien und Typeinschränkungen, die in [diesem Artikel](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md) beschrieben werden. Intern können die Windows-Runtime Typen in der Komponente beliebige .NET-Funktionen verwenden, die in einer UWP-App zulässig sind. Weitere Informationen finden Sie unter [.net für UWP-apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true). Extern können die Typelemente für ihre Parameter und Rückgabewerte nur Windows-Runtime-Typen verfügbar machen.
 
 > [!NOTE]
 > Es gibt einige Windows-Runtime Typen, die [.NET-Typen zugeordnet](../winrt-components/net-framework-mappings-of-windows-runtime-types.md#uwp-types-that-map-to-net-types-with-a-different-name-andor-namespace)sind. Diese .NET-Typen können in der öffentlichen Schnittstelle Ihrer Windows-Runtime Komponente verwendet werden und werden den Benutzern der Komponente als entsprechende Windows-Runtime Typen angezeigt.
@@ -29,7 +29,7 @@ Beachten Sie beim Erstellen der Laufzeitkomponente die Richtlinien und Typeinsch
 
 Diese exemplarische Vorgehensweise erfordert die folgenden Tools und Komponenten:
 
-- Visual Studio 2019
+- Visual Studio 2019
 - .Net 5,0 SDK
 - [C++/WinRT VSIX](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) für C++/WinRT-Projektvorlagen
 
@@ -55,7 +55,7 @@ Beginnen Sie mit dem Erstellen eines neuen Projekts in Visual Studio 2019. Wähl
 
     a. Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf den Projekt Knoten, und wählen Sie **nuget-Pakete verwalten** aus.
 
-    b. Suchen Sie nach dem nuget-Paket **Microsoft. Windows. cswinrt** , und installieren Sie die neueste Version. In dieser exemplarischen Vorgehensweise wird c#/WinRT Version 1.1.2-Prerelease. 210208.6 verwendet.
+    b. Suchen Sie nach dem nuget-Paket **Microsoft. Windows. cswinrt** , und installieren Sie die neueste Version. In dieser exemplarischen Vorgehensweise wird c#/WinRT Version 1.1.4 verwendet.
 
 3. Fügen Sie ein neues `PropertyGroup` Element hinzu, das mehrere c#-/WinRT-Eigenschaften festlegt.
 
@@ -71,7 +71,7 @@ Beginnen Sie mit dem Erstellen eines neuen Projekts in Visual Studio 2019. Wähl
     - Die- `CsWinRTComponent` Eigenschaft gibt an, dass es sich bei dem Projekt um eine Windows-Runtime Komponente handelt, sodass für die Komponente eine winmd-Datei generiert wird.
     - Die- `CsWinRTWindowsMetadata` Eigenschaft stellt eine Quelle für Windows-Metadaten bereit. Dies ist ab Version 1.1.1 erforderlich.
 
-4. Sie können Ihre Lauf Zeit Klassen mithilfe von Bibliotheks Klassendateien **(CS)** erstellen. Klicken Sie mit der rechten Maustaste auf die Datei **Class1.cs** , und benennen Sie Sie in **example.cs** um Fügen Sie dieser Datei den folgenden Code hinzu, der der Lauf Zeit Klasse eine öffentliche Eigenschaft und Methode hinzufügt. Denken Sie daran, alle Klassen, die Sie in der Lauf Zeit **Komponente verfügbar** machen möchten, zu markieren.
+4. Sie können Ihre Lauf Zeit Klassen mithilfe von Bibliotheks Klassendateien **(CS)** erstellen. Klicken Sie mit der rechten Maustaste auf die Datei **Class1. cs** , und benennen Sie Sie in **example. cs** um. Fügen Sie dieser Datei den folgenden Code hinzu, der der Lauf Zeit Klasse eine öffentliche Eigenschaft und Methode hinzufügt. Denken Sie daran, alle Klassen, die Sie in der Lauf Zeit **Komponente verfügbar** machen möchten, zu markieren.
 
     ```csharp
     namespace AuthoringDemo
@@ -136,36 +136,9 @@ C#-/WinRT erstellte Windows-Runtime Komponenten können von nativen Anwendungen 
         
         a. Klicken Sie mit der rechten Maustaste auf das Projekt **cppconsoleapp** und wählen Sie Verweis **Hinzufügen**  ->   Fügen Sie unter dem Knoten **Projekte** einen Verweis auf das Projekt **authoringdemo** hinzu. Ab dieser Vorschauversion müssen Sie auch einen Datei Verweis auf " **authoringdemo. winmd** " aus dem Knoten **Durchsuchen** hinzufügen. Die generierte winmd-Datei befindet sich im Ausgabeverzeichnis des Projekts " **authoringdemo** ".
 
-        b. Für diese Vorschau müssen Sie auch die folgende Eigenschaften Gruppe zu **cppconsoleapp. vcxproj** hinzufügen. Zum Bearbeiten der Projektdatei für native Anwendungen klicken Sie zunächst mit der rechten Maustaste auf den Projekt Knoten **cppconsoleapp** , und wählen Sie **Projekt entladen** aus.
+3. Um das Hosting der-Komponente zu unterstützen, müssen Sie eine Manifest-Datei für aktivierbare Klassen Registrierungen hinzufügen. Weitere Informationen zum Hosting verwalteter Komponenten finden Sie unter [Verwalten von verwalteten](https://github.com/microsoft/CsWinRT/blob/master/docs/hosting.md)Komponenten.
 
-        ```xml
-        <PropertyGroup>
-            <TargetFrameworkVersion>net5.0</TargetFrameworkVersion>
-            <TargetFramework>native</TargetFramework>
-            <TargetRuntime>Native</TargetRuntime>
-        </PropertyGroup>
-        ```
-
-3. Um das Hosting der-Komponente zu unterstützen, müssen Sie eine runtimeconfig.jsfür die Datei und eine Manifest-Datei hinzufügen. Weitere Informationen zum Hosting verwalteter Komponenten finden Sie in [diesen hostingdokumentationen](https://github.com/microsoft/CsWinRT/blob/master/docs/hosting.md).
-
-    a. Um das runtimeconfig.jsfür die Datei hinzuzufügen, klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie **Add-> neues Element**. Suchen Sie nach der **Textdatei** -Vorlage, und benennen Sie Sie **WinRT.Host.runtimeconfig.js** ein. Fügen Sie den folgenden Inhalt ein:
-
-    ```json
-    {
-        "runtimeOptions": {
-            "tfm": "net5.0",
-            "rollForward": "LatestMinor",
-            "framework": {
-                "name": "Microsoft.NETCore.App",
-                "version": "5.0.0"
-            }
-        }
-    }
-    ```
-
-    Hinweis für den `tfm` Eintrag kann mit der DOTNET_ROOT-Umgebungsvariable auf eine benutzerdefinierte eigenständige .net 5-Installation verwiesen werden.
-
-    b. Um die Manifest-Datei hinzuzufügen, klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie **Hinzufügen-> neues Element**. Suchen Sie nach der **Textdatei** -Vorlage, und benennen Sie Sie **CppConsoleApp.exe. Manifest**. Fügen Sie den folgenden Inhalt ein:
+    a. Um die Manifest-Datei hinzuzufügen, klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie **Hinzufügen-> neues Element**. Suchen Sie nach der **Textdatei** -Vorlage, und benennen Sie Sie **CppConsoleApp.exe. Manifest**. Fügen Sie den folgenden Inhalt ein:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -182,9 +155,9 @@ C#-/WinRT erstellte Windows-Runtime Komponenten können von nativen Anwendungen 
 
     Die Manifest-Datei ist für nicht-Paketanwendungen erforderlich. Geben Sie in dieser Datei Ihre Lauf Zeit Klassen mithilfe von aktivierbaren Einträge für die Gruppen Registrierungen wie oben gezeigt an.
 
-4. Ändern Sie das Projekt, um beim Bereitstellen des Projekts die runtimeconfig.jsfür-und-Manifest-Dateien in der Ausgabe einzuschließen. Klicken Sie für die Dateien **WinRT.Host.runtimeconfig.json** und **CppConsoleApp.exe. Manifest** auf die Datei in **Projektmappen-Explorer** , und legen Sie die **Content** -Eigenschaft auf **true** fest. Im folgenden finden Sie ein Beispiel dafür, wie dies aussieht.
+    b. Ändern Sie das Projekt, um beim Bereitstellen des Projekts die Manifestressource in der Ausgabe einzuschließen. Klicken Sie in **Projektmappen-Explorer** auf die Datei **CppConsoleApp.exe. Manifest** , und legen Sie die Eigenschaft **Content** auf **true** fest. Im folgenden finden Sie ein Beispiel dafür, wie dies aussieht.
 
-    ![Inhalt bereitstellen](images/deploy-content.png)
+    ![Inhalt bereitstellen](images/deploy-content.png) 
 
 5. Öffnen Sie " **PCH. h** " unter den Header Dateien des Projekts, und fügen Sie die folgende Codezeile hinzu, um Ihre Komponente einzubeziehen.
 
@@ -216,7 +189,7 @@ C#-/WinRT erstellte Windows-Runtime Komponenten können von nativen Anwendungen 
 
     ![C++/WinRT Konsolenausgabe](images/consume-component-output.png)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 - [Beispielcode](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/AuthoringDemo)
 - [Erstellen von Komponenten](https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md)
