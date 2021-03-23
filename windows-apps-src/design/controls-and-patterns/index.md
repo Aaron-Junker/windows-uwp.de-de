@@ -8,12 +8,12 @@ ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e568dfb35f273b4efe045a6a16c944007f1ee7f
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: df9acd948ea2dc964989803a550d9ee57ea5caf6
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101824474"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804794"
 ---
 # <a name="controls-for-windows-apps"></a>Steuerelemente für Windows-Apps
 
@@ -86,9 +86,9 @@ Detaillierte Informationen zu bestimmten Steuerelementen und Mustern.
 - [Linkschaltfläche](hyperlinks.md#create-a-hyperlinkbutton)
 - [Bilder und Bildpinsel](images-imagebrushes.md)
 - [Steuerelemente für Freihandeingaben](inking-controls.md)
+- [Liste/Details](list-details.md) (Muster)
 - [Listenansicht](listview-and-gridview.md)
 - [Kartensteuerelement](../../maps-and-location/display-maps.md)
-- [Master/Details](master-details.md) (Muster)
 - [Medienwiedergabe](media-playback.md)
 - [Menüleiste](menus.md#create-a-menu-bar) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [Menüflyout](menus.md)

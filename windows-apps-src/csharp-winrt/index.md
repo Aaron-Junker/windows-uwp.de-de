@@ -5,18 +5,20 @@ ms.date: 05/19/2020
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C#, WinRT, CSWinRT, Projektion
 ms.localizationpriority: medium
-ms.openlocfilehash: 0704a7e9c731c6f60c59615b964b51e0ded242c2
-ms.sourcegitcommit: 1022e8819e75484ca0cd94f8baf4f4d11900e0e3
+ms.openlocfilehash: 55fbc91bb67b0853eafebdf05ffcf116637233bf
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98206089"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804774"
 ---
 # <a name="cwinrt"></a>C#/WinRT
 
-Bei C#/WinRT handelt es sich um ein Toolkit als NuGet-Paket, das die Projektionsunterstützung in der Windows-Runtime (WinRT) für die C#-Sprache bereitstellt. Eine *Projektion* ist eine Übersetzungsschicht, z. B. eine Interop-Assembly, die die Programmierung von WinRT-APIs auf für die Zielsprache natürliche und vertraute Weise ermöglicht. Beispielsweise verbirgt die C#/WinRT-Projektion die Details der Interop zwischen C#- und WinRT-Schnittstellen und stellt Zuordnungen vieler WinRT-Typen zu geeigneten .NET-Entsprechungen wie Zeichenfolgen, URIs, allgemeinen Werttypen und generischen Sammlungen bereit.
+Bei C#/WinRT handelt es sich um ein Toolkit als NuGet-Paket, das die Projektionsunterstützung in der Windows-Runtime (WinRT) für die C#-Sprache bereitstellt. Eine *Projektion* bezieht sich auf eine Interop-Assembly, die die Programmierung von WinRT-APIs auf für die Zielsprache natürliche und vertraute Weise ermöglicht. Die C#/WinRT-Projektion verbirgt die Details der Interop zwischen C#- und WinRT-Schnittstellen und stellt Zuordnungen vieler [WinRT-Typen zu geeigneten .NET-Entsprechungen](../winrt-components/net-framework-mappings-of-windows-runtime-types.md) wie Zeichenfolgen, URIs, allgemeinen Werttypen und generischen Sammlungen bereit.
 
-C#/WinRT bietet derzeit Unterstützung für die Verarbeitung von WinRT-Typen, und die neueste Version ermöglicht es Ihnen, WinRT-Interop-Assemblys zu [erstellen](#create-an-interop-assembly) und auf diese zu [verweisen](#reference-an-interop-assembly). In zukünftigen Versionen von C#/WinRT folgt die Unterstützung für die Erstellung von WinRT-Typen in C#.
+C#/WinRT bietet derzeit Unterstützung für die Verarbeitung von WinRT-APIs durch die Verwendung von [Zielframeworkmonikers](/windows/apps/desktop/modernize/desktop-to-uwp-enhance#net-5-use-the-target-framework-moniker-option) in .NET 5+. Die Angabe des Zielframeworkmonikers mit einer bestimmten Windows-Version fügt Verweise auf die Windows SDK-Projektion und Laufzeitassemblys hinzu, die von C#/WinRT generiert wurden.
+
+Mit dem neuesten [C#/WinRT NuGet-Paket](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/) können Sie Ihre eigenen WinRT-Interop-Assemblys für .NET 5+-Consumer [erstellen](#create-an-interop-assembly) und darauf [verweisen](#reference-an-interop-assembly). Die neueste C#/WinRT-Version enthält auch eine [Vorschau auf die Erstellung](create-windows-runtime-component-cswinrt.md) von WinRT-Typen in C#.
 
 Weitere Informationen zu C#/WinRT finden Sie im [C#/WinRT-GitHub-Repository](https://aka.ms/cswinrt/repo).
 
@@ -32,7 +34,7 @@ Schließlich ist C#/WinRT ein allgemeines Toolkit und auf weitere Szenarien ausg
 
 ## <a name="create-an-interop-assembly"></a>Erstellen einer Interop-Assembly
 
-WinRT-APIs werden in Windows-Metadatendateien (*.winmd) definiert. Das C#/WinRT NuGet-Paket ([Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)) enthält den C#/WinRT-Compiler, **cswinrt.exe**, mit dem Sie Windows-Metadatendateien verarbeiten und .NET 5.0-C#-Code erstellen können. Sie können diese Quelldateien in Interop-Assemblys kompilieren, ähnlich wie [C++/WinRT](../cpp-and-winrt-apis/index.md) Header für die C++-Sprachprojektion generiert. Anschließend können Sie die C#/WinRT-Interop-Assemblys C# für Anwendungen als Verweis verteilen, zusammen mit der C#/WinRT-Laufzeit-Assembly.
+WinRT-APIs werden in Windows-Metadatendateien (\*.winmd) definiert. Das C#/WinRT NuGet-Paket ([Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)) enthält den C#/WinRT-Compiler, **cswinrt.exe**, mit dem Sie Windows-Metadatendateien verarbeiten und .NET 5-C#-Code erstellen können. Sie können diese Quelldateien in Interop-Assemblys kompilieren, ähnlich wie [C++/WinRT](../cpp-and-winrt-apis/index.md) Header für die C++-Sprachprojektion generiert. Anschließend können Sie die C#/WinRT-Interop-Assemblys für .NET 5-Anwendungen verteilen, auf die verwiesen werden soll, zusammen mit der C#/WinRT-Laufzeit-Assembly.
 
 Eine exemplarische Vorgehensweise, die veranschaulicht, wie eine Interop-Assembly als NuGet-Paket erstellt und verteilt wird, finden Sie unter [Exemplarische Vorgehensweise: Generieren einer .NET 5-Projektion aus einer C++/WinRT-Komponente und Aktualisieren von NuGet](net-projection-from-cppwinrt-component.md).
 
@@ -46,13 +48,13 @@ Um „cswinrt.exe“ von einem Projekt aus aufzurufen, installieren Sie das neue
 </PropertyGroup>
 ```
 
-In diesem Projekt müssten Sie auch auf das CsWinRT-NuGet-Paket und die projektspezifischen WINMD-Dateien verweisen, die Sie projizieren möchten, sei es über ein NuGet-Paket, einen Projektverweis oder einen direkten Verweis. Standardmäßig werden die Namespaces **Windows** und **Microsoft** nicht projiziert. Eine vollständige Liste der CsWinRT-Projekteigenschaften finden Sie in der [CsWinRT-NuGet-Dokumentation](https://github.com/microsoft/CsWinRT/blob/master/nuget/readme.md).
+In diesem Projekt müssten Sie auch auf das C#/WinRT-NuGet-Paket und die projektspezifischen WINMD-Dateien verweisen, die Sie projizieren möchten, sei es über ein NuGet-Paket, einen Projektverweis oder einen direkten Dateiverweis. Standardmäßig werden die **Windows**- und **Microsoft**-Namespaces nicht projiziert, da C#/WinRT diese Projektionen durch die Unterstützung des Zielframeworkmonikers und WinUI 3 bereits erzeugt hat. Eine vollständige Liste der C#/WinRT-NuGet-Projekteigenschaften finden Sie in der [CsWinRT-NuGet-Dokumentation](https://github.com/microsoft/CsWinRT/blob/master/nuget/readme.md).
 
 ### <a name="distribute-the-interop-assembly"></a>Verteilen der Interop-Assembly
 
 Eine Interop-Assembly wird in der Regel als NuGet-Paket verteilt, zusammen mit einer Abhängigkeit vom C#/WinRT-NuGet-Paket für die erforderliche C#/WinRT-Laufzeit-Assembly (**WinRT.Runtime.dll**).
 
-Um sicherzustellen, dass die korrekte Version der C#/WinRT-Laufzeit für .NET 5.0-Anwendungen bereitgestellt wird, fügen Sie eine `targetFramework`-Bedingung in die NUSPEC-Datei mit einer Abhängigkeit vom C#/WinRT-NuGet-Paket ein.
+Um sicherzustellen, dass die korrekte Version der C#/WinRT-Laufzeit für .NET 5-Anwendungen bereitgestellt wird, fügen Sie eine `targetFramework`-Bedingung in die NUSPEC-Datei mit einer Abhängigkeit vom C#/WinRT-NuGet-Paket ein.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -60,7 +62,7 @@ Um sicherzustellen, dass die korrekte Version der C#/WinRT-Laufzeit für .NET 5
   <metadata>
     <dependencies>
       <group targetFramework="net5.0">
-        <dependency id="Microsoft.Windows.CsWinRT" version="1.0.1" />
+        <dependency id="Microsoft.Windows.CsWinRT" version="1.1.4" />
       </group>
     </dependencies>
   </metadata>
