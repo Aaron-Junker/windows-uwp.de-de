@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a5942dfbcd2f72d456ac352785bce73e75454330
-ms.sourcegitcommit: aa88679989ef3c8b726e1bf5a0ed17c1206a414f
+ms.openlocfilehash: d8fac685e341ab78357bfb2ab3ea4e668a78918a
+ms.sourcegitcommit: 34f532fd023af2849c3e975baf7aa6771d7e53b9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687783"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104893850"
 ---
 # <a name="move-and-draw-commands-syntax"></a>Syntax für die Verschieben- und Zeichnen-Befehle
 
@@ -29,17 +29,15 @@ Die Windows-Runtime enthält zwei Eigenschaften, die eine Zeichenfolge verwenden
   Data="M4.12,0 L9.67,5.47 L4.12,10.94 L0,10.88 L5.56,5.47 L0,0.06" />
 ```
 
-[**PathGeometry.Figures**](/uwp/api/windows.ui.xaml.media.pathgeometry.figures) kann ebenfalls Verschieben- und Zeichnen-Befehle verwenden. Sie können ein [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry)-Objekt, das Verschieben- und Zeichnen-Befehle verwendet, mit anderen [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry)-Typen in einem [**GeometryGroup**](/uwp/api/Windows.UI.Xaml.Media.GeometryGroup)-Objekt kombinieren, das Sie dann als Wert für [**Path.Data**](/uwp/api/windows.ui.xaml.shapes.path.data) nutzen. Weitaus gängiger ist aber die Verwendung von Verschieben- und Zeichnen-Befehlen für durch Attribute definierte Daten.
+## <a name="using-move-and-draw-commands-versus-using-a-pathgeometry"></a>Verwenden von Verschieben- und Zeichnen-Befehlen oder einer **PathGeometry**-Klasse
 
-## <a name="using-move-and-draw-commands-versus-using-a-pathgeometry"></a>Verwenden von Verschieben- und Zeichnen-Befehlen oder einer **PathGeometry** -Klasse
-
-Für Windows-Runtime-XAML erzeugen die Verschieben- und Zeichnen-Befehle eine [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry)-Klasse mit einem einzigen [**PathFigure**](/uwp/api/Windows.UI.Xaml.Media.PathFigure)-Objekt, das über einen [**Figures**](/uwp/api/windows.ui.xaml.media.pathgeometry.figures)-Eigenschaftswert verfügt. Jeder Zeichnen-Befehl erzeugt eine von der [**PathSegment**](/uwp/api/Windows.UI.Xaml.Media.PathSegment)-Klasse abgeleitete Klasse in der [**Segments**](/uwp/api/windows.ui.xaml.media.pathfigure.segments)-Collection dieses einen **PathFigure** -Objekts. Der Verschieben-Befehl ändert die [**StartPoint**](/uwp/api/windows.ui.xaml.media.pathfigure.startpoint)-Eigenschaft. Zudem wird durch das Vorhandensein eines Schließen-Befehls [**IsClosed**](/uwp/api/windows.ui.xaml.media.pathfigure.isclosed) auf **true** festgelegt. In dieser Struktur können Sie dann wie in einem Objektmodell navigieren, wenn Sie zur Laufzeit die **Data** -Werte untersuchen.
+Für Windows-Runtime-XAML erzeugen die Verschieben- und Zeichnen-Befehle eine [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry)-Klasse mit einem einzigen [**PathFigure**](/uwp/api/Windows.UI.Xaml.Media.PathFigure)-Objekt, das über einen [**Figures**](/uwp/api/windows.ui.xaml.media.pathgeometry.figures)-Eigenschaftswert verfügt. Jeder Zeichnen-Befehl erzeugt eine von der [**PathSegment**](/uwp/api/Windows.UI.Xaml.Media.PathSegment)-Klasse abgeleitete Klasse in der [**Segments**](/uwp/api/windows.ui.xaml.media.pathfigure.segments)-Collection dieses einen **PathFigure**-Objekts. Der Verschieben-Befehl ändert die [**StartPoint**](/uwp/api/windows.ui.xaml.media.pathfigure.startpoint)-Eigenschaft. Zudem wird durch das Vorhandensein eines Schließen-Befehls [**IsClosed**](/uwp/api/windows.ui.xaml.media.pathfigure.isclosed) auf **true** festgelegt. In dieser Struktur können Sie dann wie in einem Objektmodell navigieren, wenn Sie zur Laufzeit die **Data**-Werte untersuchen.
 
 ## <a name="the-basic-syntax"></a>Grundlegende Syntax
 
 Hier ein Überblick der Syntax für Verschieben- und Zeichnen-Befehle:
 
-1.  Beginnen Sie mit einer optionalen Füllregel. Normalerweise geben Sie diese Füllregel nur an, wenn Sie den **EvenOdd** -Standard nicht verwenden möchten. ( **EvenOdd** wird später erläutert.)
+1.  Beginnen Sie mit einer optionalen Füllregel. Normalerweise geben Sie diese Füllregel nur an, wenn Sie den **EvenOdd**-Standard nicht verwenden möchten. (**EvenOdd** wird später erläutert.)
 2.  Geben Sie genau einen Verschieben-Befehl an.
 3.  Geben Sie mindestens einen Zeichnen-Befehl an.
 4.  Geben Sie einen Schließen-Befehl an. Sie können den Schließen-Befehl weglassen, aber dann bleibt die Figur geöffnet (das wäre ungewöhnlich).
@@ -53,7 +51,7 @@ Allgemeine Regeln für diese Syntax:
 
 **\[**_FillRule_ **\]** Befehl _drawcommand_ _drawcommand_ **\[** _drawcommand_ **\*\]** **\[** _CloseCommand_**\]**
 
-Viele der Zeichnen-Befehle verwenden Punkte, für die Sie einen _x,y_ -Wert angeben. Wenn Sie einen \* Platzhalter für _Punkte_ sehen, können Sie davon ausgehen, dass Sie zwei Dezimalwerte für den _x-, y_ -Wert eines Punkts erhalten.
+Viele der Zeichnen-Befehle verwenden Punkte, für die Sie einen _x,y_-Wert angeben. Wenn Sie einen \* Platzhalter für _Punkte_ sehen, können Sie davon ausgehen, dass Sie zwei Dezimalwerte für den _x-, y_ -Wert eines Punkts erhalten.
 
 Leerzeichen können bei eindeutigen Ergebnissen häufig weggelassen werden. Tatsächlich können Sie alle Leerzeichen weglassen, wenn Sie Kommas als Trennzeichen für alle Zahlengruppen (Punkte und Größe) verwenden. Diese Verwendung ist zum Beispiel gültig: `F1M0,58L2,56L6,60L13,51L15,53L6,64z`. Typischer ist allerdings die Verwendung von Leerzeichen zwischen Befehlen, um die Übersichtlichkeit zu verbessern.
 
@@ -63,7 +61,7 @@ Verwenden Sie als Dezimalzeichen für Dezimalzahlen kein Komma. Die Befehlszeich
 
 **Füllregel**
 
-Es gibt zwei mögliche Werte für die optionale Füllregel: **F0** oder **F1** . (Das **F** wird immer großgeschrieben.) **F0** ist der Standardwert. Er erzeugt das **EvenOdd** -Füllverhalten, sodass Sie dieses normalerweise nicht angeben. Verwenden Sie **F1** , um das Füllverhalten für **Nonzero** abzurufen. Diese Füllwerte sind an die Werte der [**FillRule**](/uwp/api/Windows.UI.Xaml.Media.FillRule)-Aufzählung angepasst.
+Es gibt zwei mögliche Werte für die optionale Füllregel: **F0** oder **F1**. (Das **F** wird immer großgeschrieben.) **F0** ist der Standardwert. Er erzeugt das **EvenOdd**-Füllverhalten, sodass Sie dieses normalerweise nicht angeben. Verwenden Sie **F1**, um das Füllverhalten für **Nonzero** abzurufen. Diese Füllwerte sind an die Werte der [**FillRule**](/uwp/api/Windows.UI.Xaml.Media.FillRule)-Aufzählung angepasst.
 
 **Move-Befehl**
 
@@ -71,7 +69,7 @@ Gibt den Ausgangspunkt einer neuen Figur an.
 
 | Syntax |
 |--------|
-| `M `_Startpunkt_ <br/>- oder -<br/>`m`_Startpunkt_|
+| `M `_Startpunkt_ <br/>- oder -<br/>`m`_Startpunkt_|
 
 | Begriff | BESCHREIBUNG |
 |------|-------------|
@@ -95,7 +93,7 @@ Erstellt eine gerade Linie zwischen dem aktuellen Punkt und dem angegebenen Endp
 
 | Syntax |
 |--------|
-| `L`_Endpunkt_ <br/>- oder -<br/>`l`_Endpunkt_ |
+| `L`_Endpunkt_ <br/>- oder -<br/>`l`_Endpunkt_ |
 
 | Begriff | BESCHREIBUNG |
 |------|-------------|
@@ -107,7 +105,7 @@ Erstellt eine horizontale Linie zwischen dem aktuellen Punkt und der angegebenen
 
 | Syntax |
 |--------|
-| `H ` _x_ <br/> - oder - <br/>`h ` _x_ |
+| `H ` _x_ <br/> - oder - <br/>`h ` _x_ |
 
 | Begriff | BESCHREIBUNG |
 |------|-------------|
@@ -119,7 +117,7 @@ Erstellt eine vertikale Linie zwischen dem aktuellen Punkt und der angegebenen y
 
 | Syntax |
 |--------|
-| `V `_j_ <br/> - oder - <br/> `v `_j_ |
+| `V ` _j_ <br/> - oder - <br/> `v ` _j_ |
 
 | Begriff | BESCHREIBUNG |
 |------|-------------|
@@ -127,11 +125,11 @@ Erstellt eine vertikale Linie zwischen dem aktuellen Punkt und der angegebenen y
 
 **Befehl für eine kubische Bézierkurve**
 
-Erstellt eine kubische Bézierkurve zwischen dem aktuellen Punkt und dem angegebenen Endpunkt. Dabei werden die beiden angegebenen Kontrollpunkte ( *controlPoint1* und *controlPoint2* ) verwendet. `C 100,200 200,400 300,200` ist ein Beispiel für einen gültigen Kurvenbefehl. Definiert das Äquivalent eines [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry)-Objekts mit einem [**BezierSegment**](/uwp/api/Windows.UI.Xaml.Media.BezierSegment)-Objekt.
+Erstellt eine kubische Bézierkurve zwischen dem aktuellen Punkt und dem angegebenen Endpunkt. Dabei werden die beiden angegebenen Kontrollpunkte (*controlPoint1* und *controlPoint2*) verwendet. `C 100,200 200,400 300,200` ist ein Beispiel für einen gültigen Kurvenbefehl. Definiert das Äquivalent eines [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry)-Objekts mit einem [**BezierSegment**](/uwp/api/Windows.UI.Xaml.Media.BezierSegment)-Objekt.
 
 | Syntax |
 |--------|
-| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - oder - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
+| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - oder - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
 
 | Begriff | BESCHREIBUNG |
 |------|-------------|
@@ -141,11 +139,11 @@ Erstellt eine kubische Bézierkurve zwischen dem aktuellen Punkt und dem angegeb
 
 **Befehl für eine quadratische Bézierkurve**
 
-Erstellt eine quadratische Bézierkurve zwischen dem aktuellen Punkt und dem angegebenen Endpunkt. Dabei wird der angegebene Kontrollpunkt ( *controlPoint* ) verwendet. `q 100,200 300,200` ist ein Beispiel für einen gültigen Befehl für eine quadratische Bézierkurve. Definiert das Äquivalent eines [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry)-Objekts mit einem [**QuadraticBezierSegment**](/uwp/api/Windows.UI.Xaml.Media.QuadraticBezierSegment)-Objekt.
+Erstellt eine quadratische Bézierkurve zwischen dem aktuellen Punkt und dem angegebenen Endpunkt. Dabei wird der angegebene Kontrollpunkt (*controlPoint*) verwendet. `q 100,200 300,200` ist ein Beispiel für einen gültigen Befehl für eine quadratische Bézierkurve. Definiert das Äquivalent eines [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry)-Objekts mit einem [**QuadraticBezierSegment**](/uwp/api/Windows.UI.Xaml.Media.QuadraticBezierSegment)-Objekt.
 
 | Syntax |
 |--------|
-| `Q ` *controlPoint endPoint* <br/> - oder - <br/> `q ` *controlPoint endPoint* |
+| `Q ` *controlPoint endPoint* <br/> - oder - <br/> `q ` *controlPoint endPoint* |
 
 | Begriff | BESCHREIBUNG |
 |------|-------------|
@@ -158,7 +156,7 @@ Erstellt eine kubische Bézierkurve zwischen dem aktuellen Punkt und dem angegeb
 
 | Syntax |
 |--------|
-| `S` *controlPoint2* *endPoint* <br/> - oder - <br/>`s` *controlPoint2 endPoint* |
+| `S` *controlPoint2* *endPoint* <br/> - oder - <br/>`s` *controlPoint2 endPoint* |
 
 | Begriff | BESCHREIBUNG |
 |------|-------------|
@@ -171,7 +169,7 @@ Erstellt eine quadratische Bézierkurve zwischen dem aktuellen Punkt und dem ang
 
 | Syntax |
 |--------|
-| `T` *controlPoint* *endPoint* <br/> - oder - <br/> `t` *controlPoint* *endPoint* |
+| `T` *controlPoint* *endPoint* <br/> - oder - <br/> `t` *controlPoint* *endPoint* |
 
 | Begriff | BESCHREIBUNG |
 |------|-------------|
@@ -184,7 +182,7 @@ Erstellt einen elliptischen Bogen zwischen dem aktuellen Punkt und dem angegeben
 
 | Syntax |
 |--------|
-| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - oder - <br/>`a ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* |
+| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - oder - <br/>`a ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* |
 
 | Begriff | BESCHREIBUNG |
 |------|-------------|
@@ -200,7 +198,7 @@ Beendet die aktuelle Figur und erstellt eine Linie, die den aktuellen Punkt mit 
 
 | Syntax |
 |--------|
-| `Z` <br/> - oder - <br/> `z ` |
+| `Z` <br/> - oder - <br/> `z ` |
 
 **Point-Syntax**
 
@@ -208,32 +206,32 @@ Beschreibt die x-Koordinate und y-Koordinate eines Punkts. Weitere Informationen
 
 | Syntax |
 |--------|
-| *x* , *y*<br/> - oder - <br/>*x* *y* |
+| *x*,*y*<br/> - oder - <br/>*x* *y* |
 
 | Begriff | BESCHREIBUNG |
 |------|-------------|
 | *x* | [**Double**](/dotnet/api/system.double) <br/> Die x-Koordinate des Punkts. |
 | *y* | [**Double**](/dotnet/api/system.double) <br/> Die y-Koordinate des Punkts. |
 
-**Weitere Hinweise**
+**Zusätzliche Hinweise**
 
 Anstelle eines numerischen Standardwerts können Sie auch die folgenden speziellen Werte verwenden. Bei diesen Werten wird zwischen Groß-/Kleinschreibung unterschieden.
 
--   **Infinity** : repräsentiert **PositiveInfinity** .
--   **\- Infinity** : stellt **negativanfinity** dar.
--   **NaN** : repräsentiert **NaN** .
+-   **Infinity**: repräsentiert **PositiveInfinity**.
+-   **\- Infinity**: stellt **negativanfinity** dar.
+-   **NaN**: repräsentiert **NaN**.
 
 Anstelle von Dezimalzahlen oder Ganzzahlen können Sie die wissenschaftliche Notation verwenden. `+1.e17` ist zum Beispiel ein gültiger Wert.
 
 ## <a name="design-tools-that-produce-move-and-draw-commands"></a>Designtools zum Erzeugen von Verschieben- und Zeichnen-Befehlen
 
-Mit dem **Pen** -Tool und anderen Zeichentools in Blend for Microsoft Visual Studio 2015 erzeugen Sie normalerweise ein [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path)-Objekt mit Verschieben- und Zeichnen-Befehlen.
+Mit dem **Pen**-Tool und anderen Zeichentools in Blend for Microsoft Visual Studio 2015 erzeugen Sie normalerweise ein [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path)-Objekt mit Verschieben- und Zeichnen-Befehlen.
 
 Möglicherweise sehen Sie vorhandene Daten für Verschieben- und Zeichnen-Befehle in einigen Steuerelementkomponenten, die in den Standardvorlagen für Steuerelemente in Windows-Runtime-XAML definiert sind. So verwenden zum Beispiel einige Steuerelemente ein [**PathIcon**](/uwp/api/Windows.UI.Xaml.Controls.PathIcon)-Objekt, dessen Daten als Verschieben- und Zeichnen-Befehle definiert sind.
 
-Für andere häufig verwendete Vektorgrafik-Designtools, die den Vektor in XAML-Form ausgeben können, sind Exporter oder Plug-Ins verfügbar. Diese erstellen gewöhnlich [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path)-Objekte in einem Layoutcontainer mit Verschieben- und Zeichnen-Befehlen für die [**Path.Data**](/uwp/api/windows.ui.xaml.shapes.path.data)-Eigenschaft. XAML kann mehrere **Path** -Elemente enthalten, sodass verschiedene Pinsel angewendet werden können. Viele dieser Exporter oder Plug-Ins wurden ursprünglich für Windows Presentation Foundation (WPF), XAML oder Silverlight geschrieben, aber die XAML-Pfadsyntax ist mit Windows-Runtime-XAML identisch. In der Regel können Sie XAML-Abschnitte aus einem Exporter verwenden und direkt in eine Windows-Runtime-XAML-Seite einfügen. (Es ist aber nicht möglich, einen **RadialGradientBrush** -Pinsel zu verwenden, wenn dieser Bestandteil der konvertierten XAML war, da Windows-Runtime-XAML diesen Pinsel nicht unterstützt.)
+Für andere häufig verwendete Vektorgrafik-Designtools, die den Vektor in XAML-Form ausgeben können, sind Exporter oder Plug-Ins verfügbar. Diese erstellen gewöhnlich [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path)-Objekte in einem Layoutcontainer mit Verschieben- und Zeichnen-Befehlen für die [**Path.Data**](/uwp/api/windows.ui.xaml.shapes.path.data)-Eigenschaft. XAML kann mehrere **Path**-Elemente enthalten, sodass verschiedene Pinsel angewendet werden können. Viele dieser Exporter oder Plug-Ins wurden ursprünglich für Windows Presentation Foundation (WPF), XAML oder Silverlight geschrieben, aber die XAML-Pfadsyntax ist mit Windows-Runtime-XAML identisch. In der Regel können Sie XAML-Abschnitte aus einem Exporter verwenden und direkt in eine Windows-Runtime-XAML-Seite einfügen. (Es ist aber nicht möglich, einen **RadialGradientBrush**-Pinsel zu verwenden, wenn dieser Bestandteil der konvertierten XAML war, da Windows-Runtime-XAML diesen Pinsel nicht unterstützt.)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Zeichnen von Formen](../design/controls-and-patterns/shapes.md)
 * [Verwenden von Pinseln](../design/style/brushes.md)
