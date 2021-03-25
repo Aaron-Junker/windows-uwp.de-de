@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bd1a5f6961e3b1caaab29a6a3fb9ecef2e9d6ef
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 848fa6bd448d4da0bfc8d760fa36a75a13fc32ae
+ms.sourcegitcommit: 3e1f65d6bb4f1e18f962f9fef66e31fe0264b6bb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93035003"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105030992"
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a>Anbieten vergünstigter Apps und Add-Ons
 
@@ -36,28 +36,27 @@ Sonderangebote werden im Rahmen der Übermittlung für Apps oder Add-Ons geplant
 
 **So planen Sie ein Sonderangebot**
 
-1. Wechseln Sie auf der Seite **Preise und Verfügbarkeit** einer aktiven App- oder Add-On-Übermittlung zum Abschnitt **Verkaufspreise** .
+1. Wechseln Sie auf der Seite **Preise und Verfügbarkeit** einer aktiven App- oder Add-On-Übermittlung zum Abschnitt **Verkaufspreise**.
 2. Wählen Sie **Optionen anzeigen** aus, und wählen Sie dann **neuer Verkauf** aus.
-3. Das Popup Fenster für die **Markt Auswahl** wird angezeigt, in dem Sie eine *Marktgruppe* erstellen können, in der die Märkte angegeben werden, in denen der Verkauf angeboten werden soll. Sie können auf **Alle auswählen** klicken, um den Verkauf für jeden Markt, in dem Ihre app verfügbar ist, zu ermöglichen, einen einzelnen Markt auszuwählen oder mehrere Märkte auszuwählen. Sie können optional einen Namen für Ihre Marktgruppe eingeben. Wenn Sie Ihre Auswahl getroffen haben, klicken Sie auf **Erstellen** . (Klicken Sie auf den Namen, um die Märkte in der Gruppe zu einem späteren Zeitpunkt zu bearbeiten.)
+3. Das Popup Fenster für die **Markt Auswahl** wird angezeigt, in dem Sie eine *Marktgruppe* erstellen können, in der die Märkte angegeben werden, in denen der Verkauf angeboten werden soll. Sie können auf **Alle auswählen** klicken, um den Verkauf für jeden Markt, in dem Ihre app verfügbar ist, zu ermöglichen, einen einzelnen Markt auszuwählen oder mehrere Märkte auszuwählen. Sie können optional einen Namen für Ihre Marktgruppe eingeben. Wenn Sie Ihre Auswahl getroffen haben, klicken Sie auf **Erstellen**. (Klicken Sie auf den Namen, um die Märkte in der Gruppe zu einem späteren Zeitpunkt zu bearbeiten.)
 
    > [!NOTE]
    > Die Markt Auswahl, die Sie im Abschnitt Preis Preise treffen, wirkt sich nicht auf die Märkte aus, in denen die APP angeboten wird. Diese Auswahl bestimmt nur, ob ein Verkaufspreis angeboten wird und in welchen Märkten. Wenn Sie Angebotspreise für einen Markt festlegen, in dem Ihre App nicht verfügbar ist, steht die App in diesem Markt weiterhin nicht zur Verfügung.
 4. Wählen Sie eine der folgenden Optionen aus, um den Typ des Rabatts anzugeben:
-   - **Preis** : Verwenden Sie diese Option, um einen niedrigeren Tarif auszuwählen, bei dem Ihre APP angeboten wird. Sie können das Dropdown Blatt Währung ändern, um den Preis in der von Ihnen bevorzugten Währung auszuwählen. (Der Preis wird für jede Währung in den entsprechenden Tarif konvertiert. Weitere Informationen finden Sie unter [Preise](set-app-pricing-and-availability.md).)
-   - **Prozentsatz** : Verwenden Sie diese Option, um den Prozentsatz für einen Rabatt auszuwählen, der auf Ihre APP angewendet wird. Der gleiche Rabatt Prozentsatz wird für alle Währungen verwendet.
+   - **Preis**: Verwenden Sie diese Option, um einen niedrigeren Tarif auszuwählen, bei dem Ihre APP angeboten wird. Sie können das Dropdown Blatt Währung ändern, um den Preis in der von Ihnen bevorzugten Währung auszuwählen. (Der Preis wird für jede Währung in den entsprechenden Tarif konvertiert. Weitere Informationen finden Sie unter [Preise](set-app-pricing-and-availability.md).)
+   - **Prozentsatz**: Verwenden Sie diese Option, um den Prozentsatz für einen Rabatt auszuwählen, der auf Ihre APP angewendet wird. Der gleiche Rabatt Prozentsatz wird für alle Währungen verwendet.
 5. Wählen Sie in der Zeile **angeboten für** eine der verfügbaren Optionen aus, einschließlich:
-   - **Alle** : der Verkauf wird allen Kunden angeboten.
-   - **Besitzer von** : der Verkauf wird Kunden angeboten, die bereits eine Ihrer Apps besitzen. In der angezeigten Dropdown-Dropdown-Dropdown-Anzeige können Sie aus Ihren veröffentlichten apps auswählen. Sie müssen über mindestens eine veröffentlichte App verfügen, damit diese Option verfügbar ist.
+   - **Alle**: der Verkauf wird allen Kunden angeboten.
+   - **Besitzer von**: der Verkauf wird Kunden angeboten, die bereits eine Ihrer Apps besitzen. In der angezeigten Dropdown-Dropdown-Dropdown-Anzeige können Sie aus Ihren veröffentlichten apps auswählen. Sie müssen über mindestens eine veröffentlichte App verfügen, damit diese Option verfügbar ist.
 
   > [!IMPORTANT]
   > Wenn Sie **Besitzer von** auswählen, wird der Verkauf nur für Kunden unter Windows 10, Version 1607 oder höher, angezeigt.
 
-   - **Bekannte Benutzergruppe** : der Verkauf wird den Personen in der ausgewählten [Benutzergruppe](create-known-user-groups.md) angeboten, die Sie auswählen. Sie müssen die Gruppe bekannter Benutzer bereits erstellt haben, damit diese Option verfügbar ist.
-   - **Segment** : der Verkauf wird den Personen im Kundensegment angeboten, das Sie auswählen. Sie können ein  [Segment verwenden, das Sie hier bereits erstellt haben](create-customer-segments.md) . Sie können auch **erstmalige kostenpflichtige** Mitarbeiter auswählen, um den Verkauf nur für Kunden zu ermöglichen, die im Store nichts gekauft haben. Dieses Segment wird hier angeboten, da wir feststellen, dass nach dem Erwerb eines Kunden für den ersten Einkauf häufig mehr Einkäufe getätigt werden. Dies kann eine großartige Gruppe sein, die mit den Preisen für den Verkauf zu rechnen ist.
+   - **Bekannte Benutzergruppe**: der Verkauf wird den Personen in der ausgewählten [Benutzergruppe](create-known-user-groups.md) angeboten, die Sie auswählen. Sie müssen die Gruppe bekannter Benutzer bereits erstellt haben, damit diese Option verfügbar ist.
 6. Geben Sie das Datum und die Uhrzeit für den Start und das Ende des Angebotszeitraums ein. Wählen Sie eine der folgenden Zeit Zonen Optionen aus:
-   - **UTC** : die Zeit, die Sie auswählen, wird als UTC-Zeit (Universal koordinierte Zeit) verwendet, damit der Verkauf gleichzeitig stattfindet.
-   - **Lokal** : die ausgewählte Zeit wird in jeder mit einem Markt verknüpften Zeitzone verwendet. (Beachten Sie, dass für Märkte, die mehr als eine Zeitzone enthalten, nur eine Zeitzone in diesem Markt verwendet wird. Für den USA wird die Zeitzone Eastern verwendet.)
-7. Um einen zusätzlichen Verkauf zu planen, wählen Sie **neu Verkauf** aus. Wählen Sie andernfalls unten auf der **Seite "Preise und Verfügbarkeit** " die Option **Speichern** aus, und wählen Sie dann über die Übersicht über die Übermittlung **an den Store senden** aus.
+   - **UTC**: die Zeit, die Sie auswählen, wird als UTC-Zeit (Universal koordinierte Zeit) verwendet, damit der Verkauf gleichzeitig stattfindet.
+   - **Lokal**: die ausgewählte Zeit wird in jeder mit einem Markt verknüpften Zeitzone verwendet. (Beachten Sie, dass für Märkte, die mehr als eine Zeitzone enthalten, nur eine Zeitzone in diesem Markt verwendet wird. Für den USA wird die Zeitzone Eastern verwendet.)
+7. Um einen zusätzlichen Verkauf zu planen, wählen Sie **neu Verkauf** aus. Wählen Sie andernfalls unten auf der **Seite "Preise und Verfügbarkeit**" die Option **Speichern** aus, und wählen Sie dann über die Übersicht über die Übermittlung **an den Store senden** aus.
 
 > [!NOTE]
 > Es ist möglich, einen Tarif auszuwählen, der höher als der Basispreis Ihrer APP ist. Allerdings werden Sonderpreise nur für Kunden angezeigt, wenn der Verkaufspreis niedriger als der reguläre Preis der App auf diesem Markt ist.
@@ -72,7 +71,7 @@ Zum Bearbeiten oder Abbrechen eines bereits für Apps oder Add-Ons geplanten Son
 
 1.  Wechseln Sie auf der Seite **Preise und Verfügbarkeit** einer laufenden app oder Add-on-Übermittlung zum Abschnitt **Preis Preise** .
 2.  Suchen Sie den Verkauf, den Sie aktualisieren möchten, und nehmen Sie dann die Änderungen vor.
-3.  Klicken Sie im unteren Bereich der Seite **Preise und Verfügbarkeit** auf **Speichern** , und klicken Sie dann in der Übermittlungsübersicht auf **An Store übermitteln** .
+3.  Klicken Sie im unteren Bereich der Seite **Preise und Verfügbarkeit** auf **Speichern**, und klicken Sie dann in der Übermittlungsübersicht auf **An Store übermitteln**.
 
 Nachdem die Übermittlung den Zertifizierungsprozess durchlaufen hat, werden die Änderungen wirksam.
 
@@ -81,9 +80,9 @@ Nachdem die Übermittlung den Zertifizierungsprozess durchlaufen hat, werden die
 
  **So brechen Sie einen Verkauf ab, der noch nicht gestartet wurde**
 
-1.  Wechseln Sie auf der Seite **Preise und Verfügbarkeit** einer aktiven App- oder Add-On-Übermittlung zum Abschnitt **Verkaufspreise** .
-2.  Suchen Sie den Verkauf, den Sie abbrechen möchten, und klicken Sie auf **Entfernen** .
-3.  Klicken Sie im unteren Bereich der Seite **Preise und Verfügbarkeit** auf **Speichern** , und klicken Sie dann in der Übermittlungsübersicht auf **An Store übermitteln** . Solange der Verkauf nicht mit dem Zeitpunkt begonnen hat, zu dem die neue Übermittlung den Zertifizierungsprozess abschließt, wird der entfernte Verkauf überhaupt nicht ausgeführt.
+1.  Wechseln Sie auf der Seite **Preise und Verfügbarkeit** einer aktiven App- oder Add-On-Übermittlung zum Abschnitt **Verkaufspreise**.
+2.  Suchen Sie den Verkauf, den Sie abbrechen möchten, und klicken Sie auf **Entfernen**.
+3.  Klicken Sie im unteren Bereich der Seite **Preise und Verfügbarkeit** auf **Speichern**, und klicken Sie dann in der Übermittlungsübersicht auf **An Store übermitteln**. Solange der Verkauf nicht mit dem Zeitpunkt begonnen hat, zu dem die neue Übermittlung den Zertifizierungsprozess abschließt, wird der entfernte Verkauf überhaupt nicht ausgeführt.
 
 
 
