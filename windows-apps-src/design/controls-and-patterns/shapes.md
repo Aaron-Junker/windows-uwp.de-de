@@ -6,12 +6,12 @@ ms.date: 11/16/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a33670f69d86a913288608ff07efb72edab8fd17
-ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
+ms.openlocfilehash: d94ba7ccd1ebce9612747d5a7be5239300bf21d6
+ms.sourcegitcommit: 9c84129c8b02c370a528b876a62ad9502092689d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91829666"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105030354"
 ---
 # <a name="draw-shapes"></a>Zeichnen von Formen
 
@@ -102,7 +102,7 @@ Hier die gerenderte [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-K
 
 ![Ein gerendertes Rechteck](images/shapes-rectangle.jpg)
 
-**Tipp**  In einigen Szenarien für UI-Definitionen ist die Verwendung eines [**Border**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Elements anstelle eines [**Rectangle**](/uwp/api/Windows.UI.Xaml.Controls.Border)-Elements möglicherweise angemessener. Wenn Sie eine rechteckige Form um anderen Inhalt zeichnen möchten, ist **Border** u. U. besser geeignet. Rahmen können untergeordnete Elemente enthalten, und ihre Größe passt sich automatisch an den Inhalt an. Dagegen sind die Breite und Höhe von **Rectangle**-Elementen auf feste Werte festgelegt. Die Ecken von **Border** können durch Festlegen der [**CornerRadius**](/uwp/api/windows.ui.xaml.controls.border.cornerradius)-Eigenschaft auch abgerundet werden.
+**Tipp**  In einigen Szenarien für UI-Definitionen ist die Verwendung eines [**Border**](/uwp/api/Windows.UI.Xaml.Controls.Border)-Elements anstelle eines [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Elements möglicherweise angemessener. Wenn Sie eine rechteckige Form um anderen Inhalt zeichnen möchten, ist **Border** u. U. besser geeignet. Rahmen können untergeordnete Elemente enthalten, und ihre Größe passt sich automatisch an den Inhalt an. Dagegen sind die Breite und Höhe von **Rectangle**-Elementen auf feste Werte festgelegt. Die Ecken von **Border** können durch Festlegen der [**CornerRadius**](/uwp/api/windows.ui.xaml.controls.border.cornerradius)-Eigenschaft auch abgerundet werden.
 
 Andererseits ist [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) wahrscheinlich eine bessere Wahl für die Steuerelementkomposition. Eine **Rectangle**-Form wird in vielen Steuerelementvorlagen verwendet, da sie als FocusVisual-Teil für fokussierbare Steuerelemente verwendet wird. Befindet sich das Steuerelement in einem fokussierten Ansichtszustand, wird dieses Rechteck sichtbar gemacht; in anderen Zuständen ist es ausgeblendet.
 
@@ -141,7 +141,7 @@ Dies ist das gerenderte [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon).
 
 ![Ein gerendertes Polygon](images/shapes-polygon.jpg)
 
-**Tipp**  Ein [**Point**](/uwp/api/Windows.Foundation.Point)-Wert wird in XAML oft als Typ für andere Szenarien als das Deklarieren der Scheitelpunkte von Formen verwendet. Ein **Point** ist beispielsweise Teil der Ereignisdaten für Fingereingabeereignisse, damit Sie ermitteln können, wo genau in Koordinatenbereich die Fingereingabeaktion stattgefunden hat. Weitere Informationen zu **Point** und dessen Verwendung in XAML oder Code finden Sie in der API-Referenz für [**Point**](/uwp/api/Windows.Foundation.Point).
+**Tipp**  Ein [**Point**](/uwp/api/Windows.Foundation.Point)-Wert wird in XAML oft als Typ für andere Szenarien als das Deklarieren der Scheitelpunkte von Formen verwendet. Ein **Point** ist beispielsweise Teil der Ereignisdaten für Fingereingabeereignisse, damit Sie ermitteln können, wo genau in Koordinatenbereich die Fingereingabeaktion stattgefunden hat. Weitere Informationen zu **Point** und dessen Verwendung in XAML oder Code finden Sie in der API-Referenz für [**Point**](/uwp/api/Windows.Foundation.Point).
 
 ## <a name="line"></a>Zeile
 
@@ -169,7 +169,7 @@ layoutRoot.Children.Add(line1);
 
 Eine [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) ähnelt einem [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon), da bei beiden die Grenze der Form durch eine Reihe von Punkten definiert wird. Bei einer **Polyline** wird jedoch der letzte Punkt nicht mit dem ersten verbunden.
 
-**Hinweis**  Sie könnten zwar in den [**Points**](/uwp/api/windows.ui.xaml.shapes.polyline.points) explizit einen identischen Anfangs- und Endpunkt für [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) festlegen. In diesem Fall sollten Sie jedoch wahrscheinlich eher ein [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) verwenden.
+**Hinweis**   Sie könnten zwar in den [**Points**](/uwp/api/windows.ui.xaml.shapes.polyline.points) explizit einen identischen Anfangs- und Endpunkt für [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) festlegen. In diesem Fall sollten Sie jedoch wahrscheinlich eher ein [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) verwenden.
 
 Wenn Sie die [**Fill**](/uwp/api/windows.ui.xaml.shapes.shape.fill) einer [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) angeben, füllt **Fill** den Innenraum der Form. Dies gilt auch, wenn der Anfangs- und Endpunkt der [**Points**](/uwp/api/windows.ui.xaml.shapes.polyline.points), die für **Polyline** festgelegt wurden, keine Überschneidungen aufweisen. Wenn Sie keine **Fill** angeben, ähnelt die **Polyline** dem Rendering für mehrere einzelne [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line)-Elemente, bei denen sich die Anfangs- und Endpunkte aufeinander folgender Linien überschneiden.
 
@@ -310,7 +310,7 @@ path1.Data = geometryGroup1;
 // When you create a XAML element in code, you have to add
 // it to the XAML visual tree. This example assumes you have
 // a panel named 'layoutRoot' in your XAML file, like this:
-// <Grid x:Name="layoutRoot>
+// <Grid x:Name="layoutRoot">
 layoutRoot.Children.Add(path1);
 ```
 
