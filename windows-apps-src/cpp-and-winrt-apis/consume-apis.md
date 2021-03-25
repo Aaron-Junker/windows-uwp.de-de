@@ -5,16 +5,23 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, projiziert, Projektion, Implementierung, Laufzeitklasse, Aktivierung
 ms.localizationpriority: medium
-ms.openlocfilehash: eb667c27b937b252f0fe3c883730646938bf19d9
-ms.sourcegitcommit: a93a309a11cdc0931e2f3bf155c5fa54c23db7c3
+ms.openlocfilehash: 5d696295c81aac18a0f11004a104f7a058bf76e0
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646273"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804744"
 ---
 # <a name="consume-apis-with-cwinrt"></a>Nutzen von APIs mit C++/WinRT
 
 In diesem Thema wird die Nutzung von [C++/WinRT](./intro-to-using-cpp-with-winrt.md)-APIs veranschaulicht. Dabei spielt es keine Rolle, ob diese APIs zu Windows gehören oder von einem Drittanbieter oder von dir selbst implementiert wurden.
+
+> [!IMPORTANT]
+> Damit die Codebeispiele in diesem Thema kurz sind und Sie sie leicht ausprobieren können, können Sie sie reproduzieren, indem Sie ein neues **Windows-Konsolenanwendungsprojekt (C++/WinRT)** erstellen und den Code per Kopieren und Einfügen einfügen. Allerdings können Sie nicht willkürliche benutzerdefinierte Windows-Runtime-Typen (von Drittanbietern) aus einer ungepackten App wie dieser verarbeiten. Auf diese Weise können nur Windows-Typen verarbeitet werden.
+>
+> Um benutzerdefinierte Windows-Runtime-Typen (von Drittanbietern) über eine Konsolen-App zu verarbeiten, müssen Sie der App eine *Paketidentität* geben, damit sie die Registrierung der verarbeiteten benutzerdefinierten Typen auflösen kann. Weitere Informationen finden Sie unter [Paketerstellungsprojekt für Windows-Anwendungen](/windows/msix/desktop/source-code-overview).
+>
+> Alternativ können Sie ein neues Projekt aus den Projektvorlagen **Leere App (C++/WinRT)** , **Core App (C++/WinRT)** oder **Komponente für Windows-Runtime (C++/WinRT)** erstellen. Diese App-Typen verfügen bereits über eine *Paketidentität*.
 
 ## <a name="if-the-api-is-in-a-windows-namespace"></a>API in einem Windows-Namespace
 Dies ist der gängigste Anwendungsfall für die Nutzung einer Windows-Runtime-API. Für jeden Typ in einem Windows-Namespace, der in den Metadaten definiert ist, definiert C++/WinRT ein für C++ geeignetes Äquivalent (den *projizierten Typ*). Ein projizierter Typ besitzt den gleichen vollqualifizierten Namen wie der Windows-Typ, wird jedoch unter Verwendung der C++-Syntax im C++-Namespace **winrt** platziert. [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) wird beispielsweise in C++/WinRT als **winrt::Windows::Foundation::Uri** projiziert.
@@ -41,7 +48,7 @@ Der enthaltene Header `winrt/Windows.Foundation.h` ist Teil des SDK und befindet
 > [!TIP]
 > Wenn du einen Typ aus einem Windows-Namespace verwenden möchtest, musst du den C++/WinRT-Header einschließen, der diesem Namespace entspricht. Die `using namespace`-Anweisungen sind optional, aber praktisch.
 
-Im obigen Codebeispiel wird nach der Initialisierung von C++/WinRT ein Wert des projizierten Typs **winrt::Windows::Foundation::Uri** mit Stapelzuordnung über einen seiner öffentlich dokumentierten Konstruktoren (in diesem Beispiel [**Uri(String)** ](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_)) zugewiesen. Für diesen häufigsten Anwendungsfall sind in der Regel keine weiteren Schritte erforderlich. Projizierte C++/WinRT-Typwerte können wie eine Instanz des tatsächlichen Windows-Runtime-Typs behandelt werden, da sie über genau die gleichen Member verfügen.
+Im obigen Codebeispiel wird nach der Initialisierung von C++/WinRT ein Wert des projizierten Typs **winrt::Windows::Foundation::Uri** mit Stapelzuordnung über einen seiner öffentlich dokumentierten Konstruktoren (in diesem Beispiel [**Uri(String)**](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_)) zugewiesen. Für diesen häufigsten Anwendungsfall sind in der Regel keine weiteren Schritte erforderlich. Projizierte C++/WinRT-Typwerte können wie eine Instanz des tatsächlichen Windows-Runtime-Typs behandelt werden, da sie über genau die gleichen Member verfügen.
 
 Der projizierte Wert ist genau genommen ein Proxy und im Grunde lediglich ein intelligenter Zeiger auf ein Unterstützungsobjekt. Die Konstruktoren des projizierten Werts rufen [**RoActivateInstance**](/windows/desktop/api/roapi/nf-roapi-roactivateinstance) auf, um eine Instanz der zugrunde liegenden Windows-Runtime-Klasse (in diesem Fall **Windows.Foundation.Uri**) zu erstellen und die Standardschnittstelle dieses Objekts im neuen projizierten Wert zu speichern. Wie unten zu sehen werden die Aufrufe der Member des projizierten Werts tatsächlich über den intelligenten Zeiger an das Unterstützungsobjekt delegiert. Hier erfolgen die Zustandsänderungen.
 
@@ -448,7 +455,7 @@ struct MyPage : Page
 }
 ```
 
-Im obigen Beispiel geht der Compiler davon aus, dass [**FrameworkElement.Style()** ](/uwp/api/windows.ui.xaml.frameworkelement.style) (eine Memberfunktion in C++/WinRT) als Vorlagenparameter an [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) übergeben wird. Die Lösung hierfür besteht darin, die Interpretation des Namens `Style` als Typ [**Windows::UI::Xaml::Style**](/uwp/api/windows.ui.xaml.style) zu erzwingen.
+Im obigen Beispiel geht der Compiler davon aus, dass [**FrameworkElement.Style()**](/uwp/api/windows.ui.xaml.frameworkelement.style) (eine Memberfunktion in C++/WinRT) als Vorlagenparameter an [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) übergeben wird. Die Lösung hierfür besteht darin, die Interpretation des Namens `Style` als Typ [**Windows::UI::Xaml::Style**](/uwp/api/windows.ui.xaml.style) zu erzwingen.
 
 ```cppwinrt
 struct MyPage : Page

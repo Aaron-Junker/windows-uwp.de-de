@@ -11,12 +11,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 4170efdf7e3133f216d26a3a4b5098664f3d4af4
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: fe0081a1558bfce9bd00eaaa0a7e4268320ce91b
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823264"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804764"
 ---
 # <a name="intro-to-controls-and-patterns"></a>Einführung in Steuerelemente und Muster
 
@@ -24,7 +24,7 @@ In der Windows-App-Entwicklung ist ein *Steuerelement* ein UI-Element, das Inhal
 
 > **Wichtige APIs:** [Windows.UI.Xaml.Controls-Namespace](/uwp/api/windows.ui.xaml.controls)
 
-Ein *Muster* ist eine Anleitung zum Ändern eines Steuerelements oder zum Kombinieren verschiedener Steuerelemente, um etwas Neues zu erstellen. Das Muster [master/details](master-details.md) ist z. B. eine Möglichkeit, ein [SplitView](split-view.md)-Steuerelement zur App-Navigation zu verwenden. Ebenso können Sie die Vorlage eines [NavigationView](navigationview.md)-Steuerelements zum Implementieren des Registerkartenmusters anpassen.
+Ein *Muster* ist eine Anleitung zum Ändern eines Steuerelements oder zum Kombinieren verschiedener Steuerelemente, um etwas Neues zu erstellen. Das Muster [Liste/Details](list-details.md) ist z. B. eine Möglichkeit, ein [SplitView](split-view.md)-Steuerelement zur App-Navigation zu verwenden. Ebenso können Sie die Vorlage eines [NavigationView](navigationview.md)-Steuerelements zum Implementieren des Registerkartenmusters anpassen.
 
 In vielen Fällen können Sie ein Steuerelement unverändert verwenden. XAML-Steuerelemente trennen jedoch die Funktion von der Struktur und Darstellung, sodass Sie diese über verschiedene Änderungsebenen an Ihre Bedürfnisse anpassen können. Im Abschnitt [Stil](../style/index.md) erfahren Sie, wie Sie mithilfe von [XAML-Formatvorlagen](xaml-styles.md) und [Steuerelementvorlagen](control-templates.md) Steuerelemente ändern.
 

@@ -8,28 +8,28 @@ ms.topic: article
 keywords: Windows 10, UWP
 localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 249b738e3db4b266ad5bd589bfb9aff875e0b0d3
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 1c82993bc7fd2734550e4afe8406cbb40a9fd600
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034583"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804284"
 ---
 # <a name="responsive-design-techniques"></a>Reaktionsfähige Designtechniken
 
 UWP-Apps verwenden effektive Pixel, um sicherzustellen, dass deine Benutzeroberfläche auf allen Geräten mit Windows erkennbar ist und verwendet werden kann. Warum sollten also Sie überhaupt die Benutzeroberfläche Ihrer App für eine bestimmte Gerätefamilie anpassen wollen?
 
-- **Effektive Bildschirmbereichsnutzung und reduzierte Navigation**
+- **Effektive Bildschirmbereichnutzung und reduzierte Navigation**
 
     Wenn du eine App für ein Gerät mit einem kleinen Bildschirm entwickelst, z. B. ein Tablet, kann die App auf einem PC mit einem viel größeren Bildschirm verwendet werden, ein großer Teil des Bildschirmbereichs bleibt jedoch vermutlich ungenutzt. Sie können die App anpassen, damit mehr Inhalt angezeigt wird, wenn eine bestimmte Bildschirmgröße überschritten wird. Bei einer Shopping-App beispielsweise wird auf einem Tablet ggf. jeweils eine Kategorie anzeigt, während auf einem PC oder Laptop mehrere Kategorien und Produkte gleichzeitig angezeigt werden.
 
     Durch das Platzieren von mehr Inhalt auf dem Bildschirm reduzieren Sie die erforderliche Navigation des Benutzers.
 
-- **So profitierst du von Gerätefunktionen**
+- **Profitieren von Gerätefunktionen**
 
     Bestimmte Geräte verfügen über bestimmte Gerätefunktionen. Laptops verfügen beispielsweise wahrscheinlich über einen Positionssensor und eine Kamera, während ein PC möglicherweise beide nicht aufweist. Ihre App kann erkennen, welche Funktionen verfügbar sind und Features die Verwendung dieser ermöglichen.
 
-- **So optimierst du für Eingaben**
+- **Optimieren für Eingabe**
 
     Die universelle Steuerelementbibliothek kann mit allen Eingabetypen (Toucheingabe, Stift, Tastatur, Maus) verwendet werden. Sie können jedoch eine Optimierung für bestimmte Eingabetypen erreichen, indem Sie Ihre UI-Elemente neu anordnen. Wenn Sie z. B. Elemente für die Navigation am unteren Bildschirmrand platzieren, ist der Zugriff auf diese für Smartphonebenutzer einfacher; die meisten PC-Benutzer hingegen erwarten, dass Elemente für die Navigation eher am oberen Bildschirmrand angezeigt werden.
 
@@ -46,7 +46,7 @@ Du kannst den Ort und die Position der UI-Elemente ändern, um die Fenstergröß
 
 In diesem Beispielentwurf einer Foto-App ändert die Foto-App die Position des Inhalts auf größeren Bildschirmen.
 
-## <a name="resize"></a>Ändern der Größe
+## <a name="resize"></a>Größe ändern
 
 Du kannst das Verhalten für die Fenstergröße optimieren, indem du die Ränder und die Größe der Benutzeroberflächenelemente anpasst. Dadurch kann beispielsweise die Lesbarkeit auf einem größeren Bildschirm verbessert werden, indem der Inhaltsframe einfach vergrößert wird.
 
@@ -60,7 +60,7 @@ Dieses Beispiel zeigt, wie eine einzelne Spalte mit vertikal scrollendem Inhalt 
 
 ![Neuanordnen von Designelementen](images/rsp-design/rspd_reflow.gif)
 
-## <a name="showhide"></a>Anzeigen/ausblenden
+## <a name="showhide"></a>Anzeigen/Ausblenden
 
 Das Ein- und Ausblenden von UI-Elementen kann von der Bildschirmfläche abhängig gemacht werden sowie davon, ob das Gerät zusätzliche Funktionen, bestimmte Situationen oder bevorzugte Bildschirmausrichtungen unterstützt.
 
@@ -76,7 +76,7 @@ Die Methode zum Ein- und Ausblenden umfasst die Wahl, wann mehr Metadaten angeze
 - In jeder App können Sie Spalten aufteilen und mehr Details anzeigen.
 - In jeder App können Sie etwas vertikal oder horizontal anordnen. Beim Wechseln von Smartphone oder Phablet auf größere Geräte, können aus gestapelten Listenelementen Zeilen mit Listenelementen und Spalten mit Metadaten werden.
 
-## <a name="replace"></a>Ersetzen
+## <a name="replace"></a>Replace
 
 Mit diesem Verfahren kann die Benutzeroberfläche für bestimmte Breakpoints geändert werden. In diesem Beispiel ist der Navigationsbereich mit seiner kompakten, kurzzeitigen Benutzeroberfläche gut für kleinere Bildschirme geeignet, auf einem größeren Bildschirm stellen jedoch Registerkarten u. U. die bessere Wahl dar.
 
@@ -86,11 +86,11 @@ Das Steuerelement [NavigationView](../controls-and-patterns/navigationview.md) u
 
 ## <a name="re-architect"></a>Ändern der Architektur
 
-Sie können die Architektur Ihrer App reduzieren oder erweitern, um eine bessere Darstellung für bestimmte Geräte zu erzielen. In diesem Beispiel zeigt die Erweiterung des Fensters das gesamte Master/Detail-Muster an.
+Sie können die Architektur Ihrer App reduzieren oder erweitern, um eine bessere Darstellung für bestimmte Geräte zu erzielen. In diesem Beispiel zeigt die Erweiterung des Fensters das gesamte Liste/Details-Muster an.
 
 ![ein Beispiel für das erneute Erstellen der Architektur einer Benutzeroberfläche](images/rsp-design/rspd-rearchitect.gif)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 - [Bildschirmgrößen und Haltepunkte](screen-sizes-and-breakpoints-for-responsive-design.md)
 - [Dynamische Layouts mit XAML](layouts-with-xaml.md)

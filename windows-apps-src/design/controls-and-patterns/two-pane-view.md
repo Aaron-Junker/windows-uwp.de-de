@@ -6,16 +6,16 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 76a6264a8ce1704e9bd209a6246c81ba9665265f
-ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
+ms.openlocfilehash: 8306b819b583edc9d2145c976d978c415c93183e
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "93034433"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804884"
 ---
 # <a name="two-pane-view"></a>Ansicht mit zwei Bereichen
 
-[TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) (Ansicht mit zwei Bereichen) ist ein Layoutsteuerelement, mit dem Sie die Anzeige von Apps mit zwei verschiedenen Inhaltsbereichen, wie beispielsweise einer Master- und einer Detailansicht, verwalten können.
+[TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) (Ansicht mit zwei Bereichen) ist ein Layoutsteuerelement, mit dem Sie die Anzeige von Apps mit zwei verschiedenen Inhaltsbereichen, wie beispielsweise einer Listen- und einer Detailansicht, verwalten können.
 
 > [!IMPORTANT]
 > In diesem Artikel werden Funktionen und Anleitungen beschrieben, die sich in der öffentlichen Vorschau befinden und vor der allgemeinen Verfügbarkeit noch wesentlich geändert werden können. Microsoft übernimmt keine Garantie, weder ausdrücklich noch stillschweigend, für die hier bereitgestellten Informationen.
@@ -206,7 +206,7 @@ Standardmäßig ist `Pane1Length` auf `Auto` festgelegt und passt sich in seiner
 
 > _Bereiche mit Standardgrößenanpassung_
 
-Die Standardwerte sind für ein typisches Master/Detail-Layout nützlich, bei dem eine Liste von Elementen in Bereich 1 (`Pane1`) und viele Details in Bereich 2 (`Pane2`) angezeigt werden. Je nach Inhalt möchten Sie den Platz jedoch möglicherweise anders aufteilen. Hier ist die Länge von Bereich 1 (`Pane1Length`) auf `2*` festgelegt, sodass er doppelt so viel Platz erhält wie Bereich 2 (`Pane2`).
+Die Standardwerte sind für ein typisches Liste/Details-Layout nützlich, bei dem eine Liste von Elementen in Bereich 1 (`Pane1`) und viele Details in Bereich 2 (`Pane2`) angezeigt werden. Je nach Inhalt möchten Sie den Platz jedoch möglicherweise anders aufteilen. Hier ist die Länge von Bereich 1 (`Pane1Length`) auf `2*` festgelegt, sodass er doppelt so viel Platz erhält wie Bereich 2 (`Pane2`).
 
 ```xaml
 <muxc:TwoPaneView x:Name="MyTwoPaneView" Pane1Length="2*">

@@ -1,23 +1,23 @@
 ---
 title: Lernpfad – Anzeigen von Kunden in einer Liste
 description: Hier erfahren Sie, wie Sie eine Sammlung von Kundenobjekten in einer Liste anzeigen.
-ms.date: 05/07/2018
+ms.date: 03/17/2021
 ms.topic: article
 keywords: Erste Schritte, UWP, Windows 10, Lernpfad, Datenbindung, Liste
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 097105d16d6d17807235ab61d36ab1fe185c8ca3
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bf116dc1e7861cb9b135b57bc8be236b4ad2bb9c
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165054"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804244"
 ---
 # <a name="display-customers-in-a-list"></a>Anzeigen von Kunden in einer Liste
 
 Das Anzeigen und Bearbeiten von echten Daten in der Benutzeroberfläche ist für die Funktionalität vieler Apps von entscheidender Bedeutung. In diesem Artikel erfahren Sie, wie Sie eine Sammlung von Kundenobjekten in einer Liste anzeigen.
 
-Dies ist kein Tutorial. Wenn Sie ein Tutorial suchen, sehen Sie sich unser [Datenbindungs-Tutorial](../data-binding/xaml-basics-data-binding.md) an, in dem Sie schrittweise Anleitungen finden.
+Dieser Artikel ist kein Tutorial. Wenn Sie ein Tutorial suchen, sehen Sie sich unser [Datenbindungs-Tutorial](../data-binding/xaml-basics-data-binding.md) an, in dem Sie schrittweise Anleitungen finden.
 
 Wir beginnen mit einer kurzen Erläuterung der Datenbindung. Im Anschluss fügen wir der Benutzeroberfläche eine **ListView** (Listenansicht) hinzu, fügen eine Datenbindung hinzu und passen die Datenbindung mit weiteren Features an.
 
@@ -48,7 +48,7 @@ public class Customer
 }
 ```
 
-## <a name="create-a-list"></a>Erstellen einer Liste
+## <a name="create-a-list"></a>Erstelle eine Liste.
 
 Bevor Sie Kunden anzeigen können, müssen Sie eine Liste erstellen, in der sie gespeichert werden. Die [Listenansicht](../design/controls-and-patterns/listview-and-gridview.md) ist ein einfaches XAML-Steuerelement, das perfekt für diese Aufgabe geeignet ist. Das ListView-Steuerelement benötigt momentan eine Position auf der Seite und in Kürze auch einen Wert für die **ItemSource**-Eigenschaft.
 
@@ -106,7 +106,7 @@ Sie haben Kunden in einer Liste angezeigt, aber die Datenbindung bietet noch meh
 
 * *Einmalig*: Diese Datenbindung wird nur einmal aktiviert. Sie reagiert nicht auf Änderungen.
 * *Unidirektional*: Diese Datenbindung aktualisiert die Benutzeroberfläche mit allen Änderungen, die an der Datenquelle vorgenommen werden.
-* *Bidirektional*: Diese Datenbindung aktualisiert die Benutzeroberfläche mit allen Änderungen, die an der Datenquelle vorgenommen wurden, und aktualisiert die Daten außerdem mit allen Änderungen, die in der Benutzeroberfläche vorgenommen wurden.
+* *Bidirektional*: Diese Datenbindung aktualisiert die Benutzeroberfläche mit allen Änderungen, die an der Datenquelle vorgenommen wurden, und aktualisiert die Daten außerdem mit allen Änderungen auf der Benutzeroberfläche.
 
 Wenn Sie die Codeausschnitte von vorher befolgt haben, verwendet Ihre Bindung x:Bind und gibt keinen Modus an; folglich handelt es sich um eine einmalige Bindung. Wenn Sie Kunden direkt über die Benutzeroberfläche bearbeiten möchten, müssen Sie die Bindung in eine bidirektionale Bindung ändern, damit die Änderungen an den Daten zurück an die Kundenobjekte übergeben werden. Weitere Informationen finden Sie unter [Datenbindung im Detail](../data-binding/data-binding-in-depth.md).
 
@@ -153,9 +153,9 @@ Sie können schnell sicherstellen, dass dies funktioniert, indem Sie eine zweite
 > [!NOTE]
 > Das direkte Bearbeiten innerhalb von ListView ist eine einfache Möglichkeit, die bidirektionale Bindung in Aktion zu zeigen. Dies kann jedoch zu Komplikationen bei der Verwendung führen. Wenn Sie Ihre App weiterentwickeln möchten, können Sie [weitere XAML-Steuerelemente](../design/controls-and-patterns/controls-and-events-intro.md) zum Bearbeiten Ihrer Daten verwenden und ListView schreibgeschützt lassen.
 
-## <a name="going-further"></a>Vertiefung
+## <a name="going-further"></a>Weiterführende Themen
 
-Nun, da Sie eine Liste von Kunden mit einer bidirektionalen Bindung erstellt haben, können Sie noch einmal die Dokumente durcharbeiten, für die wir Links zur Verfügung gestellt haben, und etwas experimentieren. Sie können auch unser [Datenbindungs-Tutorial](../data-binding/xaml-basics-data-binding.md) durcharbeiten, wenn Sie eine schrittweise Anleitung für die grundlegenden und erweiterten Bindungen erhalten oder sich näher mit Steuerelementen wie dem [Master/Details-Muster](../design/controls-and-patterns/master-details.md) beschäftigen möchten, um eine stabilere Benutzeroberfläche zu erzielen.
+Nun, da Sie eine Liste von Kunden mit einer bidirektionalen Bindung erstellt haben, können Sie noch einmal die Dokumente durcharbeiten, für die wir Links zur Verfügung gestellt haben, und etwas experimentieren. Sie können auch unser [Datenbindungs-Tutorial](../data-binding/xaml-basics-data-binding.md) durcharbeiten, wenn Sie eine schrittweise Anleitung für die grundlegenden und erweiterten Bindungen erhalten oder sich näher mit Steuerelementen wie dem [Liste/Details-Muster](../design/controls-and-patterns/list-details.md) beschäftigen möchten, um eine stabilere Benutzeroberfläche zu erzielen.
 
 ## <a name="useful-apis-and-docs"></a>Nützliche APIs und Dokumente
 
@@ -163,7 +163,7 @@ Nachfolgend finden Sie eine kurze Zusammenfassung zu den APIs und weitere nützl
 
 ### <a name="useful-apis"></a>Nützliche APIs
 
-| API | Beschreibung |
+| API | BESCHREIBUNG |
 |------|---------------|
 | [Datenvorlage](/uwp/api/Windows.UI.Xaml.DataTemplate) | Beschreibt die visuelle Struktur eines Datenobjekts, was die Anzeige bestimmter Elemente in der Benutzeroberfläche ermöglicht. |
 | [x:Bind](../xaml-platform/x-bind-markup-extension.md) | Dokumentation zur empfohlenen x:Bind-Markuperweiterung |
@@ -175,7 +175,7 @@ Nachfolgend finden Sie eine kurze Zusammenfassung zu den APIs und weitere nützl
 
 ### <a name="useful-docs"></a>Nützliche Dokumentation
 
-| Thema | Beschreibung |
+| Thema | BESCHREIBUNG |
 |-------|----------------|
 | [Datenbindung im Detail](../data-binding/data-binding-in-depth.md) | Eine grundlegende Übersicht über die Prinzipien der Datenbindung |
 | [Übersicht über Datenbindung](../data-binding/data-binding-quickstart.md) | Ausführliche konzeptionelle Informationen zur Datenbindung. |

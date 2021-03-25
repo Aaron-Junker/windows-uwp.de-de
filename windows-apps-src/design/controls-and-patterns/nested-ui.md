@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 319bf762d54ed341672a99d15d9e760c91d93cff
-ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
+ms.openlocfilehash: 2dcbbeda200e6d8d07cc3735fa6aad9aa66d68b9
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91829460"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804644"
 ---
 # <a name="nested-ui-in-list-items"></a>Geschachtelte UI bei Listenelementen
 
@@ -66,9 +66,9 @@ Wenn Sie entscheiden, dass es nicht erforderlich ist, in der Hauptlisten-UI seku
 
 ### <a name="put-secondary-actions-on-the-detail-page"></a>Platzieren der sekundären Aktionen auf der Detailseite
 
-Platzieren Sie die sekundären Aktionen auf der Seite, zu der das Listenelement navigiert, wenn es ausgewählt wird. Wenn Sie das Master/Details-Muster verwenden, ist die Detailseite häufig eine gute Stelle für sekundäre Aktionen.
+Platzieren Sie die sekundären Aktionen auf der Seite, zu der das Listenelement navigiert, wenn es ausgewählt wird. Wenn Sie das Liste/Details-Muster verwenden, ist die Detailseite häufig eine gute Stelle für sekundäre Aktionen.
 
-Weitere Informationen finden Sie unter [Master/Details-Muster](master-details.md).
+Weitere Informationen finden Sie unter [Liste/Details-Muster](list-details.md).
 
 ### <a name="put-secondary-actions-in-a-context-menu"></a>Platzieren der sekundären Aktionen in einem Kontextmenü
 

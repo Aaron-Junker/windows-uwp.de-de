@@ -5,12 +5,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 localizationpriority: medium
-ms.openlocfilehash: 46d63a5f0bf929c391e9080e621023dc9eaafdd0
-ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
+ms.openlocfilehash: 238f341373e08f2ae73b22a01020e37e4fe68673
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102784721"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804444"
 ---
 # <a name="page-layout"></a>Seitenlayout
 
@@ -79,11 +79,11 @@ Angebotsseiten werden auch Hero-Screens genannt und werden häufig auf der obers
 
 Über Sammlungen können Benutzer Gruppen von Inhalten oder Daten suchen. Die [Rasteransicht](../controls-and-patterns/item-templates-gridview.md) ist eine gute Option für Fotos oder medienzentrierte Inhalte, und die [Listenansicht](../controls-and-patterns/item-templates-listview.md) ist eine gute Option für textlastige Inhalte oder Daten.
 
-## <a name="masterdetail"></a>Master/Detail
+## <a name="listdetail"></a>Liste/Details
 
-![Master Detail](images/master-detail.svg)
+![Liste/Details-Ansicht](images/master-detail.svg)
 
-Das [Master/Detail](../controls-and-patterns/master-details.md)-Modell besteht aus einer Listenansicht (Master) und einer Inhaltsansicht (Detail). Beide Bereiche sind festgelegt und bieten vertikales Scrollen. Wenn ein Element in der Listenansicht ausgewählt ist, wird die Inhaltsansicht entsprechend aktualisiert. 
+Das [Liste/Details](../controls-and-patterns/list-details.md)-Modell besteht aus einer Listenansicht und einer Inhaltsansicht (Detail). Beide Bereiche sind festgelegt und bieten vertikales Scrollen. Wenn ein Element in der Listenansicht ausgewählt ist, wird die Inhaltsansicht entsprechend aktualisiert.
 
 ## <a name="forms"></a>Formulare
 ![Screenshot eines Formulars, das ein leeres Textfeld und eine Schaltfläche anzeigt.](images/form.svg)

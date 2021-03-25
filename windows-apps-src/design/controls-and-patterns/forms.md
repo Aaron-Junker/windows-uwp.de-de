@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Fluent
-ms.openlocfilehash: 7a4c33bbdae980029cdeeb650375b9f8cb38bbf9
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 8c394e4f1168f986cfb97d218d2ef477b19028f7
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823344"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804804"
 ---
 # <a name="forms"></a>Formulare
 Ein Formular ist eine Gruppe von Steuerelementen, die Daten von Benutzern sammeln und übermitteln. Formulare werden in der Regel für Seiten mit Einstellungen und Umfragen, zum Erstellen von Konten und für vieles mehr verwendet. 
@@ -152,7 +152,7 @@ Eine komplette Liste der UWP-Steuerelemente finden Sie unter [Index der Steuerel
 Komplexere und benutzerdefinierte Steuerelemente der Benutzeroberfläche finden Sie in Ressourcen, die von Unternehmen wie [Telerik](https://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/uwp-ui-controls), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/), [Infragistics](https://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP) und [ActiPro](https://www.actiprosoftware.com/products/controls/universal) bereitgestellt werden.
 
 ## <a name="one-column-form-example"></a>Beispiel für Formular mit einer Spalte
-In diesem Beispiel werden eine Acrylic-[Master/Detail](master-details.md)-[Listenansicht](lists.md) und ein [NavigationView](navigationview.md)-Steuerelement verwendet.
+In diesem Beispiel werden eine Acrylic-[Liste/Details](list-details.md)-[Listenansicht](lists.md) und ein [NavigationView](navigationview.md)-Steuerelement verwendet.
 ![Screenshot eines weiteren Formularbeispiels](images/FormExample2.png)
 ```xaml
 <StackPanel>

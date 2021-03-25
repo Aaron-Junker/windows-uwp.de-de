@@ -10,12 +10,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c5dc119edefbdd3ef4dd155c9de9d2e69fee193b
-ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
+ms.openlocfilehash: 36a5489ab4fa278163fd5fad53be4d28156d4cf4
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102784771"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804459"
 ---
 # <a name="navigation-design-basics-for-windows-apps"></a>Grundlagen des Navigationsdesigns für Windows-Apps
 
@@ -224,17 +224,17 @@ Zeigt eine vertikale Liste mit Links zu übergeordneten Seiten an. Zu verwenden 
         
 :::row:::
     :::column:::
-        ![Abbildung: Master/Details](images/nav/thumbnail-master-detail.svg)
+        ![Liste/Details-Abbildung](images/nav/thumbnail-list-detail.svg)
     :::column-end:::
     :::column span="2":::
-        [**Master/Details**](../controls-and-patterns/master-details.md)
+        [**Liste/Details**](../controls-and-patterns/list-details.md)
 
-Zeigt eine Liste (Masteransicht) mit Elementen an. Durch Auswählen eines Elements wird die entsprechende Seite im Detailbereich angezeigt. Zu verwenden in folgenden Fällen:
+Zeigt eine Liste mit Elementen an. Durch Auswählen eines Elements wird die entsprechende Seite im Detailbereich angezeigt. Zu verwenden in folgenden Fällen:
         
 - Sie erwarten, dass Benutzer häufig zwischen untergeordneten Elementen wechseln werden.
 - Sie möchten es dem Benutzer ermöglichen, Vorgänge auf hoher Ebene, z. B. Löschen oder Sortieren, für einzelne Elemente oder Gruppen von Elementen durchzuführen, und Sie möchten es dem Benutzer ermöglichen, Details für jedes Element anzuzeigen oder zu aktualisieren.
 
-Das Master/Details-Muster eignet sich sehr gut für E-Mail-Postfächer, Kontaktlisten und die Dateneingabe.
+Das Liste/Details-Muster eignet sich sehr gut für E-Mail-Postfächer, Kontaktlisten und die Dateneingabe.
 :::row-end:::
 
 :::row:::

@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 738efe43afaf5c278425d5636bddc72cecadf47a
-ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
+ms.openlocfilehash: 27250869d02c901825af72fe6fb1a3c0cd887e07
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98988762"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804414"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Navigationsverlauf und Rückwärtsnavigation für Windows-Apps
 
@@ -827,7 +827,7 @@ Wenn Sie Ihre eigene Zurück-Stapelnavigation bereitstellen möchten, sollte die
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>Aufzählen von Elementen</strong>
-<p>Die App zeigt die Inhalte für ein Bildschirmelement an, z. B. die Details für das ausgewählte Element in der Master/Details-Liste.</p></td>
+<p>Die App zeigt die Inhalte für ein Bildschirmelement an, z. B. die Details für das ausgewählte Element in der Liste/Details-Liste.</p></td>
 <td style="vertical-align:top;"><strong>Nein</strong>
 <p>Das Aufzählen von Elementen ist mit der Navigation innerhalb einer Peer-Gruppe vergleichbar. Wenn der Benutzer die Zurück-Schaltfläche drückt, sollte zu der Seite navigiert werden, die vor der aktuellen Seite angezeigt wurde, die die Elementenaufzählung enthält.</p>
 <p><img src="images/back-nav/nav-enumerate.png" alt="Iterm enumeration" /></p></td>

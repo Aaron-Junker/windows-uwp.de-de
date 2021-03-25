@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b1304032243c7675c4aba6cbda7e7899e8deddb
-ms.sourcegitcommit: e252ccb4a76c4883c7073083d73007957202b84d
+ms.openlocfilehash: c21d7deb96f4788a1f9b4a23dad1455cf80c8956
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657677"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804924"
 ---
 # <a name="collections-and-lists"></a>Sammlungen und Listen
 
@@ -73,7 +73,7 @@ Mit einer Listenansicht können Sie:
 - Aufnehmen einer Vielzahl von Anwendungsfällen, einschließlich der folgenden gängigen:
     - Erstellen einer Liste von Nachrichten oder Nachrichtenprotokollen.
     - Erstellen einer Kontaktliste.
-    - Den Masterbereich mit dem [Master-/Detailmuster](master-details.md) erstellen. Ein Master-/Detailmuster wird häufig in E-Mail-Apps verwendet, in denen ein Bereich (der Masterbereich) eine Liste auswählbarer Elemente enthält, während im anderen eine detaillierte Ansicht des ausgewählten Elements enthalten ist.
+    - Erstellen Sie den Listenbereich im [Liste/Details-Muster](list-details.md). Ein Liste/Details-Muster wird häufig in E-Mail-Apps verwendet, in denen ein Bereich eine Liste auswählbarer Elemente enthält, während im anderen eine detaillierte Ansicht des ausgewählten Elements enthalten ist.
 
 > [!NOTE]
 > Müssen Zeigerereignisse für ein [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) in einer scrollbaren Ansicht (z. B. einem ScrollViewer- oder ListView-Objekt) verarbeitet werden, müssen Sie die Unterstützung für Manipulationsereignisse für das Element in der Ansicht explizit deaktivieren, indem Sie [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations) aufrufen. Um Manipulationsereignisse in der Ansicht wieder zu aktivieren, rufen Sie [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation) auf.
@@ -330,7 +330,7 @@ Die folgenden drei Beispiele sind alle ItemsRepeater-Steuerelemente, die an dies
 ## <a name="related-articles"></a>Verwandte Artikel
 
 **Entwurfs- und UX-Richtlinien**
-- [Master/Details](master-details.md)
+- [Liste/Details](list-details.md)
 - [Navigationsbereich](navigationview.md)
 - [Semantischer Zoom](semantic-zoom.md)
 - [Drag & Drop](../input/drag-and-drop.md)

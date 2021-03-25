@@ -9,12 +9,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3933910d77249476e76c4d87dfd96af66bd418a8
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 4f076911fc1ed4770c9f1d69125c4fc6d0cecdf9
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031574"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804868"
 ---
 # <a name="content-design-basics-for-windows-apps"></a>Grundlagen des Inhaltsdesigns für Windows-Apps
 
@@ -39,11 +39,11 @@ Angebotsseiten werden auch Hero-Screens genannt und werden häufig auf der obers
 Über Sammlungen können Benutzer Gruppen von Inhalten oder Daten suchen. Die [Rasteransicht](../controls-and-patterns/item-templates-gridview.md) ist eine gute Option für Fotos oder medienzentrierte Inhalte, und die [Listenansicht](../controls-and-patterns/item-templates-listview.md) ist eine gute Option für textlastige Inhalte oder Daten.
 
 
-### <a name="masterdetail"></a>Master/Detail
+### <a name="listdetail"></a>Liste/Details
 
-![Master Detail](images/content-basics/master-detail.png)
+![Liste/Details-Ansicht](images/content-basics/list-detail.png)
 
-Das [Master/Detail](../controls-and-patterns/master-details.md)-Modell besteht aus einer Listenansicht (Master) und einer Inhaltsansicht (Detail). Beide Bereiche sind festgelegt und bieten vertikales Scrollen. Zwischen dem Listenelement und der Inhaltsansicht besteht ein klarer Zusammenhang: Das Element in der Master-Ansicht ist markiert und die Detailansicht wird entsprechend aktualisiert. Zusätzlich zur Navigation in der Detailansicht können Elemente in der Master-Ansicht hinzugefügt und entfernt werden.
+Das [Liste/Details](../controls-and-patterns/list-details.md)-Modell besteht aus einer Listenansicht und einer Inhaltsansicht (Detail). Beide Bereiche sind festgelegt und bieten vertikales Scrollen. Zwischen dem Listenelement und der Inhaltsansicht besteht ein klarer Zusammenhang: Das Element in der Listenansicht ist markiert und die Detailansicht wird entsprechend aktualisiert. Zusätzlich zur Navigation in der Detailansicht können Elemente in der Listenansicht hinzugefügt und entfernt werden.
 
 ### <a name="details"></a>Details
 

@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c942c5748ef1d62dc86f6fa3d041bae651167f2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fb12e251f56a8eb90b507d1bac40381789504926
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173904"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804934"
 ---
 # <a name="split-view-control"></a>Steuerelement für geteilte Ansicht
 
 Ein Steuerelement für die geteilte Darstellung verfügt über einen erweiterbaren/reduzierbaren Bereich und einen Inhaltsbereich.
 
-> **Wichtige APIs:** [SplitView-Klasse](/uwp/api/Windows.UI.Xaml.Controls.SplitView)
+> **Wichtige APIs**: [SplitView-Klasse](/uwp/api/Windows.UI.Xaml.Controls.SplitView)
 
 Dies ist ein Beispiel für die Verwendung von SplitView durch die Microsoft Edge-App, um den Hub anzuzeigen.
 
@@ -50,7 +50,7 @@ Dies ist ein Beispiel für die Verwendung von SplitView durch die Microsoft Edge
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
-Das Steuerelement für die geteilte Ansicht kann für eine Drawer-Ansicht verwendet werden, in der Benutzer den ergänzenden Bereich öffnen und schließen können. Sie können z. B. SplitView verwenden, um das [Master/Details-](master-details.md)-Muster zu erstellen.
+Das Steuerelement für die geteilte Ansicht kann für eine Drawer-Ansicht verwendet werden, in der Benutzer den ergänzenden Bereich öffnen und schließen können. Sie können z. B. SplitView verwenden, um das [Liste/Details-](list-details.md)-Muster zu erstellen.
 
 Wenn Sie ein Navigationsmenü mit einer Schaltfläche zum Erweitern/Reduzieren und eine Liste mit Navigationselementen erstellen möchten, verwenden Sie das [NavigationView](navigationview.md)-Steuerelement.
 
@@ -100,4 +100,4 @@ Dies ist ein SplitView-Steuerelement mit einem offenen Bereich, der inline neben
 ## <a name="related-topics"></a>Zugehörige Themen
 - [Navigationsbereichsmuster](navigationview.md)
 - [Listenansicht](lists.md)
-- [Master/Details](master-details.md)
+- [Liste/Details](list-details.md)

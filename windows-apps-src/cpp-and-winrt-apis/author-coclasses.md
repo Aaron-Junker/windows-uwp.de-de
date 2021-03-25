@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, erstellen, COM, Komponente
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 83ea8b5cea95f034b5cdfe4f1750a0ffd0166f49
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 286c2f87b004622d274b334cfe2852d88ab8cab3
+ms.sourcegitcommit: 0901104aa41f49674a99e6970233416c01166c71
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154574"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859609"
 ---
 # <a name="author-com-components-with-cwinrt"></a>Erstellen von COM-Komponenten mit C++/WinRT
 
@@ -21,23 +21,29 @@ ms.locfileid: "89154574"
 
 Von der C++/WinRT-Vorlage [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) werden die Laufzeitklassen und Aktivierungsfactorys direkt oder indirekt abgeleitet.
 
-Standardmäßig unterstützt **winrt::implements** nur [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)-basierte Schnittstellen und ignoriert stillschweigend klassische COM-Schnittstellen. Daher schlägt jeder Aufruf von **QueryInterface** für klassische COM-Schnittstellen mit der Ausnahme **E_NOINTERFACE** fehl.
+Standardmäßig ignoriert **winrt::implements** die klassischen COM-Schnittstellen. Daher schlägt jeder Aufruf von **QueryInterface** für klassische COM-Schnittstellen mit der Ausnahme **E_NOINTERFACE** fehl. Standardmäßig unterstützt **winrt::implements** nur C++/WinRT-Schnittstellen.
 
-Bevor wir erläutern, wie Sie dieses Problem lösen, veranschaulichen wir in einem Codebeispiel, was standardmäßig geschieht.
+* **winrt::IUnknown** ist eine C++/WinRT-Schnittstelle, daher unterstützt **winrt::implements** Schnittstellen, die auf **winrt::IUnknown** basieren.
+* **winrt::implements** unterstützt [ **::IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown) selbst standardmäßig nicht.
+
+Gleich werden Sie sehen, wie Sie die Fälle, die standardmäßig nicht unterstützt werden, überwinden. Zunächst aber ein Codebeispiel, um zu verdeutlichen, was standardmäßig passiert.
 
 ```idl
 // Sample.idl
-runtimeclass Sample
+namespace MyProject 
 {
-    Sample();
-    void DoWork();
+    runtimeclass Sample
+    {
+        Sample();
+        void DoWork();
+    }
 }
 
 // Sample.h
 #include "pch.h"
 #include <shobjidl.h> // Needed only for this file.
 
-namespace winrt::MyProject
+namespace winrt::MyProject::implementation
 {
     struct Sample : implements<Sample, IInitializeWithWindow>
     {
@@ -53,13 +59,42 @@ Der folgende Clientcode verwendet die **Sample**-Klasse.
 // Client.cpp
 Sample sample; // Construct a Sample object via its projection.
 
-// This next line crashes, because the QI for IInitializeWithWindow fails.
+// This next line doesn't compile yet.
 sample.as<IInitializeWithWindow>()->Initialize(hwnd); 
 ```
 
-Damit **winrt::implements** klassische COM-Schnittstellen unterstützt, muss lediglich `unknwn.h` eingefügt werden, bevor C++/WinRT-Header eingeschlossen werden.
+### <a name="enabling-classic-com-support"></a>Aktivieren der klassischen COM-Unterstützung
+
+Damit **winrt::implements** klassische COM-Schnittstellen unterstützt, muss lediglich die Headerdatei `unknwn.h` eingefügt werden, bevor C++/WinRT-Header eingeschlossen werden.
 
 Dies kann explizit oder indirekt durch Einschließen einer weiteren Headerdatei, z. B. `ole2.h`, erfolgen. Ein empfohlenes Verfahren besteht darin, die Headerdatei `wil\cppwinrt.h` einzuschließen, die in den [Windows Implementation Libraries (WIL)](https://github.com/Microsoft/wil) enthalten ist. Die Headerdatei `wil\cppwinrt.h` stellt nicht nur sicher, dass `unknwn.h` vor `winrt/base.h` enthalten ist, sondern sorgt auch dafür, dass die Ausnahmen und Fehlercodes von C++/WinRT und WIL von der jeweils anderen Komponente interpretiert werden können.
+
+Sie können dann **as<>** für klassische COM-Schnittstellen verwenden, und der Code im obigen Beispiel wird kompiliert.
+
+> [!NOTE]
+> Wenn Sie im obigen Beispiel auch nach dem Aktivieren der klassischen COM-Unterstützung im Client (dem Code, der die Klasse verwendet) nicht auch die klassische COM-Unterstützung im Server (dem Code, der die Klasse implementiert) aktiviert haben, dann stürzt der Aufruf von **as<>** auf dem Client ab, weil das QI für **IInitializeWithWindow** fehlschlägt.
+
+### <a name="a-local-non-projected-class"></a>Eine lokale (nicht projizierte) Klasse
+
+Eine lokale Klasse ist eine Klasse, die in derselben Kompilierungseinheit (App oder andere Binärdatei) sowohl implementiert als auch verwendet wird; es gibt also keine Projektion für sie.
+
+Im folgenden finden Sie ein Beispiel für eine lokale Klasse, die *nur klassische COM-Schnittstellen* implementiert.
+
+```cppwinrt
+struct LocalObject :
+    winrt::implements<LocalObject, IInitializeWithWindow>
+{
+    ...
+};
+```
+
+Wenn Sie dieses Beispiel implementieren, aber nicht die klassische COM-Unterstützung aktivieren, schlägt der folgende Code fehl.
+
+```cppwinrt
+winrt::make<LocalObject>(); // error: ‘first_interface’: is not a member of ‘winrt::impl::interface_list<>’
+```
+
+Auch hier wird **IInitializeWithWindow** nicht als COM-Schnittstelle erkannt, sodass sie von C++/WinRT ignoriert wird. Im Fall des **LocalObject**-Beispiels hat das Ignorieren von COM-Schnittstellen zur Folge, dass **LocalObject** überhaupt keine Schnittstellen aufweist. Allerdings muss jede COM-Klasse mindestens eine Schnittstelle implementieren.
 
 ## <a name="a-simple-example-of-a-com-component"></a>Ein einfaches Beispiel für eine COM-Komponente
 
@@ -122,7 +157,7 @@ Weitere Hintergrundinformationen zum Featurebereich von Popupbenachrichtigungen 
 
 ## <a name="create-a-windows-console-application-project-toastandcallback"></a>Erstellen eines Projekts vom Typ „Windows-Konsolenanwendung“ (ToastAndCallback)
 
-Erstelle zunächst ein neues Projekt in Microsoft Visual Studio. Erstelle ein Projekt vom Typ **Windows-Konsolenanwendung (C++/WinRT)** , und gib ihm den Namen *ToastAndCallback*.
+Erstelle zunächst ein neues Projekt in Microsoft Visual Studio. Erstelle ein Projekt vom Typ **Windows-Konsolenanwendung (C++/WinRT)**, und gib ihm den Namen *ToastAndCallback*.
 
 Öffne `pch.h`, und füge `#include <unknwn.h>` vor den Include-Elementen für C++/WinRT-Header hinzu. Hier ist das Ergebnis angegeben. Du kannst den Inhalt deiner Datei `pch.h` durch diese Auflistung ersetzen.
 
@@ -220,7 +255,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-Für die Implementierung der obigen Co-Klasse wird das gleiche Muster eingehalten, das in [Erstellen von APIs mit C++/WinRT](./author-apis.md#if-youre-not-authoring-a-runtime-class) veranschaulicht wird. Du kannst also das gleiche Verfahren nutzen, um COM-Schnittstellen und Windows-Runtime-Schnittstellen zu implementieren. Die Features von COM-Komponenten und Windows-Runtime-Klassen werden über Schnittstellen verfügbar gemacht. Jede COM-Schnittstelle wird letztendlich von der [**IUnknown-Schnittstelle**](/windows/desktop/api/unknwn/nn-unknwn-iunknown) abgeleitet. Die Windows-Runtime basiert auf COM. Ein Unterscheidungsmerkmal ist, dass Windows-Runtime-Schnittstellen letztendlich von der [**IInspectable-Schnittstelle**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) abgeleitet werden (und **IInspectable** von **IUnknown**).
+Für die Implementierung der obigen Co-Klasse wird das gleiche Muster eingehalten, das in [Erstellen von APIs mit C++/WinRT](./author-apis.md#if-youre-not-authoring-a-runtime-class) veranschaulicht wird. Du kannst also das gleiche Verfahren nutzen, um COM-Schnittstellen und Windows-Runtime-Schnittstellen zu implementieren. Die Features von COM-Komponenten und Windows-Runtime-Klassen werden über Schnittstellen verfügbar gemacht. Jede COM-Schnittstelle wird letztendlich von der [**IUnknown-Schnittstelle**](/windows/win32/api/unknwn/nn-unknwn-iunknown) abgeleitet. Die Windows-Runtime basiert auf COM. Ein Unterscheidungsmerkmal ist, dass Windows-Runtime-Schnittstellen letztendlich von der [**IInspectable-Schnittstelle**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) abgeleitet werden (und **IInspectable** von **IUnknown**).
 
 In der Co-Klasse im obigen Code implementieren wir die **INotificationActivationCallback::Activate**-Methode. Dies ist die Funktion, die aufgerufen wird, wenn der Benutzer in einer Popupbenachrichtigung auf die Rückrufschaltfläche klickt. Bevor diese Funktion aufgerufen werden kann, muss eine Instanz der Co-Klasse erstellt werden. Dies ist Aufgabe der Funktion **IClassFactory::CreateInstance**.
 

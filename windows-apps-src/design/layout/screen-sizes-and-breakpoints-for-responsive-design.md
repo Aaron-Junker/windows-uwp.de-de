@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c7d1d0069c074b95bfe93ee5894854734e3a3052
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: a18094ad4cc76df41b12b9746ecdea3938d87d0b
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218513"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804584"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>Bildschirmgrößen und Haltepunkte
 
@@ -82,7 +82,7 @@ UWP-Apps skalieren deine Benutzeroberfläche automatisch, um sicherzustellen, da
 - Verwenden jeweils eine Spalte/Region.
 - Verwenden Sie ein Symbol zum Darstellen der Suche (kein Suchfeld anzeigen).
 - Verwenden Sie den [Navigationsbereich](../controls-and-patterns/navigationview.md) im Überlagerungsmodus, um Platz auf dem Bildschirm zu sparen.
-- Verwenden Sie für das [Master/Details-Modell](../controls-and-patterns/master-details.md) den gestapelten Darstellungsmodus, um Platz auf dem Bildschirm zu sparen.
+- Verwenden Sie für das [Liste/Details-Muster](../controls-and-patterns/list-details.md) den gestapelten Darstellungsmodus, um Platz auf dem Bildschirm zu sparen.
 
 ### <a name="medium"></a>Medium (Mittel)
 - Legen Sie den linken und den rechten Fensterrand auf 24px fest, um eine visuelle Trennung zwischen dem linken und dem rechten Rand des App-Fensters zu erzielen.

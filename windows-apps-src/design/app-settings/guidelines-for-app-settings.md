@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b3f3388951dc2e3d854fcb97269e5bfb0449a6e
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: d1608c88473bf8fdf615141c18ab8a85aed07797
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93032403"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804634"
 ---
 # <a name="guidelines-for-app-settings"></a>Richtlinien für App-Einstellungen
 
@@ -62,9 +62,9 @@ Wenn Sie ein Hublayout verwenden, sollte sich der Einstiegspunkt für App-Einste
 
 Bei einem Registerkarten- oder Pivots-Layout raten wir davon ab, den Einstiegspunkt für App-Einstellungen als eines der Elemente der obersten Ebene in der Navigation zu platzieren. Stattdessen sollte der Einstiegspunkt für App-Einstellungen im Überlaufmenü „Mehr“ einer App-Leiste platziert werden.
 
-**Master/Details**
+**Liste-Details**
 
-Anstatt den Einstiegspunkt für App-Einstellungen innerhalb eines Master/Details-Bereichs zu u verstecken, machen Sie ihn als letztes angeheftete Element auf der obersten Ebene des Masterbereichs verfügbar.
+Anstatt den Einstiegspunkt für App-Einstellungen innerhalb eines Liste/Details-Bereichs zu u verstecken, machen Sie ihn als letztes angeheftete Element auf der obersten Ebene des Listenbereichs verfügbar.
 
 ## <a name="layout"></a>Layout
 

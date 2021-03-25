@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Microsoft, Windows 10, Tutorials, Onlinekurse, Blogs, Veranstaltungen
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: e5ae3eb09a015a5ae1385612d5410c41a43b005b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3736802249eb0bce10b8d0730d361e4a70df5e8c
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175774"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804554"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>Ressourcen für die Entwicklung mit Python unter Windows
 
@@ -44,6 +44,8 @@ Eine Liste mit Links, die für Python-Entwickler empfohlen werden, die auf Compu
 - [Azure-Codebeispiele mit Python:](https://azure.microsoft.com/resources/samples/?platform=python&sort=0) Erfahren Sie, wie Sie mithilfe von Python-Code mit Azure-Diensten interagieren.
 
 - [Python und Visual Studio Code:](https://code.visualstudio.com/docs/languages/python) Eine Übersicht über die Verwendung von Python mit VS Code.
+
+- [Python-Releases für Windows](https://www.python.org/downloads/windows/): die offiziellen Python-Releases für Windows.
 
 ## <a name="online-courses"></a>Onlinekurse
 
