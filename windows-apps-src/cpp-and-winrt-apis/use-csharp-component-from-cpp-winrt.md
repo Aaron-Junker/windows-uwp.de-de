@@ -5,12 +5,12 @@ ms.date: 12/30/2020
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: cc341f6fd716daf0474fdbcb25f567a7c727d507
-ms.sourcegitcommit: 7d542c6367b3b441044225431ee69d869ed0ff4b
+ms.openlocfilehash: 0b2b4f67d67fc1a23e650d1fbe5d58964add1a70
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102402336"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804754"
 ---
 # <a name="authoring-a-c-windows-runtime-component-for-use-from-a-cwinrt-app"></a>Erstellen einer C#-Komponente für Windows-Runtime zur Verwendung aus einer C++/WinRT-App
 
@@ -21,12 +21,12 @@ Visual Studio macht es einfach, eigene benutzerdefinierte Windows-Runtime-Typen 
 Intern können Ihre Windows-Runtime-Typen jede in einer UWP-Anwendung zulässige .NET-Funktion verwenden.
 
 > [!NOTE]
-> Weitere Informationen finden Sie unter [Komponenten für Windows-Runtime in C# und Visual Basic](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md) und [Überblick über .NET für UWP-Apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true).
+> Weitere Informationen finden Sie unter [Komponenten für Windows-Runtime in C# und Visual Basic](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md) und [Überblick über .NET für UWP-Apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true).
 
 Extern können die Typelemente für ihre Parameter und Rückgabewerte nur Windows-Runtime-Typen verfügbar machen. Wenn Sie die Projektmappe erstellen, erstellt Visual Studio das .NET WRC-Projekt und führt dann einen Schritt zur Erstellung einer Datei mit Windows-Metadaten (.winmd) durch. Hierbei handelt es sich um Ihre Komponente für Windows-Runtime (WRC), die Visual Studio in Ihre App einschließt.
 
 > [!NOTE]
-> .NET ordnet einige häufig verwendete .NET-Typen, z. B. primitive Datentypen und Sammlungstypen, automatisch ihren Windows-Runtime-Entsprechungen zu. Diese .NET-Typen können in der öffentlichen Schnittstelle einer Komponente für Windows-Runtime verwendet werden und werden Benutzern der Komponente als die entsprechenden Windows-Runtime-Typen angezeigt. Siehe [Komponenten für Windows-Runtime in C# und Visual Basic](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+> .NET ordnet einige häufig verwendete .NET-Typen, z. B. primitive Datentypen und Sammlungstypen, automatisch ihren Windows-Runtime-Entsprechungen zu. Diese .NET-Typen können in der öffentlichen Schnittstelle einer Komponente für Windows-Runtime verwendet werden und werden Benutzern der Komponente als die entsprechenden Windows-Runtime-Typen angezeigt. Siehe [Komponenten für Windows-Runtime in C# und Visual Basic](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
 ## <a name="prerequisites"></a>Voraussetzungen:
 
@@ -124,7 +124,7 @@ Jetzt kannst du das Projekt kompilieren und ausführen. Jedes Mal, wenn Sie auf 
 
 ## <a name="application-minimum-version"></a>Mindestversion der Anwendung
 
-Die [**Mindestversion der Anwendung**](https://docs.microsoft.com/windows/uwp/updates-and-versions/choose-a-uwp-version) für die C#-Projektversion steuert die zum Kompilieren der Anwendung verwendete Version von .NET. Wenn Sie z. B. **Windows 10 Fall Creators Update (10.0, Build 16299)** , oder höher, auswählen, wird Unterstützung für .NET Standard 2.0- und Windows ARM64-Prozessoren aktiviert. 
+Die [**Mindestversion der Anwendung**](../updates-and-versions/choose-a-uwp-version.md) für die C#-Projektversion steuert die zum Kompilieren der Anwendung verwendete Version von .NET. Wenn Sie z. B. **Windows 10 Fall Creators Update (10.0, Build 16299)** , oder höher, auswählen, wird Unterstützung für .NET Standard 2.0- und Windows ARM64-Prozessoren aktiviert. 
 
 > [!TIP]
 > Wenn keine Unterstützung für .NET Standard 2.0 oder ARM64 erforderlich ist, wird empfohlen, als **Mindestversion der Anwendung** Versionen unter 16299 zu verwenden, um eine zusätzliche Buildkonfiguration zu vermeiden.
@@ -218,5 +218,5 @@ Legen Sie als nächstes die `UseDotNetNativeToolchain`-Eigenschaft in den Releas
 ```
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Komponenten für Windows-Runtime in C# und Visual Basic](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic)
-* [Windows-Runtime-Komponenten mit C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)
+* [Komponenten für Windows-Runtime in C# und Visual Basic](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Windows-Runtime-Komponenten mit C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)

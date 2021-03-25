@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, App-Zertifizierung
 ms.localizationpriority: medium
-ms.openlocfilehash: a8be8ff09b962456b70d604a6a44203ceddb8cbc
-ms.sourcegitcommit: 8bface2162e091999b1cf2218340edda2389da89
+ms.openlocfilehash: 6f63ad960993ade83bdfa52283a33b76e2d80db2
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103496687"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804814"
 ---
 # <a name="windows-app-certification-kit"></a>Zertifizierungskit für Windows-Apps
 
@@ -31,7 +31,7 @@ Voraussetzungen für das Testen einer universellen Windows-App:
 
 ## <a name="whats-new"></a>Neuigkeiten
 
-Tests für Windows-[Desktop-Brücke-Apps](/windows/msix/desktop/source-code-overview) werden jetzt im Kit unterstützt. Apps, die [Windows Desktop Bridge-Tests](/windows/uwp/debug-test-perf/windows-desktop-bridge-app-tests) bestehen, haben die beste Chancen, im Microsoft Store veröffentlicht oder zertifiziert zu werden.
+Tests für Windows-[Desktop-Brücke-Apps](/windows/msix/desktop/source-code-overview) werden jetzt im Kit unterstützt. Apps, die [Windows Desktop Bridge-Tests](./windows-desktop-bridge-app-tests.md) bestehen, haben die beste Chancen, im Microsoft Store veröffentlicht oder zertifiziert zu werden.
 
 Das Kit kann jetzt in automatisierte Tests integriert werden, in denen keine interaktive Benutzersitzung verfügbar ist.
 
