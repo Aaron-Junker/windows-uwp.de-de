@@ -172,8 +172,8 @@
           href: controls-and-patterns/menus.md
     - name: Navigation
       items:
-        - name: Master/Details
-          href: controls-and-patterns/master-details.md
+        - name: Liste/Details
+          href: controls-and-patterns/list-details.md
         - name: Navigationsansicht
           href: controls-and-patterns/navigationview.md
         - name: Pivot
@@ -538,7 +538,7 @@
   items:
     - name: Übersicht
       href: usability/index.md
-    - name: Eingabehilfen
+    - name: Zugriff
       href: accessibility/accessibility.md
       items:
         - name: Übersicht
