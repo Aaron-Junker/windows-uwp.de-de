@@ -2,20 +2,20 @@
 description: Auf der Seite Pakete können Sie alle Paketdateien (. appxupload,. AppX,. appxbundle und/oder. xap) für die von Ihnen übermittelt App hochladen.
 title: Hochladen von App-Paketen
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
-ms.date: 09/24/2020
+ms.date: 02/26/2021
 ms.topic: article
 keywords: Windows 10, UWP, Pakete, Upload, Hochladen von Paketen
 ms.localizationpriority: medium
-ms.openlocfilehash: c2e72a767b9d50f81fba548531965d75d4ce0b56
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 4c83318f749d5b63e38b819085643aa69de64463
+ms.sourcegitcommit: e8ea2a36e4f2b9e0326958d226a36dd30c3efa57
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034953"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105099801"
 ---
 # <a name="upload-app-packages"></a>Hochladen von App-Paketen
 
-Auf der Seite **Pakete** können Sie alle Paketdateien (. msix,. msixupload,. msixbundle,. AppX,. appxupload und/oder. appxbundle) für die APP hochladen, die Sie übermitteln. Sie können alle Pakete für dieselbe App auf dieser Seite hochladen, und wenn ein Kunde Ihre APP herunterlädt, stellt der Store jedem Kunden automatisch das Paket bereit, das für das Gerät am besten geeignet ist. Nachdem Sie Ihre Pakete hochgeladen haben, sehen Sie eine Tabelle, in der angegeben wird, [welche Pakete für bestimmte Windows 10-Gerätefamilien angeboten werden](#device-family-availability) (und ggf. für frühere Betriebssystemversionen).
+Auf der Seite " **Pakete** " der [App-Übermittlung](app-submissions.md) werden alle Paketdateien (. msix,. msixupload,. msixbundle,. AppX,. appxupload und/oder. appxbundle) für die APP hochgeladen, die Sie übermitteln. Sie können alle Pakete für dieselbe App auf dieser Seite hochladen, und wenn ein Kunde Ihre APP herunterlädt, stellt der Store jedem Kunden automatisch das Paket bereit, das für das Gerät am besten geeignet ist. Nachdem Sie Ihre Pakete hochgeladen haben, sehen Sie eine Tabelle, in der angegeben wird, [welche Pakete für bestimmte Windows 10-Gerätefamilien angeboten werden](#device-family-availability) (und ggf. für frühere Betriebssystemversionen).
 
 > [!IMPORTANT]
 > Sie können keine neuen XAP-Pakete mehr hochladen, die mit den Windows Phone 8. x SDK (s) erstellt wurden. Apps, die bereits mit XAP-Paketen im Speicher gespeichert sind, funktionieren weiterhin auf Windows 10 Mobile-Geräten. Weitere Informationen finden Sie in diesem [Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
@@ -44,9 +44,9 @@ Weitere Informationen finden Sie unter [Verfügbarkeit von Gerätefamilien](devi
 
 ## <a name="package-details"></a>Paketdetails
 
-Die hochgeladenen Pakete sind hier aufgelistet, gruppiert nach Ziel Betriebssystem. Name, Version und Architektur des Pakets werden angezeigt. Klicken Sie auf **Details anzeigen** , um weitere Informationen zu erhalten, z. B. die unterstützten Sprachen, die App-Funktionen oder die Dateigröße der einzelnen Pakete.
+Die hochgeladenen Pakete sind hier aufgelistet, gruppiert nach Ziel Betriebssystem. Name, Version und Architektur des Pakets werden angezeigt. Klicken Sie auf **Details anzeigen**, um weitere Informationen zu erhalten, z. B. die unterstützten Sprachen, die App-Funktionen oder die Dateigröße der einzelnen Pakete.
 
-Wenn Sie ein Paket aus der Einsendung entfernen müssen, klicken Sie dazu im Abschnitt **Details** des Pakets unten auf den Link **Entfernen** .
+Wenn Sie ein Paket aus der Einsendung entfernen müssen, klicken Sie dazu im Abschnitt **Details** des Pakets unten auf den Link **Entfernen**.
 
 
 ## <a name="removing-redundant-packages"></a>Entfernen redundanter Pakete

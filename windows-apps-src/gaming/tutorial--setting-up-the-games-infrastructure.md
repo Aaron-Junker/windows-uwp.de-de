@@ -6,12 +6,12 @@ ms.date: 06/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Games, Setup, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e2e93ad43f866e26b448e2cbcd2cb480054cbc9
-ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
+ms.openlocfilehash: c6e3a84b2f483f0b6d2d590181cac232f68f2b72
+ms.sourcegitcommit: e8ea2a36e4f2b9e0326958d226a36dd30c3efa57
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104804264"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105099811"
 ---
 # <a name="set-up-the-game-project"></a>Einrichten des Spieleprojekts
 
@@ -94,11 +94,11 @@ Und hier ist das Gerüst der **App** -Klasse (in `App.cpp` ), die die Signaturen
 struct App : winrt::implements<App, IFrameworkViewSource, IFrameworkView>
 {
     ...
-    void Initialize(Windows::ApplicationModel::CoreCoreApplicationView const& applicationView) { ... }
+    void Initialize(Windows::ApplicationModel::Core::CoreApplicationView const& applicationView) { ... }
     void SetWindow(Windows::UI::Core::CoreWindow const& window) { ... }
     void Load(winrt::hstring const& entryPoint) { ... }
     void OnActivated(
-        Windows::ApplicationModel::CoreCoreApplicationView const& applicationView,
+        Windows::ApplicationModel::Core::CoreApplicationView const& applicationView,
         Windows::ApplicationModel::Activation::IActivatedEventArgs const& args) { ... }
     void Run() { ... }
     void Uninitialize() { ... }

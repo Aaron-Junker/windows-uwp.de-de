@@ -1,20 +1,20 @@
 ---
 description: Nachdem Ihre Pakete erfolgreich hochgeladen wurden, wird eine Tabelle angezeigt, in der angegeben wird, welche Pakete bestimmten Windows 10-Gerätefamilien (und ggf. früheren Betriebssystemversionen) in Rangfolge angeboten werden.
 title: Verfügbarkeit von Gerätefamilien
-ms.date: 03/21/2019
+ms.date: 02/26/2021
 ms.topic: article
 keywords: Windows 10, UWP, Pakete, Upload, Verfügbarkeit der Gerätefamilie
 ms.localizationpriority: medium
-ms.openlocfilehash: 48cbb0fd9ecf27c9926d55e22abc17d039d3674b
-ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
+ms.openlocfilehash: 3885a5f85a8380e87d753721c6b9ca8b0facc475
+ms.sourcegitcommit: e8ea2a36e4f2b9e0326958d226a36dd30c3efa57
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89411964"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105099791"
 ---
 # <a name="device-family-availability"></a>Verfügbarkeit von Gerätefamilien
 
-Nachdem die Pakete auf der Seite **Pakete** erfolgreich hochgeladen wurden, wird im Abschnitt **Verfügbarkeit der Gerätefamilie** eine Tabelle angezeigt, die angibt, welche Pakete bestimmten Windows 10-Gerätefamilien (und ggf. früheren Betriebssystemversionen) in Rangfolge angeboten werden. In diesem Abschnitt können Sie auch entscheiden, ob Sie die Übermittlung an Kunden in bestimmten Windows 10-Gerätefamilien anbieten möchten.
+Nachdem die Pakete [auf der Seite **Pakete** erfolgreich hochgeladen](upload-app-packages.md)wurden, wird im Abschnitt **Verfügbarkeit der Gerätefamilie** eine Tabelle angezeigt, die angibt, welche Pakete bestimmten Windows 10-Gerätefamilien (und ggf. früheren Betriebssystemversionen) in Rangfolge angeboten werden. In diesem Abschnitt können Sie auch entscheiden, ob Sie die Übermittlung an Kunden in bestimmten Windows 10-Gerätefamilien anbieten möchten.
 
 > [!NOTE]
 > Wenn Sie noch keine Pakete hochgeladen haben, werden im Abschnitt zur **Verfügbarkeit der Gerätefamilie** die Windows 10-Gerätefamilien mit Kontrollkästchen angezeigt, mit denen Sie angeben können, ob die Übermittlung für Kunden dieser Gerätefamilien angeboten werden soll. Die Tabelle wird angezeigt, nachdem Sie ein oder mehrere Pakete hochgeladen haben.
@@ -37,7 +37,7 @@ Wenn Ihre APP diese unterstützt, empfiehlt es sich, alle Felder zu aktivieren, 
 Die einzige Windows 10-Gerätefamilie, die für Windows nicht standardmäßig aktiviert ist, ist **Windows 10 Xbox**. Wenn Ihre APP kein Spiel ist (oder wenn es sich um ein Spiel handelt und Sie das [Xbox Live Creators-Programm](/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) aktiviert oder den Genehmigungsprozess des [Konzepts](../gaming/concept-approval.md) durchlaufen haben), und ihre Übermittlung neutrale und/oder x64-UWP-Pakete enthält, die mit dem Windows 10 SDK, Version 14393 oder höher, kompiliert wurden, können Sie das **Windows 10 Xbox** -Kontrollkästchen aktivieren, um die APP Kunden
 
 > [!IMPORTANT]
-> Damit Ihre APP auf Xbox-Geräten gestartet werden kann, müssen Sie ein neutrales oder x64-Paket einschließen, das mit Windows SDK Version 14393 oder höher kompiliert wird. Wenn Sie jedoch **Windows 10 Xbox**aktivieren, wird das Paket mit der höchsten Versions Angabe, das auf Xbox (d. h. ein neutrales oder x64-Paket, das auf die Xbox-oder universelle Gerätefamilie abzielt) anwendbar ist, immer für Kunden auf der Xbox angeboten, auch wenn es mit einer früheren SDK-Version kompiliert wurde. Daher müssen Sie unbedingt sicherstellen, dass das für Xbox geeignete Paket mit der höchsten Versionsnummer mit Windows SDK-Version 14393 oder höher kompiliert wurde. Andernfalls wird eine Fehlermeldung angezeigt, in der darauf hingewiesen wird, dass Xbox-Kunden die App nicht starten können. 
+> Damit Ihre APP auf Xbox-Geräten gestartet werden kann, müssen Sie ein neutrales oder x64-Paket einschließen, das mit Windows SDK Version 14393 oder höher kompiliert wird. Wenn Sie jedoch **Windows 10 Xbox** aktivieren, wird das Paket mit der höchsten Versions Angabe, das auf Xbox (d. h. ein neutrales oder x64-Paket, das auf die Xbox-oder universelle Gerätefamilie abzielt) anwendbar ist, immer für Kunden auf der Xbox angeboten, auch wenn es mit einer früheren SDK-Version kompiliert wurde. Daher müssen Sie unbedingt sicherstellen, dass das für Xbox geeignete Paket mit der höchsten Versionsnummer mit Windows SDK-Version 14393 oder höher kompiliert wurde. Andernfalls wird eine Fehlermeldung angezeigt, in der darauf hingewiesen wird, dass Xbox-Kunden die App nicht starten können. 
 > 
 > Zum Beheben dieses Fehlers können Sie eine der folgenden Maßnahmen ergreifen:
 > - Ersetzen Sie die entsprechenden Pakete durch neue, die mit Windows SDK-Version 14393 oder höher kompiliert wurden.
@@ -48,12 +48,12 @@ Die einzige Windows 10-Gerätefamilie, die für Windows nicht standardmäßig ak
 
 Wenn Sie eine UWP-App für Windows 10 IOT Core übermitteln, sollten Sie nach dem Hochladen der Pakete keine Änderungen an den Standardeinstellungen vornehmen. Es gibt kein separates Kontrollkästchen für Windows 10 IOT. Weitere Informationen zum Veröffentlichen von IOT Core-UWP-apps finden Sie [unter Microsoft Store-Unterstützung für IOT Core-UWP-apps](/windows/iot-core/commercialize-your-device/installingandservicing).
 
-Wenn Ihre Übermittlung für eine zuvor veröffentlichte App Pakete enthält, die unter **Windows 8/8.1** und **Windows Phone 8. x und früher**ausgeführt werden können, werden diese Pakete den Kunden auf diesen Betriebssystemversionen zur Verfügung gestellt. Entfernen Sie die entsprechenden Pakete aus ihrer Übermittlung, um die APP für diese Kunden nicht mehr anbieten zu können.
+Wenn Ihre Übermittlung für eine zuvor veröffentlichte App Pakete enthält, die unter **Windows 8/8.1** und **Windows Phone 8. x und früher** ausgeführt werden können, werden diese Pakete den Kunden auf diesen Betriebssystemversionen zur Verfügung gestellt. Entfernen Sie die entsprechenden Pakete aus ihrer Übermittlung, um die APP für diese Kunden nicht mehr anbieten zu können.
 
 > [!IMPORTANT]
 > Um vollständig zu verhindern, dass eine bestimmte Windows 10-Gerätefamilie ihre Übermittlung erhält, aktualisieren Sie das [**targetdevicefamily**](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) -Element in ihrem Manifest so, dass es nur auf die Gerätefamilie abzielt, die Sie unterstützen möchten (d.h. Windows. Mobile oder Windows. Desktop), anstatt Sie als Windows. Universal-Wert (für die universelle Gerätefamilie Microsoft Visual Studio) zu belassen, der standardmäßig
 
-Es ist wichtig zu wissen, dass die im Abschnitt zur **Verfügbarkeit der Gerätefamilie** vorgetroffene Auswahl nur auf neue Akquisitionen anwendbar ist. Jede Person, die Ihre APP bereits verwendet, kann Sie weiterhin verwenden und erhält alle von Ihnen übermittelten Updates, auch wenn Sie Ihre Gerätefamilie hier entfernen. Dies gilt auch für Kunden, die Ihre App vor dem Upgrade auf Windows 10 erworben haben. Wenn Sie z. b. über eine veröffentlichte App mit Windows Phone 8,1-Paketen verfügen und ein Windows 10-Paket (UWP) für die Windows. Universal-Gerätefamilie hinzufügen, wird Windows 10 Mobile-Kunden mit Ihrem Windows Phone 8,1-Paket ein Update für dieses Windows 10-Paket (UWP) angeboten, auch wenn Sie das Kontrollkästchen für **Windows 10 Mobile**deaktiviert haben.
+Es ist wichtig zu wissen, dass die im Abschnitt zur **Verfügbarkeit der Gerätefamilie** vorgetroffene Auswahl nur auf neue Akquisitionen anwendbar ist. Jede Person, die Ihre APP bereits verwendet, kann Sie weiterhin verwenden und erhält alle von Ihnen übermittelten Updates, auch wenn Sie Ihre Gerätefamilie hier entfernen. Dies gilt auch für Kunden, die Ihre App vor dem Upgrade auf Windows 10 erworben haben. Wenn Sie z. b. über eine veröffentlichte App mit Windows Phone 8,1-Paketen verfügen und ein Windows 10-Paket (UWP) für die Windows. Universal-Gerätefamilie hinzufügen, wird Windows 10 Mobile-Kunden mit Ihrem Windows Phone 8,1-Paket ein Update für dieses Windows 10-Paket (UWP) angeboten, auch wenn Sie das Kontrollkästchen für **Windows 10 Mobile** deaktiviert haben.
 
 Weitere Informationen zu Gerätefamilien finden Sie unter [Programmieren mit Erweiterungs-sdert](/uwp/extension-sdks/device-families-overview).
 
