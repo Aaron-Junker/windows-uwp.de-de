@@ -26,7 +26,7 @@
             - name: Erste Schritte mit Automatisierung
               href: ../python/scripting.md
             - name: Häufig gestellte Fragen
-              href: ../python/faqs.md
+              href: ../python/faqs.yml
         - name: Erste Schritte mit Node.js
           items:
             - name: Übersicht
