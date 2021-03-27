@@ -6,12 +6,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 18b4d6b8a901e68ea1e8513b7076a951e939f028
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 47c854103aeda6605474cc97a172dc31974f98ff
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93035033"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619436"
 ---
 # <a name="package-version-numbering"></a>Paketversionsnummern
 
@@ -46,8 +46,8 @@ Sie können die Paket-Versionsnummernregeln verwenden, um den Wechsel Ihrer Kund
 |------------|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1          | -   Paketversion: 1.1.10.0 <br> -   Gerätefamilie: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   Paketversion: 1.1.0.0 <br> -   Gerätefamilie: Windows.Mobile, minVersion 10.0.10240.0     | -   Geräte unter Windows 10 Desktop Build 10.0.10240.0 und höher erhalten Versionsnummer 1.1.10.0 <br> -   Geräte unter Windows 10 Mobile Build 10.0.10240.0 und höher erhalten Versionsnummer 1.1.0.0 <br> -   Für andere Gerätefamilien kann die App nicht erworben und installiert werden. |
 | 2          | -   Paketversion: 1.1.10.0 <br> -   Gerätefamilie: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   Paketversion: 1.1.0.0 <br> -   Gerätefamilie: Windows.Mobile, minVersion 10.0.10240.0 <br> <br> -   Paketversion: 1.0.0.0 <br> -   Gerätefamilie: Windows.Universal, minVersion 10.0.10240.0    | -   Geräte unter Windows 10 Desktop Build 10.0.10240.0 und höher erhalten Versionsnummer 1.1.10.0 <br> -   Geräte unter Windows 10 Mobile Build 10.0.10240.0 und höher erhalten Versionsnummer 1.1.0.0 <br> -   Andere (nicht-Desktop, nicht mobile) Gerätefamilien, erhalten nach Einführung Versionsnummer 1.0.0.0 <br> -   Bei Desktop- und mobilen Geräten, auf denen die App bereits installiert ist, wird kein Updates angezeigt (da diese bereits die beste verfügbare Version besitzen – 1.1.10.0 und 1.1.0.0 sind beide höher als 1.0.0.0) |
-| 3          | -   Paketversion: 1.1.10.0 <br> -   Gerätefamilie: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   Paketversion: 1.1.5.0 <br> -   Gerätefamilie: Windows.Universal, minVersion 10.0.10250.0 <br> <br> -   Paketversion: 1.0.0.0 <br> -   Gerätefamilie: Windows.Universal, minVersion 10.0.10240.0    | -   Geräte unter Windows 10 Desktop Build 10.0.10240.0 und höher erhalten Versionsnummer 1.1.10.0 <br> -   Geräte unter Windows 10 Mobile Build 10.0.10250.0 und höher erhalten Versionsnummer 1.1.5.0 <br> -   Geräte unter Windows 10 Mobile Build >= 10.0.10240.0 und < 10.010250.0 erhalten Versionsnummer 1.1.0.0 
-| 4          | -   Paketversion: 2.0.0.0 <br> -   Gerätefamilie: Windows.Universal, minVersion 10.0.10240.0   | -   Alle Kunden mit allen Gerätefamilien unter Windows 10 Build v10.0.10240.0 und höher erhalten Paket 2.0.0.0 | 
+| 3          | -   Paketversion: 1.1.10.0 <br> -   Gerätefamilie: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   Paketversion: 1.1.5.0 <br> -   Gerätefamilie: Windows.Universal, minVersion 10.0.10250.0 <br> <br> -   Paketversion: 1.0.0.0 <br> -   Gerätefamilie: Windows.Universal, minVersion 10.0.10240.0    | -   Geräte unter Windows 10 Desktop Build 10.0.10240.0 und höher erhalten Versionsnummer 1.1.10.0 <br> -   Geräte unter Windows 10 Mobile Build 10.0.10250.0 und höher erhalten Versionsnummer 1.1.5.0 <br> -   Geräte unter Windows 10 Mobile Build >= 10.0.10240.0 und < 10.010250.0 erhalten Versionsnummer 1.1.0.0|
+| 4          | -   Paketversion: 2.0.0.0 <br> -   Gerätefamilie: Windows.Universal, minVersion 10.0.10240.0   | -   Alle Kunden mit allen Gerätefamilien unter Windows 10 Build v10.0.10240.0 und höher erhalten Paket 2.0.0.0 |
 
 > [!NOTE]
 >  In allen Fällen erhalten Kunden Geräte das Paket mit der höchstmöglichen Versionsnummer, für die Sie qualifiziert sind. In der dritten Übermittlung oben erhalten beispielsweise alle Desktopgeräte v1.1.10.0, auch wenn sie die Betriebssystemversion 10.0.10250.0 oder höher haben und somit auch mit v1.1.5.0 kompatibel wären. Da 1.1.10.0 für sie die höchsten Versionsnummer ist, erhalten sie dieses Paket.

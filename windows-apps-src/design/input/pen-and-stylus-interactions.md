@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows-Freihandeingabe, DirectInk, InkPresenter, InkCanv
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a29a7ed497fdcd463df0855b4aad3b65ce6408a
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: 231145a5f8a9b44b4dc6060a6b02d55e007704e4
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860172"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619586"
 ---
 # <a name="pen-interactions-and-windows-ink-in-windows-apps"></a>Stiftinteraktionen und Windows Ink in Windows-Apps
 
@@ -45,7 +45,7 @@ In Verbindung mit einem Zeichengerät bietet die Windows Ink-Plattform eine nat�
 Ihre App kann nicht nur die grundlegende Position und Bewegung des Stifts aufzeichnen, während der Benutzer schreibt oder zeichnet, sondern auch den variierenden Druck während des gesamten Strichs nachverfolgen und erfassen. Mit diesen Informationen, zusammen mit Einstellungen für Form und Größe der Stiftspitze, Drehung, Freihandfarbe und Zweck (einfache Freihandeingabe, Löschen, Hervorheben und Auswählen), können Sie dem Benutzer ermöglichen, auf ähnliche Weise wie mit einem Stift, Bleistift oder Pinsel auf Papier zu arbeiten.
 
 > [!NOTE]
-> Ihre App kann auch Freihandeingaben von anderen zeigerbasierten Geräten, z. B. Touchdigitalisierungs- und Mausgeräte, unterstützen. 
+> Ihre App kann auch Freihandeingaben von anderen zeigerbasierten Geräten, z. B. Touchdigitalisierungs- und Mausgeräte, unterstützen. 
 
 Die Freihandplattform ist sehr flexibel. Je nach Ihren Anforderungen unterstützt sie verschiedene Funktionalitätsgrade.
 
@@ -72,7 +72,7 @@ Das [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Steuerelement u
 In diesem Beispiel überlagert ein [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Steuerelement ein Hintergrundbild.
 
 > [!NOTE]
-> Ein InkCanvas-Steuerelement verfügt über die Standardeigenschaften für [**Höhe**](/uwp/api/windows.ui.xaml.frameworkelement.Height) und [**Breite**](/uwp/api/windows.ui.xaml.frameworkelement.Width) von 0 (null), es sei denn, es handelt sich um ein untergeordnetes [Grid](/uwp/api/windows.ui.xaml.controls.grid) Element eines Elements, das seine untergeordneten Elemente [, wie z](/uwp/api/windows.ui.xaml.controls.stackpanel) . b
+> Ein InkCanvas-Steuerelement verfügt über die Standardeigenschaften für [**Höhe**](/uwp/api/windows.ui.xaml.frameworkelement.Height) und [**Breite**](/uwp/api/windows.ui.xaml.frameworkelement.Width) von 0 (null), es sei denn, es handelt sich um ein untergeordnetes [](/uwp/api/windows.ui.xaml.controls.grid) Element eines Elements, das seine untergeordneten Elemente [, wie z](/uwp/api/windows.ui.xaml.controls.stackpanel) . b
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -108,7 +108,7 @@ Für die einfache Freihandeingabe müssen Sie sich nicht mit [**InkPresenter**](
 Für jedes [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Steuerelement wird ein [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter)-Objekt instanziiert.
 
 > [!NOTE]
-> Das [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter)-Objekt kann nicht direkt instanziiert werden. Stattdessen erfolgt der Zugriff über die [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) -Eigenschaft von [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas). 
+> Das [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter)-Objekt kann nicht direkt instanziiert werden. Stattdessen erfolgt der Zugriff über die [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) -Eigenschaft von [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas). 
 
 Neben dem Bereitstellen sämtlicher Standardverhalten für die Erfassung des entsprechenden [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) -Steuer Elements bietet [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) einen umfassenden Satz von APIs für die zusätzliche Hubanpassung und eine präzisere Verwaltung der Stift Eingabe (Standard und geändert). Dies umfasst Stroke-Eigenschaften, unterstützte Eingabegeräte Typen und ob Eingaben vom-Objekt verarbeitet oder zur Verarbeitung an die APP übermittelt werden.
 
@@ -206,9 +206,22 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 Diese Bilder zeigen, wie die Stifteingabe vom [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter)-Objekt verarbeitet und angepasst wird.
 
-| ![Screenshot, der den InkCanvas mit standardmäßigen schwarzen Hand Strichen anzeigt.](images/ink-basic-custom-1-small.png) | ![Screenshot des InkCanvas mit vom Benutzer ausgewählten roten Hand Strichen.](images/ink-basic-custom-2-small.png) |
-| --- | --- |
-| Der [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) mit standardmäßigen schwarzen Hand Strichen. | Der [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) , bei dem vom Benutzer ausgewählte Rote Hand Striche angezeigt werden. | 
+:::row:::
+   :::column span="":::
+      ![Screenshot, der den InkCanvas mit standardmäßigen schwarzen Hand Strichen anzeigt.](images/ink-basic-custom-1-small.png)
+   :::column-end:::
+   :::column span="":::
+      Der [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) mit standardmäßigen schwarzen Hand Strichen.
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      ![Screenshot des InkCanvas mit vom Benutzer ausgewählten roten Hand Strichen.](images/ink-basic-custom-2-small.png)
+   :::column-end:::
+   :::column span="":::
+      Der [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) , bei dem vom Benutzer ausgewählte Rote Hand Striche angezeigt werden.
+   :::column-end:::
+:::row-end:::
 
 Um zusätzlich zur Freihandeingabe und zum Löschen weitere Funktionen wie etwa die Strichauswahl bereitzustellen, muss die App bestimmte Eingaben identifizieren, die vom [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter)-Objekt ohne Verarbeitung zur Behandlung an die App weitergegeben werden.
 
@@ -224,7 +237,7 @@ Das [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter)
 
 Die Windows Ink-Plattform bietet keine integrierte Unterstützung für Aktionen, für die geänderte Eingaben erforderlich sind, wie z. b. die Strich Auswahl. Um Funktionen wie diese zu unterstützen, müssen Sie eine benutzerdefinierte Lösung in ihren apps bereitstellen. 
 
-Das folgende Codebeispiel (sämtlicher Code finden Sie in den Dateien "MainPage. XAML" und "MainPage.XAML.cs Files"), wie Sie die Strich Auswahl aktivieren, wenn die Eingabe mit einer Stift-Taste (oder mit der rechten Maustaste) geändert wird.
+Im folgenden Codebeispiel (sämtlicher Code finden Sie in den Dateien MainPage. XAML und MainPage. XAML. cs), wie Sie die Strich Auswahl aktivieren, wenn die Eingabe mit einer Stift Taste (oder mit der rechten Maustaste) geändert wird.
 
 1.  Zunächst richten wir in „MainPage.xaml“ die Benutzeroberfläche ein.
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 72a6fe2e704bc419306c74f410ed51e8e8560fa6
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 31889f94eaa489bdb6955b578c0ad4b18af6b606
+ms.sourcegitcommit: dacbb7eef2cfffd7a8639e3a24ebda7b4eefae38
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362973"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105616783"
 ---
 # <a name="audio-graphs"></a>Audiodiagramme
 
@@ -21,8 +21,7 @@ In diesem Artikel wird beschrieben, wie Sie die APIs im [**Windows. Media. audio
 
 Bei einem *audiodiagramm* handelt es sich um einen Satz vernetzter Audioknoten, über die Audiodaten fließen. 
 
-- *Audioeingabeknoten* stellen Audiodaten aus audioeingabegeräten, Audiodateien oder aus benutzerdefiniertem Code für das Diagramm bereit. 
-
+- *Audioeingabeknoten* stellen Audiodaten aus audioeingabegeräten, Audiodateien oder aus benutzerdefiniertem Code für das Diagramm bereit. lat
 - *Audioausgabeknoten* sind das Ziel von Audiodaten, die vom Diagramm verarbeitet wurden. Audiodaten können außerhalb des Diagramms an Audioausgabegeräte, Audiodateien oder benutzerdefinierten Code weitergeleitet werden. 
 
 - *Submixknoten* kombinieren Audiodaten von mindestens einem Knoten in einer einzigen Ausgabe, die an andere Knoten in dem Diagramm weitergeleitet werden kann. 
@@ -109,7 +108,7 @@ Mit einem Dateieingabeknoten können Sie Daten aus einer Audiodatei in das Diagr
 
 ##  <a name="mediasource-input-node"></a>MediaSource-Eingabe Knoten
 
-Die [**MediaSource**](/uwp/api/Windows.Media.Core.MediaSource) -Klasse bietet eine gängige Methode zum Referenzieren von Medien aus verschiedenen Quellen und bietet ein gängiges Modell für den Zugriff auf Mediendaten, unabhängig vom zugrunde liegenden Medienformat, bei dem es sich um eine Datei auf einem Datenträger, einem Stream oder einer adaptiven streamingnetzwerkquelle Mit einem [* * mediasourceaudioinputnode](/uwp/api/windows.media.audio.mediasourceaudioinputnode) -Knoten können Sie Audiodaten von einer **MediaSource** in das audiodiagramm leiten. Erstellen Sie einen **mediasourceaudioinputnode** durch Aufrufen von [**createmediasourceaudioinputnodeasync**](/uwp/api/windows.media.audio.audiograph.createmediasourceaudioinputnodeasync#Windows_Media_Audio_AudioGraph_CreateMediaSourceAudioInputNodeAsync_Windows_Media_Core_MediaSource_), und übergeben Sie ein **MediaSource** -Objekt, das den Inhalt darstellt, den Sie wiedergeben möchten. Ein [* * ermittelungsmediasourceaudioinputnoderesult](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult) wird zurückgegeben, mit dem Sie den Status des Vorgangs ermitteln können, indem Sie die Eigenschaft [**Status**](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.status) überprüfen. Wenn der Status **erfolgreich**ist, können Sie den erstellten **mediasourceaudioinputnode** durchzugreifen auf die [**Node**](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.node) -Eigenschaft erhalten. Das folgende Beispiel zeigt die Erstellung eines Knotens aus einem adaptivemediasource-Objekt, das Content Streaming über das Netzwerk darstellt. Weitere Informationen zum Arbeiten mit **MediaSource**finden Sie unter [Medienelemente, Wiedergabelisten und Spuren](media-playback-with-mediasource.md). Weitere Informationen zum Streamen von Medieninhalten über das Internet finden Sie unter [Adaptive Streaming](adaptive-streaming.md).
+Die [**MediaSource**](/uwp/api/Windows.Media.Core.MediaSource) -Klasse bietet eine gängige Methode zum Referenzieren von Medien aus verschiedenen Quellen und bietet ein gängiges Modell für den Zugriff auf Mediendaten, unabhängig vom zugrunde liegenden Medienformat, bei dem es sich um eine Datei auf einem Datenträger, einem Stream oder einer adaptiven streamingnetzwerkquelle Mit einem [* * mediasourceaudioinputnode](/uwp/api/windows.media.audio.mediasourceaudioinputnode) -Knoten können Sie Audiodaten von einer **MediaSource** in das audiodiagramm leiten. Erstellen Sie einen **mediasourceaudioinputnode** durch Aufrufen von [**createmediasourceaudioinputnodeasync**](/uwp/api/windows.media.audio.audiograph.createmediasourceaudioinputnodeasync#Windows_Media_Audio_AudioGraph_CreateMediaSourceAudioInputNodeAsync_Windows_Media_Core_MediaSource_), und übergeben Sie ein **MediaSource** -Objekt, das den Inhalt darstellt, den Sie wiedergeben möchten. Ein [* * ermittelungsmediasourceaudioinputnoderesult](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult) wird zurückgegeben, mit dem Sie den Status des Vorgangs ermitteln können, indem Sie die Eigenschaft [**Status**](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.status) überprüfen. Wenn der Status **erfolgreich** ist, können Sie den erstellten **mediasourceaudioinputnode** durchzugreifen auf die [**Node**](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.node) -Eigenschaft erhalten. Das folgende Beispiel zeigt die Erstellung eines Knotens aus einem adaptivemediasource-Objekt, das Content Streaming über das Netzwerk darstellt. Weitere Informationen zum Arbeiten mit **MediaSource** finden Sie unter [Medienelemente, Wiedergabelisten und Spuren](media-playback-with-mediasource.md). Weitere Informationen zum Streamen von Medieninhalten über das Internet finden Sie unter [Adaptive Streaming](adaptive-streaming.md).
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetDeclareMediaSourceInputNode":::
 
@@ -250,7 +249,7 @@ Sie weisen den Emitter beim Erstellen einem Audioknoten zu, indem Sie die überl
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetCreateEmitter":::
 
-Die [**AudioDeviceOutputNode**](/uwp/api/Windows.Media.Audio.AudioDeviceOutputNode)-Klasse, die Audiodaten aus dem Diagramm für den Benutzer ausgibt, verfügt über ein Listener-Objekt, auf das mit der [**Listener**](/uwp/api/windows.media.audio.audiodeviceoutputnode.listener)-Eigenschaft zugegriffen wird. Sie gibt die Position, Ausrichtung und Geschwindigkeit des Benutzers im dreidimensionalen Raum an. Die Positionen aller Emitter im Diagramm verhalten sich relativ zur Position und Ausrichtung des Emitterobjekts. Der Listener befindet sich standardmäßig am Ursprung (0,0,0) und ist nach vorne entlang der Z-Achse ausgerichtet. Sie können die Position und Ausrichtung jedoch mit der [**Position**](/uwp/api/windows.media.audio.audionodelistener.position)-Eigenschaft und [**Orientation**](/uwp/api/windows.media.audio.audionodelistener.orientation)-Eigenschaft festlegen.
+Die [**AudioDeviceOutputNode**](/uwp/api/Windows.Media.Audio.AudioDeviceOutputNode)-Klasse, die Audiodaten aus dem Diagramm für den Benutzer ausgibt, verfügt über ein Listener-Objekt, auf das mit der [**Listener**](/uwp/api/windows.media.audio.audiodeviceoutputnode.listener)-Eigenschaft zugegriffen wird. Sie gibt die Position, Ausrichtung und Geschwindigkeit des Benutzers im dreidimensionalen Raum an. Die Positionen aller Emitter im Diagramm sind relativ zur Position und Ausrichtung des listenerobjekts. Der Listener befindet sich standardmäßig am Ursprung (0,0,0) und ist nach vorne entlang der Z-Achse ausgerichtet. Sie können die Position und Ausrichtung jedoch mit der [**Position**](/uwp/api/windows.media.audio.audionodelistener.position)-Eigenschaft und [**Orientation**](/uwp/api/windows.media.audio.audionodelistener.orientation)-Eigenschaft festlegen.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetListener":::
 
@@ -266,6 +265,6 @@ Die räumliche Audiowiedergabe wird standardmäßig mit dem HRTF-Algorithmus (He
 
 ## <a name="see-also"></a>Siehe auch
 - [Medienwiedergabe](media-playback.md)
- 
+ 
 
- 
+ 

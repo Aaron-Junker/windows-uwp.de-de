@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7217b52c6e9f9882997649c5f843eb119d741e0b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 67e5f4a212602f0b177c94d96f61d52a3369fd9d
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156154"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619406"
 ---
 # <a name="span-iddirect3dconceptsusing_system-generated_valuesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>Verwenden von systemgenerierten Werten
 
@@ -64,16 +64,16 @@ In den folgenden Tabellen sind die vom System generierten Werte für die Instanz
 | **Vertexid**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
 | **InstanceID** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
 
- 
+ 
 
 Die Dreiecks Bereichs Instanz U hat drei Dreiecks primitive mit den folgenden vom System generierten Werten:
 
-|                 |     |     |     |
+|                 | Wert 1    | Wert 2    | Wert 3    |
 |-----------------|-----|-----|-----|
 | **Primitiveid** | 0   | 1   | 2   |
 | **InstanceID**  | 0   | 0   | 0   |
 
- 
+ 
 
 In den folgenden Tabellen sind die vom System generierten Werte für die Instanz V aufgeführt.
 
@@ -82,16 +82,16 @@ In den folgenden Tabellen sind die vom System generierten Werte für die Instanz
 | **Vertexid**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
 | **InstanceID** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
 
- 
+ 
 
 Die Dreiecks Bereichs Instanz V verfügt über 3 Dreiecks primitive mit den folgenden vom System generierten Werten:
 
-|                 |     |     |     |
+|                 | Wert 1    | Wert 2    | Wert 3    |
 |-----------------|-----|-----|-----|
 | **Primitiveid** | 0   | 1   | 2   |
 | **InstanceID**  | 1   | 1   | 1   |
 
- 
+ 
 
 In der [Eingabe Assembler-Stufe (IA)](input-assembler-stage--ia-.md) werden die IDs (Vertex, primitiv und Instanz) generiert; Beachten Sie auch, dass jeder Instanz eine eindeutige Instanz-ID zugewiesen wird. Die Daten enden mit dem Strip-Cut, der die einzelnen Instanzen des Dreiecks Streifens trennt.
 
@@ -100,6 +100,6 @@ In der [Eingabe Assembler-Stufe (IA)](input-assembler-stage--ia-.md) werden die 
 
 [Eingabeassemblerphase (IA)](input-assembler-stage--ia-.md)
 
- 
+ 
 
- 
+ 

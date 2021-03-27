@@ -6,12 +6,12 @@ ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Übermittlungs-API, App-Daten
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dfbad9d0aa2bfb69479f168ec262fe67bedb49c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 120cb4d20299a8690f3d3814a8e937e763de1e7a
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162414"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619606"
 ---
 # <a name="get-app-data"></a>Abrufen von App-Daten
 
@@ -62,7 +62,7 @@ Diese Ressource steht für eine App, die in Ihrem Konto registriert ist.
 
 Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG       |
+| Wert           | type    | BESCHREIBUNG       |
 |-----------------|---------|---------------------|
 | id            | Zeichenfolge  | Die Store-ID der App. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](../publish/view-app-identity-details.md).   |
 | primaryName   | Zeichenfolge  | Der Primärname der App.      |
@@ -72,8 +72,7 @@ Die Ressource hat die folgenden Werte.
 | firstPublishedDate      | Zeichenfolge  | Das Datum, an dem die App erstmals im Format ISO 8601 veröffentlicht wurde.   |
 | lastPublishedApplicationSubmission       | Objekt (object) | Eine [Übermittlungsressource](#submission_object) mit Informationen über die letzte veröffentlichte Übermittlung für die App.    |
 | pendingApplicationSubmission        | Objekt (object)  |  Eine [Übermittlungsressource](#submission_object) mit Informationen über die aktuelle ausstehende Übermittlung für die App.   |   
-| hasadvancedlistingberechtigung        | boolean  |  Gibt an, ob Sie die [gamingoptions](manage-app-submissions.md#gaming-options-object) oder [die](manage-app-submissions.md#trailer-object) Nachspann für Übermittlungen für die APP konfigurieren können. Dieser Wert gilt für Übermittlungen, die nach dem 2017 erstellt wurden. |  |
-
+| hasadvancedlistingberechtigung        | boolean  |  Gibt an, ob Sie die [gamingoptions](manage-app-submissions.md#gaming-options-object) oder [die](manage-app-submissions.md#trailer-object) Nachspann für Übermittlungen für die APP konfigurieren können. Dieser Wert gilt für Übermittlungen, die nach dem 2017 erstellt wurden. |
 
 <span id="add-on-object" />
 
@@ -89,7 +88,7 @@ Diese Ressource enthält Informationen zu einem Add-On.
 
 Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG         |
+| Wert           | type    | BESCHREIBUNG         |
 |-----------------|---------|----------------------|
 | inAppProductId            | Zeichenfolge  | Die Store-ID des Add-Ons. Dieser Wert wird vom Store bereitgestellt. Beispiel für eine Store-ID: 9NBLGGH4TNMP.   |
 
@@ -121,7 +120,7 @@ Diese Ressource enthält Informationen zu einem Flight-Paket für eine App.
 
 Die Ressource hat die folgenden Werte.
 
-| Wert           | Typ    | BESCHREIBUNG           |
+| Wert           | type    | BESCHREIBUNG           |
 |-----------------|---------|------------------------|
 | flightId            | Zeichenfolge  | Die ID für das Flight-Paket. Dieser Wert wird von Partner Center bereitgestellt.  |
 | friendlyName           | Zeichenfolge  | Der Name des Flight-Pakets nach Vorgabe des Entwicklers.   |
@@ -148,12 +147,12 @@ Diese Ressource enthält Informationen zu einer Übermittlung. Das folgende Beis
 
 Die Ressource hat die folgenden Werte.
 
-| Wert              | Typ   | BESCHREIBUNG               |
+| Wert              | type   | BESCHREIBUNG               |
 |--------------------|--------|---------------------------|
 | id                 | Zeichenfolge | Die ID der Übermittlung. |
 | resourceLocation   | Zeichenfolge | Ein relativer Pfad, den Sie an den Basisanforderungs-URI ```https://manage.devcenter.microsoft.com/v1.0/my/``` anfügen können, um die vollständigen Daten für die Übermittlung abzurufen. |
 
- 
+ 
 ## <a name="related-topics"></a>Zugehörige Themen
 
 * [Erstellen und Verwalten von Übermittlungen mithilfe von Microsoft Store Services](create-and-manage-submissions-using-windows-store-services.md)

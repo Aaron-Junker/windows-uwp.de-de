@@ -6,12 +6,12 @@ ms.date: 09/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Games, Sample, DirectX, Structure
 ms.localizationpriority: medium
-ms.openlocfilehash: e4dd33bb40b84db79e3ac2ea43a4252b6e20d441
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4e3491bfb18edeecaa15e946dc5f0732cac1f0e9
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165244"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619556"
 ---
 # <a name="marble-maze-application-structure"></a>Marble Maze-Anwendungsstruktur
 
@@ -23,7 +23,7 @@ Die Struktur einer DirectX-UWP-App unterscheidet sich von der einer herkömmlich
 > [!NOTE]
 > Den diesem Dokument entsprechenden Beispielcode finden Sie im [DirectX Marble Maze-Spielbeispiel](https://github.com/microsoft/Windows-appsample-marble-maze).
 
- 
+ 
 ## 
 Es folgen einige wichtige Punkte, die in diesem Dokument für das Strukturieren von Spielcode erläutert werden:
 
@@ -38,14 +38,14 @@ Es folgen einige wichtige Punkte, die in diesem Dokument für das Strukturieren 
 
 Einige der Komponenten in Marble Maze können mit geringfügigen oder ohne Änderungen für andere Spiele wiederverwendet werden. Sie können die Organisation und die Ideen aus diesen Dateien für Ihr eigenes Spiel anpassen. In der folgenden Tabelle sind die wichtigen Quellcodedateien kurz beschrieben.
 
-| Files                                      | BESCHREIBUNG                                                                                                                                                                          |
+| Dateien                                      | BESCHREIBUNG                                                                                                                                                                          |
 |--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | App. h, App. cpp               | Definiert die Klassen " **App** " und " **directxapplicationsource** ", die die Ansicht (Fenster, Thread und Ereignisse) der APP Kapseln.                                                     |
 | Audio.h, Audio.cpp                         | Definiert die **Audio**-Klasse, die Audioressourcen verwaltet.                                                                                                                          |
 | BasicLoader.h, BasicLoader.cpp             | Definiert die **BasicLoader**-Klasse, die Dienstprogrammmethoden bereitstellt, mit denen Sie Texturen, Gitter und Shader laden können.                                                                  |
 | BasicMath.h                                | Definiert Strukturen und Funktionen, mit denen Sie Vektor- und Matrixdaten und -berechnungen verwenden können. Viele dieser Funktionen sind mit HLSL-Shadertypen kompatibel.                     |
 | BasicInformationen zu einigen der wichtigsten Vorgehensweisen, die Sie beim Verwenden von visuellen Ressourcen berücksichtigen sollten, finden Sie unter Writer.h, BasicInformationen zu einigen der wichtigsten Vorgehensweisen, die Sie beim Verwenden von visuellen Ressourcen berücksichtigen sollten, finden Sie unter Writer.cpp | Definiert die **BasicReaderWriter**-Klasse, die die Windows-Runtime zum Lesen und Schreiben von Dateidaten in einer UWP-App verwendet.                                                                    |
-| BasicShapes.h, BasicShapes.cpp             | Definiert die **BasicShapes**-Klasse, die Dienstprogrammmethoden zum Erstellen von Grundformen wie Würfeln und Kugeln bereitstellt. (Diese Dateien werden von der Marble Maze-Implementierung nicht verwendet). |                                                                                  |
+| BasicShapes.h, BasicShapes.cpp             | Definiert die **BasicShapes**-Klasse, die Dienstprogrammmethoden zum Erstellen von Grundformen wie Würfeln und Kugeln bereitstellt. (Diese Dateien werden von der Marble Maze-Implementierung nicht verwendet). |
 | Camera.h, Camera.cpp                       | Definiert die **Camera**-Klasse, die die Position und Ausrichtung einer Kamera bereitstellt.                                                                                               |
 | Collision.h, Collision.cpp                 | Verwaltet Informationen über das Aufeinandertreffen der Murmel mit anderen Objekten, z. B. dem Labyrinth.                                                                                                       |
 | DDSTextureLoader.h, DDSTextureLoader.cpp   | Definiert die **CreateDDSTextureFromMemory**-Funktion, die Texturen im DDS-Format aus einem Speicherpuffer lädt.                                                              |
@@ -61,7 +61,7 @@ Einige der Komponenten in Marble Maze können mit geringfügigen oder ohne Ände
 | StepTimer.h               | Definiert die Klasse " **Steptimer** ", die eine einfache Möglichkeit bietet, Gesamt-und verstrichene Zeiten zu erzielen.
 | UserInterface.h, UserInterface.cpp         | Definiert die Funktionalität, die mit der Benutzeroberfläche (z. B. dem Menüsystem und der Bestenliste) verknüpft ist.                                                                        |
 
- 
+ 
 
 ##  <a name="design-time-versus-run-time-resource-formats"></a>Entwurfszeit- und Laufzeitressourcenformate
 
@@ -90,7 +90,7 @@ Nach der Initialisierung führen Spiele in der Regel die *Spielschleife* aus. In
 
 Die Vorlage **DirectX 11-app (universelle Windows-APP)** erstellt ein Kern Fenster, in dem Sie mit Direct3D gerenden können. Die Vorlage enthält auch die **DeviceResources**-Klasse, die alle zum Rendern von 3D-Inhalten in einer UWP-App erforderlichen Direct3D-Geräteressourcen erstellt.
 
-Die **App** -Klasse erstellt das **marblemazemain** -Klassenobjekt, startet das Laden von Ressourcen, Schleifen, um den Timer zu aktualisieren, und ruft die **marblemazemain:: Rendering** -Methode für jeden Frame auf. Die Methoden **App:: onwindowsizechanged**, **App:: ondpichanged**und **App:: OnOrientationChanged** rufen jeweils die **marblemazemain:: createwindowsizedependentresources** -Methode auf, und die **App:: Run** -Methode ruft die Methoden **marblemazemain:: Update** und **marblemazemain:: Rendering** auf.
+Die **App** -Klasse erstellt das **marblemazemain** -Klassenobjekt, startet das Laden von Ressourcen, Schleifen, um den Timer zu aktualisieren, und ruft die **marblemazemain:: Rendering** -Methode für jeden Frame auf. Die Methoden **App:: onwindowsizechanged**, **App:: ondpichanged** und **App:: OnOrientationChanged** rufen jeweils die **marblemazemain:: createwindowsizedependentresources** -Methode auf, und die **App:: Run** -Methode ruft die Methoden **marblemazemain:: Update** und **marblemazemain:: Rendering** auf.
 
 Im folgenden Beispiel wird gezeigt, wo die **App:: SetWindow** -Methode das **marblemazemain** Class-Objekt erstellt. Die **deviceresources** -Klasse wird an die-Methode übergeben, sodass Sie die Direct3D-Objekte zum Rendern verwenden kann.
 
@@ -110,7 +110,7 @@ Damit das Spiel innerhalb von 5 Sekunden nach dem Starten auf Fensterereignisse 
 > [!NOTE]
 > Sie können das Hauptmenü auch anzeigen, wenn es bereit ist, und es den verbleibenden Assets ermöglichen, das Laden im Hintergrund fortzusetzen. Wenn der Benutzer eine Menüoption auswählt, bevor alle Ressourcen geladen wurden, kann beispielsweise durch Anzeigen einer Statusleiste angegeben werden, dass Szenenressourcen weiter geladen werden.
 
- 
+ 
 
 Selbst wenn das Spiel relativ wenige Spielressourcen enthält, empfiehlt es sich aus zwei Gründen, diese asynchron zu laden. Zum einen ist es schwierig, sicherzustellen, dass alle Ressourcen auf allen Geräten und in allen Konfigurationen schnell geladen werden. Zum anderen ist der Code bei frühzeitiger Integration des asynchronen Ladens zum Skalieren bereit, wenn Sie Funktionalitäten hinzufügen.
 
@@ -130,7 +130,7 @@ Weitere Informationen zur asynchronen Programmierung für UWP-Apps finden Sie un
 > [!TIP]
 > Wenn Sie Spiel Code schreiben, der Teil einer Windows-Runtime C++-Bibliothek ist (d. h. eine DLL), sollten Sie die [Erstellung von asynchronen Vorgängen in C++ für UWP-apps](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps) in Erwägung ziehen, um zu erfahren, wie Sie asynchrone Vorgänge erstellen, die von apps und anderen Bibliotheken genutzt werden können.
 
- 
+ 
 
 ## <a name="the-game-loop"></a>Die Spielschleife
 
@@ -424,9 +424,9 @@ Informationen zu einigen der wichtigsten Vorgehensweisen, die Sie beim Verwenden
 ## <a name="related-topics"></a>Zugehörige Themen
 
 * [Hinzufügen von visuellem Inhalt zum Marble Maze-Beispiel](adding-visual-content-to-the-marble-maze-sample.md)
-* [Grundlagen am Beispiel von Marble Maze](marble-maze-sample-fundamentals.md)
+* [Grundlagen zu Marble Maze-Beispielen](marble-maze-sample-fundamentals.md)
 * [Entwickeln von Marble Maze, einem UWP-Spiel in C++ und DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
- 
+ 
 
- 
+ 

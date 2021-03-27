@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store promotionapi, Werbekampagnen
 ms.localizationpriority: medium
-ms.openlocfilehash: e7b370d8eea61033092d833cdf751f1dade86c6d
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: 28db33951df79700c58a86d1d3189744028abcc4
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878563"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619566"
 ---
 # <a name="manage-delivery-lines"></a>Verwalten von Lieferpositionen
 
@@ -19,7 +19,7 @@ Verwenden Sie diese Methoden in der Microsoft Store promotionapi, um eine oder m
 
 Weitere Informationen über die Beziehung zwischen Übermittlungs Zeilen und Ad-Kampagnen, Ziel Profilen und Erstellungen finden [Sie unter Ausführen von Ad-Kampagnen mit Microsoft Store Services](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api).
 
->**Note** &nbsp; Hinweis &nbsp; Bevor Sie mithilfe dieser API Übermittlungs Zeilen für Ad-Kampagnen erstellen können, müssen Sie zunächst auf [der Seite mit den **Werbekampagnen** im Partner Center eine bezahlte Werbekampagne erstellen](./index.md), und Sie müssen mindestens ein Zahlungsinstrument auf dieser Seite hinzufügen. Nachdem Sie dies getan haben, können Sie mithilfe dieser API abrechenbare Übermittlungs Zeilen für Ad-Kampagnen erstellen. Mit Ad-Kampagnen, die Sie mithilfe der API erstellen, wird automatisch das standardmäßige Zahlungsinstrument abgerechnet, das auf der Seite mit den **Werbekampagnen** im Partner Center ausgewählt
+> &nbsp; Hinweis &nbsp; Bevor Sie mithilfe dieser API Übermittlungs Zeilen für Ad-Kampagnen erstellen können, müssen Sie zunächst auf [der Seite mit den **Werbekampagnen** im Partner Center eine bezahlte Werbekampagne erstellen](./index.md), und Sie müssen mindestens ein Zahlungsinstrument auf dieser Seite hinzufügen. Nachdem Sie dies getan haben, können Sie mithilfe dieser API abrechenbare Übermittlungs Zeilen für Ad-Kampagnen erstellen. Mit Ad-Kampagnen, die Sie mithilfe der API erstellen, wird automatisch das standardmäßige Zahlungsinstrument abgerechnet, das auf der Seite mit den **Werbekampagnen** im Partner Center ausgewählt
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -39,8 +39,8 @@ Diese Methoden verfügen über die folgenden URIs.
 | Methodentyp | Anforderungs-URI         |  BESCHREIBUNG  |
 |--------|---------------------------|---------------|
 | POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/line``` |  Erstellt eine neue Übermittlungs Zeile.  |
-| PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/line/{lineId}``` |  Bearbeitet die von *LineID*angegebene Übermittlungs Zeile.  |
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/line/{lineId}``` |  Ruft die von *LineID*angegebene Übermittlungs Zeile ab.  |
+| PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/line/{lineId}``` |  Bearbeitet die von *LineID* angegebene Übermittlungs Zeile.  |
+| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/line/{lineId}``` |  Ruft die von *LineID* angegebene Übermittlungs Zeile ab.  |
 
 
 ### <a name="header"></a>Header
@@ -56,7 +56,7 @@ Diese Methoden verfügen über die folgenden URIs.
 Die Post-und Put-Methoden erfordern einen JSON-Anforderungs Text mit den erforderlichen Feldern eines Übermittlungs [Zeilen](#line) Objekts und zusätzlichen Feldern, die Sie festlegen oder ändern möchten.
 
 
-### <a name="request-examples"></a>Anforderungsbeispiele
+### <a name="request-examples"></a>Beispiele für Anforderungen
 
 Im folgenden Beispiel wird veranschaulicht, wie die Post-Methode aufgerufen wird, um eine Übermittlungs Zeile zu erstellen.
 
@@ -135,7 +135,7 @@ Diese Methoden geben einen JSON-Antworttext mit einem Übermittlungs [Zeilen](#l
 
 Die Anforderungs-und Antwort Texte für diese Methoden enthalten die folgenden Felder. Diese Tabelle zeigt, welche Felder schreibgeschützt sind (was bedeutet, dass Sie in der Put-Methode nicht geändert werden können) und welche Felder im Anforderungs Text für die Post-oder Put-Methoden erforderlich sind.
 
-| Feld        | type   |  BESCHREIBUNG      |  Schreibgeschützt  | Standard  | Erforderlich für Post/Put |   
+| Feld        | type   |  BESCHREIBUNG      |  Nur Lesezugriff  | Standard  | Erforderlich für Post/Put |   
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  integer   |  Die ID der Übermittlungs Zeile.     |   Ja    |      |  Nein      |    
 |  name   |  Zeichenfolge   |   Der Name der Übermittlungs Zeile.    |    Nein   |      |  POST     |     
@@ -154,7 +154,7 @@ Die Anforderungs-und Antwort Texte für diese Methoden enthalten die folgenden F
 |  campaignId   |  integer   |  Die ID der übergeordneten Werbekampagne.      |    Nein   |      |   Nein     |  
 |  minminutesperimp   |  integer   |  Gibt das minimale Zeitintervall (in Minuten) zwischen zwei Eindrücken an, die dem gleichen Benutzer in dieser Übermittlungs Zeile angezeigt werden.      |    Nein   |  4000    |  Nein      |  
 |  pacingtype   |  Zeichenfolge   |  Einer der folgenden Werte, die den pacetyp angeben: <ul><li>**Spendezly**</li><li>**Spendasfastaspossible**</li></ul>      |    Nein   |  Spendezly    |  Nein      |
-|  currencyId   |  integer   |  Die ID der Währung der Kampagne.      |    Ja   |  Die Währung des Entwickler Kontos (Sie müssen dieses Feld nicht in Post-oder Put-aufrufen angeben)    |   Nein     |      |
+|  currencyId   |  integer   |  Die ID der Währung der Kampagne.      |    Yes   |  Die Währung des Entwickler Kontos (Sie müssen dieses Feld nicht in Post-oder Put-aufrufen angeben)    |   Nein     |
 
 
 ## <a name="related-topics"></a>Zugehörige Themen

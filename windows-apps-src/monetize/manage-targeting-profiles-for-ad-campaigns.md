@@ -1,59 +1,59 @@
 ---
 ms.assetid: d305746a-d370-4404-8cde-c85765bf3578
-description: Verwenden Sie diese Methode in der Microsoft Store-Werbungs-API, um Zielgruppenprofile für Werbeanzeigenkampagnen zu verwalten.
+description: Verwenden Sie diese Methode in der Microsoft Store promotionapi, um Ziel Profile für Werbekampagnen zu verwalten.
 title: Verwalten von Zielgruppenprofilen
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Microsoft Store Werbungs-API, Anzeigenkampagnen
+keywords: Windows 10, UWP, Microsoft Store promotionapi, Werbekampagnen
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d84c6eb678bf884709e13ecefd81e64097ee738
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 10a10e15c736d77e132543a54dff11455f08cde3
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630205"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619516"
 ---
 # <a name="manage-targeting-profiles"></a>Verwalten von Zielgruppenprofilen
 
 
-Verwenden Sie diese Methoden in der Microsoft Store-Werbungs-API, um Benutzer, Regionen und Bestandstypen als Ziele für jede Lieferpositionen einer Werbeanzeigenkampagne auszuwählen. Zielgruppenprofile können erstellt und über mehrere Lieferpositionen der Übermittlung hinweg wiederverwendet werden.
+Verwenden Sie diese Methoden in der Microsoft Store promotionapi, um die Benutzer, Regionen und Inventur Typen auszuwählen, die Sie für jede Übermittlungs Zeile in einer Werbe-Werbekampagne als Ziel verwenden möchten. Ziel Profile können über mehrere Übermittlungs Zeilen erstellt und wieder verwendet werden.
 
-Weitere Informationen zu der Beziehung zwischen Zielgruppenprofilen und Anzeigenkampagnen, Lieferpositionen und Werbemitteln finden Sie unter [Anzeigenkampagnen mit Microsoft Store-Diensten ausführen](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api).
+Weitere Informationen über die Beziehung Zwischenziel Profilen und Ad-Kampagnen, Übermittlungs Zeilen und schöpfenden finden [Sie unter Ausführen von Ad-Kampagnen mit Microsoft Store Services](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api).
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-Zur Verwendung dieser Methoden sind folgende Schritte erforderlich:
+Um diese Methoden zu verwenden, müssen Sie zunächst die folgenden Schritte ausführen:
 
-* Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](run-ad-campaigns-using-windows-store-services.md#prerequisites) für die Microsoft Store-Werbungs-API.
-* [Rufen Sie ein Azure AD-Zugriffstoken ab](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token), das in der Anforderungskopfzeile für diese Methoden verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
+* Wenn Sie dies noch nicht getan haben, müssen Sie alle [Voraussetzungen](run-ad-campaigns-using-windows-store-services.md#prerequisites) für die Microsoft Store promotionapi erfüllen.
+* Rufen Sie [ein Azure AD Zugriffs Token](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token) ab, das im-Anforderungs Header für diese Methoden verwendet werden soll. Nachdem Sie ein Zugriffstoken erhalten haben, haben Sie 60 Minuten Zeit, es zu verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 
-## <a name="request"></a>Anfordern
+## <a name="request"></a>Anforderung
 
-Diese Methoden haben die folgenden URIs.
+Diese Methoden verfügen über die folgenden URIs.
 
-| Methodentyp | Anforderungs-URI                                                      |  Beschreibung  |
+| Methodentyp | Anforderungs-URI                                                      |  BESCHREIBUNG  |
 |--------|------------------------------------------------------------------|---------------|
-| POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile``` |  Erstellt ein neues Zielgruppenprofil.  |
-| PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile/{targetingProfileId}``` |  Ändert das durch *TargetingProfileId* angegebene Zielgruppenprofil.  |
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile/{targetingProfileId}``` |  Ruft das durch *TargetingProfileId* angegebene Zielgruppenprofil ab.  |
+| POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile``` |  Erstellt ein neues Ziel Profil.  |
+| PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile/{targetingProfileId}``` |  Bearbeitet das von *targetingprofileid* angegebene Ziel Profil.  |
+| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile/{targetingProfileId}``` |  Ruft das von *targetingprofileid* angegebene Ziel Profil ab.  |
 
 
 ### <a name="header"></a>Header
 
-| Header        | Typ   | Beschreibung         |
+| Header        | type   | BESCHREIBUNG         |
 |---------------|--------|---------------------|
-| Autorisierung | string | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
-| Tracking-ID   | GUID   | Optional. Eine ID, die den Abfrageablauf verfolgt.                                  |
+| Authorization | Zeichenfolge | Erforderlich. Das Azure AD-Zugriffstoken im Format **Bearer** &lt;*token*&gt;. |
+| Nachverfolgungs-ID   | GUID   | Optional. Eine ID, die den aufrufflow nachverfolgt.                                  |
 
 
 ### <a name="request-body"></a>Anforderungstext
 
-Die POST- und PUT-Methoden erfordern einen JSON-Anforderungstext mit den erforderlichen Feldern für ein [Zielgruppenprofil](#targeting-profile)-Objekt und alle zusätzlichen Felder, die Sie festlegen oder ändern möchten.
+Die Post-und Put-Methoden erfordern einen JSON-Anforderungs Text mit den erforderlichen Feldern eines [Ziel Profil](#targeting-profile) Objekts und zusätzlicher Felder, die Sie festlegen oder ändern möchten.
 
 
-### <a name="request-examples"></a>Anforderungsbeispiele
+### <a name="request-examples"></a>Beispiele für Anforderungen
 
-Im folgenden Beispiel wird veranschaulicht, wie die POST-Methode zum Erstellen eines Profils für aufgerufen wird.
+Im folgenden Beispiel wird veranschaulicht, wie die Post-Methode aufgerufen wird, um ein Ziel Profil zu erstellen.
 
 ```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile HTTP/1.1
@@ -84,7 +84,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-Im folgenden Beispiel wird veranschaulicht, wie die GET-Methode zum Abrufen eines Profils für aufgerufen wird.
+Im folgenden Beispiel wird veranschaulicht, wie Sie die Get-Methode aufrufen, um ein Ziel Profil abzurufen.
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile/310023951  HTTP/1.1
@@ -95,7 +95,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>Antwort
 
-Diese Methoden geben einen JSON-Antworttext mit einem [Zielgruppenprofil](#targeting-profile)-Objekt zurück, das Informationen über das erstellte, aktualisierte bzw. abgerufene Zielgruppenprofil enthält. Das folgende Beispiel zeigt einen Antworttext für diese Methoden.
+Diese Methoden geben einen JSON-Antworttext mit einem [Ziel Profil](#targeting-profile) Objekt zurück, das Informationen zum Profil Erstellungs Profil enthält, das erstellt, aktualisiert oder abgerufen wurde. Das folgende Beispiel zeigt einen Antworttext für diese Methoden.
 
 ```json
 {
@@ -135,45 +135,45 @@ Diese Methoden geben einen JSON-Antworttext mit einem [Zielgruppenprofil](#targe
 
 <span id="targeting-profile"/>
 
-## <a name="targeting-profile-object"></a>Zielgruppenprofil-Objekt
+## <a name="targeting-profile-object"></a>Profil Objekt für Ziel
 
-Die Anforderungs- und Antworttexte für diese Methoden enthalten die folgenden Felder. Die folgende Tabelle zeigt, welche Felder schreibgeschützt sind (d. h. sie können in der PUT-Methode nicht geändert werden) und welche Felder in dem Anforderungstext für die POST-Methode erforderlich sind.
+Die Anforderungs-und Antwort Texte für diese Methoden enthalten die folgenden Felder. Diese Tabelle zeigt, welche Felder schreibgeschützt sind (was bedeutet, dass Sie in der Put-Methode nicht geändert werden können) und welche Felder im Anforderungs Text für die Post-Methode erforderlich sind.
 
-| Feld        | Typ   |  Beschreibung      |  Schreibgeschützt  | Standard  | Erforderlich für POST |  
+| Feld        | type   |  BESCHREIBUNG      |  Nur Lesezugriff  | Standard  | Für Post erforderlich |  
 |--------------|--------|---------------|------|-------------|------------|
-|  id   |  Ganzzahl   |  Die ID des Zielgruppenprofils.     |   Ja    |       |   Nein      |       
-|  name   |  string   |   Der Name des Zielgruppenprofils.    |    Nein   |      |  Ja     |       
-|  targetingType   |  string   |  Einer der folgenden Werte: <ul><li>**Auto**: Geben Sie diesen Wert, um die Microsoft für die Zielgruppenadressierung basierte auf den Einstellungen für Ihre app im Partner Center Profil auswählen zu können.</li><li>**Manuell**: Geben Sie diesen Wert auf ein eigenes Profil für definieren.</li></ul>     |  Nein     |  Auto    |   Ja    |       
-|  Alter   |  array   |   Eine oder mehrere ganze Zahlen, die den Altersbereich der Benutzer in der Zielgruppe angeben. Eine vollständige Liste von ganzen Zahlen finden Sie unter [Alterswerte](#age-values) in diesem Artikel.    |    Nein    |  Null    |     Nein    |       
-|  gender   |  array   |  Eine oder mehrere Ganzzahlen, die das Geschlecht der Benutzer in der Zielgruppe angeben. Eine vollständige Liste von ganzen Zahlen finden Sie unter [Geschlechtswerte](#gender-values) in diesem Artikel.       |  Nein    |  Null    |     Nein    |       
-|  Land   |  array   |  Eine oder mehrere ganze Zahlen, die die Ländercodes der Benutzer in der Zielgruppe angeben. Eine vollständige Liste von ganzen Zahlen finden Sie unter [Ländercodewerte](#country-code-values) in diesem Artikel.    |  Nein    |  Null   |      Nein   |       
-|  osVersion   |  array   |   Eine oder mehrere ganze Zahlen, die die Betriebssystemversionen der Benutzer in der Zielgruppe angeben. Eine vollständige Liste von ganzen Zahlen finden Sie unter [Betriebssystemversionswerte](#osversion-values) in diesem Artikel.     |   Nein    |  Null   |     Nein    |       
-|  deviceType   | array    |  Eine oder mehrere ganze Zahlen, die die Gerätetypen der Benutzer in der Zielgruppe angeben. Eine vollständige Liste von ganzen Zahlen finden Sie unter [Gerätetypenwerte](#devicetype-values) in diesem Artikel.       |   Nein    |  Null    |    Nein     |       
-|  supplyType   |  array   |  Eine oder mehrere ganze Zahlen, die den Bestandstyp angeben, in dem die Anzeigen der Kampagne angezeigt werden sollen. Eine vollständige Liste von ganzen Zahlen finden Sie unter [Bestandstypenwerte](#supplytype-values) in diesem Artikel.      |   Nein    |  Null   |     Nein    |   |  
+|  id   |  integer   |  Die ID des Ziel Profils.     |   Ja    |       |   Nein      |       
+|  name   |  Zeichenfolge   |   Der Name des Ziel Profils.    |    Nein   |      |  Ja     |       
+|  targetingType   |  Zeichenfolge   |  Einer der folgenden Werte: <ul><li>**Auto**: Geben Sie diesen Wert an, damit Microsoft das Ziel Profil basierend auf den Einstellungen für Ihre APP im Partner Center auswählen kann.</li><li>**Manuell**: Geben Sie diesen Wert an, um Ihr eigenes Ziel Profil zu definieren.</li></ul>     |  Nein     |  Auto    |   Yes    |       
+|  age   |  array   |   Eine oder mehrere ganze Zahlen, die die Alters Bereiche der Ziel Benutzer identifizieren. Eine vollständige Liste mit ganzen Zahlen finden Sie in diesem Artikel unter [Alters Werte](#age-values) .    |    Nein    |  NULL    |     Nein    |       
+|  gender   |  array   |  Eine oder mehrere ganze Zahlen, die die genderer der Ziel Benutzer identifizieren. Eine umfassende Liste mit ganzen Zahlen finden Sie in diesem Artikel unter " [Geschlecht Values](#gender-values) ".       |  Nein    |  NULL    |     Nein    |       
+|  country   |  array   |  Eine oder mehrere ganze Zahlen, die die Ländercodes der Ziel Benutzer identifizieren. Eine umfassende Liste mit ganzen Zahlen finden Sie unter [Ländercode Werte](#country-code-values) in diesem Artikel.    |  Nein    |  NULL   |      Nein   |       
+|  osVersion   |  array   |   Eine oder mehrere ganze Zahlen, die die Betriebssystemversionen der Ziel Benutzer identifizieren. Eine vollständige Liste mit ganzen Zahlen finden Sie in diesem Artikel unter [Werte der Betriebssystemversion](#osversion-values) .     |   Nein    |  NULL   |     Nein    |       
+|  deviceType   | array    |  Eine oder mehrere ganze Zahlen, die die Gerätetypen der Ziel Benutzer identifizieren. Eine umfassende Liste mit ganzen Zahlen finden Sie in diesem Artikel unter [Gerätetyp Werte](#devicetype-values) .       |   Nein    |  NULL    |    Nein     |       
+|  supplytype   |  array   |  Mindestens ein Integer-Wert, der den Typ des Bestands identifiziert, in dem die Werbeeinblendungen angezeigt werden. Eine umfassende Liste mit ganzen Zahlen finden Sie in diesem Artikel unter [Angeben von Typwerten](#supplytype-values) .      |   Nein    |  NULL   |     Nein    |
 
 
 <span id="age-values"/>
 
-### <a name="age-values"></a>Alterswerte
+### <a name="age-values"></a>Alters Werte
 
-Das Feld *Alter* im Objekt [TargetingProfile](#targeting-profile) enthält eine oder mehrere der folgenden Ganzzahlen, die den Altersbereich der Benutzer in der Zielgruppe angeben.
+Das Feld " *Age* " im Objekt " [targetingprofile](#targeting-profile) " enthält mindestens einen der folgenden Ganzzahlen, die die Alters Bereiche der Ziel Benutzer identifizieren.
 
-|  Ganzzahliger Wert für Feld *Alter*  |  Entsprechender Altersbereich  |  
+|  Ganzzahliger Wert für *Alters* Feld  |  Entsprechender Altersbereich  |  
 |---------------------------------|---------------------------|
 |     651     |            13 bis 17             |
 |     652     |           18 bis 24             |
 |     653     |            25 bis 34             |
 |     654     |            35 bis 49             |
-|     655     |            50 und älter             |
+|     655     |            50 und höher             |
 
-Die unterstützten Werte für das Feld *age* können Sie programmgesteuert erhalten, indem Sie die folgende GET-Methode aufrufen.  Für die ```Authorization``` -Header, übergeben Sie Ihr Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;.
+Wenn Sie die unterstützten Werte für das Feld " *Age* " Programm gesteuert abrufen möchten, können Sie die folgende Get-Methode abrufen.  Übergeben Sie für den- ```Authorization``` Header das Azure AD Zugriffs Token im Formular  &lt; *bearertoken* &gt; .
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/age
 Authorization: Bearer <your access token>
 ```
 
-Mit dem folgenden Codebeispiel wird der Antworttext für diese Methode veranschaulicht.
+Das folgende Beispiel zeigt den Antworttext für diese Methode.
 
 ```json
 {
@@ -191,23 +191,23 @@ Mit dem folgenden Codebeispiel wird der Antworttext für diese Methode veranscha
 
 <span id="gender-values"/>
 
-### <a name="gender-values"></a>Geschlechtswerte
+### <a name="gender-values"></a>Geschlechts Werte
 
-Das Feld *Geschlecht* im Objekt [TargetingProfile](#targeting-profile) enthält eine oder mehrere der folgenden Ganzzahlen, die das Geschlecht der Benutzer in der Zielgruppe angeben.
+Das Feld *Geschlecht* im [targetingprofile](#targeting-profile) -Objekt enthält mindestens eine der folgenden Ganzzahlen, die die genderer der Ziel Benutzer identifizieren.
 
-|  Ganzzahliger Wert für das Feld *gender*  |  Entsprechendes Geschlecht  |  
+|  Ganzzahliger Wert für das Feld *Geschlecht*  |  Entsprechendes Geschlecht  |  
 |---------------------------------|---------------------------|
-|     700     |            Männlich             |
-|     701     |           Weiblich             |
+|     700     |            Male             |
+|     701     |           Female             |
 
-Die unterstützten Werte für das Feld *gender* können Sie programmgesteuert erhalten, indem Sie die folgende GET-Methode aufrufen.  Für die ```Authorization``` -Header, übergeben Sie Ihr Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;.
+Wenn Sie die unterstützten Werte für das Feld *Geschlecht* Programm gesteuert abrufen möchten, können Sie die folgende Get-Methode abrufen.  Übergeben Sie für den- ```Authorization``` Header das Azure AD Zugriffs Token im Formular  &lt; *bearertoken* &gt; .
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/gender
 Authorization: Bearer <your access token>
 ```
 
-Mit dem folgenden Codebeispiel wird der Antworttext für diese Methode veranschaulicht.
+Das folgende Beispiel zeigt den Antworttext für diese Methode.
 
 ```json
 {
@@ -223,31 +223,31 @@ Mit dem folgenden Codebeispiel wird der Antworttext für diese Methode veranscha
 
 <span id="osversion-values"/>
 
-### <a name="os-version-values"></a>Werte für Betriebssystemversion
+### <a name="os-version-values"></a>Betriebssystem-Versions Werte
 
-Das Feld *Betriebssystemversion* im Objekt [TargetingProfile](#targeting-profile) enthält eine oder mehrere der folgenden Ganzzahlen, die die Betriebssystemversion der Benutzer in der Zielgruppe angeben.
+Das *OSVersion* -Feld im [targetingprofile](#targeting-profile) -Objekt enthält mindestens eine der folgenden Ganzzahlen, die die Betriebssystemversionen der Ziel Benutzer identifizieren.
 
-|  Ganzzahliger Wert für das Feld *osVersion*  |  Entsprechende Betriebssystemversion  |  
+|  Ganzzahliger Wert für *OSVersion* -Feld  |  Zugehörige Betriebssystemversion  |  
 |---------------------------------|---------------------------|
-|     500     |            Windows Phone 7             |
-|     501     |           Windows Phone 7.1             |
+|     500     |            Windows Phone 7             |
+|     501     |           Windows Phone 7.1             |
 |     502     |           Windows Phone 7.5             |
-|     503     |           Windows Phone 7.8             |
+|     503     |           Windows Phone 7,8             |
 |     504     |           Windows Phone 8.0             |
-|     505     |           Windows Phone 8.1             |
-|     506     |           Windows 8.0             |
-|     507     |           Windows 8.1             |
-|     508     |           Windows 10             |
-|     509     |           Windows 10 Mobile             |
+|     505     |           Windows Phone 8.1             |
+|     506     |           Windows 8.0             |
+|     507     |           Windows 8.1             |
+|     508     |           Windows 10             |
+|     509     |           Windows 10 Mobile             |
 
-Die unterstützten Werte für das Feld *osVersion* können Sie programmgesteuert erhalten, indem Sie die folgende GET-Methode aufrufen.  Für die ```Authorization``` -Header, übergeben Sie Ihr Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;.
+Wenn Sie die unterstützten Werte für das Feld *OSVersion* Programm gesteuert abrufen möchten, können Sie die folgende Get-Methode abrufen.  Übergeben Sie für den- ```Authorization``` Header das Azure AD Zugriffs Token im Formular  &lt; *bearertoken* &gt; .
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/osversion
 Authorization: Bearer <your access token>
 ```
 
-Mit dem folgenden Codebeispiel wird der Antworttext für diese Methode veranschaulicht.
+Das folgende Beispiel zeigt den Antworttext für diese Methode.
 
 ```json
 {
@@ -271,23 +271,23 @@ Mit dem folgenden Codebeispiel wird der Antworttext für diese Methode veranscha
 
 <span id="devicetype-values"/>
 
-### <a name="device-type-values"></a>Werte für Gerätetyp
+### <a name="device-type-values"></a>Gerätetyp Werte
 
-Das Feld *deviceType* im Objekt [TargetingProfile](#targeting-profile) enthält eine oder mehrere der folgenden Ganzzahlen, die die Gerätetypen der Benutzer in der Zielgruppe angeben.
+Das Feld " *DeviceType* " im Objekt " [targetingprofile](#targeting-profile) " enthält mindestens einen der folgenden Ganzzahlen, die die Gerätetypen der Ziel Benutzer identifizieren.
 
-|  Ganzzahliger Wert für das Feld *deviceType*  |  Entsprechender Gerätetyp  |  Beschreibung  |
+|  Ganzzahliger Wert für das *DeviceType* -Feld  |  Entsprechender Gerätetyp  |  BESCHREIBUNG  |
 |---------------------------------|---------------------------|---------------------------|
-|     710     |  Windows   |  Hierbei handelt es sich um Geräte mit einer Desktop-Version von Windows 10 oder Windows 8.x.  |
-|     711     |  Phone     |  Hierbei handelt es sich um Geräte unter Windows 10 Mobile, Windows Phone 8.x oder Windows Phone 7.x.
+|     710     |  Windows   |  Dabei handelt es sich um Geräte, auf denen eine Desktop Version von Windows 10 oder Windows 8. x ausgeführt wird.  |
+|     711     |  Phone     |  Dabei handelt es sich um Geräte, auf denen Windows 10 Mobile, Windows Phone 8. x oder Windows Phone 7. x ausgeführt wird.
 
-Die unterstützten Werte für das Feld *deviceType* können Sie programmgesteuert erhalten, indem Sie die folgende GET-Methode aufrufen.  Für die ```Authorization``` -Header, übergeben Sie Ihr Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;.
+Wenn Sie die unterstützten Werte für das Feld *DeviceType* Programm gesteuert abrufen möchten, können Sie die folgende Get-Methode abrufen.  Übergeben Sie für den- ```Authorization``` Header das Azure AD Zugriffs Token im Formular  &lt; *bearertoken* &gt; .
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/devicetype
 Authorization: Bearer <your access token>
 ```
 
-Mit dem folgenden Codebeispiel wird der Antworttext für diese Methode veranschaulicht.
+Das folgende Beispiel zeigt den Antworttext für diese Methode.
 
 ```json
 {
@@ -303,23 +303,23 @@ Mit dem folgenden Codebeispiel wird der Antworttext für diese Methode veranscha
 
 <span id="supplytype-values"/>
 
-### <a name="supply-type-values"></a>Werte für Bestandstypen
+### <a name="supply-type-values"></a>Typwerte angeben
 
-Das Feld *supplyType* im Objekt [TargetingProfile](#targeting-profile) enthält eine oder mehrere der folgenden Ganzzahlen, die den Bestandstyp angeben, in dem die Kampagnenanzeigen angezeigt werden.
+Das Feld *supplytype* im [targetingprofile](#targeting-profile) -Objekt enthält mindestens eine der folgenden Ganzzahlen, die den Typ des Inventars identifizieren, in dem die Werbeeinblendungen angezeigt werden.
 
-|  Ganzzahliger Wert für das Feld *SupplyType*  |  Entsprechender Bestandstyp  |  Beschreibung  |
+|  Ganzzahliger Wert für *supplytype* -Feld  |  Entsprechender Typ der Bereitstellung  |  BESCHREIBUNG  |
 |---------------------------------|---------------------------|---------------------------|
-|     11470     |  App        |  Dies bezieht sich auf Anzeigen, die ausschließlich in Apps angezeigt werden.  |
-|     11471     |  Universelle        |  Dies bezieht sich auf Anzeigen, die in Apps, im Internet und auf anderen Anzeigeflächen angezeigt werden.  |
+|     11470     |  App        |  Dies bezieht sich auf anzeigen, die nur in-apps angezeigt werden.  |
+|     11471     |  Universell        |  Dies bezieht sich auf Werbeeinblendungen, die in-apps, im Web und auf anderen Anzeige Oberflächen angezeigt werden.  |
 
-Die unterstützten Werte für das Feld *supplyType* können Sie programmgesteuert erhalten, indem Sie die folgende GET-Methode aufrufen.  Für die ```Authorization``` -Header, übergeben Sie Ihr Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;.
+Wenn Sie die unterstützten Werte für das Feld *supplytype* Programm gesteuert abrufen möchten, können Sie die folgende Get-Methode abrufen.  Übergeben Sie für den- ```Authorization``` Header das Azure AD Zugriffs Token im Formular  &lt; *bearertoken* &gt; .
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/supplytype
 Authorization: Bearer <your access token>
 ```
 
-Mit dem folgenden Codebeispiel wird der Antworttext für diese Methode veranschaulicht.
+Das folgende Beispiel zeigt den Antworttext für diese Methode.
 
 ```json
 {
@@ -334,21 +334,21 @@ Mit dem folgenden Codebeispiel wird der Antworttext für diese Methode veranscha
 
 <span id="country-code-values"/>
 
-### <a name="country-code-values"></a>Werte für Ländercode
+### <a name="country-code-values"></a>Ländercode Werte
 
-Das Feld *country* in dem Objekt [TargetingProfile](#targeting-profile) enthält eine oder mehrere der folgenden Ganzzahlen, die die [ISO 3166-1-Alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) Ländercodes der Zielgruppenbenutzer identifizieren.
+Das Feld *Country* im [targetingprofile](#targeting-profile) -Objekt enthält mindestens eine der folgenden Ganzzahlen, die die [ISO 3166-1 Alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) -Ländercodes der Ziel Benutzer identifizieren.
 
-|  Ganzzahliger Wert für das Feld *country*  |  Entsprechender Ländercode  |  
+|  Ganzzahliger Wert für *Country* -Feld  |  Entsprechender Ländercode  |  
 |-------------------------------------|------------------------------|
-|     1      |            USA                  |
+|     1      |            US                  |
 |     2      |            AU                  |
 |     3      |            AT                  |
 |     4      |            BE                  |
 |     5      |            BR                  |
-|     6      |            KA                  |
+|     6      |            CA                  |
 |     7      |            DK                  |
 |     8      |            FI                  |
-|     9      |            FR                  |
+|     9      |            BV                  |
 |     10      |            DE                  |
 |     11      |            GR                  |
 |     12      |            HK                  |
@@ -360,7 +360,7 @@ Das Feld *country* in dem Objekt [TargetingProfile](#targeting-profile) enthält
 |     18      |            MX                  |
 |     19      |            NL                  |
 |     20      |            NZ                  |
-|     21      |            NEIN                  |
+|     21      |            Nein                  |
 |     22      |            PL                  |
 |     23      |            PT                  |
 |     24      |            SG                  |
@@ -380,7 +380,7 @@ Das Feld *country* in dem Objekt [TargetingProfile](#targeting-profile) enthält
 |     38      |            RO                  |
 |     39      |            TR                  |
 |     40      |            SK                  |
-|     41      |            IL                  |
+|     41      |            BY                  |
 |     42      |            ID                  |
 |     43      |            AR                  |
 |     44      |            MY                  |
@@ -398,8 +398,8 @@ Das Feld *country* in dem Objekt [TargetingProfile](#targeting-profile) enthält
 |     56      |            BG                  |
 |     57      |            LT                  |
 |     58      |            RS                  |
-|     59      |            Personalabteilung                  |
-|     60      |            Personalabteilung                  |
+|     59      |            HR                  |
+|     60      |            HR                  |
 |     61      |            LV                  |
 |     62      |            EE                  |
 |     63      |            IS                  |
@@ -427,7 +427,7 @@ Das Feld *country* in dem Objekt [TargetingProfile](#targeting-profile) enthält
 |     101      |            EG                  |
 |     102      |            SV                  |
 |     107      |            FJ                  |
-|     108      |            GA                  |
+|     108      |            Allgemein verfügbar                  |
 |     110      |            GE                  |
 |     111      |            GH                  |
 |     114      |            GT                  |
@@ -445,7 +445,7 @@ Das Feld *country* in dem Objekt [TargetingProfile](#targeting-profile) enthält
 |     138      |            MT                  |
 |     141      |            MU                  |
 |     145      |            ME                  |
-|     146      |            MA                  |
+|     146      |            NI                  |
 |     147      |            MZ                  |
 |     148      |            Nicht verfügbar                  |
 |     150      |            NP                  |
@@ -453,7 +453,7 @@ Das Feld *country* in dem Objekt [TargetingProfile](#targeting-profile) enthält
 |     153      |            NG                  |
 |     154      |            OM                  |
 |     155      |            PK                  |
-|     157      |            AA                  |
+|     157      |            PA                  |
 |     159      |            PY                  |
 |     167      |            SN                  |
 |     172      |            LK                  |
@@ -470,14 +470,14 @@ Das Feld *country* in dem Objekt [TargetingProfile](#targeting-profile) enthält
 |     225      |            RE                  |
 |     246      |            PR                  |
 
-Die unterstützten Werte für das Feld *country* können Sie programmgesteuert erhalten, indem Sie die folgende GET-Methode aufrufen.  Für die ```Authorization``` -Header, übergeben Sie Ihr Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;.
+Wenn Sie die unterstützten Werte für das Feld *Country* Programm gesteuert abrufen möchten, können Sie die folgende Get-Methode abrufen.  Übergeben Sie für den- ```Authorization``` Header das Azure AD Zugriffs Token im Formular  &lt; *bearertoken* &gt; .
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/country
 Authorization: Bearer <your access token>
 ```
 
-Mit dem folgenden Codebeispiel wird der Antworttext für diese Methode veranschaulicht.
+Das folgende Beispiel zeigt den Antworttext für diese Methode.
 
 ```json
 {
@@ -617,10 +617,10 @@ Mit dem folgenden Codebeispiel wird der Antworttext für diese Methode veranscha
 }
 ```
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Ausführen von Ad-Kampagnen, die mithilfe von Microsoft Store Services](run-ad-campaigns-using-windows-store-services.md)
-* [Ad-Kampagnen verwalten](manage-ad-campaigns.md)
-* [Übermittlung Zeilen für Ad-Kampagnen verwalten](manage-delivery-lines-for-ad-campaigns.md)
-* [Verwalten von Werbemitteln für Ad-Kampagnen](manage-creatives-for-ad-campaigns.md)
-* [Ad-Kampagne-Leistungsdaten abrufen](get-ad-campaign-performance-data.md)
+* [Ausführen von Ad-Kampagnen mithilfe von Microsoft Store Services](run-ad-campaigns-using-windows-store-services.md)
+* [Verwalten von Anzeigenkampagnen](manage-ad-campaigns.md)
+* [Verwalten von Übermittlungs Zeilen für Werbekampagnen](manage-delivery-lines-for-ad-campaigns.md)
+* [Verwalten von kreativen für Werbekampagnen](manage-creatives-for-ad-campaigns.md)
+* [Abrufen der Leistungsdaten einer Anzeigenkampagne](get-ad-campaign-performance-data.md)

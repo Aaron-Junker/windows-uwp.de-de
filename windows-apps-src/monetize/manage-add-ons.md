@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Übermittlungs-API, Add-ons, in-App-Produkt, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ec2213f5a46318f3aaddbbe5d55b58f6816fcce
-ms.sourcegitcommit: 48702934676ae366fd46b7d952396c5e2fb2cbbe
+ms.openlocfilehash: 53fc255c85c3102d26110d05e20ebdee26b70ed9
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97927782"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619596"
 ---
 # <a name="manage-add-ons"></a>Verwalten von Add-Ons
 
@@ -49,7 +49,7 @@ Diese Methoden können nur verwendet werden, um Add-Ons abzurufen, zu erstellen 
 <td align="left"><a href="create-an-add-on.md">Erstellen eines Add-Ons</a></td>
 </tr>
 <tr>
-<td align="left">DELETE</td>
+<td align="left">Delete</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}</td>
 <td align="left"><a href="delete-an-add-on.md">Löschen eines Add-Ons</a></td>
 </tr>
@@ -104,7 +104,7 @@ Die Ressource hat die folgenden Werte.
 | productId | Zeichenfolge  | Die Produkt-ID des Add-Ons. Dies ist die ID, die vom Entwickler während der Erstellung des Add-Ons angegeben wurde. Weitere Informationen finden Sie unter [Festlegen von Produkttyp und Produkt-ID für das IAP](../publish/set-your-add-on-product-id.md). |
 | productType | Zeichenfolge  | Der Produkttyp des Add-Ons. Die folgenden Werte werden unterstützt: **Durable** und **Consumable**.  |
 | lastPublishedInAppProductSubmission       | Objekt (object) | Eine [Übermittlungsressource](#submission-object) mit Informationen über die letzte veröffentlichte Übermittlung für das Add-On.         |
-| pendingInAppProductSubmission        | Objekt (object)  |  Eine [Übermittlungsressource](#submission-object) mit Informationen über die aktuelle ausstehende Übermittlung für das Add-On.  |   |
+| pendingInAppProductSubmission        | Objekt (object)  |  Eine [Übermittlungsressource](#submission-object) mit Informationen über die aktuelle ausstehende Übermittlung für das Add-On.  |
 
 <span id="application-object" />
 

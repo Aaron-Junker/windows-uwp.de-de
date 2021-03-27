@@ -4,14 +4,14 @@ description: Erfahren Sie, wie Sie In-App-Käufe und Testversionen in UWP-Apps a
 title: In-App-Käufe und Testversionen mit dem Windows.ApplicationModel.Store-Namespace
 ms.date: 08/25/2017
 ms.topic: article
-keywords: UWP, in-App-Käufe, IAPS, Add-ons, Tests, Windows. applicationmodel. Store
+keywords: UWP, in-App-Käufe, IAPS, Add-ons, Tests, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ee18b6ea4cc8a2e77a970a273bc4a8a51516247
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: be4932725104cc96999f733d8729d37d47694e87
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162354"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619426"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>In-App-Käufe und Testversionen mit dem Windows.ApplicationModel.Store-Namespace
 
@@ -20,13 +20,13 @@ Sie können Mitglieder des [Windows.ApplicationModel.Store](/uwp/api/windows.app
 Die Artikel in diesem Abschnitt enthalten ausführliche Anleitungen und Codebeispiele für die Verwendung der Mitgliedern des **Windows.ApplicationModel.Store**-Namespace für verschiedene häufige Szenarien. Eine Übersicht über die Basiskonzepte im Zusammenhang mit In-App-Käufen in UWP-Apps finden Sie unter [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md). Ein vollständiges Beispiel, das zeigt, wie Sie Testversionen und In-App-Käufe mithilfe des **Windows.ApplicationModel.Store**-Namespace implementieren, finden Sie im [Store-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
 
 > [!IMPORTANT]
-> Der **Windows. applicationmodel. Store** -Namespace wird nicht mehr mit neuen Features aktualisiert. Wenn Ihr Projekt auf **Windows 10 Anniversary Edition abzielt (10,0; Build 14393)** oder eine neuere Version in Visual Studio (d. h. Sie verwenden Windows 10, Version 1607 oder höher), empfiehlt es sich, stattdessen den [Windows. Services. Store](/uwp/api/windows.services.store) -Namespace zu verwenden. Weitere Informationen finden Sie unter [In-App-Käufe und Testversionen](./in-app-purchases-and-trials.md). Der **Windows. applicationmodel. Store** -Namespace wird nicht in Windows-Desktop Anwendungen unterstützt, die die [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) verwenden, oder in Apps oder spielen, die eine Entwicklungs Sandbox im Partner Center verwenden (z. b. bei jedem Spiel, das in Xbox Live integriert ist). Diese Produkte müssen den **Windows. Services. Store** -Namespace verwenden, um in-App-Käufe und-Testversionen zu implementieren.
+> Der **Windows.ApplicationModel.Store** -Namespace wird nicht mehr mit neuen Features aktualisiert. Wenn Ihr Projekt auf **Windows 10 Anniversary Edition abzielt (10,0; Build 14393)** oder eine neuere Version in Visual Studio (d. h. Sie verwenden Windows 10, Version 1607 oder höher), empfiehlt es sich, stattdessen den [Windows.Services.Store](/uwp/api/windows.services.store) -Namespace zu verwenden. Weitere Informationen finden Sie unter [In-App-Käufe und Testversionen](./in-app-purchases-and-trials.md). Der **Windows.ApplicationModel.Store** -Namespace wird nicht in Windows-Desktop Anwendungen unterstützt, die die [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) oder in Apps oder spielen verwenden, die eine Entwicklungs Sandbox im Partner Center verwenden (z. b. bei jedem Spiel, das in Xbox Live integriert ist). Diese Produkte müssen den **Windows.Services.Store** -Namespace verwenden, um in-App-Käufe und-Testversionen zu implementieren.
 
 ## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>Erste Schritte mit den Klassen CurrentApp und CurrentAppSimulator
 
 Den Haupteinstiegspunkt in den **Windows.ApplicationModel.Store**-Namespace stellt die Klasse [CurrentApp](/uwp/api/windows.applicationmodel.store.currentapp) dar. Diese Klasse stellt statische Eigenschaften und Methoden bereit, die Sie verwenden können, um Informationen für die aktuelle APP und die verfügbaren Add-ons zu erhalten, Lizenzinformationen für die aktuelle APP oder deren Add-ons zu erhalten, eine APP oder ein Add-on für den aktuellen Benutzer zu erwerben und andere Aufgaben auszuführen.
 
-Die [currentapp](/uwp/api/windows.applicationmodel.store.currentapp) -Klasse ruft Ihre Daten aus der Microsoft Store ab, sodass Sie über ein Entwicklerkonto verfügen müssen und die APP im Store veröffentlicht werden muss, bevor Sie diese Klasse in Ihrer APP erfolgreich verwenden können. Vor dem Übermitteln Ihrer App an den Store können Sie den Code mit einer simulierten Version dieser Klasse mit dem Namen [CurrentAppSimulator](/uwp/api/windows.applicationmodel.store.currentappsimulator) testen. Nachdem Sie Ihre APP getestet haben und bevor Sie Sie an den Microsoft Store senden, müssen Sie die Instanzen von **currentappsimulator** durch **currentapp**ersetzen. Ihre App wird nicht zertifiziert, wenn sie **CurrentAppSimulator** verwendet.
+Die [currentapp](/uwp/api/windows.applicationmodel.store.currentapp) -Klasse ruft Ihre Daten aus der Microsoft Store ab, sodass Sie über ein Entwicklerkonto verfügen müssen und die APP im Store veröffentlicht werden muss, bevor Sie diese Klasse in Ihrer APP erfolgreich verwenden können. Vor dem Übermitteln Ihrer App an den Store können Sie den Code mit einer simulierten Version dieser Klasse mit dem Namen [CurrentAppSimulator](/uwp/api/windows.applicationmodel.store.currentappsimulator) testen. Nachdem Sie Ihre APP getestet haben und bevor Sie Sie an den Microsoft Store senden, müssen Sie die Instanzen von **currentappsimulator** durch **currentapp** ersetzen. Ihre App wird nicht zertifiziert, wenn sie **CurrentAppSimulator** verwendet.
 
 Wenn **CurrentAppSimulator** verwendet wird, wird der ursprünglichen Status der Lizenzierung Ihrer App und In-App-Produkte in einer lokalen Datei mit dem Namen WindowsStoreProxy.xml auf Ihrem Entwicklungscomputer beschrieben. Weitere Informationen zu dieser Datei finden Sie unter [Verwenden der Datei „WindowsStoreProxy.xml“ mit CurrentAppSimulator](#proxy).
 
@@ -51,7 +51,7 @@ Eine WindowsStoreProxy.xml Datei wird standardmäßig an folgendem Speicherort e
 Auch wenn Sie die Werte in dieser Datei ändern können, wird empfohlen, dass Sie eine eigene WindowsStoreProxy.xml-Datei (in einem Datenordner des Visual Studio-Projekts) zur Verwendung durch **CurrentAppSimulator** erstellen. Rufen Sie [ReloadSimulatorAsync](/uwp/api/windows.applicationmodel.store.currentappsimulator.reloadsimulatorasync) auf, um Ihre Datei zu laden, wenn Sie die Transaktion simulieren. Wenn Sie **ReloadSimulatorAsync** nicht aufrufen, um Ihre eigene WindowsStoreProxy.xml-Datei zu laden, erstellt/lädt **CurrentAppSimulator** die standardmäßige WindowsStoreProxy.xml-Datei (überschreibt sie jedoch nicht).
 
 > [!NOTE]
-> Beachten Sie, dass **currentappsimulator** nicht vollständig initialisiert ist, bis **reloadsimulatorasync** abgeschlossen ist. Und da **ReloadSimulatorAsync** eine asynchrone Methode ist, müssen Sie darauf achten, eine Racebedingung zu vermeiden, in der **CurrentAppSimulator** in einem Thread abgefragt und gleichzeitig in einem anderen Thread initialisiert wird. Eine Möglichkeit besteht darin, ein Flag verwenden, um anzugeben, dass die Initialisierung abgeschlossen ist. Eine APP, die aus dem Microsoft Store installiert wird, muss **currentapp** anstelle von **currentappsimulator**verwenden, und in diesem Fall wird **reloadsimulatorasync** nicht aufgerufen. Daher gilt die eben erwähnte Racebedingung nicht. Entwerfen Sie aus diesem Grund den Code so, dass er in beiden Fällen sowohl asynchron als auch synchron funktioniert.
+> Beachten Sie, dass **currentappsimulator** nicht vollständig initialisiert ist, bis **reloadsimulatorasync** abgeschlossen ist. Und da **ReloadSimulatorAsync** eine asynchrone Methode ist, müssen Sie darauf achten, eine Racebedingung zu vermeiden, in der **CurrentAppSimulator** in einem Thread abgefragt und gleichzeitig in einem anderen Thread initialisiert wird. Eine Möglichkeit besteht darin, ein Flag verwenden, um anzugeben, dass die Initialisierung abgeschlossen ist. Eine APP, die aus dem Microsoft Store installiert wird, muss **currentapp** anstelle von **currentappsimulator** verwenden, und in diesem Fall wird **reloadsimulatorasync** nicht aufgerufen. Daher gilt die eben erwähnte Racebedingung nicht. Entwerfen Sie aus diesem Grund den Code so, dass er in beiden Fällen sowohl asynchron als auch synchron funktioniert.
 
 
 <span id="proxy-examples" />
@@ -355,7 +355,7 @@ In diesem Abschnitt werden die Elemente und Attribute in der WindowsStoreProxy.x
 
 Das Stammelement dieser Datei ist das **CurrentApp**-Element, das die aktuelle App darstellt. Dieses Element enthält die folgenden untergeordneten Elemente.
 
-|  Element  |  Erforderlich  |  Quantity (Menge)  |  BESCHREIBUNG   |
+|  Element  |  Erforderlich  |  Menge  |  BESCHREIBUNG   |
 |-------------|------------|--------|--------|
 |  [ListingInformation](#listinginformation)  |    Ja        |  1  |  Enthält Daten aus dem App Eintrag.            |
 |  [LicenseInformation](#licenseinformation)  |     Ja       |   1    |   Beschreibt die Lizenzen, die für diese App verfügbar sind, und ihre dauerhaften Add-Ons.     |
@@ -370,10 +370,10 @@ Dieses Element enthält Daten aus dem App Eintrag. **ListingInformation** ist ei
 
 **ListingInformation** enthält die folgenden untergeordneten Elemente.
 
-|  Element  |  Erforderlich  |  Quantity (Menge)  |  BESCHREIBUNG   |
+|  Element  |  Erforderlich  |  Menge  |  BESCHREIBUNG   |
 |-------------|------------|--------|--------|
 |  [App](#app-child-of-listinginformation)  |    Ja   |  1   |    Stellt Daten zur App bereit.         |
-|  [Produkt](#product-child-of-listinginformation)  |    Nein  |  0 oder mehr   |      Beschreibt ein Add-On für die App.     |     |
+|  [Produkt](#product-child-of-listinginformation)  |    Nein  |  0 oder mehr   |      Beschreibt ein Add-On für die App.     |
 
 <span id="app-child-of-listinginformation"/>
 
@@ -383,13 +383,13 @@ Dieses Element beschreibt die App-Lizenz. **App** ist ein erforderliches unterge
 
 **App** enthält die folgenden untergeordneten Elemente.
 
-|  Element  |  Erforderlich  |  Quantity (Menge)  | BESCHREIBUNG   |
+|  Element  |  Erforderlich  |  Menge  | BESCHREIBUNG   |
 |-------------|------------|--------|--------|
 |  **AppId**  |    Ja   |  1   |   Die GUID, die die App im Store identifiziert. Dies kann eine beliebige GUID für Tests sein.        |
 |  **LinkUri**  |    Ja  |  1   |    Der URI der Eintragsseite im Store. Dies kann ein beliebiger URI für Tests sein.         |
 |  **CurrentMarket**  |    Ja  |  1   |    Das Land/die Region des Kunden.         |
 |  **AgeRating**  |    Ja  |  1   |     Eine ganze Zahl, die die Mindestaltersfreigabe der App darstellt. Dies ist derselbe Wert, den Sie in Partner Center angeben würden, wenn Sie die APP übermitteln. Die vom Store verwendeten Werte sind: 3, 7, 12 und 16. Weitere Informationen zu diesen Bewertungen finden Sie unter [Altersfreigaben](../publish/age-ratings.md).        |
-|  [MarketData](#marketdata-child-of-app)  |    Ja  |  Mindestens 1      |    Enthält Informationen über die App für ein bestimmtes Land oder eine bestimmte Region. Für jedes Land/jede Region, in denen die App eingetragen ist, müssen Sie ein **MarketData**-Element einschließen.       |    |
+|  [MarketData](#marketdata-child-of-app)  |    Yes  |  Mindestens 1      |    Enthält Informationen über die App für ein bestimmtes Land oder eine bestimmte Region. Für jedes Land/jede Region, in denen die App eingetragen ist, müssen Sie ein **MarketData**-Element einschließen.       |
 
 <span id="marketdata-child-of-app"/>
 
@@ -399,19 +399,19 @@ Dieses Element stellt Informationen zur App für ein bestimmtes Land oder eine b
 
 **MarketData** enthält die folgenden untergeordneten Elemente.
 
-|  Element  |  Erforderlich  |  Quantity (Menge)  | BESCHREIBUNG   |
+|  Element  |  Erforderlich  |  Menge  | BESCHREIBUNG   |
 |-------------|------------|--------|--------|
 |  **Name**  |    Ja   |  1   |   Der Name der App in diesem Land/dieser Region.        |
 |  **Beschreibung**  |    Ja  |  1   |      Die Beschreibung der App für dieses Land/diese Region.       |
 |  **Preis**  |    Ja  |  1   |     Der Preis der App in diesem Land/dieser Region.        |
 |  **CurrencySymbol**  |    Ja  |  1   |     Das Währungssymbol, das in diesem Land/dieser Region verwendet wird.        |
-|  **Vorkommnisse**  |    Nein  |  0 oder 1      |      Der Währungscode, der in diesem Land/dieser Region verwendet wird.         |  |
+|  **CurrencyCode**  |    Nein  |  0 oder 1      |      Der Währungscode, der in diesem Land/dieser Region verwendet wird.         |
 
 **MarketData** hat die folgenden Attribute.
 
 |  attribute  |  Erforderlich  |  BESCHREIBUNG   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    Ja        |     Gibt das Land/die Region an, für das/die die Marktdateninformationen gelten.          |  |
+|  **xml:lang**  |    Yes        |     Gibt das Land/die Region an, für das/die die Marktdateninformationen gelten.          |
 
 <span id="product-child-of-listinginformation"/>
 
@@ -423,9 +423,9 @@ Dieses Element beschreibt ein Add-On für die App. **Product** ist ein optionale
 
 |  attribute  |  Erforderlich  |  BESCHREIBUNG   |
 |-------------|------------|----------------|
-|  **ProductId**  |    Ja        |    Enthält die Zeichenfolge, die von der App zur Identifizierung des Add-Ons verwendet wird.           |
+|  **ProductId**  |    Yes        |    Enthält die Zeichenfolge, die von der App zur Identifizierung des Add-Ons verwendet wird.           |
 |  **LicenseDuration**  |    Nein        |    Gibt die Anzahl der Tage an, für die die Lizenz gültig sein wird, nachdem der Artikel gekauft wurde. Das Ablaufdatum der neuen, durch einen Produktkauf erstellten Lizenz ist das Kaufdatum plus Lizenzdauer. Dieses Attribut wird nur verwendet, wenn das **ProductType**-Attribut **Durable** ist. Dieses Attribut wird für konsumierbare Add-Ons ignoriert.           |
-|  **ProductType**  |    Nein        |    Enthält einen Wert für die Identifizierung der Persistenz des In-App-Produkts. Die unterstützten Werte sind **Durable** (Standard) und **Consumable**. Zusätzliche Informationen zu Typen dauerhafter Add-Ons werden durch ein [Product](#product-child-of-licenseinformation)-Element unter [LicenseInformation](#licenseinformation) beschrieben. Zusätzliche Informationen zu Typen konsumierbarer Add-Ons werden durch ein [Product](#product-child-of-consumableinformation)-Element unter [ConsumableInformation](#consumableinformation) beschrieben.           |  |
+|  **ProductType**  |    Nein        |    Enthält einen Wert für die Identifizierung der Persistenz des In-App-Produkts. Die unterstützten Werte sind **Durable** (Standard) und **Consumable**. Zusätzliche Informationen zu Typen dauerhafter Add-Ons werden durch ein [Product](#product-child-of-licenseinformation)-Element unter [LicenseInformation](#licenseinformation) beschrieben. Zusätzliche Informationen zu Typen konsumierbarer Add-Ons werden durch ein [Product](#product-child-of-consumableinformation)-Element unter [ConsumableInformation](#consumableinformation) beschrieben.           |
 
 <span id="marketdata-child-of-product"/>
 
@@ -435,22 +435,22 @@ Dieses Element stellt Informationen zum Add-On für ein bestimmtes Land oder ein
 
 **MarketData** enthält die folgenden untergeordneten Elemente.
 
-|  Element  |  Erforderlich  |  Quantity (Menge)  | BESCHREIBUNG   |
+|  Element  |  Erforderlich  |  Menge  | BESCHREIBUNG   |
 |-------------|------------|--------|--------|
 |  **Name**  |    Ja   |  1   |   Der Name des Add-Ons in diesem Land/dieser Region.        |
 |  **Preis**  |    Ja  |  1   |     Der Preis des Add-Ons in diesem Land/dieser Region.        |
 |  **CurrencySymbol**  |    Ja  |  1   |     Das Währungssymbol, das in diesem Land/dieser Region verwendet wird.        |
-|  **Vorkommnisse**  |    Nein  |  0 oder 1      |      Der Währungscode, der in diesem Land/dieser Region verwendet wird.         |  
+|  **CurrencyCode**  |    Nein  |  0 oder 1      |      Der Währungscode, der in diesem Land/dieser Region verwendet wird.         |  
 |  **Beschreibung**  |    Nein  |   0 oder 1   |      Die Beschreibung des Add-Ons für dieses Land/diese Region.       |
 |  **Tag**  |    Nein  |   0 oder 1   |      Die [benutzerdefinierten Daten](../publish/enter-add-on-properties.md#custom-developer-data) (auch als „Tag“ bezeichnet) für das Add-On.       |
 |  **Schlüsselwörter**  |    Nein  |   0 oder 1   |      Enthält bis zu 10 **Keyword**-Elemente, die die [Schlüsselwörter](../publish/enter-add-on-properties.md#keywords) für das Add-On enthalten.       |
-|  **Image-URI**  |    Nein  |   0 oder 1   |      Der [URI für das Bild](../publish/create-add-on-store-listings.md#icon) im Add-On-Eintrag.           |  |
+|  **Image-URI**  |    Nein  |   0 oder 1   |      Der [URI für das Bild](../publish/create-add-on-store-listings.md#icon) im Add-On-Eintrag.           |
 
 **MarketData** hat die folgenden Attribute.
 
 |  attribute  |  Erforderlich  |  BESCHREIBUNG   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    Ja        |     Gibt das Land/die Region an, für das/die die Marktdateninformationen gelten.          |  |
+|  **xml:lang**  |    Yes        |     Gibt das Land/die Region an, für das/die die Marktdateninformationen gelten.          |
 
 <span id="licenseinformation"/>
 
@@ -460,10 +460,10 @@ Dieses Element beschreibt die Lizenzen, die für diese App und deren dauerhafte 
 
 **LicenseInformation** enthält die folgenden untergeordneten Elemente.
 
-|  Element  |  Erforderlich  |  Quantity (Menge)  | BESCHREIBUNG   |
+|  Element  |  Erforderlich  |  Menge  | BESCHREIBUNG   |
 |-------------|------------|--------|--------|
 |  [App](#app-child-of-licenseinformation)  |    Ja   |  1   |    Beschreibt die App-Lizenz.         |
-|  [Produkt](#product-child-of-licenseinformation)  |    Nein  |  0 oder mehr   |      Beschreibt den Lizenzstatus eines dauerhaften Add-Ons in der App.         |   |
+|  [Produkt](#product-child-of-licenseinformation)  |    Nein  |  0 oder mehr   |      Beschreibt den Lizenzstatus eines dauerhaften Add-Ons in der App.         |
 
 Die folgende Tabelle zeigt, wie Sie einige häufige Bedingungen simulieren, indem Sie Werte unter den Elementen **App** und **Product** kombinieren.
 
@@ -472,7 +472,7 @@ Die folgende Tabelle zeigt, wie Sie einige häufige Bedingungen simulieren, inde
 |  Vollständig lizenziert  |    true   |  false  |    Nicht vorhanden. Es kann vorhanden sein und ein späteres Datum angeben. Es wird jedoch empfohlen, das Element nicht in die XML-Datei einzuschließen. Wenn es vorhanden ist und ein Datum in der Vergangenheit angibt, wird **IsActive** ignoriert und als „false“ bewertet.          |
 |  Im Testzeitraum  |    true  |  true   |      &lt;ein DateTime-Wert in der Zukunft &gt; dieses Element muss vorhanden sein, da " **istrial** " "true" ist. Sie können eine Website aufrufen, die die aktuelle koordinierte Weltzeit (UTC) anzeigt, um festzustellen, auf wie weit in der Zukunft dies festgelegt werden muss, um den gewünschten verbleibenden Testzeitraum zu erhalten.         |
 |  Abgelaufene Testversion  |    false  |  true   |      &lt;ein DateTime-Wert in der Vergangenheit, in dem &gt; dieses Element vorhanden sein muss, da " **istrial** " true ist Sie können eine Website aufrufen, die die aktuelle koordinierte Weltzeit (UTC) anzeigt, um festzustellen, was in UTC Vergangenheit ist.         |
-|  Ungültig  |    false  | false       |     &lt;Jeder Wert oder ausgelassen&gt;          |  |
+|  Ungültig  |    false  | false       |     &lt;Jeder Wert oder ausgelassen&gt;          |
 
 <span id="app-child-of-licenseinformation"/>
 
@@ -482,11 +482,11 @@ Dieses Element beschreibt die App-Lizenz. **App** ist ein erforderliches unterge
 
 **App** enthält die folgenden untergeordneten Elemente.
 
-|  Element  |  Erforderlich  |  Quantity (Menge)  | BESCHREIBUNG   |
+|  Element  |  Erforderlich  |  Menge  | BESCHREIBUNG   |
 |-------------|------------|--------|--------|
 |  **IsActive**  |    Ja   |  1   |    Beschreibt den aktuellen Lizenzstatus der App. Der Wert **true** gibt an, dass die Lizenz gültig ist. Der Wert **false** gibt an, dass die Lizenz ungültig ist. Normalerweise lautet dieser Wert **true**, unabhängig davon, ob die App einen Testmodus hat oder nicht.  Legen Sie diesen Wert auf **false** fest, um zu testen, wie sich Ihre App verhält, wenn die Lizenz ungültig ist.           |
 |  **IsTrial**  |    Ja  |  1   |      Beschreibt den aktuellen Testversionsstatus der App. Der Wert **true** gibt an, dass die App während des Testzeitraums verwendet wird. Der Wert **false** gibt an, dass die App keine Testversion ist, entweder weil die App gekauft wurde oder weil der Testzeitraum abgelaufen ist.         |
-|  **ExpirationDate**  |    Nein  |  0 oder 1       |     Das Datum, an dem der Testzeitraum für diese App abläuft, angegeben in der koordinierten Weltzeit (UTC). Das Datum muss ausgedrückt werden als: yyyy-mm-ddThh:mm:ss.ssZ. Beispielsweise würde 05:00 Uhr am 19. Januar 2015 als 2015-01-19T05:00:00.00Z angegeben. Dieses Element ist erforderlich, wenn **IsTrial****true** ist. Andernfalls ist es nicht erforderlich.          |  |
+|  **ExpirationDate**  |    Nein  |  0 oder 1       |     Das Datum, an dem der Testzeitraum für diese App abläuft, angegeben in der koordinierten Weltzeit (UTC). Das Datum muss ausgedrückt werden als: yyyy-mm-ddThh:mm:ss.ssZ. Beispielsweise würde 05:00 Uhr am 19. Januar 2015 als 2015-01-19T05:00:00.00Z angegeben. Dieses Element ist erforderlich, wenn **IsTrial****true** ist. Andernfalls ist es nicht erforderlich.          |
 
 <span id="product-child-of-licenseinformation"/>
 
@@ -496,7 +496,7 @@ Dieses Element beschreibt den Lizenzstatus eines dauerhaften Add-Ons in der App.
 
 **Product** enthält die folgenden untergeordneten Elemente.
 
-|  Element  |  Erforderlich  |  Quantity (Menge)  | BESCHREIBUNG   |
+|  Element  |  Erforderlich  |  Menge  | BESCHREIBUNG   |
 |-------------|------------|--------|--------|
 |  **IsActive**  |    Ja   |  1     |    Beschreibt den aktuellen Lizenzstatus des Add-Ons. Der Wert **true** gibt an, dass das Add-On verwendet werden kann. Der Wert **false** gibt an, dass das Add-On nicht verwendet werden kann oder nicht gekauft wurde.           |
 |  **ExpirationDate**  |    Nein   |  0 oder 1     |     Das Datum, an dem das Add-On abläuft, angegeben in der koordinierten Weltzeit (UTC). Das Datum muss ausgedrückt werden als: yyyy-mm-ddThh:mm:ss.ssZ. Beispielsweise würde 05:00 Uhr am 19. Januar 2015 als 2015-01-19T05:00:00.00Z angegeben. Wenn dieses Element vorhanden ist, hat das Add-On ein Ablaufdatum. Wenn es nicht vorhanden ist, läuft das Add-On nicht ab.  |  
@@ -505,7 +505,7 @@ Dieses Element beschreibt den Lizenzstatus eines dauerhaften Add-Ons in der App.
 
 |  attribute  |  Erforderlich  |  BESCHREIBUNG   |
 |-------------|------------|----------------|
-|  **ProductId**  |    Ja        |   Enthält die Zeichenfolge, die von der App zur Identifizierung des Add-Ons verwendet wird.            |
+|  **ProductId**  |    Yes        |   Enthält die Zeichenfolge, die von der App zur Identifizierung des Add-Ons verwendet wird.            |
 |  **OfferId**  |     Nein       |   Enthält die Zeichenfolge, die von der App zur Identifizierung der Kategorie verwendet wird, zu der das Add-On gehört. Dies stellt Unterstützung für große Artikelkataloge bereit, wie unter [Verwalten eines großen Katalogs mit In-App-Produkten](manage-a-large-catalog-of-in-app-products.md) beschrieben.           |
 
 <span id="simulation"/>
@@ -530,8 +530,8 @@ Dieses Element beschreibt den Standardfehlercode, der von einer **CurrentAppSimu
 
 |  attribute  |  Erforderlich  |  BESCHREIBUNG   |
 |-------------|------------|----------------|
-|  **MethodName**  |    Ja        |   Weisen Sie dieses Attribut einem der Enumerationswerte für den Typ **StoreMethodName** im [Schema](#schema) zu. Jede dieser Enumerationswerte stellt eine **CurrentAppSimulator**-Methode dar, für die Sie während der Testphase in Ihrer App einen Fehlercode-Rückgabewert simulieren möchten. Beispielsweise gibt der Wert **RequestAppPurchaseAsync_GetResult** an, dass Sie den Fehlercode-Rückgabewert der [RequestAppPurchaseAsync](/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync)-Methode simulieren möchten.            |
-|  **HRESULT**  |     Ja       |   Weisen Sie dieses Attribut einem der Enumerationswerte für den Typ **ResponseCodes** im [Schema](#schema) zu. Jeder dieser Enumerationswerte stellt den Fehlercode dar, den Sie für die Methode zurückgeben möchten, die Sie dem **MethodName**-Attribut für dieses **DefaultResponse**-Element zugewiesen haben.           |
+|  **MethodName**  |    Yes        |   Weisen Sie dieses Attribut einem der Enumerationswerte für den Typ **StoreMethodName** im [Schema](#schema) zu. Jede dieser Enumerationswerte stellt eine **CurrentAppSimulator**-Methode dar, für die Sie während der Testphase in Ihrer App einen Fehlercode-Rückgabewert simulieren möchten. Beispielsweise gibt der Wert **RequestAppPurchaseAsync_GetResult** an, dass Sie den Fehlercode-Rückgabewert der [RequestAppPurchaseAsync](/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync)-Methode simulieren möchten.            |
+|  **HRESULT**  |     Yes       |   Weisen Sie dieses Attribut einem der Enumerationswerte für den Typ **ResponseCodes** im [Schema](#schema) zu. Jeder dieser Enumerationswerte stellt den Fehlercode dar, den Sie für die Methode zurückgeben möchten, die Sie dem **MethodName**-Attribut für dieses **DefaultResponse**-Element zugewiesen haben.           |
 
 <span id="consumableinformation"/>
 
@@ -549,7 +549,7 @@ Dieses Element beschreibt ein konsumierbares Add-On. **Product** ist ein optiona
 
 |  attribute  |  Erforderlich  |  BESCHREIBUNG   |
 |-------------|------------|----------------|
-|  **ProductId**  |    Ja        |   Enthält die Zeichenfolge, die von der App zur Identifizierung des konsumierbaren Add-Ons verwendet wird.            |
-|  **TransactionId**  |     Ja       |   Enthält eine GUID (als Zeichenfolge), die von der App verwendet wird, um die Kauftransaktion für ein konsumierbares Add-On während der Ausführung nachzuverfolgen. Weitere Informationen finden Sie unter [Käufe von konsumierbaren In-App-Produkten aktivieren](enable-consumable-in-app-product-purchases.md).            |
+|  **ProductId**  |    Yes        |   Enthält die Zeichenfolge, die von der App zur Identifizierung des konsumierbaren Add-Ons verwendet wird.            |
+|  **TransactionId**  |     Yes       |   Enthält eine GUID (als Zeichenfolge), die von der App verwendet wird, um die Kauftransaktion für ein konsumierbares Add-On während der Ausführung nachzuverfolgen. Weitere Informationen finden Sie unter [Käufe von konsumierbaren In-App-Produkten aktivieren](enable-consumable-in-app-product-purchases.md).            |
 |  **Status**  |      Ja      |  Enthält die Zeichenfolge, die von der App verwendet wird, um den Ausführungsstatus eines konsumierbaren Add-Ons anzugeben. Werte können **Active**, **PurchaseReverted**, **PurchasePending** oder **ServerError** sein.             |
 |  **OfferId**  |     Nein       |    Enthält die Zeichenfolge, die von der App zur Identifizierung der Kategorie verwendet wird, zu der das konsumierbare Add-On gehört. Dies stellt Unterstützung für große Artikelkataloge bereit, wie unter [Verwalten eines großen Katalogs mit In-App-Produkten](manage-a-large-catalog-of-in-app-products.md) beschrieben.           |
