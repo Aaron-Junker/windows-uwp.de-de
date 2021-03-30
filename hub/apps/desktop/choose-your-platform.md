@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: Windows Win32, Desktopentwicklung
-ms.openlocfilehash: 62567b36d16e01fc6091f9514137c60dc352942a
-ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
+ms.openlocfilehash: 11605902b334025c50847103e2de9b10e49c3a0f
+ms.sourcegitcommit: 432cc11c460e9ddf855d28bcd59852741408c823
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99534379"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102474840"
 ---
 # <a name="choose-your-windows-app-platform"></a>Auswählen Ihrer Windows-App-Plattform
 
@@ -23,9 +23,9 @@ Wenn Sie eine neue Desktop Anwendung für Windows-PCs erstellen möchten, müsse
 * [WPF](#wpf) und [Windows Forms](#windows-forms): Diese auf .NET basierenden Plattformen bieten ein gemeinsames Typensystem, APIs und ein Anwendungsmodell für verwaltete Anwendungen.
 * [Win32](#win32): Die ursprüngliche Plattform für native C-/C++-Windows-Anwendungen, die direkten Zugriff auf Windows und Hardware erfordern. Dadurch ist die Win32-API die Plattform der Wahl für Anwendungen, die das höchste Maß an Leistung und den direkten Zugriff auf die Systemhardware benötigen.
 
-Jede dieser Plattformen bietet ein komplettes Benutzeroberflächen-Framework und eine Reihe von Benutzeroberflächen-Steuerelementen, mit denen Desktopanwendungen wie Word, Excel und Photoshop erstellen werden können, die auf dem klassischen Windows-Desktop laufen und die spezifischen Features dieser Umgebung voll ausnutzen können. Unter Windows 10 unterstützen alle diese Plattformen auch die [Windows-UI-Bibliothek (WinUI)](#use-the-windows-ui-library-with-windows-apps) zum Erstellen von Benutzeroberflächen.
+Jede dieser Plattformen bietet ein komplettes Benutzeroberflächen-Framework und eine Reihe von Benutzeroberflächen-Steuerelementen, mit denen Desktopanwendungen wie Word, Excel und Photoshop erstellen werden können, die auf dem klassischen Windows-Desktop laufen und die spezifischen Features dieser Umgebung voll ausnutzen können. Unter Windows 10 unterstützen alle diese Plattformen auch die [Windows-UI-Bibliothek (WinUI)](#use-the-windows-ui-library-with-windows-apps) zum Erstellen von Benutzeroberflächen.
 
-Einige dieser Plattformen weisen bestimmte Gemeinsamkeiten auf und eignen sich besser für bestimmte Arten von Anwendungen. Beispielsweise sind UWP und .NET umfassend in Visual Studio integriert. Dies bietet zahlreiche Vorteile, insbesondere in den Bereichen Entwicklerproduktivität, komplexer und anpassbarer Benutzeroberflächen und Anwendungssicherheit. Da diese Frameworks visuelle Designer und Benutzeroberflächen-Markup für die schnelle Erstellung von Benutzeroberflächen unterstützen, sind sie für branchenspezifische Anwendungen besonders gut geeignet.
+Einige dieser Plattformen haben bestimmte Gemeinsamkeiten und sind besser für bestimmte Arten von Anwendungen geeignet. Beispielsweise sind UWP und .NET umfassend in Visual Studio integriert. Dies bietet zahlreiche Vorteile, insbesondere in den Bereichen Entwicklerproduktivität, komplexer und anpassbarer Benutzeroberflächen und Anwendungssicherheit. Da diese Frameworks visuelle Designer und Benutzeroberflächen-Markup für die schnelle Erstellung von Benutzeroberflächen unterstützen, sind sie für branchenspezifische Anwendungen besonders gut geeignet.
 
 > [!NOTE]
 > Ganz gleich, für welche App-Plattform Sie sich entscheiden, können Sie viele Windows 10-Features nutzen, um Ihre Anwendung modern zu gestalten. Selbst wenn Ihre Desktop-Anwendung z. B. mit WPF, Windows Forms oder der Win32-API entwickelt wurde, können Sie weiterhin mit der Bereitstellung des MSIX-Pakets arbeiten. Weitere Informationen zu allen Möglichkeiten zur Modernisierung Ihrer Desktop-Apps finden Sie unter [Modernisieren Ihrer Desktop-Apps](modernize/index.md).

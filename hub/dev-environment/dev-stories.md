@@ -1,6 +1,6 @@
 ---
-title: Storys von Entwicklern, die von Mac zu Windows gewechselt haben
-description: Hier erfahren Sie mehr über die Erfahrungen von anderen Entwicklern beim Wechsel zwischen einer Mac- und Windows-Entwicklungsumgebung.
+title: Geschichten von Entwicklern, die von Mac zu Windows wechseln
+description: Storys von Entwicklern, die von einem Mac zu einem Windows-Entwicklungscomputer gewechselt haben.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Microsoft, Windows, Developer, Storys, Wechsel von Mac zu Windows, Mac zu Windows, WSL
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: 0141e3698b40b941cd78b60f28d862246cbc5d50
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 2a4471e1de4fc50a2cb1da2e3736d46b9b58a515
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823974"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254593"
 ---
 # <a name="stories-from-developers-who-have-switched-from-mac-to-windows"></a>Storys von Entwicklern, die von Mac zu Windows gewechselt haben
 

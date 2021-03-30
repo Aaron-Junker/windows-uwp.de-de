@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, Standard, c++, cpp, winrt, projiziert, Projektion, Implementierung, implementieren, Laufzeitklasse, Aktivierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b5c515760d0a03e163fa663da1f97a728a6da2c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e81b635d4c5bc2819aa126e4d685b49b044aa6ca
+ms.sourcegitcommit: 85b9a5fc16f4486bc23b4ec8f4fae5ab6211a066
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154594"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102192952"
 ---
 # <a name="author-apis-with-cwinrt"></a>Erstellen von APIs mit C++/WinRT
 
@@ -29,7 +29,9 @@ In beiden Fällen wird der Typ, der Ihre C++/WinRT-APIs implementiert, als *Impl
 
 ## <a name="if-youre-not-authoring-a-runtime-class"></a>Wenn Sie *keine* Laufzeitklasse erstellen
 
-Das einfachste Szenario ist die Implementierung einer Windows-Runtime-Schnittstelle für die lokale Nutzung. Sie benötigen keine Laufzeitklasse, sondern nur eine normale C++-Klasse. Beispielsweise können Sie eine App rund um [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication) schreiben.
+Im einfachsten Szenario wird durch Ihren Typ eine Windows-Runtime-Schnittstelle implementiert, und der Typ wird innerhalb der gleichen App verwendet. In diesem Fall muss der Typ keine Laufzeitklasse, sondern nur eine gewöhnliche C++-Klasse sein. Beispielsweise können Sie eine App rund um [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication) schreiben.
+
+Wenn Ihr Typ von der XAML-Benutzeroberfläche referenziert wird, *muss* er eine Laufzeitklasse sein (auch, wenn er sich im gleichen Projekt befindet wie XAML) *.* Lesen Sie in diesem Fall den Abschnitt [Wenn Sie eine Laufzeitklasse erstellen, die in Ihrer XAML-Benutzeroberfläche referenziert werden soll, gehen Sie wie folgt vor](#if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui).
 
 > [!NOTE]
 > Informationen zum Installieren und Verwenden der C++/WinRT Visual Studio-Erweiterung (VSIX) und des NuGet-Pakets (die zusammen die Projektvorlage und Buildunterstützung bereitstellen) findest du unter [Visual Studio-Unterstützung für C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
@@ -126,7 +128,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="if-youre-authoring-a-runtime-class-in-a-windows-runtime-component"></a>Wenn Sie eine Laufzeitklasse in einer Komponente für Windows-Runtime erstellen, gehen Sie wie folgt vor:
 
-Wenn Ihr Typ in einer Komponente für Windows-Runtime für den Einsatz in einer Anwendung verpackt ist, dann muss es sich um eine Laufzeitklasse handeln. Eine Laufzeitklasse wird in einer IDL-Datei (Microsoft Interface Definition Language) deklariert – siehe [Einbeziehen von Laufzeitklassen in Midl-Dateien (.idl)](#factoring-runtime-classes-into-midl-files-idl).
+Wenn Ihr Typ in einer Windows-Runtime-Komponente für die Verwendung über eine andere Binärdatei (in der Regel eine Anwendung) verpackt ist, muss es sich bei dem Typ um eine Laufzeitklasse handeln. Eine Laufzeitklasse wird in einer IDL-Datei (Microsoft Interface Definition Language) deklariert – siehe [Einbeziehen von Laufzeitklassen in Midl-Dateien (.idl)](#factoring-runtime-classes-into-midl-files-idl).
 
 Jede IDL-Datei resultiert in einer `.winmd`-Datei, und Visual Studio führt all diese Dateien in einer einzigen Datei zusammen, die denselben Namen erhält wie der Stammnamespace. Die endgültige `.winmd`-Datei wird die Datei sein, die von den Nutzern Ihrer Komponente referenziert wird.
 
@@ -406,7 +408,7 @@ void FreeFunction(MyProject::MyOtherClass const& oc)
 
 ## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>Ableiten von einem Typ, der keinen standardmäßigen Konstruktor aufweist
 
-[**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)** ](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_) ist ein Beispiel für einen nicht standardmäßigen Konstruktor. Es gibt keinen Standardkonstruktor. Um ein **ToggleButtonAutomationPeer**-Element zu erstellen, müssen Sie also einen *Owner* übergeben. Wenn Sie von **ToggleButtonAutomationPeer** ableiten, dann müssen Sie also einen Konstruktor zur Verfügung stellen, der einen *Owner* annimmt und ihn an die Basisklasse übergibt. Sehen wir uns an, wie dies in der Praxis aussieht.
+[**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_) ist ein Beispiel für einen nicht standardmäßigen Konstruktor. Es gibt keinen Standardkonstruktor. Um ein **ToggleButtonAutomationPeer**-Element zu erstellen, müssen Sie also einen *Owner* übergeben. Wenn Sie von **ToggleButtonAutomationPeer** ableiten, dann müssen Sie also einen Konstruktor zur Verfügung stellen, der einen *Owner* annimmt und ihn an die Basisklasse übergibt. Sehen wir uns an, wie dies in der Praxis aussieht.
 
 ```idl
 // MySpecializedToggleButton.idl

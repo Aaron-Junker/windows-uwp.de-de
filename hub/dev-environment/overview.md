@@ -1,6 +1,6 @@
 ---
-title: Einrichten der Entwicklungsumgebung unter Windows 10
-description: Eine umfassende Anleitung, die Ihnen hilft, Ihre Entwicklungsumgebung unter Windows einzurichten und Ihre bevorzugten Tools und Codesprachen zu installieren.
+title: Einrichten einer Entwicklungsumgebung unter Windows 10
+description: Ein Leitfaden, der Ihnen hilft, Ihre Entwicklungsumgebung unter Windows einzurichten und Ihre bevorzugten Tools und Codesprachen zu installieren. Ganz gleich, ob Sie Python, NodeJS, VS Code, Git, Bash, Linux-Tools und -Befehle oder Android Studio bevorzugen – Wir haben tolle neue Tools wie Windows Terminal und WSL für Sie.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Fenster einrichten, Entwicklungsumgebung, Entwicklertools, Entwicklungspfade, Microsoft, Windows, Developer, Tipps, Leistung, WSL, Terminal, nodejs, python
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: 58c68522fdb3ffe11c4e11dff48fb49faa79b830
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 3a577ca4241f102bcff2a84419a0e3523f812b74
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101824034"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254638"
 ---
 # <a name="set-up-your-development-environment-on-windows-10"></a>Einrichten der Entwicklungsumgebung unter Windows 10
 
@@ -65,6 +65,14 @@ Dieser Leitfaden erleichtert Ihnen den Einstieg bei der Installation der Sprache
        [![PowerShell-Symbol](../images/powershell.png)](/powershell/)<br>
         **[Erste Schritte mit PowerShell](/powershell/)**<br>
         Beginnen Sie mit der plattformübergreifenden Aufgabenautomatisierung und Konfigurationsverwaltung unter Verwendung von PowerShell, einer Befehlszeilenshell und einer Skriptsprache.
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+       [![Rust-Symbol](../images/rust-icon.png)](./rust/index.yml)<br>
+        **[Erste Schritte mit Rust](./rust/index.yml)**<br>
+        Steigen Sie in die Programmierung mit Rust ein, und erfahren Sie unter anderem, wie Sie Rust für Windows einrichten, indem Sie die Kiste *Windows* verwenden.
     :::column-end:::
 :::row-end:::
 

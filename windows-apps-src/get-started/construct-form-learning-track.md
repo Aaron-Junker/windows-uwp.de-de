@@ -1,17 +1,17 @@
 ---
 title: Lernpfad – Erstellen und Konfigurieren eines Formulars
 description: Erfahren Sie, wie Sie ein robustes Formular in einer UWP-App erstellen und konfigurieren, um die Eingabe einer beträchtlichen Menge von Informationen zu verarbeiten.
-ms.date: 05/07/2018
+ms.date: 03/17/2021
 ms.topic: article
 keywords: Erste Schritte, UWP, Windows 10, Lernpfad, Layout, Formular
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a674514bfeb2acbc545e59cf1b3fc6e59d697215
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: 9d9fe2ee2c4d68084460293f91f65b728fabd4da
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304522"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804974"
 ---
 # <a name="create-and-customize-a-form"></a>Erstellen und Anpassen eines Formulars
 
@@ -144,7 +144,7 @@ Wenn Sie komplexere Layouts mit mehreren visuellen Elementen erstellen, finden S
 
 Auch wenn Sie hier ein Formular erstellt haben, gelten die Layout- und Steuerelementkonzepte für alle XAML-Benutzeroberflächen, die Sie entwickeln können. Sie können jederzeit zu den hier verlinkten Dokumenten zurückkehren und mit dem vorhandenen Formular experimentieren, indem Sie neue Benutzeroberflächenfeatures hinzufügen und die Benutzererfahrung weiter optimieren. Eine schrittweise Anleitung zu detaillierteren Layoutfeatures finden Sie in unserem [Tutorial zu adaptiven Layouts](../design/basics/xaml-basics-adaptive-layout.md).
 
-Formulare existieren außerdem nicht in einem Vakuum – Sie können einen Schritt weitergehen und Ihr Formular in ein [Master/Details-Muster](../design/controls-and-patterns/master-details.md) oder [Pivotsteuerelement](../design/controls-and-patterns/pivot.md) einbetten. Wenn Sie das CodeBehind des Formulars bearbeiten möchten, finden Sie die ersten Schritte in unserer [Übersicht über Ereignisse](../xaml-platform/events-and-routed-events-overview.md).
+Formulare müssen außerdem nicht in einem Vakuum existieren. Sie können einen Schritt weitergehen und Ihre Formulare in ein [Liste/Details-Muster](../design/controls-and-patterns/list-details.md) oder in [NavigationView](../design/controls-and-patterns/navigationview.md) einbetten. Wenn Sie das CodeBehind des Formulars bearbeiten möchten, finden Sie die ersten Schritte in unserer [Übersicht über Ereignisse](../xaml-platform/events-and-routed-events-overview.md).
 
 ## <a name="useful-apis-and-docs"></a>Nützliche APIs und Dokumente
 
@@ -156,7 +156,7 @@ Nachfolgend finden Sie eine kurze Zusammenfassung zu den APIs und weitere nützl
 |------|---------------|
 | [Nützliche Steuerelemente für Formulare](../design/controls-and-patterns/forms.md#input-controls) | Eine Liste nützlicher Eingabesteuerelemente für das Erstellen von Formularen und ein allgemeiner Überblick zu ihrer Verwendung |
 | [Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid) | Ein Panel zum Anordnen von Elementen in Layouts mit mehreren Zeilen und Spalten |
-| [RelativePanel](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | Ein Panel zum Anordnen von Elementen im Verhältnis zu anderen Elementen und zu den Grenzen des Panels |
+| [RelativePanel](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | Ein Panel zum Anordnen von Elementen im Verhältnis zu anderen Elementen und zu den Grenzen des Panels. |
 | [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) | Ein Panel zum Anordnen von Elementen in einer einzigen horizontalen oder vertikalen Linie |
 | [VisualState](/uwp/api/Windows.UI.Xaml.VisualState) | Ermöglicht es Ihnen, das Erscheinungsbild von Benutzeroberflächenelementen festzulegen, wenn sie einen bestimmten Zustand aufweisen. |
 
@@ -169,8 +169,8 @@ Nachfolgend finden Sie eine kurze Zusammenfassung zu den APIs und weitere nützl
 | [Übersicht über Ereignisse](../xaml-platform/events-and-routed-events-overview.md) | Details zum Hinzufügen und Strukturieren von Ereignissen zur Verarbeitung von Benutzeroberflächenaktionen |
 | [Formulare](../design/controls-and-patterns/forms.md) | Allgemeine Anweisungen zum Erstellen von Formularen |
 | [Layoutpanels](../design/layout/layout-panels.md) | Übersicht über die Arten von Layoutpanels und ihre Verwendung |
-| [Master/Details-Muster](../design/controls-and-patterns/master-details.md) | Ein Entwurfsmuster, das rund um eines oder mehrere Formulare implementiert werden kann |
-| [Pivotsteuerelement](../design/controls-and-patterns/pivot.md) | Ein Steuerelement, das eines oder mehrere Formulare enthalten kann |
+| [Liste/Details-Muster](../design/controls-and-patterns/list-details.md) | Ein Entwurfsmuster, das rund um eines oder mehrere Formulare implementiert werden kann |
+| [NavigationView](../design/controls-and-patterns/navigationview.md) | Ein Steuerelement, das eines oder mehrere Formulare enthalten kann |
 | [Dynamisches Design](../design/layout/responsive-design.md) | Eine Übersicht über Prinzipien für das umfangreiche dynamische Design |
 | [Dynamische Layouts mit XAML](../design/layout/layouts-with-xaml.md) | Spezifische Informationen zu visuellen Zuständen und anderen Implementierungen des dynamischen Designs |
 | [Bildschirmgrößen für das dynamische Design](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) | Anweisungen dazu, welche Bildschirmgrößen für dynamische Layouts festgelegt werden sollten |

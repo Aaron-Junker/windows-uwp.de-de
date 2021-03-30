@@ -7,12 +7,12 @@ keywords: Windows Win32, Desktopentwicklung, Project Reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e2e4bda8440a9a504cba78286de491236d6bd49
-ms.sourcegitcommit: 2a71bb5c56bed80f26fb67a47ae8f9198c431760
+ms.openlocfilehash: 9e6ff54d8605457dd5b29735f29405e9d0302fb7
+ms.sourcegitcommit: dacbb7eef2cfffd7a8639e3a24ebda7b4eefae38
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103366235"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105616793"
 ---
 # <a name="build-desktop-windows-apps-with-project-reunion-05-preview-march-2021"></a>Erstellen von Windows-Desktop-Apps mit Project Reunion 0.5 Preview (März 2021)
 
@@ -65,15 +65,15 @@ Weitere Informationen zu den zukünftigen Plänen der Integration weiterer Kompo
     > Visual Studio 2019, Version 16.9, unterstützt auch Project Reunion, aber nicht die WinUI 3-Toolfeatures. Weitere Informationen zur Unterstützung von WinUI 3-Tools finden Sie unter „Windows-UI-Bibliothek 3 – Project Reunion 0.5 Preview (März 2021)“.
 
     Bei der Installation von Visual Studio müssen Sie die folgenden Komponenten einschließen:
-    - Vergewissern Sie sich auf der Registerkarte **Workloads**, dass **Entwicklung mit der Universellen Windows-Plattform (UWP)** ausgewählt ist.
-    - Stellen Sie sicher, dass auf der Registerkarte **Einzelne Komponenten** im Abschnitt **SDKs, Bibliotheken und Frameworks** die Option **Windows 10 SDK (10.0.19041.0)** ausgewählt ist.
+    - Vergewissern Sie sich auf der Registerkarte **Workloads** im Installationsdialogfeld, dass **Entwicklung mit der Universellen Windows-Plattform (UWP)** ausgewählt ist.
+    - Stellen Sie sicher, dass auf der Registerkarte **Einzelne Komponenten** im Installationsdialogfeld im Abschnitt **SDKs, Bibliotheken und Frameworks** die Option **Windows 10 SDK (10.0.19041.0)** ausgewählt ist.
 
     Zum Erstellen von .NET-Apps müssen Sie außerdem die folgenden Komponenten einschließen:
-    - Workload **Desktopentwicklung mit .NET**.
+    - Vergewissern Sie sich, dass auf der Registerkarte **Workloads** im Installationsdialogfeld die Option **.NET Desktopentwicklung** ausgewählt ist.
 
     Zum Erstellen von C++-Apps müssen Sie außerdem die folgenden Komponenten einschließen:
-    - Workload **Desktopentwicklung mit C++** .
-    - Die optionale Komponente **C++ (v142) UWP-Tools (Universelle Windows-Plattform)** für dem Workload **Entwicklung mit der Universellen Windows-Plattform (UWP)** .
+    - Vergewissern Sie sich, dass auf der Registerkarte **Workloads** im Installationsdialogfeld die Option **Desktopentwicklung mit C++** ausgewählt ist.
+    - Vergewissern Sie sich, dass im Bereich **Installationsdetails** auf der rechten Seite des Installationsdialogfelds im Abschnitt **Entwicklung für die universelle Windows-Plattform** die optionale Komponente **C++ (v142) Tools für die universelle Windows-Plattform** ausgewählt ist.
 
 3. Wenn Sie zuvor die [WinUI 3 Preview-Erweiterung](https://marketplace.visualstudio.com/items?itemName=Microsoft-WinUI.WinUIProjectTemplates) von einem früheren WinUI 3 Preview-Release installiert haben, deinstallieren Sie die Erweiterung. Weitere Informationen zum Deinstallieren einer Erweiterung finden Sie unter [Verwalten von Erweiterungen für Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
 

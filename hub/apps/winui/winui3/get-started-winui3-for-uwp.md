@@ -1,25 +1,27 @@
 ---
 description: Diese Anleitung zeigt Ihnen, wie Sie mit der Erstellung von UWP-Apps mit einer WinUI 3-Benutzeroberfläche beginnen können.
 title: Erste Schritte mit WinUI 3 für UWP-Apps
-ms.date: 02/09/2021
+ms.date: 03/08/2021
 ms.topic: article
 keywords: Windows 10, UWP, WinUI
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: d13acb2181160ec214070dc1276e844dc1f203ad
-ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.openlocfilehash: 6216dd85579e606f6de04c44b2f7cab6277a8df5
+ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100334896"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102629308"
 ---
 # <a name="get-started-with-winui-3-for-uwp-apps"></a>Erste Schritte mit WinUI 3 für UWP-Apps
 
-WinUI 3 Vorschau 4 enthält neue Projektvorlagen, mit denen Sie eine UWP-App (Universelle Windows-Plattform) mit einer Benutzeroberfläche erstellen können, die vollständig mit WinUI erstellt wurde. Wenn Sie Apps mit diesen Projektvorlagen erstellen, wird die gesamte Benutzeroberfläche Ihrer Anwendung mithilfe von Fenstern, Steuerelementen und Stilen implementiert, die von WinUI 3 zur Verfügung gestellt werden. Eine vollständige Liste der unterstützten WinUI 3-Projektvorlagen finden Sie unter [Projektvorlagen für WinUI 3](index.md#project-templates-for-winui-3).
+WinUI  3 – Project Reunion 0.5 Preview enthält neue Projektvorlagen, mit denen Sie eine UWP-App (Universelle Windows-Plattform) mit einer Benutzeroberfläche erstellen können, die vollständig auf WinUI basiert. Wenn Sie Apps mit diesen Projektvorlagen erstellen, wird die gesamte Benutzeroberfläche Ihrer Anwendung mithilfe von Fenstern, Steuerelementen und Stilen implementiert, die von WinUI 3 zur Verfügung gestellt werden. Eine vollständige Liste der unterstützten WinUI 3-Projektvorlagen finden Sie unter [Projektvorlagen für WinUI 3](index.md#project-templates-for-winui-3).
+
+Ab WinUI 3 – Project Reunion 0.5 Preview wird WinUI 3 als Teil des Project Reunion-Pakets bereitgestellt. Dadurch ändern sich zwar geringfügig die Installationsschritte, und Ihnen stehen mehr optionale Funktionen zur Verfügung, ansonsten bleibt die Entwicklung von WinUI 3-Apps jedoch unverändert. Weitere Informationen zu Project Reunion finden Sie unter [Erstellen von Windows-Desktop-Apps mit Project Reunion 0.5 Preview (März 2021)](../../project-reunion/index.md).
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-Um die in diesem Artikel beschriebene WinUI 3 für UWP-Projektvorlagen zu verwenden, konfigurieren Sie Ihren Entwicklungscomputer, und [installieren Sie WinUI 3 Vorschau 4](index.md#install-winui-3-preview-4).
+Wenn Sie die in diesem Artikel beschriebenen WinUI 3 für UWP-Projektvorlagen verwenden möchten, müssen Sie Ihren Entwicklungscomputer entsprechend konfigurieren und [Project Reunion 0.5 Preview installieren](../../project-reunion/index.md#set-up-your-development-environment).
 
 ## <a name="create-a-winui-3-app-in-uwp-for-c"></a>Erstellen einer „WinUI 3-App in UWP“ für C#
 
@@ -42,7 +44,7 @@ Um die in diesem Artikel beschriebene WinUI 3 für UWP-Projektvorlagen zu verwe
 
 :::image type="content" source="images/WinUI-and-UWP/vs2019-configure-new-project-dialog.png" alt-text="Screenshot des Dialogfelds zum Konfigurieren Ihres neuen Projekts mit hervorgehobenem Textfeld „Speicherort“ und der Option „Erstellen“.":::
 
-5. Lege im folgenden Dialogfeld die **Zielversion** auf Windows 10, Version 1903 (Build 18362) und **Mindestversion** auf Windows 10, Version 1803 (Build 17134) fest, und klicke auf **OK**.
+5. Legen Sie im folgenden Dialogfeld die **Zielversion** auf „Windows 10, Version 1903 (Build 18362)“ und die **Mindestversion** auf „Windows 10, Version 1809 (Build 17763)“ fest, und klicken Sie anschließend auf **OK**.
 
 :::image type="content" source="images/WinUI-min-target-version.png" alt-text="Dialogfeld „Ziel- und Mindestversion“":::
 
@@ -84,9 +86,9 @@ Um die in diesem Artikel beschriebene WinUI 3 für UWP-Projektvorlagen zu verwe
 
 ## <a name="known-issues-and-limitations"></a>Bekannte Probleme und Einschränkungen
 
-Weitere Informationen finden Sie im Abschnitt [Einschränkungen und bekannte Probleme](index.md#limitations-and-known-issues) der [Windows-UI-Bibliothek 3 Vorschau 4 (Februar 2021)](index.md).
+Weitere Informationen finden Sie unter [Windows-UI-Bibliothek 3 – Project Reunion 0.5 Preview (März 2021)](index.md) im Abschnitt [Einschränkungen und bekannte Probleme](index.md#limitations-and-known-issues).
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-- [Windows-UI-Bibliothek 3 Vorschau 4 (Februar 2021)](index.md)
+- [Windows-UI-Bibliothek 3 – Project Reunion 0.5 Preview (März 2021)](index.md)
 - [Erste App erstellen](/windows/uwp/get-started/your-first-app)

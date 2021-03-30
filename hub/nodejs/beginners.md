@@ -1,6 +1,6 @@
 ---
-title: Erste Schritte bei der Verwendung von Node.js unter Windows für Anfänger
-description: Eine umfassende Anleitung, die Anfängern den Einstieg in die Node.js-Entwicklung unter Windows erleichtert.
+title: Node.js unter Windows für Anfänger
+description: Eine Anleitung für Anfänger mit den ersten Schritten der Node.js-Entwicklung unter Windows.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, Node.js, Windows 10, Microsoft, Erlernen von NodeJS, Node unter Windows, Node unter Windows für Anfänger, Entwickeln mit Node unter Windows, Entwickler mit Node.js unter Windows
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: ab06ba36e2c77a105912a6a7b73abcdfa992c0ad
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 76d9cc90ee64173e979a43855d7bec02ca1d1f61
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823894"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254528"
 ---
 # <a name="get-started-using-nodejs-on-windows-for-beginners"></a>Erste Schritte bei der Verwendung von Node.js unter Windows für Anfänger
 

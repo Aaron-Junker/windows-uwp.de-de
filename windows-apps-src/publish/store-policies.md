@@ -1,30 +1,42 @@
 ---
 title: Microsoft Store-Richtlinien
 description: Produkte im Store müssen unsere Zertifizierungsstandards erfüllen, für Kunden wirklich hilfreich und ansprechend sein sowie gut in den Store passen.
-ms.date: 12/16/2020
+ms.date: 03/04/2021
 ms.topic: article
 keywords: Store-Richtlinienvereinbarung
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: 7d9679b591b64f804ae9c84badc5849cac28de99
-ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
+ms.openlocfilehash: 4a762410011a369e79956f5fb858d030169307b2
+ms.sourcegitcommit: 85b9a5fc16f4486bc23b4ec8f4fae5ab6211a066
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98104661"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102192992"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store-Richtlinien
 
 
 **Dokumentversion: 7.12**
 
-**Dokumentdatum: 1. Oktober 2019**
+**Dokumentdatum: 4. März 2021**
 
 > [!NOTE]
 > Eine Zusammenfassung der zuletzt vorgenommenen Änderungen an dieser Vereinbarung finden Sie im Abschnitt [Änderungsverlauf](store-policies-change-history.md).
 
 > [!NOTE]
-> **16. Dezember 2020, Hinweis zur Richtlinienaktualisierung**: Für Spieleprodukte, die auf die Konsole abzielen und im Rahmen des [Xbox Live Creators-Programms](https://www.xbox.com/developers/creators-program/) entwickelt wurden, gilt die Anforderung der Integration in die XBL-Dienste nicht mehr. Die spezifische Richtlinie ([Richtlinie 10.13.1](#1013-gaming-and-xbox)) wird bei der nächsten Aktualisierung des Store-Richtliniendokuments aktualisiert, um diese Änderung widerzuspiegeln, aber ab dieser Bekanntmachung wird die Richtlinie für das XBL Creators Program nicht mehr durchgesetzt. 
+>**4. März 2021, Hinweis zur Richtlinienaktualisierung**
+>
+>Die Store-Richtlinien von Microsoft Store werden diesen Monat aktualisiert. Angepeiltes Gültigkeitsdatum ist Ende April 2021.  Zu den wichtigsten Richtlinienänderungen zählen unter anderem:
+>
+>- Aktualisierung der Richtlinie 10.8.6: Von PC-Gaming-Abonnementprodukten kann die API für In-App-Einkäufe von Microsoft oder ein sicherer Drittanbieterabrechnungsdienst für In-Game-Käufe in Spielen verwendet werden, die über den Abonnementdienst verfügbar gemacht werden. Außerdem können in einem solchen Abonnementdienst enthaltene Spiele für Abonnenten außerhalb des Stores bereitgestellt werden.
+>- Aktualisierung der Richtlinie 11.12, um Richtlinienanforderungen im Zusammenhang mit benutzergenerierten Inhalten zu verdeutlichen.
+>
+>Microsoft lässt auf Anfrage Ausnahmen für Richtlinien zu, die von einer Aktualisierung gemäß diesem Hinweis betroffen sind, sofern das entsprechende Produkt mit den oben angegebenen Aktualisierungen konform ist.
+
+>[!NOTE]
+>**16. Dezember 2020, Hinweis zur Richtlinienaktualisierung**
+>
+>Für Konsolenspiele, die im Rahmen des Xbox Live Creators-Programms entwickelt wurden, gilt die Anforderung der Integration in die XBL-Dienste nicht mehr. Die spezifische Richtlinie (Richtlinie 10.13.1) wird bei der nächsten Aktualisierung des Store-Richtliniendokuments aktualisiert, um diese Änderung widerzuspiegeln, aber ab dieser Bekanntmachung wird die Richtlinie für das XBL Creators Program nicht mehr durchgesetzt.
 
 Vielen Dank für Ihr Interesse an der Entwicklung von Produkten für den Microsoft Store<sup>1</sup>. „Produkt“ bezeichnet in beliebiger Form übermittelte Inhalte, einschließlich Apps, Spielen, Titeln und weiteren Inhalten, die innerhalb eines Produkts angeboten oder verkauft werden. Wir bemühen uns um einen vielseitigen Katalog mit Produkten für Kunden weltweit. Produkte im Store müssen unsere Zertifizierungsstandards erfüllen, für Kunden wirklich hilfreich und ansprechend sein sowie gut in den Store passen.
 

@@ -6,12 +6,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: faf88751f5008c5a819bb39bb461a4224180edf2
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: b9786f285fc0da5f67180224699f03acb67cecfb
+ms.sourcegitcommit: 85b9a5fc16f4486bc23b4ec8f4fae5ab6211a066
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363013"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102193002"
 ---
 # <a name="background-transfers"></a>Hintergrundübertragungen
 Verwenden Sie die Hintergrundübertragungs-API zum zuverlässigen Kopieren von Dateien im Netzwerk. Die Hintergrundübertragungs-API bietet erweiterte Upload- und Downloadfeatures, die bei angehaltener App im Hintergrund ausgeführt werden und auch nach Beendigung der App aktiv bleiben. Die API überwacht den Netzwerkstatus und kann Übertragungen automatisch anhalten und fortsetzen, wenn die Verbindung unterbrochen wird. Übertragungen sind außerdem daten- und akkuabhängig – die Downloadaktivität wird also basierend auf dem aktuellen Verbindungs- und Geräteakkustatus angepasst. Die API ist ideal für das Hoch- und Herunterladen von großen Dateien über HTTP(S) geeignet. FTP wird auch unterstützt, allerdings nur für Downloads.
@@ -40,17 +40,17 @@ Beispielsweise kann die für einen Vorgang definierte Kostenrichtlinie vorsehen,
 
 Obwohl das Feature für die Hintergrundübertragung über eigene Mechanismen zur Behandlung von Netzwerkstatusänderungen verfügt, müssen bei mit einem Netzwerk verbundenen Apps einige allgemeine Punkte im Zusammenhang mit der Konnektivität beachtet werden. Weitere Informationen finden Sie unter [Zugreifen auf den Netzwerkverbindungsstatus und Verwalten von Netzwerkkosten (HTML)](/previous-versions/windows/apps/hh452983(v=win.10)).
 
-> **Hinweis**  Mithilfe von Features für auf Mobilgeräten ausgeführte Apps kann der Benutzer die übertragene Datenmenge basierend auf dem Verbindungstyp, Roamingstatus und Datentarif überwachen und einschränken. Aus diesem Grund können Hintergrundübertragungen auf dem Telefon auch dann angehalten werden, wenn die Übertragung gemäß dem [**BackgroundTransferCostPolicy**](/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy)-Wert fortgesetzt werden sollte.
+> **Hinweis:** Mithilfe von Features für auf Mobilgeräten ausgeführte Apps kann der Benutzer die übertragene Datenmenge basierend auf dem Verbindungstyp, Roamingstatus und Datentarif überwachen und einschränken. Aus diesem Grund können Hintergrundübertragungen auf dem Telefon auch dann angehalten werden, wenn die Übertragung gemäß dem [**BackgroundTransferCostPolicy**](/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy)-Wert fortgesetzt werden sollte.
 
 Die folgende Tabelle zeigt für jeden [**BackgroundTransferCostPolicy**](/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy)-Wert, wann Hintergrundübertragungen basierend auf dem aktuellen Status des Telefons zulässig sind. Sie können den aktuellen Status des Telefons auch mithilfe der [**ConnectionCost**](/uwp/api/Windows.Networking.Connectivity.ConnectionCost)-Klasse ermitteln.
 
-| Gerätestatus                                                                                                                      | UnrestrictedOnly | Standardwert | Immer |
+| Device State                                                                                                                      | UnrestrictedOnly | Standard | Always |
 |-----------------------------------------------------------------------------------------------------------------------------------|------------------|---------|--------|
-| Mit WLAN verbunden                                                                                                                 | Allow            | Allow   | Allow  |
-| Getaktete Verbindung, kein Roaming, unter dem Datenlimit, Überschreitung des Limits nicht zu erwarten                                                   | Deny             | Allow   | Allow  |
-| Getaktete Verbindung, kein Roaming, unter dem Datenlimit, Überschreitung des Limits zu erwarten                                                       | Deny             | Deny    | Allow  |
-| Getaktete Verbindung, Roaming, unter dem Datenlimit                                                                                     | Deny             | Deny    | Allow  |
-| Getaktete Verbindung, Roaming, über dem Datenlimit. Dieser Status tritt nur auf, wenn der Benutzer in der Data Sense-Benutzeroberfläche die Option „Datennutzung im Hintergrund einschränken“ aktiviert. | Deny             | Deny    | Deny   |
+| Mit WLAN verbunden                                                                                                                 | Zulassen            | Zulassen   | Zulassen  |
+| Getaktete Verbindung, kein Roaming, unter dem Datenlimit, Überschreitung des Limits nicht zu erwarten                                                   | Verweigern             | Zulassen   | Zulassen  |
+| Getaktete Verbindung, kein Roaming, unter dem Datenlimit, Überschreitung des Limits zu erwarten                                                       | Verweigern             | Verweigern    | Zulassen  |
+| Getaktete Verbindung, Roaming, unter dem Datenlimit                                                                                     | Verweigern             | Verweigern    | Zulassen  |
+| Getaktete Verbindung, Roaming, über dem Datenlimit. Dieser Status tritt nur auf, wenn der Benutzer in der Data Sense-Benutzeroberfläche die Option „Datennutzung im Hintergrund einschränken“ aktiviert. | Verweigern             | Verweigern    | Verweigern   |
 
 ## <a name="uploading-files"></a>Hochladen von Dateien
 Bei der Hintergrundübertragung erfolgt der Upload als [**UploadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.UploadOperation). Dabei wird eine Reihe von Steuerungsmethoden zum Neustarten oder Abbrechen des Vorgangs verfügbar gemacht. App-Ereignisse (z. B. Anhalten oder Beenden) und Konnektivitätsänderungen werden vom System automatisch durch **UploadOperation** behandelt. Uploads werden bei Anhalten oder Unterbrechen einer App und auch nach dem Beenden der App fortgesetzt. Außerdem wird durch Festlegen der [**CostPolicy**](/uwp/api/windows.networking.backgroundtransfer.backgrounddownloader.costpolicy)-Eigenschaft angegeben, ob die App Uploads startet, wenn für die Internetkonnektivität ein getaktetes Netzwerk verwendet wird.
@@ -198,7 +198,7 @@ Bei Abschluss oder Abbruch von [**DownloadOperation**](/uwp/api/Windows.Networki
 
 1.  Die mit Daten aufgefüllte Liste kann nun zum Neustarten ausstehender Vorgänge verwendet werden.
 
-## <a name="post-processing"></a>Nachverarbeitung
+## <a name="post-processing"></a>Nachbearbeitung
 Ein neues Feature in Windows 10 ermöglicht es nach Abschluss einer Hintergrundübertragung, den Anwendungscode auszuführen, selbst wenn die App nicht ausgeführt wird. Ihre App möchte z. B. eine Liste der verfügbaren Filme aktualisieren, nachdem ein Film heruntergeladen wurde, statt bei jedem Start nach neuen Filmen zu suchen. Ihre App möchte ggf. eine fehlerhafte Dateiübertragung behandeln, indem diese unter Verwendung eines anderes Servers oder Ports wiederholt wird. Nachbearbeitung wird für erfolgreiche und nicht erfolgreiche Übertragungen aufgerufen, damit Sie sie zum Implementieren benutzerdefinierter Fehlerbehandlung und Wiederholungslogik verwenden können.
 
 Nachbearbeitung verwendet die vorhandene Hintergrundaufgaben-Infrastruktur. Erstellen Sie eine Hintergrundaufgabe, und ordnen Sie sie Ihren Übertragungen zu, bevor Sie die Übertragung starten. Die Übertragungen werden dann im Hintergrund ausgeführt, und wenn sie abgeschlossen sind, wird die Hintergrundaufgabe aufgerufen, um die Nachbearbeitung auszuführen.
@@ -231,7 +231,7 @@ Task<DownloadOperation> startTask = download.StartAsync().AsTask();
 startTask.ContinueWith(ForegroundCompletionHandler);
 
 // Do not enable the CompletionGroup until after all downloads are created.
-downloader.CompletinGroup.Enable();
+downloader.CompletionGroup.Enable();
 ```
 
 3.  Der Code in der Hintergrundaufgabe extrahiert die Liste der Vorgänge anhand der Triggerdetails und kann dann die Details für jeden Vorgang überprüfen und die entsprechende Nachbearbeitung für jeden Vorgang ausführen.
@@ -253,14 +253,14 @@ Die Nachbearbeitungsaufgabe stellt eine reguläre Hintergrundaufgabe dar. Sie is
 
 Beachten Sie, dass die Nachbearbeitung nicht die Vordergrund-Abschlusshandler ersetzt. Wenn Ihre App einen Vordergrund-Abschlusshandler definiert und nach Abschluss der Dateiübertragung App ausgeführt wird, werden der Vordergrund- und Hintergrund-Abschlusshandler aufgerufen. Die Reihenfolge, in der die Vordergrund- und Hintergrundaufgaben aufgerufen werden, kann nicht garantiert werden. Wenn Sie beide Handler definieren, sollten Sie sicherstellen, dass die zwei Aufgaben ordnungsgemäß ausgeführt werden und keine Konflikte aufweisen, wenn sie gleichzeitig ausgeführt werden.
 
-## <a name="request-timeouts"></a>Zeitüberschreitungen bei Anforderungen
+## <a name="request-timeouts"></a>Anforderungstimeouts
 Es müssen zwei primäre Szenarien zu Verbindungszeitüberschreitungen berücksichtigt werden:
 
 -   Beim Herstellen einer neuen Verbindung für die Übertragung wird die Verbindungsanforderung abgebrochen, wenn die Verbindung nicht innerhalb von fünf Minuten hergestellt wird.
 
 -   Nach dem Herstellen einer Verbindung wird eine HTTP-Anforderungsnachricht abgebrochen, auf die nicht innerhalb von zwei Minuten reagiert wurde.
 
-> **Hinweis**  Vorausgesetzt, dass eine Internetverbindung besteht, wiederholt die Hintergrundübertragung in beiden Szenarien eine Anforderung automatisch bis zu drei Mal. Wenn keine Internetkonnektivität erkannt wird, warten zusätzliche Anforderungen, bis Konnektivität vorhanden ist.
+> **Hinweis**  Vorausgesetzt, dass eine Internetverbindung besteht, wiederholt die Hintergrundübertragung in beiden Szenarien eine Anforderung automatisch bis zu drei Mal. Wenn keine Internetkonnektivität erkannt wird, warten zusätzliche Anforderungen, bis Konnektivität vorhanden ist.
 
 ## <a name="debugging-guidance"></a>Debugging-Leitfaden
 Das Beenden einer Debugsitzung in Microsoft Visual Studio ist mit dem Schließen der App vergleichbar; PUT-Uploads werden angehalten und POST-Uploads werden beendet. Auch beim Debuggen sollte die App alle beibehaltenen Uploads auflisten und dann neu starten oder abbrechen. Sie können beispielsweise aufgelistete beibehaltene Uploadvorgänge beim App-Start durch die App abbrechen lassen, wenn kein Interesse an vorherigen Operationen für diese Debugsitzung besteht.
@@ -282,7 +282,7 @@ Umgehen Sie dieses Problem, indem Sie alle Versionen der App vollständig deinst
 ## <a name="exceptions-in-windowsnetworkingbackgroundtransfer"></a>Ausnahmen in Windows.Networking.BackgroundTransfer
 Eine Ausnahme wird ausgelöst, wenn eine ungültige Zeichenfolge für einen Uniform Resource Identifier (URI) an den Konstruktor für das [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri)-Objekt übergeben wird.
 
-**.NET:** Der [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri)-Typ wird in C# und VB als [**System.Uri**](/dotnet/api/system.uri) angezeigt.
+**NET:** Der Typ [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) wird in C# und VB als [**System.Uri**](/dotnet/api/system.uri) angezeigt.
 
 In C# und Visual Basic kann dieser Fehler vermieden werden, indem die [**System.Uri**](/dotnet/api/system.uri)-Klasse in .NET 4.5 und eine der [**System.Uri.TryCreate**](/dotnet/api/system.uri.trycreate#overloads)-Methoden zum Testen der vom App-Benutzer erhaltenen Zeichenfolge verwendet wird, bevor der URI erstellt wird.
 

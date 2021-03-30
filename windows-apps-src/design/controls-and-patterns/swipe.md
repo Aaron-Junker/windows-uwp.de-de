@@ -11,12 +11,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f81e440670ccee34269ddbe5d55d93637b8d89df
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: 7cc03fd8b2acafd7f3e85b0a6438365d74d5657c
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043552"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784821"
 ---
 # <a name="swipe"></a>Wischen
 
@@ -227,7 +227,7 @@ Hier wird ein Wischelement vom Typ _reply_ so festgelegt, dass es nach dem Aufru
 
 ## <a name="dos-and-donts"></a>Empfehlungen für die Vorgehensweise
 
-- Verwende den Wischvorgang nicht für FlipViews, Hubs oder Pivots. Die Kombination kann aufgrund von widersprüchlichen Wischrichtungen für den Benutzer verwirrend sein.
+- Verwenden Sie den Wischvorgang nicht in FlipViews oder Hubs. Die Kombination kann aufgrund von widersprüchlichen Wischrichtungen für den Benutzer verwirrend sein.
 - Kombiniere horizontales Wischen nicht mit horizontaler Navigation bzw. vertikales Wischen nicht mit vertikaler Navigation.
 - Stelle sicher, dass es sich bei dem vom Benutzer durchgeführten Wischvorgang um dieselbe Aktion handelt und dass sie konsistent für alle zugehörigen wischfähigen Elemente ausgeführt wird.
 - Verwende Wischvorgänge für die vom Benutzer ausgeführten Hauptaktionen.

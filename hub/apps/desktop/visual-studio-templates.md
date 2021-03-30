@@ -7,12 +7,12 @@ keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
-ms.openlocfilehash: 7f288d301583c08b0fd4104802b643a7c31ad99f
-ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.openlocfilehash: ea6ac2491afe8820bc47f69149f553241f17e89e
+ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100335106"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102629288"
 ---
 # <a name="visual-studio-project-and-item-templates-for-windows-apps"></a>Visual Studio-Projekt- und -Elementvorlagen für Windows-Apps
 
@@ -25,7 +25,9 @@ Visual Studio 2019 bietet zahlreiche Projekt- und Elementvorlagen, die Sie beim
 
 Die [Windows-UI-Bibliothek (WinUI)](../winui/index.md) ist die Plattform für die moderne native Benutzeroberfläche (UI) für Windows-Apps auf allen Desktop- (.NET und natives Win32) und UWP-App-Plattformen. [WinUI 3](../winui/winui3/index.md) (derzeit als Entwicklervorschau verfügbar) ist die neueste Hauptversion von WinUI und transformiert WinUI in ein vollständiges UX-Framework für Windows-Desktop-Apps um.
 
-WinUI 3 enthält ein VSIX-Paket für Visual Studio 2019, das Projekt- und Elementvorlagen bereitstellt, die Ihnen den Einstieg in das Erstellen von Apps mit einer WinUI-basierten Schnittstelle erleichtern. Weitere Informationen zum WinUI 3 VSIX-Paket und den Projektvorlagen, die es bereitstellt, finden Sie unter [Installieren von WinUI 3 Vorschau 4](../winui/winui3/index.md#install-winui-3-preview-4).
+Diese aktuelle Entwicklervorschau von WinUI 3 ist als Teil von [Project Reunion 0.5 Preview](../project-reunion/index.md) verfügbar. Diese Vorschau enthält ein VSIX-Paket für Visual Studio 2019, das Projekt- und Elementvorlagen bereitstellt, die Ihnen den Einstieg in das Erstellen von Apps mit einer WinUI-basierten Schnittstelle erleichtern.
+
+Informationen zum Installieren des VSIX-Pakets von Project Reunion 0.5 Preview sowie der WinUI-Projektvorlagen finden Sie unter [Einrichten der Entwicklungsumgebung](../project-reunion/index.md#set-up-your-development-environment). Weitere Informationen zu den verfügbaren WinUI-Projekt- und -Elementvorlagen finden Sie unter [Erstellen von WinUI-Projekten](../winui/winui3/index.md#create-winui-projects).
 
 > [!IMPORTANT]
 > WinUI 3, einschließlich der zugehörigen Visual Studio-Vorlagen, ist zurzeit als Entwicklervorschau verfügbar, die für die frühe Evaluierung und das Sammeln von Feedback aus der Entwicklercommunity vorgesehen ist. Diese Version sollte zu diesem Zeitpunkt NICHT für Produktions-Apps verwendet werden.

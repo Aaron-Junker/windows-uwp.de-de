@@ -1,27 +1,29 @@
 ---
 description: Diese Anleitung zeigt dir, wie du mit der Erstellung von .NET- und C++/Win32-Desktop Apps mit einer WinUI 3-Benutzeroberfläche beginnen kannst.
 title: Erste Schritte mit WinUI 3 für Desktop-Apps
-ms.date: 02/09/2021
+ms.date: 03/08/2021
 ms.topic: article
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: dcf3309f9b4a82019e867789bbeabb07c724ea0d
-ms.sourcegitcommit: 71701f5ffc540951f86d6f77a52416c6d75fe305
+ms.openlocfilehash: c0935fdde0e0fa721f07c50572ed978b51629a39
+ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100632701"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102629298"
 ---
 # <a name="get-started-with-winui-3-for-desktop-apps"></a>Erste Schritte mit WinUI 3 für Desktop-Apps
 
-WinUI 3 Vorschau 4 enthält neue Projektvorlagen, die es Ihnen ermöglichen, verwaltete C#-/.NET Core-Apps und native C++/Win32-Desktop-Apps mit einer vollständig WinUI-basierten Benutzeroberfläche zu erstellen. Wenn Sie Apps mit diesen Projektvorlagen erstellen, wird die gesamte Benutzeroberfläche Ihrer Anwendung mithilfe von Fenstern, Steuerelementen und anderen Benutzeroberflächentypen implementiert, die von WinUI 3 zur Verfügung gestellt werden. Eine vollständige Liste der Projektvorlagen finden Sie in [diesem Abschnitt](index.md#project-templates-for-winui-3).
+WinUI 3 – Project Reunion 0.5 Preview enthält neue Projektvorlagen, die es Ihnen ermöglichen, verwaltete C#-/.NET Core-Apps und native C++/Win32-Desktop-Apps mit einer vollständig WinUI-basierten Benutzeroberfläche zu erstellen. Wenn Sie Apps mit diesen Projektvorlagen erstellen, wird die gesamte Benutzeroberfläche Ihrer Anwendung mithilfe von Fenstern, Steuerelementen und anderen Benutzeroberflächentypen implementiert, die von WinUI 3 zur Verfügung gestellt werden. Eine vollständige Liste der Projektvorlagen finden Sie in [diesem Abschnitt](index.md#project-templates-for-winui-3).
+
+Ab WinUI 3 – Project Reunion 0.5 Preview wird WinUI 3 als Teil des Project Reunion-Pakets bereitgestellt. Dadurch ändern sich zwar geringfügig die Installationsschritte, und Ihnen stehen mehr optionale Funktionen zur Verfügung, ansonsten bleibt die Entwicklung von WinUI 3-Apps jedoch unverändert. Weitere Informationen zu Project Reunion finden Sie unter [Erstellen von Windows-Desktop-Apps mit Project Reunion 0.5 Preview (März 2021)](../../project-reunion/index.md).
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-Um die in diesem Artikel beschriebenen WinUI 3 für Desktop-Projektvorlagen zu verwenden, konfigurieren Sie Ihren Entwicklungscomputer, und installieren Sie WinUI 3 Vorschau 4 entsprechend [diesen Anweisungen](index.md#install-winui-3-preview-4).
+Wenn Sie die in diesem Artikel beschriebenen WinUI 3 für Desktop-Projektvorlagen verwenden möchten, müssen Sie Ihren Entwicklungscomputer entsprechend konfigurieren und [Project Reunion 0.5 Preview installieren](../../project-reunion/index.md#set-up-your-development-environment).
 
 ## <a name="create-a-winui-3-desktop-app-for-c-and-net-5"></a>Erstellen einer WinUI 3-Desktop-App für C# und .NET 5
 
@@ -35,7 +37,7 @@ Um die in diesem Artikel beschriebenen WinUI 3 für Desktop-Projektvorlagen zu 
 
 4. Gib einen Projektnamen ein, wähle alle anderen Optionen wie gewünscht aus, und klicke auf **Erstellen**.
 
-5. Lege im folgenden Dialogfeld die **Zielversion** auf Windows 10, Version 1903 (Build 18362) und **Mindestversion** auf Windows 10, Version 1803 (Build 17134) fest, und klicke auf **OK**.
+5. Legen Sie im folgenden Dialogfeld die **Zielversion** auf „Windows 10, Version 1903 (Build 18362)“ und die **Mindestversion** auf „Windows 10, Version 1809 (Build 17763)“ fest, und klicken Sie anschließend auf **OK**.
 
     ![Ziel- und Mindestversion](images/WinUI-min-target-version.png)
 
@@ -67,7 +69,7 @@ Um die in diesem Artikel beschriebenen WinUI 3 für Desktop-Projektvorlagen zu 
 
 4. Gib einen Projektnamen ein, wähle alle anderen Optionen wie gewünscht aus, und klicke auf **Erstellen**.
 
-5. Lege im folgenden Dialogfeld die **Zielversion** auf Windows 10, Version 1903 (Build 18362) und **Mindestversion** auf Windows 10, Version 1803 (Build 17134) fest, und klicke auf **OK**.
+5. Legen Sie im folgenden Dialogfeld die **Zielversion** auf „Windows 10, Version 1903 (Build 18362)“ und die **Mindestversion** auf „Windows 10, Version 1809 (Build 17763)“ fest, und klicken Sie anschließend auf **OK**.
 
     ![Ziel- und Mindestversion](images/WinUI-min-target-version.png)
 
@@ -113,8 +115,8 @@ Um mehrere Sprachen in einer WinUI-Desktop-App zu unterstützen und die ordnungs
 
 ## <a name="known-issues-and-limitations"></a>Bekannte Probleme und Einschränkungen
 
-Weitere Informationen finden Sie im Abschnitt [Einschränkungen und bekannte Probleme](index.md#limitations-and-known-issues) der [Windows-UI-Bibliothek 3 Vorschau 4 (Februar 2021)](index.md).
+Weitere Informationen finden Sie unter [Windows-UI-Bibliothek 3 – Project Reunion 0.5 Preview (März 2021)](index.md) im Abschnitt [Einschränkungen und bekannte Probleme](index.md#limitations-and-known-issues).
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Windows-UI-Bibliothek 3 Vorschau 4 (Februar 2021)](index.md)
+- [Windows-UI-Bibliothek 3 – Project Reunion 0.5 Preview (März 2021)](index.md)

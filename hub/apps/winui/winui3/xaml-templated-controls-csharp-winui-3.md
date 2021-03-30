@@ -1,19 +1,19 @@
 ---
 description: In diesem Artikel werden Sie schrittweise durch den Vorgang zum Erstellen eines XAML-Steuerelements mit Vorlagen für WinUI 3 mit C# geführt.
 title: XAML-Steuerelemente in Vorlagen für WinUI 3-Apps mit C#
-ms.date: 09/11/2020
+ms.date: 03/05/2021
 ms.topic: article
 keywords: Windows 10, UWP, benutzerdefiniertes Steuerelement, Steuerelement mit Vorlagen, WinUI
 ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 618bfc5a9937d29c546dc9420a1cba1c25fcc0ea
-ms.sourcegitcommit: aabd6f40df6cc82bb8ce3a43275e4abd568c236f
+ms.openlocfilehash: 3caadca2c6aae1ecceed534f9d9597f126310f3d
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92061698"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254627"
 ---
 # <a name="templated-xaml-controls-for-winui-3-apps-with-c"></a>XAML-Steuerelemente in Vorlagen für WinUI 3-Apps mit C#
 
@@ -29,11 +29,11 @@ Erstelle zunächst ein neues Projekt in Microsoft Visual Studio. Wählen Sie im 
 
 ## <a name="add-a-templated-control-to-your-app"></a>Hinzufügen eines vordefinierten Steuerelements zu Ihrer App
 
-Um ein vordefiniertes Steuerelement hinzuzufügen, klicken Sie auf das Menü **Projekt** in der Symbolleiste, oder klicken Sie mit der rechten Maustaste auf Ihr Projekt im **Projektmappen-Explorer**, und wählen Sie **Neues Element hinzufügen** aus. Wählen Sie unter **Visual C#->WinUI** die Vorlage **Benutzerdefiniertes Steuerelement (WinUI)** aus. Benennen Sie das neue Steuerelement „BgLabelControl“, und klicken Sie auf *Hinzufügen*. Dadurch werden dem Projekt zwei neue Dateien hinzugefügt. `BgLabelControl.cs` enthält das CodeBehind-Element für das Steuerelement. 
+Um ein vordefiniertes Steuerelement hinzuzufügen, klicken Sie auf das Menü **Projekt** in der Symbolleiste, oder klicken Sie mit der rechten Maustaste auf Ihr Projekt im **Projektmappen-Explorer**, und wählen Sie **Neues Element hinzufügen** aus. Wählen Sie unter **Visual C#->WinUI** die Vorlage **Benutzerdefiniertes Steuerelement (WinUI)** aus. Benennen Sie das neue Steuerelement „BgLabelControl“, und klicken Sie auf *Hinzufügen*. 
 
-## <a name="update-the-code-behind-file"></a>Aktualisieren der CodeBehind-Datei
+## <a name="update-the-custom-control-c-file"></a>Aktualisieren der C#-Datei des benutzerdefinierten Steuerelements
 
-Beachten Sie, dass der Konstruktor in der CodeBehind-Datei „BgLabelControl.xaml.cs“ die Eigenschaft **DefaultStyleKey** für unser Steuerelement definiert. Dieser Schlüssel identifiziert die Standardvorlage, die verwendet wird, wenn der Consumer des Steuerelements nicht ausdrücklich eine Vorlage angibt. Der Schlüsselwert ist der *Typ* des Steuerelements. Dieser Schlüssel wird später bei der Implementierung unserer generischen Vorlagendatei verwendet.
+Beachten Sie, dass der Konstruktor in der C#-Datei „BgLabelControl.cs“ die Eigenschaft **DefaultStyleKey** für unser Steuerelement definiert. Dieser Schlüssel identifiziert die Standardvorlage, die verwendet wird, wenn der Consumer des Steuerelements nicht ausdrücklich eine Vorlage angibt. Der Schlüsselwert ist der *Typ* des Steuerelements. Dieser Schlüssel wird später bei der Implementierung unserer generischen Vorlagendatei verwendet.
 
 ```csharp
 public BgLabelControl()
@@ -85,9 +85,9 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
 Weitere Informationen zur Funktionsweise von Abhängigkeitseigenschaften finden Sie unter [Übersicht über Abhängigkeitseigenschaften](/windows/uwp/xaml-platform/dependency-properties-overview).
 
 ## <a name="define-the-default-style-for-bglabelcontrol"></a>Definieren des Standardstils für „BgLabelControl“
-Ein Steuerelement mit Vorlagen muss eine Standardstilvorlage bereitstellen, die verwendet wird, wenn der Benutzer des Steuerelements nicht explizit einen Stil festlegt. In diesem Schritt erstellen wir eine generische Vorlagendatei für das Steuerelement.
+Ein Steuerelement mit Vorlagen muss eine Standardstilvorlage bereitstellen, die verwendet wird, wenn der Benutzer des Steuerelements nicht explizit einen Stil festlegt. In diesem Schritt wird die generische Vorlagendatei für das Steuerelement geändert.
 
-Vergewissere dich, dass **Alle Dateien anzeigen** weiterhin aktiviert ist (im **Projektmappen-Explorer**). Erstelle unter deinem Projektknoten einen neuen Ordner mit dem Namen „Themes”. Fügen Sie unter `Themes` ein neues Element vom Typ **Visual C# > WinUI > Ressourcenwörterbuch (WinUI)** hinzu, und nennen Sie es „Generic.xaml“. Ordner- und Dateiname müssen wie angegeben festgelegt werden, damit das XAML-Framework den Standardstil für ein Steuerelement mit Vorlagen findet. Löschen Sie den Standardinhalt von „Generic.xaml“, und fügen Sie das folgende Markup ein.
+Die generische Vorlagendatei wird generiert, wenn Sie Ihrer APP das **benutzerdefinierte Steuerelement (WinUI)** hinzufügen. Die Datei heißt „Generic.xaml“ und wird im Projektmappen-Explorer im Ordner **Designs** generiert. Der Ordner- und der Dateiname werden benötigt, damit das XAML-Framework den Standardstil für ein Steuerelement mit Vorlagen findet. Löschen Sie den Standardinhalt von „Generic.xaml“, und fügen Sie das folgende Markup ein.
 
 
 

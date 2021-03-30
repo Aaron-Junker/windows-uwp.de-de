@@ -1,5 +1,5 @@
 ---
-title: Beliebte Entwicklungstutorials
+title: Entwicklungstutorials und -kurse
 description: Eine Liste beliebter Tutorials, Onlinekurse und Codebeispiele für gängige Entwicklungsaufgaben und -szenarien.
 author: mattwojo
 ms.author: mattwoj
@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Microsoft, Windows, Developer, beliebte Tutorials, Kurse, Codebeispiele, WSL
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: ad37ef190a2bc34a0c067bb01b3502228a2c5ad5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2792d9b0f33dec7cef4d4328044afee454477fca
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168734"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254515"
 ---
 # <a name="popular-tutorials-courses-and-code-samples"></a>Beliebte Tutorials, Kurse und Codebeispiele
 

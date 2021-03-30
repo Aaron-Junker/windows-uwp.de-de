@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Parallelität, async, asynchron, Asynchronität
 ms.localizationpriority: medium
-ms.openlocfilehash: e916465d664b5658eeb155874dfa00795a772622
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d5dc755fbb5247c47cd0acd8a3e1f3147f061ccf
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170394"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784651"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>Erweiterte Parallelität und Asynchronie mit C++/WinRT
 
@@ -558,32 +558,39 @@ IAsyncOperationWithProgress<double, double> CalcPiTo5DPs()
 
     co_await 1s;
     double pi_so_far{ 3.1 };
+    progress.set_result(pi_so_far);
     progress(0.2);
 
     co_await 1s;
     pi_so_far += 4.e-2;
+    progress.set_result(pi_so_far);
     progress(0.4);
 
     co_await 1s;
     pi_so_far += 1.e-3;
+    progress.set_result(pi_so_far);
     progress(0.6);
 
     co_await 1s;
     pi_so_far += 5.e-4;
+    progress.set_result(pi_so_far);
     progress(0.8);
 
     co_await 1s;
     pi_so_far += 9.e-5;
+    progress.set_result(pi_so_far);
     progress(1.0);
+
     co_return pi_so_far;
 }
 
 IAsyncAction DoMath()
 {
     auto async_op_with_progress{ CalcPiTo5DPs() };
-    async_op_with_progress.Progress([](auto const& /* sender */, double progress)
+    async_op_with_progress.Progress([](auto const& sender, double progress)
     {
-        std::wcout << L"CalcPiTo5DPs() reports progress: " << progress << std::endl;
+        std::wcout << L"CalcPiTo5DPs() reports progress: " << progress << L". "
+                   << L"Value so far: " << sender.GetResults() << std::endl;
     });
     double pi{ co_await async_op_with_progress };
     std::wcout << L"CalcPiTo5DPs() is complete !" << std::endl;
@@ -596,6 +603,13 @@ int main()
     DoMath().get();
 }
 ```
+
+Rufen Sie zum Melden des Status das Statustoken auf, und verwenden Sie dabei den Statuswert als Argument. Verwenden Sie zum Festlegen eines vorläufigen Ergebnisses die Methode `set_result()` für das Statustoken.
+
+> [!NOTE]
+> Wenn Sie vorläufige Ergebnisse melden möchten, benötigen Sie mindestens die C++/WinRT-Version 2.0.210309.3.
+
+Im obigen Beispiel wird für jeden Statusbericht ein vorläufiges Ergebnis festgelegt. Sie können jederzeit wählen, ob Sie vorläufige Ergebnisse melden möchten. Es ist keine Koppelung mit einem Statusbericht erforderlich.
 
 > [!NOTE]
 > Implementiere für asynchrone Aktionen oder Vorgänge nicht mehrere *Abschlusshandler*. Du kannst entweder einen einzelnen Delegaten für das Abschlussereignis verwenden oder `co_await` dafür ausführen. Wenn Sie beide Abschlusshandler nutzen, schlägt der zweite fehl. Für ein asynchrones Objekt können Sie einen der beiden folgenden Abschlusshandlertypen verwenden, jedoch nicht beide.

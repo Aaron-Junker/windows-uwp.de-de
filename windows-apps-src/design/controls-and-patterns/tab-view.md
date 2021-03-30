@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f34e2a882746ac833d2b78373a96496c1f079864
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 3bf103e3473ce240cb4e6633c4d5002804eb4a23
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034773"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804954"
 ---
 # <a name="tabview"></a>TabView
 
@@ -39,7 +39,7 @@ Das TabView-Steuerelement bietet eine Möglichkeit, eine Reihe von Registerkarte
 > [!TIP]
 > In diesem Dokument stellt der Alias **muxc** in XAML die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben dem [Page](/uwp/api/windows.ui.xaml.controls.page)-Element Folgendes hinzugefügt: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
->Im CodeBehind stellt ebenfalls der Alias **muxc** in C# die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben am Anfang der Datei die folgende **using** -Anweisung hinzugefügt: `using muxc = Microsoft.UI.Xaml.Controls;`
+>Im CodeBehind stellt ebenfalls der Alias **muxc** in C# die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben am Anfang der Datei die folgende **using**-Anweisung hinzugefügt: `using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -52,7 +52,7 @@ Im Allgemeinen gibt es für Benutzeroberflächen mit Registerkarten zwei verschi
 - Benutzer können Dokumente oder Webseiten direkt auf Registerkarten öffnen.
 - Benutzer können Registerkarten mithilfe von Drag & Drop zwischen Fenstern verschieben.
 
-Wenn eine TabView für Ihre App nicht geeignet ist, sollten Sie Steuerelemente wie [Pivot](./pivot.md) oder [NavigationView](./navigationview.md) verwenden.
+Sollte eine TabView für Ihre App nicht geeignet sein, empfiehlt sich ggf. die Verwendung eines Steuerelements vom Typ [NavigationView](./navigationview.md).
 
 ## <a name="anatomy"></a>Aufbau
 
@@ -203,7 +203,7 @@ Unabhängig davon, wie der Benutzer mit einer Reihe von Dokumentregisterkarten i
 
 ### <a name="tab-and-cursor-key-behavior"></a>Verhalten der TAB- und CURSORTASTEN
 
-Wenn der Fokus in den _TabStrip_ -Bereich bewegt wird, erhält das ausgewählte [TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem) den Fokus. Der Benutzer kann dann mit den NACH-LINKS- und NACH-RECHTS-TASTEN den Fokus (nicht die Auswahl) auf andere Registerkarten im TabStrip-Element verschieben. Der Pfeiltastenfokus ist im TabStrip-Element und in der Schaltfläche zum Hinzufügen von Registerkarten „(+)“ eingeschlossen, falls vorhanden. Um den Fokus aus dem TabStrip-Bereich zu verschieben, kann der Benutzer die TAB-TASTE drücken, die den Fokus auf das nächste Element verschiebt, das den Fokus erhalten kann.
+Wenn der Fokus in den _TabStrip_-Bereich bewegt wird, erhält das ausgewählte [TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem) den Fokus. Der Benutzer kann dann mit den NACH-LINKS- und NACH-RECHTS-TASTEN den Fokus (nicht die Auswahl) auf andere Registerkarten im TabStrip-Element verschieben. Der Pfeiltastenfokus ist im TabStrip-Element und in der Schaltfläche zum Hinzufügen von Registerkarten „(+)“ eingeschlossen, falls vorhanden. Um den Fokus aus dem TabStrip-Bereich zu verschieben, kann der Benutzer die TAB-TASTE drücken, die den Fokus auf das nächste Element verschiebt, das den Fokus erhalten kann.
 
 Verschieben des Fokus über die TAB-TASTE
 
@@ -337,6 +337,5 @@ private void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerato
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [MasterDetails](./master-details.md)
+- [Liste/Details](./list-details.md)
 - [NavigationView](./navigationview.md)
-- [Pivot](./pivot.md)

@@ -7,14 +7,14 @@ keywords: MRT, mrtcore, PRI, makepri, Ressourcen, Laden von Ressourcen
 ms.author: hickeys
 author: hickeys
 ms.localizationpriority: medium
-ms.openlocfilehash: bde540ff99e763a2d5c622eba1d292f722008ef6
-ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
+ms.openlocfilehash: 2b732deb0f387c11b2675193c047d33fa3e55ace
+ms.sourcegitcommit: 7f2a09e8d5d37cb5860a5f2ece5351ea6907b94c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102629210"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105730484"
 ---
-# <a name="manage-resources-with-mrt-core-project-reunion"></a>Verwalten von Ressourcen mit MRT Core (Projekt Zusammenführung)
+# <a name="manage-resources-with-mrt-core"></a>Verwalten von Ressourcen mit MRT Core 
 
 MRT Core ist eine optimierte Version des modernen Windows- [Ressourcen Verwaltungssystems](/windows/uwp/app-resources/resource-management-system) , das als Teil der [Projekt Zusammenführung](../index.md)verteilt wird.
 
@@ -22,22 +22,21 @@ MRT Core hat sowohl Build-als auch Lauf Zeitfunktionen. Zum Zeitpunkt der Erstel
 
 ## <a name="package-resource-index-pri-file"></a>Paket Ressourcen Index Datei (PRI)
 
-Jedes app-Paket sollte einen binären Index der Ressourcen in der App enthalten. Dieser Index wird zum Zeitpunkt der Erstellung erstellt und ist in mindestens einer Ressourcen Datei (. resw) enthalten.
+Jedes app-Paket sollte einen binären Index der Ressourcen in der App enthalten. Dieser Index wird zum Zeitpunkt der Erstellung erstellt und ist in einer oder mehreren PRI-Dateien enthalten. Jede PRI-Datei enthält eine benannte Auflistung von Ressourcen, die als Ressourcenzuordnung bezeichnet wird.
 
-Eine resw-Datei enthält tatsächliche Zeichen folgen Ressourcen und einen indizierten Satz von Dateipfaden, die auf verschiedene Dateien im Paket verweisen.
-Ein Paket enthält in der Regel eine einzelne resw-Datei mit dem Namen Resources. resw. Die Datei Resources. resw im Stammverzeichnis jedes Pakets wird automatisch geladen, wenn ResourceManager instanziiert wird.
+Eine PRI-Datei enthält tatsächliche Zeichen folgen Ressourcen. Eingebettete Binär-und Datei Pfad Ressourcen werden direkt aus den Projektdateien indiziert. Ein Paket enthält in der Regel eine einzelne PRI-Datei pro Sprache mit dem Namen **Resources. pri**. Die Datei **Resources. pri** im Stammverzeichnis jedes Pakets wird automatisch geladen, wenn das [ResourceManager](/windows/winui/api/microsoft.applicationmodel.resources.resourcemanager) -Objekt instanziiert wird.
 
-Jede resw-Datei enthält eine benannte Auflistung von Ressourcen, die als Ressourcen Zuordnung bezeichnet wird. Wenn eine resw-Datei aus einem Paket geladen wird, wird der Name der Ressourcen Zuordnung so überprüft, dass er mit dem Namen der Paket Identität identisch ist.
+PRI-Dateien enthalten nur Daten, sodass Sie nicht das PE-Format (portable ausführbare Datei) verwenden. Sie sind speziell auf Daten beschränkt.
 
-Resw-Dateien enthalten nur Daten, sodass Sie nicht das PE-Format (portable ausführbare Datei) verwenden. Sie sind speziell auf Daten beschränkt.
+## <a name="access-app-resources"></a>Zugreifen auf App-Ressourcen
 
-## <a name="using-mrt-core-to-access-app-resources"></a>Verwenden von MRT Core zum Zugreifen auf App-Ressourcen
+MRT Core bietet verschiedene Möglichkeiten, auf Ihre APP-Ressourcen zuzugreifen.
 
-### <a name="resource-loader-basic-functionality"></a>Ressourcen Lader (grundlegende Funktionalität)
+### <a name="basic-functionality-with-resourceloader"></a>Grundlegende Funktionalität mit resourceloader
 
-Die einfachste Möglichkeit, Programm gesteuert auf Ihre APP-Ressourcen zuzugreifen, ist die Verwendung des [Microsoft. applicationmodel. Resources](/windows/winui/api/microsoft.applicationmodel.resources) -Namespace und der resourceloader-Klasse. Resourceloader ermöglicht Ihnen den einfachen Zugriff auf Zeichen folgen Ressourcen aus dem Satz von Ressourcen Dateien, referenzierten Bibliotheken oder anderen Paketen.
+Die einfachste Möglichkeit, Programm gesteuert auf Ihre APP-Ressourcen zuzugreifen, ist die Verwendung der [resourceloader](/windows/winui/api/microsoft.applicationmodel.resources.resourceloader) -Klasse. **Resourceloader** ermöglicht Ihnen den einfachen Zugriff auf Zeichen folgen Ressourcen aus dem Satz von Ressourcen Dateien, referenzierten Bibliotheken oder anderen Paketen.
 
-### <a name="resource-manager-advanced-functionality"></a>Ressourcen-Manager (erweiterte Funktionalität)
+### <a name="advanced-functionality-with-resourcemanager"></a>Erweiterte Funktionalität mit ResourceManager
 
 Die [ResourceManager](/windows/winui/api/microsoft.applicationmodel.resources.resourcemanager) -Klasse stellt zusätzliche Informationen zu Ressourcen bereit, z. b. Enumeration und Überprüfung. Dies geht über die Bereitstellung der **resourceloader** -Klasse hinaus.
 
@@ -47,15 +46,18 @@ Ressourcen, die für eine app verfügbar sind, werden in hierarchischen Sammlung
 
 Der **ResourceManager** -Dienst unterstützt nicht nur den Zugriff auf die Zeichen folgen Ressourcen einer APP, sondern auch die Möglichkeit, die verschiedenen Datei Ressourcen aufzulisten und zu überprüfen. Um Konflikte zwischen Dateien und anderen Ressourcen zu vermeiden, die aus einer Datei stammen, befinden sich alle indizierten Dateipfade in einer reservierten **ResourceMap** -Unterstruktur. Beispielsweise entspricht die Datei ' \Images\logo.png ' dem Ressourcennamen ' files/Images/logo.png '.
 
-### <a name="resourcecontext"></a>ResourceContext
+### <a name="qualify-resource-selection-with-resourcecontext"></a>Ressourcen Auswahl mit resourcecontext qualifizieren
 
 Ressourcen Kandidaten werden basierend auf einem bestimmten [resourcecontext](/windows/winui/api/microsoft.applicationmodel.resources.resourcecontext)ausgewählt. dabei handelt es sich um eine Sammlung von Ressourcen Qualifiziererwerten (Sprache, Skalierung, Kontrast usw.). Ein Standardkontext verwendet die aktuelle Konfiguration der APP für jeden qualifiziererwert, es sei denn, Sie wird überschrieben. Beispielsweise können Ressourcen wie z. b. Images für die Skalierung qualifiziert werden, die von einem Monitor zu einem anderen und somit von einer Anwendungs Ansicht zu einem anderen abweicht. Aus diesem Grund hat jede Anwendungs Ansicht einen eindeutigen Standardkontext. Wenn Sie einen Ressourcen Kandidaten abrufen, sollten Sie eine **resourcecontext** -Instanz übergeben, um den am besten geeigneten Wert für eine bestimmte Ansicht zu erhalten.
 
-### <a name="important-apis"></a>Wichtige APIs
+### <a name="load-images"></a>Images laden
 
-- [ResourceLoader](/windows/winui/api/microsoft.applicationmodel.resources.resourceloader)
-- [ResourceManager](/windows/winui/api/microsoft.applicationmodel.resources.resourcemanager)
-- [ResourceContext](/windows/winui/api/microsoft.applicationmodel.resources.resourcecontext)
+Wenn Sie MRT Core zum Abrufen von Bildern verwenden möchten, die Sie Ihrem Projekt hinzugefügt haben, müssen Sie das Abbild so konfigurieren, dass es als Inhalt erstellt wird. Wenn Sie dies nicht tun, wird das Image nicht in der Datei "Resources. pri" indiziert und kann nicht von MRT Core abgerufen werden.
+
+So konfigurieren Sie ein Bild, das als Inhalt erstellt werden soll:
+
+* Legen Sie in einem c#-Projekt/.net 5 **die Eigenschaft Buildvorgang für das Bild** auf **Inhalt** fest.
+* Legen Sie in einem C++/WinRT-Projekt die **Content** -Eigenschaft für das Bild auf **true** fest.
 
 ## <a name="sample"></a>Beispiel
 

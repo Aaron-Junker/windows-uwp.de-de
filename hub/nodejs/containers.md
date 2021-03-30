@@ -1,5 +1,5 @@
 ---
-title: Erste Schritte bei der Verwendung von Docker-Containern mit Node.js
+title: Docker-Container mit Node.js
 description: Eine ausführliche Anleitung für den Einstieg in die Verwendung von Docker-Containern mit deinen Node.js-Apps.
 author: mattwojo
 ms.author: mattwoj
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: ''
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: bd9b912dfd4b733f57aaacfe6e8f246985e3b4f5
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: 5a6ba80f96410ead8195e6175063916d2519ed91
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91933081"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254554"
 ---
 # <a name="get-started-using-docker-containers-with-nodejs"></a>Erste Schritte bei der Verwendung von Docker-Containern mit Node.js
 

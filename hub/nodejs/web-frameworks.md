@@ -1,6 +1,6 @@
 ---
-title: Erste Schritte mit Node.js-Webframeworks unter Windows
-description: Ein Schritt-für-Schritt-Leitfaden für den Einstieg in die Verwendung von Node.js-Webframeworks unter Windows, einschließlich Next.js, Nuxt.js und Gatsby.
+title: Node.js-Webframeworks unter Windows
+description: Ein Leitfaden, der Sie beim Einstieg in Node.js-Webframeworks unter Windows unterstützt.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, Node.js, Windows 10, Microsoft, Erlernen von Node.js, Node unter Windows, Node im WSL, Node unter Linux unter Windows, Installieren von Node unter Windows, NodeJS mit VS Code, Entwickeln mit Node unter Windows, Entwickeln mit NodeJS unter Windows, Installieren von Node in WSL, NodeJS im Windows-Subsystem für Linux
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: af23ec1374d5fce727579171113402536221e5f2
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: c4f2d679c50dab94beea2b15d0f4650f0967097d
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823604"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254272"
 ---
 # <a name="get-started-with-nodejs-web-frameworks-on-windows"></a>Erste Schritte mit Node.js-Webframeworks unter Windows
 

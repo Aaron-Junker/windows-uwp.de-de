@@ -1,6 +1,6 @@
 ---
 description: NavigationView ist ein adaptives Steuerelement, mit dem Muster für die Navigation auf oberster Ebene für deine App implementiert werden.
-title: Navigationsansicht
+title: NavigationView
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
@@ -14,19 +14,19 @@ ms.custom: RS5
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: af52032a0ebdf60e72f8bad0dd853696b717a05a
-ms.sourcegitcommit: 9bd23e0e08ed834accebde4db96fc87f921d983d
+ms.openlocfilehash: f49d30e5ef3d2b7d4130d2141da711c99f8969bb
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98949141"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804724"
 ---
-# <a name="navigation-view"></a>Navigationsansicht
+# <a name="navigationview"></a>NavigationView
 
 Mit dem NavigationView-Steuerelement wird die Navigation auf oberster Ebene für deine App bereitgestellt. Es ermöglicht die Anpassung an verschiedene Bildschirmgrößen und unterstützt sowohl den Navigationsstil _oben_ als auch _links_.
 
 ![Navigation „oben“](images/nav-view-header.png)<br/>
-_Navigationsansicht unterstützt die Anordnung von Bereichen bzw. Menüs sowohl „oben“ als auch „links“_
+_Mit „NavigationView“ kann der Navigationsbereich bzw. das Menü entweder oben oder links platziert werden._
 
 **Abrufen der Windows-UI-Bibliothek**
 
@@ -141,16 +141,16 @@ Wir empfehlen die Navigation _links_, wenn Folgendes gilt:
 Standardmäßig ist „PaneDisplayMode“ auf „Auto“ festgelegt. Im Modus „Auto“ wird die Navigationsansicht von „LeftMinimal“ (wenn das Fenster schmal ist) in „LeftCompact“ und dann in „Left“ geändert, wenn das Fenster breiter wird. Weitere Informationen findest du im Abschnitt zum [adaptiven Verhalten](#adaptive-behavior).
 
 ![Standardnavigation links: adaptives Verhalten](images/displaymode-auto.png)<br/>
-_Standardnavigationsansicht: adaptives Verhalten_
+_NavigationView: adaptives Standardverhalten_
 
 ## <a name="anatomy"></a>Aufbau
 
 In diesen Abbildungen ist das Layout des Bereichs, der Kopfzeile und des Inhaltsbereichs für das Steuerelement dargestellt, wenn es für die Navigation _oben_ oder _links_ konfiguriert ist.
 
-![Layout für Navigationsansicht oben](images/topnav-anatomy.png)<br/>
+![NavigationView-Layout oben](images/topnav-anatomy.png)<br/>
 _Layout für Navigation oben_
 
-![Layout für Navigationsansicht links](images/leftnav-anatomy.png)<br/>
+![NavigationView-Layout links](images/leftnav-anatomy.png)<br/>
 _Layout für Navigation links_
 
 ### <a name="pane"></a>Bereich
@@ -169,13 +169,13 @@ Der linke Bereich enthält außerdem Folgendes:
 
 - Eine Menüschaltfläche zum Öffnen und Schließen des Bereichs. Bei größeren App-Fenstern mit geöffnetem Bereich kannst du diese Schaltfläche mit der [IsPaneToggleButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsPaneToggleButtonVisible)-Eigenschaft auch ausblenden.
 
-Die Navigationsansicht verfügt über eine Zurück-Schaltfläche, die oben links im Bereich angeordnet ist. Hiermit wird die Navigation in Rückwärtsrichtung aber nicht automatisch verarbeitet und der Inhalt nicht dem Backstack hinzugefügt. Informationen zum Aktivieren der Rückwärtsnavigation findest du im Abschnitt [Rückwärtsnavigation](#backwards-navigation).
+„NavigationView“ verfügt über eine Zurück-Schaltfläche. Diese befindet sich in der linken oberen Ecke des Bereichs. Hiermit wird die Navigation in Rückwärtsrichtung aber nicht automatisch verarbeitet und der Inhalt nicht dem Backstack hinzugefügt. Informationen zum Aktivieren der Rückwärtsnavigation findest du im Abschnitt [Rückwärtsnavigation](#backwards-navigation).
 
 Hier ist der ausführliche Seitenaufbau für die Anordnung des Bereichs oben und links dargestellt.
 
 #### <a name="top-navigation-pane"></a>Navigationsbereich oben
 
-![Bereichsaufbau der Navigationsansicht oben](images/navview-pane-anatomy-horizontal.png)
+![NavigationView: Aufbau des oberen Bereichs](images/navview-pane-anatomy-horizontal.png)
 
 1. Header
 1. Navigationselemente
@@ -185,7 +185,7 @@ Hier ist der ausführliche Seitenaufbau für die Anordnung des Bereichs oben und
 
 #### <a name="left-navigation-pane"></a>Navigationsbereich links
 
-![Bereichsaufbau der Navigationsansicht links](images/navview-pane-anatomy-vertical.png)
+![NavigationView: Aufbau des linken Bereichs](images/navview-pane-anatomy-vertical.png)
 
 1. Menü-Taste
 1. Navigationselemente
@@ -260,8 +260,8 @@ Du kannst den Freiforminhalt im Bereich anordnen, indem du ihn der [PaneCustomCo
 
 Du kannst einen Seitentitel hinzufügen, indem du die [Header](/uwp/api/windows.ui.xaml.controls.navigationview.header)-Eigenschaft festlegst.
 
-![Beispiel für Kopfzeilenbereich der Navigationsansicht](images/nav-header.png)<br/>
-_Kopfzeile der Navigationsansicht_
+![Beispiel für NavigationView-Kopfzeilenbereich](images/nav-header.png)<br/>
+_NavigationView-Kopfzeile_
 
 Der Kopfzeilenbereich ist vertikal an der Position der Navigationsschaltfläche im linken Bereich ausgerichtet und befindet sich unterhalb des obersten Bereichs. Er hat eine feste Höhe von 52 Pixel. Er enthält jeweils den Seitentitel der ausgewählten Navigationskategorie. Die Kopfzeile ist am oberen Rand der Seite angedockt und dient als Scroll-Clipping-Punkt für den Inhaltsbereich.
 
@@ -269,8 +269,8 @@ Die Kopfzeile wird jedes Mal angezeigt, wenn sich „NavigationView“ im Anzeig
 
 ### <a name="content"></a>Inhalt
 
-![Beispiel für Inhaltsbereich der Navigationsansicht](images/nav-content.png)<br/>
-_Inhalt der Navigationsansicht_
+![Beispiel für NavigationView-Inhaltsbereich](images/nav-content.png)<br/>
+_NavigationView-Inhalt_
 
 Im Inhaltsbereich werden die meisten Informationen für die ausgewählte Navigationskategorie angezeigt.
 
@@ -278,7 +278,7 @@ Wir empfehlen, Ränder für deinen Inhaltsbereich auf 12 Pixel festzulegen, wen
 
 ## <a name="adaptive-behavior"></a>Adaptives Verhalten
 
-Standardmäßig ändert die Navigationsansicht je nach verfügbarem Platz auf dem Bildschirm automatisch den Anzeigemodus. Die Eigenschaften [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth) und [ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth) geben die Haltepunkte an, an denen sich der Anzeigemodus ändert. Du kannst diese Werte ändern, um das Verhalten des adaptiven Anzeigemodus anzupassen.
+Der Anzeigemodus von „NavigationView“ ändert sich standardmäßig automatisch je nach verfügbarem Platz auf dem Bildschirm. Die Eigenschaften [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth) und [ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth) geben die Haltepunkte an, an denen sich der Anzeigemodus ändert. Du kannst diese Werte ändern, um das Verhalten des adaptiven Anzeigemodus anzupassen.
 
 ### <a name="default"></a>Standardwert
 
@@ -291,7 +291,7 @@ Wenn PaneDisplayMode auf den Standardwert **Auto** festgelegt ist, wird beim ada
 Weitere Informationen zu Fenstergrößen für adaptives Verhalten findest du unter [Bildschirmgrößen und Haltepunkte](../layout/screen-sizes-and-breakpoints-for-responsive-design.md).
 
 ![Standardnavigation links: adaptives Verhalten](images/displaymode-auto.png)<br/>
-_Standardnavigationsansicht: adaptives Verhalten_
+_NavigationView: adaptives Standardverhalten_
 
 ### <a name="minimal"></a>Minimal
 
@@ -303,7 +303,7 @@ Dies empfehlen wir in folgenden Fällen:
 - Deine Navigationskategorien lassen sich durch Symbole nicht eindeutig darstellen.
 
 ![Navigation links „Minimal“: adaptives Verhalten](images/adaptive-behavior-minimal.png)<br/>
-_Navigationsansicht „Minimal“: adaptives Verhalten_
+_NavigationView: minimales adaptives Verhalten_
 
 Lege zum Konfigurieren dieses Verhaltens „CompactModeThresholdWidth“ auf die Breite fest, die für die Reduzierung des Bereichs verwendet werden soll. Hier wurde der Standardwert 640 in 1.007 geändert. Du kannst auch „ExpandedModeThresholdWidth“ festlegen, um sicherzustellen, dass es für die Werte nicht zu einem Konflikt kommt.
 
@@ -321,7 +321,7 @@ Dies empfehlen wir in folgenden Fällen:
 - Deine Navigationskategorien lassen sich durch Symbole eindeutig darstellen.
 
 ![Navigation links „Kompakt“: adaptives Verhalten](images/adaptive-behavior-compact.png)<br/>
-_Navigationsansicht „Kompakt“: adaptives Verhalten_
+_NavigationView: kompaktes adaptives Verhalten_
 
 Lege zum Konfigurieren dieses Verhaltens „CompactModeThresholdWidth“ auf „0“ fest.
 
@@ -334,7 +334,7 @@ Lege zum Konfigurieren dieses Verhaltens „CompactModeThresholdWidth“ auf „
 Lege „PaneDisplayMode“ auf einen anderen Wert als „Auto“ fest, um das automatische adaptive Verhalten zu deaktivieren. Hier ist „LeftMinimal“ festgelegt, sodass unabhängig von der Fensterbreite nur die Menüschaltfläche angezeigt wird.
 
 ![Navigation links: kein adaptives Verhalten](images/adaptive-behavior-none.png)<br/>
-_Navigationsansicht mit Festlegung von „PaneDisplayMode“ auf „LeftMinimal“_
+_NavigationView: „PaneDisplayMode“ auf „LeftMinimal“ festgelegt_
 
 ```xaml
 <NavigationView PaneDisplayMode="LeftMinimal" />
@@ -384,13 +384,13 @@ In diesem Beispiel wird gezeigt, wie du eine [VisualStateManager](/uwp/api/Windo
 ```
 
 > [!TIP]
-> Wenn du „AdaptiveTrigger.MinWindowWidth“ verwendest, wird der visuelle Zustand ausgelöst, falls das Fenster breiter als die angegebene Mindestbreite ist. Dies bedeutet, dass mit dem XAML-Standardcode das schmale Fenster definiert wird und mit „VisualState“ die Änderungen definiert werden, die angewendet werden, wenn das Fenster breiter wird. Der Standardmodus „PaneDisplayMode“ für die Navigationsansicht lautet „Auto“. Wenn die Fensterbreite kleiner oder gleich „CompactModeThresholdWidth“ ist, wird die Navigation vom Typ „LeftMinimal“ verwendet. Wenn das Fenster breiter wird, wird der Standardwert mit „VisualState“ überschrieben und die Navigation oben verwendet.
+> Wenn du „AdaptiveTrigger.MinWindowWidth“ verwendest, wird der visuelle Zustand ausgelöst, falls das Fenster breiter als die angegebene Mindestbreite ist. Dies bedeutet, dass mit dem XAML-Standardcode das schmale Fenster definiert wird und mit „VisualState“ die Änderungen definiert werden, die angewendet werden, wenn das Fenster breiter wird. Der Standardmodus „PaneDisplayMode“ für „NavigationView“ lautet „Auto“. Wenn die Fensterbreite kleiner oder gleich „CompactModeThresholdWidth“ ist, wird die Navigation vom Typ „LeftMinimal“ verwendet. Wenn das Fenster breiter wird, wird der Standardwert mit „VisualState“ überschrieben und die Navigation oben verwendet.
 
 ## <a name="navigation"></a>Navigation
 
-Für die Navigationsansicht werden keine Navigationsaufgaben automatisch durchgeführt. Wenn der Benutzer auf ein Navigationselement tippt, wird es in der Navigationsansicht als ausgewählt angezeigt und ein [ItemInvoked](/uwp/api/windows.ui.xaml.controls.navigationview.ItemInvoked)-Ereignis ausgelöst. Falls der Tippvorgang zur Auswahl eines neuen Elements führt, wird auch ein [SelectionChanged](/uwp/api/windows.ui.xaml.controls.navigationview.SelectionChanged)-Ereignis ausgelöst.
+Von „NavigationView“ werden keine Navigationsaufgaben automatisch ausgeführt. Wenn der Benutzer auf ein Navigationselement tippt, wird es von „NavigationView“ als ausgewählt angezeigt, und ein Ereignis vom Typ [ItemInvoked](/uwp/api/windows.ui.xaml.controls.navigationview.ItemInvoked) wird ausgelöst. Falls der Tippvorgang zur Auswahl eines neuen Elements führt, wird auch ein [SelectionChanged](/uwp/api/windows.ui.xaml.controls.navigationview.SelectionChanged)-Ereignis ausgelöst.
 
-Du kannst beide Ereignisse verarbeiten, um Aufgaben für die angeforderte Navigation durchzuführen. Welches Ereignis verarbeitet werden sollte, hängt von dem Verhalten ab, das für deine App gelten soll. Normalerweise navigierst du zur angeforderten Seite und aktualisierst die Kopfzeile der Navigationsansicht als Reaktion auf diese Ereignisse.
+Du kannst beide Ereignisse verarbeiten, um Aufgaben für die angeforderte Navigation durchzuführen. Welches Ereignis verarbeitet werden sollte, hängt von dem Verhalten ab, das für deine App gelten soll. Normalerweise wird als Reaktion auf diese Ereignisse zur angeforderten Seite navigiert und die NavigationView-Kopfzeile aktualisiert.
 
 **ItemInvoked** wird immer ausgelöst, wenn der Benutzer auf ein Navigationselement tippt – auch wenn es bereits ausgewählt ist. (Das Element kann auch mit einer gleichwertigen Aktion per Maus, Tastatur oder anderer Eingabemethode aufgerufen werden. Weitere Informationen findest du unter [Eingabe und Interaktionen](../input/index.md).) Wenn du im ItemInvoked-Handler navigierst, wird die Seite standardmäßig neu geladen, und dem Navigationsstapel wird ein doppelter Eintrag hinzugefügt. Für das Navigieren während eines Elementaufrufs solltest du das erneute Laden der Seite nicht zulassen oder sicherstellen, dass im Backstack der Navigation beim erneuten Laden der Seite kein doppelter Eintrag erstellt wird. (Siehe Codebeispiele.)
 
@@ -402,7 +402,7 @@ Alle Navigationselemente sind Teil desselben Auswahlmodells, egal ob sie Teil vo
 
 „NavigationView“ verfügt über eine integrierte Zurück-Schaltfläche. Wie bei der Vorwärtsnavigation auch, wird die Rückwärtsnavigation aber nicht automatisch durchgeführt. Wenn der Benutzer auf die Zurück-Schaltfläche tippt, wird das [BackRequested](/uwp/api/windows.ui.xaml.controls.navigationview.BackRequested)-Ereignis ausgelöst. Du verarbeitest dieses Ereignis, um die Rückwärtsnavigation durchzuführen. Weitere Informationen und Codebeispiele findest du unter [Navigationsverlauf und Rückwärtsnavigation für UWP-Apps](../basics/navigation-history-and-backwards-navigation.md).
 
-Im Modus „Minimal“ oder „Kompakt“ wird der Bereich der Navigationsansicht als Flyout geöffnet. In diesem Fall wird durch das Klicken auf die Zurück-Schaltfläche der Bereich geschlossen und stattdessen das **PaneClosing**-Ereignis ausgelöst.
+Im Minimal- oder Kompaktmodus wird der NavigationView-Bereich als Flyout geöffnet. In diesem Fall wird durch das Klicken auf die Zurück-Schaltfläche der Bereich geschlossen und stattdessen das **PaneClosing**-Ereignis ausgelöst.
 
 Du kannst die Zurück-Schaltfläche ausblenden oder deaktivieren, indem du diese Eigenschaften festlegst:
 
@@ -411,11 +411,11 @@ Du kannst die Zurück-Schaltfläche ausblenden oder deaktivieren, indem du diese
 
 :::row:::
     :::column:::
-        ![Schaltfläche „Zurück“ der Navigationsansicht im linken Navigationsbereich](images/leftnav-back.png)<br/>
+        ![NavigationView: Zurück-Schaltfläche im linken Navigationsbereich](images/leftnav-back.png)<br/>
         _Schaltfläche „Zurück“ im linken Navigationsbereich_
     :::column-end:::
     :::column:::
-        ![Schaltfläche „Zurück“ der Navigationsansicht im oberen Navigationsbereich](images/topnav-back.png)<br/>
+        ![NavigationView: Zurück-Schaltfläche im oberen Navigationsbereich](images/topnav-back.png)<br/>
         _Schaltfläche „Zurück“ im oberen Navigationsbereich_
     :::column-end:::
 :::row-end:::
@@ -1651,7 +1651,7 @@ MainPage::MainPage()
 
 ### <a name="keyboarding-within-hierarchical-navigationview"></a>Tastaturunterstützung innerhalb einer hierarchischen NavigationView
 
-Benutzer können den Fokus mithilfe ihrer [Tastatur](../input/keyboard-interactions.md) im der Navigationsansicht bewegen. Die Pfeiltasten machen innerhalb des Bereichs die „innere Navigation“ verfügbar und folgen den in der [Strukturansicht](./tree-view.md) bereitgestellten Interaktionen. Die Tastenaktionen ändern sich während der Navigation in der NavigationView oder dem zugehörigen Flyoutmenü, das in den Modi „Top“ und „Left-compact“ von HierarchicalNavigationView angezeigt wird. Im folgenden finden Sie die speziellen Aktionen, die jede Taste in einer hierarchischen NavigationView ausführen kann:
+Benutzer können den Fokus in „NavigationView“ mithilfe ihrer [Tastatur](../input/keyboard-interactions.md) verschieben. Die Pfeiltasten machen innerhalb des Bereichs die „innere Navigation“ verfügbar und folgen den in der [Strukturansicht](./tree-view.md) bereitgestellten Interaktionen. Die Tastenaktionen ändern sich während der Navigation in der NavigationView oder dem zugehörigen Flyoutmenü, das in den Modi „Top“ und „Left-compact“ von HierarchicalNavigationView angezeigt wird. Im folgenden finden Sie die speziellen Aktionen, die jede Taste in einer hierarchischen NavigationView ausführen kann:
 
 | Schlüssel      |      Im Modus „Left“      |  Im Modus „Top“ | Im Flyout  |
 |----------|------------------------|--------------|------------|
@@ -1666,7 +1666,7 @@ Die LEERTASTE oder die EINGABETASTE bewirkt immer, dass ein Element aufgerufen b
 
 *Beachten Sie, dass die Elemente nicht visuell aneinander angrenzend angeordnet sein müssen. Der Fokus wird vom letzten Element in der Liste des Bereichs auf das Einstellungselement verschoben. 
 
-## <a name="navigation-view-customization"></a>Anpassung der Navigationsansicht
+## <a name="navigationview-customization"></a>NavigationView-Anpassung
 
 ### <a name="pane-backgrounds"></a>Bereichshintergründe
 
@@ -1761,6 +1761,6 @@ Diese Themenressource ändert den Rand um [NavigationView.Header](/uwp/api/windo
 ## <a name="related-topics"></a>Zugehörige Themen
 
 - [NavigationView-Klasse](/uwp/api/windows.ui.xaml.controls.navigationview)
-- [Master/Details](master-details.md)
+- [Liste/Details](list-details.md)
 - [Navigationsgrundlagen](../basics/navigation-basics.md)
 - [Fluent Design-Übersicht](/windows/apps/fluent-design-system)

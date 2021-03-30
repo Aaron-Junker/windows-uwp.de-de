@@ -10,14 +10,19 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: eaef3bb57eb8719ac4183f21b764ece98cae22fe
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: c5462eecbb4b15e74fc6932da9bbbbe37fcdbd92
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93030853"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784841"
 ---
 # <a name="pivot"></a>Pivot
+
+> [!Important]
+> Das Steuerelement **[Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot)** wird nicht mehr empfohlen und kann in zukünftigen Releases der Windows-UI-Bibliothek (WinUI) entfernt werden. Die Informationen und Bilder in diesem Thema sind möglicherweise veraltet.
+>
+> Verwenden Sie stattdessen das Steuerelement **[NavigationView](navigationview.md)** mit dem Navigationsstil (oder Anzeigemodus) *Oben*.
 
 Das [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot)-Steuerelement ermöglicht Touch-Wischen zwischen einem kleinen Satz von Inhaltsabschnitten.
 
@@ -30,7 +35,7 @@ Das [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot)-Steuerelement ermöglicht T
       ![WinUI-Logo](images/winui-logo-64x64.png)
    :::column-end:::
    :::column span="3":::
-      Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](../style/rounded-corner.md). WinUI ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek).
+      Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](../style/rounded-corner.md). „WinUI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek).
    :::column-end:::
    :::column:::
 
