@@ -6,12 +6,12 @@ ms.date: 06/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Games, Setup, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: c6e3a84b2f483f0b6d2d590181cac232f68f2b72
-ms.sourcegitcommit: e8ea2a36e4f2b9e0326958d226a36dd30c3efa57
+ms.openlocfilehash: 553069897cc71b45c34159749b7c16bd0af73c7b
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105099811"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105939095"
 ---
 # <a name="set-up-the-game-project"></a>Einrichten des Spieleprojekts
 
@@ -189,7 +189,7 @@ Im folgenden finden Sie eine kurze Übersicht über einige der Dateien in **Simp
 |Vertexshader. HLSL und vertexshaderflat. HLSL|Shader|Enthält den HLSL-Code (High-Level Shader Language) für grundlegende Scheitelpunkt-Shader.|
 |Pixelshader. HLSL und pixelshaderflat. HLSL|Shader|Enthält den HLSL-Code (High-Level Shader Language) für grundlegende Pixel-Shader.|
 |Constantbuffers. hlsli|Shader|Enthält Datenstruktur Definitionen für konstante Puffer und shaderstrukturen, die verwendet werden, um MVP-Matrizen (Model-View-Projection) und pro-Vertex-Daten an den Vertex-Shader zu übergeben.|
-|pch.h/.cpp|–|Enthält allgemeine C++/WinRT-, Windows-und DirectX-includes.| 
+|pch.h/.cpp|–|Enthält allgemeine C++/WinRT-, Windows-und DirectX-includes.|
 
 ### <a name="next-steps"></a>Nächste Schritte
 

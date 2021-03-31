@@ -5,17 +5,19 @@ keywords: DirectX, XAML
 ms.date: 10/24/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: be2ef3b4d5c3cce4a4305a8faa1f4af5dea3e8bc
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a81926a29d102acec0597f70678f66868d65e44d
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156374"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105938975"
 ---
 # <a name="extend-the-sample-game"></a>Erweitern des Spielbeispiels
 
 > [!NOTE]
 > Dieses Thema ist Teil der Tutorial-Reihe zum [Erstellen eines einfachen universelle Windows-Plattform (UWP) mit DirectX](tutorial--create-your-first-uwp-directx-game.md) . Das Thema unter diesem Link legt den Kontext für die Reihe fest.
+
+Informationen zum Herunterladen der Version dieses Spiels, das XAML für das Overlay verwendet, finden Sie unter [Beispiel für DirectX und XAML-Spiel](/samples/microsoft/windows-universal-samples/simple3dgamexaml/). Lesen Sie unbedingt die Infodatei, um ausführliche Informationen zum Aufbau des Beispiels zu erhalten.
 
 An dieser Stelle haben wir die wichtigsten Komponenten eines grundlegenden universelle Windows-Plattform (UWP) DirectX 3D-Spiel behandelt. Sie können das Framework für ein Spiel einrichten, einschließlich der Ansichts Anbieter-und Renderingpipeline, und eine einfache Spiel Schleife implementieren. Sie können auch eine grundlegende Überlagerung der Benutzeroberfläche erstellen, Sounds integrieren und Steuerelemente implementieren. Sie sind auf dem besten Weg, ein eigenes Spiel zu erstellen, aber wenn Sie weitere Hilfe und Informationen benötigen, sehen Sie sich diese Ressourcen an.
 
@@ -132,6 +134,6 @@ Weitere Informationen zu diesem Prozess finden Sie unter [Interoperabilität von
 
 ## <a name="sample"></a>Beispiel
 
-Wenn Sie die Version dieses Spiels herunterladen möchten, das XAML für das Overlay verwendet, wechseln Sie zum [Direct3D Shooting Sample Game (XAML)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameXaml).
+Informationen zum Herunterladen der Version dieses Spiels, das XAML für das Overlay verwendet, finden Sie unter [Beispiel für DirectX und XAML-Spiel](/samples/microsoft/windows-universal-samples/simple3dgamexaml/). Lesen Sie unbedingt die Infodatei, um ausführliche Informationen zum Aufbau des Beispiels zu erhalten.
 
 Anders als die Version des in den restlichen Themen erläuterten samplingspiels definiert die XAML-Version das Framework in der [app. XAML. cpp](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/App.xaml.cpp) -und der [directxpage. XAML. cpp](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/DirectXPage.xaml.cpp) -Datei anstelle von [app. cpp](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameDX/cpp/App.cpp) bzw. [gameinfooverlay. cpp](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp).

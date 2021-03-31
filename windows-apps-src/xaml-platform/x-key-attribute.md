@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 45cdc3bcf766cd110498e357052da150ea96fa21
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 462a1323766a4fb2cc1c8bfdc119c72069fd59e4
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161694"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105938995"
 ---
 # <a name="xkey-attribute"></a>x:Key-Attribut
 
@@ -39,7 +39,7 @@ Dient zum eindeutigen Identifizieren von Elementen, die als Ressourcen erstellt 
 | Begriff | BESCHREIBUNG |
 |------|-------------|
 | Objekt (object) | Beliebige Objekte, die freigegeben werden können. Weitere Informationen finden Sie unter [ResourceDictionary- und XAML-Ressourcenverweise](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md). |
-| stringKeyValue | Eine als Schlüssel verwendete echte Zeichenfolge, die der _XamlName_-Grammatik entsprechen muss. Weitere Informationen erhalten Sie in "XamlName-Grammatik" unten. | 
+| stringKeyValue | Eine als Schlüssel verwendete echte Zeichenfolge, die der _XamlName_-Grammatik entsprechen muss. Weitere Informationen erhalten Sie in "XamlName-Grammatik" unten. |
 
 ##  <a name="xamlname-grammar"></a>XamlName-Grammatik
 
@@ -58,7 +58,7 @@ CombiningCharacter::= none
 -   Der Unicode-Zeichenbereich wird nicht unterstützt.
 -   Ein Name darf nicht mit einer Ziffer beginnen.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Zu den untergeordneten Elementen eines [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary)-Elements gehört im Allgemeinen ein **x:Key**-Attribut zum Angeben eines eindeutigen Schlüsselwerts innerhalb des Wörterbuchs. Die Eindeutigkeit von Schlüsseln wird beim Laden durch den XAML-Prozessor erzwungen. Nicht eindeutige **x:Key**-Werte haben XAML-Analyseausnahmen zur Folge. Auf Anforderung der [{StaticResource}-Markuperweiterung](staticresource-markup-extension.md) haben auch nicht aufgelöste Schlüssel XAML-Analyseausnahmen zur Folge.
 

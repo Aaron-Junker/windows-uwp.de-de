@@ -6,14 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b1e73dcb74ae95729cb5c07db469a1ef1a77e35
-ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
+ms.openlocfilehash: b196408a769e204513d46b67cd13c31f0d2e8b9c
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92133003"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105939035"
 ---
-#  <a name="troubleshooting-porting-windowsphone-silverlight-to-uwp"></a>Behandeln von Problemen beim Portieren von Windows Phone Silverlight zu UWP
+#  <a name="troubleshooting-porting-windows-phone-silverlight-to-uwp"></a>Behandeln von Problemen beim Portieren von Windows Phone Silverlight zu UWP
 
 
 Im vorherigen Thema ging es um das [Portieren des Projekts](wpsl-to-uwp-porting-to-a-uwp-project.md).
@@ -32,8 +32,8 @@ Als letzte Möglichkeit kann eine Binärdatei aufgeteilt werden. Entfernen Sie e
 
 In diesem Abschnitt wird erläutert, was zu tun ist, wenn beim Öffnen eines Windows 10-Projekts in Visual Studio folgende Meldung angezeigt wird: „Visual Studio-Update erforderlich. Mindestens ein Projekt erfordert ein Plattform-SDK (&lt;version&gt;), das entweder nicht installiert oder in einem zukünftigen Update von Visual Studio enthalten ist.“
 
--   Ermitteln Sie zunächst die Versionsnummer des SDK für Windows 10, die Sie installiert haben. Navigieren Sie zu **C: \\ Programme (x86) \\ Windows Kits \\ 10 \\ include \\ &lt; versionfoldername &gt; ** , und notieren Sie sich den * &lt; versionfoldername &gt; *, der in Quad-Notation "Major. Minor. Build. Revision" angegeben wird.
--   Öffnen Sie Ihre Projektdatei zur Bearbeitung, und suchen Sie das `TargetPlatformVersion`-Element und das `TargetPlatformMinVersion`-Element. Bearbeiten Sie diese, sodass Sie * &lt; versionfoldername &gt; * durch die Versionsnummer der Quad-Notation ersetzt, die Sie auf dem Datenträger gefunden haben:
+-   Ermitteln Sie zunächst die Versionsnummer des SDK für Windows 10, die Sie installiert haben. Navigieren Sie zu **C: \\ Programme (x86) \\ Windows Kits \\ 10 \\ include \\ &lt; versionfoldername &gt;** , und notieren Sie sich den *&lt; versionfoldername &gt;*, der in Quad-Notation "Major. Minor. Build. Revision" angegeben wird.
+-   Öffnen Sie Ihre Projektdatei zur Bearbeitung, und suchen Sie das `TargetPlatformVersion`-Element und das `TargetPlatformMinVersion`-Element. Bearbeiten Sie diese, sodass Sie *&lt; versionfoldername &gt;* durch die Versionsnummer der Quad-Notation ersetzt, die Sie auf dem Datenträger gefunden haben:
 
 ```xml
    <TargetPlatformVersion><versionfoldername></TargetPlatformVersion>
@@ -58,6 +58,6 @@ Die Lösungsinformationen in der Tabelle sollten ausreichen, um Ihr Problem selb
 | _Eine erste Chance-Ausnahme vom Typ ' System. Runtime. InteropServices. COMException ' ist in SYSTEM.NI.DLL aufgetreten. Zusätzliche Informationen: die Anwendung rief eine Schnittstelle auf, die für einen anderen Thread gemarshallt wurde. (Ausnahme von HRESULT: 0x8001010E (RPC_E_WRONG_THREAD))._ | Die Schritte, die Sie gerade ausführen, müssen im UI-Thread ausgeführt werden. Rufen Sie den [**CoreWindow.GetForCurrentThread**](/uwp/api/windows.ui.core.corewindow.getforcurrentthread)) auf. |
 | Eine Animation wird ausgeführt, hat jedoch keine Auswirkungen auf ihre Zieleigenschaft. | Gestalten Sie die Animation unabhängig, oder legen Sie `EnableDependentAnimation="True"` dafür fest. Siehe [Animation](wpsl-to-uwp-porting-xaml-and-ui.md). |
 | Beim Öffnen eines Windows 10-Projekts in Visual Studio wird folgende Meldung angezeigt: „Visual Studio-Update erforderlich. Mindestens ein Projekt erfordert ein Plattform-SDK (&lt;version&gt;), das entweder nicht installiert oder in einem zukünftigen Update von Visual Studio enthalten ist.“ | Weitere Informationen finden Sie im Abschnitt [TargetPlatformVersion](#targetplatformversion) in diesem Thema. |
-| Wenn in einer XAML.CS-Datei „InitializeComponent“ aufgerufen wird, wird eine „System.InvalidCastException“ ausgelöst. | Dies kann passieren, wenn mehrere XAML-Dateien (mindestens eine davon MRT-qualifiziert) dieselbe XAML.CS-Datei verwenden und Elemente x:Name-Attribute aufweisen, die zwischen den beiden XAML-Dateien inkonsistent sind. Versuchen Sie, den gleichen Elementen in XAML-Dateien denselben Namen hinzuzufügen, oder lassen Sie Namen ganz weg. | 
+| Wenn in einer XAML.CS-Datei „InitializeComponent“ aufgerufen wird, wird eine „System.InvalidCastException“ ausgelöst. | Dies kann passieren, wenn mehrere XAML-Dateien (mindestens eine davon MRT-qualifiziert) dieselbe XAML.CS-Datei verwenden und Elemente x:Name-Attribute aufweisen, die zwischen den beiden XAML-Dateien inkonsistent sind. Versuchen Sie, den gleichen Elementen in XAML-Dateien denselben Namen hinzuzufügen, oder lassen Sie Namen ganz weg. |
 
 Das nächste Thema ist [Portieren von XAML und UI](wpsl-to-uwp-porting-xaml-and-ui.md).

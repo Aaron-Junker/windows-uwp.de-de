@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d8fac685e341ab78357bfb2ab3ea4e668a78918a
-ms.sourcegitcommit: 34f532fd023af2849c3e975baf7aa6771d7e53b9
+ms.openlocfilehash: e1a0350cfcc9d77b0341fe90a92749faac5c63f2
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104893850"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105939015"
 ---
 # <a name="move-and-draw-commands-syntax"></a>Syntax für die Verschieben- und Zeichnen-Befehle
 
@@ -117,7 +117,7 @@ Erstellt eine vertikale Linie zwischen dem aktuellen Punkt und der angegebenen y
 
 | Syntax |
 |--------|
-| `V ` _j_ <br/> - oder - <br/> `v ` _j_ |
+| `V ` _Y_ <br/> - oder - <br/> `v ` _Y_ |
 
 | Begriff | BESCHREIBUNG |
 |------|-------------|
@@ -135,7 +135,7 @@ Erstellt eine kubische Bézierkurve zwischen dem aktuellen Punkt und dem angegeb
 |------|-------------|
 | *controlPoint1* | [**Point**](/uwp/api/Windows.Foundation.Point) <br/> Der erste Kontrollpunkt der Kurve, der die beginnende Tangente der Kurve bestimmt. |
 | *controlPoint2* | [**Point**](/uwp/api/Windows.Foundation.Point) <br/> Der zweite Kontrollpunkt der Kurve, der die endende Tangente der Kurve bestimmt. |
-| *Dreher* | [**Point**](/uwp/api/Windows.Foundation.Point) <br/> Der Punkt, bis zu dem die Kurve gezeichnet wird. | 
+| *Dreher* | [**Point**](/uwp/api/Windows.Foundation.Point) <br/> Der Punkt, bis zu dem die Kurve gezeichnet wird. |
 
 **Befehl für eine quadratische Bézierkurve**
 

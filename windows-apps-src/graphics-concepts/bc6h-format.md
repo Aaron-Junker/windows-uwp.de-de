@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f53ebf6a7326bd9e6a99272c01d9eeb5c03f580
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 668a95d92926ddce17d4003f66672ef1e7a3f34e
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165074"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105939045"
 ---
 # <a name="bc6h-format"></a>BC6H-Format
 
@@ -30,15 +30,16 @@ BC6H wird durch die folgenden DXGI- \_ formatenumerationswerte angegeben:
 -   **DXGI \_ Format \_ BC6H \_ UF16**. Dieses BC6H-Format verwendet kein Signier Bit in den 16-Bit-Farb Kanal Werten für Gleit Komma Zahlen.
 -   **DXGI \_ Format \_ BC6H \_ SF16**. Dieses BC6H-Format verwendet ein Signier Bit in den 16-Bit-Farb Kanal Werten für Gleit Komma Zahlen.
 
-**Hinweis**    Das 16-Bit-Gleit Komma Format für Farbkanäle wird häufig als "halb"-Gleit Komma Format bezeichnet. Dieses Format weist das folgende bitlayout auf:
-|                       |                                                 |
+**Hinweis**   Das 16-Bit-Gleit Komma Format für Farbkanäle wird häufig als "halb"-Gleit Komma Format bezeichnet. Dieses Format weist das folgende bitlayout auf:
+
+| Format                      |      Layout                                           |
 |-----------------------|-------------------------------------------------|
 | UF16 (unsigned float) | 5 Exponent Bits + 11 Mantisse Bits              |
 | SF16 (mit Vorzeichen signiert)   | 1 Vorzeichen Bit + 5 Exponent Bits + 10 Mantisse Bits |
 
- 
+ 
 
- 
+ 
 
 Das BC6H-Format kann für die Textur Ressourcen [Texture2D](/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures) (einschließlich Arrays), Texture3D oder texturecube (einschließlich Arrays) verwendet werden. Ebenso gilt dieses Format für alle mit diesen Ressourcen verknüpften MIP-Map-Oberflächen.
 
@@ -110,7 +111,7 @@ Die folgende Tabelle enthält die Bitanzahl und die Werte für jedes der 14 mög
 | 13   | 63 Bits           | 0 Bits    | 60 Bits (12,8, 12,8, 12,8)       | 5 Bits (01011) |
 | 14   | 63 Bits           | 0 Bits    | 60 Bits (16,4, 16,4, 16,4)       | 5 Bits (01111) |
 
- 
+ 
 
 Jedes Format in dieser Tabelle kann durch die modusbits eindeutig identifiziert werden. Die ersten zehn Modi werden für Kacheln mit zwei Regionen verwendet, und das Bitfeld des Modus kann entweder zwei oder fünf Bits lang sein. Diese Blöcke verfügen auch über Felder für die komprimierten Farb Endpunkte (72 oder 75 Bits), die Partition (5 Bits) und die Partitions Indizes (46 Bits).
 
@@ -156,7 +157,7 @@ Die Feldnamen in der obigen Tabelle sind wie folgt definiert:
 | by    | Endpt \[ 1 \] . A \[ 2\] |
 | BZ    | Endpt \[ 1 \] . B \[ 2\] |
 
- 
+ 
 
 "Endpt \[ i" \] , wobei "0" oder "1" ist, bezieht sich auf den bzw. den jeweils ersten Satz von Endpunkten.
 ## <a name="span-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspansign-extension-for-endpoint-values"></a><span id="Sign-extension-for-endpoint-values"></span><span id="sign-extension-for-endpoint-values"></span><span id="SIGN-EXTENSION-FOR-ENDPOINT-VALUES"></span>Signieren der Erweiterung für Endpunkt Werte
@@ -249,7 +250,7 @@ void generate_palette_unquantized(UINT8 uNumIndices, int c1, int c2, int prec, U
 Im nächsten Codebeispiel wird der Interpolations Prozess mit den folgenden Beobachtungen veranschaulicht:
 
 -   Da der vollständige Bereich von Farbwerten für die **unquantifize** -Funktion (unten) zwischen-32768 und 65535 liegt, wird der interpolators mit einer 17-Bit-Arithmetik mit Vorzeichen implementiert.
--   Nach der interpolung werden die Werte an die Funktion zur Fertigstellung von ** \_ unquantifize** (im dritten Beispiel in diesem Abschnitt beschrieben) weitergegeben, die die endgültige Skalierung anwendet.
+-   Nach der interpolung werden die Werte an die Funktion zur Fertigstellung von **\_ unquantifize** (im dritten Beispiel in diesem Abschnitt beschrieben) weitergegeben, die die endgültige Skalierung anwendet.
 -   Alle Hardware-Dekompressoren müssen mit diesen Funktionen bitgenaue Ergebnisse zurückgeben.
 
 ``` syntax
@@ -296,7 +297,7 @@ int unquantize(int comp, int uBitsPerComp)
 }
 ```
 
-**" \_ unquantize beenden** " wird nach der paletteninterpolung aufgerufen. Die Funktion " **unquantifize** " verschiebt die Skalierung um 31/32 für "signiert", 31/64 für "unsigned". Dieses Verhalten ist erforderlich, um den endgültigen Wert in einen gültigen halben Bereich (-0x7bff ~ 0x7bff) zu bringen, nachdem die paletteninterpolung abgeschlossen ist, um die Anzahl der erforderlichen Multiplikationen zu verringern. **" \_ unquantize abschließen** " wendet die endgültige Skalierung an und gibt einen **kurzen Wert ohne** Vorzeichen zurück, der in eine **Hälfte**reinterpretiert wird.
+**" \_ unquantize beenden** " wird nach der paletteninterpolung aufgerufen. Die Funktion " **unquantifize** " verschiebt die Skalierung um 31/32 für "signiert", 31/64 für "unsigned". Dieses Verhalten ist erforderlich, um den endgültigen Wert in einen gültigen halben Bereich (-0x7bff ~ 0x7bff) zu bringen, nachdem die paletteninterpolung abgeschlossen ist, um die Anzahl der erforderlichen Multiplikationen zu verringern. **" \_ unquantize abschließen** " wendet die endgültige Skalierung an und gibt einen **kurzen Wert ohne** Vorzeichen zurück, der in eine **Hälfte** reinterpretiert wird.
 
 ``` syntax
 unsigned short finish_unquantize(int comp)
@@ -323,8 +324,8 @@ unsigned short finish_unquantize(int comp)
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Texturblockkomprimierung](texture-block-compression.md)
+[Textur Block Komprimierung](texture-block-compression.md)
 
- 
+ 
 
- 
+ 

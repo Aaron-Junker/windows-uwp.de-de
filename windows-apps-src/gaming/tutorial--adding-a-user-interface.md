@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, Games, User Interface, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: eca248887985fc6d33ca6d6b552a0b61a98ce428
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0cc736bf58ea70068713218e0e8fc2e06c87ece5
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173104"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105939085"
 ---
 # <a name="add-a-user-interface"></a>Hinzufügen einer Benutzeroberfläche
 
@@ -228,7 +228,7 @@ In der **gamehud:: Rendering** -Methode speichern wir die logische Größe des S
 auto windowBounds = m_deviceResources->GetLogicalSize();
 ```
 
-Das Abrufen der Größe des Spielfensters ist für die Benutzeroberflächen Programmierung von entscheidender Bedeutung. Die Größe des Fensters wird in einer Maßeinheit namens Dips (geräteunabhängige Pixel) angegeben, bei der eine DIP als 1/96 Zoll definiert ist. Direct2D skaliert die Zeichnungs Einheiten bei der Zeichnung auf tatsächliche Pixel, indem die Einstellung Windows-dpi (dpi per inch) verwendet wird. Wenn Sie mithilfe von [**DirectWrite**](/windows/desktop/DirectWrite/direct-write-portal)Text zeichnen, geben Sie auch Dips anstelle von Punkten für die Größe der Schriftart an. DIPs werden als Gleitkommazahlen angegeben. 
+Das Abrufen der Größe des Spielfensters ist für die Benutzeroberflächen Programmierung von entscheidender Bedeutung. Die Größe des Fensters wird in einer Maßeinheit namens Dips (geräteunabhängige Pixel) angegeben, bei der eine DIP als 1/96 Zoll definiert ist. Direct2D skaliert die Zeichnungs Einheiten bei der Zeichnung auf tatsächliche Pixel, indem die Einstellung Windows-dpi (dpi per inch) verwendet wird. Wenn Sie mithilfe von [**DirectWrite**](/windows/desktop/DirectWrite/direct-write-portal)Text zeichnen, geben Sie auch Dips anstelle von Punkten für die Größe der Schriftart an. DIPs werden als Gleitkommazahlen angegeben. 
 
 ### <a name="displaying-game-state-info"></a>Anzeigen von Informationen zum Spielzustand
 
@@ -289,12 +289,12 @@ Der [**gameinfooverlay:: gameinfooverlay**](https://github.com/Microsoft/Windows
 
 #### <a name="deviceresourcessetdpi"></a>Deviceresources:: setdpi
 
-Die [**deviceresources:: setdpi**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.cpp#L514-L527) -Methode legt die Punkte pro Zoll des Fensters fest. Diese Methode wird aufgerufen, wenn der dpi-Wert geändert wird, und muss umgelesen werden, was geschieht, wenn die Größe des Spielfensters geändert wird. Nach dem Aktualisieren des dpi-Wert wird von dieser Methode auch[**deviceresources:: createwindowsizedependentresources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.cpp#L214-L487) aufgerufen, um sicherzustellen, dass die erforderlichen Ressourcen jedes Mal neu erstellt werden, wenn die Größe des Fensters geändert wird.
+Die [**deviceresources:: setdpi**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.cpp#L514-L527) -Methode legt die Punkte pro Zoll des Fensters fest. Diese Methode wird aufgerufen, wenn der dpi-Wert geändert wird, und muss umgelesen werden, was geschieht, wenn die Größe des Spielfensters geändert wird. Nach dem Aktualisieren des dpi-Wert wird von dieser Methode auch [**deviceresources:: createwindowsizedependentresources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.cpp#L214-L487) aufgerufen, um sicherzustellen, dass die erforderlichen Ressourcen jedes Mal neu erstellt werden, wenn die Größe des Fensters geändert wird.
 
 #### <a name="gameinfooverlaycreatewindowssizedependentresources"></a>Gameingefooverlay:: createwindowssizedependentresources
 
 Bei der [**gameinfooverlay:: createwindowssizedependentresources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L108-L225) -Methode findet all unsere Zeichnung statt. Im folgenden finden Sie eine Übersicht über die Schritte der Methode.
-- Es werden drei Rechtecke erstellt, um den Benutzeroberflächen Text für den **Titel**, Text **Körper**und **Aktions** Text zu überlaufen.
+- Es werden drei Rechtecke erstellt, um den Benutzeroberflächen Text für den **Titel**, Text **Körper** und **Aktions** Text zu überlaufen.
     ```cppwinrt 
     m_titleRectangle = D2D1::RectF(
         GameInfoOverlayConstant::SideMargin,
@@ -320,7 +320,7 @@ Bei der [**gameinfooverlay:: createwindowssizedependentresources**](https://gith
 - `m_levelBitmap` wird als 2D-Renderziel mithilfe von [**ID2D1DeviceContext:: SetTarget**](/windows/desktop/api/d2d1_1/nf-d2d1_1-id2d1devicecontext-settarget)festgelegt.
 - Die Bitmap wird bei jedem Pixel, das mit [**ID2D1RenderTarget:: Clear**](/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-clear)schwarz gemacht wurde, gelöscht.
 - [**ID2D1RenderTarget:: beginDraw**](/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-begindraw) wird aufgerufen, um das Zeichnen zu initiieren. 
-- **DrawText** wird aufgerufen, um den in `m_titleString` , und gespeicherten Text `m_bodyString` `m_actionString` im approperiate-Rechteck mithilfe des entsprechenden **ID2D1SolidColorBrush**zu zeichnen.
+- **DrawText** wird aufgerufen, um den in `m_titleString` , und gespeicherten Text `m_bodyString` `m_actionString` im approperiate-Rechteck mithilfe des entsprechenden **ID2D1SolidColorBrush** zu zeichnen.
 - [**ID2D1RenderTarget:: EndDraw**](ID2D1RenderTarget::EndDraw) wird aufgerufen, um alle Zeichnungsvorgänge für zu unterbinden `m_levelBitmap` .
 - Eine andere **Bitmap wird** mit dem Namen erstellt `m_tooSmallBitmap` , der als Fallback verwendet wird, und nur dann angezeigt, wenn die Anzeige Konfiguration zu klein für das Spiel ist.
 - Wiederholen Sie den Prozess zum Zeichnen von `m_levelBitmap` für `m_tooSmallBitmap` , und dieses Mal wird nur die Zeichenfolge `Paused` im Text gezeichnet.
@@ -409,7 +409,7 @@ Mithilfe des Direct2D-Geräte Kontexts, der vom **gameinfooverlay** -Objekt init
 
 Das Aktions Rechteck wird durch einen nachfolgenden Aufrufen von [**gameinfooverlay:: setAction**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L522-L564) aus einer Methode für das **gamemain** -Objekt aktualisiert, das die für **gameinfooverlay:: setAction** benötigten Informationen zum Spielzustand bereitstellt, um die richtige Meldung an den Player zu ermitteln, z. b. "tippen Sie zum Fortfahren".
 
-Das Overlay für einen beliebigen Zustand wird in der [**gamemain:: setgamanfooverlay**](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/GameMain.cpp#L606-L661) -Methode wie folgt ausgewählt:
+Das Overlay für einen beliebigen Zustand wird in der [**gamemain:: setgamanfooverlay**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameMain.cpp#L606-L661) -Methode wie folgt ausgewählt:
 
 ```cppwinrt
 void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)

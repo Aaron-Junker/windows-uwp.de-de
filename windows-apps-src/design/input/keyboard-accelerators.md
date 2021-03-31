@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f712dd8e845b3beb52981be4a17df128c48845d
-ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
+ms.openlocfilehash: 96df9555f567d8e8c1fd29847245e4e1a56a09bf
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102784741"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105939105"
 ---
 # <a name="keyboard-accelerators"></a>Tastaturkürzel
 
@@ -354,14 +354,14 @@ Dies ist möglicherweise aufgrund von Unterschieden in der Funktionalität von a
 | Suchen von Inhalten in einem Steuerelement oder Fenster mit Fokus | STRG + F |
 | Zum nächsten Suchergebnis wechseln | F3 |
 | **Weitere Aktionen** | |
-| Favoriten hinzufügen | STRG+D | 
-| Aktualisieren | F5 oder STRG + R | 
-| Vergrößern | STRG + + | 
-| Verkleinern | STRG +- | 
-| In Standardansicht Zoomen | STRG + 0 | 
-| Speichern | STRG+ S | 
-| Schließen | STRG + W | 
-| Drucken | STRG+P | 
+| Favoriten hinzufügen | STRG+D |
+| Aktualisieren | F5 oder STRG + R |
+| Vergrößern | STRG + + |
+| Verkleinern | STRG +- |
+| In Standardansicht Zoomen | STRG + 0 |
+| Speichern | STRG+ S |
+| Schließen | STRG + W |
+| Drucken | STRG+P |
 
 Beachten Sie, dass einige der Kombinationen für lokalisierte Versionen von Windows nicht gültig sind. Beispielsweise wird in der spanischen Version von Windows STRG + N als fett formatiert anstelle von STRG + B verwendet. Es wird empfohlen, lokalisierte Tastaturbeschleuniger bereitzustellen, wenn die APP lokalisiert wird.
 
