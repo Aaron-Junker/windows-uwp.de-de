@@ -6,17 +6,15 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Codec, Encoder, Decoder, Abfrage
 ms.localizationpriority: medium
-ms.openlocfilehash: f0f1ddff8336594e62ee26b6bf62b062039bf857
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 75aac91f41a854ee21a3ccfaf5b9a9c0f19bfef8
+ms.sourcegitcommit: d7783efb1c60b81e94898294fc5794c1d3320004
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363993"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105982633"
 ---
 # <a name="query-for-codecs-installed-on-a-device"></a>Abfragen von Codecs, die auf einem Gerät installiert sind
 Die **[codecquery](/uwp/api/windows.media.core.codecquery)** -Klasse ermöglicht es Ihnen, auf dem aktuellen Gerät installierte Codecs abzufragen. Die Liste der in Windows 10 für verschiedene Gerätefamilien enthaltenen Codecs ist im Artikel [unterstützte Codecs](supported-codecs.md)aufgeführt. da Benutzer und apps jedoch weitere Codecs auf einem Gerät installieren können, empfiehlt es sich, zur Laufzeit die Codec-Unterstützung abzufragen, um zu bestimmen, welche Codecs auf dem aktuellen Gerät verfügbar sind.
-
-Die codecquery-API ist ein Member des **[Windows. Media. Core](/uwp/api/windows.media.core)** -Namespace, sodass Sie diesen Namespace in Ihre APP einschließen müssen.
 
 Die codecquery-API ist ein Member des **[Windows. Media. Core](/uwp/api/windows.media.core)** -Namespace, sodass Sie diesen Namespace in Ihre APP einschließen müssen.
 
@@ -28,7 +26,7 @@ Initialisieren Sie eine neue Instanz der **codecquery** -Klasse, indem Sie den-K
 
 Die **[findallasync](/uwp/api/windows.media.core.codecquery.findallasync)** -Methode gibt alle installierten Codecs zurück, die den angegebenen Parametern entsprechen. Diese Parameter enthalten einen **[codeckind](/uwp/api/windows.media.core.codeckind)** -Wert, der angibt, ob Sie Audio-oder Video Codecs oder beides Abfragen, einen **[codeccategory](/uwp/api/windows.media.core.codeccategory)** -Wert, der angibt, ob Sie Codierungen oder Decoders Abfragen, und eine Zeichenfolge, die den unter Typ der Medien Codierung darstellt, für den Sie Abfragen, z. b. H. 264-Video oder MP3-Audiodaten.
 
-Geben Sie eine leere Zeichenfolge oder NULL für den Untertyp Wert an, um Codecs für alle Untertypen zurückzugeben. Im folgenden Beispiel werden alle auf dem Gerät installierten Video Encoder aufgelistet.
+Geben Sie eine leere Zeichenfolge für den Untertyp Wert an, um Codecs für alle Untertypen zurückzugeben. Im folgenden Beispiel werden alle auf dem Gerät installierten Video Encoder aufgelistet.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/TranscodeWin10/cs/MainPage.xaml.cs" id="SnippetFindAllEncoders":::
 
@@ -42,12 +40,12 @@ Im folgenden Beispiel wird abgefragt, um zu bestimmen, ob ein FLAC-Audioencoder 
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/TranscodeWin10/cs/MainPage.xaml.cs" id="SnippetIsFLACSupported":::
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Medienwiedergabe](media-playback.md)
 * [Allgemeine Foto-, Video- und Audioaufnahme mit „MediaCapture“](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Transkodieren von Mediendateien](transcode-media-files.md)
 * [Unterstützte Codecs](supported-codecs.md)
- 
+ 
 
- 
+ 

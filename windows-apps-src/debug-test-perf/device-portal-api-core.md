@@ -7,12 +7,12 @@ ms.date: 01/08/2021
 ms.topic: article
 keywords: Windows 10, UWP, Geräteportal, REST
 ms.localizationpriority: medium
-ms.openlocfilehash: 33e914d124520b8f4eacd120c191ed63715a3168
-ms.sourcegitcommit: 02d220ef0ec0ecd7ed733086ba164ee9653d9602
+ms.openlocfilehash: ffae68a0b5b6d17ec6b0afe88c82dc77994d72fa
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/09/2021
-ms.locfileid: "98056053"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619486"
 ---
 # <a name="windows-device-portal-core-rest-api-reference"></a>Referenz zur Kern-API des Windows-Geräteportals
 
@@ -4350,7 +4350,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | OK |. Datei umbenannt
+| 200 | OK. Datei umbenannt|
 | 404 | Datei nicht gefunden |
 | 5XX | Fehlercodes |
 
@@ -4401,7 +4401,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | OK |. Die Datei wird gelöscht. |
+| 200 | OK. Die Datei wird gelöscht. |
 | 404 | Datei nicht gefunden |
 | 5XX | Fehlercodes |
 
@@ -4449,7 +4449,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | OK |. Die Datei wird hochgeladen |
+| 200 | OK. Die Datei wird hochgeladen |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 

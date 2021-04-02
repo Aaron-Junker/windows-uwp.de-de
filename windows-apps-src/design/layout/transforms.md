@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7168895a690b8602e67b8e05832c74b8ddf4d67d
-ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
+ms.openlocfilehash: a24f4191541c289d4b26a07e69430a76e5f7bf67
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89643816"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619656"
 ---
 # <a name="transforms-overview"></a>Transformationen – Übersicht
 
@@ -107,7 +107,7 @@ Eine Transformation kann als Transformationsmatrix beschrieben werden. Mit einer
 
 Die mathematische Beschreibung einer Transformation ist ggf. hilfreich, wenn Sie über mathematisches Fachwissen verfügen oder mit Grafikprogrammierungstechniken vertraut sind, die auch Matrizen zum Beschreiben von Transformationen von Koordinatenraum verwenden. Es gibt eine von [**Transform**](/uwp/api/Windows.UI.Xaml.Media.Transform) abgeleitete Klasse, mit der Sie eine Transformation direkt als 3x3-Matrix beschreiben können: [**MatrixTransform**](/uwp/api/Windows.UI.Xaml.Media.MatrixTransform). **MatrixTransform** besitzt eine [**Matrix**](/uwp/api/windows.ui.xaml.media.matrixtransform.matrix)-Eigenschaft, die eine Struktur mit sechs Eigenschaften beinhaltet: [**M11**](/uwp/api/windows.ui.xaml.media.matrix.m11), [**M12**](/uwp/api/windows.ui.xaml.media.matrix.m12), [**M21**](/uwp/api/windows.ui.xaml.media.matrix.m21), [**M22**](/uwp/api/windows.ui.xaml.media.matrix.m22), [**OffsetX**](/uwp/api/windows.ui.xaml.media.matrix.offsetx) und [**OffsetY**](/uwp/api/windows.ui.xaml.media.matrix.offsety). Jede [**Matrix**](/uwp/api/Windows.UI.Xaml.Media.Matrix)-Eigenschaft verwendet einen **Double**-Wert und entspricht den sechs relevanten Werten (Spalten 1 und 2) einer affinen Transformationsmatrix.
 
-|                                             |                                             |     |
+|           Spalte 1                                  |         Spalte 2                                    | Spalte 3 |
 |---------------------------------------------|---------------------------------------------|-----|
 | [**M11**](/uwp/api/windows.ui.xaml.media.matrix.m11)         | [**M12**](/uwp/api/windows.ui.xaml.media.matrix.m12)         | 0   |
 | [**M21**](/uwp/api/windows.ui.xaml.media.matrix.m21)         | [**M22**](/uwp/api/windows.ui.xaml.media.matrix.m22)         | 0   |

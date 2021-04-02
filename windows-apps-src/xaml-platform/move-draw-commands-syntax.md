@@ -109,7 +109,7 @@ Erstellt eine horizontale Linie zwischen dem aktuellen Punkt und der angegebenen
 
 | Begriff | BESCHREIBUNG |
 |------|-------------|
-| w | [**Double**](/dotnet/api/system.double) <br/> Die x-Koordinate des Endpunkts der Linie. |
+| x | [**Double**](/dotnet/api/system.double) <br/> Die x-Koordinate des Endpunkts der Linie. |
 
 **Senkrechter Zeilen Befehl**
 
@@ -117,7 +117,7 @@ Erstellt eine vertikale Linie zwischen dem aktuellen Punkt und der angegebenen y
 
 | Syntax |
 |--------|
-| `V ` _Y_ <br/> - oder - <br/> `v ` _Y_ |
+| `V `_j_ <br/> - oder - <br/> `v `_j_ |
 
 | Begriff | BESCHREIBUNG |
 |------|-------------|

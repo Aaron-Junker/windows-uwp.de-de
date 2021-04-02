@@ -2,17 +2,17 @@
 description: Übersicht über die MRT-Kernkomponenten und ihre Funktionsweise beim Laden von Anwendungs Ressourcen (Projekt Zusammenführung)
 title: Verwalten von Ressourcen für den MRT-Kern (Projekt Zusammenführung)
 ms.topic: article
-ms.date: 03/09/2021
+ms.date: 03/31/2021
 keywords: MRT, mrtcore, PRI, makepri, Ressourcen, Laden von Ressourcen
 ms.author: hickeys
 author: hickeys
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b732deb0f387c11b2675193c047d33fa3e55ace
-ms.sourcegitcommit: 7f2a09e8d5d37cb5860a5f2ece5351ea6907b94c
+ms.openlocfilehash: 4b86e3d1b232a9c0da87808e8fa07a13b18ffdd6
+ms.sourcegitcommit: d793c82587b8368e241d74be1473f4f0af5bb9ee
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "105730484"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106164370"
 ---
 # <a name="manage-resources-with-mrt-core"></a>Verwalten von Ressourcen mit MRT Core 
 
@@ -28,7 +28,13 @@ Eine PRI-Datei enthält tatsächliche Zeichen folgen Ressourcen. Eingebettete Bi
 
 PRI-Dateien enthalten nur Daten, sodass Sie nicht das PE-Format (portable ausführbare Datei) verwenden. Sie sind speziell auf Daten beschränkt.
 
-## <a name="access-app-resources"></a>Zugreifen auf App-Ressourcen
+> [!NOTE]
+> Bevor Sie mit MRT Core Zeichen folgen und Bilder in einem WinUI 3-Projekt abrufen können, das c#/.net 5 verwendet, müssen Sie sicherstellen, dass diese Ressourcen so konfiguriert sind, dass Sie in der Datei "Resources. pri" indiziert werden können. Andernfalls können diese Ressourcen nicht von MRT Core abgerufen werden.
+>
+> * Stellen Sie für eine Zeichen folgen-Ressourcen Datei (. resw) sicher, dass die Eigenschaft Buildvorgang **für die Datei** auf **priresource** festgelegt ist.
+> * Stellen Sie für eine Bilddatei sicher, dass die Eigenschaft Buildvorgang **für die Datei** auf **Inhalt** festgelegt ist.
+
+## <a name="access-app-resources-with-mrt-core"></a>Zugreifen auf App-Ressourcen mit MRT Core
 
 MRT Core bietet verschiedene Möglichkeiten, auf Ihre APP-Ressourcen zuzugreifen.
 
@@ -49,15 +55,6 @@ Der **ResourceManager** -Dienst unterstützt nicht nur den Zugriff auf die Zeich
 ### <a name="qualify-resource-selection-with-resourcecontext"></a>Ressourcen Auswahl mit resourcecontext qualifizieren
 
 Ressourcen Kandidaten werden basierend auf einem bestimmten [resourcecontext](/windows/winui/api/microsoft.applicationmodel.resources.resourcecontext)ausgewählt. dabei handelt es sich um eine Sammlung von Ressourcen Qualifiziererwerten (Sprache, Skalierung, Kontrast usw.). Ein Standardkontext verwendet die aktuelle Konfiguration der APP für jeden qualifiziererwert, es sei denn, Sie wird überschrieben. Beispielsweise können Ressourcen wie z. b. Images für die Skalierung qualifiziert werden, die von einem Monitor zu einem anderen und somit von einer Anwendungs Ansicht zu einem anderen abweicht. Aus diesem Grund hat jede Anwendungs Ansicht einen eindeutigen Standardkontext. Wenn Sie einen Ressourcen Kandidaten abrufen, sollten Sie eine **resourcecontext** -Instanz übergeben, um den am besten geeigneten Wert für eine bestimmte Ansicht zu erhalten.
-
-### <a name="load-images"></a>Images laden
-
-Wenn Sie MRT Core zum Abrufen von Bildern verwenden möchten, die Sie Ihrem Projekt hinzugefügt haben, müssen Sie das Abbild so konfigurieren, dass es als Inhalt erstellt wird. Wenn Sie dies nicht tun, wird das Image nicht in der Datei "Resources. pri" indiziert und kann nicht von MRT Core abgerufen werden.
-
-So konfigurieren Sie ein Bild, das als Inhalt erstellt werden soll:
-
-* Legen Sie in einem c#-Projekt/.net 5 **die Eigenschaft Buildvorgang für das Bild** auf **Inhalt** fest.
-* Legen Sie in einem C++/WinRT-Projekt die **Content** -Eigenschaft für das Bild auf **true** fest.
 
 ## <a name="sample"></a>Beispiel
 
