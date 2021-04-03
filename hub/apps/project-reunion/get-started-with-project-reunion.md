@@ -7,12 +7,12 @@ keywords: Windows Win32, Desktopentwicklung, Project Reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 08d25334014d90f4aaec7119bc9ee84444547115
-ms.sourcegitcommit: 7f2a09e8d5d37cb5860a5f2ece5351ea6907b94c
+ms.openlocfilehash: b427e3a5b26427e00c288f90bf6f63464ebd438a
+ms.sourcegitcommit: cc871be2508f52509b6a947fe879aeec360d0fd2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "105730800"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106270202"
 ---
 # <a name="get-started-with-project-reunion"></a>Einstieg in die Projekt Zusammenführung
 
@@ -90,6 +90,9 @@ Wenn Sie über ein vorhandenes Projekt verfügen, in dem Sie die Projekt Zusamme
 
 1. Öffnen Sie ein vorhandenes Desktopprojekt (entweder C#/.NET 5 oder C++/WinRT) oder UWP-Projekt in Visual Studio 2019.
 
+    > [!NOTE]
+    > Wenn Sie über ein c#/.net 5-Desktop Projekt verfügen, stellen Sie sicher, dass das **TargetFramework** -Element in der Projektdatei einem Windows 10-spezifischen .net 5-Moniker (z. b. **net 5.0-Windows 10.0.19041.0**) zugewiesen ist, damit er Windows-Runtime-APIs aufrufen kann. Weitere Informationen finden Sie in [diesem Abschnitt](../../apps/desktop/modernize/desktop-to-uwp-enhance.md#net-5-use-the-target-framework-moniker-option).
+
 2. Vergewissern Sie sich, dass [Paketverweise](/nuget/consume-packages/package-references-in-project-files) aktiviert sind:
 
     1. Klicken Sie in Visual Studio auf **Extras > NuGet-Paket-Manager > Paket-Manager-Einstellungen**.
@@ -126,7 +129,7 @@ Die folgenden Project Reunion-Beispiele sind derzeit für Sie verfügbar.
 - [Hallo Welt-Beispiel](https://github.com/microsoft/Project-Reunion-Samples/tree/main/HelloWorld/reunioncppdesktopsampleapp): Dieses Beispiel veranschaulicht eine grundlegende Integration in das Project Reunion-NuGet-Paket.
 - Katalog für [XAML](https://aka.ms/winui3/xcg)-Steuerelemente: Dies ist eine Beispiel-APP, die alle WinUI 3-Steuerelemente in Aktion präsentiert. 
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 - [Erstellen von Windows-Desktop-Apps mit Project Reunion](index.md)
 - [Bereitstellen von apps, die Project Reunion verwenden](deploy-apps-that-use-project-reunion.md)

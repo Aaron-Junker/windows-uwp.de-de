@@ -7,12 +7,12 @@ keywords: MRT, mrtcore, PRI, makepri, Ressourcen, Laden von Ressourcen
 ms.author: hickeys
 author: hickeys
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b86e3d1b232a9c0da87808e8fa07a13b18ffdd6
-ms.sourcegitcommit: d793c82587b8368e241d74be1473f4f0af5bb9ee
+ms.openlocfilehash: c2a0f235e6bd0d8b100572bf3a38fb80440ac440
+ms.sourcegitcommit: 86630e2163a87f6d6e02db9598a3e43f2d227cb6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106164370"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106272980"
 ---
 # <a name="manage-resources-with-mrt-core"></a>Verwalten von Ressourcen mit MRT Core 
 
@@ -31,8 +31,8 @@ PRI-Dateien enthalten nur Daten, sodass Sie nicht das PE-Format (portable ausfü
 > [!NOTE]
 > Bevor Sie mit MRT Core Zeichen folgen und Bilder in einem WinUI 3-Projekt abrufen können, das c#/.net 5 verwendet, müssen Sie sicherstellen, dass diese Ressourcen so konfiguriert sind, dass Sie in der Datei "Resources. pri" indiziert werden können. Andernfalls können diese Ressourcen nicht von MRT Core abgerufen werden.
 >
-> * Stellen Sie für eine Zeichen folgen-Ressourcen Datei (. resw) sicher, dass die Eigenschaft Buildvorgang **für die Datei** auf **priresource** festgelegt ist.
-> * Stellen Sie für eine Bilddatei sicher, dass die Eigenschaft Buildvorgang **für die Datei** auf **Inhalt** festgelegt ist.
+> * Zeichen folgen: Stellen Sie sicher, **dass die Eigenschaft** Buildvorgang für Ressourcen Dateien (. resw) auf **priresource** festgelegt ist. Diese Eigenschaft wird automatisch festgelegt, wenn Sie dem Projekt eine neue **Ressourcen Datei (. resw** -Element) hinzufügen.
+> * Images: Stellen Sie sicher, **dass die Eigenschaft** Buildvorgang für Bilddateien auf **Inhalt** festgelegt ist. Diese Eigenschaft wird automatisch festgelegt, wenn Sie ein vorhandenes Bild einem Ordner mit dem Namen **Assets** in Ihrem Projekt hinzufügen.
 
 ## <a name="access-app-resources-with-mrt-core"></a>Zugreifen auf App-Ressourcen mit MRT Core
 
