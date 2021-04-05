@@ -1,20 +1,20 @@
 ---
 description: Dieser Artikel enthält Anweisungen zum Installieren der Project-Reunion-Erweiterung für Visual Studio 2019 auf dem Entwicklungs Computer und zum Verwenden von Project Reunion in neuen oder vorhandenen Projekten.
-title: Einstieg in die Projekt Zusammenführung
+title: Erste Schritte mit Project Reunion
 ms.topic: article
 ms.date: 03/19/2021
 keywords: Windows Win32, Desktopentwicklung, Project Reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b427e3a5b26427e00c288f90bf6f63464ebd438a
-ms.sourcegitcommit: cc871be2508f52509b6a947fe879aeec360d0fd2
+ms.openlocfilehash: 5b07229f381575da29d25353ca8147e712482bef
+ms.sourcegitcommit: 3942f09c620e3f3065cae91dc51505e86ec0969b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "106270202"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106376588"
 ---
-# <a name="get-started-with-project-reunion"></a>Einstieg in die Projekt Zusammenführung
+# <a name="get-started-with-project-reunion"></a>Erste Schritte mit Project Reunion
 
 Dieser Artikel enthält Anweisungen zum Installieren der Project-Reunion-Erweiterung für Visual Studio 2019 auf dem Entwicklungs Computer und zum Verwenden von Project Reunion in neuen oder vorhandenen Projekten. Bevor Sie Project Reunion installieren und verwenden, finden Sie unter [Einschränkungen und bekannte Probleme](index.md#limitations-and-known-issues)Weitere Informationen.
 
@@ -40,7 +40,10 @@ Dieser Artikel enthält Anweisungen zum Installieren der Project-Reunion-Erweite
 
 3. Wenn Sie zuvor die [WinUI 3-Vorschau Erweiterung für Visual Studio](https://marketplace.visualstudio.com/items?itemName=Microsoft-WinUI.WinUIProjectTemplates)installiert haben, deinstallieren Sie die Erweiterung. Weitere Informationen zum Deinstallieren einer Erweiterung finden Sie unter [Verwalten von Erweiterungen für Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
 
-4. Stellen Sie sicher, dass auf Ihrem System eine NuGet-Paketquelle für **nuget.org** aktiviert ist. Weitere Informationen finden Sie unter [Allgemeine NuGet-Konfigurationen](/nuget/consume-packages/configuring-nuget-behavior).
+4. Stellen Sie sicher, dass in Ihrem System eine nuget-Paketquelle für den offiziellen nuget-Dienst Index unter aktiviert ist `https://api.nuget.org/v3/index.json` . 
+
+    1. Klicken Sie in Visual Studio   ->  auf Extras **nuget Paket-Manager**  ->  **Paket-Manager Einstellungen** , um das Dialogfeld **Optionen** zu öffnen. 
+    2. Wählen Sie im linken Bereich des Dialog Felds **Optionen** die Registerkarte **Paketquellen** aus, und stellen Sie sicher, dass eine Paketquelle für **nuget.org** vorhanden ist, die auf `https://api.nuget.org/v3/index.json` als Quell-URL verweist. Weitere Informationen finden Sie unter [Allgemeine nuget-Konfigurationen](/nuget/consume-packages/configuring-nuget-behavior).
 
 5. Laden Sie die Project Reunion 0,5-Erweiterung für Visual Studio herunter, und installieren Sie Sie. Es gibt zwei Versionen der Erweiterung: eine für Desktop-Apps (c#/.net 5 oder C++/WinRT) und eine für UWP-apps.
 
@@ -71,8 +74,8 @@ So erstellen Sie ein neues Projekt, das Project Reunion 0,5 verwendet:
 1. Befolgen Sie die Anweisungen im folgenden Artikel:
 
     - [Erste Schritte mit WinUI 3 für Desktop-Apps](..\winui\winui3\get-started-winui3-for-desktop.md)
-    - [Einstieg in WinUI 3 für UWP-Apps (Vorschau)](..\winui\winui3\get-started-winui3-for-uwp.md)
-    - [Erstellen einer grundlegenden WinUI 3-Desktop-App](..\winui\winui3\desktop-build-basic-winui3-app.md)
+    - [Erste Schritte mit WinUI 3 für UWP-Apps (Vorschau)](..\winui\winui3\get-started-winui3-for-uwp.md)
+    - [Erstellen einer einfachen WinUI 3-Desktop-App](..\winui\winui3\desktop-build-basic-winui3-app.md)
 
 2. Nachdem Sie Ihr Projekt erstellt haben, erhalten Sie zusätzlich zu allen anderen Windows- und .NET-APIs, die typischerweise für Desktop- und UWP-Apps verfügbar sind, Zugriff auf die folgenden Project Reunion-APIs und -Komponenten.
 
@@ -129,7 +132,7 @@ Die folgenden Project Reunion-Beispiele sind derzeit für Sie verfügbar.
 - [Hallo Welt-Beispiel](https://github.com/microsoft/Project-Reunion-Samples/tree/main/HelloWorld/reunioncppdesktopsampleapp): Dieses Beispiel veranschaulicht eine grundlegende Integration in das Project Reunion-NuGet-Paket.
 - Katalog für [XAML](https://aka.ms/winui3/xcg)-Steuerelemente: Dies ist eine Beispiel-APP, die alle WinUI 3-Steuerelemente in Aktion präsentiert. 
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 - [Erstellen von Windows-Desktop-Apps mit Project Reunion](index.md)
-- [Bereitstellen von apps, die Project Reunion verwenden](deploy-apps-that-use-project-reunion.md)
+- [Bereitstellen von Apps, die Project Reunion verwenden](deploy-apps-that-use-project-reunion.md)
