@@ -7,12 +7,12 @@ keywords: Windows Win32, Desktopentwicklung, Project Reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: a68219986b66e96786cd4b0d0f3a553d8ea04e9b
-ms.sourcegitcommit: 7f2a09e8d5d37cb5860a5f2ece5351ea6907b94c
+ms.openlocfilehash: 91daca9b36eca88adbf13ff6be740852f76a1386
+ms.sourcegitcommit: 0be372d792b58a260634b4e008e180f0447a46ff
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "105730494"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106549666"
 ---
 # <a name="build-desktop-windows-apps-with-project-reunion-05"></a>Erstellen von Windows-Desktop-Apps mit Project Reunion 0.5
 
@@ -61,10 +61,27 @@ Neue Windows-APIs und -Funktionen sind in der Regel an Betriebssystemreleases ge
 
 ## <a name="limitations-and-known-issues"></a>Einschränkungen und bekannte Probleme
 
+Die folgenden Einschränkungen und bekannten Probleme gelten generell für Project Reunion 0.5.
+
 - **Desktop-Apps (C#/.NET 5 oder C++/Win32)** : Project Reunion 0.5 kann nicht in ungepackten Desktop-Apps (C#/.NET 5 oder C++/Win32) verwendet werden. Dieses Release wird nur für die Verwendung in als MSIX-Paket vorliegenden Desktop-Apps unterstützt.
 - **UWP-Apps**: Project Reunion 0.5 wird für UWP-Apps, die in Produktionsumgebungen verwendet werden, nicht unterstützt. Um Project Reunion in UWP-Apps zu verwenden, müssen Sie eine Vorschauversion der Project Reunion 0.5-Erweiterung verwenden. Diese wird für Produktionsumgebungen nicht unterstützt. Weitere Informationen zum Installieren der Vorschauerweiterung finden Sie unter [Einrichten der Entwicklungsumgebung](get-started-with-project-reunion.md#set-up-your-development-environment).
 - Die [Einschränkungen des WinUI 3-Entwicklertools](..\winui\winui3\index.md#developer-tools) gelten auch für alle Projekte, die Project Reunion 0.5 verwenden.
-- Beim Installieren des Project Reunion 0.5-NuGet-Pakets in vorhandenen Projekten sind [einige Einschränkungen](get-started-with-project-reunion.md#limitations-for-using-project-reunion-in-existing-projects) zu beachten.
+
+Die folgenden Einschränkungen und bekannten Probleme gelten für bestimmte Entwicklerszenarien.
+
+### <a name="using-the-project-reunion-nuget-package-in-existing-projects"></a>Verwenden des Project Reunion-NuGet-Pakets in bestehenden Projekten
+
+Wenn Sie das [Project Reunion 0.5-NuGet-Paket in bestehenden Projekten verwenden](get-started-with-project-reunion.md#use-project-reunion-in-an-existing-project) möchten, beachten Sie bitte die folgenden Einschränkungen:
+
+- Das Project Reunion 0.5-NuGet-Paket wird für die Verwendung mit Desktopprojekten (C#/.NET 5 und C++/WinRT) in Produktionsumgebungen unterstützt. Es ist als Entwicklervorschau für UWP-Projekte verfügbar und wird nicht für die Verwendung mit UWP-Projekten in Produktionsumgebungen unterstützt.
+- Das Project Reunion 0.5-NuGet-Paket (namens **Microsoft.ProjectReunion**) enthält weitere Unterpakete (einschließlich **Microsoft.ProjectReunion.Foundation** und **Microsoft.ProjectReunion.WinUI**), die die Implementierungen für Komponenten wie WinUI, MRT Core und DWriteCore umfassen. Sie können diese Unterpakete nicht einzeln installieren, um nur bestimmte Komponenten in Ihrem Projekt zu referenzieren. Sie müssen das Paket **Microsoft.ProjectReunion** installieren, in dem alle Komponenten enthalten sind.  
+- Wenn Sie das Project Reunion 0.5-NuGet-Paket in ein bestehendes Projekt installieren, können Sie nur Nicht-WinUI 3-Komponenten, die Teil von Project Reunion sind, in Ihrem Projekt verwenden. Um WinUI 3 zu verwenden, müssen Sie ein neues Projekt mit einer der WinUI 3-Projektvorlagen erstellen, wie im vorherigen Abschnitt beschrieben.
+- In WPF-Projekten wird die Installation des Project Reunion 0.5-NuGet-Pakets derzeit nicht unterstützt.
+- Die Installation des Project Reunion 0.5-NuGet-Pakets führt in Projekten, die auf **AnyCPU** abzielen, zu Buildfehlern. Um den Fehler zu beheben, fügen Sie das folgende **ProjectReunionCopyXamlToolingLibs**-Element einem **PropertyGroup**-Element in Ihrer Projektdatei hinzu.
+
+    ```xml
+    <ProjectReunionCopyXamlToolingLibs>false</ProjectReunionCopyXamlToolingLibs>
+    ```
 
 #### <a name="asta-to-sta-threading-model"></a>ASTA zu STA-Threadingmodell
 

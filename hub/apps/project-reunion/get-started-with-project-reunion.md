@@ -7,12 +7,12 @@ keywords: Windows Win32, Desktopentwicklung, Project Reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b07229f381575da29d25353ca8147e712482bef
-ms.sourcegitcommit: 3942f09c620e3f3065cae91dc51505e86ec0969b
+ms.openlocfilehash: 5ca69825acd12d67167b009474a2afe9fecc8187
+ms.sourcegitcommit: 0be372d792b58a260634b4e008e180f0447a46ff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106376588"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106549676"
 ---
 # <a name="get-started-with-project-reunion"></a>Erste Schritte mit Project Reunion
 
@@ -89,7 +89,7 @@ Um sicherzustellen, dass Ihr neues Projekt Project Reunion verwendet, erweitern 
 
 ## <a name="use-project-reunion-in-an-existing-project"></a>Verwenden von Project Reunion in einem vorhandenen Projekt
 
-Wenn Sie über ein vorhandenes Projekt verfügen, in dem Sie die Projekt Zusammenführung verwenden möchten, können Sie das nuget-Paket Project Reunion 0,5 in Ihrem Projekt installieren. Dieses Szenario weist [einige Einschränkungen](#limitations-for-using-project-reunion-in-existing-projects)auf.
+Wenn Sie über ein vorhandenes Projekt verfügen, in dem Sie die Projekt Zusammenführung verwenden möchten, können Sie das nuget-Paket Project Reunion 0,5 in Ihrem Projekt installieren. Dieses Szenario weist [einige Einschränkungen](index.md#using-the-project-reunion-nuget-package-in-existing-projects)auf.
 
 1. Öffnen Sie ein vorhandenes Desktopprojekt (entweder C#/.NET 5 oder C++/WinRT) oder UWP-Projekt in Visual Studio 2019.
 
@@ -113,15 +113,6 @@ Wenn Sie über ein vorhandenes Projekt verfügen, in dem Sie die Projekt Zusamme
 
     - [Verwalten von Ressourcen im MRT Core](mrtcore/mrtcore-overview.md)
     - [Rendern von Text mit DWriteCore](dwritecore.md)
-
-### <a name="limitations-for-using-project-reunion-in-existing-projects"></a>Einschränkungen für die Verwendung der Projekt Zusammenführung in vorhandenen Projekten
-
-Wenn Sie Project Reunion 0,5 in vorhandenen Projekten verwenden möchten, beachten Sie die folgenden Einschränkungen:
-
-- Wenn Sie das nuget-Paket Project Reunion 0,5 für ein vorhandenes Projekt installieren, können Sie nur nicht-WinUI 3-Komponenten verwenden, die Teil der Projekt Zusammenführung in Ihrem Projekt sind. Um WinUI 3 zu verwenden, müssen Sie ein neues Projekt mit einer der WinUI 3-Projektvorlagen erstellen, wie im vorherigen Abschnitt beschrieben.
-- Das nuget-Paket Project Reunion 0,5 (mit dem Namen **Microsoft. projectreunion**) enthält andere untergeordnete Pakete (einschließlich **Microsoft. projectreunion. Foundation** und **Microsoft. projectreunion. WinUI**), die die Implementierungen für Komponenten enthalten, einschließlich WinUI, MRT Core und dwrite tecore. In der aktuellen Version können Sie diese Unterpakete nicht einzeln installieren, um nur auf bestimmte Komponenten in Ihrem Projekt zu verweisen. Sie müssen das Paket **Microsoft. projectreunion** installieren, das alle-Komponenten enthält.  
-- Das Installieren des nuget-Pakets Project Reunion 0,5 wird zurzeit nicht in WPF-Projekten unterstützt.
-- Das nuget-Paket Project Reunion 0,5 wird für die Verwendung mit Desktop Projekten (c#/.net 5 und C++/WinRT) in Produktionsumgebungen unterstützt. Es ist als Entwicklervorschau für UWP-Projekte verfügbar und wird nicht für die Verwendung mit UWP-Projekten in Produktionsumgebungen unterstützt.
 
 ## <a name="samples"></a>Beispiele
 

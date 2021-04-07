@@ -7,12 +7,12 @@ keywords: Windows Win32, Desktopentwicklung
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 2518d838ca41e5ca2faa6dbd5697d64ea9257922
-ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
+ms.openlocfilehash: fcea88d91313893f93084716113ff506e502b03c
+ms.sourcegitcommit: cc871be2508f52509b6a947fe879aeec360d0fd2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99534369"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106270127"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>Erstellen von Desktop-Apps für Windows-PCs
 
@@ -66,11 +66,11 @@ Einen ausführlichen Vergleich dieser Plattformen sowie zusätzliche Ressourcen 
 
 Mit Blick auf die Zukunft entwickeln wir die Windows-App-Entwicklungsplattformen mit der Windows-UI-Bibliothek (WinUI) und Project Reunion weiter.
 
-* **WinUI** ist eine natives Framework für die Benutzererfahrung (UX) für Windows 10-Apps. WinUI begann als ein Toolkit, das neue und aktualisierte Versionen von WinRT-Steuerelementen für UWP-Apps in älteren Versionen von Windows 10 bereitstellte. Mit WinUI 3 (noch in der Vorschau) wächst WinUI zum führenden nativen Benutzeroberflächenframework für Windows 10-Apps über UWP-, .NET- und Win32-App-Plattformen hinweg.
+* **WinUI** ist eine natives Framework für die Benutzererfahrung (UX) für Windows 10-Apps. WinUI begann als ein Toolkit, das neue und aktualisierte Versionen von WinRT-Steuerelementen für UWP-Apps in älteren Versionen von Windows 10 bereitstellte. Mit WinUI 3 wächst WinUI zum führenden nativen Benutzeroberflächenframework für Windows 10-Apps über UWP-, .NET- und Win32-App-Plattformen hinweg.
 
     Weitere Informationen erhalten Sie unter [Windows-UI-Bibliothek (WinUI)](../winui/index.md).
 
-* **Project Reunion** (aktuell in der Vorschau) ist der Codename für einen umfangreichen neuen Satz von Entwicklerkomponenten und -tools, die die nächste Weiterentwicklung der Windows-App-Entwicklungsplattform darstellen. Project Reunion bietet einen einheitlichen Satz von APIs und Tools, die von jeder App auf einer breiten Palette von Zielversionen des Windows 10-Betriebssystems auf konsistente Weise verwendet werden können. Project Reunion ergänzt die bestehenden Windows-App-Plattformen und -Frameworks wie UWP und natives Win32 sowie .NET um einen gemeinsamen Satz von APIs und Tools, auf die sich Entwickler plattformübergreifend verlassen können. 
+* **Project Reunion** ist der Codename für einen umfangreichen neuen Satz von Entwicklerkomponenten und -tools, die die nächste Weiterentwicklung der Windows-App-Entwicklungsplattform darstellen. Project Reunion bietet einen einheitlichen Satz von APIs und Tools, die von jeder App auf einer breiten Palette von Zielversionen des Windows 10-Betriebssystems auf konsistente Weise verwendet werden können. Project Reunion ergänzt die bestehenden Windows-App-Plattformen und -Frameworks wie UWP und natives Win32 sowie .NET um einen gemeinsamen Satz von APIs und Tools, auf die sich Entwickler plattformübergreifend verlassen können. 
 
     Weitere Informationen finden Sie unter [Project Reunion](../project-reunion/index.md).
 
