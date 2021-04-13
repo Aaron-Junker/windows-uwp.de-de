@@ -7,12 +7,12 @@ keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
-ms.openlocfilehash: ea6ac2491afe8820bc47f69149f553241f17e89e
-ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
+ms.openlocfilehash: 28da8ee088c5871e8267e1fcadbb039322f677c7
+ms.sourcegitcommit: cc871be2508f52509b6a947fe879aeec360d0fd2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102629288"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106270187"
 ---
 # <a name="visual-studio-project-and-item-templates-for-windows-apps"></a>Visual Studio-Projekt- und -Elementvorlagen für Windows-Apps
 
@@ -23,14 +23,11 @@ Visual Studio 2019 bietet zahlreiche Projekt- und Elementvorlagen, die Sie beim
 
 ## <a name="winui-templates"></a>WinUI-Vorlagen
 
-Die [Windows-UI-Bibliothek (WinUI)](../winui/index.md) ist die Plattform für die moderne native Benutzeroberfläche (UI) für Windows-Apps auf allen Desktop- (.NET und natives Win32) und UWP-App-Plattformen. [WinUI 3](../winui/winui3/index.md) (derzeit als Entwicklervorschau verfügbar) ist die neueste Hauptversion von WinUI und transformiert WinUI in ein vollständiges UX-Framework für Windows-Desktop-Apps um.
+Die [Windows-UI-Bibliothek (WinUI)](../winui/index.md) ist die Plattform für die moderne native Benutzeroberfläche (UI) für Windows-Apps auf allen Desktop- (.NET und natives Win32) und UWP-App-Plattformen. [WinUI 3](../winui/winui3/index.md) ist die neueste Hauptversion von WinUI und transformiert WinUI in ein vollständiges UX-Framework für Windows-Desktop-Apps um.
 
-Diese aktuelle Entwicklervorschau von WinUI 3 ist als Teil von [Project Reunion 0.5 Preview](../project-reunion/index.md) verfügbar. Diese Vorschau enthält ein VSIX-Paket für Visual Studio 2019, das Projekt- und Elementvorlagen bereitstellt, die Ihnen den Einstieg in das Erstellen von Apps mit einer WinUI-basierten Schnittstelle erleichtern.
+WinUI 3 ist als Teil von [Project Reunion](../project-reunion/index.md) verfügbar. Es enthält ein VSIX-Paket für Visual Studio 2019, das Projekt- und Elementvorlagen bereitstellt, die Ihnen den Einstieg in das Erstellen von Apps mit einer WinUI-basierten Schnittstelle erleichtern.
 
-Informationen zum Installieren des VSIX-Pakets von Project Reunion 0.5 Preview sowie der WinUI-Projektvorlagen finden Sie unter [Einrichten der Entwicklungsumgebung](../project-reunion/index.md#set-up-your-development-environment). Weitere Informationen zu den verfügbaren WinUI-Projekt- und -Elementvorlagen finden Sie unter [Erstellen von WinUI-Projekten](../winui/winui3/index.md#create-winui-projects).
-
-> [!IMPORTANT]
-> WinUI 3, einschließlich der zugehörigen Visual Studio-Vorlagen, ist zurzeit als Entwicklervorschau verfügbar, die für die frühe Evaluierung und das Sammeln von Feedback aus der Entwicklercommunity vorgesehen ist. Diese Version sollte zu diesem Zeitpunkt NICHT für Produktions-Apps verwendet werden.
+Informationen zum Installieren des VSIX-Pakets von Project Reunion sowie der WinUI-Projektvorlagen finden Sie unter [Einrichten der Entwicklungsumgebung](../project-reunion/get-started-with-project-reunion.md#set-up-your-development-environment). Weitere Informationen zu den verfügbaren WinUI-Projekt- und -Elementvorlagen finden Sie unter [Erstellen von WinUI 3-Projekten](../winui/winui3/winui-project-templates-in-visual-studio.md).
 
 ## <a name="uwp-templates"></a>UWP-Vorlagen
 
