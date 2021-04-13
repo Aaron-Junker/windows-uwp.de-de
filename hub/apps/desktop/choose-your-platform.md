@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: Windows Win32, Desktopentwicklung
-ms.openlocfilehash: 2afa5e4ff1c116439f916b10a156c567bd7a2ac4
-ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
+ms.openlocfilehash: a9efb252b6b20e7a9cfe9c6bd2b3ad345c4d3abf
+ms.sourcegitcommit: cc871be2508f52509b6a947fe879aeec360d0fd2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "105619366"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106270148"
 ---
 # <a name="choose-your-windows-app-platform"></a>Auswählen Ihrer Windows-App-Plattform
 
@@ -113,7 +113,7 @@ In der folgenden Tabelle werden die verschiedenen Merkmale von Windows Forms, WP
 
 ## <a name="use-the-windows-ui-library-with-windows-apps"></a>Verwenden der Windows-UI-Bibliothek mit Windows-Apps
 
-Als Ergänzung zu den wichtigsten Windows-App-Plattformen können Sie auch die [Windows-UI-Bibliothek (WinUI)](../winui/index.md) in Ihren Apps verwenden. WinUI begann als ein Toolkit, das neue und aktualisierte Versionen von WinRT-Steuerelementen für UWP-Apps in älteren Versionen von Windows 10 bereitstellte. Mit WinUI 3 (noch in der Vorschau) wächst WinUI zum führenden nativen Benutzeroberflächenframework für Windows 10-Apps über UWP-, .NET- und Win32-App-Plattformen hinweg.
+Als Ergänzung zu den wichtigsten Windows-App-Plattformen können Sie auch die [Windows-UI-Bibliothek (WinUI)](../winui/index.md) in Ihren Apps verwenden. WinUI begann als ein Toolkit, das neue und aktualisierte Versionen von WinRT-Steuerelementen für UWP-Apps in älteren Versionen von Windows 10 bereitstellte. Mit WinUI 3 wächst WinUI zum führenden nativen Benutzeroberflächenframework für Windows 10-Apps über UWP-, .NET- und Win32-App-Plattformen hinweg.
 
 Sie können WinUI auf folgende Weise in Windows -Apps einsetzen.
 
@@ -121,11 +121,8 @@ Sie können WinUI auf folgende Weise in Windows -Apps einsetzen.
   * UWP-Apps können WinUI 2.x-Steuerelemente anstelle der vom Windows SDK bereitgestellten WinRT-Steuerelemente nutzen. Diese Releases von WinUI enthalten sowohl komplett neue Steuerelemente als auch aktualisierte Versionen bestehender Steuerelemente aus dem Windows SDK.
   * Sie können vorhandene WPF-, Windows Forms- und C++/Win32-Apps mit [XAML Islands](modernize/xaml-islands.md) aktualisieren, um WinUI 2.x-Steuerelemente zu hosten.
 
-* [WinUI 3 (Vorschau)](../winui/winui3/index.md):
+* [WinUI 3](../winui/winui3/index.md):
   * Ab WinUI 3 können Sie [.NET- und C++/Win32-Apps](../winui/winui3/get-started-winui3-for-desktop.md) sowie [UWP-Apps](../winui/winui3/get-started-winui3-for-uwp.md) erstellen, die eine vollständig WinUI-basierte Benutzeroberfläche aufweisen. Dieses Release enthält Visual Studio-Projektvorlagen, die alles bieten, was Sie zum Erstellen dieser Anwendungen benötigen.
-
-> [!NOTE]
-> WinUI 3 befindet sich noch in der Vorschau und sollte daher nicht für Apps in Produktionsumgebungen verwendet werden.
 
 ## <a name="other-app-platforms"></a>Andere App-Plattformen
 

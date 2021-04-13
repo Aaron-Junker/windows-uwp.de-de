@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Rust, Windows 10, Microsoft, Rust lernen, Rust unter Windows für Anfänger, Rust mit VS Code
 ms.localizationpriority: medium
 ms.date: 03/04/2021
-ms.openlocfilehash: 5aac8dd9b9f760f6e1ed49ff0246e44c400d72c4
-ms.sourcegitcommit: 85b9a5fc16f4486bc23b4ec8f4fae5ab6211a066
+ms.openlocfilehash: fa79808c2a2e69ec7e11c7b212d17021cc13cc50
+ms.sourcegitcommit: 2beecf3e403e9f057aefdc43c2f7db6f621793cd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102194156"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099795"
 ---
 # <a name="set-up-your-dev-environment-on-windows-for-rust"></a>Einrichten Ihrer Entwicklungsumgebung unter Windows für Rust
 

@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: b8cb2670c09c5a93d2edd67e3f338a33eeb488ad
-ms.sourcegitcommit: b4c782b2403da83a6e0b5b7416cc4dc835b068d9
+ms.openlocfilehash: 6e881fbb883d35d35b70eb8984b9264acd78191d
+ms.sourcegitcommit: cc871be2508f52509b6a947fe879aeec360d0fd2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98922757"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106270177"
 ---
 # <a name="host-winrt-xaml-controls-in-desktop-apps-xaml-islands"></a>Hosten von WinRT-XAML-Steuerelementen in Desktop-Apps (XAML Islands)
 
@@ -29,7 +29,7 @@ Grundsätzlich werden XAML Islands mithilfe der *UWP XAML-Hosting-API* erstellt.
 Die Art, wie Sie XAML Islands verwenden, hängt von Ihrem Anwendungstyp und den Typen der WinRT-XAML-Steuerelemente ab, die Sie hosten möchten.
 
 > [!NOTE]
-> Wenn Sie Feedback zu XAML Islands haben, erstellen Sie ein neues Thema im [Microsoft.Toolkit.Win32-Repository](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues), und geben Sie dort Ihre Kommentare ab. Wenn Sie Ihr Feedback lieber privat geben möchten, können Sie es an XamlIslandsFeedback@microsoft.com senden. Ihre Erkenntnisse und Szenarien sind äußerst wichtig für uns.
+> Wenn Sie Feedback zu XAML Islands haben, erstellen Sie ein neues Thema im [Microsoft.Toolkit.Win32-Repository](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues), und geben Sie dort Ihre Kommentare ab.
 
 ## <a name="requirements"></a>Anforderungen
 

@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 9da6b1acf2ce27fa6b4ec6c1b4e4274a28491b8b
-ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.openlocfilehash: d6ad174a6f3a9795cced8a77accf3eac3bb2a477
+ms.sourcegitcommit: 261c582d23b5d70b5e7b0ff094c212f74246d28a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100335096"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106400778"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Integrieren deiner Desktop-App in Windows 10 und UWP
 
@@ -30,11 +30,93 @@ In diesem Thema werden diese Erweiterungen und die Aufgaben beschrieben, die du 
 
 Unterstütze die Benutzer bei der Umstellung auf deine gepackte App.
 
+* [Umleiten Ihrer vorhandenen Desktop-App an Ihre gepackte App](#redirect)
 * [Verweis auf die gepackte App mit vorhandenen Startkacheln und Taskleistenschaltflächen](#point)
-* [Festlegen deiner gepackten Anwendung zum Öffnen von Dateien anstelle deiner Desktop-App](#make)
-* [Zuordnen einer gepackten Anwendung zu einer Gruppe von Dateitypen](#associate)
+* [Einstellen, dass Dateien mit der gepackten App und nicht Ihrer Desktop-App geöffnet werden](#make)
+* [Zuordnen Ihrer gepackten App zu einer Gruppe von Dateitypen](#associate)
 * [Hinzufügen von Optionen zu den Kontextmenüs von Dateien eines bestimmten Dateityps](#add)
 * [Öffnen bestimmter Dateitypen direkt über eine URL](#open)
+
+<a id="redirect"></a>
+
+### <a name="redirect-your-existing-desktop-app-to-your-packaged-app"></a>Umleiten Ihrer vorhandenen Desktop-App an Ihre gepackte App
+
+Wenn Benutzer Ihre vorhandene, nicht gepackte Desktop-App starten, können Sie Ihre MSIX-gepackte App so konfigurieren, dass diese stattdessen geöffnet wird. 
+
+> [!NOTE]
+> Dieses Feature wird in Windows Insider Preview Build 21313 und höheren Versionen unterstützt.
+
+So aktivieren Sie dieses Verhalten
+
+1. Fügen Sie Registrierungseinträge hinzu, um die ausführbare Datei der nicht gepackten Desktop-App an Ihre gepackte App umzuleiten.
+2. Registrieren Sie Ihre gepackte App, damit sie gestartet wird, wenn die ausführbare Datei Ihrer nicht gepackten Desktop-App gestartet wird.
+
+#### <a name="add-registry-entries-to-redirect-your-unpackaged-desktop-app-executable"></a>Fügen Sie Registrierungseinträge hinzu, um die ausführbare Datei der nicht gepackten Desktop-App umzuleiten.
+
+1. Erstellen Sie in der Registrierung unter dem Schlüssel **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options** einen Unterschlüssel mit dem Namen der ausführbaren Datei Ihrer Desktop-App.
+2. Fügen Sie unter diesem Unterschlüssel die folgenden Werte hinzu:
+    * **AppExecutionAliasRedirect** (DWORD): Wenn dieser Wert auf 1 festgelegt ist, sucht das System nach einer [AppExecutionAlias](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appexecutionalias)-Paketerweiterung mit demselben Namen wie die ausführbare Datei. Wenn die Erweiterung **AppExecutionAlias** aktiviert ist, wird die gepackte App mit diesem Wert aktiviert.
+    * **AppExecutionAliasRedirectPackages** (REG_SZ): Das System leitet nur auf die aufgelisteten Pakete um. Pakete werden nach Ihrem Paketfamiliennamen aufgelistet, getrennt durch Semikolons. Wenn der Sonderwert * verwendet wird, leitet das System von einem beliebigen Paket zu einem **AppExecutionAlias** um.
+
+Beispiele:
+
+```Ini
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\contosoapp.exe 
+    AppExecutionAliasRedirect = 1
+    AppExecutionAliasRedirectPackages = "Microsoft.WindowsNotepad_8weky8webbe" 
+```
+
+#### <a name="register-your-packaged-app-to-be-launched"></a>Registrieren der gepackten App, um diese zu starten
+
+Fügen Sie zum Paketmanifest eine [AppExecutionAlias](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appexecutionalias)-Erweiterung hinzu, die den Namen der ausführbaren Datei Ihrer nicht gepackten Desktop-App registriert. Beispiele:
+
+```XML
+<Package
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  IgnorableNamespaces="uap3">
+  <Applications>
+    <Application>
+      <Extensions>
+        <uap3:Extension Category="windows.appExecutionAlias" EntryPoint="Windows.FullTrustApplication">
+          <uap3:AppExecutionAlias>
+            <desktop:ExecutionAlias Alias="contosoapp.exe" />
+          </uap3:AppExecutionAlias>
+        </uap3:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>
+```
+
+#### <a name="disable-the-redirection"></a>Deaktivieren der Umleitung
+
+Benutzer können die Umleitung deaktivieren, um die ausführbare Datei Ihrer nicht gepackten App über diese Optionen zu starten:
+
+* Sie können die MSIX-gepackte Version Ihrer App deinstallieren.
+* Der Benutzer kann den Eintrag **AppExecutionAlias** für Ihre MSIX-gepackte App auf der Seite **App-Ausführungsaliase** in **Einstellungen** deaktivieren.
+
+#### <a name="xml-namespaces"></a>XML-Namespaces
+
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10`
+
+#### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
+
+```XML
+<uap3:Extension
+    Category="windows.appExecutionAlias"
+    EntryPoint="Windows.FullTrustApplication">
+    <uap3:AppExecutionAlias>
+        <desktop:ExecutionAlias Alias="[AliasName]" />
+    </uap3:AppExecutionAlias>
+</uap3:Extension>
+```
+
+|Name |Beschreibung |
+|-------|-------------|
+|Category |Immer ``windows.appExecutionAlias``. |
+|Ausführbare Datei |Der relative Pfad zur ausführbaren Datei, die beim Aufrufen des Alias gestartet wird. |
+|Alias |Der Kurzname für deine App. Er muss immer mit der Erweiterung „.exe“ enden. |
 
 <a id="point"></a>
 
@@ -59,7 +141,7 @@ Deine Benutzer haben möglicherweise deine Desktop-Anwendung an die Taskleiste o
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-rescap3-desktopappmigration).
 
-|Name | BESCHREIBUNG |
+|Name | Beschreibung |
 |-------|-------------|
 |Category |Immer ``windows.desktopAppMigration``.
 |AumID |Die Anwendungsbenutzermodell-ID deiner gepackten App. |
@@ -119,7 +201,7 @@ Dazu gibst du den [programmatischen Bezeichner (ProgID)](/windows/desktop/shell/
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Name |BESCHREIBUNG |
+|Name |Beschreibung |
 |-------|-------------|
 |Category |Immer ``windows.fileTypeAssociation``.
 |Name |Der Name der Dateitypzuordnung. Mit diesem Namen kannst du Dateitypen organisieren und gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen umfassen. |
@@ -178,7 +260,7 @@ Sie können Ihre gepackte App bestimmten Dateityperweiterungen zuordnen. Wenn ei
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Name |BESCHREIBUNG |
+|Name |Beschreibung |
 |-------|-------------|
 |Category |Immer ``windows.fileTypeAssociation``.
 |Name | Der Name der Dateitypzuordnung. Mit diesem Namen kannst du Dateitypen organisieren und gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen umfassen.   |
@@ -237,7 +319,7 @@ Diese Erweiterung ermöglicht es Ihnen, Optionen zum Kontextmenü hinzuzufügen,
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Name |BESCHREIBUNG |
+|Name |Beschreibung |
 |-------|-------------|
 |Category | Immer ``windows.fileTypeAssociation``.
 |Name |Der Name der Dateitypzuordnung. Mit diesem Namen kannst du Dateitypen organisieren und gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen umfassen. |
@@ -301,7 +383,7 @@ Du kannst sicherstellen, dass die Benutzer zum Öffnen bestimmter Dateitypen sta
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Name |BESCHREIBUNG |
+|Name |Beschreibung |
 |-------|-------------|
 |Category |Immer ``windows.fileTypeAssociation``.
 |Name |Der Name der Dateitypzuordnung. Mit diesem Namen kannst du Dateitypen organisieren und gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen umfassen. |
@@ -367,7 +449,7 @@ Wenn deine App über einen Port kommunizieren muss, kannst du deine App zur List
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-firewallrules).
 
-|Name |BESCHREIBUNG |
+|Name |Beschreibung |
 |-------|-------------|
 |Kategorie |Immer ``windows.firewallRules``.|
 |Ausführbare Datei |Der Name der ausführbaren Datei, die zur Liste der Firewallausnahmen hinzugefügt werden soll. |
@@ -431,7 +513,7 @@ Deklariere diese Erweiterung auf der Paketebene deines App-Manifests.
 
 ```
 
-|Name | BESCHREIBUNG |
+|Name | Beschreibung |
 |-------|-------------|
 |Category |Immer ``windows.loaderSearchPathOverride``.
 |FolderPath | Der Pfad des Ordners, der Ihre DLL-Dateien enthält. Gib einen Pfad relativ zum Stammordner des Pakets an. Du kannst bis zu fünf Pfade in einer Erweiterung angeben. Wenn das System nach Dateien im Stammordner des Pakets suchen soll, verwende eine leere Zeichenfolge für einen dieser Pfade. Fügen Sie keine doppelten Pfade ein, und stellen Sie sicher, dass die Pfade keine voran- bzw. nachgestellten Schrägstriche oder umgekehrten Schrägstriche enthalten. <br><br> Das System durchsucht keine Unterordner. Stelle deshalb sicher, dass du jeden Ordner mit DLL-Dateien, die das System laden soll, explizit auflistest.|
@@ -496,7 +578,7 @@ Gib an, wie sich die App verhält, wenn ein Benutzer mehrere Dateien gleichzeiti
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Name |BESCHREIBUNG |
+|Name |Beschreibung |
 |-------|-------------|
 |Category |Immer ``windows.fileTypeAssociation``.
 |Name |Der Name der Dateitypzuordnung. Mit diesem Namen kannst du Dateitypen organisieren und gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen umfassen. |
@@ -571,7 +653,7 @@ Ermögliche es Benutzern, eine Miniaturansicht des Dateiinhalts anzuzeigen, wenn
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Name |BESCHREIBUNG |
+|Name |Beschreibung |
 |-------|-------------|
 |Category |Immer ``windows.fileTypeAssociation``.
 |Name |Der Name der Dateitypzuordnung. Mit diesem Namen kannst du Dateitypen organisieren und gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen umfassen. |
@@ -633,7 +715,7 @@ Ermögliche es Benutzern, die Inhalte einer Datei im Vorschaubereich des Datei-E
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Name |BESCHREIBUNG |
+|Name |Beschreibung |
 |-------|-------------|
 |Category |Immer ``windows.fileTypeAssociation``.
 |Name |Der Name der Dateitypzuordnung. Mit diesem Namen kannst du Dateitypen organisieren und gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen umfassen. |
@@ -698,7 +780,7 @@ Weitere Informationen zum **Kind**-Feld und den Werten, die du für dieses Feld 
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Name |BESCHREIBUNG |
+|Name |Beschreibung |
 |-------|-------------|
 |Category |Immer ``windows.fileTypeAssociation``.
 |Name |Der Name der Dateitypzuordnung. Mit diesem Namen kannst du Dateitypen organisieren und gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen umfassen. |
@@ -759,7 +841,7 @@ Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapm
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Name |BESCHREIBUNG |
+|Name |Beschreibung |
 |-------|-------------|
 |Category |Immer ``windows.fileTypeAssociation``.
 |Name |Der Name der Dateitypzuordnung. Mit diesem Namen kannst du Dateitypen organisieren und gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen umfassen. |
@@ -915,7 +997,7 @@ Registriere die Handler, die du in deiner Anwendung implementierst. Du kannst au
 
 ```
 
-|Name |BESCHREIBUNG |
+|Name |Beschreibung |
 |-------|-------------|
 |Category |Immer ``windows.cloudfiles``.
 |iconResource |Das Symbol, das deinen Clouddateianbieter-Dienst repräsentiert. Dieses Symbol wird im Navigationsbereich des Datei-Explorers angezeigt.  Benutzer wählen dieses Symbol aus, um Dateien aus deinem Clouddienst anzuzeigen. |
@@ -985,7 +1067,7 @@ Protokollzuordnungen ermöglichen es anderen Programmen und Systemkomponenten, m
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol).
 
-|Name |BESCHREIBUNG |
+|Name |Beschreibung |
 |-------|-------------|
 |Category |Immer ``windows.protocol``.
 |Name |Der Name des Protokolls. |
@@ -1037,7 +1119,7 @@ Benutzer und andere Prozesse können einen Alias verwenden, um deine App zu star
 </uap3:Extension>
 ```
 
-|Name |BESCHREIBUNG |
+|Name |Beschreibung |
 |-------|-------------|
 |Category |Immer ``windows.appExecutionAlias``.
 |Ausführbare Datei |Der relative Pfad zur ausführbaren Datei, die beim Aufrufen des Alias gestartet wird. |
@@ -1100,7 +1182,7 @@ Benutzer können die Startaufgabe Ihrer App manuell mithilfe des Task-Managers d
 </Extension>
 ```
 
-|Name |BESCHREIBUNG |
+|Name |Beschreibung |
 |-------|-------------|
 |Category |Immer ``windows.startupTask``.|
 |Ausführbare Datei |Der relative Pfad der ausführbaren Datei, die gestartet werden soll. |
@@ -1155,7 +1237,7 @@ Du kannst deine Anwendung als Option für die automatische Wiedergabe anzeigen, 
   </AutoPlayHandler>
 ```
 
-|Name |BESCHREIBUNG |
+|Name |Beschreibung |
 |-------|-------------|
 |Category |Immer ``windows.autoPlayHandler``.
 |ActionDisplayName |Diese Zeichenfolge repräsentiert die Aktion, die Benutzer für ein Gerät ausführen können, das sie an einen PC anschließen (beispielsweise „Dateien importieren“ oder „Video wiedergeben“). |
@@ -1242,7 +1324,7 @@ Du musst deine Anwendung so einrichten, dass sie Daten im XPS-Format (XML Paper 
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-appprinter).
 
-|Name |BESCHREIBUNG |
+|Name |Beschreibung |
 |-------|-------------|
 |Category |Immer ``windows.appPrinter``.
 |DisplayName |Der Name, der in der Liste der Druckziele für eine App angezeigt werden soll. |
@@ -1295,7 +1377,7 @@ Gibt deine benutzerdefinierten Schriftarten für andere Windows-Anwendungen frei
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-sharedfonts).
 
-|Name |BESCHREIBUNG |
+|Name |Beschreibung |
 |-------|-------------|
 |Category |Immer ``windows.sharedFonts``.
 |Datei |Die Datei mit der Schriftart, die du freigeben möchtest. |
@@ -1341,7 +1423,7 @@ Starte einen Win32-Prozess, der als vollständig vertrauenswürdig eingestuft wi
 </Extension>
 ```
 
-|Name |BESCHREIBUNG |
+|Name |Beschreibung |
 |-------|-------------|
 |Category |Immer ``windows.fullTrustProcess``.
 |GroupID |Eine Zeichenfolge zum Identifizieren einer Reihe von Parametern, die du an die ausführbare Datei übergeben möchtest. |

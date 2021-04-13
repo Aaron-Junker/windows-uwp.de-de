@@ -4,12 +4,12 @@ description: Ein schnell Startprogramm für Poweruser, das einige zusätzliche F
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ce71ac5f4667952be8beb790b0890aadd0d8eb54
-ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
+ms.openlocfilehash: 8d9c67b38f9a7c7729c0f4839a327a2527aa116d
+ms.sourcegitcommit: 77af97719a439f5e73a6109b42fd3110bcb2843b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103417111"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107218137"
 ---
 # <a name="powertoys-run-utility"></a>PowerToys-Hilfsprogramm ausführen
 
@@ -40,7 +40,7 @@ Die PowerToys-Run-Funktionen umfassen Folgendes:
 
 - Ausführen einer einfachen Berechnung mithilfe des Rechners
 
-## <a name="settings"></a>Einstellung
+## <a name="settings"></a>Einstellungen
 
 Die folgenden Test Lauf Optionen sind im Menü PowerToys-Einstellungen verfügbar.
 
@@ -57,26 +57,27 @@ Die folgenden Test Lauf Optionen sind im Menü PowerToys-Einstellungen verfügba
   | **Verknüpfungen** | **Aktion** |
   | --- | --- |
   | ALT + LEERTASTE | PowerToys-Testlauf öffnen oder ausblenden |
-  | Esc | PowerToys-Run ausblenden |
+  | ESC | PowerToys-Run ausblenden |
   | STRG+UMSCHALT+EINGABE | (Gilt nur für Anwendungen) Ausgewählte Anwendung als Administrator öffnen |
   | Strg+Umschalt+E | (Gilt nur für Anwendungen und Dateien) Enthaltenden Ordner in Datei-Explorer öffnen |
   | STRG+C | (Gilt nur für Ordner und Dateien) Pfad für Kopier Pfad |
   | Registerkarte | Navigieren durch die Schaltflächen "Suchergebnis" und "Kontextmenü" |
 
-## <a name="action-key"></a>Aktions Schlüssel
+## <a name="action-keys"></a>Aktionstasten
 
 Diese Standard Aktivierungs Ausdrücke erzwingen, dass PowerToys nur Ziel-Plug-Ins ausgeführt wird.
 
   | **Aktions Schlüssel** | **Aktion** |
   | --- | --- |
-  | `=` | Nur Rechner. Beispiel: `=2+2` |
-  | `?` | Nur Dateisuche. Beispiel `?road` für die Suche `roadmap.txt` |
+  | `=` | Nur Rechner. Beispiel: `=2+2`. |
+  | `?` | Nur Dateisuche. Ein Beispiel `?road` für die Suche `roadmap.txt` . |
   | `.` | Nur installierte Programme. Beispiel `.code` für das Visual Studio Code. Optionen zum Hinzufügen von Parametern zum Start eines Programms finden Sie unter [Programm Parameter](#program-parameters) . |
-  | `//` | Nur URLs. Beispiel `//docs.microsoft.com` für das Wechseln Ihres Standard Browsers zu https://docs.microsoft.com |
-  | `<` | Nur ausführen von Prozessen. Beispiel `<outlook` für die Suche nach allen Prozessen, die Outlook enthalten |
-  | `>` | Nur Shellbefehl. Beispiel `>ping localhost` für eine Ping-Abfrage |
-  | `:` | Nur Registrierungsschlüssel. Beispiel `:hkcu` für die Suche nach dem Registrierungsschlüssel HKEY_CURRENT_USER |
-  | `!` | Nur Windows-Dienste. Beispiel für `!alg` die Suche nach dem anwendungsebenengateway-Dienst, der gestartet oder beendet werden soll |
+  | `//` | Nur URLs. Beispiel `//docs.microsoft.com` für den Standardbrowser https://docs.microsoft.com . |
+  | `<` | Nur ausführen von Prozessen. Beispiel `<outlook` für die Suche nach allen Prozessen, die Outlook enthalten. |
+  | `>` | Nur Shellbefehl. Beispiel `>ping localhost` für eine Ping-Abfrage. |
+  | `:` | Nur Registrierungsschlüssel. Beispiel `:hkcu` für die Suche nach dem Registrierungsschlüssel HKEY_CURRENT_USER. |
+  | `!` | Nur Windows-Dienste. Beispiel für `!alg` die Suche nach dem anwendungsebenengatewaydienst, der gestartet oder beendet werden soll. |
+  | `{` | Visual Studio Code zuvor geöffnete Arbeitsbereiche, Remote Computer (SSH oder codespaces) und Container. Beispiel `{powertoys` für die Suche nach Arbeitsbereichen, die ' PowerToys ' in ihren Pfaden enthalten. Dieses Plug-in ist standardmäßig deaktiviert.
 
 ## <a name="system-commands"></a>System Befehle
 
@@ -94,11 +95,11 @@ Die Ausführung von PowerToys ermöglicht eine Reihe von Aktionen auf Systemeben
 
 ## <a name="plugin-manager"></a>Plugin-Manager
 
-Mit PowerToys v 0,33 und on enthält das Menü "PowerToys-Lauf Zeit Einstellungen" einen Plug-in-Manager, mit dem Sie die verschiedenen derzeit verfügbaren Plug-ins aktivieren/deaktivieren können. Wenn Sie die Abschnitte auswählen und erweitern, können Sie die von den einzelnen Plug-ins verwendeten Aktivierungs Ausdrücke anpassen. Außerdem können Sie auswählen, ob ein Plug-in globale Ergebnisse angezeigt wird, und zusätzliche Plug-in-Optionen festlegen, sofern verfügbar. 
+Das Menü PowerToys-Lauf Zeit Einstellungen enthält einen Plug-in-Manager, mit dem Sie die verschiedenen derzeit verfügbaren Plug-ins aktivieren bzw. deaktivieren können Wenn Sie die Abschnitte auswählen und erweitern, können Sie die von den einzelnen Plug-ins verwendeten Aktivierungs Ausdrücke anpassen. Außerdem können Sie auswählen, ob ein Plug-in globale Ergebnisse angezeigt wird, und zusätzliche Plug-in-Optionen festlegen, sofern verfügbar. 
 
 ## <a name="program-parameters"></a>Programm Parameter
 
-Mit PowerToys v 0,33 und höher ermöglicht das PowerToys Run program-Plug-in das Hinzufügen von Programm Argumenten, wenn eine Anwendung gestartet wird. Die Programm Argumente müssen das erwartete Format aufweisen, wie von der Befehlszeilenschnittstelle des Programms definiert.
+Das PowerToys Run program-Plug-in ermöglicht das Hinzufügen von Programm Argumenten, wenn eine Anwendung gestartet wird. Die Programm Argumente müssen das erwartete Format aufweisen, wie von der Befehlszeilenschnittstelle des Programms definiert.
 
 Wenn Sie z. b. Visual Studio Code starten, können Sie den Ordner angeben, der geöffnet werden soll:
 
@@ -111,6 +112,16 @@ Visual Studio Code unterstützt auch eine Reihe von [Befehlszeilen Parametern](h
 Wenn die Option "in globales Ergebnis einschließen" des Programm-Plug-ins nicht ausgewählt ist, müssen Sie den Aktivierungs Ausdruck `.` standardmäßig einschließen, um das Verhalten des Plug-ins aufzurufen:
 
 `.Visual Studio Code -- C:\myFolder`
+
+## <a name="monitor-positioning"></a>Überwachen der Positionierung
+
+Wenn mehrere Monitore verwendet werden, kann die Ausführung von PowerToys auf dem gewünschten Monitor gestartet werden, indem das entsprechende Startverhalten im Menü Einstellungen konfiguriert wird. Zu den Optionen gehören das Öffnen für:
+
+- Primärer Monitor
+- Überwachen mit dem Mauszeiger
+- Überwachen mit Fokus Fenster
+
+![Auswahl von PowerToys-Monitor ausführen](../images/pt-run-monitor.png)
 
 ## <a name="windows-search-settings"></a>Windows-Sucheinstellungen
 

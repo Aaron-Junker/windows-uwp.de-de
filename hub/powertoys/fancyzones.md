@@ -4,12 +4,12 @@ description: Ein Fenster-Manager-Hilfsprogramm zum Anordnen und Ausrichten von F
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e297467f6681d3060e085ee4b60fe8c51f1ec21
-ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
+ms.openlocfilehash: 4e85193aca4ffda4f863cca7321ca870a08694a3
+ms.sourcegitcommit: 77af97719a439f5e73a6109b42fd3110bcb2843b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103417125"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107219011"
 ---
 # <a name="fancyzones-utility"></a>Fancyzones (Hilfsprogramm)
 
@@ -69,6 +69,14 @@ Das Additive **Canvas** -Modell beginnt mit einem leeren Layout und unterstützt
 
 ![Fenster-Editor-Modus "fancyzones"](../images/pt-fancyzones-canvaseditor.png)
 
+### <a name="quickly-changing-between-layouts"></a>Schnelles Wechseln zwischen Layouts
+
+Mit einem benutzerdefinierten Layout kann dieses Layout für einen benutzerdefinierten Hotkey konfiguriert werden, um es schnell auf den gewünschten Desktop anzuwenden. Der Hotkey kann festgelegt werden, indem das Menü Bearbeiten des benutzerdefinierten Layouts geöffnet wird. Sobald das benutzerdefinierte Layout festgelegt ist, kann es durch Drücken der Bindung angewendet werden `Win ⊞ + Ctrl + Alt + [hotkey]` . Das Layout kann auch durch Drücken der Hotkey-Taste angewendet werden, wenn ein Fenster gezogen wird.
+
+In der folgenden Demo beginnen wir mit einer Standardvorlage, die auf den Bildschirm angewendet wird, und zwei benutzerdefinierten Layouts, für die wir Hotkeys zuweisen. Anschließend wird die `Win ⊞ + Ctrl + Alt + [hotkey]` Bindung verwendet, um das erste benutzerdefinierte Layout anzuwenden und ein Fenster zu binden. Zum Schluss wird das zweite benutzerdefinierte Layout angewendet, während ein Fenster gezogen und das Fenster an das Fenster gebunden wird.
+
+![Fancyzones-Quick-Swap Layouts](../images/pt-fancyzones-quickswap.gif) 
+
 ## <a name="snapping-a-window-to-two-or-more-zones"></a>Ausrichten eines Fensters an zwei oder mehr Zonen
 
 Wenn zwei Zonen nebeneinander liegen, kann ein Fenster an die Summe des Bereichs ausgerichtet werden (abgerundet auf das minimale Rechteck, das beide enthält). Wenn sich der Mauszeiger in der Nähe der allgemeinen Kante von zwei Zonen befindet, werden beide Zonen gleichzeitig aktiviert, sodass Sie das Fenster in beide Zonen ablegen können.  
@@ -88,9 +96,9 @@ Wenn Sie ein Fenster mithilfe der Tastatur auf mehrere Zonen ausrichten möchten
 
 Mit fancyzones wird Windows 10 nicht außer Kraft gesetzt `Win ⊞ + Shift + Arrow` , um schnell ein Fenster zu einem angrenzenden Monitor zu verschieben.
 
-## <a name="settings"></a>Einstellung
+## <a name="settings"></a>Einstellungen
 
-| Einstellung | BESCHREIBUNG |
+| Einstellung | Beschreibung |
 | --------- | ------------- |
 | Hotkey für den Zonen-Editor konfigurieren | Wenn Sie den Standard-Hotkey ändern möchten, klicken Sie auf das Textfeld (es ist nicht erforderlich, den Text auszuwählen oder zu löschen), und drücken Sie dann auf der Tastatur die gewünschte Tastenkombination. |
 | Umschalttaste gedrückt halten, um Zonen beim Ziehen zu aktivieren | Schaltet zwischen dem automatischen Andock Modus und der UMSCHALTTASTE, wobei das Andocken während eines Drag-und manuellen Snap-Ins deaktiviert wird, wobei beim Drücken der UMSCHALTTASTE während eines Zieh Vorgangs Andocken aktiviert ist. |

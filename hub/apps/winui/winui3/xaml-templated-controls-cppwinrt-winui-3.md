@@ -8,12 +8,12 @@ ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 154177c8c909f0ea30f4fbe2323a0b28222eb932
-ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.openlocfilehash: 1c2d77c9e109fdaf83a3ca328daf183c47bc639b
+ms.sourcegitcommit: 7f2a09e8d5d37cb5860a5f2ece5351ea6907b94c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100335000"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105730374"
 ---
 # <a name="templated-xaml-controls-for-winui-3-apps-with-cwinrt"></a>XAML-Steuerelemente in Vorlagen für WinUI 3-Apps mit C++/WinRT
 
@@ -34,7 +34,6 @@ Um ein vordefiniertes Steuerelement hinzuzufügen, klicken Sie auf das Menü **P
 ## <a name="implement-the-bglabelcontrol-custom-control-class"></a>Implementieren der benutzerdefinierten Steuerelementklasse „BgLabelControl“
 
 In den folgenden Schritten aktualisieren Sie den Code in den Dateien `BgLabelControl.idl`, `BgLabelControl.h` und `BgLabelControl.cpp` im Projektverzeichnis, um die Laufzeitklasse zu implementieren. 
-
 
 Die Steuerelementklasse mit Vorlagen wird per XAML-Markup instanziiert, und wird dadurch eine Laufzeitklasse. Wenn Sie das fertige Projekt erstellen, wird der MIDL-Compiler (midl.exe) die `BgLabelControl.idl`-Datei verwenden, um die Windows-Runtime-Metadatendatei (.winmd) für Ihr Steuerelement zu generieren, auf die die Consumer Ihrer Komponente verweisen. Weitere Informationen zum Erstellen von Laufzeitklassen finden Sie unter [Erstellen von APIs mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
 

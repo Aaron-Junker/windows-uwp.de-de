@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 8427519dd010553eb1f4f00f951dcc747a94b0c0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6237fe47a6518ae7d9916be4568bf2cd4295322f
+ms.sourcegitcommit: cc871be2508f52509b6a947fe879aeec360d0fd2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174184"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106270337"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>Verwenden der UWP-XAML-Hosting-API in einer C++-Win32-App
 
@@ -22,7 +22,7 @@ Ab Windows 10, Version 1903, können nicht auf UWP basierende Desktop-Apps (ei
 Die UWP XAML-Hosting-API bildet die Grundlage für eine umfassenderen Satz von Steuerelementen, die wir bereitstellen, um Entwicklern die Verwendung der Fluent-Benutzeroberfläche in nicht auf UWP basierenden Desktop-Apps zu ermöglichen. Dieses Feature wird als *XAML Islands* bezeichnet. Eine Übersicht zu diesem Feature finden Sie unter [Hosten von UWP XAML-Steuerelementen in Desktop-Apps (XAML Islands)](xaml-islands.md).
 
 > [!NOTE]
-> Wenn Sie Feedback zu XAML Islands haben, erstellen Sie ein neues Thema im [Microsoft.Toolkit.Win32-Repository](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues), und geben Sie dort Ihre Kommentare ab. Wenn Sie Ihr Feedback lieber privat geben möchten, können Sie es an XamlIslandsFeedback@microsoft.com senden. Ihre Erkenntnisse und Szenarien sind äußerst wichtig für uns.
+> Wenn Sie Feedback zu XAML Islands haben, erstellen Sie ein neues Thema im [Microsoft.Toolkit.Win32-Repository](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues), und geben Sie dort Ihre Kommentare ab.
 
 ## <a name="is-the-uwp-xaml-hosting-api-the-right-choice-for-your-desktop-app"></a>Ist die UWP XAML-Hosting-API die richtige Wahl für Ihre Desktop-App?
 
@@ -97,25 +97,25 @@ Das folgende Diagramm veranschaulicht die Hierarchie der Objekte in einem XAML I
 
 | Problem | Lösung |
 |-------|------------|
-| Ihre App empfängt eine **COMException** mit der folgenden Nachricht: „DesktopWindowXamlSource kann nicht aktiviert werden. Dieser Typ kann nicht in einer UWP-App verwendet werden“. oder „WindowsXamlManager kann nicht aktiviert werden. Dieser Typ kann nicht in einer UWP-App verwendet werden“. | Dieser Fehler weist darauf hin, dass Sie versuchen, die UWP XAML-Hosting-API in einer UWP-App zu verwenden (insbesondere versuchen Sie, die Typen [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) oder [WindowsXamlManager](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) zu instanziieren). Die UWP XAML-Hosting-API ist nur zur Verwendung in nicht auf UWP basierenden Desktop-Apps bestimmt, wie etwa WPF-, Windows Forms- und C++-Win32-Anwendungen. |
+| Ihre App empfängt eine **COMException** mit der folgenden Meldung: „DesktopWindowXamlSource kann nicht aktiviert werden. Dieser Typ kann nicht in einer UWP-App verwendet werden“. oder „WindowsXamlManager kann nicht aktiviert werden. Dieser Typ kann nicht in einer UWP-App verwendet werden“. | Dieser Fehler weist darauf hin, dass Sie versuchen, die UWP XAML-Hosting-API in einer UWP-App zu verwenden (insbesondere versuchen Sie, die Typen [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) oder [WindowsXamlManager](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) zu instanziieren). Die UWP XAML-Hosting-API ist nur zur Verwendung in nicht auf UWP basierenden Desktop-Apps bestimmt, wie etwa WPF-, Windows Forms- und C++-Win32-Anwendungen. |
 
 ### <a name="error-trying-to-use-the-windowsxamlmanager-or-desktopwindowxamlsource-types"></a>Fehler beim Versuch, die Typen WindowsXamlManager oder DesktopWindowXamlSource zu verwenden
 
 | Problem | Lösung |
 |-------|------------|
-| Ihre App empfängt eine Ausnahme mit der folgenden Nachricht: „WindowsXamlManager und DesktopWindowXamlSource werden für Apps mit der Zielplattform Windows, Version 10.0.18226.0 und höher, unterstützt. Überprüfen Sie entweder das Anwendungsmanifest oder das Paketmanifest, und vergewissern Sie sich, dass die MaxTestedVersion-Eigenschaft aktualisiert wurde“. | Dieser Fehler weist darauf hin, dass Ihre Anwendung versucht hat, die Typen **WindowsXamlManager** oder **DesktopWindowXamlSource** in der UWP XAML-Hosting-API zu verwenden, das Betriebssystem aber nicht bestimmen kann, ob die App für die Zielplattform Windows 10, Version 1903 oder höher, erstellt wurde. Die UWP XAML-Hosting-API wurde zunächst als Vorschauversion in einer früheren Version von Windows 10 vorgestellt, sie wird aber erst ab Windows 10, Version 1903, unterstützt.</p></p>Um dieses Problem zu beheben, erstellen Sie entweder ein MSIX-Paket für die App, und führen Sie sie aus diesem Paket aus, oder installieren Sie das NuGet-Paket [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) in Ihrem Projekt.  |
+| Ihre App empfängt eine Ausnahme mit der folgenden Meldung: „WindowsXamlManager und DesktopWindowXamlSource werden für Apps unterstützt, die auf Windows Version 10.0.18226.0 und höher abzielen. Überprüfen Sie entweder das Anwendungsmanifest oder das Paketmanifest, und vergewissern Sie sich, dass die MaxTestedVersion-Eigenschaft aktualisiert wurde“. | Dieser Fehler weist darauf hin, dass Ihre Anwendung versucht hat, die Typen **WindowsXamlManager** oder **DesktopWindowXamlSource** in der UWP XAML-Hosting-API zu verwenden, das Betriebssystem aber nicht bestimmen kann, ob die App für die Zielplattform Windows 10, Version 1903 oder höher, erstellt wurde. Die UWP XAML-Hosting-API wurde zunächst als Vorschauversion in einer früheren Version von Windows 10 vorgestellt, sie wird aber erst ab Windows 10, Version 1903, unterstützt.</p></p>Um dieses Problem zu beheben, erstellen Sie entweder ein MSIX-Paket für die App, und führen Sie sie aus diesem Paket aus, oder installieren Sie das NuGet-Paket [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) in Ihrem Projekt.  |
 
 ### <a name="error-attaching-to-a-window-on-a-different-thread"></a>Fehler beim Anfügen an ein Fenster in einem anderen Thread
 
 | Problem | Lösung |
 |-------|------------|
-| Ihre App empfängt eine **COMException** mit der folgenden Nachricht: „Fehler bei der AttachToWindow-Methode, weil das angegebene HWND in einem anderen Thread erstellt wurde“. | Dieser Fehler weist darauf hin, dass Ihre Anwendung die **IDesktopWindowXamlSourceNative::AttachToWindow**-Methode aufgerufen und ihr das HWND eines Fensters übergeben hat, das in einem anderen Thread erstellt wurde. Sie müssen dieser Methode das HWND eines Fensters übergeben, das im gleichen Thread wie der Code erstellt wurde, von dem aus Sie die Methode aufrufen. |
+| Ihre App empfängt eine **COMException** mit der folgenden Meldung: „Fehler bei der AttachToWindow-Methode, weil das angegebene HWND auf einem anderen Thread erstellt wurde.“ | Dieser Fehler weist darauf hin, dass Ihre Anwendung die **IDesktopWindowXamlSourceNative::AttachToWindow**-Methode aufgerufen und ihr das HWND eines Fensters übergeben hat, das in einem anderen Thread erstellt wurde. Sie müssen dieser Methode das HWND eines Fensters übergeben, das im gleichen Thread wie der Code erstellt wurde, von dem aus Sie die Methode aufrufen. |
 
 ### <a name="error-attaching-to-a-window-on-a-different-top-level-window"></a>Fehler beim Anfügen an ein Fenster eines anderen Fensters der obersten Ebene
 
 | Problem | Lösung |
 |-------|------------|
-| Ihre App empfängt eine **COMException** mit der folgenden Nachricht: „Fehler bei der AttachToWindow-Methode, weil das angegebene HWND von einem anderen Fenster der obersten Ebene stammt als das HWND, das AttachToWindow zuvor im gleichen Thread übergeben wurde“. | Dieser Fehler weist darauf hin, dass Ihre Anwendung die **IDesktopWindowXamlSourceNative::AttachToWindow**-Methode aufgerufen und ihr das HWND eines Fensters übergeben hat, das von einem anderen Fenster der obersten Ebene stammt als ein Fenster, das Sie in einem früheren Aufruf dieser Methode im gleichen Thread angegeben haben.</p></p>Nachdem Ihre Anwendung **AttachToWindow** in einem bestimmten Thread aufgerufen hat, können alle anderen [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource)-Objekte im gleichen Thread nur an Fenster angefügt werden, die Nachfolger des gleichen Fensters der obersten Ebene sind, das im ersten Aufruf von **AttachToWindow** übergeben wurde. Wenn alle **DesktopWindowXamlSource**-Objekte für einen bestimmten Thread geschlossen sind, kann das nächste **DesktopWindowXamlSource** wieder an ein beliebiges Fenster angefügt werden.</p></p>Um dieses Problem zu beheben, schließen Sie entweder alle **DesktopWindowXamlSource**-Objekte, die in diesem Thread an andere Fenster der obersten Ebene gebunden sind, oder erstellen Sie einen neuen Thread für dieses **DesktopWindowXamlSource**. |
+| Ihre App empfängt eine **COMException** mit der folgenden Meldung: „Fehler bei der AttachToWindow-Methode, weil das angegebene HWND von einem anderen Fenster der obersten Ebene stammt als das HWND, das AttachToWindow zuvor im gleichen Thread übergeben wurde“. | Dieser Fehler weist darauf hin, dass Ihre Anwendung die **IDesktopWindowXamlSourceNative::AttachToWindow**-Methode aufgerufen und ihr das HWND eines Fensters übergeben hat, das von einem anderen Fenster der obersten Ebene stammt als ein Fenster, das Sie in einem früheren Aufruf dieser Methode im gleichen Thread angegeben haben.</p></p>Nachdem Ihre Anwendung **AttachToWindow** in einem bestimmten Thread aufgerufen hat, können alle anderen [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource)-Objekte im gleichen Thread nur an Fenster angefügt werden, die Nachfolger des gleichen Fensters der obersten Ebene sind, das im ersten Aufruf von **AttachToWindow** übergeben wurde. Wenn alle **DesktopWindowXamlSource**-Objekte für einen bestimmten Thread geschlossen sind, kann das nächste **DesktopWindowXamlSource** wieder an ein beliebiges Fenster angefügt werden.</p></p>Um dieses Problem zu beheben, schließen Sie entweder alle **DesktopWindowXamlSource**-Objekte, die in diesem Thread an andere Fenster der obersten Ebene gebunden sind, oder erstellen Sie einen neuen Thread für dieses **DesktopWindowXamlSource**. |
 
 ## <a name="related-topics"></a>Zugehörige Themen
 
