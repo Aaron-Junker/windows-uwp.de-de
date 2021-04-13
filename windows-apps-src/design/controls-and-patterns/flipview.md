@@ -4,19 +4,19 @@ title: Richtlinien für Flip-Ansicht-Steuerelemente
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 04/07/2021
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1637845752d713482ad668cfb7078d5e4c138e84
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 90f0cd65dac11128f5a66d5dc15a9a2f75a99adc
+ms.sourcegitcommit: f5d7fd9ac1837260ef1bbda9ad54208826c522f2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93032303"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107073030"
 ---
 # <a name="flip-view"></a>Flip-Ansicht
 
@@ -130,7 +130,8 @@ Hier wird die ItemsSource an eine [**CollectionViewSource**](/uwp/api/Windows.UI
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->**Hinweis:** &nbsp;&nbsp;Um eine Flip-Ansicht aufzufüllen, kannst du entweder der zugehörigen Items-Sammlung Elemente hinzufügen oder die zugehörige ItemsSource-Eigenschaft festlegen. Du kannst aber nicht beide Methoden gleichzeitig verwenden. Wenn Sie die ItemsSource-Eigenschaft festlegen und dann ein Element in XAML hinzufügen, wird das hinzugefügte Element ignoriert. Wenn Sie die ItemsSource-Eigenschaft festlegen und der Items-Sammlung ein Element in Code hinzufügen, wird eine Ausnahme ausgelöst.
+> [!CAUTION]
+> Sie können eine Flip-Ansicht auffüllen, indem Sie entweder der Items-Sammlung Elemente hinzufügen oder die ItemsSource-Eigenschaft festlegen. Die beiden Methoden können jedoch nicht gleichzeitig verwendet werden. Wenn Sie die ItemsSource-Eigenschaft festlegen und dann ein Element in XAML hinzufügen, wird das hinzugefügte Element ignoriert. Wenn Sie die ItemsSource-Eigenschaft festlegen und der Items-Sammlung ein Element in Code hinzufügen, wird eine Ausnahme ausgelöst.
 
 ### <a name="specify-the-look-of-the-items"></a>Festlegen der Darstellung der Elemente
 
@@ -159,7 +160,7 @@ In diesem Beispiel wird die ItemTemplate einer FlipView inline definiert. Dem Bi
 
 Hier sehen Sie das durch die Datenvorlage definierte Layout.
 
-Datenvorlage für die Flip-Ansicht.
+![Beispiel für eine Flip-Ansicht mit einer Datenvorlage](images/flip-view-template.png)
 
 ### <a name="set-the-orientation-of-the-flip-view"></a>Festlegen der Ausrichtung der Flip-Ansicht
 

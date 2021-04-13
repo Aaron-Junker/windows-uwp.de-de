@@ -4,22 +4,26 @@ title: Webansicht
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 03/30/2021
 ms.topic: article
 keywords: Windows 10, UWP
+ms.custom: contperf-fy21q3
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bab93eca2318d7253df5acb16d866ac81d8ae6c
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 5344e42b7c06490a0e4cd0a3ceb3b5f7f7a52974
+ms.sourcegitcommit: d7783efb1c60b81e94898294fc5794c1d3320004
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101824434"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105982643"
 ---
 # <a name="web-view"></a>Webansicht
 
-Mithilfe eines Webansichtssteuerelements betten Sie eine Ansicht in Ihre App ein, die Webinhalte mit dem Microsoft Edge-Renderingmodul rendert. In einem Webansichtssteuerelement können auch Links angezeigt und verwendet werden.
+Mithilfe eines Webansichtssteuerelements betten Sie eine Ansicht in Ihre App ein, die Webinhalte mit dem Renderingmodul der Vorgängerversion von Microsoft Edge rendert. In einem Webansichtssteuerelement können auch Links angezeigt und verwendet werden.
 
 > **Wichtige APIs**: [WebView-Klasse](/uwp/api/Windows.UI.Xaml.Controls.WebView)
+
+> [!IMPORTANT]
+> Das Steuerelement `WebView2` verwendet Microsoft Edge (Chromium) als Renderingmodul, um Webinhalte in Apps anzuzeigen. `WebView2` steht als Teil der [Windows-UI 3-Bibliothek (WinUI3)](/windows/apps/winui/winui3) zur Verfügung. Weitere Informationen finden Sie unter [Einführung in Microsoft Edge WebView2](/microsoft-edge/webview2/), [Erste Schritte mit WebView2 in WinUI 3 (Vorschau)](/microsoft-edge/webview2/gettingstarted/winui) und [WebView2](/windows/winui/api/microsoft.ui.xaml.controls.webview2) in der WinUI-API-Referenz.
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -83,7 +87,7 @@ Die Source-Eigenschaft kann grundsätzlich im Code festgelegt werden. In der Reg
 Verwenden Sie zum Laden des Webinhalts die [Navigate](/uwp/api/windows.ui.xaml.controls.webview.navigate)-Methode mit einem **Uri**, der das HTTP- oder HTTPS-Schema verwendet. 
 
 ```csharp
-webView1.Navigate("http://www.contoso.com");
+webView1.Navigate(new Uri("http://www.contoso.com"));
 ```
 
 Um zu einem URI mit POST-Anforderung und HTTP-Headern zu navigieren, verwenden Sie die [NavigateWithHttpRequestMessage](/uwp/api/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage)-Methode. Die Methode unterstützt nur [HttpMethod.Post](/uwp/api/windows.web.http.httpmethod.post) und [HttpMethod.Get](/uwp/api/windows.web.http.httpmethod.get) als Wert der [HttpRequestMessage.Method](/uwp/api/windows.web.http.httprequestmessage.method)-Eigenschaft. 
@@ -93,13 +97,13 @@ Um nicht komprimierte und unverschlüsselte Inhalte aus den Datenspeichern [Loca
 Jeder dieser Unterordner auf oberster Ebene ist vom Inhalt anderer Unterordner auf oberster Ebene isoliert. Beispielsweise kannst du zu „ms-appdata:///temp/Ordner1/Datei.html“ navigieren, aber keinen Link zu „ms-appdata:///temp/Ordner2/Datei.html“ in diese Datei aufnehmen. Sie können aber trotzdem eine Verknüpfung mit HTML-Inhalt im App-Paket erstellen, indem Sie das **Schema „ms-appx-web“** verwenden, und mit Webinhalt, indem Sie die URI-Schemas **http** und **https** verwenden.
 
 ```csharp
-webView1.Navigate("ms-appdata:///local/intro/welcome.html");
+webView1.Navigate(new Uri("ms-appdata:///local/intro/welcome.html"));
 ```
 
 Verwenden Sie zum Laden von Inhalt aus Ihrem App-Paket die **Navigate**-Methode mit einem **Uri**, der das [Schema „ms-appx-web“](/previous-versions/windows/apps/jj655406(v=win.10)) verwendet. 
 
 ```csharp
-webView1.Navigate("ms-appx-web:///help/about.html");
+webView1.Navigate(new Uri("ms-appx-web:///help/about.html"));
 ```
 
 Sie können lokalen Inhalt über einen benutzerdefinierten Resolver laden, indem Sie die [NavigateToLocalStreamUri](/uwp/api/windows.ui.xaml.controls.webview.navigatetolocalstreamuri)-Methode verwenden. Diese Vorgehensweise ermöglicht erweiterte Szenarien wie das Herunterladen und Zwischenspeichern webbasierter Inhalte für die Offlineverwendung oder das Extrahieren von Inhalten aus einer komprimierten Datei.
@@ -297,7 +301,7 @@ Zusätzlich kann vertrauenswürdigem JavaScript-Inhalt in einer Webansicht gesta
 
 Dieses Beispiel zeigt einen Abschnitt des App-Manifests. Hier wird einem lokalen URI Zugriff auf die Windows-Runtime gewährt. 
 
-```csharp
+```xml
   <Applications>
     <Application Id="App"
       ...
@@ -341,3 +345,6 @@ Eine Webansicht, die Inhalte nicht im UI-Thread hostet, ist nicht mit übergeord
 ## <a name="related-topics"></a>Zugehörige Themen
 
 - [WebView-Klasse](/uwp/api/Windows.UI.Xaml.Controls.WebView)
+- [Einführung in Microsoft Edge WebView2](/microsoft-edge/webview2/)
+- [Erste Schritte mit WebView2 in WinUI 3 (Vorschau)](/microsoft-edge/webview2/gettingstarted/winui)
+- [Webansicht2](/windows/winui/api/microsoft.ui.xaml.controls.webview2)

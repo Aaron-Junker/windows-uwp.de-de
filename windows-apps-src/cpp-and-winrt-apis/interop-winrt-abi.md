@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, Interoperabilität, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 71ae6245fe217277c7408a7eb6b5150900cc45d9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ea9c41c134e1da0ffa131a597c856af7d75b5672
+ms.sourcegitcommit: 99a30cc48d02e4034d4365f45d5d154b4c1e37ae
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170174"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106442296"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>Interoperabilität zwischen C++/WinRT und der ABI
 
@@ -309,14 +309,14 @@ static_assert(std::is_same_v<winrt::default_interface<winrt::Sample>, winrt::ISa
 
 | Vorgang | Vorgehensweise | Hinweise |
 |-|-|-|
-| **ISample\*** aus **winrt::Sample** extrahieren | `p = reinterpret_cast<ISample*>(get_abi(s));` | *s* ist noch Besitzer des Objekts. |
-| **ISample\*** von **winrt::Sample** trennen | `p = reinterpret_cast<ISample*>(detach_abi(s));` | *s* ist nicht mehr Besitzer des Objekts. |
-| **ISample\*** in ein neues **winrt::Sample** übertragen | `winrt::Sample s{ p, winrt::take_ownership_from_abi };` | *s* wird Besitzer des Objekts. |
-| **ISample\*** in **winrt::Sample** einfügen | `*put_abi(s) = p;` | *s* wird Besitzer des Objekts. Objekte, die zuvor im Besitz von *s* waren, gehen verloren (wird beim Debuggen bestätigt). |
-| **ISample\*** in **winrt::Sample** empfangen | `GetSample(reinterpret_cast<ISample**>(put_abi(s)));` | *s* wird Besitzer des Objekts. Objekte, die zuvor im Besitz von *s* waren, gehen verloren (wird beim Debuggen bestätigt). |
-| **ISample\*** in **winrt::Sample** ersetzen | `attach_abi(s, p);` | *s* wird Besitzer des Objekts. Das Objekt, das zuvor im Besitz von *s* war, wird freigegeben. |
-| **ISample\*** nach **winrt::Sample** kopieren | `copy_from_abi(s, p);` | Es wird ein neuer Verweis von *s* auf das Objekt erstellt. Das Objekt, das zuvor im Besitz von *s* war, wird freigegeben. |
-| **winrt::Sample** nach **ISample\*** kopieren | `copy_to_abi(s, reinterpret_cast<void*&>(p));` | *p* erhält eine Kopie des Objekts. Objekte, die zuvor im Besitz von *p* waren, gehen verloren. |
+| **ISample\* *_ aus _* winrt::Sample** extrahieren | `p = reinterpret_cast<ISample*>(get_abi(s));` | *s* ist noch Besitzer des Objekts. |
+| **ISample\* *_ von _* winrt::Sample** trennen | `p = reinterpret_cast<ISample*>(detach_abi(s));` | *s* ist nicht mehr Besitzer des Objekts. |
+| **ISample\* *_ in ein neues _* winrt::Sample** übertragen | `winrt::Sample s{ p, winrt::take_ownership_from_abi };` | *s* wird Besitzer des Objekts. |
+| **ISample\* *_ in _* winrt::Sample** einfügen | `*put_abi(s) = p;` | *s* wird Besitzer des Objekts. Objekte, die zuvor im Besitz von *s* waren, gehen verloren (wird beim Debuggen bestätigt). |
+| **ISample\* *_ in _* winrt::Sample** empfangen | `GetSample(reinterpret_cast<ISample**>(put_abi(s)));` | *s* wird Besitzer des Objekts. Objekte, die zuvor im Besitz von *s* waren, gehen verloren (wird beim Debuggen bestätigt). |
+| **ISample\* *_ in _* winrt::Sample** ersetzen | `attach_abi(s, p);` | *s* wird Besitzer des Objekts. Das Objekt, das zuvor im Besitz von *s* war, wird freigegeben. |
+| **ISample\* *_ nach _* winrt::Sample** kopieren | `copy_from_abi(s, p);` | Es wird ein neuer Verweis von *s* auf das Objekt erstellt. Das Objekt, das zuvor im Besitz von *s* war, wird freigegeben. |
+| **winrt::Sample** nach **ISample\** _ kopieren | `copy_to_abi(s, reinterpret_cast<void_&>(p));` | *p* erhält eine Kopie des Objekts. Objekte, die zuvor im Besitz von *p* waren, gehen verloren. |
 
 ## <a name="interoperating-with-the-abis-guid-struct"></a>Interaktion mit der GUID-Struktur der ABI
 
@@ -362,6 +362,16 @@ void GetString(_Out_ HSTRING* value);
 | **HSTRING** in **hstring** ersetzen | `attach_abi(s, h);` | *s* wird Besitzer der Zeichenfolge. Die Zeichenfolge, die zuvor im Besitz von *s* war, wird freigegeben. |
 | **HSTRING** nach **hstring** kopieren | `copy_from_abi(s, h);` | *s* erstellt eine private Kopie der Zeichenfolge. Die Zeichenfolge, die zuvor im Besitz von *s* war, wird freigegeben. |
 | **hstring** nach **HSTRING** kopieren | `copy_to_abi(s, reinterpret_cast<void*&>(h));` | *h* erhält eine Kopie der Zeichenfolge. Zeichenfolgen, die zuvor im Besitz von *h* waren, gehen verloren. |
+
+Darüber hinaus führen die [Zeichenfolgen-Hilfsprogramme](https://github.com/microsoft/wil/wiki/String-helpers) der Windows Implementation Libraries (WIL) grundlegende Zeichenfolgenbearbeitung durch. Um die WIL-Zeichenfolgen-Hilfsprogramme zu verwenden, fügen Sie [<wil/resource.h>](https://github.com/microsoft/wil/blob/master/include/wil/resource.h) hinzu, und beachten Sie die folgende Tabelle. Ausführliche Informationen finden Sie unter den Links in der Tabelle.
+
+| Vorgang | WIL-Zeichenfolgen-Hilfsprogramm für weitere Informationen |
+|-|-|
+| Einen unformatierten Unicode- oder ANSI-Zeichenfolgenzeiger und eine optionale Länge angeben. Einen entsprechend spezialisierten **unique_any**-Wrapper erhalten | [wil::make_something_string](https://github.com/microsoft/wil/wiki/String-helpers#wilmake_something_string) |
+| Ein intelligentes Objekt entpacken, bis ein unformatierter, mit NULL endender Unicode-Zeichenfolgenzeiger gefunden wird | [wil::str_raw_ptr](https://github.com/microsoft/wil/wiki/String-helpers#wilstr_raw_ptr) |
+| Die von einem intelligenten Zeigerobjekt umschlossene Zeichenfolge abrufen oder die leere Zeichenfolge `L""` abrufen, wenn der intelligente Zeiger leer ist | [wil::string_get_not_null](https://github.com/microsoft/wil/wiki/String-helpers#wilstring_get_not_null) |
+| Beliebige Anzahl von Zeichenfolgen verketten | [wil::str_concat](https://github.com/microsoft/wil/wiki/String-helpers#wilstr_concat) |
+| Eine Zeichenfolge aus einer Formatzeichenfolge im printf-Format und einer entsprechenden Parameterliste abrufen | [wil::str_printf](https://github.com/microsoft/wil/wiki/String-helpers#wilstr_printf) |
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [Funktion „AddRef“](/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)
