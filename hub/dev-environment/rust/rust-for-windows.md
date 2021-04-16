@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Rust, Windows 10, Microsoft, Rust lernen, Rust unter Windows für Anfänger, Rust mit VS Code, Rust für Windows
 ms.localizationpriority: medium
 ms.date: 03/04/2021
-ms.openlocfilehash: aa3288d01207b7f51fe0f63ea996c4ea5cbdde48
-ms.sourcegitcommit: 85b9a5fc16f4486bc23b4ec8f4fae5ab6211a066
+ms.openlocfilehash: 1ba0acf298a3bd492ceac9adccafcac857f67cba
+ms.sourcegitcommit: f7c7a2ae6367e114a8b9d438963082440cd24043
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102194159"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107315063"
 ---
 # <a name="rust-for-windows-and-the-windows-crate"></a>Rust für Windows und die Kiste *windows*
 
@@ -44,7 +44,7 @@ Beiträge zu [Rust für Windows](https://github.com/microsoft/windows-rs) sind j
 
 ## <a name="rust-documentation-for-the-windows-api"></a>Rust-Dokumentation für die Windows-API
 
-Rust für Windows profitiert von der optimierten Toolkette, die Rust-Entwicklern zur Verfügung steht. Sollte jedoch der Gedanke, Zugriff auf die gesamte Windows-API zu haben, für Sie etwas abschreckend sein, gibt es auch eine [Rust-Dokumentation für die Windows-API](https://microsoft.github.io/windows-docs-rs/doc/bindings/windows/).
+Rust für Windows profitiert von der optimierten Toolkette, die Rust-Entwicklern zur Verfügung steht. Sollte jedoch der Gedanke, Zugriff auf die gesamte Windows-API zu haben, für Sie etwas abschreckend sein, gibt es auch eine [Rust-Dokumentation für die Windows-API](https://microsoft.github.io/windows-docs-rs/doc/bindings/Windows/).
 
 Darin ist im Wesentlichen dokumentiert, wie die Windows-APIs und -Typen in idiomatisches Rust projiziert werden. In dieser Ressource können Sie die APIs durchstöbern oder nach den benötigten APIs suchen und sich darüber informieren, wie sie aufgerufen werden.
 

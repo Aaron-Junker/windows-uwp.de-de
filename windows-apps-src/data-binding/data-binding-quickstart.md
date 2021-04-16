@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cppcx
-ms.openlocfilehash: 3f1aeb24a50d0e1f4d1e7c1ee702ea078582b4e5
-ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
+ms.openlocfilehash: c21ea3baaa5992877d1fc0f695e36dda53f69ce2
+ms.sourcegitcommit: 27787a579e497d097382338654ed371b661cc3b5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89412004"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107321711"
 ---
 # <a name="data-binding-overview"></a>Übersicht über Datenbindung
 
@@ -324,7 +324,7 @@ Dies ist das Ergebnis.
 
 ## <a name="binding-to-a-collection-of-items"></a>Binden an eine Sammlung von Elementen
 
-Ein häufiges Szenario ist das Binden an eine Sammlung von Geschäftsobjekten. In C# und Visual Basic stellt die generische [**ObservableCollection&lt;T&gt;** ](/dotnet/api/system.collections.objectmodel.observablecollection-1)-Klasse eine gute Wahl für die Datenbindung bei Sammlungen dar, da sie die  [**INotifyPropertyChanged**](/dotnet/api/system.componentmodel.inotifypropertychanged)-Schnittstelle und die [**INotifyCollectionChanged**](/dotnet/api/system.collections.specialized.inotifycollectionchanged)-Schnittstelle implementiert. Diese Schnittstellen bieten eine Änderungsbenachrichtigung für Bindungen, wenn Elemente hinzugefügt oder entfernt werden oder eine Eigenschaft der Liste selbst geändert wird. Wenn Ihre gebundenen Steuerelemente bei Änderungen an Eigenschaften von Objekten in der Sammlung aktualisiert werden sollen, muss das Geschäftsobjekt auch **INotifyPropertyChanged** implementieren. Weitere Informationen finden Sie unter [Datenbindung im Detail](data-binding-in-depth.md).
+Ein häufiges Szenario ist das Binden an eine Sammlung von Geschäftsobjekten. In C# und Visual Basic stellt die generische [**ObservableCollection&lt;T&gt;**](/dotnet/api/system.collections.objectmodel.observablecollection-1)-Klasse eine gute Wahl für die Datenbindung bei Sammlungen dar, da sie die  [**INotifyPropertyChanged**](/dotnet/api/system.componentmodel.inotifypropertychanged)-Schnittstelle und die [**INotifyCollectionChanged**](/dotnet/api/system.collections.specialized.inotifycollectionchanged)-Schnittstelle implementiert. Diese Schnittstellen bieten eine Änderungsbenachrichtigung für Bindungen, wenn Elemente hinzugefügt oder entfernt werden oder eine Eigenschaft der Liste selbst geändert wird. Wenn Ihre gebundenen Steuerelemente bei Änderungen an Eigenschaften von Objekten in der Sammlung aktualisiert werden sollen, muss das Geschäftsobjekt auch **INotifyPropertyChanged** implementieren. Weitere Informationen finden Sie unter [Datenbindung im Detail](data-binding-in-depth.md).
 
 Wenn du [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) verwendest, findest du weitere Informationen zum Binden an eine beobachtbare Sammlung unter [XAML-Elementsteuerelemente; Binden an eine C++/WinRT-Sammlung](../cpp-and-winrt-apis/binding-collection.md). Wenn du dieses Thema zuerst liest, wird der Zweck des unten angezeigten C++/WinRT-Codelistings klarer.
 
@@ -585,7 +585,7 @@ Nachfolgend ist das identische Ergebnis für die beiden Methoden dargestellt.
 
 Es gibt ein Problem mit dem oben erwähnten Rendering. Die **ReleaseDateTime**-Eigenschaft ist nicht nur ein Datum, sondern ein [**DateTime**](/uwp/api/windows.foundation.datetime) (wenn du C++ verwendest, ist es ein [**Calendar**](/uwp/api/windows.globalization.calendar)). In C# wird sie also mit höherer Genauigkeit angezeigt, als wir benötigen. Und in C++ wird sie als Typname gerendert. Eine Lösung besteht darin, eine Zeichenfolgeneigenschaft zur **Recording**-Klasse hinzuzufügen, die das Äquivalent von `this.ReleaseDateTime.ToString("d")` zurückgibt. Das Benennen dieser Eigenschaft als **ReleaseDate**, würde anzeigen, dass sie ein Datum und nicht ein Datum mit Uhrzeit zurückgibt. Die Benennung als **ReleaseDateAsString** gibt dann auch noch an, dass sie eine Zeichenfolge zurückgibt.
 
-Eine flexiblere Lösung ist die Verwendung eines so genannten „Wertkonverters“. Nachfolgend ist ein Beispiel zum Erstellen Ihres eigenen Wertkonverter aufgeführt. Wenn du C# verwendest, füge deiner `Recording.cs`-Quellcodedatei den folgenden Code hinzu. Wenn du C++/WinRT verwendest, füge dem Projekt ein neues **Midl-Datei**element (.idl) hinzu, das, wie im unten stehenden C++/WinRT-Codebeispiellisting gezeigt, benannt wird, erstelle das Projekt, um `StringFormatter.h` und `.cpp` zu generieren, füge diese Dateien deinem Projekt hinzu, und füge dann Codeauflistungen in diese ein. Füge außerdem 9`#include "StringFormatter.h"` zu `MainPage.h` hinzu.
+Eine flexiblere Lösung ist die Verwendung eines so genannten „Wertkonverters“. Nachfolgend ist ein Beispiel zum Erstellen Ihres eigenen Wertkonverter aufgeführt. Wenn du C# verwendest, füge deiner `Recording.cs`-Quellcodedatei den folgenden Code hinzu. Wenn du C++/WinRT verwendest, füge dem Projekt ein neues **Midl-Datei** element (.idl) hinzu, das, wie im unten stehenden C++/WinRT-Codebeispiellisting gezeigt, benannt wird, erstelle das Projekt, um `StringFormatter.h` und `.cpp` zu generieren, füge diese Dateien deinem Projekt hinzu, und füge dann Codeauflistungen in diese ein. Füge außerdem 9`#include "StringFormatter.h"` zu `MainPage.h` hinzu.
 
 ```csharp
 public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
@@ -617,6 +617,10 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 ```
 
 ```cppwinrt
+// pch.h
+...
+#include <winrt/Windows.Globalization.h>
+
 // StringFormatter.idl
 namespace Quickstart
 {

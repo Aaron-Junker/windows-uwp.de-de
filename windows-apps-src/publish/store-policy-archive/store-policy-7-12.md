@@ -1,28 +1,42 @@
 ---
-title: Microsoft Store-Richtlinien
-description: Produkte im Store müssen unsere Zertifizierungsstandards erfüllen, für Kunden wirklich hilfreich und ansprechend sein sowie gut in den Store passen.
+title: Microsoft Store-Richtlinien, Version 7.12
+description: Archivierte Version der Microsoft Store-Richtlinien, Version 7.12
 ms.date: 04/15/2021
 ms.topic: article
-keywords: Store-Richtlinienvereinbarung
+keywords: Archiv der Store-Richtlinienvereinbarung
 ms.localizationpriority: high
-ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: 6e6a605564ea1fdd673d2dea5b90bf9efb52f1e4
+ms.assetid:
+  E49797FA-A081-40D5-980B-558B5CC21DE9: 
+ms.openlocfilehash: 6d201c3881aad69d9f85b78002d5c6af46e17964
 ms.sourcegitcommit: a54eaafdd00991a20be582732e7eb02541d4525c
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/15/2021
-ms.locfileid: "107521304"
+ms.locfileid: "107521316"
 ---
-# <a name="microsoft-store-policies"></a>Microsoft Store-Richtlinien
+# <a name="microsoft-store-policies-712"></a>Microsoft Store-Richtlinien (7.12)
 
-**Dokumentversion: 7.13**
+**Dokumentversion: 7.12**
 
-**Dokumentdatum: 15. April 2021**
+**Gültigkeitsdatum: 4. März 2021 bis 14. Mai 2021**
 
-**Gültigkeitsdatum: 15. Mai 2021**
+> [!WARNING]
+> Es gibt eine neuere Version dieses Dokuments. Weitere Informationen finden Sie unter [Microsoft Store-Richtlinien](../store-policies.md).
 
 > [!NOTE]
-> Einige ältere Versionen dieser Vereinbarung mit einer Zusammenfassung der aktuellen Änderungen ist unter [Änderungsverlauf für Microsoft Store-Richtlinien](store-policies-change-history.md) verfügbar.
+>**4. März 2021, Hinweis zur Richtlinienaktualisierung**
+>
+>Die Store-Richtlinien von Microsoft Store werden diesen Monat aktualisiert. Angepeiltes Gültigkeitsdatum ist Ende April 2021.  Zu den wichtigsten Richtlinienänderungen zählen unter anderem:
+>
+>- Aktualisierung der Richtlinie 10.8.6: Von PC-Gaming-Abonnementprodukten kann die API für In-App-Einkäufe von Microsoft oder ein sicherer Drittanbieterabrechnungsdienst für In-Game-Käufe in Spielen verwendet werden, die über den Abonnementdienst verfügbar gemacht werden. Außerdem können in einem solchen Abonnementdienst enthaltene Spiele für Abonnenten außerhalb des Stores bereitgestellt werden.
+>- Aktualisierung der Richtlinie 11.12, um Richtlinienanforderungen im Zusammenhang mit benutzergenerierten Inhalten zu verdeutlichen.
+>
+>Microsoft lässt auf Anfrage Ausnahmen für Richtlinien zu, die von einer Aktualisierung gemäß diesem Hinweis betroffen sind, sofern das entsprechende Produkt mit den oben angegebenen Aktualisierungen konform ist.
+
+>[!NOTE]
+>**16. Dezember 2020, Hinweis zur Richtlinienaktualisierung**
+>
+>Für Konsolenspiele, die im Rahmen des Xbox Live Creators-Programms entwickelt wurden, gilt die Anforderung der Integration in die XBL-Dienste nicht mehr. Die spezifische Richtlinie (Richtlinie 10.13.1) wird bei der nächsten Aktualisierung des Store-Richtliniendokuments aktualisiert, um diese Änderung widerzuspiegeln, aber ab dieser Bekanntmachung wird die Richtlinie für das XBL Creators Program nicht mehr durchgesetzt.
 
 Vielen Dank für Ihr Interesse an der Entwicklung von Produkten für den Microsoft Store<sup>1</sup>. „Produkt“ bezeichnet in beliebiger Form übermittelte Inhalte, einschließlich Apps, Spielen, Titeln und weiteren Inhalten, die innerhalb eines Produkts angeboten oder verkauft werden. Wir bemühen uns um einen vielseitigen Katalog mit Produkten für Kunden weltweit. Produkte im Store müssen unsere Zertifizierungsstandards erfüllen, für Kunden wirklich hilfreich und ansprechend sein sowie gut in den Store passen.
 
@@ -37,6 +51,7 @@ Die Einhaltung dieser Richtlinien hilft Ihnen dabei, mit Ihrem Produkt eine mög
 Ihre Produkte prägen die Erfahrungen mehrerer hundert Millionen Kunden. Wie sind überaus gespannt auf die Früchte Ihrer Arbeit und freuen uns sehr darauf, Sie dabei zu unterstützen, Ihre Produkte mit der ganzen Welt zu teilen.
 
 Feedback zu den Richtlinien ist jederzeit willkommen. Veröffentlichen Sie hierzu einfach einen Kommentar in unserem [Forum](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=windowsstore). Wir lassen keinen Kommentar unbeachtet.
+
 
 ## <a name="table-of-contents"></a>Inhaltsverzeichnis
 
@@ -57,6 +72,7 @@ Feedback zu den Richtlinien ist jederzeit willkommen. Veröffentlichen Sie hierz
 - [10.13 Spiele und Xbox](#1013-gaming-and-xbox)
 - [10.14 Kontotyp](#1014-account-type)
 
+
 **Inhaltsrichtlinien:**
 
 - [11.1 Allgemeine Anforderungen für Inhalte](#111-general-content-requirements)
@@ -76,8 +92,7 @@ Feedback zu den Richtlinien ist jederzeit willkommen. Veröffentlichen Sie hierz
 
 ### <a name="101-distinct-function--value-accurate-representation"></a>10.1 Klare Aussagen über Funktion und Nutzen; genaue Darstellung
 
-- Ihr Produkt und die zugehörigen Metadaten, unter anderem beispielsweise Titel, Beschreibung, Screenshots, Nachspann, Inhaltsbewertung und Produktkategorie, müssen die Quelle, die Funktionalität und die Features Ihres Produkts genau und eindeutig widerspiegeln.  
-- Spieleprodukte, einschließlich Produkte, die hauptsächlich Remotespiele und/oder Steuerungsfunktionen von Spielen anbieten, die auf anderen Geräten oder Plattformen ausgeführt werden, oder den Zugriff auf einen Katalog von Spielen hinter einem Gaming-Abonnementdienst ermöglichen, müssen in unserem Store als Spiele kategorisiert werden. 
+In Ihrem Produkt und den zugehörigen Metadaten müssen die Quelle, Funktionen und Features Ihres Produkts präzise und deutlich angegeben sein.
 
 **10.1.1**
 
@@ -93,7 +108,7 @@ Suchwörter sind auf maximal sieben eindeutige Begriffe beschränkt, die für Ih
 
 **10.1.4**
 
-Ihr Produkt muss über aussagekräftige und informative Metadaten verfügen und eine nützliche, qualitativ hochwertige Benutzeroberfläche bieten. Ihr Produkt muss außerdem über eine aktive Präsenz im Store verfügen.
+Ihr Produkt muss über aussagekräftige und informative Metadaten verfügen und eine nützliche, qualitativ hochwertige Benutzeroberfläche bieten. Ihr Produkt muss außerdem über eine aktive Präsenz im Store verfügen. 
 
 **10.1.5**
 
@@ -120,7 +135,6 @@ Ihr Produkt darf keine Schadsoftware gemäß den Microsoft-Kriterien für [unerw
 Ihr Produkt darf vollständig integrierte Middleware (z. B. plattformübergreifende Module oder Analysedienste von Drittanbietern) enthalten, aber keine nicht integrierten Produkte oder Module bereitstellen oder installieren, deren Eigentums- oder Markenrechte bei Drittanbietern liegen, sofern diese nicht vollständig in Ihrem Produkt-Paket enthalten sind.
 
 Ihr Produkt kann auf nicht integrierte Software (z. B. ein anderes Produkt oder Modul oder einen anderen Dienst) angewiesen sein, um seine primäre Funktionalität bereitzustellen, wenn die folgenden Anforderungen erfüllt sind:
-
 - Sie geben die Abhängigkeit am Anfang der Beschreibungsmetadaten an
 - Die abhängige Software ist im Store verfügbar
 
@@ -144,6 +158,7 @@ Stellen Sie uns über das Feld **Hinweise für Zertifizierung** ein funktioniere
 
 Wenn Ihr Produkt Zugriff auf einen Server benötigt, muss der Server funktionsfähig sein, damit die korrekte Funktionsweise des Produkts geprüft werden kann.
 
+
 ### <a name="104-usability"></a>10.4 Nutzbarkeit
 
 Ihr Produkt muss die für den Store geltenden Standards im Hinblick auf die Nutzbarkeit erfüllen. Dies umfasst u. a. die in den folgenden Unterabschnitten gemachten Aussagen.
@@ -163,6 +178,7 @@ Das Produkt muss sofort starten und weiter auf Benutzereingaben reagieren.
 **10.4.4**
 
 Durch Drücken der Zurück-Schaltfläche sollte der Benutzer zur vorherigen Seite bzw. zum vorherigen Dialogfeld zurückkehren.
+
 
 ### <a name="105-personal-information"></a>10.5 Persönliche Daten
 
@@ -201,13 +217,16 @@ Wenn Ihr Produkt die Microsoft-Identitätsauthentifizierung unterstützt, dürfe
 
 Produkte, die Standortinformationen von einem Gerät empfangen, müssen darüber hinaus Einstellungen bereitstellen, über die der Nutzer den Zugriff auf und die Verwendung von Standortdaten von der Positionsdienst-API durch das Produkt aktivieren und deaktivieren kann. Für Windows Phone 8- und Windows Phone 8.1-Produkte müssen diese Einstellungen als produktinternes Feature bereitgestellt werden. Für Windows Mobile 10-Produkte werden diese Einstellungen automatisch von Windows in der App „Einstellungen” (auf der Seite **Einstellungen > Datenschutz > Standort**) bereitgestellt. Sie müssen diese Einstellungen beachten. Wenn Sie Standortdaten des Geräts auf andere Weise erfassen, gelten solche Daten als personenbezogene Daten und die Erfassung unterliegt den weiteren Anforderungen in Abschnitt 10.5. Sie müssen sich rechtlich ausreichende Zustimmung für Ihre Datenverarbeitung einholen. Die entsprechenden Praktiken müssen ganz allgemein geltende Gesetze und Vorschriften einhalten.
 
+
 ### <a name="106-capabilities"></a>10.6 Funktionen
 
 Die deklarierten Funktionen müssen sich auf legitime Weise auf die Kernfunktionen Ihres Produkts beziehen und die Verwendung dieser Deklarationen muss unseren Produkt-Funktionsdeklarationen entsprechen. Es ist Ihnen untersagt, Betriebssystemprüfungen in Bezug auf die Nutzung der Funktionen zu umgehen.
 
+
 ### <a name="107-localization"></a>10.7 Lokalisierung
 
 Sie müssen Ihr Produkt für alle Sprachen lokalisieren, die es unterstützt. Der Text der Produktbeschreibung muss in jeder Sprache, die Sie deklarieren, lokalisiert werden. Wenn Ihr Produkt lokalisiert ist, einige Features jedoch in einer lokalisierten Version nicht verfügbar sind, muss die eingeschränkte Lokalisierung in der Produkt-Beschreibung eindeutig benannt bzw. angezeigt werden. Die Produktoberfläche muss in allen unterstützten Sprachen weitestgehend identisch sein.
+
 
 ### <a name="108-financial-transactions"></a>10.8 Finanztransaktionen
 
@@ -226,7 +245,6 @@ Sie müssen die Microsoft-Zahlungsaufforderungs-API oder eine sichere Einkaufs-A
 Sie müssen die Microsoft-Zahlungsaufforderungs-API oder eine sichere Drittanbieter-Einkaufs-API verwenden, um freiwillige Spenden von Nutzern zu erhalten. Wenn der Nutzer im Gegenzug digitale Waren oder Dienste erhält, z. B. zusätzliche Features oder Werbefreiheit, müssen Sie stattdessen die Einkaufs-API für Käufe innerhalb des Produkts des Microsoft Store verwenden.
 
 Die folgenden Anforderungen gelten für die Verwendung einer sicheren Drittanbieter-Einkaufs-API:
-
 - Zum Zeitpunkt der Transaktion oder beim Erfassen von Zahlungs- oder Finanzinformationen vom Kunden muss Ihr Produkt den E-Commerce-Transaktionsanbieter identifizieren, den Nutzer authentifizieren und vom Nutzer die Bestätigung für die Transaktion einholen.
 - Das Produkt kann dem Nutzer anbieten, diese Authentifizierung zu speichern. Der Nutzer muss jedoch die Möglichkeit haben, entweder bei jeder Transaktion eine Authentifizierung anzufordern oder die Transaktionen innerhalb des Produkts zu deaktivieren.
 - Wenn Ihr Produkt Kreditkartendaten erfasst oder die Zahlungsverarbeitung eines Drittanbieters nutzt, der diese Daten erfasst, muss der Bezahlvorgang den aktuellen PCI-Datensicherheitsstandard (PCI DSS) erfüllen.
@@ -244,16 +262,12 @@ Wenn dein Spiel Lootboxen oder andere Mechanismen anbietet, die randomisierte vi
 **10.8.6**
 
 Sie müssen die Microsoft-API für wiederkehrende Abrechnungen zur Abrechnung von digitalen Waren oder Dienstleistungen verwenden, und es gelten folgenden Richtlinien:
-
 - Sie können ein Abonnement aufwerten, es jedoch nicht für Benutzer, die es zuvor erworben haben, im Wert reduzieren.
 - Wenn Sie ein aktives Abonnement beenden, müssen Sie gekaufte digitale Produkte oder Dienste solange bereitstellen, bis das Abonnement abläuft.
-- Produkte aus PC-Gaming-Abonnements (Produkte, deren primäre Funktionalität in der Bereitstellung des Zugriffs auf einen Katalog von Spielen über einen Abonnementdienst besteht) können entweder die in das Produkt integrierte Kauf-API des Microsoft Store oder eine sichere Kauf-API eines Drittanbieters für Einkäufe innerhalb von Spielen verwenden, die über den Abonnementdienst verfügbar gemacht werden. 
-  - Ungeachtet anderslautender Store-Richtlinien muss die abhängige Software nicht im Store verfügbar sein, wenn Ihr Spieleabonnementprodukt von nicht integrierter Software abhängig ist, um Ihren Abonnenten Inhalte bereitzustellen. Die Abhängigkeit muss am Anfang der Beschreibungsmetadaten offengelegt werden.
-  - Ungeachtet anderslautender Store-Richtlinien können die einzelnen im Abonnement enthaltenen Spiele aus dem Store oder über den Game Service-Betreiber verteilt werden. Spiele, die außerhalb des Stores über das Spieleabonnement geliefert werden, unterliegen zwar nicht der Zertifizierung, müssen aber alle anderen geltenden Store-Richtlinien einhalten.  
 
 **10.8.7**
 
-Alle Preise, einschließlich Ausverkäufen oder Rabatten, für deine digitalen Produkte oder Dienste müssen allen geltenden Gesetzen, Vorschriften und regulatorischen Richtlinien entsprechen, einschließlich, aber nicht beschränkt auf die [Guides Against Deceptive Pricing](https://www.ecfr.gov/cgi-bin/text-idx?SID=676bd39fe43a808fcb417973b3d0247e&mc=true&tpl=/ecfrbrowse/Title16/16cfr233_main_02.tpl) (Richtlinien gegen irreführende Preisgestaltung) der Federal Trade Commission.
+Alle Preise, einschließlich Ausverkäufen oder Rabatten, für deine digitalen Produkte oder Dienste müssen allen geltenden Gesetzen, Vorschriften und regulatorischen Richtlinien entsprechen, einschließlich, aber nicht beschränkt auf die [Guides Against Deceptive Pricing](https://www.ecfr.gov/cgi-bin/text-idx?SID=676bd39fe43a808fcb417973b3d0247e&mc=true&tpl=/ecfrbrowse/Title16/16cfr233_main_02.tpl) (Richtlinien gegen irreführende Preisgestaltung) der Federal Trade Commission. 
 
 ### <a name="109-notifications"></a>10.9 Benachrichtigungen
 
@@ -276,6 +290,7 @@ Benachrichtigungen dürfen keine Informationen enthalten, die ein Kunde als vert
 **10.9.4**
 
 Von Ihrem Produkt versendete Benachrichtigungen müssen einen Bezug zum Produkt oder zu anderen Produkten haben, die Sie im Store-Katalog veröffentlichen. Benachrichtigungen dürfen nur Links zur Produkten oder zum Store-Katalogeintrag Ihrer anderen Produkte enthalten. Werbeaussagen jeglicher Art, die sich nicht auf Ihre Produkte beziehen, dürfen nicht enthalten sein.
+
 
 ### <a name="1010-advertising-conduct-and-content"></a>10.10 Werbung – Verhaltensregeln und Inhalt
 
@@ -325,10 +340,7 @@ Für Microsoft Edge-Erweiterungen gelten die folgenden zusätzlichen Anforderung
 
 ### <a name="1013-gaming-and-xbox"></a>10.13 Spiele und Xbox
 
-Für Produkte für Xbox-Konsolen bzw. Produkte, die primär Spielzwecken dienen, gelten die folgenden Anforderungen:
-
-> [!NOTE]
-> Zusätzliche Anforderungen für Titel, die Xbox Live auf PC/Mobile und/oder das Creators-Programm auf Xbox-Konsolen nutzen, finden Sie unter https://aka.ms/xboxlivepolicy.
+Für Produkte für Xbox One bzw. Produkte, die primär Spielzwecken dienen, gelten die folgenden Anforderungen:
 
 **10.13.1**
 
@@ -345,21 +357,18 @@ Spielprodukte auf Xbox One dürfen keine alternative, außerhalb von Xbox Live e
 **10.13.4**
 
 Für auf Xbox One veröffentlichte Produkte ist Folgendes untersagt:
-
 - Den Verkauf von Xbox-Spielprodukten, Xbox-Konsolen oder Xbox-Konsolenzubehör außerhalb des Stores ermöglichen
 - Benutzernamen und Kennwörter von Microsoft-Konten anfordern und speichern
 
 **10.13.5**
 
 Spielprodukte, die Xbox Live verwenden, müssen:
-
 - Nutzer automatisch bei Xbox Live anmelden oder dem Nutzer die Möglichkeit bieten, sich anzumelden, bevor das Spiel beginnt,
 - Das Xbox-Gamertag des Benutzers als primären Anzeige- und Profilnamen anzeigen.
 
 **10.13.6**
 
 Spielprodukte, die Xbox Live verwenden und Multiplayer-Gaming, benutzergenerierte Inhalte oder Benutzerkommunikation anbieten:
-
 - Dürfen den Spielbeginn erst zulassen, nachdem sich der Nutzer bei Xbox Live angemeldet hat
 - Müssen [Jugendschutz und Überwachungsmechanismen für Eltern](/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/check-user-privileges-in-unity) beachten
 
@@ -374,7 +383,6 @@ Spielprodukte dürfen keine Benutzerinformationen von Xbox Live (z. B. Profilda
 **10.13.9**
 
 Xbox Live-Spielprodukte müssen für die Verwendung des Dienstes die folgenden Anforderungen erfüllen:
-
 - Verknüpfen oder verbinden Sie die Xbox Live-Benutzerkontenbezeichner oder andere Kontodaten nicht mit anderen Diensten oder Identitätsanbietern.
 - Bieten Sie keine Dienste oder Benutzerdaten auf eine Weise an, die die Aufnahme dieser Dienste oder Benutzerdaten in eine Suchmaschine oder ein Verzeichnis unterstützt.
 - Legen Sie Ihren geheimen Schlüssel oder Ihre Zugriffstoken niemals offen, außer gegenüber einem Beauftragten, der Ihr Produkt verwaltet und eine Geheimhaltungserklärung unterzeichnet hat.
@@ -387,7 +395,6 @@ Produkte, die ein Spielsystem emulieren, dürfen auf keiner Gerätefamilie verwe
 **10.13.11**
 
 Die folgenden Datenschutzanforderungen gelten für Xbox Live-Benutzerdaten:
-
 - Dienste und Benutzerdaten sind nur für Ihre eigene Verwendung in Ihrem Spiel gedacht. Sie dürfen keine von uns oder unseren Diensten erhaltenen Daten verkaufen, lizensieren oder freigeben. Wenn Sie personenbezogene Daten von Endbenutzern über Xbox Live erhalten, sind Sie der Verantwortliche für diese Daten und müssen über eine Datenschutzrichtlinie (oder Richtlinie) für die Endbenutzer verfügen, in der geregelt ist, wie Sie die personenbezogenen Daten verwenden (gemäß Anforderung der Vereinbarung für App-Entwickler). Es wird empfohlen, auf Ihrer Website und auf den Microsoft Store-Seiten für Ihre Spiele einen Link zu Ihrer Datenschutzrichtlinie bereitzustellen.
 - Dienste und Benutzerdaten müssen in Spielen angemessen verwendet werden. Zu diesen Daten gehören (ohne Einschränkung) Nutzungsdaten, Bezeichner für Konten und andere personenbezogene Daten, Statistiken, Punktestände, Bewertungen, Bestenlisten, Verbindungen mit anderen Benutzern und alle anderen Daten im Zusammenhang mit sozialen Aktivitäten des Benutzers.
 - Xbox Live-Soziogrammdaten (z. B. Freundeslisten) dürfen, mit Ausnahme von Kontobezeichnern von Benutzern, die ihr Xbox Live-Konto mit Ihrem Spiel verknüpft haben, nicht gespeichert werden.
@@ -402,9 +409,11 @@ Wenn ein vernünftiger Nutzer den Namen Ihres Herausgeberkontos als den einer Un
 
 Die folgenden Richtlinien gelten für Inhalte und Metadaten (einschließlich Herausgebername, Produktname, Produktsymbol, Produktbeschreibung, Produkt-Screenshots, Produkt-Trailer, Trailer-Miniaturansichten und andere Produkt-Metadaten), die über den Store verteilt werden. Der Begriff „Inhalte” steht für den Produktnamen, den Herausgebernamen, das Produktsymbol, die Produktbeschreibung, die im Produkt enthaltenen Bilder, Sounds, Videos und Texte, für die Kacheln, Benachrichtigungen, Fehlermeldungen oder Werbung, die Ihr Produkt anzeigt, sowie für alles, was von einem Server übermittelt wird, mit dem das Produkt eine Verbindung herstellt. Da Produkte sowie der Store auf der ganzen Welt genutzt werden, werden diese Anforderungen unter Berücksichtigung regionaler und kultureller Normen ausgelegt und angewendet.
 
+
 ### <a name="111-general-content-requirements"></a>11.1 Allgemeine Anforderungen für Inhalte
 
 Metadaten und andere Begleitinhalte Ihres Produkts dürfen nur Inhalte enthalten, die den Altersfreigaben PEGI 12, ESRB EVERYONE 10+ oder niedriger entsprechen.
+
 
 ### <a name="112-content-including-names-logos-original-and-third-party"></a>11.2 Inhalte einschließlich Namen und Logos (original und von Drittanbietern)
 
@@ -420,25 +429,31 @@ Ihr Produkt darf keine Inhalte enthalten, die folgende reale Aktivitäten unters
 
 Ihr Produkt darf nicht: (a) ein Sicherheitsrisiko für den Endnutzer oder eine andere Person oder ein Tier darstellen oder zu Unannehmlichkeiten, Verletzungen oder anderen Schäden führen; oder (b) eine Gefahr darstellen oder zu einer Beschädigung von realem oder persönlichem Eigentum führen. Sie sind allein verantwortlich für alle Produktsicherheitstests, den Erwerb entsprechender Zertifikate und die Implementierung geeigneter Sicherheitsmaßnahmen. Sie werden keine Sicherheits- oder Komfortfunktionen der Plattform deaktivieren und alle gesetzlich vorgeschriebenen und branchenüblichen Warnungen, Hinweise und Haftungsausschlüsse in Ihrem Produkt aufnehmen.
 
+
 ### <a name="114-defamatory-libelous-slanderous-and-threatening"></a>11.4 Diffamierung, Verleumdung, Beleidigung oder Bedrohung
 
 Ihr Produkt darf keine diffamierenden, verleumderischen, beleidigenden oder bedrohenden Inhalte enthalten.
+
 
 ### <a name="115-offensive-content"></a>11.5 Anstößiger Inhalt
 
 Ihr Produkt und die zugehörigen Metadaten dürfen keine potenziell vertraulichen oder anstößigen Inhalte enthalten. Inhalte können aufgrund lokaler Gesetze oder kultureller Normen in bestimmten Ländern/Regionen als vertraulich oder beleidigend angesehen werden. Ihr Produkt und die zugehörigen Metadaten dürfen außerdem keine potenziell beleidigenden Inhalte oder Inhalte enthalten, die Diskriminierung, Hass oder Gewalt aufgrund der Zugehörigkeit zu einer bestimmten ethnischen, nationalen, sprachlichen, religiösen oder anderen sozialen Gruppe oder auf der Grundlage von Geschlecht, Alter, Behinderung, Veteranenstatus oder sexueller Orientierung einer Person befürworten.
 
+
 ### <a name="116-alcohol-tobacco-weapons-and-drugs"></a>11.6 Alkohol- oder Tabakprodukte, Waffen und Drogen
 
 Ihr Produkt darf keine Inhalte enthalten, die den übermäßigen bzw. unvernünftigen Umgang mit Alkohol- oder Tabakprodukten, Drogen oder Waffen unterstützen oder verherrlichen.
+
 
 ### <a name="117-adult-content"></a>11.7 Jugendgefährdender Inhalt
 
 Ihr Produkt darf keine Inhalte enthalten oder anzeigen, die nach allgemeinen Maßstäben als pornografisch oder sexuell explizit gelten.
 
+
 ### <a name="118-illegal-activity"></a>11.8 Illegale Aktivitäten
 
 Ihr Produkt darf keine Inhalte oder Funktionen enthalten, die im realen Leben illegale Aktivitäten fördern, ermöglichen oder verherrlichen.
+
 
 ### <a name="119-excessive-profanity-and-inappropriate-content"></a>11.9 Übermäßige oder unnötige Obszönitäten
 
@@ -465,17 +480,16 @@ Wenn Ihr Produkt Inhalte (z. B. von Benutzern erstellte Inhalte, Verkaufsinhalt
 
 ### <a name="1112-user-generated-content"></a>11.12 Benutzergenerierte Inhalte
 
-Benutzergenerierte Inhalte (UGC) sind Inhalte, die Benutzer zu einer App oder einem Produkt beitragen und auf die von anderen Onlinebenutzern angezeigt oder aufgerufen werden können. Wenn Ihr Produkt benutzergenerierte Inhalte enthält, müssen Sie folgende Schritte ausführen:
+Benutzergenerierte Inhalte sind Inhalte, die Benutzer zu einer App oder einem Produkt beitragen und der von einigen oder allen Benutzern angezeigt oder aufgerufen werden kann. Wenn dein Produkt benutzergenerierte Inhalte enthält, musst du
 
-- Produkt-Vertragsbedingungen und/oder -Inhaltsrichtlinien für benutzergenerierte Inhalte entweder im Produkt oder auf Ihrer Website veröffentlichen und diese den Benutzern zur Verfügung stellen.
-- Eine Möglichkeit für Benutzer bereitstellen, unangemessene Inhalte innerhalb des Produkts an den Entwickler zu melden, damit diese überprüft und entfernt/deaktiviert werden können, wenn sie gegen die Inhaltsrichtlinien verstoßen, und/oder eine Methode zur proaktiven Erkennung von unangemessenem oder schädlichem UGC implementieren.
-- UGC entfernen oder deaktivieren, wenn Sie von Microsoft dazu aufgefordert werden.
+- Produktbedingungen und/oder Inhaltsrichtlinien veröffentlichen und für Benutzer verfügbar machen
+- Benutzern eine Möglichkeit bieten, ungeeignete Inhalte innerhalb des Produkts zu melden.
 
 ---
 <sup>1</sup>„Store“ oder „Microsoft Store“ bezeichnet unabhängig vom Namen eine im Besitz von Microsoft befindliche und von Microsoft betriebene Plattform, über die Apps für Kunden angeboten und von diesen erworben werden können. Sofern nicht anders angegeben, umfasst der Begriff Store den Microsoft Store, den Windows Store, den Xbox-Store, den Microsoft Store für Unternehmen und den Microsoft Store für Bildungseinrichtungen.
 
 ### <a name="see-also"></a>Siehe auch
 
-- [Änderungsverlauf für Microsoft Store-Richtlinien](store-policies-change-history.md)
-- [Richtlinien und Verhaltensregeln für den Microsoft Store](store-policies-and-code-of-conduct.md)
+- [Änderungsverlauf für Microsoft Store-Richtlinien](../store-policies-change-history.md)
+- [Richtlinien und Verhaltensregeln für den Microsoft Store](../store-policies-and-code-of-conduct.md)
 - [Vereinbarung für App-Entwickler](/legal/windows/agreements/app-developer-agreement)

@@ -8,12 +8,12 @@ ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 3caadca2c6aae1ecceed534f9d9597f126310f3d
-ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
+ms.openlocfilehash: b0616219b1950d476a1b5dd281281399196aad3e
+ms.sourcegitcommit: 4b4ace01ab130f0f9784fa0be0dcce28bdfc422f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102254627"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107265705"
 ---
 # <a name="templated-xaml-controls-for-winui-3-apps-with-c"></a>XAML-Steuerelemente in Vorlagen für WinUI 3-Apps mit C#
 
@@ -58,7 +58,7 @@ DependencyProperty LabelProperty = DependencyProperty.Register(
     nameof(Label), 
     typeof(string),
     typeof(BgLabelControl), 
-    new PropertyMetadata(default(string)));
+    new PropertyMetadata(default(string), new PropertyChangedCallback(OnLabelChanged)));
 ```
 
 Diese beiden Schritte sind alles, was erforderlich ist, um eine Abhängigkeitseigenschaft zu implementieren, aber im Rahmen dieses Beispiels fügen wir einen optionalen Handler für das Ereignis **OnLabelChanged** hinzu. Dieses Ereignis wird vom System immer dann ausgelöst, wenn der Eigenschaftswert aktualisiert wird. In diesem Fall überprüfen wir, ob die neue Beschriftung eine leere Zeichenfolge ist, und aktualisieren eine Klassenvariable entsprechend.
@@ -68,17 +68,15 @@ public bool HasLabelValue { get; set; }
 
 private static void OnLabelChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
 {
+    BgLabelControl labelControl = d as BgLabelControl; //null checks omitted
+    String s = e.NewValue as String; //null checks omitted
+    if (s == String.Empty)
     {
-        BgLabelControl labelControl = d as BgLabelControl; //null checks omitted
-        String s = e.NewValue as String; //null checks omitted
-        if (s == String.Empty)
-        {
-            labelControl.HasLabelValue = false;
-        }
-        else
-        {
-            labelControl.HasLabelValue = true;
-        }
+        labelControl.HasLabelValue = false;
+    }
+    else
+    {
+        labelControl.HasLabelValue = true;
     }
 }
 ```

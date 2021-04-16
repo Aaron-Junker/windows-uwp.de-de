@@ -1,20 +1,19 @@
 ---
 title: Änderungsverlauf für Microsoft Store-Richtlinien
 description: Zeigen Sie eine Tabelle an, die den Verlauf der Änderungen für Microsoft Store-Richtlinien mit Beschreibungen von Hinzufügungen, Updates und Löschungen für jede Änderung zeigt.
-ms.date: 10/01/2019
+ms.date: 04/15/2021
 ms.topic: article
 keywords: Store-Richtlinienvereinbarung
 ms.localizationpriority: high
 ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
-ms.openlocfilehash: 7460658e2622fe1a08983a9519e9eda9f5b4b1ac
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 269b665eb9f48dd82629371af09310cdf8b2f3cb
+ms.sourcegitcommit: a54eaafdd00991a20be582732e7eb02541d4525c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161844"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107521294"
 ---
 # <a name="change-history-for-microsoft-store-policies"></a>Änderungsverlauf für Microsoft Store-Richtlinien
-
 
 <table>
 <colgroup>
@@ -30,9 +29,17 @@ ms.locfileid: "89161844"
 </tr>
 </thead>
 <tbody>
+<tr class="even">
+<td>15. April 2021</td>
+<td><a href="https://docs.microsoft.com/windows/uwp/publish/store-policies">7.13</a></td>
+<td><p>Aktualisierung der Richtlinie 10.1 zur Aufnahme von Beispielen für Metadaten, einschließlich Produktkategorie, und zur Bereitstellung von Leitlinien für Produkte, die als Spiele gelten. </p>
+<p>Aktualisierung der Richtlinie 10.8.6 mit spezifischen Richtlinien, die für PC-Gaming-Abonnementprodukte gelten.</p>
+<p>Aktualisierung der Richtlinie 10.13 durch Entfernen der XBL-Anforderungen für Creators-Produkte. Außerdem wurden alle XBL-spezifischen Richtlinien aus den Store-Richtlinien entfernt, da die XBL-Anforderungen unter https://aka.ms/xboxlivepolicy zu finden sind.</p>
+<p>Aktualisierung der Richtlinie 11.12, um Richtlinienanforderungen im Zusammenhang mit benutzergenerierten Inhalten zu verdeutlichen.</p></td>
+</tr>
 <tr class="odd">
-<td>1\. Oktober 2019</td>
-<td>7.12</td>
+<td>1\. Oktober 2019</td>
+<td><a href="https://docs.microsoft.com/windows/uwp/publish/store-policy-archive/store-policy-7-12">7.12</a></td>
 <td><p>Neue Richtlinie 10.2.6 zur Sperrung von Apps hinzugefügt, die Krypto-Mining auf dem Gerät durchführen.</p>
 <p>10.8.4 wurde aktualisiert, um die Offenlegungspflicht für Quoten für Produkte hinzuzufügen, die Lootboxen oder andere randomisierte virtuelle Elemente anbieten.</p>
 <p>10.8.7 wurde aktualisiert, um Anforderungen bezüglich der Preisbestimmungen hinzuzufügen.</p>
@@ -193,7 +200,6 @@ ms.locfileid: "89161844"
 </tr>
 </tbody>
 </table>
-
 
 ### <a name="see-also"></a>Siehe auch
 
