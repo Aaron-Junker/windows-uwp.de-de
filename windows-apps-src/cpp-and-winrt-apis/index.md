@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion
 ms.localizationpriority: medium
-ms.openlocfilehash: 7812eca3263e266820f3624f88aad41b2d6e6ef5
-ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
+ms.openlocfilehash: 21b7aebe0ad270ab8f722e2cea9d6ac5202381c5
+ms.sourcegitcommit: b89d3bc42713fbe4c0ada99d6f514f1304821221
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102629378"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107466430"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -54,7 +54,7 @@ Siehe auch [Wo finde ich C++/WinRT-Beispiel-Apps?](./faq.yml#where-can-i-find-c-
 | [C++/WinRT-Beispielanwendung eines Foto-Editors](./photo-editor-sample.md) | Foto-Editor ist eine UWP-Beispielanwendung, die das Entwickeln von Apps mit der C++/WinRT-Programmiersprache veranschaulicht. Mit der Beispielanwendung können Sie Fotos aus der Bibliothek **Bilder** abrufen und dann das ausgewählte Bild mit verschiedenen Fotoeffekten bearbeiten. | 
 | [String-Verarbeitung](./strings.md) | Mit C++/WinRT können Sie Windows-Runtime-APIs mit C++-String-Standardtypen aufrufen, oder Sie können den Typ [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) verwenden. |
 | [C++-Standarddatentypen und C++/WinRT](./std-cpp-data-types.md) | Mit C++/WinRT können Sie Windows-Runtime-APIs über C++-Standarddatentypen aufrufen. |
-| [Boxing und Unboxing von Einzelwerten für IInspectable](./boxing.md) | Ein Einzelwert muss in ein Referenzklassenobjekt gepackt werden, bevor er an eine Funktion übergeben wird, die **IInspectable** erwartet. Dieser Wrapping-Prozess wird als *Boxing* des Werts bezeichnet. |
+| [Boxing und Unboxing von Werten für „IInspectable“](./boxing.md) | Ein Einzel- oder Arraywert muss in ein Referenzklassenobjekt gepackt werden, bevor er an eine Funktion übergeben wird, die **IInspectable** erwartet. Dieser Wrapping-Prozess wird als *Boxing* des Werts bezeichnet. |
 | [Verwenden von APIs mit C++/WinRT](./consume-apis.md) | In diesem Thema wird gezeigt, wie vom Benutzer selbst, von Windows oder von Drittanbietern implementierte C++/WinRT-APIs verwendet werden. |
 | [Erstellen von APIs mit C++/WinRT](./author-apis.md) | Dieses Thema zeigt, wie C++/WinRT-APIs mithilfe der **winrt::implements**-Basisstruktur direkt oder indirekt erstellt werden. |
 | [Fehlerbehandlung bei C++/WinRT](./error-handling.md) | In diesem Thema werden Strategien zur Behandlung von Fehlern bei der Programmierung mit C++/WinRT erörtert. |

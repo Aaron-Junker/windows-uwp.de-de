@@ -10,12 +10,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 36a5489ab4fa278163fd5fad53be4d28156d4cf4
-ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
+ms.openlocfilehash: 63ea04040d550bced414e9591dbf3ffd44de8da2
+ms.sourcegitcommit: 77af97719a439f5e73a6109b42fd3110bcb2843b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104804459"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107219087"
 ---
 # <a name="navigation-design-basics-for-windows-apps"></a>Grundlagen des Navigationsdesigns für Windows-Apps
 
@@ -154,7 +154,7 @@ Sie müssen sich nicht zwischen den beiden Strukturen entscheiden: In vielen gut
 
 Wenn die Navigationsstruktur über mehrere Ebenen verfügt, empfehlen wir, dass Peer-to-Peer-Navigationselemente nur mit den Peers innerhalb der aktuellen Unterstruktur verknüpft sind. Die Abbildung zeigt eine Navigationsstruktur mit drei Ebenen:
 
-- Auf der ersten Ebene ermöglicht das Peer-to-Peer-Navigationselement den Zugriff auf die Seiten A, B, C und D.
+- Auf Ebene 1 sollte das Peer-to-Peer-Navigationselement den Zugriff auf die Seiten A, B und C ermöglichen.
 - Auf Ebene 2 sollten die Peer-to-Peer Navigationselemente für die A2-Seiten nur mit den anderen A2-Seiten verknüpft werden. Sie sollten nicht mit Seiten auf Ebene 2 in der C-Unterstruktur verknüpft sein.
     :::column-end:::
 :::row-end:::

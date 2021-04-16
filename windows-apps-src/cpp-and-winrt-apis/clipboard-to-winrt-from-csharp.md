@@ -5,12 +5,12 @@ ms.date: 04/13/2020
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, C#, Beispiel, Zwischenablage, Fall, Studie
 ms.localizationpriority: medium
-ms.openlocfilehash: f862dd01e91d99e19fb6996921dbc20a33d714da
-ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
+ms.openlocfilehash: cef005e00302efe850e19fff27318495efb275e9
+ms.sourcegitcommit: b89d3bc42713fbe4c0ada99d6f514f1304821221
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102629368"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107466440"
 ---
 # <a name="porting-the-clipboard-sample-to-cwinrt-from-cmdasha-case-study"></a>Portieren des Beispiels „Zwischenablage“ (Clipboard) von C# zu C++/WinRT – eine Fallstudie
 
@@ -456,7 +456,7 @@ Aus unserer vorherigen Untersuchung wissen wir, dass diese Sammlung von **Scenar
 - Entweder Laufzeitklassen oder
 - [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable).
 
-Im Fall von **IInspectable** müssen diese Elemente, wenn sie nicht selbst Laufzeitklassen sind, von einer Art sein, die von [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) mittels Boxing und Unboxing behandelt werden kann. Und dies bedeutet, dass sie Windows-Runtime-Typen sein müssen (siehe [Boxing und Unboxing von skalaren Werten für IInspectable](./boxing.md)).
+Im Fall von **IInspectable** müssen diese Elemente, wenn sie nicht selbst Laufzeitklassen sind, von einer Art sein, die von [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) mittels Boxing und Unboxing behandelt werden kann. Und dies bedeutet, dass sie Windows-Runtime-Typen sein müssen (siehe [Boxing und Unboxing von Werten für „IInspectable“](./boxing.md)).
 
 Für diese Fallstudie haben wir **Scenario** nicht zu einer Laufzeitklasse gemacht. Allerdings ist dies immer noch eine sinnvolle Option. Und es wird auch Fälle bei Ihrer eigenen Portierung geben, bei denen eine Laufzeitklasse definitiv das Richtige ist. Beispielsweise, wenn Sie den Elementtyp *beobachtbar* machen müssen (siehe [XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft](./binding-property.md)), oder wenn das Element aus anderen Gründen über Methoden verfügen muss, und es sich um mehr als nur einen Satz von Datenmembern handelt.
 
@@ -1099,7 +1099,7 @@ void MainPage::Footer_Click(Windows::Foundation::IInspectable const& sender, Win
 }
 ```
 
-Wie immer machen wir den Ereignishandler `public`. Wir verwenden die [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)-Funktion mit dem *sender*-Objekt, um die Umwandlung in einen **HyperlinkButton-** vorzunehmen. In C++/WinRT ist die **Tag**-Eigenschaft ein [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (die Entsprechung eines [**Object**](/dotnet/api/system.object)). **IInspectable** verfügt jedoch über keinen **ToString**. Stattdessen müssen wir ein Unboxing von **IInspectable** in einen Skalarwert (in diesem Fall eine Zeichenfolge) vornehmen. Auch hier finden Sie weitere Informationen zum Boxing und Unboxing unter [Boxing und Unboxing von Skalarwerten für „IInspectable“](./boxing.md).
+Wie immer machen wir den Ereignishandler `public`. Wir verwenden die [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)-Funktion mit dem *sender*-Objekt, um die Umwandlung in einen **HyperlinkButton-** vorzunehmen. In C++/WinRT ist die **Tag**-Eigenschaft ein [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (die Entsprechung eines [**Object**](/dotnet/api/system.object)). **IInspectable** verfügt jedoch über keinen **ToString**. Stattdessen müssen wir ein Unboxing von **IInspectable** in einen Skalarwert (in diesem Fall eine Zeichenfolge) vornehmen. Weitere Informationen zum Boxing und Unboxing finden Sie unter [Boxing und Unboxing von Werten für „IInspectable“](./boxing.md).
 
 In den letzten beiden Zeilen werden Portierungsmuster wiederholt, die uns bereits begegnet sind, und sie spiegeln die C#-Version recht deutlich wider.
 

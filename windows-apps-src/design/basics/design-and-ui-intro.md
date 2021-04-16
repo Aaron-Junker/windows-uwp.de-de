@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1f6474170967986bfee555eb07d7ea41601e9e48
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: 57612b41cc1ee31d2e7fd7c8e91e7b7772dab38d
+ms.sourcegitcommit: 77af97719a439f5e73a6109b42fd3110bcb2843b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339758"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107219033"
 ---
 # <a name="introduction-to-windows-app-design"></a>Einführung in das Design von Windows-Apps
 
@@ -49,7 +49,7 @@ Sie können die Pixeldichte und die tatsächliche Bildschirmauflösung beim Entw
     :::column span:::
 Die Größen, Ränder und Positionen der UI-Elemente in UWP-Apps sollten immer ein **Vielfaches von 4 Epx** betragen.
 
-UWP unterstützt eine Skalierung für eine Vielzahl von Geräten mit den Skalierungsebenen 100 %, 125 %, 150 %, 175 %, 200 %, 225 %, 250 %, 300 %, 350 % und 400 %. Die Basiseinheit ist 4, da sie die einzige ganze Zahl ist, die mit nicht ganzen Zahlen skaliert werden kann (z. B. 4 * 1,5 = 6). Durch die Verwendung von Vielfachen von vier werden alle Elemente der Benutzeroberfläche mit ganzen Pixeln ausgerichtet, und es wird sichergestellt, dass die Benutzeroberflächenelemente über klare, scharfe Kanten verfügen. (Beachten Sie, dass diese Anforderung für Text nicht gilt. Text kann eine beliebige Größe und Position haben.)
+UWP unterstützt eine Skalierung für eine Vielzahl von Geräten mit den Skalierungsebenen 100 %, 125 %, 150 %, 175 %, 200 %, 225 %, 250 %, 300 %, 350 % und 400 %. Die Basiseinheit ist 4, da sie als ganze Zahl auf diese Ebenen skaliert werden kann (z. B. 4 x 125 % = 5, 4 x 150 % = 6). Durch die Verwendung von Vielfachen von vier werden alle Elemente der Benutzeroberfläche mit ganzen Pixeln ausgerichtet, und es wird sichergestellt, dass die Benutzeroberflächenelemente über klare, scharfe Kanten verfügen. (Beachten Sie, dass diese Anforderung für Text nicht gilt. Text kann eine beliebige Größe und Position haben.)
     :::column-end:::
     :::column:::
 ![Raster](images/4epx.svg)

@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a84dcc209fa0fcd897668293cb136a5448e7254
-ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
+ms.openlocfilehash: f3d21f60a26f7a1c6a63d678c60e1d9538580d55
+ms.sourcegitcommit: 77af97719a439f5e73a6109b42fd3110bcb2843b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91829512"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107219043"
 ---
 # <a name="command-bar"></a>Befehlsleiste
 
@@ -126,9 +126,14 @@ Befehle können programmgesteuert nach Bedarf zwischen „PrimaryCommands“ und
 
 Die Steuerelemente für die App-Leistenschaltfläche zeichnen sich durch ein Symbol und eine Textbeschriftung aus. Diese Steuerelemente sind für die Verwendung in Befehlsleisten optimiert, und ihr Erscheinungsbild verändert sich abhängig davon, ob das Steuerelement in der Befehlsleiste oder im Überlaufmenü verwendet wird.
 
-Die Symbole im Überlaufmenü sind 16×16px groß und damit kleiner als die Symbole im Bereich für primäre Befehle (20×20px). Wenn Sie „SymbolIcon“, „FontIcon“ oder „PathIcon“ verwenden, wird das Symbol automatisch und ohne Qualitätsverlust auf die richtige Größe skaliert, sobald der Befehl in den Bereich für sekundäre Befehle verschoben wird. 
+#### <a name="icons"></a>Symbole
 
-### <a name="button-labels"></a>Schaltflächenbeschriftungen
+Die Größe der Symbole, wenn sie im primären Befehlsbereich angezeigt werden, beträgt 20 × 20 Pixel; im Überlaufmenü werden die Symbole mit 16 x 16 Pixel angezeigt. Wenn Sie [SymbolIcon](/uwp/api/windows.ui.xaml.controls.symbolicon), [FontIcon](/uwp/api/windows.ui.xaml.controls.fonticon) oder [PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon) verwenden, wird das Symbol automatisch und ohne Qualitätsverlust auf die richtige Größe skaliert, sobald der Befehl in den Bereich für sekundäre Befehle verschoben wird.
+
+Weitere Informationen und Beispiele zum Festlegen des Symbols finden Sie in der Dokumentation für die [AppBarButton](/uwp/api/windows.ui.xaml.controls.appbarbutton)-Klasse.
+
+#### <a name="labels"></a>Bezeichnungen
+
 Mithilfe der „AppBarbutton“-Eigenschaft [IsCompact](/uwp/api/windows.ui.xaml.controls.appbarbutton.IsCompact) wird festgelegt, ob die Bezeichnung angezeigt wird. In einem „CommandBar“-Steuerelement überschreibt die Befehlsleiste automatisch die „IsCompact“-Eigenschaft der Schaltfläche, wenn die Befehlsleiste geöffnet und geschlossen wird.
 
 Verwenden Sie zum Positionieren von App-Leistenschaltflächen die [DefaultLabelPosition](/uwp/api/windows.ui.xaml.controls.commandbar.defaultlabelposition)-Eigenschaft von „CommandBar“.

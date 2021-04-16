@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4d98877fb0d48d2c3c677af5f2b89d9fd65c05f1
-ms.sourcegitcommit: b4c782b2403da83a6e0b5b7416cc4dc835b068d9
+ms.openlocfilehash: 3358e679b44affdb5207207a30fe6b5282ac6759
+ms.sourcegitcommit: f7c7a2ae6367e114a8b9d438963082440cd24043
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98922748"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107315083"
 ---
 # <a name="host-a-standard-winrt-xaml-control-in-a-wpf-app-using-xaml-islands"></a>Hosten eines WinRT-XAML-Standardsteuerelements in einer WPF-App unter Verwendung von XAML Islands
 
@@ -74,7 +74,7 @@ Als Nächstes fügen Sie Ihrer Projektmappe ein UWP-App-Projekt hinzu und übera
 > Wenngleich dieser Schritt nicht zum Hosten eines WinRT-XAML-Erstanbietersteuerelements erforderlich ist, benötigt Ihre App das `XamlApplication`-Objekt, um die ganze Bandbreite an XAML Islands-Szenarien zu unterstützen, einschließlich des Hostings benutzerdefinierter WinRT-XAML-Steuerelemente. Deshalb wird empfohlen, dass du immer ein `XamlApplication`-Objekt in einer Projektmappe definierst, in der du XAML Islands verwendest.
 
 1. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappenknoten, und wähle **Hinzufügen** -> **Neues Projekt** aus.
-2. Fügen Sie Ihrer Projektmappe ein Projekt vom Typ **Leere App (Universal Windows)** hinzu. Vergewissern Sie sich, dass sowohl die Zielversion als auch die mindestens erforderliche Version auf **Windows 10, Version 1903 (Build 18362)** oder höher festgelegt ist.
+2. Fügen Sie Ihrer Projektmappe ein Projekt vom Typ **Leere App (Universal Windows)** hinzu. Vergewissern Sie sich, dass sowohl die Zielversion als auch die mindestens erforderliche Version auf **Windows 10, Version 1903 (Build 18362)** oder höher festgelegt ist. Stellen Sie außerdem sicher, dass sich dieses neue UWP-Projekt nicht in einem Unterordner des WPF-Projekts befindet. Andernfalls versucht die WPF-App später, das UWP-XAML-Markup so zu erstellen, als wäre es WPF-XAML.
 3. Installieren Sie im UWP-App-Projekt das NuGet-Paket [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (neueste stabile Version).
 4. Öffnen Sie die Datei **App.xaml**, und ersetzen Sie deren Inhalte durch den nachstehenden XAML-Ausschnitt. Ersetzen Sie `MyUWPApp` durch den Namespace Ihres UWP-App-Projekts.
 

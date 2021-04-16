@@ -1,27 +1,30 @@
 ---
-description: Ein Einzelwert muss in ein Referenzklassenobjekt gepackt werden, bevor er an eine Funktion übergeben wird, die **IInspectable** erwartet. Dieser Wrapping-Prozess wird als *Boxing* des Werts bezeichnet.
-title: Boxing und Unboxing von Skalarwerten für „IInspectable“ mit C++/WinRT
+description: Ein Einzel- oder Arraywert muss in ein Referenzklassenobjekt gepackt werden, bevor er an eine Funktion übergeben wird, die **IInspectable** erwartet. Dieser Wrapping-Prozess wird als *Boxing* des Werts bezeichnet.
+title: Boxing und Unboxing von Werten für „IInspectable“ mit C++/WinRT
 ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, XAML, Steuerelement, Boxing, Skalarwert
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c1a64b97b40608e877f18b764ae92835d2bc4a7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 08c36c735b319bb1658b2d4ce745ae0fdb7bdeee
+ms.sourcegitcommit: b89d3bc42713fbe4c0ada99d6f514f1304821221
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154374"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107466420"
 ---
-# <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>Boxing und Unboxing von Skalarwerten für „IInspectable“ mit C++/WinRT
- 
-Die [**Schnittstelle „IInspectable“** ](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) ist die Stammschnittstelle jeder Laufzeitklasse in der Windows-Runtime (WinRT). Dieses Konzept kommt auch bei der [**Schnittstelle „IUnknown“** ](/windows/desktop/api/unknwn/nn-unknwn-iunknown) zur Anwendung, die sich am Stamm jeder COM-Schnittstelle und -Klasse befindet, sowie bei **System.Object** am Stamm jeder Klasse des [allgemeinen Typsystems](/dotnet/standard/base-types/common-type-system).
+# <a name="boxing-and-unboxing-values-to-iinspectable-with-cwinrt"></a>Boxing und Unboxing von Werten für „IInspectable“ mit C++/WinRT
 
-Mit anderen Worten: An eine Funktion, die **IInspectable** erwartet, kann eine Instanz einer beliebigen Laufzeitklasse übergeben werden. Du kannst einer solchen Funktion aber nicht direkt einen Skalarwert (etwa einen Zahl- oder Textwert) übergeben. Skalarwerte müssen innerhalb eines Referenzklassenobjekts platziert werden. Dieser Wrapping-Prozess wird als *Boxing* des Werts bezeichnet.
+> [!NOTE]
+> Sie können nicht nur Skalarwerte, sondern auch die meisten Arten von Arrays (mit Ausnahme von Arrays von Enumerationen) mithilfe der Funktionen [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) und [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) mittels Boxing und Unboxing umwandeln. Sie können nur Skalarwerte mit der Funktion [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) mittels Unboxing umwandeln.
+
+Die [**Schnittstelle „IInspectable“**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) ist die Stammschnittstelle jeder Laufzeitklasse in der Windows-Runtime (WinRT). Dieses Konzept kommt auch bei der [**Schnittstelle „IUnknown“**](/windows/desktop/api/unknwn/nn-unknwn-iunknown) zur Anwendung, die sich am Stamm jeder COM-Schnittstelle und -Klasse befindet, sowie bei **System.Object** am Stamm jeder Klasse des [allgemeinen Typsystems](/dotnet/standard/base-types/common-type-system).
+
+Mit anderen Worten: An eine Funktion, die **IInspectable** erwartet, kann eine Instanz einer beliebigen Laufzeitklasse übergeben werden. Sie können einen Skalarwert (etwa einen Zahlen- oder Textwert) einer solchen Funktion aber nicht direkt übergeben. Stattdessen müssen Skalar- oder Arraywerte innerhalb eines Referenzklassenobjekts platziert werden. Dieser Wrapping-Prozess wird als *Boxing* des Werts bezeichnet.
 
 > [!IMPORTANT]
-> Du kannst jeden an eine Windows-Runtime API übergebenen Typ konvertieren (Boxing und Unboxing). Anders ausgedrückt: ein Windows-Runtime-Typ. Zahlen- und Textwerte (Zeichenfolgen) sind die oben genannten Beispiele. Ein weiteres Beispiel ist ein `struct`, das du in IDL definierst. Wenn du versuchst, ein reguläres C++ `struct` (eines, das nicht in IDL definiert ist) per Boxing zu konvertieren, erinnert der Compiler dich daran, dass du nur einen Windows-Runtime-Typ konvertieren darfst. Eine Laufzeitklasse ist ein Windows-Runtime-Typ, aber du kannst natürlich Laufzeitklassen an Windows-Runtime-APIs übergeben, ohne sie zu per Boxing zu konvertieren.
+> Du kannst jeden an eine Windows-Runtime API übergebenen Typ konvertieren (Boxing und Unboxing). Anders ausgedrückt: ein Windows-Runtime-Typ. Zahlen- und Textwerte (Zeichenfolgen) sowie Arrays sind einige der oben genannten Beispiele. Ein weiteres Beispiel ist ein `struct`, das du in IDL definierst. Wenn du versuchst, ein reguläres C++ `struct` (eines, das nicht in IDL definiert ist) per Boxing zu konvertieren, erinnert der Compiler dich daran, dass du nur einen Windows-Runtime-Typ konvertieren darfst. Eine Laufzeitklasse ist ein Windows-Runtime-Typ, aber du kannst natürlich Laufzeitklassen an Windows-Runtime-APIs übergeben, ohne sie zu per Boxing zu konvertieren.
 
-In [C++/WinRT](./intro-to-using-cpp-with-winrt.md) akzeptiert die Funktion [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) einen Skalarwert und gibt ihn als in **IInspectable** geschachtelten Wert zurück. Wenn du ein **IInspectable**-Element wieder in einen Skalarwert konvertieren möchtest (Unboxing), kannst du die Funktionen [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) und [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) verwenden.
+In [C++/WinRT](./intro-to-using-cpp-with-winrt.md) akzeptiert die Funktion [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) einen Skalar- oder Arraywert und gibt ihn als in **IInspectable** geschachtelten Wert zurück. Wenn Sie ein **IInspectable**-Element wieder in einen Skalarwert umwandeln möchten (Unboxing), können Sie auch die Funktion [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value) verwenden. Wenn Sie ein **IInspectable**-Element wieder in einen Skalarwert umwandeln möchten (Unboxing), können Sie auch die Funktion [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) verwenden.
 
 ## <a name="examples-of-boxing-a-value"></a>Beispiele für das Boxing eines Werts
 Die Accessorfunktion [**LaunchActivatedEventArgs::Arguments**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.Arguments) gibt eine [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)-Struktur zurück. Dabei handelt es sich um einen Skalarwert. Wir können diesen **hstring**-Wert mittels Boxing verpacken und an eine Funktion übergeben, die **IInspectable** erwartet:
@@ -70,6 +73,6 @@ WINRT_ASSERT(piPropertyValue.Type() == winrt::Windows::Foundation::PropertyType:
 ## <a name="important-apis"></a>Wichtige APIs
 * [Schnittstelle „IInspectable“](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)
 * [Funktionsvorlage „winrt::box_value“](/uwp/cpp-ref-for-winrt/box-value)
-* [Struktur „winrt::hstring“](/uwp/cpp-ref-for-winrt/hstring)
+* [winrt::hstring-Struktur](/uwp/cpp-ref-for-winrt/hstring)
 * [Funktionsvorlage „winrt::unbox_value“](/uwp/cpp-ref-for-winrt/unbox-value)
 * [Funktionsvorlage „winrt::unbox_value_or“](/uwp/cpp-ref-for-winrt/unbox-value-or)

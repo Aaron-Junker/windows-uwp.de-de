@@ -2,20 +2,20 @@
 description: Hier erfährst du, welche neuesten Ergänzungen an der Dokumentation für Windows-Entwickler vorgenommen wurden.
 title: Neueste Aktualisierungen an der Dokumentation für Windows-Entwickler
 ms.topic: article
-ms.date: 3/12/2021
+ms.date: 4/9/2021
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: 6c6a254a2272eb9c0c83f5ebb0fa72e6f2f9ae83
-ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
+ms.openlocfilehash: 11d1e203867d9b094172c522dd2e4fbfc18f2093
+ms.sourcegitcommit: 40dc4a908f68d55a58343d1d3002f97cd5dbaf60
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104804254"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107381061"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Neueste Aktualisierungen an der Dokumentation für Windows-Entwickler
 
-Die Dokumentation für Windows-Entwickler wird regelmäßig mit neuen und verbesserten Informationen und Inhalten aktualisiert. Hier finden Sie eine Zusammenfassung der Änderungen zum 10. März 2021.
+Die Dokumentation für Windows-Entwickler wird regelmäßig mit neuen und verbesserten Informationen und Inhalten aktualisiert. Hier finden Sie eine Zusammenfassung der Änderungen zum 9. April 2021.
 
 Hinweis: Eine spezifische Liste der APIs, die als Teil von Windows 10 Build 19041 (auch als 2004 bezeichnet) hinzugefügt wurden, finden Sie in [dieser Liste](/windows/uwp/whats-new/windows-10-build-19041-api-diff).
 
@@ -23,23 +23,27 @@ Die neuesten Nachrichten zur Dokumentation für Windows-Entwickler oder Informat
 
 Wir haben in unserer gesamten Dokumentation weiter nach unangemessenen Formulierungen gesucht und diese entfernt.
 
-Informationen dazu, wie Sie zur Microsoft-Dokumenten beitragen können, finden Sie im [Leitfaden für Mitwirkende](/contribute/).
+Vielen Dank an alle, die zur Dokumentation beigetragen haben. Ihre Korrekturen und Vorschläge sind sehr willkommen. Informationen dazu, wie Sie zur Microsoft-Dokumenten beitragen können, finden Sie im [Leitfaden für Mitwirkende](/contribute/).
 
 Zu den Highlights dieses Monats gehören:
 
 ### <a name="new-content"></a>Neuer Inhalt
 
-* [WinUI 2.6-Dokumentation](../winui/winui2/index.md)
-* [Entwickeln mit Rust unter Windows](../../dev-environment/rust/index.yml)
-* [Azure Object Anchors](https://techcommunity.microsoft.com/t5/mixed-reality-blog/azure-object-anchors-is-now-in-private-preview/ba-p/1696157)
-* Neues Video: [Visual Studio Code: Remoteentwicklung mit Containern & Codespaces](https://www.youtube.com/watch?v=ruIoLtqIdNc)
+
+* [Projektzusammenführung](https://docs.microsoft.com/windows/apps/project-reunion/)
+* [WinUI 3](https://docs.microsoft.com/windows/apps/winui/winui3/)
+* [Entwickeln mit Rust unter Windows](https://docs.microsoft.com/windows/dev-environment/rust/)
+* [Umleiten Ihrer vorhandenen Desktop-App an Ihre gepackte App](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions#redirect)
+
+
 
 ### <a name="related-content"></a>Verwandte Inhalte 
 
-* [Azure Content Services](https://azure.microsoft.com/services/communication-services/)
+* [Azure Communication Services](https://azure.microsoft.com/services/communication-services/)
 
 ### <a name="updated-topics"></a>Aktualisierte Themen
 
+* [Erstellen von APIs mit C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-apis)
 * [Thema zur Project Reunion-Einrichtung](../project-reunion/index.md).
 * Fortlaufende Aktualisierungen der Dokumente zur [WinUI 2](../winui/winui2/index.md) und [WinUI 3](../winui/winui3/index.md).
 * Regelmäßige Aktualisierungen zu [Einrichten Ihrer Entwicklungsumgebung unter Windows 10](../../dev-environment/overview.md), die WSL und Windows Terminal umfassen.
@@ -47,99 +51,163 @@ Zu den Highlights dieses Monats gehören:
 
 In den folgenden Themen der Referenz wurden im vergangenen Monat wichtige Aktualisierungen vorgenommen:
 
+
+## <a name="windows-conceptual-content"></a>Konzeptionelle Inhalte zu Windows
+
 <ul>
-<li><a href="/windows/desktop/Direct2D/effect-shader-linking">Effektshader-Verknüpfung</a></li>
-<li><a href="/windows/desktop/Direct2D/opacity-masks-overview">Übersicht über Durchlässigkeitsmasken</a></li>
-<li><a href="/windows/desktop/DxTechArts/games-and-firewalls">Windows-Firewall für Spieleentwickler</a></li>
-<li><a href="/windows/desktop/ETW/enumerating-providers">Auflisten von Anbietern</a></li>
-<li><a href="/windows/desktop/Midl/declare-guid">declare_guid-Schlüsselwort</a></li>
-<li><a href="/windows/desktop/Midl/importing-system-header-files">Importieren von System-Headerdateien</a></li>
-<li><a href="/windows/desktop/Midl/sh-composition">sh_composition-Schlüsselwort</a></li>
-<li><a href="/windows/desktop/Midl/sh-event">sh_event-Schlüsselwort</a></li>
-<li><a href="/windows/desktop/Midl/sh-file">sh_file-Schlüsselwort</a></li>
-<li><a href="/windows/desktop/Midl/sh-job">sh_job-Schlüsselwort</a></li>
-<li><a href="/windows/desktop/Midl/sh-mutex">sh_mutex-Schlüsselwort</a></li>
-<li><a href="/windows/desktop/Midl/sh-pipe">sh_pipe-Schlüsselwort</a></li>
-<li><a href="/windows/desktop/Midl/sh-process">sh_process-Schlüsselwort</a></li>
-<li><a href="/windows/desktop/Midl/sh-reg-key">sh_reg_key-Schlüsselwort</a></li>
-<li><a href="/windows/desktop/Midl/sh-section">sh_section-Schlüsselwort</a></li>
-<li><a href="/windows/desktop/Midl/sh-semaphore">sh_semaphore-Schlüsselwort</a></li>
-<li><a href="/windows/desktop/Midl/sh-socket">sh_socket-Schlüsselwort</a></li>
-<li><a href="/windows/desktop/Midl/sh-thread">sh_thread-Schlüsselwort</a></li>
-<li><a href="/windows/desktop/Midl/sh-token">sh_token-Schlüsselwort</a></li>
-<li><a href="/windows/desktop/Midl/system-handle">system_handle-Attribut</a></li>
-<li><a href="/windows/desktop/VML/basic-vml-types">Grundlegende VML-Typen</a></li>
-<li><a href="/windows/desktop/WEC/wecutil">Wecutil.exe</a></li>
-<li><a href="/windows/desktop/WinProg64/shared-registry-keys">Registrierungsschlüssel, die von WOW64 betroffen sind</a></li>
-<li><a href="/windows/desktop/WmiSdk/changing-registry-data">Ändern von Registrierungsdaten</a></li>
-<li><a href="/windows/desktop/direct3d10/d3d10-effect-states">Effektzustandsgruppen (Direct3D 10)</a></li>
-<li><a href="/windows/desktop/direct3d12/queries">Abfragen</a></li>
-<li><a href="/windows/desktop/direct3d12/swap-chains">Swapchains</a></li>
-<li><a href="/windows/desktop/direct3dhlsl/sm5-object-texture2d">Texture2D</a></li>
-<li><a href="/windows/desktop/direct3dhlsl/texturecube">TextureCube-Objekt</a></li>
-<li><a href="/windows/desktop/direct3dhlsl/texturecubearray">TextureCubeArray-Objekt</a></li>
-<li><a href="/windows/desktop/directx-sdk--august-2009-">Wo finde ich das DirectX SDK?</a></li>
-<li><a href="/windows/desktop/inputdev/using-raw-input">Verwenden von Rohdateneingaben</a></li>
-<li><a href="/windows/desktop/lwef/toolbar-buttons-">Schaltflächen der Symbolleiste (Microsoft Agent Character Editor)</a></li>
-<li><a href="/windows/desktop/lwef/toolbar-buttons">Schaltflächen der Symbolleiste (Linguistic Information Sound Editing Tool)</a></li>
-<li><a href="/windows/desktop/uxguide/ctrl-balloons">Ballons</a></li>
-<li><a href="/windows/desktop/uxguide/inter-touch">Toucheingabe</a></li>
-<li><a href="/windows/desktop/uxguide/mess-confirm">Bestätigungen</a></li>
-<li><a href="/windows/desktop/uxguide/mess-error">Fehlermeldungen (Entwurfsgrundlagen)</a></li>
-<li><a href="/windows/desktop/uxguide/vis-std-icons">Standardsymbole</a></li>
-<li><a href="/windows/desktop/uxguide/winenv-notification">Infobereich</a></li>
-<li><a href="/windows/desktop/w8cookbook/secured-boot">Antischadsoftware-Frühstart</a></li>
-<li><a href="/windows/desktop/wcs/a">A</a></li>
-<li><a href="/windows/desktop/wcs/additive-primary-colors">Additive Primärfarben</a></li>
-<li><a href="/windows/desktop/wcs/b">B</a></li>
-<li><a href="/windows/desktop/wcs/basic-color-management-concepts">Konzepte zur Verwaltung der Basisfarben</a></li>
-<li><a href="/windows/desktop/wcs/c">C</a></li>
-<li><a href="/windows/desktop/wcs/cmm-transform-creation-flags">CMM-Transformationserstellungsflags</a></li>
-<li><a href="/windows/desktop/wcs/cmy-and-cmyk-color-spaces">CMY- und CMYK-Farbraum</a></li>
-<li><a href="/windows/desktop/wcs/color-in-imaging">Farbe in der Bildverarbeitung</a></li>
-<li><a href="/windows/desktop/wcs/color-space-constants">Farbraumkonstanten</a></li>
-<li><a href="/windows/desktop/wcs/color-space-type-identifiers">Farbraum-Typbezeichner</a></li>
-<li><a href="/windows/desktop/wcs/color-spaces">Farbräume</a></li>
-<li><a href="/windows/desktop/wcs/common-color-messages">Allgemeine Farbmeldungen</a></li>
-<li><a href="/windows/desktop/wcs/d">D</a></li>
-<li><a href="/windows/desktop/wcs/describing-color">Beschreiben von Farbe</a></li>
-<li><a href="/windows/desktop/wcs/device-dependent-color-spaces">Geräteabhängige Farbräume</a></li>
-<li><a href="/windows/desktop/wcs/device-independent-color-spaces">Geräteunabhängige Farbräume</a></li>
-<li><a href="/windows/desktop/wcs/enumerations">Enumerationen</a></li>
-<li><a href="/windows/desktop/wcs/error-codes-specific-to-wcs">WCS-spezifische Fehlercodes</a></li>
-<li><a href="/windows/desktop/wcs/functions">Funktionen</a></li>
-<li><a href="/windows/desktop/wcs/further-information">Weitere Informationen</a></li>
-<li><a href="/windows/desktop/wcs/g">G</a></li>
-<li><a href="/windows/desktop/wcs/h">H</a></li>
-<li><a href="/windows/desktop/wcs/hls-color-spaces">HLS-Farbräume</a></li>
-<li><a href="/windows/desktop/wcs/hsv-color-spaces">HSV-Farbräume</a></li>
-<li><a href="/windows/desktop/wcs/human-color-perception">Menschliche Farbwahrnehmung</a></li>
-<li><a href="/windows/desktop/wcs/icmprogressproccallback">ICMProgressProcCallback-Rückruffunktion</a></li>
-<li><a href="/windows/desktop/wcs/interfaces">Schnittstellen</a></li>
-<li><a href="/windows/desktop/wcs/l">L</a></li>
-<li><a href="/windows/desktop/wcs/obsolete-wcs-functions">Veraltete WCS-Funktionen</a></li>
-<li><a href="/windows/desktop/wcs/p">P</a></li>
-<li><a href="/windows/desktop/wcs/profile-management-functions">Profilverwaltungsfunktionen</a></li>
-<li><a href="/windows/desktop/wcs/r">R</a></li>
-<li><a href="/windows/desktop/wcs/reference">Referenz</a></li>
-<li><a href="/windows/desktop/wcs/rendering-intents">Rendering von Absichten</a></li>
-<li><a href="/windows/desktop/wcs/rgb-color-spaces">RGB-Farbräume</a></li>
-<li><a href="/windows/desktop/wcs/s">S</a></li>
-<li><a href="/windows/desktop/wcs/srgb--a-standard-color-space">sRGB Standardfarbraum</a></li>
-<li><a href="/windows/desktop/wcs/structures">Strukturen</a></li>
-<li><a href="/windows/desktop/wcs/subtractive-primary-colors">Subtraktive Primärfarben</a></li>
-<li><a href="/windows/desktop/wcs/t">T</a></li>
-<li><a href="/windows/desktop/wcs/using-device-profiles-with-wcs">Verwenden von Geräteprofilen mit WCS</a></li>
-<li><a href="/windows/desktop/wcs/using-gdi-functions-with-wcs">Verwenden von GDI-Funktionen mit WCS</a></li>
-<li><a href="/windows/desktop/wcs/using-structures-in-wcs-1-0">Verwenden von Strukturen in WCS 1.0</a></li>
-<li><a href="/windows/desktop/wcs/using-wcs-1-0">Verwenden von WCS 1.0</a></li>
-<li><a href="/windows/desktop/wcs/w">W</a></li>
-<li><a href="/windows/desktop/wcs/wcs-1-0-availability">WCS 1.0-Verfügbarkeit</a></li>
-<li><a href="/windows/desktop/wcs/wcs-1-0-glossary">WCS 1.0-Glossar</a></li>
-<li><a href="/windows/desktop/wcs/wcs-calibration-schema">WCS-Kalibrierungsschema</a></li>
-<li><a href="/windows/desktop/wcs/wcs-constants">WCS-Konstanten</a></li>
-<li><a href="/windows/desktop/wcs/wcs-registry-keys">WCS-Registrierungsschlüssel</a></li>
-<li><a href="/windows/desktop/wcs/what-s-new-in-windows-vista">Neuerungen in Windows Vista</a></li>
-<li><a href="/windows/desktop/wcs/windows-color-system">Windows Color System (WCS)</a></li>
-<li><a href="/windows/desktop/xaudio2/xaudio2-redistributable">Entwicklerhandbuch für die weiterverteilbare Version von XAudio 2.9</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-apis">Erstellen von APIs mit C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/get-started">Erste Schritte mit C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/index">C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/csharp-winrt/index">C#/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/basics/content-basics">Grundlagen des Inhaltsdesigns für Windows-Apps</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/custom-text-input">Übersicht über benutzerdefinierte Texteingabe</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/page-layout">Seitenlayout für Windows-Apps</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/motion/xaml-animation">Übersicht über Animationen</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/cloud-for-games">Nutzen von Clouddiensten für UWP-Spiele</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/getting-started">Erste Schritte</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/manage-ad-campaigns">Verwalten von Anzeigenkampagnen</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/query-for-products">Produktabfrage</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/porting/apps-on-arm">Windows 10 in ARM</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/store-policies">Microsoft Store-Richtlinien</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/upload-app-packages">Hochladen von App-Paketen</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/uwp-deployinfo-api">Referenz zur API für Bereitstellungsinformationen des Geräteportals</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/uwp-remoteinput-api">Geräteportal-Remoteeingabe – API-Referenz</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/uwp-sshpins-api">Geräteportal-SSH-PINs – API-Referenz</a></li>
+</ul>
+
+## <a name="win32-conceptual-content"></a>Konzeptionelle Inhalte zu Win32
+
+<ul>
+<li><a href="https://docs.microsoft.com/windows/desktop/Controls/property-sheets">Informationen über Eigenschaftenblätter</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Controls/pss-propsheetheader">PROPSHEETHEADER-Struktur (Prsht.h)</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Controls/pss-propsheetpage">PROPSHEETPAGE-Struktur (Prsht.h)</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Tapi/select-an-address">Auswählen einer Adresse</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/ToolHelp/traversing-the-heap-list">Durchlaufen der Heapliste</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/WinProg64/additional-considerations">Weitere Überlegungen</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/resource-binding-in-hlsl">Ressourcenbindung in HLSL</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wic/-wic-sample-animated-gif">Animiertes GIF-Beispiel für WIC</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wic/-wic-sample-d2d-viewer">WIC-Bildanzeige mit Direct2D-Beispiel</a></li>
+</ul>
+
+## <a name="win32-api-reference"></a>Win32-API-Referenz
+
+<ul>
+<li><a href="https://docs.microsoft.com/windows/win32/api/azroles/nn-azroles-iazrole">IAzRole (azroles.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/azroles/nn-azroles-iazscope">IAzScope (azroles.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/azroles/nn-azroles-iaztask">IAzTask (azroles.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/d2d1/nn-d2d1-id2d1factory">ID2D1Factory (d2d1.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/d2d1/nn-d2d1-id2d1geometry">ID2D1Geometry (d2d1.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/d3d10/nn-d3d10-id3d10device">ID3D10Device (d3d10.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/d3d11/nn-d3d11-id3d11device">ID3D11Device (d3d11.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nn-d3d12-id3d12device">ID3D12Device (d3d12.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/d3d9/nn-d3d9-idirect3d9">IDirect3D9 (d3d9.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/ddraw/nn-ddraw-idirectdraw7">IDirectDraw7 (ddraw.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/dxgi/nn-dxgi-idxgioutput">IDXGIOutput (dxgi.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/faxcom/nn-faxcom-ifaxdoc">IFaxDoc (faxcom.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/faxcom/nn-faxcom-ifaxjob">IFaxJob (faxcom.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/faxcom/nn-faxcom-ifaxport">IFaxPort (faxcom.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/faxcom/nn-faxcom-ifaxserver">IFaxServer (faxcom.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/faxcom/nn-faxcom-ifaxstatus">IFaxStatus (faxcom.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/fhcfg/nn-fhcfg-ifhconfigmgr">IFhConfigMgr (fhcfg.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/fsrm/nn-fsrm-ifsrmsetting">IFsrmSetting (fsrm.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/gpmgmt/nn-gpmgmt-igpm">IGPM (gpmgmt.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/gpmgmt/nn-gpmgmt-igpmbackup">IGPMBackup (gpmgmt.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/gpmgmt/nn-gpmgmt-igpmdomain">IGPMDomain (gpmgmt.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/gpmgmt/nn-gpmgmt-igpmrsop">IGPMRSOP (gpmgmt.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/gpmgmt/nn-gpmgmt-igpmsom">IGPMSOM (gpmgmt.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/iads/nn-iads-iads">IADs (iads.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/iads/nn-iads-iadsclass">IADsClass (iads.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/iads/nn-iads-iadscomputer">IADsComputer (iads.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/iads/nn-iads-iadscontainer">IADsContainer (iads.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/iads/nn-iads-iadsdomain">IADsDomain (iads.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/iads/nn-iads-iadsfileshare">IADsFileShare (iads.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/iads/nn-iads-iadsgroup">IADsGroup (iads.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/iads/nn-iads-iadslocality">IADsLocality (iads.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/iads/nn-iads-iadso">IADsO (iads.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/iads/nn-iads-iadsprintjob">IADsPrintJob (iads.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/iads/nn-iads-iadsprintqueue">IADsPrintQueue (iads.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/iads/nn-iads-iadsproperty">IADsProperty (iads.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/iads/nn-iads-iadsresource">IADsResource (iads.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/iads/nn-iads-iadsservice">IADsService (iads.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/iads/nn-iads-iadssession">IADsSession (iads.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/iads/nn-iads-iadssyntax">IADsSyntax (iads.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/iads/nn-iads-iadsuser">IADsUser (iads.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ne-icm-bmformat">BMFORMAT </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-cmtranslatergbs">CMTranslateRGBs </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-colormatchsetupa">COLORMATCHSETUPA </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-colormatchsetupw">COLORMATCHSETUPW </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-enumtypea">ENUMTYPEA </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-enumtypew">ENUMTYPEW </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-profileheader">PROFILEHEADER </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/inked/nn-inked-iinkedit">IInkEdit (inked.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/mbnapi/nn-mbnapi-imbnpin">IMbnPin (mbnapi.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/mmc/nn-mmc-iconsole2">IConsole2 (mmc.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/mmc/nn-mmc-iconsole3">IConsole3 (mmc.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/mmc/nn-mmc-iresultdata">IResultData (mmc.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/mmc/nn-mmc-iresultdata2">IResultData2 (mmc.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/msctf/nn-msctf-itfcontext">ITfContext (msctf.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/mstask/nn-mstask-itask">ITask (mstask.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/netfw/nn-netfw-inetfwrule">INetFwRule (netfw.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/netfw/nn-netfw-inetfwrule3">INetFwRule3 (netfw.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/oaidl/nn-oaidl-irecordinfo">IRecordInfo (oaidl.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/oaidl/nn-oaidl-itypeinfo">ITypeInfo (oaidl.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/oaidl/nn-oaidl-itypeinfo2">ITypeInfo2 (oaidl.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/objidl/nn-objidl-imallocspy">IMallocSpy (objidl.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/objidl/nn-objidl-imoniker">IMoniker (objidl.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/objidl/nn-objidl-istorage">IStorage (objidl.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/ocidl/nn-ocidl-ifont">IFont (ocidl.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/ocidl/nn-ocidl-ipicture">IPicture (ocidl.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/pla/nn-pla-idatacollector">IDataCollector (pla.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/pla/nn-pla-idatamanager">IDataManager (pla.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/pla/nn-pla-ivaluemap">IValueMap (pla.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/rend/nn-rend-itdirectory">ITDirectory (rend.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/strmif/nn-strmif-iamtuner">IAMTuner (strmif.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/strmif/nn-strmif-icodecapi">ICodecAPI (strmif.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/strmif/nn-strmif-idvdinfo2">IDvdInfo2 (strmif.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/strmif/nn-strmif-ipin">IPin (strmif.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/tapi3/nn-tapi3-itagent">ITAgent (tapi3.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/tapi3cc/nn-tapi3cc-itagent">ITAgent (tapi3cc.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/tapi3if/nn-tapi3if-ittapi">ITTAPI (tapi3if.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/tom/nn-tom-itextdocument">ITextDocument (tom.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/tom/nn-tom-itextfont2">ITextFont2 (tom.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/tom/nn-tom-itextpara">ITextPara (tom.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/tom/nn-tom-itextpara2">ITextPara2 (tom.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/tom/nn-tom-itextrange">ITextRange (tom.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/tom/nn-tom-itextrange2">ITextRange2 (tom.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/tom/nn-tom-itextrow">ITextRow (tom.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/tom/nn-tom-itextstrings">ITextStrings (tom.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/tuner/nn-tuner-idvbtlocator">IDVBTLocator (tuner.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/tuner/nn-tuner-ilocator">ILocator (tuner.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/tuner/nn-tuner-ituningspace">ITuningSpace (tuner.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/upnp/nn-upnp-iupnpdevice">IUPnPDevice (upnp.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/vds/nn-vds-ivdslun">IVdsLun (vds.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/vds/nn-vds-ivdsservice">IVdsService (vds.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/vds/nn-vds-ivdssubsystem">IVdsSubSystem (vds.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/wabapi/nn-wabapi-iwabobject">IWABObject (wabapi.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/wabiab/nn-wabiab-iaddrbook">IAddrBook (wabiab.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/wia_xp/nn-wia_xp-iwiaitem">IWiaItem (wia_xp.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/wmp/nn-wmp-iwmpcdromburn">IWMPCdromBurn (wmp.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/wmp/nn-wmp-iwmpcontrols">IWMPControls (wmp.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/wmp/nn-wmp-iwmpmedia">IWMPMedia (wmp.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/wmp/nn-wmp-iwmpnetwork">IWMPNetwork (wmp.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/wmp/nn-wmp-iwmpplaylist">IWMPPlaylist (wmp.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/wmp/nn-wmp-iwmpsettings">IWMPSettings (wmp.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/wmp/nn-wmp-iwmpsyncdevice">IWMPSyncDevice (wmp.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/wuapi/nn-wuapi-iwebproxy">IWebProxy (wuapi.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/xaudio2/nn-xaudio2-ixaudio2">IXAudio2 (xaudio2.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/xenroll/nn-xenroll-icenroll">ICEnroll (xenroll.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/xenroll/nn-xenroll-ienroll">IEnroll (xenroll.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/xenroll/nn-xenroll-ienroll2">IEnroll2 (xenroll.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/xenroll/nn-xenroll-ienroll4">IEnroll4 (xenroll.h) </a></li>
+</ul>
+
+## <a name="winrt-api-reference"></a>WinRT-API-Referenz
+
+<ul>
+
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemswrapgrid.itemwidth">Windows.UI.Xaml.Controls.ItemsWrapGrid.ItemWidth</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.wrapgrid.itemheight">Windows.UI.Xaml.Controls.WrapGrid.ItemHeight</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.wrapgrid.itemwidth">Windows.UI.Xaml.Controls.WrapGrid.ItemWidth</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height">Windows.UI.Xaml.FrameworkElement.Height</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width">Windows.UI.Xaml.FrameworkElement.Width</a></li>
 </ul>

@@ -5,19 +5,19 @@ ms.date: 07/19/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a3f8644612954c4693ad28d3c1b41870855b37ca
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 903fe20cef1e3ccaa5db4e1cffc6b6583a878376
+ms.sourcegitcommit: f7c7a2ae6367e114a8b9d438963082440cd24043
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034883"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107315093"
 ---
 # <a name="show-multiple-views-with-appwindow"></a>Anzeigen mehrerer Ansichten mit AppWindow
 
 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) und die zugehörigen APIs vereinfachen die Erstellung von Apps mit mehreren Fenstern, indem du deinen App-Inhalt in sekundären Fenstern anzeigen lassen kannst, während in jedem Fenster immer noch am selben Benutzeroberflächenthread gearbeitet wird.
 
 > [!NOTE]
-> AppWindow ist zurzeit als Vorschau verfügbar. Du kannst daher Apps, die AppWindow verwenden, an den Store übermitteln. Es ist jedoch von einigen Plattform- und Frameworkkomponenten bekannt, dass sie nicht mit AppWindow funktionieren (siehe [Einschränkungen](/uwp/api/windows.ui.windowmanagement.appwindow#limitations)).
+> AppWindow ist derzeit in der Vorschauphase. Du kannst daher Apps, die AppWindow verwenden, an den Store übermitteln. Es ist jedoch von einigen Plattform- und Frameworkkomponenten bekannt, dass sie nicht mit AppWindow funktionieren (siehe [Einschränkungen](/uwp/api/windows.ui.windowmanagement.appwindow#limitations)).
 
 Hier werden einige Szenarien für mehrere Fenster mit einer Beispiel-App namens `HelloAppWindow` gezeigt. Die Beispiel-App veranschaulicht die folgenden Funktionen:
 
@@ -34,7 +34,7 @@ Hier werden einige Szenarien für mehrere Fenster mit einer Beispiel-App namens 
 
 > _Beispiel-App mit abgedockter Farbauswahl und sekundärem Fenster_
 
-> **Wichtige APIs:** [Namespace Windows.UI.WindowManagement](/uwp/api/windows.ui.windowmanagement), [AppWindow-Klasse](/uwp/api/windows.ui.windowmanagement.appwindow)
+> **Wichtige APIs**: [Windows.UI.WindowManagement-Namespace](/uwp/api/windows.ui.windowmanagement), [AppWindow-Klasse](/uwp/api/windows.ui.windowmanagement.appwindow)
 
 ## <a name="api-overview"></a>API-Übersicht
 
@@ -122,6 +122,9 @@ appWindow.Closed += delegate
     appWindow = null;
 };
 ```
+
+> [!TIP]
+> Sie sollten die Menge an Code in Ihrem `Closed`Ereignishandler so gering wie möglich halten, um unerwartete Probleme zu vermeiden.
 
 ## <a name="track-instances-of-appwindow"></a>Nachverfolgen von Instanzen von AppWindow
 
@@ -296,7 +299,7 @@ Rufe [RequestSize](/uwp/api/windows.ui.windowmanagement.appwindow.requestsize) w
 colorPickerAppWindow.RequestSize(new Size(300, 428));
 ```
 
-Die Methoden zum Verwalten der Fensterplatzierung sind mit _RequestMove*_ benannt: [RequestMoveAdjacentToCurrentView](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoveadjacenttocurrentview), [RequestMoveAdjacentToWindow](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoveadjacenttowindow), [RequestMoveRelativeToDisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoverelativetodisplayregion), [RequestMoveToDisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindow.requestmovetodisplayregion).
+Die Methoden zum Verwalten der Fensterplatzierung heißen _RequestMove*_ : [RequestMoveAdjacentToCurrentView](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoveadjacenttocurrentview), [RequestMoveAdjacentToWindow](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoveadjacenttowindow), [RequestMoveRelativeToDisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoverelativetodisplayregion), [RequestMoveToDisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindow.requestmovetodisplayregion).
 
 In diesem Beispiel verschiebt dieser Code das Fenster neben die Hauptansicht, aus der das Fenster erzeugt wird.
 
@@ -427,7 +430,7 @@ colorPickerContainer.Children.Remove(colorPicker);
 colorPickerContainer.Visibility = Visibility.Collapsed;
 ```
 
-Anschließend kannst du sie der neuen XAML-Struktur hinzufügen. Hier erstellst du zunächst ein [Raster](/uwp/api/windows.ui.xaml.controls.grid), das als übergeordneter Container für den ColorPicker verwendet wird, und fügst den ColorPicker als untergeordnetes Element des Rasters hinzu. (Auf diese Weise kannst du den ColorPicker später einfach aus dieser XAML-Struktur entfernen.) Anschließend legst du das Raster als Stamm der XAML-Struktur im neuen Fenster fest.
+Anschließend kannst du sie der neuen XAML-Struktur hinzufügen. Hier erstellst du zunächst ein [Raster](/uwp/api/windows.ui.xaml.controls.grid), das als übergeordneter Container für den ColorPicker verwendet wird, und fügst den ColorPicker als untergeordnetes Element des Rasters hinzu. (So können Sie den ColorPicker später leicht aus dieser XAML-Struktur entfernen.) Anschließend legen Sie das Raster als Stamm der XAML-Struktur im neuen Fenster fest.
 
 ```csharp
 Grid appWindowRootGrid = new Grid();

@@ -14,12 +14,12 @@ ms.custom: RS5
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: b5e80a1c8f77fe10748eb671476b4cd81d3c4e37
-ms.sourcegitcommit: 23f3d452806f40752d7c2ebd07b7b056ac5d8934
+ms.openlocfilehash: 959fc9f77c94ee05bf4191bd3ce01049a8163bde
+ms.sourcegitcommit: b89d3bc42713fbe4c0ada99d6f514f1304821221
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/08/2021
-ms.locfileid: "107031529"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107466450"
 ---
 # <a name="navigationview"></a>NavigationView
 
@@ -1021,7 +1021,7 @@ namespace winrt::NavigationViewCppWinRT::implementation
 
 Der oben gezeigte C#- und C++/WinRT-Code ist so konzipiert, dass Sie für beide Versionen dasselbe XAML-Markup verwenden können. Es gibt jedoch eine weitere Möglichkeit, die in diesem Abschnitt beschriebene C++/WinRT-Version zu implementieren, die Sie möglicherweise bevorzugen.
 
-Im Folgenden finden Sie eine alternative Version des **NavView_ItemInvoked**-Handlers. Das Verfahren in dieser Version des Handlers umfasst als Erstes das Speichern des vollständigen Typnamens der Seite (im Tag des [**NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)-Elements), zu der Sie navigieren möchten. Im Handler führst du das Unboxing für diesen Wert durch, wandelst ihn in ein [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename)-Objekt um und verwendest dieses Objekt, um zur Zielseite zu navigieren. Es ist nicht erforderlich, die Zuordnungsvariable mit dem Namen `_pages` aus dem obigen Beispiel zu nutzen. Sie können Komponententests erstellen, um zu bestätigen, dass die Werte in den Tags einen gültigen Typ aufweisen. Weitere Informationen findest du unter [Boxing und Unboxing von Skalarwerten für „IInspectable“ mit C++/WinRT](../../cpp-and-winrt-apis/boxing.md).
+Im Folgenden finden Sie eine alternative Version des **NavView_ItemInvoked**-Handlers. Das Verfahren in dieser Version des Handlers umfasst als Erstes das Speichern des vollständigen Typnamens der Seite (im Tag des [**NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)-Elements), zu der Sie navigieren möchten. Im Handler führst du das Unboxing für diesen Wert durch, wandelst ihn in ein [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename)-Objekt um und verwendest dieses Objekt, um zur Zielseite zu navigieren. Es ist nicht erforderlich, die Zuordnungsvariable mit dem Namen `_pages` aus dem obigen Beispiel zu nutzen. Sie können Komponententests erstellen, um zu bestätigen, dass die Werte in den Tags einen gültigen Typ aufweisen. Weitere Informationen finden Sie auch unter [Boxing und Unboxing von Werten für „IInspectable“ mit C++/WinRT](../../cpp-and-winrt-apis/boxing.md).
 
 ```cppwinrt
 void MainPage::NavView_ItemInvoked(
