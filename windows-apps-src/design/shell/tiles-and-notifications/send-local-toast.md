@@ -1,64 +1,64 @@
 ---
-description: Erfahren Sie, wie Sie eine lokale Popup Benachrichtigung aus c#-apps senden und den Benutzer bearbeiten, indem Sie auf den Toast klicken.
-title: Lokale Popup Benachrichtigung von c#-apps senden
+description: Erfahren Sie, wie Sie eine lokale Popupbenachrichtigung von C#-Apps senden und den Benutzer behandeln, der auf das Popup klickt.
+title: Senden einer lokalen Popupbenachrichtigung von C#-Apps
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification from C# apps
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP, Senden von Popup Benachrichtigungen, Benachrichtigungen, Senden von Benachrichtigungen, Popup Benachrichtigungen, Vorgehensweise, Schnellstart, erste Schritte, Codebeispiel, Exemplarische Vorgehensweise, c#, CSharp, Win32, Desktop
+keywords: Windows 10, UWP, Senden von Popupbenachrichtigungen, Benachrichtigungen, Senden von Benachrichtigungen, Popupbenachrichtigungen, Vorgehensweise, Schnellstart, erste Schritte, Codebeispiel, exemplarische Vorgehensweise, c#, csharp, win32, Desktop
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e6130b703cc1f8a0163ea539ba97cf4a08388b5
-ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
+ms.openlocfilehash: 23896b65bf2e4e0a9fc2edf5744b647d6d9c26ed
+ms.sourcegitcommit: 6cd970686d1ea7176b7e6651f349a14551709820
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104804339"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107559387"
 ---
-# <a name="send-a-local-toast-notification-from-c-apps"></a>Lokale Popup Benachrichtigung von c#-apps senden
+# <a name="send-a-local-toast-notification-from-c-apps"></a>Senden einer lokalen Popupbenachrichtigung von C#-Apps
 
 [!INCLUDE [intro](includes/send-toast-intro.md)]
 
 > [!IMPORTANT]
-> Wenn Sie eine C++-app schreiben, sehen Sie sich die [C++ UWP](send-local-toast-cpp-uwp.md) -oder [C++ WRL](send-local-toast-desktop-cpp-wrl.md) -Dokumentation an.
+> Wenn Sie eine C++-App schreiben, lesen Sie die Dokumentation zu [C++ UWP](send-local-toast-cpp-uwp.md) oder [C++ WRL.](send-local-toast-desktop-cpp-wrl.md)
 
 
-## <a name="step-1-install-nuget-package"></a>Schritt 1: Installieren des nuget-Pakets
+## <a name="step-1-install-nuget-package"></a>Schritt 1: Installieren des NuGet-Pakets
 
 [!INCLUDE [nuget package](includes/nuget-package.md)]
 
 [!INCLUDE [nuget package .NET warnings](includes/nuget-package-dotnet-warnings.md)]
 
-In unserem Codebeispiel wird dieses Paket verwendet. Mithilfe dieses Pakets können Sie Popup Benachrichtigungen erstellen, ohne XML zu verwenden. Außerdem können Desktop-Apps Toasts senden.
+In unserem Codebeispiel wird dieses Paket verwendet. Mit diesem Paket können Sie Popupbenachrichtigungen ohne XML erstellen, und Desktop-Apps können Popups senden.
 
 
-## <a name="step-2-send-a-toast"></a>Schritt 2: Senden eines Toast
+## <a name="step-2-send-a-toast"></a>Schritt 2: Senden eines Popups
 
 [!INCLUDE [basic toast intro](includes/send-toast-basic-toast-intro.md)]
 
 ```csharp
-// Requires Microsoft.Toolkit.Uwp.Notifications NuGet package
+// Requires Microsoft.Toolkit.Uwp.Notifications NuGet package version 7.0 or greater
 new ToastContentBuilder()
     .AddArgument("action", "viewConversation")
     .AddArgument("conversationId", 9813)
     .AddText("Andrew sent you a picture")
     .AddText("Check this out, The Enchantments in Washington!")
-    .Show();
+    .Show(); // Not seeing the Show() method? Make sure you have version 7.0, and if you're using .NET 5, your TFM must be net5.0-windows10.0.17763.0 or greater
 ```
 
-Versuchen Sie, diesen Code auszuführen, und Sie sollten sehen, dass die Benachrichtigung angezeigt wird.
+Versuchen Sie, diesen Code zu verwenden, und die Benachrichtigung sollte angezeigt werden.
 
 
 ## <a name="step-3-handling-activation"></a>Schritt 3: Behandeln der Aktivierung
 
-Nachdem Sie eine Benachrichtigung angezeigt haben, müssen Sie den Benutzer wahrscheinlich auf die Benachrichtigung klicken (d. h., Sie können bestimmte Inhalte aufrufen, nachdem der Benutzer darauf geklickt hat, Ihre APP im allgemeinen öffnen oder eine Aktion durchführen, wenn der Benutzer auf die Benachrichtigung klickt).
+Nachdem Sie eine Benachrichtigung angezeigt haben, müssen Sie wahrscheinlich den Benutzer behandeln, der auf die Benachrichtigung klickt (ob dies bedeutet, dass nach dem Klicken des Benutzers ein bestimmter Inhalt angezeigt wird, ihre App im Allgemeinen geöffnet wird oder eine Aktion erfolgt, wenn der Benutzer auf die Benachrichtigung klickt).
 
-Die Schritte für die Aktivierung der Aktivierung unterscheiden sich für UWP-, Desktop-(msix) und Desktop-Apps (entpackt).
+Die Schritte zum Behandeln der Aktivierung unterscheiden sich für UWP-, Desktop- (MSIX) und Desktop-Apps (nicht verpackt).
 
 
 #### <a name="uwp"></a>[UWP](#tab/uwp)
 
-Wenn der Benutzer auf die Benachrichtigung klickt (oder auf eine Schaltfläche in der Benachrichtigung mit der Vordergrund Aktivierung), wird die Datei **app. XAML. cs** **onactivation** ihrer app aufgerufen, und die hinzugefügten Argumente werden zurückgegeben.
+Wenn der Benutzer auf Ihre Benachrichtigung klickt (oder auf eine Schaltfläche in der Benachrichtigung mit Vordergrundaktivierung), wird **App.xaml.cs** **OnActivated** Ihrer App aufgerufen, und die argumente, die Sie hinzugefügt haben, werden zurückgegeben.
 
 **App.xaml.cs**
 
@@ -81,15 +81,15 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 [!INCLUDE [OnLaunched warning](includes/onlaunched-warning.md)]
 
-#### <a name="desktop-msix"></a>[Desktop (msix)](#tab/desktop-msix)
+#### <a name="desktop-msix"></a>[Desktop (MSIX)](#tab/desktop-msix)
 
-Fügen Sie zunächst in der Datei " **Package. appxmanifest**" Folgendes hinzu:
+Fügen Sie zunächst in **Ihrer Datei Package.appxmanifest** Dies hinzu:
 
-1. Deklaration für **xmlns: com**
-1. Deklaration für **xmlns: Desktop**
-1. Im **ignorablenamespaces** -Attribut, **com** und **Desktop**
-1. **Desktop: Erweiterung** für **Windows. toastnotificationactivation** zum Deklarieren der Popup-Activator-CLSID (mit einer neuen GUID Ihrer Wahl).
-1. Nur msix: **com: Erweiterung** für den com-Activator, der die GUID aus Schritt #4 verwendet. Achten Sie darauf, `Arguments="-ToastActivated"` dass Sie das einschließen, damit Sie wissen, dass der Start aus einer Benachrichtigung stammt.
+1. Deklaration für **xmlns:com**
+1. Deklaration für **xmlns:desktop**
+1. Im **IgnorableNamespaces-Attribut** com **und** **desktop**
+1. **desktop:Erweiterung** für **windows.toastNotificationActivation** zum Deklarieren ihrer Popupaktivator-CLSID (mit einer neuen GUID Ihrer Wahl).
+1. Nur MSIX: **com:Extension** for the COM activator using the GUID from step #4. Stellen `Arguments="-ToastActivated"` Sie sicher, dass Sie einschließen, damit Sie wissen, dass Ihr Start über eine Benachrichtigung erfolgt ist.
 
 **Package.appxmanifest**
 
@@ -126,7 +126,7 @@ Fügen Sie zunächst in der Datei " **Package. appxmanifest**" Folgendes hinzu:
  </Package>
 ```
 
-Abonnieren **Sie dann im Startcode Ihrer APP** (app. XAML. cs OnStartup für WPF) das onaktivierte Ereignis.
+Abonnieren Sie dann **im Startcode Ihrer App** (App.xaml.cs OnStartup für WPF) das OnActivated-Ereignis.
 
 [!INCLUDE [desktop toast activation sequence](includes/desktop-toast-activation-code.md)]
 
@@ -134,44 +134,44 @@ Abonnieren **Sie dann im Startcode Ihrer APP** (app. XAML. cs OnStartup für WPF
 [!INCLUDE [desktop toast activation sequence](includes/desktop-toast-activation-sequence.md)]
 
 
-#### <a name="desktop-unpackaged"></a>[Desktop (nicht gepackt)](#tab/desktop)
+#### <a name="desktop-unpackaged"></a>[Desktop (entpackt)](#tab/desktop)
 
 [!INCLUDE [desktop toast activation sequence](includes/desktop-toast-activation-sequence.md)]
 
-Abonnieren Sie das onaktivierte Ereignis **im Startcode Ihrer APP** (app. XAML. cs OnStartup für WPF).
+Abonnieren **Sie im Startcode Ihrer App** (App.xaml.cs OnStartup für WPF) das OnActivated-Ereignis.
 
 [!INCLUDE [desktop toast activation sequence](includes/desktop-toast-activation-code.md)]
 
 ---
 
 
-## <a name="step-4-handling-uninstallation"></a>Schritt 4: Behandeln der nicht Installation
+## <a name="step-4-handling-uninstallation"></a>Schritt 4: Behandeln der Deinstallation
 
 #### <a name="uwp"></a>[UWP](#tab/uwp)
 
-Sie müssen nichts tun! Wenn UWP-apps deinstalliert werden, werden alle Benachrichtigungen und alle anderen zugehörigen Ressourcen automatisch bereinigt.
+Sie müssen nichts tun! Wenn UWP-Apps deinstalliert werden, werden alle Benachrichtigungen und alle anderen zugehörigen Ressourcen automatisch bereinigt.
 
-#### <a name="desktop-msix"></a>[Desktop (msix)](#tab/desktop-msix)
+#### <a name="desktop-msix"></a>[Desktop (MSIX)](#tab/desktop-msix)
 
-Sie müssen nichts tun! Wenn msix-apps deinstalliert werden, werden alle Benachrichtigungen und alle anderen zugehörigen Ressourcen automatisch bereinigt.
+Sie müssen nichts tun! Wenn MSIX-Apps deinstalliert werden, werden alle Benachrichtigungen und alle anderen zugehörigen Ressourcen automatisch bereinigt.
 
-#### <a name="desktop-unpackaged"></a>[Desktop (nicht gepackt)](#tab/desktop)
+#### <a name="desktop-unpackaged"></a>[Desktop (entpackt)](#tab/desktop)
 
-Wenn Ihre APP über ein Deinstallationsprogramm verfügt, sollten Sie im Deinstallationsprogramm den Befehl ausführen `ToastNotificationManagerCompat.Uninstall();` . Wenn es sich bei ihrer App um eine "Portable App" ohne Installer handelt, sollten Sie diese Methode beim Beenden der APP aufrufen, es sei denn, Sie haben Benachrichtigungen, die nach dem Schließen der APP persistent gespeichert werden sollen.
+Wenn Ihre App über ein Deinstallationsprogramm verfügt, sollten Sie in Ihrem Deinstallationsprogramm `ToastNotificationManagerCompat.Uninstall();` aufrufen. Wenn Es sich bei Ihrer App um eine "portable App" ohne Installationsprogramm handelt, sollten Sie diese Methode beim Beenden der App aufrufen, es sei denn, Sie verfügen über Benachrichtigungen, die beibehalten werden sollen, nachdem Ihre App geschlossen wurde.
 
-Mit der Deinstallations Methode werden geplante und aktuelle Benachrichtigungen bereinigt, zugeordnete Registrierungs Werte entfernt und alle zugehörigen temporären Dateien entfernt, die von der Bibliothek erstellt wurden.
+Die Deinstallationsmethode bereinigt alle geplanten und aktuellen Benachrichtigungen, entfernt alle zugehörigen Registrierungswerte und entfernt alle zugeordneten temporären Dateien, die von der Bibliothek erstellt wurden.
 
 ---
 
 
 ## <a name="adding-images"></a>Hinzufügen von Bildern
 
-Sie können Benachrichtigungen zu Benachrichtigungen hinzufügen. Wir fügen ein Inline Image und ein Profil (app-Logo Überschreibungs Image) hinzu.
+Sie können Benachrichtigungen umfangreiche Inhalte hinzufügen. Wir fügen ein Inlinebild und ein Profilbild (App-Logoüberschreibung) hinzu.
 
 [!INCLUDE [images note](includes/images-note.md)]
 
 > [!IMPORTANT]
-> Http-Images werden nur in UWP/msix/Sparse-Apps unterstützt, die über die Internetfunktion in ihrem Manifest verfügen. Desktop-nicht-msix/Sparse-apps unterstützen keine http-Bilder. Sie müssen das Image in Ihre lokalen app-Daten herunterladen und lokal darauf verweisen.
+> HTTP-Images werden nur in UWP-/MSIX-/Sparse-Apps unterstützt, die über die Internetfunktion in ihrem Manifest verfügen. Desktop-Nicht-MSIX-/Sparse-Apps unterstützen keine HTTP-Images. Sie müssen das Image in Ihre lokalen App-Daten herunterladen und lokal darauf verweisen.
 
 <img alt="Toast with images" src="images/send-toast-02.png" width="364"/>
 
@@ -193,7 +193,7 @@ new ToastContentBuilder()
 
 ## <a name="adding-buttons-and-inputs"></a>Hinzufügen von Schaltflächen und Eingaben
 
-Sie können Schaltflächen und Eingaben hinzufügen, um Ihre Benachrichtigungen interaktiv zu gestalten. Schaltflächen können Ihre Vordergrund-APP, ein Protokoll oder Ihre Hintergrundaufgabe starten. Wir fügen ein Antwort Textfeld, eine "like"-Schaltfläche und eine Schaltfläche "View" (anzeigen) hinzu, mit der das Bild geöffnet wird.
+Sie können Schaltflächen und Eingaben hinzufügen, um Ihre Benachrichtigungen interaktiv zu gestalten. Schaltflächen können Ihre Vordergrund-App, ein Protokoll oder Ihre Hintergrundaufgabe starten. Wir fügen ein Antworttextfeld, eine Schaltfläche "Gefällt mir" und eine Schaltfläche "Ansicht" hinzu, mit der das Bild geöffnet wird.
 
 <img src="images/toast-notification.png" width="628" alt="Screenshot of a toast notification with inputs and buttons"/>
 
@@ -227,21 +227,21 @@ new ToastContentBuilder()
     .Show();
 ```
 
-Die Aktivierung von Vordergrund Schaltflächen wird auf die gleiche Weise behandelt wie der hauptpopup-Text (die app. XAML. cs onactivation wird aufgerufen).
+Die Aktivierung von Vordergrundschaltflächen wird auf die gleiche Weise wie der Hauptkörper des Popups behandelt (Ihre App.xaml.cs OnActivated wird aufgerufen).
 
-Beachten Sie, dass beim Klicken auf die Schaltflächen auch Argumente hinzugefügt werden, die dem Popup der obersten Ebene (z. b. Konversations-ID) hinzugefügt werden, solange die Schaltflächen die AddArgument-API verwenden, wie oben gezeigt (wenn Sie benutzerdefinierte Argumente auf einer Schaltfläche zuweisen, werden die Argumente der obersten Ebene nicht eingeschlossen)
+Beachten Sie, dass Argumente, die dem Popup der obersten Ebene hinzugefügt werden (z. B. die Konversations-ID), auch zurückgegeben werden, wenn auf die Schaltflächen geklickt wird, solange schaltflächen die AddArgument-API wie oben beschrieben verwenden (wenn Sie argumente auf einer Schaltfläche benutzerdefiniert zuweisen, werden die Argumente der obersten Ebene nicht eingeschlossen).
 
 
 
-## <a name="handling-background-activation"></a>Behandeln der Hintergrund Aktivierung
+## <a name="handling-background-activation"></a>Behandeln der Hintergrundaktivierung
 
 #### <a name="uwp"></a>[UWP](#tab/uwp)
 
-Wenn Sie die Hintergrund Aktivierung für den Toast (oder eine Schaltfläche im Toast) angeben, wird die Hintergrundaufgabe ausgeführt, anstatt Ihre Vordergrund-APP zu aktivieren.
+Wenn Sie die Hintergrundaktivierung für Das Popup (oder für eine Schaltfläche innerhalb des Popups) angeben, wird Ihre Hintergrundaufgabe ausgeführt, anstatt Ihre Vordergrund-App zu aktivieren.
 
-Weitere Informationen zu Hintergrundaufgaben finden Sie [unter unterstützen der APP mit Hintergrundaufgaben](../../../launch-resume/support-your-app-with-background-tasks.md).
+Weitere Informationen zu Hintergrundaufgaben finden Sie unter [Unterstützen Ihrer App mit Hintergrundaufgaben.](../../../launch-resume/support-your-app-with-background-tasks.md)
 
-Wenn Sie Build 14393 oder höher als Ziel verwenden, können Sie Prozess interne Hintergrundaufgaben verwenden, die die Dinge erheblich vereinfachen. Beachten Sie, dass Prozess interne Hintergrundaufgaben in älteren Versionen von Windows nicht ausgeführt werden können. In diesem Codebeispiel wird eine Prozess interne Hintergrundaufgabe verwendet.
+Wenn Sie auf Build 14393 oder höher abzielen, können Sie prozessspezifische Hintergrundaufgaben verwenden, die die Dinge deutlich vereinfachen. Beachten Sie, dass In-Process-Hintergrundaufgaben unter älteren Versionen von Windows nicht ausgeführt werden können. In diesem Codebeispiel wird eine In-Process-Hintergrundaufgabe verwendet.
 
 ```csharp
 const string taskName = "ToastBackgroundTask";
@@ -267,7 +267,7 @@ BackgroundTaskRegistration registration = builder.Register();
 ```
 
 
-Überschreiben Sie dann in der Datei "App. XAML. cs" die onbackgroundaktivierte Methode. Sie können dann die vordefinierten Argumente und die Benutzereingabe ähnlich der Vordergrund Aktivierung abrufen.
+Überschreiben Sie dann in Ihrer Datei App.xaml.cs die OnBackgroundActivated-Methode. Sie können dann die vordefinierten Argumente und Benutzereingaben ähnlich der Vordergrundaktivierung abrufen.
 
 **App.xaml.cs**
 
@@ -296,19 +296,19 @@ protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs
 
 #### <a name="desktop"></a>[Desktop](#tab/desktop-msix+desktop)
 
-Bei Desktop Anwendungen werden Hintergrund Aktivierungen genauso behandelt wie Vordergrund Aktivierungen (der **onaktivierte** Ereignishandler wird ausgelöst). Sie können auswählen, dass keine Benutzeroberfläche angezeigt und die APP nach der Aktivierung der Aktivierung geschlossen werden soll.
+Bei Desktopanwendungen werden Hintergrundaktivierungen genauso wie Vordergrundaktivierungen behandelt (Ihr **OnActivated-Ereignishandler** wird ausgelöst). Sie können auswählen, dass keine Benutzeroberfläche angezeigt und Ihre App nach der Aktivierung geschlossen wird.
 
 ---
 
 
 ## <a name="set-an-expiration-time"></a>Festlegen einer Ablaufzeit
 
-In Windows 10 wechseln alle Popup Benachrichtigungen in den Wartungs Center, nachdem Sie vom Benutzer verworfen oder ignoriert wurden, sodass Benutzer ihre Benachrichtigung anzeigen können, nachdem das Popup entfernt wurde.
+In Windows 10 werden alle Popupbenachrichtigungen im Action Center angezeigt, nachdem sie vom Benutzer geschlossen oder ignoriert wurden, sodass Benutzer Ihre Benachrichtigung nach dem Popup sehen können.
 
-Wenn die Meldung in der Benachrichtigung aber nur für einen bestimmten Zeitraum relevant ist, sollten Sie eine Ablaufzeit für die Popup Benachrichtigung festlegen, damit den Benutzern keine veralteten Informationen aus ihrer App angezeigt werden. Wenn eine herauf Stufung beispielsweise nur für 12 Stunden gültig ist, legen Sie die Ablaufzeit auf 12 Stunden fest. Im folgenden Code wird die Ablaufzeit auf 2 Tage festgelegt.
+Wenn die Nachricht in Ihrer Benachrichtigung jedoch nur für einen bestimmten Zeitraum relevant ist, sollten Sie eine Ablaufzeit für die Popupbenachrichtigung festlegen, damit den Benutzern keine veralteten Informationen aus Ihrer App angezeigt werden. Wenn eine Heraufstufung beispielsweise nur 12 Stunden gültig ist, legen Sie die Ablaufzeit auf 12 Stunden fest. Im folgenden Code legen wir die Ablaufzeit auf 2 Tage fest.
 
 > [!NOTE]
-> Die standardmäßige und maximale Ablaufzeit für lokale Popup Benachrichtigungen beträgt 3 Tage.
+> Die Standard- und maximale Ablaufzeit für lokale Popupbenachrichtigungen beträgt 3 Tage.
 
 ```csharp
 // Create toast content and show the toast!
@@ -321,13 +321,13 @@ new ToastContentBuilder()
 ```
 
 
-## <a name="provide-a-primary-key-for-your-toast"></a>Angeben eines Primärschlüssels für den Toast
+## <a name="provide-a-primary-key-for-your-toast"></a>Geben Sie einen Primärschlüssel für Ihr Popup an.
 
-Wenn Sie die gesendete Benachrichtigung Programm gesteuert entfernen oder ersetzen möchten, müssen Sie die Tag-Eigenschaft (und optional die Group-Eigenschaft) verwenden, um einen Primärschlüssel für die Benachrichtigung anzugeben. Anschließend können Sie diesen Primärschlüssel in Zukunft verwenden, um die Benachrichtigung zu entfernen oder zu ersetzen.
+Wenn Sie die gesendete Benachrichtigung programmgesteuert entfernen oder ersetzen möchten, müssen Sie die Tag-Eigenschaft (und optional die Group-Eigenschaft) verwenden, um einen Primärschlüssel für Ihre Benachrichtigung bereitzustellen. Anschließend können Sie diesen Primärschlüssel in Zukunft verwenden, um die Benachrichtigung zu entfernen oder zu ersetzen.
 
-Weitere Informationen zum Ersetzen/Entfernen von bereits übermittelten Popup Benachrichtigungen finden Sie unter [Schnellstart: Verwalten von Popup Benachrichtigungen im Aktions Center (XAML)](/previous-versions/windows/apps/dn631260(v=win.10)).
+Weitere Informationen zum Ersetzen/Entfernen bereits übermittelter Popupbenachrichtigungen finden Sie unter [Schnellstart: Verwalten von Popupbenachrichtigungen in Info-Center (XAML).](/previous-versions/windows/apps/dn631260(v=win.10))
 
-Die Kombination aus Tag und Gruppe fungiert als zusammengesetzter Primärschlüssel. Die Gruppe ist der allgemeinere Bezeichner, in dem Sie Gruppen wie "wallposts", "Messages", "friendrequests" usw. zuweisen können. Und dann sollte die Kennung die Benachrichtigung selbst innerhalb der Gruppe eindeutig identifizieren. Mithilfe einer generischen Gruppe können Sie dann alle Benachrichtigungen aus dieser Gruppe entfernen, indem Sie die [removegroup-API](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_)verwenden.
+Tag und Gruppe fungieren kombiniert als zusammengesetzter Primärschlüssel. Die Gruppe ist der allgemeinere Bezeichner, mit dem Sie Gruppen wie "wallPosts", "messages", "friendRequests" usw. zuweisen können. Anschließend sollte tag die Benachrichtigung selbst innerhalb der Gruppe eindeutig identifizieren. Mithilfe einer generischen Gruppe können Sie dann alle Benachrichtigungen aus dieser Gruppe entfernen, indem Sie die [RemoveGroup-API](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_)verwenden.
 
 ```csharp
 // Create toast content and show the toast!
@@ -342,20 +342,20 @@ new ToastContentBuilder()
 
 
 
-## <a name="clear-your-notifications"></a>Löschen von Benachrichtigungen
+## <a name="clear-your-notifications"></a>Löschen Ihrer Benachrichtigungen
 
-Apps sind dafür verantwortlich, ihre eigenen Benachrichtigungen zu entfernen und zu löschen. Wenn Ihre APP gestartet wird, löschen wir Ihre Benachrichtigungen nicht automatisch.
+Apps sind dafür verantwortlich, ihre eigenen Benachrichtigungen zu entfernen und zu löschen. Wenn Ihre App gestartet wird, löschen wir Ihre Benachrichtigungen NICHT automatisch.
 
-Windows entfernt nur dann automatisch eine Benachrichtigung, wenn der Benutzer explizit auf die Benachrichtigung klickt.
+Windows entfernt eine Benachrichtigung nur automatisch, wenn der Benutzer explizit auf die Benachrichtigung klickt.
 
-Im folgenden finden Sie ein Beispiel dafür, was eine Messaging-APP tun sollte...
+Hier ist ein Beispiel dafür, was eine Messaging-App tun sollte...
 
-1. Der Benutzer erhält mehrere Popup Informationen zu neuen Nachrichten in einer Konversation.
-2. Der Benutzer tippt auf eines dieser Popups, um die Konversation zu öffnen.
-3. Die APP öffnet die Konversation und löscht dann alle Popup für diese Konversation (durch Verwendung von [removegroup](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) in der von der APP bereitgestellten Gruppe für diese Konversation).
-4. Das Aktions Center des Benutzers reflektiert nun den Benachrichtigungs Status ordnungsgemäß, da keine veralteten Benachrichtigungen für diese Konversation im Aktions Center vorhanden sind.
+1. Benutzer empfängt mehrere Popups zu neuen Nachrichten in einer Konversation
+2. Benutzer tippt auf eines dieser Popups, um die Konversation zu öffnen
+3. Die App öffnet die Konversation und löscht dann alle Popups für diese Konversation (mit [removeGroup](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) in der von der App bereitgestellten Gruppe für diese Konversation).
+4. Das Aktionscenter des Benutzers spiegelt nun den Benachrichtigungsstatus ordnungsgemäß wider, da im Aktionscenter keine veralteten Benachrichtigungen für diese Konversation mehr übrig sind.
 
-Informationen dazu, wie Sie alle Benachrichtigungen löschen oder bestimmte Benachrichtigungen entfernen, finden Sie unter [Schnellstart: Verwalten von Popup Benachrichtigungen im Aktions Center (XAML)](/previous-versions/windows/apps/dn631260(v=win.10)).
+Informationen zum Löschen aller Benachrichtigungen oder zum Entfernen bestimmter Benachrichtigungen finden Sie unter Schnellstart: Verwalten von Popupbenachrichtigungen [in Info-Center (XAML).](/previous-versions/windows/apps/dn631260(v=win.10))
 
 ```csharp
 ToastNotificationManagerCompat.History.Clear();
@@ -366,6 +366,6 @@ ToastNotificationManagerCompat.History.Clear();
 ## <a name="resources"></a>Ressourcen
 
 * [Vollständiges Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10)
-* [Dokumentation zu Popup Inhalten](adaptive-interactive-toasts.md)
-* [Klasse "-Benachrichtigungs Klasse"](/uwp/api/Windows.UI.Notifications.ToastNotification)
-* [Die Klasse "atastnotificationactivatedeventargs"](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
+* [Dokumentation zu Popupinhalten](adaptive-interactive-toasts.md)
+* [ToastNotification-Klasse](/uwp/api/Windows.UI.Notifications.ToastNotification)
+* [ToastNotificationActivatedEventArgs-Klasse](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
