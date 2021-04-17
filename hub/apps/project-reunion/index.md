@@ -7,12 +7,12 @@ keywords: Windows Win32, Desktopentwicklung, Project Reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 91daca9b36eca88adbf13ff6be740852f76a1386
-ms.sourcegitcommit: 0be372d792b58a260634b4e008e180f0447a46ff
+ms.openlocfilehash: 6674b18c0a042b857b14972c55e7e57f01acc03d
+ms.sourcegitcommit: df14e7768acdb243190e3418db5afa5d65c5ff88
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106549666"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107574615"
 ---
 # <a name="build-desktop-windows-apps-with-project-reunion-05"></a>Erstellen von Windows-Desktop-Apps mit Project Reunion 0.5
 
@@ -76,12 +76,7 @@ Wenn Sie das [Project Reunion 0.5-NuGet-Paket in bestehenden Projekten verwende
 - Das Project Reunion 0.5-NuGet-Paket wird für die Verwendung mit Desktopprojekten (C#/.NET 5 und C++/WinRT) in Produktionsumgebungen unterstützt. Es ist als Entwicklervorschau für UWP-Projekte verfügbar und wird nicht für die Verwendung mit UWP-Projekten in Produktionsumgebungen unterstützt.
 - Das Project Reunion 0.5-NuGet-Paket (namens **Microsoft.ProjectReunion**) enthält weitere Unterpakete (einschließlich **Microsoft.ProjectReunion.Foundation** und **Microsoft.ProjectReunion.WinUI**), die die Implementierungen für Komponenten wie WinUI, MRT Core und DWriteCore umfassen. Sie können diese Unterpakete nicht einzeln installieren, um nur bestimmte Komponenten in Ihrem Projekt zu referenzieren. Sie müssen das Paket **Microsoft.ProjectReunion** installieren, in dem alle Komponenten enthalten sind.  
 - Wenn Sie das Project Reunion 0.5-NuGet-Paket in ein bestehendes Projekt installieren, können Sie nur Nicht-WinUI 3-Komponenten, die Teil von Project Reunion sind, in Ihrem Projekt verwenden. Um WinUI 3 zu verwenden, müssen Sie ein neues Projekt mit einer der WinUI 3-Projektvorlagen erstellen, wie im vorherigen Abschnitt beschrieben.
-- In WPF-Projekten wird die Installation des Project Reunion 0.5-NuGet-Pakets derzeit nicht unterstützt.
-- Die Installation des Project Reunion 0.5-NuGet-Pakets führt in Projekten, die auf **AnyCPU** abzielen, zu Buildfehlern. Um den Fehler zu beheben, fügen Sie das folgende **ProjectReunionCopyXamlToolingLibs**-Element einem **PropertyGroup**-Element in Ihrer Projektdatei hinzu.
 
-    ```xml
-    <ProjectReunionCopyXamlToolingLibs>false</ProjectReunionCopyXamlToolingLibs>
-    ```
 
 #### <a name="asta-to-sta-threading-model"></a>ASTA zu STA-Threadingmodell
 
