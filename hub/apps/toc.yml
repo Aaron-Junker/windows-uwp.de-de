@@ -94,6 +94,8 @@
           href: project-reunion/index.md
         - name: Erste Schritte mit Project Reunion
           href: project-reunion/get-started-with-project-reunion.md
+        - name: Aktualisieren vorhandener Projekte auf die neueste Version von Project Reunion
+          href: project-reunion/update-existing-projects-to-the-latest-release.md
         - name: 'Bereitstellen von Apps, die Project Reunion verwenden'
           href: project-reunion/deploy-apps-that-use-project-reunion.md
         - name: Verwalten von Ressourcen mit MRT Core
