@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 24ba67dfa51c039055cc5bc4cb31d4aff4de6765
-ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
+ms.openlocfilehash: 95adaae83596ab33bccbf5e0268d21dbfd53bad2
+ms.sourcegitcommit: 8f7d30ad2040a3a4b0cb520b86f8fb448086aae6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96603887"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107562529"
 ---
 # <a name="progress-controls"></a>Statussteuerelemente
 
@@ -172,13 +172,13 @@ Wenn die Dauer des Vorgangs nicht bekannt ist, verwenden Sie ein unbestimmtes Pr
 
 **ProgressRing – unbestimmt**
 
-![Beispiel für ein unbestimmtes ProgressRing-Steuerelement](images/PR_IndeterminateExample.png)
+![Beispiel für ein unbestimmtes ProgressRing-Steuerelement](images/progress-ring-indeterminate-example.png)
 
 Unbestimmte ProgressRing-Elemente werden verwendet, wenn jegliche Benutzerinteraktion mit der App ausgesetzt ist oder die App auf eine Benutzereingabe wartet, um den Vorgang fortzusetzen. Das Beispiel „Anmelden...“ ist ein optimales Szenario für das ProgressRing-Steuerelement, da der Benutzer die App erst weiterverwenden kann, nachdem der Anmeldevorgang abgeschlossen ist.
 
 **ProgressRing – bestimmt**
 
-![Beispiel für ein bestimmtes ProgressRing-Steuerelement](images/progress_ring_determinate_example.png)
+![Beispiel für ein bestimmtes ProgressRing-Steuerelement](images/progress-ring-determinate-example.png)
 
 Wenn die Dauer des Vorgangs bekannt ist und Sie den Ring als visuelles Objekt verwenden möchten, etwa beim Installieren, Herunterladen oder Einrichten, eignet sich ein bestimmtes ProgressRing-Steuerelement.
 
