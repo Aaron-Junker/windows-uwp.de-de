@@ -7,19 +7,19 @@ keywords: Windows Win32, Desktopentwicklung, Project Reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: af934c2b1f4eeaa04693c3587915421a6d1453d1
-ms.sourcegitcommit: df14e7768acdb243190e3418db5afa5d65c5ff88
+ms.openlocfilehash: e3a5c891bb6bbeafa59baf933a4d8886e8430a16
+ms.sourcegitcommit: 2772d98e0c8f039e7356f03fd09054dca1022c3a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107574645"
+ms.lasthandoff: 04/21/2021
+ms.locfileid: "107838692"
 ---
 # <a name="get-started-with-project-reunion"></a>Erste Schritte mit Project Reunion
 
 Dieser Artikel enthält Anweisungen zum Installieren der Project Reunion-Erweiterung für Visual Studio 2019 auf Ihrem Entwicklungscomputer und zum Verwenden von Project Reunion in neuen oder vorhandenen Projekten. Bevor Sie Project Reunion installieren und verwenden, sehen Sie sich die [Einschränkungen und bekannten Probleme an.](index.md#limitations-and-known-issues)
 
 > [!NOTE]
-> Wenn Sie ein Projekt mit einer früheren Vorschauversion oder Releaseversion von Project Reunion oder WinUI 3 erstellt haben, können Sie [das Projekt aktualisieren, um das neueste Release zu verwenden.](update-existing-projects-to-the-latest-release.md)
+> Wenn Sie ein Projekt mit einer früheren Vorschau- oder Releaseversion von Project Reunion oder WinUI 3 erstellt haben, können Sie das Projekt aktualisieren, um das neueste [Release zu verwenden.](update-existing-projects-to-the-latest-release.md)
 
 ## <a name="set-up-your-development-environment"></a>Einrichten der Entwicklungsumgebung
 
@@ -28,7 +28,7 @@ Dieser Artikel enthält Anweisungen zum Installieren der Project Reunion-Erweite
 2. Installieren Sie [Visual Studio 2019, Version 16.10 Preview](https://visualstudio.microsoft.com/vs/preview/) (oder höher), falls Sie dies nicht bereits getan haben.
 
     > [!NOTE]
-    > Visual Studio 2019 unterstützt Version 16.9 auch Project Reunion, aber nicht alle WinUI 3-Toolfeatures. Weitere Informationen zur Unterstützung von WinUI 3-Tools finden Sie unter [Windows UI Library 3 - Project Reunion 0.5](../winui/winui3/index.md).
+    > Visual Studio 2019 unterstützt Version 16.9 auch Project Reunion, aber nicht alle WinUI 3-Toolfunktionen. Weitere Informationen zur Unterstützung von WinUI 3-Tools finden Sie unter [Windows UI Library 3 – Project Reunion 0.5](../winui/winui3/index.md).
 
     Bei der Installation von Visual Studio müssen Sie die folgenden Komponenten einschließen:
     - Vergewissern Sie sich auf der Registerkarte **Workloads** im Installationsdialogfeld, dass **Entwicklung mit der Universellen Windows-Plattform (UWP)** ausgewählt ist.
@@ -41,44 +41,33 @@ Dieser Artikel enthält Anweisungen zum Installieren der Project Reunion-Erweite
     - Vergewissern Sie sich, dass auf der Registerkarte **Workloads** im Installationsdialogfeld die Option **Desktopentwicklung mit C++** ausgewählt ist.
     - Vergewissern Sie sich, dass im Bereich **Installationsdetails** auf der rechten Seite des Installationsdialogfelds im Abschnitt **Entwicklung für die universelle Windows-Plattform** die optionale Komponente **C++ (v142) Tools für die universelle Windows-Plattform** ausgewählt ist.
 
-3. Wenn Sie zuvor die [WinUI 3-Vorschauerweiterung für Visual Studio](https://marketplace.visualstudio.com/items?itemName=Microsoft-WinUI.WinUIProjectTemplates)installiert haben, deinstallieren Sie die Erweiterung. Weitere Informationen zum Deinstallieren einer Erweiterung finden Sie unter [Verwalten von Erweiterungen für Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
+3. Wenn Sie zuvor die [WinUI 3 Preview-Erweiterung](https://marketplace.visualstudio.com/items?itemName=Microsoft-WinUI.WinUIProjectTemplates)für Visual Studio installiert haben, deinstallieren Sie die Erweiterung. Weitere Informationen zum Deinstallieren einer Erweiterung finden Sie unter [Verwalten von Erweiterungen für Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
 
-4. Stellen Sie sicher, dass auf Ihrem System eine NuGet-Paketquelle für den offiziellen NuGet-Dienstindex unter aktiviert `https://api.nuget.org/v3/index.json` ist. 
+4. Stellen Sie sicher, dass für Ihr System eine NuGet-Paketquelle für den offiziellen NuGet-Dienstindex unter aktiviert `https://api.nuget.org/v3/index.json` ist. 
 
-    1. Klicken Sie in Visual Studio auf  ->  **Extras NuGet Paket-Manager**  ->  **Paket-Manager Einstellungen,** um das Dialogfeld **Optionen** zu öffnen. 
-    2. Wählen Sie im linken Bereich des Dialogfelds **Optionen** die Registerkarte **Paketquellen aus,** und stellen Sie sicher, dass eine Paketquelle für **nuget.org** vorhanden ist, `https://api.nuget.org/v3/index.json` die als Quell-URL auf verweist. Weitere Informationen finden Sie unter [Allgemeine NuGet-Konfigurationen.](/nuget/consume-packages/configuring-nuget-behavior)
+    1. Wählen Visual Studio **Tools**  ->  **NuGet** Paket-Manager  ->  **Paket-Manager Aus,** um das Dialogfeld **Optionen zu** öffnen. 
+    2. Wählen Sie im linken Bereich des  Dialogfelds Optionen die Registerkarte Paketquellen  aus, und stellen Sie sicher, dass es eine Paketquelle für nuget.org gibt, die als Quell-URL auf  `https://api.nuget.org/v3/index.json` zeigt. Weitere Informationen finden Sie unter [Allgemeine NuGet-Konfigurationen.](/nuget/consume-packages/configuring-nuget-behavior)
 
-5. Laden Sie die Projektreunion 0.5-Erweiterung für Visual Studio herunter, und installieren Sie sie. Es gibt zwei Versionen der Erweiterung: eine für Desktop-Apps (C#/.NET 5 oder C++/WinRT) und eine für UWP-Apps.
+5. Laden Sie die Project Reunion 0.5-Erweiterung herunter, und installieren Sie Visual Studio. Es gibt zwei Versionen der Erweiterung: eine für Desktop-Apps (C#/.NET 5 oder C++/WinRT) und eine für UWP-Apps.
 
     So verwenden Sie Project Reunion in Desktop-Apps (C#/.NET 5 oder C++/WinRT):
     - Klicken Sie in Visual Studio 2019 auf **Erweiterungen** > **Erweiterungen verwalten**, suchen Sie nach **Project Reunion**, und installieren Sie die **Project Reunion**-Erweiterung.
-    - Alternativ können Sie die [Project Reunion 0.5-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftProjectReunion) direkt aus dem Visual Studio Marketplace herunterladen und installieren.
+    - Alternativ können Sie die [Projekt-Reunion 0.5-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftProjectReunion) direkt aus dem Visual Studio Marketplace.
 
     Um Project Reunion in UWP-Apps zu verwenden, müssen Sie eine Vorschauversion der Erweiterung installieren, die für Produktionsumgebungen nicht unterstützt wird:
     - Deinstallieren Sie alle vorhandenen Versionen von Project Reunion VSIX.
-    - Klicken Visual Studio 2019 auf Erweiterungen Erweiterungen verwalten, und klicken Sie in der unteren linken Ecke auf Einstellungen für  >  Erweiterungen ändern.  Deaktivieren Sie automatische Updates für Pakete, die für alle Benutzer installiert wurden, bevor Sie die ältere Version installieren.
+    - Klicken Sie in Visual Studio 2019 auf   >  **ErweiterungenErweiterungen verwalten,** und klicken Sie in der unteren linken Ecke auf **Einstellungen für Erweiterungen ändern.** Deaktivieren Sie automatische Updates für Pakete, die für alle Benutzer installiert sind, bevor Sie die ältere Version installieren.
     - Laden Sie die [Erweiterung Project Reunion 0.5 Preview](https://download.microsoft.com/download/9/9/8/9981a84b-8fd8-4645-9dce-c62761601f17/ProjectReunion.Extension.vsix)herunter, und installieren Sie sie.
 
     Anweisungen zum Hinzufügen des VSIX-Pakets zu Visual Studio finden Sie unter [Verwalten von Erweiterungen für Visual Studio](/visualstudio/ide/finding-and-using-visual-studio-extensions).
 
-    ![Screenshot: Installierte Projekt-Reunion-Erweiterung](images/reunion-extension-install.png)
+    ![Screenshot der installierten Project Reunion-Erweiterung](images/reunion-extension-install.png)
 
-6. Um WinUI 3-Tools wie Live Visual Tree, Hot Reload und Live Property Explorer in Visual Studio 2019 16.10 Preview zu verwenden, müssen Sie WinUI 3-Tools mit Visual Studio Preview-Funktionen aktivieren. Anweisungen finden Sie unter [How to Enable UI Tooling for WinUI 3 in VS 16.9 Preview 4 (Aktivieren von Benutzeroberflächentools für WinUI 3 in VS 16.9 Preview 4).](https://github.com/microsoft/microsoft-ui-xaml/issues/4140)
+6. Um WinUI 3-Tools wie visuelle Livestruktur, Hot Reload und LiveEigenschaften-Explorer in Visual Studio 2019 16.10 Preview zu verwenden, müssen Sie WinUI 3-Tools mit Visual Studio Preview Features aktivieren. Anweisungen finden Sie unter [How to Enable UI Tooling for WinUI 3 in VS 16.9 Preview 4 (Aktivieren von Benutzeroberflächentools für WinUI 3 in VS 16.9 Preview 4).](https://github.com/microsoft/microsoft-ui-xaml/issues/4140)
 
-7. Um alle Fehlerbehebungen aus der neuesten stabilen Version von Project Reunion 0.5 zu erhalten, müssen Sie Ihr .NET SDK explizit auf die neueste Version festlegen. Fügen Sie hierzu der CSPROJ-Datei die folgende Elementgruppe hinzu, und speichern Sie das Projekt:
-
-    ```xml
-    <ItemGroup>            
-        <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.18362.16" />
-        <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.18362.16" />
-    </ItemGroup>
-    ```
-
-    Beachten Sie, dass diese Zeilen entfernt werden können, sobald .NET 5.0.6 im Mai verfügbar ist. 
-    
 ## <a name="create-a-new-project-that-uses-project-reunion"></a>Erstellen eines neuen Projekts, das Project Reunion verwendet
 
-Die Project Reunion 0.5-Erweiterungen für Visual Studio 2019 (einschließlich der Erweiterung für Desktop-Apps und der Vorschauerweiterung für UWP-Apps) stellen Projektvorlagen bereit, die Projekte mit einer WinUI 3-basierten Benutzeroberflächenebene generieren und Zugriff auf alle anderen Project Reunion-APIs bieten. Weitere Informationen zu den verfügbaren Projektvorlagen finden Sie unter [WinUI 3-Projektvorlagen in Visual Studio](..\winui\winui3\winui-project-templates-in-visual-studio.md).
+Die Projektreunion 0.5-Erweiterungen für Visual Studio 2019 (einschließlich der Erweiterung für Desktop-Apps und der Vorschauerweiterung für UWP-Apps) stellen Projektvorlagen bereit, die Projekte mit einer WinUI 3-basierten Ui-Ebene generieren und Zugriff auf alle anderen Project Reunion-APIs bieten. Weitere Informationen zu den verfügbaren Projektvorlagen finden Sie unter [WinUI 3-Projektvorlagen in Visual Studio](..\winui\winui3\winui-project-templates-in-visual-studio.md).
 
 > [!NOTE]
 > Die Desktopprojektvorlagen (C#/.NET 5 und C++/WinRT) werden für die Verwendung in Produktionsumgebungen unterstützt. Die UWP-Projektvorlagen sind nur als Entwicklervorschau verfügbar und können nicht zum Erstellen von Apps für Produktionsumgebungen verwendet werden.
@@ -121,9 +110,11 @@ Wenn Sie über ein vorhandenes Projekt verfügen, in dem Sie Project Reunion ver
 
 5. Nachdem das **Microsoft.ProjectReunion**-Paket gefunden wurde, klicken Sie im rechten Bereich des Fensters **NuGet-Paket-Manager** auf **Installieren**.
 
-    ![Screenshot der Installation des NuGet-Pakets "Project Reunion"](images/reunion-nuget-install.png)
+    ![Screenshot des installierten NuGet-Pakets "Project Reunion"](images/reunion-nuget-install.png)
 
-6. Nachdem Sie das Paket installiert haben, können Sie die folgenden Project Reunion-APIs und -Komponenten in Ihrem Projekt verwenden:
+6. Nur für **C#/.NET 5-Projekte:** Um alle Fehlerbehebungen aus der neuesten stabilen Version von Project Reunion 0.5 zu erhalten, müssen Sie Ihre Projektdatei aktualisieren, um Ihr .NET SDK explizit auf die neueste Version zu setzen. Weitere Informationen finden Sie unter [.NET SDK-Referenzen.](index.md#net-sdk-references)
+
+7. Nach der Installation des **Pakets Microsoft.ProjectReunion** können Sie die folgenden Project Reunion-APIs und -Komponenten in Ihrem Projekt verwenden:
 
     - [Verwalten von Ressourcen im MRT Core](mrtcore/mrtcore-overview.md)
     - [Rendern von Text mit DWriteCore](dwritecore.md)
@@ -135,7 +126,7 @@ Die folgenden Project Reunion-Beispiele sind derzeit für Sie verfügbar.
 - [Beispiel für den DWriteCore-Katalog](https://github.com/microsoft/Project-Reunion-Samples/tree/main/DWriteCore/DWriteCoreGallery): Diese Beispielanwendung veranschaulicht die [DWriteCore](dwritecore.md)-API.
 - [Beispiel für MRT Core](https://github.com/microsoft/Project-Reunion-Samples/tree/main/MrtCore): Diese Beispielanwendung veranschaulicht die [MRT Core](mrtcore/mrtcore-overview.md)-API.
 - [Hallo Welt-Beispiel](https://github.com/microsoft/Project-Reunion-Samples/tree/main/HelloWorld/reunioncppdesktopsampleapp): Dieses Beispiel veranschaulicht eine grundlegende Integration in das Project Reunion-NuGet-Paket.
-- [Xaml-Steuerelementkatalog:](https://aka.ms/winui3/xcg)Dies ist eine Beispiel-App, die alle WinUI 3-Steuerelemente in Aktion zeigt. 
+- [Xaml-Steuerelementekatalog:](https://aka.ms/winui3/xcg)Dies ist eine Beispiel-App, die alle WinUI 3-Steuerelemente in Aktion zeigt. 
 
 ## <a name="related-topics"></a>Zugehörige Themen
 
