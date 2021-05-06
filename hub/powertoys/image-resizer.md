@@ -1,6 +1,7 @@
 ---
-title: PowerToys-Image-Resizer-Hilfsprogramm für Windows 10
-description: 'Eine Windows-Shellerweiterung für das Massen Image: Ändern der Größe'
+title: PowerToys Bildgrößenänderung für Windows 10
+description: 'Eine Windows-Shellerweiterung für das Ändern einer Bildgröße'
+author: aaron-junker
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
@@ -11,27 +12,27 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 03/12/2021
 ms.locfileid: "103417073"
 ---
-# <a name="image-resizer-utility"></a>Hilfsprogramm für die Image-Größe
+# <a name="image-resizer-utility"></a>Hilfsprogramm für das Ändern von Bildgrößen
 
-Image Resizer ist eine Windows-Shellerweiterung für die Massen Image-Größe Klicken Sie nach der Installation von PowerToys mit der rechten Maustaste auf eine oder mehrere ausgewählte Bilddateien im Datei-Explorer, und wählen Sie dann im Menü die Option **Bilder ändern** aus.
+Bildgrößenänderung ist eine Windows-Shellerweiterung für das massenhafte Ändern von Bildgrößen. Klicken Sie nach der Installation von PowerToys mit der rechten Maustaste auf eine oder mehrere ausgewählte Bilddateien im Datei-Explorer, und wählen Sie dann im Menü die Option **Größe von Bildern ändern** aus.
 
-![Demo der Bild Größe für Bild Größe](../images/powertoys-resize-images.gif)
+![Demo der Ändern mehrerer Bildgrößen](../images/powertoys-resize-images.gif)
 
 ## <a name="drag-and-drop"></a>Drag & Drop
 
-Mit der Bildgrößen Änderung können Sie auch die Größe von Bildern ändern, indem Sie die ausgewählten Dateien **mit der rechten Maustaste** ziehen und ablegen. Dadurch können Sie Ihre in der Größe geänderten Bilder schnell in einem anderen Ordner speichern.
+Mit der Bildgrößenänderung können Sie auch die Größe von Bildern ändern, indem Sie die ausgewählten Dateien **mit der rechten Maustaste** ziehen und an einem neuen Standort ablegen. Dadurch können Sie Ihre in der Größe geänderten Bilder schnell in einem anderen Ordner speichern.
 
-![Demo zum Drag & Drop der Bild Größe](../images/powertoys-resize-drag-drop.gif)
+![Demo zum Drag & Drop der Bildgrößenänderung](../images/powertoys-resize-drag-drop.gif)
 
-## <a name="settings"></a>Einstellung
+## <a name="settings"></a>Einstellungen
 
-Auf der Registerkarte Größe des PowerToys-Bilds können Sie die folgenden Einstellungen konfigurieren.
+In der Registerkarte Bildgrößenänderung der PowerToys Einstellungen können Sie die folgenden Einstellungen konfigurieren:
 
-![Menü zum Ändern der Größe von PowerToys-Bildern](../images/powertoys-imageresize-settings.png)
+![Einstellungen der Bildgrößenänderung](../images/powertoys-imageresize-settings.png)
 
-### <a name="sizes"></a>Größen
+### <a name="sizes"></a>Bildgrößen
 
-Fügen Sie neue Voreinstellungs Größen hinzu. Jede Größe kann als Fill, fit oder Stretch konfiguriert werden. Die Dimension, die für die Größe der Größe verwendet werden soll, kann auch als Zentimeter, Zoll, Prozent und Pixel konfiguriert werden.
+Hier können Sie voreingestllte größen festlegen. Jede Größe kann als Füllen, Anpassen oder Dehnen konfiguriert werden. Die Dimension, die für die Größe verwendet werden soll, kann in Zentimeter, Zoll, Prozent oder Pixel angegeben werden.
 
 #### <a name="fill-vs-fit-vs-stretch"></a>Im Vergleich mit Stretch anpassen
 
