@@ -1,6 +1,6 @@
 ---
 title: Microsoft PowerToys
-description: Microsoft PowerToys ist eine Reihe von Hilfsprogrammen für die Anpassung von Windows 10. Zu den Hilfsprogrammen gehören Farbwähler (klicken Sie auf eine beliebige Stelle, um einen Farbwert zu übernehmen), FancyZones (Tastenkombinationen zur Positionierung von Fenstern in einem Rasterlayout), Datei-Explorer-Add-Ons (Vorschau von SVG- oder Markdown-Dateien), Bildgrößenänderung (Ändern der Größe eines oder mehrerer Bilder mit einem einfachen Rechtsklick), Tastatur-Manager (Umbelegung von Tasten oder Erstellen eigener Tastenkombinationen), PowerRename (massenhaftes Umbenennen mithilfe von Suchen und Ersetzen), PowerToys-Startprogramm (Alt + Leertaste zum Starten von Anwendungen), eine Tastenkombinationsübersicht und vieles mehr.
+description: Microsoft PowerToys ist eine Reihe von Hilfsprogrammen für die Anpassung von Windows 10. Zu den Hilfsprogrammen gehören der Farbwähler (klicken Sie auf eine beliebige Stelle, um einen Farbwert zu übernehmen), FancyZones (Tastenkombinationen zur Positionierung von Fenstern in einem Rasterlayout), Datei-Explorer-Add-Ons (Vorschau von SVG- oder Markdown-Dateien), Bildgrößenänderung (Ändern der Größe eines oder mehrerer Bilder mit einem einfachen Rechtsklick), Tastatur-Manager (Umbelegung von Tasten oder Erstellen eigener Tastenkombinationen), PowerRename (massenhaftes Umbenennen mithilfe von Suchen und Ersetzen), PowerToys Run (Alt + Leertaste zum Starten von Anwendungen), eine Tastenkombinationsübersicht und vieles mehr.
 ms.date: 12/02/2020
 ms.topic: overview
 ms.localizationpriority: medium
@@ -118,7 +118,7 @@ Zu den derzeit verfügbaren Hilfsprogrammen gehören:
 
 ## <a name="powertoys-video-walk-through"></a>Exemplarische Vorgehensweise zu PowerToys im Video
 
-In diesem Video zeigt Clint Rutkas (PM für PowerToys), wie man die verschiedenen verfügbaren Hilfsprogramme installiert und verwendet. Außerdem gibt er einige Tipps, Informationen zum Mitmachen und mehr.
+In diesem Video zeigt Clint Rutkas (Projektleiter von PowerToys), wie man die verschiedenen verfügbaren Hilfsprogramme installiert und verwendet. Außerdem gibt er einige Tipps, Informationen zum Mitmachen und mehr.
 
 > [!VIDEO https://channel9.msdn.com/Shows/Tabs-vs-Spaces/PowerToys-Utilities-to-customize-Windows-10/player?format=ny]
 
