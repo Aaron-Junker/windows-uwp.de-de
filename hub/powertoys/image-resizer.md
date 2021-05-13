@@ -2,15 +2,9 @@
 title: PowerToys Bildgrößenänderung für Windows 10
 description: 'Eine Windows-Shellerweiterung für das Ändern einer Bildgröße'
 author: aaron-junker
-ms.date: 12/02/2020
+ms.date: 06/13/2021
 ms.topic: article
-ms.localizationpriority: medium
-ms.openlocfilehash: e417a70e34ae1e5fdba95e2838a6221b3236e1c6
-ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
-ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103417073"
 ---
 # <a name="image-resizer-utility"></a>Hilfsprogramm für das Ändern von Bildgrößen
 
@@ -32,37 +26,37 @@ In der Registerkarte Bildgrößenänderung der PowerToys Einstellungen können S
 
 ### <a name="sizes"></a>Bildgrößen
 
-Hier können Sie voreingestllte größen festlegen. Jede Größe kann als Füllen, Anpassen oder Dehnen konfiguriert werden. Die Dimension, die für die Größe verwendet werden soll, kann in Zentimeter, Zoll, Prozent oder Pixel angegeben werden.
+Hier können Sie voreingestllte Größen festlegen. Jede Größe kann als Füllen, Anpassen oder Dehnen konfiguriert werden. Die Dimension, die für die Größe verwendet werden soll, kann in Zentimeter, Zoll, Prozent oder Pixel angegeben werden.
 
-#### <a name="fill-vs-fit-vs-stretch"></a>Im Vergleich mit Stretch anpassen
+#### <a name="fill-vs-fit-vs-stretch"></a>Füllen, Anpassen & Dehnen
 
-- **Ausfüllen:** Füllt die gesamte angegebene Größe mit dem Bild. Skaliert das Bild proportional. Schneidet das Bild nach Bedarf.
-- **Anpassen:** Passt das gesamte Bild in die angegebene Größe an. Skaliert das Bild proportional. Das Bild wird nicht von der Datei zuschneiden.
-- **Streckung:** Füllt die gesamte angegebene Größe mit dem Bild. Dehnt das Bild nach Bedarf unverhältnismäßig aus. Das Bild wird nicht zuschneiden.
+- **Füllen:** Füllt die gesamte angegebene Größe mit dem Bild. Skaliert das Bild proportional. Schneidet das Bild nach Bedarf.
+- **Anpassen:** Passt das gesamte Bild in die angegebene Größe an. Skaliert das Bild proportional. Das Bild wird nicht von der Datei zugeschnitten.
+- **Dehnen:** Füllt die gesamte angegebene Größe mit dem Bild. Dehnt das Bild nach Bedarf unverhältnismäßig aus. Das Bild wird nicht von der Datei zugeschnitten.
 
-Breite und Höhe der angegebenen Größe können ausgetauscht werden, um der Ausrichtung (Hochformat/Querformat) des aktuellen Bilds zu entsprechen. Um die Breite und Höhe immer wie angegeben zu verwenden, deaktivieren Sie **die Ausrichtung von Bildern**.
+Breite und Höhe der angegebenen Größe können ausgetauscht werden, um der Ausrichtung (Hochformat/Querformat) des aktuellen Bilds zu entsprechen. Um die Breite und Höhe immer wie angegeben zu verwenden, deaktivieren Sie **Bildausrichtung ignorieren**.
 
 
-### <a name="fallback-encoding"></a>Fall Back Codierung
+### <a name="fallback-encoding"></a>Fallbackencoder
 
-Der Fall Back Encoder wird verwendet, wenn die Datei nicht im ursprünglichen Format gespeichert werden kann. Beispielsweise verfügt das Windows-Metadatei-Bildformat (WMF) über einen Decoder zum Lesen des Bilds, aber keinen Encoder zum Schreiben eines neuen Bilds. In diesem Fall kann das Image nicht im ursprünglichen Format gespeichert werden. Mit der Bild Größe für die Bild Größe können Sie angeben, welches Format der Fall Back Encoder verwenden soll: PNG-, JPEG-, TIFF-, BMP-, GIF-oder wmphuto-Einstellungen. *Dabei handelt es sich nicht um ein Tool zum Konvertieren von Dateitypen, sondern nur als Fall Back für nicht unterstützte Dateiformate.*
+Der Fall Back Encoder wird verwendet, wenn die Datei nicht im ursprünglichen Format gespeichert werden kann. Beispielsweise verfügt das Windows-Metadatei-Bildformat (WMF) über einen Decoder zum Lesen des Bilds, aber keinen Encoder zum Erstellen eines neuen Bilds. In diesem Fall kann das Image nicht im ursprünglichen Format gespeichert werden. Mit der Einstellunf **Fallbackencoder** können Sie angeben, welches Format verwendet werden soll: PNG-, JPEG-, TIFF-, BMP-, GIF- oder WMPhoto-Encoder. *Dabei handelt es sich nicht um ein Tool zum Konvertieren von Dateitypen, sondern nur als Fall Back für nicht unterstützte Dateiformate.*
 
-### <a name="file"></a>File
+### <a name="file"></a>Datei
 
-Der Dateiname des Images, das in der Größe geändert wurde, kann mit den folgenden Parametern geändert werden:
+Der Dateiname des Bildes, das in der Größe geändert werden soll, kann mit den folgenden Parametern geändert werden:
 
 - `%1`: Original Dateiname
-- `%2`: Name der Größe (wie in den Einstellungen für die Größe des PowerToys-Image angepasst)
+- `%2`: Name der Größe (welcher in den Einstellungen der Bildgrößenänderung festgelegt wurde)
 - `%3`: Ausgewählte Breite
 - `%4`: Ausgewählte Höhe
 - `%5`: Tatsächliche Höhe
 - `%6`: Tatsächliche Breite
 
-Wenn Sie z. b. das Format Dateiname auf festlegen: für `%1 (%2)` die Datei `example.png` , und wählen Sie die `Small` Einstellung Dateigröße aus, führt dies zu dem Dateinamen `example (Small).png` .
+Wenn Sie z. b. das Format für Dateinamen festlegen auf: `%1 (%2)` Und die Grösse für die Datei `example.png` mit der `Small` Einstellung ändern, dann führt dies zumDateinamen `example (Small).png`.
 
-Wenn das Format für die Datei auf festgelegt wird `%1_%4` `example.jpg` und die Größeneinstellung ausgewählt wird, wird `Medium 1366 x 768px` der Dateiname angezeigt: `example_768.jpg` .
+Wenn das Format für die Datei auf  `%1_%4` festgelegt und `example.jpg` mit der Grösseneinstellung `Medium 1366 x 768px` umgewandelt wird, ergibt sich folgender Dateiname: `example_768.jpg`.
 
-Sie können auch festlegen, dass das Datum der *letzten Änderung* für das Image in der Größe geändert werden soll.
+Sie können auch festlegen, dass das Datum der *letzten Änderung* für das Bild in der Größe geändert werden soll.
 
 ### <a name="auto-widthheight"></a>Automatische Breite/Höhe
 
@@ -70,4 +64,4 @@ Sie können die Höhe oder Breite leer lassen. Dadurch wird die angegebene Dimen
 
 ### <a name="sub-directories"></a>Unterverzeichnisse
 
-Sie können im Dateinamen Format ein Verzeichnis angeben, um die Größe von Images in Unterverzeichnissen zu gruppieren. Beispielsweise speichert der Wert von `%2\%1` das Image, das in der Größe geändert wurde, in `Small\Sample.jpg`
+Sie können im **Format für Dateinamen** ein Verzeichnis angeben, um die Größe von Images in Unterverzeichnissen zu gruppieren. Beispielsweise speichert der Wert von `%2\%1` das Bild, von welchem die Größe geändert wurde, in `Small\Sample.jpg`.
